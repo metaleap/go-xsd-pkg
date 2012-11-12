@@ -95,60 +95,74 @@ type TmomentaboutType struct {
 
 }
 
-type XsdGoPkgHasElem_Mean struct {
-	Mean *TmeanType `xml:"http://www.w3.org/1998/Math/MathML mean"`
-}
-
 type XsdGoPkgHasElems_Mean struct {
 	Means []*TmeanType `xml:"http://www.w3.org/1998/Math/MathML mean"`
+
 }
 
-type XsdGoPkgHasElem_Sdev struct {
-	Sdev *TsdevType `xml:"http://www.w3.org/1998/Math/MathML sdev"`
+type XsdGoPkgHasElem_Mean struct {
+	Mean *TmeanType `xml:"http://www.w3.org/1998/Math/MathML mean"`
+
 }
 
 type XsdGoPkgHasElems_Sdev struct {
 	Sdevs []*TsdevType `xml:"http://www.w3.org/1998/Math/MathML sdev"`
+
 }
 
-type XsdGoPkgHasElem_Variance struct {
-	Variance *TvarianceType `xml:"http://www.w3.org/1998/Math/MathML variance"`
+type XsdGoPkgHasElem_Sdev struct {
+	Sdev *TsdevType `xml:"http://www.w3.org/1998/Math/MathML sdev"`
+
 }
 
 type XsdGoPkgHasElems_Variance struct {
 	Variances []*TvarianceType `xml:"http://www.w3.org/1998/Math/MathML variance"`
+
 }
 
-type XsdGoPkgHasElem_Median struct {
-	Median *TmedianType `xml:"http://www.w3.org/1998/Math/MathML median"`
+type XsdGoPkgHasElem_Variance struct {
+	Variance *TvarianceType `xml:"http://www.w3.org/1998/Math/MathML variance"`
+
 }
 
 type XsdGoPkgHasElems_Median struct {
 	Medians []*TmedianType `xml:"http://www.w3.org/1998/Math/MathML median"`
+
 }
 
-type XsdGoPkgHasElem_Mode struct {
-	Mode *TmodeType `xml:"http://www.w3.org/1998/Math/MathML mode"`
+type XsdGoPkgHasElem_Median struct {
+	Median *TmedianType `xml:"http://www.w3.org/1998/Math/MathML median"`
+
 }
 
 type XsdGoPkgHasElems_Mode struct {
 	Modes []*TmodeType `xml:"http://www.w3.org/1998/Math/MathML mode"`
+
+}
+
+type XsdGoPkgHasElem_Mode struct {
+	Mode *TmodeType `xml:"http://www.w3.org/1998/Math/MathML mode"`
+
 }
 
 type XsdGoPkgHasElems_Moment struct {
 	Moments []*TmomentType `xml:"http://www.w3.org/1998/Math/MathML moment"`
+
 }
 
 type XsdGoPkgHasElem_Moment struct {
 	Moment *TmomentType `xml:"http://www.w3.org/1998/Math/MathML moment"`
+
 }
 
 type XsdGoPkgHasElem_Momentabout struct {
 	Momentabout *TmomentaboutType `xml:"http://www.w3.org/1998/Math/MathML momentabout"`
+
 }
 
 type XsdGoPkgHasElems_Momentabout struct {
 	Momentabouts []*TmomentaboutType `xml:"http://www.w3.org/1998/Math/MathML momentabout"`
+
 }
 
 type XsdGoPkgHasGroup_MomentaboutContent struct {

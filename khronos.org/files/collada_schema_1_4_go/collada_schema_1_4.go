@@ -3373,11 +3373,11 @@ type XsdGoPkgHasAttr_Source_XsdtAnyURI_ struct {
 
 //	The InputGlobal type is used to represent inputs that can reference external resources.
 type TInputGlobal struct {
-//	The source attribute indicates the location of the data source. Required attribute.
-	XsdGoPkgHasAttr_Source_XsdtAnyURI_
-
 //	The semantic attribute is the user-defined meaning of the input connection. Required attribute.
 	XsdGoPkgHasAttr_Semantic_XsdtNmtoken_
+
+//	The source attribute indicates the location of the data source. Required attribute.
+	XsdGoPkgHasAttr_Source_XsdtAnyURI_
 
 }
 
@@ -3455,17 +3455,17 @@ type TInstanceWithExtra struct {
 //	The extra element may occur any number of times.
 	XsdGoPkgHasElems_Extra
 
-//	The sid attribute is a text string value containing the sub-identifier of this element. This
-//	value must be unique within the scope of the parent element. Optional attribute.
-	XsdGoPkgHasAttr_Sid_XsdtNCName_
+//	The name attribute is the text string name of this element. Optional attribute.
+	XsdGoPkgHasAttr_Name_XsdtNCName_
 
 //	The url attribute refers to resource to instantiate. This may refer to a local resource using a
 //	relative URL fragment identifier that begins with the “#” character. The url attribute may refer
 //	to an external resource using an absolute or relative URL.
 	XsdGoPkgHasAttr_Url_XsdtAnyURI_
 
-//	The name attribute is the text string name of this element. Optional attribute.
-	XsdGoPkgHasAttr_Name_XsdtNCName_
+//	The sid attribute is a text string value containing the sub-identifier of this element. This
+//	value must be unique within the scope of the parent element. Optional attribute.
+	XsdGoPkgHasAttr_Sid_XsdtNCName_
 
 }
 
@@ -3487,48 +3487,56 @@ type TargetableFloat3 struct {
 type XsdGoPkgHasElem_channelssequencefx_surface_format_hint_commonschema_Channels_TfxSurfaceFormatHintChannelsEnum_ struct {
 //	The per-texel layout of the format.  The length of the string indicate how many channels there are and the letter respresents the name of the channel.  There are typically 0 to 4 channels.
 	Channels TfxSurfaceFormatHintChannelsEnum `xml:"http://www.collada.org/2005/11/COLLADASchema channels"`
+
 }
 
 //	The per-texel layout of the format.  The length of the string indicate how many channels there are and the letter respresents the name of the channel.  There are typically 0 to 4 channels.
 type XsdGoPkgHasElems_channelssequencefx_surface_format_hint_commonschema_Channels_TfxSurfaceFormatHintChannelsEnum_ struct {
 //	The per-texel layout of the format.  The length of the string indicate how many channels there are and the letter respresents the name of the channel.  There are typically 0 to 4 channels.
 	Channelses []TfxSurfaceFormatHintChannelsEnum `xml:"http://www.collada.org/2005/11/COLLADASchema channels"`
+
 }
 
 //	Each channel represents a range of values. Some example ranges are signed or unsigned integers, or between between a clamped range such as 0.0f to 1.0f, or high dynamic range via floating point
 type XsdGoPkgHasElems_rangesequencefx_surface_format_hint_commonschema_Range_TfxSurfaceFormatHintRangeEnum_ struct {
 //	Each channel represents a range of values. Some example ranges are signed or unsigned integers, or between between a clamped range such as 0.0f to 1.0f, or high dynamic range via floating point
 	Ranges []TfxSurfaceFormatHintRangeEnum `xml:"http://www.collada.org/2005/11/COLLADASchema range"`
+
 }
 
 //	Each channel represents a range of values. Some example ranges are signed or unsigned integers, or between between a clamped range such as 0.0f to 1.0f, or high dynamic range via floating point
 type XsdGoPkgHasElem_rangesequencefx_surface_format_hint_commonschema_Range_TfxSurfaceFormatHintRangeEnum_ struct {
 //	Each channel represents a range of values. Some example ranges are signed or unsigned integers, or between between a clamped range such as 0.0f to 1.0f, or high dynamic range via floating point
 	Range TfxSurfaceFormatHintRangeEnum `xml:"http://www.collada.org/2005/11/COLLADASchema range"`
-}
 
-//	Each channel of the texel has a precision.  Typically these are all linked together.  An exact format lay lower the precision of an individual channel but applying a higher precision by linking the channels together may still convey the same information.
-type XsdGoPkgHasElem_precisionsequencefx_surface_format_hint_commonschema_Precision_TfxSurfaceFormatHintPrecisionEnum_ struct {
-//	Each channel of the texel has a precision.  Typically these are all linked together.  An exact format lay lower the precision of an individual channel but applying a higher precision by linking the channels together may still convey the same information.
-	Precision TfxSurfaceFormatHintPrecisionEnum `xml:"http://www.collada.org/2005/11/COLLADASchema precision"`
 }
 
 //	Each channel of the texel has a precision.  Typically these are all linked together.  An exact format lay lower the precision of an individual channel but applying a higher precision by linking the channels together may still convey the same information.
 type XsdGoPkgHasElems_precisionsequencefx_surface_format_hint_commonschema_Precision_TfxSurfaceFormatHintPrecisionEnum_ struct {
 //	Each channel of the texel has a precision.  Typically these are all linked together.  An exact format lay lower the precision of an individual channel but applying a higher precision by linking the channels together may still convey the same information.
 	Precisions []TfxSurfaceFormatHintPrecisionEnum `xml:"http://www.collada.org/2005/11/COLLADASchema precision"`
+
 }
 
-//	Additional hints about data relationships and other things to help the application pick the best format.
-type XsdGoPkgHasElem_optionsequencefx_surface_format_hint_commonschema_Option_TfxSurfaceFormatHintOptionEnum_ struct {
-//	Additional hints about data relationships and other things to help the application pick the best format.
-	Option TfxSurfaceFormatHintOptionEnum `xml:"http://www.collada.org/2005/11/COLLADASchema option"`
+//	Each channel of the texel has a precision.  Typically these are all linked together.  An exact format lay lower the precision of an individual channel but applying a higher precision by linking the channels together may still convey the same information.
+type XsdGoPkgHasElem_precisionsequencefx_surface_format_hint_commonschema_Precision_TfxSurfaceFormatHintPrecisionEnum_ struct {
+//	Each channel of the texel has a precision.  Typically these are all linked together.  An exact format lay lower the precision of an individual channel but applying a higher precision by linking the channels together may still convey the same information.
+	Precision TfxSurfaceFormatHintPrecisionEnum `xml:"http://www.collada.org/2005/11/COLLADASchema precision"`
+
 }
 
 //	Additional hints about data relationships and other things to help the application pick the best format.
 type XsdGoPkgHasElems_optionsequencefx_surface_format_hint_commonschema_Option_TfxSurfaceFormatHintOptionEnum_ struct {
 //	Additional hints about data relationships and other things to help the application pick the best format.
 	Options []TfxSurfaceFormatHintOptionEnum `xml:"http://www.collada.org/2005/11/COLLADASchema option"`
+
+}
+
+//	Additional hints about data relationships and other things to help the application pick the best format.
+type XsdGoPkgHasElem_optionsequencefx_surface_format_hint_commonschema_Option_TfxSurfaceFormatHintOptionEnum_ struct {
+//	Additional hints about data relationships and other things to help the application pick the best format.
+	Option TfxSurfaceFormatHintOptionEnum `xml:"http://www.collada.org/2005/11/COLLADASchema option"`
+
 }
 
 //	If the exact format cannot be resolve via other methods then the format_hint will describe the important features of the format so that the application may select a compatable or close format
@@ -3559,15 +3567,17 @@ type TxsdFxSurfaceInitPlanarCommonChoiceAll struct {
 }
 
 //	Init the entire surface with one compound image such as DDS
-type XsdGoPkgHasElems_allchoicefx_surface_init_planar_commonschema_All_TxsdFxSurfaceInitPlanarCommonChoiceAll_ struct {
-//	Init the entire surface with one compound image such as DDS
-	Alls []*TxsdFxSurfaceInitPlanarCommonChoiceAll `xml:"http://www.collada.org/2005/11/COLLADASchema all"`
-}
-
-//	Init the entire surface with one compound image such as DDS
 type XsdGoPkgHasElem_allchoicefx_surface_init_planar_commonschema_All_TxsdFxSurfaceInitPlanarCommonChoiceAll_ struct {
 //	Init the entire surface with one compound image such as DDS
 	All *TxsdFxSurfaceInitPlanarCommonChoiceAll `xml:"http://www.collada.org/2005/11/COLLADASchema all"`
+
+}
+
+//	Init the entire surface with one compound image such as DDS
+type XsdGoPkgHasElems_allchoicefx_surface_init_planar_commonschema_All_TxsdFxSurfaceInitPlanarCommonChoiceAll_ struct {
+//	Init the entire surface with one compound image such as DDS
+	Alls []*TxsdFxSurfaceInitPlanarCommonChoiceAll `xml:"http://www.collada.org/2005/11/COLLADASchema all"`
+
 }
 
 //	For 1D, 2D, RECT surface types
@@ -3585,27 +3595,31 @@ type TxsdFxSurfaceInitVolumeCommonChoiceAll struct {
 type XsdGoPkgHasElem_allchoicefx_surface_init_volume_commonschema_All_TxsdFxSurfaceInitVolumeCommonChoiceAll_ struct {
 //	Init the entire surface with one compound image such as DDS
 	All *TxsdFxSurfaceInitVolumeCommonChoiceAll `xml:"http://www.collada.org/2005/11/COLLADASchema all"`
+
 }
 
 //	Init the entire surface with one compound image such as DDS
 type XsdGoPkgHasElems_allchoicefx_surface_init_volume_commonschema_All_TxsdFxSurfaceInitVolumeCommonChoiceAll_ struct {
 //	Init the entire surface with one compound image such as DDS
 	Alls []*TxsdFxSurfaceInitVolumeCommonChoiceAll `xml:"http://www.collada.org/2005/11/COLLADASchema all"`
+
 }
 
 type TxsdFxSurfaceInitVolumeCommonChoicePrimary struct {
 }
 
 //	Init mip level 0 of the surface with one compound image such as DDS.  Use of this element expects that the surface has element mip_levels=0 or mipmap_generate.
-type XsdGoPkgHasElems_primarychoicefx_surface_init_volume_commonschema_Primary_TxsdFxSurfaceInitVolumeCommonChoicePrimary_ struct {
-//	Init mip level 0 of the surface with one compound image such as DDS.  Use of this element expects that the surface has element mip_levels=0 or mipmap_generate.
-	Primaries []*TxsdFxSurfaceInitVolumeCommonChoicePrimary `xml:"http://www.collada.org/2005/11/COLLADASchema primary"`
-}
-
-//	Init mip level 0 of the surface with one compound image such as DDS.  Use of this element expects that the surface has element mip_levels=0 or mipmap_generate.
 type XsdGoPkgHasElem_primarychoicefx_surface_init_volume_commonschema_Primary_TxsdFxSurfaceInitVolumeCommonChoicePrimary_ struct {
 //	Init mip level 0 of the surface with one compound image such as DDS.  Use of this element expects that the surface has element mip_levels=0 or mipmap_generate.
 	Primary *TxsdFxSurfaceInitVolumeCommonChoicePrimary `xml:"http://www.collada.org/2005/11/COLLADASchema primary"`
+
+}
+
+//	Init mip level 0 of the surface with one compound image such as DDS.  Use of this element expects that the surface has element mip_levels=0 or mipmap_generate.
+type XsdGoPkgHasElems_primarychoicefx_surface_init_volume_commonschema_Primary_TxsdFxSurfaceInitVolumeCommonChoicePrimary_ struct {
+//	Init mip level 0 of the surface with one compound image such as DDS.  Use of this element expects that the surface has element mip_levels=0 or mipmap_generate.
+	Primaries []*TxsdFxSurfaceInitVolumeCommonChoicePrimary `xml:"http://www.collada.org/2005/11/COLLADASchema primary"`
+
 }
 
 type TfxSurfaceInitVolumeCommon struct {
@@ -3624,24 +3638,28 @@ type TxsdFxSurfaceInitCubeCommonChoiceAll struct {
 type XsdGoPkgHasElems_allchoicefx_surface_init_cube_commonschema_All_TxsdFxSurfaceInitCubeCommonChoiceAll_ struct {
 //	Init the entire surface with one compound image such as DDS
 	Alls []*TxsdFxSurfaceInitCubeCommonChoiceAll `xml:"http://www.collada.org/2005/11/COLLADASchema all"`
+
 }
 
 //	Init the entire surface with one compound image such as DDS
 type XsdGoPkgHasElem_allchoicefx_surface_init_cube_commonschema_All_TxsdFxSurfaceInitCubeCommonChoiceAll_ struct {
 //	Init the entire surface with one compound image such as DDS
 	All *TxsdFxSurfaceInitCubeCommonChoiceAll `xml:"http://www.collada.org/2005/11/COLLADASchema all"`
+
 }
 
 //	If the image dues not natively describe the face ordering then this series of order elements will describe which face the index belongs too
 type XsdGoPkgHasElems_ordersequenceprimarychoicefx_surface_init_cube_commonschema_Order_TfxSurfaceFaceEnum_ struct {
 //	If the image dues not natively describe the face ordering then this series of order elements will describe which face the index belongs too
 	Orders []TfxSurfaceFaceEnum `xml:"http://www.collada.org/2005/11/COLLADASchema order"`
+
 }
 
 //	If the image dues not natively describe the face ordering then this series of order elements will describe which face the index belongs too
 type XsdGoPkgHasElem_ordersequenceprimarychoicefx_surface_init_cube_commonschema_Order_TfxSurfaceFaceEnum_ struct {
 //	If the image dues not natively describe the face ordering then this series of order elements will describe which face the index belongs too
 	Order TfxSurfaceFaceEnum `xml:"http://www.collada.org/2005/11/COLLADASchema order"`
+
 }
 
 type TxsdFxSurfaceInitCubeCommonChoicePrimary struct {
@@ -3652,30 +3670,34 @@ type TxsdFxSurfaceInitCubeCommonChoicePrimary struct {
 }
 
 //	Init all primary mip level 0 subsurfaces with one compound image such as DDS.  Use of this element expects that the surface has element mip_levels=0 or mipmap_generate.
-type XsdGoPkgHasElems_primarychoicefx_surface_init_cube_commonschema_Primary_TxsdFxSurfaceInitCubeCommonChoicePrimary_ struct {
-//	Init all primary mip level 0 subsurfaces with one compound image such as DDS.  Use of this element expects that the surface has element mip_levels=0 or mipmap_generate.
-	Primaries []*TxsdFxSurfaceInitCubeCommonChoicePrimary `xml:"http://www.collada.org/2005/11/COLLADASchema primary"`
-}
-
-//	Init all primary mip level 0 subsurfaces with one compound image such as DDS.  Use of this element expects that the surface has element mip_levels=0 or mipmap_generate.
 type XsdGoPkgHasElem_primarychoicefx_surface_init_cube_commonschema_Primary_TxsdFxSurfaceInitCubeCommonChoicePrimary_ struct {
 //	Init all primary mip level 0 subsurfaces with one compound image such as DDS.  Use of this element expects that the surface has element mip_levels=0 or mipmap_generate.
 	Primary *TxsdFxSurfaceInitCubeCommonChoicePrimary `xml:"http://www.collada.org/2005/11/COLLADASchema primary"`
+
+}
+
+//	Init all primary mip level 0 subsurfaces with one compound image such as DDS.  Use of this element expects that the surface has element mip_levels=0 or mipmap_generate.
+type XsdGoPkgHasElems_primarychoicefx_surface_init_cube_commonschema_Primary_TxsdFxSurfaceInitCubeCommonChoicePrimary_ struct {
+//	Init all primary mip level 0 subsurfaces with one compound image such as DDS.  Use of this element expects that the surface has element mip_levels=0 or mipmap_generate.
+	Primaries []*TxsdFxSurfaceInitCubeCommonChoicePrimary `xml:"http://www.collada.org/2005/11/COLLADASchema primary"`
+
 }
 
 type TxsdFxSurfaceInitCubeCommonChoiceFace struct {
 }
 
 //	Init each face mipchain with one compound image such as DDS
-type XsdGoPkgHasElems_facechoicefx_surface_init_cube_commonschema_Face_TxsdFxSurfaceInitCubeCommonChoiceFace_ struct {
-//	Init each face mipchain with one compound image such as DDS
-	Faces []*TxsdFxSurfaceInitCubeCommonChoiceFace `xml:"http://www.collada.org/2005/11/COLLADASchema face"`
-}
-
-//	Init each face mipchain with one compound image such as DDS
 type XsdGoPkgHasElem_facechoicefx_surface_init_cube_commonschema_Face_TxsdFxSurfaceInitCubeCommonChoiceFace_ struct {
 //	Init each face mipchain with one compound image such as DDS
 	Face *TxsdFxSurfaceInitCubeCommonChoiceFace `xml:"http://www.collada.org/2005/11/COLLADASchema face"`
+
+}
+
+//	Init each face mipchain with one compound image such as DDS
+type XsdGoPkgHasElems_facechoicefx_surface_init_cube_commonschema_Face_TxsdFxSurfaceInitCubeCommonChoiceFace_ struct {
+//	Init each face mipchain with one compound image such as DDS
+	Faces []*TxsdFxSurfaceInitCubeCommonChoiceFace `xml:"http://www.collada.org/2005/11/COLLADASchema face"`
+
 }
 
 type TfxSurfaceInitCubeCommon struct {
@@ -3717,9 +3739,9 @@ type TfxSurfaceInitFromCommon struct {
 
 	XsdGoPkgHasAttr_Slice_XsdtUnsignedInt_0
 
-	XsdGoPkgHasAttr_Mip_XsdtUnsignedInt_0
-
 	XsdGoPkgHasAttr_Face_TfxSurfaceFaceEnum_PositiveX
+
+	XsdGoPkgHasAttr_Mip_XsdtUnsignedInt_0
 
 }
 
@@ -3730,27 +3752,30 @@ type XsdGoPkgHasAttr_Type_TfxSurfaceTypeEnum_ struct {
 }
 
 //	The surface should be sized to these exact dimensions
-type XsdGoPkgHasElems_sizechoicesequencefx_surface_commonschema_Size_Tint3_000 struct {
-//	The surface should be sized to these exact dimensions
-	Sizes []Tint3 `xml:"http://www.collada.org/2005/11/COLLADASchema size"`
-}
-
-//	Returns the Default value for Size -- "0 0 0"
-func (me *XsdGoPkgHasElems_sizechoicesequencefx_surface_commonschema_Size_Tint3_000) SizeDefault () Tint3 { return Tint3("0 0 0") }
-
-//	The surface should be sized to these exact dimensions
 type XsdGoPkgHasElem_sizechoicesequencefx_surface_commonschema_Size_Tint3_000 struct {
 //	The surface should be sized to these exact dimensions
 	Size Tint3 `xml:"http://www.collada.org/2005/11/COLLADASchema size"`
+
 }
 
 //	Returns the Default value for Size -- "0 0 0"
 func (me *XsdGoPkgHasElem_sizechoicesequencefx_surface_commonschema_Size_Tint3_000) SizeDefault () Tint3 { return Tint3("0 0 0") }
 
+//	The surface should be sized to these exact dimensions
+type XsdGoPkgHasElems_sizechoicesequencefx_surface_commonschema_Size_Tint3_000 struct {
+//	The surface should be sized to these exact dimensions
+	Sizes []Tint3 `xml:"http://www.collada.org/2005/11/COLLADASchema size"`
+
+}
+
+//	Returns the Default value for Size -- "0 0 0"
+func (me *XsdGoPkgHasElems_sizechoicesequencefx_surface_commonschema_Size_Tint3_000) SizeDefault () Tint3 { return Tint3("0 0 0") }
+
 //	The surface should be sized to a dimension based on this ratio of the viewport's dimensions in pixels
 type XsdGoPkgHasElems_viewport_ratiochoicesequencefx_surface_commonschema_ViewportRatio_Tfloat2_11 struct {
 //	The surface should be sized to a dimension based on this ratio of the viewport's dimensions in pixels
 	ViewportRatios []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema viewport_ratio"`
+
 }
 
 //	Returns the Default value for ViewportRatio -- "1 1"
@@ -3760,6 +3785,7 @@ func (me *XsdGoPkgHasElems_viewport_ratiochoicesequencefx_surface_commonschema_V
 type XsdGoPkgHasElem_viewport_ratiochoicesequencefx_surface_commonschema_ViewportRatio_Tfloat2_11 struct {
 //	The surface should be sized to a dimension based on this ratio of the viewport's dimensions in pixels
 	ViewportRatio Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema viewport_ratio"`
+
 }
 
 //	Returns the Default value for ViewportRatio -- "1 1"
@@ -3769,30 +3795,35 @@ func (me *XsdGoPkgHasElem_viewport_ratiochoicesequencefx_surface_commonschema_Vi
 type XsdGoPkgHasElem_formatsequencefx_surface_commonschema_Format_XsdtToken_ struct {
 //	Contains a string representing the profile and platform specific texel format that the author would like this surface to use.  If this element is not specified then the application will use a common format R8G8B8A8 with linear color gradient, not  sRGB.
 	Format xsdt.Token `xml:"http://www.collada.org/2005/11/COLLADASchema format"`
+
 }
 
 //	Contains a string representing the profile and platform specific texel format that the author would like this surface to use.  If this element is not specified then the application will use a common format R8G8B8A8 with linear color gradient, not  sRGB.
 type XsdGoPkgHasElems_formatsequencefx_surface_commonschema_Format_XsdtToken_ struct {
 //	Contains a string representing the profile and platform specific texel format that the author would like this surface to use.  If this element is not specified then the application will use a common format R8G8B8A8 with linear color gradient, not  sRGB.
 	Formats []xsdt.Token `xml:"http://www.collada.org/2005/11/COLLADASchema format"`
+
 }
 
 //	If the exact format cannot be resolved via the "format" element then the format_hint will describe the important features of the format so that the application may select a compatable or close format
 type XsdGoPkgHasElems_format_hintsequencefx_surface_commonschema_FormatHint_TfxSurfaceFormatHintCommon_ struct {
 //	If the exact format cannot be resolved via the "format" element then the format_hint will describe the important features of the format so that the application may select a compatable or close format
 	FormatHints []*TfxSurfaceFormatHintCommon `xml:"http://www.collada.org/2005/11/COLLADASchema format_hint"`
+
 }
 
 //	If the exact format cannot be resolved via the "format" element then the format_hint will describe the important features of the format so that the application may select a compatable or close format
 type XsdGoPkgHasElem_format_hintsequencefx_surface_commonschema_FormatHint_TfxSurfaceFormatHintCommon_ struct {
 //	If the exact format cannot be resolved via the "format" element then the format_hint will describe the important features of the format so that the application may select a compatable or close format
 	FormatHint *TfxSurfaceFormatHintCommon `xml:"http://www.collada.org/2005/11/COLLADASchema format_hint"`
+
 }
 
 //	the surface should contain the following number of MIP levels.  If this element is not present it is assumed that all miplevels exist until a dimension becomes 1 texel.  To create a surface that has only one level of mip maps (mip=0) set this to 1.  If the value is 0 the result is the same as if mip_levels was unspecified, all possible mip_levels will exist.
 type XsdGoPkgHasElems_mip_levelssequencefx_surface_commonschema_MipLevels_XsdtUnsignedInt_0 struct {
 //	the surface should contain the following number of MIP levels.  If this element is not present it is assumed that all miplevels exist until a dimension becomes 1 texel.  To create a surface that has only one level of mip maps (mip=0) set this to 1.  If the value is 0 the result is the same as if mip_levels was unspecified, all possible mip_levels will exist.
 	MipLevelses []xsdt.UnsignedInt `xml:"http://www.collada.org/2005/11/COLLADASchema mip_levels"`
+
 }
 
 //	Returns the Default value for MipLevels -- 0
@@ -3802,21 +3833,24 @@ func (me *XsdGoPkgHasElems_mip_levelssequencefx_surface_commonschema_MipLevels_X
 type XsdGoPkgHasElem_mip_levelssequencefx_surface_commonschema_MipLevels_XsdtUnsignedInt_0 struct {
 //	the surface should contain the following number of MIP levels.  If this element is not present it is assumed that all miplevels exist until a dimension becomes 1 texel.  To create a surface that has only one level of mip maps (mip=0) set this to 1.  If the value is 0 the result is the same as if mip_levels was unspecified, all possible mip_levels will exist.
 	MipLevels xsdt.UnsignedInt `xml:"http://www.collada.org/2005/11/COLLADASchema mip_levels"`
+
 }
 
 //	Returns the Default value for MipLevels -- 0
 func (me *XsdGoPkgHasElem_mip_levelssequencefx_surface_commonschema_MipLevels_XsdtUnsignedInt_0) MipLevelsDefault () xsdt.UnsignedInt { return xsdt.UnsignedInt(0) }
 
 //	By default it is assumed that mipmaps are supplied by the author so, if not all subsurfaces are initialized, it is invalid and will result in profile and platform specific behavior unless mipmap_generate is responsible for initializing the remainder of the sub-surfaces
-type XsdGoPkgHasElems_mipmap_generatesequencefx_surface_commonschema_MipmapGenerate_XsdtBoolean_ struct {
-//	By default it is assumed that mipmaps are supplied by the author so, if not all subsurfaces are initialized, it is invalid and will result in profile and platform specific behavior unless mipmap_generate is responsible for initializing the remainder of the sub-surfaces
-	MipmapGenerates []xsdt.Boolean `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_generate"`
-}
-
-//	By default it is assumed that mipmaps are supplied by the author so, if not all subsurfaces are initialized, it is invalid and will result in profile and platform specific behavior unless mipmap_generate is responsible for initializing the remainder of the sub-surfaces
 type XsdGoPkgHasElem_mipmap_generatesequencefx_surface_commonschema_MipmapGenerate_XsdtBoolean_ struct {
 //	By default it is assumed that mipmaps are supplied by the author so, if not all subsurfaces are initialized, it is invalid and will result in profile and platform specific behavior unless mipmap_generate is responsible for initializing the remainder of the sub-surfaces
 	MipmapGenerate xsdt.Boolean `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_generate"`
+
+}
+
+//	By default it is assumed that mipmaps are supplied by the author so, if not all subsurfaces are initialized, it is invalid and will result in profile and platform specific behavior unless mipmap_generate is responsible for initializing the remainder of the sub-surfaces
+type XsdGoPkgHasElems_mipmap_generatesequencefx_surface_commonschema_MipmapGenerate_XsdtBoolean_ struct {
+//	By default it is assumed that mipmaps are supplied by the author so, if not all subsurfaces are initialized, it is invalid and will result in profile and platform specific behavior unless mipmap_generate is responsible for initializing the remainder of the sub-surfaces
+	MipmapGenerates []xsdt.Boolean `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_generate"`
+
 }
 
 //	The fx_surface_common type is used to declare a resource that can be used both as the source for texture samples and as the target of a rendering pass.
@@ -3851,14 +3885,17 @@ type TfxSurfaceCommon struct {
 
 type XsdGoPkgHasElems_sourcesequencefx_sampler1D_commonschema_Source_XsdtNCName_ struct {
 	Sources []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema source"`
+
 }
 
 type XsdGoPkgHasElem_sourcesequencefx_sampler1D_commonschema_Source_XsdtNCName_ struct {
 	Source xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema source"`
+
 }
 
 type XsdGoPkgHasElems_wrap_ssequencefx_sampler1D_commonschema_WrapS_TfxSamplerWrapCommon_Wrap struct {
 	WrapSs []TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
+
 }
 
 //	Returns the Default value for WrapS -- "WRAP"
@@ -3866,27 +3903,31 @@ func (me *XsdGoPkgHasElems_wrap_ssequencefx_sampler1D_commonschema_WrapS_TfxSamp
 
 type XsdGoPkgHasElem_wrap_ssequencefx_sampler1D_commonschema_WrapS_TfxSamplerWrapCommon_Wrap struct {
 	WrapS TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
+
 }
 
 //	Returns the Default value for WrapS -- "WRAP"
 func (me *XsdGoPkgHasElem_wrap_ssequencefx_sampler1D_commonschema_WrapS_TfxSamplerWrapCommon_Wrap) WrapSDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
 
-type XsdGoPkgHasElem_minfiltersequencefx_sampler1D_commonschema_Minfilter_TfxSamplerFilterCommon_None struct {
-	Minfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
-}
-
-//	Returns the Default value for Minfilter -- "NONE"
-func (me *XsdGoPkgHasElem_minfiltersequencefx_sampler1D_commonschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
-
 type XsdGoPkgHasElems_minfiltersequencefx_sampler1D_commonschema_Minfilter_TfxSamplerFilterCommon_None struct {
 	Minfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
+
 }
 
 //	Returns the Default value for Minfilter -- "NONE"
 func (me *XsdGoPkgHasElems_minfiltersequencefx_sampler1D_commonschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
 
+type XsdGoPkgHasElem_minfiltersequencefx_sampler1D_commonschema_Minfilter_TfxSamplerFilterCommon_None struct {
+	Minfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
+
+}
+
+//	Returns the Default value for Minfilter -- "NONE"
+func (me *XsdGoPkgHasElem_minfiltersequencefx_sampler1D_commonschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
+
 type XsdGoPkgHasElem_magfiltersequencefx_sampler1D_commonschema_Magfilter_TfxSamplerFilterCommon_None struct {
 	Magfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema magfilter"`
+
 }
 
 //	Returns the Default value for Magfilter -- "NONE"
@@ -3894,6 +3935,7 @@ func (me *XsdGoPkgHasElem_magfiltersequencefx_sampler1D_commonschema_Magfilter_T
 
 type XsdGoPkgHasElems_magfiltersequencefx_sampler1D_commonschema_Magfilter_TfxSamplerFilterCommon_None struct {
 	Magfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema magfilter"`
+
 }
 
 //	Returns the Default value for Magfilter -- "NONE"
@@ -3901,6 +3943,7 @@ func (me *XsdGoPkgHasElems_magfiltersequencefx_sampler1D_commonschema_Magfilter_
 
 type XsdGoPkgHasElem_mipfiltersequencefx_sampler1D_commonschema_Mipfilter_TfxSamplerFilterCommon_None struct {
 	Mipfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema mipfilter"`
+
 }
 
 //	Returns the Default value for Mipfilter -- "NONE"
@@ -3908,6 +3951,7 @@ func (me *XsdGoPkgHasElem_mipfiltersequencefx_sampler1D_commonschema_Mipfilter_T
 
 type XsdGoPkgHasElems_mipfiltersequencefx_sampler1D_commonschema_Mipfilter_TfxSamplerFilterCommon_None struct {
 	Mipfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema mipfilter"`
+
 }
 
 //	Returns the Default value for Mipfilter -- "NONE"
@@ -3915,14 +3959,17 @@ func (me *XsdGoPkgHasElems_mipfiltersequencefx_sampler1D_commonschema_Mipfilter_
 
 type XsdGoPkgHasElem_border_colorsequencefx_sampler1D_commonschema_BorderColor_TfxColorCommon_ struct {
 	BorderColor TfxColorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema border_color"`
+
 }
 
 type XsdGoPkgHasElems_border_colorsequencefx_sampler1D_commonschema_BorderColor_TfxColorCommon_ struct {
 	BorderColors []TfxColorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema border_color"`
+
 }
 
 type XsdGoPkgHasElem_mipmap_maxlevelsequencefx_sampler1D_commonschema_MipmapMaxlevel_XsdtUnsignedByte_0 struct {
 	MipmapMaxlevel xsdt.UnsignedByte `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_maxlevel"`
+
 }
 
 //	Returns the Default value for MipmapMaxlevel -- 0
@@ -3930,24 +3977,27 @@ func (me *XsdGoPkgHasElem_mipmap_maxlevelsequencefx_sampler1D_commonschema_Mipma
 
 type XsdGoPkgHasElems_mipmap_maxlevelsequencefx_sampler1D_commonschema_MipmapMaxlevel_XsdtUnsignedByte_0 struct {
 	MipmapMaxlevels []xsdt.UnsignedByte `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_maxlevel"`
+
 }
 
 //	Returns the Default value for MipmapMaxlevel -- 0
 func (me *XsdGoPkgHasElems_mipmap_maxlevelsequencefx_sampler1D_commonschema_MipmapMaxlevel_XsdtUnsignedByte_0) MipmapMaxlevelDefault () xsdt.UnsignedByte { return xsdt.UnsignedByte(0) }
 
-type XsdGoPkgHasElem_mipmap_biassequencefx_sampler1D_commonschema_MipmapBias_XsdtFloat_00 struct {
-	MipmapBias xsdt.Float `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_bias"`
-}
-
-//	Returns the Default value for MipmapBias -- 0.0
-func (me *XsdGoPkgHasElem_mipmap_biassequencefx_sampler1D_commonschema_MipmapBias_XsdtFloat_00) MipmapBiasDefault () xsdt.Float { return xsdt.Float(0.0) }
-
 type XsdGoPkgHasElems_mipmap_biassequencefx_sampler1D_commonschema_MipmapBias_XsdtFloat_00 struct {
 	MipmapBiases []xsdt.Float `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_bias"`
+
 }
 
 //	Returns the Default value for MipmapBias -- 0.0
 func (me *XsdGoPkgHasElems_mipmap_biassequencefx_sampler1D_commonschema_MipmapBias_XsdtFloat_00) MipmapBiasDefault () xsdt.Float { return xsdt.Float(0.0) }
+
+type XsdGoPkgHasElem_mipmap_biassequencefx_sampler1D_commonschema_MipmapBias_XsdtFloat_00 struct {
+	MipmapBias xsdt.Float `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_bias"`
+
+}
+
+//	Returns the Default value for MipmapBias -- 0.0
+func (me *XsdGoPkgHasElem_mipmap_biassequencefx_sampler1D_commonschema_MipmapBias_XsdtFloat_00) MipmapBiasDefault () xsdt.Float { return xsdt.Float(0.0) }
 
 //	A one-dimensional texture sampler.
 type TfxSampler1DCommon struct {
@@ -3973,56 +4023,65 @@ type TfxSampler1DCommon struct {
 
 type XsdGoPkgHasElem_sourcesequencefx_sampler2D_commonschema_Source_XsdtNCName_ struct {
 	Source xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema source"`
+
 }
 
 type XsdGoPkgHasElems_sourcesequencefx_sampler2D_commonschema_Source_XsdtNCName_ struct {
 	Sources []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema source"`
-}
 
-type XsdGoPkgHasElems_wrap_ssequencefx_sampler2D_commonschema_WrapS_TfxSamplerWrapCommon_Wrap struct {
-	WrapSs []TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
 }
-
-//	Returns the Default value for WrapS -- "WRAP"
-func (me *XsdGoPkgHasElems_wrap_ssequencefx_sampler2D_commonschema_WrapS_TfxSamplerWrapCommon_Wrap) WrapSDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
 
 type XsdGoPkgHasElem_wrap_ssequencefx_sampler2D_commonschema_WrapS_TfxSamplerWrapCommon_Wrap struct {
 	WrapS TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
+
 }
 
 //	Returns the Default value for WrapS -- "WRAP"
 func (me *XsdGoPkgHasElem_wrap_ssequencefx_sampler2D_commonschema_WrapS_TfxSamplerWrapCommon_Wrap) WrapSDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
 
-type XsdGoPkgHasElems_wrap_tsequencefx_sampler2D_commonschema_WrapT_TfxSamplerWrapCommon_Wrap struct {
-	WrapTs []TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_t"`
+type XsdGoPkgHasElems_wrap_ssequencefx_sampler2D_commonschema_WrapS_TfxSamplerWrapCommon_Wrap struct {
+	WrapSs []TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
+
 }
 
-//	Returns the Default value for WrapT -- "WRAP"
-func (me *XsdGoPkgHasElems_wrap_tsequencefx_sampler2D_commonschema_WrapT_TfxSamplerWrapCommon_Wrap) WrapTDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
+//	Returns the Default value for WrapS -- "WRAP"
+func (me *XsdGoPkgHasElems_wrap_ssequencefx_sampler2D_commonschema_WrapS_TfxSamplerWrapCommon_Wrap) WrapSDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
 
 type XsdGoPkgHasElem_wrap_tsequencefx_sampler2D_commonschema_WrapT_TfxSamplerWrapCommon_Wrap struct {
 	WrapT TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_t"`
+
 }
 
 //	Returns the Default value for WrapT -- "WRAP"
 func (me *XsdGoPkgHasElem_wrap_tsequencefx_sampler2D_commonschema_WrapT_TfxSamplerWrapCommon_Wrap) WrapTDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
 
-type XsdGoPkgHasElem_minfiltersequencefx_sampler2D_commonschema_Minfilter_TfxSamplerFilterCommon_None struct {
-	Minfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
+type XsdGoPkgHasElems_wrap_tsequencefx_sampler2D_commonschema_WrapT_TfxSamplerWrapCommon_Wrap struct {
+	WrapTs []TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_t"`
+
 }
 
-//	Returns the Default value for Minfilter -- "NONE"
-func (me *XsdGoPkgHasElem_minfiltersequencefx_sampler2D_commonschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
+//	Returns the Default value for WrapT -- "WRAP"
+func (me *XsdGoPkgHasElems_wrap_tsequencefx_sampler2D_commonschema_WrapT_TfxSamplerWrapCommon_Wrap) WrapTDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
 
 type XsdGoPkgHasElems_minfiltersequencefx_sampler2D_commonschema_Minfilter_TfxSamplerFilterCommon_None struct {
 	Minfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
+
 }
 
 //	Returns the Default value for Minfilter -- "NONE"
 func (me *XsdGoPkgHasElems_minfiltersequencefx_sampler2D_commonschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
 
+type XsdGoPkgHasElem_minfiltersequencefx_sampler2D_commonschema_Minfilter_TfxSamplerFilterCommon_None struct {
+	Minfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
+
+}
+
+//	Returns the Default value for Minfilter -- "NONE"
+func (me *XsdGoPkgHasElem_minfiltersequencefx_sampler2D_commonschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
+
 type XsdGoPkgHasElem_magfiltersequencefx_sampler2D_commonschema_Magfilter_TfxSamplerFilterCommon_None struct {
 	Magfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema magfilter"`
+
 }
 
 //	Returns the Default value for Magfilter -- "NONE"
@@ -4030,6 +4089,7 @@ func (me *XsdGoPkgHasElem_magfiltersequencefx_sampler2D_commonschema_Magfilter_T
 
 type XsdGoPkgHasElems_magfiltersequencefx_sampler2D_commonschema_Magfilter_TfxSamplerFilterCommon_None struct {
 	Magfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema magfilter"`
+
 }
 
 //	Returns the Default value for Magfilter -- "NONE"
@@ -4037,6 +4097,7 @@ func (me *XsdGoPkgHasElems_magfiltersequencefx_sampler2D_commonschema_Magfilter_
 
 type XsdGoPkgHasElems_mipfiltersequencefx_sampler2D_commonschema_Mipfilter_TfxSamplerFilterCommon_None struct {
 	Mipfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema mipfilter"`
+
 }
 
 //	Returns the Default value for Mipfilter -- "NONE"
@@ -4044,6 +4105,7 @@ func (me *XsdGoPkgHasElems_mipfiltersequencefx_sampler2D_commonschema_Mipfilter_
 
 type XsdGoPkgHasElem_mipfiltersequencefx_sampler2D_commonschema_Mipfilter_TfxSamplerFilterCommon_None struct {
 	Mipfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema mipfilter"`
+
 }
 
 //	Returns the Default value for Mipfilter -- "NONE"
@@ -4051,14 +4113,17 @@ func (me *XsdGoPkgHasElem_mipfiltersequencefx_sampler2D_commonschema_Mipfilter_T
 
 type XsdGoPkgHasElem_border_colorsequencefx_sampler2D_commonschema_BorderColor_TfxColorCommon_ struct {
 	BorderColor TfxColorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema border_color"`
+
 }
 
 type XsdGoPkgHasElems_border_colorsequencefx_sampler2D_commonschema_BorderColor_TfxColorCommon_ struct {
 	BorderColors []TfxColorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema border_color"`
+
 }
 
 type XsdGoPkgHasElem_mipmap_maxlevelsequencefx_sampler2D_commonschema_MipmapMaxlevel_XsdtUnsignedByte_255 struct {
 	MipmapMaxlevel xsdt.UnsignedByte `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_maxlevel"`
+
 }
 
 //	Returns the Default value for MipmapMaxlevel -- 255
@@ -4066,6 +4131,7 @@ func (me *XsdGoPkgHasElem_mipmap_maxlevelsequencefx_sampler2D_commonschema_Mipma
 
 type XsdGoPkgHasElems_mipmap_maxlevelsequencefx_sampler2D_commonschema_MipmapMaxlevel_XsdtUnsignedByte_255 struct {
 	MipmapMaxlevels []xsdt.UnsignedByte `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_maxlevel"`
+
 }
 
 //	Returns the Default value for MipmapMaxlevel -- 255
@@ -4073,6 +4139,7 @@ func (me *XsdGoPkgHasElems_mipmap_maxlevelsequencefx_sampler2D_commonschema_Mipm
 
 type XsdGoPkgHasElem_mipmap_biassequencefx_sampler2D_commonschema_MipmapBias_XsdtFloat_00 struct {
 	MipmapBias xsdt.Float `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_bias"`
+
 }
 
 //	Returns the Default value for MipmapBias -- 0.0
@@ -4080,6 +4147,7 @@ func (me *XsdGoPkgHasElem_mipmap_biassequencefx_sampler2D_commonschema_MipmapBia
 
 type XsdGoPkgHasElems_mipmap_biassequencefx_sampler2D_commonschema_MipmapBias_XsdtFloat_00 struct {
 	MipmapBiases []xsdt.Float `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_bias"`
+
 }
 
 //	Returns the Default value for MipmapBias -- 0.0
@@ -4111,28 +4179,33 @@ type TfxSampler2DCommon struct {
 
 type XsdGoPkgHasElem_sourcesequencefx_sampler3D_commonschema_Source_XsdtNCName_ struct {
 	Source xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema source"`
+
 }
 
 type XsdGoPkgHasElems_sourcesequencefx_sampler3D_commonschema_Source_XsdtNCName_ struct {
 	Sources []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema source"`
-}
 
-type XsdGoPkgHasElem_wrap_ssequencefx_sampler3D_commonschema_WrapS_TfxSamplerWrapCommon_Wrap struct {
-	WrapS TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
 }
-
-//	Returns the Default value for WrapS -- "WRAP"
-func (me *XsdGoPkgHasElem_wrap_ssequencefx_sampler3D_commonschema_WrapS_TfxSamplerWrapCommon_Wrap) WrapSDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
 
 type XsdGoPkgHasElems_wrap_ssequencefx_sampler3D_commonschema_WrapS_TfxSamplerWrapCommon_Wrap struct {
 	WrapSs []TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
+
 }
 
 //	Returns the Default value for WrapS -- "WRAP"
 func (me *XsdGoPkgHasElems_wrap_ssequencefx_sampler3D_commonschema_WrapS_TfxSamplerWrapCommon_Wrap) WrapSDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
 
+type XsdGoPkgHasElem_wrap_ssequencefx_sampler3D_commonschema_WrapS_TfxSamplerWrapCommon_Wrap struct {
+	WrapS TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
+
+}
+
+//	Returns the Default value for WrapS -- "WRAP"
+func (me *XsdGoPkgHasElem_wrap_ssequencefx_sampler3D_commonschema_WrapS_TfxSamplerWrapCommon_Wrap) WrapSDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
+
 type XsdGoPkgHasElem_wrap_tsequencefx_sampler3D_commonschema_WrapT_TfxSamplerWrapCommon_Wrap struct {
 	WrapT TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_t"`
+
 }
 
 //	Returns the Default value for WrapT -- "WRAP"
@@ -4140,55 +4213,63 @@ func (me *XsdGoPkgHasElem_wrap_tsequencefx_sampler3D_commonschema_WrapT_TfxSampl
 
 type XsdGoPkgHasElems_wrap_tsequencefx_sampler3D_commonschema_WrapT_TfxSamplerWrapCommon_Wrap struct {
 	WrapTs []TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_t"`
+
 }
 
 //	Returns the Default value for WrapT -- "WRAP"
 func (me *XsdGoPkgHasElems_wrap_tsequencefx_sampler3D_commonschema_WrapT_TfxSamplerWrapCommon_Wrap) WrapTDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
 
-type XsdGoPkgHasElem_wrap_psequencefx_sampler3D_commonschema_WrapP_TfxSamplerWrapCommon_Wrap struct {
-	WrapP TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_p"`
-}
-
-//	Returns the Default value for WrapP -- "WRAP"
-func (me *XsdGoPkgHasElem_wrap_psequencefx_sampler3D_commonschema_WrapP_TfxSamplerWrapCommon_Wrap) WrapPDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
-
 type XsdGoPkgHasElems_wrap_psequencefx_sampler3D_commonschema_WrapP_TfxSamplerWrapCommon_Wrap struct {
 	WrapPs []TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_p"`
+
 }
 
 //	Returns the Default value for WrapP -- "WRAP"
 func (me *XsdGoPkgHasElems_wrap_psequencefx_sampler3D_commonschema_WrapP_TfxSamplerWrapCommon_Wrap) WrapPDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
 
-type XsdGoPkgHasElems_minfiltersequencefx_sampler3D_commonschema_Minfilter_TfxSamplerFilterCommon_None struct {
-	Minfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
+type XsdGoPkgHasElem_wrap_psequencefx_sampler3D_commonschema_WrapP_TfxSamplerWrapCommon_Wrap struct {
+	WrapP TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_p"`
+
 }
 
-//	Returns the Default value for Minfilter -- "NONE"
-func (me *XsdGoPkgHasElems_minfiltersequencefx_sampler3D_commonschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
+//	Returns the Default value for WrapP -- "WRAP"
+func (me *XsdGoPkgHasElem_wrap_psequencefx_sampler3D_commonschema_WrapP_TfxSamplerWrapCommon_Wrap) WrapPDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
 
 type XsdGoPkgHasElem_minfiltersequencefx_sampler3D_commonschema_Minfilter_TfxSamplerFilterCommon_None struct {
 	Minfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
+
 }
 
 //	Returns the Default value for Minfilter -- "NONE"
 func (me *XsdGoPkgHasElem_minfiltersequencefx_sampler3D_commonschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
 
-type XsdGoPkgHasElems_magfiltersequencefx_sampler3D_commonschema_Magfilter_TfxSamplerFilterCommon_None struct {
-	Magfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema magfilter"`
+type XsdGoPkgHasElems_minfiltersequencefx_sampler3D_commonschema_Minfilter_TfxSamplerFilterCommon_None struct {
+	Minfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
+
 }
 
-//	Returns the Default value for Magfilter -- "NONE"
-func (me *XsdGoPkgHasElems_magfiltersequencefx_sampler3D_commonschema_Magfilter_TfxSamplerFilterCommon_None) MagfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
+//	Returns the Default value for Minfilter -- "NONE"
+func (me *XsdGoPkgHasElems_minfiltersequencefx_sampler3D_commonschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
 
 type XsdGoPkgHasElem_magfiltersequencefx_sampler3D_commonschema_Magfilter_TfxSamplerFilterCommon_None struct {
 	Magfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema magfilter"`
+
 }
 
 //	Returns the Default value for Magfilter -- "NONE"
 func (me *XsdGoPkgHasElem_magfiltersequencefx_sampler3D_commonschema_Magfilter_TfxSamplerFilterCommon_None) MagfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
 
+type XsdGoPkgHasElems_magfiltersequencefx_sampler3D_commonschema_Magfilter_TfxSamplerFilterCommon_None struct {
+	Magfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema magfilter"`
+
+}
+
+//	Returns the Default value for Magfilter -- "NONE"
+func (me *XsdGoPkgHasElems_magfiltersequencefx_sampler3D_commonschema_Magfilter_TfxSamplerFilterCommon_None) MagfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
+
 type XsdGoPkgHasElem_mipfiltersequencefx_sampler3D_commonschema_Mipfilter_TfxSamplerFilterCommon_None struct {
 	Mipfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema mipfilter"`
+
 }
 
 //	Returns the Default value for Mipfilter -- "NONE"
@@ -4196,21 +4277,25 @@ func (me *XsdGoPkgHasElem_mipfiltersequencefx_sampler3D_commonschema_Mipfilter_T
 
 type XsdGoPkgHasElems_mipfiltersequencefx_sampler3D_commonschema_Mipfilter_TfxSamplerFilterCommon_None struct {
 	Mipfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema mipfilter"`
+
 }
 
 //	Returns the Default value for Mipfilter -- "NONE"
 func (me *XsdGoPkgHasElems_mipfiltersequencefx_sampler3D_commonschema_Mipfilter_TfxSamplerFilterCommon_None) MipfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
 
-type XsdGoPkgHasElems_border_colorsequencefx_sampler3D_commonschema_BorderColor_TfxColorCommon_ struct {
-	BorderColors []TfxColorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema border_color"`
-}
-
 type XsdGoPkgHasElem_border_colorsequencefx_sampler3D_commonschema_BorderColor_TfxColorCommon_ struct {
 	BorderColor TfxColorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema border_color"`
+
+}
+
+type XsdGoPkgHasElems_border_colorsequencefx_sampler3D_commonschema_BorderColor_TfxColorCommon_ struct {
+	BorderColors []TfxColorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema border_color"`
+
 }
 
 type XsdGoPkgHasElems_mipmap_maxlevelsequencefx_sampler3D_commonschema_MipmapMaxlevel_XsdtUnsignedByte_255 struct {
 	MipmapMaxlevels []xsdt.UnsignedByte `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_maxlevel"`
+
 }
 
 //	Returns the Default value for MipmapMaxlevel -- 255
@@ -4218,6 +4303,7 @@ func (me *XsdGoPkgHasElems_mipmap_maxlevelsequencefx_sampler3D_commonschema_Mipm
 
 type XsdGoPkgHasElem_mipmap_maxlevelsequencefx_sampler3D_commonschema_MipmapMaxlevel_XsdtUnsignedByte_255 struct {
 	MipmapMaxlevel xsdt.UnsignedByte `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_maxlevel"`
+
 }
 
 //	Returns the Default value for MipmapMaxlevel -- 255
@@ -4225,6 +4311,7 @@ func (me *XsdGoPkgHasElem_mipmap_maxlevelsequencefx_sampler3D_commonschema_Mipma
 
 type XsdGoPkgHasElem_mipmap_biassequencefx_sampler3D_commonschema_MipmapBias_XsdtFloat_00 struct {
 	MipmapBias xsdt.Float `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_bias"`
+
 }
 
 //	Returns the Default value for MipmapBias -- 0.0
@@ -4232,6 +4319,7 @@ func (me *XsdGoPkgHasElem_mipmap_biassequencefx_sampler3D_commonschema_MipmapBia
 
 type XsdGoPkgHasElems_mipmap_biassequencefx_sampler3D_commonschema_MipmapBias_XsdtFloat_00 struct {
 	MipmapBiases []xsdt.Float `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_bias"`
+
 }
 
 //	Returns the Default value for MipmapBias -- 0.0
@@ -4263,30 +4351,35 @@ type TfxSampler3DCommon struct {
 
 }
 
-type XsdGoPkgHasElems_sourcesequencefx_samplerCUBE_commonschema_Source_XsdtNCName_ struct {
-	Sources []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema source"`
-}
-
 type XsdGoPkgHasElem_sourcesequencefx_samplerCUBE_commonschema_Source_XsdtNCName_ struct {
 	Source xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema source"`
+
 }
 
-type XsdGoPkgHasElem_wrap_ssequencefx_samplerCUBE_commonschema_WrapS_TfxSamplerWrapCommon_Wrap struct {
-	WrapS TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
-}
+type XsdGoPkgHasElems_sourcesequencefx_samplerCUBE_commonschema_Source_XsdtNCName_ struct {
+	Sources []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema source"`
 
-//	Returns the Default value for WrapS -- "WRAP"
-func (me *XsdGoPkgHasElem_wrap_ssequencefx_samplerCUBE_commonschema_WrapS_TfxSamplerWrapCommon_Wrap) WrapSDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
+}
 
 type XsdGoPkgHasElems_wrap_ssequencefx_samplerCUBE_commonschema_WrapS_TfxSamplerWrapCommon_Wrap struct {
 	WrapSs []TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
+
 }
 
 //	Returns the Default value for WrapS -- "WRAP"
 func (me *XsdGoPkgHasElems_wrap_ssequencefx_samplerCUBE_commonschema_WrapS_TfxSamplerWrapCommon_Wrap) WrapSDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
 
+type XsdGoPkgHasElem_wrap_ssequencefx_samplerCUBE_commonschema_WrapS_TfxSamplerWrapCommon_Wrap struct {
+	WrapS TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
+
+}
+
+//	Returns the Default value for WrapS -- "WRAP"
+func (me *XsdGoPkgHasElem_wrap_ssequencefx_samplerCUBE_commonschema_WrapS_TfxSamplerWrapCommon_Wrap) WrapSDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
+
 type XsdGoPkgHasElems_wrap_tsequencefx_samplerCUBE_commonschema_WrapT_TfxSamplerWrapCommon_Wrap struct {
 	WrapTs []TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_t"`
+
 }
 
 //	Returns the Default value for WrapT -- "WRAP"
@@ -4294,6 +4387,7 @@ func (me *XsdGoPkgHasElems_wrap_tsequencefx_samplerCUBE_commonschema_WrapT_TfxSa
 
 type XsdGoPkgHasElem_wrap_tsequencefx_samplerCUBE_commonschema_WrapT_TfxSamplerWrapCommon_Wrap struct {
 	WrapT TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_t"`
+
 }
 
 //	Returns the Default value for WrapT -- "WRAP"
@@ -4301,6 +4395,7 @@ func (me *XsdGoPkgHasElem_wrap_tsequencefx_samplerCUBE_commonschema_WrapT_TfxSam
 
 type XsdGoPkgHasElem_wrap_psequencefx_samplerCUBE_commonschema_WrapP_TfxSamplerWrapCommon_Wrap struct {
 	WrapP TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_p"`
+
 }
 
 //	Returns the Default value for WrapP -- "WRAP"
@@ -4308,6 +4403,7 @@ func (me *XsdGoPkgHasElem_wrap_psequencefx_samplerCUBE_commonschema_WrapP_TfxSam
 
 type XsdGoPkgHasElems_wrap_psequencefx_samplerCUBE_commonschema_WrapP_TfxSamplerWrapCommon_Wrap struct {
 	WrapPs []TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_p"`
+
 }
 
 //	Returns the Default value for WrapP -- "WRAP"
@@ -4315,6 +4411,7 @@ func (me *XsdGoPkgHasElems_wrap_psequencefx_samplerCUBE_commonschema_WrapP_TfxSa
 
 type XsdGoPkgHasElems_minfiltersequencefx_samplerCUBE_commonschema_Minfilter_TfxSamplerFilterCommon_None struct {
 	Minfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
+
 }
 
 //	Returns the Default value for Minfilter -- "NONE"
@@ -4322,74 +4419,85 @@ func (me *XsdGoPkgHasElems_minfiltersequencefx_samplerCUBE_commonschema_Minfilte
 
 type XsdGoPkgHasElem_minfiltersequencefx_samplerCUBE_commonschema_Minfilter_TfxSamplerFilterCommon_None struct {
 	Minfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
+
 }
 
 //	Returns the Default value for Minfilter -- "NONE"
 func (me *XsdGoPkgHasElem_minfiltersequencefx_samplerCUBE_commonschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
 
-type XsdGoPkgHasElem_magfiltersequencefx_samplerCUBE_commonschema_Magfilter_TfxSamplerFilterCommon_None struct {
-	Magfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema magfilter"`
-}
-
-//	Returns the Default value for Magfilter -- "NONE"
-func (me *XsdGoPkgHasElem_magfiltersequencefx_samplerCUBE_commonschema_Magfilter_TfxSamplerFilterCommon_None) MagfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
-
 type XsdGoPkgHasElems_magfiltersequencefx_samplerCUBE_commonschema_Magfilter_TfxSamplerFilterCommon_None struct {
 	Magfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema magfilter"`
+
 }
 
 //	Returns the Default value for Magfilter -- "NONE"
 func (me *XsdGoPkgHasElems_magfiltersequencefx_samplerCUBE_commonschema_Magfilter_TfxSamplerFilterCommon_None) MagfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
 
-type XsdGoPkgHasElem_mipfiltersequencefx_samplerCUBE_commonschema_Mipfilter_TfxSamplerFilterCommon_None struct {
-	Mipfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema mipfilter"`
+type XsdGoPkgHasElem_magfiltersequencefx_samplerCUBE_commonschema_Magfilter_TfxSamplerFilterCommon_None struct {
+	Magfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema magfilter"`
+
 }
 
-//	Returns the Default value for Mipfilter -- "NONE"
-func (me *XsdGoPkgHasElem_mipfiltersequencefx_samplerCUBE_commonschema_Mipfilter_TfxSamplerFilterCommon_None) MipfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
+//	Returns the Default value for Magfilter -- "NONE"
+func (me *XsdGoPkgHasElem_magfiltersequencefx_samplerCUBE_commonschema_Magfilter_TfxSamplerFilterCommon_None) MagfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
 
 type XsdGoPkgHasElems_mipfiltersequencefx_samplerCUBE_commonschema_Mipfilter_TfxSamplerFilterCommon_None struct {
 	Mipfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema mipfilter"`
+
 }
 
 //	Returns the Default value for Mipfilter -- "NONE"
 func (me *XsdGoPkgHasElems_mipfiltersequencefx_samplerCUBE_commonschema_Mipfilter_TfxSamplerFilterCommon_None) MipfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
 
+type XsdGoPkgHasElem_mipfiltersequencefx_samplerCUBE_commonschema_Mipfilter_TfxSamplerFilterCommon_None struct {
+	Mipfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema mipfilter"`
+
+}
+
+//	Returns the Default value for Mipfilter -- "NONE"
+func (me *XsdGoPkgHasElem_mipfiltersequencefx_samplerCUBE_commonschema_Mipfilter_TfxSamplerFilterCommon_None) MipfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
+
 type XsdGoPkgHasElems_border_colorsequencefx_samplerCUBE_commonschema_BorderColor_TfxColorCommon_ struct {
 	BorderColors []TfxColorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema border_color"`
+
 }
 
 type XsdGoPkgHasElem_border_colorsequencefx_samplerCUBE_commonschema_BorderColor_TfxColorCommon_ struct {
 	BorderColor TfxColorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema border_color"`
-}
 
-type XsdGoPkgHasElem_mipmap_maxlevelsequencefx_samplerCUBE_commonschema_MipmapMaxlevel_XsdtUnsignedByte_255 struct {
-	MipmapMaxlevel xsdt.UnsignedByte `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_maxlevel"`
 }
-
-//	Returns the Default value for MipmapMaxlevel -- 255
-func (me *XsdGoPkgHasElem_mipmap_maxlevelsequencefx_samplerCUBE_commonschema_MipmapMaxlevel_XsdtUnsignedByte_255) MipmapMaxlevelDefault () xsdt.UnsignedByte { return xsdt.UnsignedByte(255) }
 
 type XsdGoPkgHasElems_mipmap_maxlevelsequencefx_samplerCUBE_commonschema_MipmapMaxlevel_XsdtUnsignedByte_255 struct {
 	MipmapMaxlevels []xsdt.UnsignedByte `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_maxlevel"`
+
 }
 
 //	Returns the Default value for MipmapMaxlevel -- 255
 func (me *XsdGoPkgHasElems_mipmap_maxlevelsequencefx_samplerCUBE_commonschema_MipmapMaxlevel_XsdtUnsignedByte_255) MipmapMaxlevelDefault () xsdt.UnsignedByte { return xsdt.UnsignedByte(255) }
 
-type XsdGoPkgHasElem_mipmap_biassequencefx_samplerCUBE_commonschema_MipmapBias_XsdtFloat_00 struct {
-	MipmapBias xsdt.Float `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_bias"`
+type XsdGoPkgHasElem_mipmap_maxlevelsequencefx_samplerCUBE_commonschema_MipmapMaxlevel_XsdtUnsignedByte_255 struct {
+	MipmapMaxlevel xsdt.UnsignedByte `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_maxlevel"`
+
 }
 
-//	Returns the Default value for MipmapBias -- 0.0
-func (me *XsdGoPkgHasElem_mipmap_biassequencefx_samplerCUBE_commonschema_MipmapBias_XsdtFloat_00) MipmapBiasDefault () xsdt.Float { return xsdt.Float(0.0) }
+//	Returns the Default value for MipmapMaxlevel -- 255
+func (me *XsdGoPkgHasElem_mipmap_maxlevelsequencefx_samplerCUBE_commonschema_MipmapMaxlevel_XsdtUnsignedByte_255) MipmapMaxlevelDefault () xsdt.UnsignedByte { return xsdt.UnsignedByte(255) }
 
 type XsdGoPkgHasElems_mipmap_biassequencefx_samplerCUBE_commonschema_MipmapBias_XsdtFloat_00 struct {
 	MipmapBiases []xsdt.Float `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_bias"`
+
 }
 
 //	Returns the Default value for MipmapBias -- 0.0
 func (me *XsdGoPkgHasElems_mipmap_biassequencefx_samplerCUBE_commonschema_MipmapBias_XsdtFloat_00) MipmapBiasDefault () xsdt.Float { return xsdt.Float(0.0) }
+
+type XsdGoPkgHasElem_mipmap_biassequencefx_samplerCUBE_commonschema_MipmapBias_XsdtFloat_00 struct {
+	MipmapBias xsdt.Float `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_bias"`
+
+}
+
+//	Returns the Default value for MipmapBias -- 0.0
+func (me *XsdGoPkgHasElem_mipmap_biassequencefx_samplerCUBE_commonschema_MipmapBias_XsdtFloat_00) MipmapBiasDefault () xsdt.Float { return xsdt.Float(0.0) }
 
 //	A texture sampler for cube maps.
 type TfxSamplerCUBECommon struct {
@@ -4419,28 +4527,33 @@ type TfxSamplerCUBECommon struct {
 
 type XsdGoPkgHasElems_sourcesequencefx_samplerRECT_commonschema_Source_XsdtNCName_ struct {
 	Sources []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema source"`
+
 }
 
 type XsdGoPkgHasElem_sourcesequencefx_samplerRECT_commonschema_Source_XsdtNCName_ struct {
 	Source xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema source"`
-}
 
-type XsdGoPkgHasElems_wrap_ssequencefx_samplerRECT_commonschema_WrapS_TfxSamplerWrapCommon_Wrap struct {
-	WrapSs []TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
 }
-
-//	Returns the Default value for WrapS -- "WRAP"
-func (me *XsdGoPkgHasElems_wrap_ssequencefx_samplerRECT_commonschema_WrapS_TfxSamplerWrapCommon_Wrap) WrapSDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
 
 type XsdGoPkgHasElem_wrap_ssequencefx_samplerRECT_commonschema_WrapS_TfxSamplerWrapCommon_Wrap struct {
 	WrapS TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
+
 }
 
 //	Returns the Default value for WrapS -- "WRAP"
 func (me *XsdGoPkgHasElem_wrap_ssequencefx_samplerRECT_commonschema_WrapS_TfxSamplerWrapCommon_Wrap) WrapSDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
 
+type XsdGoPkgHasElems_wrap_ssequencefx_samplerRECT_commonschema_WrapS_TfxSamplerWrapCommon_Wrap struct {
+	WrapSs []TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
+
+}
+
+//	Returns the Default value for WrapS -- "WRAP"
+func (me *XsdGoPkgHasElems_wrap_ssequencefx_samplerRECT_commonschema_WrapS_TfxSamplerWrapCommon_Wrap) WrapSDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
+
 type XsdGoPkgHasElem_wrap_tsequencefx_samplerRECT_commonschema_WrapT_TfxSamplerWrapCommon_Wrap struct {
 	WrapT TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_t"`
+
 }
 
 //	Returns the Default value for WrapT -- "WRAP"
@@ -4448,41 +4561,47 @@ func (me *XsdGoPkgHasElem_wrap_tsequencefx_samplerRECT_commonschema_WrapT_TfxSam
 
 type XsdGoPkgHasElems_wrap_tsequencefx_samplerRECT_commonschema_WrapT_TfxSamplerWrapCommon_Wrap struct {
 	WrapTs []TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_t"`
+
 }
 
 //	Returns the Default value for WrapT -- "WRAP"
 func (me *XsdGoPkgHasElems_wrap_tsequencefx_samplerRECT_commonschema_WrapT_TfxSamplerWrapCommon_Wrap) WrapTDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
 
-type XsdGoPkgHasElem_minfiltersequencefx_samplerRECT_commonschema_Minfilter_TfxSamplerFilterCommon_None struct {
-	Minfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
-}
-
-//	Returns the Default value for Minfilter -- "NONE"
-func (me *XsdGoPkgHasElem_minfiltersequencefx_samplerRECT_commonschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
-
 type XsdGoPkgHasElems_minfiltersequencefx_samplerRECT_commonschema_Minfilter_TfxSamplerFilterCommon_None struct {
 	Minfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
+
 }
 
 //	Returns the Default value for Minfilter -- "NONE"
 func (me *XsdGoPkgHasElems_minfiltersequencefx_samplerRECT_commonschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
 
-type XsdGoPkgHasElem_magfiltersequencefx_samplerRECT_commonschema_Magfilter_TfxSamplerFilterCommon_None struct {
-	Magfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema magfilter"`
+type XsdGoPkgHasElem_minfiltersequencefx_samplerRECT_commonschema_Minfilter_TfxSamplerFilterCommon_None struct {
+	Minfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
+
 }
 
-//	Returns the Default value for Magfilter -- "NONE"
-func (me *XsdGoPkgHasElem_magfiltersequencefx_samplerRECT_commonschema_Magfilter_TfxSamplerFilterCommon_None) MagfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
+//	Returns the Default value for Minfilter -- "NONE"
+func (me *XsdGoPkgHasElem_minfiltersequencefx_samplerRECT_commonschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
 
 type XsdGoPkgHasElems_magfiltersequencefx_samplerRECT_commonschema_Magfilter_TfxSamplerFilterCommon_None struct {
 	Magfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema magfilter"`
+
 }
 
 //	Returns the Default value for Magfilter -- "NONE"
 func (me *XsdGoPkgHasElems_magfiltersequencefx_samplerRECT_commonschema_Magfilter_TfxSamplerFilterCommon_None) MagfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
 
+type XsdGoPkgHasElem_magfiltersequencefx_samplerRECT_commonschema_Magfilter_TfxSamplerFilterCommon_None struct {
+	Magfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema magfilter"`
+
+}
+
+//	Returns the Default value for Magfilter -- "NONE"
+func (me *XsdGoPkgHasElem_magfiltersequencefx_samplerRECT_commonschema_Magfilter_TfxSamplerFilterCommon_None) MagfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
+
 type XsdGoPkgHasElem_mipfiltersequencefx_samplerRECT_commonschema_Mipfilter_TfxSamplerFilterCommon_None struct {
 	Mipfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema mipfilter"`
+
 }
 
 //	Returns the Default value for Mipfilter -- "NONE"
@@ -4490,21 +4609,25 @@ func (me *XsdGoPkgHasElem_mipfiltersequencefx_samplerRECT_commonschema_Mipfilter
 
 type XsdGoPkgHasElems_mipfiltersequencefx_samplerRECT_commonschema_Mipfilter_TfxSamplerFilterCommon_None struct {
 	Mipfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema mipfilter"`
+
 }
 
 //	Returns the Default value for Mipfilter -- "NONE"
 func (me *XsdGoPkgHasElems_mipfiltersequencefx_samplerRECT_commonschema_Mipfilter_TfxSamplerFilterCommon_None) MipfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
 
-type XsdGoPkgHasElem_border_colorsequencefx_samplerRECT_commonschema_BorderColor_TfxColorCommon_ struct {
-	BorderColor TfxColorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema border_color"`
-}
-
 type XsdGoPkgHasElems_border_colorsequencefx_samplerRECT_commonschema_BorderColor_TfxColorCommon_ struct {
 	BorderColors []TfxColorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema border_color"`
+
+}
+
+type XsdGoPkgHasElem_border_colorsequencefx_samplerRECT_commonschema_BorderColor_TfxColorCommon_ struct {
+	BorderColor TfxColorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema border_color"`
+
 }
 
 type XsdGoPkgHasElems_mipmap_maxlevelsequencefx_samplerRECT_commonschema_MipmapMaxlevel_XsdtUnsignedByte_255 struct {
 	MipmapMaxlevels []xsdt.UnsignedByte `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_maxlevel"`
+
 }
 
 //	Returns the Default value for MipmapMaxlevel -- 255
@@ -4512,6 +4635,7 @@ func (me *XsdGoPkgHasElems_mipmap_maxlevelsequencefx_samplerRECT_commonschema_Mi
 
 type XsdGoPkgHasElem_mipmap_maxlevelsequencefx_samplerRECT_commonschema_MipmapMaxlevel_XsdtUnsignedByte_255 struct {
 	MipmapMaxlevel xsdt.UnsignedByte `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_maxlevel"`
+
 }
 
 //	Returns the Default value for MipmapMaxlevel -- 255
@@ -4519,6 +4643,7 @@ func (me *XsdGoPkgHasElem_mipmap_maxlevelsequencefx_samplerRECT_commonschema_Mip
 
 type XsdGoPkgHasElems_mipmap_biassequencefx_samplerRECT_commonschema_MipmapBias_XsdtFloat_00 struct {
 	MipmapBiases []xsdt.Float `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_bias"`
+
 }
 
 //	Returns the Default value for MipmapBias -- 0.0
@@ -4526,6 +4651,7 @@ func (me *XsdGoPkgHasElems_mipmap_biassequencefx_samplerRECT_commonschema_Mipmap
 
 type XsdGoPkgHasElem_mipmap_biassequencefx_samplerRECT_commonschema_MipmapBias_XsdtFloat_00 struct {
 	MipmapBias xsdt.Float `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_bias"`
+
 }
 
 //	Returns the Default value for MipmapBias -- 0.0
@@ -4557,28 +4683,33 @@ type TfxSamplerRECTCommon struct {
 
 type XsdGoPkgHasElem_sourcesequencefx_samplerDEPTH_commonschema_Source_XsdtNCName_ struct {
 	Source xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema source"`
+
 }
 
 type XsdGoPkgHasElems_sourcesequencefx_samplerDEPTH_commonschema_Source_XsdtNCName_ struct {
 	Sources []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema source"`
-}
 
-type XsdGoPkgHasElems_wrap_ssequencefx_samplerDEPTH_commonschema_WrapS_TfxSamplerWrapCommon_Wrap struct {
-	WrapSs []TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
 }
-
-//	Returns the Default value for WrapS -- "WRAP"
-func (me *XsdGoPkgHasElems_wrap_ssequencefx_samplerDEPTH_commonschema_WrapS_TfxSamplerWrapCommon_Wrap) WrapSDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
 
 type XsdGoPkgHasElem_wrap_ssequencefx_samplerDEPTH_commonschema_WrapS_TfxSamplerWrapCommon_Wrap struct {
 	WrapS TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
+
 }
 
 //	Returns the Default value for WrapS -- "WRAP"
 func (me *XsdGoPkgHasElem_wrap_ssequencefx_samplerDEPTH_commonschema_WrapS_TfxSamplerWrapCommon_Wrap) WrapSDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
 
+type XsdGoPkgHasElems_wrap_ssequencefx_samplerDEPTH_commonschema_WrapS_TfxSamplerWrapCommon_Wrap struct {
+	WrapSs []TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
+
+}
+
+//	Returns the Default value for WrapS -- "WRAP"
+func (me *XsdGoPkgHasElems_wrap_ssequencefx_samplerDEPTH_commonschema_WrapS_TfxSamplerWrapCommon_Wrap) WrapSDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
+
 type XsdGoPkgHasElem_wrap_tsequencefx_samplerDEPTH_commonschema_WrapT_TfxSamplerWrapCommon_Wrap struct {
 	WrapT TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_t"`
+
 }
 
 //	Returns the Default value for WrapT -- "WRAP"
@@ -4586,27 +4717,31 @@ func (me *XsdGoPkgHasElem_wrap_tsequencefx_samplerDEPTH_commonschema_WrapT_TfxSa
 
 type XsdGoPkgHasElems_wrap_tsequencefx_samplerDEPTH_commonschema_WrapT_TfxSamplerWrapCommon_Wrap struct {
 	WrapTs []TfxSamplerWrapCommon `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_t"`
+
 }
 
 //	Returns the Default value for WrapT -- "WRAP"
 func (me *XsdGoPkgHasElems_wrap_tsequencefx_samplerDEPTH_commonschema_WrapT_TfxSamplerWrapCommon_Wrap) WrapTDefault () TfxSamplerWrapCommon { return TfxSamplerWrapCommon("WRAP") }
 
-type XsdGoPkgHasElems_minfiltersequencefx_samplerDEPTH_commonschema_Minfilter_TfxSamplerFilterCommon_None struct {
-	Minfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
-}
-
-//	Returns the Default value for Minfilter -- "NONE"
-func (me *XsdGoPkgHasElems_minfiltersequencefx_samplerDEPTH_commonschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
-
 type XsdGoPkgHasElem_minfiltersequencefx_samplerDEPTH_commonschema_Minfilter_TfxSamplerFilterCommon_None struct {
 	Minfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
+
 }
 
 //	Returns the Default value for Minfilter -- "NONE"
 func (me *XsdGoPkgHasElem_minfiltersequencefx_samplerDEPTH_commonschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
 
+type XsdGoPkgHasElems_minfiltersequencefx_samplerDEPTH_commonschema_Minfilter_TfxSamplerFilterCommon_None struct {
+	Minfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
+
+}
+
+//	Returns the Default value for Minfilter -- "NONE"
+func (me *XsdGoPkgHasElems_minfiltersequencefx_samplerDEPTH_commonschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
+
 type XsdGoPkgHasElems_magfiltersequencefx_samplerDEPTH_commonschema_Magfilter_TfxSamplerFilterCommon_None struct {
 	Magfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema magfilter"`
+
 }
 
 //	Returns the Default value for Magfilter -- "NONE"
@@ -4614,6 +4749,7 @@ func (me *XsdGoPkgHasElems_magfiltersequencefx_samplerDEPTH_commonschema_Magfilt
 
 type XsdGoPkgHasElem_magfiltersequencefx_samplerDEPTH_commonschema_Magfilter_TfxSamplerFilterCommon_None struct {
 	Magfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema magfilter"`
+
 }
 
 //	Returns the Default value for Magfilter -- "NONE"
@@ -4702,39 +4838,45 @@ type TfxIncludeCommon struct {
 }
 
 //	The annotate element allows you to specify an annotation for this new param.
-type XsdGoPkgHasElem_annotatesequencefx_newparam_commonschema_Annotate_TfxAnnotateCommon_ struct {
-//	The annotate element allows you to specify an annotation for this new param.
-	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
-}
-
-//	The annotate element allows you to specify an annotation for this new param.
 type XsdGoPkgHasElems_annotatesequencefx_newparam_commonschema_Annotate_TfxAnnotateCommon_ struct {
 //	The annotate element allows you to specify an annotation for this new param.
 	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
-//	The semantic element allows you to specify a semantic for this new param.
-type XsdGoPkgHasElem_semanticsequencefx_newparam_commonschema_Semantic_XsdtNCName_ struct {
-//	The semantic element allows you to specify a semantic for this new param.
-	Semantic xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema semantic"`
+//	The annotate element allows you to specify an annotation for this new param.
+type XsdGoPkgHasElem_annotatesequencefx_newparam_commonschema_Annotate_TfxAnnotateCommon_ struct {
+//	The annotate element allows you to specify an annotation for this new param.
+	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 //	The semantic element allows you to specify a semantic for this new param.
 type XsdGoPkgHasElems_semanticsequencefx_newparam_commonschema_Semantic_XsdtNCName_ struct {
 //	The semantic element allows you to specify a semantic for this new param.
 	Semantics []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema semantic"`
+
+}
+
+//	The semantic element allows you to specify a semantic for this new param.
+type XsdGoPkgHasElem_semanticsequencefx_newparam_commonschema_Semantic_XsdtNCName_ struct {
+//	The semantic element allows you to specify a semantic for this new param.
+	Semantic xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema semantic"`
+
 }
 
 //	The modifier element allows you to specify a modifier for this new param.
 type XsdGoPkgHasElems_modifiersequencefx_newparam_commonschema_Modifier_TfxModifierEnumCommon_ struct {
 //	The modifier element allows you to specify a modifier for this new param.
 	Modifiers []TfxModifierEnumCommon `xml:"http://www.collada.org/2005/11/COLLADASchema modifier"`
+
 }
 
 //	The modifier element allows you to specify a modifier for this new param.
 type XsdGoPkgHasElem_modifiersequencefx_newparam_commonschema_Modifier_TfxModifierEnumCommon_ struct {
 //	The modifier element allows you to specify a modifier for this new param.
 	Modifier TfxModifierEnumCommon `xml:"http://www.collada.org/2005/11/COLLADASchema modifier"`
+
 }
 
 //	This element creates a new, named param object in the FX Runtime, assigns it a type, an initial value, and additional attributes at declaration time.
@@ -4801,15 +4943,17 @@ type XsdGoPkgHasAttr_Length_XsdtPositiveInteger_ struct {
 }
 
 //	You may recursively nest glsl_newarray elements to create multidimensional arrays.
-type XsdGoPkgHasElem_arraychoiceglsl_newarray_typeschema_Array_TglslNewarrayType_ struct {
-//	You may recursively nest glsl_newarray elements to create multidimensional arrays.
-	Array *TglslNewarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
-}
-
-//	You may recursively nest glsl_newarray elements to create multidimensional arrays.
 type XsdGoPkgHasElems_arraychoiceglsl_newarray_typeschema_Array_TglslNewarrayType_ struct {
 //	You may recursively nest glsl_newarray elements to create multidimensional arrays.
 	Arrays []*TglslNewarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
+
+}
+
+//	You may recursively nest glsl_newarray elements to create multidimensional arrays.
+type XsdGoPkgHasElem_arraychoiceglsl_newarray_typeschema_Array_TglslNewarrayType_ struct {
+//	You may recursively nest glsl_newarray elements to create multidimensional arrays.
+	Array *TglslNewarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
+
 }
 
 //	The glsl_newarray_type is used to creates a parameter of a one-dimensional array type.
@@ -4825,15 +4969,17 @@ type TglslNewarrayType struct {
 }
 
 //	You may recursively nest glsl_newarray elements to create multidimensional arrays.
-type XsdGoPkgHasElems_arraychoiceglsl_setarray_typeschema_Array_TglslSetarrayType_ struct {
-//	You may recursively nest glsl_newarray elements to create multidimensional arrays.
-	Arrays []*TglslSetarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
-}
-
-//	You may recursively nest glsl_newarray elements to create multidimensional arrays.
 type XsdGoPkgHasElem_arraychoiceglsl_setarray_typeschema_Array_TglslSetarrayType_ struct {
 //	You may recursively nest glsl_newarray elements to create multidimensional arrays.
 	Array *TglslSetarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
+
+}
+
+//	You may recursively nest glsl_newarray elements to create multidimensional arrays.
+type XsdGoPkgHasElems_arraychoiceglsl_setarray_typeschema_Array_TglslSetarrayType_ struct {
+//	You may recursively nest glsl_newarray elements to create multidimensional arrays.
+	Arrays []*TglslSetarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
+
 }
 
 //	The glsl_newarray_type is used to creates a parameter of a one-dimensional array type.
@@ -4849,36 +4995,42 @@ type TglslSetarrayType struct {
 type XsdGoPkgHasElems_codechoicesequencegeneratorsequenceextensioncomplexContentglsl_surface_typeschema_Code_TfxCodeProfile_ struct {
 //	The code element allows you to embed GLSL code to use for this surface generator.
 	Codes []*TfxCodeProfile `xml:"http://www.collada.org/2005/11/COLLADASchema code"`
+
 }
 
 //	The code element allows you to embed GLSL code to use for this surface generator.
 type XsdGoPkgHasElem_codechoicesequencegeneratorsequenceextensioncomplexContentglsl_surface_typeschema_Code_TfxCodeProfile_ struct {
 //	The code element allows you to embed GLSL code to use for this surface generator.
 	Code *TfxCodeProfile `xml:"http://www.collada.org/2005/11/COLLADASchema code"`
-}
 
-//	The include element allows you to import GLSL code to use for this surface generator.
-type XsdGoPkgHasElems_includechoicesequencegeneratorsequenceextensioncomplexContentglsl_surface_typeschema_Include_TfxIncludeCommon_ struct {
-//	The include element allows you to import GLSL code to use for this surface generator.
-	Includes []*TfxIncludeCommon `xml:"http://www.collada.org/2005/11/COLLADASchema include"`
 }
 
 //	The include element allows you to import GLSL code to use for this surface generator.
 type XsdGoPkgHasElem_includechoicesequencegeneratorsequenceextensioncomplexContentglsl_surface_typeschema_Include_TfxIncludeCommon_ struct {
 //	The include element allows you to import GLSL code to use for this surface generator.
 	Include *TfxIncludeCommon `xml:"http://www.collada.org/2005/11/COLLADASchema include"`
+
+}
+
+//	The include element allows you to import GLSL code to use for this surface generator.
+type XsdGoPkgHasElems_includechoicesequencegeneratorsequenceextensioncomplexContentglsl_surface_typeschema_Include_TfxIncludeCommon_ struct {
+//	The include element allows you to import GLSL code to use for this surface generator.
+	Includes []*TfxIncludeCommon `xml:"http://www.collada.org/2005/11/COLLADASchema include"`
+
 }
 
 //	The annotate element allows you to specify an annotation for this surface generator.
 type XsdGoPkgHasElem_annotatesequencegeneratorsequenceextensioncomplexContentglsl_surface_typeschema_Annotate_TfxAnnotateCommon_ struct {
 //	The annotate element allows you to specify an annotation for this surface generator.
 	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 //	The annotate element allows you to specify an annotation for this surface generator.
 type XsdGoPkgHasElems_annotatesequencegeneratorsequenceextensioncomplexContentglsl_surface_typeschema_Annotate_TfxAnnotateCommon_ struct {
 //	The annotate element allows you to specify an annotation for this surface generator.
 	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type XsdGoPkgHasAttr_Source_XsdtNCName_ struct {
@@ -4893,27 +5045,31 @@ type TxsdGlslSurfaceTypeComplexContentExtensionSequenceGeneratorSequenceName str
 }
 
 //	The entry symbol for the shader function.
-type XsdGoPkgHasElem_namesequencegeneratorsequenceextensioncomplexContentglsl_surface_typeschema_Name_TxsdGlslSurfaceTypeComplexContentExtensionSequenceGeneratorSequenceName_ struct {
-//	The entry symbol for the shader function.
-	Name *TxsdGlslSurfaceTypeComplexContentExtensionSequenceGeneratorSequenceName `xml:"http://www.collada.org/2005/11/COLLADASchema name"`
-}
-
-//	The entry symbol for the shader function.
 type XsdGoPkgHasElems_namesequencegeneratorsequenceextensioncomplexContentglsl_surface_typeschema_Name_TxsdGlslSurfaceTypeComplexContentExtensionSequenceGeneratorSequenceName_ struct {
 //	The entry symbol for the shader function.
 	Names []*TxsdGlslSurfaceTypeComplexContentExtensionSequenceGeneratorSequenceName `xml:"http://www.collada.org/2005/11/COLLADASchema name"`
+
+}
+
+//	The entry symbol for the shader function.
+type XsdGoPkgHasElem_namesequencegeneratorsequenceextensioncomplexContentglsl_surface_typeschema_Name_TxsdGlslSurfaceTypeComplexContentExtensionSequenceGeneratorSequenceName_ struct {
+//	The entry symbol for the shader function.
+	Name *TxsdGlslSurfaceTypeComplexContentExtensionSequenceGeneratorSequenceName `xml:"http://www.collada.org/2005/11/COLLADASchema name"`
+
 }
 
 //	The setparam element allows you to assign a new value to a previously defined parameter.
 type XsdGoPkgHasElems_setparamsequencegeneratorsequenceextensioncomplexContentglsl_surface_typeschema_Setparam_TglslSetparamSimple_ struct {
 //	The setparam element allows you to assign a new value to a previously defined parameter.
 	Setparams []*TglslSetparamSimple `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
+
 }
 
 //	The setparam element allows you to assign a new value to a previously defined parameter.
 type XsdGoPkgHasElem_setparamsequencegeneratorsequenceextensioncomplexContentglsl_surface_typeschema_Setparam_TglslSetparamSimple_ struct {
 //	The setparam element allows you to assign a new value to a previously defined parameter.
 	Setparam *TglslSetparamSimple `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
+
 }
 
 type TxsdGlslSurfaceTypeComplexContentExtensionSequenceGenerator struct {
@@ -4938,12 +5094,14 @@ type TxsdGlslSurfaceTypeComplexContentExtensionSequenceGenerator struct {
 type XsdGoPkgHasElems_generatorsequenceextensioncomplexContentglsl_surface_typeschema_Generator_TxsdGlslSurfaceTypeComplexContentExtensionSequenceGenerator_ struct {
 //	A procedural surface generator.
 	Generators []*TxsdGlslSurfaceTypeComplexContentExtensionSequenceGenerator `xml:"http://www.collada.org/2005/11/COLLADASchema generator"`
+
 }
 
 //	A procedural surface generator.
 type XsdGoPkgHasElem_generatorsequenceextensioncomplexContentglsl_surface_typeschema_Generator_TxsdGlslSurfaceTypeComplexContentExtensionSequenceGenerator_ struct {
 //	A procedural surface generator.
 	Generator *TxsdGlslSurfaceTypeComplexContentExtensionSequenceGenerator `xml:"http://www.collada.org/2005/11/COLLADASchema generator"`
+
 }
 
 //	A surface type for the GLSL profile. This surface inherits from the fx_surface_common type and adds the
@@ -4962,34 +5120,42 @@ type XsdGoPkgHasAttr_Sid_TglslIdentifier_ struct {
 
 type XsdGoPkgHasElem_arraychoicesequenceglsl_newparamschema_Array_TglslNewarrayType_ struct {
 	Array *TglslNewarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
+
 }
 
 type XsdGoPkgHasElems_arraychoicesequenceglsl_newparamschema_Array_TglslNewarrayType_ struct {
 	Arrays []*TglslNewarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
-}
 
-type XsdGoPkgHasElems_annotatesequenceglsl_newparamschema_Annotate_TfxAnnotateCommon_ struct {
-	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
 }
 
 type XsdGoPkgHasElem_annotatesequenceglsl_newparamschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
+}
+
+type XsdGoPkgHasElems_annotatesequenceglsl_newparamschema_Annotate_TfxAnnotateCommon_ struct {
+	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type XsdGoPkgHasElem_semanticsequenceglsl_newparamschema_Semantic_XsdtNCName_ struct {
 	Semantic xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema semantic"`
+
 }
 
 type XsdGoPkgHasElems_semanticsequenceglsl_newparamschema_Semantic_XsdtNCName_ struct {
 	Semantics []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema semantic"`
+
 }
 
 type XsdGoPkgHasElem_modifiersequenceglsl_newparamschema_Modifier_TfxModifierEnumCommon_ struct {
 	Modifier TfxModifierEnumCommon `xml:"http://www.collada.org/2005/11/COLLADASchema modifier"`
+
 }
 
 type XsdGoPkgHasElems_modifiersequenceglsl_newparamschema_Modifier_TfxModifierEnumCommon_ struct {
 	Modifiers []TfxModifierEnumCommon `xml:"http://www.collada.org/2005/11/COLLADASchema modifier"`
+
 }
 
 type TglslNewparam struct {
@@ -5011,12 +5177,14 @@ type XsdGoPkgHasAttr_Ref_TglslIdentifier_ struct {
 	Ref TglslIdentifier `xml:"http://www.collada.org/2005/11/COLLADASchema ref,attr"`
 }
 
-type XsdGoPkgHasElems_annotatesequenceglsl_setparam_simpleschema_Annotate_TfxAnnotateCommon_ struct {
-	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
-}
-
 type XsdGoPkgHasElem_annotatesequenceglsl_setparam_simpleschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
+}
+
+type XsdGoPkgHasElems_annotatesequenceglsl_setparam_simpleschema_Annotate_TfxAnnotateCommon_ struct {
+	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type TglslSetparamSimple struct {
@@ -5034,18 +5202,22 @@ type XsdGoPkgHasAttr_Program_XsdtNCName_ struct {
 
 type XsdGoPkgHasElems_arraychoicesequenceglsl_setparamschema_Array_TglslSetarrayType_ struct {
 	Arrays []*TglslSetarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
+
 }
 
 type XsdGoPkgHasElem_arraychoicesequenceglsl_setparamschema_Array_TglslSetarrayType_ struct {
 	Array *TglslSetarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
-}
 
-type XsdGoPkgHasElems_annotatesequenceglsl_setparamschema_Annotate_TfxAnnotateCommon_ struct {
-	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
 }
 
 type XsdGoPkgHasElem_annotatesequenceglsl_setparamschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
+}
+
+type XsdGoPkgHasElems_annotatesequenceglsl_setparamschema_Annotate_TfxAnnotateCommon_ struct {
+	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type TglslSetparam struct {
@@ -5066,10 +5238,12 @@ type TxsdCommonFloatOrParamTypeChoiceFloat struct {
 
 type XsdGoPkgHasElems_floatchoicecommon_float_or_param_typeschema_Float_TxsdCommonFloatOrParamTypeChoiceFloat_ struct {
 	Floats []*TxsdCommonFloatOrParamTypeChoiceFloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
+
 }
 
 type XsdGoPkgHasElem_floatchoicecommon_float_or_param_typeschema_Float_TxsdCommonFloatOrParamTypeChoiceFloat_ struct {
 	Float *TxsdCommonFloatOrParamTypeChoiceFloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
+
 }
 
 type XsdGoPkgHasAttr_Ref_XsdtNCName_ struct {
@@ -5081,12 +5255,14 @@ type TxsdCommonFloatOrParamTypeChoiceParam struct {
 
 }
 
-type XsdGoPkgHasElem_paramchoicecommon_float_or_param_typeschema_Param_TxsdCommonFloatOrParamTypeChoiceParam_ struct {
-	Param *TxsdCommonFloatOrParamTypeChoiceParam `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
-}
-
 type XsdGoPkgHasElems_paramchoicecommon_float_or_param_typeschema_Param_TxsdCommonFloatOrParamTypeChoiceParam_ struct {
 	Params []*TxsdCommonFloatOrParamTypeChoiceParam `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
+}
+
+type XsdGoPkgHasElem_paramchoicecommon_float_or_param_typeschema_Param_TxsdCommonFloatOrParamTypeChoiceParam_ struct {
+	Param *TxsdCommonFloatOrParamTypeChoiceParam `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
 }
 
 type TcommonFloatOrParamType struct {
@@ -5101,23 +5277,27 @@ type TxsdCommonColorOrTextureTypeChoiceColor struct {
 
 }
 
-type XsdGoPkgHasElem_colorchoicecommon_color_or_texture_typeschema_Color_TxsdCommonColorOrTextureTypeChoiceColor_ struct {
-	Color *TxsdCommonColorOrTextureTypeChoiceColor `xml:"http://www.collada.org/2005/11/COLLADASchema color"`
-}
-
 type XsdGoPkgHasElems_colorchoicecommon_color_or_texture_typeschema_Color_TxsdCommonColorOrTextureTypeChoiceColor_ struct {
 	Colors []*TxsdCommonColorOrTextureTypeChoiceColor `xml:"http://www.collada.org/2005/11/COLLADASchema color"`
+
+}
+
+type XsdGoPkgHasElem_colorchoicecommon_color_or_texture_typeschema_Color_TxsdCommonColorOrTextureTypeChoiceColor_ struct {
+	Color *TxsdCommonColorOrTextureTypeChoiceColor `xml:"http://www.collada.org/2005/11/COLLADASchema color"`
+
 }
 
 type TxsdCommonColorOrTextureTypeChoiceParam struct {
 }
 
-type XsdGoPkgHasElems_paramchoicecommon_color_or_texture_typeschema_Param_TxsdCommonColorOrTextureTypeChoiceParam_ struct {
-	Params []*TxsdCommonColorOrTextureTypeChoiceParam `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
-}
-
 type XsdGoPkgHasElem_paramchoicecommon_color_or_texture_typeschema_Param_TxsdCommonColorOrTextureTypeChoiceParam_ struct {
 	Param *TxsdCommonColorOrTextureTypeChoiceParam `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
+}
+
+type XsdGoPkgHasElems_paramchoicecommon_color_or_texture_typeschema_Param_TxsdCommonColorOrTextureTypeChoiceParam_ struct {
+	Params []*TxsdCommonColorOrTextureTypeChoiceParam `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
 }
 
 type XsdGoPkgHasAttr_Texture_XsdtNCName_ struct {
@@ -5139,10 +5319,12 @@ type TxsdCommonColorOrTextureTypeChoiceTexture struct {
 
 type XsdGoPkgHasElems_texturechoicecommon_color_or_texture_typeschema_Texture_TxsdCommonColorOrTextureTypeChoiceTexture_ struct {
 	Textures []*TxsdCommonColorOrTextureTypeChoiceTexture `xml:"http://www.collada.org/2005/11/COLLADASchema texture"`
+
 }
 
 type XsdGoPkgHasElem_texturechoicecommon_color_or_texture_typeschema_Texture_TxsdCommonColorOrTextureTypeChoiceTexture_ struct {
 	Texture *TxsdCommonColorOrTextureTypeChoiceTexture `xml:"http://www.collada.org/2005/11/COLLADASchema texture"`
+
 }
 
 type TcommonColorOrTextureType struct {
@@ -5168,60 +5350,74 @@ type TcommonTransparentType struct {
 
 }
 
-type XsdGoPkgHasElems_floatchoicesequencecommon_newparam_typeschema_Float_Tfloat_ struct {
-	Floats []Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
-}
-
 type XsdGoPkgHasElem_floatchoicesequencecommon_newparam_typeschema_Float_Tfloat_ struct {
 	Float Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
+
 }
 
-type XsdGoPkgHasElems_float2choicesequencecommon_newparam_typeschema_Float2_Tfloat2_ struct {
-	Float2s []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2"`
+type XsdGoPkgHasElems_floatchoicesequencecommon_newparam_typeschema_Float_Tfloat_ struct {
+	Floats []Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
+
 }
 
 type XsdGoPkgHasElem_float2choicesequencecommon_newparam_typeschema_Float2_Tfloat2_ struct {
 	Float2 Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2"`
+
+}
+
+type XsdGoPkgHasElems_float2choicesequencecommon_newparam_typeschema_Float2_Tfloat2_ struct {
+	Float2s []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2"`
+
 }
 
 type XsdGoPkgHasElems_float3choicesequencecommon_newparam_typeschema_Float3_Tfloat3_ struct {
 	Float3s []Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3"`
+
 }
 
 type XsdGoPkgHasElem_float3choicesequencecommon_newparam_typeschema_Float3_Tfloat3_ struct {
 	Float3 Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3"`
+
 }
 
 type XsdGoPkgHasElems_float4choicesequencecommon_newparam_typeschema_Float4_Tfloat4_ struct {
 	Float4s []Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4"`
+
 }
 
 type XsdGoPkgHasElem_float4choicesequencecommon_newparam_typeschema_Float4_Tfloat4_ struct {
 	Float4 Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4"`
+
 }
 
 type XsdGoPkgHasElem_surfacechoicesequencecommon_newparam_typeschema_Surface_TfxSurfaceCommon_ struct {
 	Surface *TfxSurfaceCommon `xml:"http://www.collada.org/2005/11/COLLADASchema surface"`
+
 }
 
 type XsdGoPkgHasElems_surfacechoicesequencecommon_newparam_typeschema_Surface_TfxSurfaceCommon_ struct {
 	Surfaces []*TfxSurfaceCommon `xml:"http://www.collada.org/2005/11/COLLADASchema surface"`
-}
 
-type XsdGoPkgHasElems_sampler2Dchoicesequencecommon_newparam_typeschema_Sampler2D_TfxSampler2DCommon_ struct {
-	Sampler2Ds []*TfxSampler2DCommon `xml:"http://www.collada.org/2005/11/COLLADASchema sampler2D"`
 }
 
 type XsdGoPkgHasElem_sampler2Dchoicesequencecommon_newparam_typeschema_Sampler2D_TfxSampler2DCommon_ struct {
 	Sampler2D *TfxSampler2DCommon `xml:"http://www.collada.org/2005/11/COLLADASchema sampler2D"`
+
+}
+
+type XsdGoPkgHasElems_sampler2Dchoicesequencecommon_newparam_typeschema_Sampler2D_TfxSampler2DCommon_ struct {
+	Sampler2Ds []*TfxSampler2DCommon `xml:"http://www.collada.org/2005/11/COLLADASchema sampler2D"`
+
 }
 
 type XsdGoPkgHasElems_semanticsequencecommon_newparam_typeschema_Semantic_XsdtNCName_ struct {
 	Semantics []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema semantic"`
+
 }
 
 type XsdGoPkgHasElem_semanticsequencecommon_newparam_typeschema_Semantic_XsdtNCName_ struct {
 	Semantic xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema semantic"`
+
 }
 
 type TcommonNewparamType struct {
@@ -5282,35 +5478,41 @@ type TcgConnectParam struct {
 }
 
 //	Nested array elements allow you to create multidemensional arrays.
-type XsdGoPkgHasElem_arraychoicecg_newarray_typeschema_Array_TcgNewarrayType_ struct {
-//	Nested array elements allow you to create multidemensional arrays.
-	Array *TcgNewarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
-}
-
-//	Nested array elements allow you to create multidemensional arrays.
 type XsdGoPkgHasElems_arraychoicecg_newarray_typeschema_Array_TcgNewarrayType_ struct {
 //	Nested array elements allow you to create multidemensional arrays.
 	Arrays []*TcgNewarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
+
 }
 
-//	The usertype element allows you to create arrays of usertypes.
-type XsdGoPkgHasElem_usertypechoicecg_newarray_typeschema_Usertype_TcgSetuserType_ struct {
-//	The usertype element allows you to create arrays of usertypes.
-	Usertype *TcgSetuserType `xml:"http://www.collada.org/2005/11/COLLADASchema usertype"`
+//	Nested array elements allow you to create multidemensional arrays.
+type XsdGoPkgHasElem_arraychoicecg_newarray_typeschema_Array_TcgNewarrayType_ struct {
+//	Nested array elements allow you to create multidemensional arrays.
+	Array *TcgNewarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
+
 }
 
 //	The usertype element allows you to create arrays of usertypes.
 type XsdGoPkgHasElems_usertypechoicecg_newarray_typeschema_Usertype_TcgSetuserType_ struct {
 //	The usertype element allows you to create arrays of usertypes.
 	Usertypes []*TcgSetuserType `xml:"http://www.collada.org/2005/11/COLLADASchema usertype"`
+
 }
 
-type XsdGoPkgHasElem_connect_paramchoicecg_newarray_typeschema_ConnectParam_TcgConnectParam_ struct {
-	ConnectParam *TcgConnectParam `xml:"http://www.collada.org/2005/11/COLLADASchema connect_param"`
+//	The usertype element allows you to create arrays of usertypes.
+type XsdGoPkgHasElem_usertypechoicecg_newarray_typeschema_Usertype_TcgSetuserType_ struct {
+//	The usertype element allows you to create arrays of usertypes.
+	Usertype *TcgSetuserType `xml:"http://www.collada.org/2005/11/COLLADASchema usertype"`
+
 }
 
 type XsdGoPkgHasElems_connect_paramchoicecg_newarray_typeschema_ConnectParam_TcgConnectParam_ struct {
 	ConnectParams []*TcgConnectParam `xml:"http://www.collada.org/2005/11/COLLADASchema connect_param"`
+
+}
+
+type XsdGoPkgHasElem_connect_paramchoicecg_newarray_typeschema_ConnectParam_TcgConnectParam_ struct {
+	ConnectParam *TcgConnectParam `xml:"http://www.collada.org/2005/11/COLLADASchema connect_param"`
+
 }
 
 //	Creates a parameter of a one-dimensional array type.
@@ -5328,27 +5530,31 @@ type TcgNewarrayType struct {
 }
 
 //	Nested array elements allow you to create multidemensional arrays.
-type XsdGoPkgHasElems_arraychoicecg_setarray_typeschema_Array_TcgSetarrayType_ struct {
-//	Nested array elements allow you to create multidemensional arrays.
-	Arrays []*TcgSetarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
-}
-
-//	Nested array elements allow you to create multidemensional arrays.
 type XsdGoPkgHasElem_arraychoicecg_setarray_typeschema_Array_TcgSetarrayType_ struct {
 //	Nested array elements allow you to create multidemensional arrays.
 	Array *TcgSetarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
+
+}
+
+//	Nested array elements allow you to create multidemensional arrays.
+type XsdGoPkgHasElems_arraychoicecg_setarray_typeschema_Array_TcgSetarrayType_ struct {
+//	Nested array elements allow you to create multidemensional arrays.
+	Arrays []*TcgSetarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
+
 }
 
 //	The usertype element allows you to create arrays of usertypes.
 type XsdGoPkgHasElems_usertypechoicecg_setarray_typeschema_Usertype_TcgSetuserType_ struct {
 //	The usertype element allows you to create arrays of usertypes.
 	Usertypes []*TcgSetuserType `xml:"http://www.collada.org/2005/11/COLLADASchema usertype"`
+
 }
 
 //	The usertype element allows you to create arrays of usertypes.
 type XsdGoPkgHasElem_usertypechoicecg_setarray_typeschema_Usertype_TcgSetuserType_ struct {
 //	The usertype element allows you to create arrays of usertypes.
 	Usertype *TcgSetuserType `xml:"http://www.collada.org/2005/11/COLLADASchema usertype"`
+
 }
 
 //	Creates a parameter of a one-dimensional array type.
@@ -5367,40 +5573,48 @@ type XsdGoPkgHasAttr_Name_TcgIdentifier_ struct {
 	Name TcgIdentifier `xml:"http://www.collada.org/2005/11/COLLADASchema name,attr"`
 }
 
-type XsdGoPkgHasElems_arraychoicechoicecg_setuser_typeschema_Array_TcgSetarrayType_ struct {
-	Arrays []*TcgSetarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
-}
-
 type XsdGoPkgHasElem_arraychoicechoicecg_setuser_typeschema_Array_TcgSetarrayType_ struct {
 	Array *TcgSetarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
+
+}
+
+type XsdGoPkgHasElems_arraychoicechoicecg_setuser_typeschema_Array_TcgSetarrayType_ struct {
+	Arrays []*TcgSetarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
+
 }
 
 type XsdGoPkgHasElems_usertypechoicechoicecg_setuser_typeschema_Usertype_TcgSetuserType_ struct {
 	Usertypes []*TcgSetuserType `xml:"http://www.collada.org/2005/11/COLLADASchema usertype"`
+
 }
 
 type XsdGoPkgHasElem_usertypechoicechoicecg_setuser_typeschema_Usertype_TcgSetuserType_ struct {
 	Usertype *TcgSetuserType `xml:"http://www.collada.org/2005/11/COLLADASchema usertype"`
+
 }
 
 type XsdGoPkgHasElems_connect_paramchoicechoicecg_setuser_typeschema_ConnectParam_TcgConnectParam_ struct {
 	ConnectParams []*TcgConnectParam `xml:"http://www.collada.org/2005/11/COLLADASchema connect_param"`
+
 }
 
 type XsdGoPkgHasElem_connect_paramchoicechoicecg_setuser_typeschema_ConnectParam_TcgConnectParam_ struct {
 	ConnectParam *TcgConnectParam `xml:"http://www.collada.org/2005/11/COLLADASchema connect_param"`
+
 }
 
 //	Use a series of these to set the members by name.  The ref attribute will be relative to the usertype you are in right now.
 type XsdGoPkgHasElems_setparamchoicecg_setuser_typeschema_Setparam_TcgSetparam_ struct {
 //	Use a series of these to set the members by name.  The ref attribute will be relative to the usertype you are in right now.
 	Setparams []*TcgSetparam `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
+
 }
 
 //	Use a series of these to set the members by name.  The ref attribute will be relative to the usertype you are in right now.
 type XsdGoPkgHasElem_setparamchoicecg_setuser_typeschema_Setparam_TcgSetparam_ struct {
 //	Use a series of these to set the members by name.  The ref attribute will be relative to the usertype you are in right now.
 	Setparam *TcgSetparam `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
+
 }
 
 //	Creates an instance of a structured class.
@@ -5423,39 +5637,45 @@ type TcgSetuserType struct {
 }
 
 //	The code element allows you to embed cg sourcecode for the surface generator.
-type XsdGoPkgHasElem_codechoicesequencegeneratorsequenceextensioncomplexContentcg_surface_typeschema_Code_TfxCodeProfile_ struct {
-//	The code element allows you to embed cg sourcecode for the surface generator.
-	Code *TfxCodeProfile `xml:"http://www.collada.org/2005/11/COLLADASchema code"`
-}
-
-//	The code element allows you to embed cg sourcecode for the surface generator.
 type XsdGoPkgHasElems_codechoicesequencegeneratorsequenceextensioncomplexContentcg_surface_typeschema_Code_TfxCodeProfile_ struct {
 //	The code element allows you to embed cg sourcecode for the surface generator.
 	Codes []*TfxCodeProfile `xml:"http://www.collada.org/2005/11/COLLADASchema code"`
+
+}
+
+//	The code element allows you to embed cg sourcecode for the surface generator.
+type XsdGoPkgHasElem_codechoicesequencegeneratorsequenceextensioncomplexContentcg_surface_typeschema_Code_TfxCodeProfile_ struct {
+//	The code element allows you to embed cg sourcecode for the surface generator.
+	Code *TfxCodeProfile `xml:"http://www.collada.org/2005/11/COLLADASchema code"`
+
 }
 
 //	The include element imports cg source code or precompiled binary shaders into the FX Runtime by referencing an external resource.
 type XsdGoPkgHasElem_includechoicesequencegeneratorsequenceextensioncomplexContentcg_surface_typeschema_Include_TfxIncludeCommon_ struct {
 //	The include element imports cg source code or precompiled binary shaders into the FX Runtime by referencing an external resource.
 	Include *TfxIncludeCommon `xml:"http://www.collada.org/2005/11/COLLADASchema include"`
+
 }
 
 //	The include element imports cg source code or precompiled binary shaders into the FX Runtime by referencing an external resource.
 type XsdGoPkgHasElems_includechoicesequencegeneratorsequenceextensioncomplexContentcg_surface_typeschema_Include_TfxIncludeCommon_ struct {
 //	The include element imports cg source code or precompiled binary shaders into the FX Runtime by referencing an external resource.
 	Includes []*TfxIncludeCommon `xml:"http://www.collada.org/2005/11/COLLADASchema include"`
-}
 
-//	The annotate element allows you to specify an annotation for this generator.
-type XsdGoPkgHasElem_annotatesequencegeneratorsequenceextensioncomplexContentcg_surface_typeschema_Annotate_TfxAnnotateCommon_ struct {
-//	The annotate element allows you to specify an annotation for this generator.
-	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
 }
 
 //	The annotate element allows you to specify an annotation for this generator.
 type XsdGoPkgHasElems_annotatesequencegeneratorsequenceextensioncomplexContentcg_surface_typeschema_Annotate_TfxAnnotateCommon_ struct {
 //	The annotate element allows you to specify an annotation for this generator.
 	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
+}
+
+//	The annotate element allows you to specify an annotation for this generator.
+type XsdGoPkgHasElem_annotatesequencegeneratorsequenceextensioncomplexContentcg_surface_typeschema_Annotate_TfxAnnotateCommon_ struct {
+//	The annotate element allows you to specify an annotation for this generator.
+	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type TxsdCgSurfaceTypeComplexContentExtensionSequenceGeneratorSequenceName struct {
@@ -5467,24 +5687,28 @@ type TxsdCgSurfaceTypeComplexContentExtensionSequenceGeneratorSequenceName struc
 type XsdGoPkgHasElems_namesequencegeneratorsequenceextensioncomplexContentcg_surface_typeschema_Name_TxsdCgSurfaceTypeComplexContentExtensionSequenceGeneratorSequenceName_ struct {
 //	The entry symbol for the shader function.
 	Names []*TxsdCgSurfaceTypeComplexContentExtensionSequenceGeneratorSequenceName `xml:"http://www.collada.org/2005/11/COLLADASchema name"`
+
 }
 
 //	The entry symbol for the shader function.
 type XsdGoPkgHasElem_namesequencegeneratorsequenceextensioncomplexContentcg_surface_typeschema_Name_TxsdCgSurfaceTypeComplexContentExtensionSequenceGeneratorSequenceName_ struct {
 //	The entry symbol for the shader function.
 	Name *TxsdCgSurfaceTypeComplexContentExtensionSequenceGeneratorSequenceName `xml:"http://www.collada.org/2005/11/COLLADASchema name"`
-}
 
-//	Assigns a new value to a previously defined parameter.
-type XsdGoPkgHasElem_setparamsequencegeneratorsequenceextensioncomplexContentcg_surface_typeschema_Setparam_TcgSetparamSimple_ struct {
-//	Assigns a new value to a previously defined parameter.
-	Setparam *TcgSetparamSimple `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
 }
 
 //	Assigns a new value to a previously defined parameter.
 type XsdGoPkgHasElems_setparamsequencegeneratorsequenceextensioncomplexContentcg_surface_typeschema_Setparam_TcgSetparamSimple_ struct {
 //	Assigns a new value to a previously defined parameter.
 	Setparams []*TcgSetparamSimple `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
+
+}
+
+//	Assigns a new value to a previously defined parameter.
+type XsdGoPkgHasElem_setparamsequencegeneratorsequenceextensioncomplexContentcg_surface_typeschema_Setparam_TcgSetparamSimple_ struct {
+//	Assigns a new value to a previously defined parameter.
+	Setparam *TcgSetparamSimple `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
+
 }
 
 type TxsdCgSurfaceTypeComplexContentExtensionSequenceGenerator struct {
@@ -5506,15 +5730,17 @@ type TxsdCgSurfaceTypeComplexContentExtensionSequenceGenerator struct {
 }
 
 //	A procedural surface generator for the cg profile.
-type XsdGoPkgHasElems_generatorsequenceextensioncomplexContentcg_surface_typeschema_Generator_TxsdCgSurfaceTypeComplexContentExtensionSequenceGenerator_ struct {
-//	A procedural surface generator for the cg profile.
-	Generators []*TxsdCgSurfaceTypeComplexContentExtensionSequenceGenerator `xml:"http://www.collada.org/2005/11/COLLADASchema generator"`
-}
-
-//	A procedural surface generator for the cg profile.
 type XsdGoPkgHasElem_generatorsequenceextensioncomplexContentcg_surface_typeschema_Generator_TxsdCgSurfaceTypeComplexContentExtensionSequenceGenerator_ struct {
 //	A procedural surface generator for the cg profile.
 	Generator *TxsdCgSurfaceTypeComplexContentExtensionSequenceGenerator `xml:"http://www.collada.org/2005/11/COLLADASchema generator"`
+
+}
+
+//	A procedural surface generator for the cg profile.
+type XsdGoPkgHasElems_generatorsequenceextensioncomplexContentcg_surface_typeschema_Generator_TxsdCgSurfaceTypeComplexContentExtensionSequenceGenerator_ struct {
+//	A procedural surface generator for the cg profile.
+	Generators []*TxsdCgSurfaceTypeComplexContentExtensionSequenceGenerator `xml:"http://www.collada.org/2005/11/COLLADASchema generator"`
+
 }
 
 //	Declares a resource that can be used both as the source for texture samples and as the target of a rendering pass.
@@ -5530,56 +5756,66 @@ type XsdGoPkgHasAttr_Sid_TcgIdentifier_ struct {
 	Sid TcgIdentifier `xml:"http://www.collada.org/2005/11/COLLADASchema sid,attr"`
 }
 
-type XsdGoPkgHasElems_usertypechoicesequencecg_newparamschema_Usertype_TcgSetuserType_ struct {
-	Usertypes []*TcgSetuserType `xml:"http://www.collada.org/2005/11/COLLADASchema usertype"`
-}
-
 type XsdGoPkgHasElem_usertypechoicesequencecg_newparamschema_Usertype_TcgSetuserType_ struct {
 	Usertype *TcgSetuserType `xml:"http://www.collada.org/2005/11/COLLADASchema usertype"`
+
 }
 
-type XsdGoPkgHasElems_arraychoicesequencecg_newparamschema_Array_TcgNewarrayType_ struct {
-	Arrays []*TcgNewarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
+type XsdGoPkgHasElems_usertypechoicesequencecg_newparamschema_Usertype_TcgSetuserType_ struct {
+	Usertypes []*TcgSetuserType `xml:"http://www.collada.org/2005/11/COLLADASchema usertype"`
+
 }
 
 type XsdGoPkgHasElem_arraychoicesequencecg_newparamschema_Array_TcgNewarrayType_ struct {
 	Array *TcgNewarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
+
 }
 
-//	The annotate element allows you to specify an annotation for this new param.
-type XsdGoPkgHasElems_annotatesequencecg_newparamschema_Annotate_TfxAnnotateCommon_ struct {
-//	The annotate element allows you to specify an annotation for this new param.
-	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+type XsdGoPkgHasElems_arraychoicesequencecg_newparamschema_Array_TcgNewarrayType_ struct {
+	Arrays []*TcgNewarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
+
 }
 
 //	The annotate element allows you to specify an annotation for this new param.
 type XsdGoPkgHasElem_annotatesequencecg_newparamschema_Annotate_TfxAnnotateCommon_ struct {
 //	The annotate element allows you to specify an annotation for this new param.
 	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
-//	The semantic element allows you to specify a semantic for this new param.
-type XsdGoPkgHasElems_semanticsequencecg_newparamschema_Semantic_XsdtNCName_ struct {
-//	The semantic element allows you to specify a semantic for this new param.
-	Semantics []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema semantic"`
+//	The annotate element allows you to specify an annotation for this new param.
+type XsdGoPkgHasElems_annotatesequencecg_newparamschema_Annotate_TfxAnnotateCommon_ struct {
+//	The annotate element allows you to specify an annotation for this new param.
+	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 //	The semantic element allows you to specify a semantic for this new param.
 type XsdGoPkgHasElem_semanticsequencecg_newparamschema_Semantic_XsdtNCName_ struct {
 //	The semantic element allows you to specify a semantic for this new param.
 	Semantic xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema semantic"`
+
 }
 
-//	The modifier element allows you to specify a modifier for this new param.
-type XsdGoPkgHasElem_modifiersequencecg_newparamschema_Modifier_TfxModifierEnumCommon_ struct {
-//	The modifier element allows you to specify a modifier for this new param.
-	Modifier TfxModifierEnumCommon `xml:"http://www.collada.org/2005/11/COLLADASchema modifier"`
+//	The semantic element allows you to specify a semantic for this new param.
+type XsdGoPkgHasElems_semanticsequencecg_newparamschema_Semantic_XsdtNCName_ struct {
+//	The semantic element allows you to specify a semantic for this new param.
+	Semantics []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema semantic"`
+
 }
 
 //	The modifier element allows you to specify a modifier for this new param.
 type XsdGoPkgHasElems_modifiersequencecg_newparamschema_Modifier_TfxModifierEnumCommon_ struct {
 //	The modifier element allows you to specify a modifier for this new param.
 	Modifiers []TfxModifierEnumCommon `xml:"http://www.collada.org/2005/11/COLLADASchema modifier"`
+
+}
+
+//	The modifier element allows you to specify a modifier for this new param.
+type XsdGoPkgHasElem_modifiersequencecg_newparamschema_Modifier_TfxModifierEnumCommon_ struct {
+//	The modifier element allows you to specify a modifier for this new param.
+	Modifier TfxModifierEnumCommon `xml:"http://www.collada.org/2005/11/COLLADASchema modifier"`
+
 }
 
 //	Create a new, named param object in the CG Runtime, assign it a type, an initial value, and additional attributes at declaration time.
@@ -5603,12 +5839,14 @@ type TcgNewparam struct {
 
 }
 
-type XsdGoPkgHasElems_annotatesequencecg_setparam_simpleschema_Annotate_TfxAnnotateCommon_ struct {
-	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
-}
-
 type XsdGoPkgHasElem_annotatesequencecg_setparam_simpleschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
+}
+
+type XsdGoPkgHasElems_annotatesequencecg_setparam_simpleschema_Annotate_TfxAnnotateCommon_ struct {
+	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type TcgSetparamSimple struct {
@@ -5620,26 +5858,32 @@ type TcgSetparamSimple struct {
 
 type XsdGoPkgHasElems_usertypechoicecg_setparamschema_Usertype_TcgSetuserType_ struct {
 	Usertypes []*TcgSetuserType `xml:"http://www.collada.org/2005/11/COLLADASchema usertype"`
+
 }
 
 type XsdGoPkgHasElem_usertypechoicecg_setparamschema_Usertype_TcgSetuserType_ struct {
 	Usertype *TcgSetuserType `xml:"http://www.collada.org/2005/11/COLLADASchema usertype"`
+
 }
 
 type XsdGoPkgHasElem_arraychoicecg_setparamschema_Array_TcgSetarrayType_ struct {
 	Array *TcgSetarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
+
 }
 
 type XsdGoPkgHasElems_arraychoicecg_setparamschema_Array_TcgSetarrayType_ struct {
 	Arrays []*TcgSetarrayType `xml:"http://www.collada.org/2005/11/COLLADASchema array"`
+
 }
 
 type XsdGoPkgHasElems_connect_paramchoicecg_setparamschema_ConnectParam_TcgConnectParam_ struct {
 	ConnectParams []*TcgConnectParam `xml:"http://www.collada.org/2005/11/COLLADASchema connect_param"`
+
 }
 
 type XsdGoPkgHasElem_connect_paramchoicecg_setparamschema_ConnectParam_TcgConnectParam_ struct {
 	ConnectParam *TcgConnectParam `xml:"http://www.collada.org/2005/11/COLLADASchema connect_param"`
+
 }
 
 //	Assigns a new value to a previously defined parameter.
@@ -5679,10 +5923,12 @@ type XsdGoPkgHasAttr_Unit_XsdtNCName_ struct {
 
 type XsdGoPkgHasElem_constantsequencegles_texenv_command_typeschema_Constant_TglesTextureConstantType_ struct {
 	Constant *TglesTextureConstantType `xml:"http://www.collada.org/2005/11/COLLADASchema constant"`
+
 }
 
 type XsdGoPkgHasElems_constantsequencegles_texenv_command_typeschema_Constant_TglesTextureConstantType_ struct {
 	Constants []*TglesTextureConstantType `xml:"http://www.collada.org/2005/11/COLLADASchema constant"`
+
 }
 
 type TglesTexenvCommandType struct {
@@ -5706,9 +5952,9 @@ type XsdGoPkgHasAttr_Operand_TglesTexcombinerOperandRGBEnums_SrcColor struct {
 func (me *XsdGoPkgHasAttr_Operand_TglesTexcombinerOperandRGBEnums_SrcColor) OperandDefault () TglesTexcombinerOperandRGBEnums { return TglesTexcombinerOperandRGBEnums("SRC_COLOR") }
 
 type TglesTexcombinerArgumentRGBType struct {
-	XsdGoPkgHasAttr_Source_TglesTexcombinerSourceEnums_
-
 	XsdGoPkgHasAttr_Operand_TglesTexcombinerOperandRGBEnums_SrcColor
+
+	XsdGoPkgHasAttr_Source_TglesTexcombinerSourceEnums_
 
 }
 
@@ -5732,21 +5978,23 @@ type XsdGoPkgHasAttr_Scale_XsdtFloat_ struct {
 	Scale xsdt.Float `xml:"http://www.collada.org/2005/11/COLLADASchema scale,attr"`
 }
 
-type XsdGoPkgHasElem_argumentsequencegles_texcombiner_commandRGB_typeschema_Argument_TglesTexcombinerArgumentRGBType_ struct {
-	Argument *TglesTexcombinerArgumentRGBType `xml:"http://www.collada.org/2005/11/COLLADASchema argument"`
-}
-
 type XsdGoPkgHasElems_argumentsequencegles_texcombiner_commandRGB_typeschema_Argument_TglesTexcombinerArgumentRGBType_ struct {
 	Arguments []*TglesTexcombinerArgumentRGBType `xml:"http://www.collada.org/2005/11/COLLADASchema argument"`
+
+}
+
+type XsdGoPkgHasElem_argumentsequencegles_texcombiner_commandRGB_typeschema_Argument_TglesTexcombinerArgumentRGBType_ struct {
+	Argument *TglesTexcombinerArgumentRGBType `xml:"http://www.collada.org/2005/11/COLLADASchema argument"`
+
 }
 
 //	Defines the RGB portion of a texture_pipeline command. This is a combiner-mode texturing operation.
 type TglesTexcombinerCommandRGBType struct {
 	XsdGoPkgHasElems_argumentsequencegles_texcombiner_commandRGB_typeschema_Argument_TglesTexcombinerArgumentRGBType_
 
-	XsdGoPkgHasAttr_Scale_XsdtFloat_
-
 	XsdGoPkgHasAttr_Operator_TglesTexcombinerOperatorRGBEnums_
+
+	XsdGoPkgHasAttr_Scale_XsdtFloat_
 
 }
 
@@ -5754,12 +6002,14 @@ type XsdGoPkgHasAttr_Operator_TglesTexcombinerOperatorAlphaEnums_ struct {
 	Operator TglesTexcombinerOperatorAlphaEnums `xml:"http://www.collada.org/2005/11/COLLADASchema operator,attr"`
 }
 
-type XsdGoPkgHasElem_argumentsequencegles_texcombiner_commandAlpha_typeschema_Argument_TglesTexcombinerArgumentAlphaType_ struct {
-	Argument *TglesTexcombinerArgumentAlphaType `xml:"http://www.collada.org/2005/11/COLLADASchema argument"`
-}
-
 type XsdGoPkgHasElems_argumentsequencegles_texcombiner_commandAlpha_typeschema_Argument_TglesTexcombinerArgumentAlphaType_ struct {
 	Arguments []*TglesTexcombinerArgumentAlphaType `xml:"http://www.collada.org/2005/11/COLLADASchema argument"`
+
+}
+
+type XsdGoPkgHasElem_argumentsequencegles_texcombiner_commandAlpha_typeschema_Argument_TglesTexcombinerArgumentAlphaType_ struct {
+	Argument *TglesTexcombinerArgumentAlphaType `xml:"http://www.collada.org/2005/11/COLLADASchema argument"`
+
 }
 
 type TglesTexcombinerCommandAlphaType struct {
@@ -5769,28 +6019,34 @@ type TglesTexcombinerCommandAlphaType struct {
 
 }
 
-type XsdGoPkgHasElems_constantsequencegles_texcombiner_command_typeschema_Constant_TglesTextureConstantType_ struct {
-	Constants []*TglesTextureConstantType `xml:"http://www.collada.org/2005/11/COLLADASchema constant"`
-}
-
 type XsdGoPkgHasElem_constantsequencegles_texcombiner_command_typeschema_Constant_TglesTextureConstantType_ struct {
 	Constant *TglesTextureConstantType `xml:"http://www.collada.org/2005/11/COLLADASchema constant"`
+
+}
+
+type XsdGoPkgHasElems_constantsequencegles_texcombiner_command_typeschema_Constant_TglesTextureConstantType_ struct {
+	Constants []*TglesTextureConstantType `xml:"http://www.collada.org/2005/11/COLLADASchema constant"`
+
 }
 
 type XsdGoPkgHasElem_RGBsequencegles_texcombiner_command_typeschema_Rgb_TglesTexcombinerCommandRGBType_ struct {
 	Rgb *TglesTexcombinerCommandRGBType `xml:"http://www.collada.org/2005/11/COLLADASchema RGB"`
+
 }
 
 type XsdGoPkgHasElems_RGBsequencegles_texcombiner_command_typeschema_Rgb_TglesTexcombinerCommandRGBType_ struct {
 	Rgbs []*TglesTexcombinerCommandRGBType `xml:"http://www.collada.org/2005/11/COLLADASchema RGB"`
+
 }
 
 type XsdGoPkgHasElem_alphasequencegles_texcombiner_command_typeschema_Alpha_TglesTexcombinerCommandAlphaType_ struct {
 	Alpha *TglesTexcombinerCommandAlphaType `xml:"http://www.collada.org/2005/11/COLLADASchema alpha"`
+
 }
 
 type XsdGoPkgHasElems_alphasequencegles_texcombiner_command_typeschema_Alpha_TglesTexcombinerCommandAlphaType_ struct {
 	Alphas []*TglesTexcombinerCommandAlphaType `xml:"http://www.collada.org/2005/11/COLLADASchema alpha"`
+
 }
 
 type TglesTexcombinerCommandType struct {
@@ -5806,24 +6062,28 @@ type TglesTexcombinerCommandType struct {
 type XsdGoPkgHasElem_texcombinerchoicegles_texture_pipelineschema_Texcombiner_TglesTexcombinerCommandType_ struct {
 //	Defines a texture_pipeline command. This is a combiner-mode texturing operation.
 	Texcombiner *TglesTexcombinerCommandType `xml:"http://www.collada.org/2005/11/COLLADASchema texcombiner"`
+
 }
 
 //	Defines a texture_pipeline command. This is a combiner-mode texturing operation.
 type XsdGoPkgHasElems_texcombinerchoicegles_texture_pipelineschema_Texcombiner_TglesTexcombinerCommandType_ struct {
 //	Defines a texture_pipeline command. This is a combiner-mode texturing operation.
 	Texcombiners []*TglesTexcombinerCommandType `xml:"http://www.collada.org/2005/11/COLLADASchema texcombiner"`
-}
 
-//	Defines a texture_pipeline command. It is a simple noncombiner mode of texturing operations.
-type XsdGoPkgHasElems_texenvchoicegles_texture_pipelineschema_Texenv_TglesTexenvCommandType_ struct {
-//	Defines a texture_pipeline command. It is a simple noncombiner mode of texturing operations.
-	Texenvs []*TglesTexenvCommandType `xml:"http://www.collada.org/2005/11/COLLADASchema texenv"`
 }
 
 //	Defines a texture_pipeline command. It is a simple noncombiner mode of texturing operations.
 type XsdGoPkgHasElem_texenvchoicegles_texture_pipelineschema_Texenv_TglesTexenvCommandType_ struct {
 //	Defines a texture_pipeline command. It is a simple noncombiner mode of texturing operations.
 	Texenv *TglesTexenvCommandType `xml:"http://www.collada.org/2005/11/COLLADASchema texenv"`
+
+}
+
+//	Defines a texture_pipeline command. It is a simple noncombiner mode of texturing operations.
+type XsdGoPkgHasElems_texenvchoicegles_texture_pipelineschema_Texenv_TglesTexenvCommandType_ struct {
+//	Defines a texture_pipeline command. It is a simple noncombiner mode of texturing operations.
+	Texenvs []*TglesTexenvCommandType `xml:"http://www.collada.org/2005/11/COLLADASchema texenv"`
+
 }
 
 //	Defines a set of texturing commands that will be converted into multitexturing operations using glTexEnv in regular and combiner mode.
@@ -5840,20 +6100,24 @@ type TglesTexturePipeline struct {
 
 }
 
-type XsdGoPkgHasElem_surfacesequencegles_texture_unitschema_Surface_XsdtNCName_ struct {
-	Surface xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema surface"`
-}
-
 type XsdGoPkgHasElems_surfacesequencegles_texture_unitschema_Surface_XsdtNCName_ struct {
 	Surfaces []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema surface"`
+
 }
 
-type XsdGoPkgHasElem_sampler_statesequencegles_texture_unitschema_SamplerState_XsdtNCName_ struct {
-	SamplerState xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema sampler_state"`
+type XsdGoPkgHasElem_surfacesequencegles_texture_unitschema_Surface_XsdtNCName_ struct {
+	Surface xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema surface"`
+
 }
 
 type XsdGoPkgHasElems_sampler_statesequencegles_texture_unitschema_SamplerState_XsdtNCName_ struct {
 	SamplerStates []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema sampler_state"`
+
+}
+
+type XsdGoPkgHasElem_sampler_statesequencegles_texture_unitschema_SamplerState_XsdtNCName_ struct {
+	SamplerState xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema sampler_state"`
+
 }
 
 type XsdGoPkgHasAttr_Semantic_XsdtNCName_ struct {
@@ -5867,10 +6131,12 @@ type TxsdGlesTextureUnitSequenceTexcoord struct {
 
 type XsdGoPkgHasElem_texcoordsequencegles_texture_unitschema_Texcoord_TxsdGlesTextureUnitSequenceTexcoord_ struct {
 	Texcoord *TxsdGlesTextureUnitSequenceTexcoord `xml:"http://www.collada.org/2005/11/COLLADASchema texcoord"`
+
 }
 
 type XsdGoPkgHasElems_texcoordsequencegles_texture_unitschema_Texcoord_TxsdGlesTextureUnitSequenceTexcoord_ struct {
 	Texcoords []*TxsdGlesTextureUnitSequenceTexcoord `xml:"http://www.collada.org/2005/11/COLLADASchema texcoord"`
+
 }
 
 type TglesTextureUnit struct {
@@ -5886,6 +6152,7 @@ type TglesTextureUnit struct {
 
 type XsdGoPkgHasElem_wrap_ssequencegles_sampler_stateschema_WrapS_TglesSamplerWrap_Repeat struct {
 	WrapS TglesSamplerWrap `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
+
 }
 
 //	Returns the Default value for WrapS -- "REPEAT"
@@ -5893,41 +6160,47 @@ func (me *XsdGoPkgHasElem_wrap_ssequencegles_sampler_stateschema_WrapS_TglesSamp
 
 type XsdGoPkgHasElems_wrap_ssequencegles_sampler_stateschema_WrapS_TglesSamplerWrap_Repeat struct {
 	WrapSs []TglesSamplerWrap `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_s"`
+
 }
 
 //	Returns the Default value for WrapS -- "REPEAT"
 func (me *XsdGoPkgHasElems_wrap_ssequencegles_sampler_stateschema_WrapS_TglesSamplerWrap_Repeat) WrapSDefault () TglesSamplerWrap { return TglesSamplerWrap("REPEAT") }
 
-type XsdGoPkgHasElem_wrap_tsequencegles_sampler_stateschema_WrapT_TglesSamplerWrap_Repeat struct {
-	WrapT TglesSamplerWrap `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_t"`
-}
-
-//	Returns the Default value for WrapT -- "REPEAT"
-func (me *XsdGoPkgHasElem_wrap_tsequencegles_sampler_stateschema_WrapT_TglesSamplerWrap_Repeat) WrapTDefault () TglesSamplerWrap { return TglesSamplerWrap("REPEAT") }
-
 type XsdGoPkgHasElems_wrap_tsequencegles_sampler_stateschema_WrapT_TglesSamplerWrap_Repeat struct {
 	WrapTs []TglesSamplerWrap `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_t"`
+
 }
 
 //	Returns the Default value for WrapT -- "REPEAT"
 func (me *XsdGoPkgHasElems_wrap_tsequencegles_sampler_stateschema_WrapT_TglesSamplerWrap_Repeat) WrapTDefault () TglesSamplerWrap { return TglesSamplerWrap("REPEAT") }
 
-type XsdGoPkgHasElem_minfiltersequencegles_sampler_stateschema_Minfilter_TfxSamplerFilterCommon_None struct {
-	Minfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
+type XsdGoPkgHasElem_wrap_tsequencegles_sampler_stateschema_WrapT_TglesSamplerWrap_Repeat struct {
+	WrapT TglesSamplerWrap `xml:"http://www.collada.org/2005/11/COLLADASchema wrap_t"`
+
 }
 
-//	Returns the Default value for Minfilter -- "NONE"
-func (me *XsdGoPkgHasElem_minfiltersequencegles_sampler_stateschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
+//	Returns the Default value for WrapT -- "REPEAT"
+func (me *XsdGoPkgHasElem_wrap_tsequencegles_sampler_stateschema_WrapT_TglesSamplerWrap_Repeat) WrapTDefault () TglesSamplerWrap { return TglesSamplerWrap("REPEAT") }
 
 type XsdGoPkgHasElems_minfiltersequencegles_sampler_stateschema_Minfilter_TfxSamplerFilterCommon_None struct {
 	Minfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
+
 }
 
 //	Returns the Default value for Minfilter -- "NONE"
 func (me *XsdGoPkgHasElems_minfiltersequencegles_sampler_stateschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
 
+type XsdGoPkgHasElem_minfiltersequencegles_sampler_stateschema_Minfilter_TfxSamplerFilterCommon_None struct {
+	Minfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema minfilter"`
+
+}
+
+//	Returns the Default value for Minfilter -- "NONE"
+func (me *XsdGoPkgHasElem_minfiltersequencegles_sampler_stateschema_Minfilter_TfxSamplerFilterCommon_None) MinfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
+
 type XsdGoPkgHasElem_magfiltersequencegles_sampler_stateschema_Magfilter_TfxSamplerFilterCommon_None struct {
 	Magfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema magfilter"`
+
 }
 
 //	Returns the Default value for Magfilter -- "NONE"
@@ -5935,6 +6208,7 @@ func (me *XsdGoPkgHasElem_magfiltersequencegles_sampler_stateschema_Magfilter_Tf
 
 type XsdGoPkgHasElems_magfiltersequencegles_sampler_stateschema_Magfilter_TfxSamplerFilterCommon_None struct {
 	Magfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema magfilter"`
+
 }
 
 //	Returns the Default value for Magfilter -- "NONE"
@@ -5942,6 +6216,7 @@ func (me *XsdGoPkgHasElems_magfiltersequencegles_sampler_stateschema_Magfilter_T
 
 type XsdGoPkgHasElems_mipfiltersequencegles_sampler_stateschema_Mipfilter_TfxSamplerFilterCommon_None struct {
 	Mipfilters []TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema mipfilter"`
+
 }
 
 //	Returns the Default value for Mipfilter -- "NONE"
@@ -5949,27 +6224,31 @@ func (me *XsdGoPkgHasElems_mipfiltersequencegles_sampler_stateschema_Mipfilter_T
 
 type XsdGoPkgHasElem_mipfiltersequencegles_sampler_stateschema_Mipfilter_TfxSamplerFilterCommon_None struct {
 	Mipfilter TfxSamplerFilterCommon `xml:"http://www.collada.org/2005/11/COLLADASchema mipfilter"`
+
 }
 
 //	Returns the Default value for Mipfilter -- "NONE"
 func (me *XsdGoPkgHasElem_mipfiltersequencegles_sampler_stateschema_Mipfilter_TfxSamplerFilterCommon_None) MipfilterDefault () TfxSamplerFilterCommon { return TfxSamplerFilterCommon("NONE") }
 
-type XsdGoPkgHasElem_mipmap_maxlevelsequencegles_sampler_stateschema_MipmapMaxlevel_XsdtUnsignedByte_255 struct {
-	MipmapMaxlevel xsdt.UnsignedByte `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_maxlevel"`
-}
-
-//	Returns the Default value for MipmapMaxlevel -- 255
-func (me *XsdGoPkgHasElem_mipmap_maxlevelsequencegles_sampler_stateschema_MipmapMaxlevel_XsdtUnsignedByte_255) MipmapMaxlevelDefault () xsdt.UnsignedByte { return xsdt.UnsignedByte(255) }
-
 type XsdGoPkgHasElems_mipmap_maxlevelsequencegles_sampler_stateschema_MipmapMaxlevel_XsdtUnsignedByte_255 struct {
 	MipmapMaxlevels []xsdt.UnsignedByte `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_maxlevel"`
+
 }
 
 //	Returns the Default value for MipmapMaxlevel -- 255
 func (me *XsdGoPkgHasElems_mipmap_maxlevelsequencegles_sampler_stateschema_MipmapMaxlevel_XsdtUnsignedByte_255) MipmapMaxlevelDefault () xsdt.UnsignedByte { return xsdt.UnsignedByte(255) }
 
+type XsdGoPkgHasElem_mipmap_maxlevelsequencegles_sampler_stateschema_MipmapMaxlevel_XsdtUnsignedByte_255 struct {
+	MipmapMaxlevel xsdt.UnsignedByte `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_maxlevel"`
+
+}
+
+//	Returns the Default value for MipmapMaxlevel -- 255
+func (me *XsdGoPkgHasElem_mipmap_maxlevelsequencegles_sampler_stateschema_MipmapMaxlevel_XsdtUnsignedByte_255) MipmapMaxlevelDefault () xsdt.UnsignedByte { return xsdt.UnsignedByte(255) }
+
 type XsdGoPkgHasElem_mipmap_biassequencegles_sampler_stateschema_MipmapBias_XsdtFloat_00 struct {
 	MipmapBias xsdt.Float `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_bias"`
+
 }
 
 //	Returns the Default value for MipmapBias -- 0.0
@@ -5977,6 +6256,7 @@ func (me *XsdGoPkgHasElem_mipmap_biassequencegles_sampler_stateschema_MipmapBias
 
 type XsdGoPkgHasElems_mipmap_biassequencegles_sampler_stateschema_MipmapBias_XsdtFloat_00 struct {
 	MipmapBiases []xsdt.Float `xml:"http://www.collada.org/2005/11/COLLADASchema mipmap_bias"`
+
 }
 
 //	Returns the Default value for MipmapBias -- 0.0
@@ -6008,36 +6288,42 @@ type TglesSamplerState struct {
 type XsdGoPkgHasElem_annotatesequencegles_newparamschema_Annotate_TfxAnnotateCommon_ struct {
 //	The annotate element allows you to specify an annotation for this new param.
 	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 //	The annotate element allows you to specify an annotation for this new param.
 type XsdGoPkgHasElems_annotatesequencegles_newparamschema_Annotate_TfxAnnotateCommon_ struct {
 //	The annotate element allows you to specify an annotation for this new param.
 	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 //	The semantic element allows you to specify a semantic for this new param.
 type XsdGoPkgHasElem_semanticsequencegles_newparamschema_Semantic_XsdtNCName_ struct {
 //	The semantic element allows you to specify a semantic for this new param.
 	Semantic xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema semantic"`
+
 }
 
 //	The semantic element allows you to specify a semantic for this new param.
 type XsdGoPkgHasElems_semanticsequencegles_newparamschema_Semantic_XsdtNCName_ struct {
 //	The semantic element allows you to specify a semantic for this new param.
 	Semantics []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema semantic"`
+
 }
 
 //	The modifier element allows you to specify a modifier for this new param.
 type XsdGoPkgHasElem_modifiersequencegles_newparamschema_Modifier_TfxModifierEnumCommon_ struct {
 //	The modifier element allows you to specify a modifier for this new param.
 	Modifier TfxModifierEnumCommon `xml:"http://www.collada.org/2005/11/COLLADASchema modifier"`
+
 }
 
 //	The modifier element allows you to specify a modifier for this new param.
 type XsdGoPkgHasElems_modifiersequencegles_newparamschema_Modifier_TfxModifierEnumCommon_ struct {
 //	The modifier element allows you to specify a modifier for this new param.
 	Modifiers []TfxModifierEnumCommon `xml:"http://www.collada.org/2005/11/COLLADASchema modifier"`
+
 }
 
 //	Create a new, named param object in the GLES Runtime, assign it a type, an initial value, and additional attributes at declaration time.
@@ -6065,18 +6351,20 @@ type XsdGoPkgHasAttr_Version_TVersionType_ struct {
 
 //	The instance_physics_scene element declares the instantiation of a COLLADA physics_scene resource.
 //	The instance_physics_scene element may appear any number of times.
-type XsdGoPkgHasElems_instance_physics_scenesequencescenesequenceCOLLADAschema_InstancePhysicsScene_TInstanceWithExtra_ struct {
-//	The instance_physics_scene element declares the instantiation of a COLLADA physics_scene resource.
-//	The instance_physics_scene element may appear any number of times.
-	InstancePhysicsScenes []*TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_physics_scene"`
-}
-
-//	The instance_physics_scene element declares the instantiation of a COLLADA physics_scene resource.
-//	The instance_physics_scene element may appear any number of times.
 type XsdGoPkgHasElem_instance_physics_scenesequencescenesequenceCOLLADAschema_InstancePhysicsScene_TInstanceWithExtra_ struct {
 //	The instance_physics_scene element declares the instantiation of a COLLADA physics_scene resource.
 //	The instance_physics_scene element may appear any number of times.
 	InstancePhysicsScene *TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_physics_scene"`
+
+}
+
+//	The instance_physics_scene element declares the instantiation of a COLLADA physics_scene resource.
+//	The instance_physics_scene element may appear any number of times.
+type XsdGoPkgHasElems_instance_physics_scenesequencescenesequenceCOLLADAschema_InstancePhysicsScene_TInstanceWithExtra_ struct {
+//	The instance_physics_scene element declares the instantiation of a COLLADA physics_scene resource.
+//	The instance_physics_scene element may appear any number of times.
+	InstancePhysicsScenes []*TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_physics_scene"`
+
 }
 
 //	The instance_visual_scene element declares the instantiation of a COLLADA visual_scene resource.
@@ -6085,6 +6373,7 @@ type XsdGoPkgHasElem_instance_visual_scenesequencescenesequenceCOLLADAschema_Ins
 //	The instance_visual_scene element declares the instantiation of a COLLADA visual_scene resource.
 //	The instance_visual_scene element may only appear once.
 	InstanceVisualScene *TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_visual_scene"`
+
 }
 
 //	The instance_visual_scene element declares the instantiation of a COLLADA visual_scene resource.
@@ -6093,6 +6382,7 @@ type XsdGoPkgHasElems_instance_visual_scenesequencescenesequenceCOLLADAschema_In
 //	The instance_visual_scene element declares the instantiation of a COLLADA visual_scene resource.
 //	The instance_visual_scene element may only appear once.
 	InstanceVisualScenes []*TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_visual_scene"`
+
 }
 
 type TxsdColladaSequenceScene struct {
@@ -6113,24 +6403,26 @@ type TxsdColladaSequenceScene struct {
 //	contents of a COLLADA resource. The scene element declares the base of the scene
 //	hierarchy or scene graph. The scene contains elements that comprise much of the
 //	visual and transformational information content as created by the authoring tools.
-type XsdGoPkgHasElem_scenesequenceCOLLADAschema_Scene_TxsdColladaSequenceScene_ struct {
-//	The scene embodies the entire set of information that can be visualized from the
-//	contents of a COLLADA resource. The scene element declares the base of the scene
-//	hierarchy or scene graph. The scene contains elements that comprise much of the
-//	visual and transformational information content as created by the authoring tools.
-	Scene *TxsdColladaSequenceScene `xml:"http://www.collada.org/2005/11/COLLADASchema scene"`
-}
-
-//	The scene embodies the entire set of information that can be visualized from the
-//	contents of a COLLADA resource. The scene element declares the base of the scene
-//	hierarchy or scene graph. The scene contains elements that comprise much of the
-//	visual and transformational information content as created by the authoring tools.
 type XsdGoPkgHasElems_scenesequenceCOLLADAschema_Scene_TxsdColladaSequenceScene_ struct {
 //	The scene embodies the entire set of information that can be visualized from the
 //	contents of a COLLADA resource. The scene element declares the base of the scene
 //	hierarchy or scene graph. The scene contains elements that comprise much of the
 //	visual and transformational information content as created by the authoring tools.
 	Scenes []*TxsdColladaSequenceScene `xml:"http://www.collada.org/2005/11/COLLADASchema scene"`
+
+}
+
+//	The scene embodies the entire set of information that can be visualized from the
+//	contents of a COLLADA resource. The scene element declares the base of the scene
+//	hierarchy or scene graph. The scene contains elements that comprise much of the
+//	visual and transformational information content as created by the authoring tools.
+type XsdGoPkgHasElem_scenesequenceCOLLADAschema_Scene_TxsdColladaSequenceScene_ struct {
+//	The scene embodies the entire set of information that can be visualized from the
+//	contents of a COLLADA resource. The scene element declares the base of the scene
+//	hierarchy or scene graph. The scene contains elements that comprise much of the
+//	visual and transformational information content as created by the authoring tools.
+	Scene *TxsdColladaSequenceScene `xml:"http://www.collada.org/2005/11/COLLADASchema scene"`
+
 }
 
 type TxsdCollada struct {
@@ -6207,6 +6499,7 @@ type XsdGoPkgHasElem_Collada struct {
 //	The COLLADA element declares the root of the document that comprises some of the content
 //	in the COLLADA schema.
 	Collada *TxsdCollada `xml:"http://www.collada.org/2005/11/COLLADASchema COLLADA"`
+
 }
 
 //	The COLLADA element declares the root of the document that comprises some of the content
@@ -6215,6 +6508,7 @@ type XsdGoPkgHasElems_Collada struct {
 //	The COLLADA element declares the root of the document that comprises some of the content
 //	in the COLLADA schema.
 	Colladas []*TxsdCollada `xml:"http://www.collada.org/2005/11/COLLADASchema COLLADA"`
+
 }
 
 //	The id attribute is a text string containing the unique identifier of this element. This value
@@ -6244,15 +6538,17 @@ type TxsdIdrefArray struct {
 }
 
 //	The IDREF_array element declares the storage for a homogenous array of ID reference values.
-type XsdGoPkgHasElems_IdrefArray struct {
-//	The IDREF_array element declares the storage for a homogenous array of ID reference values.
-	IdrefArrays []*TxsdIdrefArray `xml:"http://www.collada.org/2005/11/COLLADASchema IDREF_array"`
-}
-
-//	The IDREF_array element declares the storage for a homogenous array of ID reference values.
 type XsdGoPkgHasElem_IdrefArray struct {
 //	The IDREF_array element declares the storage for a homogenous array of ID reference values.
 	IdrefArray *TxsdIdrefArray `xml:"http://www.collada.org/2005/11/COLLADASchema IDREF_array"`
+
+}
+
+//	The IDREF_array element declares the storage for a homogenous array of ID reference values.
+type XsdGoPkgHasElems_IdrefArray struct {
+//	The IDREF_array element declares the storage for a homogenous array of ID reference values.
+	IdrefArrays []*TxsdIdrefArray `xml:"http://www.collada.org/2005/11/COLLADASchema IDREF_array"`
+
 }
 
 type TxsdNameArray struct {
@@ -6261,15 +6557,17 @@ type TxsdNameArray struct {
 }
 
 //	The Name_array element declares the storage for a homogenous array of Name string values.
-type XsdGoPkgHasElems_NameArray struct {
-//	The Name_array element declares the storage for a homogenous array of Name string values.
-	NameArrays []*TxsdNameArray `xml:"http://www.collada.org/2005/11/COLLADASchema Name_array"`
-}
-
-//	The Name_array element declares the storage for a homogenous array of Name string values.
 type XsdGoPkgHasElem_NameArray struct {
 //	The Name_array element declares the storage for a homogenous array of Name string values.
 	NameArray *TxsdNameArray `xml:"http://www.collada.org/2005/11/COLLADASchema Name_array"`
+
+}
+
+//	The Name_array element declares the storage for a homogenous array of Name string values.
+type XsdGoPkgHasElems_NameArray struct {
+//	The Name_array element declares the storage for a homogenous array of Name string values.
+	NameArrays []*TxsdNameArray `xml:"http://www.collada.org/2005/11/COLLADASchema Name_array"`
+
 }
 
 type TxsdBoolArray struct {
@@ -6281,12 +6579,14 @@ type TxsdBoolArray struct {
 type XsdGoPkgHasElems_BoolArray struct {
 //	The bool_array element declares the storage for a homogenous array of boolean values.
 	BoolArrays []*TxsdBoolArray `xml:"http://www.collada.org/2005/11/COLLADASchema bool_array"`
+
 }
 
 //	The bool_array element declares the storage for a homogenous array of boolean values.
 type XsdGoPkgHasElem_BoolArray struct {
 //	The bool_array element declares the storage for a homogenous array of boolean values.
 	BoolArray *TxsdBoolArray `xml:"http://www.collada.org/2005/11/COLLADASchema bool_array"`
+
 }
 
 //	The digits attribute indicates the number of significant decimal digits of the float values that
@@ -6314,13 +6614,20 @@ func (me *XsdGoPkgHasAttr_Magnitude_XsdtShort_38) MagnitudeDefault () xsdt.Short
 type TxsdFloatArray struct {
 	XsdGoPkgValue TListOfFloats `xml:",chardata"`
 
+//	The magnitude attribute indicates the largest exponent of the float values that can be contained
+//	in the array. The default value is 38. Optional attribute.
+	XsdGoPkgHasAttr_Magnitude_XsdtShort_38
+
 //	The digits attribute indicates the number of significant decimal digits of the float values that
 //	can be contained in the array. The default value is 6. Optional attribute.
 	XsdGoPkgHasAttr_Digits_XsdtShort_6
 
-//	The magnitude attribute indicates the largest exponent of the float values that can be contained
-//	in the array. The default value is 38. Optional attribute.
-	XsdGoPkgHasAttr_Magnitude_XsdtShort_38
+}
+
+//	The float_array element declares the storage for a homogenous array of floating point values.
+type XsdGoPkgHasElems_FloatArray struct {
+//	The float_array element declares the storage for a homogenous array of floating point values.
+	FloatArrays []*TxsdFloatArray `xml:"http://www.collada.org/2005/11/COLLADASchema float_array"`
 
 }
 
@@ -6328,12 +6635,7 @@ type TxsdFloatArray struct {
 type XsdGoPkgHasElem_FloatArray struct {
 //	The float_array element declares the storage for a homogenous array of floating point values.
 	FloatArray *TxsdFloatArray `xml:"http://www.collada.org/2005/11/COLLADASchema float_array"`
-}
 
-//	The float_array element declares the storage for a homogenous array of floating point values.
-type XsdGoPkgHasElems_FloatArray struct {
-//	The float_array element declares the storage for a homogenous array of floating point values.
-	FloatArrays []*TxsdFloatArray `xml:"http://www.collada.org/2005/11/COLLADASchema float_array"`
 }
 
 //	The minInclusive attribute indicates the smallest integer value that can be contained in
@@ -6361,13 +6663,13 @@ func (me *XsdGoPkgHasAttr_MaxInclusive_XsdtInteger_2147483647) MaxInclusiveDefau
 type TxsdIntArray struct {
 	XsdGoPkgValue TListOfInts `xml:",chardata"`
 
-//	The minInclusive attribute indicates the smallest integer value that can be contained in
-//	the array. The default value is –2147483648. Optional attribute.
-	XsdGoPkgHasAttr_MinInclusive_XsdtInteger_2147483648
-
 //	The maxInclusive attribute indicates the largest integer value that can be contained in
 //	the array. The default value is 2147483647. Optional attribute.
 	XsdGoPkgHasAttr_MaxInclusive_XsdtInteger_2147483647
+
+//	The minInclusive attribute indicates the smallest integer value that can be contained in
+//	the array. The default value is –2147483648. Optional attribute.
+	XsdGoPkgHasAttr_MinInclusive_XsdtInteger_2147483648
 
 }
 
@@ -6375,12 +6677,14 @@ type TxsdIntArray struct {
 type XsdGoPkgHasElem_IntArray struct {
 //	The int_array element declares the storage for a homogenous array of integer values.
 	IntArray *TxsdIntArray `xml:"http://www.collada.org/2005/11/COLLADASchema int_array"`
+
 }
 
 //	The int_array element declares the storage for a homogenous array of integer values.
 type XsdGoPkgHasElems_IntArray struct {
 //	The int_array element declares the storage for a homogenous array of integer values.
 	IntArrays []*TxsdIntArray `xml:"http://www.collada.org/2005/11/COLLADASchema int_array"`
+
 }
 
 //	The offset attribute indicates the index of the first value to be read from the array.
@@ -6409,13 +6713,13 @@ type TxsdAccessor struct {
 //	The accessor element may have any number of param elements.
 	XsdGoPkgHasElems_Param
 
-//	The stride attribute indicates number of values to be considered a unit during each access to
-//	the array. The default value is 1, indicating that a single value is accessed. Optional attribute.
-	XsdGoPkgHasAttr_Stride_Tuint_1
-
 //	The offset attribute indicates the index of the first value to be read from the array.
 //	The default value is 0. Optional attribute.
 	XsdGoPkgHasAttr_Offset_Tuint_0
+
+//	The stride attribute indicates number of values to be considered a unit during each access to
+//	the array. The default value is 1, indicating that a single value is accessed. Optional attribute.
+	XsdGoPkgHasAttr_Stride_Tuint_1
 
 }
 
@@ -6429,6 +6733,7 @@ type XsdGoPkgHasElems_Accessor struct {
 //	to arrays that are organized in either an interleaved or non-interleaved manner, depending
 //	on the offset and stride attributes.
 	Accessors []*TxsdAccessor `xml:"http://www.collada.org/2005/11/COLLADASchema accessor"`
+
 }
 
 //	The accessor element declares an access pattern to one of the array elements: float_array,
@@ -6441,6 +6746,7 @@ type XsdGoPkgHasElem_Accessor struct {
 //	to arrays that are organized in either an interleaved or non-interleaved manner, depending
 //	on the offset and stride attributes.
 	Accessor *TxsdAccessor `xml:"http://www.collada.org/2005/11/COLLADASchema accessor"`
+
 }
 
 //	The type attribute indicates the type of the value data. This text string must be understood
@@ -6461,15 +6767,17 @@ type TxsdParam struct {
 }
 
 //	The param element declares parametric information regarding its parent element.
-type XsdGoPkgHasElem_Param struct {
-//	The param element declares parametric information regarding its parent element.
-	Param *TxsdParam `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
-}
-
-//	The param element declares parametric information regarding its parent element.
 type XsdGoPkgHasElems_Param struct {
 //	The param element declares parametric information regarding its parent element.
 	Params []*TxsdParam `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
+}
+
+//	The param element declares parametric information regarding its parent element.
+type XsdGoPkgHasElem_Param struct {
+//	The param element declares parametric information regarding its parent element.
+	Param *TxsdParam `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
 }
 
 type TxsdSourceSequenceTechniqueCommon struct {
@@ -6482,12 +6790,14 @@ type TxsdSourceSequenceTechniqueCommon struct {
 type XsdGoPkgHasElem_technique_commonsequencesourceschema_TechniqueCommon_TxsdSourceSequenceTechniqueCommon_ struct {
 //	The technique common specifies the common method for accessing this source element's data.
 	TechniqueCommon *TxsdSourceSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
+
 }
 
 //	The technique common specifies the common method for accessing this source element's data.
 type XsdGoPkgHasElems_technique_commonsequencesourceschema_TechniqueCommon_TxsdSourceSequenceTechniqueCommon_ struct {
 //	The technique common specifies the common method for accessing this source element's data.
 	TechniqueCommons []*TxsdSourceSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
+
 }
 
 type TxsdSource struct {
@@ -6519,18 +6829,20 @@ type TxsdSource struct {
 
 //	The source element declares a data repository that provides values according to the semantics of an
 //	input element that refers to it.
-type XsdGoPkgHasElems_Source struct {
-//	The source element declares a data repository that provides values according to the semantics of an
-//	input element that refers to it.
-	Sources []*TxsdSource `xml:"http://www.collada.org/2005/11/COLLADASchema source"`
-}
-
-//	The source element declares a data repository that provides values according to the semantics of an
-//	input element that refers to it.
 type XsdGoPkgHasElem_Source struct {
 //	The source element declares a data repository that provides values according to the semantics of an
 //	input element that refers to it.
 	Source *TxsdSource `xml:"http://www.collada.org/2005/11/COLLADASchema source"`
+
+}
+
+//	The source element declares a data repository that provides values according to the semantics of an
+//	input element that refers to it.
+type XsdGoPkgHasElems_Source struct {
+//	The source element declares a data repository that provides values according to the semantics of an
+//	input element that refers to it.
+	Sources []*TxsdSource `xml:"http://www.collada.org/2005/11/COLLADASchema source"`
+
 }
 
 type TxsdGeometry struct {
@@ -6560,6 +6872,7 @@ type XsdGoPkgHasElems_Geometry struct {
 //	branch of mathematics that deals with the measurement, properties, and relationships of
 //	points, lines, angles, surfaces, and solids.
 	Geometries []*TxsdGeometry `xml:"http://www.collada.org/2005/11/COLLADASchema geometry"`
+
 }
 
 //	Geometry describes the visual shape and appearance of an object in the scene.
@@ -6572,6 +6885,7 @@ type XsdGoPkgHasElem_Geometry struct {
 //	branch of mathematics that deals with the measurement, properties, and relationships of
 //	points, lines, angles, surfaces, and solids.
 	Geometry *TxsdGeometry `xml:"http://www.collada.org/2005/11/COLLADASchema geometry"`
+
 }
 
 type TxsdMesh struct {
@@ -6611,12 +6925,14 @@ type TxsdMesh struct {
 type XsdGoPkgHasElem_Mesh struct {
 //	The mesh element contains vertex and primitive information sufficient to describe basic geometric meshes.
 	Mesh *TxsdMesh `xml:"http://www.collada.org/2005/11/COLLADASchema mesh"`
+
 }
 
 //	The mesh element contains vertex and primitive information sufficient to describe basic geometric meshes.
 type XsdGoPkgHasElems_Mesh struct {
 //	The mesh element contains vertex and primitive information sufficient to describe basic geometric meshes.
 	Meshs []*TxsdMesh `xml:"http://www.collada.org/2005/11/COLLADASchema mesh"`
+
 }
 
 type XsdGoPkgHasAttr_Closed_Tbool_False struct {
@@ -6627,15 +6943,17 @@ type XsdGoPkgHasAttr_Closed_Tbool_False struct {
 func (me *XsdGoPkgHasAttr_Closed_Tbool_False) ClosedDefault () Tbool { return Tbool(false) }
 
 //	The input element must occur at least one time. These inputs are local inputs.
-type XsdGoPkgHasElems_inputsequencecontrol_verticessequencesplineschema_Input_TInputLocal_ struct {
-//	The input element must occur at least one time. These inputs are local inputs.
-	Inputs []*TInputLocal `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
-}
-
-//	The input element must occur at least one time. These inputs are local inputs.
 type XsdGoPkgHasElem_inputsequencecontrol_verticessequencesplineschema_Input_TInputLocal_ struct {
 //	The input element must occur at least one time. These inputs are local inputs.
 	Input *TInputLocal `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
+}
+
+//	The input element must occur at least one time. These inputs are local inputs.
+type XsdGoPkgHasElems_inputsequencecontrol_verticessequencesplineschema_Input_TInputLocal_ struct {
+//	The input element must occur at least one time. These inputs are local inputs.
+	Inputs []*TInputLocal `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
 }
 
 type TxsdSplineSequenceControlVertices struct {
@@ -6648,15 +6966,17 @@ type TxsdSplineSequenceControlVertices struct {
 }
 
 //	The control vertices element  must occur  exactly one time. It is used to describe the CVs of the spline.
-type XsdGoPkgHasElems_control_verticessequencesplineschema_ControlVertices_TxsdSplineSequenceControlVertices_ struct {
-//	The control vertices element  must occur  exactly one time. It is used to describe the CVs of the spline.
-	ControlVerticeses []*TxsdSplineSequenceControlVertices `xml:"http://www.collada.org/2005/11/COLLADASchema control_vertices"`
-}
-
-//	The control vertices element  must occur  exactly one time. It is used to describe the CVs of the spline.
 type XsdGoPkgHasElem_control_verticessequencesplineschema_ControlVertices_TxsdSplineSequenceControlVertices_ struct {
 //	The control vertices element  must occur  exactly one time. It is used to describe the CVs of the spline.
 	ControlVertices *TxsdSplineSequenceControlVertices `xml:"http://www.collada.org/2005/11/COLLADASchema control_vertices"`
+
+}
+
+//	The control vertices element  must occur  exactly one time. It is used to describe the CVs of the spline.
+type XsdGoPkgHasElems_control_verticessequencesplineschema_ControlVertices_TxsdSplineSequenceControlVertices_ struct {
+//	The control vertices element  must occur  exactly one time. It is used to describe the CVs of the spline.
+	ControlVerticeses []*TxsdSplineSequenceControlVertices `xml:"http://www.collada.org/2005/11/COLLADASchema control_vertices"`
+
 }
 
 type TxsdSpline struct {
@@ -6674,15 +6994,17 @@ type TxsdSpline struct {
 }
 
 //	The spline element contains control vertex information sufficient to describe basic splines.
-type XsdGoPkgHasElems_Spline struct {
-//	The spline element contains control vertex information sufficient to describe basic splines.
-	Splines []*TxsdSpline `xml:"http://www.collada.org/2005/11/COLLADASchema spline"`
-}
-
-//	The spline element contains control vertex information sufficient to describe basic splines.
 type XsdGoPkgHasElem_Spline struct {
 //	The spline element contains control vertex information sufficient to describe basic splines.
 	Spline *TxsdSpline `xml:"http://www.collada.org/2005/11/COLLADASchema spline"`
+
+}
+
+//	The spline element contains control vertex information sufficient to describe basic splines.
+type XsdGoPkgHasElems_Spline struct {
+//	The spline element contains control vertex information sufficient to describe basic splines.
+	Splines []*TxsdSpline `xml:"http://www.collada.org/2005/11/COLLADASchema spline"`
+
 }
 
 //	The p element represents primitive data for the primitive types (lines, linestrips, polygons,
@@ -6693,6 +7015,7 @@ type XsdGoPkgHasElems_P struct {
 //	polylist, triangles, trifans, tristrips). The p element contains indices that reference into
 //	the parent's source elements referenced by the input elements.
 	Ps []TListOfUInts `xml:"http://www.collada.org/2005/11/COLLADASchema p"`
+
 }
 
 //	The p element represents primitive data for the primitive types (lines, linestrips, polygons,
@@ -6703,6 +7026,7 @@ type XsdGoPkgHasElem_P struct {
 //	polylist, triangles, trifans, tristrips). The p element contains indices that reference into
 //	the parent's source elements referenced by the input elements.
 	P TListOfUInts `xml:"http://www.collada.org/2005/11/COLLADASchema p"`
+
 }
 
 //	The material attribute declares a symbol for a material. This symbol is bound to a material at
@@ -6717,18 +7041,20 @@ type XsdGoPkgHasAttr_Material_XsdtNCName_ struct {
 
 //	The input element may occur any number of times. This input is a local input with the offset
 //	and set attributes.
-type XsdGoPkgHasElems_inputsequencelinesschema_Input_TInputLocalOffset_ struct {
-//	The input element may occur any number of times. This input is a local input with the offset
-//	and set attributes.
-	Inputs []*TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
-}
-
-//	The input element may occur any number of times. This input is a local input with the offset
-//	and set attributes.
 type XsdGoPkgHasElem_inputsequencelinesschema_Input_TInputLocalOffset_ struct {
 //	The input element may occur any number of times. This input is a local input with the offset
 //	and set attributes.
 	Input *TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
+}
+
+//	The input element may occur any number of times. This input is a local input with the offset
+//	and set attributes.
+type XsdGoPkgHasElems_inputsequencelinesschema_Input_TInputLocalOffset_ struct {
+//	The input element may occur any number of times. This input is a local input with the offset
+//	and set attributes.
+	Inputs []*TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
 }
 
 type TxsdLines struct {
@@ -6753,24 +7079,26 @@ type TxsdLines struct {
 //	organize those vertices into individual lines. Each line described by the mesh has two vertices.
 //	The first line is formed from first and second vertices. The second line is formed from the
 //	third and fourth vertices and so on.
-type XsdGoPkgHasElem_Lines struct {
-//	The lines element provides the information needed to bind vertex attributes together and then
-//	organize those vertices into individual lines. Each line described by the mesh has two vertices.
-//	The first line is formed from first and second vertices. The second line is formed from the
-//	third and fourth vertices and so on.
-	Lines *TxsdLines `xml:"http://www.collada.org/2005/11/COLLADASchema lines"`
-}
-
-//	The lines element provides the information needed to bind vertex attributes together and then
-//	organize those vertices into individual lines. Each line described by the mesh has two vertices.
-//	The first line is formed from first and second vertices. The second line is formed from the
-//	third and fourth vertices and so on.
 type XsdGoPkgHasElems_Lines struct {
 //	The lines element provides the information needed to bind vertex attributes together and then
 //	organize those vertices into individual lines. Each line described by the mesh has two vertices.
 //	The first line is formed from first and second vertices. The second line is formed from the
 //	third and fourth vertices and so on.
 	Lineses []*TxsdLines `xml:"http://www.collada.org/2005/11/COLLADASchema lines"`
+
+}
+
+//	The lines element provides the information needed to bind vertex attributes together and then
+//	organize those vertices into individual lines. Each line described by the mesh has two vertices.
+//	The first line is formed from first and second vertices. The second line is formed from the
+//	third and fourth vertices and so on.
+type XsdGoPkgHasElem_Lines struct {
+//	The lines element provides the information needed to bind vertex attributes together and then
+//	organize those vertices into individual lines. Each line described by the mesh has two vertices.
+//	The first line is formed from first and second vertices. The second line is formed from the
+//	third and fourth vertices and so on.
+	Lines *TxsdLines `xml:"http://www.collada.org/2005/11/COLLADASchema lines"`
+
 }
 
 //	The input element may occur any number of times. This input is a local input with the offset
@@ -6779,6 +7107,7 @@ type XsdGoPkgHasElems_inputsequencelinestripsschema_Input_TInputLocalOffset_ str
 //	The input element may occur any number of times. This input is a local input with the offset
 //	and set attributes.
 	Inputs []*TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
 }
 
 //	The input element may occur any number of times. This input is a local input with the offset
@@ -6787,6 +7116,7 @@ type XsdGoPkgHasElem_inputsequencelinestripsschema_Input_TInputLocalOffset_ stru
 //	The input element may occur any number of times. This input is a local input with the offset
 //	and set attributes.
 	Input *TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
 }
 
 type TxsdLinestrips struct {
@@ -6812,6 +7142,7 @@ type XsdGoPkgHasElem_Linestrips struct {
 //	has an arbitrary number of vertices. Each line segment within the line-strip is formed from the
 //	current vertex and the preceding vertex.
 	Linestrips *TxsdLinestrips `xml:"http://www.collada.org/2005/11/COLLADASchema linestrips"`
+
 }
 
 //	The linestrips element provides the information needed to bind vertex attributes together and
@@ -6824,18 +7155,21 @@ type XsdGoPkgHasElems_Linestrips struct {
 //	has an arbitrary number of vertices. Each line segment within the line-strip is formed from the
 //	current vertex and the preceding vertex.
 	Linestripses []*TxsdLinestrips `xml:"http://www.collada.org/2005/11/COLLADASchema linestrips"`
+
 }
 
 //	The h element represents a hole in the polygon specified. There must be at least one h element.
 type XsdGoPkgHasElem_hsequencephchoicesequencepolygonsschema_H_TListOfUInts_ struct {
 //	The h element represents a hole in the polygon specified. There must be at least one h element.
 	H TListOfUInts `xml:"http://www.collada.org/2005/11/COLLADASchema h"`
+
 }
 
 //	The h element represents a hole in the polygon specified. There must be at least one h element.
 type XsdGoPkgHasElems_hsequencephchoicesequencepolygonsschema_H_TListOfUInts_ struct {
 //	The h element represents a hole in the polygon specified. There must be at least one h element.
 	Hs []TListOfUInts `xml:"http://www.collada.org/2005/11/COLLADASchema h"`
+
 }
 
 type TxsdPolygonsSequenceChoicePh struct {
@@ -6848,15 +7182,17 @@ type TxsdPolygonsSequenceChoicePh struct {
 }
 
 //	The ph element descripes a polygon with holes.
-type XsdGoPkgHasElems_phchoicesequencepolygonsschema_Ph_TxsdPolygonsSequenceChoicePh_ struct {
-//	The ph element descripes a polygon with holes.
-	Phs []*TxsdPolygonsSequenceChoicePh `xml:"http://www.collada.org/2005/11/COLLADASchema ph"`
-}
-
-//	The ph element descripes a polygon with holes.
 type XsdGoPkgHasElem_phchoicesequencepolygonsschema_Ph_TxsdPolygonsSequenceChoicePh_ struct {
 //	The ph element descripes a polygon with holes.
 	Ph *TxsdPolygonsSequenceChoicePh `xml:"http://www.collada.org/2005/11/COLLADASchema ph"`
+
+}
+
+//	The ph element descripes a polygon with holes.
+type XsdGoPkgHasElems_phchoicesequencepolygonsschema_Ph_TxsdPolygonsSequenceChoicePh_ struct {
+//	The ph element descripes a polygon with holes.
+	Phs []*TxsdPolygonsSequenceChoicePh `xml:"http://www.collada.org/2005/11/COLLADASchema ph"`
+
 }
 
 //	The input element may occur any number of times. This input is a local input with the
@@ -6865,6 +7201,7 @@ type XsdGoPkgHasElem_inputsequencepolygonsschema_Input_TInputLocalOffset_ struct
 //	The input element may occur any number of times. This input is a local input with the
 //	offset and set attributes.
 	Input *TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
 }
 
 //	The input element may occur any number of times. This input is a local input with the
@@ -6873,6 +7210,7 @@ type XsdGoPkgHasElems_inputsequencepolygonsschema_Input_TInputLocalOffset_ struc
 //	The input element may occur any number of times. This input is a local input with the
 //	offset and set attributes.
 	Inputs []*TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
 }
 
 type TxsdPolygons struct {
@@ -6899,6 +7237,7 @@ type XsdGoPkgHasElem_Polygons struct {
 //	then organize those vertices into individual polygons. The polygons described can contain
 //	arbitrary numbers of vertices. These polygons may be self intersecting and may also contain holes.
 	Polygons *TxsdPolygons `xml:"http://www.collada.org/2005/11/COLLADASchema polygons"`
+
 }
 
 //	The polygons element provides the information needed to bind vertex attributes together and
@@ -6909,14 +7248,7 @@ type XsdGoPkgHasElems_Polygons struct {
 //	then organize those vertices into individual polygons. The polygons described can contain
 //	arbitrary numbers of vertices. These polygons may be self intersecting and may also contain holes.
 	Polygonses []*TxsdPolygons `xml:"http://www.collada.org/2005/11/COLLADASchema polygons"`
-}
 
-//	The input element may occur any number of times. This input is a local input with the
-//	offset and set attributes.
-type XsdGoPkgHasElem_inputsequencepolylistschema_Input_TInputLocalOffset_ struct {
-//	The input element may occur any number of times. This input is a local input with the
-//	offset and set attributes.
-	Input *TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
 }
 
 //	The input element may occur any number of times. This input is a local input with the
@@ -6925,6 +7257,16 @@ type XsdGoPkgHasElems_inputsequencepolylistschema_Input_TInputLocalOffset_ struc
 //	The input element may occur any number of times. This input is a local input with the
 //	offset and set attributes.
 	Inputs []*TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
+}
+
+//	The input element may occur any number of times. This input is a local input with the
+//	offset and set attributes.
+type XsdGoPkgHasElem_inputsequencepolylistschema_Input_TInputLocalOffset_ struct {
+//	The input element may occur any number of times. This input is a local input with the
+//	offset and set attributes.
+	Input *TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
 }
 
 //	The vcount element contains a list of integers describing the number of sides for each polygon
@@ -6933,6 +7275,7 @@ type XsdGoPkgHasElems_vcountsequencepolylistschema_Vcount_TListOfUInts_ struct {
 //	The vcount element contains a list of integers describing the number of sides for each polygon
 //	described by the polylist element. The vcount element may occur once.
 	Vcounts []TListOfUInts `xml:"http://www.collada.org/2005/11/COLLADASchema vcount"`
+
 }
 
 //	The vcount element contains a list of integers describing the number of sides for each polygon
@@ -6941,6 +7284,7 @@ type XsdGoPkgHasElem_vcountsequencepolylistschema_Vcount_TListOfUInts_ struct {
 //	The vcount element contains a list of integers describing the number of sides for each polygon
 //	described by the polylist element. The vcount element may occur once.
 	Vcount TListOfUInts `xml:"http://www.collada.org/2005/11/COLLADASchema vcount"`
+
 }
 
 type TxsdPolylist struct {
@@ -6970,6 +7314,7 @@ type XsdGoPkgHasElems_Polylist struct {
 //	contain arbitrary numbers of vertices. Unlike the polygons element, the polylist element cannot
 //	contain polygons with holes.
 	Polylists []*TxsdPolylist `xml:"http://www.collada.org/2005/11/COLLADASchema polylist"`
+
 }
 
 //	The polylist element provides the information needed to bind vertex attributes together and
@@ -6982,14 +7327,7 @@ type XsdGoPkgHasElem_Polylist struct {
 //	contain arbitrary numbers of vertices. Unlike the polygons element, the polylist element cannot
 //	contain polygons with holes.
 	Polylist *TxsdPolylist `xml:"http://www.collada.org/2005/11/COLLADASchema polylist"`
-}
 
-//	The input element may occur any number of times. This input is a local input with the
-//	offset and set attributes.
-type XsdGoPkgHasElems_inputsequencetrianglesschema_Input_TInputLocalOffset_ struct {
-//	The input element may occur any number of times. This input is a local input with the
-//	offset and set attributes.
-	Inputs []*TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
 }
 
 //	The input element may occur any number of times. This input is a local input with the
@@ -6998,6 +7336,16 @@ type XsdGoPkgHasElem_inputsequencetrianglesschema_Input_TInputLocalOffset_ struc
 //	The input element may occur any number of times. This input is a local input with the
 //	offset and set attributes.
 	Input *TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
+}
+
+//	The input element may occur any number of times. This input is a local input with the
+//	offset and set attributes.
+type XsdGoPkgHasElems_inputsequencetrianglesschema_Input_TInputLocalOffset_ struct {
+//	The input element may occur any number of times. This input is a local input with the
+//	offset and set attributes.
+	Inputs []*TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
 }
 
 type TxsdTriangles struct {
@@ -7023,6 +7371,7 @@ type XsdGoPkgHasElem_Triangles struct {
 //	three vertices. The first triangle is formed from the first, second, and third vertices. The
 //	second triangle is formed from the fourth, fifth, and sixth vertices, and so on.
 	Triangles *TxsdTriangles `xml:"http://www.collada.org/2005/11/COLLADASchema triangles"`
+
 }
 
 //	The triangles element provides the information needed to bind vertex attributes together and
@@ -7035,14 +7384,7 @@ type XsdGoPkgHasElems_Triangles struct {
 //	three vertices. The first triangle is formed from the first, second, and third vertices. The
 //	second triangle is formed from the fourth, fifth, and sixth vertices, and so on.
 	Triangleses []*TxsdTriangles `xml:"http://www.collada.org/2005/11/COLLADASchema triangles"`
-}
 
-//	The input element may occur any number of times. This input is a local input with the
-//	offset and set attributes.
-type XsdGoPkgHasElem_inputsequencetrifansschema_Input_TInputLocalOffset_ struct {
-//	The input element may occur any number of times. This input is a local input with the
-//	offset and set attributes.
-	Input *TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
 }
 
 //	The input element may occur any number of times. This input is a local input with the
@@ -7051,6 +7393,16 @@ type XsdGoPkgHasElems_inputsequencetrifansschema_Input_TInputLocalOffset_ struct
 //	The input element may occur any number of times. This input is a local input with the
 //	offset and set attributes.
 	Inputs []*TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
+}
+
+//	The input element may occur any number of times. This input is a local input with the
+//	offset and set attributes.
+type XsdGoPkgHasElem_inputsequencetrifansschema_Input_TInputLocalOffset_ struct {
+//	The input element may occur any number of times. This input is a local input with the
+//	offset and set attributes.
+	Input *TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
 }
 
 type TxsdTrifans struct {
@@ -7076,6 +7428,7 @@ type XsdGoPkgHasElems_Trifans struct {
 //	vertices. The first triangle is formed from first, second, and third vertices. Each subsequent
 //	triangle is formed from the current vertex, reusing the first and the previous vertices.
 	Trifanses []*TxsdTrifans `xml:"http://www.collada.org/2005/11/COLLADASchema trifans"`
+
 }
 
 //	The trifans element provides the information needed to bind vertex attributes together and then
@@ -7088,14 +7441,7 @@ type XsdGoPkgHasElem_Trifans struct {
 //	vertices. The first triangle is formed from first, second, and third vertices. Each subsequent
 //	triangle is formed from the current vertex, reusing the first and the previous vertices.
 	Trifans *TxsdTrifans `xml:"http://www.collada.org/2005/11/COLLADASchema trifans"`
-}
 
-//	The input element may occur any number of times. This input is a local input with the offset
-//	and set attributes.
-type XsdGoPkgHasElems_inputsequencetristripsschema_Input_TInputLocalOffset_ struct {
-//	The input element may occur any number of times. This input is a local input with the offset
-//	and set attributes.
-	Inputs []*TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
 }
 
 //	The input element may occur any number of times. This input is a local input with the offset
@@ -7104,6 +7450,16 @@ type XsdGoPkgHasElem_inputsequencetristripsschema_Input_TInputLocalOffset_ struc
 //	The input element may occur any number of times. This input is a local input with the offset
 //	and set attributes.
 	Input *TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
+}
+
+//	The input element may occur any number of times. This input is a local input with the offset
+//	and set attributes.
+type XsdGoPkgHasElems_inputsequencetristripsschema_Input_TInputLocalOffset_ struct {
+//	The input element may occur any number of times. This input is a local input with the offset
+//	and set attributes.
+	Inputs []*TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
 }
 
 type TxsdTristrips struct {
@@ -7129,6 +7485,7 @@ type XsdGoPkgHasElems_Tristrips struct {
 //	vertices. The first triangle is formed from first, second, and third vertices. Each subsequent
 //	triangle is formed from the current vertex, reusing the previous two vertices.
 	Tristripses []*TxsdTristrips `xml:"http://www.collada.org/2005/11/COLLADASchema tristrips"`
+
 }
 
 //	The tristrips element provides the information needed to bind vertex attributes together and then
@@ -7141,18 +7498,21 @@ type XsdGoPkgHasElem_Tristrips struct {
 //	vertices. The first triangle is formed from first, second, and third vertices. Each subsequent
 //	triangle is formed from the current vertex, reusing the previous two vertices.
 	Tristrips *TxsdTristrips `xml:"http://www.collada.org/2005/11/COLLADASchema tristrips"`
+
 }
 
 //	The input element must occur at least one time. These inputs are local inputs.
 type XsdGoPkgHasElems_inputsequenceverticesschema_Input_TInputLocal_ struct {
 //	The input element must occur at least one time. These inputs are local inputs.
 	Inputs []*TInputLocal `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
 }
 
 //	The input element must occur at least one time. These inputs are local inputs.
 type XsdGoPkgHasElem_inputsequenceverticesschema_Input_TInputLocal_ struct {
 //	The input element must occur at least one time. These inputs are local inputs.
 	Input *TInputLocal `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
 }
 
 type TxsdVertices struct {
@@ -7167,25 +7527,42 @@ type TxsdVertices struct {
 //	The vertices element declares the attributes and identity of mesh-vertices. The vertices element
 //	describes mesh-vertices in a mesh geometry. The mesh-vertices represent the position (identity)
 //	of the vertices comprising the mesh and other vertex attributes that are invariant to tessellation.
-type XsdGoPkgHasElem_Vertices struct {
-//	The vertices element declares the attributes and identity of mesh-vertices. The vertices element
-//	describes mesh-vertices in a mesh geometry. The mesh-vertices represent the position (identity)
-//	of the vertices comprising the mesh and other vertex attributes that are invariant to tessellation.
-	Vertices *TxsdVertices `xml:"http://www.collada.org/2005/11/COLLADASchema vertices"`
-}
-
-//	The vertices element declares the attributes and identity of mesh-vertices. The vertices element
-//	describes mesh-vertices in a mesh geometry. The mesh-vertices represent the position (identity)
-//	of the vertices comprising the mesh and other vertex attributes that are invariant to tessellation.
 type XsdGoPkgHasElems_Vertices struct {
 //	The vertices element declares the attributes and identity of mesh-vertices. The vertices element
 //	describes mesh-vertices in a mesh geometry. The mesh-vertices represent the position (identity)
 //	of the vertices comprising the mesh and other vertex attributes that are invariant to tessellation.
 	Verticeses []*TxsdVertices `xml:"http://www.collada.org/2005/11/COLLADASchema vertices"`
+
+}
+
+//	The vertices element declares the attributes and identity of mesh-vertices. The vertices element
+//	describes mesh-vertices in a mesh geometry. The mesh-vertices represent the position (identity)
+//	of the vertices comprising the mesh and other vertex attributes that are invariant to tessellation.
+type XsdGoPkgHasElem_Vertices struct {
+//	The vertices element declares the attributes and identity of mesh-vertices. The vertices element
+//	describes mesh-vertices in a mesh geometry. The mesh-vertices represent the position (identity)
+//	of the vertices comprising the mesh and other vertex attributes that are invariant to tessellation.
+	Vertices *TxsdVertices `xml:"http://www.collada.org/2005/11/COLLADASchema vertices"`
+
 }
 
 type TxsdLookat struct {
 	XsdGoPkgValue Tfloat3X3 `xml:",chardata"`
+
+}
+
+//	The lookat element contains a position and orientation transformation suitable for aiming a camera.
+//	The lookat element contains three mathematical vectors within it that describe:
+//	1.	The position of the object;
+//	2.	The position of the interest point;
+//	3.	The direction that points up.
+type XsdGoPkgHasElems_Lookat struct {
+//	The lookat element contains a position and orientation transformation suitable for aiming a camera.
+//	The lookat element contains three mathematical vectors within it that describe:
+//	1.	The position of the object;
+//	2.	The position of the interest point;
+//	3.	The direction that points up.
+	Lookats []*TxsdLookat `xml:"http://www.collada.org/2005/11/COLLADASchema lookat"`
 
 }
 
@@ -7201,20 +7578,7 @@ type XsdGoPkgHasElem_Lookat struct {
 //	2.	The position of the interest point;
 //	3.	The direction that points up.
 	Lookat *TxsdLookat `xml:"http://www.collada.org/2005/11/COLLADASchema lookat"`
-}
 
-//	The lookat element contains a position and orientation transformation suitable for aiming a camera.
-//	The lookat element contains three mathematical vectors within it that describe:
-//	1.	The position of the object;
-//	2.	The position of the interest point;
-//	3.	The direction that points up.
-type XsdGoPkgHasElems_Lookat struct {
-//	The lookat element contains a position and orientation transformation suitable for aiming a camera.
-//	The lookat element contains three mathematical vectors within it that describe:
-//	1.	The position of the object;
-//	2.	The position of the interest point;
-//	3.	The direction that points up.
-	Lookats []*TxsdLookat `xml:"http://www.collada.org/2005/11/COLLADASchema lookat"`
 }
 
 type TxsdMatrix struct {
@@ -7228,6 +7592,7 @@ type XsdGoPkgHasElems_Matrix struct {
 //	Matrix transformations embody mathematical changes to points within a coordinate systems or the
 //	coordinate system itself. The matrix element contains a 4-by-4 matrix of floating-point values.
 	Matrixs []*TxsdMatrix `xml:"http://www.collada.org/2005/11/COLLADASchema matrix"`
+
 }
 
 //	Matrix transformations embody mathematical changes to points within a coordinate systems or the
@@ -7236,6 +7601,7 @@ type XsdGoPkgHasElem_Matrix struct {
 //	Matrix transformations embody mathematical changes to points within a coordinate systems or the
 //	coordinate system itself. The matrix element contains a 4-by-4 matrix of floating-point values.
 	Matrix *TxsdMatrix `xml:"http://www.collada.org/2005/11/COLLADASchema matrix"`
+
 }
 
 type TxsdRotate struct {
@@ -7247,20 +7613,14 @@ type TxsdRotate struct {
 type XsdGoPkgHasElems_Rotate struct {
 //	The rotate element contains an angle and a mathematical vector that represents the axis of rotation.
 	Rotates []*TxsdRotate `xml:"http://www.collada.org/2005/11/COLLADASchema rotate"`
+
 }
 
 //	The rotate element contains an angle and a mathematical vector that represents the axis of rotation.
 type XsdGoPkgHasElem_Rotate struct {
 //	The rotate element contains an angle and a mathematical vector that represents the axis of rotation.
 	Rotate *TxsdRotate `xml:"http://www.collada.org/2005/11/COLLADASchema rotate"`
-}
 
-//	The scale element contains a mathematical vector that represents the relative proportions of the
-//	X, Y and Z axes of a coordinated system.
-type XsdGoPkgHasElems_Scale struct {
-//	The scale element contains a mathematical vector that represents the relative proportions of the
-//	X, Y and Z axes of a coordinated system.
-	Scales []*TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema scale"`
 }
 
 //	The scale element contains a mathematical vector that represents the relative proportions of the
@@ -7269,6 +7629,16 @@ type XsdGoPkgHasElem_Scale struct {
 //	The scale element contains a mathematical vector that represents the relative proportions of the
 //	X, Y and Z axes of a coordinated system.
 	Scale *TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema scale"`
+
+}
+
+//	The scale element contains a mathematical vector that represents the relative proportions of the
+//	X, Y and Z axes of a coordinated system.
+type XsdGoPkgHasElems_Scale struct {
+//	The scale element contains a mathematical vector that represents the relative proportions of the
+//	X, Y and Z axes of a coordinated system.
+	Scales []*TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema scale"`
+
 }
 
 type TxsdSkew struct {
@@ -7282,6 +7652,7 @@ type XsdGoPkgHasElem_Skew struct {
 //	The skew element contains an angle and two mathematical vectors that represent the axis of
 //	rotation and the axis of translation.
 	Skew *TxsdSkew `xml:"http://www.collada.org/2005/11/COLLADASchema skew"`
+
 }
 
 //	The skew element contains an angle and two mathematical vectors that represent the axis of
@@ -7290,6 +7661,7 @@ type XsdGoPkgHasElems_Skew struct {
 //	The skew element contains an angle and two mathematical vectors that represent the axis of
 //	rotation and the axis of translation.
 	Skews []*TxsdSkew `xml:"http://www.collada.org/2005/11/COLLADASchema skew"`
+
 }
 
 //	The translate element contains a mathematical vector that represents the distance along the
@@ -7298,6 +7670,7 @@ type XsdGoPkgHasElem_Translate struct {
 //	The translate element contains a mathematical vector that represents the distance along the
 //	X, Y and Z-axes.
 	Translate *TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema translate"`
+
 }
 
 //	The translate element contains a mathematical vector that represents the distance along the
@@ -7306,6 +7679,7 @@ type XsdGoPkgHasElems_Translate struct {
 //	The translate element contains a mathematical vector that represents the distance along the
 //	X, Y and Z-axes.
 	Translates []*TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema translate"`
+
 }
 
 //	The format attribute is a text string value that indicates the image format. Optional attribute.
@@ -7347,6 +7721,7 @@ type XsdGoPkgHasElem_datachoicesequenceimageschema_Data_TListOfHexBinary_ struct
 //	The data child element contains a sequence of hexadecimal encoded  binary octets representing
 //	the embedded image data.
 	Data TListOfHexBinary `xml:"http://www.collada.org/2005/11/COLLADASchema data"`
+
 }
 
 //	The data child element contains a sequence of hexadecimal encoded  binary octets representing
@@ -7355,18 +7730,21 @@ type XsdGoPkgHasElems_datachoicesequenceimageschema_Data_TListOfHexBinary_ struc
 //	The data child element contains a sequence of hexadecimal encoded  binary octets representing
 //	the embedded image data.
 	Datas []TListOfHexBinary `xml:"http://www.collada.org/2005/11/COLLADASchema data"`
-}
 
-//	The init_from element allows you to specify an external image file to use for the image element.
-type XsdGoPkgHasElems_init_fromchoicesequenceimageschema_InitFrom_XsdtAnyURI_ struct {
-//	The init_from element allows you to specify an external image file to use for the image element.
-	InitFroms []xsdt.AnyURI `xml:"http://www.collada.org/2005/11/COLLADASchema init_from"`
 }
 
 //	The init_from element allows you to specify an external image file to use for the image element.
 type XsdGoPkgHasElem_init_fromchoicesequenceimageschema_InitFrom_XsdtAnyURI_ struct {
 //	The init_from element allows you to specify an external image file to use for the image element.
 	InitFrom xsdt.AnyURI `xml:"http://www.collada.org/2005/11/COLLADASchema init_from"`
+
+}
+
+//	The init_from element allows you to specify an external image file to use for the image element.
+type XsdGoPkgHasElems_init_fromchoicesequenceimageschema_InitFrom_XsdtAnyURI_ struct {
+//	The init_from element allows you to specify an external image file to use for the image element.
+	InitFroms []xsdt.AnyURI `xml:"http://www.collada.org/2005/11/COLLADASchema init_from"`
+
 }
 
 type TxsdImage struct {
@@ -7383,16 +7761,16 @@ type TxsdImage struct {
 //	The extra element may appear any number of times.
 	XsdGoPkgHasElems_Extra
 
-//	The height attribute is an integer value that indicates the height of the image in pixel
-//	units. Optional attribute.
-	XsdGoPkgHasAttr_Height_Tuint_
-
 //	The depth attribute is an integer value that indicates the depth of the image in pixel units.
 //	A 2-D image has a depth of 1, which is also the default value. Optional attribute.
 	XsdGoPkgHasAttr_Depth_Tuint_1
 
 //	The format attribute is a text string value that indicates the image format. Optional attribute.
 	XsdGoPkgHasAttr_Format_XsdtToken_
+
+//	The height attribute is an integer value that indicates the height of the image in pixel
+//	units. Optional attribute.
+	XsdGoPkgHasAttr_Height_Tuint_
 
 //	The width attribute is an integer value that indicates the width of the image in pixel units.
 //	Optional attribute.
@@ -7410,6 +7788,7 @@ type XsdGoPkgHasElem_Image struct {
 //	forms of imagery. The image elements allows for specifying an external image file with
 //	the init_from element or embed image data with the data element.
 	Image *TxsdImage `xml:"http://www.collada.org/2005/11/COLLADASchema image"`
+
 }
 
 //	The image element declares the storage for the graphical representation of an object.
@@ -7422,6 +7801,7 @@ type XsdGoPkgHasElems_Image struct {
 //	forms of imagery. The image elements allows for specifying an external image file with
 //	the init_from element or embed image data with the data element.
 	Images []*TxsdImage `xml:"http://www.collada.org/2005/11/COLLADASchema image"`
+
 }
 
 //	The color element contains three floating point numbers specifying the color of the light.
@@ -7430,6 +7810,7 @@ type XsdGoPkgHasElem_colorsequenceambientchoicetechnique_commonsequencelightsche
 //	The color element contains three floating point numbers specifying the color of the light.
 //	The color element must occur exactly once.
 	Color *TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema color"`
+
 }
 
 //	The color element contains three floating point numbers specifying the color of the light.
@@ -7438,6 +7819,7 @@ type XsdGoPkgHasElems_colorsequenceambientchoicetechnique_commonsequencelightsch
 //	The color element contains three floating point numbers specifying the color of the light.
 //	The color element must occur exactly once.
 	Colors []*TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema color"`
+
 }
 
 type TxsdLightSequenceTechniqueCommonChoiceAmbient struct {
@@ -7453,6 +7835,7 @@ type XsdGoPkgHasElems_ambientchoicetechnique_commonsequencelightschema_Ambient_T
 //	The ambient element declares the parameters required to describe an ambient light source.
 //	An ambient light is one that lights everything evenly, regardless of location or orientation.
 	Ambients []*TxsdLightSequenceTechniqueCommonChoiceAmbient `xml:"http://www.collada.org/2005/11/COLLADASchema ambient"`
+
 }
 
 //	The ambient element declares the parameters required to describe an ambient light source.
@@ -7461,14 +7844,7 @@ type XsdGoPkgHasElem_ambientchoicetechnique_commonsequencelightschema_Ambient_Tx
 //	The ambient element declares the parameters required to describe an ambient light source.
 //	An ambient light is one that lights everything evenly, regardless of location or orientation.
 	Ambient *TxsdLightSequenceTechniqueCommonChoiceAmbient `xml:"http://www.collada.org/2005/11/COLLADASchema ambient"`
-}
 
-//	The color element contains three floating point numbers specifying the color of the light.
-//	The color element must occur exactly once.
-type XsdGoPkgHasElem_colorsequencedirectionalchoicetechnique_commonsequencelightschema_Color_TargetableFloat3_ struct {
-//	The color element contains three floating point numbers specifying the color of the light.
-//	The color element must occur exactly once.
-	Color *TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema color"`
 }
 
 //	The color element contains three floating point numbers specifying the color of the light.
@@ -7477,6 +7853,16 @@ type XsdGoPkgHasElems_colorsequencedirectionalchoicetechnique_commonsequenceligh
 //	The color element contains three floating point numbers specifying the color of the light.
 //	The color element must occur exactly once.
 	Colors []*TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema color"`
+
+}
+
+//	The color element contains three floating point numbers specifying the color of the light.
+//	The color element must occur exactly once.
+type XsdGoPkgHasElem_colorsequencedirectionalchoicetechnique_commonsequencelightschema_Color_TargetableFloat3_ struct {
+//	The color element contains three floating point numbers specifying the color of the light.
+//	The color element must occur exactly once.
+	Color *TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema color"`
+
 }
 
 type TxsdLightSequenceTechniqueCommonChoiceDirectional struct {
@@ -7498,6 +7884,7 @@ type XsdGoPkgHasElems_directionalchoicetechnique_commonsequencelightschema_Direc
 //	The actual direction of the light is defined by the transform of the node where the light is
 //	instantiated.
 	Directionals []*TxsdLightSequenceTechniqueCommonChoiceDirectional `xml:"http://www.collada.org/2005/11/COLLADASchema directional"`
+
 }
 
 //	The directional element declares the parameters required to describe a directional light source.
@@ -7512,14 +7899,7 @@ type XsdGoPkgHasElem_directionalchoicetechnique_commonsequencelightschema_Direct
 //	The actual direction of the light is defined by the transform of the node where the light is
 //	instantiated.
 	Directional *TxsdLightSequenceTechniqueCommonChoiceDirectional `xml:"http://www.collada.org/2005/11/COLLADASchema directional"`
-}
 
-//	The color element contains three floating point numbers specifying the color of the light.
-//	The color element must occur exactly once.
-type XsdGoPkgHasElem_colorsequencepointchoicetechnique_commonsequencelightschema_Color_TargetableFloat3_ struct {
-//	The color element contains three floating point numbers specifying the color of the light.
-//	The color element must occur exactly once.
-	Color *TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema color"`
 }
 
 //	The color element contains three floating point numbers specifying the color of the light.
@@ -7528,18 +7908,17 @@ type XsdGoPkgHasElems_colorsequencepointchoicetechnique_commonsequencelightschem
 //	The color element contains three floating point numbers specifying the color of the light.
 //	The color element must occur exactly once.
 	Colors []*TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema color"`
+
 }
 
-//	The constant_attenuation is used to calculate the total attenuation of this light given a distance.
-//	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
-type XsdGoPkgHasElem_constant_attenuationsequencepointchoicetechnique_commonsequencelightschema_ConstantAttenuation_TargetableFloat_10 struct {
-//	The constant_attenuation is used to calculate the total attenuation of this light given a distance.
-//	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
-	ConstantAttenuation *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema constant_attenuation"`
-}
+//	The color element contains three floating point numbers specifying the color of the light.
+//	The color element must occur exactly once.
+type XsdGoPkgHasElem_colorsequencepointchoicetechnique_commonsequencelightschema_Color_TargetableFloat3_ struct {
+//	The color element contains three floating point numbers specifying the color of the light.
+//	The color element must occur exactly once.
+	Color *TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema color"`
 
-//	Returns the Default value for ConstantAttenuation -- 1.0
-func (me *XsdGoPkgHasElem_constant_attenuationsequencepointchoicetechnique_commonsequencelightschema_ConstantAttenuation_TargetableFloat_10) ConstantAttenuationDefault () Tfloat { return Tfloat(1.0) }
+}
 
 //	The constant_attenuation is used to calculate the total attenuation of this light given a distance.
 //	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
@@ -7547,21 +7926,23 @@ type XsdGoPkgHasElems_constant_attenuationsequencepointchoicetechnique_commonseq
 //	The constant_attenuation is used to calculate the total attenuation of this light given a distance.
 //	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
 	ConstantAttenuations []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema constant_attenuation"`
+
 }
 
 //	Returns the Default value for ConstantAttenuation -- 1.0
 func (me *XsdGoPkgHasElems_constant_attenuationsequencepointchoicetechnique_commonsequencelightschema_ConstantAttenuation_TargetableFloat_10) ConstantAttenuationDefault () Tfloat { return Tfloat(1.0) }
 
-//	The linear_attenuation is used to calculate the total attenuation of this light given a distance.
+//	The constant_attenuation is used to calculate the total attenuation of this light given a distance.
 //	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
-type XsdGoPkgHasElem_linear_attenuationsequencepointchoicetechnique_commonsequencelightschema_LinearAttenuation_TargetableFloat_00 struct {
-//	The linear_attenuation is used to calculate the total attenuation of this light given a distance.
+type XsdGoPkgHasElem_constant_attenuationsequencepointchoicetechnique_commonsequencelightschema_ConstantAttenuation_TargetableFloat_10 struct {
+//	The constant_attenuation is used to calculate the total attenuation of this light given a distance.
 //	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
-	LinearAttenuation *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema linear_attenuation"`
+	ConstantAttenuation *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema constant_attenuation"`
+
 }
 
-//	Returns the Default value for LinearAttenuation -- 0.0
-func (me *XsdGoPkgHasElem_linear_attenuationsequencepointchoicetechnique_commonsequencelightschema_LinearAttenuation_TargetableFloat_00) LinearAttenuationDefault () Tfloat { return Tfloat(0.0) }
+//	Returns the Default value for ConstantAttenuation -- 1.0
+func (me *XsdGoPkgHasElem_constant_attenuationsequencepointchoicetechnique_commonsequencelightschema_ConstantAttenuation_TargetableFloat_10) ConstantAttenuationDefault () Tfloat { return Tfloat(1.0) }
 
 //	The linear_attenuation is used to calculate the total attenuation of this light given a distance.
 //	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
@@ -7569,21 +7950,23 @@ type XsdGoPkgHasElems_linear_attenuationsequencepointchoicetechnique_commonseque
 //	The linear_attenuation is used to calculate the total attenuation of this light given a distance.
 //	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
 	LinearAttenuations []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema linear_attenuation"`
+
 }
 
 //	Returns the Default value for LinearAttenuation -- 0.0
 func (me *XsdGoPkgHasElems_linear_attenuationsequencepointchoicetechnique_commonsequencelightschema_LinearAttenuation_TargetableFloat_00) LinearAttenuationDefault () Tfloat { return Tfloat(0.0) }
 
-//	The quadratic_attenuation is used to calculate the total attenuation of this light given a distance.
+//	The linear_attenuation is used to calculate the total attenuation of this light given a distance.
 //	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
-type XsdGoPkgHasElems_quadratic_attenuationsequencepointchoicetechnique_commonsequencelightschema_QuadraticAttenuation_TargetableFloat_00 struct {
-//	The quadratic_attenuation is used to calculate the total attenuation of this light given a distance.
+type XsdGoPkgHasElem_linear_attenuationsequencepointchoicetechnique_commonsequencelightschema_LinearAttenuation_TargetableFloat_00 struct {
+//	The linear_attenuation is used to calculate the total attenuation of this light given a distance.
 //	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
-	QuadraticAttenuations []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema quadratic_attenuation"`
+	LinearAttenuation *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema linear_attenuation"`
+
 }
 
-//	Returns the Default value for QuadraticAttenuation -- 0.0
-func (me *XsdGoPkgHasElems_quadratic_attenuationsequencepointchoicetechnique_commonsequencelightschema_QuadraticAttenuation_TargetableFloat_00) QuadraticAttenuationDefault () Tfloat { return Tfloat(0.0) }
+//	Returns the Default value for LinearAttenuation -- 0.0
+func (me *XsdGoPkgHasElem_linear_attenuationsequencepointchoicetechnique_commonsequencelightschema_LinearAttenuation_TargetableFloat_00) LinearAttenuationDefault () Tfloat { return Tfloat(0.0) }
 
 //	The quadratic_attenuation is used to calculate the total attenuation of this light given a distance.
 //	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
@@ -7591,10 +7974,23 @@ type XsdGoPkgHasElem_quadratic_attenuationsequencepointchoicetechnique_commonseq
 //	The quadratic_attenuation is used to calculate the total attenuation of this light given a distance.
 //	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
 	QuadraticAttenuation *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema quadratic_attenuation"`
+
 }
 
 //	Returns the Default value for QuadraticAttenuation -- 0.0
 func (me *XsdGoPkgHasElem_quadratic_attenuationsequencepointchoicetechnique_commonsequencelightschema_QuadraticAttenuation_TargetableFloat_00) QuadraticAttenuationDefault () Tfloat { return Tfloat(0.0) }
+
+//	The quadratic_attenuation is used to calculate the total attenuation of this light given a distance.
+//	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
+type XsdGoPkgHasElems_quadratic_attenuationsequencepointchoicetechnique_commonsequencelightschema_QuadraticAttenuation_TargetableFloat_00 struct {
+//	The quadratic_attenuation is used to calculate the total attenuation of this light given a distance.
+//	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
+	QuadraticAttenuations []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema quadratic_attenuation"`
+
+}
+
+//	Returns the Default value for QuadraticAttenuation -- 0.0
+func (me *XsdGoPkgHasElems_quadratic_attenuationsequencepointchoicetechnique_commonsequencelightschema_QuadraticAttenuation_TargetableFloat_00) QuadraticAttenuationDefault () Tfloat { return Tfloat(0.0) }
 
 type TxsdLightSequenceTechniqueCommonChoicePoint struct {
 //	The color element contains three floating point numbers specifying the color of the light.
@@ -7625,6 +8021,7 @@ type XsdGoPkgHasElem_pointchoicetechnique_commonsequencelightschema_Point_TxsdLi
 //	light source is attenuated as the distance to the light source increases. The position of the light
 //	is defined by the transform of the node in which it is instantiated.
 	Point *TxsdLightSequenceTechniqueCommonChoicePoint `xml:"http://www.collada.org/2005/11/COLLADASchema point"`
+
 }
 
 //	The point element declares the parameters required to describe a point light source.  A point light
@@ -7637,6 +8034,7 @@ type XsdGoPkgHasElems_pointchoicetechnique_commonsequencelightschema_Point_TxsdL
 //	light source is attenuated as the distance to the light source increases. The position of the light
 //	is defined by the transform of the node in which it is instantiated.
 	Points []*TxsdLightSequenceTechniqueCommonChoicePoint `xml:"http://www.collada.org/2005/11/COLLADASchema point"`
+
 }
 
 //	The color element contains three floating point numbers specifying the color of the light.
@@ -7645,6 +8043,7 @@ type XsdGoPkgHasElem_colorsequencespotchoicetechnique_commonsequencelightschema_
 //	The color element contains three floating point numbers specifying the color of the light.
 //	The color element must occur exactly once.
 	Color *TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema color"`
+
 }
 
 //	The color element contains three floating point numbers specifying the color of the light.
@@ -7653,6 +8052,7 @@ type XsdGoPkgHasElems_colorsequencespotchoicetechnique_commonsequencelightschema
 //	The color element contains three floating point numbers specifying the color of the light.
 //	The color element must occur exactly once.
 	Colors []*TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema color"`
+
 }
 
 //	The constant_attenuation is used to calculate the total attenuation of this light given a distance.
@@ -7661,6 +8061,7 @@ type XsdGoPkgHasElem_constant_attenuationsequencespotchoicetechnique_commonseque
 //	The constant_attenuation is used to calculate the total attenuation of this light given a distance.
 //	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
 	ConstantAttenuation *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema constant_attenuation"`
+
 }
 
 //	Returns the Default value for ConstantAttenuation -- 1.0
@@ -7672,6 +8073,7 @@ type XsdGoPkgHasElems_constant_attenuationsequencespotchoicetechnique_commonsequ
 //	The constant_attenuation is used to calculate the total attenuation of this light given a distance.
 //	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
 	ConstantAttenuations []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema constant_attenuation"`
+
 }
 
 //	Returns the Default value for ConstantAttenuation -- 1.0
@@ -7683,6 +8085,7 @@ type XsdGoPkgHasElem_linear_attenuationsequencespotchoicetechnique_commonsequenc
 //	The linear_attenuation is used to calculate the total attenuation of this light given a distance.
 //	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
 	LinearAttenuation *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema linear_attenuation"`
+
 }
 
 //	Returns the Default value for LinearAttenuation -- 0.0
@@ -7694,6 +8097,7 @@ type XsdGoPkgHasElems_linear_attenuationsequencespotchoicetechnique_commonsequen
 //	The linear_attenuation is used to calculate the total attenuation of this light given a distance.
 //	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
 	LinearAttenuations []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema linear_attenuation"`
+
 }
 
 //	Returns the Default value for LinearAttenuation -- 0.0
@@ -7701,30 +8105,33 @@ func (me *XsdGoPkgHasElems_linear_attenuationsequencespotchoicetechnique_commons
 
 //	The quadratic_attenuation is used to calculate the total attenuation of this light given a distance.
 //	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
-type XsdGoPkgHasElem_quadratic_attenuationsequencespotchoicetechnique_commonsequencelightschema_QuadraticAttenuation_TargetableFloat_00 struct {
-//	The quadratic_attenuation is used to calculate the total attenuation of this light given a distance.
-//	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
-	QuadraticAttenuation *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema quadratic_attenuation"`
-}
-
-//	Returns the Default value for QuadraticAttenuation -- 0.0
-func (me *XsdGoPkgHasElem_quadratic_attenuationsequencespotchoicetechnique_commonsequencelightschema_QuadraticAttenuation_TargetableFloat_00) QuadraticAttenuationDefault () Tfloat { return Tfloat(0.0) }
-
-//	The quadratic_attenuation is used to calculate the total attenuation of this light given a distance.
-//	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
 type XsdGoPkgHasElems_quadratic_attenuationsequencespotchoicetechnique_commonsequencelightschema_QuadraticAttenuation_TargetableFloat_00 struct {
 //	The quadratic_attenuation is used to calculate the total attenuation of this light given a distance.
 //	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
 	QuadraticAttenuations []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema quadratic_attenuation"`
+
 }
 
 //	Returns the Default value for QuadraticAttenuation -- 0.0
 func (me *XsdGoPkgHasElems_quadratic_attenuationsequencespotchoicetechnique_commonsequencelightschema_QuadraticAttenuation_TargetableFloat_00) QuadraticAttenuationDefault () Tfloat { return Tfloat(0.0) }
 
+//	The quadratic_attenuation is used to calculate the total attenuation of this light given a distance.
+//	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
+type XsdGoPkgHasElem_quadratic_attenuationsequencespotchoicetechnique_commonsequencelightschema_QuadraticAttenuation_TargetableFloat_00 struct {
+//	The quadratic_attenuation is used to calculate the total attenuation of this light given a distance.
+//	The equation used is A = constant_attenuation + Dist*linear_attenuation + Dist^2*quadratic_attenuation.
+	QuadraticAttenuation *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema quadratic_attenuation"`
+
+}
+
+//	Returns the Default value for QuadraticAttenuation -- 0.0
+func (me *XsdGoPkgHasElem_quadratic_attenuationsequencespotchoicetechnique_commonsequencelightschema_QuadraticAttenuation_TargetableFloat_00) QuadraticAttenuationDefault () Tfloat { return Tfloat(0.0) }
+
 //	The falloff_angle is used to specify the amount of attenuation based on the direction of the light.
 type XsdGoPkgHasElem_falloff_anglesequencespotchoicetechnique_commonsequencelightschema_FalloffAngle_TargetableFloat_1800 struct {
 //	The falloff_angle is used to specify the amount of attenuation based on the direction of the light.
 	FalloffAngle *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema falloff_angle"`
+
 }
 
 //	Returns the Default value for FalloffAngle -- 180.0
@@ -7734,6 +8141,7 @@ func (me *XsdGoPkgHasElem_falloff_anglesequencespotchoicetechnique_commonsequenc
 type XsdGoPkgHasElems_falloff_anglesequencespotchoicetechnique_commonsequencelightschema_FalloffAngle_TargetableFloat_1800 struct {
 //	The falloff_angle is used to specify the amount of attenuation based on the direction of the light.
 	FalloffAngles []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema falloff_angle"`
+
 }
 
 //	Returns the Default value for FalloffAngle -- 180.0
@@ -7743,6 +8151,7 @@ func (me *XsdGoPkgHasElems_falloff_anglesequencespotchoicetechnique_commonsequen
 type XsdGoPkgHasElem_falloff_exponentsequencespotchoicetechnique_commonsequencelightschema_FalloffExponent_TargetableFloat_00 struct {
 //	The falloff_exponent is used to specify the amount of attenuation based on the direction of the light.
 	FalloffExponent *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema falloff_exponent"`
+
 }
 
 //	Returns the Default value for FalloffExponent -- 0.0
@@ -7752,6 +8161,7 @@ func (me *XsdGoPkgHasElem_falloff_exponentsequencespotchoicetechnique_commonsequ
 type XsdGoPkgHasElems_falloff_exponentsequencespotchoicetechnique_commonsequencelightschema_FalloffExponent_TargetableFloat_00 struct {
 //	The falloff_exponent is used to specify the amount of attenuation based on the direction of the light.
 	FalloffExponents []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema falloff_exponent"`
+
 }
 
 //	Returns the Default value for FalloffExponent -- 0.0
@@ -7800,6 +8210,7 @@ type XsdGoPkgHasElem_spotchoicetechnique_commonsequencelightschema_Spot_TxsdLigh
 //	vector in local coordinates is [0,0,-1], pointing down the -Z axis. The actual direction of the
 //	light is defined by the transform of the node where the light is instantiated.
 	Spot *TxsdLightSequenceTechniqueCommonChoiceSpot `xml:"http://www.collada.org/2005/11/COLLADASchema spot"`
+
 }
 
 //	The spot element declares the parameters required to describe a spot light source.  A spot light
@@ -7820,6 +8231,7 @@ type XsdGoPkgHasElems_spotchoicetechnique_commonsequencelightschema_Spot_TxsdLig
 //	vector in local coordinates is [0,0,-1], pointing down the -Z axis. The actual direction of the
 //	light is defined by the transform of the node where the light is instantiated.
 	Spots []*TxsdLightSequenceTechniqueCommonChoiceSpot `xml:"http://www.collada.org/2005/11/COLLADASchema spot"`
+
 }
 
 type TxsdLightSequenceTechniqueCommon struct {
@@ -7854,18 +8266,20 @@ type TxsdLightSequenceTechniqueCommon struct {
 
 //	The technique_common element specifies the light information for the common profile which all
 //	COLLADA implementations need to support.
-type XsdGoPkgHasElem_technique_commonsequencelightschema_TechniqueCommon_TxsdLightSequenceTechniqueCommon_ struct {
-//	The technique_common element specifies the light information for the common profile which all
-//	COLLADA implementations need to support.
-	TechniqueCommon *TxsdLightSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
-}
-
-//	The technique_common element specifies the light information for the common profile which all
-//	COLLADA implementations need to support.
 type XsdGoPkgHasElems_technique_commonsequencelightschema_TechniqueCommon_TxsdLightSequenceTechniqueCommon_ struct {
 //	The technique_common element specifies the light information for the common profile which all
 //	COLLADA implementations need to support.
 	TechniqueCommons []*TxsdLightSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
+
+}
+
+//	The technique_common element specifies the light information for the common profile which all
+//	COLLADA implementations need to support.
+type XsdGoPkgHasElem_technique_commonsequencelightschema_TechniqueCommon_TxsdLightSequenceTechniqueCommon_ struct {
+//	The technique_common element specifies the light information for the common profile which all
+//	COLLADA implementations need to support.
+	TechniqueCommon *TxsdLightSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
+
 }
 
 type TxsdLight struct {
@@ -7892,6 +8306,7 @@ type XsdGoPkgHasElem_Light struct {
 //	Light sources have many different properties and radiate light in many different patterns and
 //	frequencies.
 	Light *TxsdLight `xml:"http://www.collada.org/2005/11/COLLADASchema light"`
+
 }
 
 //	The light element declares a light source that illuminates the scene.
@@ -7902,6 +8317,7 @@ type XsdGoPkgHasElems_Light struct {
 //	Light sources have many different properties and radiate light in many different patterns and
 //	frequencies.
 	Lights []*TxsdLight `xml:"http://www.collada.org/2005/11/COLLADASchema light"`
+
 }
 
 type TxsdMaterial struct {
@@ -7917,23 +8333,17 @@ type TxsdMaterial struct {
 }
 
 //	Materials describe the visual appearance of a geometric object.
-type XsdGoPkgHasElems_Material struct {
-//	Materials describe the visual appearance of a geometric object.
-	Materials []*TxsdMaterial `xml:"http://www.collada.org/2005/11/COLLADASchema material"`
-}
-
-//	Materials describe the visual appearance of a geometric object.
 type XsdGoPkgHasElem_Material struct {
 //	Materials describe the visual appearance of a geometric object.
 	Material *TxsdMaterial `xml:"http://www.collada.org/2005/11/COLLADASchema material"`
+
 }
 
-//	The ymag element contains a floating point number describing the vertical
-//	magnification of the view.  It can also have a sid.
-type XsdGoPkgHasElem_ymagchoicesequencechoicesequenceorthographicchoicetechnique_commonsequenceopticssequencecameraschema_Ymag_TargetableFloat_ struct {
-//	The ymag element contains a floating point number describing the vertical
-//	magnification of the view.  It can also have a sid.
-	Ymag *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema ymag"`
+//	Materials describe the visual appearance of a geometric object.
+type XsdGoPkgHasElems_Material struct {
+//	Materials describe the visual appearance of a geometric object.
+	Materials []*TxsdMaterial `xml:"http://www.collada.org/2005/11/COLLADASchema material"`
+
 }
 
 //	The ymag element contains a floating point number describing the vertical
@@ -7942,6 +8352,16 @@ type XsdGoPkgHasElems_ymagchoicesequencechoicesequenceorthographicchoicetechniqu
 //	The ymag element contains a floating point number describing the vertical
 //	magnification of the view.  It can also have a sid.
 	Ymags []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema ymag"`
+
+}
+
+//	The ymag element contains a floating point number describing the vertical
+//	magnification of the view.  It can also have a sid.
+type XsdGoPkgHasElem_ymagchoicesequencechoicesequenceorthographicchoicetechnique_commonsequenceopticssequencecameraschema_Ymag_TargetableFloat_ struct {
+//	The ymag element contains a floating point number describing the vertical
+//	magnification of the view.  It can also have a sid.
+	Ymag *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema ymag"`
+
 }
 
 //	The aspect_ratio element contains a floating point number describing the aspect ratio of
@@ -7952,6 +8372,7 @@ type XsdGoPkgHasElems_aspect_ratiochoicesequencechoicesequenceorthographicchoice
 //	the field of view. If the aspect_ratio element is not present the aspect ratio is to be
 //	calculated from the xmag or ymag elements and the current viewport.
 	AspectRatios []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema aspect_ratio"`
+
 }
 
 //	The aspect_ratio element contains a floating point number describing the aspect ratio of
@@ -7962,6 +8383,7 @@ type XsdGoPkgHasElem_aspect_ratiochoicesequencechoicesequenceorthographicchoicet
 //	the field of view. If the aspect_ratio element is not present the aspect ratio is to be
 //	calculated from the xmag or ymag elements and the current viewport.
 	AspectRatio *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema aspect_ratio"`
+
 }
 
 //	The xmag element contains a floating point number describing the horizontal
@@ -7970,6 +8392,7 @@ type XsdGoPkgHasElems_xmagsequencechoicesequenceorthographicchoicetechnique_comm
 //	The xmag element contains a floating point number describing the horizontal
 //	magnification of the view.
 	Xmags []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema xmag"`
+
 }
 
 //	The xmag element contains a floating point number describing the horizontal
@@ -7978,30 +8401,27 @@ type XsdGoPkgHasElem_xmagsequencechoicesequenceorthographicchoicetechnique_commo
 //	The xmag element contains a floating point number describing the horizontal
 //	magnification of the view.
 	Xmag *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema xmag"`
-}
 
-type XsdGoPkgHasElems_ymagsequencechoicesequenceorthographicchoicetechnique_commonsequenceopticssequencecameraschema_Ymag_TargetableFloat_ struct {
-	Ymags []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema ymag"`
 }
 
 type XsdGoPkgHasElem_ymagsequencechoicesequenceorthographicchoicetechnique_commonsequenceopticssequencecameraschema_Ymag_TargetableFloat_ struct {
 	Ymag *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema ymag"`
+
+}
+
+type XsdGoPkgHasElems_ymagsequencechoicesequenceorthographicchoicetechnique_commonsequenceopticssequencecameraschema_Ymag_TargetableFloat_ struct {
+	Ymags []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema ymag"`
+
 }
 
 type XsdGoPkgHasElem_aspect_ratiosequencechoicesequenceorthographicchoicetechnique_commonsequenceopticssequencecameraschema_AspectRatio_TargetableFloat_ struct {
 	AspectRatio *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema aspect_ratio"`
+
 }
 
 type XsdGoPkgHasElems_aspect_ratiosequencechoicesequenceorthographicchoicetechnique_commonsequenceopticssequencecameraschema_AspectRatio_TargetableFloat_ struct {
 	AspectRatios []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema aspect_ratio"`
-}
 
-//	The znear element contains a floating point number that describes the distance to the near
-//	clipping plane. The znear element must occur exactly once.
-type XsdGoPkgHasElem_znearsequenceorthographicchoicetechnique_commonsequenceopticssequencecameraschema_Znear_TargetableFloat_ struct {
-//	The znear element contains a floating point number that describes the distance to the near
-//	clipping plane. The znear element must occur exactly once.
-	Znear *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema znear"`
 }
 
 //	The znear element contains a floating point number that describes the distance to the near
@@ -8010,6 +8430,16 @@ type XsdGoPkgHasElems_znearsequenceorthographicchoicetechnique_commonsequenceopt
 //	The znear element contains a floating point number that describes the distance to the near
 //	clipping plane. The znear element must occur exactly once.
 	Znears []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema znear"`
+
+}
+
+//	The znear element contains a floating point number that describes the distance to the near
+//	clipping plane. The znear element must occur exactly once.
+type XsdGoPkgHasElem_znearsequenceorthographicchoicetechnique_commonsequenceopticssequencecameraschema_Znear_TargetableFloat_ struct {
+//	The znear element contains a floating point number that describes the distance to the near
+//	clipping plane. The znear element must occur exactly once.
+	Znear *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema znear"`
+
 }
 
 //	The zfar element contains a floating point number that describes the distance to the far
@@ -8018,6 +8448,7 @@ type XsdGoPkgHasElems_zfarsequenceorthographicchoicetechnique_commonsequenceopti
 //	The zfar element contains a floating point number that describes the distance to the far
 //	clipping plane. The zfar element must occur exactly once.
 	Zfars []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema zfar"`
+
 }
 
 //	The zfar element contains a floating point number that describes the distance to the far
@@ -8026,6 +8457,7 @@ type XsdGoPkgHasElem_zfarsequenceorthographicchoicetechnique_commonsequenceoptic
 //	The zfar element contains a floating point number that describes the distance to the far
 //	clipping plane. The zfar element must occur exactly once.
 	Zfar *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema zfar"`
+
 }
 
 type TxsdCameraSequenceOpticsSequenceTechniqueCommonChoiceOrthographic struct {
@@ -8057,27 +8489,31 @@ type TxsdCameraSequenceOpticsSequenceTechniqueCommonChoiceOrthographic struct {
 }
 
 //	The orthographic element describes the field of view of an orthographic camera.
-type XsdGoPkgHasElems_orthographicchoicetechnique_commonsequenceopticssequencecameraschema_Orthographic_TxsdCameraSequenceOpticsSequenceTechniqueCommonChoiceOrthographic_ struct {
-//	The orthographic element describes the field of view of an orthographic camera.
-	Orthographics []*TxsdCameraSequenceOpticsSequenceTechniqueCommonChoiceOrthographic `xml:"http://www.collada.org/2005/11/COLLADASchema orthographic"`
-}
-
-//	The orthographic element describes the field of view of an orthographic camera.
 type XsdGoPkgHasElem_orthographicchoicetechnique_commonsequenceopticssequencecameraschema_Orthographic_TxsdCameraSequenceOpticsSequenceTechniqueCommonChoiceOrthographic_ struct {
 //	The orthographic element describes the field of view of an orthographic camera.
 	Orthographic *TxsdCameraSequenceOpticsSequenceTechniqueCommonChoiceOrthographic `xml:"http://www.collada.org/2005/11/COLLADASchema orthographic"`
+
+}
+
+//	The orthographic element describes the field of view of an orthographic camera.
+type XsdGoPkgHasElems_orthographicchoicetechnique_commonsequenceopticssequencecameraschema_Orthographic_TxsdCameraSequenceOpticsSequenceTechniqueCommonChoiceOrthographic_ struct {
+//	The orthographic element describes the field of view of an orthographic camera.
+	Orthographics []*TxsdCameraSequenceOpticsSequenceTechniqueCommonChoiceOrthographic `xml:"http://www.collada.org/2005/11/COLLADASchema orthographic"`
+
 }
 
 //	The yfov element contains a floating point number describing the verticle field of view in degrees.
 type XsdGoPkgHasElem_yfovchoicesequencechoicesequenceperspectivechoicetechnique_commonsequenceopticssequencecameraschema_Yfov_TargetableFloat_ struct {
 //	The yfov element contains a floating point number describing the verticle field of view in degrees.
 	Yfov *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema yfov"`
+
 }
 
 //	The yfov element contains a floating point number describing the verticle field of view in degrees.
 type XsdGoPkgHasElems_yfovchoicesequencechoicesequenceperspectivechoicetechnique_commonsequenceopticssequencecameraschema_Yfov_TargetableFloat_ struct {
 //	The yfov element contains a floating point number describing the verticle field of view in degrees.
 	Yfovs []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema yfov"`
+
 }
 
 //	The aspect_ratio element contains a floating point number describing the aspect ratio of the field
@@ -8088,6 +8524,7 @@ type XsdGoPkgHasElem_aspect_ratiochoicesequencechoicesequenceperspectivechoicete
 //	of view. If the aspect_ratio element is not present the aspect ratio is to be calculated from the
 //	xfov or yfov elements and the current viewport.
 	AspectRatio *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema aspect_ratio"`
+
 }
 
 //	The aspect_ratio element contains a floating point number describing the aspect ratio of the field
@@ -8098,34 +8535,41 @@ type XsdGoPkgHasElems_aspect_ratiochoicesequencechoicesequenceperspectivechoicet
 //	of view. If the aspect_ratio element is not present the aspect ratio is to be calculated from the
 //	xfov or yfov elements and the current viewport.
 	AspectRatios []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema aspect_ratio"`
-}
 
-//	The xfov element contains a floating point number describing the horizontal field of view in degrees.
-type XsdGoPkgHasElems_xfovsequencechoicesequenceperspectivechoicetechnique_commonsequenceopticssequencecameraschema_Xfov_TargetableFloat_ struct {
-//	The xfov element contains a floating point number describing the horizontal field of view in degrees.
-	Xfovs []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema xfov"`
 }
 
 //	The xfov element contains a floating point number describing the horizontal field of view in degrees.
 type XsdGoPkgHasElem_xfovsequencechoicesequenceperspectivechoicetechnique_commonsequenceopticssequencecameraschema_Xfov_TargetableFloat_ struct {
 //	The xfov element contains a floating point number describing the horizontal field of view in degrees.
 	Xfov *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema xfov"`
+
+}
+
+//	The xfov element contains a floating point number describing the horizontal field of view in degrees.
+type XsdGoPkgHasElems_xfovsequencechoicesequenceperspectivechoicetechnique_commonsequenceopticssequencecameraschema_Xfov_TargetableFloat_ struct {
+//	The xfov element contains a floating point number describing the horizontal field of view in degrees.
+	Xfovs []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema xfov"`
+
 }
 
 type XsdGoPkgHasElems_yfovsequencechoicesequenceperspectivechoicetechnique_commonsequenceopticssequencecameraschema_Yfov_TargetableFloat_ struct {
 	Yfovs []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema yfov"`
+
 }
 
 type XsdGoPkgHasElem_yfovsequencechoicesequenceperspectivechoicetechnique_commonsequenceopticssequencecameraschema_Yfov_TargetableFloat_ struct {
 	Yfov *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema yfov"`
-}
 
-type XsdGoPkgHasElem_aspect_ratiosequencechoicesequenceperspectivechoicetechnique_commonsequenceopticssequencecameraschema_AspectRatio_TargetableFloat_ struct {
-	AspectRatio *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema aspect_ratio"`
 }
 
 type XsdGoPkgHasElems_aspect_ratiosequencechoicesequenceperspectivechoicetechnique_commonsequenceopticssequencecameraschema_AspectRatio_TargetableFloat_ struct {
 	AspectRatios []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema aspect_ratio"`
+
+}
+
+type XsdGoPkgHasElem_aspect_ratiosequencechoicesequenceperspectivechoicetechnique_commonsequenceopticssequencecameraschema_AspectRatio_TargetableFloat_ struct {
+	AspectRatio *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema aspect_ratio"`
+
 }
 
 //	The znear element contains a floating point number that describes the distance to the near
@@ -8134,6 +8578,7 @@ type XsdGoPkgHasElem_znearsequenceperspectivechoicetechnique_commonsequenceoptic
 //	The znear element contains a floating point number that describes the distance to the near
 //	clipping plane. The znear element must occur exactly once.
 	Znear *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema znear"`
+
 }
 
 //	The znear element contains a floating point number that describes the distance to the near
@@ -8142,14 +8587,7 @@ type XsdGoPkgHasElems_znearsequenceperspectivechoicetechnique_commonsequenceopti
 //	The znear element contains a floating point number that describes the distance to the near
 //	clipping plane. The znear element must occur exactly once.
 	Znears []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema znear"`
-}
 
-//	The zfar element contains a floating point number that describes the distance to the far
-//	clipping plane. The zfar element must occur exactly once.
-type XsdGoPkgHasElem_zfarsequenceperspectivechoicetechnique_commonsequenceopticssequencecameraschema_Zfar_TargetableFloat_ struct {
-//	The zfar element contains a floating point number that describes the distance to the far
-//	clipping plane. The zfar element must occur exactly once.
-	Zfar *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema zfar"`
 }
 
 //	The zfar element contains a floating point number that describes the distance to the far
@@ -8158,6 +8596,16 @@ type XsdGoPkgHasElems_zfarsequenceperspectivechoicetechnique_commonsequenceoptic
 //	The zfar element contains a floating point number that describes the distance to the far
 //	clipping plane. The zfar element must occur exactly once.
 	Zfars []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema zfar"`
+
+}
+
+//	The zfar element contains a floating point number that describes the distance to the far
+//	clipping plane. The zfar element must occur exactly once.
+type XsdGoPkgHasElem_zfarsequenceperspectivechoicetechnique_commonsequenceopticssequencecameraschema_Zfar_TargetableFloat_ struct {
+//	The zfar element contains a floating point number that describes the distance to the far
+//	clipping plane. The zfar element must occur exactly once.
+	Zfar *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema zfar"`
+
 }
 
 type TxsdCameraSequenceOpticsSequenceTechniqueCommonChoicePerspective struct {
@@ -8190,12 +8638,14 @@ type TxsdCameraSequenceOpticsSequenceTechniqueCommonChoicePerspective struct {
 type XsdGoPkgHasElems_perspectivechoicetechnique_commonsequenceopticssequencecameraschema_Perspective_TxsdCameraSequenceOpticsSequenceTechniqueCommonChoicePerspective_ struct {
 //	The perspective element describes the optics of a perspective camera.
 	Perspectives []*TxsdCameraSequenceOpticsSequenceTechniqueCommonChoicePerspective `xml:"http://www.collada.org/2005/11/COLLADASchema perspective"`
+
 }
 
 //	The perspective element describes the optics of a perspective camera.
 type XsdGoPkgHasElem_perspectivechoicetechnique_commonsequenceopticssequencecameraschema_Perspective_TxsdCameraSequenceOpticsSequenceTechniqueCommonChoicePerspective_ struct {
 //	The perspective element describes the optics of a perspective camera.
 	Perspective *TxsdCameraSequenceOpticsSequenceTechniqueCommonChoicePerspective `xml:"http://www.collada.org/2005/11/COLLADASchema perspective"`
+
 }
 
 type TxsdCameraSequenceOpticsSequenceTechniqueCommon struct {
@@ -8213,6 +8663,7 @@ type XsdGoPkgHasElem_technique_commonsequenceopticssequencecameraschema_Techniqu
 //	The technique_common element specifies the optics information for the common profile
 //	which all COLLADA implementations need to support.
 	TechniqueCommon *TxsdCameraSequenceOpticsSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
+
 }
 
 //	The technique_common element specifies the optics information for the common profile
@@ -8221,6 +8672,7 @@ type XsdGoPkgHasElems_technique_commonsequenceopticssequencecameraschema_Techniq
 //	The technique_common element specifies the optics information for the common profile
 //	which all COLLADA implementations need to support.
 	TechniqueCommons []*TxsdCameraSequenceOpticsSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
+
 }
 
 type TxsdCameraSequenceOptics struct {
@@ -8237,15 +8689,17 @@ type TxsdCameraSequenceOptics struct {
 }
 
 //	Optics represents the apparatus on a camera that projects the image onto the image sensor.
-type XsdGoPkgHasElems_opticssequencecameraschema_Optics_TxsdCameraSequenceOptics_ struct {
-//	Optics represents the apparatus on a camera that projects the image onto the image sensor.
-	Opticses []*TxsdCameraSequenceOptics `xml:"http://www.collada.org/2005/11/COLLADASchema optics"`
-}
-
-//	Optics represents the apparatus on a camera that projects the image onto the image sensor.
 type XsdGoPkgHasElem_opticssequencecameraschema_Optics_TxsdCameraSequenceOptics_ struct {
 //	Optics represents the apparatus on a camera that projects the image onto the image sensor.
 	Optics *TxsdCameraSequenceOptics `xml:"http://www.collada.org/2005/11/COLLADASchema optics"`
+
+}
+
+//	Optics represents the apparatus on a camera that projects the image onto the image sensor.
+type XsdGoPkgHasElems_opticssequencecameraschema_Optics_TxsdCameraSequenceOptics_ struct {
+//	Optics represents the apparatus on a camera that projects the image onto the image sensor.
+	Opticses []*TxsdCameraSequenceOptics `xml:"http://www.collada.org/2005/11/COLLADASchema optics"`
+
 }
 
 type TxsdCameraSequenceImager struct {
@@ -8262,12 +8716,14 @@ type TxsdCameraSequenceImager struct {
 type XsdGoPkgHasElem_imagersequencecameraschema_Imager_TxsdCameraSequenceImager_ struct {
 //	Imagers represent the image sensor of a camera (for example film or CCD).
 	Imager *TxsdCameraSequenceImager `xml:"http://www.collada.org/2005/11/COLLADASchema imager"`
+
 }
 
 //	Imagers represent the image sensor of a camera (for example film or CCD).
 type XsdGoPkgHasElems_imagersequencecameraschema_Imager_TxsdCameraSequenceImager_ struct {
 //	Imagers represent the image sensor of a camera (for example film or CCD).
 	Imagers []*TxsdCameraSequenceImager `xml:"http://www.collada.org/2005/11/COLLADASchema imager"`
+
 }
 
 type TxsdCamera struct {
@@ -8287,18 +8743,20 @@ type TxsdCamera struct {
 
 //	The camera element declares a view into the scene hierarchy or scene graph. The camera contains
 //	elements that describe the camera’s optics and imager.
-type XsdGoPkgHasElem_Camera struct {
-//	The camera element declares a view into the scene hierarchy or scene graph. The camera contains
-//	elements that describe the camera’s optics and imager.
-	Camera *TxsdCamera `xml:"http://www.collada.org/2005/11/COLLADASchema camera"`
-}
-
-//	The camera element declares a view into the scene hierarchy or scene graph. The camera contains
-//	elements that describe the camera’s optics and imager.
 type XsdGoPkgHasElems_Camera struct {
 //	The camera element declares a view into the scene hierarchy or scene graph. The camera contains
 //	elements that describe the camera’s optics and imager.
 	Cameras []*TxsdCamera `xml:"http://www.collada.org/2005/11/COLLADASchema camera"`
+
+}
+
+//	The camera element declares a view into the scene hierarchy or scene graph. The camera contains
+//	elements that describe the camera’s optics and imager.
+type XsdGoPkgHasElem_Camera struct {
+//	The camera element declares a view into the scene hierarchy or scene graph. The camera contains
+//	elements that describe the camera’s optics and imager.
+	Camera *TxsdCamera `xml:"http://www.collada.org/2005/11/COLLADASchema camera"`
+
 }
 
 type TxsdAnimation struct {
@@ -8329,6 +8787,7 @@ type XsdGoPkgHasElem_Animation struct {
 //	hierarchy contains elements that describe the animation’s key-frame data and sampler functions,
 //	ordered in such a way to group together animations that should be executed together.
 	Animation *TxsdAnimation `xml:"http://www.collada.org/2005/11/COLLADASchema animation"`
+
 }
 
 //	The animation element categorizes the declaration of animation information. The animation
@@ -8339,6 +8798,7 @@ type XsdGoPkgHasElems_Animation struct {
 //	hierarchy contains elements that describe the animation’s key-frame data and sampler functions,
 //	ordered in such a way to group together animations that should be executed together.
 	Animations []*TxsdAnimation `xml:"http://www.collada.org/2005/11/COLLADASchema animation"`
+
 }
 
 //	The start attribute is the time in seconds of the beginning of the clip.  This time is
@@ -8369,15 +8829,17 @@ type XsdGoPkgHasAttr_End_XsdtDouble_ struct {
 }
 
 //	The animation_clip must instance at least one animation element.
-type XsdGoPkgHasElems_instance_animationsequenceanimation_clipschema_InstanceAnimation_TInstanceWithExtra_ struct {
-//	The animation_clip must instance at least one animation element.
-	InstanceAnimations []*TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_animation"`
-}
-
-//	The animation_clip must instance at least one animation element.
 type XsdGoPkgHasElem_instance_animationsequenceanimation_clipschema_InstanceAnimation_TInstanceWithExtra_ struct {
 //	The animation_clip must instance at least one animation element.
 	InstanceAnimation *TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_animation"`
+
+}
+
+//	The animation_clip must instance at least one animation element.
+type XsdGoPkgHasElems_instance_animationsequenceanimation_clipschema_InstanceAnimation_TInstanceWithExtra_ struct {
+//	The animation_clip must instance at least one animation element.
+	InstanceAnimations []*TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_animation"`
+
 }
 
 type TxsdAnimationClip struct {
@@ -8390,17 +8852,17 @@ type TxsdAnimationClip struct {
 //	The extra element may appear any number of times.
 	XsdGoPkgHasElems_Extra
 
-//	The end attribute is the time in seconds of the end of the clip.  This is used in the
-//	same way as the start time.  If end is not specified, the value is taken to be the end
-//	time of the longest animation.  Optional attribute.
-	XsdGoPkgHasAttr_End_XsdtDouble_
-
 //	The start attribute is the time in seconds of the beginning of the clip.  This time is
 //	the same as that used in the key-frame data and is used to determine which set of
 //	key-frames will be included in the clip.  The start time does not specify when the clip
 //	will be played.  If the time falls between two keyframes of a referenced animation, an
 //	interpolated value should be used.  The default value is 0.0.  Optional attribute.
 	XsdGoPkgHasAttr_Start_XsdtDouble_00
+
+//	The end attribute is the time in seconds of the end of the clip.  This is used in the
+//	same way as the start time.  If end is not specified, the value is taken to be the end
+//	time of the longest animation.  Optional attribute.
+	XsdGoPkgHasAttr_End_XsdtDouble_
 
 }
 
@@ -8410,6 +8872,7 @@ type XsdGoPkgHasElems_AnimationClip struct {
 //	The animation_clip element defines a section of the animation curves to be used together as
 //	an animation clip.
 	AnimationClips []*TxsdAnimationClip `xml:"http://www.collada.org/2005/11/COLLADASchema animation_clip"`
+
 }
 
 //	The animation_clip element defines a section of the animation curves to be used together as
@@ -8418,6 +8881,7 @@ type XsdGoPkgHasElem_AnimationClip struct {
 //	The animation_clip element defines a section of the animation curves to be used together as
 //	an animation clip.
 	AnimationClip *TxsdAnimationClip `xml:"http://www.collada.org/2005/11/COLLADASchema animation_clip"`
+
 }
 
 //	The target attribute indicates the location of the element bound to the output of the sampler.
@@ -8442,24 +8906,28 @@ type TxsdChannel struct {
 type XsdGoPkgHasElems_Channel struct {
 //	The channel element declares an output channel of an animation.
 	Channels []*TxsdChannel `xml:"http://www.collada.org/2005/11/COLLADASchema channel"`
+
 }
 
 //	The channel element declares an output channel of an animation.
 type XsdGoPkgHasElem_Channel struct {
 //	The channel element declares an output channel of an animation.
 	Channel *TxsdChannel `xml:"http://www.collada.org/2005/11/COLLADASchema channel"`
+
 }
 
 //	The input element must occur at least one time. These inputs are local inputs.
 type XsdGoPkgHasElems_inputsequencesamplerschema_Input_TInputLocal_ struct {
 //	The input element must occur at least one time. These inputs are local inputs.
 	Inputs []*TInputLocal `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
 }
 
 //	The input element must occur at least one time. These inputs are local inputs.
 type XsdGoPkgHasElem_inputsequencesamplerschema_Input_TInputLocal_ struct {
 //	The input element must occur at least one time. These inputs are local inputs.
 	Input *TInputLocal `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
 }
 
 type TxsdSampler struct {
@@ -8471,21 +8939,23 @@ type TxsdSampler struct {
 //	The sampler element declares an N-dimensional function used for animation. Animation function curves
 //	are represented by 1-D sampler elements in COLLADA. The sampler defines sampling points and how to
 //	interpolate between them.
-type XsdGoPkgHasElems_Sampler struct {
-//	The sampler element declares an N-dimensional function used for animation. Animation function curves
-//	are represented by 1-D sampler elements in COLLADA. The sampler defines sampling points and how to
-//	interpolate between them.
-	Samplers []*TxsdSampler `xml:"http://www.collada.org/2005/11/COLLADASchema sampler"`
-}
-
-//	The sampler element declares an N-dimensional function used for animation. Animation function curves
-//	are represented by 1-D sampler elements in COLLADA. The sampler defines sampling points and how to
-//	interpolate between them.
 type XsdGoPkgHasElem_Sampler struct {
 //	The sampler element declares an N-dimensional function used for animation. Animation function curves
 //	are represented by 1-D sampler elements in COLLADA. The sampler defines sampling points and how to
 //	interpolate between them.
 	Sampler *TxsdSampler `xml:"http://www.collada.org/2005/11/COLLADASchema sampler"`
+
+}
+
+//	The sampler element declares an N-dimensional function used for animation. Animation function curves
+//	are represented by 1-D sampler elements in COLLADA. The sampler defines sampling points and how to
+//	interpolate between them.
+type XsdGoPkgHasElems_Sampler struct {
+//	The sampler element declares an N-dimensional function used for animation. Animation function curves
+//	are represented by 1-D sampler elements in COLLADA. The sampler defines sampling points and how to
+//	interpolate between them.
+	Samplers []*TxsdSampler `xml:"http://www.collada.org/2005/11/COLLADASchema sampler"`
+
 }
 
 type TxsdController struct {
@@ -8509,6 +8979,7 @@ type XsdGoPkgHasElem_Controller struct {
 //	The controller element categorizes the declaration of generic control information.
 //	A controller is a device or mechanism that manages and directs the operations of another object.
 	Controller *TxsdController `xml:"http://www.collada.org/2005/11/COLLADASchema controller"`
+
 }
 
 //	The controller element categorizes the declaration of generic control information.
@@ -8517,6 +8988,7 @@ type XsdGoPkgHasElems_Controller struct {
 //	The controller element categorizes the declaration of generic control information.
 //	A controller is a device or mechanism that manages and directs the operations of another object.
 	Controllers []*TxsdController `xml:"http://www.collada.org/2005/11/COLLADASchema controller"`
+
 }
 
 //	This provides extra information about the position and orientation of the base mesh before binding.
@@ -8527,6 +8999,7 @@ type XsdGoPkgHasElem_bind_shape_matrixsequenceskinschema_BindShapeMatrix_Tfloat4
 //	If bind_shape_matrix is not specified then an identity matrix may be used as the bind_shape_matrix.
 //	The bind_shape_matrix element may occur zero or one times.
 	BindShapeMatrix Tfloat4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema bind_shape_matrix"`
+
 }
 
 //	This provides extra information about the position and orientation of the base mesh before binding.
@@ -8537,18 +9010,21 @@ type XsdGoPkgHasElems_bind_shape_matrixsequenceskinschema_BindShapeMatrix_Tfloat
 //	If bind_shape_matrix is not specified then an identity matrix may be used as the bind_shape_matrix.
 //	The bind_shape_matrix element may occur zero or one times.
 	BindShapeMatrixs []Tfloat4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema bind_shape_matrix"`
+
 }
 
 //	The input element must occur at least twice. These inputs are local inputs.
 type XsdGoPkgHasElem_inputsequencejointssequenceskinschema_Input_TInputLocal_ struct {
 //	The input element must occur at least twice. These inputs are local inputs.
 	Input *TInputLocal `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
 }
 
 //	The input element must occur at least twice. These inputs are local inputs.
 type XsdGoPkgHasElems_inputsequencejointssequenceskinschema_Input_TInputLocal_ struct {
 //	The input element must occur at least twice. These inputs are local inputs.
 	Inputs []*TInputLocal `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
 }
 
 type TxsdSkinSequenceJoints struct {
@@ -8566,6 +9042,7 @@ type XsdGoPkgHasElems_jointssequenceskinschema_Joints_TxsdSkinSequenceJoints_ st
 //	The joints element associates joint, or skeleton, nodes with attribute data.
 //	In COLLADA, this is specified by the inverse bind matrix of each joint (influence) in the skeleton.
 	Jointses []*TxsdSkinSequenceJoints `xml:"http://www.collada.org/2005/11/COLLADASchema joints"`
+
 }
 
 //	The joints element associates joint, or skeleton, nodes with attribute data.
@@ -8574,26 +9051,21 @@ type XsdGoPkgHasElem_jointssequenceskinschema_Joints_TxsdSkinSequenceJoints_ str
 //	The joints element associates joint, or skeleton, nodes with attribute data.
 //	In COLLADA, this is specified by the inverse bind matrix of each joint (influence) in the skeleton.
 	Joints *TxsdSkinSequenceJoints `xml:"http://www.collada.org/2005/11/COLLADASchema joints"`
+
 }
 
 //	The input element must occur at least twice.
 type XsdGoPkgHasElems_inputsequencevertex_weightssequenceskinschema_Input_TInputLocalOffset_ struct {
 //	The input element must occur at least twice.
 	Inputs []*TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
 }
 
 //	The input element must occur at least twice.
 type XsdGoPkgHasElem_inputsequencevertex_weightssequenceskinschema_Input_TInputLocalOffset_ struct {
 //	The input element must occur at least twice.
 	Input *TInputLocalOffset `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
-}
 
-//	The vcount element contains a list of integers describing the number of influences for each vertex.
-//	The vcount element may occur once.
-type XsdGoPkgHasElem_vcountsequencevertex_weightssequenceskinschema_Vcount_TListOfUInts_ struct {
-//	The vcount element contains a list of integers describing the number of influences for each vertex.
-//	The vcount element may occur once.
-	Vcount TListOfUInts `xml:"http://www.collada.org/2005/11/COLLADASchema vcount"`
 }
 
 //	The vcount element contains a list of integers describing the number of influences for each vertex.
@@ -8602,16 +9074,16 @@ type XsdGoPkgHasElems_vcountsequencevertex_weightssequenceskinschema_Vcount_TLis
 //	The vcount element contains a list of integers describing the number of influences for each vertex.
 //	The vcount element may occur once.
 	Vcounts []TListOfUInts `xml:"http://www.collada.org/2005/11/COLLADASchema vcount"`
+
 }
 
-//	The v element describes which bones and attributes are associated with each vertex.  An index
-//	of –1 into the array of joints refers to the bind shape.  Weights should be normalized before use.
-//	The v element must occur zero or one times.
-type XsdGoPkgHasElems_vsequencevertex_weightssequenceskinschema_V_TListOfInts_ struct {
-//	The v element describes which bones and attributes are associated with each vertex.  An index
-//	of –1 into the array of joints refers to the bind shape.  Weights should be normalized before use.
-//	The v element must occur zero or one times.
-	Vs []TListOfInts `xml:"http://www.collada.org/2005/11/COLLADASchema v"`
+//	The vcount element contains a list of integers describing the number of influences for each vertex.
+//	The vcount element may occur once.
+type XsdGoPkgHasElem_vcountsequencevertex_weightssequenceskinschema_Vcount_TListOfUInts_ struct {
+//	The vcount element contains a list of integers describing the number of influences for each vertex.
+//	The vcount element may occur once.
+	Vcount TListOfUInts `xml:"http://www.collada.org/2005/11/COLLADASchema vcount"`
+
 }
 
 //	The v element describes which bones and attributes are associated with each vertex.  An index
@@ -8622,6 +9094,18 @@ type XsdGoPkgHasElem_vsequencevertex_weightssequenceskinschema_V_TListOfInts_ st
 //	of –1 into the array of joints refers to the bind shape.  Weights should be normalized before use.
 //	The v element must occur zero or one times.
 	V TListOfInts `xml:"http://www.collada.org/2005/11/COLLADASchema v"`
+
+}
+
+//	The v element describes which bones and attributes are associated with each vertex.  An index
+//	of –1 into the array of joints refers to the bind shape.  Weights should be normalized before use.
+//	The v element must occur zero or one times.
+type XsdGoPkgHasElems_vsequencevertex_weightssequenceskinschema_V_TListOfInts_ struct {
+//	The v element describes which bones and attributes are associated with each vertex.  An index
+//	of –1 into the array of joints refers to the bind shape.  Weights should be normalized before use.
+//	The v element must occur zero or one times.
+	Vs []TListOfInts `xml:"http://www.collada.org/2005/11/COLLADASchema v"`
+
 }
 
 type TxsdSkinSequenceVertexWeights struct {
@@ -8643,15 +9127,17 @@ type TxsdSkinSequenceVertexWeights struct {
 }
 
 //	The vertex_weights element associates a set of joint-weight pairs with each vertex in the base mesh.
-type XsdGoPkgHasElem_vertex_weightssequenceskinschema_VertexWeights_TxsdSkinSequenceVertexWeights_ struct {
-//	The vertex_weights element associates a set of joint-weight pairs with each vertex in the base mesh.
-	VertexWeights *TxsdSkinSequenceVertexWeights `xml:"http://www.collada.org/2005/11/COLLADASchema vertex_weights"`
-}
-
-//	The vertex_weights element associates a set of joint-weight pairs with each vertex in the base mesh.
 type XsdGoPkgHasElems_vertex_weightssequenceskinschema_VertexWeights_TxsdSkinSequenceVertexWeights_ struct {
 //	The vertex_weights element associates a set of joint-weight pairs with each vertex in the base mesh.
 	VertexWeightses []*TxsdSkinSequenceVertexWeights `xml:"http://www.collada.org/2005/11/COLLADASchema vertex_weights"`
+
+}
+
+//	The vertex_weights element associates a set of joint-weight pairs with each vertex in the base mesh.
+type XsdGoPkgHasElem_vertex_weightssequenceskinschema_VertexWeights_TxsdSkinSequenceVertexWeights_ struct {
+//	The vertex_weights element associates a set of joint-weight pairs with each vertex in the base mesh.
+	VertexWeights *TxsdSkinSequenceVertexWeights `xml:"http://www.collada.org/2005/11/COLLADASchema vertex_weights"`
+
 }
 
 type TxsdSkin struct {
@@ -8679,12 +9165,14 @@ type TxsdSkin struct {
 type XsdGoPkgHasElems_Skin struct {
 //	The skin element contains vertex and primitive information sufficient to describe blend-weight skinning.
 	Skins []*TxsdSkin `xml:"http://www.collada.org/2005/11/COLLADASchema skin"`
+
 }
 
 //	The skin element contains vertex and primitive information sufficient to describe blend-weight skinning.
 type XsdGoPkgHasElem_Skin struct {
 //	The skin element contains vertex and primitive information sufficient to describe blend-weight skinning.
 	Skin *TxsdSkin `xml:"http://www.collada.org/2005/11/COLLADASchema skin"`
+
 }
 
 //	The method attribute specifies the which blending technique to use. The accepted values are
@@ -8699,15 +9187,17 @@ type XsdGoPkgHasAttr_Method_TMorphMethodType_Normalized struct {
 func (me *XsdGoPkgHasAttr_Method_TMorphMethodType_Normalized) MethodDefault () TMorphMethodType { return TMorphMethodType("NORMALIZED") }
 
 //	The input element must occur at least twice. These inputs are local inputs.
-type XsdGoPkgHasElem_inputsequencetargetssequencemorphschema_Input_TInputLocal_ struct {
-//	The input element must occur at least twice. These inputs are local inputs.
-	Input *TInputLocal `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
-}
-
-//	The input element must occur at least twice. These inputs are local inputs.
 type XsdGoPkgHasElems_inputsequencetargetssequencemorphschema_Input_TInputLocal_ struct {
 //	The input element must occur at least twice. These inputs are local inputs.
 	Inputs []*TInputLocal `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
+}
+
+//	The input element must occur at least twice. These inputs are local inputs.
+type XsdGoPkgHasElem_inputsequencetargetssequencemorphschema_Input_TInputLocal_ struct {
+//	The input element must occur at least twice. These inputs are local inputs.
+	Input *TInputLocal `xml:"http://www.collada.org/2005/11/COLLADASchema input"`
+
 }
 
 type TxsdMorphSequenceTargets struct {
@@ -8725,6 +9215,7 @@ type XsdGoPkgHasElem_targetssequencemorphschema_Targets_TxsdMorphSequenceTargets
 //	The targets element declares the morph targets, their weights and any user defined attributes
 //	associated with them.
 	Targets *TxsdMorphSequenceTargets `xml:"http://www.collada.org/2005/11/COLLADASchema targets"`
+
 }
 
 //	The targets element declares the morph targets, their weights and any user defined attributes
@@ -8733,6 +9224,7 @@ type XsdGoPkgHasElems_targetssequencemorphschema_Targets_TxsdMorphSequenceTarget
 //	The targets element declares the morph targets, their weights and any user defined attributes
 //	associated with them.
 	Targetses []*TxsdMorphSequenceTargets `xml:"http://www.collada.org/2005/11/COLLADASchema targets"`
+
 }
 
 type TxsdMorph struct {
@@ -8754,18 +9246,20 @@ type TxsdMorph struct {
 
 //	The morph element describes the data required to blend between sets of static meshes. Each
 //	possible mesh that can be blended (a morph target) must be specified.
-type XsdGoPkgHasElems_Morph struct {
-//	The morph element describes the data required to blend between sets of static meshes. Each
-//	possible mesh that can be blended (a morph target) must be specified.
-	Morphs []*TxsdMorph `xml:"http://www.collada.org/2005/11/COLLADASchema morph"`
-}
-
-//	The morph element describes the data required to blend between sets of static meshes. Each
-//	possible mesh that can be blended (a morph target) must be specified.
 type XsdGoPkgHasElem_Morph struct {
 //	The morph element describes the data required to blend between sets of static meshes. Each
 //	possible mesh that can be blended (a morph target) must be specified.
 	Morph *TxsdMorph `xml:"http://www.collada.org/2005/11/COLLADASchema morph"`
+
+}
+
+//	The morph element describes the data required to blend between sets of static meshes. Each
+//	possible mesh that can be blended (a morph target) must be specified.
+type XsdGoPkgHasElems_Morph struct {
+//	The morph element describes the data required to blend between sets of static meshes. Each
+//	possible mesh that can be blended (a morph target) must be specified.
+	Morphs []*TxsdMorph `xml:"http://www.collada.org/2005/11/COLLADASchema morph"`
+
 }
 
 //	The author element contains a string with the author's name.
@@ -8774,6 +9268,7 @@ type XsdGoPkgHasElem_authorsequencecontributorsequenceassetschema_Author_XsdtStr
 //	The author element contains a string with the author's name.
 //	There may be only one author element.
 	Author xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema author"`
+
 }
 
 //	The author element contains a string with the author's name.
@@ -8782,14 +9277,7 @@ type XsdGoPkgHasElems_authorsequencecontributorsequenceassetschema_Author_XsdtSt
 //	The author element contains a string with the author's name.
 //	There may be only one author element.
 	Authors []xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema author"`
-}
 
-//	The authoring_tool element contains a string with the authoring tool's name.
-//	There may be only one authoring_tool element.
-type XsdGoPkgHasElem_authoring_toolsequencecontributorsequenceassetschema_AuthoringTool_XsdtString_ struct {
-//	The authoring_tool element contains a string with the authoring tool's name.
-//	There may be only one authoring_tool element.
-	AuthoringTool xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema authoring_tool"`
 }
 
 //	The authoring_tool element contains a string with the authoring tool's name.
@@ -8798,14 +9286,16 @@ type XsdGoPkgHasElems_authoring_toolsequencecontributorsequenceassetschema_Autho
 //	The authoring_tool element contains a string with the authoring tool's name.
 //	There may be only one authoring_tool element.
 	AuthoringTools []xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema authoring_tool"`
+
 }
 
-//	The comments element contains a string with comments from this contributor.
-//	There may be only one comments element.
-type XsdGoPkgHasElem_commentssequencecontributorsequenceassetschema_Comments_XsdtString_ struct {
-//	The comments element contains a string with comments from this contributor.
-//	There may be only one comments element.
-	Comments xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema comments"`
+//	The authoring_tool element contains a string with the authoring tool's name.
+//	There may be only one authoring_tool element.
+type XsdGoPkgHasElem_authoring_toolsequencecontributorsequenceassetschema_AuthoringTool_XsdtString_ struct {
+//	The authoring_tool element contains a string with the authoring tool's name.
+//	There may be only one authoring_tool element.
+	AuthoringTool xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema authoring_tool"`
+
 }
 
 //	The comments element contains a string with comments from this contributor.
@@ -8814,6 +9304,16 @@ type XsdGoPkgHasElems_commentssequencecontributorsequenceassetschema_Comments_Xs
 //	The comments element contains a string with comments from this contributor.
 //	There may be only one comments element.
 	Commentses []xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema comments"`
+
+}
+
+//	The comments element contains a string with comments from this contributor.
+//	There may be only one comments element.
+type XsdGoPkgHasElem_commentssequencecontributorsequenceassetschema_Comments_XsdtString_ struct {
+//	The comments element contains a string with comments from this contributor.
+//	There may be only one comments element.
+	Comments xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema comments"`
+
 }
 
 //	The copyright element contains a string with copyright information.
@@ -8822,6 +9322,7 @@ type XsdGoPkgHasElems_copyrightsequencecontributorsequenceassetschema_Copyright_
 //	The copyright element contains a string with copyright information.
 //	There may be only one copyright element.
 	Copyrights []xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema copyright"`
+
 }
 
 //	The copyright element contains a string with copyright information.
@@ -8830,6 +9331,7 @@ type XsdGoPkgHasElem_copyrightsequencecontributorsequenceassetschema_Copyright_X
 //	The copyright element contains a string with copyright information.
 //	There may be only one copyright element.
 	Copyright xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema copyright"`
+
 }
 
 //	The source_data element contains a URI reference to the source data used for this asset.
@@ -8838,6 +9340,7 @@ type XsdGoPkgHasElems_source_datasequencecontributorsequenceassetschema_SourceDa
 //	The source_data element contains a URI reference to the source data used for this asset.
 //	There may be only one source_data element.
 	SourceDatas []xsdt.AnyURI `xml:"http://www.collada.org/2005/11/COLLADASchema source_data"`
+
 }
 
 //	The source_data element contains a URI reference to the source data used for this asset.
@@ -8846,6 +9349,7 @@ type XsdGoPkgHasElem_source_datasequencecontributorsequenceassetschema_SourceDat
 //	The source_data element contains a URI reference to the source data used for this asset.
 //	There may be only one source_data element.
 	SourceData xsdt.AnyURI `xml:"http://www.collada.org/2005/11/COLLADASchema source_data"`
+
 }
 
 type TxsdAssetSequenceContributor struct {
@@ -8872,23 +9376,17 @@ type TxsdAssetSequenceContributor struct {
 }
 
 //	The contributor element defines authoring information for asset management
-type XsdGoPkgHasElem_contributorsequenceassetschema_Contributor_TxsdAssetSequenceContributor_ struct {
-//	The contributor element defines authoring information for asset management
-	Contributor *TxsdAssetSequenceContributor `xml:"http://www.collada.org/2005/11/COLLADASchema contributor"`
-}
-
-//	The contributor element defines authoring information for asset management
 type XsdGoPkgHasElems_contributorsequenceassetschema_Contributor_TxsdAssetSequenceContributor_ struct {
 //	The contributor element defines authoring information for asset management
 	Contributors []*TxsdAssetSequenceContributor `xml:"http://www.collada.org/2005/11/COLLADASchema contributor"`
+
 }
 
-//	The created element contains the date and time that the parent element was created and is
-//	represented in an ISO 8601 format.  The created element may appear zero or one time.
-type XsdGoPkgHasElem_createdsequenceassetschema_Created_XsdtDateTime_ struct {
-//	The created element contains the date and time that the parent element was created and is
-//	represented in an ISO 8601 format.  The created element may appear zero or one time.
-	Created xsdt.DateTime `xml:"http://www.collada.org/2005/11/COLLADASchema created"`
+//	The contributor element defines authoring information for asset management
+type XsdGoPkgHasElem_contributorsequenceassetschema_Contributor_TxsdAssetSequenceContributor_ struct {
+//	The contributor element defines authoring information for asset management
+	Contributor *TxsdAssetSequenceContributor `xml:"http://www.collada.org/2005/11/COLLADASchema contributor"`
+
 }
 
 //	The created element contains the date and time that the parent element was created and is
@@ -8897,14 +9395,16 @@ type XsdGoPkgHasElems_createdsequenceassetschema_Created_XsdtDateTime_ struct {
 //	The created element contains the date and time that the parent element was created and is
 //	represented in an ISO 8601 format.  The created element may appear zero or one time.
 	Createds []xsdt.DateTime `xml:"http://www.collada.org/2005/11/COLLADASchema created"`
+
 }
 
-//	The keywords element contains a list of words used as search criteria for the parent element.
-//	The keywords element may appear zero or more times.
-type XsdGoPkgHasElem_keywordssequenceassetschema_Keywords_XsdtString_ struct {
-//	The keywords element contains a list of words used as search criteria for the parent element.
-//	The keywords element may appear zero or more times.
-	Keywords xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema keywords"`
+//	The created element contains the date and time that the parent element was created and is
+//	represented in an ISO 8601 format.  The created element may appear zero or one time.
+type XsdGoPkgHasElem_createdsequenceassetschema_Created_XsdtDateTime_ struct {
+//	The created element contains the date and time that the parent element was created and is
+//	represented in an ISO 8601 format.  The created element may appear zero or one time.
+	Created xsdt.DateTime `xml:"http://www.collada.org/2005/11/COLLADASchema created"`
+
 }
 
 //	The keywords element contains a list of words used as search criteria for the parent element.
@@ -8913,6 +9413,16 @@ type XsdGoPkgHasElems_keywordssequenceassetschema_Keywords_XsdtString_ struct {
 //	The keywords element contains a list of words used as search criteria for the parent element.
 //	The keywords element may appear zero or more times.
 	Keywordses []xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema keywords"`
+
+}
+
+//	The keywords element contains a list of words used as search criteria for the parent element.
+//	The keywords element may appear zero or more times.
+type XsdGoPkgHasElem_keywordssequenceassetschema_Keywords_XsdtString_ struct {
+//	The keywords element contains a list of words used as search criteria for the parent element.
+//	The keywords element may appear zero or more times.
+	Keywords xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema keywords"`
+
 }
 
 //	The modified element contains the date and time that the parent element was last modified and
@@ -8921,6 +9431,7 @@ type XsdGoPkgHasElem_modifiedsequenceassetschema_Modified_XsdtDateTime_ struct {
 //	The modified element contains the date and time that the parent element was last modified and
 //	represented in an ISO 8601 format. The modified element may appear zero or one time.
 	Modified xsdt.DateTime `xml:"http://www.collada.org/2005/11/COLLADASchema modified"`
+
 }
 
 //	The modified element contains the date and time that the parent element was last modified and
@@ -8929,6 +9440,7 @@ type XsdGoPkgHasElems_modifiedsequenceassetschema_Modified_XsdtDateTime_ struct 
 //	The modified element contains the date and time that the parent element was last modified and
 //	represented in an ISO 8601 format. The modified element may appear zero or one time.
 	Modifieds []xsdt.DateTime `xml:"http://www.collada.org/2005/11/COLLADASchema modified"`
+
 }
 
 //	The revision element contains the revision information for the parent element. The revision
@@ -8937,6 +9449,7 @@ type XsdGoPkgHasElem_revisionsequenceassetschema_Revision_XsdtString_ struct {
 //	The revision element contains the revision information for the parent element. The revision
 //	element may appear zero or one time.
 	Revision xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema revision"`
+
 }
 
 //	The revision element contains the revision information for the parent element. The revision
@@ -8945,6 +9458,7 @@ type XsdGoPkgHasElems_revisionsequenceassetschema_Revision_XsdtString_ struct {
 //	The revision element contains the revision information for the parent element. The revision
 //	element may appear zero or one time.
 	Revisions []xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema revision"`
+
 }
 
 //	The subject element contains a description of the topical subject of the parent element. The
@@ -8953,6 +9467,7 @@ type XsdGoPkgHasElems_subjectsequenceassetschema_Subject_XsdtString_ struct {
 //	The subject element contains a description of the topical subject of the parent element. The
 //	subject element may appear zero or one time.
 	Subjects []xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema subject"`
+
 }
 
 //	The subject element contains a description of the topical subject of the parent element. The
@@ -8961,6 +9476,7 @@ type XsdGoPkgHasElem_subjectsequenceassetschema_Subject_XsdtString_ struct {
 //	The subject element contains a description of the topical subject of the parent element. The
 //	subject element may appear zero or one time.
 	Subject xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema subject"`
+
 }
 
 //	The title element contains the title information for the parent element. The title element may
@@ -8969,6 +9485,7 @@ type XsdGoPkgHasElems_titlesequenceassetschema_Title_XsdtString_ struct {
 //	The title element contains the title information for the parent element. The title element may
 //	appear zero or one time.
 	Titles []xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema title"`
+
 }
 
 //	The title element contains the title information for the parent element. The title element may
@@ -8977,6 +9494,7 @@ type XsdGoPkgHasElem_titlesequenceassetschema_Title_XsdtString_ struct {
 //	The title element contains the title information for the parent element. The title element may
 //	appear zero or one time.
 	Title xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema title"`
+
 }
 
 //	The meter attribute specifies the measurement with respect to the meter. The default
@@ -9002,13 +9520,13 @@ type XsdGoPkgHasAttr_Name_XsdtNmtoken_Meter struct {
 func (me *XsdGoPkgHasAttr_Name_XsdtNmtoken_Meter) NameDefault () xsdt.Nmtoken { return xsdt.Nmtoken("meter") }
 
 type TxsdAssetSequenceUnit struct {
-//	The meter attribute specifies the measurement with respect to the meter. The default
-//	value for the meter attribute is “1.0”.
-	XsdGoPkgHasAttr_Meter_Tfloat_10
-
 //	The name attribute specifies the name of the unit. The default value for the name
 //	attribute is “meter”.
 	XsdGoPkgHasAttr_Name_XsdtNmtoken_Meter
+
+//	The meter attribute specifies the measurement with respect to the meter. The default
+//	value for the meter attribute is “1.0”.
+	XsdGoPkgHasAttr_Meter_Tfloat_10
 
 }
 
@@ -9020,6 +9538,7 @@ type XsdGoPkgHasElems_unitsequenceassetschema_Unit_TxsdAssetSequenceUnit_ struct
 //	the name of the unit and the measurement with respect to the meter. The unit element may appear
 //	zero or one time.
 	Units []*TxsdAssetSequenceUnit `xml:"http://www.collada.org/2005/11/COLLADASchema unit"`
+
 }
 
 //	The unit element contains descriptive information about unit of measure. It has attributes for
@@ -9030,20 +9549,8 @@ type XsdGoPkgHasElem_unitsequenceassetschema_Unit_TxsdAssetSequenceUnit_ struct 
 //	the name of the unit and the measurement with respect to the meter. The unit element may appear
 //	zero or one time.
 	Unit *TxsdAssetSequenceUnit `xml:"http://www.collada.org/2005/11/COLLADASchema unit"`
-}
 
-//	The up_axis element contains descriptive information about coordinate system of the geometric
-//	data. All coordinates are right-handed by definition. This element specifies which axis is
-//	considered up. The default is the Y-axis. The up_axis element may appear zero or one time.
-type XsdGoPkgHasElems_up_axissequenceassetschema_UpAxis_TUpAxisType_YUp struct {
-//	The up_axis element contains descriptive information about coordinate system of the geometric
-//	data. All coordinates are right-handed by definition. This element specifies which axis is
-//	considered up. The default is the Y-axis. The up_axis element may appear zero or one time.
-	UpAxises []TUpAxisType `xml:"http://www.collada.org/2005/11/COLLADASchema up_axis"`
 }
-
-//	Returns the Default value for UpAxis -- "Y_UP"
-func (me *XsdGoPkgHasElems_up_axissequenceassetschema_UpAxis_TUpAxisType_YUp) UpAxisDefault () TUpAxisType { return TUpAxisType("Y_UP") }
 
 //	The up_axis element contains descriptive information about coordinate system of the geometric
 //	data. All coordinates are right-handed by definition. This element specifies which axis is
@@ -9053,10 +9560,25 @@ type XsdGoPkgHasElem_up_axissequenceassetschema_UpAxis_TUpAxisType_YUp struct {
 //	data. All coordinates are right-handed by definition. This element specifies which axis is
 //	considered up. The default is the Y-axis. The up_axis element may appear zero or one time.
 	UpAxis TUpAxisType `xml:"http://www.collada.org/2005/11/COLLADASchema up_axis"`
+
 }
 
 //	Returns the Default value for UpAxis -- "Y_UP"
 func (me *XsdGoPkgHasElem_up_axissequenceassetschema_UpAxis_TUpAxisType_YUp) UpAxisDefault () TUpAxisType { return TUpAxisType("Y_UP") }
+
+//	The up_axis element contains descriptive information about coordinate system of the geometric
+//	data. All coordinates are right-handed by definition. This element specifies which axis is
+//	considered up. The default is the Y-axis. The up_axis element may appear zero or one time.
+type XsdGoPkgHasElems_up_axissequenceassetschema_UpAxis_TUpAxisType_YUp struct {
+//	The up_axis element contains descriptive information about coordinate system of the geometric
+//	data. All coordinates are right-handed by definition. This element specifies which axis is
+//	considered up. The default is the Y-axis. The up_axis element may appear zero or one time.
+	UpAxises []TUpAxisType `xml:"http://www.collada.org/2005/11/COLLADASchema up_axis"`
+
+}
+
+//	Returns the Default value for UpAxis -- "Y_UP"
+func (me *XsdGoPkgHasElems_up_axissequenceassetschema_UpAxis_TUpAxisType_YUp) UpAxisDefault () TUpAxisType { return TUpAxisType("Y_UP") }
 
 type TxsdAsset struct {
 //	The contributor element defines authoring information for asset management
@@ -9102,12 +9624,14 @@ type TxsdAsset struct {
 type XsdGoPkgHasElem_Asset struct {
 //	The asset element defines asset management information regarding its parent element.
 	Asset *TxsdAsset `xml:"http://www.collada.org/2005/11/COLLADASchema asset"`
+
 }
 
 //	The asset element defines asset management information regarding its parent element.
 type XsdGoPkgHasElems_Asset struct {
 //	The asset element defines asset management information regarding its parent element.
 	Assets []*TxsdAsset `xml:"http://www.collada.org/2005/11/COLLADASchema asset"`
+
 }
 
 type TxsdExtra struct {
@@ -9120,15 +9644,17 @@ type TxsdExtra struct {
 }
 
 //	The extra element declares additional information regarding its parent element.
-type XsdGoPkgHasElems_Extra struct {
-//	The extra element declares additional information regarding its parent element.
-	Extras []*TxsdExtra `xml:"http://www.collada.org/2005/11/COLLADASchema extra"`
-}
-
-//	The extra element declares additional information regarding its parent element.
 type XsdGoPkgHasElem_Extra struct {
 //	The extra element declares additional information regarding its parent element.
 	Extra *TxsdExtra `xml:"http://www.collada.org/2005/11/COLLADASchema extra"`
+
+}
+
+//	The extra element declares additional information regarding its parent element.
+type XsdGoPkgHasElems_Extra struct {
+//	The extra element declares additional information regarding its parent element.
+	Extras []*TxsdExtra `xml:"http://www.collada.org/2005/11/COLLADASchema extra"`
+
 }
 
 //	The profile attribute indicates the type of profile. This is a vendor defined character
@@ -9151,20 +9677,6 @@ type TxsdTechnique struct {
 //	one is present for a particular portion of content, on import, one or the other is picked, but
 //	usually not both. Selection should be based on which profile the importing application can support.
 //	Techniques contain application data and programs, making them assets that can be managed as a unit.
-type XsdGoPkgHasElems_Technique struct {
-//	The technique element declares the information used to process some portion of the content. Each
-//	technique conforms to an associated profile. Techniques generally act as a “switch”. If more than
-//	one is present for a particular portion of content, on import, one or the other is picked, but
-//	usually not both. Selection should be based on which profile the importing application can support.
-//	Techniques contain application data and programs, making them assets that can be managed as a unit.
-	Techniques []*TxsdTechnique `xml:"http://www.collada.org/2005/11/COLLADASchema technique"`
-}
-
-//	The technique element declares the information used to process some portion of the content. Each
-//	technique conforms to an associated profile. Techniques generally act as a “switch”. If more than
-//	one is present for a particular portion of content, on import, one or the other is picked, but
-//	usually not both. Selection should be based on which profile the importing application can support.
-//	Techniques contain application data and programs, making them assets that can be managed as a unit.
 type XsdGoPkgHasElem_Technique struct {
 //	The technique element declares the information used to process some portion of the content. Each
 //	technique conforms to an associated profile. Techniques generally act as a “switch”. If more than
@@ -9172,6 +9684,22 @@ type XsdGoPkgHasElem_Technique struct {
 //	usually not both. Selection should be based on which profile the importing application can support.
 //	Techniques contain application data and programs, making them assets that can be managed as a unit.
 	Technique *TxsdTechnique `xml:"http://www.collada.org/2005/11/COLLADASchema technique"`
+
+}
+
+//	The technique element declares the information used to process some portion of the content. Each
+//	technique conforms to an associated profile. Techniques generally act as a “switch”. If more than
+//	one is present for a particular portion of content, on import, one or the other is picked, but
+//	usually not both. Selection should be based on which profile the importing application can support.
+//	Techniques contain application data and programs, making them assets that can be managed as a unit.
+type XsdGoPkgHasElems_Technique struct {
+//	The technique element declares the information used to process some portion of the content. Each
+//	technique conforms to an associated profile. Techniques generally act as a “switch”. If more than
+//	one is present for a particular portion of content, on import, one or the other is picked, but
+//	usually not both. Selection should be based on which profile the importing application can support.
+//	Techniques contain application data and programs, making them assets that can be managed as a unit.
+	Techniques []*TxsdTechnique `xml:"http://www.collada.org/2005/11/COLLADASchema technique"`
+
 }
 
 //	The type attribute indicates the type of the node element. The default value is “NODE”.
@@ -9240,15 +9768,15 @@ type TxsdNode struct {
 //	The extra element may appear any number of times.
 	XsdGoPkgHasElems_Extra
 
+//	The type attribute indicates the type of the node element. The default value is “NODE”.
+//	Optional attribute.
+	XsdGoPkgHasAttr_Type_TNodeType_Node
+
 //	The layer attribute indicates the names of the layers to which this node belongs.  For example,
 //	a value of “foreground glowing” indicates that this node belongs to both the ‘foreground’ layer
 //	and the ‘glowing’ layer.  The default value is empty, indicating that the node doesn’t belong to
 //	any layer.  Optional attribute.
 	XsdGoPkgHasAttr_Layer_TListOfNames_
-
-//	The type attribute indicates the type of the node element. The default value is “NODE”.
-//	Optional attribute.
-	XsdGoPkgHasAttr_Type_TNodeType_Node
 
 }
 
@@ -9256,12 +9784,14 @@ type TxsdNode struct {
 type XsdGoPkgHasElem_Node struct {
 //	Nodes embody the hierarchical relationship of elements in the scene.
 	Node *TxsdNode `xml:"http://www.collada.org/2005/11/COLLADASchema node"`
+
 }
 
 //	Nodes embody the hierarchical relationship of elements in the scene.
 type XsdGoPkgHasElems_Node struct {
 //	Nodes embody the hierarchical relationship of elements in the scene.
 	Nodes []*TxsdNode `xml:"http://www.collada.org/2005/11/COLLADASchema node"`
+
 }
 
 //	The camera_node attribute refers to a node that contains a camera describing the viewpoint to
@@ -9274,18 +9804,20 @@ type XsdGoPkgHasAttr_CameraNode_XsdtAnyURI_ struct {
 
 //	The layer element specifies which layer to render in this compositing step
 //	while evaluating the scene. You may specify any number of layers.
-type XsdGoPkgHasElem_layersequencerendersequenceevaluate_scenesequencevisual_sceneschema_Layer_XsdtNCName_ struct {
-//	The layer element specifies which layer to render in this compositing step
-//	while evaluating the scene. You may specify any number of layers.
-	Layer xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema layer"`
-}
-
-//	The layer element specifies which layer to render in this compositing step
-//	while evaluating the scene. You may specify any number of layers.
 type XsdGoPkgHasElems_layersequencerendersequenceevaluate_scenesequencevisual_sceneschema_Layer_XsdtNCName_ struct {
 //	The layer element specifies which layer to render in this compositing step
 //	while evaluating the scene. You may specify any number of layers.
 	Layers []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema layer"`
+
+}
+
+//	The layer element specifies which layer to render in this compositing step
+//	while evaluating the scene. You may specify any number of layers.
+type XsdGoPkgHasElem_layersequencerendersequenceevaluate_scenesequencevisual_sceneschema_Layer_XsdtNCName_ struct {
+//	The layer element specifies which layer to render in this compositing step
+//	while evaluating the scene. You may specify any number of layers.
+	Layer xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema layer"`
+
 }
 
 type TxsdVisualSceneSequenceEvaluateSceneSequenceRender struct {
@@ -9309,6 +9841,7 @@ type XsdGoPkgHasElems_rendersequenceevaluate_scenesequencevisual_sceneschema_Ren
 //	The render element describes one effect pass to evaluate the scene.
 //	There must be at least one render element.
 	Renders []*TxsdVisualSceneSequenceEvaluateSceneSequenceRender `xml:"http://www.collada.org/2005/11/COLLADASchema render"`
+
 }
 
 //	The render element describes one effect pass to evaluate the scene.
@@ -9317,6 +9850,7 @@ type XsdGoPkgHasElem_rendersequenceevaluate_scenesequencevisual_sceneschema_Rend
 //	The render element describes one effect pass to evaluate the scene.
 //	There must be at least one render element.
 	Render *TxsdVisualSceneSequenceEvaluateSceneSequenceRender `xml:"http://www.collada.org/2005/11/COLLADASchema render"`
+
 }
 
 type TxsdVisualSceneSequenceEvaluateScene struct {
@@ -9332,6 +9866,7 @@ type XsdGoPkgHasElems_evaluate_scenesequencevisual_sceneschema_EvaluateScene_Txs
 //	The evaluate_scene element declares information specifying a specific way to evaluate this
 //	visual_scene. There may be any number of evaluate_scene elements.
 	EvaluateScenes []*TxsdVisualSceneSequenceEvaluateScene `xml:"http://www.collada.org/2005/11/COLLADASchema evaluate_scene"`
+
 }
 
 //	The evaluate_scene element declares information specifying a specific way to evaluate this
@@ -9340,6 +9875,7 @@ type XsdGoPkgHasElem_evaluate_scenesequencevisual_sceneschema_EvaluateScene_Txsd
 //	The evaluate_scene element declares information specifying a specific way to evaluate this
 //	visual_scene. There may be any number of evaluate_scene elements.
 	EvaluateScene *TxsdVisualSceneSequenceEvaluateScene `xml:"http://www.collada.org/2005/11/COLLADASchema evaluate_scene"`
+
 }
 
 type TxsdVisualScene struct {
@@ -9366,6 +9902,7 @@ type XsdGoPkgHasElem_VisualScene struct {
 //	scene contains elements that comprise much of the visual and transformational information
 //	content as created by the authoring tools.
 	VisualScene *TxsdVisualScene `xml:"http://www.collada.org/2005/11/COLLADASchema visual_scene"`
+
 }
 
 //	The visual_scene element declares the base of the visual_scene hierarchy or scene graph. The
@@ -9376,6 +9913,7 @@ type XsdGoPkgHasElems_VisualScene struct {
 //	scene contains elements that comprise much of the visual and transformational information
 //	content as created by the authoring tools.
 	VisualScenes []*TxsdVisualScene `xml:"http://www.collada.org/2005/11/COLLADASchema visual_scene"`
+
 }
 
 type TxsdBindMaterialSequenceTechniqueCommon struct {
@@ -9387,18 +9925,20 @@ type TxsdBindMaterialSequenceTechniqueCommon struct {
 
 //	The technique_common element specifies the bind_material information for the common
 //	profile which all COLLADA implementations need to support.
-type XsdGoPkgHasElems_technique_commonsequencebind_materialschema_TechniqueCommon_TxsdBindMaterialSequenceTechniqueCommon_ struct {
-//	The technique_common element specifies the bind_material information for the common
-//	profile which all COLLADA implementations need to support.
-	TechniqueCommons []*TxsdBindMaterialSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
-}
-
-//	The technique_common element specifies the bind_material information for the common
-//	profile which all COLLADA implementations need to support.
 type XsdGoPkgHasElem_technique_commonsequencebind_materialschema_TechniqueCommon_TxsdBindMaterialSequenceTechniqueCommon_ struct {
 //	The technique_common element specifies the bind_material information for the common
 //	profile which all COLLADA implementations need to support.
 	TechniqueCommon *TxsdBindMaterialSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
+
+}
+
+//	The technique_common element specifies the bind_material information for the common
+//	profile which all COLLADA implementations need to support.
+type XsdGoPkgHasElems_technique_commonsequencebind_materialschema_TechniqueCommon_TxsdBindMaterialSequenceTechniqueCommon_ struct {
+//	The technique_common element specifies the bind_material information for the common
+//	profile which all COLLADA implementations need to support.
+	TechniqueCommons []*TxsdBindMaterialSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
+
 }
 
 type TxsdBindMaterial struct {
@@ -9423,6 +9963,7 @@ type XsdGoPkgHasElems_BindMaterial struct {
 //	Bind a specific material to a piece of geometry, binding varying and uniform parameters at the
 //	same time.
 	BindMaterials []*TxsdBindMaterial `xml:"http://www.collada.org/2005/11/COLLADASchema bind_material"`
+
 }
 
 //	Bind a specific material to a piece of geometry, binding varying and uniform parameters at the
@@ -9431,18 +9972,21 @@ type XsdGoPkgHasElem_BindMaterial struct {
 //	Bind a specific material to a piece of geometry, binding varying and uniform parameters at the
 //	same time.
 	BindMaterial *TxsdBindMaterial `xml:"http://www.collada.org/2005/11/COLLADASchema bind_material"`
+
 }
 
 //	The instance_camera element declares the instantiation of a COLLADA camera resource.
 type XsdGoPkgHasElem_InstanceCamera struct {
 //	The instance_camera element declares the instantiation of a COLLADA camera resource.
 	InstanceCamera *TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_camera"`
+
 }
 
 //	The instance_camera element declares the instantiation of a COLLADA camera resource.
 type XsdGoPkgHasElems_InstanceCamera struct {
 //	The instance_camera element declares the instantiation of a COLLADA camera resource.
 	InstanceCameras []*TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_camera"`
+
 }
 
 //	The skeleton element is used to indicate where a skin controller is to start to search for
@@ -9451,6 +9995,7 @@ type XsdGoPkgHasElems_skeletonsequenceinstance_controllerschema_Skeleton_XsdtAny
 //	The skeleton element is used to indicate where a skin controller is to start to search for
 //	the joint nodes it needs.  This element is meaningless for morph controllers.
 	Skeletons []xsdt.AnyURI `xml:"http://www.collada.org/2005/11/COLLADASchema skeleton"`
+
 }
 
 //	The skeleton element is used to indicate where a skin controller is to start to search for
@@ -9459,6 +10004,7 @@ type XsdGoPkgHasElem_skeletonsequenceinstance_controllerschema_Skeleton_XsdtAnyU
 //	The skeleton element is used to indicate where a skin controller is to start to search for
 //	the joint nodes it needs.  This element is meaningless for morph controllers.
 	Skeleton xsdt.AnyURI `xml:"http://www.collada.org/2005/11/COLLADASchema skeleton"`
+
 }
 
 type TxsdInstanceController struct {
@@ -9479,12 +10025,14 @@ type TxsdInstanceController struct {
 type XsdGoPkgHasElems_InstanceController struct {
 //	The instance_controller element declares the instantiation of a COLLADA controller resource.
 	InstanceControllers []*TxsdInstanceController `xml:"http://www.collada.org/2005/11/COLLADASchema instance_controller"`
+
 }
 
 //	The instance_controller element declares the instantiation of a COLLADA controller resource.
 type XsdGoPkgHasElem_InstanceController struct {
 //	The instance_controller element declares the instantiation of a COLLADA controller resource.
 	InstanceController *TxsdInstanceController `xml:"http://www.collada.org/2005/11/COLLADASchema instance_controller"`
+
 }
 
 //	A platform defines a string that specifies which platform this is hint is aimed for.
@@ -9500,11 +10048,18 @@ type XsdGoPkgHasAttr_Profile_XsdtNCName_ struct {
 }
 
 type TxsdInstanceEffectSequenceTechniqueHint struct {
+//	A platform defines a string that specifies which platform this is hint is aimed for.
+	XsdGoPkgHasAttr_Platform_XsdtNCName_
+
 //	A profile defines a string that specifies which API profile this is hint is aimed for.
 	XsdGoPkgHasAttr_Profile_XsdtNCName_
 
-//	A platform defines a string that specifies which platform this is hint is aimed for.
-	XsdGoPkgHasAttr_Platform_XsdtNCName_
+}
+
+//	Add a hint for a platform of which technique to use in this effect.
+type XsdGoPkgHasElem_technique_hintsequenceinstance_effectschema_TechniqueHint_TxsdInstanceEffectSequenceTechniqueHint_ struct {
+//	Add a hint for a platform of which technique to use in this effect.
+	TechniqueHint *TxsdInstanceEffectSequenceTechniqueHint `xml:"http://www.collada.org/2005/11/COLLADASchema technique_hint"`
 
 }
 
@@ -9512,12 +10067,7 @@ type TxsdInstanceEffectSequenceTechniqueHint struct {
 type XsdGoPkgHasElems_technique_hintsequenceinstance_effectschema_TechniqueHint_TxsdInstanceEffectSequenceTechniqueHint_ struct {
 //	Add a hint for a platform of which technique to use in this effect.
 	TechniqueHints []*TxsdInstanceEffectSequenceTechniqueHint `xml:"http://www.collada.org/2005/11/COLLADASchema technique_hint"`
-}
 
-//	Add a hint for a platform of which technique to use in this effect.
-type XsdGoPkgHasElem_technique_hintsequenceinstance_effectschema_TechniqueHint_TxsdInstanceEffectSequenceTechniqueHint_ struct {
-//	Add a hint for a platform of which technique to use in this effect.
-	TechniqueHint *TxsdInstanceEffectSequenceTechniqueHint `xml:"http://www.collada.org/2005/11/COLLADASchema technique_hint"`
 }
 
 type XsdGoPkgHasAttr_Ref_XsdtToken_ struct {
@@ -9532,15 +10082,17 @@ type TxsdInstanceEffectSequenceSetparam struct {
 }
 
 //	Assigns a new value to a previously defined parameter
-type XsdGoPkgHasElem_setparamsequenceinstance_effectschema_Setparam_TxsdInstanceEffectSequenceSetparam_ struct {
-//	Assigns a new value to a previously defined parameter
-	Setparam *TxsdInstanceEffectSequenceSetparam `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
-}
-
-//	Assigns a new value to a previously defined parameter
 type XsdGoPkgHasElems_setparamsequenceinstance_effectschema_Setparam_TxsdInstanceEffectSequenceSetparam_ struct {
 //	Assigns a new value to a previously defined parameter
 	Setparams []*TxsdInstanceEffectSequenceSetparam `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
+
+}
+
+//	Assigns a new value to a previously defined parameter
+type XsdGoPkgHasElem_setparamsequenceinstance_effectschema_Setparam_TxsdInstanceEffectSequenceSetparam_ struct {
+//	Assigns a new value to a previously defined parameter
+	Setparam *TxsdInstanceEffectSequenceSetparam `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
+
 }
 
 type TxsdInstanceEffect struct {
@@ -9559,24 +10111,28 @@ type TxsdInstanceEffect struct {
 type XsdGoPkgHasElem_InstanceEffect struct {
 //	The instance_effect element declares the instantiation of a COLLADA effect resource.
 	InstanceEffect *TxsdInstanceEffect `xml:"http://www.collada.org/2005/11/COLLADASchema instance_effect"`
+
 }
 
 //	The instance_effect element declares the instantiation of a COLLADA effect resource.
 type XsdGoPkgHasElems_InstanceEffect struct {
 //	The instance_effect element declares the instantiation of a COLLADA effect resource.
 	InstanceEffects []*TxsdInstanceEffect `xml:"http://www.collada.org/2005/11/COLLADASchema instance_effect"`
-}
 
-//	The instance_force_field element declares the instantiation of a COLLADA force_field resource.
-type XsdGoPkgHasElem_InstanceForceField struct {
-//	The instance_force_field element declares the instantiation of a COLLADA force_field resource.
-	InstanceForceField *TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_force_field"`
 }
 
 //	The instance_force_field element declares the instantiation of a COLLADA force_field resource.
 type XsdGoPkgHasElems_InstanceForceField struct {
 //	The instance_force_field element declares the instantiation of a COLLADA force_field resource.
 	InstanceForceFields []*TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_force_field"`
+
+}
+
+//	The instance_force_field element declares the instantiation of a COLLADA force_field resource.
+type XsdGoPkgHasElem_InstanceForceField struct {
+//	The instance_force_field element declares the instantiation of a COLLADA force_field resource.
+	InstanceForceField *TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_force_field"`
+
 }
 
 type TxsdInstanceGeometry struct {
@@ -9590,27 +10146,31 @@ type TxsdInstanceGeometry struct {
 }
 
 //	The instance_geometry element declares the instantiation of a COLLADA geometry resource.
-type XsdGoPkgHasElem_InstanceGeometry struct {
-//	The instance_geometry element declares the instantiation of a COLLADA geometry resource.
-	InstanceGeometry *TxsdInstanceGeometry `xml:"http://www.collada.org/2005/11/COLLADASchema instance_geometry"`
-}
-
-//	The instance_geometry element declares the instantiation of a COLLADA geometry resource.
 type XsdGoPkgHasElems_InstanceGeometry struct {
 //	The instance_geometry element declares the instantiation of a COLLADA geometry resource.
 	InstanceGeometries []*TxsdInstanceGeometry `xml:"http://www.collada.org/2005/11/COLLADASchema instance_geometry"`
+
 }
 
-//	The instance_light element declares the instantiation of a COLLADA light resource.
-type XsdGoPkgHasElem_InstanceLight struct {
-//	The instance_light element declares the instantiation of a COLLADA light resource.
-	InstanceLight *TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_light"`
+//	The instance_geometry element declares the instantiation of a COLLADA geometry resource.
+type XsdGoPkgHasElem_InstanceGeometry struct {
+//	The instance_geometry element declares the instantiation of a COLLADA geometry resource.
+	InstanceGeometry *TxsdInstanceGeometry `xml:"http://www.collada.org/2005/11/COLLADASchema instance_geometry"`
+
 }
 
 //	The instance_light element declares the instantiation of a COLLADA light resource.
 type XsdGoPkgHasElems_InstanceLight struct {
 //	The instance_light element declares the instantiation of a COLLADA light resource.
 	InstanceLights []*TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_light"`
+
+}
+
+//	The instance_light element declares the instantiation of a COLLADA light resource.
+type XsdGoPkgHasElem_InstanceLight struct {
+//	The instance_light element declares the instantiation of a COLLADA light resource.
+	InstanceLight *TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_light"`
+
 }
 
 //	The symbol attribute specifies which symbol defined from within the geometry this material binds to.
@@ -9632,12 +10192,14 @@ type TxsdInstanceMaterialSequenceBind struct {
 type XsdGoPkgHasElems_bindsequenceinstance_materialschema_Bind_TxsdInstanceMaterialSequenceBind_ struct {
 //	The bind element binds values to effect parameters upon instantiation.
 	Binds []*TxsdInstanceMaterialSequenceBind `xml:"http://www.collada.org/2005/11/COLLADASchema bind"`
+
 }
 
 //	The bind element binds values to effect parameters upon instantiation.
 type XsdGoPkgHasElem_bindsequenceinstance_materialschema_Bind_TxsdInstanceMaterialSequenceBind_ struct {
 //	The bind element binds values to effect parameters upon instantiation.
 	Bind *TxsdInstanceMaterialSequenceBind `xml:"http://www.collada.org/2005/11/COLLADASchema bind"`
+
 }
 
 //	The input_semantic attribute specifies which input semantic to bind.
@@ -9665,12 +10227,14 @@ type TxsdInstanceMaterialSequenceBindVertexInput struct {
 type XsdGoPkgHasElem_bind_vertex_inputsequenceinstance_materialschema_BindVertexInput_TxsdInstanceMaterialSequenceBindVertexInput_ struct {
 //	The bind_vertex_input element binds vertex inputs to effect parameters upon instantiation.
 	BindVertexInput *TxsdInstanceMaterialSequenceBindVertexInput `xml:"http://www.collada.org/2005/11/COLLADASchema bind_vertex_input"`
+
 }
 
 //	The bind_vertex_input element binds vertex inputs to effect parameters upon instantiation.
 type XsdGoPkgHasElems_bind_vertex_inputsequenceinstance_materialschema_BindVertexInput_TxsdInstanceMaterialSequenceBindVertexInput_ struct {
 //	The bind_vertex_input element binds vertex inputs to effect parameters upon instantiation.
 	BindVertexInputs []*TxsdInstanceMaterialSequenceBindVertexInput `xml:"http://www.collada.org/2005/11/COLLADASchema bind_vertex_input"`
+
 }
 
 type TxsdInstanceMaterial struct {
@@ -9692,27 +10256,31 @@ type TxsdInstanceMaterial struct {
 }
 
 //	The instance_material element declares the instantiation of a COLLADA material resource.
-type XsdGoPkgHasElem_InstanceMaterial struct {
-//	The instance_material element declares the instantiation of a COLLADA material resource.
-	InstanceMaterial *TxsdInstanceMaterial `xml:"http://www.collada.org/2005/11/COLLADASchema instance_material"`
-}
-
-//	The instance_material element declares the instantiation of a COLLADA material resource.
 type XsdGoPkgHasElems_InstanceMaterial struct {
 //	The instance_material element declares the instantiation of a COLLADA material resource.
 	InstanceMaterials []*TxsdInstanceMaterial `xml:"http://www.collada.org/2005/11/COLLADASchema instance_material"`
+
 }
 
-//	The instance_node element declares the instantiation of a COLLADA node resource.
-type XsdGoPkgHasElems_InstanceNode struct {
-//	The instance_node element declares the instantiation of a COLLADA node resource.
-	InstanceNodes []*TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_node"`
+//	The instance_material element declares the instantiation of a COLLADA material resource.
+type XsdGoPkgHasElem_InstanceMaterial struct {
+//	The instance_material element declares the instantiation of a COLLADA material resource.
+	InstanceMaterial *TxsdInstanceMaterial `xml:"http://www.collada.org/2005/11/COLLADASchema instance_material"`
+
 }
 
 //	The instance_node element declares the instantiation of a COLLADA node resource.
 type XsdGoPkgHasElem_InstanceNode struct {
 //	The instance_node element declares the instantiation of a COLLADA node resource.
 	InstanceNode *TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_node"`
+
+}
+
+//	The instance_node element declares the instantiation of a COLLADA node resource.
+type XsdGoPkgHasElems_InstanceNode struct {
+//	The instance_node element declares the instantiation of a COLLADA node resource.
+	InstanceNodes []*TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_node"`
+
 }
 
 //	The instance_physics_material element declares the instantiation of a COLLADA physics_material
@@ -9721,6 +10289,7 @@ type XsdGoPkgHasElem_InstancePhysicsMaterial struct {
 //	The instance_physics_material element declares the instantiation of a COLLADA physics_material
 //	resource.
 	InstancePhysicsMaterial *TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_physics_material"`
+
 }
 
 //	The instance_physics_material element declares the instantiation of a COLLADA physics_material
@@ -9729,6 +10298,7 @@ type XsdGoPkgHasElems_InstancePhysicsMaterial struct {
 //	The instance_physics_material element declares the instantiation of a COLLADA physics_material
 //	resource.
 	InstancePhysicsMaterials []*TInstanceWithExtra `xml:"http://www.collada.org/2005/11/COLLADASchema instance_physics_material"`
+
 }
 
 //	The parent attribute points to the id of a node in the visual scene. This allows a physics model
@@ -9765,12 +10335,14 @@ type TxsdInstancePhysicsModel struct {
 type XsdGoPkgHasElem_InstancePhysicsModel struct {
 //	This element allows instancing physics model within another physics model, or in a physics scene.
 	InstancePhysicsModel *TxsdInstancePhysicsModel `xml:"http://www.collada.org/2005/11/COLLADASchema instance_physics_model"`
+
 }
 
 //	This element allows instancing physics model within another physics model, or in a physics scene.
 type XsdGoPkgHasElems_InstancePhysicsModel struct {
 //	This element allows instancing physics model within another physics model, or in a physics scene.
 	InstancePhysicsModels []*TxsdInstancePhysicsModel `xml:"http://www.collada.org/2005/11/COLLADASchema instance_physics_model"`
+
 }
 
 //	The body attribute indicates which rigid_body to instantiate. Required attribute.
@@ -9785,6 +10357,7 @@ type XsdGoPkgHasElem_angular_velocitysequencetechnique_commonsequenceinstance_ri
 //	Specifies the initial angular velocity of the rigid_body instance in degrees per second
 //	around each axis, in the form of an X-Y-Z Euler rotation.
 	AngularVelocity Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema angular_velocity"`
+
 }
 
 //	Returns the Default value for AngularVelocity -- "0.0 0.0 0.0"
@@ -9796,28 +10369,31 @@ type XsdGoPkgHasElems_angular_velocitysequencetechnique_commonsequenceinstance_r
 //	Specifies the initial angular velocity of the rigid_body instance in degrees per second
 //	around each axis, in the form of an X-Y-Z Euler rotation.
 	AngularVelocities []Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema angular_velocity"`
+
 }
 
 //	Returns the Default value for AngularVelocity -- "0.0 0.0 0.0"
 func (me *XsdGoPkgHasElems_angular_velocitysequencetechnique_commonsequenceinstance_rigid_bodyschema_AngularVelocity_Tfloat3_000000) AngularVelocityDefault () Tfloat3 { return Tfloat3("0.0 0.0 0.0") }
 
 //	Specifies the initial linear velocity of the rigid_body instance.
-type XsdGoPkgHasElem_velocitysequencetechnique_commonsequenceinstance_rigid_bodyschema_Velocity_Tfloat3_000000 struct {
-//	Specifies the initial linear velocity of the rigid_body instance.
-	Velocity Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema velocity"`
-}
-
-//	Returns the Default value for Velocity -- "0.0 0.0 0.0"
-func (me *XsdGoPkgHasElem_velocitysequencetechnique_commonsequenceinstance_rigid_bodyschema_Velocity_Tfloat3_000000) VelocityDefault () Tfloat3 { return Tfloat3("0.0 0.0 0.0") }
-
-//	Specifies the initial linear velocity of the rigid_body instance.
 type XsdGoPkgHasElems_velocitysequencetechnique_commonsequenceinstance_rigid_bodyschema_Velocity_Tfloat3_000000 struct {
 //	Specifies the initial linear velocity of the rigid_body instance.
 	Velocities []Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema velocity"`
+
 }
 
 //	Returns the Default value for Velocity -- "0.0 0.0 0.0"
 func (me *XsdGoPkgHasElems_velocitysequencetechnique_commonsequenceinstance_rigid_bodyschema_Velocity_Tfloat3_000000) VelocityDefault () Tfloat3 { return Tfloat3("0.0 0.0 0.0") }
+
+//	Specifies the initial linear velocity of the rigid_body instance.
+type XsdGoPkgHasElem_velocitysequencetechnique_commonsequenceinstance_rigid_bodyschema_Velocity_Tfloat3_000000 struct {
+//	Specifies the initial linear velocity of the rigid_body instance.
+	Velocity Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema velocity"`
+
+}
+
+//	Returns the Default value for Velocity -- "0.0 0.0 0.0"
+func (me *XsdGoPkgHasElem_velocitysequencetechnique_commonsequenceinstance_rigid_bodyschema_Velocity_Tfloat3_000000) VelocityDefault () Tfloat3 { return Tfloat3("0.0 0.0 0.0") }
 
 type TxsdInstanceRigidBodySequenceTechniqueCommonSequenceDynamic struct {
 	XsdGoPkgValue Tbool `xml:",chardata"`
@@ -9826,18 +10402,22 @@ type TxsdInstanceRigidBodySequenceTechniqueCommonSequenceDynamic struct {
 
 type XsdGoPkgHasElems_dynamicsequencetechnique_commonsequenceinstance_rigid_bodyschema_Dynamic_TxsdInstanceRigidBodySequenceTechniqueCommonSequenceDynamic_ struct {
 	Dynamics []*TxsdInstanceRigidBodySequenceTechniqueCommonSequenceDynamic `xml:"http://www.collada.org/2005/11/COLLADASchema dynamic"`
+
 }
 
 type XsdGoPkgHasElem_dynamicsequencetechnique_commonsequenceinstance_rigid_bodyschema_Dynamic_TxsdInstanceRigidBodySequenceTechniqueCommonSequenceDynamic_ struct {
 	Dynamic *TxsdInstanceRigidBodySequenceTechniqueCommonSequenceDynamic `xml:"http://www.collada.org/2005/11/COLLADASchema dynamic"`
-}
 
-type XsdGoPkgHasElems_masssequencetechnique_commonsequenceinstance_rigid_bodyschema_Mass_TargetableFloat_ struct {
-	Masses []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema mass"`
 }
 
 type XsdGoPkgHasElem_masssequencetechnique_commonsequenceinstance_rigid_bodyschema_Mass_TargetableFloat_ struct {
 	Mass *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema mass"`
+
+}
+
+type XsdGoPkgHasElems_masssequencetechnique_commonsequenceinstance_rigid_bodyschema_Mass_TargetableFloat_ struct {
+	Masses []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema mass"`
+
 }
 
 type TxsdInstanceRigidBodySequenceTechniqueCommonSequenceMassFrame struct {
@@ -9849,18 +10429,22 @@ type TxsdInstanceRigidBodySequenceTechniqueCommonSequenceMassFrame struct {
 
 type XsdGoPkgHasElem_mass_framesequencetechnique_commonsequenceinstance_rigid_bodyschema_MassFrame_TxsdInstanceRigidBodySequenceTechniqueCommonSequenceMassFrame_ struct {
 	MassFrame *TxsdInstanceRigidBodySequenceTechniqueCommonSequenceMassFrame `xml:"http://www.collada.org/2005/11/COLLADASchema mass_frame"`
+
 }
 
 type XsdGoPkgHasElems_mass_framesequencetechnique_commonsequenceinstance_rigid_bodyschema_MassFrame_TxsdInstanceRigidBodySequenceTechniqueCommonSequenceMassFrame_ struct {
 	MassFrames []*TxsdInstanceRigidBodySequenceTechniqueCommonSequenceMassFrame `xml:"http://www.collada.org/2005/11/COLLADASchema mass_frame"`
+
 }
 
 type XsdGoPkgHasElems_inertiasequencetechnique_commonsequenceinstance_rigid_bodyschema_Inertia_TargetableFloat3_ struct {
 	Inertias []*TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema inertia"`
+
 }
 
 type XsdGoPkgHasElem_inertiasequencetechnique_commonsequenceinstance_rigid_bodyschema_Inertia_TargetableFloat3_ struct {
 	Inertia *TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema inertia"`
+
 }
 
 type TxsdInstanceRigidBodySequenceTechniqueCommonSequenceShapeSequenceHollow struct {
@@ -9870,26 +10454,32 @@ type TxsdInstanceRigidBodySequenceTechniqueCommonSequenceShapeSequenceHollow str
 
 type XsdGoPkgHasElems_hollowsequenceshapesequencetechnique_commonsequenceinstance_rigid_bodyschema_Hollow_TxsdInstanceRigidBodySequenceTechniqueCommonSequenceShapeSequenceHollow_ struct {
 	Hollows []*TxsdInstanceRigidBodySequenceTechniqueCommonSequenceShapeSequenceHollow `xml:"http://www.collada.org/2005/11/COLLADASchema hollow"`
+
 }
 
 type XsdGoPkgHasElem_hollowsequenceshapesequencetechnique_commonsequenceinstance_rigid_bodyschema_Hollow_TxsdInstanceRigidBodySequenceTechniqueCommonSequenceShapeSequenceHollow_ struct {
 	Hollow *TxsdInstanceRigidBodySequenceTechniqueCommonSequenceShapeSequenceHollow `xml:"http://www.collada.org/2005/11/COLLADASchema hollow"`
+
 }
 
 type XsdGoPkgHasElems_masssequenceshapesequencetechnique_commonsequenceinstance_rigid_bodyschema_Mass_TargetableFloat_ struct {
 	Masses []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema mass"`
+
 }
 
 type XsdGoPkgHasElem_masssequenceshapesequencetechnique_commonsequenceinstance_rigid_bodyschema_Mass_TargetableFloat_ struct {
 	Mass *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema mass"`
+
 }
 
 type XsdGoPkgHasElems_densitysequenceshapesequencetechnique_commonsequenceinstance_rigid_bodyschema_Density_TargetableFloat_ struct {
 	Densities []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema density"`
+
 }
 
 type XsdGoPkgHasElem_densitysequenceshapesequencetechnique_commonsequenceinstance_rigid_bodyschema_Density_TargetableFloat_ struct {
 	Density *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema density"`
+
 }
 
 type TxsdInstanceRigidBodySequenceTechniqueCommonSequenceShape struct {
@@ -9928,12 +10518,14 @@ type TxsdInstanceRigidBodySequenceTechniqueCommonSequenceShape struct {
 
 }
 
-type XsdGoPkgHasElem_shapesequencetechnique_commonsequenceinstance_rigid_bodyschema_Shape_TxsdInstanceRigidBodySequenceTechniqueCommonSequenceShape_ struct {
-	Shape *TxsdInstanceRigidBodySequenceTechniqueCommonSequenceShape `xml:"http://www.collada.org/2005/11/COLLADASchema shape"`
-}
-
 type XsdGoPkgHasElems_shapesequencetechnique_commonsequenceinstance_rigid_bodyschema_Shape_TxsdInstanceRigidBodySequenceTechniqueCommonSequenceShape_ struct {
 	Shapes []*TxsdInstanceRigidBodySequenceTechniqueCommonSequenceShape `xml:"http://www.collada.org/2005/11/COLLADASchema shape"`
+
+}
+
+type XsdGoPkgHasElem_shapesequencetechnique_commonsequenceinstance_rigid_bodyschema_Shape_TxsdInstanceRigidBodySequenceTechniqueCommonSequenceShape_ struct {
+	Shape *TxsdInstanceRigidBodySequenceTechniqueCommonSequenceShape `xml:"http://www.collada.org/2005/11/COLLADASchema shape"`
+
 }
 
 type TxsdInstanceRigidBodySequenceTechniqueCommon struct {
@@ -9962,18 +10554,20 @@ type TxsdInstanceRigidBodySequenceTechniqueCommon struct {
 
 //	The technique_common element specifies the instance_rigid_body information for the common
 //	profile which all COLLADA implementations need to support.
-type XsdGoPkgHasElem_technique_commonsequenceinstance_rigid_bodyschema_TechniqueCommon_TxsdInstanceRigidBodySequenceTechniqueCommon_ struct {
-//	The technique_common element specifies the instance_rigid_body information for the common
-//	profile which all COLLADA implementations need to support.
-	TechniqueCommon *TxsdInstanceRigidBodySequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
-}
-
-//	The technique_common element specifies the instance_rigid_body information for the common
-//	profile which all COLLADA implementations need to support.
 type XsdGoPkgHasElems_technique_commonsequenceinstance_rigid_bodyschema_TechniqueCommon_TxsdInstanceRigidBodySequenceTechniqueCommon_ struct {
 //	The technique_common element specifies the instance_rigid_body information for the common
 //	profile which all COLLADA implementations need to support.
 	TechniqueCommons []*TxsdInstanceRigidBodySequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
+
+}
+
+//	The technique_common element specifies the instance_rigid_body information for the common
+//	profile which all COLLADA implementations need to support.
+type XsdGoPkgHasElem_technique_commonsequenceinstance_rigid_bodyschema_TechniqueCommon_TxsdInstanceRigidBodySequenceTechniqueCommon_ struct {
+//	The technique_common element specifies the instance_rigid_body information for the common
+//	profile which all COLLADA implementations need to support.
+	TechniqueCommon *TxsdInstanceRigidBodySequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
+
 }
 
 type TxsdInstanceRigidBody struct {
@@ -9993,15 +10587,17 @@ type TxsdInstanceRigidBody struct {
 }
 
 //	This element allows instancing a rigid_body within an instance_physics_model.
-type XsdGoPkgHasElems_InstanceRigidBody struct {
-//	This element allows instancing a rigid_body within an instance_physics_model.
-	InstanceRigidBodies []*TxsdInstanceRigidBody `xml:"http://www.collada.org/2005/11/COLLADASchema instance_rigid_body"`
-}
-
-//	This element allows instancing a rigid_body within an instance_physics_model.
 type XsdGoPkgHasElem_InstanceRigidBody struct {
 //	This element allows instancing a rigid_body within an instance_physics_model.
 	InstanceRigidBody *TxsdInstanceRigidBody `xml:"http://www.collada.org/2005/11/COLLADASchema instance_rigid_body"`
+
+}
+
+//	This element allows instancing a rigid_body within an instance_physics_model.
+type XsdGoPkgHasElems_InstanceRigidBody struct {
+//	This element allows instancing a rigid_body within an instance_physics_model.
+	InstanceRigidBodies []*TxsdInstanceRigidBody `xml:"http://www.collada.org/2005/11/COLLADASchema instance_rigid_body"`
+
 }
 
 //	The constraint attribute indicates which rigid_constraing to instantiate. Required attribute.
@@ -10023,12 +10619,14 @@ type TxsdInstanceRigidConstraint struct {
 type XsdGoPkgHasElem_InstanceRigidConstraint struct {
 //	This element allows instancing a rigid_constraint within an instance_physics_model.
 	InstanceRigidConstraint *TxsdInstanceRigidConstraint `xml:"http://www.collada.org/2005/11/COLLADASchema instance_rigid_constraint"`
+
 }
 
 //	This element allows instancing a rigid_constraint within an instance_physics_model.
 type XsdGoPkgHasElems_InstanceRigidConstraint struct {
 //	This element allows instancing a rigid_constraint within an instance_physics_model.
 	InstanceRigidConstraints []*TxsdInstanceRigidConstraint `xml:"http://www.collada.org/2005/11/COLLADASchema instance_rigid_constraint"`
+
 }
 
 type TxsdLibraryAnimations struct {
@@ -10044,15 +10642,17 @@ type TxsdLibraryAnimations struct {
 }
 
 //	The library_animations element declares a module of animation elements.
-type XsdGoPkgHasElem_LibraryAnimations struct {
-//	The library_animations element declares a module of animation elements.
-	LibraryAnimations *TxsdLibraryAnimations `xml:"http://www.collada.org/2005/11/COLLADASchema library_animations"`
-}
-
-//	The library_animations element declares a module of animation elements.
 type XsdGoPkgHasElems_LibraryAnimations struct {
 //	The library_animations element declares a module of animation elements.
 	LibraryAnimationses []*TxsdLibraryAnimations `xml:"http://www.collada.org/2005/11/COLLADASchema library_animations"`
+
+}
+
+//	The library_animations element declares a module of animation elements.
+type XsdGoPkgHasElem_LibraryAnimations struct {
+//	The library_animations element declares a module of animation elements.
+	LibraryAnimations *TxsdLibraryAnimations `xml:"http://www.collada.org/2005/11/COLLADASchema library_animations"`
+
 }
 
 type TxsdLibraryAnimationClips struct {
@@ -10068,15 +10668,17 @@ type TxsdLibraryAnimationClips struct {
 }
 
 //	The library_animation_clips element declares a module of animation_clip elements.
-type XsdGoPkgHasElems_LibraryAnimationClips struct {
-//	The library_animation_clips element declares a module of animation_clip elements.
-	LibraryAnimationClipses []*TxsdLibraryAnimationClips `xml:"http://www.collada.org/2005/11/COLLADASchema library_animation_clips"`
-}
-
-//	The library_animation_clips element declares a module of animation_clip elements.
 type XsdGoPkgHasElem_LibraryAnimationClips struct {
 //	The library_animation_clips element declares a module of animation_clip elements.
 	LibraryAnimationClips *TxsdLibraryAnimationClips `xml:"http://www.collada.org/2005/11/COLLADASchema library_animation_clips"`
+
+}
+
+//	The library_animation_clips element declares a module of animation_clip elements.
+type XsdGoPkgHasElems_LibraryAnimationClips struct {
+//	The library_animation_clips element declares a module of animation_clip elements.
+	LibraryAnimationClipses []*TxsdLibraryAnimationClips `xml:"http://www.collada.org/2005/11/COLLADASchema library_animation_clips"`
+
 }
 
 type TxsdLibraryCameras struct {
@@ -10092,15 +10694,17 @@ type TxsdLibraryCameras struct {
 }
 
 //	The library_cameras element declares a module of camera elements.
-type XsdGoPkgHasElem_LibraryCameras struct {
-//	The library_cameras element declares a module of camera elements.
-	LibraryCameras *TxsdLibraryCameras `xml:"http://www.collada.org/2005/11/COLLADASchema library_cameras"`
-}
-
-//	The library_cameras element declares a module of camera elements.
 type XsdGoPkgHasElems_LibraryCameras struct {
 //	The library_cameras element declares a module of camera elements.
 	LibraryCamerases []*TxsdLibraryCameras `xml:"http://www.collada.org/2005/11/COLLADASchema library_cameras"`
+
+}
+
+//	The library_cameras element declares a module of camera elements.
+type XsdGoPkgHasElem_LibraryCameras struct {
+//	The library_cameras element declares a module of camera elements.
+	LibraryCameras *TxsdLibraryCameras `xml:"http://www.collada.org/2005/11/COLLADASchema library_cameras"`
+
 }
 
 type TxsdLibraryControllers struct {
@@ -10119,12 +10723,14 @@ type TxsdLibraryControllers struct {
 type XsdGoPkgHasElems_LibraryControllers struct {
 //	The library_controllers element declares a module of controller elements.
 	LibraryControllerses []*TxsdLibraryControllers `xml:"http://www.collada.org/2005/11/COLLADASchema library_controllers"`
+
 }
 
 //	The library_controllers element declares a module of controller elements.
 type XsdGoPkgHasElem_LibraryControllers struct {
 //	The library_controllers element declares a module of controller elements.
 	LibraryControllers *TxsdLibraryControllers `xml:"http://www.collada.org/2005/11/COLLADASchema library_controllers"`
+
 }
 
 type TxsdLibraryGeometries struct {
@@ -10140,15 +10746,17 @@ type TxsdLibraryGeometries struct {
 }
 
 //	The library_geometries element declares a module of geometry elements.
-type XsdGoPkgHasElems_LibraryGeometries struct {
-//	The library_geometries element declares a module of geometry elements.
-	LibraryGeometrieses []*TxsdLibraryGeometries `xml:"http://www.collada.org/2005/11/COLLADASchema library_geometries"`
-}
-
-//	The library_geometries element declares a module of geometry elements.
 type XsdGoPkgHasElem_LibraryGeometries struct {
 //	The library_geometries element declares a module of geometry elements.
 	LibraryGeometries *TxsdLibraryGeometries `xml:"http://www.collada.org/2005/11/COLLADASchema library_geometries"`
+
+}
+
+//	The library_geometries element declares a module of geometry elements.
+type XsdGoPkgHasElems_LibraryGeometries struct {
+//	The library_geometries element declares a module of geometry elements.
+	LibraryGeometrieses []*TxsdLibraryGeometries `xml:"http://www.collada.org/2005/11/COLLADASchema library_geometries"`
+
 }
 
 type TxsdLibraryEffects struct {
@@ -10167,12 +10775,14 @@ type TxsdLibraryEffects struct {
 type XsdGoPkgHasElem_LibraryEffects struct {
 //	The library_effects element declares a module of effect elements.
 	LibraryEffects *TxsdLibraryEffects `xml:"http://www.collada.org/2005/11/COLLADASchema library_effects"`
+
 }
 
 //	The library_effects element declares a module of effect elements.
 type XsdGoPkgHasElems_LibraryEffects struct {
 //	The library_effects element declares a module of effect elements.
 	LibraryEffectses []*TxsdLibraryEffects `xml:"http://www.collada.org/2005/11/COLLADASchema library_effects"`
+
 }
 
 type TxsdLibraryForceFields struct {
@@ -10191,12 +10801,14 @@ type TxsdLibraryForceFields struct {
 type XsdGoPkgHasElem_LibraryForceFields struct {
 //	The library_force_fields element declares a module of force_field elements.
 	LibraryForceFields *TxsdLibraryForceFields `xml:"http://www.collada.org/2005/11/COLLADASchema library_force_fields"`
+
 }
 
 //	The library_force_fields element declares a module of force_field elements.
 type XsdGoPkgHasElems_LibraryForceFields struct {
 //	The library_force_fields element declares a module of force_field elements.
 	LibraryForceFieldses []*TxsdLibraryForceFields `xml:"http://www.collada.org/2005/11/COLLADASchema library_force_fields"`
+
 }
 
 type TxsdLibraryImages struct {
@@ -10212,15 +10824,17 @@ type TxsdLibraryImages struct {
 }
 
 //	The library_images element declares a module of image elements.
-type XsdGoPkgHasElems_LibraryImages struct {
-//	The library_images element declares a module of image elements.
-	LibraryImageses []*TxsdLibraryImages `xml:"http://www.collada.org/2005/11/COLLADASchema library_images"`
-}
-
-//	The library_images element declares a module of image elements.
 type XsdGoPkgHasElem_LibraryImages struct {
 //	The library_images element declares a module of image elements.
 	LibraryImages *TxsdLibraryImages `xml:"http://www.collada.org/2005/11/COLLADASchema library_images"`
+
+}
+
+//	The library_images element declares a module of image elements.
+type XsdGoPkgHasElems_LibraryImages struct {
+//	The library_images element declares a module of image elements.
+	LibraryImageses []*TxsdLibraryImages `xml:"http://www.collada.org/2005/11/COLLADASchema library_images"`
+
 }
 
 type TxsdLibraryLights struct {
@@ -10239,12 +10853,14 @@ type TxsdLibraryLights struct {
 type XsdGoPkgHasElems_LibraryLights struct {
 //	The library_lights element declares a module of light elements.
 	LibraryLightses []*TxsdLibraryLights `xml:"http://www.collada.org/2005/11/COLLADASchema library_lights"`
+
 }
 
 //	The library_lights element declares a module of light elements.
 type XsdGoPkgHasElem_LibraryLights struct {
 //	The library_lights element declares a module of light elements.
 	LibraryLights *TxsdLibraryLights `xml:"http://www.collada.org/2005/11/COLLADASchema library_lights"`
+
 }
 
 type TxsdLibraryMaterials struct {
@@ -10260,15 +10876,17 @@ type TxsdLibraryMaterials struct {
 }
 
 //	The library_materials element declares a module of material elements.
-type XsdGoPkgHasElem_LibraryMaterials struct {
-//	The library_materials element declares a module of material elements.
-	LibraryMaterials *TxsdLibraryMaterials `xml:"http://www.collada.org/2005/11/COLLADASchema library_materials"`
-}
-
-//	The library_materials element declares a module of material elements.
 type XsdGoPkgHasElems_LibraryMaterials struct {
 //	The library_materials element declares a module of material elements.
 	LibraryMaterialses []*TxsdLibraryMaterials `xml:"http://www.collada.org/2005/11/COLLADASchema library_materials"`
+
+}
+
+//	The library_materials element declares a module of material elements.
+type XsdGoPkgHasElem_LibraryMaterials struct {
+//	The library_materials element declares a module of material elements.
+	LibraryMaterials *TxsdLibraryMaterials `xml:"http://www.collada.org/2005/11/COLLADASchema library_materials"`
+
 }
 
 type TxsdLibraryNodes struct {
@@ -10284,15 +10902,17 @@ type TxsdLibraryNodes struct {
 }
 
 //	The library_nodes element declares a module of node elements.
-type XsdGoPkgHasElem_LibraryNodes struct {
-//	The library_nodes element declares a module of node elements.
-	LibraryNodes *TxsdLibraryNodes `xml:"http://www.collada.org/2005/11/COLLADASchema library_nodes"`
-}
-
-//	The library_nodes element declares a module of node elements.
 type XsdGoPkgHasElems_LibraryNodes struct {
 //	The library_nodes element declares a module of node elements.
 	LibraryNodeses []*TxsdLibraryNodes `xml:"http://www.collada.org/2005/11/COLLADASchema library_nodes"`
+
+}
+
+//	The library_nodes element declares a module of node elements.
+type XsdGoPkgHasElem_LibraryNodes struct {
+//	The library_nodes element declares a module of node elements.
+	LibraryNodes *TxsdLibraryNodes `xml:"http://www.collada.org/2005/11/COLLADASchema library_nodes"`
+
 }
 
 type TxsdLibraryPhysicsMaterials struct {
@@ -10308,15 +10928,17 @@ type TxsdLibraryPhysicsMaterials struct {
 }
 
 //	The library_physics_materials element declares a module of physics_material elements.
-type XsdGoPkgHasElems_LibraryPhysicsMaterials struct {
-//	The library_physics_materials element declares a module of physics_material elements.
-	LibraryPhysicsMaterialses []*TxsdLibraryPhysicsMaterials `xml:"http://www.collada.org/2005/11/COLLADASchema library_physics_materials"`
-}
-
-//	The library_physics_materials element declares a module of physics_material elements.
 type XsdGoPkgHasElem_LibraryPhysicsMaterials struct {
 //	The library_physics_materials element declares a module of physics_material elements.
 	LibraryPhysicsMaterials *TxsdLibraryPhysicsMaterials `xml:"http://www.collada.org/2005/11/COLLADASchema library_physics_materials"`
+
+}
+
+//	The library_physics_materials element declares a module of physics_material elements.
+type XsdGoPkgHasElems_LibraryPhysicsMaterials struct {
+//	The library_physics_materials element declares a module of physics_material elements.
+	LibraryPhysicsMaterialses []*TxsdLibraryPhysicsMaterials `xml:"http://www.collada.org/2005/11/COLLADASchema library_physics_materials"`
+
 }
 
 type TxsdLibraryPhysicsModels struct {
@@ -10335,12 +10957,14 @@ type TxsdLibraryPhysicsModels struct {
 type XsdGoPkgHasElems_LibraryPhysicsModels struct {
 //	The library_physics_models element declares a module of physics_model elements.
 	LibraryPhysicsModelses []*TxsdLibraryPhysicsModels `xml:"http://www.collada.org/2005/11/COLLADASchema library_physics_models"`
+
 }
 
 //	The library_physics_models element declares a module of physics_model elements.
 type XsdGoPkgHasElem_LibraryPhysicsModels struct {
 //	The library_physics_models element declares a module of physics_model elements.
 	LibraryPhysicsModels *TxsdLibraryPhysicsModels `xml:"http://www.collada.org/2005/11/COLLADASchema library_physics_models"`
+
 }
 
 type TxsdLibraryPhysicsScenes struct {
@@ -10356,15 +10980,17 @@ type TxsdLibraryPhysicsScenes struct {
 }
 
 //	The library_physics_scenes element declares a module of physics_scene elements.
-type XsdGoPkgHasElem_LibraryPhysicsScenes struct {
-//	The library_physics_scenes element declares a module of physics_scene elements.
-	LibraryPhysicsScenes *TxsdLibraryPhysicsScenes `xml:"http://www.collada.org/2005/11/COLLADASchema library_physics_scenes"`
-}
-
-//	The library_physics_scenes element declares a module of physics_scene elements.
 type XsdGoPkgHasElems_LibraryPhysicsScenes struct {
 //	The library_physics_scenes element declares a module of physics_scene elements.
 	LibraryPhysicsSceneses []*TxsdLibraryPhysicsScenes `xml:"http://www.collada.org/2005/11/COLLADASchema library_physics_scenes"`
+
+}
+
+//	The library_physics_scenes element declares a module of physics_scene elements.
+type XsdGoPkgHasElem_LibraryPhysicsScenes struct {
+//	The library_physics_scenes element declares a module of physics_scene elements.
+	LibraryPhysicsScenes *TxsdLibraryPhysicsScenes `xml:"http://www.collada.org/2005/11/COLLADASchema library_physics_scenes"`
+
 }
 
 type TxsdLibraryVisualScenes struct {
@@ -10380,51 +11006,75 @@ type TxsdLibraryVisualScenes struct {
 }
 
 //	The library_visual_scenes element declares a module of visual_scene elements.
-type XsdGoPkgHasElem_LibraryVisualScenes struct {
-//	The library_visual_scenes element declares a module of visual_scene elements.
-	LibraryVisualScenes *TxsdLibraryVisualScenes `xml:"http://www.collada.org/2005/11/COLLADASchema library_visual_scenes"`
-}
-
-//	The library_visual_scenes element declares a module of visual_scene elements.
 type XsdGoPkgHasElems_LibraryVisualScenes struct {
 //	The library_visual_scenes element declares a module of visual_scene elements.
 	LibraryVisualSceneses []*TxsdLibraryVisualScenes `xml:"http://www.collada.org/2005/11/COLLADASchema library_visual_scenes"`
+
 }
 
-//	The fx_profile_abstract element is only used as a substitution group hook for COLLADA FX profiles.
-type XsdGoPkgHasElem_FxProfileAbstract struct {
-//	The fx_profile_abstract element is only used as a substitution group hook for COLLADA FX profiles.
-	FxProfileAbstract xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema fx_profile_abstract"`
+//	The library_visual_scenes element declares a module of visual_scene elements.
+type XsdGoPkgHasElem_LibraryVisualScenes struct {
+//	The library_visual_scenes element declares a module of visual_scene elements.
+	LibraryVisualScenes *TxsdLibraryVisualScenes `xml:"http://www.collada.org/2005/11/COLLADASchema library_visual_scenes"`
+
 }
 
 //	The fx_profile_abstract element is only used as a substitution group hook for COLLADA FX profiles.
 type XsdGoPkgHasElems_FxProfileAbstract struct {
 //	The fx_profile_abstract element is only used as a substitution group hook for COLLADA FX profiles.
 	FxProfileAbstracts []xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema fx_profile_abstract"`
+
+	XsdGoPkgHasElems_ProfileGlsl
+
+	XsdGoPkgHasElems_ProfileCommon
+
+	XsdGoPkgHasElems_ProfileCg
+
+	XsdGoPkgHasElems_ProfileGles
+
 }
 
-//	The annotate element allows you to specify an annotation on this effect.
-type XsdGoPkgHasElem_annotatesequenceeffectschema_Annotate_TfxAnnotateCommon_ struct {
-//	The annotate element allows you to specify an annotation on this effect.
-	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+//	The fx_profile_abstract element is only used as a substitution group hook for COLLADA FX profiles.
+type XsdGoPkgHasElem_FxProfileAbstract struct {
+//	The fx_profile_abstract element is only used as a substitution group hook for COLLADA FX profiles.
+	FxProfileAbstract xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema fx_profile_abstract"`
+
+	XsdGoPkgHasElem_ProfileGlsl
+
+	XsdGoPkgHasElem_ProfileCommon
+
+	XsdGoPkgHasElem_ProfileCg
+
+	XsdGoPkgHasElem_ProfileGles
+
 }
 
 //	The annotate element allows you to specify an annotation on this effect.
 type XsdGoPkgHasElems_annotatesequenceeffectschema_Annotate_TfxAnnotateCommon_ struct {
 //	The annotate element allows you to specify an annotation on this effect.
 	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
-//	The newparam element allows you to create new effect parameters which can be shared by multipe profiles.
-type XsdGoPkgHasElem_newparamsequenceeffectschema_Newparam_TfxNewparamCommon_ struct {
-//	The newparam element allows you to create new effect parameters which can be shared by multipe profiles.
-	Newparam *TfxNewparamCommon `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+//	The annotate element allows you to specify an annotation on this effect.
+type XsdGoPkgHasElem_annotatesequenceeffectschema_Annotate_TfxAnnotateCommon_ struct {
+//	The annotate element allows you to specify an annotation on this effect.
+	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 //	The newparam element allows you to create new effect parameters which can be shared by multipe profiles.
 type XsdGoPkgHasElems_newparamsequenceeffectschema_Newparam_TfxNewparamCommon_ struct {
 //	The newparam element allows you to create new effect parameters which can be shared by multipe profiles.
 	Newparams []*TfxNewparamCommon `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+
+}
+
+//	The newparam element allows you to create new effect parameters which can be shared by multipe profiles.
+type XsdGoPkgHasElem_newparamsequenceeffectschema_Newparam_TfxNewparamCommon_ struct {
+//	The newparam element allows you to create new effect parameters which can be shared by multipe profiles.
+	Newparam *TfxNewparamCommon `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+
 }
 
 type TxsdEffect struct {
@@ -10452,84 +11102,104 @@ type TxsdEffect struct {
 type XsdGoPkgHasElem_Effect struct {
 //	A self contained description of a shader effect.
 	Effect *TxsdEffect `xml:"http://www.collada.org/2005/11/COLLADASchema effect"`
+
 }
 
 //	A self contained description of a shader effect.
 type XsdGoPkgHasElems_Effect struct {
 //	A self contained description of a shader effect.
 	Effects []*TxsdEffect `xml:"http://www.collada.org/2005/11/COLLADASchema effect"`
-}
 
-type XsdGoPkgHasElem_GlHookAbstract struct {
-	GlHookAbstract xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema gl_hook_abstract"`
 }
 
 type XsdGoPkgHasElems_GlHookAbstract struct {
 	GlHookAbstracts []xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema gl_hook_abstract"`
+
 }
 
-type XsdGoPkgHasElem_codechoicesequenceprofile_GLSLschema_Code_TfxCodeProfile_ struct {
-	Code *TfxCodeProfile `xml:"http://www.collada.org/2005/11/COLLADASchema code"`
+type XsdGoPkgHasElem_GlHookAbstract struct {
+	GlHookAbstract xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema gl_hook_abstract"`
+
 }
 
 type XsdGoPkgHasElems_codechoicesequenceprofile_GLSLschema_Code_TfxCodeProfile_ struct {
 	Codes []*TfxCodeProfile `xml:"http://www.collada.org/2005/11/COLLADASchema code"`
+
+}
+
+type XsdGoPkgHasElem_codechoicesequenceprofile_GLSLschema_Code_TfxCodeProfile_ struct {
+	Code *TfxCodeProfile `xml:"http://www.collada.org/2005/11/COLLADASchema code"`
+
 }
 
 type XsdGoPkgHasElems_includechoicesequenceprofile_GLSLschema_Include_TfxIncludeCommon_ struct {
 	Includes []*TfxIncludeCommon `xml:"http://www.collada.org/2005/11/COLLADASchema include"`
+
 }
 
 type XsdGoPkgHasElem_includechoicesequenceprofile_GLSLschema_Include_TfxIncludeCommon_ struct {
 	Include *TfxIncludeCommon `xml:"http://www.collada.org/2005/11/COLLADASchema include"`
-}
 
-type XsdGoPkgHasElem_newparamchoicesequenceprofile_GLSLschema_Newparam_TglslNewparam_ struct {
-	Newparam *TglslNewparam `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
 }
 
 type XsdGoPkgHasElems_newparamchoicesequenceprofile_GLSLschema_Newparam_TglslNewparam_ struct {
 	Newparams []*TglslNewparam `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+
 }
 
-type XsdGoPkgHasElem_codechoicesequencetechniquesequenceprofile_GLSLschema_Code_TfxCodeProfile_ struct {
-	Code *TfxCodeProfile `xml:"http://www.collada.org/2005/11/COLLADASchema code"`
+type XsdGoPkgHasElem_newparamchoicesequenceprofile_GLSLschema_Newparam_TglslNewparam_ struct {
+	Newparam *TglslNewparam `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+
 }
 
 type XsdGoPkgHasElems_codechoicesequencetechniquesequenceprofile_GLSLschema_Code_TfxCodeProfile_ struct {
 	Codes []*TfxCodeProfile `xml:"http://www.collada.org/2005/11/COLLADASchema code"`
+
+}
+
+type XsdGoPkgHasElem_codechoicesequencetechniquesequenceprofile_GLSLschema_Code_TfxCodeProfile_ struct {
+	Code *TfxCodeProfile `xml:"http://www.collada.org/2005/11/COLLADASchema code"`
+
 }
 
 type XsdGoPkgHasElem_includechoicesequencetechniquesequenceprofile_GLSLschema_Include_TfxIncludeCommon_ struct {
 	Include *TfxIncludeCommon `xml:"http://www.collada.org/2005/11/COLLADASchema include"`
+
 }
 
 type XsdGoPkgHasElems_includechoicesequencetechniquesequenceprofile_GLSLschema_Include_TfxIncludeCommon_ struct {
 	Includes []*TfxIncludeCommon `xml:"http://www.collada.org/2005/11/COLLADASchema include"`
-}
 
-type XsdGoPkgHasElems_newparamchoicesequencetechniquesequenceprofile_GLSLschema_Newparam_TglslNewparam_ struct {
-	Newparams []*TglslNewparam `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
 }
 
 type XsdGoPkgHasElem_newparamchoicesequencetechniquesequenceprofile_GLSLschema_Newparam_TglslNewparam_ struct {
 	Newparam *TglslNewparam `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+
 }
 
-type XsdGoPkgHasElems_setparamchoicesequencetechniquesequenceprofile_GLSLschema_Setparam_TglslSetparam_ struct {
-	Setparams []*TglslSetparam `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
+type XsdGoPkgHasElems_newparamchoicesequencetechniquesequenceprofile_GLSLschema_Newparam_TglslNewparam_ struct {
+	Newparams []*TglslNewparam `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+
 }
 
 type XsdGoPkgHasElem_setparamchoicesequencetechniquesequenceprofile_GLSLschema_Setparam_TglslSetparam_ struct {
 	Setparam *TglslSetparam `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
+
 }
 
-type XsdGoPkgHasElems_annotatesequencetechniquesequenceprofile_GLSLschema_Annotate_TfxAnnotateCommon_ struct {
-	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+type XsdGoPkgHasElems_setparamchoicesequencetechniquesequenceprofile_GLSLschema_Setparam_TglslSetparam_ struct {
+	Setparams []*TglslSetparam `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
+
 }
 
 type XsdGoPkgHasElem_annotatesequencetechniquesequenceprofile_GLSLschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
+}
+
+type XsdGoPkgHasElems_annotatesequencetechniquesequenceprofile_GLSLschema_Annotate_TfxAnnotateCommon_ struct {
+	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 //	In which pipeline stage this programmable shader is designed to execute, for example, VERTEX, FRAGMENT, etc.
@@ -10544,35 +11214,41 @@ type TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceSeq
 }
 
 //	A string declaring which profile or platform the compiler is targeting this shader for.
-type XsdGoPkgHasElems_compiler_targetsequencesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_GLSLschema_CompilerTarget_TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceSequenceCompilerTarget_ struct {
-//	A string declaring which profile or platform the compiler is targeting this shader for.
-	CompilerTargets []*TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceSequenceCompilerTarget `xml:"http://www.collada.org/2005/11/COLLADASchema compiler_target"`
-}
-
-//	A string declaring which profile or platform the compiler is targeting this shader for.
 type XsdGoPkgHasElem_compiler_targetsequencesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_GLSLschema_CompilerTarget_TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceSequenceCompilerTarget_ struct {
 //	A string declaring which profile or platform the compiler is targeting this shader for.
 	CompilerTarget *TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceSequenceCompilerTarget `xml:"http://www.collada.org/2005/11/COLLADASchema compiler_target"`
+
+}
+
+//	A string declaring which profile or platform the compiler is targeting this shader for.
+type XsdGoPkgHasElems_compiler_targetsequencesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_GLSLschema_CompilerTarget_TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceSequenceCompilerTarget_ struct {
+//	A string declaring which profile or platform the compiler is targeting this shader for.
+	CompilerTargets []*TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceSequenceCompilerTarget `xml:"http://www.collada.org/2005/11/COLLADASchema compiler_target"`
+
 }
 
 //	A string containing command-line operations for the shader compiler.
 type XsdGoPkgHasElems_compiler_optionssequencesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_GLSLschema_CompilerOptions_XsdtString_ struct {
 //	A string containing command-line operations for the shader compiler.
 	CompilerOptionses []xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema compiler_options"`
+
 }
 
 //	A string containing command-line operations for the shader compiler.
 type XsdGoPkgHasElem_compiler_optionssequencesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_GLSLschema_CompilerOptions_XsdtString_ struct {
 //	A string containing command-line operations for the shader compiler.
 	CompilerOptions xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema compiler_options"`
+
 }
 
 type XsdGoPkgHasElem_annotatesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_GLSLschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type XsdGoPkgHasElems_annotatesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_GLSLschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceName struct {
@@ -10581,15 +11257,17 @@ type TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceNam
 }
 
 //	The entry symbol for the shader function.
-type XsdGoPkgHasElem_namesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_GLSLschema_Name_TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceName_ struct {
-//	The entry symbol for the shader function.
-	Name *TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceName `xml:"http://www.collada.org/2005/11/COLLADASchema name"`
-}
-
-//	The entry symbol for the shader function.
 type XsdGoPkgHasElems_namesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_GLSLschema_Name_TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceName_ struct {
 //	The entry symbol for the shader function.
 	Names []*TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceName `xml:"http://www.collada.org/2005/11/COLLADASchema name"`
+
+}
+
+//	The entry symbol for the shader function.
+type XsdGoPkgHasElem_namesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_GLSLschema_Name_TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceName_ struct {
+//	The entry symbol for the shader function.
+	Name *TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceName `xml:"http://www.collada.org/2005/11/COLLADASchema name"`
+
 }
 
 type XsdGoPkgHasAttr_Ref_XsdtString_ struct {
@@ -10603,10 +11281,12 @@ type TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBin
 
 type XsdGoPkgHasElem_paramchoicebindsequenceshaderchoicesequencepasssequencetechniquesequenceprofile_GLSLschema_Param_TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBindChoiceParam_ struct {
 	Param *TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBindChoiceParam `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
 }
 
 type XsdGoPkgHasElems_paramchoicebindsequenceshaderchoicesequencepasssequencetechniquesequenceprofile_GLSLschema_Param_TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBindChoiceParam_ struct {
 	Params []*TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBindChoiceParam `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
 }
 
 type TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBind struct {
@@ -10620,12 +11300,14 @@ type TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBin
 type XsdGoPkgHasElems_bindsequenceshaderchoicesequencepasssequencetechniquesequenceprofile_GLSLschema_Bind_TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBind_ struct {
 //	Binds values to uniform inputs of a shader.
 	Binds []*TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBind `xml:"http://www.collada.org/2005/11/COLLADASchema bind"`
+
 }
 
 //	Binds values to uniform inputs of a shader.
 type XsdGoPkgHasElem_bindsequenceshaderchoicesequencepasssequencetechniquesequenceprofile_GLSLschema_Bind_TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBind_ struct {
 //	Binds values to uniform inputs of a shader.
 	Bind *TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBind `xml:"http://www.collada.org/2005/11/COLLADASchema bind"`
+
 }
 
 type TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShader struct {
@@ -10652,76 +11334,94 @@ type TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShader struct {
 type XsdGoPkgHasElem_shaderchoicesequencepasssequencetechniquesequenceprofile_GLSLschema_Shader_TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShader_ struct {
 //	Declare and prepare a shader for execution in the rendering pipeline of a pass.
 	Shader *TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShader `xml:"http://www.collada.org/2005/11/COLLADASchema shader"`
+
 }
 
 //	Declare and prepare a shader for execution in the rendering pipeline of a pass.
 type XsdGoPkgHasElems_shaderchoicesequencepasssequencetechniquesequenceprofile_GLSLschema_Shader_TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShader_ struct {
 //	Declare and prepare a shader for execution in the rendering pipeline of a pass.
 	Shaders []*TxsdProfileGlslSequenceTechniqueSequencePassSequenceChoiceShader `xml:"http://www.collada.org/2005/11/COLLADASchema shader"`
-}
 
-type XsdGoPkgHasElem_annotatesequencepasssequencetechniquesequenceprofile_GLSLschema_Annotate_TfxAnnotateCommon_ struct {
-	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
 }
 
 type XsdGoPkgHasElems_annotatesequencepasssequencetechniquesequenceprofile_GLSLschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
-type XsdGoPkgHasElem_color_targetsequencepasssequencetechniquesequenceprofile_GLSLschema_ColorTarget_TfxColortargetCommon_ struct {
-	ColorTarget *TfxColortargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema color_target"`
+type XsdGoPkgHasElem_annotatesequencepasssequencetechniquesequenceprofile_GLSLschema_Annotate_TfxAnnotateCommon_ struct {
+	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type XsdGoPkgHasElems_color_targetsequencepasssequencetechniquesequenceprofile_GLSLschema_ColorTarget_TfxColortargetCommon_ struct {
 	ColorTargets []*TfxColortargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema color_target"`
+
+}
+
+type XsdGoPkgHasElem_color_targetsequencepasssequencetechniquesequenceprofile_GLSLschema_ColorTarget_TfxColortargetCommon_ struct {
+	ColorTarget *TfxColortargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema color_target"`
+
 }
 
 type XsdGoPkgHasElems_depth_targetsequencepasssequencetechniquesequenceprofile_GLSLschema_DepthTarget_TfxDepthtargetCommon_ struct {
 	DepthTargets []*TfxDepthtargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema depth_target"`
+
 }
 
 type XsdGoPkgHasElem_depth_targetsequencepasssequencetechniquesequenceprofile_GLSLschema_DepthTarget_TfxDepthtargetCommon_ struct {
 	DepthTarget *TfxDepthtargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema depth_target"`
-}
 
-type XsdGoPkgHasElem_stencil_targetsequencepasssequencetechniquesequenceprofile_GLSLschema_StencilTarget_TfxStenciltargetCommon_ struct {
-	StencilTarget *TfxStenciltargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_target"`
 }
 
 type XsdGoPkgHasElems_stencil_targetsequencepasssequencetechniquesequenceprofile_GLSLschema_StencilTarget_TfxStenciltargetCommon_ struct {
 	StencilTargets []*TfxStenciltargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_target"`
+
 }
 
-type XsdGoPkgHasElems_color_clearsequencepasssequencetechniquesequenceprofile_GLSLschema_ColorClear_TfxClearcolorCommon_ struct {
-	ColorClears []*TfxClearcolorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema color_clear"`
+type XsdGoPkgHasElem_stencil_targetsequencepasssequencetechniquesequenceprofile_GLSLschema_StencilTarget_TfxStenciltargetCommon_ struct {
+	StencilTarget *TfxStenciltargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_target"`
+
 }
 
 type XsdGoPkgHasElem_color_clearsequencepasssequencetechniquesequenceprofile_GLSLschema_ColorClear_TfxClearcolorCommon_ struct {
 	ColorClear *TfxClearcolorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema color_clear"`
+
 }
 
-type XsdGoPkgHasElems_depth_clearsequencepasssequencetechniquesequenceprofile_GLSLschema_DepthClear_TfxCleardepthCommon_ struct {
-	DepthClears []*TfxCleardepthCommon `xml:"http://www.collada.org/2005/11/COLLADASchema depth_clear"`
+type XsdGoPkgHasElems_color_clearsequencepasssequencetechniquesequenceprofile_GLSLschema_ColorClear_TfxClearcolorCommon_ struct {
+	ColorClears []*TfxClearcolorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema color_clear"`
+
 }
 
 type XsdGoPkgHasElem_depth_clearsequencepasssequencetechniquesequenceprofile_GLSLschema_DepthClear_TfxCleardepthCommon_ struct {
 	DepthClear *TfxCleardepthCommon `xml:"http://www.collada.org/2005/11/COLLADASchema depth_clear"`
+
 }
 
-type XsdGoPkgHasElems_stencil_clearsequencepasssequencetechniquesequenceprofile_GLSLschema_StencilClear_TfxClearstencilCommon_ struct {
-	StencilClears []*TfxClearstencilCommon `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_clear"`
+type XsdGoPkgHasElems_depth_clearsequencepasssequencetechniquesequenceprofile_GLSLschema_DepthClear_TfxCleardepthCommon_ struct {
+	DepthClears []*TfxCleardepthCommon `xml:"http://www.collada.org/2005/11/COLLADASchema depth_clear"`
+
 }
 
 type XsdGoPkgHasElem_stencil_clearsequencepasssequencetechniquesequenceprofile_GLSLschema_StencilClear_TfxClearstencilCommon_ struct {
 	StencilClear *TfxClearstencilCommon `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_clear"`
+
+}
+
+type XsdGoPkgHasElems_stencil_clearsequencepasssequencetechniquesequenceprofile_GLSLschema_StencilClear_TfxClearstencilCommon_ struct {
+	StencilClears []*TfxClearstencilCommon `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_clear"`
+
 }
 
 type XsdGoPkgHasElem_drawsequencepasssequencetechniquesequenceprofile_GLSLschema_Draw_TfxDrawCommon_ struct {
 	Draw TfxDrawCommon `xml:"http://www.collada.org/2005/11/COLLADASchema draw"`
+
 }
 
 type XsdGoPkgHasElems_drawsequencepasssequencetechniquesequenceprofile_GLSLschema_Draw_TfxDrawCommon_ struct {
 	Draws []TfxDrawCommon `xml:"http://www.collada.org/2005/11/COLLADASchema draw"`
+
 }
 
 type TxsdProfileGlslSequenceTechniqueSequencePass struct {
@@ -10754,12 +11454,14 @@ type TxsdProfileGlslSequenceTechniqueSequencePass struct {
 type XsdGoPkgHasElem_passsequencetechniquesequenceprofile_GLSLschema_Pass_TxsdProfileGlslSequenceTechniqueSequencePass_ struct {
 //	A static declaration of all the render states, shaders, and settings for one rendering pipeline.
 	Pass *TxsdProfileGlslSequenceTechniqueSequencePass `xml:"http://www.collada.org/2005/11/COLLADASchema pass"`
+
 }
 
 //	A static declaration of all the render states, shaders, and settings for one rendering pipeline.
 type XsdGoPkgHasElems_passsequencetechniquesequenceprofile_GLSLschema_Pass_TxsdProfileGlslSequenceTechniqueSequencePass_ struct {
 //	A static declaration of all the render states, shaders, and settings for one rendering pipeline.
 	Passes []*TxsdProfileGlslSequenceTechniqueSequencePass `xml:"http://www.collada.org/2005/11/COLLADASchema pass"`
+
 }
 
 type TxsdProfileGlslSequenceTechnique struct {
@@ -10786,12 +11488,14 @@ type TxsdProfileGlslSequenceTechnique struct {
 type XsdGoPkgHasElem_techniquesequenceprofile_GLSLschema_Technique_TxsdProfileGlslSequenceTechnique_ struct {
 //	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
 	Technique *TxsdProfileGlslSequenceTechnique `xml:"http://www.collada.org/2005/11/COLLADASchema technique"`
+
 }
 
 //	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
 type XsdGoPkgHasElems_techniquesequenceprofile_GLSLschema_Technique_TxsdProfileGlslSequenceTechnique_ struct {
 //	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
 	Techniques []*TxsdProfileGlslSequenceTechnique `xml:"http://www.collada.org/2005/11/COLLADASchema technique"`
+
 }
 
 type TxsdProfileGlsl struct {
@@ -10816,76 +11520,94 @@ type TxsdProfileGlsl struct {
 type XsdGoPkgHasElems_ProfileGlsl struct {
 //	Opens a block of GLSL platform-specific data types and technique declarations.
 	ProfileGlsls []*TxsdProfileGlsl `xml:"http://www.collada.org/2005/11/COLLADASchema profile_GLSL"`
+
 }
 
 //	Opens a block of GLSL platform-specific data types and technique declarations.
 type XsdGoPkgHasElem_ProfileGlsl struct {
 //	Opens a block of GLSL platform-specific data types and technique declarations.
 	ProfileGlsl *TxsdProfileGlsl `xml:"http://www.collada.org/2005/11/COLLADASchema profile_GLSL"`
+
 }
 
 type XsdGoPkgHasElem_newparamchoicesequenceprofile_COMMONschema_Newparam_TcommonNewparamType_ struct {
 	Newparam *TcommonNewparamType `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+
 }
 
 type XsdGoPkgHasElems_newparamchoicesequenceprofile_COMMONschema_Newparam_TcommonNewparamType_ struct {
 	Newparams []*TcommonNewparamType `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+
 }
 
 type XsdGoPkgHasElems_newparamchoicesequencetechniquesequenceprofile_COMMONschema_Newparam_TcommonNewparamType_ struct {
 	Newparams []*TcommonNewparamType `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+
 }
 
 type XsdGoPkgHasElem_newparamchoicesequencetechniquesequenceprofile_COMMONschema_Newparam_TcommonNewparamType_ struct {
 	Newparam *TcommonNewparamType `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
-}
 
-type XsdGoPkgHasElem_emissionsequenceconstantchoicesequencetechniquesequenceprofile_COMMONschema_Emission_TcommonColorOrTextureType_ struct {
-	Emission *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema emission"`
 }
 
 type XsdGoPkgHasElems_emissionsequenceconstantchoicesequencetechniquesequenceprofile_COMMONschema_Emission_TcommonColorOrTextureType_ struct {
 	Emissions []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema emission"`
+
 }
 
-type XsdGoPkgHasElems_reflectivesequenceconstantchoicesequencetechniquesequenceprofile_COMMONschema_Reflective_TcommonColorOrTextureType_ struct {
-	Reflectives []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema reflective"`
+type XsdGoPkgHasElem_emissionsequenceconstantchoicesequencetechniquesequenceprofile_COMMONschema_Emission_TcommonColorOrTextureType_ struct {
+	Emission *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema emission"`
+
 }
 
 type XsdGoPkgHasElem_reflectivesequenceconstantchoicesequencetechniquesequenceprofile_COMMONschema_Reflective_TcommonColorOrTextureType_ struct {
 	Reflective *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema reflective"`
+
+}
+
+type XsdGoPkgHasElems_reflectivesequenceconstantchoicesequencetechniquesequenceprofile_COMMONschema_Reflective_TcommonColorOrTextureType_ struct {
+	Reflectives []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema reflective"`
+
 }
 
 type XsdGoPkgHasElems_reflectivitysequenceconstantchoicesequencetechniquesequenceprofile_COMMONschema_Reflectivity_TcommonFloatOrParamType_ struct {
 	Reflectivities []*TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema reflectivity"`
+
 }
 
 type XsdGoPkgHasElem_reflectivitysequenceconstantchoicesequencetechniquesequenceprofile_COMMONschema_Reflectivity_TcommonFloatOrParamType_ struct {
 	Reflectivity *TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema reflectivity"`
+
 }
 
 type XsdGoPkgHasElem_transparentsequenceconstantchoicesequencetechniquesequenceprofile_COMMONschema_Transparent_TcommonTransparentType_ struct {
 	Transparent *TcommonTransparentType `xml:"http://www.collada.org/2005/11/COLLADASchema transparent"`
+
 }
 
 type XsdGoPkgHasElems_transparentsequenceconstantchoicesequencetechniquesequenceprofile_COMMONschema_Transparent_TcommonTransparentType_ struct {
 	Transparents []*TcommonTransparentType `xml:"http://www.collada.org/2005/11/COLLADASchema transparent"`
+
 }
 
 type XsdGoPkgHasElem_transparencysequenceconstantchoicesequencetechniquesequenceprofile_COMMONschema_Transparency_TcommonFloatOrParamType_ struct {
 	Transparency *TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema transparency"`
+
 }
 
 type XsdGoPkgHasElems_transparencysequenceconstantchoicesequencetechniquesequenceprofile_COMMONschema_Transparency_TcommonFloatOrParamType_ struct {
 	Transparencies []*TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema transparency"`
-}
 
-type XsdGoPkgHasElems_index_of_refractionsequenceconstantchoicesequencetechniquesequenceprofile_COMMONschema_IndexOfRefraction_TcommonFloatOrParamType_ struct {
-	IndexOfRefractions []*TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema index_of_refraction"`
 }
 
 type XsdGoPkgHasElem_index_of_refractionsequenceconstantchoicesequencetechniquesequenceprofile_COMMONschema_IndexOfRefraction_TcommonFloatOrParamType_ struct {
 	IndexOfRefraction *TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema index_of_refraction"`
+
+}
+
+type XsdGoPkgHasElems_index_of_refractionsequenceconstantchoicesequencetechniquesequenceprofile_COMMONschema_IndexOfRefraction_TcommonFloatOrParamType_ struct {
+	IndexOfRefractions []*TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema index_of_refraction"`
+
 }
 
 type TxsdProfileCommonSequenceTechniqueSequenceChoiceConstant struct {
@@ -10903,76 +11625,94 @@ type TxsdProfileCommonSequenceTechniqueSequenceChoiceConstant struct {
 
 }
 
-type XsdGoPkgHasElem_constantchoicesequencetechniquesequenceprofile_COMMONschema_Constant_TxsdProfileCommonSequenceTechniqueSequenceChoiceConstant_ struct {
-	Constant *TxsdProfileCommonSequenceTechniqueSequenceChoiceConstant `xml:"http://www.collada.org/2005/11/COLLADASchema constant"`
-}
-
 type XsdGoPkgHasElems_constantchoicesequencetechniquesequenceprofile_COMMONschema_Constant_TxsdProfileCommonSequenceTechniqueSequenceChoiceConstant_ struct {
 	Constants []*TxsdProfileCommonSequenceTechniqueSequenceChoiceConstant `xml:"http://www.collada.org/2005/11/COLLADASchema constant"`
+
+}
+
+type XsdGoPkgHasElem_constantchoicesequencetechniquesequenceprofile_COMMONschema_Constant_TxsdProfileCommonSequenceTechniqueSequenceChoiceConstant_ struct {
+	Constant *TxsdProfileCommonSequenceTechniqueSequenceChoiceConstant `xml:"http://www.collada.org/2005/11/COLLADASchema constant"`
+
 }
 
 type XsdGoPkgHasElem_emissionsequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_Emission_TcommonColorOrTextureType_ struct {
 	Emission *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema emission"`
+
 }
 
 type XsdGoPkgHasElems_emissionsequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_Emission_TcommonColorOrTextureType_ struct {
 	Emissions []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema emission"`
+
 }
 
 type XsdGoPkgHasElems_ambientsequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_Ambient_TcommonColorOrTextureType_ struct {
 	Ambients []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema ambient"`
+
 }
 
 type XsdGoPkgHasElem_ambientsequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_Ambient_TcommonColorOrTextureType_ struct {
 	Ambient *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema ambient"`
+
 }
 
 type XsdGoPkgHasElem_diffusesequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_Diffuse_TcommonColorOrTextureType_ struct {
 	Diffuse *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema diffuse"`
+
 }
 
 type XsdGoPkgHasElems_diffusesequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_Diffuse_TcommonColorOrTextureType_ struct {
 	Diffuses []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema diffuse"`
-}
 
-type XsdGoPkgHasElems_reflectivesequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_Reflective_TcommonColorOrTextureType_ struct {
-	Reflectives []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema reflective"`
 }
 
 type XsdGoPkgHasElem_reflectivesequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_Reflective_TcommonColorOrTextureType_ struct {
 	Reflective *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema reflective"`
+
+}
+
+type XsdGoPkgHasElems_reflectivesequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_Reflective_TcommonColorOrTextureType_ struct {
+	Reflectives []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema reflective"`
+
 }
 
 type XsdGoPkgHasElem_reflectivitysequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_Reflectivity_TcommonFloatOrParamType_ struct {
 	Reflectivity *TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema reflectivity"`
+
 }
 
 type XsdGoPkgHasElems_reflectivitysequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_Reflectivity_TcommonFloatOrParamType_ struct {
 	Reflectivities []*TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema reflectivity"`
-}
 
-type XsdGoPkgHasElems_transparentsequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_Transparent_TcommonTransparentType_ struct {
-	Transparents []*TcommonTransparentType `xml:"http://www.collada.org/2005/11/COLLADASchema transparent"`
 }
 
 type XsdGoPkgHasElem_transparentsequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_Transparent_TcommonTransparentType_ struct {
 	Transparent *TcommonTransparentType `xml:"http://www.collada.org/2005/11/COLLADASchema transparent"`
+
 }
 
-type XsdGoPkgHasElem_transparencysequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_Transparency_TcommonFloatOrParamType_ struct {
-	Transparency *TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema transparency"`
+type XsdGoPkgHasElems_transparentsequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_Transparent_TcommonTransparentType_ struct {
+	Transparents []*TcommonTransparentType `xml:"http://www.collada.org/2005/11/COLLADASchema transparent"`
+
 }
 
 type XsdGoPkgHasElems_transparencysequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_Transparency_TcommonFloatOrParamType_ struct {
 	Transparencies []*TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema transparency"`
+
 }
 
-type XsdGoPkgHasElem_index_of_refractionsequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_IndexOfRefraction_TcommonFloatOrParamType_ struct {
-	IndexOfRefraction *TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema index_of_refraction"`
+type XsdGoPkgHasElem_transparencysequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_Transparency_TcommonFloatOrParamType_ struct {
+	Transparency *TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema transparency"`
+
 }
 
 type XsdGoPkgHasElems_index_of_refractionsequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_IndexOfRefraction_TcommonFloatOrParamType_ struct {
 	IndexOfRefractions []*TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema index_of_refraction"`
+
+}
+
+type XsdGoPkgHasElem_index_of_refractionsequencelambertchoicesequencetechniquesequenceprofile_COMMONschema_IndexOfRefraction_TcommonFloatOrParamType_ struct {
+	IndexOfRefraction *TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema index_of_refraction"`
+
 }
 
 type TxsdProfileCommonSequenceTechniqueSequenceChoiceLambert struct {
@@ -10996,90 +11736,112 @@ type TxsdProfileCommonSequenceTechniqueSequenceChoiceLambert struct {
 
 type XsdGoPkgHasElems_lambertchoicesequencetechniquesequenceprofile_COMMONschema_Lambert_TxsdProfileCommonSequenceTechniqueSequenceChoiceLambert_ struct {
 	Lamberts []*TxsdProfileCommonSequenceTechniqueSequenceChoiceLambert `xml:"http://www.collada.org/2005/11/COLLADASchema lambert"`
+
 }
 
 type XsdGoPkgHasElem_lambertchoicesequencetechniquesequenceprofile_COMMONschema_Lambert_TxsdProfileCommonSequenceTechniqueSequenceChoiceLambert_ struct {
 	Lambert *TxsdProfileCommonSequenceTechniqueSequenceChoiceLambert `xml:"http://www.collada.org/2005/11/COLLADASchema lambert"`
-}
 
-type XsdGoPkgHasElem_emissionsequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Emission_TcommonColorOrTextureType_ struct {
-	Emission *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema emission"`
 }
 
 type XsdGoPkgHasElems_emissionsequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Emission_TcommonColorOrTextureType_ struct {
 	Emissions []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema emission"`
+
+}
+
+type XsdGoPkgHasElem_emissionsequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Emission_TcommonColorOrTextureType_ struct {
+	Emission *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema emission"`
+
 }
 
 type XsdGoPkgHasElem_ambientsequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Ambient_TcommonColorOrTextureType_ struct {
 	Ambient *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema ambient"`
+
 }
 
 type XsdGoPkgHasElems_ambientsequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Ambient_TcommonColorOrTextureType_ struct {
 	Ambients []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema ambient"`
+
 }
 
 type XsdGoPkgHasElems_diffusesequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Diffuse_TcommonColorOrTextureType_ struct {
 	Diffuses []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema diffuse"`
+
 }
 
 type XsdGoPkgHasElem_diffusesequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Diffuse_TcommonColorOrTextureType_ struct {
 	Diffuse *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema diffuse"`
-}
 
-type XsdGoPkgHasElems_specularsequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Specular_TcommonColorOrTextureType_ struct {
-	Speculars []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema specular"`
 }
 
 type XsdGoPkgHasElem_specularsequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Specular_TcommonColorOrTextureType_ struct {
 	Specular *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema specular"`
+
+}
+
+type XsdGoPkgHasElems_specularsequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Specular_TcommonColorOrTextureType_ struct {
+	Speculars []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema specular"`
+
 }
 
 type XsdGoPkgHasElem_shininesssequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Shininess_TcommonFloatOrParamType_ struct {
 	Shininess *TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema shininess"`
+
 }
 
 type XsdGoPkgHasElems_shininesssequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Shininess_TcommonFloatOrParamType_ struct {
 	Shininesses []*TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema shininess"`
+
 }
 
 type XsdGoPkgHasElem_reflectivesequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Reflective_TcommonColorOrTextureType_ struct {
 	Reflective *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema reflective"`
+
 }
 
 type XsdGoPkgHasElems_reflectivesequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Reflective_TcommonColorOrTextureType_ struct {
 	Reflectives []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema reflective"`
+
 }
 
 type XsdGoPkgHasElems_reflectivitysequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Reflectivity_TcommonFloatOrParamType_ struct {
 	Reflectivities []*TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema reflectivity"`
+
 }
 
 type XsdGoPkgHasElem_reflectivitysequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Reflectivity_TcommonFloatOrParamType_ struct {
 	Reflectivity *TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema reflectivity"`
+
 }
 
 type XsdGoPkgHasElem_transparentsequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Transparent_TcommonTransparentType_ struct {
 	Transparent *TcommonTransparentType `xml:"http://www.collada.org/2005/11/COLLADASchema transparent"`
+
 }
 
 type XsdGoPkgHasElems_transparentsequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Transparent_TcommonTransparentType_ struct {
 	Transparents []*TcommonTransparentType `xml:"http://www.collada.org/2005/11/COLLADASchema transparent"`
-}
 
-type XsdGoPkgHasElem_transparencysequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Transparency_TcommonFloatOrParamType_ struct {
-	Transparency *TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema transparency"`
 }
 
 type XsdGoPkgHasElems_transparencysequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Transparency_TcommonFloatOrParamType_ struct {
 	Transparencies []*TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema transparency"`
+
+}
+
+type XsdGoPkgHasElem_transparencysequencephongchoicesequencetechniquesequenceprofile_COMMONschema_Transparency_TcommonFloatOrParamType_ struct {
+	Transparency *TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema transparency"`
+
 }
 
 type XsdGoPkgHasElem_index_of_refractionsequencephongchoicesequencetechniquesequenceprofile_COMMONschema_IndexOfRefraction_TcommonFloatOrParamType_ struct {
 	IndexOfRefraction *TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema index_of_refraction"`
+
 }
 
 type XsdGoPkgHasElems_index_of_refractionsequencephongchoicesequencetechniquesequenceprofile_COMMONschema_IndexOfRefraction_TcommonFloatOrParamType_ struct {
 	IndexOfRefractions []*TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema index_of_refraction"`
+
 }
 
 type TxsdProfileCommonSequenceTechniqueSequenceChoicePhong struct {
@@ -11107,90 +11869,112 @@ type TxsdProfileCommonSequenceTechniqueSequenceChoicePhong struct {
 
 type XsdGoPkgHasElem_phongchoicesequencetechniquesequenceprofile_COMMONschema_Phong_TxsdProfileCommonSequenceTechniqueSequenceChoicePhong_ struct {
 	Phong *TxsdProfileCommonSequenceTechniqueSequenceChoicePhong `xml:"http://www.collada.org/2005/11/COLLADASchema phong"`
+
 }
 
 type XsdGoPkgHasElems_phongchoicesequencetechniquesequenceprofile_COMMONschema_Phong_TxsdProfileCommonSequenceTechniqueSequenceChoicePhong_ struct {
 	Phongs []*TxsdProfileCommonSequenceTechniqueSequenceChoicePhong `xml:"http://www.collada.org/2005/11/COLLADASchema phong"`
-}
 
-type XsdGoPkgHasElems_emissionsequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Emission_TcommonColorOrTextureType_ struct {
-	Emissions []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema emission"`
 }
 
 type XsdGoPkgHasElem_emissionsequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Emission_TcommonColorOrTextureType_ struct {
 	Emission *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema emission"`
+
 }
 
-type XsdGoPkgHasElems_ambientsequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Ambient_TcommonColorOrTextureType_ struct {
-	Ambients []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema ambient"`
+type XsdGoPkgHasElems_emissionsequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Emission_TcommonColorOrTextureType_ struct {
+	Emissions []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema emission"`
+
 }
 
 type XsdGoPkgHasElem_ambientsequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Ambient_TcommonColorOrTextureType_ struct {
 	Ambient *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema ambient"`
+
 }
 
-type XsdGoPkgHasElem_diffusesequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Diffuse_TcommonColorOrTextureType_ struct {
-	Diffuse *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema diffuse"`
+type XsdGoPkgHasElems_ambientsequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Ambient_TcommonColorOrTextureType_ struct {
+	Ambients []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema ambient"`
+
 }
 
 type XsdGoPkgHasElems_diffusesequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Diffuse_TcommonColorOrTextureType_ struct {
 	Diffuses []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema diffuse"`
+
 }
 
-type XsdGoPkgHasElems_specularsequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Specular_TcommonColorOrTextureType_ struct {
-	Speculars []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema specular"`
+type XsdGoPkgHasElem_diffusesequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Diffuse_TcommonColorOrTextureType_ struct {
+	Diffuse *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema diffuse"`
+
 }
 
 type XsdGoPkgHasElem_specularsequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Specular_TcommonColorOrTextureType_ struct {
 	Specular *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema specular"`
+
+}
+
+type XsdGoPkgHasElems_specularsequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Specular_TcommonColorOrTextureType_ struct {
+	Speculars []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema specular"`
+
 }
 
 type XsdGoPkgHasElems_shininesssequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Shininess_TcommonFloatOrParamType_ struct {
 	Shininesses []*TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema shininess"`
+
 }
 
 type XsdGoPkgHasElem_shininesssequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Shininess_TcommonFloatOrParamType_ struct {
 	Shininess *TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema shininess"`
+
 }
 
 type XsdGoPkgHasElem_reflectivesequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Reflective_TcommonColorOrTextureType_ struct {
 	Reflective *TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema reflective"`
+
 }
 
 type XsdGoPkgHasElems_reflectivesequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Reflective_TcommonColorOrTextureType_ struct {
 	Reflectives []*TcommonColorOrTextureType `xml:"http://www.collada.org/2005/11/COLLADASchema reflective"`
+
 }
 
 type XsdGoPkgHasElems_reflectivitysequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Reflectivity_TcommonFloatOrParamType_ struct {
 	Reflectivities []*TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema reflectivity"`
+
 }
 
 type XsdGoPkgHasElem_reflectivitysequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Reflectivity_TcommonFloatOrParamType_ struct {
 	Reflectivity *TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema reflectivity"`
-}
 
-type XsdGoPkgHasElems_transparentsequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Transparent_TcommonTransparentType_ struct {
-	Transparents []*TcommonTransparentType `xml:"http://www.collada.org/2005/11/COLLADASchema transparent"`
 }
 
 type XsdGoPkgHasElem_transparentsequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Transparent_TcommonTransparentType_ struct {
 	Transparent *TcommonTransparentType `xml:"http://www.collada.org/2005/11/COLLADASchema transparent"`
+
+}
+
+type XsdGoPkgHasElems_transparentsequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Transparent_TcommonTransparentType_ struct {
+	Transparents []*TcommonTransparentType `xml:"http://www.collada.org/2005/11/COLLADASchema transparent"`
+
 }
 
 type XsdGoPkgHasElem_transparencysequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Transparency_TcommonFloatOrParamType_ struct {
 	Transparency *TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema transparency"`
+
 }
 
 type XsdGoPkgHasElems_transparencysequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_Transparency_TcommonFloatOrParamType_ struct {
 	Transparencies []*TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema transparency"`
-}
 
-type XsdGoPkgHasElems_index_of_refractionsequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_IndexOfRefraction_TcommonFloatOrParamType_ struct {
-	IndexOfRefractions []*TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema index_of_refraction"`
 }
 
 type XsdGoPkgHasElem_index_of_refractionsequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_IndexOfRefraction_TcommonFloatOrParamType_ struct {
 	IndexOfRefraction *TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema index_of_refraction"`
+
+}
+
+type XsdGoPkgHasElems_index_of_refractionsequenceblinnchoicesequencetechniquesequenceprofile_COMMONschema_IndexOfRefraction_TcommonFloatOrParamType_ struct {
+	IndexOfRefractions []*TcommonFloatOrParamType `xml:"http://www.collada.org/2005/11/COLLADASchema index_of_refraction"`
+
 }
 
 type TxsdProfileCommonSequenceTechniqueSequenceChoiceBlinn struct {
@@ -11216,12 +12000,14 @@ type TxsdProfileCommonSequenceTechniqueSequenceChoiceBlinn struct {
 
 }
 
-type XsdGoPkgHasElem_blinnchoicesequencetechniquesequenceprofile_COMMONschema_Blinn_TxsdProfileCommonSequenceTechniqueSequenceChoiceBlinn_ struct {
-	Blinn *TxsdProfileCommonSequenceTechniqueSequenceChoiceBlinn `xml:"http://www.collada.org/2005/11/COLLADASchema blinn"`
-}
-
 type XsdGoPkgHasElems_blinnchoicesequencetechniquesequenceprofile_COMMONschema_Blinn_TxsdProfileCommonSequenceTechniqueSequenceChoiceBlinn_ struct {
 	Blinns []*TxsdProfileCommonSequenceTechniqueSequenceChoiceBlinn `xml:"http://www.collada.org/2005/11/COLLADASchema blinn"`
+
+}
+
+type XsdGoPkgHasElem_blinnchoicesequencetechniquesequenceprofile_COMMONschema_Blinn_TxsdProfileCommonSequenceTechniqueSequenceChoiceBlinn_ struct {
+	Blinn *TxsdProfileCommonSequenceTechniqueSequenceChoiceBlinn `xml:"http://www.collada.org/2005/11/COLLADASchema blinn"`
+
 }
 
 type TxsdProfileCommonSequenceTechnique struct {
@@ -11246,15 +12032,17 @@ type TxsdProfileCommonSequenceTechnique struct {
 }
 
 //	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
-type XsdGoPkgHasElem_techniquesequenceprofile_COMMONschema_Technique_TxsdProfileCommonSequenceTechnique_ struct {
-//	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
-	Technique *TxsdProfileCommonSequenceTechnique `xml:"http://www.collada.org/2005/11/COLLADASchema technique"`
-}
-
-//	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
 type XsdGoPkgHasElems_techniquesequenceprofile_COMMONschema_Technique_TxsdProfileCommonSequenceTechnique_ struct {
 //	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
 	Techniques []*TxsdProfileCommonSequenceTechnique `xml:"http://www.collada.org/2005/11/COLLADASchema technique"`
+
+}
+
+//	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
+type XsdGoPkgHasElem_techniquesequenceprofile_COMMONschema_Technique_TxsdProfileCommonSequenceTechnique_ struct {
+//	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
+	Technique *TxsdProfileCommonSequenceTechnique `xml:"http://www.collada.org/2005/11/COLLADASchema technique"`
+
 }
 
 type TxsdProfileCommon struct {
@@ -11276,12 +12064,14 @@ type TxsdProfileCommon struct {
 type XsdGoPkgHasElems_ProfileCommon struct {
 //	Opens a block of COMMON platform-specific data types and technique declarations.
 	ProfileCommons []*TxsdProfileCommon `xml:"http://www.collada.org/2005/11/COLLADASchema profile_COMMON"`
+
 }
 
 //	Opens a block of COMMON platform-specific data types and technique declarations.
 type XsdGoPkgHasElem_ProfileCommon struct {
 //	Opens a block of COMMON platform-specific data types and technique declarations.
 	ProfileCommon *TxsdProfileCommon `xml:"http://www.collada.org/2005/11/COLLADASchema profile_COMMON"`
+
 }
 
 //	The type of platform. This is a vendor-defined character string that indicates the platform or capability target for the technique. Optional
@@ -11295,66 +12085,82 @@ func (me *XsdGoPkgHasAttr_Platform_XsdtNCName_Pc) PlatformDefault () xsdt.NCName
 
 type XsdGoPkgHasElems_codechoicesequenceprofile_CGschema_Code_TfxCodeProfile_ struct {
 	Codes []*TfxCodeProfile `xml:"http://www.collada.org/2005/11/COLLADASchema code"`
+
 }
 
 type XsdGoPkgHasElem_codechoicesequenceprofile_CGschema_Code_TfxCodeProfile_ struct {
 	Code *TfxCodeProfile `xml:"http://www.collada.org/2005/11/COLLADASchema code"`
+
 }
 
 type XsdGoPkgHasElem_includechoicesequenceprofile_CGschema_Include_TfxIncludeCommon_ struct {
 	Include *TfxIncludeCommon `xml:"http://www.collada.org/2005/11/COLLADASchema include"`
+
 }
 
 type XsdGoPkgHasElems_includechoicesequenceprofile_CGschema_Include_TfxIncludeCommon_ struct {
 	Includes []*TfxIncludeCommon `xml:"http://www.collada.org/2005/11/COLLADASchema include"`
+
 }
 
 type XsdGoPkgHasElems_newparamchoicesequenceprofile_CGschema_Newparam_TcgNewparam_ struct {
 	Newparams []*TcgNewparam `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+
 }
 
 type XsdGoPkgHasElem_newparamchoicesequenceprofile_CGschema_Newparam_TcgNewparam_ struct {
 	Newparam *TcgNewparam `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+
 }
 
 type XsdGoPkgHasElem_codechoicesequencetechniquesequenceprofile_CGschema_Code_TfxCodeProfile_ struct {
 	Code *TfxCodeProfile `xml:"http://www.collada.org/2005/11/COLLADASchema code"`
+
 }
 
 type XsdGoPkgHasElems_codechoicesequencetechniquesequenceprofile_CGschema_Code_TfxCodeProfile_ struct {
 	Codes []*TfxCodeProfile `xml:"http://www.collada.org/2005/11/COLLADASchema code"`
-}
 
-type XsdGoPkgHasElems_includechoicesequencetechniquesequenceprofile_CGschema_Include_TfxIncludeCommon_ struct {
-	Includes []*TfxIncludeCommon `xml:"http://www.collada.org/2005/11/COLLADASchema include"`
 }
 
 type XsdGoPkgHasElem_includechoicesequencetechniquesequenceprofile_CGschema_Include_TfxIncludeCommon_ struct {
 	Include *TfxIncludeCommon `xml:"http://www.collada.org/2005/11/COLLADASchema include"`
+
 }
 
-type XsdGoPkgHasElem_newparamchoicesequencetechniquesequenceprofile_CGschema_Newparam_TcgNewparam_ struct {
-	Newparam *TcgNewparam `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+type XsdGoPkgHasElems_includechoicesequencetechniquesequenceprofile_CGschema_Include_TfxIncludeCommon_ struct {
+	Includes []*TfxIncludeCommon `xml:"http://www.collada.org/2005/11/COLLADASchema include"`
+
 }
 
 type XsdGoPkgHasElems_newparamchoicesequencetechniquesequenceprofile_CGschema_Newparam_TcgNewparam_ struct {
 	Newparams []*TcgNewparam `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+
 }
 
-type XsdGoPkgHasElems_setparamchoicesequencetechniquesequenceprofile_CGschema_Setparam_TcgSetparam_ struct {
-	Setparams []*TcgSetparam `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
+type XsdGoPkgHasElem_newparamchoicesequencetechniquesequenceprofile_CGschema_Newparam_TcgNewparam_ struct {
+	Newparam *TcgNewparam `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+
 }
 
 type XsdGoPkgHasElem_setparamchoicesequencetechniquesequenceprofile_CGschema_Setparam_TcgSetparam_ struct {
 	Setparam *TcgSetparam `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
+
+}
+
+type XsdGoPkgHasElems_setparamchoicesequencetechniquesequenceprofile_CGschema_Setparam_TcgSetparam_ struct {
+	Setparams []*TcgSetparam `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
+
 }
 
 type XsdGoPkgHasElem_annotatesequencetechniquesequenceprofile_CGschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type XsdGoPkgHasElems_annotatesequencetechniquesequenceprofile_CGschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 //	In which pipeline stage this programmable shader is designed to execute, for example, VERTEX, FRAGMENT, etc.
@@ -11368,32 +12174,38 @@ type TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceSeque
 
 }
 
-type XsdGoPkgHasElems_compiler_targetsequencesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_CGschema_CompilerTarget_TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceSequenceCompilerTarget_ struct {
-	CompilerTargets []*TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceSequenceCompilerTarget `xml:"http://www.collada.org/2005/11/COLLADASchema compiler_target"`
-}
-
 type XsdGoPkgHasElem_compiler_targetsequencesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_CGschema_CompilerTarget_TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceSequenceCompilerTarget_ struct {
 	CompilerTarget *TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceSequenceCompilerTarget `xml:"http://www.collada.org/2005/11/COLLADASchema compiler_target"`
+
 }
 
-//	A string containing command-line operations for the shader compiler.
-type XsdGoPkgHasElems_compiler_optionssequencesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_CGschema_CompilerOptions_XsdtString_ struct {
-//	A string containing command-line operations for the shader compiler.
-	CompilerOptionses []xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema compiler_options"`
+type XsdGoPkgHasElems_compiler_targetsequencesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_CGschema_CompilerTarget_TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceSequenceCompilerTarget_ struct {
+	CompilerTargets []*TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceSequenceCompilerTarget `xml:"http://www.collada.org/2005/11/COLLADASchema compiler_target"`
+
 }
 
 //	A string containing command-line operations for the shader compiler.
 type XsdGoPkgHasElem_compiler_optionssequencesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_CGschema_CompilerOptions_XsdtString_ struct {
 //	A string containing command-line operations for the shader compiler.
 	CompilerOptions xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema compiler_options"`
+
+}
+
+//	A string containing command-line operations for the shader compiler.
+type XsdGoPkgHasElems_compiler_optionssequencesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_CGschema_CompilerOptions_XsdtString_ struct {
+//	A string containing command-line operations for the shader compiler.
+	CompilerOptionses []xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema compiler_options"`
+
 }
 
 type XsdGoPkgHasElems_annotatesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_CGschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type XsdGoPkgHasElem_annotatesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_CGschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceName struct {
@@ -11405,12 +12217,14 @@ type TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceName 
 type XsdGoPkgHasElem_namesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_CGschema_Name_TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceName_ struct {
 //	The entry symbol for the shader function.
 	Name *TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceName `xml:"http://www.collada.org/2005/11/COLLADASchema name"`
+
 }
 
 //	The entry symbol for the shader function.
 type XsdGoPkgHasElems_namesequenceshaderchoicesequencepasssequencetechniquesequenceprofile_CGschema_Name_TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceName_ struct {
 //	The entry symbol for the shader function.
 	Names []*TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceName `xml:"http://www.collada.org/2005/11/COLLADASchema name"`
+
 }
 
 type TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBindChoiceParam struct {
@@ -11420,12 +12234,14 @@ type TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBindC
 type XsdGoPkgHasElem_paramchoicebindsequenceshaderchoicesequencepasssequencetechniquesequenceprofile_CGschema_Param_TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBindChoiceParam_ struct {
 //	References a predefined parameter in shader binding declarations.
 	Param *TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBindChoiceParam `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
 }
 
 //	References a predefined parameter in shader binding declarations.
 type XsdGoPkgHasElems_paramchoicebindsequenceshaderchoicesequencepasssequencetechniquesequenceprofile_CGschema_Param_TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBindChoiceParam_ struct {
 //	References a predefined parameter in shader binding declarations.
 	Params []*TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBindChoiceParam `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
 }
 
 type TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBind struct {
@@ -11440,12 +12256,14 @@ type TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBind 
 type XsdGoPkgHasElems_bindsequenceshaderchoicesequencepasssequencetechniquesequenceprofile_CGschema_Bind_TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBind_ struct {
 //	Binds values to uniform inputs of a shader.
 	Binds []*TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBind `xml:"http://www.collada.org/2005/11/COLLADASchema bind"`
+
 }
 
 //	Binds values to uniform inputs of a shader.
 type XsdGoPkgHasElem_bindsequenceshaderchoicesequencepasssequencetechniquesequenceprofile_CGschema_Bind_TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBind_ struct {
 //	Binds values to uniform inputs of a shader.
 	Bind *TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShaderSequenceBind `xml:"http://www.collada.org/2005/11/COLLADASchema bind"`
+
 }
 
 type TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShader struct {
@@ -11471,76 +12289,94 @@ type TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShader struct {
 type XsdGoPkgHasElem_shaderchoicesequencepasssequencetechniquesequenceprofile_CGschema_Shader_TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShader_ struct {
 //	Declare and prepare a shader for execution in the rendering pipeline of a pass.
 	Shader *TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShader `xml:"http://www.collada.org/2005/11/COLLADASchema shader"`
+
 }
 
 //	Declare and prepare a shader for execution in the rendering pipeline of a pass.
 type XsdGoPkgHasElems_shaderchoicesequencepasssequencetechniquesequenceprofile_CGschema_Shader_TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShader_ struct {
 //	Declare and prepare a shader for execution in the rendering pipeline of a pass.
 	Shaders []*TxsdProfileCgSequenceTechniqueSequencePassSequenceChoiceShader `xml:"http://www.collada.org/2005/11/COLLADASchema shader"`
-}
 
-type XsdGoPkgHasElem_annotatesequencepasssequencetechniquesequenceprofile_CGschema_Annotate_TfxAnnotateCommon_ struct {
-	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
 }
 
 type XsdGoPkgHasElems_annotatesequencepasssequencetechniquesequenceprofile_CGschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
-type XsdGoPkgHasElem_color_targetsequencepasssequencetechniquesequenceprofile_CGschema_ColorTarget_TfxColortargetCommon_ struct {
-	ColorTarget *TfxColortargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema color_target"`
+type XsdGoPkgHasElem_annotatesequencepasssequencetechniquesequenceprofile_CGschema_Annotate_TfxAnnotateCommon_ struct {
+	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type XsdGoPkgHasElems_color_targetsequencepasssequencetechniquesequenceprofile_CGschema_ColorTarget_TfxColortargetCommon_ struct {
 	ColorTargets []*TfxColortargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema color_target"`
+
+}
+
+type XsdGoPkgHasElem_color_targetsequencepasssequencetechniquesequenceprofile_CGschema_ColorTarget_TfxColortargetCommon_ struct {
+	ColorTarget *TfxColortargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema color_target"`
+
 }
 
 type XsdGoPkgHasElem_depth_targetsequencepasssequencetechniquesequenceprofile_CGschema_DepthTarget_TfxDepthtargetCommon_ struct {
 	DepthTarget *TfxDepthtargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema depth_target"`
+
 }
 
 type XsdGoPkgHasElems_depth_targetsequencepasssequencetechniquesequenceprofile_CGschema_DepthTarget_TfxDepthtargetCommon_ struct {
 	DepthTargets []*TfxDepthtargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema depth_target"`
+
 }
 
 type XsdGoPkgHasElem_stencil_targetsequencepasssequencetechniquesequenceprofile_CGschema_StencilTarget_TfxStenciltargetCommon_ struct {
 	StencilTarget *TfxStenciltargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_target"`
+
 }
 
 type XsdGoPkgHasElems_stencil_targetsequencepasssequencetechniquesequenceprofile_CGschema_StencilTarget_TfxStenciltargetCommon_ struct {
 	StencilTargets []*TfxStenciltargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_target"`
-}
 
-type XsdGoPkgHasElems_color_clearsequencepasssequencetechniquesequenceprofile_CGschema_ColorClear_TfxClearcolorCommon_ struct {
-	ColorClears []*TfxClearcolorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema color_clear"`
 }
 
 type XsdGoPkgHasElem_color_clearsequencepasssequencetechniquesequenceprofile_CGschema_ColorClear_TfxClearcolorCommon_ struct {
 	ColorClear *TfxClearcolorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema color_clear"`
+
+}
+
+type XsdGoPkgHasElems_color_clearsequencepasssequencetechniquesequenceprofile_CGschema_ColorClear_TfxClearcolorCommon_ struct {
+	ColorClears []*TfxClearcolorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema color_clear"`
+
 }
 
 type XsdGoPkgHasElems_depth_clearsequencepasssequencetechniquesequenceprofile_CGschema_DepthClear_TfxCleardepthCommon_ struct {
 	DepthClears []*TfxCleardepthCommon `xml:"http://www.collada.org/2005/11/COLLADASchema depth_clear"`
+
 }
 
 type XsdGoPkgHasElem_depth_clearsequencepasssequencetechniquesequenceprofile_CGschema_DepthClear_TfxCleardepthCommon_ struct {
 	DepthClear *TfxCleardepthCommon `xml:"http://www.collada.org/2005/11/COLLADASchema depth_clear"`
-}
 
-type XsdGoPkgHasElems_stencil_clearsequencepasssequencetechniquesequenceprofile_CGschema_StencilClear_TfxClearstencilCommon_ struct {
-	StencilClears []*TfxClearstencilCommon `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_clear"`
 }
 
 type XsdGoPkgHasElem_stencil_clearsequencepasssequencetechniquesequenceprofile_CGschema_StencilClear_TfxClearstencilCommon_ struct {
 	StencilClear *TfxClearstencilCommon `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_clear"`
+
+}
+
+type XsdGoPkgHasElems_stencil_clearsequencepasssequencetechniquesequenceprofile_CGschema_StencilClear_TfxClearstencilCommon_ struct {
+	StencilClears []*TfxClearstencilCommon `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_clear"`
+
 }
 
 type XsdGoPkgHasElems_drawsequencepasssequencetechniquesequenceprofile_CGschema_Draw_TfxDrawCommon_ struct {
 	Draws []TfxDrawCommon `xml:"http://www.collada.org/2005/11/COLLADASchema draw"`
+
 }
 
 type XsdGoPkgHasElem_drawsequencepasssequencetechniquesequenceprofile_CGschema_Draw_TfxDrawCommon_ struct {
 	Draw TfxDrawCommon `xml:"http://www.collada.org/2005/11/COLLADASchema draw"`
+
 }
 
 type TxsdProfileCgSequenceTechniqueSequencePass struct {
@@ -11570,15 +12406,17 @@ type TxsdProfileCgSequenceTechniqueSequencePass struct {
 }
 
 //	A static declaration of all the render states, shaders, and settings for one rendering pipeline.
-type XsdGoPkgHasElems_passsequencetechniquesequenceprofile_CGschema_Pass_TxsdProfileCgSequenceTechniqueSequencePass_ struct {
-//	A static declaration of all the render states, shaders, and settings for one rendering pipeline.
-	Passes []*TxsdProfileCgSequenceTechniqueSequencePass `xml:"http://www.collada.org/2005/11/COLLADASchema pass"`
-}
-
-//	A static declaration of all the render states, shaders, and settings for one rendering pipeline.
 type XsdGoPkgHasElem_passsequencetechniquesequenceprofile_CGschema_Pass_TxsdProfileCgSequenceTechniqueSequencePass_ struct {
 //	A static declaration of all the render states, shaders, and settings for one rendering pipeline.
 	Pass *TxsdProfileCgSequenceTechniqueSequencePass `xml:"http://www.collada.org/2005/11/COLLADASchema pass"`
+
+}
+
+//	A static declaration of all the render states, shaders, and settings for one rendering pipeline.
+type XsdGoPkgHasElems_passsequencetechniquesequenceprofile_CGschema_Pass_TxsdProfileCgSequenceTechniqueSequencePass_ struct {
+//	A static declaration of all the render states, shaders, and settings for one rendering pipeline.
+	Passes []*TxsdProfileCgSequenceTechniqueSequencePass `xml:"http://www.collada.org/2005/11/COLLADASchema pass"`
+
 }
 
 type TxsdProfileCgSequenceTechnique struct {
@@ -11605,15 +12443,17 @@ type TxsdProfileCgSequenceTechnique struct {
 }
 
 //	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
-type XsdGoPkgHasElem_techniquesequenceprofile_CGschema_Technique_TxsdProfileCgSequenceTechnique_ struct {
-//	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
-	Technique *TxsdProfileCgSequenceTechnique `xml:"http://www.collada.org/2005/11/COLLADASchema technique"`
-}
-
-//	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
 type XsdGoPkgHasElems_techniquesequenceprofile_CGschema_Technique_TxsdProfileCgSequenceTechnique_ struct {
 //	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
 	Techniques []*TxsdProfileCgSequenceTechnique `xml:"http://www.collada.org/2005/11/COLLADASchema technique"`
+
+}
+
+//	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
+type XsdGoPkgHasElem_techniquesequenceprofile_CGschema_Technique_TxsdProfileCgSequenceTechnique_ struct {
+//	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
+	Technique *TxsdProfileCgSequenceTechnique `xml:"http://www.collada.org/2005/11/COLLADASchema technique"`
+
 }
 
 type TxsdProfileCg struct {
@@ -11641,36 +12481,44 @@ type TxsdProfileCg struct {
 type XsdGoPkgHasElems_ProfileCg struct {
 //	Opens a block of CG platform-specific data types and technique declarations.
 	ProfileCgs []*TxsdProfileCg `xml:"http://www.collada.org/2005/11/COLLADASchema profile_CG"`
+
 }
 
 //	Opens a block of CG platform-specific data types and technique declarations.
 type XsdGoPkgHasElem_ProfileCg struct {
 //	Opens a block of CG platform-specific data types and technique declarations.
 	ProfileCg *TxsdProfileCg `xml:"http://www.collada.org/2005/11/COLLADASchema profile_CG"`
-}
 
-type XsdGoPkgHasElems_newparamchoicesequenceprofile_GLESschema_Newparam_TglesNewparam_ struct {
-	Newparams []*TglesNewparam `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
 }
 
 type XsdGoPkgHasElem_newparamchoicesequenceprofile_GLESschema_Newparam_TglesNewparam_ struct {
 	Newparam *TglesNewparam `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+
+}
+
+type XsdGoPkgHasElems_newparamchoicesequenceprofile_GLESschema_Newparam_TglesNewparam_ struct {
+	Newparams []*TglesNewparam `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+
 }
 
 type XsdGoPkgHasElem_newparamchoicesequencetechniquesequenceprofile_GLESschema_Newparam_TglesNewparam_ struct {
 	Newparam *TglesNewparam `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+
 }
 
 type XsdGoPkgHasElems_newparamchoicesequencetechniquesequenceprofile_GLESschema_Newparam_TglesNewparam_ struct {
 	Newparams []*TglesNewparam `xml:"http://www.collada.org/2005/11/COLLADASchema newparam"`
+
 }
 
 type XsdGoPkgHasElem_annotatesequencesetparamchoicesequencetechniquesequenceprofile_GLESschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type XsdGoPkgHasElems_annotatesequencesetparamchoicesequencetechniquesequenceprofile_GLESschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type TxsdProfileGlesSequenceTechniqueSequenceChoiceSetparam struct {
@@ -11680,84 +12528,104 @@ type TxsdProfileGlesSequenceTechniqueSequenceChoiceSetparam struct {
 
 }
 
-type XsdGoPkgHasElem_setparamchoicesequencetechniquesequenceprofile_GLESschema_Setparam_TxsdProfileGlesSequenceTechniqueSequenceChoiceSetparam_ struct {
-	Setparam *TxsdProfileGlesSequenceTechniqueSequenceChoiceSetparam `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
-}
-
 type XsdGoPkgHasElems_setparamchoicesequencetechniquesequenceprofile_GLESschema_Setparam_TxsdProfileGlesSequenceTechniqueSequenceChoiceSetparam_ struct {
 	Setparams []*TxsdProfileGlesSequenceTechniqueSequenceChoiceSetparam `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
+
+}
+
+type XsdGoPkgHasElem_setparamchoicesequencetechniquesequenceprofile_GLESschema_Setparam_TxsdProfileGlesSequenceTechniqueSequenceChoiceSetparam_ struct {
+	Setparam *TxsdProfileGlesSequenceTechniqueSequenceChoiceSetparam `xml:"http://www.collada.org/2005/11/COLLADASchema setparam"`
+
 }
 
 type XsdGoPkgHasElem_annotatesequencetechniquesequenceprofile_GLESschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type XsdGoPkgHasElems_annotatesequencetechniquesequenceprofile_GLESschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type XsdGoPkgHasElems_annotatesequencepasssequencetechniquesequenceprofile_GLESschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotates []*TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type XsdGoPkgHasElem_annotatesequencepasssequencetechniquesequenceprofile_GLESschema_Annotate_TfxAnnotateCommon_ struct {
 	Annotate *TfxAnnotateCommon `xml:"http://www.collada.org/2005/11/COLLADASchema annotate"`
+
 }
 
 type XsdGoPkgHasElem_color_targetsequencepasssequencetechniquesequenceprofile_GLESschema_ColorTarget_TglesRendertargetCommon_ struct {
 	ColorTarget TglesRendertargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema color_target"`
+
 }
 
 type XsdGoPkgHasElems_color_targetsequencepasssequencetechniquesequenceprofile_GLESschema_ColorTarget_TglesRendertargetCommon_ struct {
 	ColorTargets []TglesRendertargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema color_target"`
-}
 
-type XsdGoPkgHasElems_depth_targetsequencepasssequencetechniquesequenceprofile_GLESschema_DepthTarget_TglesRendertargetCommon_ struct {
-	DepthTargets []TglesRendertargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema depth_target"`
 }
 
 type XsdGoPkgHasElem_depth_targetsequencepasssequencetechniquesequenceprofile_GLESschema_DepthTarget_TglesRendertargetCommon_ struct {
 	DepthTarget TglesRendertargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema depth_target"`
+
 }
 
-type XsdGoPkgHasElems_stencil_targetsequencepasssequencetechniquesequenceprofile_GLESschema_StencilTarget_TglesRendertargetCommon_ struct {
-	StencilTargets []TglesRendertargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_target"`
+type XsdGoPkgHasElems_depth_targetsequencepasssequencetechniquesequenceprofile_GLESschema_DepthTarget_TglesRendertargetCommon_ struct {
+	DepthTargets []TglesRendertargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema depth_target"`
+
 }
 
 type XsdGoPkgHasElem_stencil_targetsequencepasssequencetechniquesequenceprofile_GLESschema_StencilTarget_TglesRendertargetCommon_ struct {
 	StencilTarget TglesRendertargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_target"`
+
 }
 
-type XsdGoPkgHasElems_color_clearsequencepasssequencetechniquesequenceprofile_GLESschema_ColorClear_TfxColorCommon_ struct {
-	ColorClears []TfxColorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema color_clear"`
+type XsdGoPkgHasElems_stencil_targetsequencepasssequencetechniquesequenceprofile_GLESschema_StencilTarget_TglesRendertargetCommon_ struct {
+	StencilTargets []TglesRendertargetCommon `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_target"`
+
 }
 
 type XsdGoPkgHasElem_color_clearsequencepasssequencetechniquesequenceprofile_GLESschema_ColorClear_TfxColorCommon_ struct {
 	ColorClear TfxColorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema color_clear"`
+
+}
+
+type XsdGoPkgHasElems_color_clearsequencepasssequencetechniquesequenceprofile_GLESschema_ColorClear_TfxColorCommon_ struct {
+	ColorClears []TfxColorCommon `xml:"http://www.collada.org/2005/11/COLLADASchema color_clear"`
+
 }
 
 type XsdGoPkgHasElems_depth_clearsequencepasssequencetechniquesequenceprofile_GLESschema_DepthClear_Tfloat_ struct {
 	DepthClears []Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema depth_clear"`
+
 }
 
 type XsdGoPkgHasElem_depth_clearsequencepasssequencetechniquesequenceprofile_GLESschema_DepthClear_Tfloat_ struct {
 	DepthClear Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema depth_clear"`
+
 }
 
 type XsdGoPkgHasElems_stencil_clearsequencepasssequencetechniquesequenceprofile_GLESschema_StencilClear_XsdtByte_ struct {
 	StencilClears []xsdt.Byte `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_clear"`
+
 }
 
 type XsdGoPkgHasElem_stencil_clearsequencepasssequencetechniquesequenceprofile_GLESschema_StencilClear_XsdtByte_ struct {
 	StencilClear xsdt.Byte `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_clear"`
-}
 
-type XsdGoPkgHasElem_drawsequencepasssequencetechniquesequenceprofile_GLESschema_Draw_TfxDrawCommon_ struct {
-	Draw TfxDrawCommon `xml:"http://www.collada.org/2005/11/COLLADASchema draw"`
 }
 
 type XsdGoPkgHasElems_drawsequencepasssequencetechniquesequenceprofile_GLESschema_Draw_TfxDrawCommon_ struct {
 	Draws []TfxDrawCommon `xml:"http://www.collada.org/2005/11/COLLADASchema draw"`
+
+}
+
+type XsdGoPkgHasElem_drawsequencepasssequencetechniquesequenceprofile_GLESschema_Draw_TfxDrawCommon_ struct {
+	Draw TfxDrawCommon `xml:"http://www.collada.org/2005/11/COLLADASchema draw"`
+
 }
 
 type TxsdProfileGlesSequenceTechniqueSequencePass struct {
@@ -11784,15 +12652,17 @@ type TxsdProfileGlesSequenceTechniqueSequencePass struct {
 }
 
 //	A static declaration of all the render states, shaders, and settings for one rendering pipeline.
-type XsdGoPkgHasElems_passsequencetechniquesequenceprofile_GLESschema_Pass_TxsdProfileGlesSequenceTechniqueSequencePass_ struct {
-//	A static declaration of all the render states, shaders, and settings for one rendering pipeline.
-	Passes []*TxsdProfileGlesSequenceTechniqueSequencePass `xml:"http://www.collada.org/2005/11/COLLADASchema pass"`
-}
-
-//	A static declaration of all the render states, shaders, and settings for one rendering pipeline.
 type XsdGoPkgHasElem_passsequencetechniquesequenceprofile_GLESschema_Pass_TxsdProfileGlesSequenceTechniqueSequencePass_ struct {
 //	A static declaration of all the render states, shaders, and settings for one rendering pipeline.
 	Pass *TxsdProfileGlesSequenceTechniqueSequencePass `xml:"http://www.collada.org/2005/11/COLLADASchema pass"`
+
+}
+
+//	A static declaration of all the render states, shaders, and settings for one rendering pipeline.
+type XsdGoPkgHasElems_passsequencetechniquesequenceprofile_GLESschema_Pass_TxsdProfileGlesSequenceTechniqueSequencePass_ struct {
+//	A static declaration of all the render states, shaders, and settings for one rendering pipeline.
+	Passes []*TxsdProfileGlesSequenceTechniqueSequencePass `xml:"http://www.collada.org/2005/11/COLLADASchema pass"`
+
 }
 
 type TxsdProfileGlesSequenceTechnique struct {
@@ -11814,15 +12684,17 @@ type TxsdProfileGlesSequenceTechnique struct {
 }
 
 //	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
-type XsdGoPkgHasElem_techniquesequenceprofile_GLESschema_Technique_TxsdProfileGlesSequenceTechnique_ struct {
-//	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
-	Technique *TxsdProfileGlesSequenceTechnique `xml:"http://www.collada.org/2005/11/COLLADASchema technique"`
-}
-
-//	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
 type XsdGoPkgHasElems_techniquesequenceprofile_GLESschema_Technique_TxsdProfileGlesSequenceTechnique_ struct {
 //	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
 	Techniques []*TxsdProfileGlesSequenceTechnique `xml:"http://www.collada.org/2005/11/COLLADASchema technique"`
+
+}
+
+//	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
+type XsdGoPkgHasElem_techniquesequenceprofile_GLESschema_Technique_TxsdProfileGlesSequenceTechnique_ struct {
+//	Holds a description of the textures, samplers, shaders, parameters, and passes necessary for rendering this effect using one method.
+	Technique *TxsdProfileGlesSequenceTechnique `xml:"http://www.collada.org/2005/11/COLLADASchema technique"`
+
 }
 
 type TxsdProfileGles struct {
@@ -11840,27 +12712,31 @@ type TxsdProfileGles struct {
 }
 
 //	Opens a block of GLES platform-specific data types and technique declarations.
-type XsdGoPkgHasElem_ProfileGles struct {
-//	Opens a block of GLES platform-specific data types and technique declarations.
-	ProfileGles *TxsdProfileGles `xml:"http://www.collada.org/2005/11/COLLADASchema profile_GLES"`
-}
-
-//	Opens a block of GLES platform-specific data types and technique declarations.
 type XsdGoPkgHasElems_ProfileGles struct {
 //	Opens a block of GLES platform-specific data types and technique declarations.
 	ProfileGleses []*TxsdProfileGles `xml:"http://www.collada.org/2005/11/COLLADASchema profile_GLES"`
+
 }
 
-//	3 float values that represent the extents of the box
-type XsdGoPkgHasElem_half_extentssequenceboxschema_HalfExtents_Tfloat3_ struct {
-//	3 float values that represent the extents of the box
-	HalfExtents Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema half_extents"`
+//	Opens a block of GLES platform-specific data types and technique declarations.
+type XsdGoPkgHasElem_ProfileGles struct {
+//	Opens a block of GLES platform-specific data types and technique declarations.
+	ProfileGles *TxsdProfileGles `xml:"http://www.collada.org/2005/11/COLLADASchema profile_GLES"`
+
 }
 
 //	3 float values that represent the extents of the box
 type XsdGoPkgHasElems_half_extentssequenceboxschema_HalfExtents_Tfloat3_ struct {
 //	3 float values that represent the extents of the box
 	HalfExtentses []Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema half_extents"`
+
+}
+
+//	3 float values that represent the extents of the box
+type XsdGoPkgHasElem_half_extentssequenceboxschema_HalfExtents_Tfloat3_ struct {
+//	3 float values that represent the extents of the box
+	HalfExtents Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema half_extents"`
+
 }
 
 type TxsdBox struct {
@@ -11873,27 +12749,31 @@ type TxsdBox struct {
 }
 
 //	An axis-aligned, centered box primitive.
-type XsdGoPkgHasElems_Box struct {
-//	An axis-aligned, centered box primitive.
-	Boxs []*TxsdBox `xml:"http://www.collada.org/2005/11/COLLADASchema box"`
-}
-
-//	An axis-aligned, centered box primitive.
 type XsdGoPkgHasElem_Box struct {
 //	An axis-aligned, centered box primitive.
 	Box *TxsdBox `xml:"http://www.collada.org/2005/11/COLLADASchema box"`
+
 }
 
-//	4 float values that represent the coefficients for the plane’s equation:    Ax + By + Cz + D = 0
-type XsdGoPkgHasElems_equationsequenceplaneschema_Equation_Tfloat4_ struct {
-//	4 float values that represent the coefficients for the plane’s equation:    Ax + By + Cz + D = 0
-	Equations []Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema equation"`
+//	An axis-aligned, centered box primitive.
+type XsdGoPkgHasElems_Box struct {
+//	An axis-aligned, centered box primitive.
+	Boxs []*TxsdBox `xml:"http://www.collada.org/2005/11/COLLADASchema box"`
+
 }
 
 //	4 float values that represent the coefficients for the plane’s equation:    Ax + By + Cz + D = 0
 type XsdGoPkgHasElem_equationsequenceplaneschema_Equation_Tfloat4_ struct {
 //	4 float values that represent the coefficients for the plane’s equation:    Ax + By + Cz + D = 0
 	Equation Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema equation"`
+
+}
+
+//	4 float values that represent the coefficients for the plane’s equation:    Ax + By + Cz + D = 0
+type XsdGoPkgHasElems_equationsequenceplaneschema_Equation_Tfloat4_ struct {
+//	4 float values that represent the coefficients for the plane’s equation:    Ax + By + Cz + D = 0
+	Equations []Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema equation"`
+
 }
 
 type TxsdPlane struct {
@@ -11906,27 +12786,31 @@ type TxsdPlane struct {
 }
 
 //	An infinite plane primitive.
-type XsdGoPkgHasElem_Plane struct {
-//	An infinite plane primitive.
-	Plane *TxsdPlane `xml:"http://www.collada.org/2005/11/COLLADASchema plane"`
-}
-
-//	An infinite plane primitive.
 type XsdGoPkgHasElems_Plane struct {
 //	An infinite plane primitive.
 	Planes []*TxsdPlane `xml:"http://www.collada.org/2005/11/COLLADASchema plane"`
+
+}
+
+//	An infinite plane primitive.
+type XsdGoPkgHasElem_Plane struct {
+//	An infinite plane primitive.
+	Plane *TxsdPlane `xml:"http://www.collada.org/2005/11/COLLADASchema plane"`
+
 }
 
 //	A float value that represents the radius of the sphere
 type XsdGoPkgHasElem_radiussequencesphereschema_Radius_Tfloat_ struct {
 //	A float value that represents the radius of the sphere
 	Radius Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema radius"`
+
 }
 
 //	A float value that represents the radius of the sphere
 type XsdGoPkgHasElems_radiussequencesphereschema_Radius_Tfloat_ struct {
 //	A float value that represents the radius of the sphere
 	Radiuses []Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema radius"`
+
 }
 
 type TxsdSphere struct {
@@ -11939,23 +12823,27 @@ type TxsdSphere struct {
 }
 
 //	A centered sphere primitive.
-type XsdGoPkgHasElems_Sphere struct {
-//	A centered sphere primitive.
-	Spheres []*TxsdSphere `xml:"http://www.collada.org/2005/11/COLLADASchema sphere"`
-}
-
-//	A centered sphere primitive.
 type XsdGoPkgHasElem_Sphere struct {
 //	A centered sphere primitive.
 	Sphere *TxsdSphere `xml:"http://www.collada.org/2005/11/COLLADASchema sphere"`
+
 }
 
-type XsdGoPkgHasElems_sizesequenceellipsoidschema_Size_Tfloat3_ struct {
-	Sizes []Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema size"`
+//	A centered sphere primitive.
+type XsdGoPkgHasElems_Sphere struct {
+//	A centered sphere primitive.
+	Spheres []*TxsdSphere `xml:"http://www.collada.org/2005/11/COLLADASchema sphere"`
+
 }
 
 type XsdGoPkgHasElem_sizesequenceellipsoidschema_Size_Tfloat3_ struct {
 	Size Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema size"`
+
+}
+
+type XsdGoPkgHasElems_sizesequenceellipsoidschema_Size_Tfloat3_ struct {
+	Sizes []Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema size"`
+
 }
 
 type TxsdEllipsoid struct {
@@ -11965,34 +12853,40 @@ type TxsdEllipsoid struct {
 
 type XsdGoPkgHasElem_Ellipsoid struct {
 	Ellipsoid *TxsdEllipsoid `xml:"http://www.collada.org/2005/11/COLLADASchema ellipsoid"`
+
 }
 
 type XsdGoPkgHasElems_Ellipsoid struct {
 	Ellipsoids []*TxsdEllipsoid `xml:"http://www.collada.org/2005/11/COLLADASchema ellipsoid"`
+
 }
 
 //	A float value that represents the length of the cylinder along the Y axis.
 type XsdGoPkgHasElem_heightsequencecylinderschema_Height_Tfloat_ struct {
 //	A float value that represents the length of the cylinder along the Y axis.
 	Height Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema height"`
+
 }
 
 //	A float value that represents the length of the cylinder along the Y axis.
 type XsdGoPkgHasElems_heightsequencecylinderschema_Height_Tfloat_ struct {
 //	A float value that represents the length of the cylinder along the Y axis.
 	Heights []Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema height"`
+
 }
 
 //	float2 values that represent the radii of the cylinder.
 type XsdGoPkgHasElems_radiussequencecylinderschema_Radius_Tfloat2_ struct {
 //	float2 values that represent the radii of the cylinder.
 	Radiuses []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema radius"`
+
 }
 
 //	float2 values that represent the radii of the cylinder.
 type XsdGoPkgHasElem_radiussequencecylinderschema_Radius_Tfloat2_ struct {
 //	float2 values that represent the radii of the cylinder.
 	Radius Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema radius"`
+
 }
 
 type TxsdCylinder struct {
@@ -12011,32 +12905,28 @@ type TxsdCylinder struct {
 type XsdGoPkgHasElems_Cylinder struct {
 //	A cylinder primitive that is centered on, and aligned with. the local Y axis.
 	Cylinders []*TxsdCylinder `xml:"http://www.collada.org/2005/11/COLLADASchema cylinder"`
+
 }
 
 //	A cylinder primitive that is centered on, and aligned with. the local Y axis.
 type XsdGoPkgHasElem_Cylinder struct {
 //	A cylinder primitive that is centered on, and aligned with. the local Y axis.
 	Cylinder *TxsdCylinder `xml:"http://www.collada.org/2005/11/COLLADASchema cylinder"`
+
 }
 
 //	A float value that represents the length of the cylinder along the Y axis.
 type XsdGoPkgHasElem_heightsequencetapered_cylinderschema_Height_Tfloat_ struct {
 //	A float value that represents the length of the cylinder along the Y axis.
 	Height Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema height"`
+
 }
 
 //	A float value that represents the length of the cylinder along the Y axis.
 type XsdGoPkgHasElems_heightsequencetapered_cylinderschema_Height_Tfloat_ struct {
 //	A float value that represents the length of the cylinder along the Y axis.
 	Heights []Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema height"`
-}
 
-//	Two float values that represent the radii of the tapered cylinder at the positive (height/2)
-//	Y value. Both ends of the tapered cylinder may be elliptical.
-type XsdGoPkgHasElem_radius1sequencetapered_cylinderschema_Radius1_Tfloat2_ struct {
-//	Two float values that represent the radii of the tapered cylinder at the positive (height/2)
-//	Y value. Both ends of the tapered cylinder may be elliptical.
-	Radius1 Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema radius1"`
 }
 
 //	Two float values that represent the radii of the tapered cylinder at the positive (height/2)
@@ -12045,6 +12935,16 @@ type XsdGoPkgHasElems_radius1sequencetapered_cylinderschema_Radius1_Tfloat2_ str
 //	Two float values that represent the radii of the tapered cylinder at the positive (height/2)
 //	Y value. Both ends of the tapered cylinder may be elliptical.
 	Radius1s []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema radius1"`
+
+}
+
+//	Two float values that represent the radii of the tapered cylinder at the positive (height/2)
+//	Y value. Both ends of the tapered cylinder may be elliptical.
+type XsdGoPkgHasElem_radius1sequencetapered_cylinderschema_Radius1_Tfloat2_ struct {
+//	Two float values that represent the radii of the tapered cylinder at the positive (height/2)
+//	Y value. Both ends of the tapered cylinder may be elliptical.
+	Radius1 Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema radius1"`
+
 }
 
 //	Two float values that represent the radii of the tapered cylinder at the negative (height/2)
@@ -12053,6 +12953,7 @@ type XsdGoPkgHasElem_radius2sequencetapered_cylinderschema_Radius2_Tfloat2_ stru
 //	Two float values that represent the radii of the tapered cylinder at the negative (height/2)
 //	Y value.Both ends of the tapered cylinder may be elliptical.
 	Radius2 Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema radius2"`
+
 }
 
 //	Two float values that represent the radii of the tapered cylinder at the negative (height/2)
@@ -12061,6 +12962,7 @@ type XsdGoPkgHasElems_radius2sequencetapered_cylinderschema_Radius2_Tfloat2_ str
 //	Two float values that represent the radii of the tapered cylinder at the negative (height/2)
 //	Y value.Both ends of the tapered cylinder may be elliptical.
 	Radius2s []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema radius2"`
+
 }
 
 type TxsdTaperedCylinder struct {
@@ -12081,23 +12983,17 @@ type TxsdTaperedCylinder struct {
 }
 
 //	A tapered cylinder primitive that is centered on and aligned with the local Y axis.
-type XsdGoPkgHasElems_TaperedCylinder struct {
-//	A tapered cylinder primitive that is centered on and aligned with the local Y axis.
-	TaperedCylinders []*TxsdTaperedCylinder `xml:"http://www.collada.org/2005/11/COLLADASchema tapered_cylinder"`
-}
-
-//	A tapered cylinder primitive that is centered on and aligned with the local Y axis.
 type XsdGoPkgHasElem_TaperedCylinder struct {
 //	A tapered cylinder primitive that is centered on and aligned with the local Y axis.
 	TaperedCylinder *TxsdTaperedCylinder `xml:"http://www.collada.org/2005/11/COLLADASchema tapered_cylinder"`
+
 }
 
-//	A float value that represents the length of the line segment connecting the centers
-//	of the capping hemispheres.
-type XsdGoPkgHasElem_heightsequencecapsuleschema_Height_Tfloat_ struct {
-//	A float value that represents the length of the line segment connecting the centers
-//	of the capping hemispheres.
-	Height Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema height"`
+//	A tapered cylinder primitive that is centered on and aligned with the local Y axis.
+type XsdGoPkgHasElems_TaperedCylinder struct {
+//	A tapered cylinder primitive that is centered on and aligned with the local Y axis.
+	TaperedCylinders []*TxsdTaperedCylinder `xml:"http://www.collada.org/2005/11/COLLADASchema tapered_cylinder"`
+
 }
 
 //	A float value that represents the length of the line segment connecting the centers
@@ -12106,18 +13002,30 @@ type XsdGoPkgHasElems_heightsequencecapsuleschema_Height_Tfloat_ struct {
 //	A float value that represents the length of the line segment connecting the centers
 //	of the capping hemispheres.
 	Heights []Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema height"`
+
+}
+
+//	A float value that represents the length of the line segment connecting the centers
+//	of the capping hemispheres.
+type XsdGoPkgHasElem_heightsequencecapsuleschema_Height_Tfloat_ struct {
+//	A float value that represents the length of the line segment connecting the centers
+//	of the capping hemispheres.
+	Height Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema height"`
+
 }
 
 //	Two float values that represent the radii of the capsule (it may be elliptical)
 type XsdGoPkgHasElem_radiussequencecapsuleschema_Radius_Tfloat2_ struct {
 //	Two float values that represent the radii of the capsule (it may be elliptical)
 	Radius Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema radius"`
+
 }
 
 //	Two float values that represent the radii of the capsule (it may be elliptical)
 type XsdGoPkgHasElems_radiussequencecapsuleschema_Radius_Tfloat2_ struct {
 //	Two float values that represent the radii of the capsule (it may be elliptical)
 	Radiuses []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema radius"`
+
 }
 
 type TxsdCapsule struct {
@@ -12134,23 +13042,17 @@ type TxsdCapsule struct {
 }
 
 //	A capsule primitive that is centered on and aligned with the local Y axis.
-type XsdGoPkgHasElem_Capsule struct {
-//	A capsule primitive that is centered on and aligned with the local Y axis.
-	Capsule *TxsdCapsule `xml:"http://www.collada.org/2005/11/COLLADASchema capsule"`
-}
-
-//	A capsule primitive that is centered on and aligned with the local Y axis.
 type XsdGoPkgHasElems_Capsule struct {
 //	A capsule primitive that is centered on and aligned with the local Y axis.
 	Capsules []*TxsdCapsule `xml:"http://www.collada.org/2005/11/COLLADASchema capsule"`
+
 }
 
-//	A float value that represents the length of the line segment connecting the centers of the
-//	capping hemispheres.
-type XsdGoPkgHasElem_heightsequencetapered_capsuleschema_Height_Tfloat_ struct {
-//	A float value that represents the length of the line segment connecting the centers of the
-//	capping hemispheres.
-	Height Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema height"`
+//	A capsule primitive that is centered on and aligned with the local Y axis.
+type XsdGoPkgHasElem_Capsule struct {
+//	A capsule primitive that is centered on and aligned with the local Y axis.
+	Capsule *TxsdCapsule `xml:"http://www.collada.org/2005/11/COLLADASchema capsule"`
+
 }
 
 //	A float value that represents the length of the line segment connecting the centers of the
@@ -12159,14 +13061,16 @@ type XsdGoPkgHasElems_heightsequencetapered_capsuleschema_Height_Tfloat_ struct 
 //	A float value that represents the length of the line segment connecting the centers of the
 //	capping hemispheres.
 	Heights []Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema height"`
+
 }
 
-//	Two float values that represent the radii of the tapered capsule at the positive (height/2)
-//	Y value.Both ends of the tapered capsule may be elliptical.
-type XsdGoPkgHasElems_radius1sequencetapered_capsuleschema_Radius1_Tfloat2_ struct {
-//	Two float values that represent the radii of the tapered capsule at the positive (height/2)
-//	Y value.Both ends of the tapered capsule may be elliptical.
-	Radius1s []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema radius1"`
+//	A float value that represents the length of the line segment connecting the centers of the
+//	capping hemispheres.
+type XsdGoPkgHasElem_heightsequencetapered_capsuleschema_Height_Tfloat_ struct {
+//	A float value that represents the length of the line segment connecting the centers of the
+//	capping hemispheres.
+	Height Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema height"`
+
 }
 
 //	Two float values that represent the radii of the tapered capsule at the positive (height/2)
@@ -12175,14 +13079,16 @@ type XsdGoPkgHasElem_radius1sequencetapered_capsuleschema_Radius1_Tfloat2_ struc
 //	Two float values that represent the radii of the tapered capsule at the positive (height/2)
 //	Y value.Both ends of the tapered capsule may be elliptical.
 	Radius1 Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema radius1"`
+
 }
 
-//	Two float values that represent the radii of the tapered capsule at the negative (height/2)
+//	Two float values that represent the radii of the tapered capsule at the positive (height/2)
 //	Y value.Both ends of the tapered capsule may be elliptical.
-type XsdGoPkgHasElem_radius2sequencetapered_capsuleschema_Radius2_Tfloat2_ struct {
-//	Two float values that represent the radii of the tapered capsule at the negative (height/2)
+type XsdGoPkgHasElems_radius1sequencetapered_capsuleschema_Radius1_Tfloat2_ struct {
+//	Two float values that represent the radii of the tapered capsule at the positive (height/2)
 //	Y value.Both ends of the tapered capsule may be elliptical.
-	Radius2 Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema radius2"`
+	Radius1s []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema radius1"`
+
 }
 
 //	Two float values that represent the radii of the tapered capsule at the negative (height/2)
@@ -12191,6 +13097,16 @@ type XsdGoPkgHasElems_radius2sequencetapered_capsuleschema_Radius2_Tfloat2_ stru
 //	Two float values that represent the radii of the tapered capsule at the negative (height/2)
 //	Y value.Both ends of the tapered capsule may be elliptical.
 	Radius2s []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema radius2"`
+
+}
+
+//	Two float values that represent the radii of the tapered capsule at the negative (height/2)
+//	Y value.Both ends of the tapered capsule may be elliptical.
+type XsdGoPkgHasElem_radius2sequencetapered_capsuleschema_Radius2_Tfloat2_ struct {
+//	Two float values that represent the radii of the tapered capsule at the negative (height/2)
+//	Y value.Both ends of the tapered capsule may be elliptical.
+	Radius2 Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema radius2"`
+
 }
 
 type TxsdTaperedCapsule struct {
@@ -12215,12 +13131,14 @@ type TxsdTaperedCapsule struct {
 type XsdGoPkgHasElem_TaperedCapsule struct {
 //	A tapered capsule primitive that is centered on, and aligned with, the local Y axis.
 	TaperedCapsule *TxsdTaperedCapsule `xml:"http://www.collada.org/2005/11/COLLADASchema tapered_capsule"`
+
 }
 
 //	A tapered capsule primitive that is centered on, and aligned with, the local Y axis.
 type XsdGoPkgHasElems_TaperedCapsule struct {
 //	A tapered capsule primitive that is centered on, and aligned with, the local Y axis.
 	TaperedCapsules []*TxsdTaperedCapsule `xml:"http://www.collada.org/2005/11/COLLADASchema tapered_capsule"`
+
 }
 
 //	The convex_hull_of attribute is a URI string of geometry to compute the convex hull of.
@@ -12269,6 +13187,7 @@ type XsdGoPkgHasElem_ConvexMesh struct {
 //	geometry to derive its shape. The latter case means that the convex hull of that geometry should
 //	be computed and is indicated by the optional “convex_hull_of” attribute.
 	ConvexMesh *TxsdConvexMesh `xml:"http://www.collada.org/2005/11/COLLADASchema convex_mesh"`
+
 }
 
 //	The definition of the convex_mesh element is identical to the mesh element with the exception that
@@ -12281,6 +13200,7 @@ type XsdGoPkgHasElems_ConvexMesh struct {
 //	geometry to derive its shape. The latter case means that the convex hull of that geometry should
 //	be computed and is indicated by the optional “convex_hull_of” attribute.
 	ConvexMeshs []*TxsdConvexMesh `xml:"http://www.collada.org/2005/11/COLLADASchema convex_mesh"`
+
 }
 
 type TxsdForceField struct {
@@ -12299,48 +13219,56 @@ type TxsdForceField struct {
 type XsdGoPkgHasElems_ForceField struct {
 //	A general container for force-fields. At the moment, it only has techniques and extra elements.
 	ForceFields []*TxsdForceField `xml:"http://www.collada.org/2005/11/COLLADASchema force_field"`
+
 }
 
 //	A general container for force-fields. At the moment, it only has techniques and extra elements.
 type XsdGoPkgHasElem_ForceField struct {
 //	A general container for force-fields. At the moment, it only has techniques and extra elements.
 	ForceField *TxsdForceField `xml:"http://www.collada.org/2005/11/COLLADASchema force_field"`
+
 }
 
 //	Dynamic friction coefficient
 type XsdGoPkgHasElem_dynamic_frictionsequencetechnique_commonsequencephysics_materialschema_DynamicFriction_TargetableFloat_ struct {
 //	Dynamic friction coefficient
 	DynamicFriction *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema dynamic_friction"`
+
 }
 
 //	Dynamic friction coefficient
 type XsdGoPkgHasElems_dynamic_frictionsequencetechnique_commonsequencephysics_materialschema_DynamicFriction_TargetableFloat_ struct {
 //	Dynamic friction coefficient
 	DynamicFrictions []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema dynamic_friction"`
-}
 
-//	The proportion of the kinetic energy preserved in the impact (typically ranges from 0.0 to 1.0)
-type XsdGoPkgHasElems_restitutionsequencetechnique_commonsequencephysics_materialschema_Restitution_TargetableFloat_ struct {
-//	The proportion of the kinetic energy preserved in the impact (typically ranges from 0.0 to 1.0)
-	Restitutions []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema restitution"`
 }
 
 //	The proportion of the kinetic energy preserved in the impact (typically ranges from 0.0 to 1.0)
 type XsdGoPkgHasElem_restitutionsequencetechnique_commonsequencephysics_materialschema_Restitution_TargetableFloat_ struct {
 //	The proportion of the kinetic energy preserved in the impact (typically ranges from 0.0 to 1.0)
 	Restitution *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema restitution"`
+
 }
 
-//	Static friction coefficient
-type XsdGoPkgHasElem_static_frictionsequencetechnique_commonsequencephysics_materialschema_StaticFriction_TargetableFloat_ struct {
-//	Static friction coefficient
-	StaticFriction *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema static_friction"`
+//	The proportion of the kinetic energy preserved in the impact (typically ranges from 0.0 to 1.0)
+type XsdGoPkgHasElems_restitutionsequencetechnique_commonsequencephysics_materialschema_Restitution_TargetableFloat_ struct {
+//	The proportion of the kinetic energy preserved in the impact (typically ranges from 0.0 to 1.0)
+	Restitutions []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema restitution"`
+
 }
 
 //	Static friction coefficient
 type XsdGoPkgHasElems_static_frictionsequencetechnique_commonsequencephysics_materialschema_StaticFriction_TargetableFloat_ struct {
 //	Static friction coefficient
 	StaticFrictions []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema static_friction"`
+
+}
+
+//	Static friction coefficient
+type XsdGoPkgHasElem_static_frictionsequencetechnique_commonsequencephysics_materialschema_StaticFriction_TargetableFloat_ struct {
+//	Static friction coefficient
+	StaticFriction *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema static_friction"`
+
 }
 
 type TxsdPhysicsMaterialSequenceTechniqueCommon struct {
@@ -12357,18 +13285,20 @@ type TxsdPhysicsMaterialSequenceTechniqueCommon struct {
 
 //	The technique_common element specifies the physics_material information for the common profile
 //	which all COLLADA implementations need to support.
-type XsdGoPkgHasElems_technique_commonsequencephysics_materialschema_TechniqueCommon_TxsdPhysicsMaterialSequenceTechniqueCommon_ struct {
-//	The technique_common element specifies the physics_material information for the common profile
-//	which all COLLADA implementations need to support.
-	TechniqueCommons []*TxsdPhysicsMaterialSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
-}
-
-//	The technique_common element specifies the physics_material information for the common profile
-//	which all COLLADA implementations need to support.
 type XsdGoPkgHasElem_technique_commonsequencephysics_materialschema_TechniqueCommon_TxsdPhysicsMaterialSequenceTechniqueCommon_ struct {
 //	The technique_common element specifies the physics_material information for the common profile
 //	which all COLLADA implementations need to support.
 	TechniqueCommon *TxsdPhysicsMaterialSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
+
+}
+
+//	The technique_common element specifies the physics_material information for the common profile
+//	which all COLLADA implementations need to support.
+type XsdGoPkgHasElems_technique_commonsequencephysics_materialschema_TechniqueCommon_TxsdPhysicsMaterialSequenceTechniqueCommon_ struct {
+//	The technique_common element specifies the physics_material information for the common profile
+//	which all COLLADA implementations need to support.
+	TechniqueCommons []*TxsdPhysicsMaterialSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
+
 }
 
 type TxsdPhysicsMaterial struct {
@@ -12389,42 +13319,48 @@ type TxsdPhysicsMaterial struct {
 
 //	This element defines the physical properties of an object. It contains a technique/profile with
 //	parameters. The COMMON profile defines the built-in names, such as static_friction.
-type XsdGoPkgHasElem_PhysicsMaterial struct {
-//	This element defines the physical properties of an object. It contains a technique/profile with
-//	parameters. The COMMON profile defines the built-in names, such as static_friction.
-	PhysicsMaterial *TxsdPhysicsMaterial `xml:"http://www.collada.org/2005/11/COLLADASchema physics_material"`
-}
-
-//	This element defines the physical properties of an object. It contains a technique/profile with
-//	parameters. The COMMON profile defines the built-in names, such as static_friction.
 type XsdGoPkgHasElems_PhysicsMaterial struct {
 //	This element defines the physical properties of an object. It contains a technique/profile with
 //	parameters. The COMMON profile defines the built-in names, such as static_friction.
 	PhysicsMaterials []*TxsdPhysicsMaterial `xml:"http://www.collada.org/2005/11/COLLADASchema physics_material"`
+
+}
+
+//	This element defines the physical properties of an object. It contains a technique/profile with
+//	parameters. The COMMON profile defines the built-in names, such as static_friction.
+type XsdGoPkgHasElem_PhysicsMaterial struct {
+//	This element defines the physical properties of an object. It contains a technique/profile with
+//	parameters. The COMMON profile defines the built-in names, such as static_friction.
+	PhysicsMaterial *TxsdPhysicsMaterial `xml:"http://www.collada.org/2005/11/COLLADASchema physics_material"`
+
 }
 
 //	The gravity vector to use for the physics_scene.
 type XsdGoPkgHasElems_gravitysequencetechnique_commonsequencephysics_sceneschema_Gravity_TargetableFloat3_ struct {
 //	The gravity vector to use for the physics_scene.
 	Gravities []*TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema gravity"`
+
 }
 
 //	The gravity vector to use for the physics_scene.
 type XsdGoPkgHasElem_gravitysequencetechnique_commonsequencephysics_sceneschema_Gravity_TargetableFloat3_ struct {
 //	The gravity vector to use for the physics_scene.
 	Gravity *TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema gravity"`
-}
 
-//	The time_step for the physics_scene.
-type XsdGoPkgHasElems_time_stepsequencetechnique_commonsequencephysics_sceneschema_TimeStep_TargetableFloat_ struct {
-//	The time_step for the physics_scene.
-	TimeSteps []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema time_step"`
 }
 
 //	The time_step for the physics_scene.
 type XsdGoPkgHasElem_time_stepsequencetechnique_commonsequencephysics_sceneschema_TimeStep_TargetableFloat_ struct {
 //	The time_step for the physics_scene.
 	TimeStep *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema time_step"`
+
+}
+
+//	The time_step for the physics_scene.
+type XsdGoPkgHasElems_time_stepsequencetechnique_commonsequencephysics_sceneschema_TimeStep_TargetableFloat_ struct {
+//	The time_step for the physics_scene.
+	TimeSteps []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema time_step"`
+
 }
 
 type TxsdPhysicsSceneSequenceTechniqueCommon struct {
@@ -12438,18 +13374,20 @@ type TxsdPhysicsSceneSequenceTechniqueCommon struct {
 
 //	The technique_common element specifies the physics_scene information for the common profile
 //	which all COLLADA implementations need to support.
-type XsdGoPkgHasElem_technique_commonsequencephysics_sceneschema_TechniqueCommon_TxsdPhysicsSceneSequenceTechniqueCommon_ struct {
-//	The technique_common element specifies the physics_scene information for the common profile
-//	which all COLLADA implementations need to support.
-	TechniqueCommon *TxsdPhysicsSceneSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
-}
-
-//	The technique_common element specifies the physics_scene information for the common profile
-//	which all COLLADA implementations need to support.
 type XsdGoPkgHasElems_technique_commonsequencephysics_sceneschema_TechniqueCommon_TxsdPhysicsSceneSequenceTechniqueCommon_ struct {
 //	The technique_common element specifies the physics_scene information for the common profile
 //	which all COLLADA implementations need to support.
 	TechniqueCommons []*TxsdPhysicsSceneSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
+
+}
+
+//	The technique_common element specifies the physics_scene information for the common profile
+//	which all COLLADA implementations need to support.
+type XsdGoPkgHasElem_technique_commonsequencephysics_sceneschema_TechniqueCommon_TxsdPhysicsSceneSequenceTechniqueCommon_ struct {
+//	The technique_common element specifies the physics_scene information for the common profile
+//	which all COLLADA implementations need to support.
+	TechniqueCommon *TxsdPhysicsSceneSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
+
 }
 
 type TxsdPhysicsScene struct {
@@ -12476,10 +13414,12 @@ type TxsdPhysicsScene struct {
 
 type XsdGoPkgHasElems_PhysicsScene struct {
 	PhysicsScenes []*TxsdPhysicsScene `xml:"http://www.collada.org/2005/11/COLLADASchema physics_scene"`
+
 }
 
 type XsdGoPkgHasElem_PhysicsScene struct {
 	PhysicsScene *TxsdPhysicsScene `xml:"http://www.collada.org/2005/11/COLLADASchema physics_scene"`
+
 }
 
 type TxsdRigidBodySequenceTechniqueCommonSequenceDynamic struct {
@@ -12488,27 +13428,31 @@ type TxsdRigidBodySequenceTechniqueCommonSequenceDynamic struct {
 }
 
 //	If false, the rigid_body is not moveable
-type XsdGoPkgHasElems_dynamicsequencetechnique_commonsequencerigid_bodyschema_Dynamic_TxsdRigidBodySequenceTechniqueCommonSequenceDynamic_ struct {
-//	If false, the rigid_body is not moveable
-	Dynamics []*TxsdRigidBodySequenceTechniqueCommonSequenceDynamic `xml:"http://www.collada.org/2005/11/COLLADASchema dynamic"`
-}
-
-//	If false, the rigid_body is not moveable
 type XsdGoPkgHasElem_dynamicsequencetechnique_commonsequencerigid_bodyschema_Dynamic_TxsdRigidBodySequenceTechniqueCommonSequenceDynamic_ struct {
 //	If false, the rigid_body is not moveable
 	Dynamic *TxsdRigidBodySequenceTechniqueCommonSequenceDynamic `xml:"http://www.collada.org/2005/11/COLLADASchema dynamic"`
+
+}
+
+//	If false, the rigid_body is not moveable
+type XsdGoPkgHasElems_dynamicsequencetechnique_commonsequencerigid_bodyschema_Dynamic_TxsdRigidBodySequenceTechniqueCommonSequenceDynamic_ struct {
+//	If false, the rigid_body is not moveable
+	Dynamics []*TxsdRigidBodySequenceTechniqueCommonSequenceDynamic `xml:"http://www.collada.org/2005/11/COLLADASchema dynamic"`
+
 }
 
 //	The total mass of the rigid-body
 type XsdGoPkgHasElem_masssequencetechnique_commonsequencerigid_bodyschema_Mass_TargetableFloat_ struct {
 //	The total mass of the rigid-body
 	Mass *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema mass"`
+
 }
 
 //	The total mass of the rigid-body
 type XsdGoPkgHasElems_masssequencetechnique_commonsequencerigid_bodyschema_Mass_TargetableFloat_ struct {
 //	The total mass of the rigid-body
 	Masses []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema mass"`
+
 }
 
 type TxsdRigidBodySequenceTechniqueCommonSequenceMassFrame struct {
@@ -12526,6 +13470,7 @@ type XsdGoPkgHasElems_mass_framesequencetechnique_commonsequencerigid_bodyschema
 //	“root” shape.This makes the off-diagonal elements of the inertia tensor (products of inertia) all
 //	0 and allows us to just store the diagonal elements (moments of inertia).
 	MassFrames []*TxsdRigidBodySequenceTechniqueCommonSequenceMassFrame `xml:"http://www.collada.org/2005/11/COLLADASchema mass_frame"`
+
 }
 
 //	Defines the center and orientation of mass of the rigid-body relative to the local origin of the
@@ -12536,6 +13481,7 @@ type XsdGoPkgHasElem_mass_framesequencetechnique_commonsequencerigid_bodyschema_
 //	“root” shape.This makes the off-diagonal elements of the inertia tensor (products of inertia) all
 //	0 and allows us to just store the diagonal elements (moments of inertia).
 	MassFrame *TxsdRigidBodySequenceTechniqueCommonSequenceMassFrame `xml:"http://www.collada.org/2005/11/COLLADASchema mass_frame"`
+
 }
 
 //	float3 – The diagonal elements of the inertia tensor (moments of inertia), which is represented
@@ -12544,6 +13490,7 @@ type XsdGoPkgHasElem_inertiasequencetechnique_commonsequencerigid_bodyschema_Ine
 //	float3 – The diagonal elements of the inertia tensor (moments of inertia), which is represented
 //	in the local frame of the center of mass. See above.
 	Inertia *TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema inertia"`
+
 }
 
 //	float3 – The diagonal elements of the inertia tensor (moments of inertia), which is represented
@@ -12552,6 +13499,7 @@ type XsdGoPkgHasElems_inertiasequencetechnique_commonsequencerigid_bodyschema_In
 //	float3 – The diagonal elements of the inertia tensor (moments of inertia), which is represented
 //	in the local frame of the center of mass. See above.
 	Inertias []*TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema inertia"`
+
 }
 
 type TxsdRigidBodySequenceTechniqueCommonSequenceShapeSequenceHollow struct {
@@ -12560,39 +13508,45 @@ type TxsdRigidBodySequenceTechniqueCommonSequenceShapeSequenceHollow struct {
 }
 
 //	If true, the mass is distributed along the surface of the shape
-type XsdGoPkgHasElems_hollowsequenceshapesequencetechnique_commonsequencerigid_bodyschema_Hollow_TxsdRigidBodySequenceTechniqueCommonSequenceShapeSequenceHollow_ struct {
-//	If true, the mass is distributed along the surface of the shape
-	Hollows []*TxsdRigidBodySequenceTechniqueCommonSequenceShapeSequenceHollow `xml:"http://www.collada.org/2005/11/COLLADASchema hollow"`
-}
-
-//	If true, the mass is distributed along the surface of the shape
 type XsdGoPkgHasElem_hollowsequenceshapesequencetechnique_commonsequencerigid_bodyschema_Hollow_TxsdRigidBodySequenceTechniqueCommonSequenceShapeSequenceHollow_ struct {
 //	If true, the mass is distributed along the surface of the shape
 	Hollow *TxsdRigidBodySequenceTechniqueCommonSequenceShapeSequenceHollow `xml:"http://www.collada.org/2005/11/COLLADASchema hollow"`
+
+}
+
+//	If true, the mass is distributed along the surface of the shape
+type XsdGoPkgHasElems_hollowsequenceshapesequencetechnique_commonsequencerigid_bodyschema_Hollow_TxsdRigidBodySequenceTechniqueCommonSequenceShapeSequenceHollow_ struct {
+//	If true, the mass is distributed along the surface of the shape
+	Hollows []*TxsdRigidBodySequenceTechniqueCommonSequenceShapeSequenceHollow `xml:"http://www.collada.org/2005/11/COLLADASchema hollow"`
+
 }
 
 //	The mass of the shape.
 type XsdGoPkgHasElems_masssequenceshapesequencetechnique_commonsequencerigid_bodyschema_Mass_TargetableFloat_ struct {
 //	The mass of the shape.
 	Masses []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema mass"`
+
 }
 
 //	The mass of the shape.
 type XsdGoPkgHasElem_masssequenceshapesequencetechnique_commonsequencerigid_bodyschema_Mass_TargetableFloat_ struct {
 //	The mass of the shape.
 	Mass *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema mass"`
+
 }
 
 //	The density of the shape.
 type XsdGoPkgHasElems_densitysequenceshapesequencetechnique_commonsequencerigid_bodyschema_Density_TargetableFloat_ struct {
 //	The density of the shape.
 	Densities []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema density"`
+
 }
 
 //	The density of the shape.
 type XsdGoPkgHasElem_densitysequenceshapesequencetechnique_commonsequencerigid_bodyschema_Density_TargetableFloat_ struct {
 //	The density of the shape.
 	Density *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema density"`
+
 }
 
 type TxsdRigidBodySequenceTechniqueCommonSequenceShape struct {
@@ -12650,12 +13604,14 @@ type TxsdRigidBodySequenceTechniqueCommonSequenceShape struct {
 type XsdGoPkgHasElem_shapesequencetechnique_commonsequencerigid_bodyschema_Shape_TxsdRigidBodySequenceTechniqueCommonSequenceShape_ struct {
 //	This element allows for describing components of a rigid_body.
 	Shape *TxsdRigidBodySequenceTechniqueCommonSequenceShape `xml:"http://www.collada.org/2005/11/COLLADASchema shape"`
+
 }
 
 //	This element allows for describing components of a rigid_body.
 type XsdGoPkgHasElems_shapesequencetechnique_commonsequencerigid_bodyschema_Shape_TxsdRigidBodySequenceTechniqueCommonSequenceShape_ struct {
 //	This element allows for describing components of a rigid_body.
 	Shapes []*TxsdRigidBodySequenceTechniqueCommonSequenceShape `xml:"http://www.collada.org/2005/11/COLLADASchema shape"`
+
 }
 
 type TxsdRigidBodySequenceTechniqueCommon struct {
@@ -12691,6 +13647,7 @@ type XsdGoPkgHasElem_technique_commonsequencerigid_bodyschema_TechniqueCommon_Tx
 //	The technique_common element specifies the rigid_body information for the common profile which all
 //	COLLADA implementations need to support.
 	TechniqueCommon *TxsdRigidBodySequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
+
 }
 
 //	The technique_common element specifies the rigid_body information for the common profile which all
@@ -12699,6 +13656,7 @@ type XsdGoPkgHasElems_technique_commonsequencerigid_bodyschema_TechniqueCommon_T
 //	The technique_common element specifies the rigid_body information for the common profile which all
 //	COLLADA implementations need to support.
 	TechniqueCommons []*TxsdRigidBodySequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
+
 }
 
 type TxsdRigidBody struct {
@@ -12717,21 +13675,23 @@ type TxsdRigidBody struct {
 //	This element allows for describing simulated bodies that do not deform. These bodies may or may
 //	not be connected by constraints (hinge, ball-joint etc.).  Rigid-bodies, constraints etc. are
 //	encapsulated in physics_model elements to allow for instantiating complex models.
-type XsdGoPkgHasElem_RigidBody struct {
-//	This element allows for describing simulated bodies that do not deform. These bodies may or may
-//	not be connected by constraints (hinge, ball-joint etc.).  Rigid-bodies, constraints etc. are
-//	encapsulated in physics_model elements to allow for instantiating complex models.
-	RigidBody *TxsdRigidBody `xml:"http://www.collada.org/2005/11/COLLADASchema rigid_body"`
-}
-
-//	This element allows for describing simulated bodies that do not deform. These bodies may or may
-//	not be connected by constraints (hinge, ball-joint etc.).  Rigid-bodies, constraints etc. are
-//	encapsulated in physics_model elements to allow for instantiating complex models.
 type XsdGoPkgHasElems_RigidBody struct {
 //	This element allows for describing simulated bodies that do not deform. These bodies may or may
 //	not be connected by constraints (hinge, ball-joint etc.).  Rigid-bodies, constraints etc. are
 //	encapsulated in physics_model elements to allow for instantiating complex models.
 	RigidBodies []*TxsdRigidBody `xml:"http://www.collada.org/2005/11/COLLADASchema rigid_body"`
+
+}
+
+//	This element allows for describing simulated bodies that do not deform. These bodies may or may
+//	not be connected by constraints (hinge, ball-joint etc.).  Rigid-bodies, constraints etc. are
+//	encapsulated in physics_model elements to allow for instantiating complex models.
+type XsdGoPkgHasElem_RigidBody struct {
+//	This element allows for describing simulated bodies that do not deform. These bodies may or may
+//	not be connected by constraints (hinge, ball-joint etc.).  Rigid-bodies, constraints etc. are
+//	encapsulated in physics_model elements to allow for instantiating complex models.
+	RigidBody *TxsdRigidBody `xml:"http://www.collada.org/2005/11/COLLADASchema rigid_body"`
+
 }
 
 //	The “rigid_body” attribute is a relative reference to a rigid-body within the same
@@ -12762,12 +13722,14 @@ type TxsdRigidConstraintSequenceRefAttachment struct {
 type XsdGoPkgHasElem_ref_attachmentsequencerigid_constraintschema_RefAttachment_TxsdRigidConstraintSequenceRefAttachment_ struct {
 //	Defines the attachment (to a rigid_body or a node) to be used as the reference-frame.
 	RefAttachment *TxsdRigidConstraintSequenceRefAttachment `xml:"http://www.collada.org/2005/11/COLLADASchema ref_attachment"`
+
 }
 
 //	Defines the attachment (to a rigid_body or a node) to be used as the reference-frame.
 type XsdGoPkgHasElems_ref_attachmentsequencerigid_constraintschema_RefAttachment_TxsdRigidConstraintSequenceRefAttachment_ struct {
 //	Defines the attachment (to a rigid_body or a node) to be used as the reference-frame.
 	RefAttachments []*TxsdRigidConstraintSequenceRefAttachment `xml:"http://www.collada.org/2005/11/COLLADASchema ref_attachment"`
+
 }
 
 type TxsdRigidConstraintSequenceAttachment struct {
@@ -12783,15 +13745,17 @@ type TxsdRigidConstraintSequenceAttachment struct {
 }
 
 //	Defines an attachment to a rigid-body or a node.
-type XsdGoPkgHasElems_attachmentsequencerigid_constraintschema_Attachment_TxsdRigidConstraintSequenceAttachment_ struct {
-//	Defines an attachment to a rigid-body or a node.
-	Attachments []*TxsdRigidConstraintSequenceAttachment `xml:"http://www.collada.org/2005/11/COLLADASchema attachment"`
-}
-
-//	Defines an attachment to a rigid-body or a node.
 type XsdGoPkgHasElem_attachmentsequencerigid_constraintschema_Attachment_TxsdRigidConstraintSequenceAttachment_ struct {
 //	Defines an attachment to a rigid-body or a node.
 	Attachment *TxsdRigidConstraintSequenceAttachment `xml:"http://www.collada.org/2005/11/COLLADASchema attachment"`
+
+}
+
+//	Defines an attachment to a rigid-body or a node.
+type XsdGoPkgHasElems_attachmentsequencerigid_constraintschema_Attachment_TxsdRigidConstraintSequenceAttachment_ struct {
+//	Defines an attachment to a rigid-body or a node.
+	Attachments []*TxsdRigidConstraintSequenceAttachment `xml:"http://www.collada.org/2005/11/COLLADASchema attachment"`
+
 }
 
 type TxsdRigidConstraintSequenceTechniqueCommonSequenceEnabled struct {
@@ -12800,22 +13764,24 @@ type TxsdRigidConstraintSequenceTechniqueCommonSequenceEnabled struct {
 }
 
 //	If false, the constraint doesn’t exert any force or influence on the rigid bodies.
-type XsdGoPkgHasElem_enabledsequencetechnique_commonsequencerigid_constraintschema_Enabled_TxsdRigidConstraintSequenceTechniqueCommonSequenceEnabled_True struct {
-//	If false, the constraint doesn’t exert any force or influence on the rigid bodies.
-	Enabled *TxsdRigidConstraintSequenceTechniqueCommonSequenceEnabled `xml:"http://www.collada.org/2005/11/COLLADASchema enabled"`
-}
-
-//	Returns the Default value for Enabled -- true
-func (me *XsdGoPkgHasElem_enabledsequencetechnique_commonsequencerigid_constraintschema_Enabled_TxsdRigidConstraintSequenceTechniqueCommonSequenceEnabled_True) EnabledDefault () Tbool { return Tbool(true) }
-
-//	If false, the constraint doesn’t exert any force or influence on the rigid bodies.
 type XsdGoPkgHasElems_enabledsequencetechnique_commonsequencerigid_constraintschema_Enabled_TxsdRigidConstraintSequenceTechniqueCommonSequenceEnabled_True struct {
 //	If false, the constraint doesn’t exert any force or influence on the rigid bodies.
 	Enableds []*TxsdRigidConstraintSequenceTechniqueCommonSequenceEnabled `xml:"http://www.collada.org/2005/11/COLLADASchema enabled"`
+
 }
 
 //	Returns the Default value for Enabled -- true
 func (me *XsdGoPkgHasElems_enabledsequencetechnique_commonsequencerigid_constraintschema_Enabled_TxsdRigidConstraintSequenceTechniqueCommonSequenceEnabled_True) EnabledDefault () Tbool { return Tbool(true) }
+
+//	If false, the constraint doesn’t exert any force or influence on the rigid bodies.
+type XsdGoPkgHasElem_enabledsequencetechnique_commonsequencerigid_constraintschema_Enabled_TxsdRigidConstraintSequenceTechniqueCommonSequenceEnabled_True struct {
+//	If false, the constraint doesn’t exert any force or influence on the rigid bodies.
+	Enabled *TxsdRigidConstraintSequenceTechniqueCommonSequenceEnabled `xml:"http://www.collada.org/2005/11/COLLADASchema enabled"`
+
+}
+
+//	Returns the Default value for Enabled -- true
+func (me *XsdGoPkgHasElem_enabledsequencetechnique_commonsequencerigid_constraintschema_Enabled_TxsdRigidConstraintSequenceTechniqueCommonSequenceEnabled_True) EnabledDefault () Tbool { return Tbool(true) }
 
 type TxsdRigidConstraintSequenceTechniqueCommonSequenceInterpenetrate struct {
 	XsdGoPkgValue Tbool `xml:",chardata"`
@@ -12826,6 +13792,7 @@ type TxsdRigidConstraintSequenceTechniqueCommonSequenceInterpenetrate struct {
 type XsdGoPkgHasElems_interpenetratesequencetechnique_commonsequencerigid_constraintschema_Interpenetrate_TxsdRigidConstraintSequenceTechniqueCommonSequenceInterpenetrate_False struct {
 //	Indicates whether the attached rigid bodies may inter-penetrate.
 	Interpenetrates []*TxsdRigidConstraintSequenceTechniqueCommonSequenceInterpenetrate `xml:"http://www.collada.org/2005/11/COLLADASchema interpenetrate"`
+
 }
 
 //	Returns the Default value for Interpenetrate -- false
@@ -12835,6 +13802,7 @@ func (me *XsdGoPkgHasElems_interpenetratesequencetechnique_commonsequencerigid_c
 type XsdGoPkgHasElem_interpenetratesequencetechnique_commonsequencerigid_constraintschema_Interpenetrate_TxsdRigidConstraintSequenceTechniqueCommonSequenceInterpenetrate_False struct {
 //	Indicates whether the attached rigid bodies may inter-penetrate.
 	Interpenetrate *TxsdRigidConstraintSequenceTechniqueCommonSequenceInterpenetrate `xml:"http://www.collada.org/2005/11/COLLADASchema interpenetrate"`
+
 }
 
 //	Returns the Default value for Interpenetrate -- false
@@ -12844,6 +13812,7 @@ func (me *XsdGoPkgHasElem_interpenetratesequencetechnique_commonsequencerigid_co
 type XsdGoPkgHasElems_minsequenceswing_cone_and_twistsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Min_TargetableFloat3_000000 struct {
 //	The minimum values for the limit.
 	Mins []*TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema min"`
+
 }
 
 //	Returns the Default value for Min -- "0.0 0.0 0.0"
@@ -12853,28 +13822,31 @@ func (me *XsdGoPkgHasElems_minsequenceswing_cone_and_twistsequencelimitssequence
 type XsdGoPkgHasElem_minsequenceswing_cone_and_twistsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Min_TargetableFloat3_000000 struct {
 //	The minimum values for the limit.
 	Min *TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema min"`
+
 }
 
 //	Returns the Default value for Min -- "0.0 0.0 0.0"
 func (me *XsdGoPkgHasElem_minsequenceswing_cone_and_twistsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Min_TargetableFloat3_000000) MinDefault () Tfloat3 { return Tfloat3("0.0 0.0 0.0") }
 
 //	The maximum values for the limit.
-type XsdGoPkgHasElems_maxsequenceswing_cone_and_twistsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Max_TargetableFloat3_000000 struct {
-//	The maximum values for the limit.
-	Maxs []*TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema max"`
-}
-
-//	Returns the Default value for Max -- "0.0 0.0 0.0"
-func (me *XsdGoPkgHasElems_maxsequenceswing_cone_and_twistsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Max_TargetableFloat3_000000) MaxDefault () Tfloat3 { return Tfloat3("0.0 0.0 0.0") }
-
-//	The maximum values for the limit.
 type XsdGoPkgHasElem_maxsequenceswing_cone_and_twistsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Max_TargetableFloat3_000000 struct {
 //	The maximum values for the limit.
 	Max *TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema max"`
+
 }
 
 //	Returns the Default value for Max -- "0.0 0.0 0.0"
 func (me *XsdGoPkgHasElem_maxsequenceswing_cone_and_twistsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Max_TargetableFloat3_000000) MaxDefault () Tfloat3 { return Tfloat3("0.0 0.0 0.0") }
+
+//	The maximum values for the limit.
+type XsdGoPkgHasElems_maxsequenceswing_cone_and_twistsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Max_TargetableFloat3_000000 struct {
+//	The maximum values for the limit.
+	Maxs []*TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema max"`
+
+}
+
+//	Returns the Default value for Max -- "0.0 0.0 0.0"
+func (me *XsdGoPkgHasElems_maxsequenceswing_cone_and_twistsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Max_TargetableFloat3_000000) MaxDefault () Tfloat3 { return Tfloat3("0.0 0.0 0.0") }
 
 type TxsdRigidConstraintSequenceTechniqueCommonSequenceLimitsSequenceSwingConeAndTwist struct {
 //	The minimum values for the limit.
@@ -12891,6 +13863,7 @@ type XsdGoPkgHasElem_swing_cone_and_twistsequencelimitssequencetechnique_commons
 //	The swing_cone_and_twist element describes the angular limits along each rotation axis in degrees.
 //	The the X and Y limits describe a “swing cone” and the Z limits describe the “twist angle” range
 	SwingConeAndTwist *TxsdRigidConstraintSequenceTechniqueCommonSequenceLimitsSequenceSwingConeAndTwist `xml:"http://www.collada.org/2005/11/COLLADASchema swing_cone_and_twist"`
+
 }
 
 //	The swing_cone_and_twist element describes the angular limits along each rotation axis in degrees.
@@ -12899,30 +13872,34 @@ type XsdGoPkgHasElems_swing_cone_and_twistsequencelimitssequencetechnique_common
 //	The swing_cone_and_twist element describes the angular limits along each rotation axis in degrees.
 //	The the X and Y limits describe a “swing cone” and the Z limits describe the “twist angle” range
 	SwingConeAndTwists []*TxsdRigidConstraintSequenceTechniqueCommonSequenceLimitsSequenceSwingConeAndTwist `xml:"http://www.collada.org/2005/11/COLLADASchema swing_cone_and_twist"`
-}
 
-//	The minimum values for the limit.
-type XsdGoPkgHasElems_minsequencelinearsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Min_TargetableFloat3_000000 struct {
-//	The minimum values for the limit.
-	Mins []*TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema min"`
 }
-
-//	Returns the Default value for Min -- "0.0 0.0 0.0"
-func (me *XsdGoPkgHasElems_minsequencelinearsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Min_TargetableFloat3_000000) MinDefault () Tfloat3 { return Tfloat3("0.0 0.0 0.0") }
 
 //	The minimum values for the limit.
 type XsdGoPkgHasElem_minsequencelinearsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Min_TargetableFloat3_000000 struct {
 //	The minimum values for the limit.
 	Min *TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema min"`
+
 }
 
 //	Returns the Default value for Min -- "0.0 0.0 0.0"
 func (me *XsdGoPkgHasElem_minsequencelinearsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Min_TargetableFloat3_000000) MinDefault () Tfloat3 { return Tfloat3("0.0 0.0 0.0") }
 
+//	The minimum values for the limit.
+type XsdGoPkgHasElems_minsequencelinearsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Min_TargetableFloat3_000000 struct {
+//	The minimum values for the limit.
+	Mins []*TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema min"`
+
+}
+
+//	Returns the Default value for Min -- "0.0 0.0 0.0"
+func (me *XsdGoPkgHasElems_minsequencelinearsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Min_TargetableFloat3_000000) MinDefault () Tfloat3 { return Tfloat3("0.0 0.0 0.0") }
+
 //	The maximum values for the limit.
 type XsdGoPkgHasElem_maxsequencelinearsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Max_TargetableFloat3_000000 struct {
 //	The maximum values for the limit.
 	Max *TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema max"`
+
 }
 
 //	Returns the Default value for Max -- "0.0 0.0 0.0"
@@ -12932,6 +13909,7 @@ func (me *XsdGoPkgHasElem_maxsequencelinearsequencelimitssequencetechnique_commo
 type XsdGoPkgHasElems_maxsequencelinearsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Max_TargetableFloat3_000000 struct {
 //	The maximum values for the limit.
 	Maxs []*TargetableFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema max"`
+
 }
 
 //	Returns the Default value for Max -- "0.0 0.0 0.0"
@@ -12950,12 +13928,14 @@ type TxsdRigidConstraintSequenceTechniqueCommonSequenceLimitsSequenceLinear stru
 type XsdGoPkgHasElem_linearsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Linear_TxsdRigidConstraintSequenceTechniqueCommonSequenceLimitsSequenceLinear_ struct {
 //	The linear element describes linear (translational) limits along each axis.
 	Linear *TxsdRigidConstraintSequenceTechniqueCommonSequenceLimitsSequenceLinear `xml:"http://www.collada.org/2005/11/COLLADASchema linear"`
+
 }
 
 //	The linear element describes linear (translational) limits along each axis.
 type XsdGoPkgHasElems_linearsequencelimitssequencetechnique_commonsequencerigid_constraintschema_Linear_TxsdRigidConstraintSequenceTechniqueCommonSequenceLimitsSequenceLinear_ struct {
 //	The linear element describes linear (translational) limits along each axis.
 	Linears []*TxsdRigidConstraintSequenceTechniqueCommonSequenceLimitsSequenceLinear `xml:"http://www.collada.org/2005/11/COLLADASchema linear"`
+
 }
 
 type TxsdRigidConstraintSequenceTechniqueCommonSequenceLimits struct {
@@ -12970,24 +13950,27 @@ type TxsdRigidConstraintSequenceTechniqueCommonSequenceLimits struct {
 
 //	The limits element provides a flexible way to specify the constraint limits (degrees of freedom
 //	and ranges).
-type XsdGoPkgHasElem_limitssequencetechnique_commonsequencerigid_constraintschema_Limits_TxsdRigidConstraintSequenceTechniqueCommonSequenceLimits_ struct {
-//	The limits element provides a flexible way to specify the constraint limits (degrees of freedom
-//	and ranges).
-	Limits *TxsdRigidConstraintSequenceTechniqueCommonSequenceLimits `xml:"http://www.collada.org/2005/11/COLLADASchema limits"`
-}
-
-//	The limits element provides a flexible way to specify the constraint limits (degrees of freedom
-//	and ranges).
 type XsdGoPkgHasElems_limitssequencetechnique_commonsequencerigid_constraintschema_Limits_TxsdRigidConstraintSequenceTechniqueCommonSequenceLimits_ struct {
 //	The limits element provides a flexible way to specify the constraint limits (degrees of freedom
 //	and ranges).
 	Limitses []*TxsdRigidConstraintSequenceTechniqueCommonSequenceLimits `xml:"http://www.collada.org/2005/11/COLLADASchema limits"`
+
+}
+
+//	The limits element provides a flexible way to specify the constraint limits (degrees of freedom
+//	and ranges).
+type XsdGoPkgHasElem_limitssequencetechnique_commonsequencerigid_constraintschema_Limits_TxsdRigidConstraintSequenceTechniqueCommonSequenceLimits_ struct {
+//	The limits element provides a flexible way to specify the constraint limits (degrees of freedom
+//	and ranges).
+	Limits *TxsdRigidConstraintSequenceTechniqueCommonSequenceLimits `xml:"http://www.collada.org/2005/11/COLLADASchema limits"`
+
 }
 
 //	The stiffness (also called spring coefficient) has units of force/angle in degrees.
 type XsdGoPkgHasElem_stiffnesssequenceangularsequencespringsequencetechnique_commonsequencerigid_constraintschema_Stiffness_TargetableFloat_10 struct {
 //	The stiffness (also called spring coefficient) has units of force/angle in degrees.
 	Stiffness *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema stiffness"`
+
 }
 
 //	Returns the Default value for Stiffness -- 1.0
@@ -12997,33 +13980,37 @@ func (me *XsdGoPkgHasElem_stiffnesssequenceangularsequencespringsequencetechniqu
 type XsdGoPkgHasElems_stiffnesssequenceangularsequencespringsequencetechnique_commonsequencerigid_constraintschema_Stiffness_TargetableFloat_10 struct {
 //	The stiffness (also called spring coefficient) has units of force/angle in degrees.
 	Stiffnesses []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema stiffness"`
+
 }
 
 //	Returns the Default value for Stiffness -- 1.0
 func (me *XsdGoPkgHasElems_stiffnesssequenceangularsequencespringsequencetechnique_commonsequencerigid_constraintschema_Stiffness_TargetableFloat_10) StiffnessDefault () Tfloat { return Tfloat(1.0) }
 
 //	The spring damping coefficient.
-type XsdGoPkgHasElem_dampingsequenceangularsequencespringsequencetechnique_commonsequencerigid_constraintschema_Damping_TargetableFloat_00 struct {
-//	The spring damping coefficient.
-	Damping *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema damping"`
-}
-
-//	Returns the Default value for Damping -- 0.0
-func (me *XsdGoPkgHasElem_dampingsequenceangularsequencespringsequencetechnique_commonsequencerigid_constraintschema_Damping_TargetableFloat_00) DampingDefault () Tfloat { return Tfloat(0.0) }
-
-//	The spring damping coefficient.
 type XsdGoPkgHasElems_dampingsequenceangularsequencespringsequencetechnique_commonsequencerigid_constraintschema_Damping_TargetableFloat_00 struct {
 //	The spring damping coefficient.
 	Dampings []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema damping"`
+
 }
 
 //	Returns the Default value for Damping -- 0.0
 func (me *XsdGoPkgHasElems_dampingsequenceangularsequencespringsequencetechnique_commonsequencerigid_constraintschema_Damping_TargetableFloat_00) DampingDefault () Tfloat { return Tfloat(0.0) }
 
+//	The spring damping coefficient.
+type XsdGoPkgHasElem_dampingsequenceangularsequencespringsequencetechnique_commonsequencerigid_constraintschema_Damping_TargetableFloat_00 struct {
+//	The spring damping coefficient.
+	Damping *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema damping"`
+
+}
+
+//	Returns the Default value for Damping -- 0.0
+func (me *XsdGoPkgHasElem_dampingsequenceangularsequencespringsequencetechnique_commonsequencerigid_constraintschema_Damping_TargetableFloat_00) DampingDefault () Tfloat { return Tfloat(0.0) }
+
 //	The spring's target or resting distance.
 type XsdGoPkgHasElem_target_valuesequenceangularsequencespringsequencetechnique_commonsequencerigid_constraintschema_TargetValue_TargetableFloat_00 struct {
 //	The spring's target or resting distance.
 	TargetValue *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema target_value"`
+
 }
 
 //	Returns the Default value for TargetValue -- 0.0
@@ -13033,6 +14020,7 @@ func (me *XsdGoPkgHasElem_target_valuesequenceangularsequencespringsequencetechn
 type XsdGoPkgHasElems_target_valuesequenceangularsequencespringsequencetechnique_commonsequencerigid_constraintschema_TargetValue_TargetableFloat_00 struct {
 //	The spring's target or resting distance.
 	TargetValues []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema target_value"`
+
 }
 
 //	Returns the Default value for TargetValue -- 0.0
@@ -13054,67 +14042,75 @@ type TxsdRigidConstraintSequenceTechniqueCommonSequenceSpringSequenceAngular str
 type XsdGoPkgHasElems_angularsequencespringsequencetechnique_commonsequencerigid_constraintschema_Angular_TxsdRigidConstraintSequenceTechniqueCommonSequenceSpringSequenceAngular_ struct {
 //	The angular spring properties.
 	Angulars []*TxsdRigidConstraintSequenceTechniqueCommonSequenceSpringSequenceAngular `xml:"http://www.collada.org/2005/11/COLLADASchema angular"`
+
 }
 
 //	The angular spring properties.
 type XsdGoPkgHasElem_angularsequencespringsequencetechnique_commonsequencerigid_constraintschema_Angular_TxsdRigidConstraintSequenceTechniqueCommonSequenceSpringSequenceAngular_ struct {
 //	The angular spring properties.
 	Angular *TxsdRigidConstraintSequenceTechniqueCommonSequenceSpringSequenceAngular `xml:"http://www.collada.org/2005/11/COLLADASchema angular"`
-}
 
-//	The stiffness (also called spring coefficient) has units of force/distance.
-type XsdGoPkgHasElems_stiffnesssequencelinearsequencespringsequencetechnique_commonsequencerigid_constraintschema_Stiffness_TargetableFloat_10 struct {
-//	The stiffness (also called spring coefficient) has units of force/distance.
-	Stiffnesses []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema stiffness"`
 }
-
-//	Returns the Default value for Stiffness -- 1.0
-func (me *XsdGoPkgHasElems_stiffnesssequencelinearsequencespringsequencetechnique_commonsequencerigid_constraintschema_Stiffness_TargetableFloat_10) StiffnessDefault () Tfloat { return Tfloat(1.0) }
 
 //	The stiffness (also called spring coefficient) has units of force/distance.
 type XsdGoPkgHasElem_stiffnesssequencelinearsequencespringsequencetechnique_commonsequencerigid_constraintschema_Stiffness_TargetableFloat_10 struct {
 //	The stiffness (also called spring coefficient) has units of force/distance.
 	Stiffness *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema stiffness"`
+
 }
 
 //	Returns the Default value for Stiffness -- 1.0
 func (me *XsdGoPkgHasElem_stiffnesssequencelinearsequencespringsequencetechnique_commonsequencerigid_constraintschema_Stiffness_TargetableFloat_10) StiffnessDefault () Tfloat { return Tfloat(1.0) }
 
-//	The spring damping coefficient.
-type XsdGoPkgHasElem_dampingsequencelinearsequencespringsequencetechnique_commonsequencerigid_constraintschema_Damping_TargetableFloat_00 struct {
-//	The spring damping coefficient.
-	Damping *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema damping"`
+//	The stiffness (also called spring coefficient) has units of force/distance.
+type XsdGoPkgHasElems_stiffnesssequencelinearsequencespringsequencetechnique_commonsequencerigid_constraintschema_Stiffness_TargetableFloat_10 struct {
+//	The stiffness (also called spring coefficient) has units of force/distance.
+	Stiffnesses []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema stiffness"`
+
 }
 
-//	Returns the Default value for Damping -- 0.0
-func (me *XsdGoPkgHasElem_dampingsequencelinearsequencespringsequencetechnique_commonsequencerigid_constraintschema_Damping_TargetableFloat_00) DampingDefault () Tfloat { return Tfloat(0.0) }
+//	Returns the Default value for Stiffness -- 1.0
+func (me *XsdGoPkgHasElems_stiffnesssequencelinearsequencespringsequencetechnique_commonsequencerigid_constraintschema_Stiffness_TargetableFloat_10) StiffnessDefault () Tfloat { return Tfloat(1.0) }
 
 //	The spring damping coefficient.
 type XsdGoPkgHasElems_dampingsequencelinearsequencespringsequencetechnique_commonsequencerigid_constraintschema_Damping_TargetableFloat_00 struct {
 //	The spring damping coefficient.
 	Dampings []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema damping"`
+
 }
 
 //	Returns the Default value for Damping -- 0.0
 func (me *XsdGoPkgHasElems_dampingsequencelinearsequencespringsequencetechnique_commonsequencerigid_constraintschema_Damping_TargetableFloat_00) DampingDefault () Tfloat { return Tfloat(0.0) }
 
-//	The spring's target or resting distance.
-type XsdGoPkgHasElem_target_valuesequencelinearsequencespringsequencetechnique_commonsequencerigid_constraintschema_TargetValue_TargetableFloat_00 struct {
-//	The spring's target or resting distance.
-	TargetValue *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema target_value"`
+//	The spring damping coefficient.
+type XsdGoPkgHasElem_dampingsequencelinearsequencespringsequencetechnique_commonsequencerigid_constraintschema_Damping_TargetableFloat_00 struct {
+//	The spring damping coefficient.
+	Damping *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema damping"`
+
 }
 
-//	Returns the Default value for TargetValue -- 0.0
-func (me *XsdGoPkgHasElem_target_valuesequencelinearsequencespringsequencetechnique_commonsequencerigid_constraintschema_TargetValue_TargetableFloat_00) TargetValueDefault () Tfloat { return Tfloat(0.0) }
+//	Returns the Default value for Damping -- 0.0
+func (me *XsdGoPkgHasElem_dampingsequencelinearsequencespringsequencetechnique_commonsequencerigid_constraintschema_Damping_TargetableFloat_00) DampingDefault () Tfloat { return Tfloat(0.0) }
 
 //	The spring's target or resting distance.
 type XsdGoPkgHasElems_target_valuesequencelinearsequencespringsequencetechnique_commonsequencerigid_constraintschema_TargetValue_TargetableFloat_00 struct {
 //	The spring's target or resting distance.
 	TargetValues []*TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema target_value"`
+
 }
 
 //	Returns the Default value for TargetValue -- 0.0
 func (me *XsdGoPkgHasElems_target_valuesequencelinearsequencespringsequencetechnique_commonsequencerigid_constraintschema_TargetValue_TargetableFloat_00) TargetValueDefault () Tfloat { return Tfloat(0.0) }
+
+//	The spring's target or resting distance.
+type XsdGoPkgHasElem_target_valuesequencelinearsequencespringsequencetechnique_commonsequencerigid_constraintschema_TargetValue_TargetableFloat_00 struct {
+//	The spring's target or resting distance.
+	TargetValue *TargetableFloat `xml:"http://www.collada.org/2005/11/COLLADASchema target_value"`
+
+}
+
+//	Returns the Default value for TargetValue -- 0.0
+func (me *XsdGoPkgHasElem_target_valuesequencelinearsequencespringsequencetechnique_commonsequencerigid_constraintschema_TargetValue_TargetableFloat_00) TargetValueDefault () Tfloat { return Tfloat(0.0) }
 
 type TxsdRigidConstraintSequenceTechniqueCommonSequenceSpringSequenceLinear struct {
 //	The stiffness (also called spring coefficient) has units of force/distance.
@@ -13132,12 +14128,14 @@ type TxsdRigidConstraintSequenceTechniqueCommonSequenceSpringSequenceLinear stru
 type XsdGoPkgHasElems_linearsequencespringsequencetechnique_commonsequencerigid_constraintschema_Linear_TxsdRigidConstraintSequenceTechniqueCommonSequenceSpringSequenceLinear_ struct {
 //	The linear spring properties.
 	Linears []*TxsdRigidConstraintSequenceTechniqueCommonSequenceSpringSequenceLinear `xml:"http://www.collada.org/2005/11/COLLADASchema linear"`
+
 }
 
 //	The linear spring properties.
 type XsdGoPkgHasElem_linearsequencespringsequencetechnique_commonsequencerigid_constraintschema_Linear_TxsdRigidConstraintSequenceTechniqueCommonSequenceSpringSequenceLinear_ struct {
 //	The linear spring properties.
 	Linear *TxsdRigidConstraintSequenceTechniqueCommonSequenceSpringSequenceLinear `xml:"http://www.collada.org/2005/11/COLLADASchema linear"`
+
 }
 
 type TxsdRigidConstraintSequenceTechniqueCommonSequenceSpring struct {
@@ -13150,15 +14148,17 @@ type TxsdRigidConstraintSequenceTechniqueCommonSequenceSpring struct {
 }
 
 //	Spring, based on distance (“LINEAR”) or angle (“ANGULAR”).
-type XsdGoPkgHasElems_springsequencetechnique_commonsequencerigid_constraintschema_Spring_TxsdRigidConstraintSequenceTechniqueCommonSequenceSpring_ struct {
-//	Spring, based on distance (“LINEAR”) or angle (“ANGULAR”).
-	Springs []*TxsdRigidConstraintSequenceTechniqueCommonSequenceSpring `xml:"http://www.collada.org/2005/11/COLLADASchema spring"`
-}
-
-//	Spring, based on distance (“LINEAR”) or angle (“ANGULAR”).
 type XsdGoPkgHasElem_springsequencetechnique_commonsequencerigid_constraintschema_Spring_TxsdRigidConstraintSequenceTechniqueCommonSequenceSpring_ struct {
 //	Spring, based on distance (“LINEAR”) or angle (“ANGULAR”).
 	Spring *TxsdRigidConstraintSequenceTechniqueCommonSequenceSpring `xml:"http://www.collada.org/2005/11/COLLADASchema spring"`
+
+}
+
+//	Spring, based on distance (“LINEAR”) or angle (“ANGULAR”).
+type XsdGoPkgHasElems_springsequencetechnique_commonsequencerigid_constraintschema_Spring_TxsdRigidConstraintSequenceTechniqueCommonSequenceSpring_ struct {
+//	Spring, based on distance (“LINEAR”) or angle (“ANGULAR”).
+	Springs []*TxsdRigidConstraintSequenceTechniqueCommonSequenceSpring `xml:"http://www.collada.org/2005/11/COLLADASchema spring"`
+
 }
 
 type TxsdRigidConstraintSequenceTechniqueCommon struct {
@@ -13179,18 +14179,20 @@ type TxsdRigidConstraintSequenceTechniqueCommon struct {
 
 //	The technique_common element specifies the rigid_constraint information for the common profile
 //	which all COLLADA implementations need to support.
-type XsdGoPkgHasElems_technique_commonsequencerigid_constraintschema_TechniqueCommon_TxsdRigidConstraintSequenceTechniqueCommon_ struct {
-//	The technique_common element specifies the rigid_constraint information for the common profile
-//	which all COLLADA implementations need to support.
-	TechniqueCommons []*TxsdRigidConstraintSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
-}
-
-//	The technique_common element specifies the rigid_constraint information for the common profile
-//	which all COLLADA implementations need to support.
 type XsdGoPkgHasElem_technique_commonsequencerigid_constraintschema_TechniqueCommon_TxsdRigidConstraintSequenceTechniqueCommon_ struct {
 //	The technique_common element specifies the rigid_constraint information for the common profile
 //	which all COLLADA implementations need to support.
 	TechniqueCommon *TxsdRigidConstraintSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
+
+}
+
+//	The technique_common element specifies the rigid_constraint information for the common profile
+//	which all COLLADA implementations need to support.
+type XsdGoPkgHasElems_technique_commonsequencerigid_constraintschema_TechniqueCommon_TxsdRigidConstraintSequenceTechniqueCommon_ struct {
+//	The technique_common element specifies the rigid_constraint information for the common profile
+//	which all COLLADA implementations need to support.
+	TechniqueCommons []*TxsdRigidConstraintSequenceTechniqueCommon `xml:"http://www.collada.org/2005/11/COLLADASchema technique_common"`
+
 }
 
 type TxsdRigidConstraint struct {
@@ -13214,18 +14216,20 @@ type TxsdRigidConstraint struct {
 
 //	This element allows for connecting components, such as rigid_body into complex physics models
 //	with moveable parts.
-type XsdGoPkgHasElem_RigidConstraint struct {
-//	This element allows for connecting components, such as rigid_body into complex physics models
-//	with moveable parts.
-	RigidConstraint *TxsdRigidConstraint `xml:"http://www.collada.org/2005/11/COLLADASchema rigid_constraint"`
-}
-
-//	This element allows for connecting components, such as rigid_body into complex physics models
-//	with moveable parts.
 type XsdGoPkgHasElems_RigidConstraint struct {
 //	This element allows for connecting components, such as rigid_body into complex physics models
 //	with moveable parts.
 	RigidConstraints []*TxsdRigidConstraint `xml:"http://www.collada.org/2005/11/COLLADASchema rigid_constraint"`
+
+}
+
+//	This element allows for connecting components, such as rigid_body into complex physics models
+//	with moveable parts.
+type XsdGoPkgHasElem_RigidConstraint struct {
+//	This element allows for connecting components, such as rigid_body into complex physics models
+//	with moveable parts.
+	RigidConstraint *TxsdRigidConstraint `xml:"http://www.collada.org/2005/11/COLLADASchema rigid_constraint"`
+
 }
 
 type TxsdPhysicsModel struct {
@@ -13248,90 +14252,104 @@ type TxsdPhysicsModel struct {
 
 //	This element allows for building complex combinations of rigid-bodies and constraints that
 //	may be instantiated multiple times.
-type XsdGoPkgHasElems_PhysicsModel struct {
-//	This element allows for building complex combinations of rigid-bodies and constraints that
-//	may be instantiated multiple times.
-	PhysicsModels []*TxsdPhysicsModel `xml:"http://www.collada.org/2005/11/COLLADASchema physics_model"`
-}
-
-//	This element allows for building complex combinations of rigid-bodies and constraints that
-//	may be instantiated multiple times.
 type XsdGoPkgHasElem_PhysicsModel struct {
 //	This element allows for building complex combinations of rigid-bodies and constraints that
 //	may be instantiated multiple times.
 	PhysicsModel *TxsdPhysicsModel `xml:"http://www.collada.org/2005/11/COLLADASchema physics_model"`
+
 }
 
-//	This surface is intended to be initialized later externally by a "setparam" element.  If it is used before being initialized there is profile and platform specific behavior.  Most elements on the surface element containing this will be ignored including mip_levels, mipmap_generate, size, viewport_ratio, and format.
-type XsdGoPkgHasElem_init_as_nullchoicefx_surface_init_commonschema_InitAsNull_XsdtString_ struct {
-//	This surface is intended to be initialized later externally by a "setparam" element.  If it is used before being initialized there is profile and platform specific behavior.  Most elements on the surface element containing this will be ignored including mip_levels, mipmap_generate, size, viewport_ratio, and format.
-	InitAsNull xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema init_as_null"`
+//	This element allows for building complex combinations of rigid-bodies and constraints that
+//	may be instantiated multiple times.
+type XsdGoPkgHasElems_PhysicsModel struct {
+//	This element allows for building complex combinations of rigid-bodies and constraints that
+//	may be instantiated multiple times.
+	PhysicsModels []*TxsdPhysicsModel `xml:"http://www.collada.org/2005/11/COLLADASchema physics_model"`
+
 }
 
 //	This surface is intended to be initialized later externally by a "setparam" element.  If it is used before being initialized there is profile and platform specific behavior.  Most elements on the surface element containing this will be ignored including mip_levels, mipmap_generate, size, viewport_ratio, and format.
 type XsdGoPkgHasElems_init_as_nullchoicefx_surface_init_commonschema_InitAsNull_XsdtString_ struct {
 //	This surface is intended to be initialized later externally by a "setparam" element.  If it is used before being initialized there is profile and platform specific behavior.  Most elements on the surface element containing this will be ignored including mip_levels, mipmap_generate, size, viewport_ratio, and format.
 	InitAsNulls []xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema init_as_null"`
+
 }
 
-//	Init as a target for depth, stencil, or color.  It does not need image data. Surface should not have mipmap_generate when using this.
-type XsdGoPkgHasElem_init_as_targetchoicefx_surface_init_commonschema_InitAsTarget_XsdtString_ struct {
-//	Init as a target for depth, stencil, or color.  It does not need image data. Surface should not have mipmap_generate when using this.
-	InitAsTarget xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema init_as_target"`
+//	This surface is intended to be initialized later externally by a "setparam" element.  If it is used before being initialized there is profile and platform specific behavior.  Most elements on the surface element containing this will be ignored including mip_levels, mipmap_generate, size, viewport_ratio, and format.
+type XsdGoPkgHasElem_init_as_nullchoicefx_surface_init_commonschema_InitAsNull_XsdtString_ struct {
+//	This surface is intended to be initialized later externally by a "setparam" element.  If it is used before being initialized there is profile and platform specific behavior.  Most elements on the surface element containing this will be ignored including mip_levels, mipmap_generate, size, viewport_ratio, and format.
+	InitAsNull xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema init_as_null"`
+
 }
 
 //	Init as a target for depth, stencil, or color.  It does not need image data. Surface should not have mipmap_generate when using this.
 type XsdGoPkgHasElems_init_as_targetchoicefx_surface_init_commonschema_InitAsTarget_XsdtString_ struct {
 //	Init as a target for depth, stencil, or color.  It does not need image data. Surface should not have mipmap_generate when using this.
 	InitAsTargets []xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema init_as_target"`
+
+}
+
+//	Init as a target for depth, stencil, or color.  It does not need image data. Surface should not have mipmap_generate when using this.
+type XsdGoPkgHasElem_init_as_targetchoicefx_surface_init_commonschema_InitAsTarget_XsdtString_ struct {
+//	Init as a target for depth, stencil, or color.  It does not need image data. Surface should not have mipmap_generate when using this.
+	InitAsTarget xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema init_as_target"`
+
 }
 
 //	Init a CUBE from a compound image such as DDS
 type XsdGoPkgHasElems_init_cubechoicefx_surface_init_commonschema_InitCube_TfxSurfaceInitCubeCommon_ struct {
 //	Init a CUBE from a compound image such as DDS
 	InitCubes []*TfxSurfaceInitCubeCommon `xml:"http://www.collada.org/2005/11/COLLADASchema init_cube"`
+
 }
 
 //	Init a CUBE from a compound image such as DDS
 type XsdGoPkgHasElem_init_cubechoicefx_surface_init_commonschema_InitCube_TfxSurfaceInitCubeCommon_ struct {
 //	Init a CUBE from a compound image such as DDS
 	InitCube *TfxSurfaceInitCubeCommon `xml:"http://www.collada.org/2005/11/COLLADASchema init_cube"`
+
 }
 
 //	Init a 3D from a compound image such as DDS
 type XsdGoPkgHasElems_init_volumechoicefx_surface_init_commonschema_InitVolume_TfxSurfaceInitVolumeCommon_ struct {
 //	Init a 3D from a compound image such as DDS
 	InitVolumes []*TfxSurfaceInitVolumeCommon `xml:"http://www.collada.org/2005/11/COLLADASchema init_volume"`
+
 }
 
 //	Init a 3D from a compound image such as DDS
 type XsdGoPkgHasElem_init_volumechoicefx_surface_init_commonschema_InitVolume_TfxSurfaceInitVolumeCommon_ struct {
 //	Init a 3D from a compound image such as DDS
 	InitVolume *TfxSurfaceInitVolumeCommon `xml:"http://www.collada.org/2005/11/COLLADASchema init_volume"`
-}
 
-//	Init a 1D,2D,RECT,DEPTH from a compound image such as DDS
-type XsdGoPkgHasElem_init_planarchoicefx_surface_init_commonschema_InitPlanar_TfxSurfaceInitPlanarCommon_ struct {
-//	Init a 1D,2D,RECT,DEPTH from a compound image such as DDS
-	InitPlanar *TfxSurfaceInitPlanarCommon `xml:"http://www.collada.org/2005/11/COLLADASchema init_planar"`
 }
 
 //	Init a 1D,2D,RECT,DEPTH from a compound image such as DDS
 type XsdGoPkgHasElems_init_planarchoicefx_surface_init_commonschema_InitPlanar_TfxSurfaceInitPlanarCommon_ struct {
 //	Init a 1D,2D,RECT,DEPTH from a compound image such as DDS
 	InitPlanars []*TfxSurfaceInitPlanarCommon `xml:"http://www.collada.org/2005/11/COLLADASchema init_planar"`
+
+}
+
+//	Init a 1D,2D,RECT,DEPTH from a compound image such as DDS
+type XsdGoPkgHasElem_init_planarchoicefx_surface_init_commonschema_InitPlanar_TfxSurfaceInitPlanarCommon_ struct {
+//	Init a 1D,2D,RECT,DEPTH from a compound image such as DDS
+	InitPlanar *TfxSurfaceInitPlanarCommon `xml:"http://www.collada.org/2005/11/COLLADASchema init_planar"`
+
 }
 
 //	Initialize the surface one sub-surface at a time by specifying combinations of mip, face, and slice which make sense for a particular surface type.  Each sub-surface is initialized by a common 2D image, not a complex compound image such as DDS. If not all subsurfaces are initialized, it is invalid and will result in profile and platform specific behavior unless mipmap_generate is responsible for initializing the remainder of the sub-surfaces
 type XsdGoPkgHasElems_init_fromchoicefx_surface_init_commonschema_InitFrom_TfxSurfaceInitFromCommon_ struct {
 //	Initialize the surface one sub-surface at a time by specifying combinations of mip, face, and slice which make sense for a particular surface type.  Each sub-surface is initialized by a common 2D image, not a complex compound image such as DDS. If not all subsurfaces are initialized, it is invalid and will result in profile and platform specific behavior unless mipmap_generate is responsible for initializing the remainder of the sub-surfaces
 	InitFroms []*TfxSurfaceInitFromCommon `xml:"http://www.collada.org/2005/11/COLLADASchema init_from"`
+
 }
 
 //	Initialize the surface one sub-surface at a time by specifying combinations of mip, face, and slice which make sense for a particular surface type.  Each sub-surface is initialized by a common 2D image, not a complex compound image such as DDS. If not all subsurfaces are initialized, it is invalid and will result in profile and platform specific behavior unless mipmap_generate is responsible for initializing the remainder of the sub-surfaces
 type XsdGoPkgHasElem_init_fromchoicefx_surface_init_commonschema_InitFrom_TfxSurfaceInitFromCommon_ struct {
 //	Initialize the surface one sub-surface at a time by specifying combinations of mip, face, and slice which make sense for a particular surface type.  Each sub-surface is initialized by a common 2D image, not a complex compound image such as DDS. If not all subsurfaces are initialized, it is invalid and will result in profile and platform specific behavior unless mipmap_generate is responsible for initializing the remainder of the sub-surfaces
 	InitFrom *TfxSurfaceInitFromCommon `xml:"http://www.collada.org/2005/11/COLLADASchema init_from"`
+
 }
 
 //	The common set of initalization options for surfaces.  Choose which is appropriate for your surface based on type and other characteristics. described by the annotation docs on the child elements.
@@ -13358,130 +14376,162 @@ type XsdGoPkgHasGroup_FxSurfaceInitCommon struct {
 
 type XsdGoPkgHasElems_boolchoicefx_annotate_type_commonschema_Bool_Tbool_ struct {
 	Bools []Tbool `xml:"http://www.collada.org/2005/11/COLLADASchema bool"`
+
 }
 
 type XsdGoPkgHasElem_boolchoicefx_annotate_type_commonschema_Bool_Tbool_ struct {
 	Bool Tbool `xml:"http://www.collada.org/2005/11/COLLADASchema bool"`
-}
 
-type XsdGoPkgHasElem_bool2choicefx_annotate_type_commonschema_Bool2_Tbool2_ struct {
-	Bool2 Tbool2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2"`
 }
 
 type XsdGoPkgHasElems_bool2choicefx_annotate_type_commonschema_Bool2_Tbool2_ struct {
 	Bool2s []Tbool2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2"`
+
+}
+
+type XsdGoPkgHasElem_bool2choicefx_annotate_type_commonschema_Bool2_Tbool2_ struct {
+	Bool2 Tbool2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2"`
+
 }
 
 type XsdGoPkgHasElems_bool3choicefx_annotate_type_commonschema_Bool3_Tbool3_ struct {
 	Bool3s []Tbool3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3"`
+
 }
 
 type XsdGoPkgHasElem_bool3choicefx_annotate_type_commonschema_Bool3_Tbool3_ struct {
 	Bool3 Tbool3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3"`
-}
 
-type XsdGoPkgHasElems_bool4choicefx_annotate_type_commonschema_Bool4_Tbool4_ struct {
-	Bool4s []Tbool4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4"`
 }
 
 type XsdGoPkgHasElem_bool4choicefx_annotate_type_commonschema_Bool4_Tbool4_ struct {
 	Bool4 Tbool4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4"`
+
 }
 
-type XsdGoPkgHasElem_intchoicefx_annotate_type_commonschema_Int_Tint_ struct {
-	Int Tint `xml:"http://www.collada.org/2005/11/COLLADASchema int"`
+type XsdGoPkgHasElems_bool4choicefx_annotate_type_commonschema_Bool4_Tbool4_ struct {
+	Bool4s []Tbool4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4"`
+
 }
 
 type XsdGoPkgHasElems_intchoicefx_annotate_type_commonschema_Int_Tint_ struct {
 	Ints []Tint `xml:"http://www.collada.org/2005/11/COLLADASchema int"`
+
+}
+
+type XsdGoPkgHasElem_intchoicefx_annotate_type_commonschema_Int_Tint_ struct {
+	Int Tint `xml:"http://www.collada.org/2005/11/COLLADASchema int"`
+
 }
 
 type XsdGoPkgHasElems_int2choicefx_annotate_type_commonschema_Int2_Tint2_ struct {
 	Int2s []Tint2 `xml:"http://www.collada.org/2005/11/COLLADASchema int2"`
+
 }
 
 type XsdGoPkgHasElem_int2choicefx_annotate_type_commonschema_Int2_Tint2_ struct {
 	Int2 Tint2 `xml:"http://www.collada.org/2005/11/COLLADASchema int2"`
+
 }
 
 type XsdGoPkgHasElems_int3choicefx_annotate_type_commonschema_Int3_Tint3_ struct {
 	Int3s []Tint3 `xml:"http://www.collada.org/2005/11/COLLADASchema int3"`
+
 }
 
 type XsdGoPkgHasElem_int3choicefx_annotate_type_commonschema_Int3_Tint3_ struct {
 	Int3 Tint3 `xml:"http://www.collada.org/2005/11/COLLADASchema int3"`
-}
 
-type XsdGoPkgHasElem_int4choicefx_annotate_type_commonschema_Int4_Tint4_ struct {
-	Int4 Tint4 `xml:"http://www.collada.org/2005/11/COLLADASchema int4"`
 }
 
 type XsdGoPkgHasElems_int4choicefx_annotate_type_commonschema_Int4_Tint4_ struct {
 	Int4s []Tint4 `xml:"http://www.collada.org/2005/11/COLLADASchema int4"`
+
 }
 
-type XsdGoPkgHasElem_floatchoicefx_annotate_type_commonschema_Float_Tfloat_ struct {
-	Float Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
+type XsdGoPkgHasElem_int4choicefx_annotate_type_commonschema_Int4_Tint4_ struct {
+	Int4 Tint4 `xml:"http://www.collada.org/2005/11/COLLADASchema int4"`
+
 }
 
 type XsdGoPkgHasElems_floatchoicefx_annotate_type_commonschema_Float_Tfloat_ struct {
 	Floats []Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
+
+}
+
+type XsdGoPkgHasElem_floatchoicefx_annotate_type_commonschema_Float_Tfloat_ struct {
+	Float Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
+
 }
 
 type XsdGoPkgHasElems_float2choicefx_annotate_type_commonschema_Float2_Tfloat2_ struct {
 	Float2s []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2"`
+
 }
 
 type XsdGoPkgHasElem_float2choicefx_annotate_type_commonschema_Float2_Tfloat2_ struct {
 	Float2 Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2"`
+
 }
 
 type XsdGoPkgHasElem_float3choicefx_annotate_type_commonschema_Float3_Tfloat3_ struct {
 	Float3 Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3"`
+
 }
 
 type XsdGoPkgHasElems_float3choicefx_annotate_type_commonschema_Float3_Tfloat3_ struct {
 	Float3s []Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3"`
+
 }
 
 type XsdGoPkgHasElems_float4choicefx_annotate_type_commonschema_Float4_Tfloat4_ struct {
 	Float4s []Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4"`
+
 }
 
 type XsdGoPkgHasElem_float4choicefx_annotate_type_commonschema_Float4_Tfloat4_ struct {
 	Float4 Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4"`
+
 }
 
 type XsdGoPkgHasElem_float2x2choicefx_annotate_type_commonschema_Float2X2_Tfloat2X2_ struct {
 	Float2X2 Tfloat2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x2"`
+
 }
 
 type XsdGoPkgHasElems_float2x2choicefx_annotate_type_commonschema_Float2X2_Tfloat2X2_ struct {
 	Float2X2s []Tfloat2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x2"`
+
 }
 
 type XsdGoPkgHasElem_float3x3choicefx_annotate_type_commonschema_Float3X3_Tfloat3X3_ struct {
 	Float3X3 Tfloat3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x3"`
+
 }
 
 type XsdGoPkgHasElems_float3x3choicefx_annotate_type_commonschema_Float3X3_Tfloat3X3_ struct {
 	Float3X3s []Tfloat3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x3"`
+
 }
 
 type XsdGoPkgHasElem_float4x4choicefx_annotate_type_commonschema_Float4X4_Tfloat4X4_ struct {
 	Float4X4 Tfloat4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x4"`
+
 }
 
 type XsdGoPkgHasElems_float4x4choicefx_annotate_type_commonschema_Float4X4_Tfloat4X4_ struct {
 	Float4X4s []Tfloat4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x4"`
+
 }
 
 type XsdGoPkgHasElems_stringchoicefx_annotate_type_commonschema_String_XsdtString_ struct {
 	Strings []xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema string"`
+
 }
 
 type XsdGoPkgHasElem_stringchoicefx_annotate_type_commonschema_String_XsdtString_ struct {
 	String xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema string"`
+
 }
 
 //	A group that specifies the allowable types for an annotation.
@@ -13520,292 +14570,364 @@ type XsdGoPkgHasGroup_FxAnnotateTypeCommon struct {
 
 }
 
-type XsdGoPkgHasElems_boolchoicefx_basic_type_commonschema_Bool_Tbool_ struct {
-	Bools []Tbool `xml:"http://www.collada.org/2005/11/COLLADASchema bool"`
-}
-
 type XsdGoPkgHasElem_boolchoicefx_basic_type_commonschema_Bool_Tbool_ struct {
 	Bool Tbool `xml:"http://www.collada.org/2005/11/COLLADASchema bool"`
+
 }
 
-type XsdGoPkgHasElem_bool2choicefx_basic_type_commonschema_Bool2_Tbool2_ struct {
-	Bool2 Tbool2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2"`
+type XsdGoPkgHasElems_boolchoicefx_basic_type_commonschema_Bool_Tbool_ struct {
+	Bools []Tbool `xml:"http://www.collada.org/2005/11/COLLADASchema bool"`
+
 }
 
 type XsdGoPkgHasElems_bool2choicefx_basic_type_commonschema_Bool2_Tbool2_ struct {
 	Bool2s []Tbool2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2"`
+
+}
+
+type XsdGoPkgHasElem_bool2choicefx_basic_type_commonschema_Bool2_Tbool2_ struct {
+	Bool2 Tbool2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2"`
+
 }
 
 type XsdGoPkgHasElem_bool3choicefx_basic_type_commonschema_Bool3_Tbool3_ struct {
 	Bool3 Tbool3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3"`
+
 }
 
 type XsdGoPkgHasElems_bool3choicefx_basic_type_commonschema_Bool3_Tbool3_ struct {
 	Bool3s []Tbool3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3"`
+
 }
 
 type XsdGoPkgHasElem_bool4choicefx_basic_type_commonschema_Bool4_Tbool4_ struct {
 	Bool4 Tbool4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4"`
+
 }
 
 type XsdGoPkgHasElems_bool4choicefx_basic_type_commonschema_Bool4_Tbool4_ struct {
 	Bool4s []Tbool4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4"`
+
 }
 
 type XsdGoPkgHasElem_intchoicefx_basic_type_commonschema_Int_Tint_ struct {
 	Int Tint `xml:"http://www.collada.org/2005/11/COLLADASchema int"`
+
 }
 
 type XsdGoPkgHasElems_intchoicefx_basic_type_commonschema_Int_Tint_ struct {
 	Ints []Tint `xml:"http://www.collada.org/2005/11/COLLADASchema int"`
+
 }
 
 type XsdGoPkgHasElem_int2choicefx_basic_type_commonschema_Int2_Tint2_ struct {
 	Int2 Tint2 `xml:"http://www.collada.org/2005/11/COLLADASchema int2"`
+
 }
 
 type XsdGoPkgHasElems_int2choicefx_basic_type_commonschema_Int2_Tint2_ struct {
 	Int2s []Tint2 `xml:"http://www.collada.org/2005/11/COLLADASchema int2"`
+
 }
 
 type XsdGoPkgHasElem_int3choicefx_basic_type_commonschema_Int3_Tint3_ struct {
 	Int3 Tint3 `xml:"http://www.collada.org/2005/11/COLLADASchema int3"`
+
 }
 
 type XsdGoPkgHasElems_int3choicefx_basic_type_commonschema_Int3_Tint3_ struct {
 	Int3s []Tint3 `xml:"http://www.collada.org/2005/11/COLLADASchema int3"`
+
 }
 
 type XsdGoPkgHasElems_int4choicefx_basic_type_commonschema_Int4_Tint4_ struct {
 	Int4s []Tint4 `xml:"http://www.collada.org/2005/11/COLLADASchema int4"`
+
 }
 
 type XsdGoPkgHasElem_int4choicefx_basic_type_commonschema_Int4_Tint4_ struct {
 	Int4 Tint4 `xml:"http://www.collada.org/2005/11/COLLADASchema int4"`
-}
 
-type XsdGoPkgHasElems_floatchoicefx_basic_type_commonschema_Float_Tfloat_ struct {
-	Floats []Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
 }
 
 type XsdGoPkgHasElem_floatchoicefx_basic_type_commonschema_Float_Tfloat_ struct {
 	Float Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
+
+}
+
+type XsdGoPkgHasElems_floatchoicefx_basic_type_commonschema_Float_Tfloat_ struct {
+	Floats []Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
+
 }
 
 type XsdGoPkgHasElem_float2choicefx_basic_type_commonschema_Float2_Tfloat2_ struct {
 	Float2 Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2"`
+
 }
 
 type XsdGoPkgHasElems_float2choicefx_basic_type_commonschema_Float2_Tfloat2_ struct {
 	Float2s []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2"`
-}
 
-type XsdGoPkgHasElems_float3choicefx_basic_type_commonschema_Float3_Tfloat3_ struct {
-	Float3s []Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3"`
 }
 
 type XsdGoPkgHasElem_float3choicefx_basic_type_commonschema_Float3_Tfloat3_ struct {
 	Float3 Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3"`
+
+}
+
+type XsdGoPkgHasElems_float3choicefx_basic_type_commonschema_Float3_Tfloat3_ struct {
+	Float3s []Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3"`
+
 }
 
 type XsdGoPkgHasElems_float4choicefx_basic_type_commonschema_Float4_Tfloat4_ struct {
 	Float4s []Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4"`
+
 }
 
 type XsdGoPkgHasElem_float4choicefx_basic_type_commonschema_Float4_Tfloat4_ struct {
 	Float4 Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4"`
-}
 
-type XsdGoPkgHasElem_float1x1choicefx_basic_type_commonschema_Float1X1_Tfloat_ struct {
-	Float1X1 Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema float1x1"`
 }
 
 type XsdGoPkgHasElems_float1x1choicefx_basic_type_commonschema_Float1X1_Tfloat_ struct {
 	Float1X1s []Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema float1x1"`
+
 }
 
-type XsdGoPkgHasElems_float1x2choicefx_basic_type_commonschema_Float1X2_Tfloat2_ struct {
-	Float1X2s []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x2"`
+type XsdGoPkgHasElem_float1x1choicefx_basic_type_commonschema_Float1X1_Tfloat_ struct {
+	Float1X1 Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema float1x1"`
+
 }
 
 type XsdGoPkgHasElem_float1x2choicefx_basic_type_commonschema_Float1X2_Tfloat2_ struct {
 	Float1X2 Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x2"`
+
 }
 
-type XsdGoPkgHasElems_float1x3choicefx_basic_type_commonschema_Float1X3_Tfloat3_ struct {
-	Float1X3s []Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x3"`
+type XsdGoPkgHasElems_float1x2choicefx_basic_type_commonschema_Float1X2_Tfloat2_ struct {
+	Float1X2s []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x2"`
+
 }
 
 type XsdGoPkgHasElem_float1x3choicefx_basic_type_commonschema_Float1X3_Tfloat3_ struct {
 	Float1X3 Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x3"`
+
 }
 
-type XsdGoPkgHasElem_float1x4choicefx_basic_type_commonschema_Float1X4_Tfloat4_ struct {
-	Float1X4 Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x4"`
+type XsdGoPkgHasElems_float1x3choicefx_basic_type_commonschema_Float1X3_Tfloat3_ struct {
+	Float1X3s []Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x3"`
+
 }
 
 type XsdGoPkgHasElems_float1x4choicefx_basic_type_commonschema_Float1X4_Tfloat4_ struct {
 	Float1X4s []Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x4"`
+
 }
 
-type XsdGoPkgHasElems_float2x1choicefx_basic_type_commonschema_Float2X1_Tfloat2_ struct {
-	Float2X1s []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x1"`
+type XsdGoPkgHasElem_float1x4choicefx_basic_type_commonschema_Float1X4_Tfloat4_ struct {
+	Float1X4 Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x4"`
+
 }
 
 type XsdGoPkgHasElem_float2x1choicefx_basic_type_commonschema_Float2X1_Tfloat2_ struct {
 	Float2X1 Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x1"`
+
+}
+
+type XsdGoPkgHasElems_float2x1choicefx_basic_type_commonschema_Float2X1_Tfloat2_ struct {
+	Float2X1s []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x1"`
+
 }
 
 type XsdGoPkgHasElems_float2x2choicefx_basic_type_commonschema_Float2X2_Tfloat2X2_ struct {
 	Float2X2s []Tfloat2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x2"`
+
 }
 
 type XsdGoPkgHasElem_float2x2choicefx_basic_type_commonschema_Float2X2_Tfloat2X2_ struct {
 	Float2X2 Tfloat2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x2"`
-}
 
-type XsdGoPkgHasElem_float2x3choicefx_basic_type_commonschema_Float2X3_Tfloat2X3_ struct {
-	Float2X3 Tfloat2X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x3"`
 }
 
 type XsdGoPkgHasElems_float2x3choicefx_basic_type_commonschema_Float2X3_Tfloat2X3_ struct {
 	Float2X3s []Tfloat2X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x3"`
+
 }
 
-type XsdGoPkgHasElems_float2x4choicefx_basic_type_commonschema_Float2X4_Tfloat2X4_ struct {
-	Float2X4s []Tfloat2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x4"`
+type XsdGoPkgHasElem_float2x3choicefx_basic_type_commonschema_Float2X3_Tfloat2X3_ struct {
+	Float2X3 Tfloat2X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x3"`
+
 }
 
 type XsdGoPkgHasElem_float2x4choicefx_basic_type_commonschema_Float2X4_Tfloat2X4_ struct {
 	Float2X4 Tfloat2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x4"`
+
+}
+
+type XsdGoPkgHasElems_float2x4choicefx_basic_type_commonschema_Float2X4_Tfloat2X4_ struct {
+	Float2X4s []Tfloat2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x4"`
+
 }
 
 type XsdGoPkgHasElems_float3x1choicefx_basic_type_commonschema_Float3X1_Tfloat3_ struct {
 	Float3X1s []Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x1"`
+
 }
 
 type XsdGoPkgHasElem_float3x1choicefx_basic_type_commonschema_Float3X1_Tfloat3_ struct {
 	Float3X1 Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x1"`
+
 }
 
 type XsdGoPkgHasElems_float3x2choicefx_basic_type_commonschema_Float3X2_Tfloat3X2_ struct {
 	Float3X2s []Tfloat3X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x2"`
+
 }
 
 type XsdGoPkgHasElem_float3x2choicefx_basic_type_commonschema_Float3X2_Tfloat3X2_ struct {
 	Float3X2 Tfloat3X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x2"`
+
 }
 
 type XsdGoPkgHasElems_float3x3choicefx_basic_type_commonschema_Float3X3_Tfloat3X3_ struct {
 	Float3X3s []Tfloat3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x3"`
+
 }
 
 type XsdGoPkgHasElem_float3x3choicefx_basic_type_commonschema_Float3X3_Tfloat3X3_ struct {
 	Float3X3 Tfloat3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x3"`
+
 }
 
 type XsdGoPkgHasElems_float3x4choicefx_basic_type_commonschema_Float3X4_Tfloat3X4_ struct {
 	Float3X4s []Tfloat3X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x4"`
+
 }
 
 type XsdGoPkgHasElem_float3x4choicefx_basic_type_commonschema_Float3X4_Tfloat3X4_ struct {
 	Float3X4 Tfloat3X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x4"`
+
 }
 
 type XsdGoPkgHasElems_float4x1choicefx_basic_type_commonschema_Float4X1_Tfloat4_ struct {
 	Float4X1s []Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x1"`
+
 }
 
 type XsdGoPkgHasElem_float4x1choicefx_basic_type_commonschema_Float4X1_Tfloat4_ struct {
 	Float4X1 Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x1"`
-}
 
-type XsdGoPkgHasElem_float4x2choicefx_basic_type_commonschema_Float4X2_Tfloat4X2_ struct {
-	Float4X2 Tfloat4X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x2"`
 }
 
 type XsdGoPkgHasElems_float4x2choicefx_basic_type_commonschema_Float4X2_Tfloat4X2_ struct {
 	Float4X2s []Tfloat4X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x2"`
+
+}
+
+type XsdGoPkgHasElem_float4x2choicefx_basic_type_commonschema_Float4X2_Tfloat4X2_ struct {
+	Float4X2 Tfloat4X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x2"`
+
 }
 
 type XsdGoPkgHasElem_float4x3choicefx_basic_type_commonschema_Float4X3_Tfloat4X3_ struct {
 	Float4X3 Tfloat4X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x3"`
+
 }
 
 type XsdGoPkgHasElems_float4x3choicefx_basic_type_commonschema_Float4X3_Tfloat4X3_ struct {
 	Float4X3s []Tfloat4X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x3"`
+
 }
 
 type XsdGoPkgHasElem_float4x4choicefx_basic_type_commonschema_Float4X4_Tfloat4X4_ struct {
 	Float4X4 Tfloat4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x4"`
+
 }
 
 type XsdGoPkgHasElems_float4x4choicefx_basic_type_commonschema_Float4X4_Tfloat4X4_ struct {
 	Float4X4s []Tfloat4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x4"`
+
 }
 
 type XsdGoPkgHasElem_surfacechoicefx_basic_type_commonschema_Surface_TfxSurfaceCommon_ struct {
 	Surface *TfxSurfaceCommon `xml:"http://www.collada.org/2005/11/COLLADASchema surface"`
+
 }
 
 type XsdGoPkgHasElems_surfacechoicefx_basic_type_commonschema_Surface_TfxSurfaceCommon_ struct {
 	Surfaces []*TfxSurfaceCommon `xml:"http://www.collada.org/2005/11/COLLADASchema surface"`
-}
 
-type XsdGoPkgHasElems_sampler1Dchoicefx_basic_type_commonschema_Sampler1D_TfxSampler1DCommon_ struct {
-	Sampler1Ds []*TfxSampler1DCommon `xml:"http://www.collada.org/2005/11/COLLADASchema sampler1D"`
 }
 
 type XsdGoPkgHasElem_sampler1Dchoicefx_basic_type_commonschema_Sampler1D_TfxSampler1DCommon_ struct {
 	Sampler1D *TfxSampler1DCommon `xml:"http://www.collada.org/2005/11/COLLADASchema sampler1D"`
+
+}
+
+type XsdGoPkgHasElems_sampler1Dchoicefx_basic_type_commonschema_Sampler1D_TfxSampler1DCommon_ struct {
+	Sampler1Ds []*TfxSampler1DCommon `xml:"http://www.collada.org/2005/11/COLLADASchema sampler1D"`
+
 }
 
 type XsdGoPkgHasElem_sampler2Dchoicefx_basic_type_commonschema_Sampler2D_TfxSampler2DCommon_ struct {
 	Sampler2D *TfxSampler2DCommon `xml:"http://www.collada.org/2005/11/COLLADASchema sampler2D"`
+
 }
 
 type XsdGoPkgHasElems_sampler2Dchoicefx_basic_type_commonschema_Sampler2D_TfxSampler2DCommon_ struct {
 	Sampler2Ds []*TfxSampler2DCommon `xml:"http://www.collada.org/2005/11/COLLADASchema sampler2D"`
-}
 
-type XsdGoPkgHasElems_sampler3Dchoicefx_basic_type_commonschema_Sampler3D_TfxSampler3DCommon_ struct {
-	Sampler3Ds []*TfxSampler3DCommon `xml:"http://www.collada.org/2005/11/COLLADASchema sampler3D"`
 }
 
 type XsdGoPkgHasElem_sampler3Dchoicefx_basic_type_commonschema_Sampler3D_TfxSampler3DCommon_ struct {
 	Sampler3D *TfxSampler3DCommon `xml:"http://www.collada.org/2005/11/COLLADASchema sampler3D"`
+
+}
+
+type XsdGoPkgHasElems_sampler3Dchoicefx_basic_type_commonschema_Sampler3D_TfxSampler3DCommon_ struct {
+	Sampler3Ds []*TfxSampler3DCommon `xml:"http://www.collada.org/2005/11/COLLADASchema sampler3D"`
+
 }
 
 type XsdGoPkgHasElems_samplerCUBEchoicefx_basic_type_commonschema_SamplerCUBE_TfxSamplerCUBECommon_ struct {
 	SamplerCUBEs []*TfxSamplerCUBECommon `xml:"http://www.collada.org/2005/11/COLLADASchema samplerCUBE"`
+
 }
 
 type XsdGoPkgHasElem_samplerCUBEchoicefx_basic_type_commonschema_SamplerCUBE_TfxSamplerCUBECommon_ struct {
 	SamplerCUBE *TfxSamplerCUBECommon `xml:"http://www.collada.org/2005/11/COLLADASchema samplerCUBE"`
-}
 
-type XsdGoPkgHasElems_samplerRECTchoicefx_basic_type_commonschema_SamplerRECT_TfxSamplerRECTCommon_ struct {
-	SamplerRECTs []*TfxSamplerRECTCommon `xml:"http://www.collada.org/2005/11/COLLADASchema samplerRECT"`
 }
 
 type XsdGoPkgHasElem_samplerRECTchoicefx_basic_type_commonschema_SamplerRECT_TfxSamplerRECTCommon_ struct {
 	SamplerRECT *TfxSamplerRECTCommon `xml:"http://www.collada.org/2005/11/COLLADASchema samplerRECT"`
+
 }
 
-type XsdGoPkgHasElem_samplerDEPTHchoicefx_basic_type_commonschema_SamplerDEPTH_TfxSamplerDEPTHCommon_ struct {
-	SamplerDEPTH *TfxSamplerDEPTHCommon `xml:"http://www.collada.org/2005/11/COLLADASchema samplerDEPTH"`
+type XsdGoPkgHasElems_samplerRECTchoicefx_basic_type_commonschema_SamplerRECT_TfxSamplerRECTCommon_ struct {
+	SamplerRECTs []*TfxSamplerRECTCommon `xml:"http://www.collada.org/2005/11/COLLADASchema samplerRECT"`
+
 }
 
 type XsdGoPkgHasElems_samplerDEPTHchoicefx_basic_type_commonschema_SamplerDEPTH_TfxSamplerDEPTHCommon_ struct {
 	SamplerDEPTHs []*TfxSamplerDEPTHCommon `xml:"http://www.collada.org/2005/11/COLLADASchema samplerDEPTH"`
+
+}
+
+type XsdGoPkgHasElem_samplerDEPTHchoicefx_basic_type_commonschema_SamplerDEPTH_TfxSamplerDEPTHCommon_ struct {
+	SamplerDEPTH *TfxSamplerDEPTHCommon `xml:"http://www.collada.org/2005/11/COLLADASchema samplerDEPTH"`
+
 }
 
 type XsdGoPkgHasElems_enumchoicefx_basic_type_commonschema_Enum_XsdtString_ struct {
 	Enums []xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema enum"`
+
 }
 
 type XsdGoPkgHasElem_enumchoicefx_basic_type_commonschema_Enum_XsdtString_ struct {
 	Enum xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema enum"`
+
 }
 
 //	A group that specifies the allowable types for effect scoped parameters.
@@ -13898,10 +15020,12 @@ type TxsdGlPipelineSettingsChoiceAlphaFuncSequenceFunc struct {
 
 type XsdGoPkgHasElem_funcsequencealpha_funcchoicegl_pipeline_settingsschema_Func_TxsdGlPipelineSettingsChoiceAlphaFuncSequenceFunc_ struct {
 	Func *TxsdGlPipelineSettingsChoiceAlphaFuncSequenceFunc `xml:"http://www.collada.org/2005/11/COLLADASchema func"`
+
 }
 
 type XsdGoPkgHasElems_funcsequencealpha_funcchoicegl_pipeline_settingsschema_Func_TxsdGlPipelineSettingsChoiceAlphaFuncSequenceFunc_ struct {
 	Funcs []*TxsdGlPipelineSettingsChoiceAlphaFuncSequenceFunc `xml:"http://www.collada.org/2005/11/COLLADASchema func"`
+
 }
 
 type XsdGoPkgHasAttr_Value_TglAlphaValueType_00 struct {
@@ -13918,10 +15042,12 @@ type TxsdGlPipelineSettingsChoiceAlphaFuncSequenceValue struct {
 
 type XsdGoPkgHasElems_valuesequencealpha_funcchoicegl_pipeline_settingsschema_Value_TxsdGlPipelineSettingsChoiceAlphaFuncSequenceValue_ struct {
 	Values []*TxsdGlPipelineSettingsChoiceAlphaFuncSequenceValue `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
+
 }
 
 type XsdGoPkgHasElem_valuesequencealpha_funcchoicegl_pipeline_settingsschema_Value_TxsdGlPipelineSettingsChoiceAlphaFuncSequenceValue_ struct {
 	Value *TxsdGlPipelineSettingsChoiceAlphaFuncSequenceValue `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceAlphaFunc struct {
@@ -13931,12 +15057,14 @@ type TxsdGlPipelineSettingsChoiceAlphaFunc struct {
 
 }
 
-type XsdGoPkgHasElem_alpha_funcchoicegl_pipeline_settingsschema_AlphaFunc_TxsdGlPipelineSettingsChoiceAlphaFunc_ struct {
-	AlphaFunc *TxsdGlPipelineSettingsChoiceAlphaFunc `xml:"http://www.collada.org/2005/11/COLLADASchema alpha_func"`
-}
-
 type XsdGoPkgHasElems_alpha_funcchoicegl_pipeline_settingsschema_AlphaFunc_TxsdGlPipelineSettingsChoiceAlphaFunc_ struct {
 	AlphaFuncs []*TxsdGlPipelineSettingsChoiceAlphaFunc `xml:"http://www.collada.org/2005/11/COLLADASchema alpha_func"`
+
+}
+
+type XsdGoPkgHasElem_alpha_funcchoicegl_pipeline_settingsschema_AlphaFunc_TxsdGlPipelineSettingsChoiceAlphaFunc_ struct {
+	AlphaFunc *TxsdGlPipelineSettingsChoiceAlphaFunc `xml:"http://www.collada.org/2005/11/COLLADASchema alpha_func"`
+
 }
 
 type XsdGoPkgHasAttr_Value_TglBlendType_One struct {
@@ -13951,12 +15079,14 @@ type TxsdGlPipelineSettingsChoiceBlendFuncSequenceSrc struct {
 
 }
 
-type XsdGoPkgHasElem_srcsequenceblend_funcchoicegl_pipeline_settingsschema_Src_TxsdGlPipelineSettingsChoiceBlendFuncSequenceSrc_ struct {
-	Src *TxsdGlPipelineSettingsChoiceBlendFuncSequenceSrc `xml:"http://www.collada.org/2005/11/COLLADASchema src"`
-}
-
 type XsdGoPkgHasElems_srcsequenceblend_funcchoicegl_pipeline_settingsschema_Src_TxsdGlPipelineSettingsChoiceBlendFuncSequenceSrc_ struct {
 	Srcs []*TxsdGlPipelineSettingsChoiceBlendFuncSequenceSrc `xml:"http://www.collada.org/2005/11/COLLADASchema src"`
+
+}
+
+type XsdGoPkgHasElem_srcsequenceblend_funcchoicegl_pipeline_settingsschema_Src_TxsdGlPipelineSettingsChoiceBlendFuncSequenceSrc_ struct {
+	Src *TxsdGlPipelineSettingsChoiceBlendFuncSequenceSrc `xml:"http://www.collada.org/2005/11/COLLADASchema src"`
+
 }
 
 type XsdGoPkgHasAttr_Value_TglBlendType_Zero struct {
@@ -13973,10 +15103,12 @@ type TxsdGlPipelineSettingsChoiceBlendFuncSequenceDest struct {
 
 type XsdGoPkgHasElems_destsequenceblend_funcchoicegl_pipeline_settingsschema_Dest_TxsdGlPipelineSettingsChoiceBlendFuncSequenceDest_ struct {
 	Dests []*TxsdGlPipelineSettingsChoiceBlendFuncSequenceDest `xml:"http://www.collada.org/2005/11/COLLADASchema dest"`
+
 }
 
 type XsdGoPkgHasElem_destsequenceblend_funcchoicegl_pipeline_settingsschema_Dest_TxsdGlPipelineSettingsChoiceBlendFuncSequenceDest_ struct {
 	Dest *TxsdGlPipelineSettingsChoiceBlendFuncSequenceDest `xml:"http://www.collada.org/2005/11/COLLADASchema dest"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceBlendFunc struct {
@@ -13986,12 +15118,14 @@ type TxsdGlPipelineSettingsChoiceBlendFunc struct {
 
 }
 
-type XsdGoPkgHasElem_blend_funcchoicegl_pipeline_settingsschema_BlendFunc_TxsdGlPipelineSettingsChoiceBlendFunc_ struct {
-	BlendFunc *TxsdGlPipelineSettingsChoiceBlendFunc `xml:"http://www.collada.org/2005/11/COLLADASchema blend_func"`
-}
-
 type XsdGoPkgHasElems_blend_funcchoicegl_pipeline_settingsschema_BlendFunc_TxsdGlPipelineSettingsChoiceBlendFunc_ struct {
 	BlendFuncs []*TxsdGlPipelineSettingsChoiceBlendFunc `xml:"http://www.collada.org/2005/11/COLLADASchema blend_func"`
+
+}
+
+type XsdGoPkgHasElem_blend_funcchoicegl_pipeline_settingsschema_BlendFunc_TxsdGlPipelineSettingsChoiceBlendFunc_ struct {
+	BlendFunc *TxsdGlPipelineSettingsChoiceBlendFunc `xml:"http://www.collada.org/2005/11/COLLADASchema blend_func"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceSrcRgb struct {
@@ -13999,43 +15133,51 @@ type TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceSrcRgb struct {
 
 type XsdGoPkgHasElem_src_rgbsequenceblend_func_separatechoicegl_pipeline_settingsschema_SrcRgb_TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceSrcRgb_ struct {
 	SrcRgb *TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceSrcRgb `xml:"http://www.collada.org/2005/11/COLLADASchema src_rgb"`
+
 }
 
 type XsdGoPkgHasElems_src_rgbsequenceblend_func_separatechoicegl_pipeline_settingsschema_SrcRgb_TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceSrcRgb_ struct {
 	SrcRgbs []*TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceSrcRgb `xml:"http://www.collada.org/2005/11/COLLADASchema src_rgb"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceDestRgb struct {
 }
 
-type XsdGoPkgHasElems_dest_rgbsequenceblend_func_separatechoicegl_pipeline_settingsschema_DestRgb_TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceDestRgb_ struct {
-	DestRgbs []*TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceDestRgb `xml:"http://www.collada.org/2005/11/COLLADASchema dest_rgb"`
-}
-
 type XsdGoPkgHasElem_dest_rgbsequenceblend_func_separatechoicegl_pipeline_settingsschema_DestRgb_TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceDestRgb_ struct {
 	DestRgb *TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceDestRgb `xml:"http://www.collada.org/2005/11/COLLADASchema dest_rgb"`
+
+}
+
+type XsdGoPkgHasElems_dest_rgbsequenceblend_func_separatechoicegl_pipeline_settingsschema_DestRgb_TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceDestRgb_ struct {
+	DestRgbs []*TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceDestRgb `xml:"http://www.collada.org/2005/11/COLLADASchema dest_rgb"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceSrcAlpha struct {
 }
 
-type XsdGoPkgHasElem_src_alphasequenceblend_func_separatechoicegl_pipeline_settingsschema_SrcAlpha_TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceSrcAlpha_ struct {
-	SrcAlpha *TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceSrcAlpha `xml:"http://www.collada.org/2005/11/COLLADASchema src_alpha"`
-}
-
 type XsdGoPkgHasElems_src_alphasequenceblend_func_separatechoicegl_pipeline_settingsschema_SrcAlpha_TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceSrcAlpha_ struct {
 	SrcAlphas []*TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceSrcAlpha `xml:"http://www.collada.org/2005/11/COLLADASchema src_alpha"`
+
+}
+
+type XsdGoPkgHasElem_src_alphasequenceblend_func_separatechoicegl_pipeline_settingsschema_SrcAlpha_TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceSrcAlpha_ struct {
+	SrcAlpha *TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceSrcAlpha `xml:"http://www.collada.org/2005/11/COLLADASchema src_alpha"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceDestAlpha struct {
 }
 
-type XsdGoPkgHasElems_dest_alphasequenceblend_func_separatechoicegl_pipeline_settingsschema_DestAlpha_TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceDestAlpha_ struct {
-	DestAlphas []*TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceDestAlpha `xml:"http://www.collada.org/2005/11/COLLADASchema dest_alpha"`
-}
-
 type XsdGoPkgHasElem_dest_alphasequenceblend_func_separatechoicegl_pipeline_settingsschema_DestAlpha_TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceDestAlpha_ struct {
 	DestAlpha *TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceDestAlpha `xml:"http://www.collada.org/2005/11/COLLADASchema dest_alpha"`
+
+}
+
+type XsdGoPkgHasElems_dest_alphasequenceblend_func_separatechoicegl_pipeline_settingsschema_DestAlpha_TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceDestAlpha_ struct {
+	DestAlphas []*TxsdGlPipelineSettingsChoiceBlendFuncSeparateSequenceDestAlpha `xml:"http://www.collada.org/2005/11/COLLADASchema dest_alpha"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceBlendFuncSeparate struct {
@@ -14049,12 +15191,14 @@ type TxsdGlPipelineSettingsChoiceBlendFuncSeparate struct {
 
 }
 
-type XsdGoPkgHasElems_blend_func_separatechoicegl_pipeline_settingsschema_BlendFuncSeparate_TxsdGlPipelineSettingsChoiceBlendFuncSeparate_ struct {
-	BlendFuncSeparates []*TxsdGlPipelineSettingsChoiceBlendFuncSeparate `xml:"http://www.collada.org/2005/11/COLLADASchema blend_func_separate"`
-}
-
 type XsdGoPkgHasElem_blend_func_separatechoicegl_pipeline_settingsschema_BlendFuncSeparate_TxsdGlPipelineSettingsChoiceBlendFuncSeparate_ struct {
 	BlendFuncSeparate *TxsdGlPipelineSettingsChoiceBlendFuncSeparate `xml:"http://www.collada.org/2005/11/COLLADASchema blend_func_separate"`
+
+}
+
+type XsdGoPkgHasElems_blend_func_separatechoicegl_pipeline_settingsschema_BlendFuncSeparate_TxsdGlPipelineSettingsChoiceBlendFuncSeparate_ struct {
+	BlendFuncSeparates []*TxsdGlPipelineSettingsChoiceBlendFuncSeparate `xml:"http://www.collada.org/2005/11/COLLADASchema blend_func_separate"`
+
 }
 
 type XsdGoPkgHasAttr_Value_TglBlendEquationType_FuncAdd struct {
@@ -14071,32 +15215,38 @@ type TxsdGlPipelineSettingsChoiceBlendEquation struct {
 
 type XsdGoPkgHasElem_blend_equationchoicegl_pipeline_settingsschema_BlendEquation_TxsdGlPipelineSettingsChoiceBlendEquation_ struct {
 	BlendEquation *TxsdGlPipelineSettingsChoiceBlendEquation `xml:"http://www.collada.org/2005/11/COLLADASchema blend_equation"`
+
 }
 
 type XsdGoPkgHasElems_blend_equationchoicegl_pipeline_settingsschema_BlendEquation_TxsdGlPipelineSettingsChoiceBlendEquation_ struct {
 	BlendEquations []*TxsdGlPipelineSettingsChoiceBlendEquation `xml:"http://www.collada.org/2005/11/COLLADASchema blend_equation"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceBlendEquationSeparateSequenceRgb struct {
 }
 
-type XsdGoPkgHasElems_rgbsequenceblend_equation_separatechoicegl_pipeline_settingsschema_Rgb_TxsdGlPipelineSettingsChoiceBlendEquationSeparateSequenceRgb_ struct {
-	Rgbs []*TxsdGlPipelineSettingsChoiceBlendEquationSeparateSequenceRgb `xml:"http://www.collada.org/2005/11/COLLADASchema rgb"`
-}
-
 type XsdGoPkgHasElem_rgbsequenceblend_equation_separatechoicegl_pipeline_settingsschema_Rgb_TxsdGlPipelineSettingsChoiceBlendEquationSeparateSequenceRgb_ struct {
 	Rgb *TxsdGlPipelineSettingsChoiceBlendEquationSeparateSequenceRgb `xml:"http://www.collada.org/2005/11/COLLADASchema rgb"`
+
+}
+
+type XsdGoPkgHasElems_rgbsequenceblend_equation_separatechoicegl_pipeline_settingsschema_Rgb_TxsdGlPipelineSettingsChoiceBlendEquationSeparateSequenceRgb_ struct {
+	Rgbs []*TxsdGlPipelineSettingsChoiceBlendEquationSeparateSequenceRgb `xml:"http://www.collada.org/2005/11/COLLADASchema rgb"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceBlendEquationSeparateSequenceAlpha struct {
 }
 
-type XsdGoPkgHasElems_alphasequenceblend_equation_separatechoicegl_pipeline_settingsschema_Alpha_TxsdGlPipelineSettingsChoiceBlendEquationSeparateSequenceAlpha_ struct {
-	Alphas []*TxsdGlPipelineSettingsChoiceBlendEquationSeparateSequenceAlpha `xml:"http://www.collada.org/2005/11/COLLADASchema alpha"`
-}
-
 type XsdGoPkgHasElem_alphasequenceblend_equation_separatechoicegl_pipeline_settingsschema_Alpha_TxsdGlPipelineSettingsChoiceBlendEquationSeparateSequenceAlpha_ struct {
 	Alpha *TxsdGlPipelineSettingsChoiceBlendEquationSeparateSequenceAlpha `xml:"http://www.collada.org/2005/11/COLLADASchema alpha"`
+
+}
+
+type XsdGoPkgHasElems_alphasequenceblend_equation_separatechoicegl_pipeline_settingsschema_Alpha_TxsdGlPipelineSettingsChoiceBlendEquationSeparateSequenceAlpha_ struct {
+	Alphas []*TxsdGlPipelineSettingsChoiceBlendEquationSeparateSequenceAlpha `xml:"http://www.collada.org/2005/11/COLLADASchema alpha"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceBlendEquationSeparate struct {
@@ -14108,10 +15258,12 @@ type TxsdGlPipelineSettingsChoiceBlendEquationSeparate struct {
 
 type XsdGoPkgHasElem_blend_equation_separatechoicegl_pipeline_settingsschema_BlendEquationSeparate_TxsdGlPipelineSettingsChoiceBlendEquationSeparate_ struct {
 	BlendEquationSeparate *TxsdGlPipelineSettingsChoiceBlendEquationSeparate `xml:"http://www.collada.org/2005/11/COLLADASchema blend_equation_separate"`
+
 }
 
 type XsdGoPkgHasElems_blend_equation_separatechoicegl_pipeline_settingsschema_BlendEquationSeparate_TxsdGlPipelineSettingsChoiceBlendEquationSeparate_ struct {
 	BlendEquationSeparates []*TxsdGlPipelineSettingsChoiceBlendEquationSeparate `xml:"http://www.collada.org/2005/11/COLLADASchema blend_equation_separate"`
+
 }
 
 type XsdGoPkgHasAttr_Value_TglFaceType_FrontAndBack struct {
@@ -14128,10 +15280,12 @@ type TxsdGlPipelineSettingsChoiceColorMaterialSequenceFace struct {
 
 type XsdGoPkgHasElems_facesequencecolor_materialchoicegl_pipeline_settingsschema_Face_TxsdGlPipelineSettingsChoiceColorMaterialSequenceFace_ struct {
 	Faces []*TxsdGlPipelineSettingsChoiceColorMaterialSequenceFace `xml:"http://www.collada.org/2005/11/COLLADASchema face"`
+
 }
 
 type XsdGoPkgHasElem_facesequencecolor_materialchoicegl_pipeline_settingsschema_Face_TxsdGlPipelineSettingsChoiceColorMaterialSequenceFace_ struct {
 	Face *TxsdGlPipelineSettingsChoiceColorMaterialSequenceFace `xml:"http://www.collada.org/2005/11/COLLADASchema face"`
+
 }
 
 type XsdGoPkgHasAttr_Value_TglMaterialType_AmbientAndDiffuse struct {
@@ -14146,12 +15300,14 @@ type TxsdGlPipelineSettingsChoiceColorMaterialSequenceMode struct {
 
 }
 
-type XsdGoPkgHasElem_modesequencecolor_materialchoicegl_pipeline_settingsschema_Mode_TxsdGlPipelineSettingsChoiceColorMaterialSequenceMode_ struct {
-	Mode *TxsdGlPipelineSettingsChoiceColorMaterialSequenceMode `xml:"http://www.collada.org/2005/11/COLLADASchema mode"`
-}
-
 type XsdGoPkgHasElems_modesequencecolor_materialchoicegl_pipeline_settingsschema_Mode_TxsdGlPipelineSettingsChoiceColorMaterialSequenceMode_ struct {
 	Modes []*TxsdGlPipelineSettingsChoiceColorMaterialSequenceMode `xml:"http://www.collada.org/2005/11/COLLADASchema mode"`
+
+}
+
+type XsdGoPkgHasElem_modesequencecolor_materialchoicegl_pipeline_settingsschema_Mode_TxsdGlPipelineSettingsChoiceColorMaterialSequenceMode_ struct {
+	Mode *TxsdGlPipelineSettingsChoiceColorMaterialSequenceMode `xml:"http://www.collada.org/2005/11/COLLADASchema mode"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceColorMaterial struct {
@@ -14163,10 +15319,12 @@ type TxsdGlPipelineSettingsChoiceColorMaterial struct {
 
 type XsdGoPkgHasElems_color_materialchoicegl_pipeline_settingsschema_ColorMaterial_TxsdGlPipelineSettingsChoiceColorMaterial_ struct {
 	ColorMaterials []*TxsdGlPipelineSettingsChoiceColorMaterial `xml:"http://www.collada.org/2005/11/COLLADASchema color_material"`
+
 }
 
 type XsdGoPkgHasElem_color_materialchoicegl_pipeline_settingsschema_ColorMaterial_TxsdGlPipelineSettingsChoiceColorMaterial_ struct {
 	ColorMaterial *TxsdGlPipelineSettingsChoiceColorMaterial `xml:"http://www.collada.org/2005/11/COLLADASchema color_material"`
+
 }
 
 type XsdGoPkgHasAttr_Value_TglFaceType_Back struct {
@@ -14181,12 +15339,14 @@ type TxsdGlPipelineSettingsChoiceCullFace struct {
 
 }
 
-type XsdGoPkgHasElem_cull_facechoicegl_pipeline_settingsschema_CullFace_TxsdGlPipelineSettingsChoiceCullFace_ struct {
-	CullFace *TxsdGlPipelineSettingsChoiceCullFace `xml:"http://www.collada.org/2005/11/COLLADASchema cull_face"`
-}
-
 type XsdGoPkgHasElems_cull_facechoicegl_pipeline_settingsschema_CullFace_TxsdGlPipelineSettingsChoiceCullFace_ struct {
 	CullFaces []*TxsdGlPipelineSettingsChoiceCullFace `xml:"http://www.collada.org/2005/11/COLLADASchema cull_face"`
+
+}
+
+type XsdGoPkgHasElem_cull_facechoicegl_pipeline_settingsschema_CullFace_TxsdGlPipelineSettingsChoiceCullFace_ struct {
+	CullFace *TxsdGlPipelineSettingsChoiceCullFace `xml:"http://www.collada.org/2005/11/COLLADASchema cull_face"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceDepthFunc struct {
@@ -14194,10 +15354,12 @@ type TxsdGlPipelineSettingsChoiceDepthFunc struct {
 
 type XsdGoPkgHasElems_depth_funcchoicegl_pipeline_settingsschema_DepthFunc_TxsdGlPipelineSettingsChoiceDepthFunc_ struct {
 	DepthFuncs []*TxsdGlPipelineSettingsChoiceDepthFunc `xml:"http://www.collada.org/2005/11/COLLADASchema depth_func"`
+
 }
 
 type XsdGoPkgHasElem_depth_funcchoicegl_pipeline_settingsschema_DepthFunc_TxsdGlPipelineSettingsChoiceDepthFunc_ struct {
 	DepthFunc *TxsdGlPipelineSettingsChoiceDepthFunc `xml:"http://www.collada.org/2005/11/COLLADASchema depth_func"`
+
 }
 
 type XsdGoPkgHasAttr_Value_TglFogType_Exp struct {
@@ -14214,10 +15376,12 @@ type TxsdGlPipelineSettingsChoiceFogMode struct {
 
 type XsdGoPkgHasElem_fog_modechoicegl_pipeline_settingsschema_FogMode_TxsdGlPipelineSettingsChoiceFogMode_ struct {
 	FogMode *TxsdGlPipelineSettingsChoiceFogMode `xml:"http://www.collada.org/2005/11/COLLADASchema fog_mode"`
+
 }
 
 type XsdGoPkgHasElems_fog_modechoicegl_pipeline_settingsschema_FogMode_TxsdGlPipelineSettingsChoiceFogMode_ struct {
 	FogModes []*TxsdGlPipelineSettingsChoiceFogMode `xml:"http://www.collada.org/2005/11/COLLADASchema fog_mode"`
+
 }
 
 type XsdGoPkgHasAttr_Value_TglFogCoordSrcType_FogCoordinate struct {
@@ -14234,10 +15398,12 @@ type TxsdGlPipelineSettingsChoiceFogCoordSrc struct {
 
 type XsdGoPkgHasElem_fog_coord_srcchoicegl_pipeline_settingsschema_FogCoordSrc_TxsdGlPipelineSettingsChoiceFogCoordSrc_ struct {
 	FogCoordSrc *TxsdGlPipelineSettingsChoiceFogCoordSrc `xml:"http://www.collada.org/2005/11/COLLADASchema fog_coord_src"`
+
 }
 
 type XsdGoPkgHasElems_fog_coord_srcchoicegl_pipeline_settingsschema_FogCoordSrc_TxsdGlPipelineSettingsChoiceFogCoordSrc_ struct {
 	FogCoordSrcs []*TxsdGlPipelineSettingsChoiceFogCoordSrc `xml:"http://www.collada.org/2005/11/COLLADASchema fog_coord_src"`
+
 }
 
 type XsdGoPkgHasAttr_Value_TglFrontFaceType_Ccw struct {
@@ -14252,12 +15418,14 @@ type TxsdGlPipelineSettingsChoiceFrontFace struct {
 
 }
 
-type XsdGoPkgHasElems_front_facechoicegl_pipeline_settingsschema_FrontFace_TxsdGlPipelineSettingsChoiceFrontFace_ struct {
-	FrontFaces []*TxsdGlPipelineSettingsChoiceFrontFace `xml:"http://www.collada.org/2005/11/COLLADASchema front_face"`
-}
-
 type XsdGoPkgHasElem_front_facechoicegl_pipeline_settingsschema_FrontFace_TxsdGlPipelineSettingsChoiceFrontFace_ struct {
 	FrontFace *TxsdGlPipelineSettingsChoiceFrontFace `xml:"http://www.collada.org/2005/11/COLLADASchema front_face"`
+
+}
+
+type XsdGoPkgHasElems_front_facechoicegl_pipeline_settingsschema_FrontFace_TxsdGlPipelineSettingsChoiceFrontFace_ struct {
+	FrontFaces []*TxsdGlPipelineSettingsChoiceFrontFace `xml:"http://www.collada.org/2005/11/COLLADASchema front_face"`
+
 }
 
 type XsdGoPkgHasAttr_Value_TglLightModelColorControlType_SingleColor struct {
@@ -14272,12 +15440,14 @@ type TxsdGlPipelineSettingsChoiceLightModelColorControl struct {
 
 }
 
-type XsdGoPkgHasElems_light_model_color_controlchoicegl_pipeline_settingsschema_LightModelColorControl_TxsdGlPipelineSettingsChoiceLightModelColorControl_ struct {
-	LightModelColorControls []*TxsdGlPipelineSettingsChoiceLightModelColorControl `xml:"http://www.collada.org/2005/11/COLLADASchema light_model_color_control"`
-}
-
 type XsdGoPkgHasElem_light_model_color_controlchoicegl_pipeline_settingsschema_LightModelColorControl_TxsdGlPipelineSettingsChoiceLightModelColorControl_ struct {
 	LightModelColorControl *TxsdGlPipelineSettingsChoiceLightModelColorControl `xml:"http://www.collada.org/2005/11/COLLADASchema light_model_color_control"`
+
+}
+
+type XsdGoPkgHasElems_light_model_color_controlchoicegl_pipeline_settingsschema_LightModelColorControl_TxsdGlPipelineSettingsChoiceLightModelColorControl_ struct {
+	LightModelColorControls []*TxsdGlPipelineSettingsChoiceLightModelColorControl `xml:"http://www.collada.org/2005/11/COLLADASchema light_model_color_control"`
+
 }
 
 type XsdGoPkgHasAttr_Value_TglLogicOpType_Copy struct {
@@ -14294,10 +15464,12 @@ type TxsdGlPipelineSettingsChoiceLogicOp struct {
 
 type XsdGoPkgHasElems_logic_opchoicegl_pipeline_settingsschema_LogicOp_TxsdGlPipelineSettingsChoiceLogicOp_ struct {
 	LogicOps []*TxsdGlPipelineSettingsChoiceLogicOp `xml:"http://www.collada.org/2005/11/COLLADASchema logic_op"`
+
 }
 
 type XsdGoPkgHasElem_logic_opchoicegl_pipeline_settingsschema_LogicOp_TxsdGlPipelineSettingsChoiceLogicOp_ struct {
 	LogicOp *TxsdGlPipelineSettingsChoiceLogicOp `xml:"http://www.collada.org/2005/11/COLLADASchema logic_op"`
+
 }
 
 type TxsdGlPipelineSettingsChoicePolygonModeSequenceFace struct {
@@ -14305,10 +15477,12 @@ type TxsdGlPipelineSettingsChoicePolygonModeSequenceFace struct {
 
 type XsdGoPkgHasElem_facesequencepolygon_modechoicegl_pipeline_settingsschema_Face_TxsdGlPipelineSettingsChoicePolygonModeSequenceFace_ struct {
 	Face *TxsdGlPipelineSettingsChoicePolygonModeSequenceFace `xml:"http://www.collada.org/2005/11/COLLADASchema face"`
+
 }
 
 type XsdGoPkgHasElems_facesequencepolygon_modechoicegl_pipeline_settingsschema_Face_TxsdGlPipelineSettingsChoicePolygonModeSequenceFace_ struct {
 	Faces []*TxsdGlPipelineSettingsChoicePolygonModeSequenceFace `xml:"http://www.collada.org/2005/11/COLLADASchema face"`
+
 }
 
 type XsdGoPkgHasAttr_Value_TglPolygonModeType_Fill struct {
@@ -14323,12 +15497,14 @@ type TxsdGlPipelineSettingsChoicePolygonModeSequenceMode struct {
 
 }
 
-type XsdGoPkgHasElems_modesequencepolygon_modechoicegl_pipeline_settingsschema_Mode_TxsdGlPipelineSettingsChoicePolygonModeSequenceMode_ struct {
-	Modes []*TxsdGlPipelineSettingsChoicePolygonModeSequenceMode `xml:"http://www.collada.org/2005/11/COLLADASchema mode"`
-}
-
 type XsdGoPkgHasElem_modesequencepolygon_modechoicegl_pipeline_settingsschema_Mode_TxsdGlPipelineSettingsChoicePolygonModeSequenceMode_ struct {
 	Mode *TxsdGlPipelineSettingsChoicePolygonModeSequenceMode `xml:"http://www.collada.org/2005/11/COLLADASchema mode"`
+
+}
+
+type XsdGoPkgHasElems_modesequencepolygon_modechoicegl_pipeline_settingsschema_Mode_TxsdGlPipelineSettingsChoicePolygonModeSequenceMode_ struct {
+	Modes []*TxsdGlPipelineSettingsChoicePolygonModeSequenceMode `xml:"http://www.collada.org/2005/11/COLLADASchema mode"`
+
 }
 
 type TxsdGlPipelineSettingsChoicePolygonMode struct {
@@ -14340,10 +15516,12 @@ type TxsdGlPipelineSettingsChoicePolygonMode struct {
 
 type XsdGoPkgHasElems_polygon_modechoicegl_pipeline_settingsschema_PolygonMode_TxsdGlPipelineSettingsChoicePolygonMode_ struct {
 	PolygonModes []*TxsdGlPipelineSettingsChoicePolygonMode `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_mode"`
+
 }
 
 type XsdGoPkgHasElem_polygon_modechoicegl_pipeline_settingsschema_PolygonMode_TxsdGlPipelineSettingsChoicePolygonMode_ struct {
 	PolygonMode *TxsdGlPipelineSettingsChoicePolygonMode `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_mode"`
+
 }
 
 type XsdGoPkgHasAttr_Value_TglShadeModelType_Smooth struct {
@@ -14360,21 +15538,25 @@ type TxsdGlPipelineSettingsChoiceShadeModel struct {
 
 type XsdGoPkgHasElems_shade_modelchoicegl_pipeline_settingsschema_ShadeModel_TxsdGlPipelineSettingsChoiceShadeModel_ struct {
 	ShadeModels []*TxsdGlPipelineSettingsChoiceShadeModel `xml:"http://www.collada.org/2005/11/COLLADASchema shade_model"`
+
 }
 
 type XsdGoPkgHasElem_shade_modelchoicegl_pipeline_settingsschema_ShadeModel_TxsdGlPipelineSettingsChoiceShadeModel_ struct {
 	ShadeModel *TxsdGlPipelineSettingsChoiceShadeModel `xml:"http://www.collada.org/2005/11/COLLADASchema shade_model"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilFuncSequenceFunc struct {
 }
 
-type XsdGoPkgHasElems_funcsequencestencil_funcchoicegl_pipeline_settingsschema_Func_TxsdGlPipelineSettingsChoiceStencilFuncSequenceFunc_ struct {
-	Funcs []*TxsdGlPipelineSettingsChoiceStencilFuncSequenceFunc `xml:"http://www.collada.org/2005/11/COLLADASchema func"`
-}
-
 type XsdGoPkgHasElem_funcsequencestencil_funcchoicegl_pipeline_settingsschema_Func_TxsdGlPipelineSettingsChoiceStencilFuncSequenceFunc_ struct {
 	Func *TxsdGlPipelineSettingsChoiceStencilFuncSequenceFunc `xml:"http://www.collada.org/2005/11/COLLADASchema func"`
+
+}
+
+type XsdGoPkgHasElems_funcsequencestencil_funcchoicegl_pipeline_settingsschema_Func_TxsdGlPipelineSettingsChoiceStencilFuncSequenceFunc_ struct {
+	Funcs []*TxsdGlPipelineSettingsChoiceStencilFuncSequenceFunc `xml:"http://www.collada.org/2005/11/COLLADASchema func"`
+
 }
 
 type XsdGoPkgHasAttr_Value_XsdtUnsignedByte_0 struct {
@@ -14391,10 +15573,12 @@ type TxsdGlPipelineSettingsChoiceStencilFuncSequenceRef struct {
 
 type XsdGoPkgHasElem_refsequencestencil_funcchoicegl_pipeline_settingsschema_Ref_TxsdGlPipelineSettingsChoiceStencilFuncSequenceRef_ struct {
 	Ref *TxsdGlPipelineSettingsChoiceStencilFuncSequenceRef `xml:"http://www.collada.org/2005/11/COLLADASchema ref"`
+
 }
 
 type XsdGoPkgHasElems_refsequencestencil_funcchoicegl_pipeline_settingsschema_Ref_TxsdGlPipelineSettingsChoiceStencilFuncSequenceRef_ struct {
 	Refs []*TxsdGlPipelineSettingsChoiceStencilFuncSequenceRef `xml:"http://www.collada.org/2005/11/COLLADASchema ref"`
+
 }
 
 type XsdGoPkgHasAttr_Value_XsdtUnsignedByte_255 struct {
@@ -14411,10 +15595,12 @@ type TxsdGlPipelineSettingsChoiceStencilFuncSequenceMask struct {
 
 type XsdGoPkgHasElems_masksequencestencil_funcchoicegl_pipeline_settingsschema_Mask_TxsdGlPipelineSettingsChoiceStencilFuncSequenceMask_ struct {
 	Masks []*TxsdGlPipelineSettingsChoiceStencilFuncSequenceMask `xml:"http://www.collada.org/2005/11/COLLADASchema mask"`
+
 }
 
 type XsdGoPkgHasElem_masksequencestencil_funcchoicegl_pipeline_settingsschema_Mask_TxsdGlPipelineSettingsChoiceStencilFuncSequenceMask_ struct {
 	Mask *TxsdGlPipelineSettingsChoiceStencilFuncSequenceMask `xml:"http://www.collada.org/2005/11/COLLADASchema mask"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilFunc struct {
@@ -14426,12 +15612,14 @@ type TxsdGlPipelineSettingsChoiceStencilFunc struct {
 
 }
 
-type XsdGoPkgHasElem_stencil_funcchoicegl_pipeline_settingsschema_StencilFunc_TxsdGlPipelineSettingsChoiceStencilFunc_ struct {
-	StencilFunc *TxsdGlPipelineSettingsChoiceStencilFunc `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_func"`
-}
-
 type XsdGoPkgHasElems_stencil_funcchoicegl_pipeline_settingsschema_StencilFunc_TxsdGlPipelineSettingsChoiceStencilFunc_ struct {
 	StencilFuncs []*TxsdGlPipelineSettingsChoiceStencilFunc `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_func"`
+
+}
+
+type XsdGoPkgHasElem_stencil_funcchoicegl_pipeline_settingsschema_StencilFunc_TxsdGlPipelineSettingsChoiceStencilFunc_ struct {
+	StencilFunc *TxsdGlPipelineSettingsChoiceStencilFunc `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_func"`
+
 }
 
 type XsdGoPkgHasAttr_Value_TglStencilOpType_Keep struct {
@@ -14448,10 +15636,12 @@ type TxsdGlPipelineSettingsChoiceStencilOpSequenceFail struct {
 
 type XsdGoPkgHasElems_failsequencestencil_opchoicegl_pipeline_settingsschema_Fail_TxsdGlPipelineSettingsChoiceStencilOpSequenceFail_ struct {
 	Fails []*TxsdGlPipelineSettingsChoiceStencilOpSequenceFail `xml:"http://www.collada.org/2005/11/COLLADASchema fail"`
+
 }
 
 type XsdGoPkgHasElem_failsequencestencil_opchoicegl_pipeline_settingsschema_Fail_TxsdGlPipelineSettingsChoiceStencilOpSequenceFail_ struct {
 	Fail *TxsdGlPipelineSettingsChoiceStencilOpSequenceFail `xml:"http://www.collada.org/2005/11/COLLADASchema fail"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilOpSequenceZfail struct {
@@ -14459,10 +15649,12 @@ type TxsdGlPipelineSettingsChoiceStencilOpSequenceZfail struct {
 
 type XsdGoPkgHasElems_zfailsequencestencil_opchoicegl_pipeline_settingsschema_Zfail_TxsdGlPipelineSettingsChoiceStencilOpSequenceZfail_ struct {
 	Zfails []*TxsdGlPipelineSettingsChoiceStencilOpSequenceZfail `xml:"http://www.collada.org/2005/11/COLLADASchema zfail"`
+
 }
 
 type XsdGoPkgHasElem_zfailsequencestencil_opchoicegl_pipeline_settingsschema_Zfail_TxsdGlPipelineSettingsChoiceStencilOpSequenceZfail_ struct {
 	Zfail *TxsdGlPipelineSettingsChoiceStencilOpSequenceZfail `xml:"http://www.collada.org/2005/11/COLLADASchema zfail"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilOpSequenceZpass struct {
@@ -14470,10 +15662,12 @@ type TxsdGlPipelineSettingsChoiceStencilOpSequenceZpass struct {
 
 type XsdGoPkgHasElems_zpasssequencestencil_opchoicegl_pipeline_settingsschema_Zpass_TxsdGlPipelineSettingsChoiceStencilOpSequenceZpass_ struct {
 	Zpasses []*TxsdGlPipelineSettingsChoiceStencilOpSequenceZpass `xml:"http://www.collada.org/2005/11/COLLADASchema zpass"`
+
 }
 
 type XsdGoPkgHasElem_zpasssequencestencil_opchoicegl_pipeline_settingsschema_Zpass_TxsdGlPipelineSettingsChoiceStencilOpSequenceZpass_ struct {
 	Zpass *TxsdGlPipelineSettingsChoiceStencilOpSequenceZpass `xml:"http://www.collada.org/2005/11/COLLADASchema zpass"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilOp struct {
@@ -14487,32 +15681,38 @@ type TxsdGlPipelineSettingsChoiceStencilOp struct {
 
 type XsdGoPkgHasElem_stencil_opchoicegl_pipeline_settingsschema_StencilOp_TxsdGlPipelineSettingsChoiceStencilOp_ struct {
 	StencilOp *TxsdGlPipelineSettingsChoiceStencilOp `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_op"`
+
 }
 
 type XsdGoPkgHasElems_stencil_opchoicegl_pipeline_settingsschema_StencilOp_TxsdGlPipelineSettingsChoiceStencilOp_ struct {
 	StencilOps []*TxsdGlPipelineSettingsChoiceStencilOp `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_op"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceFront struct {
 }
 
-type XsdGoPkgHasElems_frontsequencestencil_func_separatechoicegl_pipeline_settingsschema_Front_TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceFront_ struct {
-	Fronts []*TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceFront `xml:"http://www.collada.org/2005/11/COLLADASchema front"`
-}
-
 type XsdGoPkgHasElem_frontsequencestencil_func_separatechoicegl_pipeline_settingsschema_Front_TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceFront_ struct {
 	Front *TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceFront `xml:"http://www.collada.org/2005/11/COLLADASchema front"`
+
+}
+
+type XsdGoPkgHasElems_frontsequencestencil_func_separatechoicegl_pipeline_settingsschema_Front_TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceFront_ struct {
+	Fronts []*TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceFront `xml:"http://www.collada.org/2005/11/COLLADASchema front"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceBack struct {
 }
 
-type XsdGoPkgHasElems_backsequencestencil_func_separatechoicegl_pipeline_settingsschema_Back_TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceBack_ struct {
-	Backs []*TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceBack `xml:"http://www.collada.org/2005/11/COLLADASchema back"`
-}
-
 type XsdGoPkgHasElem_backsequencestencil_func_separatechoicegl_pipeline_settingsschema_Back_TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceBack_ struct {
 	Back *TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceBack `xml:"http://www.collada.org/2005/11/COLLADASchema back"`
+
+}
+
+type XsdGoPkgHasElems_backsequencestencil_func_separatechoicegl_pipeline_settingsschema_Back_TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceBack_ struct {
+	Backs []*TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceBack `xml:"http://www.collada.org/2005/11/COLLADASchema back"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceRef struct {
@@ -14520,21 +15720,25 @@ type TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceRef struct {
 
 type XsdGoPkgHasElems_refsequencestencil_func_separatechoicegl_pipeline_settingsschema_Ref_TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceRef_ struct {
 	Refs []*TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceRef `xml:"http://www.collada.org/2005/11/COLLADASchema ref"`
+
 }
 
 type XsdGoPkgHasElem_refsequencestencil_func_separatechoicegl_pipeline_settingsschema_Ref_TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceRef_ struct {
 	Ref *TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceRef `xml:"http://www.collada.org/2005/11/COLLADASchema ref"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceMask struct {
 }
 
-type XsdGoPkgHasElem_masksequencestencil_func_separatechoicegl_pipeline_settingsschema_Mask_TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceMask_ struct {
-	Mask *TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceMask `xml:"http://www.collada.org/2005/11/COLLADASchema mask"`
-}
-
 type XsdGoPkgHasElems_masksequencestencil_func_separatechoicegl_pipeline_settingsschema_Mask_TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceMask_ struct {
 	Masks []*TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceMask `xml:"http://www.collada.org/2005/11/COLLADASchema mask"`
+
+}
+
+type XsdGoPkgHasElem_masksequencestencil_func_separatechoicegl_pipeline_settingsschema_Mask_TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceMask_ struct {
+	Mask *TxsdGlPipelineSettingsChoiceStencilFuncSeparateSequenceMask `xml:"http://www.collada.org/2005/11/COLLADASchema mask"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilFuncSeparate struct {
@@ -14550,54 +15754,64 @@ type TxsdGlPipelineSettingsChoiceStencilFuncSeparate struct {
 
 type XsdGoPkgHasElem_stencil_func_separatechoicegl_pipeline_settingsschema_StencilFuncSeparate_TxsdGlPipelineSettingsChoiceStencilFuncSeparate_ struct {
 	StencilFuncSeparate *TxsdGlPipelineSettingsChoiceStencilFuncSeparate `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_func_separate"`
+
 }
 
 type XsdGoPkgHasElems_stencil_func_separatechoicegl_pipeline_settingsschema_StencilFuncSeparate_TxsdGlPipelineSettingsChoiceStencilFuncSeparate_ struct {
 	StencilFuncSeparates []*TxsdGlPipelineSettingsChoiceStencilFuncSeparate `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_func_separate"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceFace struct {
 }
 
-type XsdGoPkgHasElem_facesequencestencil_op_separatechoicegl_pipeline_settingsschema_Face_TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceFace_ struct {
-	Face *TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceFace `xml:"http://www.collada.org/2005/11/COLLADASchema face"`
-}
-
 type XsdGoPkgHasElems_facesequencestencil_op_separatechoicegl_pipeline_settingsschema_Face_TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceFace_ struct {
 	Faces []*TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceFace `xml:"http://www.collada.org/2005/11/COLLADASchema face"`
+
+}
+
+type XsdGoPkgHasElem_facesequencestencil_op_separatechoicegl_pipeline_settingsschema_Face_TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceFace_ struct {
+	Face *TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceFace `xml:"http://www.collada.org/2005/11/COLLADASchema face"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceFail struct {
 }
 
-type XsdGoPkgHasElem_failsequencestencil_op_separatechoicegl_pipeline_settingsschema_Fail_TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceFail_ struct {
-	Fail *TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceFail `xml:"http://www.collada.org/2005/11/COLLADASchema fail"`
-}
-
 type XsdGoPkgHasElems_failsequencestencil_op_separatechoicegl_pipeline_settingsschema_Fail_TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceFail_ struct {
 	Fails []*TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceFail `xml:"http://www.collada.org/2005/11/COLLADASchema fail"`
+
+}
+
+type XsdGoPkgHasElem_failsequencestencil_op_separatechoicegl_pipeline_settingsschema_Fail_TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceFail_ struct {
+	Fail *TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceFail `xml:"http://www.collada.org/2005/11/COLLADASchema fail"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceZfail struct {
 }
 
-type XsdGoPkgHasElems_zfailsequencestencil_op_separatechoicegl_pipeline_settingsschema_Zfail_TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceZfail_ struct {
-	Zfails []*TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceZfail `xml:"http://www.collada.org/2005/11/COLLADASchema zfail"`
-}
-
 type XsdGoPkgHasElem_zfailsequencestencil_op_separatechoicegl_pipeline_settingsschema_Zfail_TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceZfail_ struct {
 	Zfail *TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceZfail `xml:"http://www.collada.org/2005/11/COLLADASchema zfail"`
+
+}
+
+type XsdGoPkgHasElems_zfailsequencestencil_op_separatechoicegl_pipeline_settingsschema_Zfail_TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceZfail_ struct {
+	Zfails []*TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceZfail `xml:"http://www.collada.org/2005/11/COLLADASchema zfail"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceZpass struct {
 }
 
-type XsdGoPkgHasElem_zpasssequencestencil_op_separatechoicegl_pipeline_settingsschema_Zpass_TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceZpass_ struct {
-	Zpass *TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceZpass `xml:"http://www.collada.org/2005/11/COLLADASchema zpass"`
-}
-
 type XsdGoPkgHasElems_zpasssequencestencil_op_separatechoicegl_pipeline_settingsschema_Zpass_TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceZpass_ struct {
 	Zpasses []*TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceZpass `xml:"http://www.collada.org/2005/11/COLLADASchema zpass"`
+
+}
+
+type XsdGoPkgHasElem_zpasssequencestencil_op_separatechoicegl_pipeline_settingsschema_Zpass_TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceZpass_ struct {
+	Zpass *TxsdGlPipelineSettingsChoiceStencilOpSeparateSequenceZpass `xml:"http://www.collada.org/2005/11/COLLADASchema zpass"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilOpSeparate struct {
@@ -14611,34 +15825,40 @@ type TxsdGlPipelineSettingsChoiceStencilOpSeparate struct {
 
 }
 
-type XsdGoPkgHasElems_stencil_op_separatechoicegl_pipeline_settingsschema_StencilOpSeparate_TxsdGlPipelineSettingsChoiceStencilOpSeparate_ struct {
-	StencilOpSeparates []*TxsdGlPipelineSettingsChoiceStencilOpSeparate `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_op_separate"`
-}
-
 type XsdGoPkgHasElem_stencil_op_separatechoicegl_pipeline_settingsschema_StencilOpSeparate_TxsdGlPipelineSettingsChoiceStencilOpSeparate_ struct {
 	StencilOpSeparate *TxsdGlPipelineSettingsChoiceStencilOpSeparate `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_op_separate"`
+
+}
+
+type XsdGoPkgHasElems_stencil_op_separatechoicegl_pipeline_settingsschema_StencilOpSeparate_TxsdGlPipelineSettingsChoiceStencilOpSeparate_ struct {
+	StencilOpSeparates []*TxsdGlPipelineSettingsChoiceStencilOpSeparate `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_op_separate"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilMaskSeparateSequenceFace struct {
 }
 
-type XsdGoPkgHasElem_facesequencestencil_mask_separatechoicegl_pipeline_settingsschema_Face_TxsdGlPipelineSettingsChoiceStencilMaskSeparateSequenceFace_ struct {
-	Face *TxsdGlPipelineSettingsChoiceStencilMaskSeparateSequenceFace `xml:"http://www.collada.org/2005/11/COLLADASchema face"`
-}
-
 type XsdGoPkgHasElems_facesequencestencil_mask_separatechoicegl_pipeline_settingsschema_Face_TxsdGlPipelineSettingsChoiceStencilMaskSeparateSequenceFace_ struct {
 	Faces []*TxsdGlPipelineSettingsChoiceStencilMaskSeparateSequenceFace `xml:"http://www.collada.org/2005/11/COLLADASchema face"`
+
+}
+
+type XsdGoPkgHasElem_facesequencestencil_mask_separatechoicegl_pipeline_settingsschema_Face_TxsdGlPipelineSettingsChoiceStencilMaskSeparateSequenceFace_ struct {
+	Face *TxsdGlPipelineSettingsChoiceStencilMaskSeparateSequenceFace `xml:"http://www.collada.org/2005/11/COLLADASchema face"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilMaskSeparateSequenceMask struct {
 }
 
-type XsdGoPkgHasElem_masksequencestencil_mask_separatechoicegl_pipeline_settingsschema_Mask_TxsdGlPipelineSettingsChoiceStencilMaskSeparateSequenceMask_ struct {
-	Mask *TxsdGlPipelineSettingsChoiceStencilMaskSeparateSequenceMask `xml:"http://www.collada.org/2005/11/COLLADASchema mask"`
-}
-
 type XsdGoPkgHasElems_masksequencestencil_mask_separatechoicegl_pipeline_settingsschema_Mask_TxsdGlPipelineSettingsChoiceStencilMaskSeparateSequenceMask_ struct {
 	Masks []*TxsdGlPipelineSettingsChoiceStencilMaskSeparateSequenceMask `xml:"http://www.collada.org/2005/11/COLLADASchema mask"`
+
+}
+
+type XsdGoPkgHasElem_masksequencestencil_mask_separatechoicegl_pipeline_settingsschema_Mask_TxsdGlPipelineSettingsChoiceStencilMaskSeparateSequenceMask_ struct {
+	Mask *TxsdGlPipelineSettingsChoiceStencilMaskSeparateSequenceMask `xml:"http://www.collada.org/2005/11/COLLADASchema mask"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilMaskSeparate struct {
@@ -14648,12 +15868,14 @@ type TxsdGlPipelineSettingsChoiceStencilMaskSeparate struct {
 
 }
 
-type XsdGoPkgHasElem_stencil_mask_separatechoicegl_pipeline_settingsschema_StencilMaskSeparate_TxsdGlPipelineSettingsChoiceStencilMaskSeparate_ struct {
-	StencilMaskSeparate *TxsdGlPipelineSettingsChoiceStencilMaskSeparate `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_mask_separate"`
-}
-
 type XsdGoPkgHasElems_stencil_mask_separatechoicegl_pipeline_settingsschema_StencilMaskSeparate_TxsdGlPipelineSettingsChoiceStencilMaskSeparate_ struct {
 	StencilMaskSeparates []*TxsdGlPipelineSettingsChoiceStencilMaskSeparate `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_mask_separate"`
+
+}
+
+type XsdGoPkgHasElem_stencil_mask_separatechoicegl_pipeline_settingsschema_StencilMaskSeparate_TxsdGlPipelineSettingsChoiceStencilMaskSeparate_ struct {
+	StencilMaskSeparate *TxsdGlPipelineSettingsChoiceStencilMaskSeparate `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_mask_separate"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tbool_False struct {
@@ -14674,12 +15896,14 @@ type TxsdGlPipelineSettingsChoiceLightEnable struct {
 
 }
 
-type XsdGoPkgHasElem_light_enablechoicegl_pipeline_settingsschema_LightEnable_TxsdGlPipelineSettingsChoiceLightEnable_ struct {
-	LightEnable *TxsdGlPipelineSettingsChoiceLightEnable `xml:"http://www.collada.org/2005/11/COLLADASchema light_enable"`
-}
-
 type XsdGoPkgHasElems_light_enablechoicegl_pipeline_settingsschema_LightEnable_TxsdGlPipelineSettingsChoiceLightEnable_ struct {
 	LightEnables []*TxsdGlPipelineSettingsChoiceLightEnable `xml:"http://www.collada.org/2005/11/COLLADASchema light_enable"`
+
+}
+
+type XsdGoPkgHasElem_light_enablechoicegl_pipeline_settingsschema_LightEnable_TxsdGlPipelineSettingsChoiceLightEnable_ struct {
+	LightEnable *TxsdGlPipelineSettingsChoiceLightEnable `xml:"http://www.collada.org/2005/11/COLLADASchema light_enable"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tfloat4_0001 struct {
@@ -14694,12 +15918,14 @@ type TxsdGlPipelineSettingsChoiceLightAmbient struct {
 
 }
 
-type XsdGoPkgHasElem_light_ambientchoicegl_pipeline_settingsschema_LightAmbient_TxsdGlPipelineSettingsChoiceLightAmbient_ struct {
-	LightAmbient *TxsdGlPipelineSettingsChoiceLightAmbient `xml:"http://www.collada.org/2005/11/COLLADASchema light_ambient"`
-}
-
 type XsdGoPkgHasElems_light_ambientchoicegl_pipeline_settingsschema_LightAmbient_TxsdGlPipelineSettingsChoiceLightAmbient_ struct {
 	LightAmbients []*TxsdGlPipelineSettingsChoiceLightAmbient `xml:"http://www.collada.org/2005/11/COLLADASchema light_ambient"`
+
+}
+
+type XsdGoPkgHasElem_light_ambientchoicegl_pipeline_settingsschema_LightAmbient_TxsdGlPipelineSettingsChoiceLightAmbient_ struct {
+	LightAmbient *TxsdGlPipelineSettingsChoiceLightAmbient `xml:"http://www.collada.org/2005/11/COLLADASchema light_ambient"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tfloat4_0000 struct {
@@ -14714,23 +15940,27 @@ type TxsdGlPipelineSettingsChoiceLightDiffuse struct {
 
 }
 
-type XsdGoPkgHasElems_light_diffusechoicegl_pipeline_settingsschema_LightDiffuse_TxsdGlPipelineSettingsChoiceLightDiffuse_ struct {
-	LightDiffuses []*TxsdGlPipelineSettingsChoiceLightDiffuse `xml:"http://www.collada.org/2005/11/COLLADASchema light_diffuse"`
-}
-
 type XsdGoPkgHasElem_light_diffusechoicegl_pipeline_settingsschema_LightDiffuse_TxsdGlPipelineSettingsChoiceLightDiffuse_ struct {
 	LightDiffuse *TxsdGlPipelineSettingsChoiceLightDiffuse `xml:"http://www.collada.org/2005/11/COLLADASchema light_diffuse"`
+
+}
+
+type XsdGoPkgHasElems_light_diffusechoicegl_pipeline_settingsschema_LightDiffuse_TxsdGlPipelineSettingsChoiceLightDiffuse_ struct {
+	LightDiffuses []*TxsdGlPipelineSettingsChoiceLightDiffuse `xml:"http://www.collada.org/2005/11/COLLADASchema light_diffuse"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceLightSpecular struct {
 }
 
-type XsdGoPkgHasElems_light_specularchoicegl_pipeline_settingsschema_LightSpecular_TxsdGlPipelineSettingsChoiceLightSpecular_ struct {
-	LightSpeculars []*TxsdGlPipelineSettingsChoiceLightSpecular `xml:"http://www.collada.org/2005/11/COLLADASchema light_specular"`
-}
-
 type XsdGoPkgHasElem_light_specularchoicegl_pipeline_settingsschema_LightSpecular_TxsdGlPipelineSettingsChoiceLightSpecular_ struct {
 	LightSpecular *TxsdGlPipelineSettingsChoiceLightSpecular `xml:"http://www.collada.org/2005/11/COLLADASchema light_specular"`
+
+}
+
+type XsdGoPkgHasElems_light_specularchoicegl_pipeline_settingsschema_LightSpecular_TxsdGlPipelineSettingsChoiceLightSpecular_ struct {
+	LightSpeculars []*TxsdGlPipelineSettingsChoiceLightSpecular `xml:"http://www.collada.org/2005/11/COLLADASchema light_specular"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tfloat4_0010 struct {
@@ -14745,12 +15975,14 @@ type TxsdGlPipelineSettingsChoiceLightPosition struct {
 
 }
 
-type XsdGoPkgHasElems_light_positionchoicegl_pipeline_settingsschema_LightPosition_TxsdGlPipelineSettingsChoiceLightPosition_ struct {
-	LightPositions []*TxsdGlPipelineSettingsChoiceLightPosition `xml:"http://www.collada.org/2005/11/COLLADASchema light_position"`
-}
-
 type XsdGoPkgHasElem_light_positionchoicegl_pipeline_settingsschema_LightPosition_TxsdGlPipelineSettingsChoiceLightPosition_ struct {
 	LightPosition *TxsdGlPipelineSettingsChoiceLightPosition `xml:"http://www.collada.org/2005/11/COLLADASchema light_position"`
+
+}
+
+type XsdGoPkgHasElems_light_positionchoicegl_pipeline_settingsschema_LightPosition_TxsdGlPipelineSettingsChoiceLightPosition_ struct {
+	LightPositions []*TxsdGlPipelineSettingsChoiceLightPosition `xml:"http://www.collada.org/2005/11/COLLADASchema light_position"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tfloat_1 struct {
@@ -14765,12 +15997,14 @@ type TxsdGlPipelineSettingsChoiceLightConstantAttenuation struct {
 
 }
 
-type XsdGoPkgHasElem_light_constant_attenuationchoicegl_pipeline_settingsschema_LightConstantAttenuation_TxsdGlPipelineSettingsChoiceLightConstantAttenuation_ struct {
-	LightConstantAttenuation *TxsdGlPipelineSettingsChoiceLightConstantAttenuation `xml:"http://www.collada.org/2005/11/COLLADASchema light_constant_attenuation"`
-}
-
 type XsdGoPkgHasElems_light_constant_attenuationchoicegl_pipeline_settingsschema_LightConstantAttenuation_TxsdGlPipelineSettingsChoiceLightConstantAttenuation_ struct {
 	LightConstantAttenuations []*TxsdGlPipelineSettingsChoiceLightConstantAttenuation `xml:"http://www.collada.org/2005/11/COLLADASchema light_constant_attenuation"`
+
+}
+
+type XsdGoPkgHasElem_light_constant_attenuationchoicegl_pipeline_settingsschema_LightConstantAttenuation_TxsdGlPipelineSettingsChoiceLightConstantAttenuation_ struct {
+	LightConstantAttenuation *TxsdGlPipelineSettingsChoiceLightConstantAttenuation `xml:"http://www.collada.org/2005/11/COLLADASchema light_constant_attenuation"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tfloat_0 struct {
@@ -14785,12 +16019,14 @@ type TxsdGlPipelineSettingsChoiceLightLinearAttenuation struct {
 
 }
 
-type XsdGoPkgHasElems_light_linear_attenuationchoicegl_pipeline_settingsschema_LightLinearAttenuation_TxsdGlPipelineSettingsChoiceLightLinearAttenuation_ struct {
-	LightLinearAttenuations []*TxsdGlPipelineSettingsChoiceLightLinearAttenuation `xml:"http://www.collada.org/2005/11/COLLADASchema light_linear_attenuation"`
-}
-
 type XsdGoPkgHasElem_light_linear_attenuationchoicegl_pipeline_settingsschema_LightLinearAttenuation_TxsdGlPipelineSettingsChoiceLightLinearAttenuation_ struct {
 	LightLinearAttenuation *TxsdGlPipelineSettingsChoiceLightLinearAttenuation `xml:"http://www.collada.org/2005/11/COLLADASchema light_linear_attenuation"`
+
+}
+
+type XsdGoPkgHasElems_light_linear_attenuationchoicegl_pipeline_settingsschema_LightLinearAttenuation_TxsdGlPipelineSettingsChoiceLightLinearAttenuation_ struct {
+	LightLinearAttenuations []*TxsdGlPipelineSettingsChoiceLightLinearAttenuation `xml:"http://www.collada.org/2005/11/COLLADASchema light_linear_attenuation"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceLightQuadraticAttenuation struct {
@@ -14798,10 +16034,12 @@ type TxsdGlPipelineSettingsChoiceLightQuadraticAttenuation struct {
 
 type XsdGoPkgHasElem_light_quadratic_attenuationchoicegl_pipeline_settingsschema_LightQuadraticAttenuation_TxsdGlPipelineSettingsChoiceLightQuadraticAttenuation_ struct {
 	LightQuadraticAttenuation *TxsdGlPipelineSettingsChoiceLightQuadraticAttenuation `xml:"http://www.collada.org/2005/11/COLLADASchema light_quadratic_attenuation"`
+
 }
 
 type XsdGoPkgHasElems_light_quadratic_attenuationchoicegl_pipeline_settingsschema_LightQuadraticAttenuation_TxsdGlPipelineSettingsChoiceLightQuadraticAttenuation_ struct {
 	LightQuadraticAttenuations []*TxsdGlPipelineSettingsChoiceLightQuadraticAttenuation `xml:"http://www.collada.org/2005/11/COLLADASchema light_quadratic_attenuation"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tfloat_180 struct {
@@ -14816,12 +16054,14 @@ type TxsdGlPipelineSettingsChoiceLightSpotCutoff struct {
 
 }
 
-type XsdGoPkgHasElem_light_spot_cutoffchoicegl_pipeline_settingsschema_LightSpotCutoff_TxsdGlPipelineSettingsChoiceLightSpotCutoff_ struct {
-	LightSpotCutoff *TxsdGlPipelineSettingsChoiceLightSpotCutoff `xml:"http://www.collada.org/2005/11/COLLADASchema light_spot_cutoff"`
-}
-
 type XsdGoPkgHasElems_light_spot_cutoffchoicegl_pipeline_settingsschema_LightSpotCutoff_TxsdGlPipelineSettingsChoiceLightSpotCutoff_ struct {
 	LightSpotCutoffs []*TxsdGlPipelineSettingsChoiceLightSpotCutoff `xml:"http://www.collada.org/2005/11/COLLADASchema light_spot_cutoff"`
+
+}
+
+type XsdGoPkgHasElem_light_spot_cutoffchoicegl_pipeline_settingsschema_LightSpotCutoff_TxsdGlPipelineSettingsChoiceLightSpotCutoff_ struct {
+	LightSpotCutoff *TxsdGlPipelineSettingsChoiceLightSpotCutoff `xml:"http://www.collada.org/2005/11/COLLADASchema light_spot_cutoff"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tfloat3_001 struct {
@@ -14836,12 +16076,14 @@ type TxsdGlPipelineSettingsChoiceLightSpotDirection struct {
 
 }
 
-type XsdGoPkgHasElem_light_spot_directionchoicegl_pipeline_settingsschema_LightSpotDirection_TxsdGlPipelineSettingsChoiceLightSpotDirection_ struct {
-	LightSpotDirection *TxsdGlPipelineSettingsChoiceLightSpotDirection `xml:"http://www.collada.org/2005/11/COLLADASchema light_spot_direction"`
-}
-
 type XsdGoPkgHasElems_light_spot_directionchoicegl_pipeline_settingsschema_LightSpotDirection_TxsdGlPipelineSettingsChoiceLightSpotDirection_ struct {
 	LightSpotDirections []*TxsdGlPipelineSettingsChoiceLightSpotDirection `xml:"http://www.collada.org/2005/11/COLLADASchema light_spot_direction"`
+
+}
+
+type XsdGoPkgHasElem_light_spot_directionchoicegl_pipeline_settingsschema_LightSpotDirection_TxsdGlPipelineSettingsChoiceLightSpotDirection_ struct {
+	LightSpotDirection *TxsdGlPipelineSettingsChoiceLightSpotDirection `xml:"http://www.collada.org/2005/11/COLLADASchema light_spot_direction"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceLightSpotExponent struct {
@@ -14849,30 +16091,36 @@ type TxsdGlPipelineSettingsChoiceLightSpotExponent struct {
 
 type XsdGoPkgHasElems_light_spot_exponentchoicegl_pipeline_settingsschema_LightSpotExponent_TxsdGlPipelineSettingsChoiceLightSpotExponent_ struct {
 	LightSpotExponents []*TxsdGlPipelineSettingsChoiceLightSpotExponent `xml:"http://www.collada.org/2005/11/COLLADASchema light_spot_exponent"`
+
 }
 
 type XsdGoPkgHasElem_light_spot_exponentchoicegl_pipeline_settingsschema_LightSpotExponent_TxsdGlPipelineSettingsChoiceLightSpotExponent_ struct {
 	LightSpotExponent *TxsdGlPipelineSettingsChoiceLightSpotExponent `xml:"http://www.collada.org/2005/11/COLLADASchema light_spot_exponent"`
+
 }
 
 type XsdGoPkgHasAttr_Index_TglMaxTextureImageUnitsIndex_ struct {
 	Index TglMaxTextureImageUnitsIndex `xml:"http://www.collada.org/2005/11/COLLADASchema index,attr"`
 }
 
-type XsdGoPkgHasElems_valuechoicetexture1Dchoicegl_pipeline_settingsschema_Value_TglSampler1D_ struct {
-	Values []*TglSampler1D `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
-}
-
 type XsdGoPkgHasElem_valuechoicetexture1Dchoicegl_pipeline_settingsschema_Value_TglSampler1D_ struct {
 	Value *TglSampler1D `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
+
+}
+
+type XsdGoPkgHasElems_valuechoicetexture1Dchoicegl_pipeline_settingsschema_Value_TglSampler1D_ struct {
+	Values []*TglSampler1D `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
+
 }
 
 type XsdGoPkgHasElem_paramchoicetexture1Dchoicegl_pipeline_settingsschema_Param_XsdtNCName_ struct {
 	Param xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
 }
 
 type XsdGoPkgHasElems_paramchoicetexture1Dchoicegl_pipeline_settingsschema_Param_XsdtNCName_ struct {
 	Params []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceTexture1D struct {
@@ -14884,28 +16132,34 @@ type TxsdGlPipelineSettingsChoiceTexture1D struct {
 
 }
 
-type XsdGoPkgHasElem_texture1Dchoicegl_pipeline_settingsschema_Texture1D_TxsdGlPipelineSettingsChoiceTexture1D_ struct {
-	Texture1D *TxsdGlPipelineSettingsChoiceTexture1D `xml:"http://www.collada.org/2005/11/COLLADASchema texture1D"`
-}
-
 type XsdGoPkgHasElems_texture1Dchoicegl_pipeline_settingsschema_Texture1D_TxsdGlPipelineSettingsChoiceTexture1D_ struct {
 	Texture1Ds []*TxsdGlPipelineSettingsChoiceTexture1D `xml:"http://www.collada.org/2005/11/COLLADASchema texture1D"`
+
 }
 
-type XsdGoPkgHasElem_valuechoicetexture2Dchoicegl_pipeline_settingsschema_Value_TglSampler2D_ struct {
-	Value *TglSampler2D `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
+type XsdGoPkgHasElem_texture1Dchoicegl_pipeline_settingsschema_Texture1D_TxsdGlPipelineSettingsChoiceTexture1D_ struct {
+	Texture1D *TxsdGlPipelineSettingsChoiceTexture1D `xml:"http://www.collada.org/2005/11/COLLADASchema texture1D"`
+
 }
 
 type XsdGoPkgHasElems_valuechoicetexture2Dchoicegl_pipeline_settingsschema_Value_TglSampler2D_ struct {
 	Values []*TglSampler2D `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
+
+}
+
+type XsdGoPkgHasElem_valuechoicetexture2Dchoicegl_pipeline_settingsschema_Value_TglSampler2D_ struct {
+	Value *TglSampler2D `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
+
 }
 
 type XsdGoPkgHasElems_paramchoicetexture2Dchoicegl_pipeline_settingsschema_Param_XsdtNCName_ struct {
 	Params []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
 }
 
 type XsdGoPkgHasElem_paramchoicetexture2Dchoicegl_pipeline_settingsschema_Param_XsdtNCName_ struct {
 	Param xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceTexture2D struct {
@@ -14915,28 +16169,34 @@ type TxsdGlPipelineSettingsChoiceTexture2D struct {
 
 }
 
-type XsdGoPkgHasElem_texture2Dchoicegl_pipeline_settingsschema_Texture2D_TxsdGlPipelineSettingsChoiceTexture2D_ struct {
-	Texture2D *TxsdGlPipelineSettingsChoiceTexture2D `xml:"http://www.collada.org/2005/11/COLLADASchema texture2D"`
-}
-
 type XsdGoPkgHasElems_texture2Dchoicegl_pipeline_settingsschema_Texture2D_TxsdGlPipelineSettingsChoiceTexture2D_ struct {
 	Texture2Ds []*TxsdGlPipelineSettingsChoiceTexture2D `xml:"http://www.collada.org/2005/11/COLLADASchema texture2D"`
+
+}
+
+type XsdGoPkgHasElem_texture2Dchoicegl_pipeline_settingsschema_Texture2D_TxsdGlPipelineSettingsChoiceTexture2D_ struct {
+	Texture2D *TxsdGlPipelineSettingsChoiceTexture2D `xml:"http://www.collada.org/2005/11/COLLADASchema texture2D"`
+
 }
 
 type XsdGoPkgHasElem_valuechoicetexture3Dchoicegl_pipeline_settingsschema_Value_TglSampler3D_ struct {
 	Value *TglSampler3D `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
+
 }
 
 type XsdGoPkgHasElems_valuechoicetexture3Dchoicegl_pipeline_settingsschema_Value_TglSampler3D_ struct {
 	Values []*TglSampler3D `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
-}
 
-type XsdGoPkgHasElems_paramchoicetexture3Dchoicegl_pipeline_settingsschema_Param_XsdtNCName_ struct {
-	Params []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
 }
 
 type XsdGoPkgHasElem_paramchoicetexture3Dchoicegl_pipeline_settingsschema_Param_XsdtNCName_ struct {
 	Param xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
+}
+
+type XsdGoPkgHasElems_paramchoicetexture3Dchoicegl_pipeline_settingsschema_Param_XsdtNCName_ struct {
+	Params []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceTexture3D struct {
@@ -14946,28 +16206,34 @@ type TxsdGlPipelineSettingsChoiceTexture3D struct {
 
 }
 
-type XsdGoPkgHasElems_texture3Dchoicegl_pipeline_settingsschema_Texture3D_TxsdGlPipelineSettingsChoiceTexture3D_ struct {
-	Texture3Ds []*TxsdGlPipelineSettingsChoiceTexture3D `xml:"http://www.collada.org/2005/11/COLLADASchema texture3D"`
-}
-
 type XsdGoPkgHasElem_texture3Dchoicegl_pipeline_settingsschema_Texture3D_TxsdGlPipelineSettingsChoiceTexture3D_ struct {
 	Texture3D *TxsdGlPipelineSettingsChoiceTexture3D `xml:"http://www.collada.org/2005/11/COLLADASchema texture3D"`
+
 }
 
-type XsdGoPkgHasElem_valuechoicetextureCUBEchoicegl_pipeline_settingsschema_Value_TglSamplerCUBE_ struct {
-	Value *TglSamplerCUBE `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
+type XsdGoPkgHasElems_texture3Dchoicegl_pipeline_settingsschema_Texture3D_TxsdGlPipelineSettingsChoiceTexture3D_ struct {
+	Texture3Ds []*TxsdGlPipelineSettingsChoiceTexture3D `xml:"http://www.collada.org/2005/11/COLLADASchema texture3D"`
+
 }
 
 type XsdGoPkgHasElems_valuechoicetextureCUBEchoicegl_pipeline_settingsschema_Value_TglSamplerCUBE_ struct {
 	Values []*TglSamplerCUBE `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
+
 }
 
-type XsdGoPkgHasElem_paramchoicetextureCUBEchoicegl_pipeline_settingsschema_Param_XsdtNCName_ struct {
-	Param xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+type XsdGoPkgHasElem_valuechoicetextureCUBEchoicegl_pipeline_settingsschema_Value_TglSamplerCUBE_ struct {
+	Value *TglSamplerCUBE `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
+
 }
 
 type XsdGoPkgHasElems_paramchoicetextureCUBEchoicegl_pipeline_settingsschema_Param_XsdtNCName_ struct {
 	Params []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
+}
+
+type XsdGoPkgHasElem_paramchoicetextureCUBEchoicegl_pipeline_settingsschema_Param_XsdtNCName_ struct {
+	Param xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceTextureCUBE struct {
@@ -14979,26 +16245,32 @@ type TxsdGlPipelineSettingsChoiceTextureCUBE struct {
 
 type XsdGoPkgHasElems_textureCUBEchoicegl_pipeline_settingsschema_TextureCUBE_TxsdGlPipelineSettingsChoiceTextureCUBE_ struct {
 	TextureCUBEs []*TxsdGlPipelineSettingsChoiceTextureCUBE `xml:"http://www.collada.org/2005/11/COLLADASchema textureCUBE"`
+
 }
 
 type XsdGoPkgHasElem_textureCUBEchoicegl_pipeline_settingsschema_TextureCUBE_TxsdGlPipelineSettingsChoiceTextureCUBE_ struct {
 	TextureCUBE *TxsdGlPipelineSettingsChoiceTextureCUBE `xml:"http://www.collada.org/2005/11/COLLADASchema textureCUBE"`
+
 }
 
 type XsdGoPkgHasElems_valuechoicetextureRECTchoicegl_pipeline_settingsschema_Value_TglSamplerRECT_ struct {
 	Values []*TglSamplerRECT `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
+
 }
 
 type XsdGoPkgHasElem_valuechoicetextureRECTchoicegl_pipeline_settingsschema_Value_TglSamplerRECT_ struct {
 	Value *TglSamplerRECT `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
+
 }
 
 type XsdGoPkgHasElems_paramchoicetextureRECTchoicegl_pipeline_settingsschema_Param_XsdtNCName_ struct {
 	Params []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
 }
 
 type XsdGoPkgHasElem_paramchoicetextureRECTchoicegl_pipeline_settingsschema_Param_XsdtNCName_ struct {
 	Param xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceTextureRECT struct {
@@ -15010,26 +16282,32 @@ type TxsdGlPipelineSettingsChoiceTextureRECT struct {
 
 type XsdGoPkgHasElems_textureRECTchoicegl_pipeline_settingsschema_TextureRECT_TxsdGlPipelineSettingsChoiceTextureRECT_ struct {
 	TextureRECTs []*TxsdGlPipelineSettingsChoiceTextureRECT `xml:"http://www.collada.org/2005/11/COLLADASchema textureRECT"`
+
 }
 
 type XsdGoPkgHasElem_textureRECTchoicegl_pipeline_settingsschema_TextureRECT_TxsdGlPipelineSettingsChoiceTextureRECT_ struct {
 	TextureRECT *TxsdGlPipelineSettingsChoiceTextureRECT `xml:"http://www.collada.org/2005/11/COLLADASchema textureRECT"`
+
 }
 
 type XsdGoPkgHasElem_valuechoicetextureDEPTHchoicegl_pipeline_settingsschema_Value_TglSamplerDEPTH_ struct {
 	Value *TglSamplerDEPTH `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
+
 }
 
 type XsdGoPkgHasElems_valuechoicetextureDEPTHchoicegl_pipeline_settingsschema_Value_TglSamplerDEPTH_ struct {
 	Values []*TglSamplerDEPTH `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
-}
 
-type XsdGoPkgHasElem_paramchoicetextureDEPTHchoicegl_pipeline_settingsschema_Param_XsdtNCName_ struct {
-	Param xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
 }
 
 type XsdGoPkgHasElems_paramchoicetextureDEPTHchoicegl_pipeline_settingsschema_Param_XsdtNCName_ struct {
 	Params []xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
+}
+
+type XsdGoPkgHasElem_paramchoicetextureDEPTHchoicegl_pipeline_settingsschema_Param_XsdtNCName_ struct {
+	Param xsdt.NCName `xml:"http://www.collada.org/2005/11/COLLADASchema param"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceTextureDEPTH struct {
@@ -15039,23 +16317,27 @@ type TxsdGlPipelineSettingsChoiceTextureDEPTH struct {
 
 }
 
-type XsdGoPkgHasElems_textureDEPTHchoicegl_pipeline_settingsschema_TextureDEPTH_TxsdGlPipelineSettingsChoiceTextureDEPTH_ struct {
-	TextureDEPTHs []*TxsdGlPipelineSettingsChoiceTextureDEPTH `xml:"http://www.collada.org/2005/11/COLLADASchema textureDEPTH"`
-}
-
 type XsdGoPkgHasElem_textureDEPTHchoicegl_pipeline_settingsschema_TextureDEPTH_TxsdGlPipelineSettingsChoiceTextureDEPTH_ struct {
 	TextureDEPTH *TxsdGlPipelineSettingsChoiceTextureDEPTH `xml:"http://www.collada.org/2005/11/COLLADASchema textureDEPTH"`
+
+}
+
+type XsdGoPkgHasElems_textureDEPTHchoicegl_pipeline_settingsschema_TextureDEPTH_TxsdGlPipelineSettingsChoiceTextureDEPTH_ struct {
+	TextureDEPTHs []*TxsdGlPipelineSettingsChoiceTextureDEPTH `xml:"http://www.collada.org/2005/11/COLLADASchema textureDEPTH"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceTexture1DEnable struct {
 }
 
-type XsdGoPkgHasElem_texture1D_enablechoicegl_pipeline_settingsschema_Texture1DEnable_TxsdGlPipelineSettingsChoiceTexture1DEnable_ struct {
-	Texture1DEnable *TxsdGlPipelineSettingsChoiceTexture1DEnable `xml:"http://www.collada.org/2005/11/COLLADASchema texture1D_enable"`
-}
-
 type XsdGoPkgHasElems_texture1D_enablechoicegl_pipeline_settingsschema_Texture1DEnable_TxsdGlPipelineSettingsChoiceTexture1DEnable_ struct {
 	Texture1DEnables []*TxsdGlPipelineSettingsChoiceTexture1DEnable `xml:"http://www.collada.org/2005/11/COLLADASchema texture1D_enable"`
+
+}
+
+type XsdGoPkgHasElem_texture1D_enablechoicegl_pipeline_settingsschema_Texture1DEnable_TxsdGlPipelineSettingsChoiceTexture1DEnable_ struct {
+	Texture1DEnable *TxsdGlPipelineSettingsChoiceTexture1DEnable `xml:"http://www.collada.org/2005/11/COLLADASchema texture1D_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceTexture2DEnable struct {
@@ -15063,21 +16345,25 @@ type TxsdGlPipelineSettingsChoiceTexture2DEnable struct {
 
 type XsdGoPkgHasElems_texture2D_enablechoicegl_pipeline_settingsschema_Texture2DEnable_TxsdGlPipelineSettingsChoiceTexture2DEnable_ struct {
 	Texture2DEnables []*TxsdGlPipelineSettingsChoiceTexture2DEnable `xml:"http://www.collada.org/2005/11/COLLADASchema texture2D_enable"`
+
 }
 
 type XsdGoPkgHasElem_texture2D_enablechoicegl_pipeline_settingsschema_Texture2DEnable_TxsdGlPipelineSettingsChoiceTexture2DEnable_ struct {
 	Texture2DEnable *TxsdGlPipelineSettingsChoiceTexture2DEnable `xml:"http://www.collada.org/2005/11/COLLADASchema texture2D_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceTexture3DEnable struct {
 }
 
-type XsdGoPkgHasElem_texture3D_enablechoicegl_pipeline_settingsschema_Texture3DEnable_TxsdGlPipelineSettingsChoiceTexture3DEnable_ struct {
-	Texture3DEnable *TxsdGlPipelineSettingsChoiceTexture3DEnable `xml:"http://www.collada.org/2005/11/COLLADASchema texture3D_enable"`
-}
-
 type XsdGoPkgHasElems_texture3D_enablechoicegl_pipeline_settingsschema_Texture3DEnable_TxsdGlPipelineSettingsChoiceTexture3DEnable_ struct {
 	Texture3DEnables []*TxsdGlPipelineSettingsChoiceTexture3DEnable `xml:"http://www.collada.org/2005/11/COLLADASchema texture3D_enable"`
+
+}
+
+type XsdGoPkgHasElem_texture3D_enablechoicegl_pipeline_settingsschema_Texture3DEnable_TxsdGlPipelineSettingsChoiceTexture3DEnable_ struct {
+	Texture3DEnable *TxsdGlPipelineSettingsChoiceTexture3DEnable `xml:"http://www.collada.org/2005/11/COLLADASchema texture3D_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceTextureCUBEEnable struct {
@@ -15085,10 +16371,12 @@ type TxsdGlPipelineSettingsChoiceTextureCUBEEnable struct {
 
 type XsdGoPkgHasElem_textureCUBE_enablechoicegl_pipeline_settingsschema_TextureCUBEEnable_TxsdGlPipelineSettingsChoiceTextureCUBEEnable_ struct {
 	TextureCUBEEnable *TxsdGlPipelineSettingsChoiceTextureCUBEEnable `xml:"http://www.collada.org/2005/11/COLLADASchema textureCUBE_enable"`
+
 }
 
 type XsdGoPkgHasElems_textureCUBE_enablechoicegl_pipeline_settingsschema_TextureCUBEEnable_TxsdGlPipelineSettingsChoiceTextureCUBEEnable_ struct {
 	TextureCUBEEnables []*TxsdGlPipelineSettingsChoiceTextureCUBEEnable `xml:"http://www.collada.org/2005/11/COLLADASchema textureCUBE_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceTextureRECTEnable struct {
@@ -15096,32 +16384,38 @@ type TxsdGlPipelineSettingsChoiceTextureRECTEnable struct {
 
 type XsdGoPkgHasElems_textureRECT_enablechoicegl_pipeline_settingsschema_TextureRECTEnable_TxsdGlPipelineSettingsChoiceTextureRECTEnable_ struct {
 	TextureRECTEnables []*TxsdGlPipelineSettingsChoiceTextureRECTEnable `xml:"http://www.collada.org/2005/11/COLLADASchema textureRECT_enable"`
+
 }
 
 type XsdGoPkgHasElem_textureRECT_enablechoicegl_pipeline_settingsschema_TextureRECTEnable_TxsdGlPipelineSettingsChoiceTextureRECTEnable_ struct {
 	TextureRECTEnable *TxsdGlPipelineSettingsChoiceTextureRECTEnable `xml:"http://www.collada.org/2005/11/COLLADASchema textureRECT_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceTextureDEPTHEnable struct {
 }
 
-type XsdGoPkgHasElem_textureDEPTH_enablechoicegl_pipeline_settingsschema_TextureDEPTHEnable_TxsdGlPipelineSettingsChoiceTextureDEPTHEnable_ struct {
-	TextureDEPTHEnable *TxsdGlPipelineSettingsChoiceTextureDEPTHEnable `xml:"http://www.collada.org/2005/11/COLLADASchema textureDEPTH_enable"`
-}
-
 type XsdGoPkgHasElems_textureDEPTH_enablechoicegl_pipeline_settingsschema_TextureDEPTHEnable_TxsdGlPipelineSettingsChoiceTextureDEPTHEnable_ struct {
 	TextureDEPTHEnables []*TxsdGlPipelineSettingsChoiceTextureDEPTHEnable `xml:"http://www.collada.org/2005/11/COLLADASchema textureDEPTH_enable"`
+
+}
+
+type XsdGoPkgHasElem_textureDEPTH_enablechoicegl_pipeline_settingsschema_TextureDEPTHEnable_TxsdGlPipelineSettingsChoiceTextureDEPTHEnable_ struct {
+	TextureDEPTHEnable *TxsdGlPipelineSettingsChoiceTextureDEPTHEnable `xml:"http://www.collada.org/2005/11/COLLADASchema textureDEPTH_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceTextureEnvColor struct {
 }
 
-type XsdGoPkgHasElem_texture_env_colorchoicegl_pipeline_settingsschema_TextureEnvColor_TxsdGlPipelineSettingsChoiceTextureEnvColor_ struct {
-	TextureEnvColor *TxsdGlPipelineSettingsChoiceTextureEnvColor `xml:"http://www.collada.org/2005/11/COLLADASchema texture_env_color"`
-}
-
 type XsdGoPkgHasElems_texture_env_colorchoicegl_pipeline_settingsschema_TextureEnvColor_TxsdGlPipelineSettingsChoiceTextureEnvColor_ struct {
 	TextureEnvColors []*TxsdGlPipelineSettingsChoiceTextureEnvColor `xml:"http://www.collada.org/2005/11/COLLADASchema texture_env_color"`
+
+}
+
+type XsdGoPkgHasElem_texture_env_colorchoicegl_pipeline_settingsschema_TextureEnvColor_TxsdGlPipelineSettingsChoiceTextureEnvColor_ struct {
+	TextureEnvColor *TxsdGlPipelineSettingsChoiceTextureEnvColor `xml:"http://www.collada.org/2005/11/COLLADASchema texture_env_color"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tstring_ struct {
@@ -15135,10 +16429,12 @@ type TxsdGlPipelineSettingsChoiceTextureEnvMode struct {
 
 type XsdGoPkgHasElem_texture_env_modechoicegl_pipeline_settingsschema_TextureEnvMode_TxsdGlPipelineSettingsChoiceTextureEnvMode_ struct {
 	TextureEnvMode *TxsdGlPipelineSettingsChoiceTextureEnvMode `xml:"http://www.collada.org/2005/11/COLLADASchema texture_env_mode"`
+
 }
 
 type XsdGoPkgHasElems_texture_env_modechoicegl_pipeline_settingsschema_TextureEnvMode_TxsdGlPipelineSettingsChoiceTextureEnvMode_ struct {
 	TextureEnvModes []*TxsdGlPipelineSettingsChoiceTextureEnvMode `xml:"http://www.collada.org/2005/11/COLLADASchema texture_env_mode"`
+
 }
 
 type XsdGoPkgHasAttr_Index_TglMaxClipPlanesIndex_ struct {
@@ -15150,34 +16446,40 @@ type TxsdGlPipelineSettingsChoiceClipPlane struct {
 
 }
 
-type XsdGoPkgHasElems_clip_planechoicegl_pipeline_settingsschema_ClipPlane_TxsdGlPipelineSettingsChoiceClipPlane_ struct {
-	ClipPlanes []*TxsdGlPipelineSettingsChoiceClipPlane `xml:"http://www.collada.org/2005/11/COLLADASchema clip_plane"`
-}
-
 type XsdGoPkgHasElem_clip_planechoicegl_pipeline_settingsschema_ClipPlane_TxsdGlPipelineSettingsChoiceClipPlane_ struct {
 	ClipPlane *TxsdGlPipelineSettingsChoiceClipPlane `xml:"http://www.collada.org/2005/11/COLLADASchema clip_plane"`
+
+}
+
+type XsdGoPkgHasElems_clip_planechoicegl_pipeline_settingsschema_ClipPlane_TxsdGlPipelineSettingsChoiceClipPlane_ struct {
+	ClipPlanes []*TxsdGlPipelineSettingsChoiceClipPlane `xml:"http://www.collada.org/2005/11/COLLADASchema clip_plane"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceClipPlaneEnable struct {
 }
 
-type XsdGoPkgHasElem_clip_plane_enablechoicegl_pipeline_settingsschema_ClipPlaneEnable_TxsdGlPipelineSettingsChoiceClipPlaneEnable_ struct {
-	ClipPlaneEnable *TxsdGlPipelineSettingsChoiceClipPlaneEnable `xml:"http://www.collada.org/2005/11/COLLADASchema clip_plane_enable"`
-}
-
 type XsdGoPkgHasElems_clip_plane_enablechoicegl_pipeline_settingsschema_ClipPlaneEnable_TxsdGlPipelineSettingsChoiceClipPlaneEnable_ struct {
 	ClipPlaneEnables []*TxsdGlPipelineSettingsChoiceClipPlaneEnable `xml:"http://www.collada.org/2005/11/COLLADASchema clip_plane_enable"`
+
+}
+
+type XsdGoPkgHasElem_clip_plane_enablechoicegl_pipeline_settingsschema_ClipPlaneEnable_TxsdGlPipelineSettingsChoiceClipPlaneEnable_ struct {
+	ClipPlaneEnable *TxsdGlPipelineSettingsChoiceClipPlaneEnable `xml:"http://www.collada.org/2005/11/COLLADASchema clip_plane_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceBlendColor struct {
 }
 
-type XsdGoPkgHasElems_blend_colorchoicegl_pipeline_settingsschema_BlendColor_TxsdGlPipelineSettingsChoiceBlendColor_ struct {
-	BlendColors []*TxsdGlPipelineSettingsChoiceBlendColor `xml:"http://www.collada.org/2005/11/COLLADASchema blend_color"`
-}
-
 type XsdGoPkgHasElem_blend_colorchoicegl_pipeline_settingsschema_BlendColor_TxsdGlPipelineSettingsChoiceBlendColor_ struct {
 	BlendColor *TxsdGlPipelineSettingsChoiceBlendColor `xml:"http://www.collada.org/2005/11/COLLADASchema blend_color"`
+
+}
+
+type XsdGoPkgHasElems_blend_colorchoicegl_pipeline_settingsschema_BlendColor_TxsdGlPipelineSettingsChoiceBlendColor_ struct {
+	BlendColors []*TxsdGlPipelineSettingsChoiceBlendColor `xml:"http://www.collada.org/2005/11/COLLADASchema blend_color"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceClearColor struct {
@@ -15185,10 +16487,12 @@ type TxsdGlPipelineSettingsChoiceClearColor struct {
 
 type XsdGoPkgHasElem_clear_colorchoicegl_pipeline_settingsschema_ClearColor_TxsdGlPipelineSettingsChoiceClearColor_ struct {
 	ClearColor *TxsdGlPipelineSettingsChoiceClearColor `xml:"http://www.collada.org/2005/11/COLLADASchema clear_color"`
+
 }
 
 type XsdGoPkgHasElems_clear_colorchoicegl_pipeline_settingsschema_ClearColor_TxsdGlPipelineSettingsChoiceClearColor_ struct {
 	ClearColors []*TxsdGlPipelineSettingsChoiceClearColor `xml:"http://www.collada.org/2005/11/COLLADASchema clear_color"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tint_0 struct {
@@ -15205,21 +16509,25 @@ type TxsdGlPipelineSettingsChoiceClearStencil struct {
 
 type XsdGoPkgHasElem_clear_stencilchoicegl_pipeline_settingsschema_ClearStencil_TxsdGlPipelineSettingsChoiceClearStencil_ struct {
 	ClearStencil *TxsdGlPipelineSettingsChoiceClearStencil `xml:"http://www.collada.org/2005/11/COLLADASchema clear_stencil"`
+
 }
 
 type XsdGoPkgHasElems_clear_stencilchoicegl_pipeline_settingsschema_ClearStencil_TxsdGlPipelineSettingsChoiceClearStencil_ struct {
 	ClearStencils []*TxsdGlPipelineSettingsChoiceClearStencil `xml:"http://www.collada.org/2005/11/COLLADASchema clear_stencil"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceClearDepth struct {
 }
 
-type XsdGoPkgHasElems_clear_depthchoicegl_pipeline_settingsschema_ClearDepth_TxsdGlPipelineSettingsChoiceClearDepth_ struct {
-	ClearDepths []*TxsdGlPipelineSettingsChoiceClearDepth `xml:"http://www.collada.org/2005/11/COLLADASchema clear_depth"`
-}
-
 type XsdGoPkgHasElem_clear_depthchoicegl_pipeline_settingsschema_ClearDepth_TxsdGlPipelineSettingsChoiceClearDepth_ struct {
 	ClearDepth *TxsdGlPipelineSettingsChoiceClearDepth `xml:"http://www.collada.org/2005/11/COLLADASchema clear_depth"`
+
+}
+
+type XsdGoPkgHasElems_clear_depthchoicegl_pipeline_settingsschema_ClearDepth_TxsdGlPipelineSettingsChoiceClearDepth_ struct {
+	ClearDepths []*TxsdGlPipelineSettingsChoiceClearDepth `xml:"http://www.collada.org/2005/11/COLLADASchema clear_depth"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tbool4_TrueTrueTrueTrue struct {
@@ -15234,12 +16542,14 @@ type TxsdGlPipelineSettingsChoiceColorMask struct {
 
 }
 
-type XsdGoPkgHasElems_color_maskchoicegl_pipeline_settingsschema_ColorMask_TxsdGlPipelineSettingsChoiceColorMask_ struct {
-	ColorMasks []*TxsdGlPipelineSettingsChoiceColorMask `xml:"http://www.collada.org/2005/11/COLLADASchema color_mask"`
-}
-
 type XsdGoPkgHasElem_color_maskchoicegl_pipeline_settingsschema_ColorMask_TxsdGlPipelineSettingsChoiceColorMask_ struct {
 	ColorMask *TxsdGlPipelineSettingsChoiceColorMask `xml:"http://www.collada.org/2005/11/COLLADASchema color_mask"`
+
+}
+
+type XsdGoPkgHasElems_color_maskchoicegl_pipeline_settingsschema_ColorMask_TxsdGlPipelineSettingsChoiceColorMask_ struct {
+	ColorMasks []*TxsdGlPipelineSettingsChoiceColorMask `xml:"http://www.collada.org/2005/11/COLLADASchema color_mask"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tfloat2_ struct {
@@ -15253,10 +16563,12 @@ type TxsdGlPipelineSettingsChoiceDepthBounds struct {
 
 type XsdGoPkgHasElems_depth_boundschoicegl_pipeline_settingsschema_DepthBounds_TxsdGlPipelineSettingsChoiceDepthBounds_ struct {
 	DepthBoundses []*TxsdGlPipelineSettingsChoiceDepthBounds `xml:"http://www.collada.org/2005/11/COLLADASchema depth_bounds"`
+
 }
 
 type XsdGoPkgHasElem_depth_boundschoicegl_pipeline_settingsschema_DepthBounds_TxsdGlPipelineSettingsChoiceDepthBounds_ struct {
 	DepthBounds *TxsdGlPipelineSettingsChoiceDepthBounds `xml:"http://www.collada.org/2005/11/COLLADASchema depth_bounds"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tbool_True struct {
@@ -15273,10 +16585,12 @@ type TxsdGlPipelineSettingsChoiceDepthMask struct {
 
 type XsdGoPkgHasElems_depth_maskchoicegl_pipeline_settingsschema_DepthMask_TxsdGlPipelineSettingsChoiceDepthMask_ struct {
 	DepthMasks []*TxsdGlPipelineSettingsChoiceDepthMask `xml:"http://www.collada.org/2005/11/COLLADASchema depth_mask"`
+
 }
 
 type XsdGoPkgHasElem_depth_maskchoicegl_pipeline_settingsschema_DepthMask_TxsdGlPipelineSettingsChoiceDepthMask_ struct {
 	DepthMask *TxsdGlPipelineSettingsChoiceDepthMask `xml:"http://www.collada.org/2005/11/COLLADASchema depth_mask"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tfloat2_01 struct {
@@ -15291,12 +16605,14 @@ type TxsdGlPipelineSettingsChoiceDepthRange struct {
 
 }
 
-type XsdGoPkgHasElems_depth_rangechoicegl_pipeline_settingsschema_DepthRange_TxsdGlPipelineSettingsChoiceDepthRange_ struct {
-	DepthRanges []*TxsdGlPipelineSettingsChoiceDepthRange `xml:"http://www.collada.org/2005/11/COLLADASchema depth_range"`
-}
-
 type XsdGoPkgHasElem_depth_rangechoicegl_pipeline_settingsschema_DepthRange_TxsdGlPipelineSettingsChoiceDepthRange_ struct {
 	DepthRange *TxsdGlPipelineSettingsChoiceDepthRange `xml:"http://www.collada.org/2005/11/COLLADASchema depth_range"`
+
+}
+
+type XsdGoPkgHasElems_depth_rangechoicegl_pipeline_settingsschema_DepthRange_TxsdGlPipelineSettingsChoiceDepthRange_ struct {
+	DepthRanges []*TxsdGlPipelineSettingsChoiceDepthRange `xml:"http://www.collada.org/2005/11/COLLADASchema depth_range"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceFogDensity struct {
@@ -15304,10 +16620,12 @@ type TxsdGlPipelineSettingsChoiceFogDensity struct {
 
 type XsdGoPkgHasElems_fog_densitychoicegl_pipeline_settingsschema_FogDensity_TxsdGlPipelineSettingsChoiceFogDensity_ struct {
 	FogDensities []*TxsdGlPipelineSettingsChoiceFogDensity `xml:"http://www.collada.org/2005/11/COLLADASchema fog_density"`
+
 }
 
 type XsdGoPkgHasElem_fog_densitychoicegl_pipeline_settingsschema_FogDensity_TxsdGlPipelineSettingsChoiceFogDensity_ struct {
 	FogDensity *TxsdGlPipelineSettingsChoiceFogDensity `xml:"http://www.collada.org/2005/11/COLLADASchema fog_density"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceFogStart struct {
@@ -15315,10 +16633,12 @@ type TxsdGlPipelineSettingsChoiceFogStart struct {
 
 type XsdGoPkgHasElems_fog_startchoicegl_pipeline_settingsschema_FogStart_TxsdGlPipelineSettingsChoiceFogStart_ struct {
 	FogStarts []*TxsdGlPipelineSettingsChoiceFogStart `xml:"http://www.collada.org/2005/11/COLLADASchema fog_start"`
+
 }
 
 type XsdGoPkgHasElem_fog_startchoicegl_pipeline_settingsschema_FogStart_TxsdGlPipelineSettingsChoiceFogStart_ struct {
 	FogStart *TxsdGlPipelineSettingsChoiceFogStart `xml:"http://www.collada.org/2005/11/COLLADASchema fog_start"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceFogEnd struct {
@@ -15326,10 +16646,12 @@ type TxsdGlPipelineSettingsChoiceFogEnd struct {
 
 type XsdGoPkgHasElem_fog_endchoicegl_pipeline_settingsschema_FogEnd_TxsdGlPipelineSettingsChoiceFogEnd_ struct {
 	FogEnd *TxsdGlPipelineSettingsChoiceFogEnd `xml:"http://www.collada.org/2005/11/COLLADASchema fog_end"`
+
 }
 
 type XsdGoPkgHasElems_fog_endchoicegl_pipeline_settingsschema_FogEnd_TxsdGlPipelineSettingsChoiceFogEnd_ struct {
 	FogEnds []*TxsdGlPipelineSettingsChoiceFogEnd `xml:"http://www.collada.org/2005/11/COLLADASchema fog_end"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceFogColor struct {
@@ -15337,10 +16659,12 @@ type TxsdGlPipelineSettingsChoiceFogColor struct {
 
 type XsdGoPkgHasElems_fog_colorchoicegl_pipeline_settingsschema_FogColor_TxsdGlPipelineSettingsChoiceFogColor_ struct {
 	FogColors []*TxsdGlPipelineSettingsChoiceFogColor `xml:"http://www.collada.org/2005/11/COLLADASchema fog_color"`
+
 }
 
 type XsdGoPkgHasElem_fog_colorchoicegl_pipeline_settingsschema_FogColor_TxsdGlPipelineSettingsChoiceFogColor_ struct {
 	FogColor *TxsdGlPipelineSettingsChoiceFogColor `xml:"http://www.collada.org/2005/11/COLLADASchema fog_color"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tfloat4_02020210 struct {
@@ -15357,21 +16681,25 @@ type TxsdGlPipelineSettingsChoiceLightModelAmbient struct {
 
 type XsdGoPkgHasElem_light_model_ambientchoicegl_pipeline_settingsschema_LightModelAmbient_TxsdGlPipelineSettingsChoiceLightModelAmbient_ struct {
 	LightModelAmbient *TxsdGlPipelineSettingsChoiceLightModelAmbient `xml:"http://www.collada.org/2005/11/COLLADASchema light_model_ambient"`
+
 }
 
 type XsdGoPkgHasElems_light_model_ambientchoicegl_pipeline_settingsschema_LightModelAmbient_TxsdGlPipelineSettingsChoiceLightModelAmbient_ struct {
 	LightModelAmbients []*TxsdGlPipelineSettingsChoiceLightModelAmbient `xml:"http://www.collada.org/2005/11/COLLADASchema light_model_ambient"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceLightingEnable struct {
 }
 
-type XsdGoPkgHasElem_lighting_enablechoicegl_pipeline_settingsschema_LightingEnable_TxsdGlPipelineSettingsChoiceLightingEnable_ struct {
-	LightingEnable *TxsdGlPipelineSettingsChoiceLightingEnable `xml:"http://www.collada.org/2005/11/COLLADASchema lighting_enable"`
-}
-
 type XsdGoPkgHasElems_lighting_enablechoicegl_pipeline_settingsschema_LightingEnable_TxsdGlPipelineSettingsChoiceLightingEnable_ struct {
 	LightingEnables []*TxsdGlPipelineSettingsChoiceLightingEnable `xml:"http://www.collada.org/2005/11/COLLADASchema lighting_enable"`
+
+}
+
+type XsdGoPkgHasElem_lighting_enablechoicegl_pipeline_settingsschema_LightingEnable_TxsdGlPipelineSettingsChoiceLightingEnable_ struct {
+	LightingEnable *TxsdGlPipelineSettingsChoiceLightingEnable `xml:"http://www.collada.org/2005/11/COLLADASchema lighting_enable"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tint2_165536 struct {
@@ -15388,32 +16716,38 @@ type TxsdGlPipelineSettingsChoiceLineStipple struct {
 
 type XsdGoPkgHasElems_line_stipplechoicegl_pipeline_settingsschema_LineStipple_TxsdGlPipelineSettingsChoiceLineStipple_ struct {
 	LineStipples []*TxsdGlPipelineSettingsChoiceLineStipple `xml:"http://www.collada.org/2005/11/COLLADASchema line_stipple"`
+
 }
 
 type XsdGoPkgHasElem_line_stipplechoicegl_pipeline_settingsschema_LineStipple_TxsdGlPipelineSettingsChoiceLineStipple_ struct {
 	LineStipple *TxsdGlPipelineSettingsChoiceLineStipple `xml:"http://www.collada.org/2005/11/COLLADASchema line_stipple"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceLineWidth struct {
 }
 
-type XsdGoPkgHasElem_line_widthchoicegl_pipeline_settingsschema_LineWidth_TxsdGlPipelineSettingsChoiceLineWidth_ struct {
-	LineWidth *TxsdGlPipelineSettingsChoiceLineWidth `xml:"http://www.collada.org/2005/11/COLLADASchema line_width"`
-}
-
 type XsdGoPkgHasElems_line_widthchoicegl_pipeline_settingsschema_LineWidth_TxsdGlPipelineSettingsChoiceLineWidth_ struct {
 	LineWidths []*TxsdGlPipelineSettingsChoiceLineWidth `xml:"http://www.collada.org/2005/11/COLLADASchema line_width"`
+
+}
+
+type XsdGoPkgHasElem_line_widthchoicegl_pipeline_settingsschema_LineWidth_TxsdGlPipelineSettingsChoiceLineWidth_ struct {
+	LineWidth *TxsdGlPipelineSettingsChoiceLineWidth `xml:"http://www.collada.org/2005/11/COLLADASchema line_width"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceMaterialAmbient struct {
 }
 
-type XsdGoPkgHasElems_material_ambientchoicegl_pipeline_settingsschema_MaterialAmbient_TxsdGlPipelineSettingsChoiceMaterialAmbient_ struct {
-	MaterialAmbients []*TxsdGlPipelineSettingsChoiceMaterialAmbient `xml:"http://www.collada.org/2005/11/COLLADASchema material_ambient"`
-}
-
 type XsdGoPkgHasElem_material_ambientchoicegl_pipeline_settingsschema_MaterialAmbient_TxsdGlPipelineSettingsChoiceMaterialAmbient_ struct {
 	MaterialAmbient *TxsdGlPipelineSettingsChoiceMaterialAmbient `xml:"http://www.collada.org/2005/11/COLLADASchema material_ambient"`
+
+}
+
+type XsdGoPkgHasElems_material_ambientchoicegl_pipeline_settingsschema_MaterialAmbient_TxsdGlPipelineSettingsChoiceMaterialAmbient_ struct {
+	MaterialAmbients []*TxsdGlPipelineSettingsChoiceMaterialAmbient `xml:"http://www.collada.org/2005/11/COLLADASchema material_ambient"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tfloat4_08080810 struct {
@@ -15430,21 +16764,25 @@ type TxsdGlPipelineSettingsChoiceMaterialDiffuse struct {
 
 type XsdGoPkgHasElems_material_diffusechoicegl_pipeline_settingsschema_MaterialDiffuse_TxsdGlPipelineSettingsChoiceMaterialDiffuse_ struct {
 	MaterialDiffuses []*TxsdGlPipelineSettingsChoiceMaterialDiffuse `xml:"http://www.collada.org/2005/11/COLLADASchema material_diffuse"`
+
 }
 
 type XsdGoPkgHasElem_material_diffusechoicegl_pipeline_settingsschema_MaterialDiffuse_TxsdGlPipelineSettingsChoiceMaterialDiffuse_ struct {
 	MaterialDiffuse *TxsdGlPipelineSettingsChoiceMaterialDiffuse `xml:"http://www.collada.org/2005/11/COLLADASchema material_diffuse"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceMaterialEmission struct {
 }
 
-type XsdGoPkgHasElem_material_emissionchoicegl_pipeline_settingsschema_MaterialEmission_TxsdGlPipelineSettingsChoiceMaterialEmission_ struct {
-	MaterialEmission *TxsdGlPipelineSettingsChoiceMaterialEmission `xml:"http://www.collada.org/2005/11/COLLADASchema material_emission"`
-}
-
 type XsdGoPkgHasElems_material_emissionchoicegl_pipeline_settingsschema_MaterialEmission_TxsdGlPipelineSettingsChoiceMaterialEmission_ struct {
 	MaterialEmissions []*TxsdGlPipelineSettingsChoiceMaterialEmission `xml:"http://www.collada.org/2005/11/COLLADASchema material_emission"`
+
+}
+
+type XsdGoPkgHasElem_material_emissionchoicegl_pipeline_settingsschema_MaterialEmission_TxsdGlPipelineSettingsChoiceMaterialEmission_ struct {
+	MaterialEmission *TxsdGlPipelineSettingsChoiceMaterialEmission `xml:"http://www.collada.org/2005/11/COLLADASchema material_emission"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceMaterialShininess struct {
@@ -15452,10 +16790,12 @@ type TxsdGlPipelineSettingsChoiceMaterialShininess struct {
 
 type XsdGoPkgHasElem_material_shininesschoicegl_pipeline_settingsschema_MaterialShininess_TxsdGlPipelineSettingsChoiceMaterialShininess_ struct {
 	MaterialShininess *TxsdGlPipelineSettingsChoiceMaterialShininess `xml:"http://www.collada.org/2005/11/COLLADASchema material_shininess"`
+
 }
 
 type XsdGoPkgHasElems_material_shininesschoicegl_pipeline_settingsschema_MaterialShininess_TxsdGlPipelineSettingsChoiceMaterialShininess_ struct {
 	MaterialShininesses []*TxsdGlPipelineSettingsChoiceMaterialShininess `xml:"http://www.collada.org/2005/11/COLLADASchema material_shininess"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceMaterialSpecular struct {
@@ -15463,10 +16803,12 @@ type TxsdGlPipelineSettingsChoiceMaterialSpecular struct {
 
 type XsdGoPkgHasElems_material_specularchoicegl_pipeline_settingsschema_MaterialSpecular_TxsdGlPipelineSettingsChoiceMaterialSpecular_ struct {
 	MaterialSpeculars []*TxsdGlPipelineSettingsChoiceMaterialSpecular `xml:"http://www.collada.org/2005/11/COLLADASchema material_specular"`
+
 }
 
 type XsdGoPkgHasElem_material_specularchoicegl_pipeline_settingsschema_MaterialSpecular_TxsdGlPipelineSettingsChoiceMaterialSpecular_ struct {
 	MaterialSpecular *TxsdGlPipelineSettingsChoiceMaterialSpecular `xml:"http://www.collada.org/2005/11/COLLADASchema material_specular"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tfloat4X4_1000010000100001 struct {
@@ -15483,10 +16825,12 @@ type TxsdGlPipelineSettingsChoiceModelViewMatrix struct {
 
 type XsdGoPkgHasElems_model_view_matrixchoicegl_pipeline_settingsschema_ModelViewMatrix_TxsdGlPipelineSettingsChoiceModelViewMatrix_ struct {
 	ModelViewMatrixs []*TxsdGlPipelineSettingsChoiceModelViewMatrix `xml:"http://www.collada.org/2005/11/COLLADASchema model_view_matrix"`
+
 }
 
 type XsdGoPkgHasElem_model_view_matrixchoicegl_pipeline_settingsschema_ModelViewMatrix_TxsdGlPipelineSettingsChoiceModelViewMatrix_ struct {
 	ModelViewMatrix *TxsdGlPipelineSettingsChoiceModelViewMatrix `xml:"http://www.collada.org/2005/11/COLLADASchema model_view_matrix"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tfloat3_100 struct {
@@ -15503,54 +16847,64 @@ type TxsdGlPipelineSettingsChoicePointDistanceAttenuation struct {
 
 type XsdGoPkgHasElems_point_distance_attenuationchoicegl_pipeline_settingsschema_PointDistanceAttenuation_TxsdGlPipelineSettingsChoicePointDistanceAttenuation_ struct {
 	PointDistanceAttenuations []*TxsdGlPipelineSettingsChoicePointDistanceAttenuation `xml:"http://www.collada.org/2005/11/COLLADASchema point_distance_attenuation"`
+
 }
 
 type XsdGoPkgHasElem_point_distance_attenuationchoicegl_pipeline_settingsschema_PointDistanceAttenuation_TxsdGlPipelineSettingsChoicePointDistanceAttenuation_ struct {
 	PointDistanceAttenuation *TxsdGlPipelineSettingsChoicePointDistanceAttenuation `xml:"http://www.collada.org/2005/11/COLLADASchema point_distance_attenuation"`
+
 }
 
 type TxsdGlPipelineSettingsChoicePointFadeThresholdSize struct {
 }
 
-type XsdGoPkgHasElem_point_fade_threshold_sizechoicegl_pipeline_settingsschema_PointFadeThresholdSize_TxsdGlPipelineSettingsChoicePointFadeThresholdSize_ struct {
-	PointFadeThresholdSize *TxsdGlPipelineSettingsChoicePointFadeThresholdSize `xml:"http://www.collada.org/2005/11/COLLADASchema point_fade_threshold_size"`
-}
-
 type XsdGoPkgHasElems_point_fade_threshold_sizechoicegl_pipeline_settingsschema_PointFadeThresholdSize_TxsdGlPipelineSettingsChoicePointFadeThresholdSize_ struct {
 	PointFadeThresholdSizes []*TxsdGlPipelineSettingsChoicePointFadeThresholdSize `xml:"http://www.collada.org/2005/11/COLLADASchema point_fade_threshold_size"`
+
+}
+
+type XsdGoPkgHasElem_point_fade_threshold_sizechoicegl_pipeline_settingsschema_PointFadeThresholdSize_TxsdGlPipelineSettingsChoicePointFadeThresholdSize_ struct {
+	PointFadeThresholdSize *TxsdGlPipelineSettingsChoicePointFadeThresholdSize `xml:"http://www.collada.org/2005/11/COLLADASchema point_fade_threshold_size"`
+
 }
 
 type TxsdGlPipelineSettingsChoicePointSize struct {
 }
 
-type XsdGoPkgHasElem_point_sizechoicegl_pipeline_settingsschema_PointSize_TxsdGlPipelineSettingsChoicePointSize_ struct {
-	PointSize *TxsdGlPipelineSettingsChoicePointSize `xml:"http://www.collada.org/2005/11/COLLADASchema point_size"`
-}
-
 type XsdGoPkgHasElems_point_sizechoicegl_pipeline_settingsschema_PointSize_TxsdGlPipelineSettingsChoicePointSize_ struct {
 	PointSizes []*TxsdGlPipelineSettingsChoicePointSize `xml:"http://www.collada.org/2005/11/COLLADASchema point_size"`
+
+}
+
+type XsdGoPkgHasElem_point_sizechoicegl_pipeline_settingsschema_PointSize_TxsdGlPipelineSettingsChoicePointSize_ struct {
+	PointSize *TxsdGlPipelineSettingsChoicePointSize `xml:"http://www.collada.org/2005/11/COLLADASchema point_size"`
+
 }
 
 type TxsdGlPipelineSettingsChoicePointSizeMin struct {
 }
 
-type XsdGoPkgHasElems_point_size_minchoicegl_pipeline_settingsschema_PointSizeMin_TxsdGlPipelineSettingsChoicePointSizeMin_ struct {
-	PointSizeMins []*TxsdGlPipelineSettingsChoicePointSizeMin `xml:"http://www.collada.org/2005/11/COLLADASchema point_size_min"`
-}
-
 type XsdGoPkgHasElem_point_size_minchoicegl_pipeline_settingsschema_PointSizeMin_TxsdGlPipelineSettingsChoicePointSizeMin_ struct {
 	PointSizeMin *TxsdGlPipelineSettingsChoicePointSizeMin `xml:"http://www.collada.org/2005/11/COLLADASchema point_size_min"`
+
+}
+
+type XsdGoPkgHasElems_point_size_minchoicegl_pipeline_settingsschema_PointSizeMin_TxsdGlPipelineSettingsChoicePointSizeMin_ struct {
+	PointSizeMins []*TxsdGlPipelineSettingsChoicePointSizeMin `xml:"http://www.collada.org/2005/11/COLLADASchema point_size_min"`
+
 }
 
 type TxsdGlPipelineSettingsChoicePointSizeMax struct {
 }
 
-type XsdGoPkgHasElem_point_size_maxchoicegl_pipeline_settingsschema_PointSizeMax_TxsdGlPipelineSettingsChoicePointSizeMax_ struct {
-	PointSizeMax *TxsdGlPipelineSettingsChoicePointSizeMax `xml:"http://www.collada.org/2005/11/COLLADASchema point_size_max"`
-}
-
 type XsdGoPkgHasElems_point_size_maxchoicegl_pipeline_settingsschema_PointSizeMax_TxsdGlPipelineSettingsChoicePointSizeMax_ struct {
 	PointSizeMaxs []*TxsdGlPipelineSettingsChoicePointSizeMax `xml:"http://www.collada.org/2005/11/COLLADASchema point_size_max"`
+
+}
+
+type XsdGoPkgHasElem_point_size_maxchoicegl_pipeline_settingsschema_PointSizeMax_TxsdGlPipelineSettingsChoicePointSizeMax_ struct {
+	PointSizeMax *TxsdGlPipelineSettingsChoicePointSizeMax `xml:"http://www.collada.org/2005/11/COLLADASchema point_size_max"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tfloat2_00 struct {
@@ -15565,12 +16919,14 @@ type TxsdGlPipelineSettingsChoicePolygonOffset struct {
 
 }
 
-type XsdGoPkgHasElems_polygon_offsetchoicegl_pipeline_settingsschema_PolygonOffset_TxsdGlPipelineSettingsChoicePolygonOffset_ struct {
-	PolygonOffsets []*TxsdGlPipelineSettingsChoicePolygonOffset `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_offset"`
-}
-
 type XsdGoPkgHasElem_polygon_offsetchoicegl_pipeline_settingsschema_PolygonOffset_TxsdGlPipelineSettingsChoicePolygonOffset_ struct {
 	PolygonOffset *TxsdGlPipelineSettingsChoicePolygonOffset `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_offset"`
+
+}
+
+type XsdGoPkgHasElems_polygon_offsetchoicegl_pipeline_settingsschema_PolygonOffset_TxsdGlPipelineSettingsChoicePolygonOffset_ struct {
+	PolygonOffsets []*TxsdGlPipelineSettingsChoicePolygonOffset `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_offset"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceProjectionMatrix struct {
@@ -15578,10 +16934,12 @@ type TxsdGlPipelineSettingsChoiceProjectionMatrix struct {
 
 type XsdGoPkgHasElems_projection_matrixchoicegl_pipeline_settingsschema_ProjectionMatrix_TxsdGlPipelineSettingsChoiceProjectionMatrix_ struct {
 	ProjectionMatrixs []*TxsdGlPipelineSettingsChoiceProjectionMatrix `xml:"http://www.collada.org/2005/11/COLLADASchema projection_matrix"`
+
 }
 
 type XsdGoPkgHasElem_projection_matrixchoicegl_pipeline_settingsschema_ProjectionMatrix_TxsdGlPipelineSettingsChoiceProjectionMatrix_ struct {
 	ProjectionMatrix *TxsdGlPipelineSettingsChoiceProjectionMatrix `xml:"http://www.collada.org/2005/11/COLLADASchema projection_matrix"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tint4_ struct {
@@ -15595,10 +16953,12 @@ type TxsdGlPipelineSettingsChoiceScissor struct {
 
 type XsdGoPkgHasElems_scissorchoicegl_pipeline_settingsschema_Scissor_TxsdGlPipelineSettingsChoiceScissor_ struct {
 	Scissors []*TxsdGlPipelineSettingsChoiceScissor `xml:"http://www.collada.org/2005/11/COLLADASchema scissor"`
+
 }
 
 type XsdGoPkgHasElem_scissorchoicegl_pipeline_settingsschema_Scissor_TxsdGlPipelineSettingsChoiceScissor_ struct {
 	Scissor *TxsdGlPipelineSettingsChoiceScissor `xml:"http://www.collada.org/2005/11/COLLADASchema scissor"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tint_4294967295 struct {
@@ -15613,12 +16973,14 @@ type TxsdGlPipelineSettingsChoiceStencilMask struct {
 
 }
 
-type XsdGoPkgHasElem_stencil_maskchoicegl_pipeline_settingsschema_StencilMask_TxsdGlPipelineSettingsChoiceStencilMask_ struct {
-	StencilMask *TxsdGlPipelineSettingsChoiceStencilMask `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_mask"`
-}
-
 type XsdGoPkgHasElems_stencil_maskchoicegl_pipeline_settingsschema_StencilMask_TxsdGlPipelineSettingsChoiceStencilMask_ struct {
 	StencilMasks []*TxsdGlPipelineSettingsChoiceStencilMask `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_mask"`
+
+}
+
+type XsdGoPkgHasElem_stencil_maskchoicegl_pipeline_settingsschema_StencilMask_TxsdGlPipelineSettingsChoiceStencilMask_ struct {
+	StencilMask *TxsdGlPipelineSettingsChoiceStencilMask `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_mask"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceAlphaTestEnable struct {
@@ -15626,10 +16988,12 @@ type TxsdGlPipelineSettingsChoiceAlphaTestEnable struct {
 
 type XsdGoPkgHasElem_alpha_test_enablechoicegl_pipeline_settingsschema_AlphaTestEnable_TxsdGlPipelineSettingsChoiceAlphaTestEnable_ struct {
 	AlphaTestEnable *TxsdGlPipelineSettingsChoiceAlphaTestEnable `xml:"http://www.collada.org/2005/11/COLLADASchema alpha_test_enable"`
+
 }
 
 type XsdGoPkgHasElems_alpha_test_enablechoicegl_pipeline_settingsschema_AlphaTestEnable_TxsdGlPipelineSettingsChoiceAlphaTestEnable_ struct {
 	AlphaTestEnables []*TxsdGlPipelineSettingsChoiceAlphaTestEnable `xml:"http://www.collada.org/2005/11/COLLADASchema alpha_test_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceAutoNormalEnable struct {
@@ -15637,76 +17001,90 @@ type TxsdGlPipelineSettingsChoiceAutoNormalEnable struct {
 
 type XsdGoPkgHasElem_auto_normal_enablechoicegl_pipeline_settingsschema_AutoNormalEnable_TxsdGlPipelineSettingsChoiceAutoNormalEnable_ struct {
 	AutoNormalEnable *TxsdGlPipelineSettingsChoiceAutoNormalEnable `xml:"http://www.collada.org/2005/11/COLLADASchema auto_normal_enable"`
+
 }
 
 type XsdGoPkgHasElems_auto_normal_enablechoicegl_pipeline_settingsschema_AutoNormalEnable_TxsdGlPipelineSettingsChoiceAutoNormalEnable_ struct {
 	AutoNormalEnables []*TxsdGlPipelineSettingsChoiceAutoNormalEnable `xml:"http://www.collada.org/2005/11/COLLADASchema auto_normal_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceBlendEnable struct {
 }
 
-type XsdGoPkgHasElem_blend_enablechoicegl_pipeline_settingsschema_BlendEnable_TxsdGlPipelineSettingsChoiceBlendEnable_ struct {
-	BlendEnable *TxsdGlPipelineSettingsChoiceBlendEnable `xml:"http://www.collada.org/2005/11/COLLADASchema blend_enable"`
-}
-
 type XsdGoPkgHasElems_blend_enablechoicegl_pipeline_settingsschema_BlendEnable_TxsdGlPipelineSettingsChoiceBlendEnable_ struct {
 	BlendEnables []*TxsdGlPipelineSettingsChoiceBlendEnable `xml:"http://www.collada.org/2005/11/COLLADASchema blend_enable"`
+
+}
+
+type XsdGoPkgHasElem_blend_enablechoicegl_pipeline_settingsschema_BlendEnable_TxsdGlPipelineSettingsChoiceBlendEnable_ struct {
+	BlendEnable *TxsdGlPipelineSettingsChoiceBlendEnable `xml:"http://www.collada.org/2005/11/COLLADASchema blend_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceColorLogicOpEnable struct {
 }
 
-type XsdGoPkgHasElem_color_logic_op_enablechoicegl_pipeline_settingsschema_ColorLogicOpEnable_TxsdGlPipelineSettingsChoiceColorLogicOpEnable_ struct {
-	ColorLogicOpEnable *TxsdGlPipelineSettingsChoiceColorLogicOpEnable `xml:"http://www.collada.org/2005/11/COLLADASchema color_logic_op_enable"`
-}
-
 type XsdGoPkgHasElems_color_logic_op_enablechoicegl_pipeline_settingsschema_ColorLogicOpEnable_TxsdGlPipelineSettingsChoiceColorLogicOpEnable_ struct {
 	ColorLogicOpEnables []*TxsdGlPipelineSettingsChoiceColorLogicOpEnable `xml:"http://www.collada.org/2005/11/COLLADASchema color_logic_op_enable"`
+
+}
+
+type XsdGoPkgHasElem_color_logic_op_enablechoicegl_pipeline_settingsschema_ColorLogicOpEnable_TxsdGlPipelineSettingsChoiceColorLogicOpEnable_ struct {
+	ColorLogicOpEnable *TxsdGlPipelineSettingsChoiceColorLogicOpEnable `xml:"http://www.collada.org/2005/11/COLLADASchema color_logic_op_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceColorMaterialEnable struct {
 }
 
-type XsdGoPkgHasElem_color_material_enablechoicegl_pipeline_settingsschema_ColorMaterialEnable_TxsdGlPipelineSettingsChoiceColorMaterialEnable_ struct {
-	ColorMaterialEnable *TxsdGlPipelineSettingsChoiceColorMaterialEnable `xml:"http://www.collada.org/2005/11/COLLADASchema color_material_enable"`
-}
-
 type XsdGoPkgHasElems_color_material_enablechoicegl_pipeline_settingsschema_ColorMaterialEnable_TxsdGlPipelineSettingsChoiceColorMaterialEnable_ struct {
 	ColorMaterialEnables []*TxsdGlPipelineSettingsChoiceColorMaterialEnable `xml:"http://www.collada.org/2005/11/COLLADASchema color_material_enable"`
+
+}
+
+type XsdGoPkgHasElem_color_material_enablechoicegl_pipeline_settingsschema_ColorMaterialEnable_TxsdGlPipelineSettingsChoiceColorMaterialEnable_ struct {
+	ColorMaterialEnable *TxsdGlPipelineSettingsChoiceColorMaterialEnable `xml:"http://www.collada.org/2005/11/COLLADASchema color_material_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceCullFaceEnable struct {
 }
 
-type XsdGoPkgHasElems_cull_face_enablechoicegl_pipeline_settingsschema_CullFaceEnable_TxsdGlPipelineSettingsChoiceCullFaceEnable_ struct {
-	CullFaceEnables []*TxsdGlPipelineSettingsChoiceCullFaceEnable `xml:"http://www.collada.org/2005/11/COLLADASchema cull_face_enable"`
-}
-
 type XsdGoPkgHasElem_cull_face_enablechoicegl_pipeline_settingsschema_CullFaceEnable_TxsdGlPipelineSettingsChoiceCullFaceEnable_ struct {
 	CullFaceEnable *TxsdGlPipelineSettingsChoiceCullFaceEnable `xml:"http://www.collada.org/2005/11/COLLADASchema cull_face_enable"`
+
+}
+
+type XsdGoPkgHasElems_cull_face_enablechoicegl_pipeline_settingsschema_CullFaceEnable_TxsdGlPipelineSettingsChoiceCullFaceEnable_ struct {
+	CullFaceEnables []*TxsdGlPipelineSettingsChoiceCullFaceEnable `xml:"http://www.collada.org/2005/11/COLLADASchema cull_face_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceDepthBoundsEnable struct {
 }
 
-type XsdGoPkgHasElem_depth_bounds_enablechoicegl_pipeline_settingsschema_DepthBoundsEnable_TxsdGlPipelineSettingsChoiceDepthBoundsEnable_ struct {
-	DepthBoundsEnable *TxsdGlPipelineSettingsChoiceDepthBoundsEnable `xml:"http://www.collada.org/2005/11/COLLADASchema depth_bounds_enable"`
-}
-
 type XsdGoPkgHasElems_depth_bounds_enablechoicegl_pipeline_settingsschema_DepthBoundsEnable_TxsdGlPipelineSettingsChoiceDepthBoundsEnable_ struct {
 	DepthBoundsEnables []*TxsdGlPipelineSettingsChoiceDepthBoundsEnable `xml:"http://www.collada.org/2005/11/COLLADASchema depth_bounds_enable"`
+
+}
+
+type XsdGoPkgHasElem_depth_bounds_enablechoicegl_pipeline_settingsschema_DepthBoundsEnable_TxsdGlPipelineSettingsChoiceDepthBoundsEnable_ struct {
+	DepthBoundsEnable *TxsdGlPipelineSettingsChoiceDepthBoundsEnable `xml:"http://www.collada.org/2005/11/COLLADASchema depth_bounds_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceDepthClampEnable struct {
 }
 
-type XsdGoPkgHasElems_depth_clamp_enablechoicegl_pipeline_settingsschema_DepthClampEnable_TxsdGlPipelineSettingsChoiceDepthClampEnable_ struct {
-	DepthClampEnables []*TxsdGlPipelineSettingsChoiceDepthClampEnable `xml:"http://www.collada.org/2005/11/COLLADASchema depth_clamp_enable"`
-}
-
 type XsdGoPkgHasElem_depth_clamp_enablechoicegl_pipeline_settingsschema_DepthClampEnable_TxsdGlPipelineSettingsChoiceDepthClampEnable_ struct {
 	DepthClampEnable *TxsdGlPipelineSettingsChoiceDepthClampEnable `xml:"http://www.collada.org/2005/11/COLLADASchema depth_clamp_enable"`
+
+}
+
+type XsdGoPkgHasElems_depth_clamp_enablechoicegl_pipeline_settingsschema_DepthClampEnable_TxsdGlPipelineSettingsChoiceDepthClampEnable_ struct {
+	DepthClampEnables []*TxsdGlPipelineSettingsChoiceDepthClampEnable `xml:"http://www.collada.org/2005/11/COLLADASchema depth_clamp_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceDepthTestEnable struct {
@@ -15714,10 +17092,12 @@ type TxsdGlPipelineSettingsChoiceDepthTestEnable struct {
 
 type XsdGoPkgHasElem_depth_test_enablechoicegl_pipeline_settingsschema_DepthTestEnable_TxsdGlPipelineSettingsChoiceDepthTestEnable_ struct {
 	DepthTestEnable *TxsdGlPipelineSettingsChoiceDepthTestEnable `xml:"http://www.collada.org/2005/11/COLLADASchema depth_test_enable"`
+
 }
 
 type XsdGoPkgHasElems_depth_test_enablechoicegl_pipeline_settingsschema_DepthTestEnable_TxsdGlPipelineSettingsChoiceDepthTestEnable_ struct {
 	DepthTestEnables []*TxsdGlPipelineSettingsChoiceDepthTestEnable `xml:"http://www.collada.org/2005/11/COLLADASchema depth_test_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceDitherEnable struct {
@@ -15725,10 +17105,12 @@ type TxsdGlPipelineSettingsChoiceDitherEnable struct {
 
 type XsdGoPkgHasElem_dither_enablechoicegl_pipeline_settingsschema_DitherEnable_TxsdGlPipelineSettingsChoiceDitherEnable_ struct {
 	DitherEnable *TxsdGlPipelineSettingsChoiceDitherEnable `xml:"http://www.collada.org/2005/11/COLLADASchema dither_enable"`
+
 }
 
 type XsdGoPkgHasElems_dither_enablechoicegl_pipeline_settingsschema_DitherEnable_TxsdGlPipelineSettingsChoiceDitherEnable_ struct {
 	DitherEnables []*TxsdGlPipelineSettingsChoiceDitherEnable `xml:"http://www.collada.org/2005/11/COLLADASchema dither_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceFogEnable struct {
@@ -15736,10 +17118,12 @@ type TxsdGlPipelineSettingsChoiceFogEnable struct {
 
 type XsdGoPkgHasElems_fog_enablechoicegl_pipeline_settingsschema_FogEnable_TxsdGlPipelineSettingsChoiceFogEnable_ struct {
 	FogEnables []*TxsdGlPipelineSettingsChoiceFogEnable `xml:"http://www.collada.org/2005/11/COLLADASchema fog_enable"`
+
 }
 
 type XsdGoPkgHasElem_fog_enablechoicegl_pipeline_settingsschema_FogEnable_TxsdGlPipelineSettingsChoiceFogEnable_ struct {
 	FogEnable *TxsdGlPipelineSettingsChoiceFogEnable `xml:"http://www.collada.org/2005/11/COLLADASchema fog_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceLightModelLocalViewerEnable struct {
@@ -15747,21 +17131,25 @@ type TxsdGlPipelineSettingsChoiceLightModelLocalViewerEnable struct {
 
 type XsdGoPkgHasElem_light_model_local_viewer_enablechoicegl_pipeline_settingsschema_LightModelLocalViewerEnable_TxsdGlPipelineSettingsChoiceLightModelLocalViewerEnable_ struct {
 	LightModelLocalViewerEnable *TxsdGlPipelineSettingsChoiceLightModelLocalViewerEnable `xml:"http://www.collada.org/2005/11/COLLADASchema light_model_local_viewer_enable"`
+
 }
 
 type XsdGoPkgHasElems_light_model_local_viewer_enablechoicegl_pipeline_settingsschema_LightModelLocalViewerEnable_TxsdGlPipelineSettingsChoiceLightModelLocalViewerEnable_ struct {
 	LightModelLocalViewerEnables []*TxsdGlPipelineSettingsChoiceLightModelLocalViewerEnable `xml:"http://www.collada.org/2005/11/COLLADASchema light_model_local_viewer_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceLightModelTwoSideEnable struct {
 }
 
-type XsdGoPkgHasElems_light_model_two_side_enablechoicegl_pipeline_settingsschema_LightModelTwoSideEnable_TxsdGlPipelineSettingsChoiceLightModelTwoSideEnable_ struct {
-	LightModelTwoSideEnables []*TxsdGlPipelineSettingsChoiceLightModelTwoSideEnable `xml:"http://www.collada.org/2005/11/COLLADASchema light_model_two_side_enable"`
-}
-
 type XsdGoPkgHasElem_light_model_two_side_enablechoicegl_pipeline_settingsschema_LightModelTwoSideEnable_TxsdGlPipelineSettingsChoiceLightModelTwoSideEnable_ struct {
 	LightModelTwoSideEnable *TxsdGlPipelineSettingsChoiceLightModelTwoSideEnable `xml:"http://www.collada.org/2005/11/COLLADASchema light_model_two_side_enable"`
+
+}
+
+type XsdGoPkgHasElems_light_model_two_side_enablechoicegl_pipeline_settingsschema_LightModelTwoSideEnable_TxsdGlPipelineSettingsChoiceLightModelTwoSideEnable_ struct {
+	LightModelTwoSideEnables []*TxsdGlPipelineSettingsChoiceLightModelTwoSideEnable `xml:"http://www.collada.org/2005/11/COLLADASchema light_model_two_side_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceLineSmoothEnable struct {
@@ -15769,32 +17157,38 @@ type TxsdGlPipelineSettingsChoiceLineSmoothEnable struct {
 
 type XsdGoPkgHasElems_line_smooth_enablechoicegl_pipeline_settingsschema_LineSmoothEnable_TxsdGlPipelineSettingsChoiceLineSmoothEnable_ struct {
 	LineSmoothEnables []*TxsdGlPipelineSettingsChoiceLineSmoothEnable `xml:"http://www.collada.org/2005/11/COLLADASchema line_smooth_enable"`
+
 }
 
 type XsdGoPkgHasElem_line_smooth_enablechoicegl_pipeline_settingsschema_LineSmoothEnable_TxsdGlPipelineSettingsChoiceLineSmoothEnable_ struct {
 	LineSmoothEnable *TxsdGlPipelineSettingsChoiceLineSmoothEnable `xml:"http://www.collada.org/2005/11/COLLADASchema line_smooth_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceLineStippleEnable struct {
 }
 
-type XsdGoPkgHasElems_line_stipple_enablechoicegl_pipeline_settingsschema_LineStippleEnable_TxsdGlPipelineSettingsChoiceLineStippleEnable_ struct {
-	LineStippleEnables []*TxsdGlPipelineSettingsChoiceLineStippleEnable `xml:"http://www.collada.org/2005/11/COLLADASchema line_stipple_enable"`
-}
-
 type XsdGoPkgHasElem_line_stipple_enablechoicegl_pipeline_settingsschema_LineStippleEnable_TxsdGlPipelineSettingsChoiceLineStippleEnable_ struct {
 	LineStippleEnable *TxsdGlPipelineSettingsChoiceLineStippleEnable `xml:"http://www.collada.org/2005/11/COLLADASchema line_stipple_enable"`
+
+}
+
+type XsdGoPkgHasElems_line_stipple_enablechoicegl_pipeline_settingsschema_LineStippleEnable_TxsdGlPipelineSettingsChoiceLineStippleEnable_ struct {
+	LineStippleEnables []*TxsdGlPipelineSettingsChoiceLineStippleEnable `xml:"http://www.collada.org/2005/11/COLLADASchema line_stipple_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceLogicOpEnable struct {
 }
 
-type XsdGoPkgHasElems_logic_op_enablechoicegl_pipeline_settingsschema_LogicOpEnable_TxsdGlPipelineSettingsChoiceLogicOpEnable_ struct {
-	LogicOpEnables []*TxsdGlPipelineSettingsChoiceLogicOpEnable `xml:"http://www.collada.org/2005/11/COLLADASchema logic_op_enable"`
-}
-
 type XsdGoPkgHasElem_logic_op_enablechoicegl_pipeline_settingsschema_LogicOpEnable_TxsdGlPipelineSettingsChoiceLogicOpEnable_ struct {
 	LogicOpEnable *TxsdGlPipelineSettingsChoiceLogicOpEnable `xml:"http://www.collada.org/2005/11/COLLADASchema logic_op_enable"`
+
+}
+
+type XsdGoPkgHasElems_logic_op_enablechoicegl_pipeline_settingsschema_LogicOpEnable_TxsdGlPipelineSettingsChoiceLogicOpEnable_ struct {
+	LogicOpEnables []*TxsdGlPipelineSettingsChoiceLogicOpEnable `xml:"http://www.collada.org/2005/11/COLLADASchema logic_op_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceMultisampleEnable struct {
@@ -15802,21 +17196,25 @@ type TxsdGlPipelineSettingsChoiceMultisampleEnable struct {
 
 type XsdGoPkgHasElem_multisample_enablechoicegl_pipeline_settingsschema_MultisampleEnable_TxsdGlPipelineSettingsChoiceMultisampleEnable_ struct {
 	MultisampleEnable *TxsdGlPipelineSettingsChoiceMultisampleEnable `xml:"http://www.collada.org/2005/11/COLLADASchema multisample_enable"`
+
 }
 
 type XsdGoPkgHasElems_multisample_enablechoicegl_pipeline_settingsschema_MultisampleEnable_TxsdGlPipelineSettingsChoiceMultisampleEnable_ struct {
 	MultisampleEnables []*TxsdGlPipelineSettingsChoiceMultisampleEnable `xml:"http://www.collada.org/2005/11/COLLADASchema multisample_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceNormalizeEnable struct {
 }
 
-type XsdGoPkgHasElems_normalize_enablechoicegl_pipeline_settingsschema_NormalizeEnable_TxsdGlPipelineSettingsChoiceNormalizeEnable_ struct {
-	NormalizeEnables []*TxsdGlPipelineSettingsChoiceNormalizeEnable `xml:"http://www.collada.org/2005/11/COLLADASchema normalize_enable"`
-}
-
 type XsdGoPkgHasElem_normalize_enablechoicegl_pipeline_settingsschema_NormalizeEnable_TxsdGlPipelineSettingsChoiceNormalizeEnable_ struct {
 	NormalizeEnable *TxsdGlPipelineSettingsChoiceNormalizeEnable `xml:"http://www.collada.org/2005/11/COLLADASchema normalize_enable"`
+
+}
+
+type XsdGoPkgHasElems_normalize_enablechoicegl_pipeline_settingsschema_NormalizeEnable_TxsdGlPipelineSettingsChoiceNormalizeEnable_ struct {
+	NormalizeEnables []*TxsdGlPipelineSettingsChoiceNormalizeEnable `xml:"http://www.collada.org/2005/11/COLLADASchema normalize_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoicePointSmoothEnable struct {
@@ -15824,21 +17222,25 @@ type TxsdGlPipelineSettingsChoicePointSmoothEnable struct {
 
 type XsdGoPkgHasElems_point_smooth_enablechoicegl_pipeline_settingsschema_PointSmoothEnable_TxsdGlPipelineSettingsChoicePointSmoothEnable_ struct {
 	PointSmoothEnables []*TxsdGlPipelineSettingsChoicePointSmoothEnable `xml:"http://www.collada.org/2005/11/COLLADASchema point_smooth_enable"`
+
 }
 
 type XsdGoPkgHasElem_point_smooth_enablechoicegl_pipeline_settingsschema_PointSmoothEnable_TxsdGlPipelineSettingsChoicePointSmoothEnable_ struct {
 	PointSmoothEnable *TxsdGlPipelineSettingsChoicePointSmoothEnable `xml:"http://www.collada.org/2005/11/COLLADASchema point_smooth_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoicePolygonOffsetFillEnable struct {
 }
 
-type XsdGoPkgHasElem_polygon_offset_fill_enablechoicegl_pipeline_settingsschema_PolygonOffsetFillEnable_TxsdGlPipelineSettingsChoicePolygonOffsetFillEnable_ struct {
-	PolygonOffsetFillEnable *TxsdGlPipelineSettingsChoicePolygonOffsetFillEnable `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_offset_fill_enable"`
-}
-
 type XsdGoPkgHasElems_polygon_offset_fill_enablechoicegl_pipeline_settingsschema_PolygonOffsetFillEnable_TxsdGlPipelineSettingsChoicePolygonOffsetFillEnable_ struct {
 	PolygonOffsetFillEnables []*TxsdGlPipelineSettingsChoicePolygonOffsetFillEnable `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_offset_fill_enable"`
+
+}
+
+type XsdGoPkgHasElem_polygon_offset_fill_enablechoicegl_pipeline_settingsschema_PolygonOffsetFillEnable_TxsdGlPipelineSettingsChoicePolygonOffsetFillEnable_ struct {
+	PolygonOffsetFillEnable *TxsdGlPipelineSettingsChoicePolygonOffsetFillEnable `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_offset_fill_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoicePolygonOffsetLineEnable struct {
@@ -15846,21 +17248,25 @@ type TxsdGlPipelineSettingsChoicePolygonOffsetLineEnable struct {
 
 type XsdGoPkgHasElem_polygon_offset_line_enablechoicegl_pipeline_settingsschema_PolygonOffsetLineEnable_TxsdGlPipelineSettingsChoicePolygonOffsetLineEnable_ struct {
 	PolygonOffsetLineEnable *TxsdGlPipelineSettingsChoicePolygonOffsetLineEnable `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_offset_line_enable"`
+
 }
 
 type XsdGoPkgHasElems_polygon_offset_line_enablechoicegl_pipeline_settingsschema_PolygonOffsetLineEnable_TxsdGlPipelineSettingsChoicePolygonOffsetLineEnable_ struct {
 	PolygonOffsetLineEnables []*TxsdGlPipelineSettingsChoicePolygonOffsetLineEnable `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_offset_line_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoicePolygonOffsetPointEnable struct {
 }
 
-type XsdGoPkgHasElems_polygon_offset_point_enablechoicegl_pipeline_settingsschema_PolygonOffsetPointEnable_TxsdGlPipelineSettingsChoicePolygonOffsetPointEnable_ struct {
-	PolygonOffsetPointEnables []*TxsdGlPipelineSettingsChoicePolygonOffsetPointEnable `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_offset_point_enable"`
-}
-
 type XsdGoPkgHasElem_polygon_offset_point_enablechoicegl_pipeline_settingsschema_PolygonOffsetPointEnable_TxsdGlPipelineSettingsChoicePolygonOffsetPointEnable_ struct {
 	PolygonOffsetPointEnable *TxsdGlPipelineSettingsChoicePolygonOffsetPointEnable `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_offset_point_enable"`
+
+}
+
+type XsdGoPkgHasElems_polygon_offset_point_enablechoicegl_pipeline_settingsschema_PolygonOffsetPointEnable_TxsdGlPipelineSettingsChoicePolygonOffsetPointEnable_ struct {
+	PolygonOffsetPointEnables []*TxsdGlPipelineSettingsChoicePolygonOffsetPointEnable `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_offset_point_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoicePolygonSmoothEnable struct {
@@ -15868,10 +17274,12 @@ type TxsdGlPipelineSettingsChoicePolygonSmoothEnable struct {
 
 type XsdGoPkgHasElems_polygon_smooth_enablechoicegl_pipeline_settingsschema_PolygonSmoothEnable_TxsdGlPipelineSettingsChoicePolygonSmoothEnable_ struct {
 	PolygonSmoothEnables []*TxsdGlPipelineSettingsChoicePolygonSmoothEnable `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_smooth_enable"`
+
 }
 
 type XsdGoPkgHasElem_polygon_smooth_enablechoicegl_pipeline_settingsschema_PolygonSmoothEnable_TxsdGlPipelineSettingsChoicePolygonSmoothEnable_ struct {
 	PolygonSmoothEnable *TxsdGlPipelineSettingsChoicePolygonSmoothEnable `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_smooth_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoicePolygonStippleEnable struct {
@@ -15879,21 +17287,25 @@ type TxsdGlPipelineSettingsChoicePolygonStippleEnable struct {
 
 type XsdGoPkgHasElem_polygon_stipple_enablechoicegl_pipeline_settingsschema_PolygonStippleEnable_TxsdGlPipelineSettingsChoicePolygonStippleEnable_ struct {
 	PolygonStippleEnable *TxsdGlPipelineSettingsChoicePolygonStippleEnable `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_stipple_enable"`
+
 }
 
 type XsdGoPkgHasElems_polygon_stipple_enablechoicegl_pipeline_settingsschema_PolygonStippleEnable_TxsdGlPipelineSettingsChoicePolygonStippleEnable_ struct {
 	PolygonStippleEnables []*TxsdGlPipelineSettingsChoicePolygonStippleEnable `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_stipple_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceRescaleNormalEnable struct {
 }
 
-type XsdGoPkgHasElems_rescale_normal_enablechoicegl_pipeline_settingsschema_RescaleNormalEnable_TxsdGlPipelineSettingsChoiceRescaleNormalEnable_ struct {
-	RescaleNormalEnables []*TxsdGlPipelineSettingsChoiceRescaleNormalEnable `xml:"http://www.collada.org/2005/11/COLLADASchema rescale_normal_enable"`
-}
-
 type XsdGoPkgHasElem_rescale_normal_enablechoicegl_pipeline_settingsschema_RescaleNormalEnable_TxsdGlPipelineSettingsChoiceRescaleNormalEnable_ struct {
 	RescaleNormalEnable *TxsdGlPipelineSettingsChoiceRescaleNormalEnable `xml:"http://www.collada.org/2005/11/COLLADASchema rescale_normal_enable"`
+
+}
+
+type XsdGoPkgHasElems_rescale_normal_enablechoicegl_pipeline_settingsschema_RescaleNormalEnable_TxsdGlPipelineSettingsChoiceRescaleNormalEnable_ struct {
+	RescaleNormalEnables []*TxsdGlPipelineSettingsChoiceRescaleNormalEnable `xml:"http://www.collada.org/2005/11/COLLADASchema rescale_normal_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceSampleAlphaToCoverageEnable struct {
@@ -15901,10 +17313,12 @@ type TxsdGlPipelineSettingsChoiceSampleAlphaToCoverageEnable struct {
 
 type XsdGoPkgHasElem_sample_alpha_to_coverage_enablechoicegl_pipeline_settingsschema_SampleAlphaToCoverageEnable_TxsdGlPipelineSettingsChoiceSampleAlphaToCoverageEnable_ struct {
 	SampleAlphaToCoverageEnable *TxsdGlPipelineSettingsChoiceSampleAlphaToCoverageEnable `xml:"http://www.collada.org/2005/11/COLLADASchema sample_alpha_to_coverage_enable"`
+
 }
 
 type XsdGoPkgHasElems_sample_alpha_to_coverage_enablechoicegl_pipeline_settingsschema_SampleAlphaToCoverageEnable_TxsdGlPipelineSettingsChoiceSampleAlphaToCoverageEnable_ struct {
 	SampleAlphaToCoverageEnables []*TxsdGlPipelineSettingsChoiceSampleAlphaToCoverageEnable `xml:"http://www.collada.org/2005/11/COLLADASchema sample_alpha_to_coverage_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceSampleAlphaToOneEnable struct {
@@ -15912,32 +17326,38 @@ type TxsdGlPipelineSettingsChoiceSampleAlphaToOneEnable struct {
 
 type XsdGoPkgHasElems_sample_alpha_to_one_enablechoicegl_pipeline_settingsschema_SampleAlphaToOneEnable_TxsdGlPipelineSettingsChoiceSampleAlphaToOneEnable_ struct {
 	SampleAlphaToOneEnables []*TxsdGlPipelineSettingsChoiceSampleAlphaToOneEnable `xml:"http://www.collada.org/2005/11/COLLADASchema sample_alpha_to_one_enable"`
+
 }
 
 type XsdGoPkgHasElem_sample_alpha_to_one_enablechoicegl_pipeline_settingsschema_SampleAlphaToOneEnable_TxsdGlPipelineSettingsChoiceSampleAlphaToOneEnable_ struct {
 	SampleAlphaToOneEnable *TxsdGlPipelineSettingsChoiceSampleAlphaToOneEnable `xml:"http://www.collada.org/2005/11/COLLADASchema sample_alpha_to_one_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceSampleCoverageEnable struct {
 }
 
-type XsdGoPkgHasElems_sample_coverage_enablechoicegl_pipeline_settingsschema_SampleCoverageEnable_TxsdGlPipelineSettingsChoiceSampleCoverageEnable_ struct {
-	SampleCoverageEnables []*TxsdGlPipelineSettingsChoiceSampleCoverageEnable `xml:"http://www.collada.org/2005/11/COLLADASchema sample_coverage_enable"`
-}
-
 type XsdGoPkgHasElem_sample_coverage_enablechoicegl_pipeline_settingsschema_SampleCoverageEnable_TxsdGlPipelineSettingsChoiceSampleCoverageEnable_ struct {
 	SampleCoverageEnable *TxsdGlPipelineSettingsChoiceSampleCoverageEnable `xml:"http://www.collada.org/2005/11/COLLADASchema sample_coverage_enable"`
+
+}
+
+type XsdGoPkgHasElems_sample_coverage_enablechoicegl_pipeline_settingsschema_SampleCoverageEnable_TxsdGlPipelineSettingsChoiceSampleCoverageEnable_ struct {
+	SampleCoverageEnables []*TxsdGlPipelineSettingsChoiceSampleCoverageEnable `xml:"http://www.collada.org/2005/11/COLLADASchema sample_coverage_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceScissorTestEnable struct {
 }
 
-type XsdGoPkgHasElem_scissor_test_enablechoicegl_pipeline_settingsschema_ScissorTestEnable_TxsdGlPipelineSettingsChoiceScissorTestEnable_ struct {
-	ScissorTestEnable *TxsdGlPipelineSettingsChoiceScissorTestEnable `xml:"http://www.collada.org/2005/11/COLLADASchema scissor_test_enable"`
-}
-
 type XsdGoPkgHasElems_scissor_test_enablechoicegl_pipeline_settingsschema_ScissorTestEnable_TxsdGlPipelineSettingsChoiceScissorTestEnable_ struct {
 	ScissorTestEnables []*TxsdGlPipelineSettingsChoiceScissorTestEnable `xml:"http://www.collada.org/2005/11/COLLADASchema scissor_test_enable"`
+
+}
+
+type XsdGoPkgHasElem_scissor_test_enablechoicegl_pipeline_settingsschema_ScissorTestEnable_TxsdGlPipelineSettingsChoiceScissorTestEnable_ struct {
+	ScissorTestEnable *TxsdGlPipelineSettingsChoiceScissorTestEnable `xml:"http://www.collada.org/2005/11/COLLADASchema scissor_test_enable"`
+
 }
 
 type TxsdGlPipelineSettingsChoiceStencilTestEnable struct {
@@ -15945,10 +17365,12 @@ type TxsdGlPipelineSettingsChoiceStencilTestEnable struct {
 
 type XsdGoPkgHasElems_stencil_test_enablechoicegl_pipeline_settingsschema_StencilTestEnable_TxsdGlPipelineSettingsChoiceStencilTestEnable_ struct {
 	StencilTestEnables []*TxsdGlPipelineSettingsChoiceStencilTestEnable `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_test_enable"`
+
 }
 
 type XsdGoPkgHasElem_stencil_test_enablechoicegl_pipeline_settingsschema_StencilTestEnable_TxsdGlPipelineSettingsChoiceStencilTestEnable_ struct {
 	StencilTestEnable *TxsdGlPipelineSettingsChoiceStencilTestEnable `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_test_enable"`
+
 }
 
 //	A group that defines all of the renderstates used for the CG and GLSL profiles.
@@ -16175,186 +17597,232 @@ type XsdGoPkgHasGroup_GlPipelineSettings struct {
 
 type XsdGoPkgHasElems_boolchoiceglsl_param_typeschema_Bool_TglslBool_ struct {
 	Bools []TglslBool `xml:"http://www.collada.org/2005/11/COLLADASchema bool"`
+
 }
 
 type XsdGoPkgHasElem_boolchoiceglsl_param_typeschema_Bool_TglslBool_ struct {
 	Bool TglslBool `xml:"http://www.collada.org/2005/11/COLLADASchema bool"`
-}
 
-type XsdGoPkgHasElems_bool2choiceglsl_param_typeschema_Bool2_TglslBool2_ struct {
-	Bool2s []TglslBool2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2"`
 }
 
 type XsdGoPkgHasElem_bool2choiceglsl_param_typeschema_Bool2_TglslBool2_ struct {
 	Bool2 TglslBool2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2"`
+
 }
 
-type XsdGoPkgHasElem_bool3choiceglsl_param_typeschema_Bool3_TglslBool3_ struct {
-	Bool3 TglslBool3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3"`
+type XsdGoPkgHasElems_bool2choiceglsl_param_typeschema_Bool2_TglslBool2_ struct {
+	Bool2s []TglslBool2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2"`
+
 }
 
 type XsdGoPkgHasElems_bool3choiceglsl_param_typeschema_Bool3_TglslBool3_ struct {
 	Bool3s []TglslBool3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3"`
+
+}
+
+type XsdGoPkgHasElem_bool3choiceglsl_param_typeschema_Bool3_TglslBool3_ struct {
+	Bool3 TglslBool3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3"`
+
 }
 
 type XsdGoPkgHasElem_bool4choiceglsl_param_typeschema_Bool4_TglslBool4_ struct {
 	Bool4 TglslBool4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4"`
+
 }
 
 type XsdGoPkgHasElems_bool4choiceglsl_param_typeschema_Bool4_TglslBool4_ struct {
 	Bool4s []TglslBool4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4"`
-}
 
-type XsdGoPkgHasElems_floatchoiceglsl_param_typeschema_Float_TglslFloat_ struct {
-	Floats []TglslFloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
 }
 
 type XsdGoPkgHasElem_floatchoiceglsl_param_typeschema_Float_TglslFloat_ struct {
 	Float TglslFloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
+
 }
 
-type XsdGoPkgHasElem_float2choiceglsl_param_typeschema_Float2_TglslFloat2_ struct {
-	Float2 TglslFloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2"`
+type XsdGoPkgHasElems_floatchoiceglsl_param_typeschema_Float_TglslFloat_ struct {
+	Floats []TglslFloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
+
 }
 
 type XsdGoPkgHasElems_float2choiceglsl_param_typeschema_Float2_TglslFloat2_ struct {
 	Float2s []TglslFloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2"`
+
+}
+
+type XsdGoPkgHasElem_float2choiceglsl_param_typeschema_Float2_TglslFloat2_ struct {
+	Float2 TglslFloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2"`
+
 }
 
 type XsdGoPkgHasElems_float3choiceglsl_param_typeschema_Float3_TglslFloat3_ struct {
 	Float3s []TglslFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3"`
+
 }
 
 type XsdGoPkgHasElem_float3choiceglsl_param_typeschema_Float3_TglslFloat3_ struct {
 	Float3 TglslFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3"`
+
 }
 
 type XsdGoPkgHasElems_float4choiceglsl_param_typeschema_Float4_TglslFloat4_ struct {
 	Float4s []TglslFloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4"`
+
 }
 
 type XsdGoPkgHasElem_float4choiceglsl_param_typeschema_Float4_TglslFloat4_ struct {
 	Float4 TglslFloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4"`
+
 }
 
 type XsdGoPkgHasElem_float2x2choiceglsl_param_typeschema_Float2X2_TglslFloat2X2_ struct {
 	Float2X2 TglslFloat2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x2"`
+
 }
 
 type XsdGoPkgHasElems_float2x2choiceglsl_param_typeschema_Float2X2_TglslFloat2X2_ struct {
 	Float2X2s []TglslFloat2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x2"`
+
 }
 
 type XsdGoPkgHasElems_float3x3choiceglsl_param_typeschema_Float3X3_TglslFloat3X3_ struct {
 	Float3X3s []TglslFloat3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x3"`
+
 }
 
 type XsdGoPkgHasElem_float3x3choiceglsl_param_typeschema_Float3X3_TglslFloat3X3_ struct {
 	Float3X3 TglslFloat3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x3"`
-}
 
-type XsdGoPkgHasElems_float4x4choiceglsl_param_typeschema_Float4X4_TglslFloat4X4_ struct {
-	Float4X4s []TglslFloat4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x4"`
 }
 
 type XsdGoPkgHasElem_float4x4choiceglsl_param_typeschema_Float4X4_TglslFloat4X4_ struct {
 	Float4X4 TglslFloat4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x4"`
+
 }
 
-type XsdGoPkgHasElem_intchoiceglsl_param_typeschema_Int_TglslInt_ struct {
-	Int TglslInt `xml:"http://www.collada.org/2005/11/COLLADASchema int"`
+type XsdGoPkgHasElems_float4x4choiceglsl_param_typeschema_Float4X4_TglslFloat4X4_ struct {
+	Float4X4s []TglslFloat4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x4"`
+
 }
 
 type XsdGoPkgHasElems_intchoiceglsl_param_typeschema_Int_TglslInt_ struct {
 	Ints []TglslInt `xml:"http://www.collada.org/2005/11/COLLADASchema int"`
+
 }
 
-type XsdGoPkgHasElems_int2choiceglsl_param_typeschema_Int2_TglslInt2_ struct {
-	Int2s []TglslInt2 `xml:"http://www.collada.org/2005/11/COLLADASchema int2"`
+type XsdGoPkgHasElem_intchoiceglsl_param_typeschema_Int_TglslInt_ struct {
+	Int TglslInt `xml:"http://www.collada.org/2005/11/COLLADASchema int"`
+
 }
 
 type XsdGoPkgHasElem_int2choiceglsl_param_typeschema_Int2_TglslInt2_ struct {
 	Int2 TglslInt2 `xml:"http://www.collada.org/2005/11/COLLADASchema int2"`
+
+}
+
+type XsdGoPkgHasElems_int2choiceglsl_param_typeschema_Int2_TglslInt2_ struct {
+	Int2s []TglslInt2 `xml:"http://www.collada.org/2005/11/COLLADASchema int2"`
+
 }
 
 type XsdGoPkgHasElems_int3choiceglsl_param_typeschema_Int3_TglslInt3_ struct {
 	Int3s []TglslInt3 `xml:"http://www.collada.org/2005/11/COLLADASchema int3"`
+
 }
 
 type XsdGoPkgHasElem_int3choiceglsl_param_typeschema_Int3_TglslInt3_ struct {
 	Int3 TglslInt3 `xml:"http://www.collada.org/2005/11/COLLADASchema int3"`
+
 }
 
 type XsdGoPkgHasElems_int4choiceglsl_param_typeschema_Int4_TglslInt4_ struct {
 	Int4s []TglslInt4 `xml:"http://www.collada.org/2005/11/COLLADASchema int4"`
+
 }
 
 type XsdGoPkgHasElem_int4choiceglsl_param_typeschema_Int4_TglslInt4_ struct {
 	Int4 TglslInt4 `xml:"http://www.collada.org/2005/11/COLLADASchema int4"`
+
 }
 
 type XsdGoPkgHasElem_surfacechoiceglsl_param_typeschema_Surface_TglslSurfaceType_ struct {
 	Surface *TglslSurfaceType `xml:"http://www.collada.org/2005/11/COLLADASchema surface"`
+
 }
 
 type XsdGoPkgHasElems_surfacechoiceglsl_param_typeschema_Surface_TglslSurfaceType_ struct {
 	Surfaces []*TglslSurfaceType `xml:"http://www.collada.org/2005/11/COLLADASchema surface"`
+
 }
 
 type XsdGoPkgHasElem_sampler1Dchoiceglsl_param_typeschema_Sampler1D_TglSampler1D_ struct {
 	Sampler1D *TglSampler1D `xml:"http://www.collada.org/2005/11/COLLADASchema sampler1D"`
+
 }
 
 type XsdGoPkgHasElems_sampler1Dchoiceglsl_param_typeschema_Sampler1D_TglSampler1D_ struct {
 	Sampler1Ds []*TglSampler1D `xml:"http://www.collada.org/2005/11/COLLADASchema sampler1D"`
+
 }
 
 type XsdGoPkgHasElems_sampler2Dchoiceglsl_param_typeschema_Sampler2D_TglSampler2D_ struct {
 	Sampler2Ds []*TglSampler2D `xml:"http://www.collada.org/2005/11/COLLADASchema sampler2D"`
+
 }
 
 type XsdGoPkgHasElem_sampler2Dchoiceglsl_param_typeschema_Sampler2D_TglSampler2D_ struct {
 	Sampler2D *TglSampler2D `xml:"http://www.collada.org/2005/11/COLLADASchema sampler2D"`
+
 }
 
 type XsdGoPkgHasElem_sampler3Dchoiceglsl_param_typeschema_Sampler3D_TglSampler3D_ struct {
 	Sampler3D *TglSampler3D `xml:"http://www.collada.org/2005/11/COLLADASchema sampler3D"`
+
 }
 
 type XsdGoPkgHasElems_sampler3Dchoiceglsl_param_typeschema_Sampler3D_TglSampler3D_ struct {
 	Sampler3Ds []*TglSampler3D `xml:"http://www.collada.org/2005/11/COLLADASchema sampler3D"`
+
 }
 
 type XsdGoPkgHasElems_samplerCUBEchoiceglsl_param_typeschema_SamplerCUBE_TglSamplerCUBE_ struct {
 	SamplerCUBEs []*TglSamplerCUBE `xml:"http://www.collada.org/2005/11/COLLADASchema samplerCUBE"`
+
 }
 
 type XsdGoPkgHasElem_samplerCUBEchoiceglsl_param_typeschema_SamplerCUBE_TglSamplerCUBE_ struct {
 	SamplerCUBE *TglSamplerCUBE `xml:"http://www.collada.org/2005/11/COLLADASchema samplerCUBE"`
+
 }
 
 type XsdGoPkgHasElems_samplerRECTchoiceglsl_param_typeschema_SamplerRECT_TglSamplerRECT_ struct {
 	SamplerRECTs []*TglSamplerRECT `xml:"http://www.collada.org/2005/11/COLLADASchema samplerRECT"`
+
 }
 
 type XsdGoPkgHasElem_samplerRECTchoiceglsl_param_typeschema_SamplerRECT_TglSamplerRECT_ struct {
 	SamplerRECT *TglSamplerRECT `xml:"http://www.collada.org/2005/11/COLLADASchema samplerRECT"`
+
 }
 
 type XsdGoPkgHasElem_samplerDEPTHchoiceglsl_param_typeschema_SamplerDEPTH_TglSamplerDEPTH_ struct {
 	SamplerDEPTH *TglSamplerDEPTH `xml:"http://www.collada.org/2005/11/COLLADASchema samplerDEPTH"`
+
 }
 
 type XsdGoPkgHasElems_samplerDEPTHchoiceglsl_param_typeschema_SamplerDEPTH_TglSamplerDEPTH_ struct {
 	SamplerDEPTHs []*TglSamplerDEPTH `xml:"http://www.collada.org/2005/11/COLLADASchema samplerDEPTH"`
+
 }
 
 type XsdGoPkgHasElems_enumchoiceglsl_param_typeschema_Enum_TglEnumeration_ struct {
 	Enums []TglEnumeration `xml:"http://www.collada.org/2005/11/COLLADASchema enum"`
+
 }
 
 type XsdGoPkgHasElem_enumchoiceglsl_param_typeschema_Enum_TglEnumeration_ struct {
 	Enum TglEnumeration `xml:"http://www.collada.org/2005/11/COLLADASchema enum"`
+
 }
 
 //	A group that specifies the allowable types for GLSL profile parameters.
@@ -16409,914 +17877,1142 @@ type XsdGoPkgHasGroup_GlslParamType struct {
 
 type XsdGoPkgHasElem_boolchoicecg_param_typeschema_Bool_TcgBool_ struct {
 	Bool TcgBool `xml:"http://www.collada.org/2005/11/COLLADASchema bool"`
+
 }
 
 type XsdGoPkgHasElems_boolchoicecg_param_typeschema_Bool_TcgBool_ struct {
 	Bools []TcgBool `xml:"http://www.collada.org/2005/11/COLLADASchema bool"`
-}
 
-type XsdGoPkgHasElem_bool1choicecg_param_typeschema_Bool1_TcgBool1_ struct {
-	Bool1 TcgBool1 `xml:"http://www.collada.org/2005/11/COLLADASchema bool1"`
 }
 
 type XsdGoPkgHasElems_bool1choicecg_param_typeschema_Bool1_TcgBool1_ struct {
 	Bool1s []TcgBool1 `xml:"http://www.collada.org/2005/11/COLLADASchema bool1"`
+
+}
+
+type XsdGoPkgHasElem_bool1choicecg_param_typeschema_Bool1_TcgBool1_ struct {
+	Bool1 TcgBool1 `xml:"http://www.collada.org/2005/11/COLLADASchema bool1"`
+
 }
 
 type XsdGoPkgHasElems_bool2choicecg_param_typeschema_Bool2_TcgBool2_ struct {
 	Bool2s []TcgBool2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2"`
+
 }
 
 type XsdGoPkgHasElem_bool2choicecg_param_typeschema_Bool2_TcgBool2_ struct {
 	Bool2 TcgBool2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2"`
-}
 
-type XsdGoPkgHasElems_bool3choicecg_param_typeschema_Bool3_TcgBool3_ struct {
-	Bool3s []TcgBool3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3"`
 }
 
 type XsdGoPkgHasElem_bool3choicecg_param_typeschema_Bool3_TcgBool3_ struct {
 	Bool3 TcgBool3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3"`
+
 }
 
-type XsdGoPkgHasElems_bool4choicecg_param_typeschema_Bool4_TcgBool4_ struct {
-	Bool4s []TcgBool4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4"`
+type XsdGoPkgHasElems_bool3choicecg_param_typeschema_Bool3_TcgBool3_ struct {
+	Bool3s []TcgBool3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3"`
+
 }
 
 type XsdGoPkgHasElem_bool4choicecg_param_typeschema_Bool4_TcgBool4_ struct {
 	Bool4 TcgBool4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4"`
+
+}
+
+type XsdGoPkgHasElems_bool4choicecg_param_typeschema_Bool4_TcgBool4_ struct {
+	Bool4s []TcgBool4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4"`
+
 }
 
 type XsdGoPkgHasElems_bool1x1choicecg_param_typeschema_Bool1X1_TcgBool1X1_ struct {
 	Bool1X1s []TcgBool1X1 `xml:"http://www.collada.org/2005/11/COLLADASchema bool1x1"`
+
 }
 
 type XsdGoPkgHasElem_bool1x1choicecg_param_typeschema_Bool1X1_TcgBool1X1_ struct {
 	Bool1X1 TcgBool1X1 `xml:"http://www.collada.org/2005/11/COLLADASchema bool1x1"`
+
 }
 
 type XsdGoPkgHasElems_bool1x2choicecg_param_typeschema_Bool1X2_TcgBool1X2_ struct {
 	Bool1X2s []TcgBool1X2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool1x2"`
+
 }
 
 type XsdGoPkgHasElem_bool1x2choicecg_param_typeschema_Bool1X2_TcgBool1X2_ struct {
 	Bool1X2 TcgBool1X2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool1x2"`
+
 }
 
 type XsdGoPkgHasElem_bool1x3choicecg_param_typeschema_Bool1X3_TcgBool1X3_ struct {
 	Bool1X3 TcgBool1X3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool1x3"`
+
 }
 
 type XsdGoPkgHasElems_bool1x3choicecg_param_typeschema_Bool1X3_TcgBool1X3_ struct {
 	Bool1X3s []TcgBool1X3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool1x3"`
-}
 
-type XsdGoPkgHasElems_bool1x4choicecg_param_typeschema_Bool1X4_TcgBool1X4_ struct {
-	Bool1X4s []TcgBool1X4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool1x4"`
 }
 
 type XsdGoPkgHasElem_bool1x4choicecg_param_typeschema_Bool1X4_TcgBool1X4_ struct {
 	Bool1X4 TcgBool1X4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool1x4"`
+
 }
 
-type XsdGoPkgHasElem_bool2x1choicecg_param_typeschema_Bool2X1_TcgBool2X1_ struct {
-	Bool2X1 TcgBool2X1 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2x1"`
+type XsdGoPkgHasElems_bool1x4choicecg_param_typeschema_Bool1X4_TcgBool1X4_ struct {
+	Bool1X4s []TcgBool1X4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool1x4"`
+
 }
 
 type XsdGoPkgHasElems_bool2x1choicecg_param_typeschema_Bool2X1_TcgBool2X1_ struct {
 	Bool2X1s []TcgBool2X1 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2x1"`
+
+}
+
+type XsdGoPkgHasElem_bool2x1choicecg_param_typeschema_Bool2X1_TcgBool2X1_ struct {
+	Bool2X1 TcgBool2X1 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2x1"`
+
 }
 
 type XsdGoPkgHasElem_bool2x2choicecg_param_typeschema_Bool2X2_TcgBool2X2_ struct {
 	Bool2X2 TcgBool2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2x2"`
+
 }
 
 type XsdGoPkgHasElems_bool2x2choicecg_param_typeschema_Bool2X2_TcgBool2X2_ struct {
 	Bool2X2s []TcgBool2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2x2"`
+
 }
 
 type XsdGoPkgHasElem_bool2x3choicecg_param_typeschema_Bool2X3_TcgBool2X3_ struct {
 	Bool2X3 TcgBool2X3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2x3"`
+
 }
 
 type XsdGoPkgHasElems_bool2x3choicecg_param_typeschema_Bool2X3_TcgBool2X3_ struct {
 	Bool2X3s []TcgBool2X3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2x3"`
-}
 
-type XsdGoPkgHasElem_bool2x4choicecg_param_typeschema_Bool2X4_TcgBool2X4_ struct {
-	Bool2X4 TcgBool2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2x4"`
 }
 
 type XsdGoPkgHasElems_bool2x4choicecg_param_typeschema_Bool2X4_TcgBool2X4_ struct {
 	Bool2X4s []TcgBool2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2x4"`
+
+}
+
+type XsdGoPkgHasElem_bool2x4choicecg_param_typeschema_Bool2X4_TcgBool2X4_ struct {
+	Bool2X4 TcgBool2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2x4"`
+
 }
 
 type XsdGoPkgHasElems_bool3x1choicecg_param_typeschema_Bool3X1_TcgBool3X1_ struct {
 	Bool3X1s []TcgBool3X1 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3x1"`
+
 }
 
 type XsdGoPkgHasElem_bool3x1choicecg_param_typeschema_Bool3X1_TcgBool3X1_ struct {
 	Bool3X1 TcgBool3X1 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3x1"`
+
 }
 
 type XsdGoPkgHasElems_bool3x2choicecg_param_typeschema_Bool3X2_TcgBool3X2_ struct {
 	Bool3X2s []TcgBool3X2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3x2"`
+
 }
 
 type XsdGoPkgHasElem_bool3x2choicecg_param_typeschema_Bool3X2_TcgBool3X2_ struct {
 	Bool3X2 TcgBool3X2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3x2"`
+
 }
 
 type XsdGoPkgHasElems_bool3x3choicecg_param_typeschema_Bool3X3_TcgBool3X3_ struct {
 	Bool3X3s []TcgBool3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3x3"`
+
 }
 
 type XsdGoPkgHasElem_bool3x3choicecg_param_typeschema_Bool3X3_TcgBool3X3_ struct {
 	Bool3X3 TcgBool3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3x3"`
+
 }
 
 type XsdGoPkgHasElems_bool3x4choicecg_param_typeschema_Bool3X4_TcgBool3X4_ struct {
 	Bool3X4s []TcgBool3X4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3x4"`
+
 }
 
 type XsdGoPkgHasElem_bool3x4choicecg_param_typeschema_Bool3X4_TcgBool3X4_ struct {
 	Bool3X4 TcgBool3X4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3x4"`
-}
 
-type XsdGoPkgHasElem_bool4x1choicecg_param_typeschema_Bool4X1_TcgBool4X1_ struct {
-	Bool4X1 TcgBool4X1 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4x1"`
 }
 
 type XsdGoPkgHasElems_bool4x1choicecg_param_typeschema_Bool4X1_TcgBool4X1_ struct {
 	Bool4X1s []TcgBool4X1 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4x1"`
+
+}
+
+type XsdGoPkgHasElem_bool4x1choicecg_param_typeschema_Bool4X1_TcgBool4X1_ struct {
+	Bool4X1 TcgBool4X1 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4x1"`
+
 }
 
 type XsdGoPkgHasElem_bool4x2choicecg_param_typeschema_Bool4X2_TcgBool4X2_ struct {
 	Bool4X2 TcgBool4X2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4x2"`
+
 }
 
 type XsdGoPkgHasElems_bool4x2choicecg_param_typeschema_Bool4X2_TcgBool4X2_ struct {
 	Bool4X2s []TcgBool4X2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4x2"`
+
 }
 
 type XsdGoPkgHasElems_bool4x3choicecg_param_typeschema_Bool4X3_TcgBool4X3_ struct {
 	Bool4X3s []TcgBool4X3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4x3"`
+
 }
 
 type XsdGoPkgHasElem_bool4x3choicecg_param_typeschema_Bool4X3_TcgBool4X3_ struct {
 	Bool4X3 TcgBool4X3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4x3"`
-}
 
-type XsdGoPkgHasElem_bool4x4choicecg_param_typeschema_Bool4X4_TcgBool4X4_ struct {
-	Bool4X4 TcgBool4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4x4"`
 }
 
 type XsdGoPkgHasElems_bool4x4choicecg_param_typeschema_Bool4X4_TcgBool4X4_ struct {
 	Bool4X4s []TcgBool4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4x4"`
+
 }
 
-type XsdGoPkgHasElem_floatchoicecg_param_typeschema_Float_TcgFloat_ struct {
-	Float TcgFloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
+type XsdGoPkgHasElem_bool4x4choicecg_param_typeschema_Bool4X4_TcgBool4X4_ struct {
+	Bool4X4 TcgBool4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4x4"`
+
 }
 
 type XsdGoPkgHasElems_floatchoicecg_param_typeschema_Float_TcgFloat_ struct {
 	Floats []TcgFloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
+
 }
 
-type XsdGoPkgHasElem_float1choicecg_param_typeschema_Float1_TcgFloat1_ struct {
-	Float1 TcgFloat1 `xml:"http://www.collada.org/2005/11/COLLADASchema float1"`
+type XsdGoPkgHasElem_floatchoicecg_param_typeschema_Float_TcgFloat_ struct {
+	Float TcgFloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
+
 }
 
 type XsdGoPkgHasElems_float1choicecg_param_typeschema_Float1_TcgFloat1_ struct {
 	Float1s []TcgFloat1 `xml:"http://www.collada.org/2005/11/COLLADASchema float1"`
+
+}
+
+type XsdGoPkgHasElem_float1choicecg_param_typeschema_Float1_TcgFloat1_ struct {
+	Float1 TcgFloat1 `xml:"http://www.collada.org/2005/11/COLLADASchema float1"`
+
 }
 
 type XsdGoPkgHasElems_float2choicecg_param_typeschema_Float2_TcgFloat2_ struct {
 	Float2s []TcgFloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2"`
+
 }
 
 type XsdGoPkgHasElem_float2choicecg_param_typeschema_Float2_TcgFloat2_ struct {
 	Float2 TcgFloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2"`
+
 }
 
 type XsdGoPkgHasElems_float3choicecg_param_typeschema_Float3_TcgFloat3_ struct {
 	Float3s []TcgFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3"`
+
 }
 
 type XsdGoPkgHasElem_float3choicecg_param_typeschema_Float3_TcgFloat3_ struct {
 	Float3 TcgFloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3"`
-}
 
-type XsdGoPkgHasElems_float4choicecg_param_typeschema_Float4_TcgFloat4_ struct {
-	Float4s []TcgFloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4"`
 }
 
 type XsdGoPkgHasElem_float4choicecg_param_typeschema_Float4_TcgFloat4_ struct {
 	Float4 TcgFloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4"`
+
 }
 
-type XsdGoPkgHasElems_float1x1choicecg_param_typeschema_Float1X1_TcgFloat1X1_ struct {
-	Float1X1s []TcgFloat1X1 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x1"`
+type XsdGoPkgHasElems_float4choicecg_param_typeschema_Float4_TcgFloat4_ struct {
+	Float4s []TcgFloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4"`
+
 }
 
 type XsdGoPkgHasElem_float1x1choicecg_param_typeschema_Float1X1_TcgFloat1X1_ struct {
 	Float1X1 TcgFloat1X1 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x1"`
+
+}
+
+type XsdGoPkgHasElems_float1x1choicecg_param_typeschema_Float1X1_TcgFloat1X1_ struct {
+	Float1X1s []TcgFloat1X1 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x1"`
+
 }
 
 type XsdGoPkgHasElem_float1x2choicecg_param_typeschema_Float1X2_TcgFloat1X2_ struct {
 	Float1X2 TcgFloat1X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x2"`
+
 }
 
 type XsdGoPkgHasElems_float1x2choicecg_param_typeschema_Float1X2_TcgFloat1X2_ struct {
 	Float1X2s []TcgFloat1X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x2"`
-}
 
-type XsdGoPkgHasElems_float1x3choicecg_param_typeschema_Float1X3_TcgFloat1X3_ struct {
-	Float1X3s []TcgFloat1X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x3"`
 }
 
 type XsdGoPkgHasElem_float1x3choicecg_param_typeschema_Float1X3_TcgFloat1X3_ struct {
 	Float1X3 TcgFloat1X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x3"`
+
 }
 
-type XsdGoPkgHasElem_float1x4choicecg_param_typeschema_Float1X4_TcgFloat1X4_ struct {
-	Float1X4 TcgFloat1X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x4"`
+type XsdGoPkgHasElems_float1x3choicecg_param_typeschema_Float1X3_TcgFloat1X3_ struct {
+	Float1X3s []TcgFloat1X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x3"`
+
 }
 
 type XsdGoPkgHasElems_float1x4choicecg_param_typeschema_Float1X4_TcgFloat1X4_ struct {
 	Float1X4s []TcgFloat1X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x4"`
+
+}
+
+type XsdGoPkgHasElem_float1x4choicecg_param_typeschema_Float1X4_TcgFloat1X4_ struct {
+	Float1X4 TcgFloat1X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x4"`
+
 }
 
 type XsdGoPkgHasElem_float2x1choicecg_param_typeschema_Float2X1_TcgFloat2X1_ struct {
 	Float2X1 TcgFloat2X1 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x1"`
+
 }
 
 type XsdGoPkgHasElems_float2x1choicecg_param_typeschema_Float2X1_TcgFloat2X1_ struct {
 	Float2X1s []TcgFloat2X1 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x1"`
+
 }
 
 type XsdGoPkgHasElem_float2x2choicecg_param_typeschema_Float2X2_TcgFloat2X2_ struct {
 	Float2X2 TcgFloat2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x2"`
+
 }
 
 type XsdGoPkgHasElems_float2x2choicecg_param_typeschema_Float2X2_TcgFloat2X2_ struct {
 	Float2X2s []TcgFloat2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x2"`
+
 }
 
 type XsdGoPkgHasElem_float2x3choicecg_param_typeschema_Float2X3_TcgFloat2X3_ struct {
 	Float2X3 TcgFloat2X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x3"`
+
 }
 
 type XsdGoPkgHasElems_float2x3choicecg_param_typeschema_Float2X3_TcgFloat2X3_ struct {
 	Float2X3s []TcgFloat2X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x3"`
+
 }
 
 type XsdGoPkgHasElem_float2x4choicecg_param_typeschema_Float2X4_TcgFloat2X4_ struct {
 	Float2X4 TcgFloat2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x4"`
+
 }
 
 type XsdGoPkgHasElems_float2x4choicecg_param_typeschema_Float2X4_TcgFloat2X4_ struct {
 	Float2X4s []TcgFloat2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x4"`
-}
 
-type XsdGoPkgHasElem_float3x1choicecg_param_typeschema_Float3X1_TcgFloat3X1_ struct {
-	Float3X1 TcgFloat3X1 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x1"`
 }
 
 type XsdGoPkgHasElems_float3x1choicecg_param_typeschema_Float3X1_TcgFloat3X1_ struct {
 	Float3X1s []TcgFloat3X1 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x1"`
+
+}
+
+type XsdGoPkgHasElem_float3x1choicecg_param_typeschema_Float3X1_TcgFloat3X1_ struct {
+	Float3X1 TcgFloat3X1 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x1"`
+
 }
 
 type XsdGoPkgHasElems_float3x2choicecg_param_typeschema_Float3X2_TcgFloat3X2_ struct {
 	Float3X2s []TcgFloat3X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x2"`
+
 }
 
 type XsdGoPkgHasElem_float3x2choicecg_param_typeschema_Float3X2_TcgFloat3X2_ struct {
 	Float3X2 TcgFloat3X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x2"`
-}
 
-type XsdGoPkgHasElem_float3x3choicecg_param_typeschema_Float3X3_TcgFloat3X3_ struct {
-	Float3X3 TcgFloat3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x3"`
 }
 
 type XsdGoPkgHasElems_float3x3choicecg_param_typeschema_Float3X3_TcgFloat3X3_ struct {
 	Float3X3s []TcgFloat3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x3"`
+
 }
 
-type XsdGoPkgHasElems_float3x4choicecg_param_typeschema_Float3X4_TcgFloat3X4_ struct {
-	Float3X4s []TcgFloat3X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x4"`
+type XsdGoPkgHasElem_float3x3choicecg_param_typeschema_Float3X3_TcgFloat3X3_ struct {
+	Float3X3 TcgFloat3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x3"`
+
 }
 
 type XsdGoPkgHasElem_float3x4choicecg_param_typeschema_Float3X4_TcgFloat3X4_ struct {
 	Float3X4 TcgFloat3X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x4"`
+
 }
 
-type XsdGoPkgHasElem_float4x1choicecg_param_typeschema_Float4X1_TcgFloat4X1_ struct {
-	Float4X1 TcgFloat4X1 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x1"`
+type XsdGoPkgHasElems_float3x4choicecg_param_typeschema_Float3X4_TcgFloat3X4_ struct {
+	Float3X4s []TcgFloat3X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x4"`
+
 }
 
 type XsdGoPkgHasElems_float4x1choicecg_param_typeschema_Float4X1_TcgFloat4X1_ struct {
 	Float4X1s []TcgFloat4X1 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x1"`
+
+}
+
+type XsdGoPkgHasElem_float4x1choicecg_param_typeschema_Float4X1_TcgFloat4X1_ struct {
+	Float4X1 TcgFloat4X1 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x1"`
+
 }
 
 type XsdGoPkgHasElem_float4x2choicecg_param_typeschema_Float4X2_TcgFloat4X2_ struct {
 	Float4X2 TcgFloat4X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x2"`
+
 }
 
 type XsdGoPkgHasElems_float4x2choicecg_param_typeschema_Float4X2_TcgFloat4X2_ struct {
 	Float4X2s []TcgFloat4X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x2"`
-}
 
-type XsdGoPkgHasElems_float4x3choicecg_param_typeschema_Float4X3_TcgFloat4X3_ struct {
-	Float4X3s []TcgFloat4X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x3"`
 }
 
 type XsdGoPkgHasElem_float4x3choicecg_param_typeschema_Float4X3_TcgFloat4X3_ struct {
 	Float4X3 TcgFloat4X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x3"`
+
+}
+
+type XsdGoPkgHasElems_float4x3choicecg_param_typeschema_Float4X3_TcgFloat4X3_ struct {
+	Float4X3s []TcgFloat4X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x3"`
+
 }
 
 type XsdGoPkgHasElem_float4x4choicecg_param_typeschema_Float4X4_TcgFloat4X4_ struct {
 	Float4X4 TcgFloat4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x4"`
+
 }
 
 type XsdGoPkgHasElems_float4x4choicecg_param_typeschema_Float4X4_TcgFloat4X4_ struct {
 	Float4X4s []TcgFloat4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x4"`
+
 }
 
 type XsdGoPkgHasElems_intchoicecg_param_typeschema_Int_TcgInt_ struct {
 	Ints []TcgInt `xml:"http://www.collada.org/2005/11/COLLADASchema int"`
+
 }
 
 type XsdGoPkgHasElem_intchoicecg_param_typeschema_Int_TcgInt_ struct {
 	Int TcgInt `xml:"http://www.collada.org/2005/11/COLLADASchema int"`
+
 }
 
 type XsdGoPkgHasElems_int1choicecg_param_typeschema_Int1_TcgInt1_ struct {
 	Int1s []TcgInt1 `xml:"http://www.collada.org/2005/11/COLLADASchema int1"`
+
 }
 
 type XsdGoPkgHasElem_int1choicecg_param_typeschema_Int1_TcgInt1_ struct {
 	Int1 TcgInt1 `xml:"http://www.collada.org/2005/11/COLLADASchema int1"`
-}
 
-type XsdGoPkgHasElem_int2choicecg_param_typeschema_Int2_TcgInt2_ struct {
-	Int2 TcgInt2 `xml:"http://www.collada.org/2005/11/COLLADASchema int2"`
 }
 
 type XsdGoPkgHasElems_int2choicecg_param_typeschema_Int2_TcgInt2_ struct {
 	Int2s []TcgInt2 `xml:"http://www.collada.org/2005/11/COLLADASchema int2"`
+
+}
+
+type XsdGoPkgHasElem_int2choicecg_param_typeschema_Int2_TcgInt2_ struct {
+	Int2 TcgInt2 `xml:"http://www.collada.org/2005/11/COLLADASchema int2"`
+
 }
 
 type XsdGoPkgHasElem_int3choicecg_param_typeschema_Int3_TcgInt3_ struct {
 	Int3 TcgInt3 `xml:"http://www.collada.org/2005/11/COLLADASchema int3"`
+
 }
 
 type XsdGoPkgHasElems_int3choicecg_param_typeschema_Int3_TcgInt3_ struct {
 	Int3s []TcgInt3 `xml:"http://www.collada.org/2005/11/COLLADASchema int3"`
-}
 
-type XsdGoPkgHasElem_int4choicecg_param_typeschema_Int4_TcgInt4_ struct {
-	Int4 TcgInt4 `xml:"http://www.collada.org/2005/11/COLLADASchema int4"`
 }
 
 type XsdGoPkgHasElems_int4choicecg_param_typeschema_Int4_TcgInt4_ struct {
 	Int4s []TcgInt4 `xml:"http://www.collada.org/2005/11/COLLADASchema int4"`
+
+}
+
+type XsdGoPkgHasElem_int4choicecg_param_typeschema_Int4_TcgInt4_ struct {
+	Int4 TcgInt4 `xml:"http://www.collada.org/2005/11/COLLADASchema int4"`
+
 }
 
 type XsdGoPkgHasElem_int1x1choicecg_param_typeschema_Int1X1_TcgInt1X1_ struct {
 	Int1X1 TcgInt1X1 `xml:"http://www.collada.org/2005/11/COLLADASchema int1x1"`
+
 }
 
 type XsdGoPkgHasElems_int1x1choicecg_param_typeschema_Int1X1_TcgInt1X1_ struct {
 	Int1X1s []TcgInt1X1 `xml:"http://www.collada.org/2005/11/COLLADASchema int1x1"`
-}
 
-type XsdGoPkgHasElem_int1x2choicecg_param_typeschema_Int1X2_TcgInt1X2_ struct {
-	Int1X2 TcgInt1X2 `xml:"http://www.collada.org/2005/11/COLLADASchema int1x2"`
 }
 
 type XsdGoPkgHasElems_int1x2choicecg_param_typeschema_Int1X2_TcgInt1X2_ struct {
 	Int1X2s []TcgInt1X2 `xml:"http://www.collada.org/2005/11/COLLADASchema int1x2"`
+
+}
+
+type XsdGoPkgHasElem_int1x2choicecg_param_typeschema_Int1X2_TcgInt1X2_ struct {
+	Int1X2 TcgInt1X2 `xml:"http://www.collada.org/2005/11/COLLADASchema int1x2"`
+
 }
 
 type XsdGoPkgHasElems_int1x3choicecg_param_typeschema_Int1X3_TcgInt1X3_ struct {
 	Int1X3s []TcgInt1X3 `xml:"http://www.collada.org/2005/11/COLLADASchema int1x3"`
+
 }
 
 type XsdGoPkgHasElem_int1x3choicecg_param_typeschema_Int1X3_TcgInt1X3_ struct {
 	Int1X3 TcgInt1X3 `xml:"http://www.collada.org/2005/11/COLLADASchema int1x3"`
+
 }
 
 type XsdGoPkgHasElem_int1x4choicecg_param_typeschema_Int1X4_TcgInt1X4_ struct {
 	Int1X4 TcgInt1X4 `xml:"http://www.collada.org/2005/11/COLLADASchema int1x4"`
+
 }
 
 type XsdGoPkgHasElems_int1x4choicecg_param_typeschema_Int1X4_TcgInt1X4_ struct {
 	Int1X4s []TcgInt1X4 `xml:"http://www.collada.org/2005/11/COLLADASchema int1x4"`
+
 }
 
 type XsdGoPkgHasElems_int2x1choicecg_param_typeschema_Int2X1_TcgInt2X1_ struct {
 	Int2X1s []TcgInt2X1 `xml:"http://www.collada.org/2005/11/COLLADASchema int2x1"`
+
 }
 
 type XsdGoPkgHasElem_int2x1choicecg_param_typeschema_Int2X1_TcgInt2X1_ struct {
 	Int2X1 TcgInt2X1 `xml:"http://www.collada.org/2005/11/COLLADASchema int2x1"`
+
 }
 
 type XsdGoPkgHasElem_int2x2choicecg_param_typeschema_Int2X2_TcgInt2X2_ struct {
 	Int2X2 TcgInt2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema int2x2"`
+
 }
 
 type XsdGoPkgHasElems_int2x2choicecg_param_typeschema_Int2X2_TcgInt2X2_ struct {
 	Int2X2s []TcgInt2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema int2x2"`
+
 }
 
 type XsdGoPkgHasElem_int2x3choicecg_param_typeschema_Int2X3_TcgInt2X3_ struct {
 	Int2X3 TcgInt2X3 `xml:"http://www.collada.org/2005/11/COLLADASchema int2x3"`
+
 }
 
 type XsdGoPkgHasElems_int2x3choicecg_param_typeschema_Int2X3_TcgInt2X3_ struct {
 	Int2X3s []TcgInt2X3 `xml:"http://www.collada.org/2005/11/COLLADASchema int2x3"`
+
 }
 
 type XsdGoPkgHasElems_int2x4choicecg_param_typeschema_Int2X4_TcgInt2X4_ struct {
 	Int2X4s []TcgInt2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema int2x4"`
+
 }
 
 type XsdGoPkgHasElem_int2x4choicecg_param_typeschema_Int2X4_TcgInt2X4_ struct {
 	Int2X4 TcgInt2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema int2x4"`
+
 }
 
 type XsdGoPkgHasElems_int3x1choicecg_param_typeschema_Int3X1_TcgInt3X1_ struct {
 	Int3X1s []TcgInt3X1 `xml:"http://www.collada.org/2005/11/COLLADASchema int3x1"`
+
 }
 
 type XsdGoPkgHasElem_int3x1choicecg_param_typeschema_Int3X1_TcgInt3X1_ struct {
 	Int3X1 TcgInt3X1 `xml:"http://www.collada.org/2005/11/COLLADASchema int3x1"`
-}
 
-type XsdGoPkgHasElem_int3x2choicecg_param_typeschema_Int3X2_TcgInt3X2_ struct {
-	Int3X2 TcgInt3X2 `xml:"http://www.collada.org/2005/11/COLLADASchema int3x2"`
 }
 
 type XsdGoPkgHasElems_int3x2choicecg_param_typeschema_Int3X2_TcgInt3X2_ struct {
 	Int3X2s []TcgInt3X2 `xml:"http://www.collada.org/2005/11/COLLADASchema int3x2"`
+
 }
 
-type XsdGoPkgHasElems_int3x3choicecg_param_typeschema_Int3X3_TcgInt3X3_ struct {
-	Int3X3s []TcgInt3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema int3x3"`
+type XsdGoPkgHasElem_int3x2choicecg_param_typeschema_Int3X2_TcgInt3X2_ struct {
+	Int3X2 TcgInt3X2 `xml:"http://www.collada.org/2005/11/COLLADASchema int3x2"`
+
 }
 
 type XsdGoPkgHasElem_int3x3choicecg_param_typeschema_Int3X3_TcgInt3X3_ struct {
 	Int3X3 TcgInt3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema int3x3"`
+
 }
 
-type XsdGoPkgHasElem_int3x4choicecg_param_typeschema_Int3X4_TcgInt3X4_ struct {
-	Int3X4 TcgInt3X4 `xml:"http://www.collada.org/2005/11/COLLADASchema int3x4"`
+type XsdGoPkgHasElems_int3x3choicecg_param_typeschema_Int3X3_TcgInt3X3_ struct {
+	Int3X3s []TcgInt3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema int3x3"`
+
 }
 
 type XsdGoPkgHasElems_int3x4choicecg_param_typeschema_Int3X4_TcgInt3X4_ struct {
 	Int3X4s []TcgInt3X4 `xml:"http://www.collada.org/2005/11/COLLADASchema int3x4"`
+
 }
 
-type XsdGoPkgHasElems_int4x1choicecg_param_typeschema_Int4X1_TcgInt4X1_ struct {
-	Int4X1s []TcgInt4X1 `xml:"http://www.collada.org/2005/11/COLLADASchema int4x1"`
+type XsdGoPkgHasElem_int3x4choicecg_param_typeschema_Int3X4_TcgInt3X4_ struct {
+	Int3X4 TcgInt3X4 `xml:"http://www.collada.org/2005/11/COLLADASchema int3x4"`
+
 }
 
 type XsdGoPkgHasElem_int4x1choicecg_param_typeschema_Int4X1_TcgInt4X1_ struct {
 	Int4X1 TcgInt4X1 `xml:"http://www.collada.org/2005/11/COLLADASchema int4x1"`
+
 }
 
-type XsdGoPkgHasElems_int4x2choicecg_param_typeschema_Int4X2_TcgInt4X2_ struct {
-	Int4X2s []TcgInt4X2 `xml:"http://www.collada.org/2005/11/COLLADASchema int4x2"`
+type XsdGoPkgHasElems_int4x1choicecg_param_typeschema_Int4X1_TcgInt4X1_ struct {
+	Int4X1s []TcgInt4X1 `xml:"http://www.collada.org/2005/11/COLLADASchema int4x1"`
+
 }
 
 type XsdGoPkgHasElem_int4x2choicecg_param_typeschema_Int4X2_TcgInt4X2_ struct {
 	Int4X2 TcgInt4X2 `xml:"http://www.collada.org/2005/11/COLLADASchema int4x2"`
+
+}
+
+type XsdGoPkgHasElems_int4x2choicecg_param_typeschema_Int4X2_TcgInt4X2_ struct {
+	Int4X2s []TcgInt4X2 `xml:"http://www.collada.org/2005/11/COLLADASchema int4x2"`
+
 }
 
 type XsdGoPkgHasElem_int4x3choicecg_param_typeschema_Int4X3_TcgInt4X3_ struct {
 	Int4X3 TcgInt4X3 `xml:"http://www.collada.org/2005/11/COLLADASchema int4x3"`
+
 }
 
 type XsdGoPkgHasElems_int4x3choicecg_param_typeschema_Int4X3_TcgInt4X3_ struct {
 	Int4X3s []TcgInt4X3 `xml:"http://www.collada.org/2005/11/COLLADASchema int4x3"`
-}
 
-type XsdGoPkgHasElem_int4x4choicecg_param_typeschema_Int4X4_TcgInt4X4_ struct {
-	Int4X4 TcgInt4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema int4x4"`
 }
 
 type XsdGoPkgHasElems_int4x4choicecg_param_typeschema_Int4X4_TcgInt4X4_ struct {
 	Int4X4s []TcgInt4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema int4x4"`
+
 }
 
-type XsdGoPkgHasElem_halfchoicecg_param_typeschema_Half_TcgHalf_ struct {
-	Half TcgHalf `xml:"http://www.collada.org/2005/11/COLLADASchema half"`
+type XsdGoPkgHasElem_int4x4choicecg_param_typeschema_Int4X4_TcgInt4X4_ struct {
+	Int4X4 TcgInt4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema int4x4"`
+
 }
 
 type XsdGoPkgHasElems_halfchoicecg_param_typeschema_Half_TcgHalf_ struct {
 	Halfs []TcgHalf `xml:"http://www.collada.org/2005/11/COLLADASchema half"`
+
 }
 
-type XsdGoPkgHasElem_half1choicecg_param_typeschema_Half1_TcgHalf1_ struct {
-	Half1 TcgHalf1 `xml:"http://www.collada.org/2005/11/COLLADASchema half1"`
+type XsdGoPkgHasElem_halfchoicecg_param_typeschema_Half_TcgHalf_ struct {
+	Half TcgHalf `xml:"http://www.collada.org/2005/11/COLLADASchema half"`
+
 }
 
 type XsdGoPkgHasElems_half1choicecg_param_typeschema_Half1_TcgHalf1_ struct {
 	Half1s []TcgHalf1 `xml:"http://www.collada.org/2005/11/COLLADASchema half1"`
+
+}
+
+type XsdGoPkgHasElem_half1choicecg_param_typeschema_Half1_TcgHalf1_ struct {
+	Half1 TcgHalf1 `xml:"http://www.collada.org/2005/11/COLLADASchema half1"`
+
 }
 
 type XsdGoPkgHasElem_half2choicecg_param_typeschema_Half2_TcgHalf2_ struct {
 	Half2 TcgHalf2 `xml:"http://www.collada.org/2005/11/COLLADASchema half2"`
+
 }
 
 type XsdGoPkgHasElems_half2choicecg_param_typeschema_Half2_TcgHalf2_ struct {
 	Half2s []TcgHalf2 `xml:"http://www.collada.org/2005/11/COLLADASchema half2"`
+
 }
 
 type XsdGoPkgHasElems_half3choicecg_param_typeschema_Half3_TcgHalf3_ struct {
 	Half3s []TcgHalf3 `xml:"http://www.collada.org/2005/11/COLLADASchema half3"`
+
 }
 
 type XsdGoPkgHasElem_half3choicecg_param_typeschema_Half3_TcgHalf3_ struct {
 	Half3 TcgHalf3 `xml:"http://www.collada.org/2005/11/COLLADASchema half3"`
-}
 
-type XsdGoPkgHasElem_half4choicecg_param_typeschema_Half4_TcgHalf4_ struct {
-	Half4 TcgHalf4 `xml:"http://www.collada.org/2005/11/COLLADASchema half4"`
 }
 
 type XsdGoPkgHasElems_half4choicecg_param_typeschema_Half4_TcgHalf4_ struct {
 	Half4s []TcgHalf4 `xml:"http://www.collada.org/2005/11/COLLADASchema half4"`
+
+}
+
+type XsdGoPkgHasElem_half4choicecg_param_typeschema_Half4_TcgHalf4_ struct {
+	Half4 TcgHalf4 `xml:"http://www.collada.org/2005/11/COLLADASchema half4"`
+
 }
 
 type XsdGoPkgHasElems_half1x1choicecg_param_typeschema_Half1X1_TcgHalf1X1_ struct {
 	Half1X1s []TcgHalf1X1 `xml:"http://www.collada.org/2005/11/COLLADASchema half1x1"`
+
 }
 
 type XsdGoPkgHasElem_half1x1choicecg_param_typeschema_Half1X1_TcgHalf1X1_ struct {
 	Half1X1 TcgHalf1X1 `xml:"http://www.collada.org/2005/11/COLLADASchema half1x1"`
-}
 
-type XsdGoPkgHasElems_half1x2choicecg_param_typeschema_Half1X2_TcgHalf1X2_ struct {
-	Half1X2s []TcgHalf1X2 `xml:"http://www.collada.org/2005/11/COLLADASchema half1x2"`
 }
 
 type XsdGoPkgHasElem_half1x2choicecg_param_typeschema_Half1X2_TcgHalf1X2_ struct {
 	Half1X2 TcgHalf1X2 `xml:"http://www.collada.org/2005/11/COLLADASchema half1x2"`
+
+}
+
+type XsdGoPkgHasElems_half1x2choicecg_param_typeschema_Half1X2_TcgHalf1X2_ struct {
+	Half1X2s []TcgHalf1X2 `xml:"http://www.collada.org/2005/11/COLLADASchema half1x2"`
+
 }
 
 type XsdGoPkgHasElems_half1x3choicecg_param_typeschema_Half1X3_TcgHalf1X3_ struct {
 	Half1X3s []TcgHalf1X3 `xml:"http://www.collada.org/2005/11/COLLADASchema half1x3"`
+
 }
 
 type XsdGoPkgHasElem_half1x3choicecg_param_typeschema_Half1X3_TcgHalf1X3_ struct {
 	Half1X3 TcgHalf1X3 `xml:"http://www.collada.org/2005/11/COLLADASchema half1x3"`
+
 }
 
 type XsdGoPkgHasElems_half1x4choicecg_param_typeschema_Half1X4_TcgHalf1X4_ struct {
 	Half1X4s []TcgHalf1X4 `xml:"http://www.collada.org/2005/11/COLLADASchema half1x4"`
+
 }
 
 type XsdGoPkgHasElem_half1x4choicecg_param_typeschema_Half1X4_TcgHalf1X4_ struct {
 	Half1X4 TcgHalf1X4 `xml:"http://www.collada.org/2005/11/COLLADASchema half1x4"`
+
 }
 
 type XsdGoPkgHasElems_half2x1choicecg_param_typeschema_Half2X1_TcgHalf2X1_ struct {
 	Half2X1s []TcgHalf2X1 `xml:"http://www.collada.org/2005/11/COLLADASchema half2x1"`
+
 }
 
 type XsdGoPkgHasElem_half2x1choicecg_param_typeschema_Half2X1_TcgHalf2X1_ struct {
 	Half2X1 TcgHalf2X1 `xml:"http://www.collada.org/2005/11/COLLADASchema half2x1"`
-}
 
-type XsdGoPkgHasElem_half2x2choicecg_param_typeschema_Half2X2_TcgHalf2X2_ struct {
-	Half2X2 TcgHalf2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema half2x2"`
 }
 
 type XsdGoPkgHasElems_half2x2choicecg_param_typeschema_Half2X2_TcgHalf2X2_ struct {
 	Half2X2s []TcgHalf2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema half2x2"`
+
+}
+
+type XsdGoPkgHasElem_half2x2choicecg_param_typeschema_Half2X2_TcgHalf2X2_ struct {
+	Half2X2 TcgHalf2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema half2x2"`
+
 }
 
 type XsdGoPkgHasElem_half2x3choicecg_param_typeschema_Half2X3_TcgHalf2X3_ struct {
 	Half2X3 TcgHalf2X3 `xml:"http://www.collada.org/2005/11/COLLADASchema half2x3"`
+
 }
 
 type XsdGoPkgHasElems_half2x3choicecg_param_typeschema_Half2X3_TcgHalf2X3_ struct {
 	Half2X3s []TcgHalf2X3 `xml:"http://www.collada.org/2005/11/COLLADASchema half2x3"`
-}
 
-type XsdGoPkgHasElem_half2x4choicecg_param_typeschema_Half2X4_TcgHalf2X4_ struct {
-	Half2X4 TcgHalf2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema half2x4"`
 }
 
 type XsdGoPkgHasElems_half2x4choicecg_param_typeschema_Half2X4_TcgHalf2X4_ struct {
 	Half2X4s []TcgHalf2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema half2x4"`
+
+}
+
+type XsdGoPkgHasElem_half2x4choicecg_param_typeschema_Half2X4_TcgHalf2X4_ struct {
+	Half2X4 TcgHalf2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema half2x4"`
+
 }
 
 type XsdGoPkgHasElems_half3x1choicecg_param_typeschema_Half3X1_TcgHalf3X1_ struct {
 	Half3X1s []TcgHalf3X1 `xml:"http://www.collada.org/2005/11/COLLADASchema half3x1"`
+
 }
 
 type XsdGoPkgHasElem_half3x1choicecg_param_typeschema_Half3X1_TcgHalf3X1_ struct {
 	Half3X1 TcgHalf3X1 `xml:"http://www.collada.org/2005/11/COLLADASchema half3x1"`
+
 }
 
 type XsdGoPkgHasElem_half3x2choicecg_param_typeschema_Half3X2_TcgHalf3X2_ struct {
 	Half3X2 TcgHalf3X2 `xml:"http://www.collada.org/2005/11/COLLADASchema half3x2"`
+
 }
 
 type XsdGoPkgHasElems_half3x2choicecg_param_typeschema_Half3X2_TcgHalf3X2_ struct {
 	Half3X2s []TcgHalf3X2 `xml:"http://www.collada.org/2005/11/COLLADASchema half3x2"`
-}
 
-type XsdGoPkgHasElems_half3x3choicecg_param_typeschema_Half3X3_TcgHalf3X3_ struct {
-	Half3X3s []TcgHalf3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema half3x3"`
 }
 
 type XsdGoPkgHasElem_half3x3choicecg_param_typeschema_Half3X3_TcgHalf3X3_ struct {
 	Half3X3 TcgHalf3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema half3x3"`
+
 }
 
-type XsdGoPkgHasElems_half3x4choicecg_param_typeschema_Half3X4_TcgHalf3X4_ struct {
-	Half3X4s []TcgHalf3X4 `xml:"http://www.collada.org/2005/11/COLLADASchema half3x4"`
+type XsdGoPkgHasElems_half3x3choicecg_param_typeschema_Half3X3_TcgHalf3X3_ struct {
+	Half3X3s []TcgHalf3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema half3x3"`
+
 }
 
 type XsdGoPkgHasElem_half3x4choicecg_param_typeschema_Half3X4_TcgHalf3X4_ struct {
 	Half3X4 TcgHalf3X4 `xml:"http://www.collada.org/2005/11/COLLADASchema half3x4"`
+
 }
 
-type XsdGoPkgHasElem_half4x1choicecg_param_typeschema_Half4X1_TcgHalf4X1_ struct {
-	Half4X1 TcgHalf4X1 `xml:"http://www.collada.org/2005/11/COLLADASchema half4x1"`
+type XsdGoPkgHasElems_half3x4choicecg_param_typeschema_Half3X4_TcgHalf3X4_ struct {
+	Half3X4s []TcgHalf3X4 `xml:"http://www.collada.org/2005/11/COLLADASchema half3x4"`
+
 }
 
 type XsdGoPkgHasElems_half4x1choicecg_param_typeschema_Half4X1_TcgHalf4X1_ struct {
 	Half4X1s []TcgHalf4X1 `xml:"http://www.collada.org/2005/11/COLLADASchema half4x1"`
+
+}
+
+type XsdGoPkgHasElem_half4x1choicecg_param_typeschema_Half4X1_TcgHalf4X1_ struct {
+	Half4X1 TcgHalf4X1 `xml:"http://www.collada.org/2005/11/COLLADASchema half4x1"`
+
 }
 
 type XsdGoPkgHasElems_half4x2choicecg_param_typeschema_Half4X2_TcgHalf4X2_ struct {
 	Half4X2s []TcgHalf4X2 `xml:"http://www.collada.org/2005/11/COLLADASchema half4x2"`
+
 }
 
 type XsdGoPkgHasElem_half4x2choicecg_param_typeschema_Half4X2_TcgHalf4X2_ struct {
 	Half4X2 TcgHalf4X2 `xml:"http://www.collada.org/2005/11/COLLADASchema half4x2"`
+
 }
 
 type XsdGoPkgHasElem_half4x3choicecg_param_typeschema_Half4X3_TcgHalf4X3_ struct {
 	Half4X3 TcgHalf4X3 `xml:"http://www.collada.org/2005/11/COLLADASchema half4x3"`
+
 }
 
 type XsdGoPkgHasElems_half4x3choicecg_param_typeschema_Half4X3_TcgHalf4X3_ struct {
 	Half4X3s []TcgHalf4X3 `xml:"http://www.collada.org/2005/11/COLLADASchema half4x3"`
-}
 
-type XsdGoPkgHasElems_half4x4choicecg_param_typeschema_Half4X4_TcgHalf4X4_ struct {
-	Half4X4s []TcgHalf4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema half4x4"`
 }
 
 type XsdGoPkgHasElem_half4x4choicecg_param_typeschema_Half4X4_TcgHalf4X4_ struct {
 	Half4X4 TcgHalf4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema half4x4"`
+
 }
 
-type XsdGoPkgHasElems_fixedchoicecg_param_typeschema_Fixed_TcgFixed_ struct {
-	Fixeds []TcgFixed `xml:"http://www.collada.org/2005/11/COLLADASchema fixed"`
+type XsdGoPkgHasElems_half4x4choicecg_param_typeschema_Half4X4_TcgHalf4X4_ struct {
+	Half4X4s []TcgHalf4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema half4x4"`
+
 }
 
 type XsdGoPkgHasElem_fixedchoicecg_param_typeschema_Fixed_TcgFixed_ struct {
 	Fixed TcgFixed `xml:"http://www.collada.org/2005/11/COLLADASchema fixed"`
+
+}
+
+type XsdGoPkgHasElems_fixedchoicecg_param_typeschema_Fixed_TcgFixed_ struct {
+	Fixeds []TcgFixed `xml:"http://www.collada.org/2005/11/COLLADASchema fixed"`
+
 }
 
 type XsdGoPkgHasElems_fixed1choicecg_param_typeschema_Fixed1_TcgFixed1_ struct {
 	Fixed1s []TcgFixed1 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed1"`
+
 }
 
 type XsdGoPkgHasElem_fixed1choicecg_param_typeschema_Fixed1_TcgFixed1_ struct {
 	Fixed1 TcgFixed1 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed1"`
-}
 
-type XsdGoPkgHasElem_fixed2choicecg_param_typeschema_Fixed2_TcgFixed2_ struct {
-	Fixed2 TcgFixed2 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed2"`
 }
 
 type XsdGoPkgHasElems_fixed2choicecg_param_typeschema_Fixed2_TcgFixed2_ struct {
 	Fixed2s []TcgFixed2 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed2"`
+
+}
+
+type XsdGoPkgHasElem_fixed2choicecg_param_typeschema_Fixed2_TcgFixed2_ struct {
+	Fixed2 TcgFixed2 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed2"`
+
 }
 
 type XsdGoPkgHasElems_fixed3choicecg_param_typeschema_Fixed3_TcgFixed3_ struct {
 	Fixed3s []TcgFixed3 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed3"`
+
 }
 
 type XsdGoPkgHasElem_fixed3choicecg_param_typeschema_Fixed3_TcgFixed3_ struct {
 	Fixed3 TcgFixed3 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed3"`
+
 }
 
 type XsdGoPkgHasElems_fixed4choicecg_param_typeschema_Fixed4_TcgFixed4_ struct {
 	Fixed4s []TcgFixed4 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed4"`
+
 }
 
 type XsdGoPkgHasElem_fixed4choicecg_param_typeschema_Fixed4_TcgFixed4_ struct {
 	Fixed4 TcgFixed4 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed4"`
+
 }
 
 type XsdGoPkgHasElem_fixed1x1choicecg_param_typeschema_Fixed1X1_TcgFixed1X1_ struct {
 	Fixed1X1 TcgFixed1X1 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed1x1"`
+
 }
 
 type XsdGoPkgHasElems_fixed1x1choicecg_param_typeschema_Fixed1X1_TcgFixed1X1_ struct {
 	Fixed1X1s []TcgFixed1X1 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed1x1"`
+
 }
 
 type XsdGoPkgHasElems_fixed1x2choicecg_param_typeschema_Fixed1X2_TcgFixed1X2_ struct {
 	Fixed1X2s []TcgFixed1X2 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed1x2"`
+
 }
 
 type XsdGoPkgHasElem_fixed1x2choicecg_param_typeschema_Fixed1X2_TcgFixed1X2_ struct {
 	Fixed1X2 TcgFixed1X2 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed1x2"`
-}
 
-type XsdGoPkgHasElems_fixed1x3choicecg_param_typeschema_Fixed1X3_TcgFixed1X3_ struct {
-	Fixed1X3s []TcgFixed1X3 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed1x3"`
 }
 
 type XsdGoPkgHasElem_fixed1x3choicecg_param_typeschema_Fixed1X3_TcgFixed1X3_ struct {
 	Fixed1X3 TcgFixed1X3 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed1x3"`
+
 }
 
-type XsdGoPkgHasElems_fixed1x4choicecg_param_typeschema_Fixed1X4_TcgFixed1X4_ struct {
-	Fixed1X4s []TcgFixed1X4 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed1x4"`
+type XsdGoPkgHasElems_fixed1x3choicecg_param_typeschema_Fixed1X3_TcgFixed1X3_ struct {
+	Fixed1X3s []TcgFixed1X3 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed1x3"`
+
 }
 
 type XsdGoPkgHasElem_fixed1x4choicecg_param_typeschema_Fixed1X4_TcgFixed1X4_ struct {
 	Fixed1X4 TcgFixed1X4 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed1x4"`
+
+}
+
+type XsdGoPkgHasElems_fixed1x4choicecg_param_typeschema_Fixed1X4_TcgFixed1X4_ struct {
+	Fixed1X4s []TcgFixed1X4 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed1x4"`
+
 }
 
 type XsdGoPkgHasElem_fixed2x1choicecg_param_typeschema_Fixed2X1_TcgFixed2X1_ struct {
 	Fixed2X1 TcgFixed2X1 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed2x1"`
+
 }
 
 type XsdGoPkgHasElems_fixed2x1choicecg_param_typeschema_Fixed2X1_TcgFixed2X1_ struct {
 	Fixed2X1s []TcgFixed2X1 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed2x1"`
+
 }
 
 type XsdGoPkgHasElems_fixed2x2choicecg_param_typeschema_Fixed2X2_TcgFixed2X2_ struct {
 	Fixed2X2s []TcgFixed2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed2x2"`
+
 }
 
 type XsdGoPkgHasElem_fixed2x2choicecg_param_typeschema_Fixed2X2_TcgFixed2X2_ struct {
 	Fixed2X2 TcgFixed2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed2x2"`
-}
 
-type XsdGoPkgHasElem_fixed2x3choicecg_param_typeschema_Fixed2X3_TcgFixed2X3_ struct {
-	Fixed2X3 TcgFixed2X3 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed2x3"`
 }
 
 type XsdGoPkgHasElems_fixed2x3choicecg_param_typeschema_Fixed2X3_TcgFixed2X3_ struct {
 	Fixed2X3s []TcgFixed2X3 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed2x3"`
+
 }
 
-type XsdGoPkgHasElems_fixed2x4choicecg_param_typeschema_Fixed2X4_TcgFixed2X4_ struct {
-	Fixed2X4s []TcgFixed2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed2x4"`
+type XsdGoPkgHasElem_fixed2x3choicecg_param_typeschema_Fixed2X3_TcgFixed2X3_ struct {
+	Fixed2X3 TcgFixed2X3 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed2x3"`
+
 }
 
 type XsdGoPkgHasElem_fixed2x4choicecg_param_typeschema_Fixed2X4_TcgFixed2X4_ struct {
 	Fixed2X4 TcgFixed2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed2x4"`
+
 }
 
-type XsdGoPkgHasElems_fixed3x1choicecg_param_typeschema_Fixed3X1_TcgFixed3X1_ struct {
-	Fixed3X1s []TcgFixed3X1 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed3x1"`
+type XsdGoPkgHasElems_fixed2x4choicecg_param_typeschema_Fixed2X4_TcgFixed2X4_ struct {
+	Fixed2X4s []TcgFixed2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed2x4"`
+
 }
 
 type XsdGoPkgHasElem_fixed3x1choicecg_param_typeschema_Fixed3X1_TcgFixed3X1_ struct {
 	Fixed3X1 TcgFixed3X1 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed3x1"`
+
+}
+
+type XsdGoPkgHasElems_fixed3x1choicecg_param_typeschema_Fixed3X1_TcgFixed3X1_ struct {
+	Fixed3X1s []TcgFixed3X1 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed3x1"`
+
 }
 
 type XsdGoPkgHasElems_fixed3x2choicecg_param_typeschema_Fixed3X2_TcgFixed3X2_ struct {
 	Fixed3X2s []TcgFixed3X2 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed3x2"`
+
 }
 
 type XsdGoPkgHasElem_fixed3x2choicecg_param_typeschema_Fixed3X2_TcgFixed3X2_ struct {
 	Fixed3X2 TcgFixed3X2 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed3x2"`
-}
 
-type XsdGoPkgHasElems_fixed3x3choicecg_param_typeschema_Fixed3X3_TcgFixed3X3_ struct {
-	Fixed3X3s []TcgFixed3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed3x3"`
 }
 
 type XsdGoPkgHasElem_fixed3x3choicecg_param_typeschema_Fixed3X3_TcgFixed3X3_ struct {
 	Fixed3X3 TcgFixed3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed3x3"`
+
+}
+
+type XsdGoPkgHasElems_fixed3x3choicecg_param_typeschema_Fixed3X3_TcgFixed3X3_ struct {
+	Fixed3X3s []TcgFixed3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed3x3"`
+
 }
 
 type XsdGoPkgHasElem_fixed3x4choicecg_param_typeschema_Fixed3X4_TcgFixed3X4_ struct {
 	Fixed3X4 TcgFixed3X4 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed3x4"`
+
 }
 
 type XsdGoPkgHasElems_fixed3x4choicecg_param_typeschema_Fixed3X4_TcgFixed3X4_ struct {
 	Fixed3X4s []TcgFixed3X4 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed3x4"`
+
 }
 
 type XsdGoPkgHasElem_fixed4x1choicecg_param_typeschema_Fixed4X1_TcgFixed4X1_ struct {
 	Fixed4X1 TcgFixed4X1 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed4x1"`
+
 }
 
 type XsdGoPkgHasElems_fixed4x1choicecg_param_typeschema_Fixed4X1_TcgFixed4X1_ struct {
 	Fixed4X1s []TcgFixed4X1 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed4x1"`
-}
 
-type XsdGoPkgHasElem_fixed4x2choicecg_param_typeschema_Fixed4X2_TcgFixed4X2_ struct {
-	Fixed4X2 TcgFixed4X2 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed4x2"`
 }
 
 type XsdGoPkgHasElems_fixed4x2choicecg_param_typeschema_Fixed4X2_TcgFixed4X2_ struct {
 	Fixed4X2s []TcgFixed4X2 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed4x2"`
+
+}
+
+type XsdGoPkgHasElem_fixed4x2choicecg_param_typeschema_Fixed4X2_TcgFixed4X2_ struct {
+	Fixed4X2 TcgFixed4X2 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed4x2"`
+
 }
 
 type XsdGoPkgHasElems_fixed4x3choicecg_param_typeschema_Fixed4X3_TcgFixed4X3_ struct {
 	Fixed4X3s []TcgFixed4X3 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed4x3"`
+
 }
 
 type XsdGoPkgHasElem_fixed4x3choicecg_param_typeschema_Fixed4X3_TcgFixed4X3_ struct {
 	Fixed4X3 TcgFixed4X3 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed4x3"`
-}
 
-type XsdGoPkgHasElems_fixed4x4choicecg_param_typeschema_Fixed4X4_TcgFixed4X4_ struct {
-	Fixed4X4s []TcgFixed4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed4x4"`
 }
 
 type XsdGoPkgHasElem_fixed4x4choicecg_param_typeschema_Fixed4X4_TcgFixed4X4_ struct {
 	Fixed4X4 TcgFixed4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed4x4"`
+
 }
 
-type XsdGoPkgHasElem_surfacechoicecg_param_typeschema_Surface_TcgSurfaceType_ struct {
-	Surface *TcgSurfaceType `xml:"http://www.collada.org/2005/11/COLLADASchema surface"`
+type XsdGoPkgHasElems_fixed4x4choicecg_param_typeschema_Fixed4X4_TcgFixed4X4_ struct {
+	Fixed4X4s []TcgFixed4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema fixed4x4"`
+
 }
 
 type XsdGoPkgHasElems_surfacechoicecg_param_typeschema_Surface_TcgSurfaceType_ struct {
 	Surfaces []*TcgSurfaceType `xml:"http://www.collada.org/2005/11/COLLADASchema surface"`
+
 }
 
-type XsdGoPkgHasElems_sampler1Dchoicecg_param_typeschema_Sampler1D_TcgSampler1D_ struct {
-	Sampler1Ds []*TcgSampler1D `xml:"http://www.collada.org/2005/11/COLLADASchema sampler1D"`
+type XsdGoPkgHasElem_surfacechoicecg_param_typeschema_Surface_TcgSurfaceType_ struct {
+	Surface *TcgSurfaceType `xml:"http://www.collada.org/2005/11/COLLADASchema surface"`
+
 }
 
 type XsdGoPkgHasElem_sampler1Dchoicecg_param_typeschema_Sampler1D_TcgSampler1D_ struct {
 	Sampler1D *TcgSampler1D `xml:"http://www.collada.org/2005/11/COLLADASchema sampler1D"`
+
 }
 
-type XsdGoPkgHasElems_sampler2Dchoicecg_param_typeschema_Sampler2D_TcgSampler2D_ struct {
-	Sampler2Ds []*TcgSampler2D `xml:"http://www.collada.org/2005/11/COLLADASchema sampler2D"`
+type XsdGoPkgHasElems_sampler1Dchoicecg_param_typeschema_Sampler1D_TcgSampler1D_ struct {
+	Sampler1Ds []*TcgSampler1D `xml:"http://www.collada.org/2005/11/COLLADASchema sampler1D"`
+
 }
 
 type XsdGoPkgHasElem_sampler2Dchoicecg_param_typeschema_Sampler2D_TcgSampler2D_ struct {
 	Sampler2D *TcgSampler2D `xml:"http://www.collada.org/2005/11/COLLADASchema sampler2D"`
+
+}
+
+type XsdGoPkgHasElems_sampler2Dchoicecg_param_typeschema_Sampler2D_TcgSampler2D_ struct {
+	Sampler2Ds []*TcgSampler2D `xml:"http://www.collada.org/2005/11/COLLADASchema sampler2D"`
+
 }
 
 type XsdGoPkgHasElems_sampler3Dchoicecg_param_typeschema_Sampler3D_TcgSampler3D_ struct {
 	Sampler3Ds []*TcgSampler3D `xml:"http://www.collada.org/2005/11/COLLADASchema sampler3D"`
+
 }
 
 type XsdGoPkgHasElem_sampler3Dchoicecg_param_typeschema_Sampler3D_TcgSampler3D_ struct {
 	Sampler3D *TcgSampler3D `xml:"http://www.collada.org/2005/11/COLLADASchema sampler3D"`
+
 }
 
 type XsdGoPkgHasElems_samplerRECTchoicecg_param_typeschema_SamplerRECT_TcgSamplerRECT_ struct {
 	SamplerRECTs []*TcgSamplerRECT `xml:"http://www.collada.org/2005/11/COLLADASchema samplerRECT"`
+
 }
 
 type XsdGoPkgHasElem_samplerRECTchoicecg_param_typeschema_SamplerRECT_TcgSamplerRECT_ struct {
 	SamplerRECT *TcgSamplerRECT `xml:"http://www.collada.org/2005/11/COLLADASchema samplerRECT"`
-}
 
-type XsdGoPkgHasElems_samplerCUBEchoicecg_param_typeschema_SamplerCUBE_TcgSamplerCUBE_ struct {
-	SamplerCUBEs []*TcgSamplerCUBE `xml:"http://www.collada.org/2005/11/COLLADASchema samplerCUBE"`
 }
 
 type XsdGoPkgHasElem_samplerCUBEchoicecg_param_typeschema_SamplerCUBE_TcgSamplerCUBE_ struct {
 	SamplerCUBE *TcgSamplerCUBE `xml:"http://www.collada.org/2005/11/COLLADASchema samplerCUBE"`
+
+}
+
+type XsdGoPkgHasElems_samplerCUBEchoicecg_param_typeschema_SamplerCUBE_TcgSamplerCUBE_ struct {
+	SamplerCUBEs []*TcgSamplerCUBE `xml:"http://www.collada.org/2005/11/COLLADASchema samplerCUBE"`
+
 }
 
 type XsdGoPkgHasElem_samplerDEPTHchoicecg_param_typeschema_SamplerDEPTH_TcgSamplerDEPTH_ struct {
 	SamplerDEPTH *TcgSamplerDEPTH `xml:"http://www.collada.org/2005/11/COLLADASchema samplerDEPTH"`
+
 }
 
 type XsdGoPkgHasElems_samplerDEPTHchoicecg_param_typeschema_SamplerDEPTH_TcgSamplerDEPTH_ struct {
 	SamplerDEPTHs []*TcgSamplerDEPTH `xml:"http://www.collada.org/2005/11/COLLADASchema samplerDEPTH"`
+
 }
 
 type XsdGoPkgHasElems_stringchoicecg_param_typeschema_String_XsdtString_ struct {
 	Strings []xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema string"`
+
 }
 
 type XsdGoPkgHasElem_stringchoicecg_param_typeschema_String_XsdtString_ struct {
 	String xsdt.String `xml:"http://www.collada.org/2005/11/COLLADASchema string"`
+
 }
 
 type XsdGoPkgHasElem_enumchoicecg_param_typeschema_Enum_TglEnumeration_ struct {
 	Enum TglEnumeration `xml:"http://www.collada.org/2005/11/COLLADASchema enum"`
+
 }
 
 type XsdGoPkgHasElems_enumchoicecg_param_typeschema_Enum_TglEnumeration_ struct {
 	Enums []TglEnumeration `xml:"http://www.collada.org/2005/11/COLLADASchema enum"`
+
 }
 
 //	A group that specifies the allowable types for CG profile parameters.
@@ -17556,10 +19252,12 @@ type TxsdGlesPipelineSettingsChoiceAlphaFuncSequenceFunc struct {
 
 type XsdGoPkgHasElems_funcsequencealpha_funcchoicegles_pipeline_settingsschema_Func_TxsdGlesPipelineSettingsChoiceAlphaFuncSequenceFunc_ struct {
 	Funcs []*TxsdGlesPipelineSettingsChoiceAlphaFuncSequenceFunc `xml:"http://www.collada.org/2005/11/COLLADASchema func"`
+
 }
 
 type XsdGoPkgHasElem_funcsequencealpha_funcchoicegles_pipeline_settingsschema_Func_TxsdGlesPipelineSettingsChoiceAlphaFuncSequenceFunc_ struct {
 	Func *TxsdGlesPipelineSettingsChoiceAlphaFuncSequenceFunc `xml:"http://www.collada.org/2005/11/COLLADASchema func"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceAlphaFuncSequenceValue struct {
@@ -17567,10 +19265,12 @@ type TxsdGlesPipelineSettingsChoiceAlphaFuncSequenceValue struct {
 
 type XsdGoPkgHasElems_valuesequencealpha_funcchoicegles_pipeline_settingsschema_Value_TxsdGlesPipelineSettingsChoiceAlphaFuncSequenceValue_ struct {
 	Values []*TxsdGlesPipelineSettingsChoiceAlphaFuncSequenceValue `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
+
 }
 
 type XsdGoPkgHasElem_valuesequencealpha_funcchoicegles_pipeline_settingsschema_Value_TxsdGlesPipelineSettingsChoiceAlphaFuncSequenceValue_ struct {
 	Value *TxsdGlesPipelineSettingsChoiceAlphaFuncSequenceValue `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceAlphaFunc struct {
@@ -17582,10 +19282,12 @@ type TxsdGlesPipelineSettingsChoiceAlphaFunc struct {
 
 type XsdGoPkgHasElems_alpha_funcchoicegles_pipeline_settingsschema_AlphaFunc_TxsdGlesPipelineSettingsChoiceAlphaFunc_ struct {
 	AlphaFuncs []*TxsdGlesPipelineSettingsChoiceAlphaFunc `xml:"http://www.collada.org/2005/11/COLLADASchema alpha_func"`
+
 }
 
 type XsdGoPkgHasElem_alpha_funcchoicegles_pipeline_settingsschema_AlphaFunc_TxsdGlesPipelineSettingsChoiceAlphaFunc_ struct {
 	AlphaFunc *TxsdGlesPipelineSettingsChoiceAlphaFunc `xml:"http://www.collada.org/2005/11/COLLADASchema alpha_func"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceBlendFuncSequenceSrc struct {
@@ -17593,10 +19295,12 @@ type TxsdGlesPipelineSettingsChoiceBlendFuncSequenceSrc struct {
 
 type XsdGoPkgHasElem_srcsequenceblend_funcchoicegles_pipeline_settingsschema_Src_TxsdGlesPipelineSettingsChoiceBlendFuncSequenceSrc_ struct {
 	Src *TxsdGlesPipelineSettingsChoiceBlendFuncSequenceSrc `xml:"http://www.collada.org/2005/11/COLLADASchema src"`
+
 }
 
 type XsdGoPkgHasElems_srcsequenceblend_funcchoicegles_pipeline_settingsschema_Src_TxsdGlesPipelineSettingsChoiceBlendFuncSequenceSrc_ struct {
 	Srcs []*TxsdGlesPipelineSettingsChoiceBlendFuncSequenceSrc `xml:"http://www.collada.org/2005/11/COLLADASchema src"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceBlendFuncSequenceDest struct {
@@ -17604,10 +19308,12 @@ type TxsdGlesPipelineSettingsChoiceBlendFuncSequenceDest struct {
 
 type XsdGoPkgHasElem_destsequenceblend_funcchoicegles_pipeline_settingsschema_Dest_TxsdGlesPipelineSettingsChoiceBlendFuncSequenceDest_ struct {
 	Dest *TxsdGlesPipelineSettingsChoiceBlendFuncSequenceDest `xml:"http://www.collada.org/2005/11/COLLADASchema dest"`
+
 }
 
 type XsdGoPkgHasElems_destsequenceblend_funcchoicegles_pipeline_settingsschema_Dest_TxsdGlesPipelineSettingsChoiceBlendFuncSequenceDest_ struct {
 	Dests []*TxsdGlesPipelineSettingsChoiceBlendFuncSequenceDest `xml:"http://www.collada.org/2005/11/COLLADASchema dest"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceBlendFunc struct {
@@ -17619,21 +19325,25 @@ type TxsdGlesPipelineSettingsChoiceBlendFunc struct {
 
 type XsdGoPkgHasElem_blend_funcchoicegles_pipeline_settingsschema_BlendFunc_TxsdGlesPipelineSettingsChoiceBlendFunc_ struct {
 	BlendFunc *TxsdGlesPipelineSettingsChoiceBlendFunc `xml:"http://www.collada.org/2005/11/COLLADASchema blend_func"`
+
 }
 
 type XsdGoPkgHasElems_blend_funcchoicegles_pipeline_settingsschema_BlendFunc_TxsdGlesPipelineSettingsChoiceBlendFunc_ struct {
 	BlendFuncs []*TxsdGlesPipelineSettingsChoiceBlendFunc `xml:"http://www.collada.org/2005/11/COLLADASchema blend_func"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceClearColor struct {
 }
 
-type XsdGoPkgHasElems_clear_colorchoicegles_pipeline_settingsschema_ClearColor_TxsdGlesPipelineSettingsChoiceClearColor_ struct {
-	ClearColors []*TxsdGlesPipelineSettingsChoiceClearColor `xml:"http://www.collada.org/2005/11/COLLADASchema clear_color"`
-}
-
 type XsdGoPkgHasElem_clear_colorchoicegles_pipeline_settingsschema_ClearColor_TxsdGlesPipelineSettingsChoiceClearColor_ struct {
 	ClearColor *TxsdGlesPipelineSettingsChoiceClearColor `xml:"http://www.collada.org/2005/11/COLLADASchema clear_color"`
+
+}
+
+type XsdGoPkgHasElems_clear_colorchoicegles_pipeline_settingsschema_ClearColor_TxsdGlesPipelineSettingsChoiceClearColor_ struct {
+	ClearColors []*TxsdGlesPipelineSettingsChoiceClearColor `xml:"http://www.collada.org/2005/11/COLLADASchema clear_color"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tint_ struct {
@@ -17645,12 +19355,14 @@ type TxsdGlesPipelineSettingsChoiceClearStencil struct {
 
 }
 
-type XsdGoPkgHasElems_clear_stencilchoicegles_pipeline_settingsschema_ClearStencil_TxsdGlesPipelineSettingsChoiceClearStencil_ struct {
-	ClearStencils []*TxsdGlesPipelineSettingsChoiceClearStencil `xml:"http://www.collada.org/2005/11/COLLADASchema clear_stencil"`
-}
-
 type XsdGoPkgHasElem_clear_stencilchoicegles_pipeline_settingsschema_ClearStencil_TxsdGlesPipelineSettingsChoiceClearStencil_ struct {
 	ClearStencil *TxsdGlesPipelineSettingsChoiceClearStencil `xml:"http://www.collada.org/2005/11/COLLADASchema clear_stencil"`
+
+}
+
+type XsdGoPkgHasElems_clear_stencilchoicegles_pipeline_settingsschema_ClearStencil_TxsdGlesPipelineSettingsChoiceClearStencil_ struct {
+	ClearStencils []*TxsdGlesPipelineSettingsChoiceClearStencil `xml:"http://www.collada.org/2005/11/COLLADASchema clear_stencil"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tfloat_ struct {
@@ -17664,10 +19376,12 @@ type TxsdGlesPipelineSettingsChoiceClearDepth struct {
 
 type XsdGoPkgHasElem_clear_depthchoicegles_pipeline_settingsschema_ClearDepth_TxsdGlesPipelineSettingsChoiceClearDepth_ struct {
 	ClearDepth *TxsdGlesPipelineSettingsChoiceClearDepth `xml:"http://www.collada.org/2005/11/COLLADASchema clear_depth"`
+
 }
 
 type XsdGoPkgHasElems_clear_depthchoicegles_pipeline_settingsschema_ClearDepth_TxsdGlesPipelineSettingsChoiceClearDepth_ struct {
 	ClearDepths []*TxsdGlesPipelineSettingsChoiceClearDepth `xml:"http://www.collada.org/2005/11/COLLADASchema clear_depth"`
+
 }
 
 type XsdGoPkgHasAttr_Value_Tbool4_ struct {
@@ -17679,40 +19393,46 @@ type XsdGoPkgHasAttr_Index_TglesMaxClipPlanesIndex_ struct {
 }
 
 type TxsdGlesPipelineSettingsChoiceClipPlane struct {
-	XsdGoPkgHasAttr_Index_TglesMaxClipPlanesIndex_
-
 	XsdGoPkgHasAttr_Value_Tbool4_
+
+	XsdGoPkgHasAttr_Index_TglesMaxClipPlanesIndex_
 
 }
 
 type XsdGoPkgHasElem_clip_planechoicegles_pipeline_settingsschema_ClipPlane_TxsdGlesPipelineSettingsChoiceClipPlane_ struct {
 	ClipPlane *TxsdGlesPipelineSettingsChoiceClipPlane `xml:"http://www.collada.org/2005/11/COLLADASchema clip_plane"`
+
 }
 
 type XsdGoPkgHasElems_clip_planechoicegles_pipeline_settingsschema_ClipPlane_TxsdGlesPipelineSettingsChoiceClipPlane_ struct {
 	ClipPlanes []*TxsdGlesPipelineSettingsChoiceClipPlane `xml:"http://www.collada.org/2005/11/COLLADASchema clip_plane"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceColorMask struct {
 }
 
-type XsdGoPkgHasElems_color_maskchoicegles_pipeline_settingsschema_ColorMask_TxsdGlesPipelineSettingsChoiceColorMask_ struct {
-	ColorMasks []*TxsdGlesPipelineSettingsChoiceColorMask `xml:"http://www.collada.org/2005/11/COLLADASchema color_mask"`
-}
-
 type XsdGoPkgHasElem_color_maskchoicegles_pipeline_settingsschema_ColorMask_TxsdGlesPipelineSettingsChoiceColorMask_ struct {
 	ColorMask *TxsdGlesPipelineSettingsChoiceColorMask `xml:"http://www.collada.org/2005/11/COLLADASchema color_mask"`
+
+}
+
+type XsdGoPkgHasElems_color_maskchoicegles_pipeline_settingsschema_ColorMask_TxsdGlesPipelineSettingsChoiceColorMask_ struct {
+	ColorMasks []*TxsdGlesPipelineSettingsChoiceColorMask `xml:"http://www.collada.org/2005/11/COLLADASchema color_mask"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceCullFace struct {
 }
 
-type XsdGoPkgHasElems_cull_facechoicegles_pipeline_settingsschema_CullFace_TxsdGlesPipelineSettingsChoiceCullFace_ struct {
-	CullFaces []*TxsdGlesPipelineSettingsChoiceCullFace `xml:"http://www.collada.org/2005/11/COLLADASchema cull_face"`
-}
-
 type XsdGoPkgHasElem_cull_facechoicegles_pipeline_settingsschema_CullFace_TxsdGlesPipelineSettingsChoiceCullFace_ struct {
 	CullFace *TxsdGlesPipelineSettingsChoiceCullFace `xml:"http://www.collada.org/2005/11/COLLADASchema cull_face"`
+
+}
+
+type XsdGoPkgHasElems_cull_facechoicegles_pipeline_settingsschema_CullFace_TxsdGlesPipelineSettingsChoiceCullFace_ struct {
+	CullFaces []*TxsdGlesPipelineSettingsChoiceCullFace `xml:"http://www.collada.org/2005/11/COLLADASchema cull_face"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceDepthFunc struct {
@@ -17720,10 +19440,12 @@ type TxsdGlesPipelineSettingsChoiceDepthFunc struct {
 
 type XsdGoPkgHasElems_depth_funcchoicegles_pipeline_settingsschema_DepthFunc_TxsdGlesPipelineSettingsChoiceDepthFunc_ struct {
 	DepthFuncs []*TxsdGlesPipelineSettingsChoiceDepthFunc `xml:"http://www.collada.org/2005/11/COLLADASchema depth_func"`
+
 }
 
 type XsdGoPkgHasElem_depth_funcchoicegles_pipeline_settingsschema_DepthFunc_TxsdGlesPipelineSettingsChoiceDepthFunc_ struct {
 	DepthFunc *TxsdGlesPipelineSettingsChoiceDepthFunc `xml:"http://www.collada.org/2005/11/COLLADASchema depth_func"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceDepthMask struct {
@@ -17731,10 +19453,12 @@ type TxsdGlesPipelineSettingsChoiceDepthMask struct {
 
 type XsdGoPkgHasElem_depth_maskchoicegles_pipeline_settingsschema_DepthMask_TxsdGlesPipelineSettingsChoiceDepthMask_ struct {
 	DepthMask *TxsdGlesPipelineSettingsChoiceDepthMask `xml:"http://www.collada.org/2005/11/COLLADASchema depth_mask"`
+
 }
 
 type XsdGoPkgHasElems_depth_maskchoicegles_pipeline_settingsschema_DepthMask_TxsdGlesPipelineSettingsChoiceDepthMask_ struct {
 	DepthMasks []*TxsdGlesPipelineSettingsChoiceDepthMask `xml:"http://www.collada.org/2005/11/COLLADASchema depth_mask"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceDepthRange struct {
@@ -17742,10 +19466,12 @@ type TxsdGlesPipelineSettingsChoiceDepthRange struct {
 
 type XsdGoPkgHasElem_depth_rangechoicegles_pipeline_settingsschema_DepthRange_TxsdGlesPipelineSettingsChoiceDepthRange_ struct {
 	DepthRange *TxsdGlesPipelineSettingsChoiceDepthRange `xml:"http://www.collada.org/2005/11/COLLADASchema depth_range"`
+
 }
 
 type XsdGoPkgHasElems_depth_rangechoicegles_pipeline_settingsschema_DepthRange_TxsdGlesPipelineSettingsChoiceDepthRange_ struct {
 	DepthRanges []*TxsdGlesPipelineSettingsChoiceDepthRange `xml:"http://www.collada.org/2005/11/COLLADASchema depth_range"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceFogColor struct {
@@ -17753,10 +19479,12 @@ type TxsdGlesPipelineSettingsChoiceFogColor struct {
 
 type XsdGoPkgHasElems_fog_colorchoicegles_pipeline_settingsschema_FogColor_TxsdGlesPipelineSettingsChoiceFogColor_ struct {
 	FogColors []*TxsdGlesPipelineSettingsChoiceFogColor `xml:"http://www.collada.org/2005/11/COLLADASchema fog_color"`
+
 }
 
 type XsdGoPkgHasElem_fog_colorchoicegles_pipeline_settingsschema_FogColor_TxsdGlesPipelineSettingsChoiceFogColor_ struct {
 	FogColor *TxsdGlesPipelineSettingsChoiceFogColor `xml:"http://www.collada.org/2005/11/COLLADASchema fog_color"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceFogDensity struct {
@@ -17764,21 +19492,25 @@ type TxsdGlesPipelineSettingsChoiceFogDensity struct {
 
 type XsdGoPkgHasElem_fog_densitychoicegles_pipeline_settingsschema_FogDensity_TxsdGlesPipelineSettingsChoiceFogDensity_ struct {
 	FogDensity *TxsdGlesPipelineSettingsChoiceFogDensity `xml:"http://www.collada.org/2005/11/COLLADASchema fog_density"`
+
 }
 
 type XsdGoPkgHasElems_fog_densitychoicegles_pipeline_settingsschema_FogDensity_TxsdGlesPipelineSettingsChoiceFogDensity_ struct {
 	FogDensities []*TxsdGlesPipelineSettingsChoiceFogDensity `xml:"http://www.collada.org/2005/11/COLLADASchema fog_density"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceFogMode struct {
 }
 
-type XsdGoPkgHasElem_fog_modechoicegles_pipeline_settingsschema_FogMode_TxsdGlesPipelineSettingsChoiceFogMode_ struct {
-	FogMode *TxsdGlesPipelineSettingsChoiceFogMode `xml:"http://www.collada.org/2005/11/COLLADASchema fog_mode"`
-}
-
 type XsdGoPkgHasElems_fog_modechoicegles_pipeline_settingsschema_FogMode_TxsdGlesPipelineSettingsChoiceFogMode_ struct {
 	FogModes []*TxsdGlesPipelineSettingsChoiceFogMode `xml:"http://www.collada.org/2005/11/COLLADASchema fog_mode"`
+
+}
+
+type XsdGoPkgHasElem_fog_modechoicegles_pipeline_settingsschema_FogMode_TxsdGlesPipelineSettingsChoiceFogMode_ struct {
+	FogMode *TxsdGlesPipelineSettingsChoiceFogMode `xml:"http://www.collada.org/2005/11/COLLADASchema fog_mode"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceFogStart struct {
@@ -17786,10 +19518,12 @@ type TxsdGlesPipelineSettingsChoiceFogStart struct {
 
 type XsdGoPkgHasElems_fog_startchoicegles_pipeline_settingsschema_FogStart_TxsdGlesPipelineSettingsChoiceFogStart_ struct {
 	FogStarts []*TxsdGlesPipelineSettingsChoiceFogStart `xml:"http://www.collada.org/2005/11/COLLADASchema fog_start"`
+
 }
 
 type XsdGoPkgHasElem_fog_startchoicegles_pipeline_settingsschema_FogStart_TxsdGlesPipelineSettingsChoiceFogStart_ struct {
 	FogStart *TxsdGlesPipelineSettingsChoiceFogStart `xml:"http://www.collada.org/2005/11/COLLADASchema fog_start"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceFogEnd struct {
@@ -17797,10 +19531,12 @@ type TxsdGlesPipelineSettingsChoiceFogEnd struct {
 
 type XsdGoPkgHasElems_fog_endchoicegles_pipeline_settingsschema_FogEnd_TxsdGlesPipelineSettingsChoiceFogEnd_ struct {
 	FogEnds []*TxsdGlesPipelineSettingsChoiceFogEnd `xml:"http://www.collada.org/2005/11/COLLADASchema fog_end"`
+
 }
 
 type XsdGoPkgHasElem_fog_endchoicegles_pipeline_settingsschema_FogEnd_TxsdGlesPipelineSettingsChoiceFogEnd_ struct {
 	FogEnd *TxsdGlesPipelineSettingsChoiceFogEnd `xml:"http://www.collada.org/2005/11/COLLADASchema fog_end"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceFrontFace struct {
@@ -17808,18 +19544,22 @@ type TxsdGlesPipelineSettingsChoiceFrontFace struct {
 
 type XsdGoPkgHasElems_front_facechoicegles_pipeline_settingsschema_FrontFace_TxsdGlesPipelineSettingsChoiceFrontFace_ struct {
 	FrontFaces []*TxsdGlesPipelineSettingsChoiceFrontFace `xml:"http://www.collada.org/2005/11/COLLADASchema front_face"`
+
 }
 
 type XsdGoPkgHasElem_front_facechoicegles_pipeline_settingsschema_FrontFace_TxsdGlesPipelineSettingsChoiceFrontFace_ struct {
 	FrontFace *TxsdGlesPipelineSettingsChoiceFrontFace `xml:"http://www.collada.org/2005/11/COLLADASchema front_face"`
-}
 
-type XsdGoPkgHasElems_valuesequencetexture_pipelinechoicegles_pipeline_settingsschema_Value_TglesTexturePipeline_ struct {
-	Values []*TglesTexturePipeline `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
 }
 
 type XsdGoPkgHasElem_valuesequencetexture_pipelinechoicegles_pipeline_settingsschema_Value_TglesTexturePipeline_ struct {
 	Value *TglesTexturePipeline `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
+
+}
+
+type XsdGoPkgHasElems_valuesequencetexture_pipelinechoicegles_pipeline_settingsschema_Value_TglesTexturePipeline_ struct {
+	Values []*TglesTexturePipeline `xml:"http://www.collada.org/2005/11/COLLADASchema value"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceTexturePipeline struct {
@@ -17827,12 +19567,14 @@ type TxsdGlesPipelineSettingsChoiceTexturePipeline struct {
 
 }
 
-type XsdGoPkgHasElem_texture_pipelinechoicegles_pipeline_settingsschema_TexturePipeline_TxsdGlesPipelineSettingsChoiceTexturePipeline_ struct {
-	TexturePipeline *TxsdGlesPipelineSettingsChoiceTexturePipeline `xml:"http://www.collada.org/2005/11/COLLADASchema texture_pipeline"`
-}
-
 type XsdGoPkgHasElems_texture_pipelinechoicegles_pipeline_settingsschema_TexturePipeline_TxsdGlesPipelineSettingsChoiceTexturePipeline_ struct {
 	TexturePipelines []*TxsdGlesPipelineSettingsChoiceTexturePipeline `xml:"http://www.collada.org/2005/11/COLLADASchema texture_pipeline"`
+
+}
+
+type XsdGoPkgHasElem_texture_pipelinechoicegles_pipeline_settingsschema_TexturePipeline_TxsdGlesPipelineSettingsChoiceTexturePipeline_ struct {
+	TexturePipeline *TxsdGlesPipelineSettingsChoiceTexturePipeline `xml:"http://www.collada.org/2005/11/COLLADASchema texture_pipeline"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceLogicOp struct {
@@ -17840,10 +19582,12 @@ type TxsdGlesPipelineSettingsChoiceLogicOp struct {
 
 type XsdGoPkgHasElems_logic_opchoicegles_pipeline_settingsschema_LogicOp_TxsdGlesPipelineSettingsChoiceLogicOp_ struct {
 	LogicOps []*TxsdGlesPipelineSettingsChoiceLogicOp `xml:"http://www.collada.org/2005/11/COLLADASchema logic_op"`
+
 }
 
 type XsdGoPkgHasElem_logic_opchoicegles_pipeline_settingsschema_LogicOp_TxsdGlesPipelineSettingsChoiceLogicOp_ struct {
 	LogicOp *TxsdGlesPipelineSettingsChoiceLogicOp `xml:"http://www.collada.org/2005/11/COLLADASchema logic_op"`
+
 }
 
 type XsdGoPkgHasAttr_Index_TglesMaxLightsIndex_ struct {
@@ -17857,10 +19601,12 @@ type TxsdGlesPipelineSettingsChoiceLightAmbient struct {
 
 type XsdGoPkgHasElem_light_ambientchoicegles_pipeline_settingsschema_LightAmbient_TxsdGlesPipelineSettingsChoiceLightAmbient_ struct {
 	LightAmbient *TxsdGlesPipelineSettingsChoiceLightAmbient `xml:"http://www.collada.org/2005/11/COLLADASchema light_ambient"`
+
 }
 
 type XsdGoPkgHasElems_light_ambientchoicegles_pipeline_settingsschema_LightAmbient_TxsdGlesPipelineSettingsChoiceLightAmbient_ struct {
 	LightAmbients []*TxsdGlesPipelineSettingsChoiceLightAmbient `xml:"http://www.collada.org/2005/11/COLLADASchema light_ambient"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceLightDiffuse struct {
@@ -17868,21 +19614,25 @@ type TxsdGlesPipelineSettingsChoiceLightDiffuse struct {
 
 type XsdGoPkgHasElems_light_diffusechoicegles_pipeline_settingsschema_LightDiffuse_TxsdGlesPipelineSettingsChoiceLightDiffuse_ struct {
 	LightDiffuses []*TxsdGlesPipelineSettingsChoiceLightDiffuse `xml:"http://www.collada.org/2005/11/COLLADASchema light_diffuse"`
+
 }
 
 type XsdGoPkgHasElem_light_diffusechoicegles_pipeline_settingsschema_LightDiffuse_TxsdGlesPipelineSettingsChoiceLightDiffuse_ struct {
 	LightDiffuse *TxsdGlesPipelineSettingsChoiceLightDiffuse `xml:"http://www.collada.org/2005/11/COLLADASchema light_diffuse"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceLightSpecular struct {
 }
 
-type XsdGoPkgHasElems_light_specularchoicegles_pipeline_settingsschema_LightSpecular_TxsdGlesPipelineSettingsChoiceLightSpecular_ struct {
-	LightSpeculars []*TxsdGlesPipelineSettingsChoiceLightSpecular `xml:"http://www.collada.org/2005/11/COLLADASchema light_specular"`
-}
-
 type XsdGoPkgHasElem_light_specularchoicegles_pipeline_settingsschema_LightSpecular_TxsdGlesPipelineSettingsChoiceLightSpecular_ struct {
 	LightSpecular *TxsdGlesPipelineSettingsChoiceLightSpecular `xml:"http://www.collada.org/2005/11/COLLADASchema light_specular"`
+
+}
+
+type XsdGoPkgHasElems_light_specularchoicegles_pipeline_settingsschema_LightSpecular_TxsdGlesPipelineSettingsChoiceLightSpecular_ struct {
+	LightSpeculars []*TxsdGlesPipelineSettingsChoiceLightSpecular `xml:"http://www.collada.org/2005/11/COLLADASchema light_specular"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceLightPosition struct {
@@ -17890,43 +19640,51 @@ type TxsdGlesPipelineSettingsChoiceLightPosition struct {
 
 type XsdGoPkgHasElem_light_positionchoicegles_pipeline_settingsschema_LightPosition_TxsdGlesPipelineSettingsChoiceLightPosition_ struct {
 	LightPosition *TxsdGlesPipelineSettingsChoiceLightPosition `xml:"http://www.collada.org/2005/11/COLLADASchema light_position"`
+
 }
 
 type XsdGoPkgHasElems_light_positionchoicegles_pipeline_settingsschema_LightPosition_TxsdGlesPipelineSettingsChoiceLightPosition_ struct {
 	LightPositions []*TxsdGlesPipelineSettingsChoiceLightPosition `xml:"http://www.collada.org/2005/11/COLLADASchema light_position"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceLightConstantAttenuation struct {
 }
 
-type XsdGoPkgHasElem_light_constant_attenuationchoicegles_pipeline_settingsschema_LightConstantAttenuation_TxsdGlesPipelineSettingsChoiceLightConstantAttenuation_ struct {
-	LightConstantAttenuation *TxsdGlesPipelineSettingsChoiceLightConstantAttenuation `xml:"http://www.collada.org/2005/11/COLLADASchema light_constant_attenuation"`
-}
-
 type XsdGoPkgHasElems_light_constant_attenuationchoicegles_pipeline_settingsschema_LightConstantAttenuation_TxsdGlesPipelineSettingsChoiceLightConstantAttenuation_ struct {
 	LightConstantAttenuations []*TxsdGlesPipelineSettingsChoiceLightConstantAttenuation `xml:"http://www.collada.org/2005/11/COLLADASchema light_constant_attenuation"`
+
+}
+
+type XsdGoPkgHasElem_light_constant_attenuationchoicegles_pipeline_settingsschema_LightConstantAttenuation_TxsdGlesPipelineSettingsChoiceLightConstantAttenuation_ struct {
+	LightConstantAttenuation *TxsdGlesPipelineSettingsChoiceLightConstantAttenuation `xml:"http://www.collada.org/2005/11/COLLADASchema light_constant_attenuation"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceLightLinearAttenutation struct {
 }
 
-type XsdGoPkgHasElems_light_linear_attenutationchoicegles_pipeline_settingsschema_LightLinearAttenutation_TxsdGlesPipelineSettingsChoiceLightLinearAttenutation_ struct {
-	LightLinearAttenutations []*TxsdGlesPipelineSettingsChoiceLightLinearAttenutation `xml:"http://www.collada.org/2005/11/COLLADASchema light_linear_attenutation"`
-}
-
 type XsdGoPkgHasElem_light_linear_attenutationchoicegles_pipeline_settingsschema_LightLinearAttenutation_TxsdGlesPipelineSettingsChoiceLightLinearAttenutation_ struct {
 	LightLinearAttenutation *TxsdGlesPipelineSettingsChoiceLightLinearAttenutation `xml:"http://www.collada.org/2005/11/COLLADASchema light_linear_attenutation"`
+
+}
+
+type XsdGoPkgHasElems_light_linear_attenutationchoicegles_pipeline_settingsschema_LightLinearAttenutation_TxsdGlesPipelineSettingsChoiceLightLinearAttenutation_ struct {
+	LightLinearAttenutations []*TxsdGlesPipelineSettingsChoiceLightLinearAttenutation `xml:"http://www.collada.org/2005/11/COLLADASchema light_linear_attenutation"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceLightQuadraticAttenuation struct {
 }
 
-type XsdGoPkgHasElems_light_quadratic_attenuationchoicegles_pipeline_settingsschema_LightQuadraticAttenuation_TxsdGlesPipelineSettingsChoiceLightQuadraticAttenuation_ struct {
-	LightQuadraticAttenuations []*TxsdGlesPipelineSettingsChoiceLightQuadraticAttenuation `xml:"http://www.collada.org/2005/11/COLLADASchema light_quadratic_attenuation"`
-}
-
 type XsdGoPkgHasElem_light_quadratic_attenuationchoicegles_pipeline_settingsschema_LightQuadraticAttenuation_TxsdGlesPipelineSettingsChoiceLightQuadraticAttenuation_ struct {
 	LightQuadraticAttenuation *TxsdGlesPipelineSettingsChoiceLightQuadraticAttenuation `xml:"http://www.collada.org/2005/11/COLLADASchema light_quadratic_attenuation"`
+
+}
+
+type XsdGoPkgHasElems_light_quadratic_attenuationchoicegles_pipeline_settingsschema_LightQuadraticAttenuation_TxsdGlesPipelineSettingsChoiceLightQuadraticAttenuation_ struct {
+	LightQuadraticAttenuations []*TxsdGlesPipelineSettingsChoiceLightQuadraticAttenuation `xml:"http://www.collada.org/2005/11/COLLADASchema light_quadratic_attenuation"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceLightSpotCutoff struct {
@@ -17934,10 +19692,12 @@ type TxsdGlesPipelineSettingsChoiceLightSpotCutoff struct {
 
 type XsdGoPkgHasElems_light_spot_cutoffchoicegles_pipeline_settingsschema_LightSpotCutoff_TxsdGlesPipelineSettingsChoiceLightSpotCutoff_ struct {
 	LightSpotCutoffs []*TxsdGlesPipelineSettingsChoiceLightSpotCutoff `xml:"http://www.collada.org/2005/11/COLLADASchema light_spot_cutoff"`
+
 }
 
 type XsdGoPkgHasElem_light_spot_cutoffchoicegles_pipeline_settingsschema_LightSpotCutoff_TxsdGlesPipelineSettingsChoiceLightSpotCutoff_ struct {
 	LightSpotCutoff *TxsdGlesPipelineSettingsChoiceLightSpotCutoff `xml:"http://www.collada.org/2005/11/COLLADASchema light_spot_cutoff"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceLightSpotDirection struct {
@@ -17945,32 +19705,38 @@ type TxsdGlesPipelineSettingsChoiceLightSpotDirection struct {
 
 type XsdGoPkgHasElem_light_spot_directionchoicegles_pipeline_settingsschema_LightSpotDirection_TxsdGlesPipelineSettingsChoiceLightSpotDirection_ struct {
 	LightSpotDirection *TxsdGlesPipelineSettingsChoiceLightSpotDirection `xml:"http://www.collada.org/2005/11/COLLADASchema light_spot_direction"`
+
 }
 
 type XsdGoPkgHasElems_light_spot_directionchoicegles_pipeline_settingsschema_LightSpotDirection_TxsdGlesPipelineSettingsChoiceLightSpotDirection_ struct {
 	LightSpotDirections []*TxsdGlesPipelineSettingsChoiceLightSpotDirection `xml:"http://www.collada.org/2005/11/COLLADASchema light_spot_direction"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceLightSpotExponent struct {
 }
 
-type XsdGoPkgHasElem_light_spot_exponentchoicegles_pipeline_settingsschema_LightSpotExponent_TxsdGlesPipelineSettingsChoiceLightSpotExponent_ struct {
-	LightSpotExponent *TxsdGlesPipelineSettingsChoiceLightSpotExponent `xml:"http://www.collada.org/2005/11/COLLADASchema light_spot_exponent"`
-}
-
 type XsdGoPkgHasElems_light_spot_exponentchoicegles_pipeline_settingsschema_LightSpotExponent_TxsdGlesPipelineSettingsChoiceLightSpotExponent_ struct {
 	LightSpotExponents []*TxsdGlesPipelineSettingsChoiceLightSpotExponent `xml:"http://www.collada.org/2005/11/COLLADASchema light_spot_exponent"`
+
+}
+
+type XsdGoPkgHasElem_light_spot_exponentchoicegles_pipeline_settingsschema_LightSpotExponent_TxsdGlesPipelineSettingsChoiceLightSpotExponent_ struct {
+	LightSpotExponent *TxsdGlesPipelineSettingsChoiceLightSpotExponent `xml:"http://www.collada.org/2005/11/COLLADASchema light_spot_exponent"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceLightModelAmbient struct {
 }
 
-type XsdGoPkgHasElem_light_model_ambientchoicegles_pipeline_settingsschema_LightModelAmbient_TxsdGlesPipelineSettingsChoiceLightModelAmbient_ struct {
-	LightModelAmbient *TxsdGlesPipelineSettingsChoiceLightModelAmbient `xml:"http://www.collada.org/2005/11/COLLADASchema light_model_ambient"`
-}
-
 type XsdGoPkgHasElems_light_model_ambientchoicegles_pipeline_settingsschema_LightModelAmbient_TxsdGlesPipelineSettingsChoiceLightModelAmbient_ struct {
 	LightModelAmbients []*TxsdGlesPipelineSettingsChoiceLightModelAmbient `xml:"http://www.collada.org/2005/11/COLLADASchema light_model_ambient"`
+
+}
+
+type XsdGoPkgHasElem_light_model_ambientchoicegles_pipeline_settingsschema_LightModelAmbient_TxsdGlesPipelineSettingsChoiceLightModelAmbient_ struct {
+	LightModelAmbient *TxsdGlesPipelineSettingsChoiceLightModelAmbient `xml:"http://www.collada.org/2005/11/COLLADASchema light_model_ambient"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceLineWidth struct {
@@ -17978,10 +19744,12 @@ type TxsdGlesPipelineSettingsChoiceLineWidth struct {
 
 type XsdGoPkgHasElem_line_widthchoicegles_pipeline_settingsschema_LineWidth_TxsdGlesPipelineSettingsChoiceLineWidth_ struct {
 	LineWidth *TxsdGlesPipelineSettingsChoiceLineWidth `xml:"http://www.collada.org/2005/11/COLLADASchema line_width"`
+
 }
 
 type XsdGoPkgHasElems_line_widthchoicegles_pipeline_settingsschema_LineWidth_TxsdGlesPipelineSettingsChoiceLineWidth_ struct {
 	LineWidths []*TxsdGlesPipelineSettingsChoiceLineWidth `xml:"http://www.collada.org/2005/11/COLLADASchema line_width"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceMaterialAmbient struct {
@@ -17989,43 +19757,51 @@ type TxsdGlesPipelineSettingsChoiceMaterialAmbient struct {
 
 type XsdGoPkgHasElems_material_ambientchoicegles_pipeline_settingsschema_MaterialAmbient_TxsdGlesPipelineSettingsChoiceMaterialAmbient_ struct {
 	MaterialAmbients []*TxsdGlesPipelineSettingsChoiceMaterialAmbient `xml:"http://www.collada.org/2005/11/COLLADASchema material_ambient"`
+
 }
 
 type XsdGoPkgHasElem_material_ambientchoicegles_pipeline_settingsschema_MaterialAmbient_TxsdGlesPipelineSettingsChoiceMaterialAmbient_ struct {
 	MaterialAmbient *TxsdGlesPipelineSettingsChoiceMaterialAmbient `xml:"http://www.collada.org/2005/11/COLLADASchema material_ambient"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceMaterialDiffuse struct {
 }
 
-type XsdGoPkgHasElem_material_diffusechoicegles_pipeline_settingsschema_MaterialDiffuse_TxsdGlesPipelineSettingsChoiceMaterialDiffuse_ struct {
-	MaterialDiffuse *TxsdGlesPipelineSettingsChoiceMaterialDiffuse `xml:"http://www.collada.org/2005/11/COLLADASchema material_diffuse"`
-}
-
 type XsdGoPkgHasElems_material_diffusechoicegles_pipeline_settingsschema_MaterialDiffuse_TxsdGlesPipelineSettingsChoiceMaterialDiffuse_ struct {
 	MaterialDiffuses []*TxsdGlesPipelineSettingsChoiceMaterialDiffuse `xml:"http://www.collada.org/2005/11/COLLADASchema material_diffuse"`
+
+}
+
+type XsdGoPkgHasElem_material_diffusechoicegles_pipeline_settingsschema_MaterialDiffuse_TxsdGlesPipelineSettingsChoiceMaterialDiffuse_ struct {
+	MaterialDiffuse *TxsdGlesPipelineSettingsChoiceMaterialDiffuse `xml:"http://www.collada.org/2005/11/COLLADASchema material_diffuse"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceMaterialEmission struct {
 }
 
-type XsdGoPkgHasElems_material_emissionchoicegles_pipeline_settingsschema_MaterialEmission_TxsdGlesPipelineSettingsChoiceMaterialEmission_ struct {
-	MaterialEmissions []*TxsdGlesPipelineSettingsChoiceMaterialEmission `xml:"http://www.collada.org/2005/11/COLLADASchema material_emission"`
-}
-
 type XsdGoPkgHasElem_material_emissionchoicegles_pipeline_settingsschema_MaterialEmission_TxsdGlesPipelineSettingsChoiceMaterialEmission_ struct {
 	MaterialEmission *TxsdGlesPipelineSettingsChoiceMaterialEmission `xml:"http://www.collada.org/2005/11/COLLADASchema material_emission"`
+
+}
+
+type XsdGoPkgHasElems_material_emissionchoicegles_pipeline_settingsschema_MaterialEmission_TxsdGlesPipelineSettingsChoiceMaterialEmission_ struct {
+	MaterialEmissions []*TxsdGlesPipelineSettingsChoiceMaterialEmission `xml:"http://www.collada.org/2005/11/COLLADASchema material_emission"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceMaterialShininess struct {
 }
 
-type XsdGoPkgHasElem_material_shininesschoicegles_pipeline_settingsschema_MaterialShininess_TxsdGlesPipelineSettingsChoiceMaterialShininess_ struct {
-	MaterialShininess *TxsdGlesPipelineSettingsChoiceMaterialShininess `xml:"http://www.collada.org/2005/11/COLLADASchema material_shininess"`
-}
-
 type XsdGoPkgHasElems_material_shininesschoicegles_pipeline_settingsschema_MaterialShininess_TxsdGlesPipelineSettingsChoiceMaterialShininess_ struct {
 	MaterialShininesses []*TxsdGlesPipelineSettingsChoiceMaterialShininess `xml:"http://www.collada.org/2005/11/COLLADASchema material_shininess"`
+
+}
+
+type XsdGoPkgHasElem_material_shininesschoicegles_pipeline_settingsschema_MaterialShininess_TxsdGlesPipelineSettingsChoiceMaterialShininess_ struct {
+	MaterialShininess *TxsdGlesPipelineSettingsChoiceMaterialShininess `xml:"http://www.collada.org/2005/11/COLLADASchema material_shininess"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceMaterialSpecular struct {
@@ -18033,10 +19809,12 @@ type TxsdGlesPipelineSettingsChoiceMaterialSpecular struct {
 
 type XsdGoPkgHasElem_material_specularchoicegles_pipeline_settingsschema_MaterialSpecular_TxsdGlesPipelineSettingsChoiceMaterialSpecular_ struct {
 	MaterialSpecular *TxsdGlesPipelineSettingsChoiceMaterialSpecular `xml:"http://www.collada.org/2005/11/COLLADASchema material_specular"`
+
 }
 
 type XsdGoPkgHasElems_material_specularchoicegles_pipeline_settingsschema_MaterialSpecular_TxsdGlesPipelineSettingsChoiceMaterialSpecular_ struct {
 	MaterialSpeculars []*TxsdGlesPipelineSettingsChoiceMaterialSpecular `xml:"http://www.collada.org/2005/11/COLLADASchema material_specular"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceModelViewMatrix struct {
@@ -18044,10 +19822,12 @@ type TxsdGlesPipelineSettingsChoiceModelViewMatrix struct {
 
 type XsdGoPkgHasElems_model_view_matrixchoicegles_pipeline_settingsschema_ModelViewMatrix_TxsdGlesPipelineSettingsChoiceModelViewMatrix_ struct {
 	ModelViewMatrixs []*TxsdGlesPipelineSettingsChoiceModelViewMatrix `xml:"http://www.collada.org/2005/11/COLLADASchema model_view_matrix"`
+
 }
 
 type XsdGoPkgHasElem_model_view_matrixchoicegles_pipeline_settingsschema_ModelViewMatrix_TxsdGlesPipelineSettingsChoiceModelViewMatrix_ struct {
 	ModelViewMatrix *TxsdGlesPipelineSettingsChoiceModelViewMatrix `xml:"http://www.collada.org/2005/11/COLLADASchema model_view_matrix"`
+
 }
 
 type TxsdGlesPipelineSettingsChoicePointDistanceAttenuation struct {
@@ -18055,10 +19835,12 @@ type TxsdGlesPipelineSettingsChoicePointDistanceAttenuation struct {
 
 type XsdGoPkgHasElems_point_distance_attenuationchoicegles_pipeline_settingsschema_PointDistanceAttenuation_TxsdGlesPipelineSettingsChoicePointDistanceAttenuation_ struct {
 	PointDistanceAttenuations []*TxsdGlesPipelineSettingsChoicePointDistanceAttenuation `xml:"http://www.collada.org/2005/11/COLLADASchema point_distance_attenuation"`
+
 }
 
 type XsdGoPkgHasElem_point_distance_attenuationchoicegles_pipeline_settingsschema_PointDistanceAttenuation_TxsdGlesPipelineSettingsChoicePointDistanceAttenuation_ struct {
 	PointDistanceAttenuation *TxsdGlesPipelineSettingsChoicePointDistanceAttenuation `xml:"http://www.collada.org/2005/11/COLLADASchema point_distance_attenuation"`
+
 }
 
 type TxsdGlesPipelineSettingsChoicePointFadeThresholdSize struct {
@@ -18066,32 +19848,38 @@ type TxsdGlesPipelineSettingsChoicePointFadeThresholdSize struct {
 
 type XsdGoPkgHasElem_point_fade_threshold_sizechoicegles_pipeline_settingsschema_PointFadeThresholdSize_TxsdGlesPipelineSettingsChoicePointFadeThresholdSize_ struct {
 	PointFadeThresholdSize *TxsdGlesPipelineSettingsChoicePointFadeThresholdSize `xml:"http://www.collada.org/2005/11/COLLADASchema point_fade_threshold_size"`
+
 }
 
 type XsdGoPkgHasElems_point_fade_threshold_sizechoicegles_pipeline_settingsschema_PointFadeThresholdSize_TxsdGlesPipelineSettingsChoicePointFadeThresholdSize_ struct {
 	PointFadeThresholdSizes []*TxsdGlesPipelineSettingsChoicePointFadeThresholdSize `xml:"http://www.collada.org/2005/11/COLLADASchema point_fade_threshold_size"`
+
 }
 
 type TxsdGlesPipelineSettingsChoicePointSize struct {
 }
 
-type XsdGoPkgHasElem_point_sizechoicegles_pipeline_settingsschema_PointSize_TxsdGlesPipelineSettingsChoicePointSize_ struct {
-	PointSize *TxsdGlesPipelineSettingsChoicePointSize `xml:"http://www.collada.org/2005/11/COLLADASchema point_size"`
-}
-
 type XsdGoPkgHasElems_point_sizechoicegles_pipeline_settingsschema_PointSize_TxsdGlesPipelineSettingsChoicePointSize_ struct {
 	PointSizes []*TxsdGlesPipelineSettingsChoicePointSize `xml:"http://www.collada.org/2005/11/COLLADASchema point_size"`
+
+}
+
+type XsdGoPkgHasElem_point_sizechoicegles_pipeline_settingsschema_PointSize_TxsdGlesPipelineSettingsChoicePointSize_ struct {
+	PointSize *TxsdGlesPipelineSettingsChoicePointSize `xml:"http://www.collada.org/2005/11/COLLADASchema point_size"`
+
 }
 
 type TxsdGlesPipelineSettingsChoicePointSizeMin struct {
 }
 
-type XsdGoPkgHasElem_point_size_minchoicegles_pipeline_settingsschema_PointSizeMin_TxsdGlesPipelineSettingsChoicePointSizeMin_ struct {
-	PointSizeMin *TxsdGlesPipelineSettingsChoicePointSizeMin `xml:"http://www.collada.org/2005/11/COLLADASchema point_size_min"`
-}
-
 type XsdGoPkgHasElems_point_size_minchoicegles_pipeline_settingsschema_PointSizeMin_TxsdGlesPipelineSettingsChoicePointSizeMin_ struct {
 	PointSizeMins []*TxsdGlesPipelineSettingsChoicePointSizeMin `xml:"http://www.collada.org/2005/11/COLLADASchema point_size_min"`
+
+}
+
+type XsdGoPkgHasElem_point_size_minchoicegles_pipeline_settingsschema_PointSizeMin_TxsdGlesPipelineSettingsChoicePointSizeMin_ struct {
+	PointSizeMin *TxsdGlesPipelineSettingsChoicePointSizeMin `xml:"http://www.collada.org/2005/11/COLLADASchema point_size_min"`
+
 }
 
 type TxsdGlesPipelineSettingsChoicePointSizeMax struct {
@@ -18099,21 +19887,25 @@ type TxsdGlesPipelineSettingsChoicePointSizeMax struct {
 
 type XsdGoPkgHasElems_point_size_maxchoicegles_pipeline_settingsschema_PointSizeMax_TxsdGlesPipelineSettingsChoicePointSizeMax_ struct {
 	PointSizeMaxs []*TxsdGlesPipelineSettingsChoicePointSizeMax `xml:"http://www.collada.org/2005/11/COLLADASchema point_size_max"`
+
 }
 
 type XsdGoPkgHasElem_point_size_maxchoicegles_pipeline_settingsschema_PointSizeMax_TxsdGlesPipelineSettingsChoicePointSizeMax_ struct {
 	PointSizeMax *TxsdGlesPipelineSettingsChoicePointSizeMax `xml:"http://www.collada.org/2005/11/COLLADASchema point_size_max"`
+
 }
 
 type TxsdGlesPipelineSettingsChoicePolygonOffset struct {
 }
 
-type XsdGoPkgHasElems_polygon_offsetchoicegles_pipeline_settingsschema_PolygonOffset_TxsdGlesPipelineSettingsChoicePolygonOffset_ struct {
-	PolygonOffsets []*TxsdGlesPipelineSettingsChoicePolygonOffset `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_offset"`
-}
-
 type XsdGoPkgHasElem_polygon_offsetchoicegles_pipeline_settingsschema_PolygonOffset_TxsdGlesPipelineSettingsChoicePolygonOffset_ struct {
 	PolygonOffset *TxsdGlesPipelineSettingsChoicePolygonOffset `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_offset"`
+
+}
+
+type XsdGoPkgHasElems_polygon_offsetchoicegles_pipeline_settingsschema_PolygonOffset_TxsdGlesPipelineSettingsChoicePolygonOffset_ struct {
+	PolygonOffsets []*TxsdGlesPipelineSettingsChoicePolygonOffset `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_offset"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceProjectionMatrix struct {
@@ -18121,21 +19913,25 @@ type TxsdGlesPipelineSettingsChoiceProjectionMatrix struct {
 
 type XsdGoPkgHasElems_projection_matrixchoicegles_pipeline_settingsschema_ProjectionMatrix_TxsdGlesPipelineSettingsChoiceProjectionMatrix_ struct {
 	ProjectionMatrixs []*TxsdGlesPipelineSettingsChoiceProjectionMatrix `xml:"http://www.collada.org/2005/11/COLLADASchema projection_matrix"`
+
 }
 
 type XsdGoPkgHasElem_projection_matrixchoicegles_pipeline_settingsschema_ProjectionMatrix_TxsdGlesPipelineSettingsChoiceProjectionMatrix_ struct {
 	ProjectionMatrix *TxsdGlesPipelineSettingsChoiceProjectionMatrix `xml:"http://www.collada.org/2005/11/COLLADASchema projection_matrix"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceScissor struct {
 }
 
-type XsdGoPkgHasElem_scissorchoicegles_pipeline_settingsschema_Scissor_TxsdGlesPipelineSettingsChoiceScissor_ struct {
-	Scissor *TxsdGlesPipelineSettingsChoiceScissor `xml:"http://www.collada.org/2005/11/COLLADASchema scissor"`
-}
-
 type XsdGoPkgHasElems_scissorchoicegles_pipeline_settingsschema_Scissor_TxsdGlesPipelineSettingsChoiceScissor_ struct {
 	Scissors []*TxsdGlesPipelineSettingsChoiceScissor `xml:"http://www.collada.org/2005/11/COLLADASchema scissor"`
+
+}
+
+type XsdGoPkgHasElem_scissorchoicegles_pipeline_settingsschema_Scissor_TxsdGlesPipelineSettingsChoiceScissor_ struct {
+	Scissor *TxsdGlesPipelineSettingsChoiceScissor `xml:"http://www.collada.org/2005/11/COLLADASchema scissor"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceShadeModel struct {
@@ -18143,10 +19939,12 @@ type TxsdGlesPipelineSettingsChoiceShadeModel struct {
 
 type XsdGoPkgHasElems_shade_modelchoicegles_pipeline_settingsschema_ShadeModel_TxsdGlesPipelineSettingsChoiceShadeModel_ struct {
 	ShadeModels []*TxsdGlesPipelineSettingsChoiceShadeModel `xml:"http://www.collada.org/2005/11/COLLADASchema shade_model"`
+
 }
 
 type XsdGoPkgHasElem_shade_modelchoicegles_pipeline_settingsschema_ShadeModel_TxsdGlesPipelineSettingsChoiceShadeModel_ struct {
 	ShadeModel *TxsdGlesPipelineSettingsChoiceShadeModel `xml:"http://www.collada.org/2005/11/COLLADASchema shade_model"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceStencilFuncSequenceFunc struct {
@@ -18154,10 +19952,12 @@ type TxsdGlesPipelineSettingsChoiceStencilFuncSequenceFunc struct {
 
 type XsdGoPkgHasElem_funcsequencestencil_funcchoicegles_pipeline_settingsschema_Func_TxsdGlesPipelineSettingsChoiceStencilFuncSequenceFunc_ struct {
 	Func *TxsdGlesPipelineSettingsChoiceStencilFuncSequenceFunc `xml:"http://www.collada.org/2005/11/COLLADASchema func"`
+
 }
 
 type XsdGoPkgHasElems_funcsequencestencil_funcchoicegles_pipeline_settingsschema_Func_TxsdGlesPipelineSettingsChoiceStencilFuncSequenceFunc_ struct {
 	Funcs []*TxsdGlesPipelineSettingsChoiceStencilFuncSequenceFunc `xml:"http://www.collada.org/2005/11/COLLADASchema func"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceStencilFuncSequenceRef struct {
@@ -18165,10 +19965,12 @@ type TxsdGlesPipelineSettingsChoiceStencilFuncSequenceRef struct {
 
 type XsdGoPkgHasElem_refsequencestencil_funcchoicegles_pipeline_settingsschema_Ref_TxsdGlesPipelineSettingsChoiceStencilFuncSequenceRef_ struct {
 	Ref *TxsdGlesPipelineSettingsChoiceStencilFuncSequenceRef `xml:"http://www.collada.org/2005/11/COLLADASchema ref"`
+
 }
 
 type XsdGoPkgHasElems_refsequencestencil_funcchoicegles_pipeline_settingsschema_Ref_TxsdGlesPipelineSettingsChoiceStencilFuncSequenceRef_ struct {
 	Refs []*TxsdGlesPipelineSettingsChoiceStencilFuncSequenceRef `xml:"http://www.collada.org/2005/11/COLLADASchema ref"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceStencilFuncSequenceMask struct {
@@ -18176,10 +19978,12 @@ type TxsdGlesPipelineSettingsChoiceStencilFuncSequenceMask struct {
 
 type XsdGoPkgHasElems_masksequencestencil_funcchoicegles_pipeline_settingsschema_Mask_TxsdGlesPipelineSettingsChoiceStencilFuncSequenceMask_ struct {
 	Masks []*TxsdGlesPipelineSettingsChoiceStencilFuncSequenceMask `xml:"http://www.collada.org/2005/11/COLLADASchema mask"`
+
 }
 
 type XsdGoPkgHasElem_masksequencestencil_funcchoicegles_pipeline_settingsschema_Mask_TxsdGlesPipelineSettingsChoiceStencilFuncSequenceMask_ struct {
 	Mask *TxsdGlesPipelineSettingsChoiceStencilFuncSequenceMask `xml:"http://www.collada.org/2005/11/COLLADASchema mask"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceStencilFunc struct {
@@ -18191,12 +19995,14 @@ type TxsdGlesPipelineSettingsChoiceStencilFunc struct {
 
 }
 
-type XsdGoPkgHasElems_stencil_funcchoicegles_pipeline_settingsschema_StencilFunc_TxsdGlesPipelineSettingsChoiceStencilFunc_ struct {
-	StencilFuncs []*TxsdGlesPipelineSettingsChoiceStencilFunc `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_func"`
-}
-
 type XsdGoPkgHasElem_stencil_funcchoicegles_pipeline_settingsschema_StencilFunc_TxsdGlesPipelineSettingsChoiceStencilFunc_ struct {
 	StencilFunc *TxsdGlesPipelineSettingsChoiceStencilFunc `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_func"`
+
+}
+
+type XsdGoPkgHasElems_stencil_funcchoicegles_pipeline_settingsschema_StencilFunc_TxsdGlesPipelineSettingsChoiceStencilFunc_ struct {
+	StencilFuncs []*TxsdGlesPipelineSettingsChoiceStencilFunc `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_func"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceStencilMask struct {
@@ -18204,10 +20010,12 @@ type TxsdGlesPipelineSettingsChoiceStencilMask struct {
 
 type XsdGoPkgHasElem_stencil_maskchoicegles_pipeline_settingsschema_StencilMask_TxsdGlesPipelineSettingsChoiceStencilMask_ struct {
 	StencilMask *TxsdGlesPipelineSettingsChoiceStencilMask `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_mask"`
+
 }
 
 type XsdGoPkgHasElems_stencil_maskchoicegles_pipeline_settingsschema_StencilMask_TxsdGlesPipelineSettingsChoiceStencilMask_ struct {
 	StencilMasks []*TxsdGlesPipelineSettingsChoiceStencilMask `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_mask"`
+
 }
 
 type XsdGoPkgHasAttr_Value_TglesStencilOpType_Keep struct {
@@ -18224,21 +20032,25 @@ type TxsdGlesPipelineSettingsChoiceStencilOpSequenceFail struct {
 
 type XsdGoPkgHasElems_failsequencestencil_opchoicegles_pipeline_settingsschema_Fail_TxsdGlesPipelineSettingsChoiceStencilOpSequenceFail_ struct {
 	Fails []*TxsdGlesPipelineSettingsChoiceStencilOpSequenceFail `xml:"http://www.collada.org/2005/11/COLLADASchema fail"`
+
 }
 
 type XsdGoPkgHasElem_failsequencestencil_opchoicegles_pipeline_settingsschema_Fail_TxsdGlesPipelineSettingsChoiceStencilOpSequenceFail_ struct {
 	Fail *TxsdGlesPipelineSettingsChoiceStencilOpSequenceFail `xml:"http://www.collada.org/2005/11/COLLADASchema fail"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceStencilOpSequenceZfail struct {
 }
 
-type XsdGoPkgHasElem_zfailsequencestencil_opchoicegles_pipeline_settingsschema_Zfail_TxsdGlesPipelineSettingsChoiceStencilOpSequenceZfail_ struct {
-	Zfail *TxsdGlesPipelineSettingsChoiceStencilOpSequenceZfail `xml:"http://www.collada.org/2005/11/COLLADASchema zfail"`
-}
-
 type XsdGoPkgHasElems_zfailsequencestencil_opchoicegles_pipeline_settingsschema_Zfail_TxsdGlesPipelineSettingsChoiceStencilOpSequenceZfail_ struct {
 	Zfails []*TxsdGlesPipelineSettingsChoiceStencilOpSequenceZfail `xml:"http://www.collada.org/2005/11/COLLADASchema zfail"`
+
+}
+
+type XsdGoPkgHasElem_zfailsequencestencil_opchoicegles_pipeline_settingsschema_Zfail_TxsdGlesPipelineSettingsChoiceStencilOpSequenceZfail_ struct {
+	Zfail *TxsdGlesPipelineSettingsChoiceStencilOpSequenceZfail `xml:"http://www.collada.org/2005/11/COLLADASchema zfail"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceStencilOpSequenceZpass struct {
@@ -18246,10 +20058,12 @@ type TxsdGlesPipelineSettingsChoiceStencilOpSequenceZpass struct {
 
 type XsdGoPkgHasElems_zpasssequencestencil_opchoicegles_pipeline_settingsschema_Zpass_TxsdGlesPipelineSettingsChoiceStencilOpSequenceZpass_ struct {
 	Zpasses []*TxsdGlesPipelineSettingsChoiceStencilOpSequenceZpass `xml:"http://www.collada.org/2005/11/COLLADASchema zpass"`
+
 }
 
 type XsdGoPkgHasElem_zpasssequencestencil_opchoicegles_pipeline_settingsschema_Zpass_TxsdGlesPipelineSettingsChoiceStencilOpSequenceZpass_ struct {
 	Zpass *TxsdGlesPipelineSettingsChoiceStencilOpSequenceZpass `xml:"http://www.collada.org/2005/11/COLLADASchema zpass"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceStencilOp struct {
@@ -18263,10 +20077,12 @@ type TxsdGlesPipelineSettingsChoiceStencilOp struct {
 
 type XsdGoPkgHasElems_stencil_opchoicegles_pipeline_settingsschema_StencilOp_TxsdGlesPipelineSettingsChoiceStencilOp_ struct {
 	StencilOps []*TxsdGlesPipelineSettingsChoiceStencilOp `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_op"`
+
 }
 
 type XsdGoPkgHasElem_stencil_opchoicegles_pipeline_settingsschema_StencilOp_TxsdGlesPipelineSettingsChoiceStencilOp_ struct {
 	StencilOp *TxsdGlesPipelineSettingsChoiceStencilOp `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_op"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceAlphaTestEnable struct {
@@ -18274,10 +20090,12 @@ type TxsdGlesPipelineSettingsChoiceAlphaTestEnable struct {
 
 type XsdGoPkgHasElem_alpha_test_enablechoicegles_pipeline_settingsschema_AlphaTestEnable_TxsdGlesPipelineSettingsChoiceAlphaTestEnable_ struct {
 	AlphaTestEnable *TxsdGlesPipelineSettingsChoiceAlphaTestEnable `xml:"http://www.collada.org/2005/11/COLLADASchema alpha_test_enable"`
+
 }
 
 type XsdGoPkgHasElems_alpha_test_enablechoicegles_pipeline_settingsschema_AlphaTestEnable_TxsdGlesPipelineSettingsChoiceAlphaTestEnable_ struct {
 	AlphaTestEnables []*TxsdGlesPipelineSettingsChoiceAlphaTestEnable `xml:"http://www.collada.org/2005/11/COLLADASchema alpha_test_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceBlendEnable struct {
@@ -18285,21 +20103,25 @@ type TxsdGlesPipelineSettingsChoiceBlendEnable struct {
 
 type XsdGoPkgHasElem_blend_enablechoicegles_pipeline_settingsschema_BlendEnable_TxsdGlesPipelineSettingsChoiceBlendEnable_ struct {
 	BlendEnable *TxsdGlesPipelineSettingsChoiceBlendEnable `xml:"http://www.collada.org/2005/11/COLLADASchema blend_enable"`
+
 }
 
 type XsdGoPkgHasElems_blend_enablechoicegles_pipeline_settingsschema_BlendEnable_TxsdGlesPipelineSettingsChoiceBlendEnable_ struct {
 	BlendEnables []*TxsdGlesPipelineSettingsChoiceBlendEnable `xml:"http://www.collada.org/2005/11/COLLADASchema blend_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceClipPlaneEnable struct {
 }
 
-type XsdGoPkgHasElem_clip_plane_enablechoicegles_pipeline_settingsschema_ClipPlaneEnable_TxsdGlesPipelineSettingsChoiceClipPlaneEnable_ struct {
-	ClipPlaneEnable *TxsdGlesPipelineSettingsChoiceClipPlaneEnable `xml:"http://www.collada.org/2005/11/COLLADASchema clip_plane_enable"`
-}
-
 type XsdGoPkgHasElems_clip_plane_enablechoicegles_pipeline_settingsschema_ClipPlaneEnable_TxsdGlesPipelineSettingsChoiceClipPlaneEnable_ struct {
 	ClipPlaneEnables []*TxsdGlesPipelineSettingsChoiceClipPlaneEnable `xml:"http://www.collada.org/2005/11/COLLADASchema clip_plane_enable"`
+
+}
+
+type XsdGoPkgHasElem_clip_plane_enablechoicegles_pipeline_settingsschema_ClipPlaneEnable_TxsdGlesPipelineSettingsChoiceClipPlaneEnable_ struct {
+	ClipPlaneEnable *TxsdGlesPipelineSettingsChoiceClipPlaneEnable `xml:"http://www.collada.org/2005/11/COLLADASchema clip_plane_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceColorLogicOpEnable struct {
@@ -18307,10 +20129,12 @@ type TxsdGlesPipelineSettingsChoiceColorLogicOpEnable struct {
 
 type XsdGoPkgHasElem_color_logic_op_enablechoicegles_pipeline_settingsschema_ColorLogicOpEnable_TxsdGlesPipelineSettingsChoiceColorLogicOpEnable_ struct {
 	ColorLogicOpEnable *TxsdGlesPipelineSettingsChoiceColorLogicOpEnable `xml:"http://www.collada.org/2005/11/COLLADASchema color_logic_op_enable"`
+
 }
 
 type XsdGoPkgHasElems_color_logic_op_enablechoicegles_pipeline_settingsschema_ColorLogicOpEnable_TxsdGlesPipelineSettingsChoiceColorLogicOpEnable_ struct {
 	ColorLogicOpEnables []*TxsdGlesPipelineSettingsChoiceColorLogicOpEnable `xml:"http://www.collada.org/2005/11/COLLADASchema color_logic_op_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceColorMaterialEnable struct {
@@ -18318,21 +20142,25 @@ type TxsdGlesPipelineSettingsChoiceColorMaterialEnable struct {
 
 type XsdGoPkgHasElem_color_material_enablechoicegles_pipeline_settingsschema_ColorMaterialEnable_TxsdGlesPipelineSettingsChoiceColorMaterialEnable_ struct {
 	ColorMaterialEnable *TxsdGlesPipelineSettingsChoiceColorMaterialEnable `xml:"http://www.collada.org/2005/11/COLLADASchema color_material_enable"`
+
 }
 
 type XsdGoPkgHasElems_color_material_enablechoicegles_pipeline_settingsschema_ColorMaterialEnable_TxsdGlesPipelineSettingsChoiceColorMaterialEnable_ struct {
 	ColorMaterialEnables []*TxsdGlesPipelineSettingsChoiceColorMaterialEnable `xml:"http://www.collada.org/2005/11/COLLADASchema color_material_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceCullFaceEnable struct {
 }
 
-type XsdGoPkgHasElem_cull_face_enablechoicegles_pipeline_settingsschema_CullFaceEnable_TxsdGlesPipelineSettingsChoiceCullFaceEnable_ struct {
-	CullFaceEnable *TxsdGlesPipelineSettingsChoiceCullFaceEnable `xml:"http://www.collada.org/2005/11/COLLADASchema cull_face_enable"`
-}
-
 type XsdGoPkgHasElems_cull_face_enablechoicegles_pipeline_settingsschema_CullFaceEnable_TxsdGlesPipelineSettingsChoiceCullFaceEnable_ struct {
 	CullFaceEnables []*TxsdGlesPipelineSettingsChoiceCullFaceEnable `xml:"http://www.collada.org/2005/11/COLLADASchema cull_face_enable"`
+
+}
+
+type XsdGoPkgHasElem_cull_face_enablechoicegles_pipeline_settingsschema_CullFaceEnable_TxsdGlesPipelineSettingsChoiceCullFaceEnable_ struct {
+	CullFaceEnable *TxsdGlesPipelineSettingsChoiceCullFaceEnable `xml:"http://www.collada.org/2005/11/COLLADASchema cull_face_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceDepthTestEnable struct {
@@ -18340,43 +20168,51 @@ type TxsdGlesPipelineSettingsChoiceDepthTestEnable struct {
 
 type XsdGoPkgHasElems_depth_test_enablechoicegles_pipeline_settingsschema_DepthTestEnable_TxsdGlesPipelineSettingsChoiceDepthTestEnable_ struct {
 	DepthTestEnables []*TxsdGlesPipelineSettingsChoiceDepthTestEnable `xml:"http://www.collada.org/2005/11/COLLADASchema depth_test_enable"`
+
 }
 
 type XsdGoPkgHasElem_depth_test_enablechoicegles_pipeline_settingsschema_DepthTestEnable_TxsdGlesPipelineSettingsChoiceDepthTestEnable_ struct {
 	DepthTestEnable *TxsdGlesPipelineSettingsChoiceDepthTestEnable `xml:"http://www.collada.org/2005/11/COLLADASchema depth_test_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceDitherEnable struct {
 }
 
-type XsdGoPkgHasElem_dither_enablechoicegles_pipeline_settingsschema_DitherEnable_TxsdGlesPipelineSettingsChoiceDitherEnable_ struct {
-	DitherEnable *TxsdGlesPipelineSettingsChoiceDitherEnable `xml:"http://www.collada.org/2005/11/COLLADASchema dither_enable"`
-}
-
 type XsdGoPkgHasElems_dither_enablechoicegles_pipeline_settingsschema_DitherEnable_TxsdGlesPipelineSettingsChoiceDitherEnable_ struct {
 	DitherEnables []*TxsdGlesPipelineSettingsChoiceDitherEnable `xml:"http://www.collada.org/2005/11/COLLADASchema dither_enable"`
+
+}
+
+type XsdGoPkgHasElem_dither_enablechoicegles_pipeline_settingsschema_DitherEnable_TxsdGlesPipelineSettingsChoiceDitherEnable_ struct {
+	DitherEnable *TxsdGlesPipelineSettingsChoiceDitherEnable `xml:"http://www.collada.org/2005/11/COLLADASchema dither_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceFogEnable struct {
 }
 
-type XsdGoPkgHasElems_fog_enablechoicegles_pipeline_settingsschema_FogEnable_TxsdGlesPipelineSettingsChoiceFogEnable_ struct {
-	FogEnables []*TxsdGlesPipelineSettingsChoiceFogEnable `xml:"http://www.collada.org/2005/11/COLLADASchema fog_enable"`
-}
-
 type XsdGoPkgHasElem_fog_enablechoicegles_pipeline_settingsschema_FogEnable_TxsdGlesPipelineSettingsChoiceFogEnable_ struct {
 	FogEnable *TxsdGlesPipelineSettingsChoiceFogEnable `xml:"http://www.collada.org/2005/11/COLLADASchema fog_enable"`
+
+}
+
+type XsdGoPkgHasElems_fog_enablechoicegles_pipeline_settingsschema_FogEnable_TxsdGlesPipelineSettingsChoiceFogEnable_ struct {
+	FogEnables []*TxsdGlesPipelineSettingsChoiceFogEnable `xml:"http://www.collada.org/2005/11/COLLADASchema fog_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceTexturePipelineEnable struct {
 }
 
-type XsdGoPkgHasElem_texture_pipeline_enablechoicegles_pipeline_settingsschema_TexturePipelineEnable_TxsdGlesPipelineSettingsChoiceTexturePipelineEnable_ struct {
-	TexturePipelineEnable *TxsdGlesPipelineSettingsChoiceTexturePipelineEnable `xml:"http://www.collada.org/2005/11/COLLADASchema texture_pipeline_enable"`
-}
-
 type XsdGoPkgHasElems_texture_pipeline_enablechoicegles_pipeline_settingsschema_TexturePipelineEnable_TxsdGlesPipelineSettingsChoiceTexturePipelineEnable_ struct {
 	TexturePipelineEnables []*TxsdGlesPipelineSettingsChoiceTexturePipelineEnable `xml:"http://www.collada.org/2005/11/COLLADASchema texture_pipeline_enable"`
+
+}
+
+type XsdGoPkgHasElem_texture_pipeline_enablechoicegles_pipeline_settingsschema_TexturePipelineEnable_TxsdGlesPipelineSettingsChoiceTexturePipelineEnable_ struct {
+	TexturePipelineEnable *TxsdGlesPipelineSettingsChoiceTexturePipelineEnable `xml:"http://www.collada.org/2005/11/COLLADASchema texture_pipeline_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceLightEnable struct {
@@ -18384,10 +20220,12 @@ type TxsdGlesPipelineSettingsChoiceLightEnable struct {
 
 type XsdGoPkgHasElem_light_enablechoicegles_pipeline_settingsschema_LightEnable_TxsdGlesPipelineSettingsChoiceLightEnable_ struct {
 	LightEnable *TxsdGlesPipelineSettingsChoiceLightEnable `xml:"http://www.collada.org/2005/11/COLLADASchema light_enable"`
+
 }
 
 type XsdGoPkgHasElems_light_enablechoicegles_pipeline_settingsschema_LightEnable_TxsdGlesPipelineSettingsChoiceLightEnable_ struct {
 	LightEnables []*TxsdGlesPipelineSettingsChoiceLightEnable `xml:"http://www.collada.org/2005/11/COLLADASchema light_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceLightingEnable struct {
@@ -18395,21 +20233,25 @@ type TxsdGlesPipelineSettingsChoiceLightingEnable struct {
 
 type XsdGoPkgHasElem_lighting_enablechoicegles_pipeline_settingsschema_LightingEnable_TxsdGlesPipelineSettingsChoiceLightingEnable_ struct {
 	LightingEnable *TxsdGlesPipelineSettingsChoiceLightingEnable `xml:"http://www.collada.org/2005/11/COLLADASchema lighting_enable"`
+
 }
 
 type XsdGoPkgHasElems_lighting_enablechoicegles_pipeline_settingsschema_LightingEnable_TxsdGlesPipelineSettingsChoiceLightingEnable_ struct {
 	LightingEnables []*TxsdGlesPipelineSettingsChoiceLightingEnable `xml:"http://www.collada.org/2005/11/COLLADASchema lighting_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceLightModelTwoSideEnable struct {
 }
 
-type XsdGoPkgHasElem_light_model_two_side_enablechoicegles_pipeline_settingsschema_LightModelTwoSideEnable_TxsdGlesPipelineSettingsChoiceLightModelTwoSideEnable_ struct {
-	LightModelTwoSideEnable *TxsdGlesPipelineSettingsChoiceLightModelTwoSideEnable `xml:"http://www.collada.org/2005/11/COLLADASchema light_model_two_side_enable"`
-}
-
 type XsdGoPkgHasElems_light_model_two_side_enablechoicegles_pipeline_settingsschema_LightModelTwoSideEnable_TxsdGlesPipelineSettingsChoiceLightModelTwoSideEnable_ struct {
 	LightModelTwoSideEnables []*TxsdGlesPipelineSettingsChoiceLightModelTwoSideEnable `xml:"http://www.collada.org/2005/11/COLLADASchema light_model_two_side_enable"`
+
+}
+
+type XsdGoPkgHasElem_light_model_two_side_enablechoicegles_pipeline_settingsschema_LightModelTwoSideEnable_TxsdGlesPipelineSettingsChoiceLightModelTwoSideEnable_ struct {
+	LightModelTwoSideEnable *TxsdGlesPipelineSettingsChoiceLightModelTwoSideEnable `xml:"http://www.collada.org/2005/11/COLLADASchema light_model_two_side_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceLineSmoothEnable struct {
@@ -18417,21 +20259,25 @@ type TxsdGlesPipelineSettingsChoiceLineSmoothEnable struct {
 
 type XsdGoPkgHasElems_line_smooth_enablechoicegles_pipeline_settingsschema_LineSmoothEnable_TxsdGlesPipelineSettingsChoiceLineSmoothEnable_ struct {
 	LineSmoothEnables []*TxsdGlesPipelineSettingsChoiceLineSmoothEnable `xml:"http://www.collada.org/2005/11/COLLADASchema line_smooth_enable"`
+
 }
 
 type XsdGoPkgHasElem_line_smooth_enablechoicegles_pipeline_settingsschema_LineSmoothEnable_TxsdGlesPipelineSettingsChoiceLineSmoothEnable_ struct {
 	LineSmoothEnable *TxsdGlesPipelineSettingsChoiceLineSmoothEnable `xml:"http://www.collada.org/2005/11/COLLADASchema line_smooth_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceMultisampleEnable struct {
 }
 
-type XsdGoPkgHasElem_multisample_enablechoicegles_pipeline_settingsschema_MultisampleEnable_TxsdGlesPipelineSettingsChoiceMultisampleEnable_ struct {
-	MultisampleEnable *TxsdGlesPipelineSettingsChoiceMultisampleEnable `xml:"http://www.collada.org/2005/11/COLLADASchema multisample_enable"`
-}
-
 type XsdGoPkgHasElems_multisample_enablechoicegles_pipeline_settingsschema_MultisampleEnable_TxsdGlesPipelineSettingsChoiceMultisampleEnable_ struct {
 	MultisampleEnables []*TxsdGlesPipelineSettingsChoiceMultisampleEnable `xml:"http://www.collada.org/2005/11/COLLADASchema multisample_enable"`
+
+}
+
+type XsdGoPkgHasElem_multisample_enablechoicegles_pipeline_settingsschema_MultisampleEnable_TxsdGlesPipelineSettingsChoiceMultisampleEnable_ struct {
+	MultisampleEnable *TxsdGlesPipelineSettingsChoiceMultisampleEnable `xml:"http://www.collada.org/2005/11/COLLADASchema multisample_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceNormalizeEnable struct {
@@ -18439,21 +20285,25 @@ type TxsdGlesPipelineSettingsChoiceNormalizeEnable struct {
 
 type XsdGoPkgHasElems_normalize_enablechoicegles_pipeline_settingsschema_NormalizeEnable_TxsdGlesPipelineSettingsChoiceNormalizeEnable_ struct {
 	NormalizeEnables []*TxsdGlesPipelineSettingsChoiceNormalizeEnable `xml:"http://www.collada.org/2005/11/COLLADASchema normalize_enable"`
+
 }
 
 type XsdGoPkgHasElem_normalize_enablechoicegles_pipeline_settingsschema_NormalizeEnable_TxsdGlesPipelineSettingsChoiceNormalizeEnable_ struct {
 	NormalizeEnable *TxsdGlesPipelineSettingsChoiceNormalizeEnable `xml:"http://www.collada.org/2005/11/COLLADASchema normalize_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoicePointSmoothEnable struct {
 }
 
-type XsdGoPkgHasElems_point_smooth_enablechoicegles_pipeline_settingsschema_PointSmoothEnable_TxsdGlesPipelineSettingsChoicePointSmoothEnable_ struct {
-	PointSmoothEnables []*TxsdGlesPipelineSettingsChoicePointSmoothEnable `xml:"http://www.collada.org/2005/11/COLLADASchema point_smooth_enable"`
-}
-
 type XsdGoPkgHasElem_point_smooth_enablechoicegles_pipeline_settingsschema_PointSmoothEnable_TxsdGlesPipelineSettingsChoicePointSmoothEnable_ struct {
 	PointSmoothEnable *TxsdGlesPipelineSettingsChoicePointSmoothEnable `xml:"http://www.collada.org/2005/11/COLLADASchema point_smooth_enable"`
+
+}
+
+type XsdGoPkgHasElems_point_smooth_enablechoicegles_pipeline_settingsschema_PointSmoothEnable_TxsdGlesPipelineSettingsChoicePointSmoothEnable_ struct {
+	PointSmoothEnables []*TxsdGlesPipelineSettingsChoicePointSmoothEnable `xml:"http://www.collada.org/2005/11/COLLADASchema point_smooth_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoicePolygonOffsetFillEnable struct {
@@ -18461,32 +20311,38 @@ type TxsdGlesPipelineSettingsChoicePolygonOffsetFillEnable struct {
 
 type XsdGoPkgHasElem_polygon_offset_fill_enablechoicegles_pipeline_settingsschema_PolygonOffsetFillEnable_TxsdGlesPipelineSettingsChoicePolygonOffsetFillEnable_ struct {
 	PolygonOffsetFillEnable *TxsdGlesPipelineSettingsChoicePolygonOffsetFillEnable `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_offset_fill_enable"`
+
 }
 
 type XsdGoPkgHasElems_polygon_offset_fill_enablechoicegles_pipeline_settingsschema_PolygonOffsetFillEnable_TxsdGlesPipelineSettingsChoicePolygonOffsetFillEnable_ struct {
 	PolygonOffsetFillEnables []*TxsdGlesPipelineSettingsChoicePolygonOffsetFillEnable `xml:"http://www.collada.org/2005/11/COLLADASchema polygon_offset_fill_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceRescaleNormalEnable struct {
 }
 
-type XsdGoPkgHasElem_rescale_normal_enablechoicegles_pipeline_settingsschema_RescaleNormalEnable_TxsdGlesPipelineSettingsChoiceRescaleNormalEnable_ struct {
-	RescaleNormalEnable *TxsdGlesPipelineSettingsChoiceRescaleNormalEnable `xml:"http://www.collada.org/2005/11/COLLADASchema rescale_normal_enable"`
-}
-
 type XsdGoPkgHasElems_rescale_normal_enablechoicegles_pipeline_settingsschema_RescaleNormalEnable_TxsdGlesPipelineSettingsChoiceRescaleNormalEnable_ struct {
 	RescaleNormalEnables []*TxsdGlesPipelineSettingsChoiceRescaleNormalEnable `xml:"http://www.collada.org/2005/11/COLLADASchema rescale_normal_enable"`
+
+}
+
+type XsdGoPkgHasElem_rescale_normal_enablechoicegles_pipeline_settingsschema_RescaleNormalEnable_TxsdGlesPipelineSettingsChoiceRescaleNormalEnable_ struct {
+	RescaleNormalEnable *TxsdGlesPipelineSettingsChoiceRescaleNormalEnable `xml:"http://www.collada.org/2005/11/COLLADASchema rescale_normal_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceSampleAlphaToCoverageEnable struct {
 }
 
-type XsdGoPkgHasElem_sample_alpha_to_coverage_enablechoicegles_pipeline_settingsschema_SampleAlphaToCoverageEnable_TxsdGlesPipelineSettingsChoiceSampleAlphaToCoverageEnable_ struct {
-	SampleAlphaToCoverageEnable *TxsdGlesPipelineSettingsChoiceSampleAlphaToCoverageEnable `xml:"http://www.collada.org/2005/11/COLLADASchema sample_alpha_to_coverage_enable"`
-}
-
 type XsdGoPkgHasElems_sample_alpha_to_coverage_enablechoicegles_pipeline_settingsschema_SampleAlphaToCoverageEnable_TxsdGlesPipelineSettingsChoiceSampleAlphaToCoverageEnable_ struct {
 	SampleAlphaToCoverageEnables []*TxsdGlesPipelineSettingsChoiceSampleAlphaToCoverageEnable `xml:"http://www.collada.org/2005/11/COLLADASchema sample_alpha_to_coverage_enable"`
+
+}
+
+type XsdGoPkgHasElem_sample_alpha_to_coverage_enablechoicegles_pipeline_settingsschema_SampleAlphaToCoverageEnable_TxsdGlesPipelineSettingsChoiceSampleAlphaToCoverageEnable_ struct {
+	SampleAlphaToCoverageEnable *TxsdGlesPipelineSettingsChoiceSampleAlphaToCoverageEnable `xml:"http://www.collada.org/2005/11/COLLADASchema sample_alpha_to_coverage_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceSampleAlphaToOneEnable struct {
@@ -18494,10 +20350,12 @@ type TxsdGlesPipelineSettingsChoiceSampleAlphaToOneEnable struct {
 
 type XsdGoPkgHasElems_sample_alpha_to_one_enablechoicegles_pipeline_settingsschema_SampleAlphaToOneEnable_TxsdGlesPipelineSettingsChoiceSampleAlphaToOneEnable_ struct {
 	SampleAlphaToOneEnables []*TxsdGlesPipelineSettingsChoiceSampleAlphaToOneEnable `xml:"http://www.collada.org/2005/11/COLLADASchema sample_alpha_to_one_enable"`
+
 }
 
 type XsdGoPkgHasElem_sample_alpha_to_one_enablechoicegles_pipeline_settingsschema_SampleAlphaToOneEnable_TxsdGlesPipelineSettingsChoiceSampleAlphaToOneEnable_ struct {
 	SampleAlphaToOneEnable *TxsdGlesPipelineSettingsChoiceSampleAlphaToOneEnable `xml:"http://www.collada.org/2005/11/COLLADASchema sample_alpha_to_one_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceSampleCoverageEnable struct {
@@ -18505,21 +20363,25 @@ type TxsdGlesPipelineSettingsChoiceSampleCoverageEnable struct {
 
 type XsdGoPkgHasElems_sample_coverage_enablechoicegles_pipeline_settingsschema_SampleCoverageEnable_TxsdGlesPipelineSettingsChoiceSampleCoverageEnable_ struct {
 	SampleCoverageEnables []*TxsdGlesPipelineSettingsChoiceSampleCoverageEnable `xml:"http://www.collada.org/2005/11/COLLADASchema sample_coverage_enable"`
+
 }
 
 type XsdGoPkgHasElem_sample_coverage_enablechoicegles_pipeline_settingsschema_SampleCoverageEnable_TxsdGlesPipelineSettingsChoiceSampleCoverageEnable_ struct {
 	SampleCoverageEnable *TxsdGlesPipelineSettingsChoiceSampleCoverageEnable `xml:"http://www.collada.org/2005/11/COLLADASchema sample_coverage_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceScissorTestEnable struct {
 }
 
-type XsdGoPkgHasElems_scissor_test_enablechoicegles_pipeline_settingsschema_ScissorTestEnable_TxsdGlesPipelineSettingsChoiceScissorTestEnable_ struct {
-	ScissorTestEnables []*TxsdGlesPipelineSettingsChoiceScissorTestEnable `xml:"http://www.collada.org/2005/11/COLLADASchema scissor_test_enable"`
-}
-
 type XsdGoPkgHasElem_scissor_test_enablechoicegles_pipeline_settingsschema_ScissorTestEnable_TxsdGlesPipelineSettingsChoiceScissorTestEnable_ struct {
 	ScissorTestEnable *TxsdGlesPipelineSettingsChoiceScissorTestEnable `xml:"http://www.collada.org/2005/11/COLLADASchema scissor_test_enable"`
+
+}
+
+type XsdGoPkgHasElems_scissor_test_enablechoicegles_pipeline_settingsschema_ScissorTestEnable_TxsdGlesPipelineSettingsChoiceScissorTestEnable_ struct {
+	ScissorTestEnables []*TxsdGlesPipelineSettingsChoiceScissorTestEnable `xml:"http://www.collada.org/2005/11/COLLADASchema scissor_test_enable"`
+
 }
 
 type TxsdGlesPipelineSettingsChoiceStencilTestEnable struct {
@@ -18527,10 +20389,12 @@ type TxsdGlesPipelineSettingsChoiceStencilTestEnable struct {
 
 type XsdGoPkgHasElems_stencil_test_enablechoicegles_pipeline_settingsschema_StencilTestEnable_TxsdGlesPipelineSettingsChoiceStencilTestEnable_ struct {
 	StencilTestEnables []*TxsdGlesPipelineSettingsChoiceStencilTestEnable `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_test_enable"`
+
 }
 
 type XsdGoPkgHasElem_stencil_test_enablechoicegles_pipeline_settingsschema_StencilTestEnable_TxsdGlesPipelineSettingsChoiceStencilTestEnable_ struct {
 	StencilTestEnable *TxsdGlesPipelineSettingsChoiceStencilTestEnable `xml:"http://www.collada.org/2005/11/COLLADASchema stencil_test_enable"`
+
 }
 
 //	A group that contains the renderstates available for the GLES profile.
@@ -18685,266 +20549,332 @@ type XsdGoPkgHasGroup_GlesPipelineSettings struct {
 
 type XsdGoPkgHasElem_boolchoicegles_basic_type_commonschema_Bool_Tbool_ struct {
 	Bool Tbool `xml:"http://www.collada.org/2005/11/COLLADASchema bool"`
+
 }
 
 type XsdGoPkgHasElems_boolchoicegles_basic_type_commonschema_Bool_Tbool_ struct {
 	Bools []Tbool `xml:"http://www.collada.org/2005/11/COLLADASchema bool"`
-}
 
-type XsdGoPkgHasElem_bool2choicegles_basic_type_commonschema_Bool2_Tbool2_ struct {
-	Bool2 Tbool2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2"`
 }
 
 type XsdGoPkgHasElems_bool2choicegles_basic_type_commonschema_Bool2_Tbool2_ struct {
 	Bool2s []Tbool2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2"`
+
 }
 
-type XsdGoPkgHasElem_bool3choicegles_basic_type_commonschema_Bool3_Tbool3_ struct {
-	Bool3 Tbool3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3"`
+type XsdGoPkgHasElem_bool2choicegles_basic_type_commonschema_Bool2_Tbool2_ struct {
+	Bool2 Tbool2 `xml:"http://www.collada.org/2005/11/COLLADASchema bool2"`
+
 }
 
 type XsdGoPkgHasElems_bool3choicegles_basic_type_commonschema_Bool3_Tbool3_ struct {
 	Bool3s []Tbool3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3"`
+
+}
+
+type XsdGoPkgHasElem_bool3choicegles_basic_type_commonschema_Bool3_Tbool3_ struct {
+	Bool3 Tbool3 `xml:"http://www.collada.org/2005/11/COLLADASchema bool3"`
+
 }
 
 type XsdGoPkgHasElems_bool4choicegles_basic_type_commonschema_Bool4_Tbool4_ struct {
 	Bool4s []Tbool4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4"`
+
 }
 
 type XsdGoPkgHasElem_bool4choicegles_basic_type_commonschema_Bool4_Tbool4_ struct {
 	Bool4 Tbool4 `xml:"http://www.collada.org/2005/11/COLLADASchema bool4"`
+
 }
 
 type XsdGoPkgHasElem_intchoicegles_basic_type_commonschema_Int_Tint_ struct {
 	Int Tint `xml:"http://www.collada.org/2005/11/COLLADASchema int"`
+
 }
 
 type XsdGoPkgHasElems_intchoicegles_basic_type_commonschema_Int_Tint_ struct {
 	Ints []Tint `xml:"http://www.collada.org/2005/11/COLLADASchema int"`
-}
 
-type XsdGoPkgHasElems_int2choicegles_basic_type_commonschema_Int2_Tint2_ struct {
-	Int2s []Tint2 `xml:"http://www.collada.org/2005/11/COLLADASchema int2"`
 }
 
 type XsdGoPkgHasElem_int2choicegles_basic_type_commonschema_Int2_Tint2_ struct {
 	Int2 Tint2 `xml:"http://www.collada.org/2005/11/COLLADASchema int2"`
+
 }
 
-type XsdGoPkgHasElems_int3choicegles_basic_type_commonschema_Int3_Tint3_ struct {
-	Int3s []Tint3 `xml:"http://www.collada.org/2005/11/COLLADASchema int3"`
+type XsdGoPkgHasElems_int2choicegles_basic_type_commonschema_Int2_Tint2_ struct {
+	Int2s []Tint2 `xml:"http://www.collada.org/2005/11/COLLADASchema int2"`
+
 }
 
 type XsdGoPkgHasElem_int3choicegles_basic_type_commonschema_Int3_Tint3_ struct {
 	Int3 Tint3 `xml:"http://www.collada.org/2005/11/COLLADASchema int3"`
+
 }
 
-type XsdGoPkgHasElem_int4choicegles_basic_type_commonschema_Int4_Tint4_ struct {
-	Int4 Tint4 `xml:"http://www.collada.org/2005/11/COLLADASchema int4"`
+type XsdGoPkgHasElems_int3choicegles_basic_type_commonschema_Int3_Tint3_ struct {
+	Int3s []Tint3 `xml:"http://www.collada.org/2005/11/COLLADASchema int3"`
+
 }
 
 type XsdGoPkgHasElems_int4choicegles_basic_type_commonschema_Int4_Tint4_ struct {
 	Int4s []Tint4 `xml:"http://www.collada.org/2005/11/COLLADASchema int4"`
+
 }
 
-type XsdGoPkgHasElems_floatchoicegles_basic_type_commonschema_Float_Tfloat_ struct {
-	Floats []Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
+type XsdGoPkgHasElem_int4choicegles_basic_type_commonschema_Int4_Tint4_ struct {
+	Int4 Tint4 `xml:"http://www.collada.org/2005/11/COLLADASchema int4"`
+
 }
 
 type XsdGoPkgHasElem_floatchoicegles_basic_type_commonschema_Float_Tfloat_ struct {
 	Float Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
+
 }
 
-type XsdGoPkgHasElem_float2choicegles_basic_type_commonschema_Float2_Tfloat2_ struct {
-	Float2 Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2"`
+type XsdGoPkgHasElems_floatchoicegles_basic_type_commonschema_Float_Tfloat_ struct {
+	Floats []Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema float"`
+
 }
 
 type XsdGoPkgHasElems_float2choicegles_basic_type_commonschema_Float2_Tfloat2_ struct {
 	Float2s []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2"`
+
+}
+
+type XsdGoPkgHasElem_float2choicegles_basic_type_commonschema_Float2_Tfloat2_ struct {
+	Float2 Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2"`
+
 }
 
 type XsdGoPkgHasElem_float3choicegles_basic_type_commonschema_Float3_Tfloat3_ struct {
 	Float3 Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3"`
+
 }
 
 type XsdGoPkgHasElems_float3choicegles_basic_type_commonschema_Float3_Tfloat3_ struct {
 	Float3s []Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3"`
-}
 
-type XsdGoPkgHasElem_float4choicegles_basic_type_commonschema_Float4_Tfloat4_ struct {
-	Float4 Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4"`
 }
 
 type XsdGoPkgHasElems_float4choicegles_basic_type_commonschema_Float4_Tfloat4_ struct {
 	Float4s []Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4"`
+
 }
 
-type XsdGoPkgHasElems_float1x1choicegles_basic_type_commonschema_Float1X1_Tfloat_ struct {
-	Float1X1s []Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema float1x1"`
+type XsdGoPkgHasElem_float4choicegles_basic_type_commonschema_Float4_Tfloat4_ struct {
+	Float4 Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4"`
+
 }
 
 type XsdGoPkgHasElem_float1x1choicegles_basic_type_commonschema_Float1X1_Tfloat_ struct {
 	Float1X1 Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema float1x1"`
+
+}
+
+type XsdGoPkgHasElems_float1x1choicegles_basic_type_commonschema_Float1X1_Tfloat_ struct {
+	Float1X1s []Tfloat `xml:"http://www.collada.org/2005/11/COLLADASchema float1x1"`
+
 }
 
 type XsdGoPkgHasElem_float1x2choicegles_basic_type_commonschema_Float1X2_Tfloat2_ struct {
 	Float1X2 Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x2"`
+
 }
 
 type XsdGoPkgHasElems_float1x2choicegles_basic_type_commonschema_Float1X2_Tfloat2_ struct {
 	Float1X2s []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x2"`
-}
 
-type XsdGoPkgHasElem_float1x3choicegles_basic_type_commonschema_Float1X3_Tfloat3_ struct {
-	Float1X3 Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x3"`
 }
 
 type XsdGoPkgHasElems_float1x3choicegles_basic_type_commonschema_Float1X3_Tfloat3_ struct {
 	Float1X3s []Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x3"`
+
 }
 
-type XsdGoPkgHasElems_float1x4choicegles_basic_type_commonschema_Float1X4_Tfloat4_ struct {
-	Float1X4s []Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x4"`
+type XsdGoPkgHasElem_float1x3choicegles_basic_type_commonschema_Float1X3_Tfloat3_ struct {
+	Float1X3 Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x3"`
+
 }
 
 type XsdGoPkgHasElem_float1x4choicegles_basic_type_commonschema_Float1X4_Tfloat4_ struct {
 	Float1X4 Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x4"`
+
 }
 
-type XsdGoPkgHasElems_float2x1choicegles_basic_type_commonschema_Float2X1_Tfloat2_ struct {
-	Float2X1s []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x1"`
+type XsdGoPkgHasElems_float1x4choicegles_basic_type_commonschema_Float1X4_Tfloat4_ struct {
+	Float1X4s []Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float1x4"`
+
 }
 
 type XsdGoPkgHasElem_float2x1choicegles_basic_type_commonschema_Float2X1_Tfloat2_ struct {
 	Float2X1 Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x1"`
+
 }
 
-type XsdGoPkgHasElem_float2x2choicegles_basic_type_commonschema_Float2X2_Tfloat2X2_ struct {
-	Float2X2 Tfloat2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x2"`
+type XsdGoPkgHasElems_float2x1choicegles_basic_type_commonschema_Float2X1_Tfloat2_ struct {
+	Float2X1s []Tfloat2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x1"`
+
 }
 
 type XsdGoPkgHasElems_float2x2choicegles_basic_type_commonschema_Float2X2_Tfloat2X2_ struct {
 	Float2X2s []Tfloat2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x2"`
+
 }
 
-type XsdGoPkgHasElem_float2x3choicegles_basic_type_commonschema_Float2X3_Tfloat2X3_ struct {
-	Float2X3 Tfloat2X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x3"`
+type XsdGoPkgHasElem_float2x2choicegles_basic_type_commonschema_Float2X2_Tfloat2X2_ struct {
+	Float2X2 Tfloat2X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x2"`
+
 }
 
 type XsdGoPkgHasElems_float2x3choicegles_basic_type_commonschema_Float2X3_Tfloat2X3_ struct {
 	Float2X3s []Tfloat2X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x3"`
+
 }
 
-type XsdGoPkgHasElems_float2x4choicegles_basic_type_commonschema_Float2X4_Tfloat2X4_ struct {
-	Float2X4s []Tfloat2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x4"`
+type XsdGoPkgHasElem_float2x3choicegles_basic_type_commonschema_Float2X3_Tfloat2X3_ struct {
+	Float2X3 Tfloat2X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x3"`
+
 }
 
 type XsdGoPkgHasElem_float2x4choicegles_basic_type_commonschema_Float2X4_Tfloat2X4_ struct {
 	Float2X4 Tfloat2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x4"`
+
+}
+
+type XsdGoPkgHasElems_float2x4choicegles_basic_type_commonschema_Float2X4_Tfloat2X4_ struct {
+	Float2X4s []Tfloat2X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float2x4"`
+
 }
 
 type XsdGoPkgHasElems_float3x1choicegles_basic_type_commonschema_Float3X1_Tfloat3_ struct {
 	Float3X1s []Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x1"`
+
 }
 
 type XsdGoPkgHasElem_float3x1choicegles_basic_type_commonschema_Float3X1_Tfloat3_ struct {
 	Float3X1 Tfloat3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x1"`
-}
 
-type XsdGoPkgHasElems_float3x2choicegles_basic_type_commonschema_Float3X2_Tfloat3X2_ struct {
-	Float3X2s []Tfloat3X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x2"`
 }
 
 type XsdGoPkgHasElem_float3x2choicegles_basic_type_commonschema_Float3X2_Tfloat3X2_ struct {
 	Float3X2 Tfloat3X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x2"`
+
 }
 
-type XsdGoPkgHasElem_float3x3choicegles_basic_type_commonschema_Float3X3_Tfloat3X3_ struct {
-	Float3X3 Tfloat3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x3"`
+type XsdGoPkgHasElems_float3x2choicegles_basic_type_commonschema_Float3X2_Tfloat3X2_ struct {
+	Float3X2s []Tfloat3X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x2"`
+
 }
 
 type XsdGoPkgHasElems_float3x3choicegles_basic_type_commonschema_Float3X3_Tfloat3X3_ struct {
 	Float3X3s []Tfloat3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x3"`
+
 }
 
-type XsdGoPkgHasElems_float3x4choicegles_basic_type_commonschema_Float3X4_Tfloat3X4_ struct {
-	Float3X4s []Tfloat3X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x4"`
+type XsdGoPkgHasElem_float3x3choicegles_basic_type_commonschema_Float3X3_Tfloat3X3_ struct {
+	Float3X3 Tfloat3X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x3"`
+
 }
 
 type XsdGoPkgHasElem_float3x4choicegles_basic_type_commonschema_Float3X4_Tfloat3X4_ struct {
 	Float3X4 Tfloat3X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x4"`
+
+}
+
+type XsdGoPkgHasElems_float3x4choicegles_basic_type_commonschema_Float3X4_Tfloat3X4_ struct {
+	Float3X4s []Tfloat3X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float3x4"`
+
 }
 
 type XsdGoPkgHasElem_float4x1choicegles_basic_type_commonschema_Float4X1_Tfloat4_ struct {
 	Float4X1 Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x1"`
+
 }
 
 type XsdGoPkgHasElems_float4x1choicegles_basic_type_commonschema_Float4X1_Tfloat4_ struct {
 	Float4X1s []Tfloat4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x1"`
-}
 
-type XsdGoPkgHasElem_float4x2choicegles_basic_type_commonschema_Float4X2_Tfloat4X2_ struct {
-	Float4X2 Tfloat4X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x2"`
 }
 
 type XsdGoPkgHasElems_float4x2choicegles_basic_type_commonschema_Float4X2_Tfloat4X2_ struct {
 	Float4X2s []Tfloat4X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x2"`
+
+}
+
+type XsdGoPkgHasElem_float4x2choicegles_basic_type_commonschema_Float4X2_Tfloat4X2_ struct {
+	Float4X2 Tfloat4X2 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x2"`
+
 }
 
 type XsdGoPkgHasElems_float4x3choicegles_basic_type_commonschema_Float4X3_Tfloat4X3_ struct {
 	Float4X3s []Tfloat4X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x3"`
+
 }
 
 type XsdGoPkgHasElem_float4x3choicegles_basic_type_commonschema_Float4X3_Tfloat4X3_ struct {
 	Float4X3 Tfloat4X3 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x3"`
+
 }
 
 type XsdGoPkgHasElems_float4x4choicegles_basic_type_commonschema_Float4X4_Tfloat4X4_ struct {
 	Float4X4s []Tfloat4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x4"`
+
 }
 
 type XsdGoPkgHasElem_float4x4choicegles_basic_type_commonschema_Float4X4_Tfloat4X4_ struct {
 	Float4X4 Tfloat4X4 `xml:"http://www.collada.org/2005/11/COLLADASchema float4x4"`
+
 }
 
 type XsdGoPkgHasElems_surfacechoicegles_basic_type_commonschema_Surface_TfxSurfaceCommon_ struct {
 	Surfaces []*TfxSurfaceCommon `xml:"http://www.collada.org/2005/11/COLLADASchema surface"`
+
 }
 
 type XsdGoPkgHasElem_surfacechoicegles_basic_type_commonschema_Surface_TfxSurfaceCommon_ struct {
 	Surface *TfxSurfaceCommon `xml:"http://www.collada.org/2005/11/COLLADASchema surface"`
-}
 
-type XsdGoPkgHasElems_texture_pipelinechoicegles_basic_type_commonschema_TexturePipeline_TglesTexturePipeline_ struct {
-	TexturePipelines []*TglesTexturePipeline `xml:"http://www.collada.org/2005/11/COLLADASchema texture_pipeline"`
 }
 
 type XsdGoPkgHasElem_texture_pipelinechoicegles_basic_type_commonschema_TexturePipeline_TglesTexturePipeline_ struct {
 	TexturePipeline *TglesTexturePipeline `xml:"http://www.collada.org/2005/11/COLLADASchema texture_pipeline"`
+
+}
+
+type XsdGoPkgHasElems_texture_pipelinechoicegles_basic_type_commonschema_TexturePipeline_TglesTexturePipeline_ struct {
+	TexturePipelines []*TglesTexturePipeline `xml:"http://www.collada.org/2005/11/COLLADASchema texture_pipeline"`
+
 }
 
 type XsdGoPkgHasElems_sampler_statechoicegles_basic_type_commonschema_SamplerState_TglesSamplerState_ struct {
 	SamplerStates []*TglesSamplerState `xml:"http://www.collada.org/2005/11/COLLADASchema sampler_state"`
+
 }
 
 type XsdGoPkgHasElem_sampler_statechoicegles_basic_type_commonschema_SamplerState_TglesSamplerState_ struct {
 	SamplerState *TglesSamplerState `xml:"http://www.collada.org/2005/11/COLLADASchema sampler_state"`
-}
 
-type XsdGoPkgHasElems_texture_unitchoicegles_basic_type_commonschema_TextureUnit_TglesTextureUnit_ struct {
-	TextureUnits []*TglesTextureUnit `xml:"http://www.collada.org/2005/11/COLLADASchema texture_unit"`
 }
 
 type XsdGoPkgHasElem_texture_unitchoicegles_basic_type_commonschema_TextureUnit_TglesTextureUnit_ struct {
 	TextureUnit *TglesTextureUnit `xml:"http://www.collada.org/2005/11/COLLADASchema texture_unit"`
+
+}
+
+type XsdGoPkgHasElems_texture_unitchoicegles_basic_type_commonschema_TextureUnit_TglesTextureUnit_ struct {
+	TextureUnits []*TglesTextureUnit `xml:"http://www.collada.org/2005/11/COLLADASchema texture_unit"`
+
 }
 
 type XsdGoPkgHasElem_enumchoicegles_basic_type_commonschema_Enum_TglesEnumeration_ struct {
 	Enum TglesEnumeration `xml:"http://www.collada.org/2005/11/COLLADASchema enum"`
+
 }
 
 type XsdGoPkgHasElems_enumchoicegles_basic_type_commonschema_Enum_TglesEnumeration_ struct {
 	Enums []TglesEnumeration `xml:"http://www.collada.org/2005/11/COLLADASchema enum"`
+
 }
 
 //	A group that defines the available variable types for GLES parameters.

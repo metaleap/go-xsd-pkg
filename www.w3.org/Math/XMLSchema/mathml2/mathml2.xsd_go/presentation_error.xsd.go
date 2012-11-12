@@ -21,12 +21,14 @@ type TmerrorType struct {
 
 }
 
-type XsdGoPkgHasElems_Merror struct {
-	Merrors []*TmerrorType `xml:"http://www.w3.org/1998/Math/MathML merror"`
-}
-
 type XsdGoPkgHasElem_Merror struct {
 	Merror *TmerrorType `xml:"http://www.w3.org/1998/Math/MathML merror"`
+
+}
+
+type XsdGoPkgHasElems_Merror struct {
+	Merrors []*TmerrorType `xml:"http://www.w3.org/1998/Math/MathML merror"`
+
 }
 
 type XsdGoPkgHasGroup_MerrorContent struct {

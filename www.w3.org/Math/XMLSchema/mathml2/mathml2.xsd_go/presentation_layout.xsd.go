@@ -282,66 +282,82 @@ type TmencloseType struct {
 
 type XsdGoPkgHasElems_Mrow struct {
 	Mrows []*TmrowType `xml:"http://www.w3.org/1998/Math/MathML mrow"`
+
 }
 
 type XsdGoPkgHasElem_Mrow struct {
 	Mrow *TmrowType `xml:"http://www.w3.org/1998/Math/MathML mrow"`
-}
 
-type XsdGoPkgHasElem_Mfrac struct {
-	Mfrac *TmfracType `xml:"http://www.w3.org/1998/Math/MathML mfrac"`
 }
 
 type XsdGoPkgHasElems_Mfrac struct {
 	Mfracs []*TmfracType `xml:"http://www.w3.org/1998/Math/MathML mfrac"`
+
+}
+
+type XsdGoPkgHasElem_Mfrac struct {
+	Mfrac *TmfracType `xml:"http://www.w3.org/1998/Math/MathML mfrac"`
+
 }
 
 type XsdGoPkgHasElems_Msqrt struct {
 	Msqrts []*TmsqrtType `xml:"http://www.w3.org/1998/Math/MathML msqrt"`
+
 }
 
 type XsdGoPkgHasElem_Msqrt struct {
 	Msqrt *TmsqrtType `xml:"http://www.w3.org/1998/Math/MathML msqrt"`
+
 }
 
 type XsdGoPkgHasElem_Mroot struct {
 	Mroot *TmrootType `xml:"http://www.w3.org/1998/Math/MathML mroot"`
+
 }
 
 type XsdGoPkgHasElems_Mroot struct {
 	Mroots []*TmrootType `xml:"http://www.w3.org/1998/Math/MathML mroot"`
-}
 
-type XsdGoPkgHasElem_Mpadded struct {
-	Mpadded *TmpaddedType `xml:"http://www.w3.org/1998/Math/MathML mpadded"`
 }
 
 type XsdGoPkgHasElems_Mpadded struct {
 	Mpaddeds []*TmpaddedType `xml:"http://www.w3.org/1998/Math/MathML mpadded"`
+
+}
+
+type XsdGoPkgHasElem_Mpadded struct {
+	Mpadded *TmpaddedType `xml:"http://www.w3.org/1998/Math/MathML mpadded"`
+
 }
 
 type XsdGoPkgHasElems_Mphantom struct {
 	Mphantoms []*TmphantomType `xml:"http://www.w3.org/1998/Math/MathML mphantom"`
+
 }
 
 type XsdGoPkgHasElem_Mphantom struct {
 	Mphantom *TmphantomType `xml:"http://www.w3.org/1998/Math/MathML mphantom"`
-}
 
-type XsdGoPkgHasElems_Mfenced struct {
-	Mfenceds []*TmfencedType `xml:"http://www.w3.org/1998/Math/MathML mfenced"`
 }
 
 type XsdGoPkgHasElem_Mfenced struct {
 	Mfenced *TmfencedType `xml:"http://www.w3.org/1998/Math/MathML mfenced"`
+
+}
+
+type XsdGoPkgHasElems_Mfenced struct {
+	Mfenceds []*TmfencedType `xml:"http://www.w3.org/1998/Math/MathML mfenced"`
+
 }
 
 type XsdGoPkgHasElem_Menclose struct {
 	Menclose *TmencloseType `xml:"http://www.w3.org/1998/Math/MathML menclose"`
+
 }
 
 type XsdGoPkgHasElems_Menclose struct {
 	Mencloses []*TmencloseType `xml:"http://www.w3.org/1998/Math/MathML menclose"`
+
 }
 
 type XsdGoPkgHasGroup_PresentationLayoutClass struct {

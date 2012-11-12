@@ -5,9 +5,9 @@
 package gopkg_WwwW3OrgTr2002WdSvg1120020108SvgXsd
 
 import (
-	xml "github.com/metaleap/go-xsd-pkg/www.w3.org/TR/2002/WD-SVG11-20020108/xml.xsd_go"
 	xsdt "github.com/metaleap/go-xsd/types"
 	xlink "github.com/metaleap/go-xsd-pkg/www.w3.org/TR/2002/WD-SVG11-20020108/xlink.xsd_go"
+	xml "github.com/metaleap/go-xsd-pkg/www.w3.org/TR/2002/WD-SVG11-20020108/xml.xsd_go"
 )
 
 type XsdGoPkgHasCdata struct { CombinedCharDatas string `xml:",chardata"` }
@@ -2308,33 +2308,33 @@ type TsvgType struct {
 
 	XsdGoPkgHasElems_FontFace
 
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasAtts_PresentationAttributesAll
-
 	XsdGoPkgHasAtts_DocumentEvents
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAtts_TestAttrs
 
-	XsdGoPkgHasAttr_ContentStyleType_TContentTypeType_TextCss
+	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAttr_PreserveAspectRatio_TPreserveAspectRatioSpecType_XMidYMidMeet
+	XsdGoPkgHasAtts_PresentationAttributesAll
 
-	XsdGoPkgHasAttr_ZoomAndPan_TxsdSvgTypeZoomAndPan_Magnify
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
 
 	XsdGoPkgHasAttr_ContentScriptType_TContentTypeType_TextEcmascript
+
+	XsdGoPkgHasAttr_ContentStyleType_TContentTypeType_TextCss
 
 	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
 
 	XsdGoPkgHasAttr_Class_TClassListType_
 
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
+	XsdGoPkgHasAttr_PreserveAspectRatio_TPreserveAspectRatioSpecType_XMidYMidMeet
 
 	XsdGoPkgHasAttr_ViewBox_TViewBoxSpecType_
+
+	XsdGoPkgHasAttr_ZoomAndPan_TxsdSvgTypeZoomAndPan_Magnify
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
 
 }
 
@@ -2421,15 +2421,15 @@ type TgType struct {
 
 	XsdGoPkgHasElems_FontFace
 
-	XsdGoPkgHasAtts_TestAttrs
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAtts_GraphicsElementEvents
 
-	XsdGoPkgHasAtts_LangSpaceAttrs
+	XsdGoPkgHasAtts_TestAttrs
 
 	XsdGoPkgHasAtts_PresentationAttributesAll
-
-	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAttr_Transform_TransformListType_
 
@@ -2514,15 +2514,15 @@ type TdefsType struct {
 
 	XsdGoPkgHasElems_FontFace
 
-	XsdGoPkgHasAtts_StdAttrs
-
 	XsdGoPkgHasAtts_GraphicsElementEvents
 
 	XsdGoPkgHasAtts_TestAttrs
 
+	XsdGoPkgHasAtts_PresentationAttributesAll
+
 	XsdGoPkgHasAtts_LangSpaceAttrs
 
-	XsdGoPkgHasAtts_PresentationAttributesAll
+	XsdGoPkgHasAtts_StdAttrs
 
 }
 
@@ -2536,9 +2536,9 @@ func (me *XsdGoPkgHasAttr_Content_XsdtString_StructuredText) ContentFixed () xsd
 type TdescType struct {
 	XsdGoPkgHasCdata
 
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
 	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
 
 	XsdGoPkgHasAttr_Content_XsdtString_StructuredText
 
@@ -2547,9 +2547,9 @@ type TdescType struct {
 type TtitleType struct {
 	XsdGoPkgHasCdata
 
-	XsdGoPkgHasAtts_StdAttrs
-
 	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAtts_StdAttrs
 
 }
 
@@ -2632,13 +2632,13 @@ type TsymbolType struct {
 
 	XsdGoPkgHasElems_FontFace
 
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
 	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAtts_LangSpaceAttrs
 
 	XsdGoPkgHasAtts_PresentationAttributesAll
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
 
 }
 
@@ -2655,15 +2655,15 @@ type TuseType struct {
 
 	XsdGoPkgHasGroup_DescTitleMetadata
 
-	XsdGoPkgHasAtts_PresentationAttributesAll
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
+	XsdGoPkgHasAtts_TestAttrs
 
 	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAtts_TestAttrs
-
 	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesAll
 
 	XsdGoPkgHasAtts_XlinkRefAttrsEmbed
 
@@ -2684,21 +2684,21 @@ type TimageType struct {
 
 	XsdGoPkgHasGroup_DescTitleMetadata
 
-	XsdGoPkgHasAtts_PresentationAttributesColor
+	XsdGoPkgHasAtts_PresentationAttributesViewports
 
-	XsdGoPkgHasAtts_LangSpaceAttrs
+	XsdGoPkgHasAtts_GraphicsElementEvents
 
 	XsdGoPkgHasAtts_PresentationAttributesGraphics
 
 	XsdGoPkgHasAtts_TestAttrs
 
-	XsdGoPkgHasAtts_XlinkRefAttrs
+	XsdGoPkgHasAtts_LangSpaceAttrs
 
-	XsdGoPkgHasAtts_PresentationAttributesViewports
+	XsdGoPkgHasAtts_PresentationAttributesColor
 
 	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAtts_GraphicsElementEvents
+	XsdGoPkgHasAtts_XlinkRefAttrs
 
 	xlink.XsdGoPkgHasAttr_Href
 
@@ -2747,15 +2747,15 @@ type TswitchType struct {
 
 	XsdGoPkgHasGroup_DescTitleMetadata
 
-	XsdGoPkgHasAtts_PresentationAttributesAll
+	XsdGoPkgHasAtts_TestAttrs
 
 	XsdGoPkgHasAtts_GraphicsElementEvents
 
 	XsdGoPkgHasAtts_LangSpaceAttrs
 
-	XsdGoPkgHasAtts_StdAttrs
+	XsdGoPkgHasAtts_PresentationAttributesAll
 
-	XsdGoPkgHasAtts_TestAttrs
+	XsdGoPkgHasAtts_StdAttrs
 
 }
 
@@ -2776,13 +2776,13 @@ type TstyleType struct {
 
 	XsdGoPkgHasAtts_StdAttrs
 
+	xml.XsdGoPkgHasAttr_Space
+
 	XsdGoPkgHasAttr_Title_XsdtString_
 
 	XsdGoPkgHasAttr_Type_TContentTypeType_
 
 	XsdGoPkgHasAttr_Media_TMediaDescType_
-
-	xml.XsdGoPkgHasAttr_Space
 
 }
 
@@ -2807,25 +2807,25 @@ type TpathType struct {
 
 	XsdGoPkgHasGroup_DescTitleMetadata
 
-	XsdGoPkgHasAtts_TestAttrs
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesColor
 
 	XsdGoPkgHasAtts_GraphicsElementEvents
 
 	XsdGoPkgHasAtts_PresentationAttributesFillStroke
 
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
-
 	XsdGoPkgHasAtts_PresentationAttributesMarkers
 
-	XsdGoPkgHasAtts_PresentationAttributesColor
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasAttr_PathLength_XsdtDouble_
+	XsdGoPkgHasAtts_TestAttrs
 
 	XsdGoPkgHasAttr_D_TPathDataType_
+
+	XsdGoPkgHasAttr_PathLength_XsdtDouble_
 
 }
 
@@ -2850,19 +2850,19 @@ type TrectType struct {
 
 	XsdGoPkgHasGroup_DescTitleMetadata
 
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
 	XsdGoPkgHasAtts_PresentationAttributesColor
 
 	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
 
 	XsdGoPkgHasAttr_Rx_TLengthType_
 
@@ -2895,23 +2895,23 @@ type TcircleType struct {
 
 	XsdGoPkgHasGroup_DescTitleMetadata
 
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAtts_TestAttrs
+
 	XsdGoPkgHasAtts_PresentationAttributesGraphics
 
 	XsdGoPkgHasAtts_PresentationAttributesColor
 
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
 	XsdGoPkgHasAtts_GraphicsElementEvents
 
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasAttr_R_TLengthType_
+	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAttr_Cx_TCoordinateType_
+
+	XsdGoPkgHasAttr_R_TLengthType_
 
 	XsdGoPkgHasAttr_Cy_TCoordinateType_
 
@@ -2930,19 +2930,19 @@ type TellipseType struct {
 
 	XsdGoPkgHasGroup_DescTitleMetadata
 
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
 	XsdGoPkgHasAtts_LangSpaceAttrs
 
-	XsdGoPkgHasAtts_PresentationAttributesColor
-
-	XsdGoPkgHasAtts_TestAttrs
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
 
 	XsdGoPkgHasAtts_GraphicsElementEvents
 
+	XsdGoPkgHasAtts_PresentationAttributesColor
+
 	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
-
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+	XsdGoPkgHasAtts_TestAttrs
 
 }
 
@@ -2975,29 +2975,29 @@ type TlineType struct {
 
 	XsdGoPkgHasGroup_DescTitleMetadata
 
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
 	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasAtts_PresentationAttributesColor
 
 	XsdGoPkgHasAtts_LangSpaceAttrs
 
 	XsdGoPkgHasAtts_PresentationAttributesMarkers
 
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasAtts_PresentationAttributesColor
+
 	XsdGoPkgHasAttr_X1_TCoordinateType_
+
+	XsdGoPkgHasAttr_Y2_TCoordinateType_
 
 	XsdGoPkgHasAttr_Y1_TCoordinateType_
 
 	XsdGoPkgHasAttr_X2_TCoordinateType_
-
-	XsdGoPkgHasAttr_Y2_TCoordinateType_
 
 }
 
@@ -3018,21 +3018,21 @@ type TpolylineType struct {
 
 	XsdGoPkgHasGroup_DescTitleMetadata
 
-	XsdGoPkgHasAtts_StdAttrs
-
 	XsdGoPkgHasAtts_PresentationAttributesMarkers
+
+	XsdGoPkgHasAtts_TestAttrs
 
 	XsdGoPkgHasAtts_LangSpaceAttrs
 
-	XsdGoPkgHasAtts_GraphicsElementEvents
+	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAtts_PresentationAttributesFillStroke
 
-	XsdGoPkgHasAtts_PresentationAttributesColor
-
 	XsdGoPkgHasAtts_PresentationAttributesGraphics
 
-	XsdGoPkgHasAtts_TestAttrs
+	XsdGoPkgHasAtts_PresentationAttributesColor
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
 
 	XsdGoPkgHasAttr_Points_TPointsType_
 
@@ -3051,21 +3051,21 @@ type TpolygonType struct {
 
 	XsdGoPkgHasGroup_DescTitleMetadata
 
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAtts_PresentationAttributesColor
-
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
-
 	XsdGoPkgHasAtts_PresentationAttributesMarkers
 
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAtts_LangSpaceAttrs
 
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
 	XsdGoPkgHasAtts_GraphicsElementEvents
 
-	XsdGoPkgHasAtts_TestAttrs
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
+	XsdGoPkgHasAtts_PresentationAttributesColor
 
 }
 
@@ -3123,29 +3123,29 @@ type TtextType struct {
 
 	XsdGoPkgHasElems_AnimateTransform
 
-	XsdGoPkgHasAtts_PresentationAttributesTextElements
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
+	XsdGoPkgHasAtts_TestAttrs
 
 	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
 
 	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
 
-	XsdGoPkgHasAtts_StdAttrs
-
 	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
 
 	XsdGoPkgHasAtts_PresentationAttributesColor
 
 	XsdGoPkgHasAtts_LangSpaceAttrs
 
-	XsdGoPkgHasAttr_LengthAdjust_TxsdTextTypeLengthAdjust_
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesTextElements
 
 	XsdGoPkgHasAttr_TextLength_TLengthType_
+
+	XsdGoPkgHasAttr_LengthAdjust_TxsdTextTypeLengthAdjust_
 
 }
 
@@ -3213,35 +3213,35 @@ type TtspanType struct {
 
 	XsdGoPkgHasElems_AnimateColor
 
-	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
+	XsdGoPkgHasAtts_LangSpaceAttrs
 
 	XsdGoPkgHasAtts_GraphicsElementEvents
 
+	XsdGoPkgHasAtts_PresentationAttributesColor
+
 	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
 
-	XsdGoPkgHasAtts_LangSpaceAttrs
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
 
 	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAtts_PresentationAttributesColor
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
+
+	XsdGoPkgHasAttr_Dy_TLengthsType_
 
 	XsdGoPkgHasAttr_X_TCoordinatesType_
 
-	XsdGoPkgHasAttr_Dx_TLengthsType_
+	XsdGoPkgHasAttr_Y_TCoordinatesType_
 
 	XsdGoPkgHasAttr_LengthAdjust_TxsdTspanTypeLengthAdjust_
 
+	XsdGoPkgHasAttr_Dx_TLengthsType_
+
 	XsdGoPkgHasAttr_Rotate_XsdtString_
-
-	XsdGoPkgHasAttr_Y_TCoordinatesType_
-
-	XsdGoPkgHasAttr_Dy_TLengthsType_
 
 }
 
@@ -3279,25 +3279,25 @@ type TtrefType struct {
 
 	XsdGoPkgHasElems_AnimateColor
 
-	XsdGoPkgHasAtts_PresentationAttributesColor
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasAtts_TestAttrs
-
 	XsdGoPkgHasAtts_PresentationAttributesGraphics
 
 	XsdGoPkgHasAtts_PresentationAttributesFillStroke
 
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
 	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
 
 	XsdGoPkgHasAtts_XlinkRefAttrs
 
+	XsdGoPkgHasAtts_PresentationAttributesColor
+
 	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
 
-	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
+	XsdGoPkgHasAtts_LangSpaceAttrs
 
 	xlink.XsdGoPkgHasAttr_Href
 
@@ -3395,33 +3395,33 @@ type TtextPathType struct {
 
 	XsdGoPkgHasElems_AnimateColor
 
-	XsdGoPkgHasAtts_GraphicsElementEvents
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
+
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
 
 	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAtts_XlinkRefAttrs
 
-	XsdGoPkgHasAtts_LangSpaceAttrs
+	XsdGoPkgHasAtts_GraphicsElementEvents
 
 	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
 
 	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
 
 	XsdGoPkgHasAtts_PresentationAttributesGraphics
 
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
-	XsdGoPkgHasAttr_LengthAdjust_TxsdTextPathTypeLengthAdjust_
-
 	XsdGoPkgHasAttr_Spacing_TxsdTextPathTypeSpacing_
-
-	xlink.XsdGoPkgHasAttr_Href
 
 	XsdGoPkgHasAttr_Method_TxsdTextPathTypeMethod_
 
 	XsdGoPkgHasAttr_StartOffset_XsdtString_
+
+	XsdGoPkgHasAttr_LengthAdjust_TxsdTextPathTypeLengthAdjust_
+
+	xlink.XsdGoPkgHasAttr_Href
 
 }
 
@@ -3438,27 +3438,27 @@ type TaltGlyphType struct {
 
 	XsdGoPkgHasAtts_PresentationAttributesGraphics
 
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAtts_XlinkRefAttrs
-
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
 	XsdGoPkgHasAtts_PresentationAttributesColor
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
 
 	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
 
-	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
-
 	XsdGoPkgHasAtts_TestAttrs
 
-	xlink.XsdGoPkgHasAttr_Href
+	XsdGoPkgHasAtts_XlinkRefAttrs
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
+	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
 
 	XsdGoPkgHasAttr_Format_XsdtString_
+
+	xlink.XsdGoPkgHasAttr_Href
 
 	XsdGoPkgHasAttr_GlyphRef_XsdtString_
 
@@ -3481,11 +3481,11 @@ type TaltGlyphItemType struct {
 }
 
 type TglyphRefType struct {
-	XsdGoPkgHasAtts_XlinkRefAttrs
+	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
 
-	XsdGoPkgHasAtts_StdAttrs
+	XsdGoPkgHasAtts_XlinkRefAttrs
 
 	xlink.XsdGoPkgHasAttr_Href
 
@@ -3614,23 +3614,23 @@ type TmarkerType struct {
 
 	XsdGoPkgHasElems_FontFace
 
-	XsdGoPkgHasAtts_StdAttrs
-
 	XsdGoPkgHasAtts_PresentationAttributesAll
 
 	XsdGoPkgHasAtts_LangSpaceAttrs
 
-	XsdGoPkgHasAttr_MarkerUnits_TxsdMarkerTypeMarkerUnits_
+	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAttr_RefX_TCoordinateType_
+	XsdGoPkgHasAttr_MarkerHeight_TLengthType_
 
 	XsdGoPkgHasAttr_MarkerWidth_TLengthType_
 
-	XsdGoPkgHasAttr_RefY_TCoordinateType_
+	XsdGoPkgHasAttr_RefX_TCoordinateType_
 
 	XsdGoPkgHasAttr_Orient_XsdtString_
 
-	XsdGoPkgHasAttr_MarkerHeight_TLengthType_
+	XsdGoPkgHasAttr_RefY_TCoordinateType_
+
+	XsdGoPkgHasAttr_MarkerUnits_TxsdMarkerTypeMarkerUnits_
 
 }
 
@@ -3678,15 +3678,15 @@ func (me *XsdGoPkgHasAttr_RenderingIntent_TxsdColorProfileTypeRenderingIntent_Au
 type TcolorProfileType struct {
 	XsdGoPkgHasGroup_DescTitleMetadata
 
-	XsdGoPkgHasAtts_StdAttrs
-
 	XsdGoPkgHasAtts_XlinkRefAttrs
 
-	XsdGoPkgHasAttr_Name_XsdtString_
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_Local_XsdtString_
 
 	XsdGoPkgHasAttr_RenderingIntent_TxsdColorProfileTypeRenderingIntent_Auto
 
-	XsdGoPkgHasAttr_Local_XsdtString_
+	XsdGoPkgHasAttr_Name_XsdtString_
 
 	xlink.XsdGoPkgHasAttr_Href
 
@@ -3764,11 +3764,11 @@ type TlinearGradientType struct {
 
 	XsdGoPkgHasAttr_GradientUnits_TxsdLinearGradientTypeGradientUnits_
 
+	XsdGoPkgHasAttr_SpreadMethod_TxsdLinearGradientTypeSpreadMethod_Pad
+
 	XsdGoPkgHasAttr_GradientTransform_TransformListType_
 
 	xlink.XsdGoPkgHasAttr_Href
-
-	XsdGoPkgHasAttr_SpreadMethod_TxsdLinearGradientTypeSpreadMethod_Pad
 
 }
 
@@ -3842,9 +3842,9 @@ type TradialGradientType struct {
 
 	XsdGoPkgHasGroup_DescTitleMetadata
 
-	XsdGoPkgHasAtts_StdAttrs
-
 	XsdGoPkgHasAtts_XlinkRefAttrs
+
+	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAttr_Fx_TCoordinateType_
 
@@ -3852,9 +3852,9 @@ type TradialGradientType struct {
 
 	XsdGoPkgHasAttr_Fy_TCoordinateType_
 
-	XsdGoPkgHasAttr_SpreadMethod_TxsdRadialGradientTypeSpreadMethod_Pad
-
 	xlink.XsdGoPkgHasAttr_Href
+
+	XsdGoPkgHasAttr_SpreadMethod_TxsdRadialGradientTypeSpreadMethod_Pad
 
 }
 
@@ -3984,15 +3984,15 @@ type TpatternType struct {
 
 	XsdGoPkgHasElems_FontFace
 
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
 	XsdGoPkgHasAtts_XlinkRefAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesAll
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
 
 	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAtts_PresentationAttributesAll
 
 	xlink.XsdGoPkgHasAttr_Href
 
@@ -4057,21 +4057,21 @@ type TclipPathType struct {
 
 	XsdGoPkgHasGroup_DescTitleMetadata
 
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
 	XsdGoPkgHasAtts_PresentationAttributesGraphics
 
-	XsdGoPkgHasAtts_StdAttrs
+	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
 
-	XsdGoPkgHasAtts_TestAttrs
+	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
 
 	XsdGoPkgHasAtts_PresentationAttributesTextElements
 
 	XsdGoPkgHasAtts_LangSpaceAttrs
 
-	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
+	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
-	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
+	XsdGoPkgHasAtts_TestAttrs
 
 	XsdGoPkgHasAttr_ClipPathUnits_TxsdClipPathTypeClipPathUnits_
 
@@ -4180,11 +4180,11 @@ type TmaskType struct {
 
 	XsdGoPkgHasElems_FontFace
 
+	XsdGoPkgHasAtts_PresentationAttributesAll
+
 	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAtts_PresentationAttributesAll
 
 	XsdGoPkgHasAtts_LangSpaceAttrs
 
@@ -4283,21 +4283,21 @@ type TfilterType struct {
 
 	XsdGoPkgHasGroup_DescTitleMetadata
 
-	XsdGoPkgHasAtts_XlinkRefAttrs
-
 	XsdGoPkgHasAtts_PresentationAttributesAll
-
-	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAtts_LangSpaceAttrs
 
-	XsdGoPkgHasAttr_FilterUnits_TxsdFilterTypeFilterUnits_
+	XsdGoPkgHasAtts_XlinkRefAttrs
+
+	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAttr_FilterRes_XsdtString_
 
 	xlink.XsdGoPkgHasAttr_Href
 
 	XsdGoPkgHasAttr_PrimitiveUnits_TxsdFilterTypePrimitiveUnits_
+
+	XsdGoPkgHasAttr_FilterUnits_TxsdFilterTypeFilterUnits_
 
 }
 
@@ -4316,9 +4316,9 @@ type TfeDistantLightType struct {
 
 	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAttr_Elevation_XsdtDouble_
-
 	XsdGoPkgHasAttr_Azimuth_XsdtDouble_
+
+	XsdGoPkgHasAttr_Elevation_XsdtDouble_
 
 }
 
@@ -4341,11 +4341,11 @@ type TfePointLightType struct {
 
 	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAttr_X_XsdtDouble_
+	XsdGoPkgHasAttr_Z_XsdtDouble_
 
 	XsdGoPkgHasAttr_Y_XsdtDouble_
 
-	XsdGoPkgHasAttr_Z_XsdtDouble_
+	XsdGoPkgHasAttr_X_XsdtDouble_
 
 }
 
@@ -4376,15 +4376,15 @@ type TfeSpotLightType struct {
 
 	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAttr_PointsAtX_XsdtDouble_
-
-	XsdGoPkgHasAttr_SpecularExponent_XsdtDouble_
-
 	XsdGoPkgHasAttr_LimitingConeAngle_XsdtDouble_
 
 	XsdGoPkgHasAttr_PointsAtY_XsdtDouble_
 
 	XsdGoPkgHasAttr_PointsAtZ_XsdtDouble_
+
+	XsdGoPkgHasAttr_PointsAtX_XsdtDouble_
+
+	XsdGoPkgHasAttr_SpecularExponent_XsdtDouble_
 
 }
 
@@ -4492,9 +4492,9 @@ type TfeComponentTransferType struct {
 
 	XsdGoPkgHasElem_FeFuncA
 
-	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
-
 	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
 
 }
 
@@ -4533,9 +4533,9 @@ type TfeFuncRType struct {
 
 	XsdGoPkgHasElems_Set
 
-	XsdGoPkgHasAtts_ComponentTransferFunctionAttributes
-
 	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_ComponentTransferFunctionAttributes
 
 	XsdGoPkgHasAttr_Type_TxsdFeFuncRTypeType_
 
@@ -4576,9 +4576,9 @@ type TfeFuncGType struct {
 
 	XsdGoPkgHasElems_Set
 
-	XsdGoPkgHasAtts_ComponentTransferFunctionAttributes
-
 	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_ComponentTransferFunctionAttributes
 
 	XsdGoPkgHasAttr_Type_TxsdFeFuncGTypeType_
 
@@ -4619,9 +4619,9 @@ type TfeFuncBType struct {
 
 	XsdGoPkgHasElems_Set
 
-	XsdGoPkgHasAtts_ComponentTransferFunctionAttributes
-
 	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_ComponentTransferFunctionAttributes
 
 	XsdGoPkgHasAttr_Type_TxsdFeFuncBTypeType_
 
@@ -4731,13 +4731,13 @@ type TfeCompositeType struct {
 
 	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAttr_Operator_TxsdFeCompositeTypeOperator_Over
-
-	XsdGoPkgHasAttr_K4_XsdtDouble_
-
 	XsdGoPkgHasAttr_K2_XsdtDouble_
 
+	XsdGoPkgHasAttr_Operator_TxsdFeCompositeTypeOperator_Over
+
 	XsdGoPkgHasAttr_K1_XsdtDouble_
+
+	XsdGoPkgHasAttr_K4_XsdtDouble_
 
 	XsdGoPkgHasAttr_K3_XsdtDouble_
 
@@ -4809,23 +4809,23 @@ type TfeConvolveMatrixType struct {
 
 	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
 
-	XsdGoPkgHasAttr_TargetX_XsdtInteger_
-
-	XsdGoPkgHasAttr_Divisor_XsdtDouble_
+	XsdGoPkgHasAttr_KernelMatrix_XsdtString_
 
 	XsdGoPkgHasAttr_TargetY_XsdtInteger_
 
-	XsdGoPkgHasAttr_KernelUnitLength_XsdtString_
+	XsdGoPkgHasAttr_Bias_XsdtDouble_
 
-	XsdGoPkgHasAttr_Order_XsdtString_
+	XsdGoPkgHasAttr_TargetX_XsdtInteger_
+
+	XsdGoPkgHasAttr_KernelUnitLength_XsdtString_
 
 	XsdGoPkgHasAttr_PreserveAlpha_XsdtBoolean_
 
+	XsdGoPkgHasAttr_Order_XsdtString_
+
 	XsdGoPkgHasAttr_EdgeMode_TxsdFeConvolveMatrixTypeEdgeMode_Duplicate
 
-	XsdGoPkgHasAttr_Bias_XsdtDouble_
-
-	XsdGoPkgHasAttr_KernelMatrix_XsdtString_
+	XsdGoPkgHasAttr_Divisor_XsdtDouble_
 
 }
 
@@ -4850,11 +4850,11 @@ type TfeDiffuseLightingType struct {
 
 	XsdGoPkgHasElems_AnimateColor
 
-	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
-
 	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAtts_PresentationAttributesLightingEffects
+
+	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
 
 	XsdGoPkgHasAttr_DiffuseConstant_XsdtDouble_
 
@@ -4931,15 +4931,15 @@ type TfeDisplacementMapType struct {
 
 	XsdGoPkgHasElems_Set
 
+	XsdGoPkgHasAtts_StdAttrs
+
 	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
 
-	XsdGoPkgHasAtts_StdAttrs
+	XsdGoPkgHasAttr_Scale_XsdtDouble_
 
 	XsdGoPkgHasAttr_XChannelSelector_TxsdFeDisplacementMapTypeXChannelSelector_A
 
 	XsdGoPkgHasAttr_YChannelSelector_TxsdFeDisplacementMapTypeYChannelSelector_A
-
-	XsdGoPkgHasAttr_Scale_XsdtDouble_
 
 }
 
@@ -4950,11 +4950,11 @@ type TfeFloodType struct {
 
 	XsdGoPkgHasElems_AnimateColor
 
+	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
+
 	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAtts_PresentationAttributesFeFlood
-
-	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
 
 }
 
@@ -4982,15 +4982,15 @@ type TfeImageType struct {
 
 	XsdGoPkgHasElems_AnimateTransform
 
+	XsdGoPkgHasAtts_XlinkRefAttrs
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
 	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAtts_PresentationAttributesAll
 
 	XsdGoPkgHasAtts_FilterPrimitiveAttributes
-
-	XsdGoPkgHasAtts_XlinkRefAttrs
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
 
 	xlink.XsdGoPkgHasAttr_Href
 
@@ -5047,13 +5047,13 @@ type TfeMorphologyType struct {
 
 	XsdGoPkgHasElems_Set
 
-	XsdGoPkgHasAtts_StdAttrs
-
 	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
 
-	XsdGoPkgHasAttr_Radius_TLengthType_
+	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAttr_Operator_TxsdFeMorphologyTypeOperator_Erode
+
+	XsdGoPkgHasAttr_Radius_TLengthType_
 
 }
 
@@ -5099,9 +5099,9 @@ type TfeSpecularLightingType struct {
 
 	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
 
-	XsdGoPkgHasAtts_PresentationAttributesLightingEffects
-
 	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesLightingEffects
 
 	XsdGoPkgHasAttr_SpecularConstant_XsdtDouble_
 
@@ -5187,26 +5187,26 @@ type TfeTurbulenceType struct {
 
 	XsdGoPkgHasAtts_FilterPrimitiveAttributes
 
+	XsdGoPkgHasAttr_Type_TxsdFeTurbulenceTypeType_Turbulence
+
+	XsdGoPkgHasAttr_StitchTiles_TxsdFeTurbulenceTypeStitchTiles_NoStitch
+
 	XsdGoPkgHasAttr_Seed_XsdtDouble_
 
 	XsdGoPkgHasAttr_BaseFrequency_XsdtString_
 
 	XsdGoPkgHasAttr_NumOctaves_XsdtInteger_
 
-	XsdGoPkgHasAttr_Type_TxsdFeTurbulenceTypeType_Turbulence
-
-	XsdGoPkgHasAttr_StitchTiles_TxsdFeTurbulenceTypeStitchTiles_NoStitch
-
 }
 
 type TcursorType struct {
 	XsdGoPkgHasGroup_DescTitleMetadata
 
+	XsdGoPkgHasAtts_StdAttrs
+
 	XsdGoPkgHasAtts_XlinkRefAttrs
 
 	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAtts_StdAttrs
 
 	xlink.XsdGoPkgHasAttr_Href
 
@@ -5297,31 +5297,31 @@ type TaType struct {
 
 	XsdGoPkgHasElems_FontFace
 
-	XsdGoPkgHasAtts_LangSpaceAttrs
+	XsdGoPkgHasAtts_GraphicsElementEvents
 
-	XsdGoPkgHasAtts_StdAttrs
+	XsdGoPkgHasAtts_LangSpaceAttrs
 
 	XsdGoPkgHasAtts_TestAttrs
 
+	XsdGoPkgHasAtts_StdAttrs
+
 	XsdGoPkgHasAtts_PresentationAttributesAll
 
-	XsdGoPkgHasAtts_GraphicsElementEvents
+	xlink.XsdGoPkgHasAttr_Show
 
 	xlink.XsdGoPkgHasAttr_Type
+
+	xlink.XsdGoPkgHasAttr_Href
+
+	xlink.XsdGoPkgHasAttr_Actuate
+
+	xlink.XsdGoPkgHasAttr_Arcrole
 
 	XsdGoPkgHasAttr_Target_XsdtNmtoken_
 
 	xlink.XsdGoPkgHasAttr_Title
 
-	xlink.XsdGoPkgHasAttr_Actuate
-
-	xlink.XsdGoPkgHasAttr_Href
-
-	xlink.XsdGoPkgHasAttr_Arcrole
-
 	xlink.XsdGoPkgHasAttr_Role
-
-	xlink.XsdGoPkgHasAttr_Show
 
 }
 
@@ -5361,9 +5361,9 @@ type TviewType struct {
 
 	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAttr_ViewTarget_XsdtString_
-
 	XsdGoPkgHasAttr_ZoomAndPan_TxsdViewTypeZoomAndPan_Magnify
+
+	XsdGoPkgHasAttr_ViewTarget_XsdtString_
 
 }
 
@@ -5385,30 +5385,30 @@ type TanimateType struct {
 
 	XsdGoPkgHasAtts_TestAttrs
 
-	XsdGoPkgHasAtts_AnimationEvents
+	XsdGoPkgHasAtts_AnimAdditionAttrs
+
+	XsdGoPkgHasAtts_AnimTimingAttrs
 
 	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAtts_AnimAdditionAttrs
-
 	XsdGoPkgHasAtts_AnimTargetAttrs
 
-	XsdGoPkgHasAtts_AnimTimingAttrs
+	XsdGoPkgHasAtts_AnimationEvents
 
 }
 
 type TsetType struct {
 	XsdGoPkgHasGroup_DescTitleMetadata
 
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAtts_AnimTimingAttrs
-
-	XsdGoPkgHasAtts_AnimationEvents
+	XsdGoPkgHasAtts_AnimTargetAttrs
 
 	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAtts_AnimTargetAttrs
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAtts_AnimationEvents
+
+	XsdGoPkgHasAtts_AnimTimingAttrs
 
 }
 
@@ -5429,25 +5429,25 @@ type TanimateMotionType struct {
 
 	XsdGoPkgHasGroup_DescTitleMetadata
 
-	XsdGoPkgHasAtts_AnimationEvents
-
-	XsdGoPkgHasAtts_TestAttrs
+	XsdGoPkgHasAtts_AnimElementAttrs
 
 	XsdGoPkgHasAtts_AnimValueAttrs
 
 	XsdGoPkgHasAtts_AnimAdditionAttrs
 
-	XsdGoPkgHasAtts_AnimTimingAttrs
-
-	XsdGoPkgHasAtts_AnimElementAttrs
+	XsdGoPkgHasAtts_TestAttrs
 
 	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_AnimTimingAttrs
+
+	XsdGoPkgHasAtts_AnimationEvents
+
+	XsdGoPkgHasAttr_Path_XsdtString_
 
 	XsdGoPkgHasAttr_KeyPoints_XsdtString_
 
 	XsdGoPkgHasAttr_Origin_XsdtString_
-
-	XsdGoPkgHasAttr_Path_XsdtString_
 
 }
 
@@ -5465,17 +5465,17 @@ type TmpathType struct {
 type TanimateColorType struct {
 	XsdGoPkgHasGroup_DescTitleMetadata
 
-	XsdGoPkgHasAtts_AnimAdditionAttrs
-
 	XsdGoPkgHasAtts_AnimTargetAttrs
 
-	XsdGoPkgHasAtts_AnimTimingAttrs
-
 	XsdGoPkgHasAtts_AnimationEvents
+
+	XsdGoPkgHasAtts_AnimAdditionAttrs
 
 	XsdGoPkgHasAtts_TestAttrs
 
 	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_AnimTimingAttrs
 
 	XsdGoPkgHasAtts_AnimValueAttrs
 
@@ -5519,17 +5519,17 @@ type TanimateTransformType struct {
 
 	XsdGoPkgHasAtts_AnimTargetAttrs
 
-	XsdGoPkgHasAtts_AnimValueAttrs
+	XsdGoPkgHasAtts_AnimTimingAttrs
 
-	XsdGoPkgHasAtts_StdAttrs
+	XsdGoPkgHasAtts_AnimValueAttrs
 
 	XsdGoPkgHasAtts_AnimAdditionAttrs
 
-	XsdGoPkgHasAtts_AnimationEvents
-
 	XsdGoPkgHasAtts_TestAttrs
 
-	XsdGoPkgHasAtts_AnimTimingAttrs
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_AnimationEvents
 
 	XsdGoPkgHasAttr_Type_TxsdAnimateTransformTypeType_Translate
 
@@ -5576,17 +5576,17 @@ type TfontType struct {
 
 	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAttr_HorizOriginY_XsdtDouble_
-
-	XsdGoPkgHasAttr_VertOriginY_XsdtDouble_
-
-	XsdGoPkgHasAttr_HorizAdvX_XsdtDouble_
-
 	XsdGoPkgHasAttr_VertOriginX_XsdtDouble_
 
 	XsdGoPkgHasAttr_HorizOriginX_XsdtDouble_
 
+	XsdGoPkgHasAttr_HorizAdvX_XsdtDouble_
+
+	XsdGoPkgHasAttr_HorizOriginY_XsdtDouble_
+
 	XsdGoPkgHasAttr_VertAdvY_XsdtDouble_
+
+	XsdGoPkgHasAttr_VertOriginY_XsdtDouble_
 
 }
 
@@ -5689,17 +5689,17 @@ type TglyphType struct {
 
 	XsdGoPkgHasElems_FontFace
 
-	XsdGoPkgHasAtts_StdAttrs
-
 	XsdGoPkgHasAtts_PresentationAttributesAll
 
-	XsdGoPkgHasAttr_VertTextOrient_XsdtString_
+	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAttr_Arabic_XsdtString_
 
-	XsdGoPkgHasAttr_Unicode_XsdtString_
-
 	XsdGoPkgHasAttr_Han_XsdtString_
+
+	XsdGoPkgHasAttr_VertTextOrient_XsdtString_
+
+	XsdGoPkgHasAttr_Unicode_XsdtString_
 
 	XsdGoPkgHasAttr_GlyphName_XsdtString_
 
@@ -5784,9 +5784,9 @@ type TmissingGlyphType struct {
 
 	XsdGoPkgHasElems_FontFace
 
-	XsdGoPkgHasAtts_StdAttrs
-
 	XsdGoPkgHasAtts_PresentationAttributesAll
+
+	XsdGoPkgHasAtts_StdAttrs
 
 }
 
@@ -5813,11 +5813,11 @@ type XsdGoPkgHasAttr_K_XsdtDouble_ struct {
 type ThkernType struct {
 	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAttr_U2_XsdtString_
+	XsdGoPkgHasAttr_U1_XsdtString_
 
 	XsdGoPkgHasAttr_K_XsdtDouble_
 
-	XsdGoPkgHasAttr_U1_XsdtString_
+	XsdGoPkgHasAttr_U2_XsdtString_
 
 	XsdGoPkgHasAttr_G2_XsdtString_
 
@@ -5953,59 +5953,59 @@ type TfontFaceType struct {
 
 	XsdGoPkgHasAttr_Panose1_XsdtString_
 
-	XsdGoPkgHasAttr_OverlineThickness_XsdtDouble_
-
-	XsdGoPkgHasAttr_OverlinePosition_XsdtDouble_
-
-	XsdGoPkgHasAttr_UnderlinePosition_XsdtDouble_
-
-	XsdGoPkgHasAttr_Baseline_XsdtDouble_
-
-	XsdGoPkgHasAttr_StrikethroughThickness_XsdtDouble_
-
-	XsdGoPkgHasAttr_FontStretch_XsdtString_
-
-	XsdGoPkgHasAttr_UnderlineThickness_XsdtDouble_
-
-	XsdGoPkgHasAttr_XHeight_XsdtDouble_
-
-	XsdGoPkgHasAttr_Ideographic_XsdtDouble_
-
-	XsdGoPkgHasAttr_FontVariant_XsdtString_
-
-	XsdGoPkgHasAttr_AccentHeight_XsdtDouble_
-
-	XsdGoPkgHasAttr_FontStyle_XsdtString_
-
-	XsdGoPkgHasAttr_Stemh_XsdtDouble_
-
-	XsdGoPkgHasAttr_Stemv_XsdtDouble_
+	XsdGoPkgHasAttr_Ascent_XsdtDouble_
 
 	XsdGoPkgHasAttr_Descent_XsdtDouble_
 
-	XsdGoPkgHasAttr_Widths_XsdtString_
+	XsdGoPkgHasAttr_UnderlineThickness_XsdtDouble_
 
-	XsdGoPkgHasAttr_Bbox_XsdtString_
+	XsdGoPkgHasAttr_StrikethroughThickness_XsdtDouble_
+
+	XsdGoPkgHasAttr_Baseline_XsdtDouble_
+
+	XsdGoPkgHasAttr_FontStretch_XsdtString_
 
 	XsdGoPkgHasAttr_UnicodeRange_XsdtString_
 
-	XsdGoPkgHasAttr_Hanging_XsdtDouble_
+	XsdGoPkgHasAttr_Stemv_XsdtDouble_
 
-	XsdGoPkgHasAttr_CapHeight_XsdtDouble_
+	XsdGoPkgHasAttr_FontStyle_XsdtString_
 
-	XsdGoPkgHasAttr_Mathline_XsdtDouble_
+	XsdGoPkgHasAttr_OverlinePosition_XsdtDouble_
 
-	XsdGoPkgHasAttr_Ascent_XsdtDouble_
-
-	XsdGoPkgHasAttr_FontWeight_XsdtString_
+	XsdGoPkgHasAttr_AccentHeight_XsdtDouble_
 
 	XsdGoPkgHasAttr_Centerline_XsdtDouble_
 
-	XsdGoPkgHasAttr_Topline_XsdtDouble_
+	XsdGoPkgHasAttr_CapHeight_XsdtDouble_
 
 	XsdGoPkgHasAttr_UnitsPerEm_XsdtDouble_
 
+	XsdGoPkgHasAttr_Widths_XsdtString_
+
+	XsdGoPkgHasAttr_Topline_XsdtDouble_
+
+	XsdGoPkgHasAttr_Mathline_XsdtDouble_
+
 	XsdGoPkgHasAttr_StrikethroughPosition_XsdtDouble_
+
+	XsdGoPkgHasAttr_XHeight_XsdtDouble_
+
+	XsdGoPkgHasAttr_Hanging_XsdtDouble_
+
+	XsdGoPkgHasAttr_FontWeight_XsdtString_
+
+	XsdGoPkgHasAttr_FontVariant_XsdtString_
+
+	XsdGoPkgHasAttr_UnderlinePosition_XsdtDouble_
+
+	XsdGoPkgHasAttr_Bbox_XsdtString_
+
+	XsdGoPkgHasAttr_Stemh_XsdtDouble_
+
+	XsdGoPkgHasAttr_OverlineThickness_XsdtDouble_
+
+	XsdGoPkgHasAttr_Ideographic_XsdtDouble_
 
 }
 
@@ -6021,9 +6021,9 @@ type TfontFaceSrcType struct {
 type TfontFaceUriType struct {
 	XsdGoPkgHasElem_FontFaceFormat
 
-	XsdGoPkgHasAtts_XlinkRefAttrs
-
 	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_XlinkRefAttrs
 
 	xlink.XsdGoPkgHasAttr_Href
 
@@ -6046,9 +6046,9 @@ type TfontFaceNameType struct {
 }
 
 type TdefinitionSrcType struct {
-	XsdGoPkgHasAtts_XlinkRefAttrs
-
 	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_XlinkRefAttrs
 
 	xlink.XsdGoPkgHasAttr_Href
 
@@ -6064,688 +6064,856 @@ type TmetadataType struct {
 type TforeignObjectType struct {
 	XsdGoPkgHasCdata
 
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
 	XsdGoPkgHasAtts_TestAttrs
 
 	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
 	XsdGoPkgHasAtts_PresentationAttributesAll
 
-	XsdGoPkgHasAtts_GraphicsElementEvents
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+}
+
+type XsdGoPkgHasElem_Svg struct {
+	Svg *TsvgType `xml:"http://www.w3.org/2000/svg svg"`
 
 }
 
 type XsdGoPkgHasElems_Svg struct {
 	Svgs []*TsvgType `xml:"http://www.w3.org/2000/svg svg"`
-}
 
-type XsdGoPkgHasElem_Svg struct {
-	Svg *TsvgType `xml:"http://www.w3.org/2000/svg svg"`
-}
-
-type XsdGoPkgHasElems_G struct {
-	Gs []*TgType `xml:"http://www.w3.org/2000/svg g"`
 }
 
 type XsdGoPkgHasElem_G struct {
 	G *TgType `xml:"http://www.w3.org/2000/svg g"`
+
 }
 
-type XsdGoPkgHasElems_Defs struct {
-	Defses []*TdefsType `xml:"http://www.w3.org/2000/svg defs"`
+type XsdGoPkgHasElems_G struct {
+	Gs []*TgType `xml:"http://www.w3.org/2000/svg g"`
+
 }
 
 type XsdGoPkgHasElem_Defs struct {
 	Defs *TdefsType `xml:"http://www.w3.org/2000/svg defs"`
+
+}
+
+type XsdGoPkgHasElems_Defs struct {
+	Defses []*TdefsType `xml:"http://www.w3.org/2000/svg defs"`
+
 }
 
 type XsdGoPkgHasElem_Desc struct {
 	Desc *TdescType `xml:"http://www.w3.org/2000/svg desc"`
+
 }
 
 type XsdGoPkgHasElems_Desc struct {
 	Descs []*TdescType `xml:"http://www.w3.org/2000/svg desc"`
+
 }
 
 type XsdGoPkgHasElems_Title struct {
 	Titles []*TtitleType `xml:"http://www.w3.org/2000/svg title"`
+
 }
 
 type XsdGoPkgHasElem_Title struct {
 	Title *TtitleType `xml:"http://www.w3.org/2000/svg title"`
-}
 
-type XsdGoPkgHasElems_Symbol struct {
-	Symbols []*TsymbolType `xml:"http://www.w3.org/2000/svg symbol"`
 }
 
 type XsdGoPkgHasElem_Symbol struct {
 	Symbol *TsymbolType `xml:"http://www.w3.org/2000/svg symbol"`
+
 }
 
-type XsdGoPkgHasElems_Use struct {
-	Uses []*TuseType `xml:"http://www.w3.org/2000/svg use"`
+type XsdGoPkgHasElems_Symbol struct {
+	Symbols []*TsymbolType `xml:"http://www.w3.org/2000/svg symbol"`
+
 }
 
 type XsdGoPkgHasElem_Use struct {
 	Use *TuseType `xml:"http://www.w3.org/2000/svg use"`
+
+}
+
+type XsdGoPkgHasElems_Use struct {
+	Uses []*TuseType `xml:"http://www.w3.org/2000/svg use"`
+
 }
 
 type XsdGoPkgHasElems_Image struct {
 	Images []*TimageType `xml:"http://www.w3.org/2000/svg image"`
+
 }
 
 type XsdGoPkgHasElem_Image struct {
 	Image *TimageType `xml:"http://www.w3.org/2000/svg image"`
-}
 
-type XsdGoPkgHasElems_Switch struct {
-	Switchs []*TswitchType `xml:"http://www.w3.org/2000/svg switch"`
 }
 
 type XsdGoPkgHasElem_Switch struct {
 	Switch *TswitchType `xml:"http://www.w3.org/2000/svg switch"`
+
+}
+
+type XsdGoPkgHasElems_Switch struct {
+	Switchs []*TswitchType `xml:"http://www.w3.org/2000/svg switch"`
+
 }
 
 type XsdGoPkgHasElem_Style struct {
 	Style *TstyleType `xml:"http://www.w3.org/2000/svg style"`
+
 }
 
 type XsdGoPkgHasElems_Style struct {
 	Styles []*TstyleType `xml:"http://www.w3.org/2000/svg style"`
+
 }
 
 type XsdGoPkgHasElem_Path struct {
 	Path *TpathType `xml:"http://www.w3.org/2000/svg path"`
+
 }
 
 type XsdGoPkgHasElems_Path struct {
 	Paths []*TpathType `xml:"http://www.w3.org/2000/svg path"`
-}
 
-type XsdGoPkgHasElem_Rect struct {
-	Rect *TrectType `xml:"http://www.w3.org/2000/svg rect"`
 }
 
 type XsdGoPkgHasElems_Rect struct {
 	Rects []*TrectType `xml:"http://www.w3.org/2000/svg rect"`
+
+}
+
+type XsdGoPkgHasElem_Rect struct {
+	Rect *TrectType `xml:"http://www.w3.org/2000/svg rect"`
+
 }
 
 type XsdGoPkgHasElem_Circle struct {
 	Circle *TcircleType `xml:"http://www.w3.org/2000/svg circle"`
+
 }
 
 type XsdGoPkgHasElems_Circle struct {
 	Circles []*TcircleType `xml:"http://www.w3.org/2000/svg circle"`
+
 }
 
 type XsdGoPkgHasElem_Ellipse struct {
 	Ellipse *TellipseType `xml:"http://www.w3.org/2000/svg ellipse"`
+
 }
 
 type XsdGoPkgHasElems_Ellipse struct {
 	Ellipses []*TellipseType `xml:"http://www.w3.org/2000/svg ellipse"`
-}
 
-type XsdGoPkgHasElem_Line struct {
-	Line *TlineType `xml:"http://www.w3.org/2000/svg line"`
 }
 
 type XsdGoPkgHasElems_Line struct {
 	Lines []*TlineType `xml:"http://www.w3.org/2000/svg line"`
+
+}
+
+type XsdGoPkgHasElem_Line struct {
+	Line *TlineType `xml:"http://www.w3.org/2000/svg line"`
+
 }
 
 type XsdGoPkgHasElem_Polyline struct {
 	Polyline *TpolylineType `xml:"http://www.w3.org/2000/svg polyline"`
+
 }
 
 type XsdGoPkgHasElems_Polyline struct {
 	Polylines []*TpolylineType `xml:"http://www.w3.org/2000/svg polyline"`
+
 }
 
 type XsdGoPkgHasElems_Polygon struct {
 	Polygons []*TpolygonType `xml:"http://www.w3.org/2000/svg polygon"`
+
 }
 
 type XsdGoPkgHasElem_Polygon struct {
 	Polygon *TpolygonType `xml:"http://www.w3.org/2000/svg polygon"`
+
 }
 
 type XsdGoPkgHasElem_Text struct {
 	Text *TtextType `xml:"http://www.w3.org/2000/svg text"`
+
 }
 
 type XsdGoPkgHasElems_Text struct {
 	Texts []*TtextType `xml:"http://www.w3.org/2000/svg text"`
+
 }
 
 type XsdGoPkgHasElem_Tspan struct {
 	Tspan *TtspanType `xml:"http://www.w3.org/2000/svg tspan"`
+
 }
 
 type XsdGoPkgHasElems_Tspan struct {
 	Tspans []*TtspanType `xml:"http://www.w3.org/2000/svg tspan"`
-}
 
-type XsdGoPkgHasElems_Tref struct {
-	Trefs []*TtrefType `xml:"http://www.w3.org/2000/svg tref"`
 }
 
 type XsdGoPkgHasElem_Tref struct {
 	Tref *TtrefType `xml:"http://www.w3.org/2000/svg tref"`
+
+}
+
+type XsdGoPkgHasElems_Tref struct {
+	Trefs []*TtrefType `xml:"http://www.w3.org/2000/svg tref"`
+
 }
 
 type XsdGoPkgHasElems_TextPath struct {
 	TextPaths []*TtextPathType `xml:"http://www.w3.org/2000/svg textPath"`
+
 }
 
 type XsdGoPkgHasElem_TextPath struct {
 	TextPath *TtextPathType `xml:"http://www.w3.org/2000/svg textPath"`
+
 }
 
 type XsdGoPkgHasElems_AltGlyph struct {
 	AltGlyphs []*TaltGlyphType `xml:"http://www.w3.org/2000/svg altGlyph"`
+
 }
 
 type XsdGoPkgHasElem_AltGlyph struct {
 	AltGlyph *TaltGlyphType `xml:"http://www.w3.org/2000/svg altGlyph"`
+
 }
 
 type XsdGoPkgHasElems_AltGlyphDef struct {
 	AltGlyphDefs []*TaltGlyphDefType `xml:"http://www.w3.org/2000/svg altGlyphDef"`
+
 }
 
 type XsdGoPkgHasElem_AltGlyphDef struct {
 	AltGlyphDef *TaltGlyphDefType `xml:"http://www.w3.org/2000/svg altGlyphDef"`
+
 }
 
 type XsdGoPkgHasElems_AltGlyphItem struct {
 	AltGlyphItems []*TaltGlyphItemType `xml:"http://www.w3.org/2000/svg altGlyphItem"`
+
 }
 
 type XsdGoPkgHasElem_AltGlyphItem struct {
 	AltGlyphItem *TaltGlyphItemType `xml:"http://www.w3.org/2000/svg altGlyphItem"`
-}
 
-type XsdGoPkgHasElem_GlyphRef struct {
-	GlyphRef *TglyphRefType `xml:"http://www.w3.org/2000/svg glyphRef"`
 }
 
 type XsdGoPkgHasElems_GlyphRef struct {
 	GlyphRefs []*TglyphRefType `xml:"http://www.w3.org/2000/svg glyphRef"`
+
+}
+
+type XsdGoPkgHasElem_GlyphRef struct {
+	GlyphRef *TglyphRefType `xml:"http://www.w3.org/2000/svg glyphRef"`
+
 }
 
 type XsdGoPkgHasElems_Marker struct {
 	Markers []*TmarkerType `xml:"http://www.w3.org/2000/svg marker"`
+
 }
 
 type XsdGoPkgHasElem_Marker struct {
 	Marker *TmarkerType `xml:"http://www.w3.org/2000/svg marker"`
+
 }
 
 type XsdGoPkgHasElems_ColorProfile struct {
 	ColorProfiles []*TcolorProfileType `xml:"http://www.w3.org/2000/svg color-profile"`
+
 }
 
 type XsdGoPkgHasElem_ColorProfile struct {
 	ColorProfile *TcolorProfileType `xml:"http://www.w3.org/2000/svg color-profile"`
-}
 
-type XsdGoPkgHasElems_LinearGradient struct {
-	LinearGradients []*TlinearGradientType `xml:"http://www.w3.org/2000/svg linearGradient"`
 }
 
 type XsdGoPkgHasElem_LinearGradient struct {
 	LinearGradient *TlinearGradientType `xml:"http://www.w3.org/2000/svg linearGradient"`
+
 }
 
-type XsdGoPkgHasElem_RadialGradient struct {
-	RadialGradient *TradialGradientType `xml:"http://www.w3.org/2000/svg radialGradient"`
+type XsdGoPkgHasElems_LinearGradient struct {
+	LinearGradients []*TlinearGradientType `xml:"http://www.w3.org/2000/svg linearGradient"`
+
 }
 
 type XsdGoPkgHasElems_RadialGradient struct {
 	RadialGradients []*TradialGradientType `xml:"http://www.w3.org/2000/svg radialGradient"`
+
+}
+
+type XsdGoPkgHasElem_RadialGradient struct {
+	RadialGradient *TradialGradientType `xml:"http://www.w3.org/2000/svg radialGradient"`
+
 }
 
 type XsdGoPkgHasElem_Stop struct {
 	Stop *TstopType `xml:"http://www.w3.org/2000/svg stop"`
+
 }
 
 type XsdGoPkgHasElems_Stop struct {
 	Stops []*TstopType `xml:"http://www.w3.org/2000/svg stop"`
-}
 
-type XsdGoPkgHasElem_Pattern struct {
-	Pattern *TpatternType `xml:"http://www.w3.org/2000/svg pattern"`
 }
 
 type XsdGoPkgHasElems_Pattern struct {
 	Patterns []*TpatternType `xml:"http://www.w3.org/2000/svg pattern"`
+
 }
 
-type XsdGoPkgHasElem_ClipPath struct {
-	ClipPath *TclipPathType `xml:"http://www.w3.org/2000/svg clipPath"`
+type XsdGoPkgHasElem_Pattern struct {
+	Pattern *TpatternType `xml:"http://www.w3.org/2000/svg pattern"`
+
 }
 
 type XsdGoPkgHasElems_ClipPath struct {
 	ClipPaths []*TclipPathType `xml:"http://www.w3.org/2000/svg clipPath"`
+
 }
 
-type XsdGoPkgHasElem_Mask struct {
-	Mask *TmaskType `xml:"http://www.w3.org/2000/svg mask"`
+type XsdGoPkgHasElem_ClipPath struct {
+	ClipPath *TclipPathType `xml:"http://www.w3.org/2000/svg clipPath"`
+
 }
 
 type XsdGoPkgHasElems_Mask struct {
 	Masks []*TmaskType `xml:"http://www.w3.org/2000/svg mask"`
+
+}
+
+type XsdGoPkgHasElem_Mask struct {
+	Mask *TmaskType `xml:"http://www.w3.org/2000/svg mask"`
+
 }
 
 type XsdGoPkgHasElems_Filter struct {
 	Filters []*TfilterType `xml:"http://www.w3.org/2000/svg filter"`
+
 }
 
 type XsdGoPkgHasElem_Filter struct {
 	Filter *TfilterType `xml:"http://www.w3.org/2000/svg filter"`
+
 }
 
 type XsdGoPkgHasElems_FeDistantLight struct {
 	FeDistantLights []*TfeDistantLightType `xml:"http://www.w3.org/2000/svg feDistantLight"`
+
 }
 
 type XsdGoPkgHasElem_FeDistantLight struct {
 	FeDistantLight *TfeDistantLightType `xml:"http://www.w3.org/2000/svg feDistantLight"`
+
 }
 
 type XsdGoPkgHasElem_FePointLight struct {
 	FePointLight *TfePointLightType `xml:"http://www.w3.org/2000/svg fePointLight"`
+
 }
 
 type XsdGoPkgHasElems_FePointLight struct {
 	FePointLights []*TfePointLightType `xml:"http://www.w3.org/2000/svg fePointLight"`
-}
 
-type XsdGoPkgHasElem_FeSpotLight struct {
-	FeSpotLight *TfeSpotLightType `xml:"http://www.w3.org/2000/svg feSpotLight"`
 }
 
 type XsdGoPkgHasElems_FeSpotLight struct {
 	FeSpotLights []*TfeSpotLightType `xml:"http://www.w3.org/2000/svg feSpotLight"`
+
+}
+
+type XsdGoPkgHasElem_FeSpotLight struct {
+	FeSpotLight *TfeSpotLightType `xml:"http://www.w3.org/2000/svg feSpotLight"`
+
 }
 
 type XsdGoPkgHasElem_FeBlend struct {
 	FeBlend *TfeBlendType `xml:"http://www.w3.org/2000/svg feBlend"`
+
 }
 
 type XsdGoPkgHasElems_FeBlend struct {
 	FeBlends []*TfeBlendType `xml:"http://www.w3.org/2000/svg feBlend"`
+
 }
 
 type XsdGoPkgHasElems_FeColorMatrix struct {
 	FeColorMatrixs []*TfeColorMatrixType `xml:"http://www.w3.org/2000/svg feColorMatrix"`
+
 }
 
 type XsdGoPkgHasElem_FeColorMatrix struct {
 	FeColorMatrix *TfeColorMatrixType `xml:"http://www.w3.org/2000/svg feColorMatrix"`
-}
 
-type XsdGoPkgHasElems_FeComponentTransfer struct {
-	FeComponentTransfers []*TfeComponentTransferType `xml:"http://www.w3.org/2000/svg feComponentTransfer"`
 }
 
 type XsdGoPkgHasElem_FeComponentTransfer struct {
 	FeComponentTransfer *TfeComponentTransferType `xml:"http://www.w3.org/2000/svg feComponentTransfer"`
+
 }
 
-type XsdGoPkgHasElem_FeFuncR struct {
-	FeFuncR *TfeFuncRType `xml:"http://www.w3.org/2000/svg feFuncR"`
+type XsdGoPkgHasElems_FeComponentTransfer struct {
+	FeComponentTransfers []*TfeComponentTransferType `xml:"http://www.w3.org/2000/svg feComponentTransfer"`
+
 }
 
 type XsdGoPkgHasElems_FeFuncR struct {
 	FeFuncRs []*TfeFuncRType `xml:"http://www.w3.org/2000/svg feFuncR"`
+
 }
 
-type XsdGoPkgHasElems_FeFuncG struct {
-	FeFuncGs []*TfeFuncGType `xml:"http://www.w3.org/2000/svg feFuncG"`
+type XsdGoPkgHasElem_FeFuncR struct {
+	FeFuncR *TfeFuncRType `xml:"http://www.w3.org/2000/svg feFuncR"`
+
 }
 
 type XsdGoPkgHasElem_FeFuncG struct {
 	FeFuncG *TfeFuncGType `xml:"http://www.w3.org/2000/svg feFuncG"`
+
+}
+
+type XsdGoPkgHasElems_FeFuncG struct {
+	FeFuncGs []*TfeFuncGType `xml:"http://www.w3.org/2000/svg feFuncG"`
+
 }
 
 type XsdGoPkgHasElems_FeFuncB struct {
 	FeFuncBs []*TfeFuncBType `xml:"http://www.w3.org/2000/svg feFuncB"`
+
 }
 
 type XsdGoPkgHasElem_FeFuncB struct {
 	FeFuncB *TfeFuncBType `xml:"http://www.w3.org/2000/svg feFuncB"`
-}
 
-type XsdGoPkgHasElems_FeFuncA struct {
-	FeFuncAs []*TfeFuncAType `xml:"http://www.w3.org/2000/svg feFuncA"`
 }
 
 type XsdGoPkgHasElem_FeFuncA struct {
 	FeFuncA *TfeFuncAType `xml:"http://www.w3.org/2000/svg feFuncA"`
+
+}
+
+type XsdGoPkgHasElems_FeFuncA struct {
+	FeFuncAs []*TfeFuncAType `xml:"http://www.w3.org/2000/svg feFuncA"`
+
 }
 
 type XsdGoPkgHasElems_FeComposite struct {
 	FeComposites []*TfeCompositeType `xml:"http://www.w3.org/2000/svg feComposite"`
+
 }
 
 type XsdGoPkgHasElem_FeComposite struct {
 	FeComposite *TfeCompositeType `xml:"http://www.w3.org/2000/svg feComposite"`
-}
 
-type XsdGoPkgHasElems_FeConvolveMatrix struct {
-	FeConvolveMatrixs []*TfeConvolveMatrixType `xml:"http://www.w3.org/2000/svg feConvolveMatrix"`
 }
 
 type XsdGoPkgHasElem_FeConvolveMatrix struct {
 	FeConvolveMatrix *TfeConvolveMatrixType `xml:"http://www.w3.org/2000/svg feConvolveMatrix"`
+
+}
+
+type XsdGoPkgHasElems_FeConvolveMatrix struct {
+	FeConvolveMatrixs []*TfeConvolveMatrixType `xml:"http://www.w3.org/2000/svg feConvolveMatrix"`
+
 }
 
 type XsdGoPkgHasElem_FeDiffuseLighting struct {
 	FeDiffuseLighting *TfeDiffuseLightingType `xml:"http://www.w3.org/2000/svg feDiffuseLighting"`
+
 }
 
 type XsdGoPkgHasElems_FeDiffuseLighting struct {
 	FeDiffuseLightings []*TfeDiffuseLightingType `xml:"http://www.w3.org/2000/svg feDiffuseLighting"`
+
 }
 
 type XsdGoPkgHasElem_FeDisplacementMap struct {
 	FeDisplacementMap *TfeDisplacementMapType `xml:"http://www.w3.org/2000/svg feDisplacementMap"`
+
 }
 
 type XsdGoPkgHasElems_FeDisplacementMap struct {
 	FeDisplacementMaps []*TfeDisplacementMapType `xml:"http://www.w3.org/2000/svg feDisplacementMap"`
+
 }
 
 type XsdGoPkgHasElem_FeFlood struct {
 	FeFlood *TfeFloodType `xml:"http://www.w3.org/2000/svg feFlood"`
+
 }
 
 type XsdGoPkgHasElems_FeFlood struct {
 	FeFloods []*TfeFloodType `xml:"http://www.w3.org/2000/svg feFlood"`
-}
 
-type XsdGoPkgHasElem_FeGaussianBlur struct {
-	FeGaussianBlur *TfeGaussianBlurType `xml:"http://www.w3.org/2000/svg feGaussianBlur"`
 }
 
 type XsdGoPkgHasElems_FeGaussianBlur struct {
 	FeGaussianBlurs []*TfeGaussianBlurType `xml:"http://www.w3.org/2000/svg feGaussianBlur"`
+
+}
+
+type XsdGoPkgHasElem_FeGaussianBlur struct {
+	FeGaussianBlur *TfeGaussianBlurType `xml:"http://www.w3.org/2000/svg feGaussianBlur"`
+
 }
 
 type XsdGoPkgHasElem_FeImage struct {
 	FeImage *TfeImageType `xml:"http://www.w3.org/2000/svg feImage"`
+
 }
 
 type XsdGoPkgHasElems_FeImage struct {
 	FeImages []*TfeImageType `xml:"http://www.w3.org/2000/svg feImage"`
-}
 
-type XsdGoPkgHasElems_FeMerge struct {
-	FeMerges []*TfeMergeType `xml:"http://www.w3.org/2000/svg feMerge"`
 }
 
 type XsdGoPkgHasElem_FeMerge struct {
 	FeMerge *TfeMergeType `xml:"http://www.w3.org/2000/svg feMerge"`
+
 }
 
-type XsdGoPkgHasElem_FeMergeNode struct {
-	FeMergeNode *TfeMergeNodeType `xml:"http://www.w3.org/2000/svg feMergeNode"`
+type XsdGoPkgHasElems_FeMerge struct {
+	FeMerges []*TfeMergeType `xml:"http://www.w3.org/2000/svg feMerge"`
+
 }
 
 type XsdGoPkgHasElems_FeMergeNode struct {
 	FeMergeNodes []*TfeMergeNodeType `xml:"http://www.w3.org/2000/svg feMergeNode"`
+
 }
 
-type XsdGoPkgHasElem_FeMorphology struct {
-	FeMorphology *TfeMorphologyType `xml:"http://www.w3.org/2000/svg feMorphology"`
+type XsdGoPkgHasElem_FeMergeNode struct {
+	FeMergeNode *TfeMergeNodeType `xml:"http://www.w3.org/2000/svg feMergeNode"`
+
 }
 
 type XsdGoPkgHasElems_FeMorphology struct {
 	FeMorphologies []*TfeMorphologyType `xml:"http://www.w3.org/2000/svg feMorphology"`
+
+}
+
+type XsdGoPkgHasElem_FeMorphology struct {
+	FeMorphology *TfeMorphologyType `xml:"http://www.w3.org/2000/svg feMorphology"`
+
 }
 
 type XsdGoPkgHasElem_FeOffset struct {
 	FeOffset *TfeOffsetType `xml:"http://www.w3.org/2000/svg feOffset"`
+
 }
 
 type XsdGoPkgHasElems_FeOffset struct {
 	FeOffsets []*TfeOffsetType `xml:"http://www.w3.org/2000/svg feOffset"`
-}
 
-type XsdGoPkgHasElem_FeSpecularLighting struct {
-	FeSpecularLighting *TfeSpecularLightingType `xml:"http://www.w3.org/2000/svg feSpecularLighting"`
 }
 
 type XsdGoPkgHasElems_FeSpecularLighting struct {
 	FeSpecularLightings []*TfeSpecularLightingType `xml:"http://www.w3.org/2000/svg feSpecularLighting"`
+
 }
 
-type XsdGoPkgHasElems_FeTile struct {
-	FeTiles []*TfeTileType `xml:"http://www.w3.org/2000/svg feTile"`
+type XsdGoPkgHasElem_FeSpecularLighting struct {
+	FeSpecularLighting *TfeSpecularLightingType `xml:"http://www.w3.org/2000/svg feSpecularLighting"`
+
 }
 
 type XsdGoPkgHasElem_FeTile struct {
 	FeTile *TfeTileType `xml:"http://www.w3.org/2000/svg feTile"`
+
 }
 
-type XsdGoPkgHasElem_FeTurbulence struct {
-	FeTurbulence *TfeTurbulenceType `xml:"http://www.w3.org/2000/svg feTurbulence"`
+type XsdGoPkgHasElems_FeTile struct {
+	FeTiles []*TfeTileType `xml:"http://www.w3.org/2000/svg feTile"`
+
 }
 
 type XsdGoPkgHasElems_FeTurbulence struct {
 	FeTurbulences []*TfeTurbulenceType `xml:"http://www.w3.org/2000/svg feTurbulence"`
+
+}
+
+type XsdGoPkgHasElem_FeTurbulence struct {
+	FeTurbulence *TfeTurbulenceType `xml:"http://www.w3.org/2000/svg feTurbulence"`
+
 }
 
 type XsdGoPkgHasElems_Cursor struct {
 	Cursors []*TcursorType `xml:"http://www.w3.org/2000/svg cursor"`
+
 }
 
 type XsdGoPkgHasElem_Cursor struct {
 	Cursor *TcursorType `xml:"http://www.w3.org/2000/svg cursor"`
+
 }
 
 type XsdGoPkgHasElem_A struct {
 	A *TaType `xml:"http://www.w3.org/2000/svg a"`
+
 }
 
 type XsdGoPkgHasElems_A struct {
 	As []*TaType `xml:"http://www.w3.org/2000/svg a"`
-}
 
-type XsdGoPkgHasElem_View struct {
-	View *TviewType `xml:"http://www.w3.org/2000/svg view"`
 }
 
 type XsdGoPkgHasElems_View struct {
 	Views []*TviewType `xml:"http://www.w3.org/2000/svg view"`
+
+}
+
+type XsdGoPkgHasElem_View struct {
+	View *TviewType `xml:"http://www.w3.org/2000/svg view"`
+
 }
 
 type XsdGoPkgHasElem_Script struct {
 	Script *TscriptType `xml:"http://www.w3.org/2000/svg script"`
+
 }
 
 type XsdGoPkgHasElems_Script struct {
 	Scripts []*TscriptType `xml:"http://www.w3.org/2000/svg script"`
-}
 
-type XsdGoPkgHasElem_Animate struct {
-	Animate *TanimateType `xml:"http://www.w3.org/2000/svg animate"`
 }
 
 type XsdGoPkgHasElems_Animate struct {
 	Animates []*TanimateType `xml:"http://www.w3.org/2000/svg animate"`
+
+}
+
+type XsdGoPkgHasElem_Animate struct {
+	Animate *TanimateType `xml:"http://www.w3.org/2000/svg animate"`
+
 }
 
 type XsdGoPkgHasElems_Set struct {
 	Sets []*TsetType `xml:"http://www.w3.org/2000/svg set"`
+
 }
 
 type XsdGoPkgHasElem_Set struct {
 	Set *TsetType `xml:"http://www.w3.org/2000/svg set"`
+
 }
 
 type XsdGoPkgHasElem_AnimateMotion struct {
 	AnimateMotion *TanimateMotionType `xml:"http://www.w3.org/2000/svg animateMotion"`
+
 }
 
 type XsdGoPkgHasElems_AnimateMotion struct {
 	AnimateMotions []*TanimateMotionType `xml:"http://www.w3.org/2000/svg animateMotion"`
-}
 
-type XsdGoPkgHasElems_Mpath struct {
-	Mpaths []*TmpathType `xml:"http://www.w3.org/2000/svg mpath"`
 }
 
 type XsdGoPkgHasElem_Mpath struct {
 	Mpath *TmpathType `xml:"http://www.w3.org/2000/svg mpath"`
+
+}
+
+type XsdGoPkgHasElems_Mpath struct {
+	Mpaths []*TmpathType `xml:"http://www.w3.org/2000/svg mpath"`
+
 }
 
 type XsdGoPkgHasElem_AnimateColor struct {
 	AnimateColor *TanimateColorType `xml:"http://www.w3.org/2000/svg animateColor"`
+
 }
 
 type XsdGoPkgHasElems_AnimateColor struct {
 	AnimateColors []*TanimateColorType `xml:"http://www.w3.org/2000/svg animateColor"`
+
 }
 
 type XsdGoPkgHasElem_AnimateTransform struct {
 	AnimateTransform *TanimateTransformType `xml:"http://www.w3.org/2000/svg animateTransform"`
+
 }
 
 type XsdGoPkgHasElems_AnimateTransform struct {
 	AnimateTransforms []*TanimateTransformType `xml:"http://www.w3.org/2000/svg animateTransform"`
+
 }
 
 type XsdGoPkgHasElems_Font struct {
 	Fonts []*TfontType `xml:"http://www.w3.org/2000/svg font"`
+
 }
 
 type XsdGoPkgHasElem_Font struct {
 	Font *TfontType `xml:"http://www.w3.org/2000/svg font"`
-}
 
-type XsdGoPkgHasElem_Glyph struct {
-	Glyph *TglyphType `xml:"http://www.w3.org/2000/svg glyph"`
 }
 
 type XsdGoPkgHasElems_Glyph struct {
 	Glyphs []*TglyphType `xml:"http://www.w3.org/2000/svg glyph"`
+
+}
+
+type XsdGoPkgHasElem_Glyph struct {
+	Glyph *TglyphType `xml:"http://www.w3.org/2000/svg glyph"`
+
 }
 
 type XsdGoPkgHasElem_MissingGlyph struct {
 	MissingGlyph *TmissingGlyphType `xml:"http://www.w3.org/2000/svg missing-glyph"`
+
 }
 
 type XsdGoPkgHasElems_MissingGlyph struct {
 	MissingGlyphs []*TmissingGlyphType `xml:"http://www.w3.org/2000/svg missing-glyph"`
-}
 
-type XsdGoPkgHasElems_Hkern struct {
-	Hkerns []*ThkernType `xml:"http://www.w3.org/2000/svg hkern"`
 }
 
 type XsdGoPkgHasElem_Hkern struct {
 	Hkern *ThkernType `xml:"http://www.w3.org/2000/svg hkern"`
+
+}
+
+type XsdGoPkgHasElems_Hkern struct {
+	Hkerns []*ThkernType `xml:"http://www.w3.org/2000/svg hkern"`
+
 }
 
 type XsdGoPkgHasElem_Vkern struct {
 	Vkern *TvkernType `xml:"http://www.w3.org/2000/svg vkern"`
+
 }
 
 type XsdGoPkgHasElems_Vkern struct {
 	Vkerns []*TvkernType `xml:"http://www.w3.org/2000/svg vkern"`
+
 }
 
 type XsdGoPkgHasElem_FontFace struct {
 	FontFace *TfontFaceType `xml:"http://www.w3.org/2000/svg font-face"`
+
 }
 
 type XsdGoPkgHasElems_FontFace struct {
 	FontFaces []*TfontFaceType `xml:"http://www.w3.org/2000/svg font-face"`
+
 }
 
 type XsdGoPkgHasElem_FontFaceSrc struct {
 	FontFaceSrc *TfontFaceSrcType `xml:"http://www.w3.org/2000/svg font-face-src"`
+
 }
 
 type XsdGoPkgHasElems_FontFaceSrc struct {
 	FontFaceSrcs []*TfontFaceSrcType `xml:"http://www.w3.org/2000/svg font-face-src"`
+
 }
 
 type XsdGoPkgHasElems_FontFaceUri struct {
 	FontFaceUris []*TfontFaceUriType `xml:"http://www.w3.org/2000/svg font-face-uri"`
+
 }
 
 type XsdGoPkgHasElem_FontFaceUri struct {
 	FontFaceUri *TfontFaceUriType `xml:"http://www.w3.org/2000/svg font-face-uri"`
+
 }
 
 type XsdGoPkgHasElem_FontFaceFormat struct {
 	FontFaceFormat *TfontFaceFormatType `xml:"http://www.w3.org/2000/svg font-face-format"`
+
 }
 
 type XsdGoPkgHasElems_FontFaceFormat struct {
 	FontFaceFormats []*TfontFaceFormatType `xml:"http://www.w3.org/2000/svg font-face-format"`
-}
 
-type XsdGoPkgHasElem_FontFaceName struct {
-	FontFaceName *TfontFaceNameType `xml:"http://www.w3.org/2000/svg font-face-name"`
 }
 
 type XsdGoPkgHasElems_FontFaceName struct {
 	FontFaceNames []*TfontFaceNameType `xml:"http://www.w3.org/2000/svg font-face-name"`
+
 }
 
-type XsdGoPkgHasElems_DefinitionSrc struct {
-	DefinitionSrcs []*TdefinitionSrcType `xml:"http://www.w3.org/2000/svg definition-src"`
+type XsdGoPkgHasElem_FontFaceName struct {
+	FontFaceName *TfontFaceNameType `xml:"http://www.w3.org/2000/svg font-face-name"`
+
 }
 
 type XsdGoPkgHasElem_DefinitionSrc struct {
 	DefinitionSrc *TdefinitionSrcType `xml:"http://www.w3.org/2000/svg definition-src"`
+
+}
+
+type XsdGoPkgHasElems_DefinitionSrc struct {
+	DefinitionSrcs []*TdefinitionSrcType `xml:"http://www.w3.org/2000/svg definition-src"`
+
 }
 
 type XsdGoPkgHasElems_Metadata struct {
 	Metadatas []*TmetadataType `xml:"http://www.w3.org/2000/svg metadata"`
+
 }
 
 type XsdGoPkgHasElem_Metadata struct {
 	Metadata *TmetadataType `xml:"http://www.w3.org/2000/svg metadata"`
-}
 
-type XsdGoPkgHasElem_ForeignObject struct {
-	ForeignObject *TforeignObjectType `xml:"http://www.w3.org/2000/svg foreignObject"`
 }
 
 type XsdGoPkgHasElems_ForeignObject struct {
 	ForeignObjects []*TforeignObjectType `xml:"http://www.w3.org/2000/svg foreignObject"`
+
+}
+
+type XsdGoPkgHasElem_ForeignObject struct {
+	ForeignObject *TforeignObjectType `xml:"http://www.w3.org/2000/svg foreignObject"`
+
 }
 
 type XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_ struct {
 	Desc *TdescType `xml:"http://www.w3.org/2000/svg desc"`
+
 }
 
 type XsdGoPkgHasElems_descalldescTitleMetadataschema_Desc_TdescType_ struct {
 	Descs []*TdescType `xml:"http://www.w3.org/2000/svg desc"`
-}
 
-type XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_ struct {
-	Title *TtitleType `xml:"http://www.w3.org/2000/svg title"`
 }
 
 type XsdGoPkgHasElems_titlealldescTitleMetadataschema_Title_TtitleType_ struct {
 	Titles []*TtitleType `xml:"http://www.w3.org/2000/svg title"`
+
+}
+
+type XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_ struct {
+	Title *TtitleType `xml:"http://www.w3.org/2000/svg title"`
+
 }
 
 type XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_ struct {
 	Metadata *TmetadataType `xml:"http://www.w3.org/2000/svg metadata"`
+
 }
 
 type XsdGoPkgHasElems_metadataalldescTitleMetadataschema_Metadata_TmetadataType_ struct {
 	Metadatas []*TmetadataType `xml:"http://www.w3.org/2000/svg metadata"`
+
 }
 
 //	A bit simpler than the DTD, but see commented-out alternative

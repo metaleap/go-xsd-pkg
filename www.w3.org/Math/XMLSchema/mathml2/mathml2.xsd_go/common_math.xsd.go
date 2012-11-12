@@ -123,12 +123,14 @@ type TmathType struct {
 
 }
 
-type XsdGoPkgHasElem_Math struct {
-	Math *TmathType `xml:"http://www.w3.org/1998/Math/MathML math"`
-}
-
 type XsdGoPkgHasElems_Math struct {
 	Maths []*TmathType `xml:"http://www.w3.org/1998/Math/MathML math"`
+
+}
+
+type XsdGoPkgHasElem_Math struct {
+	Math *TmathType `xml:"http://www.w3.org/1998/Math/MathML math"`
+
 }
 
 type XsdGoPkgHasGroup_PresentationExprClass struct {

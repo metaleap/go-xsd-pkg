@@ -198,90 +198,112 @@ type TdegreeType struct {
 
 type XsdGoPkgHasElem_Apply struct {
 	Apply *TapplyType `xml:"http://www.w3.org/1998/Math/MathML apply"`
+
 }
 
 type XsdGoPkgHasElems_Apply struct {
 	Applies []*TapplyType `xml:"http://www.w3.org/1998/Math/MathML apply"`
+
 }
 
 type XsdGoPkgHasElems_Interval struct {
 	Intervals []*TintervalType `xml:"http://www.w3.org/1998/Math/MathML interval"`
+
 }
 
 type XsdGoPkgHasElem_Interval struct {
 	Interval *TintervalType `xml:"http://www.w3.org/1998/Math/MathML interval"`
-}
 
-type XsdGoPkgHasElems_Inverse struct {
-	Inverses []*TinverseType `xml:"http://www.w3.org/1998/Math/MathML inverse"`
 }
 
 type XsdGoPkgHasElem_Inverse struct {
 	Inverse *TinverseType `xml:"http://www.w3.org/1998/Math/MathML inverse"`
+
+}
+
+type XsdGoPkgHasElems_Inverse struct {
+	Inverses []*TinverseType `xml:"http://www.w3.org/1998/Math/MathML inverse"`
+
 }
 
 type XsdGoPkgHasElem_Condition struct {
 	Condition *TconditionType `xml:"http://www.w3.org/1998/Math/MathML condition"`
+
 }
 
 type XsdGoPkgHasElems_Condition struct {
 	Conditions []*TconditionType `xml:"http://www.w3.org/1998/Math/MathML condition"`
-}
 
-type XsdGoPkgHasElems_Declare struct {
-	Declares []*TdeclareType `xml:"http://www.w3.org/1998/Math/MathML declare"`
 }
 
 type XsdGoPkgHasElem_Declare struct {
 	Declare *TdeclareType `xml:"http://www.w3.org/1998/Math/MathML declare"`
+
+}
+
+type XsdGoPkgHasElems_Declare struct {
+	Declares []*TdeclareType `xml:"http://www.w3.org/1998/Math/MathML declare"`
+
 }
 
 type XsdGoPkgHasElem_Lambda struct {
 	Lambda *TlambdaType `xml:"http://www.w3.org/1998/Math/MathML lambda"`
+
 }
 
 type XsdGoPkgHasElems_Lambda struct {
 	Lambdas []*TlambdaType `xml:"http://www.w3.org/1998/Math/MathML lambda"`
-}
 
-type XsdGoPkgHasElem_Otherwise struct {
-	Otherwise *TotherwiseType `xml:"http://www.w3.org/1998/Math/MathML otherwise"`
 }
 
 type XsdGoPkgHasElems_Otherwise struct {
 	Otherwises []*TotherwiseType `xml:"http://www.w3.org/1998/Math/MathML otherwise"`
+
 }
 
-type XsdGoPkgHasElems_Piece struct {
-	Pieces []*TpieceType `xml:"http://www.w3.org/1998/Math/MathML piece"`
+type XsdGoPkgHasElem_Otherwise struct {
+	Otherwise *TotherwiseType `xml:"http://www.w3.org/1998/Math/MathML otherwise"`
+
 }
 
 type XsdGoPkgHasElem_Piece struct {
 	Piece *TpieceType `xml:"http://www.w3.org/1998/Math/MathML piece"`
+
 }
 
-type XsdGoPkgHasElems_Piecewise struct {
-	Piecewises []*TpiecewiseType `xml:"http://www.w3.org/1998/Math/MathML piecewise"`
+type XsdGoPkgHasElems_Piece struct {
+	Pieces []*TpieceType `xml:"http://www.w3.org/1998/Math/MathML piece"`
+
 }
 
 type XsdGoPkgHasElem_Piecewise struct {
 	Piecewise *TpiecewiseType `xml:"http://www.w3.org/1998/Math/MathML piecewise"`
+
 }
 
-type XsdGoPkgHasElems_Bvar struct {
-	Bvars []*TbvarType `xml:"http://www.w3.org/1998/Math/MathML bvar"`
+type XsdGoPkgHasElems_Piecewise struct {
+	Piecewises []*TpiecewiseType `xml:"http://www.w3.org/1998/Math/MathML piecewise"`
+
 }
 
 type XsdGoPkgHasElem_Bvar struct {
 	Bvar *TbvarType `xml:"http://www.w3.org/1998/Math/MathML bvar"`
+
 }
 
-type XsdGoPkgHasElems_Degree struct {
-	Degrees []*TdegreeType `xml:"http://www.w3.org/1998/Math/MathML degree"`
+type XsdGoPkgHasElems_Bvar struct {
+	Bvars []*TbvarType `xml:"http://www.w3.org/1998/Math/MathML bvar"`
+
 }
 
 type XsdGoPkgHasElem_Degree struct {
 	Degree *TdegreeType `xml:"http://www.w3.org/1998/Math/MathML degree"`
+
+}
+
+type XsdGoPkgHasElems_Degree struct {
+	Degrees []*TdegreeType `xml:"http://www.w3.org/1998/Math/MathML degree"`
+
 }
 
 type XsdGoPkgHasGroup_ApplyContent struct {

@@ -67,26 +67,32 @@ type TtextType struct {
 
 type XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_ struct {
 	Names []xsdt.String `xml:"http://www.w3.org/2005/Atom name"`
+
 }
 
 type XsdGoPkgHasElem_namechoicepersonTypeschema_Name_XsdtString_ struct {
 	Name xsdt.String `xml:"http://www.w3.org/2005/Atom name"`
-}
 
-type XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_ struct {
-	Uris []*TuriType `xml:"http://www.w3.org/2005/Atom uri"`
 }
 
 type XsdGoPkgHasElem_urichoicepersonTypeschema_Uri_TuriType_ struct {
 	Uri *TuriType `xml:"http://www.w3.org/2005/Atom uri"`
+
+}
+
+type XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_ struct {
+	Uris []*TuriType `xml:"http://www.w3.org/2005/Atom uri"`
+
 }
 
 type XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_ struct {
 	Emails []TemailType `xml:"http://www.w3.org/2005/Atom email"`
+
 }
 
 type XsdGoPkgHasElem_emailchoicepersonTypeschema_Email_TemailType_ struct {
 	Email TemailType `xml:"http://www.w3.org/2005/Atom email"`
+
 }
 
 //	The Atom person construct is defined in section 3.2 of the format spec.
@@ -101,108 +107,134 @@ type TpersonType struct {
 
 }
 
-type XsdGoPkgHasElems_authorchoicefeedTypeschema_Author_TpersonType_ struct {
-	Authors []*TpersonType `xml:"http://www.w3.org/2005/Atom author"`
-}
-
 type XsdGoPkgHasElem_authorchoicefeedTypeschema_Author_TpersonType_ struct {
 	Author *TpersonType `xml:"http://www.w3.org/2005/Atom author"`
+
 }
 
-type XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_ struct {
-	Categories []*TcategoryType `xml:"http://www.w3.org/2005/Atom category"`
+type XsdGoPkgHasElems_authorchoicefeedTypeschema_Author_TpersonType_ struct {
+	Authors []*TpersonType `xml:"http://www.w3.org/2005/Atom author"`
+
 }
 
 type XsdGoPkgHasElem_categorychoicefeedTypeschema_Category_TcategoryType_ struct {
 	Category *TcategoryType `xml:"http://www.w3.org/2005/Atom category"`
+
 }
 
-type XsdGoPkgHasElems_contributorchoicefeedTypeschema_Contributor_TpersonType_ struct {
-	Contributors []*TpersonType `xml:"http://www.w3.org/2005/Atom contributor"`
+type XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_ struct {
+	Categories []*TcategoryType `xml:"http://www.w3.org/2005/Atom category"`
+
 }
 
 type XsdGoPkgHasElem_contributorchoicefeedTypeschema_Contributor_TpersonType_ struct {
 	Contributor *TpersonType `xml:"http://www.w3.org/2005/Atom contributor"`
+
 }
 
-type XsdGoPkgHasElem_generatorchoicefeedTypeschema_Generator_TgeneratorType_ struct {
-	Generator *TgeneratorType `xml:"http://www.w3.org/2005/Atom generator"`
+type XsdGoPkgHasElems_contributorchoicefeedTypeschema_Contributor_TpersonType_ struct {
+	Contributors []*TpersonType `xml:"http://www.w3.org/2005/Atom contributor"`
+
 }
 
 type XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_ struct {
 	Generators []*TgeneratorType `xml:"http://www.w3.org/2005/Atom generator"`
+
 }
 
-type XsdGoPkgHasElem_iconchoicefeedTypeschema_Icon_TiconType_ struct {
-	Icon *TiconType `xml:"http://www.w3.org/2005/Atom icon"`
+type XsdGoPkgHasElem_generatorchoicefeedTypeschema_Generator_TgeneratorType_ struct {
+	Generator *TgeneratorType `xml:"http://www.w3.org/2005/Atom generator"`
+
 }
 
 type XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_ struct {
 	Icons []*TiconType `xml:"http://www.w3.org/2005/Atom icon"`
+
+}
+
+type XsdGoPkgHasElem_iconchoicefeedTypeschema_Icon_TiconType_ struct {
+	Icon *TiconType `xml:"http://www.w3.org/2005/Atom icon"`
+
 }
 
 type XsdGoPkgHasElem_idchoicefeedTypeschema_Id_TidType_ struct {
 	Id *TidType `xml:"http://www.w3.org/2005/Atom id"`
+
 }
 
 type XsdGoPkgHasElems_idchoicefeedTypeschema_Id_TidType_ struct {
 	Ids []*TidType `xml:"http://www.w3.org/2005/Atom id"`
+
 }
 
 type XsdGoPkgHasElems_linkchoicefeedTypeschema_Link_TlinkType_ struct {
 	Links []*TlinkType `xml:"http://www.w3.org/2005/Atom link"`
+
 }
 
 type XsdGoPkgHasElem_linkchoicefeedTypeschema_Link_TlinkType_ struct {
 	Link *TlinkType `xml:"http://www.w3.org/2005/Atom link"`
+
 }
 
 type XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_ struct {
 	Logos []*TlogoType `xml:"http://www.w3.org/2005/Atom logo"`
+
 }
 
 type XsdGoPkgHasElem_logochoicefeedTypeschema_Logo_TlogoType_ struct {
 	Logo *TlogoType `xml:"http://www.w3.org/2005/Atom logo"`
-}
 
-type XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_ struct {
-	Rightses []*TtextType `xml:"http://www.w3.org/2005/Atom rights"`
 }
 
 type XsdGoPkgHasElem_rightschoicefeedTypeschema_Rights_TtextType_ struct {
 	Rights *TtextType `xml:"http://www.w3.org/2005/Atom rights"`
+
+}
+
+type XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_ struct {
+	Rightses []*TtextType `xml:"http://www.w3.org/2005/Atom rights"`
+
 }
 
 type XsdGoPkgHasElem_subtitlechoicefeedTypeschema_Subtitle_TtextType_ struct {
 	Subtitle *TtextType `xml:"http://www.w3.org/2005/Atom subtitle"`
+
 }
 
 type XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_ struct {
 	Subtitles []*TtextType `xml:"http://www.w3.org/2005/Atom subtitle"`
-}
 
-type XsdGoPkgHasElems_titlechoicefeedTypeschema_Title_TtextType_ struct {
-	Titles []*TtextType `xml:"http://www.w3.org/2005/Atom title"`
 }
 
 type XsdGoPkgHasElem_titlechoicefeedTypeschema_Title_TtextType_ struct {
 	Title *TtextType `xml:"http://www.w3.org/2005/Atom title"`
+
+}
+
+type XsdGoPkgHasElems_titlechoicefeedTypeschema_Title_TtextType_ struct {
+	Titles []*TtextType `xml:"http://www.w3.org/2005/Atom title"`
+
 }
 
 type XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_ struct {
 	Updateds []*TdateTimeType `xml:"http://www.w3.org/2005/Atom updated"`
+
 }
 
 type XsdGoPkgHasElem_updatedchoicefeedTypeschema_Updated_TdateTimeType_ struct {
 	Updated *TdateTimeType `xml:"http://www.w3.org/2005/Atom updated"`
-}
 
-type XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_ struct {
-	Entries []*TentryType `xml:"http://www.w3.org/2005/Atom entry"`
 }
 
 type XsdGoPkgHasElem_entrychoicefeedTypeschema_Entry_TentryType_ struct {
 	Entry *TentryType `xml:"http://www.w3.org/2005/Atom entry"`
+
+}
+
+type XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_ struct {
+	Entries []*TentryType `xml:"http://www.w3.org/2005/Atom entry"`
+
 }
 
 //	The Atom feed construct is defined in section 4.1.1 of the format spec.
@@ -239,98 +271,122 @@ type TfeedType struct {
 
 type XsdGoPkgHasElem_authorchoiceentryTypeschema_Author_TpersonType_ struct {
 	Author *TpersonType `xml:"http://www.w3.org/2005/Atom author"`
+
 }
 
 type XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_ struct {
 	Authors []*TpersonType `xml:"http://www.w3.org/2005/Atom author"`
-}
 
-type XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_ struct {
-	Categories []*TcategoryType `xml:"http://www.w3.org/2005/Atom category"`
 }
 
 type XsdGoPkgHasElem_categorychoiceentryTypeschema_Category_TcategoryType_ struct {
 	Category *TcategoryType `xml:"http://www.w3.org/2005/Atom category"`
+
 }
 
-type XsdGoPkgHasElem_contentchoiceentryTypeschema_Content_TcontentType_ struct {
-	Content *TcontentType `xml:"http://www.w3.org/2005/Atom content"`
+type XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_ struct {
+	Categories []*TcategoryType `xml:"http://www.w3.org/2005/Atom category"`
+
 }
 
 type XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_ struct {
 	Contents []*TcontentType `xml:"http://www.w3.org/2005/Atom content"`
+
 }
 
-type XsdGoPkgHasElem_contributorchoiceentryTypeschema_Contributor_TpersonType_ struct {
-	Contributor *TpersonType `xml:"http://www.w3.org/2005/Atom contributor"`
+type XsdGoPkgHasElem_contentchoiceentryTypeschema_Content_TcontentType_ struct {
+	Content *TcontentType `xml:"http://www.w3.org/2005/Atom content"`
+
 }
 
 type XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_ struct {
 	Contributors []*TpersonType `xml:"http://www.w3.org/2005/Atom contributor"`
+
 }
 
-type XsdGoPkgHasElem_idchoiceentryTypeschema_Id_TidType_ struct {
-	Id *TidType `xml:"http://www.w3.org/2005/Atom id"`
+type XsdGoPkgHasElem_contributorchoiceentryTypeschema_Contributor_TpersonType_ struct {
+	Contributor *TpersonType `xml:"http://www.w3.org/2005/Atom contributor"`
+
 }
 
 type XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_ struct {
 	Ids []*TidType `xml:"http://www.w3.org/2005/Atom id"`
+
 }
 
-type XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_ struct {
-	Links []*TlinkType `xml:"http://www.w3.org/2005/Atom link"`
+type XsdGoPkgHasElem_idchoiceentryTypeschema_Id_TidType_ struct {
+	Id *TidType `xml:"http://www.w3.org/2005/Atom id"`
+
 }
 
 type XsdGoPkgHasElem_linkchoiceentryTypeschema_Link_TlinkType_ struct {
 	Link *TlinkType `xml:"http://www.w3.org/2005/Atom link"`
+
 }
 
-type XsdGoPkgHasElem_publishedchoiceentryTypeschema_Published_TdateTimeType_ struct {
-	Published *TdateTimeType `xml:"http://www.w3.org/2005/Atom published"`
+type XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_ struct {
+	Links []*TlinkType `xml:"http://www.w3.org/2005/Atom link"`
+
 }
 
 type XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_ struct {
 	Publisheds []*TdateTimeType `xml:"http://www.w3.org/2005/Atom published"`
+
+}
+
+type XsdGoPkgHasElem_publishedchoiceentryTypeschema_Published_TdateTimeType_ struct {
+	Published *TdateTimeType `xml:"http://www.w3.org/2005/Atom published"`
+
 }
 
 type XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_ struct {
 	Rightses []*TtextType `xml:"http://www.w3.org/2005/Atom rights"`
+
 }
 
 type XsdGoPkgHasElem_rightschoiceentryTypeschema_Rights_TtextType_ struct {
 	Rights *TtextType `xml:"http://www.w3.org/2005/Atom rights"`
+
 }
 
 type XsdGoPkgHasElem_sourcechoiceentryTypeschema_Source_TtextType_ struct {
 	Source *TtextType `xml:"http://www.w3.org/2005/Atom source"`
+
 }
 
 type XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_ struct {
 	Sources []*TtextType `xml:"http://www.w3.org/2005/Atom source"`
-}
 
-type XsdGoPkgHasElem_summarychoiceentryTypeschema_Summary_TtextType_ struct {
-	Summary *TtextType `xml:"http://www.w3.org/2005/Atom summary"`
 }
 
 type XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_ struct {
 	Summaries []*TtextType `xml:"http://www.w3.org/2005/Atom summary"`
+
+}
+
+type XsdGoPkgHasElem_summarychoiceentryTypeschema_Summary_TtextType_ struct {
+	Summary *TtextType `xml:"http://www.w3.org/2005/Atom summary"`
+
 }
 
 type XsdGoPkgHasElem_titlechoiceentryTypeschema_Title_TtextType_ struct {
 	Title *TtextType `xml:"http://www.w3.org/2005/Atom title"`
+
 }
 
 type XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_ struct {
 	Titles []*TtextType `xml:"http://www.w3.org/2005/Atom title"`
+
 }
 
 type XsdGoPkgHasElems_updatedchoiceentryTypeschema_Updated_TdateTimeType_ struct {
 	Updateds []*TdateTimeType `xml:"http://www.w3.org/2005/Atom updated"`
+
 }
 
 type XsdGoPkgHasElem_updatedchoiceentryTypeschema_Updated_TdateTimeType_ struct {
 	Updated *TdateTimeType `xml:"http://www.w3.org/2005/Atom updated"`
+
 }
 
 //	The Atom entry construct is defined in section 4.1.2 of the format spec.
@@ -399,11 +455,11 @@ type XsdGoPkgHasAttr_Label_XsdtString_ struct {
 type TcategoryType struct {
 	XsdGoPkgHasAtts_CommonAttributes
 
-	XsdGoPkgHasAttr_Term_XsdtString_
+	XsdGoPkgHasAttr_Label_XsdtString_
 
 	XsdGoPkgHasAttr_Scheme_XsdtAnyURI_
 
-	XsdGoPkgHasAttr_Label_XsdtString_
+	XsdGoPkgHasAttr_Term_XsdtString_
 
 }
 
@@ -469,13 +525,13 @@ type TlinkType struct {
 
 	XsdGoPkgHasAtts_CommonAttributes
 
-	XsdGoPkgHasAttr_Length_XsdtPositiveInteger_
-
-	XsdGoPkgHasAttr_Rel_XsdtString_
-
 	XsdGoPkgHasAttr_Title_XsdtString_
 
 	XsdGoPkgHasAttr_Hreflang_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Length_XsdtPositiveInteger_
+
+	XsdGoPkgHasAttr_Rel_XsdtString_
 
 	XsdGoPkgHasAttr_Href_XsdtAnyURI_
 
@@ -489,100 +545,124 @@ type TlogoType struct {
 
 }
 
-type XsdGoPkgHasElem_authorchoicesourceTypeschema_Author_TpersonType_ struct {
-	Author *TpersonType `xml:"http://www.w3.org/2005/Atom author"`
-}
-
 type XsdGoPkgHasElems_authorchoicesourceTypeschema_Author_TpersonType_ struct {
 	Authors []*TpersonType `xml:"http://www.w3.org/2005/Atom author"`
+
+}
+
+type XsdGoPkgHasElem_authorchoicesourceTypeschema_Author_TpersonType_ struct {
+	Author *TpersonType `xml:"http://www.w3.org/2005/Atom author"`
+
 }
 
 type XsdGoPkgHasElems_categorychoicesourceTypeschema_Category_TcategoryType_ struct {
 	Categories []*TcategoryType `xml:"http://www.w3.org/2005/Atom category"`
+
 }
 
 type XsdGoPkgHasElem_categorychoicesourceTypeschema_Category_TcategoryType_ struct {
 	Category *TcategoryType `xml:"http://www.w3.org/2005/Atom category"`
+
 }
 
 type XsdGoPkgHasElems_contributorchoicesourceTypeschema_Contributor_TpersonType_ struct {
 	Contributors []*TpersonType `xml:"http://www.w3.org/2005/Atom contributor"`
+
 }
 
 type XsdGoPkgHasElem_contributorchoicesourceTypeschema_Contributor_TpersonType_ struct {
 	Contributor *TpersonType `xml:"http://www.w3.org/2005/Atom contributor"`
+
 }
 
 type XsdGoPkgHasElem_generatorchoicesourceTypeschema_Generator_TgeneratorType_ struct {
 	Generator *TgeneratorType `xml:"http://www.w3.org/2005/Atom generator"`
+
 }
 
 type XsdGoPkgHasElems_generatorchoicesourceTypeschema_Generator_TgeneratorType_ struct {
 	Generators []*TgeneratorType `xml:"http://www.w3.org/2005/Atom generator"`
+
 }
 
 type XsdGoPkgHasElem_iconchoicesourceTypeschema_Icon_TiconType_ struct {
 	Icon *TiconType `xml:"http://www.w3.org/2005/Atom icon"`
+
 }
 
 type XsdGoPkgHasElems_iconchoicesourceTypeschema_Icon_TiconType_ struct {
 	Icons []*TiconType `xml:"http://www.w3.org/2005/Atom icon"`
+
 }
 
 type XsdGoPkgHasElems_idchoicesourceTypeschema_Id_TidType_ struct {
 	Ids []*TidType `xml:"http://www.w3.org/2005/Atom id"`
+
 }
 
 type XsdGoPkgHasElem_idchoicesourceTypeschema_Id_TidType_ struct {
 	Id *TidType `xml:"http://www.w3.org/2005/Atom id"`
-}
 
-type XsdGoPkgHasElem_linkchoicesourceTypeschema_Link_TlinkType_ struct {
-	Link *TlinkType `xml:"http://www.w3.org/2005/Atom link"`
 }
 
 type XsdGoPkgHasElems_linkchoicesourceTypeschema_Link_TlinkType_ struct {
 	Links []*TlinkType `xml:"http://www.w3.org/2005/Atom link"`
+
+}
+
+type XsdGoPkgHasElem_linkchoicesourceTypeschema_Link_TlinkType_ struct {
+	Link *TlinkType `xml:"http://www.w3.org/2005/Atom link"`
+
 }
 
 type XsdGoPkgHasElems_logochoicesourceTypeschema_Logo_TlogoType_ struct {
 	Logos []*TlogoType `xml:"http://www.w3.org/2005/Atom logo"`
+
 }
 
 type XsdGoPkgHasElem_logochoicesourceTypeschema_Logo_TlogoType_ struct {
 	Logo *TlogoType `xml:"http://www.w3.org/2005/Atom logo"`
-}
 
-type XsdGoPkgHasElems_rightschoicesourceTypeschema_Rights_TtextType_ struct {
-	Rightses []*TtextType `xml:"http://www.w3.org/2005/Atom rights"`
 }
 
 type XsdGoPkgHasElem_rightschoicesourceTypeschema_Rights_TtextType_ struct {
 	Rights *TtextType `xml:"http://www.w3.org/2005/Atom rights"`
+
 }
 
-type XsdGoPkgHasElem_subtitlechoicesourceTypeschema_Subtitle_TtextType_ struct {
-	Subtitle *TtextType `xml:"http://www.w3.org/2005/Atom subtitle"`
+type XsdGoPkgHasElems_rightschoicesourceTypeschema_Rights_TtextType_ struct {
+	Rightses []*TtextType `xml:"http://www.w3.org/2005/Atom rights"`
+
 }
 
 type XsdGoPkgHasElems_subtitlechoicesourceTypeschema_Subtitle_TtextType_ struct {
 	Subtitles []*TtextType `xml:"http://www.w3.org/2005/Atom subtitle"`
+
+}
+
+type XsdGoPkgHasElem_subtitlechoicesourceTypeschema_Subtitle_TtextType_ struct {
+	Subtitle *TtextType `xml:"http://www.w3.org/2005/Atom subtitle"`
+
 }
 
 type XsdGoPkgHasElems_titlechoicesourceTypeschema_Title_TtextType_ struct {
 	Titles []*TtextType `xml:"http://www.w3.org/2005/Atom title"`
+
 }
 
 type XsdGoPkgHasElem_titlechoicesourceTypeschema_Title_TtextType_ struct {
 	Title *TtextType `xml:"http://www.w3.org/2005/Atom title"`
+
 }
 
 type XsdGoPkgHasElems_updatedchoicesourceTypeschema_Updated_TdateTimeType_ struct {
 	Updateds []*TdateTimeType `xml:"http://www.w3.org/2005/Atom updated"`
+
 }
 
 type XsdGoPkgHasElem_updatedchoicesourceTypeschema_Updated_TdateTimeType_ struct {
 	Updated *TdateTimeType `xml:"http://www.w3.org/2005/Atom updated"`
+
 }
 
 //	The Atom source construct is defined in section 4.2.11 of the format spec.
@@ -629,18 +709,22 @@ type TdateTimeType struct {
 
 }
 
-type XsdGoPkgHasElem_Feed struct {
-	Feed *TfeedType `xml:"http://www.w3.org/2005/Atom feed"`
-}
-
 type XsdGoPkgHasElems_Feed struct {
 	Feeds []*TfeedType `xml:"http://www.w3.org/2005/Atom feed"`
+
+}
+
+type XsdGoPkgHasElem_Feed struct {
+	Feed *TfeedType `xml:"http://www.w3.org/2005/Atom feed"`
+
 }
 
 type XsdGoPkgHasElems_Entry struct {
 	Entries []*TentryType `xml:"http://www.w3.org/2005/Atom entry"`
+
 }
 
 type XsdGoPkgHasElem_Entry struct {
 	Entry *TentryType `xml:"http://www.w3.org/2005/Atom entry"`
+
 }

@@ -24,228 +24,284 @@ type TlogbaseType struct {
 
 }
 
-type XsdGoPkgHasElem_Exp struct {
-	Exp *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML exp"`
-}
-
 type XsdGoPkgHasElems_Exp struct {
 	Exps []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML exp"`
+
+}
+
+type XsdGoPkgHasElem_Exp struct {
+	Exp *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML exp"`
+
 }
 
 type XsdGoPkgHasElems_Ln struct {
 	Lns []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML ln"`
+
 }
 
 type XsdGoPkgHasElem_Ln struct {
 	Ln *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML ln"`
+
 }
 
 type XsdGoPkgHasElems_Log struct {
 	Logs []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML log"`
+
 }
 
 type XsdGoPkgHasElem_Log struct {
 	Log *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML log"`
-}
 
-type XsdGoPkgHasElems_Logbase struct {
-	Logbases []*TlogbaseType `xml:"http://www.w3.org/1998/Math/MathML logbase"`
 }
 
 type XsdGoPkgHasElem_Logbase struct {
 	Logbase *TlogbaseType `xml:"http://www.w3.org/1998/Math/MathML logbase"`
+
 }
 
-type XsdGoPkgHasElem_Sin struct {
-	Sin *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sin"`
+type XsdGoPkgHasElems_Logbase struct {
+	Logbases []*TlogbaseType `xml:"http://www.w3.org/1998/Math/MathML logbase"`
+
 }
 
 type XsdGoPkgHasElems_Sin struct {
 	Sins []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sin"`
+
 }
 
-type XsdGoPkgHasElem_Cos struct {
-	Cos *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cos"`
+type XsdGoPkgHasElem_Sin struct {
+	Sin *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sin"`
+
 }
 
 type XsdGoPkgHasElems_Cos struct {
 	Coses []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cos"`
+
+}
+
+type XsdGoPkgHasElem_Cos struct {
+	Cos *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cos"`
+
 }
 
 type XsdGoPkgHasElems_Tan struct {
 	Tans []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML tan"`
+
 }
 
 type XsdGoPkgHasElem_Tan struct {
 	Tan *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML tan"`
-}
 
-type XsdGoPkgHasElem_Sec struct {
-	Sec *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sec"`
 }
 
 type XsdGoPkgHasElems_Sec struct {
 	Secs []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sec"`
+
 }
 
-type XsdGoPkgHasElem_Csc struct {
-	Csc *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML csc"`
+type XsdGoPkgHasElem_Sec struct {
+	Sec *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sec"`
+
 }
 
 type XsdGoPkgHasElems_Csc struct {
 	Cscs []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML csc"`
+
 }
 
-type XsdGoPkgHasElems_Cot struct {
-	Cots []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cot"`
+type XsdGoPkgHasElem_Csc struct {
+	Csc *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML csc"`
+
 }
 
 type XsdGoPkgHasElem_Cot struct {
 	Cot *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cot"`
+
+}
+
+type XsdGoPkgHasElems_Cot struct {
+	Cots []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cot"`
+
 }
 
 type XsdGoPkgHasElems_Arcsin struct {
 	Arcsins []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsin"`
+
 }
 
 type XsdGoPkgHasElem_Arcsin struct {
 	Arcsin *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsin"`
+
 }
 
 type XsdGoPkgHasElems_Arccos struct {
 	Arccoses []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccos"`
+
 }
 
 type XsdGoPkgHasElem_Arccos struct {
 	Arccos *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccos"`
+
 }
 
 type XsdGoPkgHasElems_Arctan struct {
 	Arctans []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arctan"`
+
 }
 
 type XsdGoPkgHasElem_Arctan struct {
 	Arctan *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arctan"`
+
 }
 
 type XsdGoPkgHasElem_Arccot struct {
 	Arccot *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccot"`
+
 }
 
 type XsdGoPkgHasElems_Arccot struct {
 	Arccots []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccot"`
-}
 
-type XsdGoPkgHasElem_Arccsc struct {
-	Arccsc *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccsc"`
 }
 
 type XsdGoPkgHasElems_Arccsc struct {
 	Arccscs []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccsc"`
+
+}
+
+type XsdGoPkgHasElem_Arccsc struct {
+	Arccsc *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccsc"`
+
 }
 
 type XsdGoPkgHasElems_Arcsec struct {
 	Arcsecs []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsec"`
+
 }
 
 type XsdGoPkgHasElem_Arcsec struct {
 	Arcsec *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsec"`
+
 }
 
 type XsdGoPkgHasElem_Sinh struct {
 	Sinh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sinh"`
+
 }
 
 type XsdGoPkgHasElems_Sinh struct {
 	Sinhs []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sinh"`
-}
 
-type XsdGoPkgHasElem_Cosh struct {
-	Cosh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cosh"`
 }
 
 type XsdGoPkgHasElems_Cosh struct {
 	Coshs []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cosh"`
+
+}
+
+type XsdGoPkgHasElem_Cosh struct {
+	Cosh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cosh"`
+
 }
 
 type XsdGoPkgHasElems_Tanh struct {
 	Tanhs []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML tanh"`
+
 }
 
 type XsdGoPkgHasElem_Tanh struct {
 	Tanh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML tanh"`
+
 }
 
 type XsdGoPkgHasElems_Sech struct {
 	Sechs []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sech"`
+
 }
 
 type XsdGoPkgHasElem_Sech struct {
 	Sech *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sech"`
-}
 
-type XsdGoPkgHasElem_Csch struct {
-	Csch *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML csch"`
 }
 
 type XsdGoPkgHasElems_Csch struct {
 	Cschs []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML csch"`
+
+}
+
+type XsdGoPkgHasElem_Csch struct {
+	Csch *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML csch"`
+
 }
 
 type XsdGoPkgHasElem_Coth struct {
 	Coth *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML coth"`
+
 }
 
 type XsdGoPkgHasElems_Coth struct {
 	Coths []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML coth"`
-}
 
-type XsdGoPkgHasElem_Arccosh struct {
-	Arccosh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccosh"`
 }
 
 type XsdGoPkgHasElems_Arccosh struct {
 	Arccoshs []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccosh"`
+
 }
 
-type XsdGoPkgHasElem_Arccoth struct {
-	Arccoth *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccoth"`
+type XsdGoPkgHasElem_Arccosh struct {
+	Arccosh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccosh"`
+
 }
 
 type XsdGoPkgHasElems_Arccoth struct {
 	Arccoths []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccoth"`
+
 }
 
-type XsdGoPkgHasElem_Arccsch struct {
-	Arccsch *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccsch"`
+type XsdGoPkgHasElem_Arccoth struct {
+	Arccoth *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccoth"`
+
 }
 
 type XsdGoPkgHasElems_Arccsch struct {
 	Arccschs []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccsch"`
+
+}
+
+type XsdGoPkgHasElem_Arccsch struct {
+	Arccsch *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccsch"`
+
 }
 
 type XsdGoPkgHasElem_Arcsech struct {
 	Arcsech *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsech"`
+
 }
 
 type XsdGoPkgHasElems_Arcsech struct {
 	Arcsechs []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsech"`
+
 }
 
 type XsdGoPkgHasElems_Arcsinh struct {
 	Arcsinhs []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsinh"`
+
 }
 
 type XsdGoPkgHasElem_Arcsinh struct {
 	Arcsinh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsinh"`
-}
 
-type XsdGoPkgHasElems_Arctanh struct {
-	Arctanhs []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arctanh"`
 }
 
 type XsdGoPkgHasElem_Arctanh struct {
 	Arctanh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arctanh"`
+
+}
+
+type XsdGoPkgHasElems_Arctanh struct {
+	Arctanhs []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arctanh"`
+
 }
 
 type XsdGoPkgHasGroup_LogbaseContent struct {

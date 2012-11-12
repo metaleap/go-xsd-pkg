@@ -117,34 +117,42 @@ type TcsymbolType struct {
 
 type XsdGoPkgHasElems_Sep struct {
 	Seps []*TsepType `xml:"http://www.w3.org/1998/Math/MathML sep"`
+
 }
 
 type XsdGoPkgHasElem_Sep struct {
 	Sep *TsepType `xml:"http://www.w3.org/1998/Math/MathML sep"`
+
 }
 
 type XsdGoPkgHasElems_Cn struct {
 	Cns []*TcnType `xml:"http://www.w3.org/1998/Math/MathML cn"`
+
 }
 
 type XsdGoPkgHasElem_Cn struct {
 	Cn *TcnType `xml:"http://www.w3.org/1998/Math/MathML cn"`
-}
 
-type XsdGoPkgHasElem_Ci struct {
-	Ci *TciType `xml:"http://www.w3.org/1998/Math/MathML ci"`
 }
 
 type XsdGoPkgHasElems_Ci struct {
 	Cis []*TciType `xml:"http://www.w3.org/1998/Math/MathML ci"`
+
 }
 
-type XsdGoPkgHasElems_Csymbol struct {
-	Csymbols []*TcsymbolType `xml:"http://www.w3.org/1998/Math/MathML csymbol"`
+type XsdGoPkgHasElem_Ci struct {
+	Ci *TciType `xml:"http://www.w3.org/1998/Math/MathML ci"`
+
 }
 
 type XsdGoPkgHasElem_Csymbol struct {
 	Csymbol *TcsymbolType `xml:"http://www.w3.org/1998/Math/MathML csymbol"`
+
+}
+
+type XsdGoPkgHasElems_Csymbol struct {
+	Csymbols []*TcsymbolType `xml:"http://www.w3.org/1998/Math/MathML csymbol"`
+
 }
 
 type XsdGoPkgHasGroup_ContentTokenContent struct {

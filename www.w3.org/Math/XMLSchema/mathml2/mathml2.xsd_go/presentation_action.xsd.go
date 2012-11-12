@@ -37,10 +37,12 @@ type TmactionType struct {
 
 type XsdGoPkgHasElems_Maction struct {
 	Mactions []*TmactionType `xml:"http://www.w3.org/1998/Math/MathML maction"`
+
 }
 
 type XsdGoPkgHasElem_Maction struct {
 	Maction *TmactionType `xml:"http://www.w3.org/1998/Math/MathML maction"`
+
 }
 
 type XsdGoPkgHasGroup_MactionContent struct {

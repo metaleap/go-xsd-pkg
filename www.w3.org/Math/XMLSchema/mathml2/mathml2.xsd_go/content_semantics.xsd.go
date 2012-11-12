@@ -47,26 +47,32 @@ type TsemanticsType struct {
 
 type XsdGoPkgHasElems_Annotation struct {
 	Annotations []*TannotationType `xml:"http://www.w3.org/1998/Math/MathML annotation"`
+
 }
 
 type XsdGoPkgHasElem_Annotation struct {
 	Annotation *TannotationType `xml:"http://www.w3.org/1998/Math/MathML annotation"`
+
 }
 
 type XsdGoPkgHasElems_AnnotationXml struct {
 	AnnotationXmls []*TannotationXmlType `xml:"http://www.w3.org/1998/Math/MathML annotation-xml"`
+
 }
 
 type XsdGoPkgHasElem_AnnotationXml struct {
 	AnnotationXml *TannotationXmlType `xml:"http://www.w3.org/1998/Math/MathML annotation-xml"`
+
 }
 
 type XsdGoPkgHasElems_Semantics struct {
 	Semanticses []*TsemanticsType `xml:"http://www.w3.org/1998/Math/MathML semantics"`
+
 }
 
 type XsdGoPkgHasElem_Semantics struct {
 	Semantics *TsemanticsType `xml:"http://www.w3.org/1998/Math/MathML semantics"`
+
 }
 
 type XsdGoPkgHasGroup_AnnotationXmlContent struct {

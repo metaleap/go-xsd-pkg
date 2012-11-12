@@ -377,50 +377,62 @@ type TmalignmarkType struct {
 
 type XsdGoPkgHasElems_Mtr struct {
 	Mtrs []*TmtrType `xml:"http://www.w3.org/1998/Math/MathML mtr"`
+
 }
 
 type XsdGoPkgHasElem_Mtr struct {
 	Mtr *TmtrType `xml:"http://www.w3.org/1998/Math/MathML mtr"`
+
 }
 
 type XsdGoPkgHasElems_Mlabeledtr struct {
 	Mlabeledtrs []*TmlabeledtrType `xml:"http://www.w3.org/1998/Math/MathML mlabeledtr"`
+
 }
 
 type XsdGoPkgHasElem_Mlabeledtr struct {
 	Mlabeledtr *TmlabeledtrType `xml:"http://www.w3.org/1998/Math/MathML mlabeledtr"`
-}
 
-type XsdGoPkgHasElem_Mtd struct {
-	Mtd *TmtdType `xml:"http://www.w3.org/1998/Math/MathML mtd"`
 }
 
 type XsdGoPkgHasElems_Mtd struct {
 	Mtds []*TmtdType `xml:"http://www.w3.org/1998/Math/MathML mtd"`
+
 }
 
-type XsdGoPkgHasElems_Mtable struct {
-	Mtables []*TmtableType `xml:"http://www.w3.org/1998/Math/MathML mtable"`
+type XsdGoPkgHasElem_Mtd struct {
+	Mtd *TmtdType `xml:"http://www.w3.org/1998/Math/MathML mtd"`
+
 }
 
 type XsdGoPkgHasElem_Mtable struct {
 	Mtable *TmtableType `xml:"http://www.w3.org/1998/Math/MathML mtable"`
+
 }
 
-type XsdGoPkgHasElem_Maligngroup struct {
-	Maligngroup *TmaligngroupType `xml:"http://www.w3.org/1998/Math/MathML maligngroup"`
+type XsdGoPkgHasElems_Mtable struct {
+	Mtables []*TmtableType `xml:"http://www.w3.org/1998/Math/MathML mtable"`
+
 }
 
 type XsdGoPkgHasElems_Maligngroup struct {
 	Maligngroups []*TmaligngroupType `xml:"http://www.w3.org/1998/Math/MathML maligngroup"`
+
 }
 
-type XsdGoPkgHasElem_Malignmark struct {
-	Malignmark *TmalignmarkType `xml:"http://www.w3.org/1998/Math/MathML malignmark"`
+type XsdGoPkgHasElem_Maligngroup struct {
+	Maligngroup *TmaligngroupType `xml:"http://www.w3.org/1998/Math/MathML maligngroup"`
+
 }
 
 type XsdGoPkgHasElems_Malignmark struct {
 	Malignmarks []*TmalignmarkType `xml:"http://www.w3.org/1998/Math/MathML malignmark"`
+
+}
+
+type XsdGoPkgHasElem_Malignmark struct {
+	Malignmark *TmalignmarkType `xml:"http://www.w3.org/1998/Math/MathML malignmark"`
+
 }
 
 type XsdGoPkgHasGroup_MtrContent struct {

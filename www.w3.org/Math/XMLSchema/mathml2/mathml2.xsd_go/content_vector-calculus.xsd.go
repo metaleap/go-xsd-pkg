@@ -58,36 +58,44 @@ type TlaplacianType struct {
 
 }
 
-type XsdGoPkgHasElem_Divergence struct {
-	Divergence *TdivergenceType `xml:"http://www.w3.org/1998/Math/MathML divergence"`
-}
-
 type XsdGoPkgHasElems_Divergence struct {
 	Divergences []*TdivergenceType `xml:"http://www.w3.org/1998/Math/MathML divergence"`
+
 }
 
-type XsdGoPkgHasElems_Grad struct {
-	Grads []*TgradType `xml:"http://www.w3.org/1998/Math/MathML grad"`
+type XsdGoPkgHasElem_Divergence struct {
+	Divergence *TdivergenceType `xml:"http://www.w3.org/1998/Math/MathML divergence"`
+
 }
 
 type XsdGoPkgHasElem_Grad struct {
 	Grad *TgradType `xml:"http://www.w3.org/1998/Math/MathML grad"`
+
 }
 
-type XsdGoPkgHasElems_Curl struct {
-	Curls []*TcurlType `xml:"http://www.w3.org/1998/Math/MathML curl"`
+type XsdGoPkgHasElems_Grad struct {
+	Grads []*TgradType `xml:"http://www.w3.org/1998/Math/MathML grad"`
+
 }
 
 type XsdGoPkgHasElem_Curl struct {
 	Curl *TcurlType `xml:"http://www.w3.org/1998/Math/MathML curl"`
+
+}
+
+type XsdGoPkgHasElems_Curl struct {
+	Curls []*TcurlType `xml:"http://www.w3.org/1998/Math/MathML curl"`
+
 }
 
 type XsdGoPkgHasElem_Laplacian struct {
 	Laplacian *TlaplacianType `xml:"http://www.w3.org/1998/Math/MathML laplacian"`
+
 }
 
 type XsdGoPkgHasElems_Laplacian struct {
 	Laplacians []*TlaplacianType `xml:"http://www.w3.org/1998/Math/MathML laplacian"`
+
 }
 
 type XsdGoPkgHasGroup_ContentVectorCalculusClass struct {

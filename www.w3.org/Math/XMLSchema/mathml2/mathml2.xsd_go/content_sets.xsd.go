@@ -189,108 +189,134 @@ type TcartesianproductType struct {
 
 }
 
-type XsdGoPkgHasElems_Set struct {
-	Sets []*TsetType `xml:"http://www.w3.org/1998/Math/MathML set"`
-}
-
 type XsdGoPkgHasElem_Set struct {
 	Set *TsetType `xml:"http://www.w3.org/1998/Math/MathML set"`
+
+}
+
+type XsdGoPkgHasElems_Set struct {
+	Sets []*TsetType `xml:"http://www.w3.org/1998/Math/MathML set"`
+
 }
 
 type XsdGoPkgHasElem_List struct {
 	List *TlistType `xml:"http://www.w3.org/1998/Math/MathML list"`
+
 }
 
 type XsdGoPkgHasElems_List struct {
 	Lists []*TlistType `xml:"http://www.w3.org/1998/Math/MathML list"`
-}
 
-type XsdGoPkgHasElem_Union struct {
-	Union *TunionType `xml:"http://www.w3.org/1998/Math/MathML union"`
 }
 
 type XsdGoPkgHasElems_Union struct {
 	Unions []*TunionType `xml:"http://www.w3.org/1998/Math/MathML union"`
+
+}
+
+type XsdGoPkgHasElem_Union struct {
+	Union *TunionType `xml:"http://www.w3.org/1998/Math/MathML union"`
+
 }
 
 type XsdGoPkgHasElems_Intersect struct {
 	Intersects []*TintersectType `xml:"http://www.w3.org/1998/Math/MathML intersect"`
+
 }
 
 type XsdGoPkgHasElem_Intersect struct {
 	Intersect *TintersectType `xml:"http://www.w3.org/1998/Math/MathML intersect"`
-}
 
-type XsdGoPkgHasElem_In struct {
-	In *TinType `xml:"http://www.w3.org/1998/Math/MathML in"`
 }
 
 type XsdGoPkgHasElems_In struct {
 	Ins []*TinType `xml:"http://www.w3.org/1998/Math/MathML in"`
+
 }
 
-type XsdGoPkgHasElem_Notin struct {
-	Notin *TnotinType `xml:"http://www.w3.org/1998/Math/MathML notin"`
+type XsdGoPkgHasElem_In struct {
+	In *TinType `xml:"http://www.w3.org/1998/Math/MathML in"`
+
 }
 
 type XsdGoPkgHasElems_Notin struct {
 	Notins []*TnotinType `xml:"http://www.w3.org/1998/Math/MathML notin"`
+
 }
 
-type XsdGoPkgHasElem_Subset struct {
-	Subset *TsubsetType `xml:"http://www.w3.org/1998/Math/MathML subset"`
+type XsdGoPkgHasElem_Notin struct {
+	Notin *TnotinType `xml:"http://www.w3.org/1998/Math/MathML notin"`
+
 }
 
 type XsdGoPkgHasElems_Subset struct {
 	Subsets []*TsubsetType `xml:"http://www.w3.org/1998/Math/MathML subset"`
+
 }
 
-type XsdGoPkgHasElems_Prsubset struct {
-	Prsubsets []*TprsubsetType `xml:"http://www.w3.org/1998/Math/MathML prsubset"`
+type XsdGoPkgHasElem_Subset struct {
+	Subset *TsubsetType `xml:"http://www.w3.org/1998/Math/MathML subset"`
+
 }
 
 type XsdGoPkgHasElem_Prsubset struct {
 	Prsubset *TprsubsetType `xml:"http://www.w3.org/1998/Math/MathML prsubset"`
+
 }
 
-type XsdGoPkgHasElems_Notsubset struct {
-	Notsubsets []*TnotsubsetType `xml:"http://www.w3.org/1998/Math/MathML notsubset"`
+type XsdGoPkgHasElems_Prsubset struct {
+	Prsubsets []*TprsubsetType `xml:"http://www.w3.org/1998/Math/MathML prsubset"`
+
 }
 
 type XsdGoPkgHasElem_Notsubset struct {
 	Notsubset *TnotsubsetType `xml:"http://www.w3.org/1998/Math/MathML notsubset"`
+
+}
+
+type XsdGoPkgHasElems_Notsubset struct {
+	Notsubsets []*TnotsubsetType `xml:"http://www.w3.org/1998/Math/MathML notsubset"`
+
 }
 
 type XsdGoPkgHasElem_Notprsubset struct {
 	Notprsubset *TnotprsubsetType `xml:"http://www.w3.org/1998/Math/MathML notprsubset"`
+
 }
 
 type XsdGoPkgHasElems_Notprsubset struct {
 	Notprsubsets []*TnotprsubsetType `xml:"http://www.w3.org/1998/Math/MathML notprsubset"`
+
 }
 
 type XsdGoPkgHasElem_Setdiff struct {
 	Setdiff *TsetdiffType `xml:"http://www.w3.org/1998/Math/MathML setdiff"`
+
 }
 
 type XsdGoPkgHasElems_Setdiff struct {
 	Setdiffs []*TsetdiffType `xml:"http://www.w3.org/1998/Math/MathML setdiff"`
+
 }
 
 type XsdGoPkgHasElems_Card struct {
 	Cards []*TcardType `xml:"http://www.w3.org/1998/Math/MathML card"`
+
 }
 
 type XsdGoPkgHasElem_Card struct {
 	Card *TcardType `xml:"http://www.w3.org/1998/Math/MathML card"`
-}
 
-type XsdGoPkgHasElem_Cartesianproduct struct {
-	Cartesianproduct *TcartesianproductType `xml:"http://www.w3.org/1998/Math/MathML cartesianproduct"`
 }
 
 type XsdGoPkgHasElems_Cartesianproduct struct {
 	Cartesianproducts []*TcartesianproductType `xml:"http://www.w3.org/1998/Math/MathML cartesianproduct"`
+
+}
+
+type XsdGoPkgHasElem_Cartesianproduct struct {
+	Cartesianproduct *TcartesianproductType `xml:"http://www.w3.org/1998/Math/MathML cartesianproduct"`
+
 }
 
 type XsdGoPkgHasGroup_SetContent struct {

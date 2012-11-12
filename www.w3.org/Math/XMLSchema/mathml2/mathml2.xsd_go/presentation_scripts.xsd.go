@@ -118,74 +118,92 @@ type TmprescriptsType struct {
 
 type XsdGoPkgHasElems_Msub struct {
 	Msubs []*TmsubType `xml:"http://www.w3.org/1998/Math/MathML msub"`
+
 }
 
 type XsdGoPkgHasElem_Msub struct {
 	Msub *TmsubType `xml:"http://www.w3.org/1998/Math/MathML msub"`
+
 }
 
 type XsdGoPkgHasElem_Msup struct {
 	Msup *TmsupType `xml:"http://www.w3.org/1998/Math/MathML msup"`
+
 }
 
 type XsdGoPkgHasElems_Msup struct {
 	Msups []*TmsupType `xml:"http://www.w3.org/1998/Math/MathML msup"`
+
 }
 
 type XsdGoPkgHasElem_Msubsup struct {
 	Msubsup *TmsubsupType `xml:"http://www.w3.org/1998/Math/MathML msubsup"`
+
 }
 
 type XsdGoPkgHasElems_Msubsup struct {
 	Msubsups []*TmsubsupType `xml:"http://www.w3.org/1998/Math/MathML msubsup"`
+
 }
 
 type XsdGoPkgHasElem_Munder struct {
 	Munder *TmunderType `xml:"http://www.w3.org/1998/Math/MathML munder"`
+
 }
 
 type XsdGoPkgHasElems_Munder struct {
 	Munders []*TmunderType `xml:"http://www.w3.org/1998/Math/MathML munder"`
+
 }
 
 type XsdGoPkgHasElems_Mover struct {
 	Movers []*TmoverType `xml:"http://www.w3.org/1998/Math/MathML mover"`
+
 }
 
 type XsdGoPkgHasElem_Mover struct {
 	Mover *TmoverType `xml:"http://www.w3.org/1998/Math/MathML mover"`
-}
 
-type XsdGoPkgHasElems_Munderover struct {
-	Munderovers []*TmunderoverType `xml:"http://www.w3.org/1998/Math/MathML munderover"`
 }
 
 type XsdGoPkgHasElem_Munderover struct {
 	Munderover *TmunderoverType `xml:"http://www.w3.org/1998/Math/MathML munderover"`
+
 }
 
-type XsdGoPkgHasElem_Mmultiscripts struct {
-	Mmultiscripts *TmmultiscriptsType `xml:"http://www.w3.org/1998/Math/MathML mmultiscripts"`
+type XsdGoPkgHasElems_Munderover struct {
+	Munderovers []*TmunderoverType `xml:"http://www.w3.org/1998/Math/MathML munderover"`
+
 }
 
 type XsdGoPkgHasElems_Mmultiscripts struct {
 	Mmultiscriptses []*TmmultiscriptsType `xml:"http://www.w3.org/1998/Math/MathML mmultiscripts"`
+
+}
+
+type XsdGoPkgHasElem_Mmultiscripts struct {
+	Mmultiscripts *TmmultiscriptsType `xml:"http://www.w3.org/1998/Math/MathML mmultiscripts"`
+
 }
 
 type XsdGoPkgHasElems_None struct {
 	Nones []*TnoneType `xml:"http://www.w3.org/1998/Math/MathML none"`
+
 }
 
 type XsdGoPkgHasElem_None struct {
 	None *TnoneType `xml:"http://www.w3.org/1998/Math/MathML none"`
+
 }
 
 type XsdGoPkgHasElems_Mprescripts struct {
 	Mprescriptses []*TmprescriptsType `xml:"http://www.w3.org/1998/Math/MathML mprescripts"`
+
 }
 
 type XsdGoPkgHasElem_Mprescripts struct {
 	Mprescripts *TmprescriptsType `xml:"http://www.w3.org/1998/Math/MathML mprescripts"`
+
 }
 
 type XsdGoPkgHasGroup_PresentationExprOrNoneClass struct {

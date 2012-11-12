@@ -117,76 +117,94 @@ type TouterproductType struct {
 
 }
 
-type XsdGoPkgHasElem_Vector struct {
-	Vector *TvectorType `xml:"http://www.w3.org/1998/Math/MathML vector"`
-}
-
 type XsdGoPkgHasElems_Vector struct {
 	Vectors []*TvectorType `xml:"http://www.w3.org/1998/Math/MathML vector"`
+
 }
 
-type XsdGoPkgHasElems_Matrix struct {
-	Matrixs []*TmatrixType `xml:"http://www.w3.org/1998/Math/MathML matrix"`
+type XsdGoPkgHasElem_Vector struct {
+	Vector *TvectorType `xml:"http://www.w3.org/1998/Math/MathML vector"`
+
 }
 
 type XsdGoPkgHasElem_Matrix struct {
 	Matrix *TmatrixType `xml:"http://www.w3.org/1998/Math/MathML matrix"`
+
 }
 
-type XsdGoPkgHasElems_Matrixrow struct {
-	Matrixrows []*TmatrixrowType `xml:"http://www.w3.org/1998/Math/MathML matrixrow"`
+type XsdGoPkgHasElems_Matrix struct {
+	Matrixs []*TmatrixType `xml:"http://www.w3.org/1998/Math/MathML matrix"`
+
 }
 
 type XsdGoPkgHasElem_Matrixrow struct {
 	Matrixrow *TmatrixrowType `xml:"http://www.w3.org/1998/Math/MathML matrixrow"`
+
+}
+
+type XsdGoPkgHasElems_Matrixrow struct {
+	Matrixrows []*TmatrixrowType `xml:"http://www.w3.org/1998/Math/MathML matrixrow"`
+
 }
 
 type XsdGoPkgHasElems_Determinant struct {
 	Determinants []*TdeterminantType `xml:"http://www.w3.org/1998/Math/MathML determinant"`
+
 }
 
 type XsdGoPkgHasElem_Determinant struct {
 	Determinant *TdeterminantType `xml:"http://www.w3.org/1998/Math/MathML determinant"`
-}
 
-type XsdGoPkgHasElem_Transpose struct {
-	Transpose *TtransposeType `xml:"http://www.w3.org/1998/Math/MathML transpose"`
 }
 
 type XsdGoPkgHasElems_Transpose struct {
 	Transposes []*TtransposeType `xml:"http://www.w3.org/1998/Math/MathML transpose"`
+
+}
+
+type XsdGoPkgHasElem_Transpose struct {
+	Transpose *TtransposeType `xml:"http://www.w3.org/1998/Math/MathML transpose"`
+
 }
 
 type XsdGoPkgHasElem_Selector struct {
 	Selector *TselectorType `xml:"http://www.w3.org/1998/Math/MathML selector"`
+
 }
 
 type XsdGoPkgHasElems_Selector struct {
 	Selectors []*TselectorType `xml:"http://www.w3.org/1998/Math/MathML selector"`
-}
 
-type XsdGoPkgHasElems_Vectorproduct struct {
-	Vectorproducts []*TvectorproductType `xml:"http://www.w3.org/1998/Math/MathML vectorproduct"`
 }
 
 type XsdGoPkgHasElem_Vectorproduct struct {
 	Vectorproduct *TvectorproductType `xml:"http://www.w3.org/1998/Math/MathML vectorproduct"`
+
+}
+
+type XsdGoPkgHasElems_Vectorproduct struct {
+	Vectorproducts []*TvectorproductType `xml:"http://www.w3.org/1998/Math/MathML vectorproduct"`
+
 }
 
 type XsdGoPkgHasElems_Scalarproduct struct {
 	Scalarproducts []*TscalarproductType `xml:"http://www.w3.org/1998/Math/MathML scalarproduct"`
+
 }
 
 type XsdGoPkgHasElem_Scalarproduct struct {
 	Scalarproduct *TscalarproductType `xml:"http://www.w3.org/1998/Math/MathML scalarproduct"`
+
 }
 
 type XsdGoPkgHasElem_Outerproduct struct {
 	Outerproduct *TouterproductType `xml:"http://www.w3.org/1998/Math/MathML outerproduct"`
+
 }
 
 type XsdGoPkgHasElems_Outerproduct struct {
 	Outerproducts []*TouterproductType `xml:"http://www.w3.org/1998/Math/MathML outerproduct"`
+
 }
 
 type XsdGoPkgHasGroup_VectorContent struct {

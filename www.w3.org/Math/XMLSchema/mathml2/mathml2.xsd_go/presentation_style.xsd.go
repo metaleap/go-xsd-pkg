@@ -146,12 +146,14 @@ type TmstyleType struct {
 
 }
 
-type XsdGoPkgHasElems_Mstyle struct {
-	Mstyles []*TmstyleType `xml:"http://www.w3.org/1998/Math/MathML mstyle"`
-}
-
 type XsdGoPkgHasElem_Mstyle struct {
 	Mstyle *TmstyleType `xml:"http://www.w3.org/1998/Math/MathML mstyle"`
+
+}
+
+type XsdGoPkgHasElems_Mstyle struct {
+	Mstyles []*TmstyleType `xml:"http://www.w3.org/1998/Math/MathML mstyle"`
+
 }
 
 type XsdGoPkgHasGroup_MstyleContent struct {

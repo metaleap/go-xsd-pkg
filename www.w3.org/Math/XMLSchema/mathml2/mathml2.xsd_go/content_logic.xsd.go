@@ -16,60 +16,74 @@ type TLogicType struct {
 
 }
 
-type XsdGoPkgHasElem_And struct {
-	And TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML and"`
+type XsdGoPkgHasElems_And struct {
+	Ands []*TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML and"`
+
 }
 
-type XsdGoPkgHasElems_And struct {
-	Ands []TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML and"`
+type XsdGoPkgHasElem_And struct {
+	And *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML and"`
+
 }
 
 type XsdGoPkgHasElems_Or struct {
 	Ors []*TLogicType `xml:"http://www.w3.org/1998/Math/MathML or"`
+
 }
 
 type XsdGoPkgHasElem_Or struct {
 	Or *TLogicType `xml:"http://www.w3.org/1998/Math/MathML or"`
+
 }
 
 type XsdGoPkgHasElems_Xor struct {
 	Xors []*TLogicType `xml:"http://www.w3.org/1998/Math/MathML xor"`
+
 }
 
 type XsdGoPkgHasElem_Xor struct {
 	Xor *TLogicType `xml:"http://www.w3.org/1998/Math/MathML xor"`
-}
 
-type XsdGoPkgHasElem_Not struct {
-	Not *TLogicType `xml:"http://www.w3.org/1998/Math/MathML not"`
 }
 
 type XsdGoPkgHasElems_Not struct {
 	Nots []*TLogicType `xml:"http://www.w3.org/1998/Math/MathML not"`
+
 }
 
-type XsdGoPkgHasElems_Exists struct {
-	Existses []*TLogicType `xml:"http://www.w3.org/1998/Math/MathML exists"`
+type XsdGoPkgHasElem_Not struct {
+	Not *TLogicType `xml:"http://www.w3.org/1998/Math/MathML not"`
+
 }
 
 type XsdGoPkgHasElem_Exists struct {
 	Exists *TLogicType `xml:"http://www.w3.org/1998/Math/MathML exists"`
+
 }
 
-type XsdGoPkgHasElem_Forall struct {
-	Forall *TLogicType `xml:"http://www.w3.org/1998/Math/MathML forall"`
+type XsdGoPkgHasElems_Exists struct {
+	Existses []*TLogicType `xml:"http://www.w3.org/1998/Math/MathML exists"`
+
 }
 
 type XsdGoPkgHasElems_Forall struct {
 	Foralls []*TLogicType `xml:"http://www.w3.org/1998/Math/MathML forall"`
+
+}
+
+type XsdGoPkgHasElem_Forall struct {
+	Forall *TLogicType `xml:"http://www.w3.org/1998/Math/MathML forall"`
+
 }
 
 type XsdGoPkgHasElem_Implies struct {
 	Implies *TLogicType `xml:"http://www.w3.org/1998/Math/MathML implies"`
+
 }
 
 type XsdGoPkgHasElems_Implies struct {
 	Implieses []*TLogicType `xml:"http://www.w3.org/1998/Math/MathML implies"`
+
 }
 
 type XsdGoPkgHasGroup_ContentLogicClass struct {

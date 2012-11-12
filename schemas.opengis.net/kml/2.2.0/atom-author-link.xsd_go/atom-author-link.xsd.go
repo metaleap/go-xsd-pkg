@@ -57,34 +57,42 @@ type TatomPersonConstruct struct {
 
 type XsdGoPkgHasElems_Name struct {
 	Names []xsdt.String `xml:"http://www.w3.org/2005/Atom name"`
+
 }
 
 type XsdGoPkgHasElem_Name struct {
 	Name xsdt.String `xml:"http://www.w3.org/2005/Atom name"`
-}
 
-type XsdGoPkgHasElem_Uri struct {
-	Uri xsdt.String `xml:"http://www.w3.org/2005/Atom uri"`
 }
 
 type XsdGoPkgHasElems_Uri struct {
 	Uris []xsdt.String `xml:"http://www.w3.org/2005/Atom uri"`
+
 }
 
-type XsdGoPkgHasElem_Email struct {
-	Email TatomEmailAddress `xml:"http://www.w3.org/2005/Atom email"`
+type XsdGoPkgHasElem_Uri struct {
+	Uri xsdt.String `xml:"http://www.w3.org/2005/Atom uri"`
+
 }
 
 type XsdGoPkgHasElems_Email struct {
 	Emails []TatomEmailAddress `xml:"http://www.w3.org/2005/Atom email"`
+
 }
 
-type XsdGoPkgHasElems_Author struct {
-	Authors []*TatomPersonConstruct `xml:"http://www.w3.org/2005/Atom author"`
+type XsdGoPkgHasElem_Email struct {
+	Email TatomEmailAddress `xml:"http://www.w3.org/2005/Atom email"`
+
 }
 
 type XsdGoPkgHasElem_Author struct {
 	Author *TatomPersonConstruct `xml:"http://www.w3.org/2005/Atom author"`
+
+}
+
+type XsdGoPkgHasElems_Author struct {
+	Authors []*TatomPersonConstruct `xml:"http://www.w3.org/2005/Atom author"`
+
 }
 
 type XsdGoPkgHasAttr_Href_XsdtString_ struct {
@@ -112,24 +120,26 @@ type XsdGoPkgHasAttr_Length_XsdtString_ struct {
 }
 
 type TxsdLink struct {
-	XsdGoPkgHasAttr_Rel_XsdtString_
-
-	XsdGoPkgHasAttr_Href_XsdtString_
+	XsdGoPkgHasAttr_Hreflang_TatomLanguageTag_
 
 	XsdGoPkgHasAttr_Type_TatomMediaType_
 
-	XsdGoPkgHasAttr_Length_XsdtString_
-
 	XsdGoPkgHasAttr_Title_XsdtString_
 
-	XsdGoPkgHasAttr_Hreflang_TatomLanguageTag_
+	XsdGoPkgHasAttr_Length_XsdtString_
+
+	XsdGoPkgHasAttr_Href_XsdtString_
+
+	XsdGoPkgHasAttr_Rel_XsdtString_
+
+}
+
+type XsdGoPkgHasElem_Link struct {
+	Link *TxsdLink `xml:"http://www.w3.org/2005/Atom link"`
 
 }
 
 type XsdGoPkgHasElems_Link struct {
 	Links []*TxsdLink `xml:"http://www.w3.org/2005/Atom link"`
-}
 
-type XsdGoPkgHasElem_Link struct {
-	Link *TxsdLink `xml:"http://www.w3.org/2005/Atom link"`
 }

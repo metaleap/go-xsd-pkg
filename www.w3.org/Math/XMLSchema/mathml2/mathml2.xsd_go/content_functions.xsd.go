@@ -20,58 +20,70 @@ type TFunctionsType struct {
 type TdomainofapplicationType struct {
 	XsdGoPkgHasGroup_DomainofapplicationContent
 
+	XsdGoPkgHasAtts_DefinitionAttrib
+
 	XsdGoPkgHasAtts_CommonAttrib
 
-	XsdGoPkgHasAtts_DefinitionAttrib
+}
+
+type XsdGoPkgHasElem_Compose struct {
+	Compose *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML compose"`
 
 }
 
 type XsdGoPkgHasElems_Compose struct {
 	Composes []*TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML compose"`
-}
 
-type XsdGoPkgHasElem_Compose struct {
-	Compose *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML compose"`
 }
 
 type XsdGoPkgHasElems_Domain struct {
 	Domains []*TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML domain"`
+
 }
 
 type XsdGoPkgHasElem_Domain struct {
 	Domain *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML domain"`
-}
 
-type XsdGoPkgHasElem_Codomain struct {
-	Codomain *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML codomain"`
 }
 
 type XsdGoPkgHasElems_Codomain struct {
 	Codomains []*TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML codomain"`
+
+}
+
+type XsdGoPkgHasElem_Codomain struct {
+	Codomain *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML codomain"`
+
 }
 
 type XsdGoPkgHasElems_Image struct {
 	Images []*TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML image"`
+
 }
 
 type XsdGoPkgHasElem_Image struct {
 	Image *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML image"`
-}
 
-type XsdGoPkgHasElem_Domainofapplication struct {
-	Domainofapplication *TdomainofapplicationType `xml:"http://www.w3.org/1998/Math/MathML domainofapplication"`
 }
 
 type XsdGoPkgHasElems_Domainofapplication struct {
 	Domainofapplications []*TdomainofapplicationType `xml:"http://www.w3.org/1998/Math/MathML domainofapplication"`
+
+}
+
+type XsdGoPkgHasElem_Domainofapplication struct {
+	Domainofapplication *TdomainofapplicationType `xml:"http://www.w3.org/1998/Math/MathML domainofapplication"`
+
 }
 
 type XsdGoPkgHasElems_Ident struct {
 	Idents []*TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML ident"`
+
 }
 
 type XsdGoPkgHasElem_Ident struct {
 	Ident *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML ident"`
+
 }
 
 type XsdGoPkgHasGroup_DomainofapplicationContent struct {

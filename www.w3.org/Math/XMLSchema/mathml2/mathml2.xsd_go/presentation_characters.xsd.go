@@ -33,10 +33,12 @@ type TmglyphType struct {
 
 }
 
-type XsdGoPkgHasElems_Mglyph struct {
-	Mglyphs []*TmglyphType `xml:"http://www.w3.org/1998/Math/MathML mglyph"`
-}
-
 type XsdGoPkgHasElem_Mglyph struct {
 	Mglyph *TmglyphType `xml:"http://www.w3.org/1998/Math/MathML mglyph"`
+
+}
+
+type XsdGoPkgHasElems_Mglyph struct {
+	Mglyphs []*TmglyphType `xml:"http://www.w3.org/1998/Math/MathML mglyph"`
+
 }

@@ -5,9 +5,9 @@
 package gopkg_DocbookOrgXml50XsdDocbookXsd
 
 import (
-	xsdt "github.com/metaleap/go-xsd/types"
-	xlink "github.com/metaleap/go-xsd-pkg/docbook.org/xml/5.0/xsd/xlink.xsd_go"
 	xml "github.com/metaleap/go-xsd-pkg/docbook.org/xml/5.0/xsd/xml.xsd_go"
+	xlink "github.com/metaleap/go-xsd-pkg/docbook.org/xml/5.0/xsd/xlink.xsd_go"
+	xsdt "github.com/metaleap/go-xsd/types"
 )
 
 type XsdGoPkgHasCdata struct { CombinedCharDatas string `xml:",chardata"` }
@@ -372,10 +372,12 @@ type TxsdTitle struct {
 
 type XsdGoPkgHasElems_Title struct {
 	Titles []*TxsdTitle `xml:"http://docbook.org/ns/docbook title"`
+
 }
 
 type XsdGoPkgHasElem_Title struct {
 	Title *TxsdTitle `xml:"http://docbook.org/ns/docbook title"`
+
 }
 
 type TxsdTitleabbrev struct {
@@ -585,10 +587,12 @@ type TxsdTitleabbrev struct {
 
 type XsdGoPkgHasElem_Titleabbrev struct {
 	Titleabbrev *TxsdTitleabbrev `xml:"http://docbook.org/ns/docbook titleabbrev"`
+
 }
 
 type XsdGoPkgHasElems_Titleabbrev struct {
 	Titleabbrevs []*TxsdTitleabbrev `xml:"http://docbook.org/ns/docbook titleabbrev"`
+
 }
 
 type TxsdSubtitle struct {
@@ -798,10 +802,12 @@ type TxsdSubtitle struct {
 
 type XsdGoPkgHasElems_Subtitle struct {
 	Subtitles []*TxsdSubtitle `xml:"http://docbook.org/ns/docbook subtitle"`
+
 }
 
 type XsdGoPkgHasElem_Subtitle struct {
 	Subtitle *TxsdSubtitle `xml:"http://docbook.org/ns/docbook subtitle"`
+
 }
 
 type TxsdInfo struct {
@@ -903,12 +909,14 @@ type TxsdInfo struct {
 
 }
 
-type XsdGoPkgHasElem_Info struct {
-	Info *TxsdInfo `xml:"http://docbook.org/ns/docbook info"`
-}
-
 type XsdGoPkgHasElems_Info struct {
 	Infos []*TxsdInfo `xml:"http://docbook.org/ns/docbook info"`
+
+}
+
+type XsdGoPkgHasElem_Info struct {
+	Info *TxsdInfo `xml:"http://docbook.org/ns/docbook info"`
+
 }
 
 type XsdGoPkgHasAttr_Scheme_XsdtNmtoken_ struct {
@@ -928,10 +936,12 @@ type TxsdSubjectset struct {
 
 type XsdGoPkgHasElems_Subjectset struct {
 	Subjectsets []*TxsdSubjectset `xml:"http://docbook.org/ns/docbook subjectset"`
+
 }
 
 type XsdGoPkgHasElem_Subjectset struct {
 	Subjectset *TxsdSubjectset `xml:"http://docbook.org/ns/docbook subjectset"`
+
 }
 
 type XsdGoPkgHasAttr_Weight_XsdtString_ struct {
@@ -941,37 +951,41 @@ type XsdGoPkgHasAttr_Weight_XsdtString_ struct {
 type TxsdSubject struct {
 	XsdGoPkgHasElems_Subjectterm
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Weight_XsdtString_
 
 }
 
-type XsdGoPkgHasElem_Subject struct {
-	Subject *TxsdSubject `xml:"http://docbook.org/ns/docbook subject"`
-}
-
 type XsdGoPkgHasElems_Subject struct {
 	Subjects []*TxsdSubject `xml:"http://docbook.org/ns/docbook subject"`
+
+}
+
+type XsdGoPkgHasElem_Subject struct {
+	Subject *TxsdSubject `xml:"http://docbook.org/ns/docbook subject"`
+
 }
 
 type TxsdSubjectterm struct {
 	XsdGoPkgHasCdata
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Subjectterm struct {
+	Subjectterm *TxsdSubjectterm `xml:"http://docbook.org/ns/docbook subjectterm"`
 
 }
 
 type XsdGoPkgHasElems_Subjectterm struct {
 	Subjectterms []*TxsdSubjectterm `xml:"http://docbook.org/ns/docbook subjectterm"`
-}
 
-type XsdGoPkgHasElem_Subjectterm struct {
-	Subjectterm *TxsdSubjectterm `xml:"http://docbook.org/ns/docbook subjectterm"`
 }
 
 type TxsdKeywordset struct {
@@ -983,29 +997,33 @@ type TxsdKeywordset struct {
 
 }
 
-type XsdGoPkgHasElem_Keywordset struct {
-	Keywordset *TxsdKeywordset `xml:"http://docbook.org/ns/docbook keywordset"`
-}
-
 type XsdGoPkgHasElems_Keywordset struct {
 	Keywordsets []*TxsdKeywordset `xml:"http://docbook.org/ns/docbook keywordset"`
+
+}
+
+type XsdGoPkgHasElem_Keywordset struct {
+	Keywordset *TxsdKeywordset `xml:"http://docbook.org/ns/docbook keywordset"`
+
 }
 
 type TxsdKeyword struct {
 	XsdGoPkgHasCdata
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElem_Keyword struct {
 	Keyword *TxsdKeyword `xml:"http://docbook.org/ns/docbook keyword"`
+
 }
 
 type XsdGoPkgHasElems_Keyword struct {
 	Keywords []*TxsdKeyword `xml:"http://docbook.org/ns/docbook keyword"`
+
 }
 
 type TxsdProcedure struct {
@@ -1135,10 +1153,12 @@ type TxsdProcedure struct {
 
 type XsdGoPkgHasElems_Procedure struct {
 	Procedures []*TxsdProcedure `xml:"http://docbook.org/ns/docbook procedure"`
+
 }
 
 type XsdGoPkgHasElem_Procedure struct {
 	Procedure *TxsdProcedure `xml:"http://docbook.org/ns/docbook procedure"`
+
 }
 
 type TxsdStepPerformance xsdt.Token
@@ -1283,9 +1303,9 @@ type TxsdStep struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Performance_TxsdStepPerformance_
 
@@ -1293,10 +1313,12 @@ type TxsdStep struct {
 
 type XsdGoPkgHasElems_Step struct {
 	Steps []*TxsdStep `xml:"http://docbook.org/ns/docbook step"`
+
 }
 
 type XsdGoPkgHasElem_Step struct {
 	Step *TxsdStep `xml:"http://docbook.org/ns/docbook step"`
+
 }
 
 type TxsdStepalternativesPerformance xsdt.Token
@@ -1325,20 +1347,22 @@ type TxsdStepalternatives struct {
 
 	XsdGoPkgHasElems_Step
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Performance_TxsdStepalternativesPerformance_
 
 }
 
-type XsdGoPkgHasElems_Stepalternatives struct {
-	Stepalternativeses []*TxsdStepalternatives `xml:"http://docbook.org/ns/docbook stepalternatives"`
-}
-
 type XsdGoPkgHasElem_Stepalternatives struct {
 	Stepalternatives *TxsdStepalternatives `xml:"http://docbook.org/ns/docbook stepalternatives"`
+
+}
+
+type XsdGoPkgHasElems_Stepalternatives struct {
+	Stepalternativeses []*TxsdStepalternatives `xml:"http://docbook.org/ns/docbook stepalternatives"`
+
 }
 
 type TxsdSubstepsPerformance xsdt.Token
@@ -1365,20 +1389,22 @@ type XsdGoPkgHasAttr_Performance_TxsdSubstepsPerformance_ struct {
 type TxsdSubsteps struct {
 	XsdGoPkgHasElems_Step
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Performance_TxsdSubstepsPerformance_
 
 }
 
-type XsdGoPkgHasElem_Substeps struct {
-	Substeps *TxsdSubsteps `xml:"http://docbook.org/ns/docbook substeps"`
-}
-
 type XsdGoPkgHasElems_Substeps struct {
 	Substepses []*TxsdSubsteps `xml:"http://docbook.org/ns/docbook substeps"`
+
+}
+
+type XsdGoPkgHasElem_Substeps struct {
+	Substeps *TxsdSubsteps `xml:"http://docbook.org/ns/docbook substeps"`
+
 }
 
 type TxsdSidebar struct {
@@ -1506,10 +1532,12 @@ type TxsdSidebar struct {
 
 type XsdGoPkgHasElem_Sidebar struct {
 	Sidebar *TxsdSidebar `xml:"http://docbook.org/ns/docbook sidebar"`
+
 }
 
 type XsdGoPkgHasElems_Sidebar struct {
 	Sidebars []*TxsdSidebar `xml:"http://docbook.org/ns/docbook sidebar"`
+
 }
 
 type TxsdAbstract struct {
@@ -1527,18 +1555,20 @@ type TxsdAbstract struct {
 
 	XsdGoPkgHasElem_Info
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Abstract struct {
+	Abstract *TxsdAbstract `xml:"http://docbook.org/ns/docbook abstract"`
 
 }
 
 type XsdGoPkgHasElems_Abstract struct {
 	Abstracts []*TxsdAbstract `xml:"http://docbook.org/ns/docbook abstract"`
-}
 
-type XsdGoPkgHasElem_Abstract struct {
-	Abstract *TxsdAbstract `xml:"http://docbook.org/ns/docbook abstract"`
 }
 
 type TxsdPersonblurb struct {
@@ -1564,10 +1594,12 @@ type TxsdPersonblurb struct {
 
 type XsdGoPkgHasElem_Personblurb struct {
 	Personblurb *TxsdPersonblurb `xml:"http://docbook.org/ns/docbook personblurb"`
+
 }
 
 type XsdGoPkgHasElems_Personblurb struct {
 	Personblurbs []*TxsdPersonblurb `xml:"http://docbook.org/ns/docbook personblurb"`
+
 }
 
 type TxsdBlockquote struct {
@@ -1689,18 +1721,20 @@ type TxsdBlockquote struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElems_Blockquote struct {
 	Blockquotes []*TxsdBlockquote `xml:"http://docbook.org/ns/docbook blockquote"`
+
 }
 
 type XsdGoPkgHasElem_Blockquote struct {
 	Blockquote *TxsdBlockquote `xml:"http://docbook.org/ns/docbook blockquote"`
+
 }
 
 type TxsdAttribution struct {
@@ -1742,18 +1776,20 @@ type TxsdAttribution struct {
 
 	XsdGoPkgHasElems_Citation
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElems_Attribution struct {
 	Attributions []*TxsdAttribution `xml:"http://docbook.org/ns/docbook attribution"`
+
 }
 
 type XsdGoPkgHasElem_Attribution struct {
 	Attribution *TxsdAttribution `xml:"http://docbook.org/ns/docbook attribution"`
+
 }
 
 type TxsdBridgeheadRenderas xsdt.Token
@@ -1996,18 +2032,20 @@ type TxsdBridgehead struct {
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
+	XsdGoPkgHasAttr_Otherrenderas_XsdtNmtoken_
+
 	XsdGoPkgHasAttr_Renderas_TxsdBridgeheadRenderas_
 
-	XsdGoPkgHasAttr_Otherrenderas_XsdtNmtoken_
+}
+
+type XsdGoPkgHasElems_Bridgehead struct {
+	Bridgeheads []*TxsdBridgehead `xml:"http://docbook.org/ns/docbook bridgehead"`
 
 }
 
 type XsdGoPkgHasElem_Bridgehead struct {
 	Bridgehead *TxsdBridgehead `xml:"http://docbook.org/ns/docbook bridgehead"`
-}
 
-type XsdGoPkgHasElems_Bridgehead struct {
-	Bridgeheads []*TxsdBridgehead `xml:"http://docbook.org/ns/docbook bridgehead"`
 }
 
 type TxsdRemark struct {
@@ -2047,12 +2085,14 @@ type TxsdRemark struct {
 
 }
 
-type XsdGoPkgHasElems_Remark struct {
-	Remarks []*TxsdRemark `xml:"http://docbook.org/ns/docbook remark"`
-}
-
 type XsdGoPkgHasElem_Remark struct {
 	Remark *TxsdRemark `xml:"http://docbook.org/ns/docbook remark"`
+
+}
+
+type XsdGoPkgHasElems_Remark struct {
+	Remarks []*TxsdRemark `xml:"http://docbook.org/ns/docbook remark"`
+
 }
 
 type TxsdEpigraph struct {
@@ -2070,18 +2110,20 @@ type TxsdEpigraph struct {
 
 	XsdGoPkgHasElem_Attribution
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElem_Epigraph struct {
 	Epigraph *TxsdEpigraph `xml:"http://docbook.org/ns/docbook epigraph"`
+
 }
 
 type XsdGoPkgHasElems_Epigraph struct {
 	Epigraphs []*TxsdEpigraph `xml:"http://docbook.org/ns/docbook epigraph"`
+
 }
 
 type XsdGoPkgHasAttr_Label_XsdtNmtoken_ struct {
@@ -2199,20 +2241,22 @@ type TxsdFootnote struct {
 
 	XsdGoPkgHasElems_Annotation
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Label_XsdtNmtoken_
 
 }
 
-type XsdGoPkgHasElems_Footnote struct {
-	Footnotes []*TxsdFootnote `xml:"http://docbook.org/ns/docbook footnote"`
-}
-
 type XsdGoPkgHasElem_Footnote struct {
 	Footnote *TxsdFootnote `xml:"http://docbook.org/ns/docbook footnote"`
+
+}
+
+type XsdGoPkgHasElems_Footnote struct {
+	Footnotes []*TxsdFootnote `xml:"http://docbook.org/ns/docbook footnote"`
+
 }
 
 type TxsdFormalpara struct {
@@ -2226,18 +2270,20 @@ type TxsdFormalpara struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_Formalpara struct {
 	Formalparas []*TxsdFormalpara `xml:"http://docbook.org/ns/docbook formalpara"`
+
 }
 
 type XsdGoPkgHasElem_Formalpara struct {
 	Formalpara *TxsdFormalpara `xml:"http://docbook.org/ns/docbook formalpara"`
+
 }
 
 type TxsdPara struct {
@@ -2537,18 +2583,20 @@ type TxsdPara struct {
 
 	XsdGoPkgHasElems_Warning
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElem_Para struct {
 	Para *TxsdPara `xml:"http://docbook.org/ns/docbook para"`
+
 }
 
 type XsdGoPkgHasElems_Para struct {
 	Paras []*TxsdPara `xml:"http://docbook.org/ns/docbook para"`
+
 }
 
 type TxsdSimpara struct {
@@ -2760,10 +2808,12 @@ type TxsdSimpara struct {
 
 type XsdGoPkgHasElem_Simpara struct {
 	Simpara *TxsdSimpara `xml:"http://docbook.org/ns/docbook simpara"`
+
 }
 
 type XsdGoPkgHasElems_Simpara struct {
 	Simparas []*TxsdSimpara `xml:"http://docbook.org/ns/docbook simpara"`
+
 }
 
 type TxsdItemizedlistSpacing xsdt.Token
@@ -2910,22 +2960,24 @@ type TxsdItemizedlist struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Spacing_TxsdItemizedlistSpacing_
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Mark_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Spacing_TxsdItemizedlistSpacing_
 
 }
 
 type XsdGoPkgHasElems_Itemizedlist struct {
 	Itemizedlists []*TxsdItemizedlist `xml:"http://docbook.org/ns/docbook itemizedlist"`
+
 }
 
 type XsdGoPkgHasElem_Itemizedlist struct {
 	Itemizedlist *TxsdItemizedlist `xml:"http://docbook.org/ns/docbook itemizedlist"`
+
 }
 
 type TxsdOrderedlistSpacing xsdt.Token
@@ -3148,24 +3200,26 @@ type TxsdOrderedlist struct {
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAttr_Continuation_TxsdOrderedlistContinuation_
-
 	XsdGoPkgHasAttr_Numeration_TxsdOrderedlistNumeration_
 
 	XsdGoPkgHasAttr_Inheritnum_TxsdOrderedlistInheritnum_
 
+	XsdGoPkgHasAttr_Startingnumber_XsdtNmtoken_
+
 	XsdGoPkgHasAttr_Spacing_TxsdOrderedlistSpacing_
 
-	XsdGoPkgHasAttr_Startingnumber_XsdtNmtoken_
+	XsdGoPkgHasAttr_Continuation_TxsdOrderedlistContinuation_
+
+}
+
+type XsdGoPkgHasElem_Orderedlist struct {
+	Orderedlist *TxsdOrderedlist `xml:"http://docbook.org/ns/docbook orderedlist"`
 
 }
 
 type XsdGoPkgHasElems_Orderedlist struct {
 	Orderedlists []*TxsdOrderedlist `xml:"http://docbook.org/ns/docbook orderedlist"`
-}
 
-type XsdGoPkgHasElem_Orderedlist struct {
-	Orderedlist *TxsdOrderedlist `xml:"http://docbook.org/ns/docbook orderedlist"`
 }
 
 type XsdGoPkgHasAttr_Override_XsdtNmtoken_ struct {
@@ -3293,10 +3347,12 @@ type TxsdListitem struct {
 
 type XsdGoPkgHasElem_Listitem struct {
 	Listitem *TxsdListitem `xml:"http://docbook.org/ns/docbook listitem"`
+
 }
 
 type XsdGoPkgHasElems_Listitem struct {
 	Listitems []*TxsdListitem `xml:"http://docbook.org/ns/docbook listitem"`
+
 }
 
 type TxsdSegmentedlist struct {
@@ -3318,10 +3374,12 @@ type TxsdSegmentedlist struct {
 
 type XsdGoPkgHasElems_Segmentedlist struct {
 	Segmentedlists []*TxsdSegmentedlist `xml:"http://docbook.org/ns/docbook segmentedlist"`
+
 }
 
 type XsdGoPkgHasElem_Segmentedlist struct {
 	Segmentedlist *TxsdSegmentedlist `xml:"http://docbook.org/ns/docbook segmentedlist"`
+
 }
 
 type TxsdSegtitle struct {
@@ -3531,10 +3589,12 @@ type TxsdSegtitle struct {
 
 type XsdGoPkgHasElems_Segtitle struct {
 	Segtitles []*TxsdSegtitle `xml:"http://docbook.org/ns/docbook segtitle"`
+
 }
 
 type XsdGoPkgHasElem_Segtitle struct {
 	Segtitle *TxsdSegtitle `xml:"http://docbook.org/ns/docbook segtitle"`
+
 }
 
 type TxsdSeglistitem struct {
@@ -3546,12 +3606,14 @@ type TxsdSeglistitem struct {
 
 }
 
-type XsdGoPkgHasElem_Seglistitem struct {
-	Seglistitem *TxsdSeglistitem `xml:"http://docbook.org/ns/docbook seglistitem"`
-}
-
 type XsdGoPkgHasElems_Seglistitem struct {
 	Seglistitems []*TxsdSeglistitem `xml:"http://docbook.org/ns/docbook seglistitem"`
+
+}
+
+type XsdGoPkgHasElem_Seglistitem struct {
+	Seglistitem *TxsdSeglistitem `xml:"http://docbook.org/ns/docbook seglistitem"`
+
 }
 
 type TxsdSeg struct {
@@ -3753,18 +3815,20 @@ type TxsdSeg struct {
 
 	XsdGoPkgHasElems_Errortype
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Seg struct {
+	Seg *TxsdSeg `xml:"http://docbook.org/ns/docbook seg"`
 
 }
 
 type XsdGoPkgHasElems_Seg struct {
 	Segs []*TxsdSeg `xml:"http://docbook.org/ns/docbook seg"`
-}
 
-type XsdGoPkgHasElem_Seg struct {
-	Seg *TxsdSeg `xml:"http://docbook.org/ns/docbook seg"`
 }
 
 type TxsdSimplelistType xsdt.Token
@@ -3801,22 +3865,24 @@ type XsdGoPkgHasAttr_Columns_XsdtNmtoken_ struct {
 type TxsdSimplelist struct {
 	XsdGoPkgHasElems_Member
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasAttr_Columns_XsdtNmtoken_
 
 	XsdGoPkgHasAttr_Type_TxsdSimplelistType_Vert
 
-	XsdGoPkgHasAttr_Columns_XsdtNmtoken_
+}
+
+type XsdGoPkgHasElem_Simplelist struct {
+	Simplelist *TxsdSimplelist `xml:"http://docbook.org/ns/docbook simplelist"`
 
 }
 
 type XsdGoPkgHasElems_Simplelist struct {
 	Simplelists []*TxsdSimplelist `xml:"http://docbook.org/ns/docbook simplelist"`
-}
 
-type XsdGoPkgHasElem_Simplelist struct {
-	Simplelist *TxsdSimplelist `xml:"http://docbook.org/ns/docbook simplelist"`
 }
 
 type TxsdMember struct {
@@ -4026,10 +4092,12 @@ type TxsdMember struct {
 
 type XsdGoPkgHasElem_Member struct {
 	Member *TxsdMember `xml:"http://docbook.org/ns/docbook member"`
+
 }
 
 type XsdGoPkgHasElems_Member struct {
 	Members []*TxsdMember `xml:"http://docbook.org/ns/docbook member"`
+
 }
 
 type TxsdVariablelistSpacing xsdt.Token
@@ -4176,9 +4244,9 @@ type TxsdVariablelist struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Spacing_TxsdVariablelistSpacing_
 
@@ -4186,12 +4254,14 @@ type TxsdVariablelist struct {
 
 }
 
-type XsdGoPkgHasElem_Variablelist struct {
-	Variablelist *TxsdVariablelist `xml:"http://docbook.org/ns/docbook variablelist"`
-}
-
 type XsdGoPkgHasElems_Variablelist struct {
 	Variablelists []*TxsdVariablelist `xml:"http://docbook.org/ns/docbook variablelist"`
+
+}
+
+type XsdGoPkgHasElem_Variablelist struct {
+	Variablelist *TxsdVariablelist `xml:"http://docbook.org/ns/docbook variablelist"`
+
 }
 
 type TxsdVarlistentry struct {
@@ -4207,10 +4277,12 @@ type TxsdVarlistentry struct {
 
 type XsdGoPkgHasElem_Varlistentry struct {
 	Varlistentry *TxsdVarlistentry `xml:"http://docbook.org/ns/docbook varlistentry"`
+
 }
 
 type XsdGoPkgHasElems_Varlistentry struct {
 	Varlistentries []*TxsdVarlistentry `xml:"http://docbook.org/ns/docbook varlistentry"`
+
 }
 
 type TxsdTerm struct {
@@ -4418,12 +4490,14 @@ type TxsdTerm struct {
 
 }
 
-type XsdGoPkgHasElem_Term struct {
-	Term *TxsdTerm `xml:"http://docbook.org/ns/docbook term"`
-}
-
 type XsdGoPkgHasElems_Term struct {
 	Terms []*TxsdTerm `xml:"http://docbook.org/ns/docbook term"`
+
+}
+
+type XsdGoPkgHasElem_Term struct {
+	Term *TxsdTerm `xml:"http://docbook.org/ns/docbook term"`
+
 }
 
 type XsdGoPkgHasAttr_Label_XsdtString_ struct {
@@ -4578,15 +4652,15 @@ type TxsdExample struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Floatstyle_XsdtString_
 
-	XsdGoPkgHasAttr_Width_XsdtNmtoken_
-
 	XsdGoPkgHasAttr_Pgwide_TxsdExamplePgwide_
+
+	XsdGoPkgHasAttr_Width_XsdtNmtoken_
 
 	XsdGoPkgHasAttr_Label_XsdtString_
 
@@ -4594,10 +4668,12 @@ type TxsdExample struct {
 
 type XsdGoPkgHasElems_Example struct {
 	Examples []*TxsdExample `xml:"http://docbook.org/ns/docbook example"`
+
 }
 
 type XsdGoPkgHasElem_Example struct {
 	Example *TxsdExample `xml:"http://docbook.org/ns/docbook example"`
+
 }
 
 type TxsdInformalexample struct {
@@ -4715,18 +4791,20 @@ type TxsdInformalexample struct {
 
 	XsdGoPkgHasElem_Caption
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElem_Informalexample struct {
 	Informalexample *TxsdInformalexample `xml:"http://docbook.org/ns/docbook informalexample"`
+
 }
 
 type XsdGoPkgHasElems_Informalexample struct {
 	Informalexamples []*TxsdInformalexample `xml:"http://docbook.org/ns/docbook informalexample"`
+
 }
 
 type TxsdLiterallayoutContinuation xsdt.Token
@@ -5011,26 +5089,28 @@ type TxsdLiterallayout struct {
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
+	XsdGoPkgHasAttr_Language_XsdtString_
+
+	XsdGoPkgHasAttr_Linenumbering_TxsdLiterallayoutLinenumbering_
+
 	XsdGoPkgHasAttr_Continuation_TxsdLiterallayoutContinuation_
 
 	XsdGoPkgHasAttr_Startinglinenumber_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_Linenumbering_TxsdLiterallayoutLinenumbering_
 
 	XsdGoPkgHasAttr_Class_TxsdLiterallayoutClass_
 
 	xml.XsdGoPkgHasAttr_Space
 
-	XsdGoPkgHasAttr_Language_XsdtString_
+}
+
+type XsdGoPkgHasElems_Literallayout struct {
+	Literallayouts []*TxsdLiterallayout `xml:"http://docbook.org/ns/docbook literallayout"`
 
 }
 
 type XsdGoPkgHasElem_Literallayout struct {
 	Literallayout *TxsdLiterallayout `xml:"http://docbook.org/ns/docbook literallayout"`
-}
 
-type XsdGoPkgHasElems_Literallayout struct {
-	Literallayouts []*TxsdLiterallayout `xml:"http://docbook.org/ns/docbook literallayout"`
 }
 
 type TxsdScreenContinuation xsdt.Token
@@ -5282,24 +5362,26 @@ type TxsdScreen struct {
 
 	XsdGoPkgHasElems_Co
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasAttr_Continuation_TxsdScreenContinuation_
 
 	xml.XsdGoPkgHasAttr_Space
 
 	XsdGoPkgHasAttr_Linenumbering_TxsdScreenLinenumbering_
 
-	XsdGoPkgHasAttr_Continuation_TxsdScreenContinuation_
+}
+
+type XsdGoPkgHasElem_Screen struct {
+	Screen *TxsdScreen `xml:"http://docbook.org/ns/docbook screen"`
 
 }
 
 type XsdGoPkgHasElems_Screen struct {
 	Screens []*TxsdScreen `xml:"http://docbook.org/ns/docbook screen"`
-}
 
-type XsdGoPkgHasElem_Screen struct {
-	Screen *TxsdScreen `xml:"http://docbook.org/ns/docbook screen"`
 }
 
 type TxsdScreenshot struct {
@@ -5321,10 +5403,12 @@ type TxsdScreenshot struct {
 
 type XsdGoPkgHasElem_Screenshot struct {
 	Screenshot *TxsdScreenshot `xml:"http://docbook.org/ns/docbook screenshot"`
+
 }
 
 type XsdGoPkgHasElems_Screenshot struct {
 	Screenshots []*TxsdScreenshot `xml:"http://docbook.org/ns/docbook screenshot"`
+
 }
 
 type TxsdFigurePgwide xsdt.Token
@@ -5467,9 +5551,9 @@ type TxsdFigure struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Pgwide_TxsdFigurePgwide_
 
@@ -5477,10 +5561,12 @@ type TxsdFigure struct {
 
 type XsdGoPkgHasElem_Figure struct {
 	Figure *TxsdFigure `xml:"http://docbook.org/ns/docbook figure"`
+
 }
 
 type XsdGoPkgHasElems_Figure struct {
 	Figures []*TxsdFigure `xml:"http://docbook.org/ns/docbook figure"`
+
 }
 
 type TxsdInformalfigurePgwide xsdt.Token
@@ -5619,20 +5705,22 @@ type TxsdInformalfigure struct {
 
 	XsdGoPkgHasElem_Caption
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Pgwide_TxsdInformalfigurePgwide_
 
 }
 
-type XsdGoPkgHasElems_Informalfigure struct {
-	Informalfigures []*TxsdInformalfigure `xml:"http://docbook.org/ns/docbook informalfigure"`
-}
-
 type XsdGoPkgHasElem_Informalfigure struct {
 	Informalfigure *TxsdInformalfigure `xml:"http://docbook.org/ns/docbook informalfigure"`
+
+}
+
+type XsdGoPkgHasElems_Informalfigure struct {
+	Informalfigures []*TxsdInformalfigure `xml:"http://docbook.org/ns/docbook informalfigure"`
+
 }
 
 type TxsdMediaobject struct {
@@ -5658,12 +5746,14 @@ type TxsdMediaobject struct {
 
 }
 
-type XsdGoPkgHasElem_Mediaobject struct {
-	Mediaobject *TxsdMediaobject `xml:"http://docbook.org/ns/docbook mediaobject"`
-}
-
 type XsdGoPkgHasElems_Mediaobject struct {
 	Mediaobjects []*TxsdMediaobject `xml:"http://docbook.org/ns/docbook mediaobject"`
+
+}
+
+type XsdGoPkgHasElem_Mediaobject struct {
+	Mediaobject *TxsdMediaobject `xml:"http://docbook.org/ns/docbook mediaobject"`
+
 }
 
 type TxsdInlinemediaobject struct {
@@ -5681,18 +5771,20 @@ type TxsdInlinemediaobject struct {
 
 	XsdGoPkgHasElem_Alt
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElem_Inlinemediaobject struct {
 	Inlinemediaobject *TxsdInlinemediaobject `xml:"http://docbook.org/ns/docbook inlinemediaobject"`
+
 }
 
 type XsdGoPkgHasElems_Inlinemediaobject struct {
 	Inlinemediaobjects []*TxsdInlinemediaobject `xml:"http://docbook.org/ns/docbook inlinemediaobject"`
+
 }
 
 type TxsdVideoobject struct {
@@ -5700,18 +5792,20 @@ type TxsdVideoobject struct {
 
 	XsdGoPkgHasElem_Videodata
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElem_Videoobject struct {
 	Videoobject *TxsdVideoobject `xml:"http://docbook.org/ns/docbook videoobject"`
+
 }
 
 type XsdGoPkgHasElems_Videoobject struct {
 	Videoobjects []*TxsdVideoobject `xml:"http://docbook.org/ns/docbook videoobject"`
+
 }
 
 type TxsdAudioobject struct {
@@ -5719,18 +5813,20 @@ type TxsdAudioobject struct {
 
 	XsdGoPkgHasElem_Audiodata
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElems_Audioobject struct {
 	Audioobjects []*TxsdAudioobject `xml:"http://docbook.org/ns/docbook audioobject"`
+
 }
 
 type XsdGoPkgHasElem_Audioobject struct {
 	Audioobject *TxsdAudioobject `xml:"http://docbook.org/ns/docbook audioobject"`
+
 }
 
 type TxsdImageobject struct {
@@ -5744,12 +5840,14 @@ type TxsdImageobject struct {
 
 }
 
-type XsdGoPkgHasElem_Imageobject struct {
-	Imageobject *TxsdImageobject `xml:"http://docbook.org/ns/docbook imageobject"`
-}
-
 type XsdGoPkgHasElems_Imageobject struct {
 	Imageobjects []*TxsdImageobject `xml:"http://docbook.org/ns/docbook imageobject"`
+
+}
+
+type XsdGoPkgHasElem_Imageobject struct {
+	Imageobject *TxsdImageobject `xml:"http://docbook.org/ns/docbook imageobject"`
+
 }
 
 type TxsdTextobject struct {
@@ -5877,10 +5975,12 @@ type TxsdTextobject struct {
 
 type XsdGoPkgHasElem_Textobject struct {
 	Textobject *TxsdTextobject `xml:"http://docbook.org/ns/docbook textobject"`
+
 }
 
 type XsdGoPkgHasElems_Textobject struct {
 	Textobjects []*TxsdTextobject `xml:"http://docbook.org/ns/docbook textobject"`
+
 }
 
 type XsdGoPkgHasAttr_Format_XsdtString_ struct {
@@ -5995,36 +6095,38 @@ type TxsdVideodata struct {
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Scale_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_Entityref_XsdtEntity_
-
-	XsdGoPkgHasAttr_Scalefit_TxsdVideodataScalefit_
-
 	XsdGoPkgHasAttr_Format_XsdtString_
-
-	XsdGoPkgHasAttr_Valign_TxsdVideodataValign_
-
-	XsdGoPkgHasAttr_Fileref_XsdtString_
 
 	XsdGoPkgHasAttr_Depth_XsdtString_
 
+	XsdGoPkgHasAttr_Valign_TxsdVideodataValign_
+
 	XsdGoPkgHasAttr_Contentwidth_XsdtString_
 
-	XsdGoPkgHasAttr_Contentdepth_XsdtString_
+	XsdGoPkgHasAttr_Width_XsdtString_
+
+	XsdGoPkgHasAttr_Scalefit_TxsdVideodataScalefit_
 
 	XsdGoPkgHasAttr_Align_TxsdVideodataAlign_
 
-	XsdGoPkgHasAttr_Width_XsdtString_
+	XsdGoPkgHasAttr_Entityref_XsdtEntity_
+
+	XsdGoPkgHasAttr_Fileref_XsdtString_
+
+	XsdGoPkgHasAttr_Contentdepth_XsdtString_
+
+	XsdGoPkgHasAttr_Scale_XsdtNmtoken_
 
 }
 
 type XsdGoPkgHasElem_Videodata struct {
 	Videodata *TxsdVideodata `xml:"http://docbook.org/ns/docbook videodata"`
+
 }
 
 type XsdGoPkgHasElems_Videodata struct {
 	Videodatas []*TxsdVideodata `xml:"http://docbook.org/ns/docbook videodata"`
+
 }
 
 type TxsdAudiodata struct {
@@ -6034,12 +6136,14 @@ type TxsdAudiodata struct {
 
 }
 
-type XsdGoPkgHasElem_Audiodata struct {
-	Audiodata *TxsdAudiodata `xml:"http://docbook.org/ns/docbook audiodata"`
-}
-
 type XsdGoPkgHasElems_Audiodata struct {
 	Audiodatas []*TxsdAudiodata `xml:"http://docbook.org/ns/docbook audiodata"`
+
+}
+
+type XsdGoPkgHasElem_Audiodata struct {
+	Audiodata *TxsdAudiodata `xml:"http://docbook.org/ns/docbook audiodata"`
+
 }
 
 type TxsdImagedataAlign xsdt.Token
@@ -6122,20 +6226,22 @@ type TxsdImagedata struct {
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Valign_TxsdImagedataValign_
+	XsdGoPkgHasAttr_Scalefit_TxsdImagedataScalefit_
 
 	XsdGoPkgHasAttr_Align_TxsdImagedataAlign_
 
-	XsdGoPkgHasAttr_Scalefit_TxsdImagedataScalefit_
+	XsdGoPkgHasAttr_Valign_TxsdImagedataValign_
+
+}
+
+type XsdGoPkgHasElem_Imagedata struct {
+	Imagedata *TxsdImagedata `xml:"http://docbook.org/ns/docbook imagedata"`
 
 }
 
 type XsdGoPkgHasElems_Imagedata struct {
 	Imagedatas []*TxsdImagedata `xml:"http://docbook.org/ns/docbook imagedata"`
-}
 
-type XsdGoPkgHasElem_Imagedata struct {
-	Imagedata *TxsdImagedata `xml:"http://docbook.org/ns/docbook imagedata"`
 }
 
 type XsdGoPkgHasAttr_Encoding_XsdtString_ struct {
@@ -6153,10 +6259,12 @@ type TxsdTextdata struct {
 
 type XsdGoPkgHasElems_Textdata struct {
 	Textdatas []*TxsdTextdata `xml:"http://docbook.org/ns/docbook textdata"`
+
 }
 
 type XsdGoPkgHasElem_Textdata struct {
 	Textdata *TxsdTextdata `xml:"http://docbook.org/ns/docbook textdata"`
+
 }
 
 type XsdGoPkgHasAttr_Class_XsdtString_ struct {
@@ -6332,42 +6440,44 @@ type TxsdCaption struct {
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAttr_Onmousemove_XsdtString_
+	XsdGoPkgHasAttr_Onclick_XsdtString_
 
-	XsdGoPkgHasAttr_Onmouseout_XsdtString_
+	XsdGoPkgHasAttr_Onmouseup_XsdtString_
+
+	XsdGoPkgHasAttr_Onkeydown_XsdtString_
 
 	XsdGoPkgHasAttr_Ondblclick_XsdtString_
 
 	XsdGoPkgHasAttr_Onmouseover_XsdtString_
 
-	XsdGoPkgHasAttr_Lang_XsdtString_
-
-	XsdGoPkgHasAttr_Title_XsdtString_
+	XsdGoPkgHasAttr_Onkeyup_XsdtString_
 
 	XsdGoPkgHasAttr_Class_XsdtString_
 
-	XsdGoPkgHasAttr_Onclick_XsdtString_
+	XsdGoPkgHasAttr_Onmouseout_XsdtString_
+
+	XsdGoPkgHasAttr_Onmousemove_XsdtString_
 
 	XsdGoPkgHasAttr_Onmousedown_XsdtString_
 
+	XsdGoPkgHasAttr_Title_XsdtString_
+
+	XsdGoPkgHasAttr_Lang_XsdtString_
+
 	XsdGoPkgHasAttr_Onkeypress_XsdtString_
 
-	XsdGoPkgHasAttr_Onmouseup_XsdtString_
-
 	XsdGoPkgHasAttr_Style_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeydown_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeyup_XsdtString_
 
 }
 
 type XsdGoPkgHasElem_Caption struct {
 	Caption *TxsdCaption `xml:"http://docbook.org/ns/docbook caption"`
+
 }
 
 type XsdGoPkgHasElems_Caption struct {
 	Captions []*TxsdCaption `xml:"http://docbook.org/ns/docbook caption"`
+
 }
 
 type TxsdAddressContinuation xsdt.Token
@@ -6467,24 +6577,26 @@ type TxsdAddress struct {
 
 	XsdGoPkgHasElems_Otheraddr
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+	XsdGoPkgHasAttr_Linenumbering_TxsdAddressLinenumbering_
 
 	XsdGoPkgHasAttr_Continuation_TxsdAddressContinuation_
 
 	xml.XsdGoPkgHasAttr_Space
 
-	XsdGoPkgHasAttr_Linenumbering_TxsdAddressLinenumbering_
+}
+
+type XsdGoPkgHasElem_Address struct {
+	Address *TxsdAddress `xml:"http://docbook.org/ns/docbook address"`
 
 }
 
 type XsdGoPkgHasElems_Address struct {
 	Addresses []*TxsdAddress `xml:"http://docbook.org/ns/docbook address"`
-}
 
-type XsdGoPkgHasElem_Address struct {
-	Address *TxsdAddress `xml:"http://docbook.org/ns/docbook address"`
 }
 
 type TxsdStreet struct {
@@ -6524,12 +6636,14 @@ type TxsdStreet struct {
 
 }
 
-type XsdGoPkgHasElem_Street struct {
-	Street *TxsdStreet `xml:"http://docbook.org/ns/docbook street"`
-}
-
 type XsdGoPkgHasElems_Street struct {
 	Streets []*TxsdStreet `xml:"http://docbook.org/ns/docbook street"`
+
+}
+
+type XsdGoPkgHasElem_Street struct {
+	Street *TxsdStreet `xml:"http://docbook.org/ns/docbook street"`
+
 }
 
 type TxsdPob struct {
@@ -6563,18 +6677,20 @@ type TxsdPob struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElem_Pob struct {
 	Pob *TxsdPob `xml:"http://docbook.org/ns/docbook pob"`
+
 }
 
 type XsdGoPkgHasElems_Pob struct {
 	Pobs []*TxsdPob `xml:"http://docbook.org/ns/docbook pob"`
+
 }
 
 type TxsdPostcode struct {
@@ -6608,18 +6724,20 @@ type TxsdPostcode struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElem_Postcode struct {
 	Postcode *TxsdPostcode `xml:"http://docbook.org/ns/docbook postcode"`
+
 }
 
 type XsdGoPkgHasElems_Postcode struct {
 	Postcodes []*TxsdPostcode `xml:"http://docbook.org/ns/docbook postcode"`
+
 }
 
 type TxsdCity struct {
@@ -6653,18 +6771,20 @@ type TxsdCity struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_City struct {
 	Cities []*TxsdCity `xml:"http://docbook.org/ns/docbook city"`
+
 }
 
 type XsdGoPkgHasElem_City struct {
 	City *TxsdCity `xml:"http://docbook.org/ns/docbook city"`
+
 }
 
 type TxsdState struct {
@@ -6706,10 +6826,12 @@ type TxsdState struct {
 
 type XsdGoPkgHasElems_State struct {
 	States []*TxsdState `xml:"http://docbook.org/ns/docbook state"`
+
 }
 
 type XsdGoPkgHasElem_State struct {
 	State *TxsdState `xml:"http://docbook.org/ns/docbook state"`
+
 }
 
 type TxsdCountry struct {
@@ -6743,18 +6865,20 @@ type TxsdCountry struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElem_Country struct {
 	Country *TxsdCountry `xml:"http://docbook.org/ns/docbook country"`
+
 }
 
 type XsdGoPkgHasElems_Country struct {
 	Countries []*TxsdCountry `xml:"http://docbook.org/ns/docbook country"`
+
 }
 
 type TxsdPhone struct {
@@ -6788,18 +6912,20 @@ type TxsdPhone struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElems_Phone struct {
+	Phones []*TxsdPhone `xml:"http://docbook.org/ns/docbook phone"`
 
 }
 
 type XsdGoPkgHasElem_Phone struct {
 	Phone *TxsdPhone `xml:"http://docbook.org/ns/docbook phone"`
-}
 
-type XsdGoPkgHasElems_Phone struct {
-	Phones []*TxsdPhone `xml:"http://docbook.org/ns/docbook phone"`
 }
 
 type TxsdFax struct {
@@ -6833,18 +6959,20 @@ type TxsdFax struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Fax struct {
+	Fax *TxsdFax `xml:"http://docbook.org/ns/docbook fax"`
 
 }
 
 type XsdGoPkgHasElems_Fax struct {
 	Faxs []*TxsdFax `xml:"http://docbook.org/ns/docbook fax"`
-}
 
-type XsdGoPkgHasElem_Fax struct {
-	Fax *TxsdFax `xml:"http://docbook.org/ns/docbook fax"`
 }
 
 type TxsdOtheraddr struct {
@@ -6878,18 +7006,20 @@ type TxsdOtheraddr struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_Otheraddr struct {
 	Otheraddrs []*TxsdOtheraddr `xml:"http://docbook.org/ns/docbook otheraddr"`
+
 }
 
 type XsdGoPkgHasElem_Otheraddr struct {
 	Otheraddr *TxsdOtheraddr `xml:"http://docbook.org/ns/docbook otheraddr"`
+
 }
 
 type TxsdAffiliation struct {
@@ -6905,18 +7035,20 @@ type TxsdAffiliation struct {
 
 	XsdGoPkgHasElems_Address
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElem_Affiliation struct {
+	Affiliation *TxsdAffiliation `xml:"http://docbook.org/ns/docbook affiliation"`
 
 }
 
 type XsdGoPkgHasElems_Affiliation struct {
 	Affiliations []*TxsdAffiliation `xml:"http://docbook.org/ns/docbook affiliation"`
-}
 
-type XsdGoPkgHasElem_Affiliation struct {
-	Affiliation *TxsdAffiliation `xml:"http://docbook.org/ns/docbook affiliation"`
 }
 
 type TxsdShortaffil struct {
@@ -6958,10 +7090,12 @@ type TxsdShortaffil struct {
 
 type XsdGoPkgHasElem_Shortaffil struct {
 	Shortaffil *TxsdShortaffil `xml:"http://docbook.org/ns/docbook shortaffil"`
+
 }
 
 type XsdGoPkgHasElems_Shortaffil struct {
 	Shortaffils []*TxsdShortaffil `xml:"http://docbook.org/ns/docbook shortaffil"`
+
 }
 
 type TxsdJobtitle struct {
@@ -7003,10 +7137,12 @@ type TxsdJobtitle struct {
 
 type XsdGoPkgHasElems_Jobtitle struct {
 	Jobtitles []*TxsdJobtitle `xml:"http://docbook.org/ns/docbook jobtitle"`
+
 }
 
 type XsdGoPkgHasElem_Jobtitle struct {
 	Jobtitle *TxsdJobtitle `xml:"http://docbook.org/ns/docbook jobtitle"`
+
 }
 
 type TxsdOrgnameClass xsdt.Token
@@ -7084,12 +7220,14 @@ type TxsdOrgname struct {
 
 }
 
-type XsdGoPkgHasElem_Orgname struct {
-	Orgname *TxsdOrgname `xml:"http://docbook.org/ns/docbook orgname"`
-}
-
 type XsdGoPkgHasElems_Orgname struct {
 	Orgnames []*TxsdOrgname `xml:"http://docbook.org/ns/docbook orgname"`
+
+}
+
+type XsdGoPkgHasElem_Orgname struct {
+	Orgname *TxsdOrgname `xml:"http://docbook.org/ns/docbook orgname"`
+
 }
 
 type TxsdOrgdiv struct {
@@ -7299,10 +7437,12 @@ type TxsdOrgdiv struct {
 
 type XsdGoPkgHasElem_Orgdiv struct {
 	Orgdiv *TxsdOrgdiv `xml:"http://docbook.org/ns/docbook orgdiv"`
+
 }
 
 type XsdGoPkgHasElems_Orgdiv struct {
 	Orgdivs []*TxsdOrgdiv `xml:"http://docbook.org/ns/docbook orgdiv"`
+
 }
 
 type TxsdArtpagenums struct {
@@ -7336,18 +7476,20 @@ type TxsdArtpagenums struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElems_Artpagenums struct {
 	Artpagenumses []*TxsdArtpagenums `xml:"http://docbook.org/ns/docbook artpagenums"`
+
 }
 
 type XsdGoPkgHasElem_Artpagenums struct {
 	Artpagenums *TxsdArtpagenums `xml:"http://docbook.org/ns/docbook artpagenums"`
+
 }
 
 type TxsdPersonname struct {
@@ -7397,12 +7539,14 @@ type TxsdPersonname struct {
 
 }
 
-type XsdGoPkgHasElems_Personname struct {
-	Personnames []*TxsdPersonname `xml:"http://docbook.org/ns/docbook personname"`
-}
-
 type XsdGoPkgHasElem_Personname struct {
 	Personname *TxsdPersonname `xml:"http://docbook.org/ns/docbook personname"`
+
+}
+
+type XsdGoPkgHasElems_Personname struct {
+	Personnames []*TxsdPersonname `xml:"http://docbook.org/ns/docbook personname"`
+
 }
 
 type TxsdAuthor struct {
@@ -7424,18 +7568,20 @@ type TxsdAuthor struct {
 
 	XsdGoPkgHasElem_Orgname
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElem_Author struct {
 	Author *TxsdAuthor `xml:"http://docbook.org/ns/docbook author"`
+
 }
 
 type XsdGoPkgHasElems_Author struct {
 	Authors []*TxsdAuthor `xml:"http://docbook.org/ns/docbook author"`
+
 }
 
 type TxsdAuthorgroup struct {
@@ -7451,12 +7597,14 @@ type TxsdAuthorgroup struct {
 
 }
 
-type XsdGoPkgHasElem_Authorgroup struct {
-	Authorgroup *TxsdAuthorgroup `xml:"http://docbook.org/ns/docbook authorgroup"`
-}
-
 type XsdGoPkgHasElems_Authorgroup struct {
 	Authorgroups []*TxsdAuthorgroup `xml:"http://docbook.org/ns/docbook authorgroup"`
+
+}
+
+type XsdGoPkgHasElem_Authorgroup struct {
+	Authorgroup *TxsdAuthorgroup `xml:"http://docbook.org/ns/docbook authorgroup"`
+
 }
 
 type TxsdCollab struct {
@@ -7476,12 +7624,14 @@ type TxsdCollab struct {
 
 }
 
-type XsdGoPkgHasElem_Collab struct {
-	Collab *TxsdCollab `xml:"http://docbook.org/ns/docbook collab"`
-}
-
 type XsdGoPkgHasElems_Collab struct {
 	Collabs []*TxsdCollab `xml:"http://docbook.org/ns/docbook collab"`
+
+}
+
+type XsdGoPkgHasElem_Collab struct {
+	Collab *TxsdCollab `xml:"http://docbook.org/ns/docbook collab"`
+
 }
 
 type TxsdAuthorinitials struct {
@@ -7515,18 +7665,20 @@ type TxsdAuthorinitials struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_Authorinitials struct {
 	Authorinitialses []*TxsdAuthorinitials `xml:"http://docbook.org/ns/docbook authorinitials"`
+
 }
 
 type XsdGoPkgHasElem_Authorinitials struct {
 	Authorinitials *TxsdAuthorinitials `xml:"http://docbook.org/ns/docbook authorinitials"`
+
 }
 
 type TxsdPerson struct {
@@ -7542,18 +7694,20 @@ type TxsdPerson struct {
 
 	XsdGoPkgHasElem_Personname
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElems_Person struct {
 	Persons []*TxsdPerson `xml:"http://docbook.org/ns/docbook person"`
+
 }
 
 type XsdGoPkgHasElem_Person struct {
 	Person *TxsdPerson `xml:"http://docbook.org/ns/docbook person"`
+
 }
 
 type TxsdOrg struct {
@@ -7577,10 +7731,12 @@ type TxsdOrg struct {
 
 type XsdGoPkgHasElem_Org struct {
 	Org *TxsdOrg `xml:"http://docbook.org/ns/docbook org"`
+
 }
 
 type XsdGoPkgHasElems_Org struct {
 	Orgs []*TxsdOrg `xml:"http://docbook.org/ns/docbook org"`
+
 }
 
 type TxsdConfgroup struct {
@@ -7600,12 +7756,14 @@ type TxsdConfgroup struct {
 
 }
 
-type XsdGoPkgHasElems_Confgroup struct {
-	Confgroups []*TxsdConfgroup `xml:"http://docbook.org/ns/docbook confgroup"`
-}
-
 type XsdGoPkgHasElem_Confgroup struct {
 	Confgroup *TxsdConfgroup `xml:"http://docbook.org/ns/docbook confgroup"`
+
+}
+
+type XsdGoPkgHasElems_Confgroup struct {
+	Confgroups []*TxsdConfgroup `xml:"http://docbook.org/ns/docbook confgroup"`
+
 }
 
 type TxsdConfdates struct {
@@ -7639,18 +7797,20 @@ type TxsdConfdates struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElems_Confdates struct {
+	Confdateses []*TxsdConfdates `xml:"http://docbook.org/ns/docbook confdates"`
 
 }
 
 type XsdGoPkgHasElem_Confdates struct {
 	Confdates *TxsdConfdates `xml:"http://docbook.org/ns/docbook confdates"`
-}
 
-type XsdGoPkgHasElems_Confdates struct {
-	Confdateses []*TxsdConfdates `xml:"http://docbook.org/ns/docbook confdates"`
 }
 
 type TxsdConftitle struct {
@@ -7684,18 +7844,20 @@ type TxsdConftitle struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElem_Conftitle struct {
+	Conftitle *TxsdConftitle `xml:"http://docbook.org/ns/docbook conftitle"`
 
 }
 
 type XsdGoPkgHasElems_Conftitle struct {
 	Conftitles []*TxsdConftitle `xml:"http://docbook.org/ns/docbook conftitle"`
-}
 
-type XsdGoPkgHasElem_Conftitle struct {
-	Conftitle *TxsdConftitle `xml:"http://docbook.org/ns/docbook conftitle"`
 }
 
 type TxsdConfnum struct {
@@ -7737,10 +7899,12 @@ type TxsdConfnum struct {
 
 type XsdGoPkgHasElem_Confnum struct {
 	Confnum *TxsdConfnum `xml:"http://docbook.org/ns/docbook confnum"`
+
 }
 
 type XsdGoPkgHasElems_Confnum struct {
 	Confnums []*TxsdConfnum `xml:"http://docbook.org/ns/docbook confnum"`
+
 }
 
 type TxsdConfsponsor struct {
@@ -7774,18 +7938,20 @@ type TxsdConfsponsor struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElem_Confsponsor struct {
 	Confsponsor *TxsdConfsponsor `xml:"http://docbook.org/ns/docbook confsponsor"`
+
 }
 
 type XsdGoPkgHasElems_Confsponsor struct {
 	Confsponsors []*TxsdConfsponsor `xml:"http://docbook.org/ns/docbook confsponsor"`
+
 }
 
 type TxsdContractnum struct {
@@ -7819,18 +7985,20 @@ type TxsdContractnum struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElems_Contractnum struct {
 	Contractnums []*TxsdContractnum `xml:"http://docbook.org/ns/docbook contractnum"`
+
 }
 
 type XsdGoPkgHasElem_Contractnum struct {
 	Contractnum *TxsdContractnum `xml:"http://docbook.org/ns/docbook contractnum"`
+
 }
 
 type TxsdContractsponsor struct {
@@ -7864,18 +8032,20 @@ type TxsdContractsponsor struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Contractsponsor struct {
+	Contractsponsor *TxsdContractsponsor `xml:"http://docbook.org/ns/docbook contractsponsor"`
 
 }
 
 type XsdGoPkgHasElems_Contractsponsor struct {
 	Contractsponsors []*TxsdContractsponsor `xml:"http://docbook.org/ns/docbook contractsponsor"`
-}
 
-type XsdGoPkgHasElem_Contractsponsor struct {
-	Contractsponsor *TxsdContractsponsor `xml:"http://docbook.org/ns/docbook contractsponsor"`
 }
 
 type TxsdCopyright struct {
@@ -7891,10 +8061,12 @@ type TxsdCopyright struct {
 
 type XsdGoPkgHasElem_Copyright struct {
 	Copyright *TxsdCopyright `xml:"http://docbook.org/ns/docbook copyright"`
+
 }
 
 type XsdGoPkgHasElems_Copyright struct {
 	Copyrights []*TxsdCopyright `xml:"http://docbook.org/ns/docbook copyright"`
+
 }
 
 type TxsdYear struct {
@@ -7928,18 +8100,20 @@ type TxsdYear struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_Year struct {
 	Years []*TxsdYear `xml:"http://docbook.org/ns/docbook year"`
+
 }
 
 type XsdGoPkgHasElem_Year struct {
 	Year *TxsdYear `xml:"http://docbook.org/ns/docbook year"`
+
 }
 
 type TxsdHolder struct {
@@ -7981,10 +8155,12 @@ type TxsdHolder struct {
 
 type XsdGoPkgHasElem_Holder struct {
 	Holder *TxsdHolder `xml:"http://docbook.org/ns/docbook holder"`
+
 }
 
 type XsdGoPkgHasElems_Holder struct {
 	Holders []*TxsdHolder `xml:"http://docbook.org/ns/docbook holder"`
+
 }
 
 type TxsdCover struct {
@@ -8082,29 +8258,33 @@ type TxsdCover struct {
 
 }
 
-type XsdGoPkgHasElem_Cover struct {
-	Cover *TxsdCover `xml:"http://docbook.org/ns/docbook cover"`
-}
-
 type XsdGoPkgHasElems_Cover struct {
 	Covers []*TxsdCover `xml:"http://docbook.org/ns/docbook cover"`
+
+}
+
+type XsdGoPkgHasElem_Cover struct {
+	Cover *TxsdCover `xml:"http://docbook.org/ns/docbook cover"`
+
 }
 
 type TxsdDate struct {
 	XsdGoPkgHasCdata
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_Date struct {
 	Dates []*TxsdDate `xml:"http://docbook.org/ns/docbook date"`
+
 }
 
 type XsdGoPkgHasElem_Date struct {
 	Date *TxsdDate `xml:"http://docbook.org/ns/docbook date"`
+
 }
 
 type TxsdEdition struct {
@@ -8146,10 +8326,12 @@ type TxsdEdition struct {
 
 type XsdGoPkgHasElems_Edition struct {
 	Editions []*TxsdEdition `xml:"http://docbook.org/ns/docbook edition"`
+
 }
 
 type XsdGoPkgHasElem_Edition struct {
 	Edition *TxsdEdition `xml:"http://docbook.org/ns/docbook edition"`
+
 }
 
 type TxsdEditor struct {
@@ -8177,12 +8359,14 @@ type TxsdEditor struct {
 
 }
 
-type XsdGoPkgHasElem_Editor struct {
-	Editor *TxsdEditor `xml:"http://docbook.org/ns/docbook editor"`
-}
-
 type XsdGoPkgHasElems_Editor struct {
 	Editors []*TxsdEditor `xml:"http://docbook.org/ns/docbook editor"`
+
+}
+
+type XsdGoPkgHasElem_Editor struct {
+	Editor *TxsdEditor `xml:"http://docbook.org/ns/docbook editor"`
+
 }
 
 type TxsdBiblioidClass xsdt.Token
@@ -8259,9 +8443,9 @@ type TxsdBiblioid struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Class_TxsdBiblioidClass_
 
@@ -8271,10 +8455,12 @@ type TxsdBiblioid struct {
 
 type XsdGoPkgHasElems_Biblioid struct {
 	Biblioids []*TxsdBiblioid `xml:"http://docbook.org/ns/docbook biblioid"`
+
 }
 
 type XsdGoPkgHasElem_Biblioid struct {
 	Biblioid *TxsdBiblioid `xml:"http://docbook.org/ns/docbook biblioid"`
+
 }
 
 type TxsdCitebiblioidClass xsdt.Token
@@ -8347,20 +8533,22 @@ type TxsdCitebiblioid struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Class_TxsdCitebiblioidClass_
 
 }
 
-type XsdGoPkgHasElems_Citebiblioid struct {
-	Citebiblioids []*TxsdCitebiblioid `xml:"http://docbook.org/ns/docbook citebiblioid"`
-}
-
 type XsdGoPkgHasElem_Citebiblioid struct {
 	Citebiblioid *TxsdCitebiblioid `xml:"http://docbook.org/ns/docbook citebiblioid"`
+
+}
+
+type XsdGoPkgHasElems_Citebiblioid struct {
+	Citebiblioids []*TxsdCitebiblioid `xml:"http://docbook.org/ns/docbook citebiblioid"`
+
 }
 
 type TxsdBibliosourceClass xsdt.Token
@@ -8443,10 +8631,12 @@ type TxsdBibliosource struct {
 
 type XsdGoPkgHasElems_Bibliosource struct {
 	Bibliosources []*TxsdBibliosource `xml:"http://docbook.org/ns/docbook bibliosource"`
+
 }
 
 type XsdGoPkgHasElem_Bibliosource struct {
 	Bibliosource *TxsdBibliosource `xml:"http://docbook.org/ns/docbook bibliosource"`
+
 }
 
 type TxsdBibliorelationClass xsdt.Token
@@ -8577,24 +8767,26 @@ type TxsdBibliorelation struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasAttr_Type_TxsdBibliorelationType_
 
 	XsdGoPkgHasAttr_Class_TxsdBibliorelationClass_
 
 	XsdGoPkgHasAttr_Othertype_XsdtNmtoken_
 
-	XsdGoPkgHasAttr_Type_TxsdBibliorelationType_
-
 }
 
 type XsdGoPkgHasElems_Bibliorelation struct {
 	Bibliorelations []*TxsdBibliorelation `xml:"http://docbook.org/ns/docbook bibliorelation"`
+
 }
 
 type XsdGoPkgHasElem_Bibliorelation struct {
 	Bibliorelation *TxsdBibliorelation `xml:"http://docbook.org/ns/docbook bibliorelation"`
+
 }
 
 type TxsdBibliocoverageSpatial xsdt.Token
@@ -8690,26 +8882,28 @@ type TxsdBibliocoverage struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Temporal_TxsdBibliocoverageTemporal_
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAttr_Othertemporal_XsdtNmtoken_
+	XsdGoPkgHasAttr_Temporal_TxsdBibliocoverageTemporal_
 
 	XsdGoPkgHasAttr_Spatial_TxsdBibliocoverageSpatial_
 
 	XsdGoPkgHasAttr_Otherspatial_XsdtNmtoken_
 
-}
+	XsdGoPkgHasAttr_Othertemporal_XsdtNmtoken_
 
-type XsdGoPkgHasElems_Bibliocoverage struct {
-	Bibliocoverages []*TxsdBibliocoverage `xml:"http://docbook.org/ns/docbook bibliocoverage"`
 }
 
 type XsdGoPkgHasElem_Bibliocoverage struct {
 	Bibliocoverage *TxsdBibliocoverage `xml:"http://docbook.org/ns/docbook bibliocoverage"`
+
+}
+
+type XsdGoPkgHasElems_Bibliocoverage struct {
+	Bibliocoverages []*TxsdBibliocoverage `xml:"http://docbook.org/ns/docbook bibliocoverage"`
+
 }
 
 type TxsdLegalnotice struct {
@@ -8829,18 +9023,20 @@ type TxsdLegalnotice struct {
 
 	XsdGoPkgHasElem_Info
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElems_Legalnotice struct {
+	Legalnotices []*TxsdLegalnotice `xml:"http://docbook.org/ns/docbook legalnotice"`
 
 }
 
 type XsdGoPkgHasElem_Legalnotice struct {
 	Legalnotice *TxsdLegalnotice `xml:"http://docbook.org/ns/docbook legalnotice"`
-}
 
-type XsdGoPkgHasElems_Legalnotice struct {
-	Legalnotices []*TxsdLegalnotice `xml:"http://docbook.org/ns/docbook legalnotice"`
 }
 
 type TxsdOthercreditClass xsdt.Token
@@ -8895,9 +9091,9 @@ type TxsdOthercredit struct {
 
 	XsdGoPkgHasElem_Orgname
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Class_TxsdOthercreditClass_
 
@@ -8905,10 +9101,12 @@ type TxsdOthercredit struct {
 
 type XsdGoPkgHasElems_Othercredit struct {
 	Othercredits []*TxsdOthercredit `xml:"http://docbook.org/ns/docbook othercredit"`
+
 }
 
 type XsdGoPkgHasElem_Othercredit struct {
 	Othercredit *TxsdOthercredit `xml:"http://docbook.org/ns/docbook othercredit"`
+
 }
 
 type TxsdPagenums struct {
@@ -8948,12 +9146,14 @@ type TxsdPagenums struct {
 
 }
 
-type XsdGoPkgHasElems_Pagenums struct {
-	Pagenumses []*TxsdPagenums `xml:"http://docbook.org/ns/docbook pagenums"`
-}
-
 type XsdGoPkgHasElem_Pagenums struct {
 	Pagenums *TxsdPagenums `xml:"http://docbook.org/ns/docbook pagenums"`
+
+}
+
+type XsdGoPkgHasElems_Pagenums struct {
+	Pagenumses []*TxsdPagenums `xml:"http://docbook.org/ns/docbook pagenums"`
+
 }
 
 type TxsdContrib struct {
@@ -8987,18 +9187,20 @@ type TxsdContrib struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Contrib struct {
+	Contrib *TxsdContrib `xml:"http://docbook.org/ns/docbook contrib"`
 
 }
 
 type XsdGoPkgHasElems_Contrib struct {
 	Contribs []*TxsdContrib `xml:"http://docbook.org/ns/docbook contrib"`
-}
 
-type XsdGoPkgHasElem_Contrib struct {
-	Contrib *TxsdContrib `xml:"http://docbook.org/ns/docbook contrib"`
 }
 
 type TxsdHonorific struct {
@@ -9032,18 +9234,20 @@ type TxsdHonorific struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElem_Honorific struct {
 	Honorific *TxsdHonorific `xml:"http://docbook.org/ns/docbook honorific"`
+
 }
 
 type XsdGoPkgHasElems_Honorific struct {
 	Honorifics []*TxsdHonorific `xml:"http://docbook.org/ns/docbook honorific"`
+
 }
 
 type TxsdFirstname struct {
@@ -9077,18 +9281,20 @@ type TxsdFirstname struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Firstname struct {
+	Firstname *TxsdFirstname `xml:"http://docbook.org/ns/docbook firstname"`
 
 }
 
 type XsdGoPkgHasElems_Firstname struct {
 	Firstnames []*TxsdFirstname `xml:"http://docbook.org/ns/docbook firstname"`
-}
 
-type XsdGoPkgHasElem_Firstname struct {
-	Firstname *TxsdFirstname `xml:"http://docbook.org/ns/docbook firstname"`
 }
 
 type TxsdSurname struct {
@@ -9122,18 +9328,20 @@ type TxsdSurname struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElems_Surname struct {
+	Surnames []*TxsdSurname `xml:"http://docbook.org/ns/docbook surname"`
 
 }
 
 type XsdGoPkgHasElem_Surname struct {
 	Surname *TxsdSurname `xml:"http://docbook.org/ns/docbook surname"`
-}
 
-type XsdGoPkgHasElems_Surname struct {
-	Surnames []*TxsdSurname `xml:"http://docbook.org/ns/docbook surname"`
 }
 
 type TxsdLineage struct {
@@ -9173,12 +9381,14 @@ type TxsdLineage struct {
 
 }
 
-type XsdGoPkgHasElem_Lineage struct {
-	Lineage *TxsdLineage `xml:"http://docbook.org/ns/docbook lineage"`
-}
-
 type XsdGoPkgHasElems_Lineage struct {
 	Lineages []*TxsdLineage `xml:"http://docbook.org/ns/docbook lineage"`
+
+}
+
+type XsdGoPkgHasElem_Lineage struct {
+	Lineage *TxsdLineage `xml:"http://docbook.org/ns/docbook lineage"`
+
 }
 
 type TxsdOthername struct {
@@ -9212,18 +9422,20 @@ type TxsdOthername struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_Othername struct {
 	Othernames []*TxsdOthername `xml:"http://docbook.org/ns/docbook othername"`
+
 }
 
 type XsdGoPkgHasElem_Othername struct {
 	Othername *TxsdOthername `xml:"http://docbook.org/ns/docbook othername"`
+
 }
 
 type TxsdPrinthistory struct {
@@ -9235,35 +9447,39 @@ type TxsdPrinthistory struct {
 
 	XsdGoPkgHasElems_Simpara
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElem_Printhistory struct {
+	Printhistory *TxsdPrinthistory `xml:"http://docbook.org/ns/docbook printhistory"`
 
 }
 
 type XsdGoPkgHasElems_Printhistory struct {
 	Printhistories []*TxsdPrinthistory `xml:"http://docbook.org/ns/docbook printhistory"`
-}
 
-type XsdGoPkgHasElem_Printhistory struct {
-	Printhistory *TxsdPrinthistory `xml:"http://docbook.org/ns/docbook printhistory"`
 }
 
 type TxsdPubdate struct {
 	XsdGoPkgHasCdata
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElems_Pubdate struct {
+	Pubdates []*TxsdPubdate `xml:"http://docbook.org/ns/docbook pubdate"`
 
 }
 
 type XsdGoPkgHasElem_Pubdate struct {
 	Pubdate *TxsdPubdate `xml:"http://docbook.org/ns/docbook pubdate"`
-}
 
-type XsdGoPkgHasElems_Pubdate struct {
-	Pubdates []*TxsdPubdate `xml:"http://docbook.org/ns/docbook pubdate"`
 }
 
 type TxsdPublisher struct {
@@ -9279,10 +9495,12 @@ type TxsdPublisher struct {
 
 type XsdGoPkgHasElems_Publisher struct {
 	Publishers []*TxsdPublisher `xml:"http://docbook.org/ns/docbook publisher"`
+
 }
 
 type XsdGoPkgHasElem_Publisher struct {
 	Publisher *TxsdPublisher `xml:"http://docbook.org/ns/docbook publisher"`
+
 }
 
 type TxsdPublishername struct {
@@ -9316,18 +9534,20 @@ type TxsdPublishername struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElem_Publishername struct {
 	Publishername *TxsdPublishername `xml:"http://docbook.org/ns/docbook publishername"`
+
 }
 
 type XsdGoPkgHasElems_Publishername struct {
 	Publishernames []*TxsdPublishername `xml:"http://docbook.org/ns/docbook publishername"`
+
 }
 
 type TxsdReleaseinfo struct {
@@ -9369,10 +9589,12 @@ type TxsdReleaseinfo struct {
 
 type XsdGoPkgHasElems_Releaseinfo struct {
 	Releaseinfos []*TxsdReleaseinfo `xml:"http://docbook.org/ns/docbook releaseinfo"`
+
 }
 
 type XsdGoPkgHasElem_Releaseinfo struct {
 	Releaseinfo *TxsdReleaseinfo `xml:"http://docbook.org/ns/docbook releaseinfo"`
+
 }
 
 type TxsdRevhistory struct {
@@ -9392,10 +9614,12 @@ type TxsdRevhistory struct {
 
 type XsdGoPkgHasElems_Revhistory struct {
 	Revhistories []*TxsdRevhistory `xml:"http://docbook.org/ns/docbook revhistory"`
+
 }
 
 type XsdGoPkgHasElem_Revhistory struct {
 	Revhistory *TxsdRevhistory `xml:"http://docbook.org/ns/docbook revhistory"`
+
 }
 
 type TxsdRevision struct {
@@ -9417,12 +9641,14 @@ type TxsdRevision struct {
 
 }
 
-type XsdGoPkgHasElem_Revision struct {
-	Revision *TxsdRevision `xml:"http://docbook.org/ns/docbook revision"`
-}
-
 type XsdGoPkgHasElems_Revision struct {
 	Revisions []*TxsdRevision `xml:"http://docbook.org/ns/docbook revision"`
+
+}
+
+type XsdGoPkgHasElem_Revision struct {
+	Revision *TxsdRevision `xml:"http://docbook.org/ns/docbook revision"`
+
 }
 
 type TxsdRevnumber struct {
@@ -9464,10 +9690,12 @@ type TxsdRevnumber struct {
 
 type XsdGoPkgHasElem_Revnumber struct {
 	Revnumber *TxsdRevnumber `xml:"http://docbook.org/ns/docbook revnumber"`
+
 }
 
 type XsdGoPkgHasElems_Revnumber struct {
 	Revnumbers []*TxsdRevnumber `xml:"http://docbook.org/ns/docbook revnumber"`
+
 }
 
 type TxsdRevremark struct {
@@ -9509,10 +9737,12 @@ type TxsdRevremark struct {
 
 type XsdGoPkgHasElems_Revremark struct {
 	Revremarks []*TxsdRevremark `xml:"http://docbook.org/ns/docbook revremark"`
+
 }
 
 type XsdGoPkgHasElem_Revremark struct {
 	Revremark *TxsdRevremark `xml:"http://docbook.org/ns/docbook revremark"`
+
 }
 
 type TxsdRevdescription struct {
@@ -9626,18 +9856,20 @@ type TxsdRevdescription struct {
 
 	XsdGoPkgHasElems_Annotation
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_Revdescription struct {
 	Revdescriptions []*TxsdRevdescription `xml:"http://docbook.org/ns/docbook revdescription"`
+
 }
 
 type XsdGoPkgHasElem_Revdescription struct {
 	Revdescription *TxsdRevdescription `xml:"http://docbook.org/ns/docbook revdescription"`
+
 }
 
 type TxsdSeriesvolnums struct {
@@ -9679,10 +9911,12 @@ type TxsdSeriesvolnums struct {
 
 type XsdGoPkgHasElem_Seriesvolnums struct {
 	Seriesvolnums *TxsdSeriesvolnums `xml:"http://docbook.org/ns/docbook seriesvolnums"`
+
 }
 
 type XsdGoPkgHasElems_Seriesvolnums struct {
 	Seriesvolnumses []*TxsdSeriesvolnums `xml:"http://docbook.org/ns/docbook seriesvolnums"`
+
 }
 
 type TxsdVolumenum struct {
@@ -9722,12 +9956,14 @@ type TxsdVolumenum struct {
 
 }
 
-type XsdGoPkgHasElems_Volumenum struct {
-	Volumenums []*TxsdVolumenum `xml:"http://docbook.org/ns/docbook volumenum"`
-}
-
 type XsdGoPkgHasElem_Volumenum struct {
 	Volumenum *TxsdVolumenum `xml:"http://docbook.org/ns/docbook volumenum"`
+
+}
+
+type XsdGoPkgHasElems_Volumenum struct {
+	Volumenums []*TxsdVolumenum `xml:"http://docbook.org/ns/docbook volumenum"`
+
 }
 
 type TxsdIssuenum struct {
@@ -9761,18 +9997,20 @@ type TxsdIssuenum struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElem_Issuenum struct {
 	Issuenum *TxsdIssuenum `xml:"http://docbook.org/ns/docbook issuenum"`
+
 }
 
 type XsdGoPkgHasElems_Issuenum struct {
 	Issuenums []*TxsdIssuenum `xml:"http://docbook.org/ns/docbook issuenum"`
+
 }
 
 type TxsdPackage struct {
@@ -9812,12 +10050,14 @@ type TxsdPackage struct {
 
 }
 
-type XsdGoPkgHasElems_Package struct {
-	Packages []*TxsdPackage `xml:"http://docbook.org/ns/docbook package"`
-}
-
 type XsdGoPkgHasElem_Package struct {
 	Package *TxsdPackage `xml:"http://docbook.org/ns/docbook package"`
+
+}
+
+type XsdGoPkgHasElems_Package struct {
+	Packages []*TxsdPackage `xml:"http://docbook.org/ns/docbook package"`
+
 }
 
 type TxsdEmail struct {
@@ -9851,18 +10091,20 @@ type TxsdEmail struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Email struct {
+	Email *TxsdEmail `xml:"http://docbook.org/ns/docbook email"`
 
 }
 
 type XsdGoPkgHasElems_Email struct {
 	Emails []*TxsdEmail `xml:"http://docbook.org/ns/docbook email"`
-}
 
-type XsdGoPkgHasElem_Email struct {
-	Email *TxsdEmail `xml:"http://docbook.org/ns/docbook email"`
 }
 
 type TxsdLineannotation struct {
@@ -9902,12 +10144,14 @@ type TxsdLineannotation struct {
 
 }
 
-type XsdGoPkgHasElems_Lineannotation struct {
-	Lineannotations []*TxsdLineannotation `xml:"http://docbook.org/ns/docbook lineannotation"`
-}
-
 type XsdGoPkgHasElem_Lineannotation struct {
 	Lineannotation *TxsdLineannotation `xml:"http://docbook.org/ns/docbook lineannotation"`
+
+}
+
+type XsdGoPkgHasElems_Lineannotation struct {
+	Lineannotations []*TxsdLineannotation `xml:"http://docbook.org/ns/docbook lineannotation"`
+
 }
 
 type TxsdParameterClass xsdt.Token
@@ -9965,9 +10209,9 @@ type TxsdParameter struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Class_TxsdParameterClass_
 
@@ -9975,10 +10219,12 @@ type TxsdParameter struct {
 
 type XsdGoPkgHasElems_Parameter struct {
 	Parameters []*TxsdParameter `xml:"http://docbook.org/ns/docbook parameter"`
+
 }
 
 type XsdGoPkgHasElem_Parameter struct {
 	Parameter *TxsdParameter `xml:"http://docbook.org/ns/docbook parameter"`
+
 }
 
 type TxsdReplaceableClass xsdt.Token
@@ -10049,12 +10295,14 @@ type TxsdReplaceable struct {
 
 }
 
-type XsdGoPkgHasElems_Replaceable struct {
-	Replaceables []*TxsdReplaceable `xml:"http://docbook.org/ns/docbook replaceable"`
-}
-
 type XsdGoPkgHasElem_Replaceable struct {
 	Replaceable *TxsdReplaceable `xml:"http://docbook.org/ns/docbook replaceable"`
+
+}
+
+type XsdGoPkgHasElems_Replaceable struct {
+	Replaceables []*TxsdReplaceable `xml:"http://docbook.org/ns/docbook replaceable"`
+
 }
 
 type XsdGoPkgHasAttr_Type_XsdtString_ struct {
@@ -10092,9 +10340,9 @@ type TxsdUri struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Type_XsdtString_
 
@@ -10102,10 +10350,12 @@ type TxsdUri struct {
 
 type XsdGoPkgHasElem_Uri struct {
 	Uri *TxsdUri `xml:"http://docbook.org/ns/docbook uri"`
+
 }
 
 type XsdGoPkgHasElems_Uri struct {
 	Uris []*TxsdUri `xml:"http://docbook.org/ns/docbook uri"`
+
 }
 
 type TxsdAbbrev struct {
@@ -10149,10 +10399,12 @@ type TxsdAbbrev struct {
 
 type XsdGoPkgHasElem_Abbrev struct {
 	Abbrev *TxsdAbbrev `xml:"http://docbook.org/ns/docbook abbrev"`
+
 }
 
 type XsdGoPkgHasElems_Abbrev struct {
 	Abbrevs []*TxsdAbbrev `xml:"http://docbook.org/ns/docbook abbrev"`
+
 }
 
 type TxsdAcronym struct {
@@ -10196,10 +10448,12 @@ type TxsdAcronym struct {
 
 type XsdGoPkgHasElem_Acronym struct {
 	Acronym *TxsdAcronym `xml:"http://docbook.org/ns/docbook acronym"`
+
 }
 
 type XsdGoPkgHasElems_Acronym struct {
 	Acronyms []*TxsdAcronym `xml:"http://docbook.org/ns/docbook acronym"`
+
 }
 
 type TxsdCitation struct {
@@ -10407,12 +10661,14 @@ type TxsdCitation struct {
 
 }
 
-type XsdGoPkgHasElems_Citation struct {
-	Citations []*TxsdCitation `xml:"http://docbook.org/ns/docbook citation"`
-}
-
 type XsdGoPkgHasElem_Citation struct {
 	Citation *TxsdCitation `xml:"http://docbook.org/ns/docbook citation"`
+
+}
+
+type XsdGoPkgHasElems_Citation struct {
+	Citations []*TxsdCitation `xml:"http://docbook.org/ns/docbook citation"`
+
 }
 
 type TxsdCiterefentry struct {
@@ -10428,10 +10684,12 @@ type TxsdCiterefentry struct {
 
 type XsdGoPkgHasElems_Citerefentry struct {
 	Citerefentries []*TxsdCiterefentry `xml:"http://docbook.org/ns/docbook citerefentry"`
+
 }
 
 type XsdGoPkgHasElem_Citerefentry struct {
 	Citerefentry *TxsdCiterefentry `xml:"http://docbook.org/ns/docbook citerefentry"`
+
 }
 
 type TxsdRefentrytitle struct {
@@ -10633,18 +10891,20 @@ type TxsdRefentrytitle struct {
 
 	XsdGoPkgHasElems_Errortype
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Refentrytitle struct {
+	Refentrytitle *TxsdRefentrytitle `xml:"http://docbook.org/ns/docbook refentrytitle"`
 
 }
 
 type XsdGoPkgHasElems_Refentrytitle struct {
 	Refentrytitles []*TxsdRefentrytitle `xml:"http://docbook.org/ns/docbook refentrytitle"`
-}
 
-type XsdGoPkgHasElem_Refentrytitle struct {
-	Refentrytitle *TxsdRefentrytitle `xml:"http://docbook.org/ns/docbook refentrytitle"`
 }
 
 type TxsdManvolnum struct {
@@ -10678,18 +10938,20 @@ type TxsdManvolnum struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElems_Manvolnum struct {
+	Manvolnums []*TxsdManvolnum `xml:"http://docbook.org/ns/docbook manvolnum"`
 
 }
 
 type XsdGoPkgHasElem_Manvolnum struct {
 	Manvolnum *TxsdManvolnum `xml:"http://docbook.org/ns/docbook manvolnum"`
-}
 
-type XsdGoPkgHasElems_Manvolnum struct {
-	Manvolnums []*TxsdManvolnum `xml:"http://docbook.org/ns/docbook manvolnum"`
 }
 
 type TxsdCitetitlePubwork xsdt.Token
@@ -10970,10 +11232,12 @@ type TxsdCitetitle struct {
 
 type XsdGoPkgHasElem_Citetitle struct {
 	Citetitle *TxsdCitetitle `xml:"http://docbook.org/ns/docbook citetitle"`
+
 }
 
 type XsdGoPkgHasElems_Citetitle struct {
 	Citetitles []*TxsdCitetitle `xml:"http://docbook.org/ns/docbook citetitle"`
+
 }
 
 type TxsdEmphasis struct {
@@ -11181,12 +11445,14 @@ type TxsdEmphasis struct {
 
 }
 
-type XsdGoPkgHasElem_Emphasis struct {
-	Emphasis *TxsdEmphasis `xml:"http://docbook.org/ns/docbook emphasis"`
-}
-
 type XsdGoPkgHasElems_Emphasis struct {
 	Emphasises []*TxsdEmphasis `xml:"http://docbook.org/ns/docbook emphasis"`
+
+}
+
+type XsdGoPkgHasElem_Emphasis struct {
+	Emphasis *TxsdEmphasis `xml:"http://docbook.org/ns/docbook emphasis"`
+
 }
 
 type TxsdForeignphrase struct {
@@ -11276,12 +11542,14 @@ type TxsdForeignphrase struct {
 
 }
 
-type XsdGoPkgHasElem_Foreignphrase struct {
-	Foreignphrase *TxsdForeignphrase `xml:"http://docbook.org/ns/docbook foreignphrase"`
-}
-
 type XsdGoPkgHasElems_Foreignphrase struct {
 	Foreignphrases []*TxsdForeignphrase `xml:"http://docbook.org/ns/docbook foreignphrase"`
+
+}
+
+type XsdGoPkgHasElem_Foreignphrase struct {
+	Foreignphrase *TxsdForeignphrase `xml:"http://docbook.org/ns/docbook foreignphrase"`
+
 }
 
 type TxsdPhrase struct {
@@ -11483,18 +11751,20 @@ type TxsdPhrase struct {
 
 	XsdGoPkgHasElems_Errortype
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElem_Phrase struct {
 	Phrase *TxsdPhrase `xml:"http://docbook.org/ns/docbook phrase"`
+
 }
 
 type XsdGoPkgHasElems_Phrase struct {
 	Phrases []*TxsdPhrase `xml:"http://docbook.org/ns/docbook phrase"`
+
 }
 
 type TxsdQuote struct {
@@ -11696,18 +11966,20 @@ type TxsdQuote struct {
 
 	XsdGoPkgHasElems_Errortype
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElems_Quote struct {
+	Quotes []*TxsdQuote `xml:"http://docbook.org/ns/docbook quote"`
 
 }
 
 type XsdGoPkgHasElem_Quote struct {
 	Quote *TxsdQuote `xml:"http://docbook.org/ns/docbook quote"`
-}
 
-type XsdGoPkgHasElems_Quote struct {
-	Quotes []*TxsdQuote `xml:"http://docbook.org/ns/docbook quote"`
 }
 
 type TxsdSubscript struct {
@@ -11741,18 +12013,20 @@ type TxsdSubscript struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElem_Subscript struct {
+	Subscript *TxsdSubscript `xml:"http://docbook.org/ns/docbook subscript"`
 
 }
 
 type XsdGoPkgHasElems_Subscript struct {
 	Subscripts []*TxsdSubscript `xml:"http://docbook.org/ns/docbook subscript"`
-}
 
-type XsdGoPkgHasElem_Subscript struct {
-	Subscript *TxsdSubscript `xml:"http://docbook.org/ns/docbook subscript"`
 }
 
 type TxsdSuperscript struct {
@@ -11792,12 +12066,14 @@ type TxsdSuperscript struct {
 
 }
 
-type XsdGoPkgHasElems_Superscript struct {
-	Superscripts []*TxsdSuperscript `xml:"http://docbook.org/ns/docbook superscript"`
-}
-
 type XsdGoPkgHasElem_Superscript struct {
 	Superscript *TxsdSuperscript `xml:"http://docbook.org/ns/docbook superscript"`
+
+}
+
+type XsdGoPkgHasElems_Superscript struct {
+	Superscripts []*TxsdSuperscript `xml:"http://docbook.org/ns/docbook superscript"`
+
 }
 
 type TxsdTrademarkClass xsdt.Token
@@ -11858,20 +12134,22 @@ type TxsdTrademark struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Class_TxsdTrademarkClass_
 
 }
 
-type XsdGoPkgHasElems_Trademark struct {
-	Trademarks []*TxsdTrademark `xml:"http://docbook.org/ns/docbook trademark"`
-}
-
 type XsdGoPkgHasElem_Trademark struct {
 	Trademark *TxsdTrademark `xml:"http://docbook.org/ns/docbook trademark"`
+
+}
+
+type XsdGoPkgHasElems_Trademark struct {
+	Trademarks []*TxsdTrademark `xml:"http://docbook.org/ns/docbook trademark"`
+
 }
 
 type TxsdWordasword struct {
@@ -11911,12 +12189,14 @@ type TxsdWordasword struct {
 
 }
 
-type XsdGoPkgHasElem_Wordasword struct {
-	Wordasword *TxsdWordasword `xml:"http://docbook.org/ns/docbook wordasword"`
-}
-
 type XsdGoPkgHasElems_Wordasword struct {
 	Wordaswords []*TxsdWordasword `xml:"http://docbook.org/ns/docbook wordasword"`
+
+}
+
+type XsdGoPkgHasElem_Wordasword struct {
+	Wordasword *TxsdWordasword `xml:"http://docbook.org/ns/docbook wordasword"`
+
 }
 
 type TxsdFootnoteref struct {
@@ -11926,12 +12206,14 @@ type TxsdFootnoteref struct {
 
 }
 
-type XsdGoPkgHasElem_Footnoteref struct {
-	Footnoteref *TxsdFootnoteref `xml:"http://docbook.org/ns/docbook footnoteref"`
-}
-
 type XsdGoPkgHasElems_Footnoteref struct {
 	Footnoterefs []*TxsdFootnoteref `xml:"http://docbook.org/ns/docbook footnoteref"`
+
+}
+
+type XsdGoPkgHasElem_Footnoteref struct {
+	Footnoteref *TxsdFootnoteref `xml:"http://docbook.org/ns/docbook footnoteref"`
+
 }
 
 type XsdGoPkgHasAttr_Xrefstyle_XsdtString_ struct {
@@ -11953,12 +12235,14 @@ type TxsdXref struct {
 
 }
 
-type XsdGoPkgHasElems_Xref struct {
-	Xrefs []*TxsdXref `xml:"http://docbook.org/ns/docbook xref"`
-}
-
 type XsdGoPkgHasElem_Xref struct {
 	Xref *TxsdXref `xml:"http://docbook.org/ns/docbook xref"`
+
+}
+
+type XsdGoPkgHasElems_Xref struct {
+	Xrefs []*TxsdXref `xml:"http://docbook.org/ns/docbook xref"`
+
 }
 
 type TxsdLink struct {
@@ -12166,12 +12450,14 @@ type TxsdLink struct {
 
 }
 
-type XsdGoPkgHasElem_Link struct {
-	Link *TxsdLink `xml:"http://docbook.org/ns/docbook link"`
-}
-
 type XsdGoPkgHasElems_Link struct {
 	Links []*TxsdLink `xml:"http://docbook.org/ns/docbook link"`
+
+}
+
+type XsdGoPkgHasElem_Link struct {
+	Link *TxsdLink `xml:"http://docbook.org/ns/docbook link"`
+
 }
 
 type XsdGoPkgHasAttr_Targetdoc_XsdtString_ struct {
@@ -12387,20 +12673,22 @@ type TxsdOlink struct {
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Targetdoc_XsdtString_
+	XsdGoPkgHasAttr_Localinfo_XsdtString_
 
 	XsdGoPkgHasAttr_Targetptr_XsdtString_
 
-	XsdGoPkgHasAttr_Localinfo_XsdtString_
+	XsdGoPkgHasAttr_Targetdoc_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_Olink struct {
+	Olinks []*TxsdOlink `xml:"http://docbook.org/ns/docbook olink"`
 
 }
 
 type XsdGoPkgHasElem_Olink struct {
 	Olink *TxsdOlink `xml:"http://docbook.org/ns/docbook olink"`
-}
 
-type XsdGoPkgHasElems_Olink struct {
-	Olinks []*TxsdOlink `xml:"http://docbook.org/ns/docbook olink"`
 }
 
 type TxsdAnchor struct {
@@ -12410,10 +12698,12 @@ type TxsdAnchor struct {
 
 type XsdGoPkgHasElems_Anchor struct {
 	Anchors []*TxsdAnchor `xml:"http://docbook.org/ns/docbook anchor"`
+
 }
 
 type XsdGoPkgHasElem_Anchor struct {
 	Anchor *TxsdAnchor `xml:"http://docbook.org/ns/docbook anchor"`
+
 }
 
 type TxsdAlt struct {
@@ -12427,10 +12717,12 @@ type TxsdAlt struct {
 
 type XsdGoPkgHasElem_Alt struct {
 	Alt *TxsdAlt `xml:"http://docbook.org/ns/docbook alt"`
+
 }
 
 type XsdGoPkgHasElems_Alt struct {
 	Alts []*TxsdAlt `xml:"http://docbook.org/ns/docbook alt"`
+
 }
 
 type XsdGoPkgHasAttr_Status_XsdtString_ struct {
@@ -12462,12 +12754,14 @@ type TxsdSet struct {
 
 }
 
-type XsdGoPkgHasElems_Set struct {
-	Sets []*TxsdSet `xml:"http://docbook.org/ns/docbook set"`
-}
-
 type XsdGoPkgHasElem_Set struct {
 	Set *TxsdSet `xml:"http://docbook.org/ns/docbook set"`
+
+}
+
+type XsdGoPkgHasElems_Set struct {
+	Sets []*TxsdSet `xml:"http://docbook.org/ns/docbook set"`
+
 }
 
 type TxsdBook struct {
@@ -12513,10 +12807,12 @@ type TxsdBook struct {
 
 type XsdGoPkgHasElems_Book struct {
 	Books []*TxsdBook `xml:"http://docbook.org/ns/docbook book"`
+
 }
 
 type XsdGoPkgHasElem_Book struct {
 	Book *TxsdBook `xml:"http://docbook.org/ns/docbook book"`
+
 }
 
 type TxsdDedication struct {
@@ -12646,10 +12942,12 @@ type TxsdDedication struct {
 
 type XsdGoPkgHasElems_Dedication struct {
 	Dedications []*TxsdDedication `xml:"http://docbook.org/ns/docbook dedication"`
+
 }
 
 type XsdGoPkgHasElem_Dedication struct {
 	Dedication *TxsdDedication `xml:"http://docbook.org/ns/docbook dedication"`
+
 }
 
 type TxsdAcknowledgements struct {
@@ -12777,12 +13075,14 @@ type TxsdAcknowledgements struct {
 
 }
 
-type XsdGoPkgHasElem_Acknowledgements struct {
-	Acknowledgements *TxsdAcknowledgements `xml:"http://docbook.org/ns/docbook acknowledgements"`
-}
-
 type XsdGoPkgHasElems_Acknowledgements struct {
 	Acknowledgementses []*TxsdAcknowledgements `xml:"http://docbook.org/ns/docbook acknowledgements"`
+
+}
+
+type XsdGoPkgHasElem_Acknowledgements struct {
+	Acknowledgements *TxsdAcknowledgements `xml:"http://docbook.org/ns/docbook acknowledgements"`
+
 }
 
 type TxsdColophon struct {
@@ -12912,10 +13212,12 @@ type TxsdColophon struct {
 
 type XsdGoPkgHasElem_Colophon struct {
 	Colophon *TxsdColophon `xml:"http://docbook.org/ns/docbook colophon"`
+
 }
 
 type XsdGoPkgHasElems_Colophon struct {
 	Colophons []*TxsdColophon `xml:"http://docbook.org/ns/docbook colophon"`
+
 }
 
 type TxsdAppendix struct {
@@ -13053,18 +13355,20 @@ type TxsdAppendix struct {
 
 	XsdGoPkgHasElems_Sect1
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_Appendix struct {
 	Appendixs []*TxsdAppendix `xml:"http://docbook.org/ns/docbook appendix"`
+
 }
 
 type XsdGoPkgHasElem_Appendix struct {
 	Appendix *TxsdAppendix `xml:"http://docbook.org/ns/docbook appendix"`
+
 }
 
 type TxsdChapter struct {
@@ -13202,18 +13506,20 @@ type TxsdChapter struct {
 
 	XsdGoPkgHasElems_Sect1
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Chapter struct {
+	Chapter *TxsdChapter `xml:"http://docbook.org/ns/docbook chapter"`
 
 }
 
 type XsdGoPkgHasElems_Chapter struct {
 	Chapters []*TxsdChapter `xml:"http://docbook.org/ns/docbook chapter"`
-}
 
-type XsdGoPkgHasElem_Chapter struct {
-	Chapter *TxsdChapter `xml:"http://docbook.org/ns/docbook chapter"`
 }
 
 type TxsdPart struct {
@@ -13253,18 +13559,20 @@ type TxsdPart struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElems_Part struct {
 	Parts []*TxsdPart `xml:"http://docbook.org/ns/docbook part"`
+
 }
 
 type XsdGoPkgHasElem_Part struct {
 	Part *TxsdPart `xml:"http://docbook.org/ns/docbook part"`
+
 }
 
 type TxsdPreface struct {
@@ -13410,10 +13718,12 @@ type TxsdPreface struct {
 
 type XsdGoPkgHasElems_Preface struct {
 	Prefaces []*TxsdPreface `xml:"http://docbook.org/ns/docbook preface"`
+
 }
 
 type XsdGoPkgHasElem_Preface struct {
 	Preface *TxsdPreface `xml:"http://docbook.org/ns/docbook preface"`
+
 }
 
 type TxsdPartintro struct {
@@ -13551,10 +13861,12 @@ type TxsdPartintro struct {
 
 type XsdGoPkgHasElem_Partintro struct {
 	Partintro *TxsdPartintro `xml:"http://docbook.org/ns/docbook partintro"`
+
 }
 
 type XsdGoPkgHasElems_Partintro struct {
 	Partintros []*TxsdPartintro `xml:"http://docbook.org/ns/docbook partintro"`
+
 }
 
 type TxsdSection struct {
@@ -13698,10 +14010,12 @@ type TxsdSection struct {
 
 type XsdGoPkgHasElem_Section struct {
 	Section *TxsdSection `xml:"http://docbook.org/ns/docbook section"`
+
 }
 
 type XsdGoPkgHasElems_Section struct {
 	Sections []*TxsdSection `xml:"http://docbook.org/ns/docbook section"`
+
 }
 
 type TxsdSimplesect struct {
@@ -13829,12 +14143,14 @@ type TxsdSimplesect struct {
 
 }
 
-type XsdGoPkgHasElem_Simplesect struct {
-	Simplesect *TxsdSimplesect `xml:"http://docbook.org/ns/docbook simplesect"`
-}
-
 type XsdGoPkgHasElems_Simplesect struct {
 	Simplesects []*TxsdSimplesect `xml:"http://docbook.org/ns/docbook simplesect"`
+
+}
+
+type XsdGoPkgHasElem_Simplesect struct {
+	Simplesect *TxsdSimplesect `xml:"http://docbook.org/ns/docbook simplesect"`
+
 }
 
 type TxsdArticleClass xsdt.Token
@@ -14011,20 +14327,22 @@ type TxsdArticle struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Class_TxsdArticleClass_
 
 }
 
-type XsdGoPkgHasElem_Article struct {
-	Article *TxsdArticle `xml:"http://docbook.org/ns/docbook article"`
-}
-
 type XsdGoPkgHasElems_Article struct {
 	Articles []*TxsdArticle `xml:"http://docbook.org/ns/docbook article"`
+
+}
+
+type XsdGoPkgHasElem_Article struct {
+	Article *TxsdArticle `xml:"http://docbook.org/ns/docbook article"`
+
 }
 
 type XsdGoPkgHasAttr_Annotates_XsdtString_ struct {
@@ -14154,12 +14472,14 @@ type TxsdAnnotation struct {
 
 }
 
-type XsdGoPkgHasElems_Annotation struct {
-	Annotations []*TxsdAnnotation `xml:"http://docbook.org/ns/docbook annotation"`
-}
-
 type XsdGoPkgHasElem_Annotation struct {
 	Annotation *TxsdAnnotation `xml:"http://docbook.org/ns/docbook annotation"`
+
+}
+
+type XsdGoPkgHasElems_Annotation struct {
+	Annotations []*TxsdAnnotation `xml:"http://docbook.org/ns/docbook annotation"`
+
 }
 
 type TxsdExtendedlink struct {
@@ -14171,12 +14491,14 @@ type TxsdExtendedlink struct {
 
 }
 
-type XsdGoPkgHasElem_Extendedlink struct {
-	Extendedlink *TxsdExtendedlink `xml:"http://docbook.org/ns/docbook extendedlink"`
-}
-
 type XsdGoPkgHasElems_Extendedlink struct {
 	Extendedlinks []*TxsdExtendedlink `xml:"http://docbook.org/ns/docbook extendedlink"`
+
+}
+
+type XsdGoPkgHasElem_Extendedlink struct {
+	Extendedlink *TxsdExtendedlink `xml:"http://docbook.org/ns/docbook extendedlink"`
+
 }
 
 type TxsdLocator struct {
@@ -14186,12 +14508,14 @@ type TxsdLocator struct {
 
 }
 
-type XsdGoPkgHasElem_Locator struct {
-	Locator *TxsdLocator `xml:"http://docbook.org/ns/docbook locator"`
-}
-
 type XsdGoPkgHasElems_Locator struct {
 	Locators []*TxsdLocator `xml:"http://docbook.org/ns/docbook locator"`
+
+}
+
+type XsdGoPkgHasElem_Locator struct {
+	Locator *TxsdLocator `xml:"http://docbook.org/ns/docbook locator"`
+
 }
 
 type TxsdArc struct {
@@ -14203,12 +14527,14 @@ type TxsdArc struct {
 
 }
 
-type XsdGoPkgHasElem_Arc struct {
-	Arc *TxsdArc `xml:"http://docbook.org/ns/docbook arc"`
-}
-
 type XsdGoPkgHasElems_Arc struct {
 	Arcs []*TxsdArc `xml:"http://docbook.org/ns/docbook arc"`
+
+}
+
+type XsdGoPkgHasElem_Arc struct {
+	Arc *TxsdArc `xml:"http://docbook.org/ns/docbook arc"`
+
 }
 
 type TxsdSect1 struct {
@@ -14348,12 +14674,14 @@ type TxsdSect1 struct {
 
 }
 
-type XsdGoPkgHasElems_Sect1 struct {
-	Sect1s []*TxsdSect1 `xml:"http://docbook.org/ns/docbook sect1"`
-}
-
 type XsdGoPkgHasElem_Sect1 struct {
 	Sect1 *TxsdSect1 `xml:"http://docbook.org/ns/docbook sect1"`
+
+}
+
+type XsdGoPkgHasElems_Sect1 struct {
+	Sect1s []*TxsdSect1 `xml:"http://docbook.org/ns/docbook sect1"`
+
 }
 
 type TxsdSect2 struct {
@@ -14487,18 +14815,20 @@ type TxsdSect2 struct {
 
 	XsdGoPkgHasElem_Info
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElems_Sect2 struct {
+	Sect2s []*TxsdSect2 `xml:"http://docbook.org/ns/docbook sect2"`
 
 }
 
 type XsdGoPkgHasElem_Sect2 struct {
 	Sect2 *TxsdSect2 `xml:"http://docbook.org/ns/docbook sect2"`
-}
 
-type XsdGoPkgHasElems_Sect2 struct {
-	Sect2s []*TxsdSect2 `xml:"http://docbook.org/ns/docbook sect2"`
 }
 
 type TxsdSect3 struct {
@@ -14632,18 +14962,20 @@ type TxsdSect3 struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElem_Sect3 struct {
 	Sect3 *TxsdSect3 `xml:"http://docbook.org/ns/docbook sect3"`
+
 }
 
 type XsdGoPkgHasElems_Sect3 struct {
 	Sect3s []*TxsdSect3 `xml:"http://docbook.org/ns/docbook sect3"`
+
 }
 
 type TxsdSect4 struct {
@@ -14777,18 +15109,20 @@ type TxsdSect4 struct {
 
 	XsdGoPkgHasElem_Info
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElem_Sect4 struct {
+	Sect4 *TxsdSect4 `xml:"http://docbook.org/ns/docbook sect4"`
 
 }
 
 type XsdGoPkgHasElems_Sect4 struct {
 	Sect4s []*TxsdSect4 `xml:"http://docbook.org/ns/docbook sect4"`
-}
 
-type XsdGoPkgHasElem_Sect4 struct {
-	Sect4 *TxsdSect4 `xml:"http://docbook.org/ns/docbook sect4"`
 }
 
 type TxsdSect5 struct {
@@ -14928,10 +15262,12 @@ type TxsdSect5 struct {
 
 type XsdGoPkgHasElems_Sect5 struct {
 	Sect5s []*TxsdSect5 `xml:"http://docbook.org/ns/docbook sect5"`
+
 }
 
 type XsdGoPkgHasElem_Sect5 struct {
 	Sect5 *TxsdSect5 `xml:"http://docbook.org/ns/docbook sect5"`
+
 }
 
 type TxsdReference struct {
@@ -14947,18 +15283,20 @@ type TxsdReference struct {
 
 	XsdGoPkgHasElem_Info
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Reference struct {
+	Reference *TxsdReference `xml:"http://docbook.org/ns/docbook reference"`
 
 }
 
 type XsdGoPkgHasElems_Reference struct {
 	References []*TxsdReference `xml:"http://docbook.org/ns/docbook reference"`
-}
 
-type XsdGoPkgHasElem_Reference struct {
-	Reference *TxsdReference `xml:"http://docbook.org/ns/docbook reference"`
 }
 
 type TxsdRefentry struct {
@@ -14976,18 +15314,20 @@ type TxsdRefentry struct {
 
 	XsdGoPkgHasElem_Refsynopsisdiv
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElem_Refentry struct {
 	Refentry *TxsdRefentry `xml:"http://docbook.org/ns/docbook refentry"`
+
 }
 
 type XsdGoPkgHasElems_Refentry struct {
 	Refentries []*TxsdRefentry `xml:"http://docbook.org/ns/docbook refentry"`
+
 }
 
 type TxsdRefmeta struct {
@@ -14999,18 +15339,20 @@ type TxsdRefmeta struct {
 
 	XsdGoPkgHasElems_Refmiscinfo
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElems_Refmeta struct {
+	Refmetas []*TxsdRefmeta `xml:"http://docbook.org/ns/docbook refmeta"`
 
 }
 
 type XsdGoPkgHasElem_Refmeta struct {
 	Refmeta *TxsdRefmeta `xml:"http://docbook.org/ns/docbook refmeta"`
-}
 
-type XsdGoPkgHasElems_Refmeta struct {
-	Refmetas []*TxsdRefmeta `xml:"http://docbook.org/ns/docbook refmeta"`
 }
 
 type TxsdRefmiscinfoClass xsdt.Token
@@ -15077,20 +15419,22 @@ type TxsdRefmiscinfo struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Class_TxsdRefmiscinfoClass_
 
 }
 
-type XsdGoPkgHasElems_Refmiscinfo struct {
-	Refmiscinfos []*TxsdRefmiscinfo `xml:"http://docbook.org/ns/docbook refmiscinfo"`
-}
-
 type XsdGoPkgHasElem_Refmiscinfo struct {
 	Refmiscinfo *TxsdRefmiscinfo `xml:"http://docbook.org/ns/docbook refmiscinfo"`
+
+}
+
+type XsdGoPkgHasElems_Refmiscinfo struct {
+	Refmiscinfos []*TxsdRefmiscinfo `xml:"http://docbook.org/ns/docbook refmiscinfo"`
+
 }
 
 type TxsdRefnamediv struct {
@@ -15102,18 +15446,20 @@ type TxsdRefnamediv struct {
 
 	XsdGoPkgHasElems_Refclass
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElems_Refnamediv struct {
 	Refnamedivs []*TxsdRefnamediv `xml:"http://docbook.org/ns/docbook refnamediv"`
+
 }
 
 type XsdGoPkgHasElem_Refnamediv struct {
 	Refnamediv *TxsdRefnamediv `xml:"http://docbook.org/ns/docbook refnamediv"`
+
 }
 
 type TxsdRefdescriptor struct {
@@ -15323,10 +15669,12 @@ type TxsdRefdescriptor struct {
 
 type XsdGoPkgHasElems_Refdescriptor struct {
 	Refdescriptors []*TxsdRefdescriptor `xml:"http://docbook.org/ns/docbook refdescriptor"`
+
 }
 
 type XsdGoPkgHasElem_Refdescriptor struct {
 	Refdescriptor *TxsdRefdescriptor `xml:"http://docbook.org/ns/docbook refdescriptor"`
+
 }
 
 type TxsdRefname struct {
@@ -15528,18 +15876,20 @@ type TxsdRefname struct {
 
 	XsdGoPkgHasElems_Errortype
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElems_Refname struct {
+	Refnames []*TxsdRefname `xml:"http://docbook.org/ns/docbook refname"`
 
 }
 
 type XsdGoPkgHasElem_Refname struct {
 	Refname *TxsdRefname `xml:"http://docbook.org/ns/docbook refname"`
-}
 
-type XsdGoPkgHasElems_Refname struct {
-	Refnames []*TxsdRefname `xml:"http://docbook.org/ns/docbook refname"`
 }
 
 type TxsdRefpurpose struct {
@@ -15741,18 +16091,20 @@ type TxsdRefpurpose struct {
 
 	XsdGoPkgHasElems_Errortype
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElems_Refpurpose struct {
+	Refpurposes []*TxsdRefpurpose `xml:"http://docbook.org/ns/docbook refpurpose"`
 
 }
 
 type XsdGoPkgHasElem_Refpurpose struct {
 	Refpurpose *TxsdRefpurpose `xml:"http://docbook.org/ns/docbook refpurpose"`
-}
 
-type XsdGoPkgHasElems_Refpurpose struct {
-	Refpurposes []*TxsdRefpurpose `xml:"http://docbook.org/ns/docbook refpurpose"`
 }
 
 type TxsdRefclass struct {
@@ -15760,18 +16112,20 @@ type TxsdRefclass struct {
 
 	XsdGoPkgHasElems_Application
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElems_Refclass struct {
+	Refclasses []*TxsdRefclass `xml:"http://docbook.org/ns/docbook refclass"`
 
 }
 
 type XsdGoPkgHasElem_Refclass struct {
 	Refclass *TxsdRefclass `xml:"http://docbook.org/ns/docbook refclass"`
-}
 
-type XsdGoPkgHasElems_Refclass struct {
-	Refclasses []*TxsdRefclass `xml:"http://docbook.org/ns/docbook refclass"`
 }
 
 type TxsdRefsynopsisdiv struct {
@@ -15897,18 +16251,20 @@ type TxsdRefsynopsisdiv struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElem_Refsynopsisdiv struct {
 	Refsynopsisdiv *TxsdRefsynopsisdiv `xml:"http://docbook.org/ns/docbook refsynopsisdiv"`
+
 }
 
 type XsdGoPkgHasElems_Refsynopsisdiv struct {
 	Refsynopsisdivs []*TxsdRefsynopsisdiv `xml:"http://docbook.org/ns/docbook refsynopsisdiv"`
+
 }
 
 type TxsdRefsection struct {
@@ -16032,18 +16388,20 @@ type TxsdRefsection struct {
 
 	XsdGoPkgHasElem_Info
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Refsection struct {
+	Refsection *TxsdRefsection `xml:"http://docbook.org/ns/docbook refsection"`
 
 }
 
 type XsdGoPkgHasElems_Refsection struct {
 	Refsections []*TxsdRefsection `xml:"http://docbook.org/ns/docbook refsection"`
-}
 
-type XsdGoPkgHasElem_Refsection struct {
-	Refsection *TxsdRefsection `xml:"http://docbook.org/ns/docbook refsection"`
 }
 
 type TxsdRefsect1 struct {
@@ -16167,18 +16525,20 @@ type TxsdRefsect1 struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElem_Refsect1 struct {
 	Refsect1 *TxsdRefsect1 `xml:"http://docbook.org/ns/docbook refsect1"`
+
 }
 
 type XsdGoPkgHasElems_Refsect1 struct {
 	Refsect1s []*TxsdRefsect1 `xml:"http://docbook.org/ns/docbook refsect1"`
+
 }
 
 type TxsdRefsect2 struct {
@@ -16308,12 +16668,14 @@ type TxsdRefsect2 struct {
 
 }
 
-type XsdGoPkgHasElem_Refsect2 struct {
-	Refsect2 *TxsdRefsect2 `xml:"http://docbook.org/ns/docbook refsect2"`
-}
-
 type XsdGoPkgHasElems_Refsect2 struct {
 	Refsect2s []*TxsdRefsect2 `xml:"http://docbook.org/ns/docbook refsect2"`
+
+}
+
+type XsdGoPkgHasElem_Refsect2 struct {
+	Refsect2 *TxsdRefsect2 `xml:"http://docbook.org/ns/docbook refsect2"`
+
 }
 
 type TxsdRefsect3 struct {
@@ -16443,10 +16805,12 @@ type TxsdRefsect3 struct {
 
 type XsdGoPkgHasElems_Refsect3 struct {
 	Refsect3s []*TxsdRefsect3 `xml:"http://docbook.org/ns/docbook refsect3"`
+
 }
 
 type XsdGoPkgHasElem_Refsect3 struct {
 	Refsect3 *TxsdRefsect3 `xml:"http://docbook.org/ns/docbook refsect3"`
+
 }
 
 type TxsdGlosslist struct {
@@ -16574,12 +16938,14 @@ type TxsdGlosslist struct {
 
 }
 
-type XsdGoPkgHasElems_Glosslist struct {
-	Glosslists []*TxsdGlosslist `xml:"http://docbook.org/ns/docbook glosslist"`
-}
-
 type XsdGoPkgHasElem_Glosslist struct {
 	Glosslist *TxsdGlosslist `xml:"http://docbook.org/ns/docbook glosslist"`
+
+}
+
+type XsdGoPkgHasElems_Glosslist struct {
+	Glosslists []*TxsdGlosslist `xml:"http://docbook.org/ns/docbook glosslist"`
+
 }
 
 type XsdGoPkgHasAttr_Sortas_XsdtString_ struct {
@@ -16599,9 +16965,9 @@ type TxsdGlossentry struct {
 
 	XsdGoPkgHasElems_Indexterm
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Sortas_XsdtString_
 
@@ -16609,10 +16975,12 @@ type TxsdGlossentry struct {
 
 type XsdGoPkgHasElem_Glossentry struct {
 	Glossentry *TxsdGlossentry `xml:"http://docbook.org/ns/docbook glossentry"`
+
 }
 
 type XsdGoPkgHasElems_Glossentry struct {
 	Glossentries []*TxsdGlossentry `xml:"http://docbook.org/ns/docbook glossentry"`
+
 }
 
 type XsdGoPkgHasAttr_Subject_XsdtString_ struct {
@@ -16732,9 +17100,9 @@ type TxsdGlossdef struct {
 
 	XsdGoPkgHasElems_Glossseealso
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Subject_XsdtString_
 
@@ -16742,10 +17110,12 @@ type TxsdGlossdef struct {
 
 type XsdGoPkgHasElem_Glossdef struct {
 	Glossdef *TxsdGlossdef `xml:"http://docbook.org/ns/docbook glossdef"`
+
 }
 
 type XsdGoPkgHasElems_Glossdef struct {
 	Glossdefs []*TxsdGlossdef `xml:"http://docbook.org/ns/docbook glossdef"`
+
 }
 
 type XsdGoPkgHasAttr_Otherterm_XsdtIdref_ struct {
@@ -16961,10 +17331,12 @@ type TxsdGlosssee struct {
 
 type XsdGoPkgHasElems_Glosssee struct {
 	Glosssees []*TxsdGlosssee `xml:"http://docbook.org/ns/docbook glosssee"`
+
 }
 
 type XsdGoPkgHasElem_Glosssee struct {
 	Glosssee *TxsdGlosssee `xml:"http://docbook.org/ns/docbook glosssee"`
+
 }
 
 type TxsdGlossseealso struct {
@@ -17166,18 +17538,20 @@ type TxsdGlossseealso struct {
 
 	XsdGoPkgHasElems_Errortype
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElems_Glossseealso struct {
 	Glossseealsos []*TxsdGlossseealso `xml:"http://docbook.org/ns/docbook glossseealso"`
+
 }
 
 type XsdGoPkgHasElem_Glossseealso struct {
 	Glossseealso *TxsdGlossseealso `xml:"http://docbook.org/ns/docbook glossseealso"`
+
 }
 
 type XsdGoPkgHasAttr_Baseform_XsdtString_ struct {
@@ -17391,12 +17765,14 @@ type TxsdFirstterm struct {
 
 }
 
-type XsdGoPkgHasElem_Firstterm struct {
-	Firstterm *TxsdFirstterm `xml:"http://docbook.org/ns/docbook firstterm"`
-}
-
 type XsdGoPkgHasElems_Firstterm struct {
 	Firstterms []*TxsdFirstterm `xml:"http://docbook.org/ns/docbook firstterm"`
+
+}
+
+type XsdGoPkgHasElem_Firstterm struct {
+	Firstterm *TxsdFirstterm `xml:"http://docbook.org/ns/docbook firstterm"`
+
 }
 
 type TxsdGlossterm struct {
@@ -17604,12 +17980,14 @@ type TxsdGlossterm struct {
 
 }
 
-type XsdGoPkgHasElems_Glossterm struct {
-	Glossterms []*TxsdGlossterm `xml:"http://docbook.org/ns/docbook glossterm"`
-}
-
 type XsdGoPkgHasElem_Glossterm struct {
 	Glossterm *TxsdGlossterm `xml:"http://docbook.org/ns/docbook glossterm"`
+
+}
+
+type XsdGoPkgHasElems_Glossterm struct {
+	Glossterms []*TxsdGlossterm `xml:"http://docbook.org/ns/docbook glossterm"`
+
 }
 
 type TxsdGlossary struct {
@@ -17737,18 +18115,20 @@ type TxsdGlossary struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_Glossary struct {
 	Glossaries []*TxsdGlossary `xml:"http://docbook.org/ns/docbook glossary"`
+
 }
 
 type XsdGoPkgHasElem_Glossary struct {
 	Glossary *TxsdGlossary `xml:"http://docbook.org/ns/docbook glossary"`
+
 }
 
 type TxsdGlossdiv struct {
@@ -17872,18 +18252,20 @@ type TxsdGlossdiv struct {
 
 	XsdGoPkgHasElem_Info
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElem_Glossdiv struct {
+	Glossdiv *TxsdGlossdiv `xml:"http://docbook.org/ns/docbook glossdiv"`
 
 }
 
 type XsdGoPkgHasElems_Glossdiv struct {
 	Glossdivs []*TxsdGlossdiv `xml:"http://docbook.org/ns/docbook glossdiv"`
-}
 
-type XsdGoPkgHasElem_Glossdiv struct {
-	Glossdiv *TxsdGlossdiv `xml:"http://docbook.org/ns/docbook glossdiv"`
 }
 
 type TxsdTermdef struct {
@@ -18091,12 +18473,14 @@ type TxsdTermdef struct {
 
 }
 
-type XsdGoPkgHasElems_Termdef struct {
-	Termdefs []*TxsdTermdef `xml:"http://docbook.org/ns/docbook termdef"`
-}
-
 type XsdGoPkgHasElem_Termdef struct {
 	Termdef *TxsdTermdef `xml:"http://docbook.org/ns/docbook termdef"`
+
+}
+
+type XsdGoPkgHasElems_Termdef struct {
+	Termdefs []*TxsdTermdef `xml:"http://docbook.org/ns/docbook termdef"`
+
 }
 
 type TxsdBiblioentry struct {
@@ -18242,10 +18626,12 @@ type TxsdBiblioentry struct {
 
 type XsdGoPkgHasElem_Biblioentry struct {
 	Biblioentry *TxsdBiblioentry `xml:"http://docbook.org/ns/docbook biblioentry"`
+
 }
 
 type XsdGoPkgHasElems_Biblioentry struct {
 	Biblioentries []*TxsdBiblioentry `xml:"http://docbook.org/ns/docbook biblioentry"`
+
 }
 
 type TxsdBibliomixed struct {
@@ -18393,10 +18779,12 @@ type TxsdBibliomixed struct {
 
 type XsdGoPkgHasElems_Bibliomixed struct {
 	Bibliomixeds []*TxsdBibliomixed `xml:"http://docbook.org/ns/docbook bibliomixed"`
+
 }
 
 type XsdGoPkgHasElem_Bibliomixed struct {
 	Bibliomixed *TxsdBibliomixed `xml:"http://docbook.org/ns/docbook bibliomixed"`
+
 }
 
 type XsdGoPkgHasAttr_Relation_XsdtString_ struct {
@@ -18538,9 +18926,9 @@ type TxsdBiblioset struct {
 
 	XsdGoPkgHasElems_Titleabbrev
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Relation_XsdtString_
 
@@ -18548,10 +18936,12 @@ type TxsdBiblioset struct {
 
 type XsdGoPkgHasElems_Biblioset struct {
 	Bibliosets []*TxsdBiblioset `xml:"http://docbook.org/ns/docbook biblioset"`
+
 }
 
 type XsdGoPkgHasElem_Biblioset struct {
 	Biblioset *TxsdBiblioset `xml:"http://docbook.org/ns/docbook biblioset"`
+
 }
 
 type TxsdBibliomset struct {
@@ -18719,10 +19109,12 @@ type TxsdBibliomset struct {
 
 type XsdGoPkgHasElem_Bibliomset struct {
 	Bibliomset *TxsdBibliomset `xml:"http://docbook.org/ns/docbook bibliomset"`
+
 }
 
 type XsdGoPkgHasElems_Bibliomset struct {
 	Bibliomsets []*TxsdBibliomset `xml:"http://docbook.org/ns/docbook bibliomset"`
+
 }
 
 type TxsdBibliomisc struct {
@@ -18756,18 +19148,20 @@ type TxsdBibliomisc struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElem_Bibliomisc struct {
 	Bibliomisc *TxsdBibliomisc `xml:"http://docbook.org/ns/docbook bibliomisc"`
+
 }
 
 type XsdGoPkgHasElems_Bibliomisc struct {
 	Bibliomiscs []*TxsdBibliomisc `xml:"http://docbook.org/ns/docbook bibliomisc"`
+
 }
 
 type TxsdBibliography struct {
@@ -18895,18 +19289,20 @@ type TxsdBibliography struct {
 
 	XsdGoPkgHasElem_Info
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Bibliography struct {
+	Bibliography *TxsdBibliography `xml:"http://docbook.org/ns/docbook bibliography"`
 
 }
 
 type XsdGoPkgHasElems_Bibliography struct {
 	Bibliographies []*TxsdBibliography `xml:"http://docbook.org/ns/docbook bibliography"`
-}
 
-type XsdGoPkgHasElem_Bibliography struct {
-	Bibliography *TxsdBibliography `xml:"http://docbook.org/ns/docbook bibliography"`
 }
 
 type TxsdBibliodiv struct {
@@ -19032,18 +19428,20 @@ type TxsdBibliodiv struct {
 
 	XsdGoPkgHasElem_Info
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElems_Bibliodiv struct {
+	Bibliodivs []*TxsdBibliodiv `xml:"http://docbook.org/ns/docbook bibliodiv"`
 
 }
 
 type XsdGoPkgHasElem_Bibliodiv struct {
 	Bibliodiv *TxsdBibliodiv `xml:"http://docbook.org/ns/docbook bibliodiv"`
-}
 
-type XsdGoPkgHasElems_Bibliodiv struct {
-	Bibliodivs []*TxsdBibliodiv `xml:"http://docbook.org/ns/docbook bibliodiv"`
 }
 
 type TxsdBibliolist struct {
@@ -19173,12 +19571,14 @@ type TxsdBibliolist struct {
 
 }
 
-type XsdGoPkgHasElems_Bibliolist struct {
-	Bibliolists []*TxsdBibliolist `xml:"http://docbook.org/ns/docbook bibliolist"`
-}
-
 type XsdGoPkgHasElem_Bibliolist struct {
 	Bibliolist *TxsdBibliolist `xml:"http://docbook.org/ns/docbook bibliolist"`
+
+}
+
+type XsdGoPkgHasElems_Bibliolist struct {
+	Bibliolists []*TxsdBibliolist `xml:"http://docbook.org/ns/docbook bibliolist"`
+
 }
 
 type XsdGoPkgHasAttr_Units_XsdtNmtoken_ struct {
@@ -19198,37 +19598,41 @@ type TxsdBiblioref struct {
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_End_XsdtNmtoken_
-
 	XsdGoPkgHasAttr_Units_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_End_XsdtNmtoken_
 
 	XsdGoPkgHasAttr_Begin_XsdtNmtoken_
 
 }
 
-type XsdGoPkgHasElem_Biblioref struct {
-	Biblioref *TxsdBiblioref `xml:"http://docbook.org/ns/docbook biblioref"`
-}
-
 type XsdGoPkgHasElems_Biblioref struct {
 	Bibliorefs []*TxsdBiblioref `xml:"http://docbook.org/ns/docbook biblioref"`
+
+}
+
+type XsdGoPkgHasElem_Biblioref struct {
+	Biblioref *TxsdBiblioref `xml:"http://docbook.org/ns/docbook biblioref"`
+
 }
 
 type TxsdItermset struct {
 	XsdGoPkgHasElems_Indexterm
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Itermset struct {
+	Itermset *TxsdItermset `xml:"http://docbook.org/ns/docbook itermset"`
 
 }
 
 type XsdGoPkgHasElems_Itermset struct {
 	Itermsets []*TxsdItermset `xml:"http://docbook.org/ns/docbook itermset"`
-}
 
-type XsdGoPkgHasElem_Itermset struct {
-	Itermset *TxsdItermset `xml:"http://docbook.org/ns/docbook itermset"`
 }
 
 type TxsdIndextermSignificance xsdt.Token
@@ -19327,26 +19731,28 @@ type TxsdIndexterm struct {
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAttr_Pagenum_XsdtString_
-
 	XsdGoPkgHasAttr_Zone_XsdtIdrefs_
 
 	XsdGoPkgHasAttr_Significance_TxsdIndextermSignificance_
 
 	XsdGoPkgHasAttr_Scope_TxsdIndextermScope_
 
-	XsdGoPkgHasAttr_Startref_XsdtIdref_
+	XsdGoPkgHasAttr_Pagenum_XsdtString_
 
 	XsdGoPkgHasAttr_Class_TxsdIndextermClass_
+
+	XsdGoPkgHasAttr_Startref_XsdtIdref_
+
+}
+
+type XsdGoPkgHasElem_Indexterm struct {
+	Indexterm *TxsdIndexterm `xml:"http://docbook.org/ns/docbook indexterm"`
 
 }
 
 type XsdGoPkgHasElems_Indexterm struct {
 	Indexterms []*TxsdIndexterm `xml:"http://docbook.org/ns/docbook indexterm"`
-}
 
-type XsdGoPkgHasElem_Indexterm struct {
-	Indexterm *TxsdIndexterm `xml:"http://docbook.org/ns/docbook indexterm"`
 }
 
 type TxsdPrimary struct {
@@ -19554,12 +19960,14 @@ type TxsdPrimary struct {
 
 }
 
-type XsdGoPkgHasElem_Primary struct {
-	Primary *TxsdPrimary `xml:"http://docbook.org/ns/docbook primary"`
-}
-
 type XsdGoPkgHasElems_Primary struct {
 	Primaries []*TxsdPrimary `xml:"http://docbook.org/ns/docbook primary"`
+
+}
+
+type XsdGoPkgHasElem_Primary struct {
+	Primary *TxsdPrimary `xml:"http://docbook.org/ns/docbook primary"`
+
 }
 
 type TxsdSecondary struct {
@@ -19769,10 +20177,12 @@ type TxsdSecondary struct {
 
 type XsdGoPkgHasElem_Secondary struct {
 	Secondary *TxsdSecondary `xml:"http://docbook.org/ns/docbook secondary"`
+
 }
 
 type XsdGoPkgHasElems_Secondary struct {
 	Secondaries []*TxsdSecondary `xml:"http://docbook.org/ns/docbook secondary"`
+
 }
 
 type TxsdTertiary struct {
@@ -19974,18 +20384,20 @@ type TxsdTertiary struct {
 
 	XsdGoPkgHasElems_Errortype
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElems_Tertiary struct {
+	Tertiaries []*TxsdTertiary `xml:"http://docbook.org/ns/docbook tertiary"`
 
 }
 
 type XsdGoPkgHasElem_Tertiary struct {
 	Tertiary *TxsdTertiary `xml:"http://docbook.org/ns/docbook tertiary"`
-}
 
-type XsdGoPkgHasElems_Tertiary struct {
-	Tertiaries []*TxsdTertiary `xml:"http://docbook.org/ns/docbook tertiary"`
 }
 
 type TxsdSee struct {
@@ -20193,12 +20605,14 @@ type TxsdSee struct {
 
 }
 
-type XsdGoPkgHasElems_See struct {
-	Sees []*TxsdSee `xml:"http://docbook.org/ns/docbook see"`
-}
-
 type XsdGoPkgHasElem_See struct {
 	See *TxsdSee `xml:"http://docbook.org/ns/docbook see"`
+
+}
+
+type XsdGoPkgHasElems_See struct {
+	Sees []*TxsdSee `xml:"http://docbook.org/ns/docbook see"`
+
 }
 
 type TxsdSeealso struct {
@@ -20406,12 +20820,14 @@ type TxsdSeealso struct {
 
 }
 
-type XsdGoPkgHasElems_Seealso struct {
-	Seealsos []*TxsdSeealso `xml:"http://docbook.org/ns/docbook seealso"`
-}
-
 type XsdGoPkgHasElem_Seealso struct {
 	Seealso *TxsdSeealso `xml:"http://docbook.org/ns/docbook seealso"`
+
+}
+
+type XsdGoPkgHasElems_Seealso struct {
+	Seealsos []*TxsdSeealso `xml:"http://docbook.org/ns/docbook seealso"`
+
 }
 
 type TxsdIndex struct {
@@ -20537,18 +20953,20 @@ type TxsdIndex struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_Index struct {
 	Indexs []*TxsdIndex `xml:"http://docbook.org/ns/docbook index"`
+
 }
 
 type XsdGoPkgHasElem_Index struct {
 	Index *TxsdIndex `xml:"http://docbook.org/ns/docbook index"`
+
 }
 
 type TxsdSetindex struct {
@@ -20682,10 +21100,12 @@ type TxsdSetindex struct {
 
 type XsdGoPkgHasElems_Setindex struct {
 	Setindexs []*TxsdSetindex `xml:"http://docbook.org/ns/docbook setindex"`
+
 }
 
 type XsdGoPkgHasElem_Setindex struct {
 	Setindex *TxsdSetindex `xml:"http://docbook.org/ns/docbook setindex"`
+
 }
 
 type TxsdIndexdiv struct {
@@ -20815,12 +21235,14 @@ type TxsdIndexdiv struct {
 
 }
 
-type XsdGoPkgHasElems_Indexdiv struct {
-	Indexdivs []*TxsdIndexdiv `xml:"http://docbook.org/ns/docbook indexdiv"`
-}
-
 type XsdGoPkgHasElem_Indexdiv struct {
 	Indexdiv *TxsdIndexdiv `xml:"http://docbook.org/ns/docbook indexdiv"`
+
+}
+
+type XsdGoPkgHasElems_Indexdiv struct {
+	Indexdivs []*TxsdIndexdiv `xml:"http://docbook.org/ns/docbook indexdiv"`
+
 }
 
 type TxsdIndexentry struct {
@@ -20840,12 +21262,14 @@ type TxsdIndexentry struct {
 
 }
 
-type XsdGoPkgHasElems_Indexentry struct {
-	Indexentries []*TxsdIndexentry `xml:"http://docbook.org/ns/docbook indexentry"`
-}
-
 type XsdGoPkgHasElem_Indexentry struct {
 	Indexentry *TxsdIndexentry `xml:"http://docbook.org/ns/docbook indexentry"`
+
+}
+
+type XsdGoPkgHasElems_Indexentry struct {
+	Indexentries []*TxsdIndexentry `xml:"http://docbook.org/ns/docbook indexentry"`
+
 }
 
 type XsdGoPkgHasAttr_Linkends_XsdtIdrefs_ struct {
@@ -21059,10 +21483,12 @@ type TxsdPrimaryie struct {
 
 type XsdGoPkgHasElem_Primaryie struct {
 	Primaryie *TxsdPrimaryie `xml:"http://docbook.org/ns/docbook primaryie"`
+
 }
 
 type XsdGoPkgHasElems_Primaryie struct {
 	Primaryies []*TxsdPrimaryie `xml:"http://docbook.org/ns/docbook primaryie"`
+
 }
 
 type TxsdSecondaryie struct {
@@ -21270,10 +21696,12 @@ type TxsdSecondaryie struct {
 
 type XsdGoPkgHasElem_Secondaryie struct {
 	Secondaryie *TxsdSecondaryie `xml:"http://docbook.org/ns/docbook secondaryie"`
+
 }
 
 type XsdGoPkgHasElems_Secondaryie struct {
 	Secondaryies []*TxsdSecondaryie `xml:"http://docbook.org/ns/docbook secondaryie"`
+
 }
 
 type TxsdTertiaryie struct {
@@ -21479,12 +21907,14 @@ type TxsdTertiaryie struct {
 
 }
 
-type XsdGoPkgHasElems_Tertiaryie struct {
-	Tertiaryies []*TxsdTertiaryie `xml:"http://docbook.org/ns/docbook tertiaryie"`
-}
-
 type XsdGoPkgHasElem_Tertiaryie struct {
 	Tertiaryie *TxsdTertiaryie `xml:"http://docbook.org/ns/docbook tertiaryie"`
+
+}
+
+type XsdGoPkgHasElems_Tertiaryie struct {
+	Tertiaryies []*TxsdTertiaryie `xml:"http://docbook.org/ns/docbook tertiaryie"`
+
 }
 
 type TxsdSeeie struct {
@@ -21686,18 +22116,20 @@ type TxsdSeeie struct {
 
 	XsdGoPkgHasElems_Errortype
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElems_Seeie struct {
+	Seeies []*TxsdSeeie `xml:"http://docbook.org/ns/docbook seeie"`
 
 }
 
 type XsdGoPkgHasElem_Seeie struct {
 	Seeie *TxsdSeeie `xml:"http://docbook.org/ns/docbook seeie"`
-}
 
-type XsdGoPkgHasElems_Seeie struct {
-	Seeies []*TxsdSeeie `xml:"http://docbook.org/ns/docbook seeie"`
 }
 
 type TxsdSeealsoie struct {
@@ -21905,10 +22337,12 @@ type TxsdSeealsoie struct {
 
 type XsdGoPkgHasElems_Seealsoie struct {
 	Seealsoies []*TxsdSeealsoie `xml:"http://docbook.org/ns/docbook seealsoie"`
+
 }
 
 type XsdGoPkgHasElem_Seealsoie struct {
 	Seealsoie *TxsdSeealsoie `xml:"http://docbook.org/ns/docbook seealsoie"`
+
 }
 
 type TxsdToc struct {
@@ -22040,10 +22474,12 @@ type TxsdToc struct {
 
 type XsdGoPkgHasElem_Toc struct {
 	Toc *TxsdToc `xml:"http://docbook.org/ns/docbook toc"`
+
 }
 
 type XsdGoPkgHasElems_Toc struct {
 	Tocs []*TxsdToc `xml:"http://docbook.org/ns/docbook toc"`
+
 }
 
 type TxsdTocdiv struct {
@@ -22175,12 +22611,14 @@ type TxsdTocdiv struct {
 
 }
 
-type XsdGoPkgHasElem_Tocdiv struct {
-	Tocdiv *TxsdTocdiv `xml:"http://docbook.org/ns/docbook tocdiv"`
-}
-
 type XsdGoPkgHasElems_Tocdiv struct {
 	Tocdivs []*TxsdTocdiv `xml:"http://docbook.org/ns/docbook tocdiv"`
+
+}
+
+type XsdGoPkgHasElem_Tocdiv struct {
+	Tocdiv *TxsdTocdiv `xml:"http://docbook.org/ns/docbook tocdiv"`
+
 }
 
 type TxsdTocentry struct {
@@ -22382,18 +22820,20 @@ type TxsdTocentry struct {
 
 	XsdGoPkgHasElems_Errortype
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_Tocentry struct {
 	Tocentries []*TxsdTocentry `xml:"http://docbook.org/ns/docbook tocentry"`
+
 }
 
 type XsdGoPkgHasElem_Tocentry struct {
 	Tocentry *TxsdTocentry `xml:"http://docbook.org/ns/docbook tocentry"`
+
 }
 
 type TxsdTask struct {
@@ -22421,12 +22861,14 @@ type TxsdTask struct {
 
 }
 
-type XsdGoPkgHasElems_Task struct {
-	Tasks []*TxsdTask `xml:"http://docbook.org/ns/docbook task"`
-}
-
 type XsdGoPkgHasElem_Task struct {
 	Task *TxsdTask `xml:"http://docbook.org/ns/docbook task"`
+
+}
+
+type XsdGoPkgHasElems_Task struct {
+	Tasks []*TxsdTask `xml:"http://docbook.org/ns/docbook task"`
+
 }
 
 type TxsdTasksummary struct {
@@ -22554,10 +22996,12 @@ type TxsdTasksummary struct {
 
 type XsdGoPkgHasElem_Tasksummary struct {
 	Tasksummary *TxsdTasksummary `xml:"http://docbook.org/ns/docbook tasksummary"`
+
 }
 
 type XsdGoPkgHasElems_Tasksummary struct {
 	Tasksummaries []*TxsdTasksummary `xml:"http://docbook.org/ns/docbook tasksummary"`
+
 }
 
 type TxsdTaskprerequisites struct {
@@ -22683,12 +23127,14 @@ type TxsdTaskprerequisites struct {
 
 }
 
-type XsdGoPkgHasElem_Taskprerequisites struct {
-	Taskprerequisites *TxsdTaskprerequisites `xml:"http://docbook.org/ns/docbook taskprerequisites"`
-}
-
 type XsdGoPkgHasElems_Taskprerequisites struct {
 	Taskprerequisiteses []*TxsdTaskprerequisites `xml:"http://docbook.org/ns/docbook taskprerequisites"`
+
+}
+
+type XsdGoPkgHasElem_Taskprerequisites struct {
+	Taskprerequisites *TxsdTaskprerequisites `xml:"http://docbook.org/ns/docbook taskprerequisites"`
+
 }
 
 type TxsdTaskrelated struct {
@@ -22814,12 +23260,14 @@ type TxsdTaskrelated struct {
 
 }
 
-type XsdGoPkgHasElems_Taskrelated struct {
-	Taskrelateds []*TxsdTaskrelated `xml:"http://docbook.org/ns/docbook taskrelated"`
-}
-
 type XsdGoPkgHasElem_Taskrelated struct {
 	Taskrelated *TxsdTaskrelated `xml:"http://docbook.org/ns/docbook taskrelated"`
+
+}
+
+type XsdGoPkgHasElems_Taskrelated struct {
+	Taskrelateds []*TxsdTaskrelated `xml:"http://docbook.org/ns/docbook taskrelated"`
+
 }
 
 type TxsdCalloutlist struct {
@@ -22941,18 +23389,20 @@ type TxsdCalloutlist struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_Calloutlist struct {
 	Calloutlists []*TxsdCalloutlist `xml:"http://docbook.org/ns/docbook calloutlist"`
+
 }
 
 type XsdGoPkgHasElem_Calloutlist struct {
 	Calloutlist *TxsdCalloutlist `xml:"http://docbook.org/ns/docbook calloutlist"`
+
 }
 
 type XsdGoPkgHasAttr_Arearefs_XsdtIdrefs_ struct {
@@ -23076,12 +23526,14 @@ type TxsdCallout struct {
 
 }
 
-type XsdGoPkgHasElems_Callout struct {
-	Callouts []*TxsdCallout `xml:"http://docbook.org/ns/docbook callout"`
-}
-
 type XsdGoPkgHasElem_Callout struct {
 	Callout *TxsdCallout `xml:"http://docbook.org/ns/docbook callout"`
+
+}
+
+type XsdGoPkgHasElems_Callout struct {
+	Callouts []*TxsdCallout `xml:"http://docbook.org/ns/docbook callout"`
+
 }
 
 type TxsdProgramlistingco struct {
@@ -23093,18 +23545,20 @@ type TxsdProgramlistingco struct {
 
 	XsdGoPkgHasElems_Calloutlist
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_Programlistingco struct {
 	Programlistingcos []*TxsdProgramlistingco `xml:"http://docbook.org/ns/docbook programlistingco"`
+
 }
 
 type XsdGoPkgHasElem_Programlistingco struct {
 	Programlistingco *TxsdProgramlistingco `xml:"http://docbook.org/ns/docbook programlistingco"`
+
 }
 
 type TxsdAreaspecUnits xsdt.Token
@@ -23146,22 +23600,24 @@ type TxsdAreaspec struct {
 
 	XsdGoPkgHasElems_Areaset
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+	XsdGoPkgHasAttr_Units_TxsdAreaspecUnits_
 
 	XsdGoPkgHasAttr_Otherunits_XsdtNmtoken_
 
-	XsdGoPkgHasAttr_Units_TxsdAreaspecUnits_
+}
+
+type XsdGoPkgHasElems_Areaspec struct {
+	Areaspecs []*TxsdAreaspec `xml:"http://docbook.org/ns/docbook areaspec"`
 
 }
 
 type XsdGoPkgHasElem_Areaspec struct {
 	Areaspec *TxsdAreaspec `xml:"http://docbook.org/ns/docbook areaspec"`
-}
 
-type XsdGoPkgHasElems_Areaspec struct {
-	Areaspecs []*TxsdAreaspec `xml:"http://docbook.org/ns/docbook areaspec"`
 }
 
 type TxsdAreaUnits xsdt.Token
@@ -23211,10 +23667,12 @@ type TxsdArea struct {
 
 type XsdGoPkgHasElems_Area struct {
 	Areas []*TxsdArea `xml:"http://docbook.org/ns/docbook area"`
+
 }
 
 type XsdGoPkgHasElem_Area struct {
 	Area *TxsdArea `xml:"http://docbook.org/ns/docbook area"`
+
 }
 
 type TxsdAreasetUnits xsdt.Token
@@ -23256,12 +23714,14 @@ type TxsdAreaset struct {
 
 }
 
-type XsdGoPkgHasElems_Areaset struct {
-	Areasets []*TxsdAreaset `xml:"http://docbook.org/ns/docbook areaset"`
-}
-
 type XsdGoPkgHasElem_Areaset struct {
 	Areaset *TxsdAreaset `xml:"http://docbook.org/ns/docbook areaset"`
+
+}
+
+type XsdGoPkgHasElems_Areaset struct {
+	Areasets []*TxsdAreaset `xml:"http://docbook.org/ns/docbook areaset"`
+
 }
 
 type TxsdScreenco struct {
@@ -23273,18 +23733,20 @@ type TxsdScreenco struct {
 
 	XsdGoPkgHasElems_Calloutlist
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElems_Screenco struct {
+	Screencos []*TxsdScreenco `xml:"http://docbook.org/ns/docbook screenco"`
 
 }
 
 type XsdGoPkgHasElem_Screenco struct {
 	Screenco *TxsdScreenco `xml:"http://docbook.org/ns/docbook screenco"`
-}
 
-type XsdGoPkgHasElems_Screenco struct {
-	Screencos []*TxsdScreenco `xml:"http://docbook.org/ns/docbook screenco"`
 }
 
 type TxsdImageobjectco struct {
@@ -23302,12 +23764,14 @@ type TxsdImageobjectco struct {
 
 }
 
-type XsdGoPkgHasElems_Imageobjectco struct {
-	Imageobjectcos []*TxsdImageobjectco `xml:"http://docbook.org/ns/docbook imageobjectco"`
-}
-
 type XsdGoPkgHasElem_Imageobjectco struct {
 	Imageobjectco *TxsdImageobjectco `xml:"http://docbook.org/ns/docbook imageobjectco"`
+
+}
+
+type XsdGoPkgHasElems_Imageobjectco struct {
+	Imageobjectcos []*TxsdImageobjectco `xml:"http://docbook.org/ns/docbook imageobjectco"`
+
 }
 
 type TxsdCo struct {
@@ -23315,27 +23779,31 @@ type TxsdCo struct {
 
 }
 
-type XsdGoPkgHasElems_Co struct {
-	Cos []*TxsdCo `xml:"http://docbook.org/ns/docbook co"`
-}
-
 type XsdGoPkgHasElem_Co struct {
 	Co *TxsdCo `xml:"http://docbook.org/ns/docbook co"`
+
+}
+
+type XsdGoPkgHasElems_Co struct {
+	Cos []*TxsdCo `xml:"http://docbook.org/ns/docbook co"`
+
 }
 
 type TxsdCoref struct {
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElems_Coref struct {
+	Corefs []*TxsdCoref `xml:"http://docbook.org/ns/docbook coref"`
 
 }
 
 type XsdGoPkgHasElem_Coref struct {
 	Coref *TxsdCoref `xml:"http://docbook.org/ns/docbook coref"`
-}
 
-type XsdGoPkgHasElems_Coref struct {
-	Corefs []*TxsdCoref `xml:"http://docbook.org/ns/docbook coref"`
 }
 
 type TxsdProductionset struct {
@@ -23349,18 +23817,20 @@ type TxsdProductionset struct {
 
 	XsdGoPkgHasElem_Info
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElems_Productionset struct {
+	Productionsets []*TxsdProductionset `xml:"http://docbook.org/ns/docbook productionset"`
 
 }
 
 type XsdGoPkgHasElem_Productionset struct {
 	Productionset *TxsdProductionset `xml:"http://docbook.org/ns/docbook productionset"`
-}
 
-type XsdGoPkgHasElems_Productionset struct {
-	Productionsets []*TxsdProductionset `xml:"http://docbook.org/ns/docbook productionset"`
 }
 
 type TxsdProduction struct {
@@ -23370,35 +23840,39 @@ type TxsdProduction struct {
 
 	XsdGoPkgHasElems_Constraint
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElems_Production struct {
 	Productions []*TxsdProduction `xml:"http://docbook.org/ns/docbook production"`
+
 }
 
 type XsdGoPkgHasElem_Production struct {
 	Production *TxsdProduction `xml:"http://docbook.org/ns/docbook production"`
+
 }
 
 type TxsdLhs struct {
 	XsdGoPkgHasCdata
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElems_Lhs struct {
 	Lhses []*TxsdLhs `xml:"http://docbook.org/ns/docbook lhs"`
+
 }
 
 type XsdGoPkgHasElem_Lhs struct {
 	Lhs *TxsdLhs `xml:"http://docbook.org/ns/docbook lhs"`
+
 }
 
 type TxsdRhs struct {
@@ -23410,18 +23884,20 @@ type TxsdRhs struct {
 
 	XsdGoPkgHasElems_Sbr
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_Rhs struct {
 	Rhses []*TxsdRhs `xml:"http://docbook.org/ns/docbook rhs"`
+
 }
 
 type XsdGoPkgHasElem_Rhs struct {
 	Rhs *TxsdRhs `xml:"http://docbook.org/ns/docbook rhs"`
+
 }
 
 type XsdGoPkgHasAttr_Def_XsdtString_ struct {
@@ -23439,42 +23915,48 @@ type TxsdNonterminal struct {
 
 }
 
-type XsdGoPkgHasElem_Nonterminal struct {
-	Nonterminal *TxsdNonterminal `xml:"http://docbook.org/ns/docbook nonterminal"`
-}
-
 type XsdGoPkgHasElems_Nonterminal struct {
 	Nonterminals []*TxsdNonterminal `xml:"http://docbook.org/ns/docbook nonterminal"`
+
+}
+
+type XsdGoPkgHasElem_Nonterminal struct {
+	Nonterminal *TxsdNonterminal `xml:"http://docbook.org/ns/docbook nonterminal"`
+
 }
 
 type TxsdConstraint struct {
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Constraint struct {
+	Constraint *TxsdConstraint `xml:"http://docbook.org/ns/docbook constraint"`
 
 }
 
 type XsdGoPkgHasElems_Constraint struct {
 	Constraints []*TxsdConstraint `xml:"http://docbook.org/ns/docbook constraint"`
-}
 
-type XsdGoPkgHasElem_Constraint struct {
-	Constraint *TxsdConstraint `xml:"http://docbook.org/ns/docbook constraint"`
 }
 
 type TxsdProductionrecap struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElem_Productionrecap struct {
+	Productionrecap *TxsdProductionrecap `xml:"http://docbook.org/ns/docbook productionrecap"`
 
 }
 
 type XsdGoPkgHasElems_Productionrecap struct {
 	Productionrecaps []*TxsdProductionrecap `xml:"http://docbook.org/ns/docbook productionrecap"`
-}
 
-type XsdGoPkgHasElem_Productionrecap struct {
-	Productionrecap *TxsdProductionrecap `xml:"http://docbook.org/ns/docbook productionrecap"`
 }
 
 type TxsdConstraintdef struct {
@@ -23594,18 +24076,20 @@ type TxsdConstraintdef struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElem_Constraintdef struct {
 	Constraintdef *TxsdConstraintdef `xml:"http://docbook.org/ns/docbook constraintdef"`
+
 }
 
 type XsdGoPkgHasElems_Constraintdef struct {
 	Constraintdefs []*TxsdConstraintdef `xml:"http://docbook.org/ns/docbook constraintdef"`
+
 }
 
 type XsdGoPkgHasAttr_Char_XsdtString_ struct {
@@ -23711,28 +24195,30 @@ type TxsdTgroup struct {
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Tgroupstyle_XsdtString_
+	XsdGoPkgHasAttr_Rowsep_TxsdTgroupRowsep_
 
 	XsdGoPkgHasAttr_Char_XsdtString_
-
-	XsdGoPkgHasAttr_Cols_XsdtNmtoken_
 
 	XsdGoPkgHasAttr_Colsep_TxsdTgroupColsep_
 
 	XsdGoPkgHasAttr_Charoff_XsdtString_
 
-	XsdGoPkgHasAttr_Rowsep_TxsdTgroupRowsep_
+	XsdGoPkgHasAttr_Tgroupstyle_XsdtString_
 
 	XsdGoPkgHasAttr_Align_TxsdTgroupAlign_
+
+	XsdGoPkgHasAttr_Cols_XsdtNmtoken_
+
+}
+
+type XsdGoPkgHasElems_Tgroup struct {
+	Tgroups []*TxsdTgroup `xml:"http://docbook.org/ns/docbook tgroup"`
 
 }
 
 type XsdGoPkgHasElem_Tgroup struct {
 	Tgroup *TxsdTgroup `xml:"http://docbook.org/ns/docbook tgroup"`
-}
 
-type XsdGoPkgHasElems_Tgroup struct {
-	Tgroups []*TxsdTgroup `xml:"http://docbook.org/ns/docbook tgroup"`
 }
 
 type XsdGoPkgHasAttr_Colnum_XsdtNmtoken_ struct {
@@ -23820,30 +24306,32 @@ type XsdGoPkgHasAttr_Align_TxsdColspecAlign_ struct {
 }
 
 type TxsdColspec struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAttr_Rowsep_TxsdColspecRowsep_
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Colnum_XsdtNmtoken_
 
+	XsdGoPkgHasAttr_Align_TxsdColspecAlign_
+
 	XsdGoPkgHasAttr_Colsep_TxsdColspecColsep_
+
+	XsdGoPkgHasAttr_Colwidth_XsdtString_
 
 	XsdGoPkgHasAttr_Colname_XsdtString_
 
-	XsdGoPkgHasAttr_Align_TxsdColspecAlign_
-
-	XsdGoPkgHasAttr_Colwidth_XsdtString_
+	XsdGoPkgHasAttr_Rowsep_TxsdColspecRowsep_
 
 }
 
 type XsdGoPkgHasElem_Colspec struct {
 	Colspec *TxsdColspec `xml:"http://docbook.org/ns/docbook colspec"`
+
 }
 
 type XsdGoPkgHasElems_Colspec struct {
 	Colspecs []*TxsdColspec `xml:"http://docbook.org/ns/docbook colspec"`
+
 }
 
 type XsdGoPkgHasAttr_Spanname_XsdtString_ struct {
@@ -23931,30 +24419,32 @@ type XsdGoPkgHasAttr_Align_TxsdSpanspecAlign_ struct {
 }
 
 type TxsdSpanspec struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAttr_Align_TxsdSpanspecAlign_
-
-	XsdGoPkgHasAttr_Colsep_TxsdSpanspecColsep_
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Spanname_XsdtString_
 
 	XsdGoPkgHasAttr_Nameend_XsdtString_
 
+	XsdGoPkgHasAttr_Namest_XsdtString_
+
 	XsdGoPkgHasAttr_Rowsep_TxsdSpanspecRowsep_
 
-	XsdGoPkgHasAttr_Namest_XsdtString_
+	XsdGoPkgHasAttr_Align_TxsdSpanspecAlign_
+
+	XsdGoPkgHasAttr_Colsep_TxsdSpanspecColsep_
 
 }
 
 type XsdGoPkgHasElem_Spanspec struct {
 	Spanspec *TxsdSpanspec `xml:"http://docbook.org/ns/docbook spanspec"`
+
 }
 
 type XsdGoPkgHasElems_Spanspec struct {
 	Spanspecs []*TxsdSpanspec `xml:"http://docbook.org/ns/docbook spanspec"`
+
 }
 
 type TxsdTheadValign xsdt.Token
@@ -24021,9 +24511,9 @@ type TxsdThead struct {
 
 	XsdGoPkgHasElems_Colspec
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Valign_TxsdTheadValign_
 
@@ -24033,10 +24523,12 @@ type TxsdThead struct {
 
 type XsdGoPkgHasElems_Thead struct {
 	Theads []*TxsdThead `xml:"http://docbook.org/ns/docbook thead"`
+
 }
 
 type XsdGoPkgHasElem_Thead struct {
 	Thead *TxsdThead `xml:"http://docbook.org/ns/docbook thead"`
+
 }
 
 type TxsdTfootValign xsdt.Token
@@ -24103,22 +24595,24 @@ type TxsdTfoot struct {
 
 	XsdGoPkgHasElems_Colspec
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasAttr_Align_TxsdTfootAlign_
 
 	XsdGoPkgHasAttr_Valign_TxsdTfootValign_
 
-	XsdGoPkgHasAttr_Align_TxsdTfootAlign_
+}
+
+type XsdGoPkgHasElems_Tfoot struct {
+	Tfoots []*TxsdTfoot `xml:"http://docbook.org/ns/docbook tfoot"`
 
 }
 
 type XsdGoPkgHasElem_Tfoot struct {
 	Tfoot *TxsdTfoot `xml:"http://docbook.org/ns/docbook tfoot"`
-}
 
-type XsdGoPkgHasElems_Tfoot struct {
-	Tfoots []*TxsdTfoot `xml:"http://docbook.org/ns/docbook tfoot"`
 }
 
 type TxsdTbodyValign xsdt.Token
@@ -24183,22 +24677,24 @@ type TxsdTbody struct {
 
 	XsdGoPkgHasElems_Tr
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Valign_TxsdTbodyValign_
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Align_TxsdTbodyAlign_
+
+	XsdGoPkgHasAttr_Valign_TxsdTbodyValign_
 
 }
 
 type XsdGoPkgHasElem_Tbody struct {
 	Tbody *TxsdTbody `xml:"http://docbook.org/ns/docbook tbody"`
+
 }
 
 type XsdGoPkgHasElems_Tbody struct {
 	Tbodies []*TxsdTbody `xml:"http://docbook.org/ns/docbook tbody"`
+
 }
 
 type TxsdRowRowsep xsdt.Token
@@ -24263,10 +24759,12 @@ type TxsdRow struct {
 
 type XsdGoPkgHasElem_Row struct {
 	Row *TxsdRow `xml:"http://docbook.org/ns/docbook row"`
+
 }
 
 type XsdGoPkgHasElems_Row struct {
 	Rows []*TxsdRow `xml:"http://docbook.org/ns/docbook row"`
+
 }
 
 type TxsdEntryValign xsdt.Token
@@ -24691,30 +25189,32 @@ type TxsdEntry struct {
 
 	XsdGoPkgHasElems_Simpara
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Rotate_TxsdEntryRotate_
-
-	XsdGoPkgHasAttr_Morerows_XsdtNmtoken_
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Colsep_TxsdEntryColsep_
-
-	XsdGoPkgHasAttr_Align_TxsdEntryAlign_
 
 	XsdGoPkgHasAttr_Rowsep_TxsdEntryRowsep_
 
 	XsdGoPkgHasAttr_Valign_TxsdEntryValign_
 
-}
+	XsdGoPkgHasAttr_Rotate_TxsdEntryRotate_
 
-type XsdGoPkgHasElem_Entry struct {
-	Entry *TxsdEntry `xml:"http://docbook.org/ns/docbook entry"`
+	XsdGoPkgHasAttr_Morerows_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Align_TxsdEntryAlign_
+
 }
 
 type XsdGoPkgHasElems_Entry struct {
 	Entries []*TxsdEntry `xml:"http://docbook.org/ns/docbook entry"`
+
+}
+
+type XsdGoPkgHasElem_Entry struct {
+	Entry *TxsdEntry `xml:"http://docbook.org/ns/docbook entry"`
+
 }
 
 type TxsdEntrytblColsep xsdt.Token
@@ -24798,24 +25298,26 @@ type TxsdEntrytbl struct {
 
 	XsdGoPkgHasElem_Tbody
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAttr_Colsep_TxsdEntrytblColsep_
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Align_TxsdEntrytblAlign_
 
 	XsdGoPkgHasAttr_Rowsep_TxsdEntrytblRowsep_
 
-	XsdGoPkgHasAttr_Align_TxsdEntrytblAlign_
+	XsdGoPkgHasAttr_Colsep_TxsdEntrytblColsep_
 
 }
 
 type XsdGoPkgHasElem_Entrytbl struct {
 	Entrytbl *TxsdEntrytbl `xml:"http://docbook.org/ns/docbook entrytbl"`
+
 }
 
 type XsdGoPkgHasElems_Entrytbl struct {
 	Entrytbls []*TxsdEntrytbl `xml:"http://docbook.org/ns/docbook entrytbl"`
+
 }
 
 type XsdGoPkgHasAttr_Tabstyle_XsdtString_ struct {
@@ -25108,42 +25610,44 @@ type TxsdTable struct {
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
+	XsdGoPkgHasAttr_Rules_TxsdTableRules_
+
 	XsdGoPkgHasAttr_Frame_TxsdTableFrame_
-
-	XsdGoPkgHasAttr_Colsep_TxsdTableColsep_
-
-	XsdGoPkgHasAttr_Border_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_Cellspacing_XsdtString_
 
 	XsdGoPkgHasAttr_Cellpadding_XsdtString_
 
-	XsdGoPkgHasAttr_Pgwide_TxsdTablePgwide_
+	XsdGoPkgHasAttr_Tocentry_TxsdTableTocentry_
 
-	XsdGoPkgHasAttr_Rowheader_TxsdTableRowheader_
+	XsdGoPkgHasAttr_Border_XsdtNmtoken_
 
-	XsdGoPkgHasAttr_Shortentry_TxsdTableShortentry_
+	XsdGoPkgHasAttr_Rowsep_TxsdTableRowsep_
 
 	XsdGoPkgHasAttr_Tabstyle_XsdtString_
 
-	XsdGoPkgHasAttr_Rules_TxsdTableRules_
+	XsdGoPkgHasAttr_Cellspacing_XsdtString_
 
-	XsdGoPkgHasAttr_Orient_TxsdTableOrient_
-
-	XsdGoPkgHasAttr_Tocentry_TxsdTableTocentry_
+	XsdGoPkgHasAttr_Shortentry_TxsdTableShortentry_
 
 	XsdGoPkgHasAttr_Summary_XsdtString_
 
-	XsdGoPkgHasAttr_Rowsep_TxsdTableRowsep_
+	XsdGoPkgHasAttr_Colsep_TxsdTableColsep_
+
+	XsdGoPkgHasAttr_Pgwide_TxsdTablePgwide_
+
+	XsdGoPkgHasAttr_Orient_TxsdTableOrient_
+
+	XsdGoPkgHasAttr_Rowheader_TxsdTableRowheader_
 
 }
 
 type XsdGoPkgHasElems_Table struct {
 	Tables []*TxsdTable `xml:"http://docbook.org/ns/docbook table"`
+
 }
 
 type XsdGoPkgHasElem_Table struct {
 	Table *TxsdTable `xml:"http://docbook.org/ns/docbook table"`
+
 }
 
 type TxsdInformaltableOrient xsdt.Token
@@ -25366,28 +25870,30 @@ type TxsdInformaltable struct {
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAttr_Colsep_TxsdInformaltableColsep_
-
 	XsdGoPkgHasAttr_Orient_TxsdInformaltableOrient_
-
-	XsdGoPkgHasAttr_Frame_TxsdInformaltableFrame_
 
 	XsdGoPkgHasAttr_Rules_TxsdInformaltableRules_
 
-	XsdGoPkgHasAttr_Rowheader_TxsdInformaltableRowheader_
+	XsdGoPkgHasAttr_Frame_TxsdInformaltableFrame_
 
 	XsdGoPkgHasAttr_Rowsep_TxsdInformaltableRowsep_
 
 	XsdGoPkgHasAttr_Pgwide_TxsdInformaltablePgwide_
 
+	XsdGoPkgHasAttr_Rowheader_TxsdInformaltableRowheader_
+
+	XsdGoPkgHasAttr_Colsep_TxsdInformaltableColsep_
+
 }
 
 type XsdGoPkgHasElem_Informaltable struct {
 	Informaltable *TxsdInformaltable `xml:"http://docbook.org/ns/docbook informaltable"`
+
 }
 
 type XsdGoPkgHasElems_Informaltable struct {
 	Informaltables []*TxsdInformaltable `xml:"http://docbook.org/ns/docbook informaltable"`
+
 }
 
 type XsdGoPkgHasAttr_Span_XsdtNmtoken_ struct {
@@ -25454,20 +25960,22 @@ type XsdGoPkgHasAttr_Valign_TxsdColValign_ struct {
 type TxsdCol struct {
 	XsdGoPkgHasAtts_DbCommonAttributes
 
+	XsdGoPkgHasAttr_Align_TxsdColAlign_
+
 	XsdGoPkgHasAttr_Span_XsdtNmtoken_
 
 	XsdGoPkgHasAttr_Valign_TxsdColValign_
 
-	XsdGoPkgHasAttr_Align_TxsdColAlign_
+}
+
+type XsdGoPkgHasElem_Col struct {
+	Col *TxsdCol `xml:"http://docbook.org/ns/docbook col"`
 
 }
 
 type XsdGoPkgHasElems_Col struct {
 	Cols []*TxsdCol `xml:"http://docbook.org/ns/docbook col"`
-}
 
-type XsdGoPkgHasElem_Col struct {
-	Col *TxsdCol `xml:"http://docbook.org/ns/docbook col"`
 }
 
 type TxsdColgroupAlign xsdt.Token
@@ -25540,10 +26048,12 @@ type TxsdColgroup struct {
 
 type XsdGoPkgHasElem_Colgroup struct {
 	Colgroup *TxsdColgroup `xml:"http://docbook.org/ns/docbook colgroup"`
+
 }
 
 type XsdGoPkgHasElems_Colgroup struct {
 	Colgroups []*TxsdColgroup `xml:"http://docbook.org/ns/docbook colgroup"`
+
 }
 
 type TxsdTrAlign xsdt.Token
@@ -25618,10 +26128,12 @@ type TxsdTr struct {
 
 type XsdGoPkgHasElem_Tr struct {
 	Tr *TxsdTr `xml:"http://docbook.org/ns/docbook tr"`
+
 }
 
 type XsdGoPkgHasElems_Tr struct {
 	Trs []*TxsdTr `xml:"http://docbook.org/ns/docbook tr"`
+
 }
 
 type XsdGoPkgHasAttr_Abbr_XsdtString_ struct {
@@ -26031,30 +26543,32 @@ type TxsdTh struct {
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Abbr_XsdtString_
-
 	XsdGoPkgHasAttr_Axis_XsdtString_
 
-	XsdGoPkgHasAttr_Rowspan_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_Align_TxsdThAlign_
+	XsdGoPkgHasAttr_Abbr_XsdtString_
 
 	XsdGoPkgHasAttr_Colspan_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Valign_TxsdThValign_
+
+	XsdGoPkgHasAttr_Align_TxsdThAlign_
 
 	XsdGoPkgHasAttr_Scope_TxsdThScope_
 
 	XsdGoPkgHasAttr_Headers_XsdtString_
 
-	XsdGoPkgHasAttr_Valign_TxsdThValign_
+	XsdGoPkgHasAttr_Rowspan_XsdtNmtoken_
 
 }
 
 type XsdGoPkgHasElems_Th struct {
 	Ths []*TxsdTh `xml:"http://docbook.org/ns/docbook th"`
+
 }
 
 type XsdGoPkgHasElem_Th struct {
 	Th *TxsdTh `xml:"http://docbook.org/ns/docbook th"`
+
 }
 
 type TxsdTdScope xsdt.Token
@@ -26444,20 +26958,22 @@ type TxsdTd struct {
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Scope_TxsdTdScope_
-
 	XsdGoPkgHasAttr_Align_TxsdTdAlign_
 
 	XsdGoPkgHasAttr_Valign_TxsdTdValign_
+
+	XsdGoPkgHasAttr_Scope_TxsdTdScope_
 
 }
 
 type XsdGoPkgHasElem_Td struct {
 	Td *TxsdTd `xml:"http://docbook.org/ns/docbook td"`
+
 }
 
 type XsdGoPkgHasElems_Td struct {
 	Tds []*TxsdTd `xml:"http://docbook.org/ns/docbook td"`
+
 }
 
 type TxsdMsgset struct {
@@ -26471,18 +26987,20 @@ type TxsdMsgset struct {
 
 	XsdGoPkgHasElem_Info
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Msgset struct {
+	Msgset *TxsdMsgset `xml:"http://docbook.org/ns/docbook msgset"`
 
 }
 
 type XsdGoPkgHasElems_Msgset struct {
 	Msgsets []*TxsdMsgset `xml:"http://docbook.org/ns/docbook msgset"`
-}
 
-type XsdGoPkgHasElem_Msgset struct {
-	Msgset *TxsdMsgset `xml:"http://docbook.org/ns/docbook msgset"`
 }
 
 type TxsdMsgentry struct {
@@ -26492,18 +27010,20 @@ type TxsdMsgentry struct {
 
 	XsdGoPkgHasElems_Msgexplan
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElems_Msgentry struct {
+	Msgentries []*TxsdMsgentry `xml:"http://docbook.org/ns/docbook msgentry"`
 
 }
 
 type XsdGoPkgHasElem_Msgentry struct {
 	Msgentry *TxsdMsgentry `xml:"http://docbook.org/ns/docbook msgentry"`
-}
 
-type XsdGoPkgHasElems_Msgentry struct {
-	Msgentries []*TxsdMsgentry `xml:"http://docbook.org/ns/docbook msgentry"`
 }
 
 type XsdGoPkgHasAttr_Msgaud_XsdtString_ struct {
@@ -26527,20 +27047,22 @@ type TxsdSimplemsgentry struct {
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Msgorig_XsdtString_
-
 	XsdGoPkgHasAttr_Msglevel_XsdtString_
+
+	XsdGoPkgHasAttr_Msgorig_XsdtString_
 
 	XsdGoPkgHasAttr_Msgaud_XsdtString_
 
 }
 
-type XsdGoPkgHasElems_Simplemsgentry struct {
-	Simplemsgentries []*TxsdSimplemsgentry `xml:"http://docbook.org/ns/docbook simplemsgentry"`
-}
-
 type XsdGoPkgHasElem_Simplemsgentry struct {
 	Simplemsgentry *TxsdSimplemsgentry `xml:"http://docbook.org/ns/docbook simplemsgentry"`
+
+}
+
+type XsdGoPkgHasElems_Simplemsgentry struct {
+	Simplemsgentries []*TxsdSimplemsgentry `xml:"http://docbook.org/ns/docbook simplemsgentry"`
+
 }
 
 type TxsdMsg struct {
@@ -26562,12 +27084,14 @@ type TxsdMsg struct {
 
 }
 
-type XsdGoPkgHasElem_Msg struct {
-	Msg *TxsdMsg `xml:"http://docbook.org/ns/docbook msg"`
-}
-
 type XsdGoPkgHasElems_Msg struct {
 	Msgs []*TxsdMsg `xml:"http://docbook.org/ns/docbook msg"`
+
+}
+
+type XsdGoPkgHasElem_Msg struct {
+	Msg *TxsdMsg `xml:"http://docbook.org/ns/docbook msg"`
+
 }
 
 type TxsdMsgmain struct {
@@ -26587,10 +27111,12 @@ type TxsdMsgmain struct {
 
 type XsdGoPkgHasElems_Msgmain struct {
 	Msgmains []*TxsdMsgmain `xml:"http://docbook.org/ns/docbook msgmain"`
+
 }
 
 type XsdGoPkgHasElem_Msgmain struct {
 	Msgmain *TxsdMsgmain `xml:"http://docbook.org/ns/docbook msgmain"`
+
 }
 
 type TxsdMsgsub struct {
@@ -26602,18 +27128,20 @@ type TxsdMsgsub struct {
 
 	XsdGoPkgHasElem_Info
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElems_Msgsub struct {
+	Msgsubs []*TxsdMsgsub `xml:"http://docbook.org/ns/docbook msgsub"`
 
 }
 
 type XsdGoPkgHasElem_Msgsub struct {
 	Msgsub *TxsdMsgsub `xml:"http://docbook.org/ns/docbook msgsub"`
-}
 
-type XsdGoPkgHasElems_Msgsub struct {
-	Msgsubs []*TxsdMsgsub `xml:"http://docbook.org/ns/docbook msgsub"`
 }
 
 type TxsdMsgrel struct {
@@ -26625,18 +27153,20 @@ type TxsdMsgrel struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElem_Msgrel struct {
 	Msgrel *TxsdMsgrel `xml:"http://docbook.org/ns/docbook msgrel"`
+
 }
 
 type XsdGoPkgHasElems_Msgrel struct {
 	Msgrels []*TxsdMsgrel `xml:"http://docbook.org/ns/docbook msgrel"`
+
 }
 
 type TxsdMsgtext struct {
@@ -26758,10 +27288,12 @@ type TxsdMsgtext struct {
 
 type XsdGoPkgHasElems_Msgtext struct {
 	Msgtexts []*TxsdMsgtext `xml:"http://docbook.org/ns/docbook msgtext"`
+
 }
 
 type XsdGoPkgHasElem_Msgtext struct {
 	Msgtext *TxsdMsgtext `xml:"http://docbook.org/ns/docbook msgtext"`
+
 }
 
 type TxsdMsginfo struct {
@@ -26777,12 +27309,14 @@ type TxsdMsginfo struct {
 
 }
 
-type XsdGoPkgHasElem_Msginfo struct {
-	Msginfo *TxsdMsginfo `xml:"http://docbook.org/ns/docbook msginfo"`
-}
-
 type XsdGoPkgHasElems_Msginfo struct {
 	Msginfos []*TxsdMsginfo `xml:"http://docbook.org/ns/docbook msginfo"`
+
+}
+
+type XsdGoPkgHasElem_Msginfo struct {
+	Msginfo *TxsdMsginfo `xml:"http://docbook.org/ns/docbook msginfo"`
+
 }
 
 type TxsdMsglevel struct {
@@ -26816,18 +27350,20 @@ type TxsdMsglevel struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_Msglevel struct {
 	Msglevels []*TxsdMsglevel `xml:"http://docbook.org/ns/docbook msglevel"`
+
 }
 
 type XsdGoPkgHasElem_Msglevel struct {
 	Msglevel *TxsdMsglevel `xml:"http://docbook.org/ns/docbook msglevel"`
+
 }
 
 type TxsdMsgorig struct {
@@ -26861,18 +27397,20 @@ type TxsdMsgorig struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElems_Msgorig struct {
+	Msgorigs []*TxsdMsgorig `xml:"http://docbook.org/ns/docbook msgorig"`
 
 }
 
 type XsdGoPkgHasElem_Msgorig struct {
 	Msgorig *TxsdMsgorig `xml:"http://docbook.org/ns/docbook msgorig"`
-}
 
-type XsdGoPkgHasElems_Msgorig struct {
-	Msgorigs []*TxsdMsgorig `xml:"http://docbook.org/ns/docbook msgorig"`
 }
 
 type TxsdMsgaud struct {
@@ -26906,18 +27444,20 @@ type TxsdMsgaud struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElems_Msgaud struct {
+	Msgauds []*TxsdMsgaud `xml:"http://docbook.org/ns/docbook msgaud"`
 
 }
 
 type XsdGoPkgHasElem_Msgaud struct {
 	Msgaud *TxsdMsgaud `xml:"http://docbook.org/ns/docbook msgaud"`
-}
 
-type XsdGoPkgHasElems_Msgaud struct {
-	Msgauds []*TxsdMsgaud `xml:"http://docbook.org/ns/docbook msgaud"`
 }
 
 type TxsdMsgexplan struct {
@@ -27043,12 +27583,14 @@ type TxsdMsgexplan struct {
 
 }
 
-type XsdGoPkgHasElem_Msgexplan struct {
-	Msgexplan *TxsdMsgexplan `xml:"http://docbook.org/ns/docbook msgexplan"`
-}
-
 type XsdGoPkgHasElems_Msgexplan struct {
 	Msgexplans []*TxsdMsgexplan `xml:"http://docbook.org/ns/docbook msgexplan"`
+
+}
+
+type XsdGoPkgHasElem_Msgexplan struct {
+	Msgexplan *TxsdMsgexplan `xml:"http://docbook.org/ns/docbook msgexplan"`
+
 }
 
 type TxsdQandasetDefaultlabel xsdt.Token
@@ -27196,20 +27738,22 @@ type TxsdQandaset struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Defaultlabel_TxsdQandasetDefaultlabel_
 
 }
 
-type XsdGoPkgHasElems_Qandaset struct {
-	Qandasets []*TxsdQandaset `xml:"http://docbook.org/ns/docbook qandaset"`
-}
-
 type XsdGoPkgHasElem_Qandaset struct {
 	Qandaset *TxsdQandaset `xml:"http://docbook.org/ns/docbook qandaset"`
+
+}
+
+type XsdGoPkgHasElems_Qandaset struct {
+	Qandasets []*TxsdQandaset `xml:"http://docbook.org/ns/docbook qandaset"`
+
 }
 
 type TxsdQandadiv struct {
@@ -27333,18 +27877,20 @@ type TxsdQandadiv struct {
 
 	XsdGoPkgHasElem_Info
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Qandadiv struct {
+	Qandadiv *TxsdQandadiv `xml:"http://docbook.org/ns/docbook qandadiv"`
 
 }
 
 type XsdGoPkgHasElems_Qandadiv struct {
 	Qandadivs []*TxsdQandadiv `xml:"http://docbook.org/ns/docbook qandadiv"`
-}
 
-type XsdGoPkgHasElem_Qandadiv struct {
-	Qandadiv *TxsdQandadiv `xml:"http://docbook.org/ns/docbook qandadiv"`
 }
 
 type TxsdQandaentry struct {
@@ -27358,18 +27904,20 @@ type TxsdQandaentry struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElem_Qandaentry struct {
 	Qandaentry *TxsdQandaentry `xml:"http://docbook.org/ns/docbook qandaentry"`
+
 }
 
 type XsdGoPkgHasElems_Qandaentry struct {
 	Qandaentries []*TxsdQandaentry `xml:"http://docbook.org/ns/docbook qandaentry"`
+
 }
 
 type TxsdQuestion struct {
@@ -27485,18 +28033,20 @@ type TxsdQuestion struct {
 
 	XsdGoPkgHasElem_Label
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElems_Question struct {
+	Questions []*TxsdQuestion `xml:"http://docbook.org/ns/docbook question"`
 
 }
 
 type XsdGoPkgHasElem_Question struct {
 	Question *TxsdQuestion `xml:"http://docbook.org/ns/docbook question"`
-}
 
-type XsdGoPkgHasElems_Question struct {
-	Questions []*TxsdQuestion `xml:"http://docbook.org/ns/docbook question"`
 }
 
 type TxsdAnswer struct {
@@ -27620,10 +28170,12 @@ type TxsdAnswer struct {
 
 type XsdGoPkgHasElem_Answer struct {
 	Answer *TxsdAnswer `xml:"http://docbook.org/ns/docbook answer"`
+
 }
 
 type XsdGoPkgHasElems_Answer struct {
 	Answers []*TxsdAnswer `xml:"http://docbook.org/ns/docbook answer"`
+
 }
 
 type TxsdLabel struct {
@@ -27665,10 +28217,12 @@ type TxsdLabel struct {
 
 type XsdGoPkgHasElem_Label struct {
 	Label *TxsdLabel `xml:"http://docbook.org/ns/docbook label"`
+
 }
 
 type XsdGoPkgHasElems_Label struct {
 	Labels []*TxsdLabel `xml:"http://docbook.org/ns/docbook label"`
+
 }
 
 type TxsdEquationPgwide xsdt.Token
@@ -27707,9 +28261,9 @@ type TxsdEquation struct {
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Pgwide_TxsdEquationPgwide_
 
@@ -27717,10 +28271,12 @@ type TxsdEquation struct {
 
 type XsdGoPkgHasElem_Equation struct {
 	Equation *TxsdEquation `xml:"http://docbook.org/ns/docbook equation"`
+
 }
 
 type XsdGoPkgHasElems_Equation struct {
 	Equations []*TxsdEquation `xml:"http://docbook.org/ns/docbook equation"`
+
 }
 
 type TxsdInformalequation struct {
@@ -27740,12 +28296,14 @@ type TxsdInformalequation struct {
 
 }
 
-type XsdGoPkgHasElems_Informalequation struct {
-	Informalequations []*TxsdInformalequation `xml:"http://docbook.org/ns/docbook informalequation"`
-}
-
 type XsdGoPkgHasElem_Informalequation struct {
 	Informalequation *TxsdInformalequation `xml:"http://docbook.org/ns/docbook informalequation"`
+
+}
+
+type XsdGoPkgHasElems_Informalequation struct {
+	Informalequations []*TxsdInformalequation `xml:"http://docbook.org/ns/docbook informalequation"`
+
 }
 
 type TxsdInlineequation struct {
@@ -27763,10 +28321,12 @@ type TxsdInlineequation struct {
 
 type XsdGoPkgHasElem_Inlineequation struct {
 	Inlineequation *TxsdInlineequation `xml:"http://docbook.org/ns/docbook inlineequation"`
+
 }
 
 type XsdGoPkgHasElems_Inlineequation struct {
 	Inlineequations []*TxsdInlineequation `xml:"http://docbook.org/ns/docbook inlineequation"`
+
 }
 
 type TxsdMathphrase struct {
@@ -27802,18 +28362,20 @@ type TxsdMathphrase struct {
 
 	XsdGoPkgHasElems_Emphasis
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElem_Mathphrase struct {
 	Mathphrase *TxsdMathphrase `xml:"http://docbook.org/ns/docbook mathphrase"`
+
 }
 
 type XsdGoPkgHasElems_Mathphrase struct {
 	Mathphrases []*TxsdMathphrase `xml:"http://docbook.org/ns/docbook mathphrase"`
+
 }
 
 type TxsdMarkup struct {
@@ -27855,10 +28417,12 @@ type TxsdMarkup struct {
 
 type XsdGoPkgHasElems_Markup struct {
 	Markups []*TxsdMarkup `xml:"http://docbook.org/ns/docbook markup"`
+
 }
 
 type XsdGoPkgHasElem_Markup struct {
 	Markup *TxsdMarkup `xml:"http://docbook.org/ns/docbook markup"`
+
 }
 
 type TxsdTagClass xsdt.Token
@@ -27956,9 +28520,9 @@ type TxsdTag struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Namespace_XsdtString_
 
@@ -27966,12 +28530,14 @@ type TxsdTag struct {
 
 }
 
-type XsdGoPkgHasElems_Tag struct {
-	Tags []*TxsdTag `xml:"http://docbook.org/ns/docbook tag"`
-}
-
 type XsdGoPkgHasElem_Tag struct {
 	Tag *TxsdTag `xml:"http://docbook.org/ns/docbook tag"`
+
+}
+
+type XsdGoPkgHasElems_Tag struct {
+	Tags []*TxsdTag `xml:"http://docbook.org/ns/docbook tag"`
+
 }
 
 type TxsdSymbolClass xsdt.Token
@@ -28033,10 +28599,12 @@ type TxsdSymbol struct {
 
 type XsdGoPkgHasElem_Symbol struct {
 	Symbol *TxsdSymbol `xml:"http://docbook.org/ns/docbook symbol"`
+
 }
 
 type XsdGoPkgHasElems_Symbol struct {
 	Symbols []*TxsdSymbol `xml:"http://docbook.org/ns/docbook symbol"`
+
 }
 
 type TxsdToken struct {
@@ -28070,18 +28638,20 @@ type TxsdToken struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElem_Token struct {
+	Token *TxsdToken `xml:"http://docbook.org/ns/docbook token"`
 
 }
 
 type XsdGoPkgHasElems_Token struct {
 	Tokens []*TxsdToken `xml:"http://docbook.org/ns/docbook token"`
-}
 
-type XsdGoPkgHasElem_Token struct {
-	Token *TxsdToken `xml:"http://docbook.org/ns/docbook token"`
 }
 
 type TxsdLiteral struct {
@@ -28121,12 +28691,14 @@ type TxsdLiteral struct {
 
 }
 
-type XsdGoPkgHasElems_Literal struct {
-	Literals []*TxsdLiteral `xml:"http://docbook.org/ns/docbook literal"`
-}
-
 type XsdGoPkgHasElem_Literal struct {
 	Literal *TxsdLiteral `xml:"http://docbook.org/ns/docbook literal"`
+
+}
+
+type XsdGoPkgHasElems_Literal struct {
+	Literals []*TxsdLiteral `xml:"http://docbook.org/ns/docbook literal"`
+
 }
 
 type TxsdCode struct {
@@ -28196,10 +28768,12 @@ type TxsdCode struct {
 
 type XsdGoPkgHasElems_Code struct {
 	Codes []*TxsdCode `xml:"http://docbook.org/ns/docbook code"`
+
 }
 
 type XsdGoPkgHasElem_Code struct {
 	Code *TxsdCode `xml:"http://docbook.org/ns/docbook code"`
+
 }
 
 type TxsdConstantClass xsdt.Token
@@ -28259,12 +28833,14 @@ type TxsdConstant struct {
 
 }
 
-type XsdGoPkgHasElem_Constant struct {
-	Constant *TxsdConstant `xml:"http://docbook.org/ns/docbook constant"`
-}
-
 type XsdGoPkgHasElems_Constant struct {
 	Constants []*TxsdConstant `xml:"http://docbook.org/ns/docbook constant"`
+
+}
+
+type XsdGoPkgHasElem_Constant struct {
+	Constant *TxsdConstant `xml:"http://docbook.org/ns/docbook constant"`
+
 }
 
 type TxsdProductnameClass xsdt.Token
@@ -28325,9 +28901,9 @@ type TxsdProductname struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Class_TxsdProductnameClass_
 
@@ -28335,10 +28911,12 @@ type TxsdProductname struct {
 
 type XsdGoPkgHasElems_Productname struct {
 	Productnames []*TxsdProductname `xml:"http://docbook.org/ns/docbook productname"`
+
 }
 
 type XsdGoPkgHasElem_Productname struct {
 	Productname *TxsdProductname `xml:"http://docbook.org/ns/docbook productname"`
+
 }
 
 type TxsdProductnumber struct {
@@ -28372,18 +28950,20 @@ type TxsdProductnumber struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElems_Productnumber struct {
 	Productnumbers []*TxsdProductnumber `xml:"http://docbook.org/ns/docbook productnumber"`
+
 }
 
 type XsdGoPkgHasElem_Productnumber struct {
 	Productnumber *TxsdProductnumber `xml:"http://docbook.org/ns/docbook productnumber"`
+
 }
 
 type TxsdDatabaseClass xsdt.Token
@@ -28494,12 +29074,14 @@ type TxsdDatabase struct {
 
 }
 
-type XsdGoPkgHasElems_Database struct {
-	Databases []*TxsdDatabase `xml:"http://docbook.org/ns/docbook database"`
-}
-
 type XsdGoPkgHasElem_Database struct {
 	Database *TxsdDatabase `xml:"http://docbook.org/ns/docbook database"`
+
+}
+
+type XsdGoPkgHasElems_Database struct {
+	Databases []*TxsdDatabase `xml:"http://docbook.org/ns/docbook database"`
+
 }
 
 type TxsdApplicationClass xsdt.Token
@@ -28554,20 +29136,22 @@ type TxsdApplication struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Class_TxsdApplicationClass_
 
 }
 
-type XsdGoPkgHasElem_Application struct {
-	Application *TxsdApplication `xml:"http://docbook.org/ns/docbook application"`
-}
-
 type XsdGoPkgHasElems_Application struct {
 	Applications []*TxsdApplication `xml:"http://docbook.org/ns/docbook application"`
+
+}
+
+type XsdGoPkgHasElem_Application struct {
+	Application *TxsdApplication `xml:"http://docbook.org/ns/docbook application"`
+
 }
 
 type TxsdHardware struct {
@@ -28609,10 +29193,12 @@ type TxsdHardware struct {
 
 type XsdGoPkgHasElems_Hardware struct {
 	Hardwares []*TxsdHardware `xml:"http://docbook.org/ns/docbook hardware"`
+
 }
 
 type XsdGoPkgHasElem_Hardware struct {
 	Hardware *TxsdHardware `xml:"http://docbook.org/ns/docbook hardware"`
+
 }
 
 type TxsdGuibutton struct {
@@ -28656,10 +29242,12 @@ type TxsdGuibutton struct {
 
 type XsdGoPkgHasElem_Guibutton struct {
 	Guibutton *TxsdGuibutton `xml:"http://docbook.org/ns/docbook guibutton"`
+
 }
 
 type XsdGoPkgHasElems_Guibutton struct {
 	Guibuttons []*TxsdGuibutton `xml:"http://docbook.org/ns/docbook guibutton"`
+
 }
 
 type TxsdGuiicon struct {
@@ -28703,10 +29291,12 @@ type TxsdGuiicon struct {
 
 type XsdGoPkgHasElem_Guiicon struct {
 	Guiicon *TxsdGuiicon `xml:"http://docbook.org/ns/docbook guiicon"`
+
 }
 
 type XsdGoPkgHasElems_Guiicon struct {
 	Guiicons []*TxsdGuiicon `xml:"http://docbook.org/ns/docbook guiicon"`
+
 }
 
 type TxsdGuilabel struct {
@@ -28750,10 +29340,12 @@ type TxsdGuilabel struct {
 
 type XsdGoPkgHasElem_Guilabel struct {
 	Guilabel *TxsdGuilabel `xml:"http://docbook.org/ns/docbook guilabel"`
+
 }
 
 type XsdGoPkgHasElems_Guilabel struct {
 	Guilabels []*TxsdGuilabel `xml:"http://docbook.org/ns/docbook guilabel"`
+
 }
 
 type TxsdGuimenu struct {
@@ -28795,12 +29387,14 @@ type TxsdGuimenu struct {
 
 }
 
-type XsdGoPkgHasElems_Guimenu struct {
-	Guimenus []*TxsdGuimenu `xml:"http://docbook.org/ns/docbook guimenu"`
-}
-
 type XsdGoPkgHasElem_Guimenu struct {
 	Guimenu *TxsdGuimenu `xml:"http://docbook.org/ns/docbook guimenu"`
+
+}
+
+type XsdGoPkgHasElems_Guimenu struct {
+	Guimenus []*TxsdGuimenu `xml:"http://docbook.org/ns/docbook guimenu"`
+
 }
 
 type TxsdGuimenuitem struct {
@@ -28842,12 +29436,14 @@ type TxsdGuimenuitem struct {
 
 }
 
-type XsdGoPkgHasElem_Guimenuitem struct {
-	Guimenuitem *TxsdGuimenuitem `xml:"http://docbook.org/ns/docbook guimenuitem"`
-}
-
 type XsdGoPkgHasElems_Guimenuitem struct {
 	Guimenuitems []*TxsdGuimenuitem `xml:"http://docbook.org/ns/docbook guimenuitem"`
+
+}
+
+type XsdGoPkgHasElem_Guimenuitem struct {
+	Guimenuitem *TxsdGuimenuitem `xml:"http://docbook.org/ns/docbook guimenuitem"`
+
 }
 
 type TxsdGuisubmenu struct {
@@ -28883,18 +29479,20 @@ type TxsdGuisubmenu struct {
 
 	XsdGoPkgHasElems_Accel
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_Guisubmenu struct {
 	Guisubmenus []*TxsdGuisubmenu `xml:"http://docbook.org/ns/docbook guisubmenu"`
+
 }
 
 type XsdGoPkgHasElem_Guisubmenu struct {
 	Guisubmenu *TxsdGuisubmenu `xml:"http://docbook.org/ns/docbook guisubmenu"`
+
 }
 
 type TxsdMenuchoice struct {
@@ -28918,12 +29516,14 @@ type TxsdMenuchoice struct {
 
 }
 
-type XsdGoPkgHasElems_Menuchoice struct {
-	Menuchoices []*TxsdMenuchoice `xml:"http://docbook.org/ns/docbook menuchoice"`
-}
-
 type XsdGoPkgHasElem_Menuchoice struct {
 	Menuchoice *TxsdMenuchoice `xml:"http://docbook.org/ns/docbook menuchoice"`
+
+}
+
+type XsdGoPkgHasElems_Menuchoice struct {
+	Menuchoices []*TxsdMenuchoice `xml:"http://docbook.org/ns/docbook menuchoice"`
+
 }
 
 type TxsdMousebutton struct {
@@ -28965,10 +29565,12 @@ type TxsdMousebutton struct {
 
 type XsdGoPkgHasElems_Mousebutton struct {
 	Mousebuttons []*TxsdMousebutton `xml:"http://docbook.org/ns/docbook mousebutton"`
+
 }
 
 type XsdGoPkgHasElem_Mousebutton struct {
 	Mousebutton *TxsdMousebutton `xml:"http://docbook.org/ns/docbook mousebutton"`
+
 }
 
 type TxsdKeycapFunction xsdt.Token
@@ -29091,18 +29693,20 @@ type TxsdKeycap struct {
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
+	XsdGoPkgHasAttr_Otherfunction_XsdtString_
+
 	XsdGoPkgHasAttr_Function_TxsdKeycapFunction_
 
-	XsdGoPkgHasAttr_Otherfunction_XsdtString_
+}
+
+type XsdGoPkgHasElem_Keycap struct {
+	Keycap *TxsdKeycap `xml:"http://docbook.org/ns/docbook keycap"`
 
 }
 
 type XsdGoPkgHasElems_Keycap struct {
 	Keycaps []*TxsdKeycap `xml:"http://docbook.org/ns/docbook keycap"`
-}
 
-type XsdGoPkgHasElem_Keycap struct {
-	Keycap *TxsdKeycap `xml:"http://docbook.org/ns/docbook keycap"`
 }
 
 type TxsdKeycode struct {
@@ -29144,10 +29748,12 @@ type TxsdKeycode struct {
 
 type XsdGoPkgHasElem_Keycode struct {
 	Keycode *TxsdKeycode `xml:"http://docbook.org/ns/docbook keycode"`
+
 }
 
 type XsdGoPkgHasElems_Keycode struct {
 	Keycodes []*TxsdKeycode `xml:"http://docbook.org/ns/docbook keycode"`
+
 }
 
 type TxsdKeycomboAction xsdt.Token
@@ -29196,22 +29802,24 @@ type TxsdKeycombo struct {
 
 	XsdGoPkgHasElems_Mousebutton
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Action_TxsdKeycomboAction_
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Otheraction_XsdtString_
+
+	XsdGoPkgHasAttr_Action_TxsdKeycomboAction_
 
 }
 
 type XsdGoPkgHasElem_Keycombo struct {
 	Keycombo *TxsdKeycombo `xml:"http://docbook.org/ns/docbook keycombo"`
+
 }
 
 type XsdGoPkgHasElems_Keycombo struct {
 	Keycombos []*TxsdKeycombo `xml:"http://docbook.org/ns/docbook keycombo"`
+
 }
 
 type TxsdKeysym struct {
@@ -29245,18 +29853,20 @@ type TxsdKeysym struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElem_Keysym struct {
 	Keysym *TxsdKeysym `xml:"http://docbook.org/ns/docbook keysym"`
+
 }
 
 type XsdGoPkgHasElems_Keysym struct {
 	Keysyms []*TxsdKeysym `xml:"http://docbook.org/ns/docbook keysym"`
+
 }
 
 type TxsdAccel struct {
@@ -29296,12 +29906,14 @@ type TxsdAccel struct {
 
 }
 
-type XsdGoPkgHasElems_Accel struct {
-	Accels []*TxsdAccel `xml:"http://docbook.org/ns/docbook accel"`
-}
-
 type XsdGoPkgHasElem_Accel struct {
 	Accel *TxsdAccel `xml:"http://docbook.org/ns/docbook accel"`
+
+}
+
+type XsdGoPkgHasElems_Accel struct {
+	Accels []*TxsdAccel `xml:"http://docbook.org/ns/docbook accel"`
+
 }
 
 type TxsdShortcutAction xsdt.Token
@@ -29356,10 +29968,12 @@ type TxsdShortcut struct {
 
 type XsdGoPkgHasElem_Shortcut struct {
 	Shortcut *TxsdShortcut `xml:"http://docbook.org/ns/docbook shortcut"`
+
 }
 
 type XsdGoPkgHasElems_Shortcut struct {
 	Shortcuts []*TxsdShortcut `xml:"http://docbook.org/ns/docbook shortcut"`
+
 }
 
 type TxsdPrompt struct {
@@ -29403,10 +30017,12 @@ type TxsdPrompt struct {
 
 type XsdGoPkgHasElem_Prompt struct {
 	Prompt *TxsdPrompt `xml:"http://docbook.org/ns/docbook prompt"`
+
 }
 
 type XsdGoPkgHasElems_Prompt struct {
 	Prompts []*TxsdPrompt `xml:"http://docbook.org/ns/docbook prompt"`
+
 }
 
 type TxsdEnvar struct {
@@ -29448,10 +30064,12 @@ type TxsdEnvar struct {
 
 type XsdGoPkgHasElem_Envar struct {
 	Envar *TxsdEnvar `xml:"http://docbook.org/ns/docbook envar"`
+
 }
 
 type XsdGoPkgHasElems_Envar struct {
 	Envars []*TxsdEnvar `xml:"http://docbook.org/ns/docbook envar"`
+
 }
 
 type XsdGoPkgHasAttr_Path_XsdtString_ struct {
@@ -29525,22 +30143,24 @@ type TxsdFilename struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Class_TxsdFilenameClass_
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Path_XsdtString_
+
+	XsdGoPkgHasAttr_Class_TxsdFilenameClass_
 
 }
 
 type XsdGoPkgHasElems_Filename struct {
 	Filenames []*TxsdFilename `xml:"http://docbook.org/ns/docbook filename"`
+
 }
 
 type XsdGoPkgHasElem_Filename struct {
 	Filename *TxsdFilename `xml:"http://docbook.org/ns/docbook filename"`
+
 }
 
 type TxsdCommand struct {
@@ -29582,10 +30202,12 @@ type TxsdCommand struct {
 
 type XsdGoPkgHasElem_Command struct {
 	Command *TxsdCommand `xml:"http://docbook.org/ns/docbook command"`
+
 }
 
 type XsdGoPkgHasElems_Command struct {
 	Commands []*TxsdCommand `xml:"http://docbook.org/ns/docbook command"`
+
 }
 
 type TxsdComputeroutput struct {
@@ -29671,12 +30293,14 @@ type TxsdComputeroutput struct {
 
 }
 
-type XsdGoPkgHasElem_Computeroutput struct {
-	Computeroutput *TxsdComputeroutput `xml:"http://docbook.org/ns/docbook computeroutput"`
-}
-
 type XsdGoPkgHasElems_Computeroutput struct {
 	Computeroutputs []*TxsdComputeroutput `xml:"http://docbook.org/ns/docbook computeroutput"`
+
+}
+
+type XsdGoPkgHasElem_Computeroutput struct {
+	Computeroutput *TxsdComputeroutput `xml:"http://docbook.org/ns/docbook computeroutput"`
+
 }
 
 type TxsdUserinput struct {
@@ -29790,12 +30414,14 @@ type TxsdUserinput struct {
 
 }
 
-type XsdGoPkgHasElem_Userinput struct {
-	Userinput *TxsdUserinput `xml:"http://docbook.org/ns/docbook userinput"`
-}
-
 type XsdGoPkgHasElems_Userinput struct {
 	Userinputs []*TxsdUserinput `xml:"http://docbook.org/ns/docbook userinput"`
+
+}
+
+type XsdGoPkgHasElem_Userinput struct {
+	Userinput *TxsdUserinput `xml:"http://docbook.org/ns/docbook userinput"`
+
 }
 
 type XsdGoPkgHasAttr_Sepchar_XsdtString_ struct {
@@ -29829,12 +30455,14 @@ type TxsdCmdsynopsis struct {
 
 }
 
-type XsdGoPkgHasElems_Cmdsynopsis struct {
-	Cmdsynopsises []*TxsdCmdsynopsis `xml:"http://docbook.org/ns/docbook cmdsynopsis"`
-}
-
 type XsdGoPkgHasElem_Cmdsynopsis struct {
 	Cmdsynopsis *TxsdCmdsynopsis `xml:"http://docbook.org/ns/docbook cmdsynopsis"`
+
+}
+
+type XsdGoPkgHasElems_Cmdsynopsis struct {
+	Cmdsynopsises []*TxsdCmdsynopsis `xml:"http://docbook.org/ns/docbook cmdsynopsis"`
+
 }
 
 type TxsdArgRep xsdt.Token
@@ -29929,9 +30557,9 @@ type TxsdArg struct {
 
 	XsdGoPkgHasElems_Sbr
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Rep_TxsdArgRep_Norepeat
 
@@ -29941,10 +30569,12 @@ type TxsdArg struct {
 
 type XsdGoPkgHasElem_Arg struct {
 	Arg *TxsdArg `xml:"http://docbook.org/ns/docbook arg"`
+
 }
 
 type XsdGoPkgHasElems_Arg struct {
 	Args []*TxsdArg `xml:"http://docbook.org/ns/docbook arg"`
+
 }
 
 type TxsdGroupRep xsdt.Token
@@ -30011,9 +30641,9 @@ type TxsdGroup struct {
 
 	XsdGoPkgHasElems_Sbr
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Choice_TxsdGroupChoice_Opt
 
@@ -30021,12 +30651,14 @@ type TxsdGroup struct {
 
 }
 
-type XsdGoPkgHasElems_Group struct {
-	Groups []*TxsdGroup `xml:"http://docbook.org/ns/docbook group"`
-}
-
 type XsdGoPkgHasElem_Group struct {
 	Group *TxsdGroup `xml:"http://docbook.org/ns/docbook group"`
+
+}
+
+type XsdGoPkgHasElems_Group struct {
+	Groups []*TxsdGroup `xml:"http://docbook.org/ns/docbook group"`
+
 }
 
 type TxsdSbr struct {
@@ -30036,10 +30668,12 @@ type TxsdSbr struct {
 
 type XsdGoPkgHasElems_Sbr struct {
 	Sbrs []*TxsdSbr `xml:"http://docbook.org/ns/docbook sbr"`
+
 }
 
 type XsdGoPkgHasElem_Sbr struct {
 	Sbr *TxsdSbr `xml:"http://docbook.org/ns/docbook sbr"`
+
 }
 
 type TxsdSynopfragment struct {
@@ -30047,35 +30681,39 @@ type TxsdSynopfragment struct {
 
 	XsdGoPkgHasElems_Group
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElems_Synopfragment struct {
 	Synopfragments []*TxsdSynopfragment `xml:"http://docbook.org/ns/docbook synopfragment"`
+
 }
 
 type XsdGoPkgHasElem_Synopfragment struct {
 	Synopfragment *TxsdSynopfragment `xml:"http://docbook.org/ns/docbook synopfragment"`
+
 }
 
 type TxsdSynopfragmentref struct {
 	XsdGoPkgHasCdata
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElem_Synopfragmentref struct {
 	Synopfragmentref *TxsdSynopfragmentref `xml:"http://docbook.org/ns/docbook synopfragmentref"`
+
 }
 
 type XsdGoPkgHasElems_Synopfragmentref struct {
 	Synopfragmentrefs []*TxsdSynopfragmentref `xml:"http://docbook.org/ns/docbook synopfragmentref"`
+
 }
 
 type TxsdSynopsisContinuation xsdt.Token
@@ -30327,24 +30965,26 @@ type TxsdSynopsis struct {
 
 	XsdGoPkgHasElems_Co
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAttr_Continuation_TxsdSynopsisContinuation_
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	xml.XsdGoPkgHasAttr_Space
 
 	XsdGoPkgHasAttr_Linenumbering_TxsdSynopsisLinenumbering_
 
+	XsdGoPkgHasAttr_Continuation_TxsdSynopsisContinuation_
+
 }
 
 type XsdGoPkgHasElems_Synopsis struct {
 	Synopsises []*TxsdSynopsis `xml:"http://docbook.org/ns/docbook synopsis"`
+
 }
 
 type XsdGoPkgHasElem_Synopsis struct {
 	Synopsis *TxsdSynopsis `xml:"http://docbook.org/ns/docbook synopsis"`
+
 }
 
 type TxsdFuncsynopsis struct {
@@ -30354,18 +30994,20 @@ type TxsdFuncsynopsis struct {
 
 	XsdGoPkgHasElem_Info
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElems_Funcsynopsis struct {
+	Funcsynopsises []*TxsdFuncsynopsis `xml:"http://docbook.org/ns/docbook funcsynopsis"`
 
 }
 
 type XsdGoPkgHasElem_Funcsynopsis struct {
 	Funcsynopsis *TxsdFuncsynopsis `xml:"http://docbook.org/ns/docbook funcsynopsis"`
-}
 
-type XsdGoPkgHasElems_Funcsynopsis struct {
-	Funcsynopsises []*TxsdFuncsynopsis `xml:"http://docbook.org/ns/docbook funcsynopsis"`
 }
 
 type TxsdFuncsynopsisinfoContinuation xsdt.Token
@@ -30617,24 +31259,26 @@ type TxsdFuncsynopsisinfo struct {
 
 	XsdGoPkgHasElems_Co
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Continuation_TxsdFuncsynopsisinfoContinuation_
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	xml.XsdGoPkgHasAttr_Space
+
+	XsdGoPkgHasAttr_Continuation_TxsdFuncsynopsisinfoContinuation_
 
 	XsdGoPkgHasAttr_Linenumbering_TxsdFuncsynopsisinfoLinenumbering_
 
 }
 
-type XsdGoPkgHasElem_Funcsynopsisinfo struct {
-	Funcsynopsisinfo *TxsdFuncsynopsisinfo `xml:"http://docbook.org/ns/docbook funcsynopsisinfo"`
-}
-
 type XsdGoPkgHasElems_Funcsynopsisinfo struct {
 	Funcsynopsisinfos []*TxsdFuncsynopsisinfo `xml:"http://docbook.org/ns/docbook funcsynopsisinfo"`
+
+}
+
+type XsdGoPkgHasElem_Funcsynopsisinfo struct {
+	Funcsynopsisinfo *TxsdFuncsynopsisinfo `xml:"http://docbook.org/ns/docbook funcsynopsisinfo"`
+
 }
 
 type TxsdFuncprototype struct {
@@ -30654,12 +31298,14 @@ type TxsdFuncprototype struct {
 
 }
 
-type XsdGoPkgHasElem_Funcprototype struct {
-	Funcprototype *TxsdFuncprototype `xml:"http://docbook.org/ns/docbook funcprototype"`
-}
-
 type XsdGoPkgHasElems_Funcprototype struct {
 	Funcprototypes []*TxsdFuncprototype `xml:"http://docbook.org/ns/docbook funcprototype"`
+
+}
+
+type XsdGoPkgHasElem_Funcprototype struct {
+	Funcprototype *TxsdFuncprototype `xml:"http://docbook.org/ns/docbook funcprototype"`
+
 }
 
 type TxsdFuncdef struct {
@@ -30705,10 +31351,12 @@ type TxsdFuncdef struct {
 
 type XsdGoPkgHasElems_Funcdef struct {
 	Funcdefs []*TxsdFuncdef `xml:"http://docbook.org/ns/docbook funcdef"`
+
 }
 
 type XsdGoPkgHasElem_Funcdef struct {
 	Funcdef *TxsdFuncdef `xml:"http://docbook.org/ns/docbook funcdef"`
+
 }
 
 type TxsdFunction struct {
@@ -30742,18 +31390,20 @@ type TxsdFunction struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElem_Function struct {
+	Function *TxsdFunction `xml:"http://docbook.org/ns/docbook function"`
 
 }
 
 type XsdGoPkgHasElems_Function struct {
 	Functions []*TxsdFunction `xml:"http://docbook.org/ns/docbook function"`
-}
 
-type XsdGoPkgHasElem_Function struct {
-	Function *TxsdFunction `xml:"http://docbook.org/ns/docbook function"`
 }
 
 type TxsdVoid struct {
@@ -30763,27 +31413,31 @@ type TxsdVoid struct {
 
 }
 
-type XsdGoPkgHasElems_Void struct {
-	Voids []*TxsdVoid `xml:"http://docbook.org/ns/docbook void"`
-}
-
 type XsdGoPkgHasElem_Void struct {
 	Void *TxsdVoid `xml:"http://docbook.org/ns/docbook void"`
+
+}
+
+type XsdGoPkgHasElems_Void struct {
+	Voids []*TxsdVoid `xml:"http://docbook.org/ns/docbook void"`
+
 }
 
 type TxsdVarargs struct {
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElem_Varargs struct {
 	Varargs *TxsdVarargs `xml:"http://docbook.org/ns/docbook varargs"`
+
 }
 
 type XsdGoPkgHasElems_Varargs struct {
 	Varargses []*TxsdVarargs `xml:"http://docbook.org/ns/docbook varargs"`
+
 }
 
 type TxsdParamdefChoice xsdt.Token
@@ -30849,20 +31503,22 @@ type TxsdParamdef struct {
 
 	XsdGoPkgHasElems_Funcparams
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Choice_TxsdParamdefChoice_Opt
 
 }
 
-type XsdGoPkgHasElems_Paramdef struct {
-	Paramdefs []*TxsdParamdef `xml:"http://docbook.org/ns/docbook paramdef"`
-}
-
 type XsdGoPkgHasElem_Paramdef struct {
 	Paramdef *TxsdParamdef `xml:"http://docbook.org/ns/docbook paramdef"`
+
+}
+
+type XsdGoPkgHasElems_Paramdef struct {
+	Paramdefs []*TxsdParamdef `xml:"http://docbook.org/ns/docbook paramdef"`
+
 }
 
 type TxsdFuncparams struct {
@@ -30902,12 +31558,14 @@ type TxsdFuncparams struct {
 
 }
 
-type XsdGoPkgHasElem_Funcparams struct {
-	Funcparams *TxsdFuncparams `xml:"http://docbook.org/ns/docbook funcparams"`
-}
-
 type XsdGoPkgHasElems_Funcparams struct {
 	Funcparamses []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook funcparams"`
+
+}
+
+type XsdGoPkgHasElem_Funcparams struct {
+	Funcparams *TxsdFuncparams `xml:"http://docbook.org/ns/docbook funcparams"`
+
 }
 
 type TxsdClasssynopsisClass xsdt.Token
@@ -30958,10 +31616,12 @@ type TxsdClasssynopsis struct {
 
 type XsdGoPkgHasElem_Classsynopsis struct {
 	Classsynopsis *TxsdClasssynopsis `xml:"http://docbook.org/ns/docbook classsynopsis"`
+
 }
 
 type XsdGoPkgHasElems_Classsynopsis struct {
 	Classsynopsises []*TxsdClasssynopsis `xml:"http://docbook.org/ns/docbook classsynopsis"`
+
 }
 
 type TxsdClasssynopsisinfoContinuation xsdt.Token
@@ -31217,20 +31877,22 @@ type TxsdClasssynopsisinfo struct {
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	xml.XsdGoPkgHasAttr_Space
+	XsdGoPkgHasAttr_Continuation_TxsdClasssynopsisinfoContinuation_
 
 	XsdGoPkgHasAttr_Linenumbering_TxsdClasssynopsisinfoLinenumbering_
 
-	XsdGoPkgHasAttr_Continuation_TxsdClasssynopsisinfoContinuation_
+	xml.XsdGoPkgHasAttr_Space
 
 }
 
 type XsdGoPkgHasElem_Classsynopsisinfo struct {
 	Classsynopsisinfo *TxsdClasssynopsisinfo `xml:"http://docbook.org/ns/docbook classsynopsisinfo"`
+
 }
 
 type XsdGoPkgHasElems_Classsynopsisinfo struct {
 	Classsynopsisinfos []*TxsdClasssynopsisinfo `xml:"http://docbook.org/ns/docbook classsynopsisinfo"`
+
 }
 
 type TxsdOoclass struct {
@@ -31248,10 +31910,12 @@ type TxsdOoclass struct {
 
 type XsdGoPkgHasElems_Ooclass struct {
 	Ooclasses []*TxsdOoclass `xml:"http://docbook.org/ns/docbook ooclass"`
+
 }
 
 type XsdGoPkgHasElem_Ooclass struct {
 	Ooclass *TxsdOoclass `xml:"http://docbook.org/ns/docbook ooclass"`
+
 }
 
 type TxsdOointerface struct {
@@ -31261,18 +31925,20 @@ type TxsdOointerface struct {
 
 	XsdGoPkgHasElem_Interfacename
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElems_Oointerface struct {
+	Oointerfaces []*TxsdOointerface `xml:"http://docbook.org/ns/docbook oointerface"`
 
 }
 
 type XsdGoPkgHasElem_Oointerface struct {
 	Oointerface *TxsdOointerface `xml:"http://docbook.org/ns/docbook oointerface"`
-}
 
-type XsdGoPkgHasElems_Oointerface struct {
-	Oointerfaces []*TxsdOointerface `xml:"http://docbook.org/ns/docbook oointerface"`
 }
 
 type TxsdOoexception struct {
@@ -31282,18 +31948,20 @@ type TxsdOoexception struct {
 
 	XsdGoPkgHasElem_Exceptionname
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_Ooexception struct {
 	Ooexceptions []*TxsdOoexception `xml:"http://docbook.org/ns/docbook ooexception"`
+
 }
 
 type XsdGoPkgHasElem_Ooexception struct {
 	Ooexception *TxsdOoexception `xml:"http://docbook.org/ns/docbook ooexception"`
+
 }
 
 type TxsdModifier struct {
@@ -31327,9 +31995,9 @@ type TxsdModifier struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	xml.XsdGoPkgHasAttr_Space
 
@@ -31337,10 +32005,12 @@ type TxsdModifier struct {
 
 type XsdGoPkgHasElem_Modifier struct {
 	Modifier *TxsdModifier `xml:"http://docbook.org/ns/docbook modifier"`
+
 }
 
 type XsdGoPkgHasElems_Modifier struct {
 	Modifiers []*TxsdModifier `xml:"http://docbook.org/ns/docbook modifier"`
+
 }
 
 type TxsdInterfacename struct {
@@ -31374,18 +32044,20 @@ type TxsdInterfacename struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElems_Interfacename struct {
 	Interfacenames []*TxsdInterfacename `xml:"http://docbook.org/ns/docbook interfacename"`
+
 }
 
 type XsdGoPkgHasElem_Interfacename struct {
 	Interfacename *TxsdInterfacename `xml:"http://docbook.org/ns/docbook interfacename"`
+
 }
 
 type TxsdExceptionname struct {
@@ -31425,12 +32097,14 @@ type TxsdExceptionname struct {
 
 }
 
-type XsdGoPkgHasElem_Exceptionname struct {
-	Exceptionname *TxsdExceptionname `xml:"http://docbook.org/ns/docbook exceptionname"`
-}
-
 type XsdGoPkgHasElems_Exceptionname struct {
 	Exceptionnames []*TxsdExceptionname `xml:"http://docbook.org/ns/docbook exceptionname"`
+
+}
+
+type XsdGoPkgHasElem_Exceptionname struct {
+	Exceptionname *TxsdExceptionname `xml:"http://docbook.org/ns/docbook exceptionname"`
+
 }
 
 type TxsdFieldsynopsis struct {
@@ -31450,10 +32124,12 @@ type TxsdFieldsynopsis struct {
 
 type XsdGoPkgHasElem_Fieldsynopsis struct {
 	Fieldsynopsis *TxsdFieldsynopsis `xml:"http://docbook.org/ns/docbook fieldsynopsis"`
+
 }
 
 type XsdGoPkgHasElems_Fieldsynopsis struct {
 	Fieldsynopsises []*TxsdFieldsynopsis `xml:"http://docbook.org/ns/docbook fieldsynopsis"`
+
 }
 
 type TxsdInitializer struct {
@@ -31487,18 +32163,20 @@ type TxsdInitializer struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
 type XsdGoPkgHasElem_Initializer struct {
 	Initializer *TxsdInitializer `xml:"http://docbook.org/ns/docbook initializer"`
+
 }
 
 type XsdGoPkgHasElems_Initializer struct {
 	Initializers []*TxsdInitializer `xml:"http://docbook.org/ns/docbook initializer"`
+
 }
 
 type TxsdConstructorsynopsis struct {
@@ -31512,18 +32190,20 @@ type TxsdConstructorsynopsis struct {
 
 	XsdGoPkgHasElems_Exceptionname
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElems_Constructorsynopsis struct {
+	Constructorsynopsises []*TxsdConstructorsynopsis `xml:"http://docbook.org/ns/docbook constructorsynopsis"`
 
 }
 
 type XsdGoPkgHasElem_Constructorsynopsis struct {
 	Constructorsynopsis *TxsdConstructorsynopsis `xml:"http://docbook.org/ns/docbook constructorsynopsis"`
-}
 
-type XsdGoPkgHasElems_Constructorsynopsis struct {
-	Constructorsynopsises []*TxsdConstructorsynopsis `xml:"http://docbook.org/ns/docbook constructorsynopsis"`
 }
 
 type TxsdDestructorsynopsis struct {
@@ -31543,12 +32223,14 @@ type TxsdDestructorsynopsis struct {
 
 }
 
-type XsdGoPkgHasElem_Destructorsynopsis struct {
-	Destructorsynopsis *TxsdDestructorsynopsis `xml:"http://docbook.org/ns/docbook destructorsynopsis"`
-}
-
 type XsdGoPkgHasElems_Destructorsynopsis struct {
 	Destructorsynopsises []*TxsdDestructorsynopsis `xml:"http://docbook.org/ns/docbook destructorsynopsis"`
+
+}
+
+type XsdGoPkgHasElem_Destructorsynopsis struct {
+	Destructorsynopsis *TxsdDestructorsynopsis `xml:"http://docbook.org/ns/docbook destructorsynopsis"`
+
 }
 
 type TxsdMethodsynopsis struct {
@@ -31564,18 +32246,20 @@ type TxsdMethodsynopsis struct {
 
 	XsdGoPkgHasElems_Exceptionname
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Methodsynopsis struct {
+	Methodsynopsis *TxsdMethodsynopsis `xml:"http://docbook.org/ns/docbook methodsynopsis"`
 
 }
 
 type XsdGoPkgHasElems_Methodsynopsis struct {
 	Methodsynopsises []*TxsdMethodsynopsis `xml:"http://docbook.org/ns/docbook methodsynopsis"`
-}
 
-type XsdGoPkgHasElem_Methodsynopsis struct {
-	Methodsynopsis *TxsdMethodsynopsis `xml:"http://docbook.org/ns/docbook methodsynopsis"`
 }
 
 type TxsdMethodname struct {
@@ -31615,12 +32299,14 @@ type TxsdMethodname struct {
 
 }
 
-type XsdGoPkgHasElems_Methodname struct {
-	Methodnames []*TxsdMethodname `xml:"http://docbook.org/ns/docbook methodname"`
-}
-
 type XsdGoPkgHasElem_Methodname struct {
 	Methodname *TxsdMethodname `xml:"http://docbook.org/ns/docbook methodname"`
+
+}
+
+type XsdGoPkgHasElems_Methodname struct {
+	Methodnames []*TxsdMethodname `xml:"http://docbook.org/ns/docbook methodname"`
+
 }
 
 type TxsdMethodparamRep xsdt.Token
@@ -31697,10 +32383,12 @@ type TxsdMethodparam struct {
 
 type XsdGoPkgHasElem_Methodparam struct {
 	Methodparam *TxsdMethodparam `xml:"http://docbook.org/ns/docbook methodparam"`
+
 }
 
 type XsdGoPkgHasElems_Methodparam struct {
 	Methodparams []*TxsdMethodparam `xml:"http://docbook.org/ns/docbook methodparam"`
+
 }
 
 type TxsdVarname struct {
@@ -31734,18 +32422,20 @@ type TxsdVarname struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElems_Varname struct {
+	Varnames []*TxsdVarname `xml:"http://docbook.org/ns/docbook varname"`
 
 }
 
 type XsdGoPkgHasElem_Varname struct {
 	Varname *TxsdVarname `xml:"http://docbook.org/ns/docbook varname"`
-}
 
-type XsdGoPkgHasElems_Varname struct {
-	Varnames []*TxsdVarname `xml:"http://docbook.org/ns/docbook varname"`
 }
 
 type TxsdReturnvalue struct {
@@ -31787,10 +32477,12 @@ type TxsdReturnvalue struct {
 
 type XsdGoPkgHasElems_Returnvalue struct {
 	Returnvalues []*TxsdReturnvalue `xml:"http://docbook.org/ns/docbook returnvalue"`
+
 }
 
 type XsdGoPkgHasElem_Returnvalue struct {
 	Returnvalue *TxsdReturnvalue `xml:"http://docbook.org/ns/docbook returnvalue"`
+
 }
 
 type TxsdType struct {
@@ -31832,10 +32524,12 @@ type TxsdType struct {
 
 type XsdGoPkgHasElem_Type struct {
 	Type *TxsdType `xml:"http://docbook.org/ns/docbook type"`
+
 }
 
 type XsdGoPkgHasElems_Type struct {
 	Types []*TxsdType `xml:"http://docbook.org/ns/docbook type"`
+
 }
 
 type TxsdClassname struct {
@@ -31869,18 +32563,20 @@ type TxsdClassname struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElems_Classname struct {
+	Classnames []*TxsdClassname `xml:"http://docbook.org/ns/docbook classname"`
 
 }
 
 type XsdGoPkgHasElem_Classname struct {
 	Classname *TxsdClassname `xml:"http://docbook.org/ns/docbook classname"`
-}
 
-type XsdGoPkgHasElems_Classname struct {
-	Classnames []*TxsdClassname `xml:"http://docbook.org/ns/docbook classname"`
 }
 
 type TxsdProgramlistingContinuation xsdt.Token
@@ -32136,20 +32832,22 @@ type TxsdProgramlisting struct {
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
+	xml.XsdGoPkgHasAttr_Space
+
 	XsdGoPkgHasAttr_Continuation_TxsdProgramlistingContinuation_
 
 	XsdGoPkgHasAttr_Linenumbering_TxsdProgramlistingLinenumbering_
-
-	xml.XsdGoPkgHasAttr_Space
 
 }
 
 type XsdGoPkgHasElems_Programlisting struct {
 	Programlistings []*TxsdProgramlisting `xml:"http://docbook.org/ns/docbook programlisting"`
+
 }
 
 type XsdGoPkgHasElem_Programlisting struct {
 	Programlisting *TxsdProgramlisting `xml:"http://docbook.org/ns/docbook programlisting"`
+
 }
 
 type TxsdCaution struct {
@@ -32269,18 +32967,20 @@ type TxsdCaution struct {
 
 	XsdGoPkgHasElem_Info
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElems_Caution struct {
+	Cautions []*TxsdCaution `xml:"http://docbook.org/ns/docbook caution"`
 
 }
 
 type XsdGoPkgHasElem_Caution struct {
 	Caution *TxsdCaution `xml:"http://docbook.org/ns/docbook caution"`
-}
 
-type XsdGoPkgHasElems_Caution struct {
-	Cautions []*TxsdCaution `xml:"http://docbook.org/ns/docbook caution"`
 }
 
 type TxsdImportant struct {
@@ -32400,18 +33100,20 @@ type TxsdImportant struct {
 
 	XsdGoPkgHasElem_Info
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElems_Important struct {
+	Importants []*TxsdImportant `xml:"http://docbook.org/ns/docbook important"`
 
 }
 
 type XsdGoPkgHasElem_Important struct {
 	Important *TxsdImportant `xml:"http://docbook.org/ns/docbook important"`
-}
 
-type XsdGoPkgHasElems_Important struct {
-	Importants []*TxsdImportant `xml:"http://docbook.org/ns/docbook important"`
 }
 
 type TxsdNote struct {
@@ -32537,12 +33239,14 @@ type TxsdNote struct {
 
 }
 
-type XsdGoPkgHasElems_Note struct {
-	Notes []*TxsdNote `xml:"http://docbook.org/ns/docbook note"`
-}
-
 type XsdGoPkgHasElem_Note struct {
 	Note *TxsdNote `xml:"http://docbook.org/ns/docbook note"`
+
+}
+
+type XsdGoPkgHasElems_Note struct {
+	Notes []*TxsdNote `xml:"http://docbook.org/ns/docbook note"`
+
 }
 
 type TxsdTip struct {
@@ -32668,12 +33372,14 @@ type TxsdTip struct {
 
 }
 
-type XsdGoPkgHasElems_Tip struct {
-	Tips []*TxsdTip `xml:"http://docbook.org/ns/docbook tip"`
-}
-
 type XsdGoPkgHasElem_Tip struct {
 	Tip *TxsdTip `xml:"http://docbook.org/ns/docbook tip"`
+
+}
+
+type XsdGoPkgHasElems_Tip struct {
+	Tips []*TxsdTip `xml:"http://docbook.org/ns/docbook tip"`
+
 }
 
 type TxsdWarning struct {
@@ -32793,18 +33499,20 @@ type TxsdWarning struct {
 
 	XsdGoPkgHasElem_Info
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElem_Warning struct {
+	Warning *TxsdWarning `xml:"http://docbook.org/ns/docbook warning"`
 
 }
 
 type XsdGoPkgHasElems_Warning struct {
 	Warnings []*TxsdWarning `xml:"http://docbook.org/ns/docbook warning"`
-}
 
-type XsdGoPkgHasElem_Warning struct {
-	Warning *TxsdWarning `xml:"http://docbook.org/ns/docbook warning"`
 }
 
 type TxsdErrorcode struct {
@@ -32844,12 +33552,14 @@ type TxsdErrorcode struct {
 
 }
 
-type XsdGoPkgHasElems_Errorcode struct {
-	Errorcodes []*TxsdErrorcode `xml:"http://docbook.org/ns/docbook errorcode"`
-}
-
 type XsdGoPkgHasElem_Errorcode struct {
 	Errorcode *TxsdErrorcode `xml:"http://docbook.org/ns/docbook errorcode"`
+
+}
+
+type XsdGoPkgHasElems_Errorcode struct {
+	Errorcodes []*TxsdErrorcode `xml:"http://docbook.org/ns/docbook errorcode"`
+
 }
 
 type TxsdErrorname struct {
@@ -32883,18 +33593,20 @@ type TxsdErrorname struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElem_Errorname struct {
+	Errorname *TxsdErrorname `xml:"http://docbook.org/ns/docbook errorname"`
 
 }
 
 type XsdGoPkgHasElems_Errorname struct {
 	Errornames []*TxsdErrorname `xml:"http://docbook.org/ns/docbook errorname"`
-}
 
-type XsdGoPkgHasElem_Errorname struct {
-	Errorname *TxsdErrorname `xml:"http://docbook.org/ns/docbook errorname"`
 }
 
 type TxsdErrortext struct {
@@ -32928,18 +33640,20 @@ type TxsdErrortext struct {
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
 type XsdGoPkgHasElems_Errortext struct {
 	Errortexts []*TxsdErrortext `xml:"http://docbook.org/ns/docbook errortext"`
+
 }
 
 type XsdGoPkgHasElem_Errortext struct {
 	Errortext *TxsdErrortext `xml:"http://docbook.org/ns/docbook errortext"`
+
 }
 
 type TxsdErrortype struct {
@@ -32973,18 +33687,20 @@ type TxsdErrortype struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElems_Errortype struct {
+	Errortypes []*TxsdErrortype `xml:"http://docbook.org/ns/docbook errortype"`
 
 }
 
 type XsdGoPkgHasElem_Errortype struct {
 	Errortype *TxsdErrortype `xml:"http://docbook.org/ns/docbook errortype"`
-}
 
-type XsdGoPkgHasElems_Errortype struct {
-	Errortypes []*TxsdErrortype `xml:"http://docbook.org/ns/docbook errortype"`
 }
 
 type TxsdSystemitemClass xsdt.Token
@@ -33108,10 +33824,12 @@ type TxsdSystemitem struct {
 
 type XsdGoPkgHasElems_Systemitem struct {
 	Systemitems []*TxsdSystemitem `xml:"http://docbook.org/ns/docbook systemitem"`
+
 }
 
 type XsdGoPkgHasElem_Systemitem struct {
 	Systemitem *TxsdSystemitem `xml:"http://docbook.org/ns/docbook systemitem"`
+
 }
 
 type TxsdOption struct {
@@ -33153,10 +33871,12 @@ type TxsdOption struct {
 
 type XsdGoPkgHasElems_Option struct {
 	Options []*TxsdOption `xml:"http://docbook.org/ns/docbook option"`
+
 }
 
 type XsdGoPkgHasElem_Option struct {
 	Option *TxsdOption `xml:"http://docbook.org/ns/docbook option"`
+
 }
 
 type TxsdOptional struct {
@@ -33190,18 +33910,20 @@ type TxsdOptional struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
+
+type XsdGoPkgHasElem_Optional struct {
+	Optional *TxsdOptional `xml:"http://docbook.org/ns/docbook optional"`
 
 }
 
 type XsdGoPkgHasElems_Optional struct {
 	Optionals []*TxsdOptional `xml:"http://docbook.org/ns/docbook optional"`
-}
 
-type XsdGoPkgHasElem_Optional struct {
-	Optional *TxsdOptional `xml:"http://docbook.org/ns/docbook optional"`
 }
 
 type TxsdProperty struct {
@@ -33235,16 +33957,18 @@ type TxsdProperty struct {
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
+
+type XsdGoPkgHasElems_Property struct {
+	Properties []*TxsdProperty `xml:"http://docbook.org/ns/docbook property"`
 
 }
 
 type XsdGoPkgHasElem_Property struct {
 	Property *TxsdProperty `xml:"http://docbook.org/ns/docbook property"`
-}
 
-type XsdGoPkgHasElems_Property struct {
-	Properties []*TxsdProperty `xml:"http://docbook.org/ns/docbook property"`
 }

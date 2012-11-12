@@ -18,122 +18,152 @@ type TConstantType struct {
 
 type XsdGoPkgHasElems_Naturalnumbers struct {
 	Naturalnumberses []*TConstantType `xml:"http://www.w3.org/1998/Math/MathML naturalnumbers"`
+
 }
 
 type XsdGoPkgHasElem_Naturalnumbers struct {
 	Naturalnumbers *TConstantType `xml:"http://www.w3.org/1998/Math/MathML naturalnumbers"`
+
 }
 
 type XsdGoPkgHasElems_Primes struct {
 	Primeses []*TConstantType `xml:"http://www.w3.org/1998/Math/MathML primes"`
+
 }
 
 type XsdGoPkgHasElem_Primes struct {
 	Primes *TConstantType `xml:"http://www.w3.org/1998/Math/MathML primes"`
+
 }
 
 type XsdGoPkgHasElem_Integers struct {
 	Integers *TConstantType `xml:"http://www.w3.org/1998/Math/MathML integers"`
+
 }
 
 type XsdGoPkgHasElems_Integers struct {
 	Integerses []*TConstantType `xml:"http://www.w3.org/1998/Math/MathML integers"`
+
 }
 
 type XsdGoPkgHasElem_Rationals struct {
 	Rationals *TConstantType `xml:"http://www.w3.org/1998/Math/MathML rationals"`
+
 }
 
 type XsdGoPkgHasElems_Rationals struct {
 	Rationalses []*TConstantType `xml:"http://www.w3.org/1998/Math/MathML rationals"`
-}
 
-type XsdGoPkgHasElem_Reals struct {
-	Reals *TConstantType `xml:"http://www.w3.org/1998/Math/MathML reals"`
 }
 
 type XsdGoPkgHasElems_Reals struct {
 	Realses []*TConstantType `xml:"http://www.w3.org/1998/Math/MathML reals"`
+
+}
+
+type XsdGoPkgHasElem_Reals struct {
+	Reals *TConstantType `xml:"http://www.w3.org/1998/Math/MathML reals"`
+
 }
 
 type XsdGoPkgHasElem_Complexes struct {
 	Complexes *TConstantType `xml:"http://www.w3.org/1998/Math/MathML complexes"`
+
 }
 
 type XsdGoPkgHasElems_Complexes struct {
 	Complexeses []*TConstantType `xml:"http://www.w3.org/1998/Math/MathML complexes"`
-}
 
-type XsdGoPkgHasElem_Emptyset struct {
-	Emptyset *TConstantType `xml:"http://www.w3.org/1998/Math/MathML emptyset"`
 }
 
 type XsdGoPkgHasElems_Emptyset struct {
 	Emptysets []*TConstantType `xml:"http://www.w3.org/1998/Math/MathML emptyset"`
+
+}
+
+type XsdGoPkgHasElem_Emptyset struct {
+	Emptyset *TConstantType `xml:"http://www.w3.org/1998/Math/MathML emptyset"`
+
 }
 
 type XsdGoPkgHasElem_Exponentiale struct {
 	Exponentiale *TConstantType `xml:"http://www.w3.org/1998/Math/MathML exponentiale"`
+
 }
 
 type XsdGoPkgHasElems_Exponentiale struct {
 	Exponentiales []*TConstantType `xml:"http://www.w3.org/1998/Math/MathML exponentiale"`
+
 }
 
 type XsdGoPkgHasElem_Imaginaryi struct {
 	Imaginaryi *TConstantType `xml:"http://www.w3.org/1998/Math/MathML imaginaryi"`
+
 }
 
 type XsdGoPkgHasElems_Imaginaryi struct {
 	Imaginaryis []*TConstantType `xml:"http://www.w3.org/1998/Math/MathML imaginaryi"`
-}
 
-type XsdGoPkgHasElems_Pi struct {
-	Pis []*TConstantType `xml:"http://www.w3.org/1998/Math/MathML pi"`
 }
 
 type XsdGoPkgHasElem_Pi struct {
 	Pi *TConstantType `xml:"http://www.w3.org/1998/Math/MathML pi"`
+
 }
 
-type XsdGoPkgHasElem_Eulergamma struct {
-	Eulergamma *TConstantType `xml:"http://www.w3.org/1998/Math/MathML eulergamma"`
+type XsdGoPkgHasElems_Pi struct {
+	Pis []*TConstantType `xml:"http://www.w3.org/1998/Math/MathML pi"`
+
 }
 
 type XsdGoPkgHasElems_Eulergamma struct {
 	Eulergammas []*TConstantType `xml:"http://www.w3.org/1998/Math/MathML eulergamma"`
+
 }
 
-type XsdGoPkgHasElems_True struct {
-	Trues []*TConstantType `xml:"http://www.w3.org/1998/Math/MathML true"`
+type XsdGoPkgHasElem_Eulergamma struct {
+	Eulergamma *TConstantType `xml:"http://www.w3.org/1998/Math/MathML eulergamma"`
+
 }
 
 type XsdGoPkgHasElem_True struct {
 	True *TConstantType `xml:"http://www.w3.org/1998/Math/MathML true"`
+
 }
 
-type XsdGoPkgHasElem_False struct {
-	False *TConstantType `xml:"http://www.w3.org/1998/Math/MathML false"`
+type XsdGoPkgHasElems_True struct {
+	Trues []*TConstantType `xml:"http://www.w3.org/1998/Math/MathML true"`
+
 }
 
 type XsdGoPkgHasElems_False struct {
 	Falses []*TConstantType `xml:"http://www.w3.org/1998/Math/MathML false"`
+
 }
 
-type XsdGoPkgHasElem_Infinity struct {
-	Infinity *TConstantType `xml:"http://www.w3.org/1998/Math/MathML infinity"`
+type XsdGoPkgHasElem_False struct {
+	False *TConstantType `xml:"http://www.w3.org/1998/Math/MathML false"`
+
 }
 
 type XsdGoPkgHasElems_Infinity struct {
 	Infinities []*TConstantType `xml:"http://www.w3.org/1998/Math/MathML infinity"`
+
 }
 
-type XsdGoPkgHasElems_Notanumber struct {
-	Notanumbers []*TConstantType `xml:"http://www.w3.org/1998/Math/MathML notanumber"`
+type XsdGoPkgHasElem_Infinity struct {
+	Infinity *TConstantType `xml:"http://www.w3.org/1998/Math/MathML infinity"`
+
 }
 
 type XsdGoPkgHasElem_Notanumber struct {
 	Notanumber *TConstantType `xml:"http://www.w3.org/1998/Math/MathML notanumber"`
+
+}
+
+type XsdGoPkgHasElems_Notanumber struct {
+	Notanumbers []*TConstantType `xml:"http://www.w3.org/1998/Math/MathML notanumber"`
+
 }
 
 type XsdGoPkgHasGroup_ContentConstantsClass struct {
