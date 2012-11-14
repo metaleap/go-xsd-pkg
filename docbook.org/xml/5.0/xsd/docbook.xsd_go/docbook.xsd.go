@@ -7,33 +7,84 @@ package go_Docbook
 
 
 import (
-	xsdt "github.com/metaleap/go-xsd/types"
-	xlink "github.com/metaleap/go-xsd-pkg/docbook.org/xml/5.0/xsd/xlink.xsd_go"
 	xml "github.com/metaleap/go-xsd-pkg/docbook.org/xml/5.0/xsd/xml.xsd_go"
+	xlink "github.com/metaleap/go-xsd-pkg/docbook.org/xml/5.0/xsd/xlink.xsd_go"
+	xsdt "github.com/metaleap/go-xsd/types"
 )
+
+type TxsdDbCommonAttributesDir xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdDbCommonAttributesDir is "rtl".
+func (me TxsdDbCommonAttributesDir) IsRtl () bool { return me == "rtl" }
+
+//	Returns true if the value of this enumerated TxsdDbCommonAttributesDir is "ltr".
+func (me TxsdDbCommonAttributesDir) IsLtr () bool { return me == "ltr" }
+
+//	Returns true if the value of this enumerated TxsdDbCommonAttributesDir is "lro".
+func (me TxsdDbCommonAttributesDir) IsLro () bool { return me == "lro" }
+
+//	This convenience method just performs a simple type conversion to TxsdDbCommonAttributesDir's alias type xsdt.Token.
+func (me TxsdDbCommonAttributesDir) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Since TxsdDbCommonAttributesDir is just a simple String type, this merely returns the current string value.
+func (me TxsdDbCommonAttributesDir) String () string { return xsdt.Token(me).String() }
+
+//	Since TxsdDbCommonAttributesDir is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdDbCommonAttributesDir) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdDbCommonAttributesDir is "rlo".
+func (me TxsdDbCommonAttributesDir) IsRlo () bool { return me == "rlo" }
+
+type XsdGoPkgHasAttr_Dir_TxsdDbCommonAttributesDir_ struct {
+	Dir TxsdDbCommonAttributesDir `xml:"http://docbook.org/ns/docbook dir,attr"`
+
+}
 
 type XsdGoPkgHasAttr_Xreflabel_XsdtString_ struct {
 	Xreflabel xsdt.String `xml:"http://docbook.org/ns/docbook xreflabel,attr"`
 
 }
 
+type XsdGoPkgHasAttr_Annotations_XsdtString_ struct {
+	Annotations xsdt.String `xml:"http://docbook.org/ns/docbook annotations,attr"`
+
+}
+
+type TxsdDbCommonAttributesRevisionflag xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdDbCommonAttributesRevisionflag is "off".
+func (me TxsdDbCommonAttributesRevisionflag) IsOff () bool { return me == "off" }
+
+//	Since TxsdDbCommonAttributesRevisionflag is just a simple String type, this merely returns the current string value.
+func (me TxsdDbCommonAttributesRevisionflag) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdDbCommonAttributesRevisionflag is "changed".
+func (me TxsdDbCommonAttributesRevisionflag) IsChanged () bool { return me == "changed" }
+
+//	Returns true if the value of this enumerated TxsdDbCommonAttributesRevisionflag is "deleted".
+func (me TxsdDbCommonAttributesRevisionflag) IsDeleted () bool { return me == "deleted" }
+
+//	Returns true if the value of this enumerated TxsdDbCommonAttributesRevisionflag is "added".
+func (me TxsdDbCommonAttributesRevisionflag) IsAdded () bool { return me == "added" }
+
+//	This convenience method just performs a simple type conversion to TxsdDbCommonAttributesRevisionflag's alias type xsdt.Token.
+func (me TxsdDbCommonAttributesRevisionflag) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Since TxsdDbCommonAttributesRevisionflag is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdDbCommonAttributesRevisionflag) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_Revisionflag_TxsdDbCommonAttributesRevisionflag_ struct {
+	Revisionflag TxsdDbCommonAttributesRevisionflag `xml:"http://docbook.org/ns/docbook revisionflag,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Userlevel_XsdtString_ struct {
+	Userlevel xsdt.String `xml:"http://docbook.org/ns/docbook userlevel,attr"`
+
+}
+
 type XsdGoPkgHasAttr_Remap_XsdtString_ struct {
 	Remap xsdt.String `xml:"http://docbook.org/ns/docbook remap,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Arch_XsdtString_ struct {
-	Arch xsdt.String `xml:"http://docbook.org/ns/docbook arch,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Vendor_XsdtString_ struct {
-	Vendor xsdt.String `xml:"http://docbook.org/ns/docbook vendor,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Version_XsdtString_ struct {
-	Version xsdt.String `xml:"http://docbook.org/ns/docbook version,attr"`
 
 }
 
@@ -47,84 +98,13 @@ type XsdGoPkgHasAttr_Revision_XsdtString_ struct {
 
 }
 
-type TxsdDbCommonAttributesRevisionflag xsdt.Token
-
-//	Returns true if the value of this enumerated TxsdDbCommonAttributesRevisionflag is "deleted".
-func (me TxsdDbCommonAttributesRevisionflag) IsDeleted () bool { return me == "deleted" }
-
-//	This convenience method just performs a simple type conversion to TxsdDbCommonAttributesRevisionflag's alias type xsdt.Token.
-func (me TxsdDbCommonAttributesRevisionflag) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Since TxsdDbCommonAttributesRevisionflag is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdDbCommonAttributesRevisionflag) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Since TxsdDbCommonAttributesRevisionflag is just a simple String type, this merely returns the current string value.
-func (me TxsdDbCommonAttributesRevisionflag) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdDbCommonAttributesRevisionflag is "added".
-func (me TxsdDbCommonAttributesRevisionflag) IsAdded () bool { return me == "added" }
-
-//	Returns true if the value of this enumerated TxsdDbCommonAttributesRevisionflag is "changed".
-func (me TxsdDbCommonAttributesRevisionflag) IsChanged () bool { return me == "changed" }
-
-//	Returns true if the value of this enumerated TxsdDbCommonAttributesRevisionflag is "off".
-func (me TxsdDbCommonAttributesRevisionflag) IsOff () bool { return me == "off" }
-
-type XsdGoPkgHasAttr_Revisionflag_TxsdDbCommonAttributesRevisionflag_ struct {
-	Revisionflag TxsdDbCommonAttributesRevisionflag `xml:"http://docbook.org/ns/docbook revisionflag,attr"`
+type XsdGoPkgHasAttr_Security_XsdtString_ struct {
+	Security xsdt.String `xml:"http://docbook.org/ns/docbook security,attr"`
 
 }
 
-type XsdGoPkgHasAttr_Wordsize_XsdtString_ struct {
-	Wordsize xsdt.String `xml:"http://docbook.org/ns/docbook wordsize,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Annotations_XsdtString_ struct {
-	Annotations xsdt.String `xml:"http://docbook.org/ns/docbook annotations,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Condition_XsdtString_ struct {
-	Condition xsdt.String `xml:"http://docbook.org/ns/docbook condition,attr"`
-
-}
-
-type TxsdDbCommonAttributesDir xsdt.Token
-
-//	This convenience method just performs a simple type conversion to TxsdDbCommonAttributesDir's alias type xsdt.Token.
-func (me TxsdDbCommonAttributesDir) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Since TxsdDbCommonAttributesDir is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdDbCommonAttributesDir) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdDbCommonAttributesDir is "ltr".
-func (me TxsdDbCommonAttributesDir) IsLtr () bool { return me == "ltr" }
-
-//	Returns true if the value of this enumerated TxsdDbCommonAttributesDir is "rlo".
-func (me TxsdDbCommonAttributesDir) IsRlo () bool { return me == "rlo" }
-
-//	Returns true if the value of this enumerated TxsdDbCommonAttributesDir is "lro".
-func (me TxsdDbCommonAttributesDir) IsLro () bool { return me == "lro" }
-
-//	Since TxsdDbCommonAttributesDir is just a simple String type, this merely returns the current string value.
-func (me TxsdDbCommonAttributesDir) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdDbCommonAttributesDir is "rtl".
-func (me TxsdDbCommonAttributesDir) IsRtl () bool { return me == "rtl" }
-
-type XsdGoPkgHasAttr_Dir_TxsdDbCommonAttributesDir_ struct {
-	Dir TxsdDbCommonAttributesDir `xml:"http://docbook.org/ns/docbook dir,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Userlevel_XsdtString_ struct {
-	Userlevel xsdt.String `xml:"http://docbook.org/ns/docbook userlevel,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Conformance_XsdtString_ struct {
-	Conformance xsdt.String `xml:"http://docbook.org/ns/docbook conformance,attr"`
+type XsdGoPkgHasAttr_Arch_XsdtString_ struct {
+	Arch xsdt.String `xml:"http://docbook.org/ns/docbook arch,attr"`
 
 }
 
@@ -133,49 +113,69 @@ type XsdGoPkgHasAttr_Audience_XsdtString_ struct {
 
 }
 
-type XsdGoPkgHasAttr_Security_XsdtString_ struct {
-	Security xsdt.String `xml:"http://docbook.org/ns/docbook security,attr"`
+type XsdGoPkgHasAttr_Vendor_XsdtString_ struct {
+	Vendor xsdt.String `xml:"http://docbook.org/ns/docbook vendor,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Condition_XsdtString_ struct {
+	Condition xsdt.String `xml:"http://docbook.org/ns/docbook condition,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Wordsize_XsdtString_ struct {
+	Wordsize xsdt.String `xml:"http://docbook.org/ns/docbook wordsize,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Conformance_XsdtString_ struct {
+	Conformance xsdt.String `xml:"http://docbook.org/ns/docbook conformance,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Version_XsdtString_ struct {
+	Version xsdt.String `xml:"http://docbook.org/ns/docbook version,attr"`
 
 }
 
 type XsdGoPkgHasAtts_DbCommonAttributes struct {
-	xml.XsdGoPkgHasAttr_Id
+	XsdGoPkgHasAttr_Userlevel_XsdtString_
 
-	XsdGoPkgHasAttr_Vendor_XsdtString_
+	xml.XsdGoPkgHasAttr_Base
 
-	XsdGoPkgHasAttr_Version_XsdtString_
+	XsdGoPkgHasAttr_Remap_XsdtString_
 
 	XsdGoPkgHasAttr_Os_XsdtString_
 
 	XsdGoPkgHasAttr_Revision_XsdtString_
 
-	XsdGoPkgHasAttr_Revisionflag_TxsdDbCommonAttributesRevisionflag_
+	XsdGoPkgHasAttr_Security_XsdtString_
 
-	XsdGoPkgHasAttr_Wordsize_XsdtString_
+	xml.XsdGoPkgHasAttr_Id
 
-	xml.XsdGoPkgHasAttr_Lang
-
-	XsdGoPkgHasAttr_Annotations_XsdtString_
-
-	XsdGoPkgHasAttr_Condition_XsdtString_
-
-	XsdGoPkgHasAttr_Dir_TxsdDbCommonAttributesDir_
-
-	XsdGoPkgHasAttr_Userlevel_XsdtString_
-
-	xml.XsdGoPkgHasAttr_Base
-
-	XsdGoPkgHasAttr_Conformance_XsdtString_
+	XsdGoPkgHasAttr_Arch_XsdtString_
 
 	XsdGoPkgHasAttr_Audience_XsdtString_
 
-	XsdGoPkgHasAttr_Security_XsdtString_
+	xml.XsdGoPkgHasAttr_Lang
+
+	XsdGoPkgHasAttr_Vendor_XsdtString_
+
+	XsdGoPkgHasAttr_Condition_XsdtString_
+
+	XsdGoPkgHasAttr_Wordsize_XsdtString_
+
+	XsdGoPkgHasAttr_Conformance_XsdtString_
+
+	XsdGoPkgHasAttr_Version_XsdtString_
+
+	XsdGoPkgHasAttr_Dir_TxsdDbCommonAttributesDir_
 
 	XsdGoPkgHasAttr_Xreflabel_XsdtString_
 
-	XsdGoPkgHasAttr_Remap_XsdtString_
+	XsdGoPkgHasAttr_Annotations_XsdtString_
 
-	XsdGoPkgHasAttr_Arch_XsdtString_
+	XsdGoPkgHasAttr_Revisionflag_TxsdDbCommonAttributesRevisionflag_
 
 }
 
@@ -185,38 +185,21 @@ type XsdGoPkgHasAttr_Linkend_XsdtIdref_ struct {
 }
 
 type XsdGoPkgHasAtts_DbCommonLinkingAttributes struct {
-	xlink.XsdGoPkgHasAttr_Role
+	xlink.XsdGoPkgHasAttr_Title
+
+	xlink.XsdGoPkgHasAttr_Show
 
 	XsdGoPkgHasAttr_Linkend_XsdtIdref_
 
-	xlink.XsdGoPkgHasAttr_Actuate
-
 	xlink.XsdGoPkgHasAttr_Type
+
+	xlink.XsdGoPkgHasAttr_Role
 
 	xlink.XsdGoPkgHasAttr_Arcrole
 
 	xlink.XsdGoPkgHasAttr_Href
 
-	xlink.XsdGoPkgHasAttr_Show
-
-	xlink.XsdGoPkgHasAttr_Title
-
-}
-
-type XsdGoPkgHasAttr_Role_XsdtString_ struct {
-	Role xsdt.String `xml:"http://docbook.org/ns/docbook role,attr"`
-
-}
-
-type TxsdAnchor struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Anchor struct {
-	Anchors []*TxsdAnchor `xml:"http://docbook.org/ns/docbook anchor"`
+	xlink.XsdGoPkgHasAttr_Actuate
 
 }
 
@@ -225,18 +208,8 @@ type XsdGoPkgHasAttr_Endterm_XsdtIdref_ struct {
 
 }
 
-type XsdGoPkgHasAttr_Units_XsdtNmtoken_ struct {
-	Units xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook units,attr"`
-
-}
-
-type XsdGoPkgHasAttr_End_XsdtNmtoken_ struct {
-	End xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook end,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Begin_XsdtNmtoken_ struct {
-	Begin xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook begin,attr"`
+type XsdGoPkgHasAttr_Role_XsdtString_ struct {
+	Role xsdt.String `xml:"http://docbook.org/ns/docbook role,attr"`
 
 }
 
@@ -245,22 +218,67 @@ type XsdGoPkgHasAttr_Xrefstyle_XsdtString_ struct {
 
 }
 
-type TxsdBiblioref struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Begin_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_Xrefstyle_XsdtString_
-
+type TxsdXref struct {
 	XsdGoPkgHasAttr_Role_XsdtString_
 
-	XsdGoPkgHasAttr_Endterm_XsdtIdref_
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAttr_Units_XsdtNmtoken_
+	XsdGoPkgHasAttr_Xrefstyle_XsdtString_
+
+	XsdGoPkgHasAttr_Endterm_XsdtIdref_
+
+}
+
+type XsdGoPkgHasElems_Xref struct {
+	Xrefs []*TxsdXref `xml:"http://docbook.org/ns/docbook xref"`
+
+}
+
+type TxsdAnchor struct {
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+}
+
+type XsdGoPkgHasElems_Anchor struct {
+	Anchors []*TxsdAnchor `xml:"http://docbook.org/ns/docbook anchor"`
+
+}
+
+type XsdGoPkgHasAttr_Units_XsdtNmtoken_ struct {
+	Units xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook units,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Begin_XsdtNmtoken_ struct {
+	Begin xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook begin,attr"`
+
+}
+
+type XsdGoPkgHasAttr_End_XsdtNmtoken_ struct {
+	End xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook end,attr"`
+
+}
+
+type TxsdBiblioref struct {
+	XsdGoPkgHasAttr_Begin_XsdtNmtoken_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Endterm_XsdtIdref_
 
 	XsdGoPkgHasAttr_End_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Xrefstyle_XsdtString_
+
+	XsdGoPkgHasAttr_Units_XsdtNmtoken_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
@@ -274,34 +292,108 @@ type XsdGoPkgHasCdata struct {
 
 }
 
-type TxsdImagedataAlign xsdt.Token
+type TxsdAlt struct {
+	XsdGoPkgHasCdata
 
-//	Since TxsdImagedataAlign is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdImagedataAlign) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+	XsdGoPkgHasElems_Inlinemediaobject
 
-//	Returns true if the value of this enumerated TxsdImagedataAlign is "left".
-func (me TxsdImagedataAlign) IsLeft () bool { return me == "left" }
+	XsdGoPkgHasAttr_Role_XsdtString_
 
-//	Since TxsdImagedataAlign is just a simple String type, this merely returns the current string value.
-func (me TxsdImagedataAlign) String () string { return xsdt.Token(me).String() }
+	XsdGoPkgHasAtts_DbCommonAttributes
 
-//	Returns true if the value of this enumerated TxsdImagedataAlign is "justify".
-func (me TxsdImagedataAlign) IsJustify () bool { return me == "justify" }
+}
 
-//	Returns true if the value of this enumerated TxsdImagedataAlign is "right".
-func (me TxsdImagedataAlign) IsRight () bool { return me == "right" }
+type XsdGoPkgHasElems_Alt struct {
+	Alts []*TxsdAlt `xml:"http://docbook.org/ns/docbook alt"`
 
-//	Returns true if the value of this enumerated TxsdImagedataAlign is "center".
-func (me TxsdImagedataAlign) IsCenter () bool { return me == "center" }
+}
 
-//	This convenience method just performs a simple type conversion to TxsdImagedataAlign's alias type xsdt.Token.
-func (me TxsdImagedataAlign) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+type XsdGoPkgHasElems_Title struct {
+	Titles []*TxsdTitle `xml:"http://docbook.org/ns/docbook title"`
 
-//	Returns true if the value of this enumerated TxsdImagedataAlign is "char".
-func (me TxsdImagedataAlign) IsChar () bool { return me == "char" }
+}
 
-type XsdGoPkgHasAttr_Align_TxsdImagedataAlign_ struct {
-	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
+type XsdGoPkgHasAttr_Language_XsdtString_ struct {
+	Language xsdt.String `xml:"http://docbook.org/ns/docbook language,attr"`
+
+}
+
+type TxsdReplaceableClass xsdt.Token
+
+//	Since TxsdReplaceableClass is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdReplaceableClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdReplaceableClass is "option".
+func (me TxsdReplaceableClass) IsOption () bool { return me == "option" }
+
+//	Returns true if the value of this enumerated TxsdReplaceableClass is "function".
+func (me TxsdReplaceableClass) IsFunction () bool { return me == "function" }
+
+//	Returns true if the value of this enumerated TxsdReplaceableClass is "parameter".
+func (me TxsdReplaceableClass) IsParameter () bool { return me == "parameter" }
+
+//	This convenience method just performs a simple type conversion to TxsdReplaceableClass's alias type xsdt.Token.
+func (me TxsdReplaceableClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Since TxsdReplaceableClass is just a simple String type, this merely returns the current string value.
+func (me TxsdReplaceableClass) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdReplaceableClass is "command".
+func (me TxsdReplaceableClass) IsCommand () bool { return me == "command" }
+
+type XsdGoPkgHasAttr_Class_TxsdReplaceableClass_ struct {
+	Class TxsdReplaceableClass `xml:"http://docbook.org/ns/docbook class,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Linkends_XsdtIdrefs_ struct {
+	Linkends xsdt.Idrefs `xml:"http://docbook.org/ns/docbook linkends,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Label_XsdtString_ struct {
+	Label xsdt.String `xml:"http://docbook.org/ns/docbook label,attr"`
+
+}
+
+type TxsdCo struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Linkends_XsdtIdrefs_
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_Co struct {
+	Cos []*TxsdCo `xml:"http://docbook.org/ns/docbook co"`
+
+}
+
+type TxsdImagedataValign xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdImagedataValign is "top".
+func (me TxsdImagedataValign) IsTop () bool { return me == "top" }
+
+//	Since TxsdImagedataValign is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdImagedataValign) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdImagedataValign's alias type xsdt.Token.
+func (me TxsdImagedataValign) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Since TxsdImagedataValign is just a simple String type, this merely returns the current string value.
+func (me TxsdImagedataValign) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdImagedataValign is "bottom".
+func (me TxsdImagedataValign) IsBottom () bool { return me == "bottom" }
+
+//	Returns true if the value of this enumerated TxsdImagedataValign is "middle".
+func (me TxsdImagedataValign) IsMiddle () bool { return me == "middle" }
+
+type XsdGoPkgHasAttr_Valign_TxsdImagedataValign_ struct {
+	Valign TxsdImagedataValign `xml:"http://docbook.org/ns/docbook valign,attr"`
 
 }
 
@@ -310,50 +402,49 @@ type XsdGoPkgHasAttr_Format_XsdtString_ struct {
 
 }
 
-type XsdGoPkgHasAttr_Depth_XsdtString_ struct {
-	Depth xsdt.String `xml:"http://docbook.org/ns/docbook depth,attr"`
-
-}
-
-type TxsdImagedataScalefit xsdt.Token
-
-//	Since TxsdImagedataScalefit is just a simple String type, this merely returns the current string value.
-func (me TxsdImagedataScalefit) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdImagedataScalefit is "0".
-func (me TxsdImagedataScalefit) Is0 () bool { return me == "0" }
-
-//	Since TxsdImagedataScalefit is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdImagedataScalefit) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TxsdImagedataScalefit's alias type xsdt.Token.
-func (me TxsdImagedataScalefit) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdImagedataScalefit is "1".
-func (me TxsdImagedataScalefit) Is1 () bool { return me == "1" }
-
-type XsdGoPkgHasAttr_Scalefit_TxsdImagedataScalefit_ struct {
-	Scalefit TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook scalefit,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Contentwidth_XsdtString_ struct {
-	Contentwidth xsdt.String `xml:"http://docbook.org/ns/docbook contentwidth,attr"`
-
-}
-
 type XsdGoPkgHasAttr_Scale_XsdtNmtoken_ struct {
 	Scale xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook scale,attr"`
 
 }
 
-type XsdGoPkgHasAttr_Entityref_XsdtEntity_ struct {
-	Entityref xsdt.Entity `xml:"http://docbook.org/ns/docbook entityref,attr"`
+type TxsdImagedataAlign xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdImagedataAlign is "center".
+func (me TxsdImagedataAlign) IsCenter () bool { return me == "center" }
+
+//	Since TxsdImagedataAlign is just a simple String type, this merely returns the current string value.
+func (me TxsdImagedataAlign) String () string { return xsdt.Token(me).String() }
+
+//	This convenience method just performs a simple type conversion to TxsdImagedataAlign's alias type xsdt.Token.
+func (me TxsdImagedataAlign) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdImagedataAlign is "right".
+func (me TxsdImagedataAlign) IsRight () bool { return me == "right" }
+
+//	Returns true if the value of this enumerated TxsdImagedataAlign is "left".
+func (me TxsdImagedataAlign) IsLeft () bool { return me == "left" }
+
+//	Returns true if the value of this enumerated TxsdImagedataAlign is "char".
+func (me TxsdImagedataAlign) IsChar () bool { return me == "char" }
+
+//	Since TxsdImagedataAlign is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdImagedataAlign) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdImagedataAlign is "justify".
+func (me TxsdImagedataAlign) IsJustify () bool { return me == "justify" }
+
+type XsdGoPkgHasAttr_Align_TxsdImagedataAlign_ struct {
+	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
 
 }
 
 type XsdGoPkgHasAttr_Width_XsdtString_ struct {
 	Width xsdt.String `xml:"http://docbook.org/ns/docbook width,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Depth_XsdtString_ struct {
+	Depth xsdt.String `xml:"http://docbook.org/ns/docbook depth,attr"`
 
 }
 
@@ -367,59 +458,66 @@ type XsdGoPkgHasAttr_Fileref_XsdtString_ struct {
 
 }
 
-type TxsdImagedataValign xsdt.Token
+type XsdGoPkgHasAttr_Contentwidth_XsdtString_ struct {
+	Contentwidth xsdt.String `xml:"http://docbook.org/ns/docbook contentwidth,attr"`
 
-//	This convenience method just performs a simple type conversion to TxsdImagedataValign's alias type xsdt.Token.
-func (me TxsdImagedataValign) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+}
 
-//	Returns true if the value of this enumerated TxsdImagedataValign is "bottom".
-func (me TxsdImagedataValign) IsBottom () bool { return me == "bottom" }
+type TxsdImagedataScalefit xsdt.Token
 
-//	Returns true if the value of this enumerated TxsdImagedataValign is "middle".
-func (me TxsdImagedataValign) IsMiddle () bool { return me == "middle" }
+//	This convenience method just performs a simple type conversion to TxsdImagedataScalefit's alias type xsdt.Token.
+func (me TxsdImagedataScalefit) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
 
-//	Since TxsdImagedataValign is just a simple String type, this merely returns the current string value.
-func (me TxsdImagedataValign) String () string { return xsdt.Token(me).String() }
+//	Since TxsdImagedataScalefit is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdImagedataScalefit) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
 
-//	Since TxsdImagedataValign is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdImagedataValign) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+//	Returns true if the value of this enumerated TxsdImagedataScalefit is "1".
+func (me TxsdImagedataScalefit) Is1 () bool { return me == "1" }
 
-//	Returns true if the value of this enumerated TxsdImagedataValign is "top".
-func (me TxsdImagedataValign) IsTop () bool { return me == "top" }
+//	Since TxsdImagedataScalefit is just a simple String type, this merely returns the current string value.
+func (me TxsdImagedataScalefit) String () string { return xsdt.Token(me).String() }
 
-type XsdGoPkgHasAttr_Valign_TxsdImagedataValign_ struct {
-	Valign TxsdImagedataValign `xml:"http://docbook.org/ns/docbook valign,attr"`
+//	Returns true if the value of this enumerated TxsdImagedataScalefit is "0".
+func (me TxsdImagedataScalefit) Is0 () bool { return me == "0" }
+
+type XsdGoPkgHasAttr_Scalefit_TxsdImagedataScalefit_ struct {
+	Scalefit TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook scalefit,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Entityref_XsdtEntity_ struct {
+	Entityref xsdt.Entity `xml:"http://docbook.org/ns/docbook entityref,attr"`
 
 }
 
 type TxsdImagedata struct {
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasAttr_Scalefit_TxsdImagedataScalefit_
-
-	XsdGoPkgHasAttr_Contentwidth_XsdtString_
-
-	XsdGoPkgHasAttr_Scale_XsdtNmtoken_
-
 	XsdGoPkgHasAttr_Entityref_XsdtEntity_
-
-	XsdGoPkgHasAttr_Width_XsdtString_
-
-	XsdGoPkgHasAttr_Contentdepth_XsdtString_
-
-	XsdGoPkgHasAttr_Fileref_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
 
 	XsdGoPkgHasAttr_Valign_TxsdImagedataValign_
 
-	XsdGoPkgHasAttr_Align_TxsdImagedataAlign_
-
 	XsdGoPkgHasAttr_Format_XsdtString_
 
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Scale_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Align_TxsdImagedataAlign_
+
+	XsdGoPkgHasAttr_Width_XsdtString_
+
 	XsdGoPkgHasAttr_Depth_XsdtString_
+
+	XsdGoPkgHasAttr_Contentdepth_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Fileref_XsdtString_
+
+	XsdGoPkgHasAttr_Contentwidth_XsdtString_
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasAttr_Scalefit_TxsdImagedataScalefit_
 
 }
 
@@ -429,13 +527,13 @@ type XsdGoPkgHasElem_Imagedata struct {
 }
 
 type TxsdImageobject struct {
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElem_Info
 
 	XsdGoPkgHasElem_Imagedata
 
@@ -446,41 +544,327 @@ type XsdGoPkgHasElems_Imageobject struct {
 
 }
 
-type TxsdAudiodata struct {
-	XsdGoPkgHasAttr_Fileref_XsdtString_
+type TxsdMethodparamChoice xsdt.Token
 
-	XsdGoPkgHasElem_Info
+//	Returns true if the value of this enumerated TxsdMethodparamChoice is "opt".
+func (me TxsdMethodparamChoice) IsOpt () bool { return me == "opt" }
 
-	XsdGoPkgHasAttr_Entityref_XsdtEntity_
+//	This convenience method just performs a simple type conversion to TxsdMethodparamChoice's alias type xsdt.Token.
+func (me TxsdMethodparamChoice) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
 
-	XsdGoPkgHasAttr_Format_XsdtString_
+//	Returns true if the value of this enumerated TxsdMethodparamChoice is "plain".
+func (me TxsdMethodparamChoice) IsPlain () bool { return me == "plain" }
 
-	XsdGoPkgHasAttr_Role_XsdtString_
+//	Since TxsdMethodparamChoice is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdMethodparamChoice) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdMethodparamChoice is "req".
+func (me TxsdMethodparamChoice) IsReq () bool { return me == "req" }
+
+//	Since TxsdMethodparamChoice is just a simple String type, this merely returns the current string value.
+func (me TxsdMethodparamChoice) String () string { return xsdt.Token(me).String() }
+
+type XsdGoPkgHasAttr_Choice_TxsdMethodparamChoice_Req struct {
+	Choice TxsdMethodparamChoice `xml:"http://docbook.org/ns/docbook choice,attr"`
+
+}
+
+//	Returns the default value for Choice -- "req"
+func (me XsdGoPkgHasAttr_Choice_TxsdMethodparamChoice_Req) ChoiceDefault () TxsdMethodparamChoice { return TxsdMethodparamChoice("req") }
+
+type TxsdModifier struct {
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Remark
+
+	xml.XsdGoPkgHasAttr_Space
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Superscript
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-}
+	XsdGoPkgHasCdata
 
-type XsdGoPkgHasElem_Audiodata struct {
-	Audiodata *TxsdAudiodata `xml:"http://docbook.org/ns/docbook audiodata"`
+	XsdGoPkgHasElems_Anchor
 
-}
-
-type TxsdAudioobject struct {
 	XsdGoPkgHasAttr_Role_XsdtString_
 
-	XsdGoPkgHasElem_Audiodata
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Replaceable
+
+}
+
+type XsdGoPkgHasElems_Modifier struct {
+	Modifiers []*TxsdModifier `xml:"http://docbook.org/ns/docbook modifier"`
+
+}
+
+type TxsdParameterClass xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdParameterClass is "function".
+func (me TxsdParameterClass) IsFunction () bool { return me == "function" }
+
+//	Since TxsdParameterClass is just a simple String type, this merely returns the current string value.
+func (me TxsdParameterClass) String () string { return xsdt.Token(me).String() }
+
+//	This convenience method just performs a simple type conversion to TxsdParameterClass's alias type xsdt.Token.
+func (me TxsdParameterClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdParameterClass is "option".
+func (me TxsdParameterClass) IsOption () bool { return me == "option" }
+
+//	Returns true if the value of this enumerated TxsdParameterClass is "command".
+func (me TxsdParameterClass) IsCommand () bool { return me == "command" }
+
+//	Since TxsdParameterClass is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdParameterClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_Class_TxsdParameterClass_ struct {
+	Class TxsdParameterClass `xml:"http://docbook.org/ns/docbook class,attr"`
+
+}
+
+type TxsdParameter struct {
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Class_TxsdParameterClass_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Superscript
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
 
-	XsdGoPkgHasElem_Info
+type XsdGoPkgHasElem_Parameter struct {
+	Parameter *TxsdParameter `xml:"http://docbook.org/ns/docbook parameter"`
 
 }
 
-type XsdGoPkgHasElems_Audioobject struct {
-	Audioobjects []*TxsdAudioobject `xml:"http://docbook.org/ns/docbook audioobject"`
+type TxsdMethodparamRep xsdt.Token
+
+//	Since TxsdMethodparamRep is just a simple String type, this merely returns the current string value.
+func (me TxsdMethodparamRep) String () string { return xsdt.Token(me).String() }
+
+//	Since TxsdMethodparamRep is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdMethodparamRep) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdMethodparamRep is "norepeat".
+func (me TxsdMethodparamRep) IsNorepeat () bool { return me == "norepeat" }
+
+//	This convenience method just performs a simple type conversion to TxsdMethodparamRep's alias type xsdt.Token.
+func (me TxsdMethodparamRep) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdMethodparamRep is "repeat".
+func (me TxsdMethodparamRep) IsRepeat () bool { return me == "repeat" }
+
+type XsdGoPkgHasAttr_Rep_TxsdMethodparamRep_Norepeat struct {
+	Rep TxsdMethodparamRep `xml:"http://docbook.org/ns/docbook rep,attr"`
+
+}
+
+//	Returns the default value for Rep -- "norepeat"
+func (me XsdGoPkgHasAttr_Rep_TxsdMethodparamRep_Norepeat) RepDefault () TxsdMethodparamRep { return TxsdMethodparamRep("norepeat") }
+
+type TxsdFuncparams struct {
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Replaceable
+
+}
+
+type XsdGoPkgHasElem_Funcparams struct {
+	Funcparams *TxsdFuncparams `xml:"http://docbook.org/ns/docbook funcparams"`
+
+}
+
+type XsdGoPkgHasElem_Initializer struct {
+	Initializer *TxsdFuncparams `xml:"http://docbook.org/ns/docbook initializer"`
+
+}
+
+type XsdGoPkgHasElems_Type struct {
+	Types []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook type"`
+
+}
+
+type TxsdMethodparam struct {
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Rep_TxsdMethodparamRep_Norepeat
+
+	XsdGoPkgHasElem_Funcparams
+
+	XsdGoPkgHasElem_Initializer
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Choice_TxsdMethodparamChoice_Req
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElem_Parameter
+
+}
+
+type XsdGoPkgHasElems_Methodparam struct {
+	Methodparams []*TxsdMethodparam `xml:"http://docbook.org/ns/docbook methodparam"`
+
+}
+
+type TxsdVoid struct {
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+}
+
+type XsdGoPkgHasElem_Void struct {
+	Void *TxsdVoid `xml:"http://docbook.org/ns/docbook void"`
+
+}
+
+type XsdGoPkgHasElem_Methodname struct {
+	Methodname *TxsdFuncparams `xml:"http://docbook.org/ns/docbook methodname"`
+
+}
+
+type XsdGoPkgHasElem_Type struct {
+	Type *TxsdFuncparams `xml:"http://docbook.org/ns/docbook type"`
+
+}
+
+type XsdGoPkgHasElems_Exceptionname struct {
+	Exceptionnames []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook exceptionname"`
+
+}
+
+type TxsdMethodsynopsis struct {
+	XsdGoPkgHasElem_Void
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElem_Methodname
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElem_Type
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasAttr_Language_XsdtString_
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Methodparam
+
+}
+
+type XsdGoPkgHasElems_Methodsynopsis struct {
+	Methodsynopsises []*TxsdMethodsynopsis `xml:"http://docbook.org/ns/docbook methodsynopsis"`
+
+}
+
+type XsdGoPkgHasAttr_Msglevel_XsdtString_ struct {
+	Msglevel xsdt.String `xml:"http://docbook.org/ns/docbook msglevel,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Msgorig_XsdtString_ struct {
+	Msgorig xsdt.String `xml:"http://docbook.org/ns/docbook msgorig,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Floatstyle_XsdtString_ struct {
+	Floatstyle xsdt.String `xml:"http://docbook.org/ns/docbook floatstyle,attr"`
 
 }
 
@@ -489,339 +873,380 @@ type XsdGoPkgHasElem_Alt struct {
 
 }
 
-type XsdGoPkgHasAttr_Align_TxsdVideodataAlign_ struct {
-	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
+type XsdGoPkgHasElems_Initializer struct {
+	Initializers []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook initializer"`
 
 }
 
-type XsdGoPkgHasAttr_Scalefit_TxsdVideodataScalefit_ struct {
-	Scalefit TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook scalefit,attr"`
+type TxsdDatabaseClass xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdDatabaseClass is "datatype".
+func (me TxsdDatabaseClass) IsDatatype () bool { return me == "datatype" }
+
+//	Returns true if the value of this enumerated TxsdDatabaseClass is "index".
+func (me TxsdDatabaseClass) IsIndex () bool { return me == "index" }
+
+//	Returns true if the value of this enumerated TxsdDatabaseClass is "key1".
+func (me TxsdDatabaseClass) IsKey1 () bool { return me == "key1" }
+
+//	This convenience method just performs a simple type conversion to TxsdDatabaseClass's alias type xsdt.Token.
+func (me TxsdDatabaseClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdDatabaseClass is "altkey".
+func (me TxsdDatabaseClass) IsAltkey () bool { return me == "altkey" }
+
+//	Returns true if the value of this enumerated TxsdDatabaseClass is "procedure".
+func (me TxsdDatabaseClass) IsProcedure () bool { return me == "procedure" }
+
+//	Returns true if the value of this enumerated TxsdDatabaseClass is "group".
+func (me TxsdDatabaseClass) IsGroup () bool { return me == "group" }
+
+//	Returns true if the value of this enumerated TxsdDatabaseClass is "view".
+func (me TxsdDatabaseClass) IsView () bool { return me == "view" }
+
+//	Returns true if the value of this enumerated TxsdDatabaseClass is "record".
+func (me TxsdDatabaseClass) IsRecord () bool { return me == "record" }
+
+//	Returns true if the value of this enumerated TxsdDatabaseClass is "secondarykey".
+func (me TxsdDatabaseClass) IsSecondarykey () bool { return me == "secondarykey" }
+
+//	Since TxsdDatabaseClass is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdDatabaseClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdDatabaseClass is "foreignkey".
+func (me TxsdDatabaseClass) IsForeignkey () bool { return me == "foreignkey" }
+
+//	Returns true if the value of this enumerated TxsdDatabaseClass is "rule".
+func (me TxsdDatabaseClass) IsRule () bool { return me == "rule" }
+
+//	Returns true if the value of this enumerated TxsdDatabaseClass is "key2".
+func (me TxsdDatabaseClass) IsKey2 () bool { return me == "key2" }
+
+//	Returns true if the value of this enumerated TxsdDatabaseClass is "name".
+func (me TxsdDatabaseClass) IsName () bool { return me == "name" }
+
+//	Returns true if the value of this enumerated TxsdDatabaseClass is "table".
+func (me TxsdDatabaseClass) IsTable () bool { return me == "table" }
+
+//	Returns true if the value of this enumerated TxsdDatabaseClass is "constraint".
+func (me TxsdDatabaseClass) IsConstraint () bool { return me == "constraint" }
+
+//	Since TxsdDatabaseClass is just a simple String type, this merely returns the current string value.
+func (me TxsdDatabaseClass) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdDatabaseClass is "user".
+func (me TxsdDatabaseClass) IsUser () bool { return me == "user" }
+
+//	Returns true if the value of this enumerated TxsdDatabaseClass is "primarykey".
+func (me TxsdDatabaseClass) IsPrimarykey () bool { return me == "primarykey" }
+
+//	Returns true if the value of this enumerated TxsdDatabaseClass is "field".
+func (me TxsdDatabaseClass) IsField () bool { return me == "field" }
+
+type XsdGoPkgHasAttr_Class_TxsdDatabaseClass_ struct {
+	Class TxsdDatabaseClass `xml:"http://docbook.org/ns/docbook class,attr"`
 
 }
 
-type XsdGoPkgHasAttr_Valign_TxsdVideodataValign_ struct {
-	Valign TxsdImagedataValign `xml:"http://docbook.org/ns/docbook valign,attr"`
-
-}
-
-type TxsdVideodata struct {
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAttr_Contentwidth_XsdtString_
-
-	XsdGoPkgHasAttr_Align_TxsdVideodataAlign_
-
-	XsdGoPkgHasAttr_Depth_XsdtString_
-
-	XsdGoPkgHasAttr_Format_XsdtString_
-
-	XsdGoPkgHasAttr_Width_XsdtString_
-
-	XsdGoPkgHasAttr_Scale_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_Fileref_XsdtString_
-
-	XsdGoPkgHasAttr_Scalefit_TxsdVideodataScalefit_
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasAttr_Contentdepth_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Entityref_XsdtEntity_
-
-	XsdGoPkgHasAttr_Valign_TxsdVideodataValign_
-
-}
-
-type XsdGoPkgHasElem_Videodata struct {
-	Videodata *TxsdVideodata `xml:"http://docbook.org/ns/docbook videodata"`
-
-}
-
-type TxsdVideoobject struct {
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElem_Videodata
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Videoobject struct {
-	Videoobjects []*TxsdVideoobject `xml:"http://docbook.org/ns/docbook videoobject"`
-
-}
-
-type TxsdXref struct {
-	XsdGoPkgHasAttr_Xrefstyle_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAttr_Endterm_XsdtIdref_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-}
-
-type XsdGoPkgHasElems_Xref struct {
-	Xrefs []*TxsdXref `xml:"http://docbook.org/ns/docbook xref"`
-
-}
-
-type TxsdAccel struct {
+type TxsdDatabase struct {
 	XsdGoPkgHasElems_Biblioref
 
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Superscript
+	XsdGoPkgHasElems_Xref
 
 	XsdGoPkgHasElems_Alt
 
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
 	XsdGoPkgHasCdata
 
-	XsdGoPkgHasElems_Phrase
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Link
 
 	XsdGoPkgHasElems_Remark
 
+	XsdGoPkgHasElems_Indexterm
+
 	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasAttr_Class_TxsdDatabaseClass_
 
 	XsdGoPkgHasElems_Subscript
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasElems_Xref
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasElems_Replaceable
+
+}
+
+type XsdGoPkgHasElems_Database struct {
+	Databases []*TxsdDatabase `xml:"http://docbook.org/ns/docbook database"`
+
+}
+
+type TxsdDate struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+}
+
+type XsdGoPkgHasElems_Date struct {
+	Dates []*TxsdDate `xml:"http://docbook.org/ns/docbook date"`
+
+}
+
+type XsdGoPkgHasElems_Keysym struct {
+	Keysyms []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook keysym"`
+
+}
+
+type TxsdTrademarkClass xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdTrademarkClass is "trade".
+func (me TxsdTrademarkClass) IsTrade () bool { return me == "trade" }
+
+//	Returns true if the value of this enumerated TxsdTrademarkClass is "copyright".
+func (me TxsdTrademarkClass) IsCopyright () bool { return me == "copyright" }
+
+//	Returns true if the value of this enumerated TxsdTrademarkClass is "service".
+func (me TxsdTrademarkClass) IsService () bool { return me == "service" }
+
+//	This convenience method just performs a simple type conversion to TxsdTrademarkClass's alias type xsdt.Token.
+func (me TxsdTrademarkClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Since TxsdTrademarkClass is just a simple String type, this merely returns the current string value.
+func (me TxsdTrademarkClass) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdTrademarkClass is "registered".
+func (me TxsdTrademarkClass) IsRegistered () bool { return me == "registered" }
+
+//	Since TxsdTrademarkClass is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdTrademarkClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_Class_TxsdTrademarkClass_ struct {
+	Class TxsdTrademarkClass `xml:"http://docbook.org/ns/docbook class,attr"`
+
+}
+
+type TxsdTrademark struct {
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Class_TxsdTrademarkClass_
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Olink
+
+}
+
+type XsdGoPkgHasElems_Trademark struct {
+	Trademarks []*TxsdTrademark `xml:"http://docbook.org/ns/docbook trademark"`
+
+}
+
+type TxsdAbbrev struct {
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Inlinemediaobject
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasElems_Anchor
 
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Alt
+
 	XsdGoPkgHasElems_Indexterm
 
 	XsdGoPkgHasElems_Link
 
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Replaceable
 
 	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Xref
+
+}
+
+type XsdGoPkgHasElems_Abbrev struct {
+	Abbrevs []*TxsdAbbrev `xml:"http://docbook.org/ns/docbook abbrev"`
 
 }
 
 type XsdGoPkgHasElems_Accel struct {
-	Accels []*TxsdAccel `xml:"http://docbook.org/ns/docbook accel"`
+	Accels []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook accel"`
 
 }
 
-type TxsdSymbolClass xsdt.Token
-
-//	Since TxsdSymbolClass is just a simple String type, this merely returns the current string value.
-func (me TxsdSymbolClass) String () string { return xsdt.Token(me).String() }
-
-//	Since TxsdSymbolClass is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdSymbolClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TxsdSymbolClass's alias type xsdt.Token.
-func (me TxsdSymbolClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdSymbolClass is "limit".
-func (me TxsdSymbolClass) IsLimit () bool { return me == "limit" }
-
-type XsdGoPkgHasAttr_Class_TxsdSymbolClass_ struct {
-	Class TxsdSymbolClass `xml:"http://docbook.org/ns/docbook class,attr"`
-
-}
-
-type TxsdSymbol struct {
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Class_TxsdSymbolClass_
+type TxsdGuiicon struct {
+	XsdGoPkgHasElems_Anchor
 
 	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Anchor
 
 	XsdGoPkgHasElems_Superscript
 
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Olink
-
-}
-
-type XsdGoPkgHasElems_Symbol struct {
-	Symbols []*TxsdSymbol `xml:"http://docbook.org/ns/docbook symbol"`
-
-}
-
-type TxsdGuimenuitem struct {
-	XsdGoPkgHasElems_Replaceable
-
 	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Subscript
 
 	XsdGoPkgHasElems_Link
 
-	XsdGoPkgHasElems_Xref
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Olink
 
 	XsdGoPkgHasAttr_Role_XsdtString_
 
-	XsdGoPkgHasElems_Anchor
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Annotation
 
 	XsdGoPkgHasElems_Accel
 
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Annotation
-
-}
-
-type XsdGoPkgHasElems_Guimenuitem struct {
-	Guimenuitems []*TxsdGuimenuitem `xml:"http://docbook.org/ns/docbook guimenuitem"`
-
-}
-
-type TxsdOrgnameClass xsdt.Token
-
-//	This convenience method just performs a simple type conversion to TxsdOrgnameClass's alias type xsdt.Token.
-func (me TxsdOrgnameClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdOrgnameClass is "informal".
-func (me TxsdOrgnameClass) IsInformal () bool { return me == "informal" }
-
-//	Returns true if the value of this enumerated TxsdOrgnameClass is "other".
-func (me TxsdOrgnameClass) IsOther () bool { return me == "other" }
-
-//	Returns true if the value of this enumerated TxsdOrgnameClass is "nonprofit".
-func (me TxsdOrgnameClass) IsNonprofit () bool { return me == "nonprofit" }
-
-//	Since TxsdOrgnameClass is just a simple String type, this merely returns the current string value.
-func (me TxsdOrgnameClass) String () string { return xsdt.Token(me).String() }
-
-//	Since TxsdOrgnameClass is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdOrgnameClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdOrgnameClass is "corporation".
-func (me TxsdOrgnameClass) IsCorporation () bool { return me == "corporation" }
-
-//	Returns true if the value of this enumerated TxsdOrgnameClass is "consortium".
-func (me TxsdOrgnameClass) IsConsortium () bool { return me == "consortium" }
-
-type XsdGoPkgHasAttr_Class_TxsdOrgnameClass_ struct {
-	Class TxsdOrgnameClass `xml:"http://docbook.org/ns/docbook class,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Otherclass_XsdtString_ struct {
-	Otherclass xsdt.String `xml:"http://docbook.org/ns/docbook otherclass,attr"`
-
-}
-
-type TxsdOrgname struct {
 	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasCdata
 
 	XsdGoPkgHasElems_Indexterm
 
-	XsdGoPkgHasElems_Annotation
+}
 
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasAttr_Class_TxsdOrgnameClass_
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasAttr_Otherclass_XsdtString_
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Remark
+type XsdGoPkgHasElems_Guiicon struct {
+	Guiicons []*TxsdGuiicon `xml:"http://docbook.org/ns/docbook guiicon"`
 
 }
 
-type XsdGoPkgHasElems_Orgname struct {
-	Orgnames []*TxsdOrgname `xml:"http://docbook.org/ns/docbook orgname"`
+type XsdGoPkgHasElems_Guibutton struct {
+	Guibuttons []*TxsdGuiicon `xml:"http://docbook.org/ns/docbook guibutton"`
 
 }
 
-type XsdGoPkgHasElems_Type struct {
-	Types []*TxsdAccel `xml:"http://docbook.org/ns/docbook type"`
+type XsdGoPkgHasElems_Guilabel struct {
+	Guilabels []*TxsdGuiicon `xml:"http://docbook.org/ns/docbook guilabel"`
+
+}
+
+type XsdGoPkgHasElems_Guimenu struct {
+	Guimenus []*TxsdGuiicon `xml:"http://docbook.org/ns/docbook guimenu"`
+
+}
+
+type TxsdShortcutAction xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdShortcutAction is "seq".
+func (me TxsdShortcutAction) IsSeq () bool { return me == "seq" }
+
+//	Returns true if the value of this enumerated TxsdShortcutAction is "simul".
+func (me TxsdShortcutAction) IsSimul () bool { return me == "simul" }
+
+//	Since TxsdShortcutAction is just a simple String type, this merely returns the current string value.
+func (me TxsdShortcutAction) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdShortcutAction is "double-click".
+func (me TxsdShortcutAction) IsDoubleClick () bool { return me == "double-click" }
+
+//	Since TxsdShortcutAction is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdShortcutAction) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdShortcutAction is "click".
+func (me TxsdShortcutAction) IsClick () bool { return me == "click" }
+
+//	This convenience method just performs a simple type conversion to TxsdShortcutAction's alias type xsdt.Token.
+func (me TxsdShortcutAction) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdShortcutAction is "other".
+func (me TxsdShortcutAction) IsOther () bool { return me == "other" }
+
+//	Returns true if the value of this enumerated TxsdShortcutAction is "press".
+func (me TxsdShortcutAction) IsPress () bool { return me == "press" }
+
+type XsdGoPkgHasAttr_Action_TxsdShortcutAction_ struct {
+	Action TxsdShortcutAction `xml:"http://docbook.org/ns/docbook action,attr"`
+
+}
+
+type XsdGoPkgHasElems_Mousebutton struct {
+	Mousebuttons []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook mousebutton"`
 
 }
 
 type XsdGoPkgHasAttr_Otheraction_XsdtString_ struct {
 	Otheraction xsdt.String `xml:"http://docbook.org/ns/docbook otheraction,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Action_TxsdKeycomboAction_ struct {
+	Action TxsdShortcutAction `xml:"http://docbook.org/ns/docbook action,attr"`
 
 }
 
@@ -832,80 +1257,80 @@ type XsdGoPkgHasAttr_Otherfunction_XsdtString_ struct {
 
 type TxsdKeycapFunction xsdt.Token
 
+//	Returns true if the value of this enumerated TxsdKeycapFunction is "control".
+func (me TxsdKeycapFunction) IsControl () bool { return me == "control" }
+
 //	Returns true if the value of this enumerated TxsdKeycapFunction is "space".
 func (me TxsdKeycapFunction) IsSpace () bool { return me == "space" }
-
-//	Returns true if the value of this enumerated TxsdKeycapFunction is "delete".
-func (me TxsdKeycapFunction) IsDelete () bool { return me == "delete" }
-
-//	Returns true if the value of this enumerated TxsdKeycapFunction is "enter".
-func (me TxsdKeycapFunction) IsEnter () bool { return me == "enter" }
-
-//	Returns true if the value of this enumerated TxsdKeycapFunction is "right".
-func (me TxsdKeycapFunction) IsRight () bool { return me == "right" }
-
-//	Returns true if the value of this enumerated TxsdKeycapFunction is "command".
-func (me TxsdKeycapFunction) IsCommand () bool { return me == "command" }
-
-//	Returns true if the value of this enumerated TxsdKeycapFunction is "left".
-func (me TxsdKeycapFunction) IsLeft () bool { return me == "left" }
-
-//	Returns true if the value of this enumerated TxsdKeycapFunction is "backspace".
-func (me TxsdKeycapFunction) IsBackspace () bool { return me == "backspace" }
-
-//	Returns true if the value of this enumerated TxsdKeycapFunction is "shift".
-func (me TxsdKeycapFunction) IsShift () bool { return me == "shift" }
-
-//	Since TxsdKeycapFunction is just a simple String type, this merely returns the current string value.
-func (me TxsdKeycapFunction) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdKeycapFunction is "home".
-func (me TxsdKeycapFunction) IsHome () bool { return me == "home" }
-
-//	Returns true if the value of this enumerated TxsdKeycapFunction is "up".
-func (me TxsdKeycapFunction) IsUp () bool { return me == "up" }
-
-//	Returns true if the value of this enumerated TxsdKeycapFunction is "insert".
-func (me TxsdKeycapFunction) IsInsert () bool { return me == "insert" }
-
-//	Returns true if the value of this enumerated TxsdKeycapFunction is "pageup".
-func (me TxsdKeycapFunction) IsPageup () bool { return me == "pageup" }
-
-//	Returns true if the value of this enumerated TxsdKeycapFunction is "meta".
-func (me TxsdKeycapFunction) IsMeta () bool { return me == "meta" }
 
 //	Returns true if the value of this enumerated TxsdKeycapFunction is "other".
 func (me TxsdKeycapFunction) IsOther () bool { return me == "other" }
 
-//	Returns true if the value of this enumerated TxsdKeycapFunction is "end".
-func (me TxsdKeycapFunction) IsEnd () bool { return me == "end" }
+//	Returns true if the value of this enumerated TxsdKeycapFunction is "up".
+func (me TxsdKeycapFunction) IsUp () bool { return me == "up" }
+
+//	Returns true if the value of this enumerated TxsdKeycapFunction is "command".
+func (me TxsdKeycapFunction) IsCommand () bool { return me == "command" }
+
+//	Returns true if the value of this enumerated TxsdKeycapFunction is "home".
+func (me TxsdKeycapFunction) IsHome () bool { return me == "home" }
 
 //	Returns true if the value of this enumerated TxsdKeycapFunction is "alt".
 func (me TxsdKeycapFunction) IsAlt () bool { return me == "alt" }
 
-//	Since TxsdKeycapFunction is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdKeycapFunction) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+//	Returns true if the value of this enumerated TxsdKeycapFunction is "backspace".
+func (me TxsdKeycapFunction) IsBackspace () bool { return me == "backspace" }
+
+//	Since TxsdKeycapFunction is just a simple String type, this merely returns the current string value.
+func (me TxsdKeycapFunction) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdKeycapFunction is "left".
+func (me TxsdKeycapFunction) IsLeft () bool { return me == "left" }
+
+//	Returns true if the value of this enumerated TxsdKeycapFunction is "delete".
+func (me TxsdKeycapFunction) IsDelete () bool { return me == "delete" }
 
 //	This convenience method just performs a simple type conversion to TxsdKeycapFunction's alias type xsdt.Token.
 func (me TxsdKeycapFunction) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
 
+//	Returns true if the value of this enumerated TxsdKeycapFunction is "enter".
+func (me TxsdKeycapFunction) IsEnter () bool { return me == "enter" }
+
+//	Returns true if the value of this enumerated TxsdKeycapFunction is "insert".
+func (me TxsdKeycapFunction) IsInsert () bool { return me == "insert" }
+
 //	Returns true if the value of this enumerated TxsdKeycapFunction is "escape".
 func (me TxsdKeycapFunction) IsEscape () bool { return me == "escape" }
+
+//	Returns true if the value of this enumerated TxsdKeycapFunction is "meta".
+func (me TxsdKeycapFunction) IsMeta () bool { return me == "meta" }
 
 //	Returns true if the value of this enumerated TxsdKeycapFunction is "option".
 func (me TxsdKeycapFunction) IsOption () bool { return me == "option" }
 
+//	Returns true if the value of this enumerated TxsdKeycapFunction is "shift".
+func (me TxsdKeycapFunction) IsShift () bool { return me == "shift" }
+
+//	Returns true if the value of this enumerated TxsdKeycapFunction is "pageup".
+func (me TxsdKeycapFunction) IsPageup () bool { return me == "pageup" }
+
+//	Returns true if the value of this enumerated TxsdKeycapFunction is "end".
+func (me TxsdKeycapFunction) IsEnd () bool { return me == "end" }
+
 //	Returns true if the value of this enumerated TxsdKeycapFunction is "down".
 func (me TxsdKeycapFunction) IsDown () bool { return me == "down" }
-
-//	Returns true if the value of this enumerated TxsdKeycapFunction is "tab".
-func (me TxsdKeycapFunction) IsTab () bool { return me == "tab" }
 
 //	Returns true if the value of this enumerated TxsdKeycapFunction is "pagedown".
 func (me TxsdKeycapFunction) IsPagedown () bool { return me == "pagedown" }
 
-//	Returns true if the value of this enumerated TxsdKeycapFunction is "control".
-func (me TxsdKeycapFunction) IsControl () bool { return me == "control" }
+//	Since TxsdKeycapFunction is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdKeycapFunction) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdKeycapFunction is "tab".
+func (me TxsdKeycapFunction) IsTab () bool { return me == "tab" }
+
+//	Returns true if the value of this enumerated TxsdKeycapFunction is "right".
+func (me TxsdKeycapFunction) IsRight () bool { return me == "right" }
 
 type XsdGoPkgHasAttr_Function_TxsdKeycapFunction_ struct {
 	Function TxsdKeycapFunction `xml:"http://docbook.org/ns/docbook function,attr"`
@@ -913,17 +1338,37 @@ type XsdGoPkgHasAttr_Function_TxsdKeycapFunction_ struct {
 }
 
 type TxsdKeycap struct {
-	XsdGoPkgHasElems_Replaceable
+	XsdGoPkgHasElems_Alt
 
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Link
 
 	XsdGoPkgHasElems_Olink
 
-	XsdGoPkgHasElems_Alt
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasAttr_Role_XsdtString_
 
 	XsdGoPkgHasElems_Indexterm
 
-	XsdGoPkgHasElems_Inlinemediaobject
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Subscript
 
 	XsdGoPkgHasAttr_Otherfunction_XsdtString_
 
@@ -931,27 +1376,7 @@ type TxsdKeycap struct {
 
 	XsdGoPkgHasAttr_Function_TxsdKeycapFunction_
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
 	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Subscript
 
 }
 
@@ -960,68 +1385,24 @@ type XsdGoPkgHasElems_Keycap struct {
 
 }
 
-type XsdGoPkgHasElems_Keysym struct {
-	Keysyms []*TxsdAccel `xml:"http://docbook.org/ns/docbook keysym"`
-
-}
-
-type TxsdShortcutAction xsdt.Token
-
-//	Returns true if the value of this enumerated TxsdShortcutAction is "seq".
-func (me TxsdShortcutAction) IsSeq () bool { return me == "seq" }
-
-//	This convenience method just performs a simple type conversion to TxsdShortcutAction's alias type xsdt.Token.
-func (me TxsdShortcutAction) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdShortcutAction is "press".
-func (me TxsdShortcutAction) IsPress () bool { return me == "press" }
-
-//	Since TxsdShortcutAction is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdShortcutAction) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdShortcutAction is "simul".
-func (me TxsdShortcutAction) IsSimul () bool { return me == "simul" }
-
-//	Returns true if the value of this enumerated TxsdShortcutAction is "click".
-func (me TxsdShortcutAction) IsClick () bool { return me == "click" }
-
-//	Returns true if the value of this enumerated TxsdShortcutAction is "other".
-func (me TxsdShortcutAction) IsOther () bool { return me == "other" }
-
-//	Since TxsdShortcutAction is just a simple String type, this merely returns the current string value.
-func (me TxsdShortcutAction) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdShortcutAction is "double-click".
-func (me TxsdShortcutAction) IsDoubleClick () bool { return me == "double-click" }
-
-type XsdGoPkgHasAttr_Action_TxsdShortcutAction_ struct {
-	Action TxsdShortcutAction `xml:"http://docbook.org/ns/docbook action,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Action_TxsdKeycomboAction_ struct {
-	Action TxsdShortcutAction `xml:"http://docbook.org/ns/docbook action,attr"`
-
-}
-
 type TxsdKeycombo struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Action_TxsdKeycomboAction_
+	XsdGoPkgHasAttr_Otheraction_XsdtString_
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasElems_Keycombo
+	XsdGoPkgHasAttr_Action_TxsdKeycomboAction_
 
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasAttr_Otheraction_XsdtString_
-
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasElems_Keycap
 
 	XsdGoPkgHasElems_Mousebutton
 
-	XsdGoPkgHasElems_Keycap
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Keycombo
 
 }
 
@@ -1031,23 +1412,23 @@ type XsdGoPkgHasElems_Keycombo struct {
 }
 
 type TxsdShortcut struct {
-	XsdGoPkgHasElems_Keycombo
+	XsdGoPkgHasAttr_Role_XsdtString_
 
 	XsdGoPkgHasAttr_Otheraction_XsdtString_
 
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Keysym
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Action_TxsdShortcutAction_
 
 	XsdGoPkgHasElems_Mousebutton
 
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Keycap
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
@@ -1056,46 +1437,36 @@ type XsdGoPkgHasElem_Shortcut struct {
 
 }
 
-type XsdGoPkgHasElems_Guilabel struct {
-	Guilabels []*TxsdGuimenuitem `xml:"http://docbook.org/ns/docbook guilabel"`
-
-}
-
-type XsdGoPkgHasElems_Guibutton struct {
-	Guibuttons []*TxsdGuimenuitem `xml:"http://docbook.org/ns/docbook guibutton"`
-
-}
-
 type XsdGoPkgHasElems_Guisubmenu struct {
-	Guisubmenus []*TxsdGuimenuitem `xml:"http://docbook.org/ns/docbook guisubmenu"`
+	Guisubmenus []*TxsdGuiicon `xml:"http://docbook.org/ns/docbook guisubmenu"`
 
 }
 
-type XsdGoPkgHasElems_Guiicon struct {
-	Guiicons []*TxsdGuimenuitem `xml:"http://docbook.org/ns/docbook guiicon"`
+type XsdGoPkgHasElems_Guimenuitem struct {
+	Guimenuitems []*TxsdGuiicon `xml:"http://docbook.org/ns/docbook guimenuitem"`
 
 }
 
 type TxsdMenuchoice struct {
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasElems_Guilabel
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Guisubmenu
+	XsdGoPkgHasAttr_Role_XsdtString_
 
 	XsdGoPkgHasElems_Guimenu
 
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Guimenuitem
-
 	XsdGoPkgHasElem_Shortcut
+
+	XsdGoPkgHasElems_Guisubmenu
 
 }
 
@@ -1104,259 +1475,403 @@ type XsdGoPkgHasElems_Menuchoice struct {
 
 }
 
+type XsdGoPkgHasElems_Command struct {
+	Commands []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook command"`
+
+}
+
+type XsdGoPkgHasElems_Shortcut struct {
+	Shortcuts []*TxsdShortcut `xml:"http://docbook.org/ns/docbook shortcut"`
+
+}
+
+type XsdGoPkgHasElems_Parameter struct {
+	Parameters []*TxsdParameter `xml:"http://docbook.org/ns/docbook parameter"`
+
+}
+
 type XsdGoPkgHasElems_Option struct {
-	Options []*TxsdAccel `xml:"http://docbook.org/ns/docbook option"`
+	Options []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook option"`
 
 }
 
-type XsdGoPkgHasElems_Initializer struct {
-	Initializers []*TxsdAccel `xml:"http://docbook.org/ns/docbook initializer"`
+type XsdGoPkgHasElems_Optional struct {
+	Optionals []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook optional"`
 
 }
 
-type XsdGoPkgHasElems_Hardware struct {
-	Hardwares []*TxsdAccel `xml:"http://docbook.org/ns/docbook hardware"`
+type TxsdSystemitemClass xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "ipaddress".
+func (me TxsdSystemitemClass) IsIpaddress () bool { return me == "ipaddress" }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "library".
+func (me TxsdSystemitemClass) IsLibrary () bool { return me == "library" }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "username".
+func (me TxsdSystemitemClass) IsUsername () bool { return me == "username" }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "systemname".
+func (me TxsdSystemitemClass) IsSystemname () bool { return me == "systemname" }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "domainname".
+func (me TxsdSystemitemClass) IsDomainname () bool { return me == "domainname" }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "netmask".
+func (me TxsdSystemitemClass) IsNetmask () bool { return me == "netmask" }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "filesystem".
+func (me TxsdSystemitemClass) IsFilesystem () bool { return me == "filesystem" }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "service".
+func (me TxsdSystemitemClass) IsService () bool { return me == "service" }
+
+//	Since TxsdSystemitemClass is just a simple String type, this merely returns the current string value.
+func (me TxsdSystemitemClass) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "fqdomainname".
+func (me TxsdSystemitemClass) IsFqdomainname () bool { return me == "fqdomainname" }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "server".
+func (me TxsdSystemitemClass) IsServer () bool { return me == "server" }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "groupname".
+func (me TxsdSystemitemClass) IsGroupname () bool { return me == "groupname" }
+
+//	This convenience method just performs a simple type conversion to TxsdSystemitemClass's alias type xsdt.Token.
+func (me TxsdSystemitemClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "eventhandler".
+func (me TxsdSystemitemClass) IsEventhandler () bool { return me == "eventhandler" }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "process".
+func (me TxsdSystemitemClass) IsProcess () bool { return me == "process" }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "macro".
+func (me TxsdSystemitemClass) IsMacro () bool { return me == "macro" }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "protocol".
+func (me TxsdSystemitemClass) IsProtocol () bool { return me == "protocol" }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "etheraddress".
+func (me TxsdSystemitemClass) IsEtheraddress () bool { return me == "etheraddress" }
+
+//	Since TxsdSystemitemClass is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdSystemitemClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "newsgroup".
+func (me TxsdSystemitemClass) IsNewsgroup () bool { return me == "newsgroup" }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "daemon".
+func (me TxsdSystemitemClass) IsDaemon () bool { return me == "daemon" }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "osname".
+func (me TxsdSystemitemClass) IsOsname () bool { return me == "osname" }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "resource".
+func (me TxsdSystemitemClass) IsResource () bool { return me == "resource" }
+
+//	Returns true if the value of this enumerated TxsdSystemitemClass is "event".
+func (me TxsdSystemitemClass) IsEvent () bool { return me == "event" }
+
+type XsdGoPkgHasAttr_Class_TxsdSystemitemClass_ struct {
+	Class TxsdSystemitemClass `xml:"http://docbook.org/ns/docbook class,attr"`
 
 }
 
-type XsdGoPkgHasElems_Errortype struct {
-	Errortypes []*TxsdAccel `xml:"http://docbook.org/ns/docbook errortype"`
+type TxsdSystemitem struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
 
-}
-
-type XsdGoPkgHasAttr_Namespace_XsdtString_ struct {
-	Namespace xsdt.String `xml:"http://docbook.org/ns/docbook namespace,attr"`
-
-}
-
-type TxsdTagClass xsdt.Token
-
-//	Returns true if the value of this enumerated TxsdTagClass is "namespace".
-func (me TxsdTagClass) IsNamespace () bool { return me == "namespace" }
-
-//	Returns true if the value of this enumerated TxsdTagClass is "starttag".
-func (me TxsdTagClass) IsStarttag () bool { return me == "starttag" }
-
-//	Returns true if the value of this enumerated TxsdTagClass is "attribute".
-func (me TxsdTagClass) IsAttribute () bool { return me == "attribute" }
-
-//	Since TxsdTagClass is just a simple String type, this merely returns the current string value.
-func (me TxsdTagClass) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdTagClass is "xmlpi".
-func (me TxsdTagClass) IsXmlpi () bool { return me == "xmlpi" }
-
-//	Returns true if the value of this enumerated TxsdTagClass is "pi".
-func (me TxsdTagClass) IsPi () bool { return me == "pi" }
-
-//	Returns true if the value of this enumerated TxsdTagClass is "element".
-func (me TxsdTagClass) IsElement () bool { return me == "element" }
-
-//	Returns true if the value of this enumerated TxsdTagClass is "paramentity".
-func (me TxsdTagClass) IsParamentity () bool { return me == "paramentity" }
-
-//	Returns true if the value of this enumerated TxsdTagClass is "attvalue".
-func (me TxsdTagClass) IsAttvalue () bool { return me == "attvalue" }
-
-//	Since TxsdTagClass is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdTagClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdTagClass is "emptytag".
-func (me TxsdTagClass) IsEmptytag () bool { return me == "emptytag" }
-
-//	Returns true if the value of this enumerated TxsdTagClass is "numcharref".
-func (me TxsdTagClass) IsNumcharref () bool { return me == "numcharref" }
-
-//	Returns true if the value of this enumerated TxsdTagClass is "comment".
-func (me TxsdTagClass) IsComment () bool { return me == "comment" }
-
-//	Returns true if the value of this enumerated TxsdTagClass is "localname".
-func (me TxsdTagClass) IsLocalname () bool { return me == "localname" }
-
-//	Returns true if the value of this enumerated TxsdTagClass is "prefix".
-func (me TxsdTagClass) IsPrefix () bool { return me == "prefix" }
-
-//	This convenience method just performs a simple type conversion to TxsdTagClass's alias type xsdt.Token.
-func (me TxsdTagClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdTagClass is "endtag".
-func (me TxsdTagClass) IsEndtag () bool { return me == "endtag" }
-
-//	Returns true if the value of this enumerated TxsdTagClass is "genentity".
-func (me TxsdTagClass) IsGenentity () bool { return me == "genentity" }
-
-type XsdGoPkgHasAttr_Class_TxsdTagClass_ struct {
-	Class TxsdTagClass `xml:"http://docbook.org/ns/docbook class,attr"`
-
-}
-
-type TxsdTag struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Annotation
+	XsdGoPkgHasElems_Co
 
 	XsdGoPkgHasElems_Link
 
-	XsdGoPkgHasAttr_Namespace_XsdtString_
+	XsdGoPkgHasElems_Biblioref
 
 	XsdGoPkgHasAttr_Role_XsdtString_
 
-	XsdGoPkgHasElems_Subscript
+	XsdGoPkgHasCdata
 
 	XsdGoPkgHasElems_Remark
 
-	XsdGoPkgHasAttr_Class_TxsdTagClass_
+	XsdGoPkgHasElems_Xref
 
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasElems_Subscript
 
 	XsdGoPkgHasElems_Inlinemediaobject
 
-	XsdGoPkgHasElems_Biblioref
+	XsdGoPkgHasElems_Annotation
 
-	XsdGoPkgHasElems_Xref
+	XsdGoPkgHasElems_Olink
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Replaceable
 
 	XsdGoPkgHasElems_Alt
 
 	XsdGoPkgHasElems_Phrase
 
-}
+	XsdGoPkgHasAttr_Class_TxsdSystemitemClass_
 
-type XsdGoPkgHasElems_Tag struct {
-	Tags []*TxsdTag `xml:"http://docbook.org/ns/docbook tag"`
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-}
+	XsdGoPkgHasElems_Anchor
 
-type XsdGoPkgHasElems_Errortext struct {
-	Errortexts []*TxsdAccel `xml:"http://docbook.org/ns/docbook errortext"`
+	XsdGoPkgHasElems_Superscript
 
 }
 
-type XsdGoPkgHasElems_Envar struct {
-	Envars []*TxsdAccel `xml:"http://docbook.org/ns/docbook envar"`
+type XsdGoPkgHasElems_Systemitem struct {
+	Systemitems []*TxsdSystemitem `xml:"http://docbook.org/ns/docbook systemitem"`
 
 }
 
-type XsdGoPkgHasElems_Exceptionname struct {
-	Exceptionnames []*TxsdAccel `xml:"http://docbook.org/ns/docbook exceptionname"`
+type XsdGoPkgHasElems_Email struct {
+	Emails []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook email"`
+
+}
+
+type XsdGoPkgHasAttr_Path_XsdtString_ struct {
+	Path xsdt.String `xml:"http://docbook.org/ns/docbook path,attr"`
+
+}
+
+type TxsdFilenameClass xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdFilenameClass is "devicefile".
+func (me TxsdFilenameClass) IsDevicefile () bool { return me == "devicefile" }
+
+//	This convenience method just performs a simple type conversion to TxsdFilenameClass's alias type xsdt.Token.
+func (me TxsdFilenameClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdFilenameClass is "extension".
+func (me TxsdFilenameClass) IsExtension () bool { return me == "extension" }
+
+//	Returns true if the value of this enumerated TxsdFilenameClass is "libraryfile".
+func (me TxsdFilenameClass) IsLibraryfile () bool { return me == "libraryfile" }
+
+//	Returns true if the value of this enumerated TxsdFilenameClass is "headerfile".
+func (me TxsdFilenameClass) IsHeaderfile () bool { return me == "headerfile" }
+
+//	Since TxsdFilenameClass is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdFilenameClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Since TxsdFilenameClass is just a simple String type, this merely returns the current string value.
+func (me TxsdFilenameClass) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdFilenameClass is "directory".
+func (me TxsdFilenameClass) IsDirectory () bool { return me == "directory" }
+
+//	Returns true if the value of this enumerated TxsdFilenameClass is "symlink".
+func (me TxsdFilenameClass) IsSymlink () bool { return me == "symlink" }
+
+//	Returns true if the value of this enumerated TxsdFilenameClass is "partition".
+func (me TxsdFilenameClass) IsPartition () bool { return me == "partition" }
+
+type XsdGoPkgHasAttr_Class_TxsdFilenameClass_ struct {
+	Class TxsdFilenameClass `xml:"http://docbook.org/ns/docbook class,attr"`
+
+}
+
+type TxsdFilename struct {
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasAttr_Path_XsdtString_
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasAttr_Class_TxsdFilenameClass_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+}
+
+type XsdGoPkgHasElems_Filename struct {
+	Filenames []*TxsdFilename `xml:"http://docbook.org/ns/docbook filename"`
 
 }
 
 type XsdGoPkgHasElems_Keycode struct {
-	Keycodes []*TxsdAccel `xml:"http://docbook.org/ns/docbook keycode"`
+	Keycodes []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook keycode"`
 
 }
 
-type XsdGoPkgHasElems_Methodname struct {
-	Methodnames []*TxsdAccel `xml:"http://docbook.org/ns/docbook methodname"`
+type XsdGoPkgHasElems_Productnumber struct {
+	Productnumbers []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook productnumber"`
 
 }
 
-type XsdGoPkgHasElems_Errorcode struct {
-	Errorcodes []*TxsdAccel `xml:"http://docbook.org/ns/docbook errorcode"`
+type XsdGoPkgHasElems_Errorname struct {
+	Errornames []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook errorname"`
 
 }
 
-type XsdGoPkgHasElems_Jobtitle struct {
-	Jobtitles []*TxsdAccel `xml:"http://docbook.org/ns/docbook jobtitle"`
+type XsdGoPkgHasElem_Manvolnum struct {
+	Manvolnum *TxsdFuncparams `xml:"http://docbook.org/ns/docbook manvolnum"`
 
 }
 
-type XsdGoPkgHasElems_Postcode struct {
-	Postcodes []*TxsdAccel `xml:"http://docbook.org/ns/docbook postcode"`
+type TxsdPrompt struct {
+	XsdGoPkgHasElems_Co
 
-}
+	XsdGoPkgHasElems_Alt
 
-type XsdGoPkgHasElems_Country struct {
-	Countries []*TxsdAccel `xml:"http://docbook.org/ns/docbook country"`
+	XsdGoPkgHasElems_Xref
 
-}
-
-type XsdGoPkgHasElems_State struct {
-	States []*TxsdAccel `xml:"http://docbook.org/ns/docbook state"`
-
-}
-
-type XsdGoPkgHasElems_Firstname struct {
-	Firstnames []*TxsdAccel `xml:"http://docbook.org/ns/docbook firstname"`
-
-}
-
-type XsdGoPkgHasElems_Honorific struct {
-	Honorifics []*TxsdAccel `xml:"http://docbook.org/ns/docbook honorific"`
-
-}
-
-type XsdGoPkgHasElems_Othername struct {
-	Othernames []*TxsdAccel `xml:"http://docbook.org/ns/docbook othername"`
-
-}
-
-type XsdGoPkgHasElems_Surname struct {
-	Surnames []*TxsdAccel `xml:"http://docbook.org/ns/docbook surname"`
-
-}
-
-type XsdGoPkgHasElems_Lineage struct {
-	Lineages []*TxsdAccel `xml:"http://docbook.org/ns/docbook lineage"`
-
-}
-
-type TxsdPersonname struct {
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Othername
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Link
+	XsdGoPkgHasAttr_Role_XsdtString_
 
 	XsdGoPkgHasElems_Biblioref
 
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Alt
+	XsdGoPkgHasElems_Anchor
 
 	XsdGoPkgHasElems_Indexterm
 
 	XsdGoPkgHasCdata
 
-	XsdGoPkgHasElems_Surname
-
-	XsdGoPkgHasElems_Lineage
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Phrase
+	XsdGoPkgHasElems_Annotation
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Superscript
+
+}
+
+type XsdGoPkgHasElems_Prompt struct {
+	Prompts []*TxsdPrompt `xml:"http://docbook.org/ns/docbook prompt"`
+
+}
+
+type XsdGoPkgHasElems_City struct {
+	Cities []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook city"`
+
+}
+
+type XsdGoPkgHasElems_Postcode struct {
+	Postcodes []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook postcode"`
+
+}
+
+type XsdGoPkgHasAttr_Startinglinenumber_XsdtNmtoken_ struct {
+	Startinglinenumber xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook startinglinenumber,attr"`
+
+}
+
+type XsdGoPkgHasElems_Honorific struct {
+	Honorifics []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook honorific"`
+
+}
+
+type XsdGoPkgHasElems_Lineage struct {
+	Lineages []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook lineage"`
+
+}
+
+type XsdGoPkgHasElems_Othername struct {
+	Othernames []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook othername"`
+
+}
+
+type XsdGoPkgHasElems_Surname struct {
+	Surnames []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook surname"`
+
+}
+
+type XsdGoPkgHasElems_Firstname struct {
+	Firstnames []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook firstname"`
+
+}
+
+type TxsdPersonname struct {
+	XsdGoPkgHasElems_Firstname
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Phrase
+
 	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Subscript
 
 	XsdGoPkgHasElems_Xref
 
-	XsdGoPkgHasElems_Firstname
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Indexterm
 
 	XsdGoPkgHasElems_Honorific
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Lineage
+
+	XsdGoPkgHasElems_Othername
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Surname
 
 	XsdGoPkgHasAttr_Role_XsdtString_
 
@@ -1367,45 +1882,77 @@ type XsdGoPkgHasElems_Personname struct {
 
 }
 
+type XsdGoPkgHasElems_Otheraddr struct {
+	Otheraddrs []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook otheraddr"`
+
+}
+
+type TxsdAddressContinuation xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdAddressContinuation is "restarts".
+func (me TxsdAddressContinuation) IsRestarts () bool { return me == "restarts" }
+
+//	This convenience method just performs a simple type conversion to TxsdAddressContinuation's alias type xsdt.Token.
+func (me TxsdAddressContinuation) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Since TxsdAddressContinuation is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdAddressContinuation) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Since TxsdAddressContinuation is just a simple String type, this merely returns the current string value.
+func (me TxsdAddressContinuation) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdAddressContinuation is "continues".
+func (me TxsdAddressContinuation) IsContinues () bool { return me == "continues" }
+
+type XsdGoPkgHasAttr_Continuation_TxsdAddressContinuation_ struct {
+	Continuation TxsdAddressContinuation `xml:"http://docbook.org/ns/docbook continuation,attr"`
+
+}
+
+type XsdGoPkgHasElems_Pob struct {
+	Pobs []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook pob"`
+
+}
+
+type XsdGoPkgHasElems_Fax struct {
+	Faxs []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook fax"`
+
+}
+
+type XsdGoPkgHasElems_State struct {
+	States []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook state"`
+
+}
+
 type TxsdAddressLinenumbering xsdt.Token
 
-//	Since TxsdAddressLinenumbering is just a simple String type, this merely returns the current string value.
-func (me TxsdAddressLinenumbering) String () string { return xsdt.Token(me).String() }
+//	Returns true if the value of this enumerated TxsdAddressLinenumbering is "numbered".
+func (me TxsdAddressLinenumbering) IsNumbered () bool { return me == "numbered" }
 
 //	This convenience method just performs a simple type conversion to TxsdAddressLinenumbering's alias type xsdt.Token.
 func (me TxsdAddressLinenumbering) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
 
-//	Returns true if the value of this enumerated TxsdAddressLinenumbering is "unnumbered".
-func (me TxsdAddressLinenumbering) IsUnnumbered () bool { return me == "unnumbered" }
-
 //	Since TxsdAddressLinenumbering is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdAddressLinenumbering) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
 
-//	Returns true if the value of this enumerated TxsdAddressLinenumbering is "numbered".
-func (me TxsdAddressLinenumbering) IsNumbered () bool { return me == "numbered" }
+//	Since TxsdAddressLinenumbering is just a simple String type, this merely returns the current string value.
+func (me TxsdAddressLinenumbering) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdAddressLinenumbering is "unnumbered".
+func (me TxsdAddressLinenumbering) IsUnnumbered () bool { return me == "unnumbered" }
 
 type XsdGoPkgHasAttr_Linenumbering_TxsdAddressLinenumbering_ struct {
 	Linenumbering TxsdAddressLinenumbering `xml:"http://docbook.org/ns/docbook linenumbering,attr"`
 
 }
 
-type XsdGoPkgHasAttr_Startinglinenumber_XsdtNmtoken_ struct {
-	Startinglinenumber xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook startinglinenumber,attr"`
+type XsdGoPkgHasElems_Phone struct {
+	Phones []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook phone"`
 
 }
 
-type XsdGoPkgHasAttr_Language_XsdtString_ struct {
-	Language xsdt.String `xml:"http://docbook.org/ns/docbook language,attr"`
-
-}
-
-type XsdGoPkgHasElems_City struct {
-	Cities []*TxsdAccel `xml:"http://docbook.org/ns/docbook city"`
-
-}
-
-type XsdGoPkgHasElems_Fax struct {
-	Faxs []*TxsdAccel `xml:"http://docbook.org/ns/docbook fax"`
+type XsdGoPkgHasElems_Street struct {
+	Streets []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook street"`
 
 }
 
@@ -1417,41 +1964,41 @@ type XsdGoPkgHasAttr_Type_XsdtString_ struct {
 type TxsdUri struct {
 	XsdGoPkgHasElems_Xref
 
-	XsdGoPkgHasElems_Replaceable
-
 	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Superscript
 
 	XsdGoPkgHasElems_Alt
 
-	XsdGoPkgHasElems_Olink
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasElems_Anchor
 
-	XsdGoPkgHasAttr_Type_XsdtString_
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Remark
 
 	XsdGoPkgHasElems_Annotation
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasElems_Link
-
 	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Superscript
 
 	XsdGoPkgHasElems_Inlinemediaobject
 
-	XsdGoPkgHasElems_Remark
+	XsdGoPkgHasAttr_Type_XsdtString_
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+	XsdGoPkgHasElems_Biblioref
 
-	XsdGoPkgHasElems_Subscript
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Indexterm
 
 }
 
@@ -1460,123 +2007,81 @@ type XsdGoPkgHasElems_Uri struct {
 
 }
 
-type XsdGoPkgHasElems_Email struct {
-	Emails []*TxsdAccel `xml:"http://docbook.org/ns/docbook email"`
-
-}
-
-type XsdGoPkgHasElems_Phone struct {
-	Phones []*TxsdAccel `xml:"http://docbook.org/ns/docbook phone"`
-
-}
-
-type XsdGoPkgHasElems_Street struct {
-	Streets []*TxsdAccel `xml:"http://docbook.org/ns/docbook street"`
-
-}
-
-type XsdGoPkgHasElems_Pob struct {
-	Pobs []*TxsdAccel `xml:"http://docbook.org/ns/docbook pob"`
-
-}
-
-type XsdGoPkgHasElems_Otheraddr struct {
-	Otheraddrs []*TxsdAccel `xml:"http://docbook.org/ns/docbook otheraddr"`
-
-}
-
-type TxsdAddressContinuation xsdt.Token
-
-//	This convenience method just performs a simple type conversion to TxsdAddressContinuation's alias type xsdt.Token.
-func (me TxsdAddressContinuation) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Since TxsdAddressContinuation is just a simple String type, this merely returns the current string value.
-func (me TxsdAddressContinuation) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdAddressContinuation is "restarts".
-func (me TxsdAddressContinuation) IsRestarts () bool { return me == "restarts" }
-
-//	Returns true if the value of this enumerated TxsdAddressContinuation is "continues".
-func (me TxsdAddressContinuation) IsContinues () bool { return me == "continues" }
-
-//	Since TxsdAddressContinuation is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdAddressContinuation) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_Continuation_TxsdAddressContinuation_ struct {
-	Continuation TxsdAddressContinuation `xml:"http://docbook.org/ns/docbook continuation,attr"`
+type XsdGoPkgHasElems_Country struct {
+	Countries []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook country"`
 
 }
 
 type TxsdAddress struct {
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAttr_Language_XsdtString_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_City
-
-	XsdGoPkgHasElems_Fax
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Replaceable
-
 	XsdGoPkgHasElems_Phone
 
 	XsdGoPkgHasElems_Street
 
-	XsdGoPkgHasElems_Pob
+	XsdGoPkgHasElems_Alt
 
-	XsdGoPkgHasElems_Biblioref
+	XsdGoPkgHasElems_Email
 
-	XsdGoPkgHasElems_Xref
+	XsdGoPkgHasElems_Uri
 
-	XsdGoPkgHasElems_Otheraddr
+	XsdGoPkgHasElems_Olink
 
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasAttr_Continuation_TxsdAddressContinuation_
-
-	XsdGoPkgHasElems_Postcode
+	XsdGoPkgHasElems_Superscript
 
 	XsdGoPkgHasElems_Country
 
-	XsdGoPkgHasElems_State
+	XsdGoPkgHasElems_City
+
+	XsdGoPkgHasAttr_Language_XsdtString_
+
+	XsdGoPkgHasElems_Postcode
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Startinglinenumber_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Phrase
 
 	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Otheraddr
+
+	XsdGoPkgHasAttr_Continuation_TxsdAddressContinuation_
+
+	XsdGoPkgHasElems_Pob
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Fax
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Annotation
+
+	xml.XsdGoPkgHasAttr_Space
+
+	XsdGoPkgHasElems_State
+
+	XsdGoPkgHasElems_Replaceable
 
 	XsdGoPkgHasAttr_Linenumbering_TxsdAddressLinenumbering_
 
 	XsdGoPkgHasElems_Link
-
-	xml.XsdGoPkgHasAttr_Space
-
-	XsdGoPkgHasAttr_Startinglinenumber_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Remark
 
 }
 
@@ -1585,796 +2090,104 @@ type XsdGoPkgHasElems_Address struct {
 
 }
 
-type XsdGoPkgHasElem_Org struct {
-	Org *TxsdOrg `xml:"http://docbook.org/ns/docbook org"`
-
-}
-
-type XsdGoPkgHasElem_Orgname struct {
-	Orgname *TxsdOrgname `xml:"http://docbook.org/ns/docbook orgname"`
-
-}
-
-type XsdGoPkgHasElem_Shortaffil struct {
-	Shortaffil *TxsdAccel `xml:"http://docbook.org/ns/docbook shortaffil"`
-
-}
-
-type TxsdAffiliation struct {
-	XsdGoPkgHasElem_Orgname
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Orgdiv
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElem_Shortaffil
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElem_Org
-
-}
-
-type XsdGoPkgHasElems_Affiliation struct {
-	Affiliations []*TxsdAffiliation `xml:"http://docbook.org/ns/docbook affiliation"`
-
-}
-
-type TxsdOrg struct {
-	XsdGoPkgHasElems_Orgdiv
-
-	XsdGoPkgHasElem_Orgname
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Affiliation
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Org struct {
-	Orgs []*TxsdOrg `xml:"http://docbook.org/ns/docbook org"`
-
-}
-
-type TxsdTrademarkClass xsdt.Token
-
-//	Since TxsdTrademarkClass is just a simple String type, this merely returns the current string value.
-func (me TxsdTrademarkClass) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdTrademarkClass is "service".
-func (me TxsdTrademarkClass) IsService () bool { return me == "service" }
-
-//	Since TxsdTrademarkClass is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdTrademarkClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdTrademarkClass is "trade".
-func (me TxsdTrademarkClass) IsTrade () bool { return me == "trade" }
-
-//	Returns true if the value of this enumerated TxsdTrademarkClass is "copyright".
-func (me TxsdTrademarkClass) IsCopyright () bool { return me == "copyright" }
-
-//	This convenience method just performs a simple type conversion to TxsdTrademarkClass's alias type xsdt.Token.
-func (me TxsdTrademarkClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdTrademarkClass is "registered".
-func (me TxsdTrademarkClass) IsRegistered () bool { return me == "registered" }
-
-type XsdGoPkgHasAttr_Class_TxsdTrademarkClass_ struct {
-	Class TxsdTrademarkClass `xml:"http://docbook.org/ns/docbook class,attr"`
-
-}
-
-type TxsdTrademark struct {
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasAttr_Class_TxsdTrademarkClass_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Biblioref
-
-}
-
-type XsdGoPkgHasElems_Trademark struct {
-	Trademarks []*TxsdTrademark `xml:"http://docbook.org/ns/docbook trademark"`
-
-}
-
-type XsdGoPkgHasElem_Classname struct {
-	Classname *TxsdAccel `xml:"http://docbook.org/ns/docbook classname"`
-
-}
-
-type TxsdModifier struct {
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Subscript
-
-	xml.XsdGoPkgHasAttr_Space
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Link
-
-}
-
-type XsdGoPkgHasElems_Modifier struct {
-	Modifiers []*TxsdModifier `xml:"http://docbook.org/ns/docbook modifier"`
-
-}
-
-type TxsdOoclass struct {
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElem_Classname
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-}
-
-type XsdGoPkgHasElems_Ooclass struct {
-	Ooclasses []*TxsdOoclass `xml:"http://docbook.org/ns/docbook ooclass"`
-
-}
-
-type TxsdFilenameClass xsdt.Token
-
-//	Returns true if the value of this enumerated TxsdFilenameClass is "extension".
-func (me TxsdFilenameClass) IsExtension () bool { return me == "extension" }
-
-//	Returns true if the value of this enumerated TxsdFilenameClass is "headerfile".
-func (me TxsdFilenameClass) IsHeaderfile () bool { return me == "headerfile" }
-
-//	Returns true if the value of this enumerated TxsdFilenameClass is "symlink".
-func (me TxsdFilenameClass) IsSymlink () bool { return me == "symlink" }
-
-//	Returns true if the value of this enumerated TxsdFilenameClass is "directory".
-func (me TxsdFilenameClass) IsDirectory () bool { return me == "directory" }
-
-//	Since TxsdFilenameClass is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdFilenameClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TxsdFilenameClass's alias type xsdt.Token.
-func (me TxsdFilenameClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdFilenameClass is "libraryfile".
-func (me TxsdFilenameClass) IsLibraryfile () bool { return me == "libraryfile" }
-
-//	Since TxsdFilenameClass is just a simple String type, this merely returns the current string value.
-func (me TxsdFilenameClass) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdFilenameClass is "partition".
-func (me TxsdFilenameClass) IsPartition () bool { return me == "partition" }
-
-//	Returns true if the value of this enumerated TxsdFilenameClass is "devicefile".
-func (me TxsdFilenameClass) IsDevicefile () bool { return me == "devicefile" }
-
-type XsdGoPkgHasAttr_Class_TxsdFilenameClass_ struct {
-	Class TxsdFilenameClass `xml:"http://docbook.org/ns/docbook class,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Path_XsdtString_ struct {
-	Path xsdt.String `xml:"http://docbook.org/ns/docbook path,attr"`
-
-}
-
-type TxsdFilename struct {
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasAttr_Path_XsdtString_
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasAttr_Class_TxsdFilenameClass_
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Alt
-
-}
-
-type XsdGoPkgHasElems_Filename struct {
-	Filenames []*TxsdFilename `xml:"http://docbook.org/ns/docbook filename"`
-
-}
-
-type XsdGoPkgHasElems_Returnvalue struct {
-	Returnvalues []*TxsdAccel `xml:"http://docbook.org/ns/docbook returnvalue"`
-
-}
-
-type TxsdDate struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-}
-
-type XsdGoPkgHasElems_Date struct {
-	Dates []*TxsdDate `xml:"http://docbook.org/ns/docbook date"`
-
-}
-
-type XsdGoPkgHasElems_Wordasword struct {
-	Wordaswords []*TxsdAccel `xml:"http://docbook.org/ns/docbook wordasword"`
-
-}
-
-type TxsdAbbrev struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Trademark
-
-}
-
-type XsdGoPkgHasElems_Abbrev struct {
-	Abbrevs []*TxsdAbbrev `xml:"http://docbook.org/ns/docbook abbrev"`
-
-}
-
 type XsdGoPkgHasElem_Personname struct {
 	Personname *TxsdPersonname `xml:"http://docbook.org/ns/docbook personname"`
 
 }
 
-type XsdGoPkgHasElems_Shortcut struct {
-	Shortcuts []*TxsdShortcut `xml:"http://docbook.org/ns/docbook shortcut"`
+type XsdGoPkgHasElems_Envar struct {
+	Envars []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook envar"`
 
 }
 
-type XsdGoPkgHasElems_Interfacename struct {
-	Interfacenames []*TxsdAccel `xml:"http://docbook.org/ns/docbook interfacename"`
-
-}
-
-type XsdGoPkgHasElem_Manvolnum struct {
-	Manvolnum *TxsdAccel `xml:"http://docbook.org/ns/docbook manvolnum"`
-
-}
-
-type XsdGoPkgHasAttr_Label_XsdtString_ struct {
-	Label xsdt.String `xml:"http://docbook.org/ns/docbook label,attr"`
-
-}
-
-type TxsdCoref struct {
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
+type TxsdFootnoteref struct {
 	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAttr_Label_XsdtString_
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-}
-
-type XsdGoPkgHasElems_Coref struct {
-	Corefs []*TxsdCoref `xml:"http://docbook.org/ns/docbook coref"`
-
-}
-
-type XsdGoPkgHasElems_Function struct {
-	Functions []*TxsdAccel `xml:"http://docbook.org/ns/docbook function"`
-
-}
-
-type TxsdDatabaseClass xsdt.Token
-
-//	Returns true if the value of this enumerated TxsdDatabaseClass is "table".
-func (me TxsdDatabaseClass) IsTable () bool { return me == "table" }
-
-//	Returns true if the value of this enumerated TxsdDatabaseClass is "secondarykey".
-func (me TxsdDatabaseClass) IsSecondarykey () bool { return me == "secondarykey" }
-
-//	Returns true if the value of this enumerated TxsdDatabaseClass is "foreignkey".
-func (me TxsdDatabaseClass) IsForeignkey () bool { return me == "foreignkey" }
-
-//	Returns true if the value of this enumerated TxsdDatabaseClass is "key2".
-func (me TxsdDatabaseClass) IsKey2 () bool { return me == "key2" }
-
-//	Since TxsdDatabaseClass is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdDatabaseClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdDatabaseClass is "altkey".
-func (me TxsdDatabaseClass) IsAltkey () bool { return me == "altkey" }
-
-//	Since TxsdDatabaseClass is just a simple String type, this merely returns the current string value.
-func (me TxsdDatabaseClass) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdDatabaseClass is "primarykey".
-func (me TxsdDatabaseClass) IsPrimarykey () bool { return me == "primarykey" }
-
-//	Returns true if the value of this enumerated TxsdDatabaseClass is "view".
-func (me TxsdDatabaseClass) IsView () bool { return me == "view" }
-
-//	Returns true if the value of this enumerated TxsdDatabaseClass is "key1".
-func (me TxsdDatabaseClass) IsKey1 () bool { return me == "key1" }
-
-//	Returns true if the value of this enumerated TxsdDatabaseClass is "datatype".
-func (me TxsdDatabaseClass) IsDatatype () bool { return me == "datatype" }
-
-//	Returns true if the value of this enumerated TxsdDatabaseClass is "record".
-func (me TxsdDatabaseClass) IsRecord () bool { return me == "record" }
-
-//	Returns true if the value of this enumerated TxsdDatabaseClass is "field".
-func (me TxsdDatabaseClass) IsField () bool { return me == "field" }
-
-//	This convenience method just performs a simple type conversion to TxsdDatabaseClass's alias type xsdt.Token.
-func (me TxsdDatabaseClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdDatabaseClass is "name".
-func (me TxsdDatabaseClass) IsName () bool { return me == "name" }
-
-//	Returns true if the value of this enumerated TxsdDatabaseClass is "group".
-func (me TxsdDatabaseClass) IsGroup () bool { return me == "group" }
-
-//	Returns true if the value of this enumerated TxsdDatabaseClass is "user".
-func (me TxsdDatabaseClass) IsUser () bool { return me == "user" }
-
-//	Returns true if the value of this enumerated TxsdDatabaseClass is "index".
-func (me TxsdDatabaseClass) IsIndex () bool { return me == "index" }
-
-//	Returns true if the value of this enumerated TxsdDatabaseClass is "constraint".
-func (me TxsdDatabaseClass) IsConstraint () bool { return me == "constraint" }
-
-//	Returns true if the value of this enumerated TxsdDatabaseClass is "rule".
-func (me TxsdDatabaseClass) IsRule () bool { return me == "rule" }
-
-//	Returns true if the value of this enumerated TxsdDatabaseClass is "procedure".
-func (me TxsdDatabaseClass) IsProcedure () bool { return me == "procedure" }
-
-type XsdGoPkgHasAttr_Class_TxsdDatabaseClass_ struct {
-	Class TxsdDatabaseClass `xml:"http://docbook.org/ns/docbook class,attr"`
-
-}
-
-type TxsdDatabase struct {
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasAttr_Class_TxsdDatabaseClass_
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+}
 
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Subscript
+type XsdGoPkgHasElems_Footnoteref struct {
+	Footnoterefs []*TxsdFootnoteref `xml:"http://docbook.org/ns/docbook footnoteref"`
 
 }
 
-type XsdGoPkgHasElems_Database struct {
-	Databases []*TxsdDatabase `xml:"http://docbook.org/ns/docbook database"`
+type XsdGoPkgHasElems_Literal struct {
+	Literals []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook literal"`
 
 }
 
-type TxsdParameterClass xsdt.Token
-
-//	Returns true if the value of this enumerated TxsdParameterClass is "function".
-func (me TxsdParameterClass) IsFunction () bool { return me == "function" }
-
-//	Since TxsdParameterClass is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdParameterClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdParameterClass is "option".
-func (me TxsdParameterClass) IsOption () bool { return me == "option" }
-
-//	Since TxsdParameterClass is just a simple String type, this merely returns the current string value.
-func (me TxsdParameterClass) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdParameterClass is "command".
-func (me TxsdParameterClass) IsCommand () bool { return me == "command" }
-
-//	This convenience method just performs a simple type conversion to TxsdParameterClass's alias type xsdt.Token.
-func (me TxsdParameterClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-type XsdGoPkgHasAttr_Class_TxsdParameterClass_ struct {
-	Class TxsdParameterClass `xml:"http://docbook.org/ns/docbook class,attr"`
+type XsdGoPkgHasElems_Markup struct {
+	Markups []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook markup"`
 
 }
 
-type TxsdParameter struct {
-	XsdGoPkgHasElems_Remark
+type TxsdConstantClass xsdt.Token
 
-	XsdGoPkgHasElems_Superscript
+//	Since TxsdConstantClass is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdConstantClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
 
-	XsdGoPkgHasElems_Anchor
+//	Since TxsdConstantClass is just a simple String type, this merely returns the current string value.
+func (me TxsdConstantClass) String () string { return xsdt.Token(me).String() }
 
-	XsdGoPkgHasElems_Replaceable
+//	This convenience method just performs a simple type conversion to TxsdConstantClass's alias type xsdt.Token.
+func (me TxsdConstantClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
 
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Class_TxsdParameterClass_
-
-	XsdGoPkgHasElems_Link
-
-}
-
-type XsdGoPkgHasElems_Parameter struct {
-	Parameters []*TxsdParameter `xml:"http://docbook.org/ns/docbook parameter"`
-
-}
-
-type XsdGoPkgHasElems_Classname struct {
-	Classnames []*TxsdAccel `xml:"http://docbook.org/ns/docbook classname"`
-
-}
-
-type XsdGoPkgHasElems_Varname struct {
-	Varnames []*TxsdAccel `xml:"http://docbook.org/ns/docbook varname"`
-
-}
-
-type XsdGoPkgHasElem_Exceptionname struct {
-	Exceptionname *TxsdAccel `xml:"http://docbook.org/ns/docbook exceptionname"`
-
-}
-
-type TxsdOoexception struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElem_Exceptionname
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Package
-
-}
-
-type XsdGoPkgHasElems_Ooexception struct {
-	Ooexceptions []*TxsdOoexception `xml:"http://docbook.org/ns/docbook ooexception"`
-
-}
-
-type TxsdCode struct {
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasAttr_Language_XsdtString_
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Xref
-
-}
-
-type XsdGoPkgHasElems_Code struct {
-	Codes []*TxsdCode `xml:"http://docbook.org/ns/docbook code"`
-
-}
-
-type XsdGoPkgHasElems_Optional struct {
-	Optionals []*TxsdAccel `xml:"http://docbook.org/ns/docbook optional"`
-
-}
+//	Returns true if the value of this enumerated TxsdConstantClass is "limit".
+func (me TxsdConstantClass) IsLimit () bool { return me == "limit" }
 
 type XsdGoPkgHasAttr_Class_TxsdConstantClass_ struct {
-	Class TxsdSymbolClass `xml:"http://docbook.org/ns/docbook class,attr"`
+	Class TxsdConstantClass `xml:"http://docbook.org/ns/docbook class,attr"`
 
 }
 
 type TxsdConstant struct {
+	XsdGoPkgHasAttr_Class_TxsdConstantClass_
+
 	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Remark
 
 	XsdGoPkgHasElems_Subscript
 
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAttr_Class_TxsdConstantClass_
-
-	XsdGoPkgHasElems_Biblioref
+	XsdGoPkgHasCdata
 
 	XsdGoPkgHasElems_Olink
 
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Phrase
+	XsdGoPkgHasElems_Inlinemediaobject
 
 	XsdGoPkgHasElems_Link
 
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Indexterm
+
 	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Superscript
 
 }
 
 type XsdGoPkgHasElems_Constant struct {
 	Constants []*TxsdConstant `xml:"http://docbook.org/ns/docbook constant"`
-
-}
-
-type XsdGoPkgHasAttr_Linkends_XsdtIdrefs_ struct {
-	Linkends xsdt.Idrefs `xml:"http://docbook.org/ns/docbook linkends,attr"`
-
-}
-
-type TxsdCo struct {
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAttr_Linkends_XsdtIdrefs_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Co struct {
-	Cos []*TxsdCo `xml:"http://docbook.org/ns/docbook co"`
 
 }
 
@@ -2384,15 +2197,15 @@ type XsdGoPkgHasAttr_Def_XsdtString_ struct {
 }
 
 type TxsdNonterminal struct {
-	XsdGoPkgHasAttr_Role_XsdtString_
-
 	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Def_XsdtString_
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+	XsdGoPkgHasAttr_Role_XsdtString_
 
-	XsdGoPkgHasAttr_Def_XsdtString_
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
@@ -2401,240 +2214,263 @@ type XsdGoPkgHasElems_Nonterminal struct {
 
 }
 
-type XsdGoPkgHasElems_Token struct {
-	Tokens []*TxsdAccel `xml:"http://docbook.org/ns/docbook token"`
+type XsdGoPkgHasElems_Package struct {
+	Packages []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook package"`
 
 }
 
-type XsdGoPkgHasElems_Literal struct {
-	Literals []*TxsdAccel `xml:"http://docbook.org/ns/docbook literal"`
+type XsdGoPkgHasAttr_Class_TxsdSymbolClass_ struct {
+	Class TxsdConstantClass `xml:"http://docbook.org/ns/docbook class,attr"`
 
 }
 
-type XsdGoPkgHasElems_Markup struct {
-	Markups []*TxsdAccel `xml:"http://docbook.org/ns/docbook markup"`
-
-}
-
-type TxsdSystemitemClass xsdt.Token
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "macro".
-func (me TxsdSystemitemClass) IsMacro () bool { return me == "macro" }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "eventhandler".
-func (me TxsdSystemitemClass) IsEventhandler () bool { return me == "eventhandler" }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "etheraddress".
-func (me TxsdSystemitemClass) IsEtheraddress () bool { return me == "etheraddress" }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "service".
-func (me TxsdSystemitemClass) IsService () bool { return me == "service" }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "event".
-func (me TxsdSystemitemClass) IsEvent () bool { return me == "event" }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "filesystem".
-func (me TxsdSystemitemClass) IsFilesystem () bool { return me == "filesystem" }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "systemname".
-func (me TxsdSystemitemClass) IsSystemname () bool { return me == "systemname" }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "server".
-func (me TxsdSystemitemClass) IsServer () bool { return me == "server" }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "daemon".
-func (me TxsdSystemitemClass) IsDaemon () bool { return me == "daemon" }
-
-//	Since TxsdSystemitemClass is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdSystemitemClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "library".
-func (me TxsdSystemitemClass) IsLibrary () bool { return me == "library" }
-
-//	This convenience method just performs a simple type conversion to TxsdSystemitemClass's alias type xsdt.Token.
-func (me TxsdSystemitemClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "osname".
-func (me TxsdSystemitemClass) IsOsname () bool { return me == "osname" }
-
-//	Since TxsdSystemitemClass is just a simple String type, this merely returns the current string value.
-func (me TxsdSystemitemClass) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "username".
-func (me TxsdSystemitemClass) IsUsername () bool { return me == "username" }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "newsgroup".
-func (me TxsdSystemitemClass) IsNewsgroup () bool { return me == "newsgroup" }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "groupname".
-func (me TxsdSystemitemClass) IsGroupname () bool { return me == "groupname" }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "netmask".
-func (me TxsdSystemitemClass) IsNetmask () bool { return me == "netmask" }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "protocol".
-func (me TxsdSystemitemClass) IsProtocol () bool { return me == "protocol" }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "process".
-func (me TxsdSystemitemClass) IsProcess () bool { return me == "process" }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "ipaddress".
-func (me TxsdSystemitemClass) IsIpaddress () bool { return me == "ipaddress" }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "domainname".
-func (me TxsdSystemitemClass) IsDomainname () bool { return me == "domainname" }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "resource".
-func (me TxsdSystemitemClass) IsResource () bool { return me == "resource" }
-
-//	Returns true if the value of this enumerated TxsdSystemitemClass is "fqdomainname".
-func (me TxsdSystemitemClass) IsFqdomainname () bool { return me == "fqdomainname" }
-
-type XsdGoPkgHasAttr_Class_TxsdSystemitemClass_ struct {
-	Class TxsdSystemitemClass `xml:"http://docbook.org/ns/docbook class,attr"`
-
-}
-
-type TxsdSystemitem struct {
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Superscript
+type TxsdSymbol struct {
+	XsdGoPkgHasElems_Replaceable
 
 	XsdGoPkgHasElems_Biblioref
 
-	XsdGoPkgHasAttr_Class_TxsdSystemitemClass_
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasElems_Anchor
 
 	XsdGoPkgHasElems_Subscript
 
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasCdata
 
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Co
-
-	XsdGoPkgHasElems_Link
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasElems_Alt
 
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Inlinemediaobject
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasElems_Annotation
 
-	XsdGoPkgHasElems_Replaceable
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasAttr_Class_TxsdSymbolClass_
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Remark
 
 }
 
-type XsdGoPkgHasElems_Systemitem struct {
-	Systemitems []*TxsdSystemitem `xml:"http://docbook.org/ns/docbook systemitem"`
+type XsdGoPkgHasElems_Symbol struct {
+	Symbols []*TxsdSymbol `xml:"http://docbook.org/ns/docbook symbol"`
 
 }
 
 type XsdGoPkgHasElems_Property struct {
-	Properties []*TxsdAccel `xml:"http://docbook.org/ns/docbook property"`
+	Properties []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook property"`
 
 }
 
-type XsdGoPkgHasElems_Command struct {
-	Commands []*TxsdAccel `xml:"http://docbook.org/ns/docbook command"`
+type TxsdTagClass xsdt.Token
+
+//	Since TxsdTagClass is just a simple String type, this merely returns the current string value.
+func (me TxsdTagClass) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdTagClass is "emptytag".
+func (me TxsdTagClass) IsEmptytag () bool { return me == "emptytag" }
+
+//	Returns true if the value of this enumerated TxsdTagClass is "numcharref".
+func (me TxsdTagClass) IsNumcharref () bool { return me == "numcharref" }
+
+//	Returns true if the value of this enumerated TxsdTagClass is "xmlpi".
+func (me TxsdTagClass) IsXmlpi () bool { return me == "xmlpi" }
+
+//	Returns true if the value of this enumerated TxsdTagClass is "paramentity".
+func (me TxsdTagClass) IsParamentity () bool { return me == "paramentity" }
+
+//	Since TxsdTagClass is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdTagClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdTagClass is "attribute".
+func (me TxsdTagClass) IsAttribute () bool { return me == "attribute" }
+
+//	Returns true if the value of this enumerated TxsdTagClass is "element".
+func (me TxsdTagClass) IsElement () bool { return me == "element" }
+
+//	Returns true if the value of this enumerated TxsdTagClass is "pi".
+func (me TxsdTagClass) IsPi () bool { return me == "pi" }
+
+//	Returns true if the value of this enumerated TxsdTagClass is "prefix".
+func (me TxsdTagClass) IsPrefix () bool { return me == "prefix" }
+
+//	Returns true if the value of this enumerated TxsdTagClass is "namespace".
+func (me TxsdTagClass) IsNamespace () bool { return me == "namespace" }
+
+//	Returns true if the value of this enumerated TxsdTagClass is "genentity".
+func (me TxsdTagClass) IsGenentity () bool { return me == "genentity" }
+
+//	Returns true if the value of this enumerated TxsdTagClass is "starttag".
+func (me TxsdTagClass) IsStarttag () bool { return me == "starttag" }
+
+//	Returns true if the value of this enumerated TxsdTagClass is "endtag".
+func (me TxsdTagClass) IsEndtag () bool { return me == "endtag" }
+
+//	Returns true if the value of this enumerated TxsdTagClass is "attvalue".
+func (me TxsdTagClass) IsAttvalue () bool { return me == "attvalue" }
+
+//	Returns true if the value of this enumerated TxsdTagClass is "localname".
+func (me TxsdTagClass) IsLocalname () bool { return me == "localname" }
+
+//	Returns true if the value of this enumerated TxsdTagClass is "comment".
+func (me TxsdTagClass) IsComment () bool { return me == "comment" }
+
+//	This convenience method just performs a simple type conversion to TxsdTagClass's alias type xsdt.Token.
+func (me TxsdTagClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+type XsdGoPkgHasAttr_Class_TxsdTagClass_ struct {
+	Class TxsdTagClass `xml:"http://docbook.org/ns/docbook class,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Namespace_XsdtString_ struct {
+	Namespace xsdt.String `xml:"http://docbook.org/ns/docbook namespace,attr"`
+
+}
+
+type TxsdTag struct {
+	XsdGoPkgHasAttr_Namespace_XsdtString_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasAttr_Class_TxsdTagClass_
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Xref
+
+}
+
+type XsdGoPkgHasElems_Tag struct {
+	Tags []*TxsdTag `xml:"http://docbook.org/ns/docbook tag"`
 
 }
 
 type TxsdComputeroutput struct {
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasElems_Subscript
 
 	XsdGoPkgHasElems_Userinput
 
-	XsdGoPkgHasElems_Filename
+	XsdGoPkgHasElems_Constant
 
-	XsdGoPkgHasElems_Option
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Literal
 
 	XsdGoPkgHasElems_Xref
 
-	XsdGoPkgHasElems_Tag
+	XsdGoPkgHasElems_Nonterminal
 
-	XsdGoPkgHasElems_Co
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Termdef
 
 	XsdGoPkgHasElems_Indexterm
 
 	XsdGoPkgHasElems_Envar
 
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Olink
-
 	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Email
 
 	XsdGoPkgHasElems_Property
 
-	XsdGoPkgHasElems_Remark
+	XsdGoPkgHasAttr_Role_XsdtString_
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+	XsdGoPkgHasElems_Option
 
-	XsdGoPkgHasElems_Nonterminal
+	XsdGoPkgHasElems_Olink
 
-	XsdGoPkgHasElems_Prompt
+	XsdGoPkgHasElems_Annotation
 
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Markup
+	XsdGoPkgHasElems_Tag
 
 	XsdGoPkgHasElems_Token
 
-	XsdGoPkgHasElems_Subscript
+	XsdGoPkgHasElems_Code
 
-	XsdGoPkgHasElems_Parameter
+	XsdGoPkgHasElems_Link
 
-	XsdGoPkgHasElems_Command
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Co
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Alt
 
 }
 
@@ -2643,158 +2479,148 @@ type XsdGoPkgHasElems_Computeroutput struct {
 
 }
 
-type TxsdUserinput struct {
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Co
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Property
+type XsdGoPkgHasElems_Coref struct {
+	Corefs []*TxsdFootnoteref `xml:"http://docbook.org/ns/docbook coref"`
 
 }
 
-type XsdGoPkgHasElems_Userinput struct {
-	Userinputs []*TxsdUserinput `xml:"http://docbook.org/ns/docbook userinput"`
+type XsdGoPkgHasElems_Errortext struct {
+	Errortexts []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook errortext"`
+
+}
+
+type XsdGoPkgHasElems_Interfacename struct {
+	Interfacenames []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook interfacename"`
+
+}
+
+type XsdGoPkgHasElem_Interfacename struct {
+	Interfacename *TxsdFuncparams `xml:"http://docbook.org/ns/docbook interfacename"`
+
+}
+
+type TxsdOointerface struct {
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElem_Interfacename
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+}
+
+type XsdGoPkgHasElems_Oointerface struct {
+	Oointerfaces []*TxsdOointerface `xml:"http://docbook.org/ns/docbook oointerface"`
+
+}
+
+type TxsdApplicationClass xsdt.Token
+
+//	Since TxsdApplicationClass is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdApplicationClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdApplicationClass is "hardware".
+func (me TxsdApplicationClass) IsHardware () bool { return me == "hardware" }
+
+//	This convenience method just performs a simple type conversion to TxsdApplicationClass's alias type xsdt.Token.
+func (me TxsdApplicationClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdApplicationClass is "software".
+func (me TxsdApplicationClass) IsSoftware () bool { return me == "software" }
+
+//	Since TxsdApplicationClass is just a simple String type, this merely returns the current string value.
+func (me TxsdApplicationClass) String () string { return xsdt.Token(me).String() }
+
+type XsdGoPkgHasAttr_Class_TxsdApplicationClass_ struct {
+	Class TxsdApplicationClass `xml:"http://docbook.org/ns/docbook class,attr"`
+
+}
+
+type TxsdApplication struct {
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasAttr_Class_TxsdApplicationClass_
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Subscript
+
+}
+
+type XsdGoPkgHasElems_Application struct {
+	Applications []*TxsdApplication `xml:"http://docbook.org/ns/docbook application"`
 
 }
 
 type TxsdCitebiblioidClass xsdt.Token
 
-//	Returns true if the value of this enumerated TxsdCitebiblioidClass is "pubsnumber".
-func (me TxsdCitebiblioidClass) IsPubsnumber () bool { return me == "pubsnumber" }
-
-//	Returns true if the value of this enumerated TxsdCitebiblioidClass is "isbn".
-func (me TxsdCitebiblioidClass) IsIsbn () bool { return me == "isbn" }
-
-//	Returns true if the value of this enumerated TxsdCitebiblioidClass is "isrn".
-func (me TxsdCitebiblioidClass) IsIsrn () bool { return me == "isrn" }
-
-//	Returns true if the value of this enumerated TxsdCitebiblioidClass is "issn".
-func (me TxsdCitebiblioidClass) IsIssn () bool { return me == "issn" }
-
-//	Returns true if the value of this enumerated TxsdCitebiblioidClass is "uri".
-func (me TxsdCitebiblioidClass) IsUri () bool { return me == "uri" }
-
-//	Since TxsdCitebiblioidClass is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdCitebiblioidClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+//	Returns true if the value of this enumerated TxsdCitebiblioidClass is "libraryofcongress".
+func (me TxsdCitebiblioidClass) IsLibraryofcongress () bool { return me == "libraryofcongress" }
 
 //	Returns true if the value of this enumerated TxsdCitebiblioidClass is "doi".
 func (me TxsdCitebiblioidClass) IsDoi () bool { return me == "doi" }
 
-//	Returns true if the value of this enumerated TxsdCitebiblioidClass is "other".
-func (me TxsdCitebiblioidClass) IsOther () bool { return me == "other" }
+//	Since TxsdCitebiblioidClass is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdCitebiblioidClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Since TxsdCitebiblioidClass is just a simple String type, this merely returns the current string value.
+func (me TxsdCitebiblioidClass) String () string { return xsdt.Token(me).String() }
 
 //	This convenience method just performs a simple type conversion to TxsdCitebiblioidClass's alias type xsdt.Token.
 func (me TxsdCitebiblioidClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
 
-//	Returns true if the value of this enumerated TxsdCitebiblioidClass is "libraryofcongress".
-func (me TxsdCitebiblioidClass) IsLibraryofcongress () bool { return me == "libraryofcongress" }
+//	Returns true if the value of this enumerated TxsdCitebiblioidClass is "isbn".
+func (me TxsdCitebiblioidClass) IsIsbn () bool { return me == "isbn" }
 
-//	Since TxsdCitebiblioidClass is just a simple String type, this merely returns the current string value.
-func (me TxsdCitebiblioidClass) String () string { return xsdt.Token(me).String() }
+//	Returns true if the value of this enumerated TxsdCitebiblioidClass is "other".
+func (me TxsdCitebiblioidClass) IsOther () bool { return me == "other" }
+
+//	Returns true if the value of this enumerated TxsdCitebiblioidClass is "isrn".
+func (me TxsdCitebiblioidClass) IsIsrn () bool { return me == "isrn" }
+
+//	Returns true if the value of this enumerated TxsdCitebiblioidClass is "pubsnumber".
+func (me TxsdCitebiblioidClass) IsPubsnumber () bool { return me == "pubsnumber" }
+
+//	Returns true if the value of this enumerated TxsdCitebiblioidClass is "uri".
+func (me TxsdCitebiblioidClass) IsUri () bool { return me == "uri" }
+
+//	Returns true if the value of this enumerated TxsdCitebiblioidClass is "issn".
+func (me TxsdCitebiblioidClass) IsIssn () bool { return me == "issn" }
 
 type XsdGoPkgHasAttr_Class_TxsdCitebiblioidClass_ struct {
 	Class TxsdCitebiblioidClass `xml:"http://docbook.org/ns/docbook class,attr"`
@@ -2807,45 +2633,45 @@ type XsdGoPkgHasAttr_Otherclass_XsdtNmtoken_ struct {
 }
 
 type TxsdCitebiblioid struct {
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasAttr_Class_TxsdCitebiblioidClass_
-
-	XsdGoPkgHasElems_Inlinemediaobject
+	XsdGoPkgHasElems_Remark
 
 	XsdGoPkgHasElems_Indexterm
 
-	XsdGoPkgHasAttr_Otherclass_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasElems_Link
 
 	XsdGoPkgHasElems_Anchor
 
 	XsdGoPkgHasElems_Annotation
 
-	XsdGoPkgHasElems_Alt
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasCdata
 
 	XsdGoPkgHasElems_Superscript
 
-	XsdGoPkgHasElems_Remark
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Inlinemediaobject
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Link
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Class_TxsdCitebiblioidClass_
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Otherclass_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Subscript
 
 	XsdGoPkgHasElems_Biblioref
 
-	XsdGoPkgHasCdata
+	XsdGoPkgHasElems_Alt
 
 }
 
@@ -2854,8 +2680,53 @@ type XsdGoPkgHasElems_Citebiblioid struct {
 
 }
 
-type XsdGoPkgHasElems_Productnumber struct {
-	Productnumbers []*TxsdAccel `xml:"http://docbook.org/ns/docbook productnumber"`
+type XsdGoPkgHasElems_Acronym struct {
+	Acronyms []*TxsdAbbrev `xml:"http://docbook.org/ns/docbook acronym"`
+
+}
+
+type XsdGoPkgHasElems_Wordasword struct {
+	Wordaswords []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook wordasword"`
+
+}
+
+type XsdGoPkgHasElem_Classname struct {
+	Classname *TxsdFuncparams `xml:"http://docbook.org/ns/docbook classname"`
+
+}
+
+type TxsdOoclass struct {
+	XsdGoPkgHasElem_Classname
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Modifier
+
+}
+
+type XsdGoPkgHasElems_Ooclass struct {
+	Ooclasses []*TxsdOoclass `xml:"http://docbook.org/ns/docbook ooclass"`
+
+}
+
+type XsdGoPkgHasElems_Classname struct {
+	Classnames []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook classname"`
+
+}
+
+type XsdGoPkgHasElems_Methodname struct {
+	Methodnames []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook methodname"`
+
+}
+
+type XsdGoPkgHasElems_Function struct {
+	Functions []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook function"`
 
 }
 
@@ -2865,43 +2736,43 @@ type XsdGoPkgHasAttr_Class_TxsdProductnameClass_ struct {
 }
 
 type TxsdProductname struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Subscript
-
 	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasAttr_Class_TxsdProductnameClass_
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Link
 
 	XsdGoPkgHasElems_Superscript
 
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasCdata
 
 	XsdGoPkgHasElems_Annotation
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Indexterm
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Anchor
 
 	XsdGoPkgHasElems_Xref
 
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Biblioref
+
 	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasAttr_Class_TxsdProductnameClass_
+
+	XsdGoPkgHasElems_Replaceable
 
 }
 
@@ -2910,50 +2781,134 @@ type XsdGoPkgHasElems_Productname struct {
 
 }
 
-type XsdGoPkgHasElems_Footnoteref struct {
-	Footnoterefs []*TxsdCoref `xml:"http://docbook.org/ns/docbook footnoteref"`
+type XsdGoPkgHasElems_Returnvalue struct {
+	Returnvalues []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook returnvalue"`
 
 }
 
-type XsdGoPkgHasElems_Errorname struct {
-	Errornames []*TxsdAccel `xml:"http://docbook.org/ns/docbook errorname"`
+type XsdGoPkgHasElems_Varname struct {
+	Varnames []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook varname"`
 
 }
 
-type XsdGoPkgHasElems_Acronym struct {
-	Acronyms []*TxsdAbbrev `xml:"http://docbook.org/ns/docbook acronym"`
+type TxsdOrgnameClass xsdt.Token
+
+//	This convenience method just performs a simple type conversion to TxsdOrgnameClass's alias type xsdt.Token.
+func (me TxsdOrgnameClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdOrgnameClass is "nonprofit".
+func (me TxsdOrgnameClass) IsNonprofit () bool { return me == "nonprofit" }
+
+//	Returns true if the value of this enumerated TxsdOrgnameClass is "corporation".
+func (me TxsdOrgnameClass) IsCorporation () bool { return me == "corporation" }
+
+//	Returns true if the value of this enumerated TxsdOrgnameClass is "consortium".
+func (me TxsdOrgnameClass) IsConsortium () bool { return me == "consortium" }
+
+//	Returns true if the value of this enumerated TxsdOrgnameClass is "informal".
+func (me TxsdOrgnameClass) IsInformal () bool { return me == "informal" }
+
+//	Since TxsdOrgnameClass is just a simple String type, this merely returns the current string value.
+func (me TxsdOrgnameClass) String () string { return xsdt.Token(me).String() }
+
+//	Since TxsdOrgnameClass is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdOrgnameClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdOrgnameClass is "other".
+func (me TxsdOrgnameClass) IsOther () bool { return me == "other" }
+
+type XsdGoPkgHasAttr_Class_TxsdOrgnameClass_ struct {
+	Class TxsdOrgnameClass `xml:"http://docbook.org/ns/docbook class,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Otherclass_XsdtString_ struct {
+	Otherclass xsdt.String `xml:"http://docbook.org/ns/docbook otherclass,attr"`
+
+}
+
+type TxsdOrgname struct {
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Class_TxsdOrgnameClass_
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasAttr_Otherclass_XsdtString_
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Biblioref
+
+}
+
+type XsdGoPkgHasElems_Orgname struct {
+	Orgnames []*TxsdOrgname `xml:"http://docbook.org/ns/docbook orgname"`
+
+}
+
+type XsdGoPkgHasElem_Orgname struct {
+	Orgname *TxsdOrgname `xml:"http://docbook.org/ns/docbook orgname"`
 
 }
 
 type XsdGoPkgHasElems_Contrib struct {
-	Contribs []*TxsdAccel `xml:"http://docbook.org/ns/docbook contrib"`
+	Contribs []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook contrib"`
 
 }
 
 type TxsdAuthor struct {
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Affiliation
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
 	XsdGoPkgHasAttr_Role_XsdtString_
 
 	XsdGoPkgHasElem_Personname
 
-	XsdGoPkgHasElems_Address
+	XsdGoPkgHasElem_Orgname
 
 	XsdGoPkgHasElems_Orgdiv
 
-	XsdGoPkgHasElems_Contrib
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElem_Orgname
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Affiliation
+	XsdGoPkgHasElems_Address
 
 	XsdGoPkgHasElems_Personblurb
 
-	XsdGoPkgHasElems_Email
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Contrib
 
 }
 
@@ -2962,438 +2917,53 @@ type XsdGoPkgHasElems_Author struct {
 
 }
 
-type TxsdApplicationClass xsdt.Token
-
-//	This convenience method just performs a simple type conversion to TxsdApplicationClass's alias type xsdt.Token.
-func (me TxsdApplicationClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Since TxsdApplicationClass is just a simple String type, this merely returns the current string value.
-func (me TxsdApplicationClass) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdApplicationClass is "hardware".
-func (me TxsdApplicationClass) IsHardware () bool { return me == "hardware" }
-
-//	Since TxsdApplicationClass is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdApplicationClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdApplicationClass is "software".
-func (me TxsdApplicationClass) IsSoftware () bool { return me == "software" }
-
-type XsdGoPkgHasAttr_Class_TxsdApplicationClass_ struct {
-	Class TxsdApplicationClass `xml:"http://docbook.org/ns/docbook class,attr"`
+type XsdGoPkgHasElem_Exceptionname struct {
+	Exceptionname *TxsdFuncparams `xml:"http://docbook.org/ns/docbook exceptionname"`
 
 }
 
-type TxsdApplication struct {
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Superscript
-
+type TxsdOoexception struct {
 	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasAttr_Class_TxsdApplicationClass_
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasCdata
-
-}
-
-type XsdGoPkgHasElems_Application struct {
-	Applications []*TxsdApplication `xml:"http://docbook.org/ns/docbook application"`
-
-}
-
-type TxsdForeignphrase struct {
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Phrase
-
-}
-
-type XsdGoPkgHasElems_Foreignphrase struct {
-	Foreignphrases []*TxsdForeignphrase `xml:"http://docbook.org/ns/docbook foreignphrase"`
-
-}
-
-type TxsdEmphasis struct {
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Ooclass
 
 	XsdGoPkgHasElems_Package
 
-	XsdGoPkgHasElems_Olink
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Jobtitle
+	XsdGoPkgHasElem_Exceptionname
 
 	XsdGoPkgHasElems_Modifier
 
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Accel
-
-}
-
-type XsdGoPkgHasElems_Emphasis struct {
-	Emphasises []*TxsdEmphasis `xml:"http://docbook.org/ns/docbook emphasis"`
-
-}
-
-type TxsdMathphrase struct {
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Link
-
 	XsdGoPkgHasAttr_Role_XsdtString_
 
-	XsdGoPkgHasElems_Annotation
+}
 
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Inlinemediaobject
+type XsdGoPkgHasElems_Ooexception struct {
+	Ooexceptions []*TxsdOoexception `xml:"http://docbook.org/ns/docbook ooexception"`
 
 }
 
-type XsdGoPkgHasElems_Mathphrase struct {
-	Mathphrases []*TxsdMathphrase `xml:"http://docbook.org/ns/docbook mathphrase"`
+type XsdGoPkgHasAttr_Baseform_XsdtString_ struct {
+	Baseform xsdt.String `xml:"http://docbook.org/ns/docbook baseform,attr"`
+
+}
+
+type XsdGoPkgHasElems_Errorcode struct {
+	Errorcodes []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook errorcode"`
 
 }
 
 type TxsdInlineequation struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
+	XsdGoPkgHasElems_Inlinemediaobject
 
 	XsdGoPkgHasElems_Mathphrase
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
 	XsdGoPkgHasElem_Alt
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
 
 }
 
@@ -3402,28 +2972,257 @@ type XsdGoPkgHasElems_Inlineequation struct {
 
 }
 
+type TxsdFirstterm struct {
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasAttr_Baseform_XsdtString_
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Markup
+
+}
+
+type XsdGoPkgHasElems_Firstterm struct {
+	Firstterms []*TxsdFirstterm `xml:"http://docbook.org/ns/docbook firstterm"`
+
+}
+
 type TxsdCitetitlePubwork xsdt.Token
 
-//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "article".
-func (me TxsdCitetitlePubwork) IsArticle () bool { return me == "article" }
+//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "series".
+func (me TxsdCitetitlePubwork) IsSeries () bool { return me == "series" }
 
 //	Returns true if the value of this enumerated TxsdCitetitlePubwork is "book".
 func (me TxsdCitetitlePubwork) IsBook () bool { return me == "book" }
 
-//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "part".
-func (me TxsdCitetitlePubwork) IsPart () bool { return me == "part" }
+//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "chapter".
+func (me TxsdCitetitlePubwork) IsChapter () bool { return me == "chapter" }
+
+//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "gopher".
+func (me TxsdCitetitlePubwork) IsGopher () bool { return me == "gopher" }
 
 //	Since TxsdCitetitlePubwork is just a simple String type, this merely returns the current string value.
 func (me TxsdCitetitlePubwork) String () string { return xsdt.Token(me).String() }
 
-//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "bbs".
-func (me TxsdCitetitlePubwork) IsBbs () bool { return me == "bbs" }
-
-//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "cdrom".
-func (me TxsdCitetitlePubwork) IsCdrom () bool { return me == "cdrom" }
-
 //	Returns true if the value of this enumerated TxsdCitetitlePubwork is "manuscript".
 func (me TxsdCitetitlePubwork) IsManuscript () bool { return me == "manuscript" }
+
+//	This convenience method just performs a simple type conversion to TxsdCitetitlePubwork's alias type xsdt.Token.
+func (me TxsdCitetitlePubwork) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "newsposting".
+func (me TxsdCitetitlePubwork) IsNewsposting () bool { return me == "newsposting" }
+
+//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "article".
+func (me TxsdCitetitlePubwork) IsArticle () bool { return me == "article" }
+
+//	Since TxsdCitetitlePubwork is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdCitetitlePubwork) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "part".
+func (me TxsdCitetitlePubwork) IsPart () bool { return me == "part" }
+
+//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "dvd".
+func (me TxsdCitetitlePubwork) IsDvd () bool { return me == "dvd" }
 
 //	Returns true if the value of this enumerated TxsdCitetitlePubwork is "wiki".
 func (me TxsdCitetitlePubwork) IsWiki () bool { return me == "wiki" }
@@ -3431,41 +3230,26 @@ func (me TxsdCitetitlePubwork) IsWiki () bool { return me == "wiki" }
 //	Returns true if the value of this enumerated TxsdCitetitlePubwork is "set".
 func (me TxsdCitetitlePubwork) IsSet () bool { return me == "set" }
 
-//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "webpage".
-func (me TxsdCitetitlePubwork) IsWebpage () bool { return me == "webpage" }
-
-//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "series".
-func (me TxsdCitetitlePubwork) IsSeries () bool { return me == "series" }
-
-//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "emailmessage".
-func (me TxsdCitetitlePubwork) IsEmailmessage () bool { return me == "emailmessage" }
-
-//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "chapter".
-func (me TxsdCitetitlePubwork) IsChapter () bool { return me == "chapter" }
-
-//	Since TxsdCitetitlePubwork is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdCitetitlePubwork) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "gopher".
-func (me TxsdCitetitlePubwork) IsGopher () bool { return me == "gopher" }
-
-//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "journal".
-func (me TxsdCitetitlePubwork) IsJournal () bool { return me == "journal" }
-
-//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "newsposting".
-func (me TxsdCitetitlePubwork) IsNewsposting () bool { return me == "newsposting" }
-
-//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "refentry".
-func (me TxsdCitetitlePubwork) IsRefentry () bool { return me == "refentry" }
+//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "cdrom".
+func (me TxsdCitetitlePubwork) IsCdrom () bool { return me == "cdrom" }
 
 //	Returns true if the value of this enumerated TxsdCitetitlePubwork is "section".
 func (me TxsdCitetitlePubwork) IsSection () bool { return me == "section" }
 
-//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "dvd".
-func (me TxsdCitetitlePubwork) IsDvd () bool { return me == "dvd" }
+//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "bbs".
+func (me TxsdCitetitlePubwork) IsBbs () bool { return me == "bbs" }
 
-//	This convenience method just performs a simple type conversion to TxsdCitetitlePubwork's alias type xsdt.Token.
-func (me TxsdCitetitlePubwork) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "refentry".
+func (me TxsdCitetitlePubwork) IsRefentry () bool { return me == "refentry" }
+
+//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "journal".
+func (me TxsdCitetitlePubwork) IsJournal () bool { return me == "journal" }
+
+//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "emailmessage".
+func (me TxsdCitetitlePubwork) IsEmailmessage () bool { return me == "emailmessage" }
+
+//	Returns true if the value of this enumerated TxsdCitetitlePubwork is "webpage".
+func (me TxsdCitetitlePubwork) IsWebpage () bool { return me == "webpage" }
 
 type XsdGoPkgHasAttr_Pubwork_TxsdCitetitlePubwork_ struct {
 	Pubwork TxsdCitetitlePubwork `xml:"http://docbook.org/ns/docbook pubwork,attr"`
@@ -3473,211 +3257,211 @@ type XsdGoPkgHasAttr_Pubwork_TxsdCitetitlePubwork_ struct {
 }
 
 type TxsdCitetitle struct {
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasAttr_Pubwork_TxsdCitetitlePubwork_
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasElems_Guiicon
 
 	XsdGoPkgHasElems_Coref
 
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Anchor
+	XsdGoPkgHasElems_Keycap
 
 	XsdGoPkgHasElems_Phrase
 
-	XsdGoPkgHasElems_Function
+	XsdGoPkgHasElems_Uri
 
-	XsdGoPkgHasElems_Code
+	XsdGoPkgHasElems_Guibutton
 
 	XsdGoPkgHasElems_Subscript
 
-	XsdGoPkgHasElems_Systemitem
+	XsdGoPkgHasElems_Guisubmenu
 
-	XsdGoPkgHasElems_Annotation
+	XsdGoPkgHasElems_Exceptionname
 
-	XsdGoPkgHasElems_Ooexception
+	XsdGoPkgHasElems_Code
 
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Superscript
+	XsdGoPkgHasElems_Abbrev
 
 	XsdGoPkgHasElems_Application
 
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Ooexception
+
 	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Footnote
 
 	XsdGoPkgHasElems_Optional
 
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Property
+
 	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Ooclass
 
 	XsdGoPkgHasElems_Filename
 
-	XsdGoPkgHasElems_Guisubmenu
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasAttr_Pubwork_TxsdCitetitlePubwork_
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Methodname
 
 }
 
@@ -3686,215 +3470,1987 @@ type XsdGoPkgHasElems_Citetitle struct {
 
 }
 
-type TxsdSubtitle struct {
-	XsdGoPkgHasElems_Citerefentry
+type TxsdGlossterm struct {
+	XsdGoPkgHasElems_Foreignphrase
 
-	XsdGoPkgHasElems_Constant
+	XsdGoPkgHasElems_Uri
 
-	XsdGoPkgHasElems_Alt
+	XsdGoPkgHasElems_Personname
 
-	XsdGoPkgHasElems_Type
+	XsdGoPkgHasElems_Tag
 
-	XsdGoPkgHasElems_Anchor
+	XsdGoPkgHasElems_Firstterm
 
-	XsdGoPkgHasElems_Function
+	XsdGoPkgHasElems_Phrase
 
-	XsdGoPkgHasElems_Ooexception
+	XsdGoPkgHasElems_Errorcode
 
-	XsdGoPkgHasElems_Classname
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Exceptionname
 
 	XsdGoPkgHasElems_Methodname
 
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasAttr_Baseform_XsdtString_
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Modifier
+
 	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Shortcut
+
+}
+
+type XsdGoPkgHasElems_Glossterm struct {
+	Glossterms []*TxsdGlossterm `xml:"http://docbook.org/ns/docbook glossterm"`
+
+}
+
+type TxsdOrgdiv struct {
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Alt
 
 	XsdGoPkgHasElems_Guimenuitem
 
 	XsdGoPkgHasElems_Guimenu
 
-	XsdGoPkgHasElems_Computeroutput
+	XsdGoPkgHasElems_Keycap
 
-	XsdGoPkgHasElems_Prompt
+	XsdGoPkgHasElems_Firstterm
 
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Keycombo
+	XsdGoPkgHasElems_Parameter
 
 	XsdGoPkgHasElems_Menuchoice
 
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Oointerface
+
+}
+
+type XsdGoPkgHasElems_Orgdiv struct {
+	Orgdivs []*TxsdOrgdiv `xml:"http://docbook.org/ns/docbook orgdiv"`
+
+}
+
+type TxsdOrg struct {
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Affiliation
+
+	XsdGoPkgHasElem_Orgname
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Orgdiv
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Uri
+
+}
+
+type XsdGoPkgHasElems_Org struct {
+	Orgs []*TxsdOrg `xml:"http://docbook.org/ns/docbook org"`
+
+}
+
+type TxsdForeignphrase struct {
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Biblioref
+
 	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Quote
+
+}
+
+type XsdGoPkgHasElems_Foreignphrase struct {
+	Foreignphrases []*TxsdForeignphrase `xml:"http://docbook.org/ns/docbook foreignphrase"`
+
+}
+
+type TxsdQuote struct {
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Footnote
 
 	XsdGoPkgHasElems_Abbrev
 
 	XsdGoPkgHasElems_Inlineequation
 
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Database
+	XsdGoPkgHasElems_Errorcode
 
 	XsdGoPkgHasElems_Link
 
-	XsdGoPkgHasElems_Org
+	XsdGoPkgHasElems_Olink
 
-	XsdGoPkgHasElems_Errorcode
+	XsdGoPkgHasElems_Guibutton
 
-	XsdGoPkgHasElems_Annotation
+	XsdGoPkgHasElems_Package
 
-	XsdGoPkgHasElems_Modifier
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Glossterm
 
 	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Person
 
 	XsdGoPkgHasElems_Remark
 
 	XsdGoPkgHasElems_Token
 
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Parameter
+
 }
 
-type XsdGoPkgHasElems_Subtitle struct {
-	Subtitles []*TxsdSubtitle `xml:"http://docbook.org/ns/docbook subtitle"`
+type XsdGoPkgHasElems_Quote struct {
+	Quotes []*TxsdQuote `xml:"http://docbook.org/ns/docbook quote"`
+
+}
+
+type TxsdCitation struct {
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Envar
+
+}
+
+type XsdGoPkgHasElems_Citation struct {
+	Citations []*TxsdCitation `xml:"http://docbook.org/ns/docbook citation"`
+
+}
+
+type XsdGoPkgHasElems_Info struct {
+	Infos []*TxsdInfo `xml:"http://docbook.org/ns/docbook info"`
+
+}
+
+type TxsdSimpara struct {
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Info
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Citerefentry
+
+}
+
+type XsdGoPkgHasElems_Simpara struct {
+	Simparas []*TxsdSimpara `xml:"http://docbook.org/ns/docbook simpara"`
+
+}
+
+type XsdGoPkgHasElems_Titleabbrev struct {
+	Titleabbrevs []*TxsdCitation `xml:"http://docbook.org/ns/docbook titleabbrev"`
+
+}
+
+type XsdGoPkgHasAttr_Onkeypress_XsdtString_ struct {
+	Onkeypress xsdt.String `xml:"http://docbook.org/ns/docbook onkeypress,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Ondblclick_XsdtString_ struct {
+	Ondblclick xsdt.String `xml:"http://docbook.org/ns/docbook ondblclick,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Onmousedown_XsdtString_ struct {
+	Onmousedown xsdt.String `xml:"http://docbook.org/ns/docbook onmousedown,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Continuation_TxsdProgramlistingContinuation_ struct {
+	Continuation TxsdAddressContinuation `xml:"http://docbook.org/ns/docbook continuation,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Width_XsdtNmtoken_ struct {
+	Width xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook width,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Linenumbering_TxsdProgramlistingLinenumbering_ struct {
+	Linenumbering TxsdAddressLinenumbering `xml:"http://docbook.org/ns/docbook linenumbering,attr"`
+
+}
+
+type XsdGoPkgHasElems_Lineannotation struct {
+	Lineannotations []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook lineannotation"`
+
+}
+
+type TxsdProgramlisting struct {
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Textobject
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasAttr_Startinglinenumber_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Lineannotation
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasAttr_Continuation_TxsdProgramlistingContinuation_
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasAttr_Width_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasAttr_Linenumbering_TxsdProgramlistingLinenumbering_
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Co
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Info
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasAttr_Language_XsdtString_
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Glossterm
+
+	xml.XsdGoPkgHasAttr_Space
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Productnumber
+
+}
+
+type XsdGoPkgHasElems_Programlisting struct {
+	Programlistings []*TxsdProgramlisting `xml:"http://docbook.org/ns/docbook programlisting"`
+
+}
+
+type TxsdDestructorsynopsis struct {
+	XsdGoPkgHasElem_Methodname
+
+	XsdGoPkgHasElems_Methodparam
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Language_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElem_Void
+
+}
+
+type XsdGoPkgHasElems_Destructorsynopsis struct {
+	Destructorsynopsises []*TxsdDestructorsynopsis `xml:"http://docbook.org/ns/docbook destructorsynopsis"`
+
+}
+
+type XsdGoPkgHasAttr_Continuation_TxsdScreenContinuation_ struct {
+	Continuation TxsdAddressContinuation `xml:"http://docbook.org/ns/docbook continuation,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Linenumbering_TxsdScreenLinenumbering_ struct {
+	Linenumbering TxsdAddressLinenumbering `xml:"http://docbook.org/ns/docbook linenumbering,attr"`
+
+}
+
+type TxsdScreen struct {
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Co
+
+	XsdGoPkgHasElems_Org
+
+	xml.XsdGoPkgHasAttr_Space
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasAttr_Startinglinenumber_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasAttr_Language_XsdtString_
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasAttr_Continuation_TxsdScreenContinuation_
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Textobject
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasAttr_Linenumbering_TxsdScreenLinenumbering_
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Lineannotation
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Info
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasAttr_Width_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Constant
+
+}
+
+type XsdGoPkgHasElems_Screen struct {
+	Screens []*TxsdScreen `xml:"http://docbook.org/ns/docbook screen"`
+
+}
+
+type XsdGoPkgHasElem_Varname struct {
+	Varname *TxsdFuncparams `xml:"http://docbook.org/ns/docbook varname"`
+
+}
+
+type TxsdFieldsynopsis struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElem_Varname
+
+	XsdGoPkgHasAttr_Language_XsdtString_
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElem_Initializer
+
+	XsdGoPkgHasElem_Type
+
+}
+
+type XsdGoPkgHasElems_Fieldsynopsis struct {
+	Fieldsynopsises []*TxsdFieldsynopsis `xml:"http://docbook.org/ns/docbook fieldsynopsis"`
+
+}
+
+type XsdGoPkgHasElems_Sbr struct {
+	Sbrs []*TxsdAnchor `xml:"http://docbook.org/ns/docbook sbr"`
+
+}
+
+type XsdGoPkgHasAttr_Rep_TxsdArgRep_Norepeat struct {
+	Rep TxsdMethodparamRep `xml:"http://docbook.org/ns/docbook rep,attr"`
+
+}
+
+//	Returns the default value for Rep -- "norepeat"
+func (me XsdGoPkgHasAttr_Rep_TxsdArgRep_Norepeat) RepDefault () TxsdMethodparamRep { return TxsdMethodparamRep("norepeat") }
+
+type XsdGoPkgHasAttr_Rep_TxsdGroupRep_Norepeat struct {
+	Rep TxsdMethodparamRep `xml:"http://docbook.org/ns/docbook rep,attr"`
+
+}
+
+//	Returns the default value for Rep -- "norepeat"
+func (me XsdGoPkgHasAttr_Rep_TxsdGroupRep_Norepeat) RepDefault () TxsdMethodparamRep { return TxsdMethodparamRep("norepeat") }
+
+type XsdGoPkgHasElems_Synopfragmentref struct {
+	Synopfragmentrefs []*TxsdDate `xml:"http://docbook.org/ns/docbook synopfragmentref"`
+
+}
+
+type XsdGoPkgHasAttr_Choice_TxsdGroupChoice_Opt struct {
+	Choice TxsdMethodparamChoice `xml:"http://docbook.org/ns/docbook choice,attr"`
+
+}
+
+//	Returns the default value for Choice -- "opt"
+func (me XsdGoPkgHasAttr_Choice_TxsdGroupChoice_Opt) ChoiceDefault () TxsdMethodparamChoice { return TxsdMethodparamChoice("opt") }
+
+type TxsdGroup struct {
+	XsdGoPkgHasAttr_Choice_TxsdGroupChoice_Opt
+
+	XsdGoPkgHasElems_Sbr
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasAttr_Rep_TxsdGroupRep_Norepeat
+
+	XsdGoPkgHasElems_Synopfragmentref
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Group
+
+	XsdGoPkgHasElems_Arg
+
+}
+
+type XsdGoPkgHasElems_Group struct {
+	Groups []*TxsdGroup `xml:"http://docbook.org/ns/docbook group"`
+
+}
+
+type XsdGoPkgHasAttr_Choice_TxsdArgChoice_Opt struct {
+	Choice TxsdMethodparamChoice `xml:"http://docbook.org/ns/docbook choice,attr"`
+
+}
+
+//	Returns the default value for Choice -- "opt"
+func (me XsdGoPkgHasAttr_Choice_TxsdArgChoice_Opt) ChoiceDefault () TxsdMethodparamChoice { return TxsdMethodparamChoice("opt") }
+
+type TxsdArg struct {
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Sbr
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Arg
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasAttr_Rep_TxsdArgRep_Norepeat
+
+	XsdGoPkgHasElems_Group
+
+	XsdGoPkgHasElems_Synopfragmentref
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasAttr_Choice_TxsdArgChoice_Opt
+
+}
+
+type XsdGoPkgHasElems_Arg struct {
+	Args []*TxsdArg `xml:"http://docbook.org/ns/docbook arg"`
+
+}
+
+type XsdGoPkgHasAttr_Sepchar_XsdtString_ struct {
+	Sepchar xsdt.String `xml:"http://docbook.org/ns/docbook sepchar,attr"`
+
+}
+
+type TxsdSynopfragment struct {
+	XsdGoPkgHasElems_Group
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Arg
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+}
+
+type XsdGoPkgHasElems_Synopfragment struct {
+	Synopfragments []*TxsdSynopfragment `xml:"http://docbook.org/ns/docbook synopfragment"`
+
+}
+
+type XsdGoPkgHasAttr_Cmdlength_XsdtString_ struct {
+	Cmdlength xsdt.String `xml:"http://docbook.org/ns/docbook cmdlength,attr"`
+
+}
+
+type TxsdCmdsynopsis struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Sbr
+
+	XsdGoPkgHasElems_Arg
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Sepchar_XsdtString_
+
+	XsdGoPkgHasElems_Synopfragment
+
+	XsdGoPkgHasAttr_Cmdlength_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Group
+
+}
+
+type XsdGoPkgHasElems_Cmdsynopsis struct {
+	Cmdsynopsises []*TxsdCmdsynopsis `xml:"http://docbook.org/ns/docbook cmdsynopsis"`
+
+}
+
+type XsdGoPkgHasElem_Programlisting struct {
+	Programlisting *TxsdProgramlisting `xml:"http://docbook.org/ns/docbook programlisting"`
+
+}
+
+type TxsdAreaspecUnits xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdAreaspecUnits is "calspair".
+func (me TxsdAreaspecUnits) IsCalspair () bool { return me == "calspair" }
+
+//	Returns true if the value of this enumerated TxsdAreaspecUnits is "linecolumn".
+func (me TxsdAreaspecUnits) IsLinecolumn () bool { return me == "linecolumn" }
+
+//	Returns true if the value of this enumerated TxsdAreaspecUnits is "linecolumnpair".
+func (me TxsdAreaspecUnits) IsLinecolumnpair () bool { return me == "linecolumnpair" }
+
+//	Since TxsdAreaspecUnits is just a simple String type, this merely returns the current string value.
+func (me TxsdAreaspecUnits) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdAreaspecUnits is "linerange".
+func (me TxsdAreaspecUnits) IsLinerange () bool { return me == "linerange" }
+
+//	Returns true if the value of this enumerated TxsdAreaspecUnits is "other".
+func (me TxsdAreaspecUnits) IsOther () bool { return me == "other" }
+
+//	Since TxsdAreaspecUnits is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdAreaspecUnits) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdAreaspecUnits's alias type xsdt.Token.
+func (me TxsdAreaspecUnits) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+type XsdGoPkgHasAttr_Units_TxsdAreaspecUnits_ struct {
+	Units TxsdAreaspecUnits `xml:"http://docbook.org/ns/docbook units,attr"`
 
 }
 
@@ -3903,34 +5459,8 @@ type XsdGoPkgHasAttr_Otherunits_XsdtNmtoken_ struct {
 
 }
 
-type TxsdAreaspecUnits xsdt.Token
-
-//	Returns true if the value of this enumerated TxsdAreaspecUnits is "other".
-func (me TxsdAreaspecUnits) IsOther () bool { return me == "other" }
-
-//	Returns true if the value of this enumerated TxsdAreaspecUnits is "calspair".
-func (me TxsdAreaspecUnits) IsCalspair () bool { return me == "calspair" }
-
-//	Since TxsdAreaspecUnits is just a simple String type, this merely returns the current string value.
-func (me TxsdAreaspecUnits) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdAreaspecUnits is "linerange".
-func (me TxsdAreaspecUnits) IsLinerange () bool { return me == "linerange" }
-
-//	Returns true if the value of this enumerated TxsdAreaspecUnits is "linecolumnpair".
-func (me TxsdAreaspecUnits) IsLinecolumnpair () bool { return me == "linecolumnpair" }
-
-//	Since TxsdAreaspecUnits is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdAreaspecUnits) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TxsdAreaspecUnits's alias type xsdt.Token.
-func (me TxsdAreaspecUnits) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdAreaspecUnits is "linecolumn".
-func (me TxsdAreaspecUnits) IsLinecolumn () bool { return me == "linecolumn" }
-
-type XsdGoPkgHasAttr_Units_TxsdAreaspecUnits_ struct {
-	Units TxsdAreaspecUnits `xml:"http://docbook.org/ns/docbook units,attr"`
+type XsdGoPkgHasAttr_Coords_XsdtString_ struct {
+	Coords xsdt.String `xml:"http://docbook.org/ns/docbook coords,attr"`
 
 }
 
@@ -3939,27 +5469,22 @@ type XsdGoPkgHasAttr_Units_TxsdAreaUnits_ struct {
 
 }
 
-type XsdGoPkgHasAttr_Coords_XsdtString_ struct {
-	Coords xsdt.String `xml:"http://docbook.org/ns/docbook coords,attr"`
-
-}
-
 type TxsdArea struct {
-	XsdGoPkgHasAttr_Linkends_XsdtIdrefs_
-
-	XsdGoPkgHasAttr_Units_TxsdAreaUnits_
-
-	XsdGoPkgHasAttr_Otherunits_XsdtNmtoken_
-
 	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElem_Alt
-
-	XsdGoPkgHasAttr_Coords_XsdtString_
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
+	XsdGoPkgHasAttr_Otherunits_XsdtNmtoken_
+
 	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasAttr_Coords_XsdtString_
+
+	XsdGoPkgHasAttr_Units_TxsdAreaUnits_
+
+	XsdGoPkgHasAttr_Linkends_XsdtIdrefs_
+
+	XsdGoPkgHasElem_Alt
 
 }
 
@@ -3974,19 +5499,19 @@ type XsdGoPkgHasAttr_Units_TxsdAreasetUnits_ struct {
 }
 
 type TxsdAreaset struct {
-	XsdGoPkgHasAttr_Linkends_XsdtIdrefs_
+	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasAttr_Linkends_XsdtIdrefs_
 
 	XsdGoPkgHasAttr_Otherunits_XsdtNmtoken_
 
+	XsdGoPkgHasAttr_Role_XsdtString_
+
 	XsdGoPkgHasElems_Area
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+	XsdGoPkgHasAttr_Units_TxsdAreasetUnits_
 
 	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasAttr_Units_TxsdAreasetUnits_
 
 }
 
@@ -3996,19 +5521,19 @@ type XsdGoPkgHasElems_Areaset struct {
 }
 
 type TxsdAreaspec struct {
-	XsdGoPkgHasElems_Area
-
 	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Areaset
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+	XsdGoPkgHasAttr_Units_TxsdAreaspecUnits_
+
+	XsdGoPkgHasElems_Area
+
+	XsdGoPkgHasElems_Areaset
 
 	XsdGoPkgHasAttr_Otherunits_XsdtNmtoken_
 
-	XsdGoPkgHasAttr_Units_TxsdAreaspecUnits_
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
@@ -4017,52 +5542,92 @@ type XsdGoPkgHasElem_Areaspec struct {
 
 }
 
-type XsdGoPkgHasAttr_Columns_XsdtNmtoken_ struct {
-	Columns xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook columns,attr"`
-
-}
-
-type XsdGoPkgHasElems_Member struct {
-	Members []*TxsdSubtitle `xml:"http://docbook.org/ns/docbook member"`
-
-}
-
-type TxsdSimplelistType xsdt.Token
-
-//	Since TxsdSimplelistType is just a simple String type, this merely returns the current string value.
-func (me TxsdSimplelistType) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdSimplelistType is "inline".
-func (me TxsdSimplelistType) IsInline () bool { return me == "inline" }
-
-//	Returns true if the value of this enumerated TxsdSimplelistType is "horiz".
-func (me TxsdSimplelistType) IsHoriz () bool { return me == "horiz" }
-
-//	This convenience method just performs a simple type conversion to TxsdSimplelistType's alias type xsdt.Token.
-func (me TxsdSimplelistType) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Since TxsdSimplelistType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdSimplelistType) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdSimplelistType is "vert".
-func (me TxsdSimplelistType) IsVert () bool { return me == "vert" }
-
-type XsdGoPkgHasAttr_Type_TxsdSimplelistType_Vert struct {
-	Type TxsdSimplelistType `xml:"http://docbook.org/ns/docbook type,attr"`
-
-}
-
-//	Returns the default value for Type -- "vert"
-func (me XsdGoPkgHasAttr_Type_TxsdSimplelistType_Vert) TypeDefault () TxsdSimplelistType { return TxsdSimplelistType("vert") }
-
-type TxsdSimplelist struct {
+type TxsdProgramlistingco struct {
 	XsdGoPkgHasAttr_Role_XsdtString_
 
-	XsdGoPkgHasElems_Member
+	XsdGoPkgHasElems_Calloutlist
 
-	XsdGoPkgHasAttr_Type_TxsdSimplelistType_Vert
+	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Columns_XsdtNmtoken_
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElem_Programlisting
+
+	XsdGoPkgHasElem_Areaspec
+
+}
+
+type XsdGoPkgHasElems_Programlistingco struct {
+	Programlistingcos []*TxsdProgramlistingco `xml:"http://docbook.org/ns/docbook programlistingco"`
+
+}
+
+type XsdGoPkgHasElems_Constructorsynopsis struct {
+	Constructorsynopsises []*TxsdDestructorsynopsis `xml:"http://docbook.org/ns/docbook constructorsynopsis"`
+
+}
+
+type TxsdStepPerformance xsdt.Token
+
+//	Since TxsdStepPerformance is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdStepPerformance) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdStepPerformance is "optional".
+func (me TxsdStepPerformance) IsOptional () bool { return me == "optional" }
+
+//	This convenience method just performs a simple type conversion to TxsdStepPerformance's alias type xsdt.Token.
+func (me TxsdStepPerformance) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdStepPerformance is "required".
+func (me TxsdStepPerformance) IsRequired () bool { return me == "required" }
+
+//	Since TxsdStepPerformance is just a simple String type, this merely returns the current string value.
+func (me TxsdStepPerformance) String () string { return xsdt.Token(me).String() }
+
+type XsdGoPkgHasAttr_Performance_TxsdStepPerformance_ struct {
+	Performance TxsdStepPerformance `xml:"http://docbook.org/ns/docbook performance,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Performance_TxsdStepalternativesPerformance_ struct {
+	Performance TxsdStepPerformance `xml:"http://docbook.org/ns/docbook performance,attr"`
+
+}
+
+type TxsdStepalternatives struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Step
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasAttr_Performance_TxsdStepalternativesPerformance_
+
+}
+
+type XsdGoPkgHasElem_Stepalternatives struct {
+	Stepalternatives *TxsdStepalternatives `xml:"http://docbook.org/ns/docbook stepalternatives"`
+
+}
+
+type TxsdInformalequation struct {
+	XsdGoPkgHasElems_Mathphrase
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElem_Caption
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElem_Alt
+
+	XsdGoPkgHasElem_Info
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
@@ -4070,13 +5635,327 @@ type TxsdSimplelist struct {
 
 }
 
-type XsdGoPkgHasElems_Simplelist struct {
-	Simplelists []*TxsdSimplelist `xml:"http://docbook.org/ns/docbook simplelist"`
+type XsdGoPkgHasElems_Informalequation struct {
+	Informalequations []*TxsdInformalequation `xml:"http://docbook.org/ns/docbook informalequation"`
 
 }
 
-type XsdGoPkgHasElems_Info struct {
-	Infos []*TxsdInfo `xml:"http://docbook.org/ns/docbook info"`
+type XsdGoPkgHasAttr_Continuation_TxsdClasssynopsisinfoContinuation_ struct {
+	Continuation TxsdAddressContinuation `xml:"http://docbook.org/ns/docbook continuation,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Linenumbering_TxsdClasssynopsisinfoLinenumbering_ struct {
+	Linenumbering TxsdAddressLinenumbering `xml:"http://docbook.org/ns/docbook linenumbering,attr"`
+
+}
+
+type TxsdClasssynopsisinfo struct {
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasAttr_Startinglinenumber_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasAttr_Language_XsdtString_
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Linenumbering_TxsdClasssynopsisinfoLinenumbering_
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Info
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Replaceable
+
+	xml.XsdGoPkgHasAttr_Space
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Textobject
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Lineannotation
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasAttr_Continuation_TxsdClasssynopsisinfoContinuation_
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Co
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Systemitem
+
+}
+
+type XsdGoPkgHasElems_Classsynopsisinfo struct {
+	Classsynopsisinfos []*TxsdClasssynopsisinfo `xml:"http://docbook.org/ns/docbook classsynopsisinfo"`
+
+}
+
+type TxsdClasssynopsisClass xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdClasssynopsisClass is "class".
+func (me TxsdClasssynopsisClass) IsClass () bool { return me == "class" }
+
+//	Returns true if the value of this enumerated TxsdClasssynopsisClass is "interface".
+func (me TxsdClasssynopsisClass) IsInterface () bool { return me == "interface" }
+
+//	Since TxsdClasssynopsisClass is just a simple String type, this merely returns the current string value.
+func (me TxsdClasssynopsisClass) String () string { return xsdt.Token(me).String() }
+
+//	This convenience method just performs a simple type conversion to TxsdClasssynopsisClass's alias type xsdt.Token.
+func (me TxsdClasssynopsisClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Since TxsdClasssynopsisClass is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdClasssynopsisClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_Class_TxsdClasssynopsisClass_ struct {
+	Class TxsdClasssynopsisClass `xml:"http://docbook.org/ns/docbook class,attr"`
+
+}
+
+type TxsdClasssynopsis struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Classsynopsisinfo
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasAttr_Class_TxsdClasssynopsisClass_
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Language_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Ooclass
+
+}
+
+type XsdGoPkgHasElems_Classsynopsis struct {
+	Classsynopsises []*TxsdClasssynopsis `xml:"http://docbook.org/ns/docbook classsynopsis"`
+
+}
+
+type XsdGoPkgHasAttr_Performance_TxsdSubstepsPerformance_ struct {
+	Performance TxsdStepPerformance `xml:"http://docbook.org/ns/docbook performance,attr"`
+
+}
+
+type TxsdSubsteps struct {
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Performance_TxsdSubstepsPerformance_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Step
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+}
+
+type XsdGoPkgHasElem_Substeps struct {
+	Substeps *TxsdSubsteps `xml:"http://docbook.org/ns/docbook substeps"`
 
 }
 
@@ -4090,27 +5969,22 @@ type XsdGoPkgHasAttr_Linenumbering_TxsdLiterallayoutLinenumbering_ struct {
 
 }
 
-type XsdGoPkgHasElems_Lineannotation struct {
-	Lineannotations []*TxsdAccel `xml:"http://docbook.org/ns/docbook lineannotation"`
-
-}
-
 type TxsdLiterallayoutClass xsdt.Token
 
-//	Returns true if the value of this enumerated TxsdLiterallayoutClass is "monospaced".
-func (me TxsdLiterallayoutClass) IsMonospaced () bool { return me == "monospaced" }
-
-//	Since TxsdLiterallayoutClass is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdLiterallayoutClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TxsdLiterallayoutClass's alias type xsdt.Token.
-func (me TxsdLiterallayoutClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+//	Since TxsdLiterallayoutClass is just a simple String type, this merely returns the current string value.
+func (me TxsdLiterallayoutClass) String () string { return xsdt.Token(me).String() }
 
 //	Returns true if the value of this enumerated TxsdLiterallayoutClass is "normal".
 func (me TxsdLiterallayoutClass) IsNormal () bool { return me == "normal" }
 
-//	Since TxsdLiterallayoutClass is just a simple String type, this merely returns the current string value.
-func (me TxsdLiterallayoutClass) String () string { return xsdt.Token(me).String() }
+//	This convenience method just performs a simple type conversion to TxsdLiterallayoutClass's alias type xsdt.Token.
+func (me TxsdLiterallayoutClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Since TxsdLiterallayoutClass is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdLiterallayoutClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdLiterallayoutClass is "monospaced".
+func (me TxsdLiterallayoutClass) IsMonospaced () bool { return me == "monospaced" }
 
 type XsdGoPkgHasAttr_Class_TxsdLiterallayoutClass_ struct {
 	Class TxsdLiterallayoutClass `xml:"http://docbook.org/ns/docbook class,attr"`
@@ -4118,229 +5992,229 @@ type XsdGoPkgHasAttr_Class_TxsdLiterallayoutClass_ struct {
 }
 
 type TxsdLiterallayout struct {
-	XsdGoPkgHasElems_Literal
+	XsdGoPkgHasElems_Guisubmenu
 
-	XsdGoPkgHasElems_Alt
+	XsdGoPkgHasElems_Optional
 
-	XsdGoPkgHasElems_Quote
+	XsdGoPkgHasElems_Interfacename
 
-	XsdGoPkgHasElems_Command
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Remark
 
 	XsdGoPkgHasElems_Guimenuitem
 
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Lineannotation
+
 	XsdGoPkgHasAttr_Class_TxsdLiterallayoutClass_
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Info
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Textobject
+
+	XsdGoPkgHasAttr_Startinglinenumber_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Subscript
+
+	xml.XsdGoPkgHasAttr_Space
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Exceptionname
 
 	XsdGoPkgHasElems_Varname
 
-	XsdGoPkgHasElems_Inlinemediaobject
+	XsdGoPkgHasElems_Termdef
 
-	XsdGoPkgHasElems_Annotation
+	XsdGoPkgHasElems_Errorcode
 
-	XsdGoPkgHasElems_Emphasis
+	XsdGoPkgHasElems_Org
 
-	XsdGoPkgHasElems_Phrase
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasAttr_Continuation_TxsdLiterallayoutContinuation_
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Option
 
 	XsdGoPkgHasElems_Author
 
 	XsdGoPkgHasElems_Person
 
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Co
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasAttr_Startinglinenumber_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Textobject
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Info
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasAttr_Continuation_TxsdLiterallayoutContinuation_
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Replaceable
+	XsdGoPkgHasElems_Emphasis
 
 	XsdGoPkgHasElems_Foreignphrase
 
-	XsdGoPkgHasElems_Hardware
+	XsdGoPkgHasElems_Alt
 
-	XsdGoPkgHasElems_Productnumber
-
-	xml.XsdGoPkgHasAttr_Space
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasAttr_Linenumbering_TxsdLiterallayoutLinenumbering_
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Optional
+	XsdGoPkgHasAttr_Role_XsdtString_
 
 	XsdGoPkgHasElems_Editor
 
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasAttr_Language_XsdtString_
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Mousebutton
-
 	XsdGoPkgHasElems_Filename
 
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Olink
+	XsdGoPkgHasElems_Superscript
 
 	XsdGoPkgHasElems_Type
 
-	XsdGoPkgHasElems_Lineannotation
+	XsdGoPkgHasAttr_Linenumbering_TxsdLiterallayoutLinenumbering_
+
+	XsdGoPkgHasElems_Co
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasAttr_Language_XsdtString_
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Olink
 
 }
 
@@ -4349,228 +6223,53 @@ type XsdGoPkgHasElems_Literallayout struct {
 
 }
 
-type XsdGoPkgHasElems_Authorinitials struct {
-	Authorinitialses []*TxsdAccel `xml:"http://docbook.org/ns/docbook authorinitials"`
+type XsdGoPkgHasElems_Segtitle struct {
+	Segtitles []*TxsdCitation `xml:"http://docbook.org/ns/docbook segtitle"`
 
 }
 
-type XsdGoPkgHasElem_Date struct {
-	Date *TxsdDate `xml:"http://docbook.org/ns/docbook date"`
+type XsdGoPkgHasElems_Seg struct {
+	Segs []*TxsdCitation `xml:"http://docbook.org/ns/docbook seg"`
 
 }
 
-type XsdGoPkgHasElem_Revnumber struct {
-	Revnumber *TxsdAccel `xml:"http://docbook.org/ns/docbook revnumber"`
+type TxsdSeglistitem struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Seg
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
-type XsdGoPkgHasElem_Revremark struct {
-	Revremark *TxsdAccel `xml:"http://docbook.org/ns/docbook revremark"`
+type XsdGoPkgHasElems_Seglistitem struct {
+	Seglistitems []*TxsdSeglistitem `xml:"http://docbook.org/ns/docbook seglistitem"`
 
 }
 
-type XsdGoPkgHasAttr_Onkeyup_XsdtString_ struct {
-	Onkeyup xsdt.String `xml:"http://docbook.org/ns/docbook onkeyup,attr"`
+type TxsdSegmentedlist struct {
+	XsdGoPkgHasElems_Title
 
-}
+	XsdGoPkgHasAttr_Role_XsdtString_
 
-type XsdGoPkgHasAttr_Class_XsdtString_ struct {
-	Class xsdt.String `xml:"http://docbook.org/ns/docbook class,attr"`
+	XsdGoPkgHasElem_Info
 
-}
-
-type XsdGoPkgHasAttr_Align_TxsdColAlign_ struct {
-	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Ondblclick_XsdtString_ struct {
-	Ondblclick xsdt.String `xml:"http://docbook.org/ns/docbook ondblclick,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Onmousedown_XsdtString_ struct {
-	Onmousedown xsdt.String `xml:"http://docbook.org/ns/docbook onmousedown,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Onmouseout_XsdtString_ struct {
-	Onmouseout xsdt.String `xml:"http://docbook.org/ns/docbook onmouseout,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Onmouseover_XsdtString_ struct {
-	Onmouseover xsdt.String `xml:"http://docbook.org/ns/docbook onmouseover,attr"`
-
-}
-
-type TxsdColValign xsdt.Token
-
-//	Returns true if the value of this enumerated TxsdColValign is "top".
-func (me TxsdColValign) IsTop () bool { return me == "top" }
-
-//	Since TxsdColValign is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdColValign) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Since TxsdColValign is just a simple String type, this merely returns the current string value.
-func (me TxsdColValign) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdColValign is "middle".
-func (me TxsdColValign) IsMiddle () bool { return me == "middle" }
-
-//	This convenience method just performs a simple type conversion to TxsdColValign's alias type xsdt.Token.
-func (me TxsdColValign) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdColValign is "baseline".
-func (me TxsdColValign) IsBaseline () bool { return me == "baseline" }
-
-//	Returns true if the value of this enumerated TxsdColValign is "bottom".
-func (me TxsdColValign) IsBottom () bool { return me == "bottom" }
-
-type XsdGoPkgHasAttr_Valign_TxsdColValign_ struct {
-	Valign TxsdColValign `xml:"http://docbook.org/ns/docbook valign,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Charoff_XsdtString_ struct {
-	Charoff xsdt.String `xml:"http://docbook.org/ns/docbook charoff,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Onclick_XsdtString_ struct {
-	Onclick xsdt.String `xml:"http://docbook.org/ns/docbook onclick,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Onmousemove_XsdtString_ struct {
-	Onmousemove xsdt.String `xml:"http://docbook.org/ns/docbook onmousemove,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Char_XsdtString_ struct {
-	Char xsdt.String `xml:"http://docbook.org/ns/docbook char,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Onmouseup_XsdtString_ struct {
-	Onmouseup xsdt.String `xml:"http://docbook.org/ns/docbook onmouseup,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Title_XsdtString_ struct {
-	Title xsdt.String `xml:"http://docbook.org/ns/docbook title,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Onkeydown_XsdtString_ struct {
-	Onkeydown xsdt.String `xml:"http://docbook.org/ns/docbook onkeydown,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Lang_XsdtString_ struct {
-	Lang xsdt.String `xml:"http://docbook.org/ns/docbook lang,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Span_XsdtNmtoken_ struct {
-	Span xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook span,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Onkeypress_XsdtString_ struct {
-	Onkeypress xsdt.String `xml:"http://docbook.org/ns/docbook onkeypress,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Style_XsdtString_ struct {
-	Style xsdt.String `xml:"http://docbook.org/ns/docbook style,attr"`
-
-}
-
-type TxsdCol struct {
-	XsdGoPkgHasAttr_Onkeyup_XsdtString_
-
-	XsdGoPkgHasAttr_Onmouseup_XsdtString_
-
-	XsdGoPkgHasAttr_Title_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeydown_XsdtString_
-
-	XsdGoPkgHasAttr_Lang_XsdtString_
-
-	XsdGoPkgHasAttr_Width_XsdtString_
-
-	XsdGoPkgHasAttr_Span_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_Onkeypress_XsdtString_
-
-	XsdGoPkgHasAttr_Style_XsdtString_
-
-	XsdGoPkgHasAttr_Align_TxsdColAlign_
-
-	XsdGoPkgHasAttr_Ondblclick_XsdtString_
-
-	XsdGoPkgHasAttr_Onmousedown_XsdtString_
-
-	XsdGoPkgHasAttr_Onmouseout_XsdtString_
-
-	XsdGoPkgHasAttr_Class_XsdtString_
-
-	XsdGoPkgHasAttr_Onmouseover_XsdtString_
-
-	XsdGoPkgHasAttr_Valign_TxsdColValign_
-
-	XsdGoPkgHasAttr_Charoff_XsdtString_
-
-	XsdGoPkgHasAttr_Onclick_XsdtString_
-
-	XsdGoPkgHasAttr_Onmousemove_XsdtString_
+	XsdGoPkgHasElems_Titleabbrev
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Char_XsdtString_
+	XsdGoPkgHasElems_Segtitle
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Seglistitem
 
 }
 
-type XsdGoPkgHasElems_Col struct {
-	Cols []*TxsdCol `xml:"http://docbook.org/ns/docbook col"`
-
-}
-
-type XsdGoPkgHasAttr_Border_XsdtNmtoken_ struct {
-	Border xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook border,attr"`
-
-}
-
-type TxsdInformaltableRowheader xsdt.Token
-
-//	Returns true if the value of this enumerated TxsdInformaltableRowheader is "norowheader".
-func (me TxsdInformaltableRowheader) IsNorowheader () bool { return me == "norowheader" }
-
-//	Since TxsdInformaltableRowheader is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdInformaltableRowheader) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TxsdInformaltableRowheader's alias type xsdt.Token.
-func (me TxsdInformaltableRowheader) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Since TxsdInformaltableRowheader is just a simple String type, this merely returns the current string value.
-func (me TxsdInformaltableRowheader) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdInformaltableRowheader is "firstcol".
-func (me TxsdInformaltableRowheader) IsFirstcol () bool { return me == "firstcol" }
-
-type XsdGoPkgHasAttr_Rowheader_TxsdInformaltableRowheader_ struct {
-	Rowheader TxsdInformaltableRowheader `xml:"http://docbook.org/ns/docbook rowheader,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Valign_TxsdTbodyValign_ struct {
-	Valign TxsdColValign `xml:"http://docbook.org/ns/docbook valign,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Align_TxsdTrAlign_ struct {
-	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
+type XsdGoPkgHasElems_Segmentedlist struct {
+	Segmentedlists []*TxsdSegmentedlist `xml:"http://docbook.org/ns/docbook segmentedlist"`
 
 }
 
@@ -4585,229 +6284,229 @@ type XsdGoPkgHasAttr_Linenumbering_TxsdSynopsisLinenumbering_ struct {
 }
 
 type TxsdSynopsis struct {
-	XsdGoPkgHasElems_Footnoteref
+	XsdGoPkgHasElems_Productname
 
-	XsdGoPkgHasElems_Keycode
+	XsdGoPkgHasElems_Guibutton
 
-	XsdGoPkgHasElems_Citation
+	XsdGoPkgHasElems_Keycombo
 
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasElems_Keycap
 
-	XsdGoPkgHasAttr_Continuation_TxsdSynopsisContinuation_
-
-	XsdGoPkgHasElems_Co
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Shortcut
+	XsdGoPkgHasElems_Nonterminal
 
 	XsdGoPkgHasElems_Link
 
 	XsdGoPkgHasElems_Info
 
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasAttr_Startinglinenumber_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasAttr_Linenumbering_TxsdSynopsisLinenumbering_
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Lineannotation
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Textobject
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Language_XsdtString_
+	XsdGoPkgHasElems_Abbrev
 
 	XsdGoPkgHasElems_Hardware
 
-	xml.XsdGoPkgHasAttr_Space
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Methodname
-
 	XsdGoPkgHasElems_Wordasword
 
-	XsdGoPkgHasElems_Person
+	XsdGoPkgHasElems_Errortype
 
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Command
+	XsdGoPkgHasElems_Shortcut
 
 	XsdGoPkgHasElems_Date
 
-	XsdGoPkgHasElems_Envar
+	XsdGoPkgHasElems_Userinput
 
-	XsdGoPkgHasElems_Errorname
+	XsdGoPkgHasElems_Methodname
 
-	XsdGoPkgHasElems_Guiicon
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Lineannotation
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasAttr_Linenumbering_TxsdSynopsisLinenumbering_
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Optional
 
 	XsdGoPkgHasElems_Constant
 
-	XsdGoPkgHasElems_Abbrev
+	XsdGoPkgHasAttr_Language_XsdtString_
 
-	XsdGoPkgHasElems_Code
+	XsdGoPkgHasElems_Accel
 
-	XsdGoPkgHasElems_Database
+	XsdGoPkgHasElems_Initializer
 
-	XsdGoPkgHasElems_Glossterm
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Textobject
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Token
 
 	XsdGoPkgHasElems_Productnumber
 
-	XsdGoPkgHasElems_Parameter
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Co
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Modifier
+
+	xml.XsdGoPkgHasAttr_Space
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasAttr_Continuation_TxsdSynopsisContinuation_
+
+	XsdGoPkgHasAttr_Startinglinenumber_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Option
 
 }
 
@@ -4816,522 +6515,485 @@ type XsdGoPkgHasElems_Synopsis struct {
 
 }
 
-type TxsdBridgeheadRenderas xsdt.Token
-
-//	Since TxsdBridgeheadRenderas is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdBridgeheadRenderas) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdBridgeheadRenderas is "other".
-func (me TxsdBridgeheadRenderas) IsOther () bool { return me == "other" }
-
-//	Since TxsdBridgeheadRenderas is just a simple String type, this merely returns the current string value.
-func (me TxsdBridgeheadRenderas) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdBridgeheadRenderas is "sect2".
-func (me TxsdBridgeheadRenderas) IsSect2 () bool { return me == "sect2" }
-
-//	Returns true if the value of this enumerated TxsdBridgeheadRenderas is "sect4".
-func (me TxsdBridgeheadRenderas) IsSect4 () bool { return me == "sect4" }
-
-//	Returns true if the value of this enumerated TxsdBridgeheadRenderas is "sect1".
-func (me TxsdBridgeheadRenderas) IsSect1 () bool { return me == "sect1" }
-
-//	Returns true if the value of this enumerated TxsdBridgeheadRenderas is "sect5".
-func (me TxsdBridgeheadRenderas) IsSect5 () bool { return me == "sect5" }
-
-//	This convenience method just performs a simple type conversion to TxsdBridgeheadRenderas's alias type xsdt.Token.
-func (me TxsdBridgeheadRenderas) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdBridgeheadRenderas is "sect3".
-func (me TxsdBridgeheadRenderas) IsSect3 () bool { return me == "sect3" }
-
-type XsdGoPkgHasAttr_Renderas_TxsdBridgeheadRenderas_ struct {
-	Renderas TxsdBridgeheadRenderas `xml:"http://docbook.org/ns/docbook renderas,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Otherrenderas_XsdtNmtoken_ struct {
-	Otherrenderas xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook otherrenderas,attr"`
-
-}
-
-type TxsdBridgehead struct {
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Constant
+type TxsdAttribution struct {
+	XsdGoPkgHasCdata
 
 	XsdGoPkgHasElems_Citetitle
 
-	XsdGoPkgHasAttr_Renderas_TxsdBridgeheadRenderas_
+	XsdGoPkgHasElems_Personname
 
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasAttr_Otherrenderas_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasCdata
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Jobtitle
+	XsdGoPkgHasElems_Citation
 
 	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-}
-
-type XsdGoPkgHasElems_Bridgehead struct {
-	Bridgeheads []*TxsdBridgehead `xml:"http://docbook.org/ns/docbook bridgehead"`
-
-}
-
-type XsdGoPkgHasElems_Titleabbrev struct {
-	Titleabbrevs []*TxsdSubtitle `xml:"http://docbook.org/ns/docbook titleabbrev"`
-
-}
-
-type XsdGoPkgHasElems_Seg struct {
-	Segs []*TxsdSubtitle `xml:"http://docbook.org/ns/docbook seg"`
-
-}
-
-type TxsdSeglistitem struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Seg
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Seglistitem struct {
-	Seglistitems []*TxsdSeglistitem `xml:"http://docbook.org/ns/docbook seglistitem"`
-
-}
-
-type XsdGoPkgHasElems_Segtitle struct {
-	Segtitles []*TxsdSubtitle `xml:"http://docbook.org/ns/docbook segtitle"`
-
-}
-
-type TxsdSegmentedlist struct {
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Seglistitem
-
-	XsdGoPkgHasElems_Segtitle
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Segmentedlist struct {
-	Segmentedlists []*TxsdSegmentedlist `xml:"http://docbook.org/ns/docbook segmentedlist"`
-
-}
-
-type XsdGoPkgHasElem_Methodname struct {
-	Methodname *TxsdAccel `xml:"http://docbook.org/ns/docbook methodname"`
-
-}
-
-type TxsdVoid struct {
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-}
-
-type XsdGoPkgHasElem_Void struct {
-	Void *TxsdVoid `xml:"http://docbook.org/ns/docbook void"`
-
-}
-
-type XsdGoPkgHasElem_Funcparams struct {
-	Funcparams *TxsdAccel `xml:"http://docbook.org/ns/docbook funcparams"`
-
-}
-
-type TxsdMethodparamChoice xsdt.Token
-
-//	This convenience method just performs a simple type conversion to TxsdMethodparamChoice's alias type xsdt.Token.
-func (me TxsdMethodparamChoice) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdMethodparamChoice is "req".
-func (me TxsdMethodparamChoice) IsReq () bool { return me == "req" }
-
-//	Returns true if the value of this enumerated TxsdMethodparamChoice is "opt".
-func (me TxsdMethodparamChoice) IsOpt () bool { return me == "opt" }
-
-//	Since TxsdMethodparamChoice is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdMethodparamChoice) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdMethodparamChoice is "plain".
-func (me TxsdMethodparamChoice) IsPlain () bool { return me == "plain" }
-
-//	Since TxsdMethodparamChoice is just a simple String type, this merely returns the current string value.
-func (me TxsdMethodparamChoice) String () string { return xsdt.Token(me).String() }
-
-type XsdGoPkgHasAttr_Choice_TxsdMethodparamChoice_Req struct {
-	Choice TxsdMethodparamChoice `xml:"http://docbook.org/ns/docbook choice,attr"`
-
-}
-
-//	Returns the default value for Choice -- "req"
-func (me XsdGoPkgHasAttr_Choice_TxsdMethodparamChoice_Req) ChoiceDefault () TxsdMethodparamChoice { return TxsdMethodparamChoice("req") }
-
-type XsdGoPkgHasElem_Parameter struct {
-	Parameter *TxsdParameter `xml:"http://docbook.org/ns/docbook parameter"`
-
-}
-
-type TxsdMethodparamRep xsdt.Token
-
-//	Returns true if the value of this enumerated TxsdMethodparamRep is "norepeat".
-func (me TxsdMethodparamRep) IsNorepeat () bool { return me == "norepeat" }
-
-//	Since TxsdMethodparamRep is just a simple String type, this merely returns the current string value.
-func (me TxsdMethodparamRep) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdMethodparamRep is "repeat".
-func (me TxsdMethodparamRep) IsRepeat () bool { return me == "repeat" }
-
-//	Since TxsdMethodparamRep is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdMethodparamRep) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TxsdMethodparamRep's alias type xsdt.Token.
-func (me TxsdMethodparamRep) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-type XsdGoPkgHasAttr_Rep_TxsdMethodparamRep_Norepeat struct {
-	Rep TxsdMethodparamRep `xml:"http://docbook.org/ns/docbook rep,attr"`
-
-}
-
-//	Returns the default value for Rep -- "norepeat"
-func (me XsdGoPkgHasAttr_Rep_TxsdMethodparamRep_Norepeat) RepDefault () TxsdMethodparamRep { return TxsdMethodparamRep("norepeat") }
-
-type XsdGoPkgHasElem_Initializer struct {
-	Initializer *TxsdAccel `xml:"http://docbook.org/ns/docbook initializer"`
-
-}
-
-type TxsdMethodparam struct {
-	XsdGoPkgHasElem_Parameter
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Rep_TxsdMethodparamRep_Norepeat
-
-	XsdGoPkgHasElem_Initializer
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElem_Funcparams
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAttr_Choice_TxsdMethodparamChoice_Req
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-}
-
-type XsdGoPkgHasElems_Methodparam struct {
-	Methodparams []*TxsdMethodparam `xml:"http://docbook.org/ns/docbook methodparam"`
-
-}
-
-type TxsdConstructorsynopsis struct {
-	XsdGoPkgHasElem_Methodname
-
-	XsdGoPkgHasElem_Void
-
-	XsdGoPkgHasElems_Methodparam
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Language_XsdtString_
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Constructorsynopsis struct {
-	Constructorsynopsises []*TxsdConstructorsynopsis `xml:"http://docbook.org/ns/docbook constructorsynopsis"`
-
-}
-
-type XsdGoPkgHasElems_Mediaobject struct {
-	Mediaobjects []*TxsdMediaobject `xml:"http://docbook.org/ns/docbook mediaobject"`
-
-}
-
-type XsdGoPkgHasAttr_Floatstyle_XsdtString_ struct {
-	Floatstyle xsdt.String `xml:"http://docbook.org/ns/docbook floatstyle,attr"`
-
-}
-
-type XsdGoPkgHasElem_Varargs struct {
-	Varargs *TxsdVoid `xml:"http://docbook.org/ns/docbook varargs"`
-
-}
-
-type TxsdFuncdef struct {
-	XsdGoPkgHasElems_Annotation
 
 	XsdGoPkgHasElems_Subscript
 
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Inlinemediaobject
+	XsdGoPkgHasElems_Superscript
 
 	XsdGoPkgHasElems_Link
 
-	XsdGoPkgHasElems_Function
+	XsdGoPkgHasElems_Anchor
 
 	XsdGoPkgHasElems_Phrase
 
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Xref
+	XsdGoPkgHasElems_Annotation
 
 	XsdGoPkgHasElems_Replaceable
 
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Xref
+
+}
+
+type XsdGoPkgHasElem_Attribution struct {
+	Attribution *TxsdAttribution `xml:"http://docbook.org/ns/docbook attribution"`
+
+}
+
+type XsdGoPkgHasElem_Para struct {
+	Para *TxsdPara `xml:"http://docbook.org/ns/docbook para"`
+
+}
+
+type TxsdFormalpara struct {
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElem_Para
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Title
+
+}
+
+type XsdGoPkgHasElems_Formalpara struct {
+	Formalparas []*TxsdFormalpara `xml:"http://docbook.org/ns/docbook formalpara"`
+
+}
+
+type TxsdEpigraph struct {
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasElems_Anchor
 
-	XsdGoPkgHasElems_Type
+	XsdGoPkgHasElems_Para
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Superscript
+	XsdGoPkgHasElems_Simpara
 
-	XsdGoPkgHasElems_Indexterm
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElem_Attribution
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_Epigraph struct {
+	Epigraphs []*TxsdEpigraph `xml:"http://docbook.org/ns/docbook epigraph"`
+
+}
+
+type XsdGoPkgHasElem_Mediaobject struct {
+	Mediaobject *TxsdMediaobject `xml:"http://docbook.org/ns/docbook mediaobject"`
+
+}
+
+type XsdGoPkgHasElems_Subtitle struct {
+	Subtitles []*TxsdCitation `xml:"http://docbook.org/ns/docbook subtitle"`
+
+}
+
+type TxsdScreenshot struct {
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElem_Mediaobject
+
+}
+
+type XsdGoPkgHasElems_Screenshot struct {
+	Screenshots []*TxsdScreenshot `xml:"http://docbook.org/ns/docbook screenshot"`
+
+}
+
+type XsdGoPkgHasElems_Member struct {
+	Members []*TxsdCitation `xml:"http://docbook.org/ns/docbook member"`
+
+}
+
+type TxsdSimplelistType xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdSimplelistType is "horiz".
+func (me TxsdSimplelistType) IsHoriz () bool { return me == "horiz" }
+
+//	Since TxsdSimplelistType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdSimplelistType) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Since TxsdSimplelistType is just a simple String type, this merely returns the current string value.
+func (me TxsdSimplelistType) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdSimplelistType is "vert".
+func (me TxsdSimplelistType) IsVert () bool { return me == "vert" }
+
+//	This convenience method just performs a simple type conversion to TxsdSimplelistType's alias type xsdt.Token.
+func (me TxsdSimplelistType) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdSimplelistType is "inline".
+func (me TxsdSimplelistType) IsInline () bool { return me == "inline" }
+
+type XsdGoPkgHasAttr_Type_TxsdSimplelistType_Vert struct {
+	Type TxsdSimplelistType `xml:"http://docbook.org/ns/docbook type,attr"`
+
+}
+
+//	Returns the default value for Type -- "vert"
+func (me XsdGoPkgHasAttr_Type_TxsdSimplelistType_Vert) TypeDefault () TxsdSimplelistType { return TxsdSimplelistType("vert") }
+
+type XsdGoPkgHasAttr_Columns_XsdtNmtoken_ struct {
+	Columns xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook columns,attr"`
+
+}
+
+type TxsdSimplelist struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Member
+
+	XsdGoPkgHasAttr_Type_TxsdSimplelistType_Vert
+
+	XsdGoPkgHasAttr_Columns_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_Simplelist struct {
+	Simplelists []*TxsdSimplelist `xml:"http://docbook.org/ns/docbook simplelist"`
+
+}
+
+type XsdGoPkgHasElems_Constraint struct {
+	Constraints []*TxsdVoid `xml:"http://docbook.org/ns/docbook constraint"`
+
+}
+
+type XsdGoPkgHasElem_Lhs struct {
+	Lhs *TxsdDate `xml:"http://docbook.org/ns/docbook lhs"`
+
+}
+
+type TxsdRhs struct {
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasCdata
 
-	XsdGoPkgHasElems_Olink
+	XsdGoPkgHasElems_Lineannotation
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Sbr
 
 }
 
-type XsdGoPkgHasElem_Funcdef struct {
-	Funcdef *TxsdFuncdef `xml:"http://docbook.org/ns/docbook funcdef"`
+type XsdGoPkgHasElem_Rhs struct {
+	Rhs *TxsdRhs `xml:"http://docbook.org/ns/docbook rhs"`
 
 }
 
-type XsdGoPkgHasElems_Funcparams struct {
-	Funcparamses []*TxsdAccel `xml:"http://docbook.org/ns/docbook funcparams"`
+type TxsdProduction struct {
+	XsdGoPkgHasElems_Constraint
+
+	XsdGoPkgHasElem_Lhs
+
+	XsdGoPkgHasElem_Rhs
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+}
+
+type XsdGoPkgHasElems_Production struct {
+	Productions []*TxsdProduction `xml:"http://docbook.org/ns/docbook production"`
+
+}
+
+type XsdGoPkgHasElems_Productionrecap struct {
+	Productionrecaps []*TxsdVoid `xml:"http://docbook.org/ns/docbook productionrecap"`
+
+}
+
+type TxsdProductionset struct {
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Production
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Productionrecap
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+}
+
+type XsdGoPkgHasElems_Productionset struct {
+	Productionsets []*TxsdProductionset `xml:"http://docbook.org/ns/docbook productionset"`
+
+}
+
+type XsdGoPkgHasAttr_Continuation_TxsdOrderedlistContinuation_ struct {
+	Continuation TxsdAddressContinuation `xml:"http://docbook.org/ns/docbook continuation,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Pgwide_TxsdInformaltablePgwide_ struct {
+	Pgwide TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook pgwide,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Summary_XsdtString_ struct {
+	Summary xsdt.String `xml:"http://docbook.org/ns/docbook summary,attr"`
+
+}
+
+type TxsdInformaltableRowheader xsdt.Token
+
+//	This convenience method just performs a simple type conversion to TxsdInformaltableRowheader's alias type xsdt.Token.
+func (me TxsdInformaltableRowheader) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdInformaltableRowheader is "firstcol".
+func (me TxsdInformaltableRowheader) IsFirstcol () bool { return me == "firstcol" }
+
+//	Since TxsdInformaltableRowheader is just a simple String type, this merely returns the current string value.
+func (me TxsdInformaltableRowheader) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdInformaltableRowheader is "norowheader".
+func (me TxsdInformaltableRowheader) IsNorowheader () bool { return me == "norowheader" }
+
+//	Since TxsdInformaltableRowheader is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdInformaltableRowheader) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_Rowheader_TxsdInformaltableRowheader_ struct {
+	Rowheader TxsdInformaltableRowheader `xml:"http://docbook.org/ns/docbook rowheader,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Charoff_XsdtString_ struct {
+	Charoff xsdt.String `xml:"http://docbook.org/ns/docbook charoff,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Onkeydown_XsdtString_ struct {
+	Onkeydown xsdt.String `xml:"http://docbook.org/ns/docbook onkeydown,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Align_TxsdColAlign_ struct {
+	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Onmouseout_XsdtString_ struct {
+	Onmouseout xsdt.String `xml:"http://docbook.org/ns/docbook onmouseout,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Span_XsdtNmtoken_ struct {
+	Span xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook span,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Lang_XsdtString_ struct {
+	Lang xsdt.String `xml:"http://docbook.org/ns/docbook lang,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Style_XsdtString_ struct {
+	Style xsdt.String `xml:"http://docbook.org/ns/docbook style,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Onmousemove_XsdtString_ struct {
+	Onmousemove xsdt.String `xml:"http://docbook.org/ns/docbook onmousemove,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Class_XsdtString_ struct {
+	Class xsdt.String `xml:"http://docbook.org/ns/docbook class,attr"`
+
+}
+
+type TxsdColValign xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdColValign is "bottom".
+func (me TxsdColValign) IsBottom () bool { return me == "bottom" }
+
+//	Since TxsdColValign is just a simple String type, this merely returns the current string value.
+func (me TxsdColValign) String () string { return xsdt.Token(me).String() }
+
+//	This convenience method just performs a simple type conversion to TxsdColValign's alias type xsdt.Token.
+func (me TxsdColValign) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdColValign is "baseline".
+func (me TxsdColValign) IsBaseline () bool { return me == "baseline" }
+
+//	Since TxsdColValign is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdColValign) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdColValign is "middle".
+func (me TxsdColValign) IsMiddle () bool { return me == "middle" }
+
+//	Returns true if the value of this enumerated TxsdColValign is "top".
+func (me TxsdColValign) IsTop () bool { return me == "top" }
+
+type XsdGoPkgHasAttr_Valign_TxsdColValign_ struct {
+	Valign TxsdColValign `xml:"http://docbook.org/ns/docbook valign,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Onmouseover_XsdtString_ struct {
+	Onmouseover xsdt.String `xml:"http://docbook.org/ns/docbook onmouseover,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Title_XsdtString_ struct {
+	Title xsdt.String `xml:"http://docbook.org/ns/docbook title,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Char_XsdtString_ struct {
+	Char xsdt.String `xml:"http://docbook.org/ns/docbook char,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Onkeyup_XsdtString_ struct {
+	Onkeyup xsdt.String `xml:"http://docbook.org/ns/docbook onkeyup,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Onmouseup_XsdtString_ struct {
+	Onmouseup xsdt.String `xml:"http://docbook.org/ns/docbook onmouseup,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Onclick_XsdtString_ struct {
+	Onclick xsdt.String `xml:"http://docbook.org/ns/docbook onclick,attr"`
+
+}
+
+type TxsdCol struct {
+	XsdGoPkgHasAttr_Ondblclick_XsdtString_
+
+	XsdGoPkgHasAttr_Char_XsdtString_
+
+	XsdGoPkgHasAttr_Onkeyup_XsdtString_
+
+	XsdGoPkgHasAttr_Onmouseup_XsdtString_
+
+	XsdGoPkgHasAttr_Onclick_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Charoff_XsdtString_
+
+	XsdGoPkgHasAttr_Onkeydown_XsdtString_
+
+	XsdGoPkgHasAttr_Align_TxsdColAlign_
+
+	XsdGoPkgHasAttr_Onkeypress_XsdtString_
+
+	XsdGoPkgHasAttr_Onmouseout_XsdtString_
+
+	XsdGoPkgHasAttr_Onmousedown_XsdtString_
+
+	XsdGoPkgHasAttr_Span_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Lang_XsdtString_
+
+	XsdGoPkgHasAttr_Style_XsdtString_
+
+	XsdGoPkgHasAttr_Onmousemove_XsdtString_
+
+	XsdGoPkgHasAttr_Class_XsdtString_
+
+	XsdGoPkgHasAttr_Valign_TxsdColValign_
+
+	XsdGoPkgHasAttr_Onmouseover_XsdtString_
+
+	XsdGoPkgHasAttr_Title_XsdtString_
+
+	XsdGoPkgHasAttr_Width_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_Col struct {
+	Cols []*TxsdCol `xml:"http://docbook.org/ns/docbook col"`
+
+}
+
+type XsdGoPkgHasAttr_Border_XsdtNmtoken_ struct {
+	Border xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook border,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Align_TxsdTdAlign_ struct {
+	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
 
 }
 
@@ -5340,17 +7002,17 @@ type TxsdParamdefChoice xsdt.Token
 //	Returns true if the value of this enumerated TxsdParamdefChoice is "opt".
 func (me TxsdParamdefChoice) IsOpt () bool { return me == "opt" }
 
-//	Returns true if the value of this enumerated TxsdParamdefChoice is "req".
-func (me TxsdParamdefChoice) IsReq () bool { return me == "req" }
-
-//	This convenience method just performs a simple type conversion to TxsdParamdefChoice's alias type xsdt.Token.
-func (me TxsdParamdefChoice) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+//	Since TxsdParamdefChoice is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdParamdefChoice) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
 
 //	Since TxsdParamdefChoice is just a simple String type, this merely returns the current string value.
 func (me TxsdParamdefChoice) String () string { return xsdt.Token(me).String() }
 
-//	Since TxsdParamdefChoice is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdParamdefChoice) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+//	This convenience method just performs a simple type conversion to TxsdParamdefChoice's alias type xsdt.Token.
+func (me TxsdParamdefChoice) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdParamdefChoice is "req".
+func (me TxsdParamdefChoice) IsReq () bool { return me == "req" }
 
 type XsdGoPkgHasAttr_Choice_TxsdParamdefChoice_Opt struct {
 	Choice TxsdParamdefChoice `xml:"http://docbook.org/ns/docbook choice,attr"`
@@ -5360,52 +7022,57 @@ type XsdGoPkgHasAttr_Choice_TxsdParamdefChoice_Opt struct {
 //	Returns the default value for Choice -- "opt"
 func (me XsdGoPkgHasAttr_Choice_TxsdParamdefChoice_Opt) ChoiceDefault () TxsdParamdefChoice { return TxsdParamdefChoice("opt") }
 
+type XsdGoPkgHasElems_Funcparams struct {
+	Funcparamses []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook funcparams"`
+
+}
+
 type TxsdParamdef struct {
-	XsdGoPkgHasElems_Indexterm
+	XsdGoPkgHasElems_Initializer
 
-	XsdGoPkgHasCdata
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasElems_Type
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Superscript
 
 	XsdGoPkgHasElems_Biblioref
 
-	XsdGoPkgHasAttr_Choice_TxsdParamdefChoice_Opt
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Subscript
 
 	XsdGoPkgHasElems_Olink
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Anchor
-
 	XsdGoPkgHasElems_Xref
 
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasAttr_Choice_TxsdParamdefChoice_Opt
 
 	XsdGoPkgHasElems_Annotation
 
 	XsdGoPkgHasElems_Remark
 
-	XsdGoPkgHasElems_Superscript
+	XsdGoPkgHasCdata
 
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Inlinemediaobject
+	XsdGoPkgHasElems_Parameter
 
 	XsdGoPkgHasElems_Alt
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Funcparams
-
 	XsdGoPkgHasElems_Link
 
-	XsdGoPkgHasElems_Initializer
+	XsdGoPkgHasElems_Inlinemediaobject
 
-	XsdGoPkgHasElems_Phrase
+	XsdGoPkgHasAttr_Role_XsdtString_
 
-	XsdGoPkgHasElems_Subscript
+	XsdGoPkgHasElems_Indexterm
 
-	XsdGoPkgHasElems_Parameter
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Funcparams
 
 }
 
@@ -5414,22 +7081,75 @@ type XsdGoPkgHasElems_Paramdef struct {
 
 }
 
-type TxsdFuncprototype struct {
-	XsdGoPkgHasElems_Modifier
+type XsdGoPkgHasElem_Varargs struct {
+	Varargs *TxsdVoid `xml:"http://docbook.org/ns/docbook varargs"`
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+}
 
-	XsdGoPkgHasElem_Varargs
+type TxsdFuncdef struct {
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Link
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElem_Void
+	XsdGoPkgHasElems_Alt
 
-	XsdGoPkgHasElem_Funcdef
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Remark
 
 	XsdGoPkgHasAttr_Role_XsdtString_
 
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Replaceable
+
+}
+
+type XsdGoPkgHasElem_Funcdef struct {
+	Funcdef *TxsdFuncdef `xml:"http://docbook.org/ns/docbook funcdef"`
+
+}
+
+type TxsdFuncprototype struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElem_Funcdef
+
 	XsdGoPkgHasElems_Paramdef
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElem_Void
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElem_Varargs
 
 }
 
@@ -5449,227 +7169,227 @@ type XsdGoPkgHasAttr_Continuation_TxsdFuncsynopsisinfoContinuation_ struct {
 }
 
 type TxsdFuncsynopsisinfo struct {
-	XsdGoPkgHasElems_Keycombo
+	XsdGoPkgHasElems_Footnote
 
-	XsdGoPkgHasElems_Guimenu
+	XsdGoPkgHasAttr_Role_XsdtString_
 
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasAttr_Language_XsdtString_
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Lineannotation
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Co
-
-	XsdGoPkgHasElems_Mousebutton
+	XsdGoPkgHasElems_Optional
 
 	XsdGoPkgHasElems_Remark
 
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Guimenuitem
+	XsdGoPkgHasElems_Inlinemediaobject
 
 	XsdGoPkgHasElems_Envar
 
-	XsdGoPkgHasElems_Command
+	XsdGoPkgHasElems_Annotation
 
-	XsdGoPkgHasElems_Citation
+	XsdGoPkgHasElems_Guimenuitem
 
-	XsdGoPkgHasElems_Info
+	XsdGoPkgHasElems_Accel
 
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Orgname
+	XsdGoPkgHasElems_Replaceable
 
 	XsdGoPkgHasElems_Token
 
-	XsdGoPkgHasElems_Markup
+	XsdGoPkgHasElems_Termdef
 
-	XsdGoPkgHasElems_Coref
+	XsdGoPkgHasAttr_Continuation_TxsdFuncsynopsisinfoContinuation_
 
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasAttr_Startinglinenumber_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Computeroutput
+	XsdGoPkgHasElems_Guisubmenu
 
 	XsdGoPkgHasElems_Systemitem
 
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasAttr_Startinglinenumber_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Co
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasAttr_Language_XsdtString_
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Linenumbering_TxsdFuncsynopsisinfoLinenumbering_
+
 	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Textobject
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Date
+
+	xml.XsdGoPkgHasAttr_Space
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Command
 
 	XsdGoPkgHasElems_Personname
 
-	XsdGoPkgHasElems_Annotation
+	XsdGoPkgHasElems_Tag
 
-	XsdGoPkgHasElems_Productnumber
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Lineannotation
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Info
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Application
 
 	XsdGoPkgHasElems_Varname
 
 	XsdGoPkgHasElems_Abbrev
 
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasAttr_Linenumbering_TxsdFuncsynopsisinfoLinenumbering_
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasAttr_Continuation_TxsdFuncsynopsisinfoContinuation_
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Textobject
+	XsdGoPkgHasElems_Parameter
 
 	XsdGoPkgHasElems_Shortcut
 
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Symbol
-
-	xml.XsdGoPkgHasAttr_Space
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Parameter
+	XsdGoPkgHasElems_Errorcode
 
 }
 
@@ -5679,13 +7399,13 @@ type XsdGoPkgHasElems_Funcsynopsisinfo struct {
 }
 
 type TxsdFuncsynopsis struct {
-	XsdGoPkgHasAttr_Language_XsdtString_
+	XsdGoPkgHasElems_Funcsynopsisinfo
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Funcsynopsisinfo
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Language_XsdtString_
 
 	XsdGoPkgHasElem_Info
 
@@ -5700,388 +7420,1651 @@ type XsdGoPkgHasElems_Funcsynopsis struct {
 
 }
 
-type XsdGoPkgHasAttr_Continuation_TxsdScreenContinuation_ struct {
-	Continuation TxsdAddressContinuation `xml:"http://docbook.org/ns/docbook continuation,attr"`
+type XsdGoPkgHasElems_Term struct {
+	Terms []*TxsdCitation `xml:"http://docbook.org/ns/docbook term"`
 
 }
 
-type XsdGoPkgHasAttr_Linenumbering_TxsdScreenLinenumbering_ struct {
-	Linenumbering TxsdAddressLinenumbering `xml:"http://docbook.org/ns/docbook linenumbering,attr"`
+type XsdGoPkgHasAttr_Override_XsdtNmtoken_ struct {
+	Override xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook override,attr"`
 
 }
 
-type XsdGoPkgHasAttr_Width_XsdtNmtoken_ struct {
-	Width xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook width,attr"`
+type TxsdListitem struct {
+	XsdGoPkgHasElems_Glosslist
 
-}
+	XsdGoPkgHasElems_Methodsynopsis
 
-type TxsdScreen struct {
-	XsdGoPkgHasElems_Inlineequation
+	XsdGoPkgHasElems_Procedure
 
-	XsdGoPkgHasElems_Quote
+	XsdGoPkgHasElems_Tip
 
-	XsdGoPkgHasElems_Coref
+	XsdGoPkgHasAttr_Override_XsdtNmtoken_
 
-	XsdGoPkgHasElems_Info
+	XsdGoPkgHasElems_Informalfigure
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+	XsdGoPkgHasElems_Note
 
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasAttr_Continuation_TxsdScreenContinuation_
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Textobject
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasAttr_Language_XsdtString_
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasAttr_Linenumbering_TxsdScreenLinenumbering_
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Classname
+	XsdGoPkgHasElems_Table
 
 	XsdGoPkgHasElems_Remark
 
-	XsdGoPkgHasElems_Token
+	XsdGoPkgHasElems_Task
 
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasAttr_Startinglinenumber_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Co
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasAttr_Width_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Package
-
-	xml.XsdGoPkgHasAttr_Space
-
-	XsdGoPkgHasElems_Lineannotation
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Keycode
-
-}
-
-type XsdGoPkgHasElems_Screen struct {
-	Screens []*TxsdScreen `xml:"http://docbook.org/ns/docbook screen"`
-
-}
-
-type XsdGoPkgHasElems_Para struct {
-	Paras []*TxsdPara `xml:"http://docbook.org/ns/docbook para"`
-
-}
-
-type XsdGoPkgHasElem_Lhs struct {
-	Lhs *TxsdDate `xml:"http://docbook.org/ns/docbook lhs"`
-
-}
-
-type XsdGoPkgHasElems_Constraint struct {
-	Constraints []*TxsdVoid `xml:"http://docbook.org/ns/docbook constraint"`
-
-}
-
-type XsdGoPkgHasElems_Sbr struct {
-	Sbrs []*TxsdAnchor `xml:"http://docbook.org/ns/docbook sbr"`
-
-}
-
-type TxsdRhs struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Sbr
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Lineannotation
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-}
-
-type XsdGoPkgHasElem_Rhs struct {
-	Rhs *TxsdRhs `xml:"http://docbook.org/ns/docbook rhs"`
-
-}
-
-type TxsdProduction struct {
-	XsdGoPkgHasElems_Constraint
-
-	XsdGoPkgHasElem_Rhs
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElem_Lhs
-
-}
-
-type XsdGoPkgHasElems_Production struct {
-	Productions []*TxsdProduction `xml:"http://docbook.org/ns/docbook production"`
-
-}
-
-type XsdGoPkgHasElems_Productionrecap struct {
-	Productionrecaps []*TxsdVoid `xml:"http://docbook.org/ns/docbook productionrecap"`
-
-}
-
-type TxsdProductionset struct {
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Productionrecap
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Production
-
-}
-
-type XsdGoPkgHasElems_Productionset struct {
-	Productionsets []*TxsdProductionset `xml:"http://docbook.org/ns/docbook productionset"`
-
-}
-
-type XsdGoPkgHasElem_Screen struct {
-	Screen *TxsdScreen `xml:"http://docbook.org/ns/docbook screen"`
-
-}
-
-type TxsdScreenco struct {
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElem_Areaspec
-
-	XsdGoPkgHasElem_Screen
-
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasElems_Msgset
 
 	XsdGoPkgHasElems_Calloutlist
 
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Synopsis
+
 }
 
-type XsdGoPkgHasElems_Screenco struct {
-	Screencos []*TxsdScreenco `xml:"http://docbook.org/ns/docbook screenco"`
+type XsdGoPkgHasElem_Listitem struct {
+	Listitem *TxsdListitem `xml:"http://docbook.org/ns/docbook listitem"`
 
 }
 
-type XsdGoPkgHasAttr_Pgwide_TxsdTablePgwide_ struct {
+type TxsdVarlistentry struct {
+	XsdGoPkgHasElem_Listitem
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Term
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+}
+
+type XsdGoPkgHasElems_Varlistentry struct {
+	Varlistentries []*TxsdVarlistentry `xml:"http://docbook.org/ns/docbook varlistentry"`
+
+}
+
+type XsdGoPkgHasAttr_Termlength_XsdtString_ struct {
+	Termlength xsdt.String `xml:"http://docbook.org/ns/docbook termlength,attr"`
+
+}
+
+type TxsdVariablelistSpacing xsdt.Token
+
+//	Since TxsdVariablelistSpacing is just a simple String type, this merely returns the current string value.
+func (me TxsdVariablelistSpacing) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdVariablelistSpacing is "normal".
+func (me TxsdVariablelistSpacing) IsNormal () bool { return me == "normal" }
+
+//	Since TxsdVariablelistSpacing is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdVariablelistSpacing) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdVariablelistSpacing is "compact".
+func (me TxsdVariablelistSpacing) IsCompact () bool { return me == "compact" }
+
+//	This convenience method just performs a simple type conversion to TxsdVariablelistSpacing's alias type xsdt.Token.
+func (me TxsdVariablelistSpacing) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+type XsdGoPkgHasAttr_Spacing_TxsdVariablelistSpacing_ struct {
+	Spacing TxsdVariablelistSpacing `xml:"http://docbook.org/ns/docbook spacing,attr"`
+
+}
+
+type TxsdVariablelist struct {
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Varlistentry
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasAttr_Termlength_XsdtString_
+
+	XsdGoPkgHasAttr_Spacing_TxsdVariablelistSpacing_
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Warning
+
+}
+
+type XsdGoPkgHasElems_Variablelist struct {
+	Variablelists []*TxsdVariablelist `xml:"http://docbook.org/ns/docbook variablelist"`
+
+}
+
+type XsdGoPkgHasAttr_Pgwide_TxsdExamplePgwide_ struct {
 	Pgwide TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook pgwide,attr"`
 
 }
 
-type XsdGoPkgHasAttr_Cellpadding_XsdtString_ struct {
-	Cellpadding xsdt.String `xml:"http://docbook.org/ns/docbook cellpadding,attr"`
+type TxsdExample struct {
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasAttr_Width_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElem_Caption
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasAttr_Floatstyle_XsdtString_
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Pgwide_TxsdExamplePgwide_
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Variablelist
 
 }
 
-type XsdGoPkgHasAttr_Valign_TxsdTheadValign_ struct {
+type XsdGoPkgHasElems_Example struct {
+	Examples []*TxsdExample `xml:"http://docbook.org/ns/docbook example"`
+
+}
+
+type TxsdTasksummary struct {
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Variablelist
+
+}
+
+type XsdGoPkgHasElem_Tasksummary struct {
+	Tasksummary *TxsdTasksummary `xml:"http://docbook.org/ns/docbook tasksummary"`
+
+}
+
+type XsdGoPkgHasElem_Procedure struct {
+	Procedure *TxsdProcedure `xml:"http://docbook.org/ns/docbook procedure"`
+
+}
+
+type XsdGoPkgHasElem_Taskrelated struct {
+	Taskrelated *TxsdTasksummary `xml:"http://docbook.org/ns/docbook taskrelated"`
+
+}
+
+type XsdGoPkgHasElem_Taskprerequisites struct {
+	Taskprerequisites *TxsdTasksummary `xml:"http://docbook.org/ns/docbook taskprerequisites"`
+
+}
+
+type TxsdTask struct {
+	XsdGoPkgHasElem_Tasksummary
+
+	XsdGoPkgHasElem_Procedure
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElem_Taskrelated
+
+	XsdGoPkgHasElem_Taskprerequisites
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Title
+
+}
+
+type XsdGoPkgHasElems_Task struct {
+	Tasks []*TxsdTask `xml:"http://docbook.org/ns/docbook task"`
+
+}
+
+type TxsdImportant struct {
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+}
+
+type XsdGoPkgHasElems_Important struct {
+	Importants []*TxsdImportant `xml:"http://docbook.org/ns/docbook important"`
+
+}
+
+type XsdGoPkgHasAttr_Valign_TxsdTdValign_ struct {
 	Valign TxsdColValign `xml:"http://docbook.org/ns/docbook valign,attr"`
 
 }
 
-type XsdGoPkgHasAttr_Align_TxsdEntryAlign_ struct {
+type XsdGoPkgHasAttr_Headers_XsdtString_ struct {
+	Headers xsdt.String `xml:"http://docbook.org/ns/docbook headers,attr"`
+
+}
+
+type TxsdTdScope xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdTdScope is "col".
+func (me TxsdTdScope) IsCol () bool { return me == "col" }
+
+//	Since TxsdTdScope is just a simple String type, this merely returns the current string value.
+func (me TxsdTdScope) String () string { return xsdt.Token(me).String() }
+
+//	Since TxsdTdScope is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdTdScope) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdTdScope's alias type xsdt.Token.
+func (me TxsdTdScope) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdTdScope is "row".
+func (me TxsdTdScope) IsRow () bool { return me == "row" }
+
+//	Returns true if the value of this enumerated TxsdTdScope is "colgroup".
+func (me TxsdTdScope) IsColgroup () bool { return me == "colgroup" }
+
+//	Returns true if the value of this enumerated TxsdTdScope is "rowgroup".
+func (me TxsdTdScope) IsRowgroup () bool { return me == "rowgroup" }
+
+type XsdGoPkgHasAttr_Scope_TxsdTdScope_ struct {
+	Scope TxsdTdScope `xml:"http://docbook.org/ns/docbook scope,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Axis_XsdtString_ struct {
+	Axis xsdt.String `xml:"http://docbook.org/ns/docbook axis,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Rowspan_XsdtNmtoken_ struct {
+	Rowspan xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook rowspan,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Abbr_XsdtString_ struct {
+	Abbr xsdt.String `xml:"http://docbook.org/ns/docbook abbr,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Colspan_XsdtNmtoken_ struct {
+	Colspan xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook colspan,attr"`
+
+}
+
+type TxsdTd struct {
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasAttr_Rowspan_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasAttr_Char_XsdtString_
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasAttr_Class_XsdtString_
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasAttr_Lang_XsdtString_
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasAttr_Abbr_XsdtString_
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasAttr_Onclick_XsdtString_
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasAttr_Colspan_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasAttr_Onkeydown_XsdtString_
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasAttr_Onmousemove_XsdtString_
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasAttr_Align_TxsdTdAlign_
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasAttr_Onmouseup_XsdtString_
+
+	XsdGoPkgHasAttr_Onmouseover_XsdtString_
+
+	XsdGoPkgHasAttr_Ondblclick_XsdtString_
+
+	XsdGoPkgHasAttr_Valign_TxsdTdValign_
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasAttr_Style_XsdtString_
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasAttr_Onkeyup_XsdtString_
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasAttr_Headers_XsdtString_
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasAttr_Scope_TxsdTdScope_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasAttr_Onkeypress_XsdtString_
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasAttr_Charoff_XsdtString_
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasAttr_Onmousedown_XsdtString_
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasAttr_Onmouseout_XsdtString_
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasAttr_Axis_XsdtString_
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasAttr_Title_XsdtString_
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Foreignphrase
+
+}
+
+type XsdGoPkgHasElems_Td struct {
+	Tds []*TxsdTd `xml:"http://docbook.org/ns/docbook td"`
+
+}
+
+type XsdGoPkgHasAttr_Align_TxsdTrAlign_ struct {
 	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Valign_TxsdTrValign_ struct {
+	Valign TxsdColValign `xml:"http://docbook.org/ns/docbook valign,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Scope_TxsdThScope_ struct {
+	Scope TxsdTdScope `xml:"http://docbook.org/ns/docbook scope,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Align_TxsdThAlign_ struct {
+	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Valign_TxsdThValign_ struct {
+	Valign TxsdColValign `xml:"http://docbook.org/ns/docbook valign,attr"`
+
+}
+
+type TxsdTh struct {
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasAttr_Char_XsdtString_
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasAttr_Onmousemove_XsdtString_
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasAttr_Axis_XsdtString_
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasAttr_Onkeydown_XsdtString_
+
+	XsdGoPkgHasAttr_Onkeyup_XsdtString_
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasAttr_Align_TxsdThAlign_
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasAttr_Charoff_XsdtString_
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasAttr_Class_XsdtString_
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasAttr_Onclick_XsdtString_
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasAttr_Abbr_XsdtString_
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasAttr_Valign_TxsdThValign_
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasAttr_Colspan_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Headers_XsdtString_
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasAttr_Onmouseup_XsdtString_
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasAttr_Ondblclick_XsdtString_
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasAttr_Rowspan_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasAttr_Style_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Lang_XsdtString_
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasAttr_Onkeypress_XsdtString_
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasAttr_Onmousedown_XsdtString_
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasAttr_Onmouseout_XsdtString_
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasAttr_Onmouseover_XsdtString_
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasAttr_Scope_TxsdThScope_
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasAttr_Title_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_Th struct {
+	Ths []*TxsdTh `xml:"http://docbook.org/ns/docbook th"`
+
+}
+
+type TxsdTr struct {
+	XsdGoPkgHasAttr_Onkeyup_XsdtString_
+
+	XsdGoPkgHasAttr_Onkeydown_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Valign_TxsdTrValign_
+
+	XsdGoPkgHasAttr_Onmouseover_XsdtString_
+
+	XsdGoPkgHasAttr_Onmousemove_XsdtString_
+
+	XsdGoPkgHasAttr_Onclick_XsdtString_
+
+	XsdGoPkgHasAttr_Lang_XsdtString_
+
+	XsdGoPkgHasElems_Th
+
+	XsdGoPkgHasAttr_Char_XsdtString_
+
+	XsdGoPkgHasAttr_Onkeypress_XsdtString_
+
+	XsdGoPkgHasAttr_Onmouseup_XsdtString_
+
+	XsdGoPkgHasAttr_Title_XsdtString_
+
+	XsdGoPkgHasAttr_Style_XsdtString_
+
+	XsdGoPkgHasAttr_Charoff_XsdtString_
+
+	XsdGoPkgHasElems_Td
+
+	XsdGoPkgHasAttr_Align_TxsdTrAlign_
+
+	XsdGoPkgHasAttr_Onmousedown_XsdtString_
+
+	XsdGoPkgHasAttr_Class_XsdtString_
+
+	XsdGoPkgHasAttr_Onmouseout_XsdtString_
+
+	XsdGoPkgHasAttr_Ondblclick_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_Tr struct {
+	Trs []*TxsdTr `xml:"http://docbook.org/ns/docbook tr"`
+
+}
+
+type XsdGoPkgHasAttr_Valign_TxsdEntryValign_ struct {
+	Valign TxsdImagedataValign `xml:"http://docbook.org/ns/docbook valign,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Nameend_XsdtString_ struct {
+	Nameend xsdt.String `xml:"http://docbook.org/ns/docbook nameend,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Rowsep_TxsdEntryRowsep_ struct {
+	Rowsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook rowsep,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Morerows_XsdtNmtoken_ struct {
+	Morerows xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook morerows,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Spanname_XsdtString_ struct {
+	Spanname xsdt.String `xml:"http://docbook.org/ns/docbook spanname,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Namest_XsdtString_ struct {
+	Namest xsdt.String `xml:"http://docbook.org/ns/docbook namest,attr"`
 
 }
 
@@ -6095,600 +9078,1116 @@ type XsdGoPkgHasAttr_Colname_XsdtString_ struct {
 
 }
 
-type TxsdAttribution struct {
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Citetitle
+type XsdGoPkgHasAttr_Rotate_TxsdEntryRotate_ struct {
+	Rotate TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook rotate,attr"`
 
 }
 
-type XsdGoPkgHasElem_Attribution struct {
-	Attribution *TxsdAttribution `xml:"http://docbook.org/ns/docbook attribution"`
+type XsdGoPkgHasAttr_Align_TxsdEntryAlign_ struct {
+	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
 
 }
 
-type TxsdEpigraph struct {
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElem_Attribution
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Anchor
-
-}
-
-type XsdGoPkgHasElems_Epigraph struct {
-	Epigraphs []*TxsdEpigraph `xml:"http://docbook.org/ns/docbook epigraph"`
-
-}
-
-type XsdGoPkgHasAttr_Continuation_TxsdProgramlistingContinuation_ struct {
-	Continuation TxsdAddressContinuation `xml:"http://docbook.org/ns/docbook continuation,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Linenumbering_TxsdProgramlistingLinenumbering_ struct {
-	Linenumbering TxsdAddressLinenumbering `xml:"http://docbook.org/ns/docbook linenumbering,attr"`
-
-}
-
-type TxsdProgramlisting struct {
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Function
-
+type TxsdEntry struct {
 	XsdGoPkgHasElems_Database
 
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Person
+	XsdGoPkgHasElems_Superscript
 
 	XsdGoPkgHasElems_Constant
 
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasAttr_Language_XsdtString_
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasCdata
-
 	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Lineannotation
-
-	XsdGoPkgHasElems_Initializer
 
 	XsdGoPkgHasElems_Optional
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+	XsdGoPkgHasElems_Keycap
 
-	XsdGoPkgHasElems_Classname
+	XsdGoPkgHasElems_Revhistory
 
-	XsdGoPkgHasElems_Jobtitle
+	XsdGoPkgHasElems_Blockquote
 
-	XsdGoPkgHasElems_Methodname
+	XsdGoPkgHasElems_Trademark
 
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Info
-
-	XsdGoPkgHasElems_Orgname
+	XsdGoPkgHasElems_Errorname
 
 	XsdGoPkgHasElems_Citerefentry
 
-	XsdGoPkgHasElems_Code
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Para
 
 	XsdGoPkgHasElems_Keycode
 
-	XsdGoPkgHasElems_Annotation
+	XsdGoPkgHasElems_Productionset
 
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Interfacename
+	XsdGoPkgHasElems_Table
 
 	XsdGoPkgHasElems_Org
 
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasAttr_Continuation_TxsdProgramlistingContinuation_
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasAttr_Linenumbering_TxsdProgramlistingLinenumbering_
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Co
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Mousebutton
-
-	xml.XsdGoPkgHasAttr_Space
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Textobject
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasAttr_Startinglinenumber_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasAttr_Width_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Replaceable
-
-}
-
-type XsdGoPkgHasElems_Programlisting struct {
-	Programlistings []*TxsdProgramlisting `xml:"http://docbook.org/ns/docbook programlisting"`
-
-}
-
-type XsdGoPkgHasElem_Programlisting struct {
-	Programlisting *TxsdProgramlisting `xml:"http://docbook.org/ns/docbook programlisting"`
-
-}
-
-type TxsdProgramlistingco struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElem_Programlisting
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElem_Areaspec
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Programlistingco struct {
-	Programlistingcos []*TxsdProgramlistingco `xml:"http://docbook.org/ns/docbook programlistingco"`
-
-}
-
-type XsdGoPkgHasAttr_Choice_TxsdGroupChoice_Opt struct {
-	Choice TxsdMethodparamChoice `xml:"http://docbook.org/ns/docbook choice,attr"`
-
-}
-
-//	Returns the default value for Choice -- "opt"
-func (me XsdGoPkgHasAttr_Choice_TxsdGroupChoice_Opt) ChoiceDefault () TxsdMethodparamChoice { return TxsdMethodparamChoice("opt") }
-
-type XsdGoPkgHasAttr_Rep_TxsdGroupRep_Norepeat struct {
-	Rep TxsdMethodparamRep `xml:"http://docbook.org/ns/docbook rep,attr"`
-
-}
-
-//	Returns the default value for Rep -- "norepeat"
-func (me XsdGoPkgHasAttr_Rep_TxsdGroupRep_Norepeat) RepDefault () TxsdMethodparamRep { return TxsdMethodparamRep("norepeat") }
-
-type XsdGoPkgHasElems_Synopfragmentref struct {
-	Synopfragmentrefs []*TxsdDate `xml:"http://docbook.org/ns/docbook synopfragmentref"`
-
-}
-
-type TxsdGroup struct {
-	XsdGoPkgHasElems_Synopfragmentref
-
-	XsdGoPkgHasElems_Group
-
-	XsdGoPkgHasElems_Arg
-
 	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasAttr_Choice_TxsdGroupChoice_Opt
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAttr_Rep_TxsdGroupRep_Norepeat
-
-	XsdGoPkgHasElems_Sbr
-
-}
-
-type XsdGoPkgHasElems_Group struct {
-	Groups []*TxsdGroup `xml:"http://docbook.org/ns/docbook group"`
-
-}
-
-type XsdGoPkgHasAttr_Rep_TxsdArgRep_Norepeat struct {
-	Rep TxsdMethodparamRep `xml:"http://docbook.org/ns/docbook rep,attr"`
-
-}
-
-//	Returns the default value for Rep -- "norepeat"
-func (me XsdGoPkgHasAttr_Rep_TxsdArgRep_Norepeat) RepDefault () TxsdMethodparamRep { return TxsdMethodparamRep("norepeat") }
-
-type XsdGoPkgHasAttr_Choice_TxsdArgChoice_Opt struct {
-	Choice TxsdMethodparamChoice `xml:"http://docbook.org/ns/docbook choice,attr"`
-
-}
-
-//	Returns the default value for Choice -- "opt"
-func (me XsdGoPkgHasAttr_Choice_TxsdArgChoice_Opt) ChoiceDefault () TxsdMethodparamChoice { return TxsdMethodparamChoice("opt") }
-
-type TxsdArg struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Group
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasAttr_Rep_TxsdArgRep_Norepeat
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Sbr
-
-	XsdGoPkgHasElems_Arg
-
-	XsdGoPkgHasElems_Inlinemediaobject
 
 	XsdGoPkgHasElems_Alt
 
-	XsdGoPkgHasElems_Subscript
+	XsdGoPkgHasAttr_Valign_TxsdEntryValign_
 
-	XsdGoPkgHasElems_Synopfragmentref
+	XsdGoPkgHasElems_Foreignphrase
 
-	XsdGoPkgHasElems_Link
+	XsdGoPkgHasElems_Methodsynopsis
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Editor
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasElems_Superscript
+	XsdGoPkgHasElems_Type
 
-	XsdGoPkgHasAttr_Choice_TxsdArgChoice_Opt
+	XsdGoPkgHasElems_Caution
 
-	XsdGoPkgHasElems_Phrase
+	XsdGoPkgHasElems_Subscript
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasAttr_Nameend_XsdtString_
 
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasElems_Guimenu
 
-}
+	XsdGoPkgHasElems_Glossterm
 
-type XsdGoPkgHasElems_Arg struct {
-	Args []*TxsdArg `xml:"http://docbook.org/ns/docbook arg"`
+	XsdGoPkgHasElems_Shortcut
 
-}
+	XsdGoPkgHasElems_Varname
 
-type XsdGoPkgHasAttr_Sepchar_XsdtString_ struct {
-	Sepchar xsdt.String `xml:"http://docbook.org/ns/docbook sepchar,attr"`
+	XsdGoPkgHasElems_Wordasword
 
-}
+	XsdGoPkgHasElems_Destructorsynopsis
 
-type XsdGoPkgHasAttr_Cmdlength_XsdtString_ struct {
-	Cmdlength xsdt.String `xml:"http://docbook.org/ns/docbook cmdlength,attr"`
+	XsdGoPkgHasElems_Token
 
-}
+	XsdGoPkgHasElems_Msgset
 
-type TxsdSynopfragment struct {
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasElems_Nonterminal
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasElems_Biblioref
 
-	XsdGoPkgHasElems_Arg
+	XsdGoPkgHasElems_Guibutton
 
-	XsdGoPkgHasElems_Group
+	XsdGoPkgHasElems_Informalexample
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+	XsdGoPkgHasElems_Constructorsynopsis
 
-}
+	XsdGoPkgHasElems_Keycombo
 
-type XsdGoPkgHasElems_Synopfragment struct {
-	Synopfragments []*TxsdSynopfragment `xml:"http://docbook.org/ns/docbook synopfragment"`
+	XsdGoPkgHasElems_Orderedlist
 
-}
+	XsdGoPkgHasElems_Mediaobject
 
-type TxsdCmdsynopsis struct {
-	XsdGoPkgHasElems_Group
+	XsdGoPkgHasElems_Simplelist
 
-	XsdGoPkgHasElems_Sbr
+	XsdGoPkgHasAttr_Rowsep_TxsdEntryRowsep_
 
-	XsdGoPkgHasElem_Info
+	XsdGoPkgHasElems_Tag
 
-	XsdGoPkgHasElems_Arg
+	XsdGoPkgHasElems_Informalequation
 
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasElems_Parameter
 
-	XsdGoPkgHasAttr_Sepchar_XsdtString_
+	XsdGoPkgHasAttr_Char_XsdtString_
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasElems_Property
 
-	XsdGoPkgHasAttr_Cmdlength_XsdtString_
+	XsdGoPkgHasElems_Sidebar
 
-	XsdGoPkgHasAttr_Label_XsdtString_
+	XsdGoPkgHasElems_Interfacename
 
-	XsdGoPkgHasElems_Synopfragment
+	XsdGoPkgHasElems_Programlisting
 
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-}
-
-type XsdGoPkgHasElems_Cmdsynopsis struct {
-	Cmdsynopsises []*TxsdCmdsynopsis `xml:"http://docbook.org/ns/docbook cmdsynopsis"`
-
-}
-
-type XsdGoPkgHasAttr_Subject_XsdtString_ struct {
-	Subject xsdt.String `xml:"http://docbook.org/ns/docbook subject,attr"`
-
-}
-
-type XsdGoPkgHasElem_Type struct {
-	Type *TxsdAccel `xml:"http://docbook.org/ns/docbook type"`
-
-}
-
-type XsdGoPkgHasElem_Varname struct {
-	Varname *TxsdAccel `xml:"http://docbook.org/ns/docbook varname"`
-
-}
-
-type TxsdFieldsynopsis struct {
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElem_Type
-
-	XsdGoPkgHasAttr_Language_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasElems_Synopsis
 
 	XsdGoPkgHasElems_Modifier
 
-	XsdGoPkgHasElem_Varname
+	XsdGoPkgHasElems_Task
 
-	XsdGoPkgHasElem_Initializer
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasAttr_Morerows_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasAttr_Spanname_XsdtString_
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Namest_XsdtString_
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasAttr_Colsep_TxsdEntryColsep_
+
+	XsdGoPkgHasAttr_Charoff_XsdtString_
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Colname_XsdtString_
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasAttr_Rotate_TxsdEntryRotate_
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasAttr_Align_TxsdEntryAlign_
+
+	XsdGoPkgHasElems_Screenshot
 
 }
 
-type XsdGoPkgHasElems_Fieldsynopsis struct {
-	Fieldsynopsises []*TxsdFieldsynopsis `xml:"http://docbook.org/ns/docbook fieldsynopsis"`
+type XsdGoPkgHasElems_Entry struct {
+	Entries []*TxsdEntry `xml:"http://docbook.org/ns/docbook entry"`
 
 }
 
-type XsdGoPkgHasAttr_Pgwide_TxsdExamplePgwide_ struct {
-	Pgwide TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook pgwide,attr"`
+type XsdGoPkgHasAttr_Valign_TxsdRowValign_ struct {
+	Valign TxsdImagedataValign `xml:"http://docbook.org/ns/docbook valign,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Rowsep_TxsdRowRowsep_ struct {
+	Rowsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook rowsep,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Align_TxsdEntrytblAlign_ struct {
+	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Colsep_TxsdSpanspecColsep_ struct {
+	Colsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook colsep,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Align_TxsdSpanspecAlign_ struct {
+	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Rowsep_TxsdSpanspecRowsep_ struct {
+	Rowsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook rowsep,attr"`
+
+}
+
+type TxsdSpanspec struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Rowsep_TxsdSpanspecRowsep_
+
+	XsdGoPkgHasAttr_Charoff_XsdtString_
+
+	XsdGoPkgHasAttr_Char_XsdtString_
+
+	XsdGoPkgHasAttr_Nameend_XsdtString_
+
+	XsdGoPkgHasAttr_Spanname_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Namest_XsdtString_
+
+	XsdGoPkgHasAttr_Colsep_TxsdSpanspecColsep_
+
+	XsdGoPkgHasAttr_Align_TxsdSpanspecAlign_
+
+}
+
+type XsdGoPkgHasElems_Spanspec struct {
+	Spanspecs []*TxsdSpanspec `xml:"http://docbook.org/ns/docbook spanspec"`
+
+}
+
+type XsdGoPkgHasAttr_Cols_XsdtNmtoken_ struct {
+	Cols xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook cols,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Colsep_TxsdEntrytblColsep_ struct {
+	Colsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook colsep,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Align_TxsdColspecAlign_ struct {
+	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Colwidth_XsdtString_ struct {
+	Colwidth xsdt.String `xml:"http://docbook.org/ns/docbook colwidth,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Colsep_TxsdColspecColsep_ struct {
+	Colsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook colsep,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Rowsep_TxsdColspecRowsep_ struct {
+	Rowsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook rowsep,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Colnum_XsdtNmtoken_ struct {
+	Colnum xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook colnum,attr"`
+
+}
+
+type TxsdColspec struct {
+	XsdGoPkgHasAttr_Align_TxsdColspecAlign_
+
+	XsdGoPkgHasAttr_Colwidth_XsdtString_
+
+	XsdGoPkgHasAttr_Colsep_TxsdColspecColsep_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Rowsep_TxsdColspecRowsep_
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Colnum_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Colname_XsdtString_
+
+	XsdGoPkgHasAttr_Char_XsdtString_
+
+	XsdGoPkgHasAttr_Charoff_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_Colspec struct {
+	Colspecs []*TxsdColspec `xml:"http://docbook.org/ns/docbook colspec"`
+
+}
+
+type XsdGoPkgHasAttr_Align_TxsdTheadAlign_ struct {
+	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Valign_TxsdTheadValign_ struct {
+	Valign TxsdColValign `xml:"http://docbook.org/ns/docbook valign,attr"`
+
+}
+
+type TxsdThead struct {
+	XsdGoPkgHasAttr_Onkeyup_XsdtString_
+
+	XsdGoPkgHasAttr_Charoff_XsdtString_
+
+	XsdGoPkgHasElems_Colspec
+
+	XsdGoPkgHasElems_Tr
+
+	XsdGoPkgHasAttr_Align_TxsdTheadAlign_
+
+	XsdGoPkgHasAttr_Onmouseup_XsdtString_
+
+	XsdGoPkgHasAttr_Onmouseout_XsdtString_
+
+	XsdGoPkgHasAttr_Lang_XsdtString_
+
+	XsdGoPkgHasElems_Row
+
+	XsdGoPkgHasAttr_Ondblclick_XsdtString_
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Onmousemove_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Onkeydown_XsdtString_
+
+	XsdGoPkgHasAttr_Onclick_XsdtString_
+
+	XsdGoPkgHasAttr_Valign_TxsdTheadValign_
+
+	XsdGoPkgHasAttr_Onkeypress_XsdtString_
+
+	XsdGoPkgHasAttr_Onmouseover_XsdtString_
+
+	XsdGoPkgHasAttr_Char_XsdtString_
+
+	XsdGoPkgHasAttr_Class_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Style_XsdtString_
+
+	XsdGoPkgHasAttr_Title_XsdtString_
+
+	XsdGoPkgHasAttr_Onmousedown_XsdtString_
+
+}
+
+type XsdGoPkgHasElem_Thead struct {
+	Thead *TxsdThead `xml:"http://docbook.org/ns/docbook thead"`
+
+}
+
+type XsdGoPkgHasAttr_Tgroupstyle_XsdtString_ struct {
+	Tgroupstyle xsdt.String `xml:"http://docbook.org/ns/docbook tgroupstyle,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Rowsep_TxsdEntrytblRowsep_ struct {
+	Rowsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook rowsep,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Align_TxsdTbodyAlign_ struct {
+	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Valign_TxsdTbodyValign_ struct {
+	Valign TxsdColValign `xml:"http://docbook.org/ns/docbook valign,attr"`
+
+}
+
+type TxsdTbody struct {
+	XsdGoPkgHasAttr_Onmousedown_XsdtString_
+
+	XsdGoPkgHasAttr_Onkeyup_XsdtString_
+
+	XsdGoPkgHasAttr_Onmouseout_XsdtString_
+
+	XsdGoPkgHasAttr_Lang_XsdtString_
+
+	XsdGoPkgHasAttr_Onclick_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Onkeypress_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Onmouseover_XsdtString_
+
+	XsdGoPkgHasElems_Row
+
+	XsdGoPkgHasAttr_Onkeydown_XsdtString_
+
+	XsdGoPkgHasAttr_Style_XsdtString_
+
+	XsdGoPkgHasAttr_Title_XsdtString_
+
+	XsdGoPkgHasAttr_Align_TxsdTbodyAlign_
+
+	XsdGoPkgHasAttr_Onmousemove_XsdtString_
+
+	XsdGoPkgHasAttr_Charoff_XsdtString_
+
+	XsdGoPkgHasAttr_Class_XsdtString_
+
+	XsdGoPkgHasAttr_Valign_TxsdTbodyValign_
+
+	XsdGoPkgHasElems_Tr
+
+	XsdGoPkgHasAttr_Onmouseup_XsdtString_
+
+	XsdGoPkgHasAttr_Char_XsdtString_
+
+	XsdGoPkgHasAttr_Ondblclick_XsdtString_
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+}
+
+type XsdGoPkgHasElem_Tbody struct {
+	Tbody *TxsdTbody `xml:"http://docbook.org/ns/docbook tbody"`
+
+}
+
+type TxsdEntrytbl struct {
+	XsdGoPkgHasAttr_Rowsep_TxsdEntrytblRowsep_
+
+	XsdGoPkgHasElem_Tbody
+
+	XsdGoPkgHasElems_Colspec
+
+	XsdGoPkgHasAttr_Char_XsdtString_
+
+	XsdGoPkgHasAttr_Colname_XsdtString_
+
+	XsdGoPkgHasAttr_Align_TxsdEntrytblAlign_
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Nameend_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Spanspec
+
+	XsdGoPkgHasAttr_Cols_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Namest_XsdtString_
+
+	XsdGoPkgHasAttr_Colsep_TxsdEntrytblColsep_
+
+	XsdGoPkgHasAttr_Charoff_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElem_Thead
+
+	XsdGoPkgHasAttr_Tgroupstyle_XsdtString_
+
+	XsdGoPkgHasAttr_Spanname_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_Entrytbl struct {
+	Entrytbls []*TxsdEntrytbl `xml:"http://docbook.org/ns/docbook entrytbl"`
+
+}
+
+type TxsdRow struct {
+	XsdGoPkgHasAttr_Rowsep_TxsdRowRowsep_
+
+	XsdGoPkgHasElems_Entrytbl
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Entry
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Valign_TxsdRowValign_
+
+}
+
+type XsdGoPkgHasElems_Row struct {
+	Rows []*TxsdRow `xml:"http://docbook.org/ns/docbook row"`
+
+}
+
+type XsdGoPkgHasAttr_Align_TxsdTfootAlign_ struct {
+	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Valign_TxsdTfootValign_ struct {
+	Valign TxsdColValign `xml:"http://docbook.org/ns/docbook valign,attr"`
+
+}
+
+type TxsdTfoot struct {
+	XsdGoPkgHasAttr_Onmouseover_XsdtString_
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Style_XsdtString_
+
+	XsdGoPkgHasAttr_Valign_TxsdTfootValign_
+
+	XsdGoPkgHasAttr_Charoff_XsdtString_
+
+	XsdGoPkgHasAttr_Class_XsdtString_
+
+	XsdGoPkgHasAttr_Onmouseout_XsdtString_
+
+	XsdGoPkgHasAttr_Onkeydown_XsdtString_
+
+	XsdGoPkgHasAttr_Onmousedown_XsdtString_
+
+	XsdGoPkgHasAttr_Char_XsdtString_
+
+	XsdGoPkgHasAttr_Onmousemove_XsdtString_
+
+	XsdGoPkgHasElems_Tr
+
+	XsdGoPkgHasElems_Row
+
+	XsdGoPkgHasAttr_Onkeyup_XsdtString_
+
+	XsdGoPkgHasAttr_Onclick_XsdtString_
+
+	XsdGoPkgHasElems_Colspec
+
+	XsdGoPkgHasAttr_Onkeypress_XsdtString_
+
+	XsdGoPkgHasAttr_Align_TxsdTfootAlign_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Lang_XsdtString_
+
+	XsdGoPkgHasAttr_Title_XsdtString_
+
+	XsdGoPkgHasAttr_Onmouseup_XsdtString_
+
+	XsdGoPkgHasAttr_Ondblclick_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+}
+
+type XsdGoPkgHasElem_Tfoot struct {
+	Tfoot *TxsdTfoot `xml:"http://docbook.org/ns/docbook tfoot"`
+
+}
+
+type XsdGoPkgHasAttr_Align_TxsdTgroupAlign_ struct {
+	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Colsep_TxsdTgroupColsep_ struct {
+	Colsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook colsep,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Rowsep_TxsdTgroupRowsep_ struct {
+	Rowsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook rowsep,attr"`
+
+}
+
+type TxsdTgroup struct {
+	XsdGoPkgHasElem_Tfoot
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Spanspec
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Cols_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Align_TxsdTgroupAlign_
+
+	XsdGoPkgHasElems_Colspec
+
+	XsdGoPkgHasAttr_Tgroupstyle_XsdtString_
+
+	XsdGoPkgHasAttr_Char_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Charoff_XsdtString_
+
+	XsdGoPkgHasElem_Thead
+
+	XsdGoPkgHasAttr_Colsep_TxsdTgroupColsep_
+
+	XsdGoPkgHasAttr_Rowsep_TxsdTgroupRowsep_
+
+	XsdGoPkgHasElem_Tbody
+
+}
+
+type XsdGoPkgHasElems_Tgroup struct {
+	Tgroups []*TxsdTgroup `xml:"http://docbook.org/ns/docbook tgroup"`
+
+}
+
+type XsdGoPkgHasAttr_Tabstyle_XsdtString_ struct {
+	Tabstyle xsdt.String `xml:"http://docbook.org/ns/docbook tabstyle,attr"`
+
+}
+
+type TxsdInformaltableRules xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdInformaltableRules is "none".
+func (me TxsdInformaltableRules) IsNone () bool { return me == "none" }
+
+//	Returns true if the value of this enumerated TxsdInformaltableRules is "rows".
+func (me TxsdInformaltableRules) IsRows () bool { return me == "rows" }
+
+//	Since TxsdInformaltableRules is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdInformaltableRules) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdInformaltableRules's alias type xsdt.Token.
+func (me TxsdInformaltableRules) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdInformaltableRules is "all".
+func (me TxsdInformaltableRules) IsAll () bool { return me == "all" }
+
+//	Returns true if the value of this enumerated TxsdInformaltableRules is "cols".
+func (me TxsdInformaltableRules) IsCols () bool { return me == "cols" }
+
+//	Since TxsdInformaltableRules is just a simple String type, this merely returns the current string value.
+func (me TxsdInformaltableRules) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdInformaltableRules is "groups".
+func (me TxsdInformaltableRules) IsGroups () bool { return me == "groups" }
+
+type XsdGoPkgHasAttr_Rules_TxsdInformaltableRules_ struct {
+	Rules TxsdInformaltableRules `xml:"http://docbook.org/ns/docbook rules,attr"`
+
+}
+
+type TxsdInformaltableFrame xsdt.Token
+
+//	Since TxsdInformaltableFrame is just a simple String type, this merely returns the current string value.
+func (me TxsdInformaltableFrame) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdInformaltableFrame is "sides".
+func (me TxsdInformaltableFrame) IsSides () bool { return me == "sides" }
+
+//	Returns true if the value of this enumerated TxsdInformaltableFrame is "hsides".
+func (me TxsdInformaltableFrame) IsHsides () bool { return me == "hsides" }
+
+//	Since TxsdInformaltableFrame is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdInformaltableFrame) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdInformaltableFrame's alias type xsdt.Token.
+func (me TxsdInformaltableFrame) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdInformaltableFrame is "vsides".
+func (me TxsdInformaltableFrame) IsVsides () bool { return me == "vsides" }
+
+//	Returns true if the value of this enumerated TxsdInformaltableFrame is "lhs".
+func (me TxsdInformaltableFrame) IsLhs () bool { return me == "lhs" }
+
+//	Returns true if the value of this enumerated TxsdInformaltableFrame is "below".
+func (me TxsdInformaltableFrame) IsBelow () bool { return me == "below" }
+
+//	Returns true if the value of this enumerated TxsdInformaltableFrame is "top".
+func (me TxsdInformaltableFrame) IsTop () bool { return me == "top" }
+
+//	Returns true if the value of this enumerated TxsdInformaltableFrame is "border".
+func (me TxsdInformaltableFrame) IsBorder () bool { return me == "border" }
+
+//	Returns true if the value of this enumerated TxsdInformaltableFrame is "above".
+func (me TxsdInformaltableFrame) IsAbove () bool { return me == "above" }
+
+//	Returns true if the value of this enumerated TxsdInformaltableFrame is "box".
+func (me TxsdInformaltableFrame) IsBox () bool { return me == "box" }
+
+//	Returns true if the value of this enumerated TxsdInformaltableFrame is "bottom".
+func (me TxsdInformaltableFrame) IsBottom () bool { return me == "bottom" }
+
+//	Returns true if the value of this enumerated TxsdInformaltableFrame is "void".
+func (me TxsdInformaltableFrame) IsVoid () bool { return me == "void" }
+
+//	Returns true if the value of this enumerated TxsdInformaltableFrame is "none".
+func (me TxsdInformaltableFrame) IsNone () bool { return me == "none" }
+
+//	Returns true if the value of this enumerated TxsdInformaltableFrame is "rhs".
+func (me TxsdInformaltableFrame) IsRhs () bool { return me == "rhs" }
+
+//	Returns true if the value of this enumerated TxsdInformaltableFrame is "all".
+func (me TxsdInformaltableFrame) IsAll () bool { return me == "all" }
+
+//	Returns true if the value of this enumerated TxsdInformaltableFrame is "topbot".
+func (me TxsdInformaltableFrame) IsTopbot () bool { return me == "topbot" }
+
+type XsdGoPkgHasAttr_Frame_TxsdInformaltableFrame_ struct {
+	Frame TxsdInformaltableFrame `xml:"http://docbook.org/ns/docbook frame,attr"`
+
+}
+
+type TxsdInformaltableOrient xsdt.Token
+
+//	Since TxsdInformaltableOrient is just a simple String type, this merely returns the current string value.
+func (me TxsdInformaltableOrient) String () string { return xsdt.Token(me).String() }
+
+//	This convenience method just performs a simple type conversion to TxsdInformaltableOrient's alias type xsdt.Token.
+func (me TxsdInformaltableOrient) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdInformaltableOrient is "land".
+func (me TxsdInformaltableOrient) IsLand () bool { return me == "land" }
+
+//	Returns true if the value of this enumerated TxsdInformaltableOrient is "port".
+func (me TxsdInformaltableOrient) IsPort () bool { return me == "port" }
+
+//	Since TxsdInformaltableOrient is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdInformaltableOrient) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_Orient_TxsdInformaltableOrient_ struct {
+	Orient TxsdInformaltableOrient `xml:"http://docbook.org/ns/docbook orient,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Rowsep_TxsdInformaltableRowsep_ struct {
+	Rowsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook rowsep,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Cellspacing_XsdtString_ struct {
+	Cellspacing xsdt.String `xml:"http://docbook.org/ns/docbook cellspacing,attr"`
+
+}
+
+type XsdGoPkgHasElems_Tbody struct {
+	Tbodies []*TxsdTbody `xml:"http://docbook.org/ns/docbook tbody"`
+
+}
+
+type XsdGoPkgHasAttr_Align_TxsdColgroupAlign_ struct {
+	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Valign_TxsdColgroupValign_ struct {
+	Valign TxsdColValign `xml:"http://docbook.org/ns/docbook valign,attr"`
+
+}
+
+type TxsdColgroup struct {
+	XsdGoPkgHasAttr_Valign_TxsdColgroupValign_
+
+	XsdGoPkgHasAttr_Onkeyup_XsdtString_
+
+	XsdGoPkgHasAttr_Onclick_XsdtString_
+
+	XsdGoPkgHasAttr_Onmousemove_XsdtString_
+
+	XsdGoPkgHasAttr_Charoff_XsdtString_
+
+	XsdGoPkgHasAttr_Onmousedown_XsdtString_
+
+	XsdGoPkgHasAttr_Class_XsdtString_
+
+	XsdGoPkgHasAttr_Lang_XsdtString_
+
+	XsdGoPkgHasAttr_Ondblclick_XsdtString_
+
+	XsdGoPkgHasAttr_Onmouseover_XsdtString_
+
+	XsdGoPkgHasElems_Col
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Onkeypress_XsdtString_
+
+	XsdGoPkgHasAttr_Style_XsdtString_
+
+	XsdGoPkgHasAttr_Align_TxsdColgroupAlign_
+
+	XsdGoPkgHasAttr_Title_XsdtString_
+
+	XsdGoPkgHasAttr_Onmouseout_XsdtString_
+
+	XsdGoPkgHasAttr_Width_XsdtString_
+
+	XsdGoPkgHasAttr_Span_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Onkeydown_XsdtString_
+
+	XsdGoPkgHasAttr_Char_XsdtString_
+
+	XsdGoPkgHasAttr_Onmouseup_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_Colgroup struct {
+	Colgroups []*TxsdColgroup `xml:"http://docbook.org/ns/docbook colgroup"`
+
+}
+
+type XsdGoPkgHasAttr_Cellpadding_XsdtString_ struct {
+	Cellpadding xsdt.String `xml:"http://docbook.org/ns/docbook cellpadding,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Colsep_TxsdInformaltableColsep_ struct {
+	Colsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook colsep,attr"`
+
+}
+
+type TxsdInformaltable struct {
+	XsdGoPkgHasAttr_Onkeypress_XsdtString_
+
+	XsdGoPkgHasElems_Textobject
+
+	XsdGoPkgHasAttr_Rowsep_TxsdInformaltableRowsep_
+
+	XsdGoPkgHasAttr_Onkeyup_XsdtString_
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasAttr_Cellspacing_XsdtString_
+
+	XsdGoPkgHasElems_Tbody
+
+	XsdGoPkgHasElem_Thead
+
+	XsdGoPkgHasAttr_Onkeydown_XsdtString_
+
+	XsdGoPkgHasAttr_Onmousemove_XsdtString_
+
+	XsdGoPkgHasAttr_Class_XsdtString_
+
+	XsdGoPkgHasElems_Colgroup
+
+	XsdGoPkgHasAttr_Onmouseout_XsdtString_
+
+	XsdGoPkgHasElem_Tfoot
+
+	XsdGoPkgHasAttr_Cellpadding_XsdtString_
+
+	XsdGoPkgHasElems_Tr
+
+	XsdGoPkgHasAttr_Colsep_TxsdInformaltableColsep_
+
+	XsdGoPkgHasAttr_Pgwide_TxsdInformaltablePgwide_
+
+	XsdGoPkgHasAttr_Summary_XsdtString_
+
+	XsdGoPkgHasAttr_Rowheader_TxsdInformaltableRowheader_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Col
+
+	XsdGoPkgHasAttr_Border_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Onmousedown_XsdtString_
+
+	XsdGoPkgHasElems_Tgroup
+
+	XsdGoPkgHasAttr_Onmouseover_XsdtString_
+
+	XsdGoPkgHasAttr_Tabstyle_XsdtString_
+
+	XsdGoPkgHasAttr_Onmouseup_XsdtString_
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Title_XsdtString_
+
+	XsdGoPkgHasAttr_Rules_TxsdInformaltableRules_
+
+	XsdGoPkgHasAttr_Ondblclick_XsdtString_
+
+	XsdGoPkgHasAttr_Floatstyle_XsdtString_
+
+	XsdGoPkgHasAttr_Frame_TxsdInformaltableFrame_
+
+	XsdGoPkgHasAttr_Onclick_XsdtString_
+
+	XsdGoPkgHasAttr_Width_XsdtString_
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasAttr_Orient_TxsdInformaltableOrient_
+
+	XsdGoPkgHasAttr_Lang_XsdtString_
+
+	XsdGoPkgHasAttr_Style_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+}
+
+type XsdGoPkgHasElems_Informaltable struct {
+	Informaltables []*TxsdInformaltable `xml:"http://docbook.org/ns/docbook informaltable"`
 
 }
 
 type TxsdOrderedlistInheritnum xsdt.Token
 
-//	Since TxsdOrderedlistInheritnum is just a simple String type, this merely returns the current string value.
-func (me TxsdOrderedlistInheritnum) String () string { return xsdt.Token(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdOrderedlistInheritnum's alias type xsdt.Token.
-func (me TxsdOrderedlistInheritnum) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
 //	Returns true if the value of this enumerated TxsdOrderedlistInheritnum is "ignore".
 func (me TxsdOrderedlistInheritnum) IsIgnore () bool { return me == "ignore" }
+
+//	Since TxsdOrderedlistInheritnum is just a simple String type, this merely returns the current string value.
+func (me TxsdOrderedlistInheritnum) String () string { return xsdt.Token(me).String() }
 
 //	Returns true if the value of this enumerated TxsdOrderedlistInheritnum is "inherit".
 func (me TxsdOrderedlistInheritnum) IsInherit () bool { return me == "inherit" }
 
 //	Since TxsdOrderedlistInheritnum is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdOrderedlistInheritnum) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdOrderedlistInheritnum's alias type xsdt.Token.
+func (me TxsdOrderedlistInheritnum) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
 
 type XsdGoPkgHasAttr_Inheritnum_TxsdOrderedlistInheritnum_ struct {
 	Inheritnum TxsdOrderedlistInheritnum `xml:"http://docbook.org/ns/docbook inheritnum,attr"`
@@ -6706,12 +10205,6 @@ func (me *TxsdOrderedlistNumeration) SetFromString (s string)  { (*xsdt.Token)(m
 //	Returns true if the value of this enumerated TxsdOrderedlistNumeration is "arabic".
 func (me TxsdOrderedlistNumeration) IsArabic () bool { return me == "arabic" }
 
-//	Returns true if the value of this enumerated TxsdOrderedlistNumeration is "upperroman".
-func (me TxsdOrderedlistNumeration) IsUpperroman () bool { return me == "upperroman" }
-
-//	Returns true if the value of this enumerated TxsdOrderedlistNumeration is "upperalpha".
-func (me TxsdOrderedlistNumeration) IsUpperalpha () bool { return me == "upperalpha" }
-
 //	Returns true if the value of this enumerated TxsdOrderedlistNumeration is "loweralpha".
 func (me TxsdOrderedlistNumeration) IsLoweralpha () bool { return me == "loweralpha" }
 
@@ -6721,194 +10214,19 @@ func (me TxsdOrderedlistNumeration) ToXsdtToken () xsdt.Token { return xsdt.Toke
 //	Returns true if the value of this enumerated TxsdOrderedlistNumeration is "lowerroman".
 func (me TxsdOrderedlistNumeration) IsLowerroman () bool { return me == "lowerroman" }
 
+//	Returns true if the value of this enumerated TxsdOrderedlistNumeration is "upperalpha".
+func (me TxsdOrderedlistNumeration) IsUpperalpha () bool { return me == "upperalpha" }
+
+//	Returns true if the value of this enumerated TxsdOrderedlistNumeration is "upperroman".
+func (me TxsdOrderedlistNumeration) IsUpperroman () bool { return me == "upperroman" }
+
 type XsdGoPkgHasAttr_Numeration_TxsdOrderedlistNumeration_ struct {
 	Numeration TxsdOrderedlistNumeration `xml:"http://docbook.org/ns/docbook numeration,attr"`
 
 }
 
-type TxsdMethodsynopsis struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElem_Methodname
-
-	XsdGoPkgHasElem_Void
-
-	XsdGoPkgHasElems_Methodparam
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAttr_Language_XsdtString_
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElem_Type
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-}
-
-type XsdGoPkgHasElems_Methodsynopsis struct {
-	Methodsynopsises []*TxsdMethodsynopsis `xml:"http://docbook.org/ns/docbook methodsynopsis"`
-
-}
-
-type XsdGoPkgHasAttr_Continuation_TxsdOrderedlistContinuation_ struct {
-	Continuation TxsdAddressContinuation `xml:"http://docbook.org/ns/docbook continuation,attr"`
-
-}
-
-type TxsdOrderedlistSpacing xsdt.Token
-
-//	Since TxsdOrderedlistSpacing is just a simple String type, this merely returns the current string value.
-func (me TxsdOrderedlistSpacing) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdOrderedlistSpacing is "compact".
-func (me TxsdOrderedlistSpacing) IsCompact () bool { return me == "compact" }
-
-//	This convenience method just performs a simple type conversion to TxsdOrderedlistSpacing's alias type xsdt.Token.
-func (me TxsdOrderedlistSpacing) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdOrderedlistSpacing is "normal".
-func (me TxsdOrderedlistSpacing) IsNormal () bool { return me == "normal" }
-
-//	Since TxsdOrderedlistSpacing is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdOrderedlistSpacing) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
 type XsdGoPkgHasAttr_Spacing_TxsdOrderedlistSpacing_ struct {
-	Spacing TxsdOrderedlistSpacing `xml:"http://docbook.org/ns/docbook spacing,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Override_XsdtNmtoken_ struct {
-	Override xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook override,attr"`
-
-}
-
-type XsdGoPkgHasElems_Destructorsynopsis struct {
-	Destructorsynopsises []*TxsdConstructorsynopsis `xml:"http://docbook.org/ns/docbook destructorsynopsis"`
-
-}
-
-type TxsdListitem struct {
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasAttr_Override_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Informaltable
+	Spacing TxsdVariablelistSpacing `xml:"http://docbook.org/ns/docbook spacing,attr"`
 
 }
 
@@ -6923,139 +10241,139 @@ type XsdGoPkgHasAttr_Startingnumber_XsdtNmtoken_ struct {
 }
 
 type TxsdOrderedlist struct {
-	XsdGoPkgHasAttr_Inheritnum_TxsdOrderedlistInheritnum_
+	XsdGoPkgHasElems_Calloutlist
 
-	XsdGoPkgHasElems_Classsynopsis
+	XsdGoPkgHasElems_Glosslist
 
-	XsdGoPkgHasElems_Screen
+	XsdGoPkgHasElems_Programlisting
 
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Bibliolist
+	XsdGoPkgHasElems_Itemizedlist
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasAttr_Inheritnum_TxsdOrderedlistInheritnum_
+
 	XsdGoPkgHasAttr_Numeration_TxsdOrderedlistNumeration_
 
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasAttr_Continuation_TxsdOrderedlistContinuation_
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Bridgehead
+	XsdGoPkgHasElems_Procedure
 
 	XsdGoPkgHasElems_Msgset
 
+	XsdGoPkgHasElems_Qandaset
+
 	XsdGoPkgHasAttr_Spacing_TxsdOrderedlistSpacing_
-
-	XsdGoPkgHasElems_Listitem
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Destructorsynopsis
 
 	XsdGoPkgHasElems_Informalequation
 
-	XsdGoPkgHasElems_Literallayout
+	XsdGoPkgHasElems_Table
 
-	XsdGoPkgHasElems_Constructorsynopsis
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Simpara
 
 	XsdGoPkgHasElems_Remark
 
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Example
+	XsdGoPkgHasElems_Tip
 
 	XsdGoPkgHasElems_Informalfigure
 
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Table
+	XsdGoPkgHasElems_Listitem
 
 	XsdGoPkgHasElems_Segmentedlist
 
+	XsdGoPkgHasAttr_Startingnumber_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Blockquote
+
 	XsdGoPkgHasElems_Constraintdef
 
-	XsdGoPkgHasElems_Qandaset
+	XsdGoPkgHasElems_Revhistory
 
 	XsdGoPkgHasElems_Sidebar
 
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasAttr_Continuation_TxsdOrderedlistContinuation_
+
+	XsdGoPkgHasElems_Programlistingco
+
 	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Formalpara
 
 	XsdGoPkgHasElems_Note
 
 	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasAttr_Startingnumber_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Glosslist
 
 }
 
@@ -7064,1951 +10382,19 @@ type XsdGoPkgHasElems_Orderedlist struct {
 
 }
 
-type TxsdExample struct {
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasAttr_Width_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasAttr_Pgwide_TxsdExamplePgwide_
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasAttr_Floatstyle_XsdtString_
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElem_Caption
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-}
-
-type XsdGoPkgHasElems_Example struct {
-	Examples []*TxsdExample `xml:"http://docbook.org/ns/docbook example"`
-
-}
-
-type XsdGoPkgHasAttr_Otherterm_XsdtIdref_ struct {
-	Otherterm xsdt.Idref `xml:"http://docbook.org/ns/docbook otherterm,attr"`
-
-}
-
-type TxsdGlossseealso struct {
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasAttr_Otherterm_XsdtIdref_
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-}
-
-type XsdGoPkgHasElems_Glossseealso struct {
-	Glossseealsos []*TxsdGlossseealso `xml:"http://docbook.org/ns/docbook glossseealso"`
-
-}
-
-type TxsdGlossdef struct {
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Glossseealso
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasAttr_Subject_XsdtString_
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Qandaset
-
-}
-
-type XsdGoPkgHasElems_Glossdef struct {
-	Glossdefs []*TxsdGlossdef `xml:"http://docbook.org/ns/docbook glossdef"`
-
-}
-
-type XsdGoPkgHasElem_Glossterm struct {
-	Glossterm *TxsdGlossterm `xml:"http://docbook.org/ns/docbook glossterm"`
-
-}
-
-type XsdGoPkgHasElem_Acronym struct {
-	Acronym *TxsdAbbrev `xml:"http://docbook.org/ns/docbook acronym"`
-
-}
-
-type XsdGoPkgHasAttr_Sortas_XsdtString_ struct {
-	Sortas xsdt.String `xml:"http://docbook.org/ns/docbook sortas,attr"`
-
-}
-
-type XsdGoPkgHasElem_Abbrev struct {
-	Abbrev *TxsdAbbrev `xml:"http://docbook.org/ns/docbook abbrev"`
-
-}
-
-type XsdGoPkgHasElem_Glosssee struct {
-	Glosssee *TxsdGlossseealso `xml:"http://docbook.org/ns/docbook glosssee"`
-
-}
-
-type TxsdGlossentry struct {
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElem_Glosssee
-
-	XsdGoPkgHasElems_Glossdef
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElem_Glossterm
-
-	XsdGoPkgHasElem_Acronym
-
-	XsdGoPkgHasAttr_Sortas_XsdtString_
-
-	XsdGoPkgHasElem_Abbrev
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-}
-
-type XsdGoPkgHasElems_Glossentry struct {
-	Glossentries []*TxsdGlossentry `xml:"http://docbook.org/ns/docbook glossentry"`
-
-}
-
-type TxsdGlosslist struct {
-	XsdGoPkgHasElems_Glossentry
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Screenco
-
-}
-
-type XsdGoPkgHasElems_Glosslist struct {
-	Glosslists []*TxsdGlosslist `xml:"http://docbook.org/ns/docbook glosslist"`
-
-}
-
-type TxsdTaskprerequisites struct {
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Programlisting
-
-}
-
-type XsdGoPkgHasElem_Taskprerequisites struct {
-	Taskprerequisites *TxsdTaskprerequisites `xml:"http://docbook.org/ns/docbook taskprerequisites"`
-
-}
-
-type XsdGoPkgHasElem_Taskrelated struct {
-	Taskrelated *TxsdTaskprerequisites `xml:"http://docbook.org/ns/docbook taskrelated"`
-
-}
-
-type XsdGoPkgHasElem_Procedure struct {
-	Procedure *TxsdProcedure `xml:"http://docbook.org/ns/docbook procedure"`
-
-}
-
-type XsdGoPkgHasElem_Tasksummary struct {
-	Tasksummary *TxsdTaskprerequisites `xml:"http://docbook.org/ns/docbook tasksummary"`
-
-}
-
-type TxsdTask struct {
-	XsdGoPkgHasElem_Procedure
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElem_Tasksummary
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElem_Taskprerequisites
-
-	XsdGoPkgHasElem_Taskrelated
-
-}
-
-type XsdGoPkgHasElems_Task struct {
-	Tasks []*TxsdTask `xml:"http://docbook.org/ns/docbook task"`
-
-}
-
-type XsdGoPkgHasAttr_Morerows_XsdtNmtoken_ struct {
-	Morerows xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook morerows,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Nameend_XsdtString_ struct {
-	Nameend xsdt.String `xml:"http://docbook.org/ns/docbook nameend,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Rotate_TxsdEntryRotate_ struct {
-	Rotate TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook rotate,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Namest_XsdtString_ struct {
-	Namest xsdt.String `xml:"http://docbook.org/ns/docbook namest,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Valign_TxsdEntryValign_ struct {
-	Valign TxsdImagedataValign `xml:"http://docbook.org/ns/docbook valign,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Spanname_XsdtString_ struct {
-	Spanname xsdt.String `xml:"http://docbook.org/ns/docbook spanname,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Rowsep_TxsdEntryRowsep_ struct {
-	Rowsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook rowsep,attr"`
-
-}
-
-type TxsdEntry struct {
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasAttr_Namest_XsdtString_
-
-	XsdGoPkgHasAttr_Char_XsdtString_
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasAttr_Valign_TxsdEntryValign_
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasAttr_Spanname_XsdtString_
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasAttr_Rowsep_TxsdEntryRowsep_
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasAttr_Align_TxsdEntryAlign_
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasAttr_Colsep_TxsdEntryColsep_
-
-	XsdGoPkgHasAttr_Colname_XsdtString_
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasAttr_Morerows_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasAttr_Nameend_XsdtString_
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasAttr_Charoff_XsdtString_
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Rotate_TxsdEntryRotate_
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Classsynopsis
-
-}
-
-type XsdGoPkgHasElems_Entry struct {
-	Entries []*TxsdEntry `xml:"http://docbook.org/ns/docbook entry"`
-
-}
-
-type XsdGoPkgHasAttr_Rowsep_TxsdRowRowsep_ struct {
-	Rowsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook rowsep,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Valign_TxsdRowValign_ struct {
-	Valign TxsdImagedataValign `xml:"http://docbook.org/ns/docbook valign,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Rowsep_TxsdColspecRowsep_ struct {
-	Rowsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook rowsep,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Colwidth_XsdtString_ struct {
-	Colwidth xsdt.String `xml:"http://docbook.org/ns/docbook colwidth,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Align_TxsdColspecAlign_ struct {
-	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Colsep_TxsdColspecColsep_ struct {
-	Colsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook colsep,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Colnum_XsdtNmtoken_ struct {
-	Colnum xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook colnum,attr"`
-
-}
-
-type TxsdColspec struct {
-	XsdGoPkgHasAttr_Colsep_TxsdColspecColsep_
-
-	XsdGoPkgHasAttr_Charoff_XsdtString_
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAttr_Colnum_XsdtNmtoken_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Colname_XsdtString_
-
-	XsdGoPkgHasAttr_Rowsep_TxsdColspecRowsep_
-
-	XsdGoPkgHasAttr_Colwidth_XsdtString_
-
-	XsdGoPkgHasAttr_Char_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Align_TxsdColspecAlign_
-
-}
-
-type XsdGoPkgHasElems_Colspec struct {
-	Colspecs []*TxsdColspec `xml:"http://docbook.org/ns/docbook colspec"`
-
-}
-
-type XsdGoPkgHasElem_Tbody struct {
-	Tbody *TxsdTbody `xml:"http://docbook.org/ns/docbook tbody"`
-
-}
-
-type XsdGoPkgHasAttr_Rowsep_TxsdEntrytblRowsep_ struct {
-	Rowsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook rowsep,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Colsep_TxsdEntrytblColsep_ struct {
-	Colsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook colsep,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Cols_XsdtNmtoken_ struct {
-	Cols xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook cols,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Align_TxsdEntrytblAlign_ struct {
-	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Rowsep_TxsdSpanspecRowsep_ struct {
-	Rowsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook rowsep,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Colsep_TxsdSpanspecColsep_ struct {
-	Colsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook colsep,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Align_TxsdSpanspecAlign_ struct {
-	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
-
-}
-
-type TxsdSpanspec struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Rowsep_TxsdSpanspecRowsep_
-
-	XsdGoPkgHasAttr_Charoff_XsdtString_
-
-	XsdGoPkgHasAttr_Namest_XsdtString_
-
-	XsdGoPkgHasAttr_Colsep_TxsdSpanspecColsep_
-
-	XsdGoPkgHasAttr_Char_XsdtString_
-
-	XsdGoPkgHasAttr_Align_TxsdSpanspecAlign_
-
-	XsdGoPkgHasAttr_Nameend_XsdtString_
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Spanname_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Spanspec struct {
-	Spanspecs []*TxsdSpanspec `xml:"http://docbook.org/ns/docbook spanspec"`
-
-}
-
-type XsdGoPkgHasAttr_Tgroupstyle_XsdtString_ struct {
-	Tgroupstyle xsdt.String `xml:"http://docbook.org/ns/docbook tgroupstyle,attr"`
-
-}
-
-type TxsdEntrytbl struct {
-	XsdGoPkgHasAttr_Spanname_XsdtString_
-
-	XsdGoPkgHasAttr_Charoff_XsdtString_
-
-	XsdGoPkgHasElems_Colspec
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAttr_Namest_XsdtString_
-
-	XsdGoPkgHasElem_Tbody
-
-	XsdGoPkgHasAttr_Colname_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Rowsep_TxsdEntrytblRowsep_
-
-	XsdGoPkgHasAttr_Nameend_XsdtString_
-
-	XsdGoPkgHasAttr_Colsep_TxsdEntrytblColsep_
-
-	XsdGoPkgHasAttr_Cols_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_Align_TxsdEntrytblAlign_
-
-	XsdGoPkgHasElems_Spanspec
-
-	XsdGoPkgHasElem_Thead
-
-	XsdGoPkgHasAttr_Tgroupstyle_XsdtString_
-
-	XsdGoPkgHasAttr_Char_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Entrytbl struct {
-	Entrytbls []*TxsdEntrytbl `xml:"http://docbook.org/ns/docbook entrytbl"`
-
-}
-
-type TxsdRow struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Valign_TxsdRowValign_
-
-	XsdGoPkgHasElems_Entrytbl
-
-	XsdGoPkgHasElems_Entry
-
-	XsdGoPkgHasAttr_Rowsep_TxsdRowRowsep_
-
-}
-
-type XsdGoPkgHasElems_Row struct {
-	Rows []*TxsdRow `xml:"http://docbook.org/ns/docbook row"`
-
-}
-
-type XsdGoPkgHasAttr_Align_TxsdTheadAlign_ struct {
-	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
-
-}
-
-type TxsdThead struct {
-	XsdGoPkgHasAttr_Onmouseup_XsdtString_
-
-	XsdGoPkgHasElems_Colspec
-
-	XsdGoPkgHasElems_Tr
-
-	XsdGoPkgHasAttr_Onmouseout_XsdtString_
-
-	XsdGoPkgHasAttr_Char_XsdtString_
-
-	XsdGoPkgHasAttr_Align_TxsdTheadAlign_
-
-	XsdGoPkgHasAttr_Charoff_XsdtString_
-
-	XsdGoPkgHasAttr_Onclick_XsdtString_
-
-	XsdGoPkgHasAttr_Onmousedown_XsdtString_
-
-	XsdGoPkgHasAttr_Class_XsdtString_
-
-	XsdGoPkgHasAttr_Ondblclick_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeyup_XsdtString_
-
-	XsdGoPkgHasAttr_Title_XsdtString_
-
-	XsdGoPkgHasAttr_Valign_TxsdTheadValign_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Row
-
-	XsdGoPkgHasAttr_Lang_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeydown_XsdtString_
-
-	XsdGoPkgHasAttr_Style_XsdtString_
-
-	XsdGoPkgHasAttr_Onmousemove_XsdtString_
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAttr_Onmouseover_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeypress_XsdtString_
-
-}
-
-type XsdGoPkgHasElem_Thead struct {
-	Thead *TxsdThead `xml:"http://docbook.org/ns/docbook thead"`
-
-}
-
-type XsdGoPkgHasElem_Titleabbrev struct {
-	Titleabbrev *TxsdSubtitle `xml:"http://docbook.org/ns/docbook titleabbrev"`
-
-}
-
-type XsdGoPkgHasAttr_Shortentry_TxsdTableShortentry_ struct {
-	Shortentry TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook shortentry,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Summary_XsdtString_ struct {
-	Summary xsdt.String `xml:"http://docbook.org/ns/docbook summary,attr"`
-
-}
-
-type TxsdTableRules xsdt.Token
-
-//	Since TxsdTableRules is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdTableRules) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdTableRules is "all".
-func (me TxsdTableRules) IsAll () bool { return me == "all" }
-
-//	Returns true if the value of this enumerated TxsdTableRules is "none".
-func (me TxsdTableRules) IsNone () bool { return me == "none" }
-
-//	Returns true if the value of this enumerated TxsdTableRules is "groups".
-func (me TxsdTableRules) IsGroups () bool { return me == "groups" }
-
-//	Returns true if the value of this enumerated TxsdTableRules is "rows".
-func (me TxsdTableRules) IsRows () bool { return me == "rows" }
-
-//	Since TxsdTableRules is just a simple String type, this merely returns the current string value.
-func (me TxsdTableRules) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdTableRules is "cols".
-func (me TxsdTableRules) IsCols () bool { return me == "cols" }
-
-//	This convenience method just performs a simple type conversion to TxsdTableRules's alias type xsdt.Token.
-func (me TxsdTableRules) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-type XsdGoPkgHasAttr_Rules_TxsdTableRules_ struct {
-	Rules TxsdTableRules `xml:"http://docbook.org/ns/docbook rules,attr"`
-
-}
-
-type TxsdTableOrient xsdt.Token
-
-//	Since TxsdTableOrient is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdTableOrient) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdTableOrient is "land".
-func (me TxsdTableOrient) IsLand () bool { return me == "land" }
-
-//	Returns true if the value of this enumerated TxsdTableOrient is "port".
-func (me TxsdTableOrient) IsPort () bool { return me == "port" }
-
-//	Since TxsdTableOrient is just a simple String type, this merely returns the current string value.
-func (me TxsdTableOrient) String () string { return xsdt.Token(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdTableOrient's alias type xsdt.Token.
-func (me TxsdTableOrient) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-type XsdGoPkgHasAttr_Orient_TxsdTableOrient_ struct {
-	Orient TxsdTableOrient `xml:"http://docbook.org/ns/docbook orient,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Colsep_TxsdTableColsep_ struct {
-	Colsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook colsep,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Rowsep_TxsdTableRowsep_ struct {
-	Rowsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook rowsep,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Rowheader_TxsdTableRowheader_ struct {
-	Rowheader TxsdInformaltableRowheader `xml:"http://docbook.org/ns/docbook rowheader,attr"`
-
-}
-
-type XsdGoPkgHasElem_Title struct {
-	Title *TxsdTitle `xml:"http://docbook.org/ns/docbook title"`
-
-}
-
-type TxsdTableFrame xsdt.Token
-
-//	Returns true if the value of this enumerated TxsdTableFrame is "above".
-func (me TxsdTableFrame) IsAbove () bool { return me == "above" }
-
-//	This convenience method just performs a simple type conversion to TxsdTableFrame's alias type xsdt.Token.
-func (me TxsdTableFrame) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdTableFrame is "below".
-func (me TxsdTableFrame) IsBelow () bool { return me == "below" }
-
-//	Returns true if the value of this enumerated TxsdTableFrame is "topbot".
-func (me TxsdTableFrame) IsTopbot () bool { return me == "topbot" }
-
-//	Returns true if the value of this enumerated TxsdTableFrame is "top".
-func (me TxsdTableFrame) IsTop () bool { return me == "top" }
-
-//	Since TxsdTableFrame is just a simple String type, this merely returns the current string value.
-func (me TxsdTableFrame) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdTableFrame is "rhs".
-func (me TxsdTableFrame) IsRhs () bool { return me == "rhs" }
-
-//	Returns true if the value of this enumerated TxsdTableFrame is "vsides".
-func (me TxsdTableFrame) IsVsides () bool { return me == "vsides" }
-
-//	Returns true if the value of this enumerated TxsdTableFrame is "bottom".
-func (me TxsdTableFrame) IsBottom () bool { return me == "bottom" }
-
-//	Returns true if the value of this enumerated TxsdTableFrame is "none".
-func (me TxsdTableFrame) IsNone () bool { return me == "none" }
-
-//	Returns true if the value of this enumerated TxsdTableFrame is "box".
-func (me TxsdTableFrame) IsBox () bool { return me == "box" }
-
-//	Returns true if the value of this enumerated TxsdTableFrame is "hsides".
-func (me TxsdTableFrame) IsHsides () bool { return me == "hsides" }
-
-//	Returns true if the value of this enumerated TxsdTableFrame is "lhs".
-func (me TxsdTableFrame) IsLhs () bool { return me == "lhs" }
-
-//	Returns true if the value of this enumerated TxsdTableFrame is "border".
-func (me TxsdTableFrame) IsBorder () bool { return me == "border" }
-
-//	Returns true if the value of this enumerated TxsdTableFrame is "sides".
-func (me TxsdTableFrame) IsSides () bool { return me == "sides" }
-
-//	Returns true if the value of this enumerated TxsdTableFrame is "all".
-func (me TxsdTableFrame) IsAll () bool { return me == "all" }
-
-//	Returns true if the value of this enumerated TxsdTableFrame is "void".
-func (me TxsdTableFrame) IsVoid () bool { return me == "void" }
-
-//	Since TxsdTableFrame is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdTableFrame) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_Frame_TxsdTableFrame_ struct {
-	Frame TxsdTableFrame `xml:"http://docbook.org/ns/docbook frame,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Align_TxsdColgroupAlign_ struct {
-	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Valign_TxsdColgroupValign_ struct {
-	Valign TxsdColValign `xml:"http://docbook.org/ns/docbook valign,attr"`
-
-}
-
-type TxsdColgroup struct {
-	XsdGoPkgHasAttr_Onmouseup_XsdtString_
-
-	XsdGoPkgHasElems_Col
-
-	XsdGoPkgHasAttr_Span_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_Charoff_XsdtString_
-
-	XsdGoPkgHasAttr_Title_XsdtString_
-
-	XsdGoPkgHasAttr_Onmouseover_XsdtString_
-
-	XsdGoPkgHasAttr_Onclick_XsdtString_
-
-	XsdGoPkgHasAttr_Class_XsdtString_
-
-	XsdGoPkgHasAttr_Char_XsdtString_
-
-	XsdGoPkgHasAttr_Lang_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeydown_XsdtString_
-
-	XsdGoPkgHasAttr_Onmouseout_XsdtString_
-
-	XsdGoPkgHasAttr_Width_XsdtString_
-
-	XsdGoPkgHasAttr_Ondblclick_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Style_XsdtString_
-
-	XsdGoPkgHasAttr_Onmousemove_XsdtString_
-
-	XsdGoPkgHasAttr_Align_TxsdColgroupAlign_
-
-	XsdGoPkgHasAttr_Onkeyup_XsdtString_
-
-	XsdGoPkgHasAttr_Valign_TxsdColgroupValign_
-
-	XsdGoPkgHasAttr_Onmousedown_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeypress_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Colgroup struct {
-	Colgroups []*TxsdColgroup `xml:"http://docbook.org/ns/docbook colgroup"`
-
-}
-
-type XsdGoPkgHasAttr_Align_TxsdTfootAlign_ struct {
-	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Valign_TxsdTfootValign_ struct {
-	Valign TxsdColValign `xml:"http://docbook.org/ns/docbook valign,attr"`
-
-}
-
-type TxsdTfoot struct {
-	XsdGoPkgHasAttr_Onkeyup_XsdtString_
-
-	XsdGoPkgHasAttr_Onmousedown_XsdtString_
-
-	XsdGoPkgHasAttr_Class_XsdtString_
-
-	XsdGoPkgHasAttr_Align_TxsdTfootAlign_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Ondblclick_XsdtString_
-
-	XsdGoPkgHasAttr_Onmouseup_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeypress_XsdtString_
-
-	XsdGoPkgHasElems_Colspec
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Style_XsdtString_
-
-	XsdGoPkgHasAttr_Onmouseout_XsdtString_
-
-	XsdGoPkgHasAttr_Title_XsdtString_
-
-	XsdGoPkgHasElems_Row
-
-	XsdGoPkgHasAttr_Charoff_XsdtString_
-
-	XsdGoPkgHasAttr_Onmouseover_XsdtString_
-
-	XsdGoPkgHasAttr_Onclick_XsdtString_
-
-	XsdGoPkgHasAttr_Valign_TxsdTfootValign_
-
-	XsdGoPkgHasAttr_Onmousemove_XsdtString_
-
-	XsdGoPkgHasAttr_Lang_XsdtString_
-
-	XsdGoPkgHasElems_Tr
-
-	XsdGoPkgHasAttr_Char_XsdtString_
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeydown_XsdtString_
-
-}
-
-type XsdGoPkgHasElem_Tfoot struct {
-	Tfoot *TxsdTfoot `xml:"http://docbook.org/ns/docbook tfoot"`
-
-}
-
-type XsdGoPkgHasAttr_Cellspacing_XsdtString_ struct {
-	Cellspacing xsdt.String `xml:"http://docbook.org/ns/docbook cellspacing,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Tabstyle_XsdtString_ struct {
-	Tabstyle xsdt.String `xml:"http://docbook.org/ns/docbook tabstyle,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Tocentry_TxsdTableTocentry_ struct {
-	Tocentry TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook tocentry,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Colsep_TxsdTgroupColsep_ struct {
-	Colsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook colsep,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Rowsep_TxsdTgroupRowsep_ struct {
-	Rowsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook rowsep,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Align_TxsdTgroupAlign_ struct {
-	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
-
-}
-
-type TxsdTgroup struct {
-	XsdGoPkgHasAttr_Align_TxsdTgroupAlign_
-
-	XsdGoPkgHasElem_Tfoot
-
-	XsdGoPkgHasAttr_Char_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Colsep_TxsdTgroupColsep_
-
-	XsdGoPkgHasElem_Tbody
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAttr_Tgroupstyle_XsdtString_
-
-	XsdGoPkgHasAttr_Cols_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Spanspec
-
-	XsdGoPkgHasAttr_Charoff_XsdtString_
-
-	XsdGoPkgHasElem_Thead
-
-	XsdGoPkgHasElems_Colspec
-
-	XsdGoPkgHasAttr_Rowsep_TxsdTgroupRowsep_
-
-}
-
-type XsdGoPkgHasElems_Tgroup struct {
-	Tgroups []*TxsdTgroup `xml:"http://docbook.org/ns/docbook tgroup"`
-
-}
-
-type TxsdTable struct {
-	XsdGoPkgHasAttr_Shortentry_TxsdTableShortentry_
-
-	XsdGoPkgHasAttr_Class_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Summary_XsdtString_
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasAttr_Floatstyle_XsdtString_
-
-	XsdGoPkgHasAttr_Rules_TxsdTableRules_
-
-	XsdGoPkgHasAttr_Onclick_XsdtString_
-
-	XsdGoPkgHasAttr_Orient_TxsdTableOrient_
-
-	XsdGoPkgHasAttr_Border_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_Width_XsdtString_
-
-	XsdGoPkgHasAttr_Onmousedown_XsdtString_
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasAttr_Colsep_TxsdTableColsep_
-
-	XsdGoPkgHasAttr_Rowsep_TxsdTableRowsep_
-
-	XsdGoPkgHasAttr_Rowheader_TxsdTableRowheader_
-
-	XsdGoPkgHasElem_Title
-
-	XsdGoPkgHasAttr_Onmouseout_XsdtString_
-
-	XsdGoPkgHasAttr_Frame_TxsdTableFrame_
-
-	XsdGoPkgHasElems_Colgroup
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElem_Tfoot
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasAttr_Cellspacing_XsdtString_
-
-	XsdGoPkgHasAttr_Style_XsdtString_
-
-	XsdGoPkgHasAttr_Tabstyle_XsdtString_
-
-	XsdGoPkgHasAttr_Tocentry_TxsdTableTocentry_
-
-	XsdGoPkgHasElems_Tgroup
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasAttr_Onmouseup_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeyup_XsdtString_
-
-	XsdGoPkgHasElems_Tr
-
-	XsdGoPkgHasElem_Caption
-
-	XsdGoPkgHasAttr_Onkeypress_XsdtString_
-
-	XsdGoPkgHasAttr_Title_XsdtString_
-
-	XsdGoPkgHasAttr_Onmouseover_XsdtString_
-
-	XsdGoPkgHasAttr_Lang_XsdtString_
-
-	XsdGoPkgHasAttr_Pgwide_TxsdTablePgwide_
-
-	XsdGoPkgHasElems_Tbody
-
-	XsdGoPkgHasElems_Textobject
-
-	XsdGoPkgHasAttr_Cellpadding_XsdtString_
-
-	XsdGoPkgHasElem_Thead
-
-	XsdGoPkgHasElems_Col
-
-	XsdGoPkgHasAttr_Ondblclick_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeydown_XsdtString_
-
-	XsdGoPkgHasElem_Titleabbrev
-
-	XsdGoPkgHasAttr_Onmousemove_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Table struct {
-	Tables []*TxsdTable `xml:"http://docbook.org/ns/docbook table"`
-
-}
-
 type TxsdQandasetDefaultlabel xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdQandasetDefaultlabel is "none".
+func (me TxsdQandasetDefaultlabel) IsNone () bool { return me == "none" }
+
+//	Returns true if the value of this enumerated TxsdQandasetDefaultlabel is "qanda".
+func (me TxsdQandasetDefaultlabel) IsQanda () bool { return me == "qanda" }
 
 //	Since TxsdQandasetDefaultlabel is just a simple String type, this merely returns the current string value.
 func (me TxsdQandasetDefaultlabel) String () string { return xsdt.Token(me).String() }
 
-//	Returns true if the value of this enumerated TxsdQandasetDefaultlabel is "none".
-func (me TxsdQandasetDefaultlabel) IsNone () bool { return me == "none" }
+//	Returns true if the value of this enumerated TxsdQandasetDefaultlabel is "number".
+func (me TxsdQandasetDefaultlabel) IsNumber () bool { return me == "number" }
 
 //	Since TxsdQandasetDefaultlabel is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdQandasetDefaultlabel) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
@@ -9016,140 +10402,134 @@ func (me *TxsdQandasetDefaultlabel) SetFromString (s string)  { (*xsdt.Token)(me
 //	This convenience method just performs a simple type conversion to TxsdQandasetDefaultlabel's alias type xsdt.Token.
 func (me TxsdQandasetDefaultlabel) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
 
-//	Returns true if the value of this enumerated TxsdQandasetDefaultlabel is "number".
-func (me TxsdQandasetDefaultlabel) IsNumber () bool { return me == "number" }
-
-//	Returns true if the value of this enumerated TxsdQandasetDefaultlabel is "qanda".
-func (me TxsdQandasetDefaultlabel) IsQanda () bool { return me == "qanda" }
-
 type XsdGoPkgHasAttr_Defaultlabel_TxsdQandasetDefaultlabel_ struct {
 	Defaultlabel TxsdQandasetDefaultlabel `xml:"http://docbook.org/ns/docbook defaultlabel,attr"`
 
 }
 
 type XsdGoPkgHasElem_Label struct {
-	Label *TxsdAccel `xml:"http://docbook.org/ns/docbook label"`
+	Label *TxsdFuncparams `xml:"http://docbook.org/ns/docbook label"`
 
 }
 
 type TxsdAnswer struct {
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Glosslist
+	XsdGoPkgHasElems_Informaltable
 
 	XsdGoPkgHasElems_Warning
 
-	XsdGoPkgHasElems_Destructorsynopsis
+	XsdGoPkgHasElems_Glosslist
 
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElem_Label
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Tip
+	XsdGoPkgHasElems_Indexterm
 
 	XsdGoPkgHasElems_Variablelist
 
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Programlisting
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Classsynopsis
+
 	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Sidebar
 
 	XsdGoPkgHasElems_Methodsynopsis
 
 	XsdGoPkgHasElems_Constraintdef
 
-	XsdGoPkgHasElems_Screen
+	XsdGoPkgHasElems_Anchor
 
-	XsdGoPkgHasElems_Constructorsynopsis
+	XsdGoPkgHasElem_Label
 
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Programlisting
+	XsdGoPkgHasElems_Para
 
 	XsdGoPkgHasElems_Formalpara
 
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Table
+
 	XsdGoPkgHasElems_Remark
 
-	XsdGoPkgHasElems_Synopsis
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Bibliolist
 
 	XsdGoPkgHasElems_Figure
 
-	XsdGoPkgHasElems_Simplelist
+	XsdGoPkgHasElems_Programlistingco
 
 }
 
@@ -9164,21 +10544,21 @@ type XsdGoPkgHasElem_Question struct {
 }
 
 type TxsdQandaentry struct {
-	XsdGoPkgHasElem_Info
+	XsdGoPkgHasElems_Titleabbrev
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElem_Info
 
 	XsdGoPkgHasElems_Answer
 
 	XsdGoPkgHasElem_Question
 
 	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Titleabbrev
 
 }
 
@@ -9188,131 +10568,131 @@ type XsdGoPkgHasElems_Qandaentry struct {
 }
 
 type TxsdQandadiv struct {
-	XsdGoPkgHasElems_Caution
+	XsdGoPkgHasElems_Funcsynopsis
 
-	XsdGoPkgHasElems_Informaltable
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Para
 
 	XsdGoPkgHasElems_Bridgehead
 
 	XsdGoPkgHasElems_Programlistingco
 
-	XsdGoPkgHasElems_Qandadiv
+	XsdGoPkgHasElems_Screen
 
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Epigraph
+	XsdGoPkgHasElems_Tip
 
 	XsdGoPkgHasElems_Synopsis
 
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Qandaset
+	XsdGoPkgHasElems_Simplelist
 
 	XsdGoPkgHasElems_Formalpara
 
-	XsdGoPkgHasElems_Productionset
+	XsdGoPkgHasElems_Informaltable
 
-	XsdGoPkgHasElems_Revhistory
+	XsdGoPkgHasElems_Itemizedlist
 
-	XsdGoPkgHasElems_Important
+	XsdGoPkgHasElems_Constructorsynopsis
 
-	XsdGoPkgHasElems_Equation
+	XsdGoPkgHasElems_Task
 
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Funcsynopsis
+	XsdGoPkgHasElems_Indexterm
 
 	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Screenshot
 
 	XsdGoPkgHasElems_Orderedlist
 
 	XsdGoPkgHasElems_Msgset
 
-	XsdGoPkgHasElems_Fieldsynopsis
+	XsdGoPkgHasElems_Literallayout
 
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Example
+	XsdGoPkgHasElems_Screenco
 
 	XsdGoPkgHasElems_Calloutlist
 
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
 	XsdGoPkgHasElems_Informalfigure
 
-	XsdGoPkgHasElems_Qandaentry
+	XsdGoPkgHasElems_Mediaobject
 
 	XsdGoPkgHasElems_Table
 
-	XsdGoPkgHasElems_Blockquote
+	XsdGoPkgHasElems_Annotation
 
-	XsdGoPkgHasElems_Task
+	XsdGoPkgHasElems_Procedure
 
-	XsdGoPkgHasElems_Classsynopsis
+	XsdGoPkgHasElems_Equation
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Address
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasElems_Warning
 
-	XsdGoPkgHasElems_Anchor
+	XsdGoPkgHasElems_Caution
 
-	XsdGoPkgHasElems_Destructorsynopsis
+	XsdGoPkgHasElems_Qandaset
 
-	XsdGoPkgHasElems_Programlisting
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Segmentedlist
 
 	XsdGoPkgHasAttr_Role_XsdtString_
 
-	XsdGoPkgHasElem_Info
+	XsdGoPkgHasElems_Qandaentry
 
-	XsdGoPkgHasElems_Indexterm
+	XsdGoPkgHasElems_Qandadiv
 
-	XsdGoPkgHasElems_Remark
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Note
 
 }
 
@@ -9322,138 +10702,792 @@ type XsdGoPkgHasElems_Qandadiv struct {
 }
 
 type TxsdQandaset struct {
-	XsdGoPkgHasElems_Funcsynopsis
+	XsdGoPkgHasElems_Address
 
-	XsdGoPkgHasElems_Example
+	XsdGoPkgHasElems_Methodsynopsis
 
-	XsdGoPkgHasElems_Destructorsynopsis
+	XsdGoPkgHasElems_Segmentedlist
 
-	XsdGoPkgHasElems_Sidebar
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Orderedlist
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElem_Info
+	XsdGoPkgHasElems_Fieldsynopsis
 
 	XsdGoPkgHasElems_Formalpara
 
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Titleabbrev
-
 	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Anchor
 
 	XsdGoPkgHasElems_Literallayout
 
 	XsdGoPkgHasElems_Epigraph
 
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Qandaentry
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Address
+	XsdGoPkgHasElems_Synopsis
 
 	XsdGoPkgHasElems_Productionset
 
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Qandaset
+	XsdGoPkgHasElems_Calloutlist
 
 	XsdGoPkgHasElems_Screenco
 
-	XsdGoPkgHasElems_Simpara
+	XsdGoPkgHasElems_Remark
 
 	XsdGoPkgHasElems_Indexterm
 
-	XsdGoPkgHasElems_Annotation
+	XsdGoPkgHasElems_Procedure
 
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Screenshot
+	XsdGoPkgHasElems_Programlistingco
 
 	XsdGoPkgHasElems_Table
 
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Funcsynopsis
+
 	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Bibliolist
 
 	XsdGoPkgHasAttr_Defaultlabel_TxsdQandasetDefaultlabel_
 
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Remark
+	XsdGoPkgHasElems_Note
 
 	XsdGoPkgHasElems_Bridgehead
 
-	XsdGoPkgHasElems_Orderedlist
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Qandaentry
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Informalfigure
 
 	XsdGoPkgHasElems_Revhistory
 
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Tip
+
 	XsdGoPkgHasElems_Qandadiv
 
-	XsdGoPkgHasElems_Cmdsynopsis
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Mediaobject
 
 }
 
 type XsdGoPkgHasElems_Qandaset struct {
 	Qandasets []*TxsdQandaset `xml:"http://docbook.org/ns/docbook qandaset"`
+
+}
+
+type TxsdSidebar struct {
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Blockquote
+
+}
+
+type XsdGoPkgHasElems_Sidebar struct {
+	Sidebars []*TxsdSidebar `xml:"http://docbook.org/ns/docbook sidebar"`
+
+}
+
+type TxsdInformalexample struct {
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Floatstyle_XsdtString_
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElem_Caption
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasAttr_Width_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Task
+
+}
+
+type XsdGoPkgHasElems_Informalexample struct {
+	Informalexamples []*TxsdInformalexample `xml:"http://docbook.org/ns/docbook informalexample"`
+
+}
+
+type TxsdNote struct {
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Classsynopsis
+
+}
+
+type XsdGoPkgHasElems_Note struct {
+	Notes []*TxsdNote `xml:"http://docbook.org/ns/docbook note"`
+
+}
+
+type TxsdCaution struct {
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Revhistory
+
+}
+
+type XsdGoPkgHasElems_Caution struct {
+	Cautions []*TxsdCaution `xml:"http://docbook.org/ns/docbook caution"`
+
+}
+
+type TxsdBlockquote struct {
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElem_Attribution
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Indexterm
+
+}
+
+type XsdGoPkgHasElems_Blockquote struct {
+	Blockquotes []*TxsdBlockquote `xml:"http://docbook.org/ns/docbook blockquote"`
 
 }
 
@@ -9463,135 +11497,135 @@ type XsdGoPkgHasAttr_Pgwide_TxsdFigurePgwide_ struct {
 }
 
 type TxsdFigure struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElem_Caption
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasElems_Screen
 
 	XsdGoPkgHasAttr_Pgwide_TxsdFigurePgwide_
 
-	XsdGoPkgHasElems_Screen
+	XsdGoPkgHasElem_Caption
 
-	XsdGoPkgHasElems_Constraintdef
+	XsdGoPkgHasElems_Itemizedlist
 
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Destructorsynopsis
+	XsdGoPkgHasElems_Bridgehead
 
 	XsdGoPkgHasElems_Important
 
-	XsdGoPkgHasElems_Equation
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Indexterm
 
 	XsdGoPkgHasElems_Informaltable
 
 	XsdGoPkgHasElems_Title
 
-	XsdGoPkgHasElems_Figure
+	XsdGoPkgHasElems_Programlistingco
 
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Titleabbrev
+	XsdGoPkgHasElems_Warning
 
 	XsdGoPkgHasElems_Programlisting
 
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasAttr_Floatstyle_XsdtString_
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElem_Info
+	XsdGoPkgHasElems_Productionset
 
 	XsdGoPkgHasElems_Orderedlist
 
-	XsdGoPkgHasElems_Bridgehead
+	XsdGoPkgHasElems_Task
 
-	XsdGoPkgHasElems_Blockquote
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Bibliolist
 
 	XsdGoPkgHasElems_Literallayout
 
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasAttr_Floatstyle_XsdtString_
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Glosslist
+
 	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Note
 
 }
 
@@ -9600,34 +11634,1675 @@ type XsdGoPkgHasElems_Figure struct {
 
 }
 
-type TxsdOthercreditClass xsdt.Token
+type TxsdStep struct {
+	XsdGoPkgHasElems_Funcsynopsis
 
-//	Returns true if the value of this enumerated TxsdOthercreditClass is "other".
-func (me TxsdOthercreditClass) IsOther () bool { return me == "other" }
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasAttr_Performance_TxsdStepPerformance_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElem_Stepalternatives
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElem_Substeps
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+}
+
+type XsdGoPkgHasElems_Step struct {
+	Steps []*TxsdStep `xml:"http://docbook.org/ns/docbook step"`
+
+}
+
+type TxsdProcedure struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Step
+
+}
+
+type XsdGoPkgHasElems_Procedure struct {
+	Procedures []*TxsdProcedure `xml:"http://docbook.org/ns/docbook procedure"`
+
+}
+
+type XsdGoPkgHasAttr_Otherterm_XsdtIdref_ struct {
+	Otherterm xsdt.Idref `xml:"http://docbook.org/ns/docbook otherterm,attr"`
+
+}
+
+type TxsdGlossseealso struct {
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasAttr_Otherterm_XsdtIdref_
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Userinput
+
+}
+
+type XsdGoPkgHasElems_Glossseealso struct {
+	Glossseealsos []*TxsdGlossseealso `xml:"http://docbook.org/ns/docbook glossseealso"`
+
+}
+
+type XsdGoPkgHasAttr_Subject_XsdtString_ struct {
+	Subject xsdt.String `xml:"http://docbook.org/ns/docbook subject,attr"`
+
+}
+
+type TxsdGlossdef struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Glossseealso
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasAttr_Subject_XsdtString_
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Warning
+
+}
+
+type XsdGoPkgHasElems_Glossdef struct {
+	Glossdefs []*TxsdGlossdef `xml:"http://docbook.org/ns/docbook glossdef"`
+
+}
+
+type XsdGoPkgHasAttr_Sortas_XsdtString_ struct {
+	Sortas xsdt.String `xml:"http://docbook.org/ns/docbook sortas,attr"`
+
+}
+
+type XsdGoPkgHasElem_Acronym struct {
+	Acronym *TxsdAbbrev `xml:"http://docbook.org/ns/docbook acronym"`
+
+}
+
+type XsdGoPkgHasElem_Glosssee struct {
+	Glosssee *TxsdGlossseealso `xml:"http://docbook.org/ns/docbook glosssee"`
+
+}
+
+type XsdGoPkgHasElem_Glossterm struct {
+	Glossterm *TxsdGlossterm `xml:"http://docbook.org/ns/docbook glossterm"`
+
+}
+
+type XsdGoPkgHasElem_Abbrev struct {
+	Abbrev *TxsdAbbrev `xml:"http://docbook.org/ns/docbook abbrev"`
+
+}
+
+type TxsdGlossentry struct {
+	XsdGoPkgHasElem_Glossterm
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElem_Abbrev
+
+	XsdGoPkgHasElems_Glossdef
+
+	XsdGoPkgHasAttr_Sortas_XsdtString_
+
+	XsdGoPkgHasElem_Acronym
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElem_Glosssee
+
+}
+
+type XsdGoPkgHasElems_Glossentry struct {
+	Glossentries []*TxsdGlossentry `xml:"http://docbook.org/ns/docbook glossentry"`
+
+}
+
+type TxsdGlosslist struct {
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Glossentry
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Msgset
+
+}
+
+type XsdGoPkgHasElems_Glosslist struct {
+	Glosslists []*TxsdGlosslist `xml:"http://docbook.org/ns/docbook glosslist"`
+
+}
+
+type XsdGoPkgHasAttr_Mark_XsdtNmtoken_ struct {
+	Mark xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook mark,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Spacing_TxsdItemizedlistSpacing_ struct {
+	Spacing TxsdVariablelistSpacing `xml:"http://docbook.org/ns/docbook spacing,attr"`
+
+}
+
+type TxsdItemizedlist struct {
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Listitem
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasAttr_Mark_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Spacing_TxsdItemizedlistSpacing_
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+}
+
+type XsdGoPkgHasElems_Itemizedlist struct {
+	Itemizedlists []*TxsdItemizedlist `xml:"http://docbook.org/ns/docbook itemizedlist"`
+
+}
+
+type TxsdWarning struct {
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Qandaset
+
+}
+
+type XsdGoPkgHasElems_Warning struct {
+	Warnings []*TxsdWarning `xml:"http://docbook.org/ns/docbook warning"`
+
+}
+
+type TxsdConstraintdef struct {
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Bibliolist
+
+}
+
+type XsdGoPkgHasElems_Constraintdef struct {
+	Constraintdefs []*TxsdConstraintdef `xml:"http://docbook.org/ns/docbook constraintdef"`
+
+}
+
+type TxsdTip struct {
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Warning
+
+}
+
+type XsdGoPkgHasElems_Tip struct {
+	Tips []*TxsdTip `xml:"http://docbook.org/ns/docbook tip"`
+
+}
+
+type XsdGoPkgHasAttr_Pgwide_TxsdInformalfigurePgwide_ struct {
+	Pgwide TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook pgwide,attr"`
+
+}
+
+type TxsdInformalfigure struct {
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElem_Caption
+
+	XsdGoPkgHasAttr_Pgwide_TxsdInformalfigurePgwide_
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasAttr_Floatstyle_XsdtString_
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Note
+
+}
+
+type XsdGoPkgHasElems_Informalfigure struct {
+	Informalfigures []*TxsdInformalfigure `xml:"http://docbook.org/ns/docbook informalfigure"`
+
+}
+
+type TxsdCollab struct {
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Affiliation
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+}
+
+type XsdGoPkgHasElems_Collab struct {
+	Collabs []*TxsdCollab `xml:"http://docbook.org/ns/docbook collab"`
+
+}
+
+type TxsdBibliorelationType xsdt.Token
+
+//	This convenience method just performs a simple type conversion to TxsdBibliorelationType's alias type xsdt.Token.
+func (me TxsdBibliorelationType) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdBibliorelationType is "replaces".
+func (me TxsdBibliorelationType) IsReplaces () bool { return me == "replaces" }
+
+//	Returns true if the value of this enumerated TxsdBibliorelationType is "isreplacedby".
+func (me TxsdBibliorelationType) IsIsreplacedby () bool { return me == "isreplacedby" }
+
+//	Returns true if the value of this enumerated TxsdBibliorelationType is "isformatof".
+func (me TxsdBibliorelationType) IsIsformatof () bool { return me == "isformatof" }
+
+//	Since TxsdBibliorelationType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdBibliorelationType) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdBibliorelationType is "references".
+func (me TxsdBibliorelationType) IsReferences () bool { return me == "references" }
+
+//	Returns true if the value of this enumerated TxsdBibliorelationType is "isreferencedby".
+func (me TxsdBibliorelationType) IsIsreferencedby () bool { return me == "isreferencedby" }
+
+//	Returns true if the value of this enumerated TxsdBibliorelationType is "ispartof".
+func (me TxsdBibliorelationType) IsIspartof () bool { return me == "ispartof" }
+
+//	Returns true if the value of this enumerated TxsdBibliorelationType is "isrequiredby".
+func (me TxsdBibliorelationType) IsIsrequiredby () bool { return me == "isrequiredby" }
+
+//	Returns true if the value of this enumerated TxsdBibliorelationType is "isversionof".
+func (me TxsdBibliorelationType) IsIsversionof () bool { return me == "isversionof" }
+
+//	Since TxsdBibliorelationType is just a simple String type, this merely returns the current string value.
+func (me TxsdBibliorelationType) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdBibliorelationType is "hasformat".
+func (me TxsdBibliorelationType) IsHasformat () bool { return me == "hasformat" }
+
+//	Returns true if the value of this enumerated TxsdBibliorelationType is "requires".
+func (me TxsdBibliorelationType) IsRequires () bool { return me == "requires" }
+
+//	Returns true if the value of this enumerated TxsdBibliorelationType is "hasversion".
+func (me TxsdBibliorelationType) IsHasversion () bool { return me == "hasversion" }
+
+//	Returns true if the value of this enumerated TxsdBibliorelationType is "othertype".
+func (me TxsdBibliorelationType) IsOthertype () bool { return me == "othertype" }
+
+//	Returns true if the value of this enumerated TxsdBibliorelationType is "haspart".
+func (me TxsdBibliorelationType) IsHaspart () bool { return me == "haspart" }
+
+type XsdGoPkgHasAttr_Type_TxsdBibliorelationType_ struct {
+	Type TxsdBibliorelationType `xml:"http://docbook.org/ns/docbook type,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Othertype_XsdtNmtoken_ struct {
+	Othertype xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook othertype,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Class_TxsdBibliorelationClass_ struct {
+	Class TxsdCitebiblioidClass `xml:"http://docbook.org/ns/docbook class,attr"`
+
+}
+
+type TxsdBibliorelation struct {
+	XsdGoPkgHasAttr_Othertype_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasAttr_Class_TxsdBibliorelationClass_
+
+	XsdGoPkgHasAttr_Otherclass_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasAttr_Type_TxsdBibliorelationType_
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasCdata
+
+}
+
+type XsdGoPkgHasElems_Bibliorelation struct {
+	Bibliorelations []*TxsdBibliorelation `xml:"http://docbook.org/ns/docbook bibliorelation"`
+
+}
+
+type XsdGoPkgHasElems_Volumenum struct {
+	Volumenums []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook volumenum"`
+
+}
+
+type XsdGoPkgHasElems_Artpagenums struct {
+	Artpagenumses []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook artpagenums"`
+
+}
+
+type XsdGoPkgHasElems_Seriesvolnums struct {
+	Seriesvolnumses []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook seriesvolnums"`
+
+}
+
+type XsdGoPkgHasElems_Publishername struct {
+	Publishernames []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook publishername"`
+
+}
+
+type TxsdOthercreditClass xsdt.Token
 
 //	This convenience method just performs a simple type conversion to TxsdOthercreditClass's alias type xsdt.Token.
 func (me TxsdOthercreditClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
 
-//	Returns true if the value of this enumerated TxsdOthercreditClass is "graphicdesigner".
-func (me TxsdOthercreditClass) IsGraphicdesigner () bool { return me == "graphicdesigner" }
+//	Since TxsdOthercreditClass is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdOthercreditClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
 
 //	Since TxsdOthercreditClass is just a simple String type, this merely returns the current string value.
 func (me TxsdOthercreditClass) String () string { return xsdt.Token(me).String() }
 
-//	Returns true if the value of this enumerated TxsdOthercreditClass is "productioneditor".
-func (me TxsdOthercreditClass) IsProductioneditor () bool { return me == "productioneditor" }
+//	Returns true if the value of this enumerated TxsdOthercreditClass is "copyeditor".
+func (me TxsdOthercreditClass) IsCopyeditor () bool { return me == "copyeditor" }
 
-//	Returns true if the value of this enumerated TxsdOthercreditClass is "technicaleditor".
-func (me TxsdOthercreditClass) IsTechnicaleditor () bool { return me == "technicaleditor" }
+//	Returns true if the value of this enumerated TxsdOthercreditClass is "graphicdesigner".
+func (me TxsdOthercreditClass) IsGraphicdesigner () bool { return me == "graphicdesigner" }
 
 //	Returns true if the value of this enumerated TxsdOthercreditClass is "translator".
 func (me TxsdOthercreditClass) IsTranslator () bool { return me == "translator" }
 
-//	Returns true if the value of this enumerated TxsdOthercreditClass is "copyeditor".
-func (me TxsdOthercreditClass) IsCopyeditor () bool { return me == "copyeditor" }
+//	Returns true if the value of this enumerated TxsdOthercreditClass is "technicaleditor".
+func (me TxsdOthercreditClass) IsTechnicaleditor () bool { return me == "technicaleditor" }
 
-//	Since TxsdOthercreditClass is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdOthercreditClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+//	Returns true if the value of this enumerated TxsdOthercreditClass is "productioneditor".
+func (me TxsdOthercreditClass) IsProductioneditor () bool { return me == "productioneditor" }
+
+//	Returns true if the value of this enumerated TxsdOthercreditClass is "other".
+func (me TxsdOthercreditClass) IsOther () bool { return me == "other" }
 
 type XsdGoPkgHasAttr_Class_TxsdOthercreditClass_ struct {
 	Class TxsdOthercreditClass `xml:"http://docbook.org/ns/docbook class,attr"`
@@ -9635,33 +13310,33 @@ type XsdGoPkgHasAttr_Class_TxsdOthercreditClass_ struct {
 }
 
 type TxsdOthercredit struct {
-	XsdGoPkgHasElems_Contrib
-
-	XsdGoPkgHasElem_Personname
-
-	XsdGoPkgHasAttr_Class_TxsdOthercreditClass_
-
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElem_Orgname
-
-	XsdGoPkgHasElems_Orgdiv
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Personblurb
-
-	XsdGoPkgHasAttr_Otherclass_XsdtNmtoken_
+	XsdGoPkgHasElems_Contrib
 
 	XsdGoPkgHasElems_Affiliation
 
+	XsdGoPkgHasAttr_Otherclass_XsdtNmtoken_
+
+	XsdGoPkgHasElem_Orgname
+
+	XsdGoPkgHasElems_Personblurb
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Orgdiv
+
+	XsdGoPkgHasAttr_Class_TxsdOthercreditClass_
+
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElem_Personname
+
+	XsdGoPkgHasElems_Address
 
 }
 
@@ -9671,15 +13346,15 @@ type XsdGoPkgHasElems_Othercredit struct {
 }
 
 type TxsdAuthorgroup struct {
-	XsdGoPkgHasAttr_Role_XsdtString_
-
 	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Othercredit
+
+	XsdGoPkgHasAttr_Role_XsdtString_
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Othercredit
 
 	XsdGoPkgHasElems_Editor
 
@@ -9690,163 +13365,124 @@ type XsdGoPkgHasElems_Authorgroup struct {
 
 }
 
-type XsdGoPkgHasElems_Pubdate struct {
-	Pubdates []*TxsdDate `xml:"http://docbook.org/ns/docbook pubdate"`
+type XsdGoPkgHasElems_Legalnotice struct {
+	Legalnotices []*TxsdTip `xml:"http://docbook.org/ns/docbook legalnotice"`
 
 }
 
-type XsdGoPkgHasElems_Edition struct {
-	Editions []*TxsdAccel `xml:"http://docbook.org/ns/docbook edition"`
+type XsdGoPkgHasElems_Authorinitials struct {
+	Authorinitialses []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook authorinitials"`
 
 }
 
-type XsdGoPkgHasElems_Volumenum struct {
-	Volumenums []*TxsdAccel `xml:"http://docbook.org/ns/docbook volumenum"`
+type XsdGoPkgHasElem_Publishername struct {
+	Publishername *TxsdFuncparams `xml:"http://docbook.org/ns/docbook publishername"`
 
 }
 
-type XsdGoPkgHasElems_Issuenum struct {
-	Issuenums []*TxsdAccel `xml:"http://docbook.org/ns/docbook issuenum"`
+type TxsdPublisher struct {
+	XsdGoPkgHasElems_Address
 
-}
-
-type XsdGoPkgHasElems_Releaseinfo struct {
-	Releaseinfos []*TxsdAccel `xml:"http://docbook.org/ns/docbook releaseinfo"`
-
-}
-
-type XsdGoPkgHasElems_Holder struct {
-	Holders []*TxsdAccel `xml:"http://docbook.org/ns/docbook holder"`
-
-}
-
-type XsdGoPkgHasElems_Year struct {
-	Years []*TxsdAccel `xml:"http://docbook.org/ns/docbook year"`
-
-}
-
-type TxsdCopyright struct {
-	XsdGoPkgHasElems_Holder
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Year
+	XsdGoPkgHasElem_Publishername
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-}
-
-type XsdGoPkgHasElems_Copyright struct {
-	Copyrights []*TxsdCopyright `xml:"http://docbook.org/ns/docbook copyright"`
+	XsdGoPkgHasAttr_Role_XsdtString_
 
 }
 
-type TxsdCover struct {
-	XsdGoPkgHasElems_Epigraph
+type XsdGoPkgHasElems_Publisher struct {
+	Publishers []*TxsdPublisher `xml:"http://docbook.org/ns/docbook publisher"`
 
-	XsdGoPkgHasElems_Bibliolist
+}
 
-	XsdGoPkgHasElems_Synopsis
+type XsdGoPkgHasElems_Conftitle struct {
+	Conftitles []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook conftitle"`
 
-	XsdGoPkgHasElems_Informaltable
+}
 
-	XsdGoPkgHasElems_Qandaset
+type XsdGoPkgHasElems_Confnum struct {
+	Confnums []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook confnum"`
 
-	XsdGoPkgHasElems_Destructorsynopsis
+}
 
-	XsdGoPkgHasElems_Task
+type XsdGoPkgHasElems_Confsponsor struct {
+	Confsponsors []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook confsponsor"`
 
-	XsdGoPkgHasElems_Screenshot
+}
 
-	XsdGoPkgHasElems_Itemizedlist
+type XsdGoPkgHasElems_Confdates struct {
+	Confdateses []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook confdates"`
 
-	XsdGoPkgHasElems_Informalfigure
+}
 
-	XsdGoPkgHasElems_Msgset
+type TxsdConfgroup struct {
+	XsdGoPkgHasElems_Confnum
 
-	XsdGoPkgHasElems_Revhistory
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasElems_Segmentedlist
+	XsdGoPkgHasElems_Confsponsor
 
-	XsdGoPkgHasElems_Sidebar
+	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Anchor
+	XsdGoPkgHasElems_Confdates
 
-	XsdGoPkgHasElems_Blockquote
+	XsdGoPkgHasAttr_Role_XsdtString_
 
-	XsdGoPkgHasElems_Constructorsynopsis
+	XsdGoPkgHasElems_Conftitle
 
 	XsdGoPkgHasElems_Address
 
-	XsdGoPkgHasElems_Formalpara
+}
 
-	XsdGoPkgHasElems_Productionset
+type XsdGoPkgHasElems_Confgroup struct {
+	Confgroups []*TxsdConfgroup `xml:"http://docbook.org/ns/docbook confgroup"`
 
-	XsdGoPkgHasElems_Procedure
+}
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Constraintdef
+type TxsdItermset struct {
+	XsdGoPkgHasElems_Indexterm
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasElems_Calloutlist
+	XsdGoPkgHasAttr_Role_XsdtString_
 
-	XsdGoPkgHasElems_Remark
-
-}
-
-type XsdGoPkgHasElems_Cover struct {
-	Covers []*TxsdCover `xml:"http://docbook.org/ns/docbook cover"`
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
-type XsdGoPkgHasElems_Artpagenums struct {
-	Artpagenumses []*TxsdAccel `xml:"http://docbook.org/ns/docbook artpagenums"`
+type XsdGoPkgHasElems_Itermset struct {
+	Itermsets []*TxsdItermset `xml:"http://docbook.org/ns/docbook itermset"`
+
+}
+
+type TxsdAbstract struct {
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+}
+
+type XsdGoPkgHasElems_Abstract struct {
+	Abstracts []*TxsdAbstract `xml:"http://docbook.org/ns/docbook abstract"`
 
 }
 
@@ -9858,11 +13494,11 @@ type XsdGoPkgHasElems_Keyword struct {
 type TxsdKeywordset struct {
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Keyword
-
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Keyword
 
 }
 
@@ -9877,45 +13513,45 @@ type XsdGoPkgHasAttr_Class_TxsdBiblioidClass_ struct {
 }
 
 type TxsdBiblioid struct {
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Anchor
-
 	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Olink
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasElems_Biblioref
-
 	XsdGoPkgHasAttr_Otherclass_XsdtNmtoken_
 
-	XsdGoPkgHasElems_Alt
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Anchor
 
 	XsdGoPkgHasAttr_Class_TxsdBiblioidClass_
 
 	XsdGoPkgHasElems_Indexterm
 
-	XsdGoPkgHasElems_Phrase
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Alt
 
 }
 
@@ -9924,19 +13560,13 @@ type XsdGoPkgHasElems_Biblioid struct {
 
 }
 
-type TxsdItermset struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasAttr_Role_XsdtString_
+type XsdGoPkgHasElems_Releaseinfo struct {
+	Releaseinfos []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook releaseinfo"`
 
 }
 
-type XsdGoPkgHasElems_Itermset struct {
-	Itermsets []*TxsdItermset `xml:"http://docbook.org/ns/docbook itermset"`
+type XsdGoPkgHasAttr_Othertemporal_XsdtNmtoken_ struct {
+	Othertemporal xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook othertemporal,attr"`
 
 }
 
@@ -9950,20 +13580,20 @@ type TxsdBibliocoverageTemporal xsdt.Token
 //	Returns true if the value of this enumerated TxsdBibliocoverageTemporal is "w3c-dtf".
 func (me TxsdBibliocoverageTemporal) IsW3CDtf () bool { return me == "w3c-dtf" }
 
+//	This convenience method just performs a simple type conversion to TxsdBibliocoverageTemporal's alias type xsdt.Token.
+func (me TxsdBibliocoverageTemporal) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
 //	Returns true if the value of this enumerated TxsdBibliocoverageTemporal is "dcmiperiod".
 func (me TxsdBibliocoverageTemporal) IsDcmiperiod () bool { return me == "dcmiperiod" }
 
 //	Since TxsdBibliocoverageTemporal is just a simple String type, this merely returns the current string value.
 func (me TxsdBibliocoverageTemporal) String () string { return xsdt.Token(me).String() }
 
-//	Since TxsdBibliocoverageTemporal is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdBibliocoverageTemporal) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
 //	Returns true if the value of this enumerated TxsdBibliocoverageTemporal is "othertemporal".
 func (me TxsdBibliocoverageTemporal) IsOthertemporal () bool { return me == "othertemporal" }
 
-//	This convenience method just performs a simple type conversion to TxsdBibliocoverageTemporal's alias type xsdt.Token.
-func (me TxsdBibliocoverageTemporal) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+//	Since TxsdBibliocoverageTemporal is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdBibliocoverageTemporal) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
 
 type XsdGoPkgHasAttr_Temporal_TxsdBibliocoverageTemporal_ struct {
 	Temporal TxsdBibliocoverageTemporal `xml:"http://docbook.org/ns/docbook temporal,attr"`
@@ -9972,89 +13602,99 @@ type XsdGoPkgHasAttr_Temporal_TxsdBibliocoverageTemporal_ struct {
 
 type TxsdBibliocoverageSpatial xsdt.Token
 
-//	Returns true if the value of this enumerated TxsdBibliocoverageSpatial is "dcmibox".
-func (me TxsdBibliocoverageSpatial) IsDcmibox () bool { return me == "dcmibox" }
+//	Returns true if the value of this enumerated TxsdBibliocoverageSpatial is "otherspatial".
+func (me TxsdBibliocoverageSpatial) IsOtherspatial () bool { return me == "otherspatial" }
+
+//	Since TxsdBibliocoverageSpatial is just a simple String type, this merely returns the current string value.
+func (me TxsdBibliocoverageSpatial) String () string { return xsdt.Token(me).String() }
 
 //	Since TxsdBibliocoverageSpatial is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdBibliocoverageSpatial) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
 
+//	Returns true if the value of this enumerated TxsdBibliocoverageSpatial is "dcmipoint".
+func (me TxsdBibliocoverageSpatial) IsDcmipoint () bool { return me == "dcmipoint" }
+
 //	Returns true if the value of this enumerated TxsdBibliocoverageSpatial is "iso3166".
 func (me TxsdBibliocoverageSpatial) IsIso3166 () bool { return me == "iso3166" }
-
-//	Returns true if the value of this enumerated TxsdBibliocoverageSpatial is "otherspatial".
-func (me TxsdBibliocoverageSpatial) IsOtherspatial () bool { return me == "otherspatial" }
 
 //	This convenience method just performs a simple type conversion to TxsdBibliocoverageSpatial's alias type xsdt.Token.
 func (me TxsdBibliocoverageSpatial) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
 
+//	Returns true if the value of this enumerated TxsdBibliocoverageSpatial is "dcmibox".
+func (me TxsdBibliocoverageSpatial) IsDcmibox () bool { return me == "dcmibox" }
+
 //	Returns true if the value of this enumerated TxsdBibliocoverageSpatial is "tgn".
 func (me TxsdBibliocoverageSpatial) IsTgn () bool { return me == "tgn" }
-
-//	Returns true if the value of this enumerated TxsdBibliocoverageSpatial is "dcmipoint".
-func (me TxsdBibliocoverageSpatial) IsDcmipoint () bool { return me == "dcmipoint" }
-
-//	Since TxsdBibliocoverageSpatial is just a simple String type, this merely returns the current string value.
-func (me TxsdBibliocoverageSpatial) String () string { return xsdt.Token(me).String() }
 
 type XsdGoPkgHasAttr_Spatial_TxsdBibliocoverageSpatial_ struct {
 	Spatial TxsdBibliocoverageSpatial `xml:"http://docbook.org/ns/docbook spatial,attr"`
 
 }
 
-type XsdGoPkgHasAttr_Othertemporal_XsdtNmtoken_ struct {
-	Othertemporal xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook othertemporal,attr"`
-
-}
-
 type TxsdBibliocoverage struct {
+	XsdGoPkgHasAttr_Othertemporal_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
 	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasAttr_Otherspatial_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasAttr_Temporal_TxsdBibliocoverageTemporal_
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Spatial_TxsdBibliocoverageSpatial_
 
 	XsdGoPkgHasElems_Link
 
 	XsdGoPkgHasElems_Biblioref
 
-	XsdGoPkgHasCdata
-
 	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasAttr_Otherspatial_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Temporal_TxsdBibliocoverageTemporal_
-
-	XsdGoPkgHasElems_Annotation
 
 	XsdGoPkgHasElems_Subscript
 
-	XsdGoPkgHasAttr_Spatial_TxsdBibliocoverageSpatial_
+	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Xref
+	XsdGoPkgHasElems_Superscript
 
-	XsdGoPkgHasElems_Olink
+	XsdGoPkgHasElems_Annotation
 
 	XsdGoPkgHasElems_Inlinemediaobject
 
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasAttr_Othertemporal_XsdtNmtoken_
+	XsdGoPkgHasElems_Xref
 
 }
 
 type XsdGoPkgHasElems_Bibliocoverage struct {
 	Bibliocoverages []*TxsdBibliocoverage `xml:"http://docbook.org/ns/docbook bibliocoverage"`
+
+}
+
+type XsdGoPkgHasElems_Contractnum struct {
+	Contractnums []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook contractnum"`
+
+}
+
+type XsdGoPkgHasElems_Bibliomisc struct {
+	Bibliomiscs []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook bibliomisc"`
+
+}
+
+type XsdGoPkgHasElems_Edition struct {
+	Editions []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook edition"`
 
 }
 
@@ -10073,13 +13713,13 @@ type XsdGoPkgHasElems_Locator struct {
 }
 
 type TxsdArc struct {
-	xlink.XsdGoPkgHasAttr_From
+	XsdGoPkgHasAttr_Role_XsdtString_
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Role_XsdtString_
-
 	xlink.XsdGoPkgHasAttr_To
+
+	xlink.XsdGoPkgHasAttr_From
 
 }
 
@@ -10104,23 +13744,79 @@ type XsdGoPkgHasElems_Extendedlink struct {
 
 }
 
-type XsdGoPkgHasAttr_Relation_XsdtString_ struct {
-	Relation xsdt.String `xml:"http://docbook.org/ns/docbook relation,attr"`
+type XsdGoPkgHasElems_Contractsponsor struct {
+	Contractsponsors []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook contractsponsor"`
 
 }
 
-type TxsdPrinthistory struct {
-	XsdGoPkgHasElems_Simpara
+type XsdGoPkgHasElems_Pagenums struct {
+	Pagenumses []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook pagenums"`
+
+}
+
+type XsdGoPkgHasAttr_Scheme_XsdtNmtoken_ struct {
+	Scheme xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook scheme,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Weight_XsdtString_ struct {
+	Weight xsdt.String `xml:"http://docbook.org/ns/docbook weight,attr"`
+
+}
+
+type XsdGoPkgHasElems_Subjectterm struct {
+	Subjectterms []*TxsdDate `xml:"http://docbook.org/ns/docbook subjectterm"`
+
+}
+
+type TxsdSubject struct {
+	XsdGoPkgHasElems_Subjectterm
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasElems_Formalpara
+	XsdGoPkgHasAttr_Weight_XsdtString_
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_Subject struct {
+	Subjects []*TxsdSubject `xml:"http://docbook.org/ns/docbook subject"`
+
+}
+
+type TxsdSubjectset struct {
+	XsdGoPkgHasAttr_Scheme_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Subject
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_Subjectset struct {
+	Subjectsets []*TxsdSubjectset `xml:"http://docbook.org/ns/docbook subjectset"`
+
+}
+
+type TxsdPrinthistory struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasElems_Para
 
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Formalpara
+
 	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasElems_Anchor
 
@@ -10131,320 +13827,18 @@ type XsdGoPkgHasElems_Printhistory struct {
 
 }
 
-type XsdGoPkgHasElems_Seriesvolnums struct {
-	Seriesvolnumses []*TxsdAccel `xml:"http://docbook.org/ns/docbook seriesvolnums"`
+type XsdGoPkgHasAttr_Relation_XsdtString_ struct {
+	Relation xsdt.String `xml:"http://docbook.org/ns/docbook relation,attr"`
 
 }
 
-type XsdGoPkgHasElems_Confnum struct {
-	Confnums []*TxsdAccel `xml:"http://docbook.org/ns/docbook confnum"`
+type XsdGoPkgHasElems_Issuenum struct {
+	Issuenums []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook issuenum"`
 
 }
 
-type XsdGoPkgHasElems_Confsponsor struct {
-	Confsponsors []*TxsdAccel `xml:"http://docbook.org/ns/docbook confsponsor"`
-
-}
-
-type XsdGoPkgHasElems_Conftitle struct {
-	Conftitles []*TxsdAccel `xml:"http://docbook.org/ns/docbook conftitle"`
-
-}
-
-type XsdGoPkgHasElems_Confdates struct {
-	Confdateses []*TxsdAccel `xml:"http://docbook.org/ns/docbook confdates"`
-
-}
-
-type TxsdConfgroup struct {
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Confnum
-
-	XsdGoPkgHasElems_Confsponsor
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Conftitle
-
-	XsdGoPkgHasElems_Confdates
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-}
-
-type XsdGoPkgHasElems_Confgroup struct {
-	Confgroups []*TxsdConfgroup `xml:"http://docbook.org/ns/docbook confgroup"`
-
-}
-
-type XsdGoPkgHasElems_Bibliomisc struct {
-	Bibliomiscs []*TxsdAccel `xml:"http://docbook.org/ns/docbook bibliomisc"`
-
-}
-
-type XsdGoPkgHasElems_Legalnotice struct {
-	Legalnotices []*TxsdTaskprerequisites `xml:"http://docbook.org/ns/docbook legalnotice"`
-
-}
-
-type XsdGoPkgHasElems_Contractnum struct {
-	Contractnums []*TxsdAccel `xml:"http://docbook.org/ns/docbook contractnum"`
-
-}
-
-type XsdGoPkgHasElem_Publishername struct {
-	Publishername *TxsdAccel `xml:"http://docbook.org/ns/docbook publishername"`
-
-}
-
-type TxsdPublisher struct {
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElem_Publishername
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-}
-
-type XsdGoPkgHasElems_Publisher struct {
-	Publishers []*TxsdPublisher `xml:"http://docbook.org/ns/docbook publisher"`
-
-}
-
-type XsdGoPkgHasAttr_Class_TxsdBibliorelationClass_ struct {
-	Class TxsdCitebiblioidClass `xml:"http://docbook.org/ns/docbook class,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Othertype_XsdtNmtoken_ struct {
-	Othertype xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook othertype,attr"`
-
-}
-
-type TxsdBibliorelationType xsdt.Token
-
-//	Returns true if the value of this enumerated TxsdBibliorelationType is "replaces".
-func (me TxsdBibliorelationType) IsReplaces () bool { return me == "replaces" }
-
-//	This convenience method just performs a simple type conversion to TxsdBibliorelationType's alias type xsdt.Token.
-func (me TxsdBibliorelationType) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdBibliorelationType is "ispartof".
-func (me TxsdBibliorelationType) IsIspartof () bool { return me == "ispartof" }
-
-//	Returns true if the value of this enumerated TxsdBibliorelationType is "isrequiredby".
-func (me TxsdBibliorelationType) IsIsrequiredby () bool { return me == "isrequiredby" }
-
-//	Returns true if the value of this enumerated TxsdBibliorelationType is "isreplacedby".
-func (me TxsdBibliorelationType) IsIsreplacedby () bool { return me == "isreplacedby" }
-
-//	Returns true if the value of this enumerated TxsdBibliorelationType is "othertype".
-func (me TxsdBibliorelationType) IsOthertype () bool { return me == "othertype" }
-
-//	Returns true if the value of this enumerated TxsdBibliorelationType is "isreferencedby".
-func (me TxsdBibliorelationType) IsIsreferencedby () bool { return me == "isreferencedby" }
-
-//	Returns true if the value of this enumerated TxsdBibliorelationType is "haspart".
-func (me TxsdBibliorelationType) IsHaspart () bool { return me == "haspart" }
-
-//	Returns true if the value of this enumerated TxsdBibliorelationType is "isformatof".
-func (me TxsdBibliorelationType) IsIsformatof () bool { return me == "isformatof" }
-
-//	Returns true if the value of this enumerated TxsdBibliorelationType is "hasversion".
-func (me TxsdBibliorelationType) IsHasversion () bool { return me == "hasversion" }
-
-//	Returns true if the value of this enumerated TxsdBibliorelationType is "requires".
-func (me TxsdBibliorelationType) IsRequires () bool { return me == "requires" }
-
-//	Returns true if the value of this enumerated TxsdBibliorelationType is "references".
-func (me TxsdBibliorelationType) IsReferences () bool { return me == "references" }
-
-//	Returns true if the value of this enumerated TxsdBibliorelationType is "isversionof".
-func (me TxsdBibliorelationType) IsIsversionof () bool { return me == "isversionof" }
-
-//	Returns true if the value of this enumerated TxsdBibliorelationType is "hasformat".
-func (me TxsdBibliorelationType) IsHasformat () bool { return me == "hasformat" }
-
-//	Since TxsdBibliorelationType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdBibliorelationType) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Since TxsdBibliorelationType is just a simple String type, this merely returns the current string value.
-func (me TxsdBibliorelationType) String () string { return xsdt.Token(me).String() }
-
-type XsdGoPkgHasAttr_Type_TxsdBibliorelationType_ struct {
-	Type TxsdBibliorelationType `xml:"http://docbook.org/ns/docbook type,attr"`
-
-}
-
-type TxsdBibliorelation struct {
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasAttr_Otherclass_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_Class_TxsdBibliorelationClass_
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Othertype_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_Type_TxsdBibliorelationType_
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Link
-
-}
-
-type XsdGoPkgHasElems_Bibliorelation struct {
-	Bibliorelations []*TxsdBibliorelation `xml:"http://docbook.org/ns/docbook bibliorelation"`
-
-}
-
-type XsdGoPkgHasElems_Publishername struct {
-	Publishernames []*TxsdAccel `xml:"http://docbook.org/ns/docbook publishername"`
-
-}
-
-type TxsdCollab struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Affiliation
-
-}
-
-type XsdGoPkgHasElems_Collab struct {
-	Collabs []*TxsdCollab `xml:"http://docbook.org/ns/docbook collab"`
-
-}
-
-type XsdGoPkgHasElems_Subjectterm struct {
-	Subjectterms []*TxsdDate `xml:"http://docbook.org/ns/docbook subjectterm"`
-
-}
-
-type XsdGoPkgHasAttr_Weight_XsdtString_ struct {
-	Weight xsdt.String `xml:"http://docbook.org/ns/docbook weight,attr"`
-
-}
-
-type TxsdSubject struct {
-	XsdGoPkgHasAttr_Weight_XsdtString_
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Subjectterm
-
-}
-
-type XsdGoPkgHasElems_Subject struct {
-	Subjects []*TxsdSubject `xml:"http://docbook.org/ns/docbook subject"`
-
-}
-
-type XsdGoPkgHasAttr_Scheme_XsdtNmtoken_ struct {
-	Scheme xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook scheme,attr"`
-
-}
-
-type TxsdSubjectset struct {
-	XsdGoPkgHasElems_Subject
-
-	XsdGoPkgHasAttr_Scheme_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-}
-
-type XsdGoPkgHasElems_Subjectset struct {
-	Subjectsets []*TxsdSubjectset `xml:"http://docbook.org/ns/docbook subjectset"`
-
-}
-
-type XsdGoPkgHasElems_Contractsponsor struct {
-	Contractsponsors []*TxsdAccel `xml:"http://docbook.org/ns/docbook contractsponsor"`
-
-}
-
-type TxsdAbstract struct {
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Title
-
-}
-
-type XsdGoPkgHasElems_Abstract struct {
-	Abstracts []*TxsdAbstract `xml:"http://docbook.org/ns/docbook abstract"`
+type XsdGoPkgHasElems_Pubdate struct {
+	Pubdates []*TxsdDate `xml:"http://docbook.org/ns/docbook pubdate"`
 
 }
 
@@ -10454,45 +13848,45 @@ type XsdGoPkgHasAttr_Class_TxsdBibliosourceClass_ struct {
 }
 
 type TxsdBibliosource struct {
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasAttr_Otherclass_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Remark
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasCdata
+	XsdGoPkgHasElems_Alt
 
 	XsdGoPkgHasElems_Anchor
 
 	XsdGoPkgHasElems_Link
 
-	XsdGoPkgHasElems_Alt
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Indexterm
 
 	XsdGoPkgHasElems_Superscript
 
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasAttr_Otherclass_XsdtNmtoken_
+	XsdGoPkgHasElems_Phrase
 
 	XsdGoPkgHasAttr_Class_TxsdBibliosourceClass_
 
-	XsdGoPkgHasElems_Phrase
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Subscript
 
 }
 
@@ -10501,320 +13895,176 @@ type XsdGoPkgHasElems_Bibliosource struct {
 
 }
 
-type TxsdBibliomset struct {
-	XsdGoPkgHasElems_Keywordset
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Pubdate
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Subjectset
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Issuenum
-
-	XsdGoPkgHasElems_Itermset
-
-	XsdGoPkgHasElems_Contractsponsor
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Pagenums
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Abstract
-
-	XsdGoPkgHasElems_Bibliomset
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Biblioset
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Bibliocoverage
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Bibliosource
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Bibliomisc
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Biblioid
-
-	XsdGoPkgHasElems_Confgroup
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Legalnotice
-
-	XsdGoPkgHasElems_Volumenum
-
-	XsdGoPkgHasElems_Edition
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Printhistory
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Othercredit
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Extendedlink
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Copyright
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Releaseinfo
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Contractnum
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Personblurb
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Seriesvolnums
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Publisher
-
-	XsdGoPkgHasElems_Authorinitials
-
-	XsdGoPkgHasElems_Artpagenums
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Authorgroup
-
-	XsdGoPkgHasElems_Bibliorelation
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasAttr_Relation_XsdtString_
-
-	XsdGoPkgHasElems_Publishername
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Collab
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Cover
+type XsdGoPkgHasElems_Year struct {
+	Years []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook year"`
 
 }
 
-type XsdGoPkgHasElems_Bibliomset struct {
-	Bibliomsets []*TxsdBibliomset `xml:"http://docbook.org/ns/docbook bibliomset"`
+type XsdGoPkgHasElems_Holder struct {
+	Holders []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook holder"`
+
+}
+
+type TxsdCopyright struct {
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Year
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Holder
+
+}
+
+type XsdGoPkgHasElems_Copyright struct {
+	Copyrights []*TxsdCopyright `xml:"http://docbook.org/ns/docbook copyright"`
 
 }
 
 type TxsdBiblioset struct {
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Subjectset
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Publisher
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Releaseinfo
-
-	XsdGoPkgHasElems_Volumenum
-
-	XsdGoPkgHasElems_Issuenum
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Abstract
-
-	XsdGoPkgHasElems_Legalnotice
-
-	XsdGoPkgHasElems_Bibliosource
-
-	XsdGoPkgHasElems_Contractnum
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Authorgroup
-
-	XsdGoPkgHasElems_Cover
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Othercredit
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Biblioid
-
-	XsdGoPkgHasElems_Publishername
-
-	XsdGoPkgHasElems_Wordasword
-
 	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Itermset
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Bibliocoverage
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Extendedlink
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasAttr_Relation_XsdtString_
-
-	XsdGoPkgHasElems_Personblurb
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Artpagenums
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Printhistory
-
-	XsdGoPkgHasElems_Pagenums
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Biblioset
-
-	XsdGoPkgHasElems_Copyright
-
-	XsdGoPkgHasElems_Authorinitials
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Seriesvolnums
-
-	XsdGoPkgHasElems_Pubdate
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Confgroup
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Bibliomset
-
-	XsdGoPkgHasElems_Bibliorelation
 
 	XsdGoPkgHasElems_Contractsponsor
 
-	XsdGoPkgHasElems_Collab
+	XsdGoPkgHasElems_Authorinitials
 
-	XsdGoPkgHasElems_Firstterm
+	XsdGoPkgHasElems_Citetitle
 
-	XsdGoPkgHasElems_Edition
+	XsdGoPkgHasElems_Bibliocoverage
+
+	XsdGoPkgHasElems_Bibliomisc
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Artpagenums
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Contractnum
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Confgroup
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Pagenums
 
 	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Personblurb
+
+	XsdGoPkgHasElems_Subjectset
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Emphasis
 
 	XsdGoPkgHasElems_Titleabbrev
 
 	XsdGoPkgHasElems_Keywordset
 
-	XsdGoPkgHasElems_Bibliomisc
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Biblioset
+
+	XsdGoPkgHasElems_Edition
+
+	XsdGoPkgHasElems_Legalnotice
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Printhistory
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasAttr_Relation_XsdtString_
+
+	XsdGoPkgHasElems_Issuenum
+
+	XsdGoPkgHasElems_Pubdate
+
+	XsdGoPkgHasElems_Collab
+
+	XsdGoPkgHasElems_Cover
+
+	XsdGoPkgHasElems_Publisher
+
+	XsdGoPkgHasElems_Publishername
+
+	XsdGoPkgHasElems_Itermset
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Biblioid
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Abstract
+
+	XsdGoPkgHasElems_Bibliosource
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Bibliorelation
+
+	XsdGoPkgHasElems_Copyright
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Bibliomset
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Othercredit
+
+	XsdGoPkgHasElems_Releaseinfo
+
+	XsdGoPkgHasElems_Volumenum
+
+	XsdGoPkgHasElems_Authorgroup
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Seriesvolnums
+
+	XsdGoPkgHasElems_Extendedlink
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Glossterm
 
 }
 
@@ -10823,146 +14073,318 @@ type XsdGoPkgHasElems_Biblioset struct {
 
 }
 
-type TxsdBiblioentry struct {
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Biblioset
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Seriesvolnums
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Pagenums
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Confgroup
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Subjectset
-
-	XsdGoPkgHasElems_Collab
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Contractnum
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Bibliomisc
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Contractsponsor
-
+type TxsdBibliomset struct {
 	XsdGoPkgHasElems_Printhistory
-
-	XsdGoPkgHasElems_Abstract
-
-	XsdGoPkgHasElems_Bibliorelation
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Bibliomset
-
-	XsdGoPkgHasElems_Bibliosource
 
 	XsdGoPkgHasElems_Publisher
 
-	XsdGoPkgHasElems_Legalnotice
-
-	XsdGoPkgHasElems_Bibliocoverage
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Extendedlink
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Itermset
-
-	XsdGoPkgHasElems_Publishername
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Othercredit
-
-	XsdGoPkgHasElems_Authorgroup
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Pubdate
-
 	XsdGoPkgHasElems_Emphasis
 
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Edition
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Personblurb
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Volumenum
-
-	XsdGoPkgHasElems_Issuenum
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Releaseinfo
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Copyright
-
-	XsdGoPkgHasElems_Address
+	XsdGoPkgHasElems_Foreignphrase
 
 	XsdGoPkgHasElems_Subscript
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+	XsdGoPkgHasElems_Anchor
 
-	XsdGoPkgHasElems_Revhistory
+	XsdGoPkgHasElems_Abstract
 
-	XsdGoPkgHasElems_Acronym
+	XsdGoPkgHasElems_Releaseinfo
 
-	XsdGoPkgHasElems_Cover
+	XsdGoPkgHasElems_Citebiblioid
 
-	XsdGoPkgHasElems_Personname
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Bibliosource
+
+	XsdGoPkgHasElems_Pubdate
+
+	XsdGoPkgHasElems_Seriesvolnums
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Indexterm
 
 	XsdGoPkgHasElems_Artpagenums
 
 	XsdGoPkgHasElems_Authorinitials
 
-	XsdGoPkgHasElems_Editor
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Subjectset
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Bibliomset
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasAttr_Relation_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Contractsponsor
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Itermset
+
+	XsdGoPkgHasElems_Collab
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Authorgroup
 
 	XsdGoPkgHasElems_Keywordset
+
+	XsdGoPkgHasElems_Legalnotice
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Bibliocoverage
+
+	XsdGoPkgHasElems_Bibliorelation
+
+	XsdGoPkgHasElems_Publishername
+
+	XsdGoPkgHasElems_Personblurb
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Contractnum
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Othercredit
+
+	XsdGoPkgHasElems_Biblioid
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Volumenum
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Bibliomisc
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Edition
+
+	XsdGoPkgHasElems_Extendedlink
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Confgroup
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Biblioset
+
+	XsdGoPkgHasElems_Issuenum
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Cover
+
+	XsdGoPkgHasElems_Pagenums
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Copyright
+
+	XsdGoPkgHasElems_Olink
+
+}
+
+type XsdGoPkgHasElems_Bibliomset struct {
+	Bibliomsets []*TxsdBibliomset `xml:"http://docbook.org/ns/docbook bibliomset"`
+
+}
+
+type TxsdBiblioentry struct {
+	XsdGoPkgHasElems_Publishername
+
+	XsdGoPkgHasElems_Authorgroup
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Legalnotice
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Authorinitials
+
+	XsdGoPkgHasElems_Publisher
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Confgroup
+
+	XsdGoPkgHasElems_Itermset
+
+	XsdGoPkgHasElems_Abstract
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Cover
+
+	XsdGoPkgHasElems_Keywordset
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Productname
 
 	XsdGoPkgHasElems_Biblioid
 
 	XsdGoPkgHasElems_Footnoteref
 
-	XsdGoPkgHasElems_Org
+	XsdGoPkgHasElems_Releaseinfo
+
+	XsdGoPkgHasElems_Bibliomset
+
+	XsdGoPkgHasElems_Pubdate
+
+	XsdGoPkgHasElems_Contractsponsor
+
+	XsdGoPkgHasElems_Issuenum
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Pagenums
+
+	XsdGoPkgHasElems_Biblioset
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Subjectset
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Extendedlink
+
+	XsdGoPkgHasElems_Bibliocoverage
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Printhistory
+
+	XsdGoPkgHasElems_Copyright
+
+	XsdGoPkgHasElems_Contractnum
+
+	XsdGoPkgHasElems_Personblurb
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Bibliomisc
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Othercredit
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Edition
+
+	XsdGoPkgHasElems_Bibliosource
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Collab
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Bibliorelation
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Volumenum
+
+	XsdGoPkgHasElems_Artpagenums
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Seriesvolnums
 
 }
 
@@ -10972,147 +14394,147 @@ type XsdGoPkgHasElems_Biblioentry struct {
 }
 
 type TxsdBibliomixed struct {
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Pagenums
-
-	XsdGoPkgHasElems_Itermset
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Keywordset
-
-	XsdGoPkgHasElems_Edition
-
 	XsdGoPkgHasElems_Pubdate
-
-	XsdGoPkgHasElems_Authorgroup
-
-	XsdGoPkgHasElems_Authorinitials
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Printhistory
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Bibliocoverage
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Biblioset
-
-	XsdGoPkgHasElems_Personblurb
-
-	XsdGoPkgHasElems_Bibliomset
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Seriesvolnums
-
-	XsdGoPkgHasElems_Extendedlink
-
-	XsdGoPkgHasElems_Releaseinfo
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Issuenum
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Contractsponsor
-
-	XsdGoPkgHasElems_Legalnotice
-
-	XsdGoPkgHasElems_Subjectset
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Volumenum
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Bibliomisc
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Biblioid
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Publishername
-
-	XsdGoPkgHasElems_Othercredit
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Collab
-
-	XsdGoPkgHasElems_Contractnum
-
-	XsdGoPkgHasElems_Copyright
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Publisher
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Bibliosource
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Abstract
-
-	XsdGoPkgHasElems_Titleabbrev
 
 	XsdGoPkgHasElems_Person
 
-	XsdGoPkgHasElems_Confgroup
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Keywordset
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Printhistory
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Artpagenums
+
+	XsdGoPkgHasElems_Publisher
+
+	XsdGoPkgHasElems_Authorgroup
+
+	XsdGoPkgHasElems_Issuenum
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Copyright
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Bibliomset
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Authorinitials
+
+	XsdGoPkgHasElems_Bibliosource
+
+	XsdGoPkgHasElems_Legalnotice
 
 	XsdGoPkgHasElems_Cover
 
-	XsdGoPkgHasElems_Bibliorelation
+	XsdGoPkgHasElems_Confgroup
 
-	XsdGoPkgHasElems_Date
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Collab
+
+	XsdGoPkgHasElems_Abstract
+
+	XsdGoPkgHasElems_Releaseinfo
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Contractsponsor
 
 	XsdGoPkgHasElems_Productname
 
-	XsdGoPkgHasElems_Artpagenums
+	XsdGoPkgHasElems_Biblioset
+
+	XsdGoPkgHasElems_Contractnum
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Edition
+
+	XsdGoPkgHasElems_Pagenums
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Bibliorelation
+
+	XsdGoPkgHasElems_Bibliocoverage
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Seriesvolnums
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Extendedlink
+
+	XsdGoPkgHasElems_Subjectset
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Volumenum
+
+	XsdGoPkgHasElems_Itermset
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Personblurb
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Bibliomisc
+
+	XsdGoPkgHasElems_Biblioid
+
+	XsdGoPkgHasElems_Othercredit
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Publishername
+
+	XsdGoPkgHasElems_Orgname
 
 }
 
@@ -11122,131 +14544,131 @@ type XsdGoPkgHasElems_Bibliomixed struct {
 }
 
 type TxsdBibliolist struct {
-	XsdGoPkgHasElem_Info
+	XsdGoPkgHasElems_Caution
 
-	XsdGoPkgHasElems_Orderedlist
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Task
 
 	XsdGoPkgHasElems_Epigraph
 
 	XsdGoPkgHasElems_Equation
 
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Tip
+	XsdGoPkgHasElems_Remark
 
 	XsdGoPkgHasElems_Screen
 
-	XsdGoPkgHasElems_Note
+	XsdGoPkgHasElems_Simpara
 
 	XsdGoPkgHasElems_Synopsis
 
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Figure
-
 	XsdGoPkgHasElems_Biblioentry
 
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Bibliomixed
+	XsdGoPkgHasElems_Simplelist
 
 	XsdGoPkgHasElems_Sidebar
 
-	XsdGoPkgHasElems_Funcsynopsis
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Bibliomixed
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Orderedlist
 
 	XsdGoPkgHasElems_Variablelist
 
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Para
+
 	XsdGoPkgHasElems_Warning
 
-	XsdGoPkgHasElems_Procedure
+	XsdGoPkgHasElems_Msgset
 
-	XsdGoPkgHasElems_Qandaset
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Screenshot
 
 	XsdGoPkgHasElems_Anchor
 
-	XsdGoPkgHasElems_Table
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElem_Info
 
 }
 
@@ -11255,634 +14677,1785 @@ type XsdGoPkgHasElems_Bibliolist struct {
 
 }
 
-type TxsdStepPerformance xsdt.Token
-
-//	Returns true if the value of this enumerated TxsdStepPerformance is "optional".
-func (me TxsdStepPerformance) IsOptional () bool { return me == "optional" }
-
-//	Since TxsdStepPerformance is just a simple String type, this merely returns the current string value.
-func (me TxsdStepPerformance) String () string { return xsdt.Token(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdStepPerformance's alias type xsdt.Token.
-func (me TxsdStepPerformance) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Since TxsdStepPerformance is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdStepPerformance) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdStepPerformance is "required".
-func (me TxsdStepPerformance) IsRequired () bool { return me == "required" }
-
-type XsdGoPkgHasAttr_Performance_TxsdStepPerformance_ struct {
-	Performance TxsdStepPerformance `xml:"http://docbook.org/ns/docbook performance,attr"`
+type XsdGoPkgHasAttr_Arearefs_XsdtIdrefs_ struct {
+	Arearefs xsdt.Idrefs `xml:"http://docbook.org/ns/docbook arearefs,attr"`
 
 }
 
-type XsdGoPkgHasAttr_Performance_TxsdStepalternativesPerformance_ struct {
-	Performance TxsdStepPerformance `xml:"http://docbook.org/ns/docbook performance,attr"`
+type TxsdCallout struct {
+	XsdGoPkgHasElems_Blockquote
 
-}
-
-type TxsdStepalternatives struct {
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Step
-
-	XsdGoPkgHasAttr_Performance_TxsdStepalternativesPerformance_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-}
-
-type XsdGoPkgHasElem_Stepalternatives struct {
-	Stepalternatives *TxsdStepalternatives `xml:"http://docbook.org/ns/docbook stepalternatives"`
-
-}
-
-type XsdGoPkgHasAttr_Performance_TxsdSubstepsPerformance_ struct {
-	Performance TxsdStepPerformance `xml:"http://docbook.org/ns/docbook performance,attr"`
-
-}
-
-type TxsdSubsteps struct {
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Performance_TxsdSubstepsPerformance_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Step
-
-}
-
-type XsdGoPkgHasElem_Substeps struct {
-	Substeps *TxsdSubsteps `xml:"http://docbook.org/ns/docbook substeps"`
-
-}
-
-type TxsdStep struct {
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasAttr_Performance_TxsdStepPerformance_
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElem_Stepalternatives
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Literallayout
+	XsdGoPkgHasElems_Formalpara
 
 	XsdGoPkgHasElems_Figure
 
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElem_Substeps
-
 	XsdGoPkgHasElems_Qandaset
 
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Bibliolist
+	XsdGoPkgHasElems_Programlisting
 
 	XsdGoPkgHasElems_Mediaobject
 
-	XsdGoPkgHasElems_Epigraph
+	XsdGoPkgHasElems_Indexterm
 
-	XsdGoPkgHasElems_Caution
+	XsdGoPkgHasElems_Screenshot
 
-	XsdGoPkgHasElems_Para
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasAttr_Arearefs_XsdtIdrefs_
+
+	XsdGoPkgHasElems_Literallayout
 
 	XsdGoPkgHasElems_Destructorsynopsis
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasElems_Equation
 
-	XsdGoPkgHasElems_Note
+	XsdGoPkgHasElems_Synopsis
 
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Informaltable
+	XsdGoPkgHasElems_Constructorsynopsis
 
 	XsdGoPkgHasElems_Cmdsynopsis
 
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Informalexample
+
 	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Screenco
 
 	XsdGoPkgHasElems_Classsynopsis
 
 	XsdGoPkgHasElems_Itemizedlist
 
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Productionset
-
 	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Para
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Constructorsynopsis
+}
+
+type XsdGoPkgHasElems_Callout struct {
+	Callouts []*TxsdCallout `xml:"http://docbook.org/ns/docbook callout"`
+
+}
+
+type TxsdCalloutlist struct {
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Programlistingco
 
 	XsdGoPkgHasElems_Calloutlist
 
 	XsdGoPkgHasElems_Table
 
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Informalexample
-
-}
-
-type XsdGoPkgHasElems_Step struct {
-	Steps []*TxsdStep `xml:"http://docbook.org/ns/docbook step"`
-
-}
-
-type TxsdProcedure struct {
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Programlisting
+	XsdGoPkgHasElems_Figure
 
 	XsdGoPkgHasElems_Caution
 
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasElems_Msgset
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasElems_Literallayout
 
-	XsdGoPkgHasElems_Constructorsynopsis
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Bibliolist
 
 	XsdGoPkgHasElems_Segmentedlist
 
-	XsdGoPkgHasElems_Example
+	XsdGoPkgHasElems_Sidebar
 
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Note
+	XsdGoPkgHasElems_Screenco
 
 	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Callout
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Indexterm
 
 	XsdGoPkgHasElems_Title
 
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Qandaset
+	XsdGoPkgHasElems_Itemizedlist
 
 	XsdGoPkgHasElems_Orderedlist
 
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Step
-
-	XsdGoPkgHasElems_Task
-
 	XsdGoPkgHasElems_Variablelist
 
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Classsynopsis
-
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Cmdsynopsis
+	XsdGoPkgHasElems_Methodsynopsis
 
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Bibliolist
-
-}
-
-type XsdGoPkgHasElems_Procedure struct {
-	Procedures []*TxsdProcedure `xml:"http://docbook.org/ns/docbook procedure"`
-
-}
-
-type XsdGoPkgHasAttr_Pgwide_TxsdInformalfigurePgwide_ struct {
-	Pgwide TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook pgwide,attr"`
-
-}
-
-type TxsdInformalfigure struct {
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasAttr_Floatstyle_XsdtString_
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasAttr_Label_XsdtString_
+	XsdGoPkgHasElems_Annotation
 
 	XsdGoPkgHasElems_Constructorsynopsis
 
-	XsdGoPkgHasElems_Formalpara
+	XsdGoPkgHasElems_Equation
 
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Mediaobject
+	XsdGoPkgHasElems_Bridgehead
 
 	XsdGoPkgHasElems_Informalfigure
 
 	XsdGoPkgHasElems_Blockquote
 
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Bibliolist
-
 	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Cmdsynopsis
 
 	XsdGoPkgHasElems_Note
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasElems_Titleabbrev
 
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Fieldsynopsis
+	XsdGoPkgHasElems_Anchor
 
 	XsdGoPkgHasElems_Qandaset
 
-	XsdGoPkgHasElems_Table
+	XsdGoPkgHasElems_Informaltable
 
-	XsdGoPkgHasElems_Classsynopsis
+	XsdGoPkgHasElems_Screenshot
 
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Epigraph
+	XsdGoPkgHasElems_Constraintdef
 
 	XsdGoPkgHasElems_Destructorsynopsis
 
-	XsdGoPkgHasElem_Caption
+	XsdGoPkgHasElems_Tip
 
-	XsdGoPkgHasElems_Address
+	XsdGoPkgHasElems_Informalexample
 
-	XsdGoPkgHasAttr_Pgwide_TxsdInformalfigurePgwide_
+	XsdGoPkgHasElems_Formalpara
 
 }
 
-type XsdGoPkgHasElems_Informalfigure struct {
-	Informalfigures []*TxsdInformalfigure `xml:"http://docbook.org/ns/docbook informalfigure"`
+type XsdGoPkgHasElems_Calloutlist struct {
+	Calloutlists []*TxsdCalloutlist `xml:"http://docbook.org/ns/docbook calloutlist"`
+
+}
+
+type XsdGoPkgHasElem_Screen struct {
+	Screen *TxsdScreen `xml:"http://docbook.org/ns/docbook screen"`
+
+}
+
+type TxsdScreenco struct {
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElem_Screen
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElem_Areaspec
+
+}
+
+type XsdGoPkgHasElems_Screenco struct {
+	Screencos []*TxsdScreenco `xml:"http://docbook.org/ns/docbook screenco"`
 
 }
 
 type TxsdCaption struct {
-	XsdGoPkgHasElems_Note
+	XsdGoPkgHasElems_Annotation
 
-	XsdGoPkgHasElems_Funcsynopsis
+	XsdGoPkgHasElems_Calloutlist
 
-	XsdGoPkgHasElems_Informalfigure
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasAttr_Style_XsdtString_
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Qandaset
 
 	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasAttr_Onmouseup_XsdtString_
+
+	XsdGoPkgHasAttr_Lang_XsdtString_
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Indexterm
 
 	XsdGoPkgHasElems_Constructorsynopsis
 
 	XsdGoPkgHasElems_Cmdsynopsis
 
-	XsdGoPkgHasAttr_Title_XsdtString_
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasAttr_Onclick_XsdtString_
-
 	XsdGoPkgHasElems_Synopsis
 
-	XsdGoPkgHasElems_Bibliolist
+	XsdGoPkgHasAttr_Onmousedown_XsdtString_
 
 	XsdGoPkgHasElems_Itemizedlist
 
-	XsdGoPkgHasAttr_Onmousedown_XsdtString_
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasAttr_Onkeypress_XsdtString_
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasAttr_Ondblclick_XsdtString_
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasAttr_Onmouseout_XsdtString_
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Productionset
 
 	XsdGoPkgHasElems_Classsynopsis
 
 	XsdGoPkgHasElems_Caution
 
-	XsdGoPkgHasElems_Figure
+	XsdGoPkgHasAttr_Title_XsdtString_
 
-	XsdGoPkgHasElems_Table
+	XsdGoPkgHasElems_Variablelist
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasAttr_Onmousemove_XsdtString_
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasAttr_Onkeydown_XsdtString_
-
-	XsdGoPkgHasAttr_Lang_XsdtString_
-
-	XsdGoPkgHasElems_Screenco
+	XsdGoPkgHasElems_Important
 
 	XsdGoPkgHasElems_Task
 
-	XsdGoPkgHasAttr_Onkeyup_XsdtString_
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Formalpara
+	XsdGoPkgHasElems_Destructorsynopsis
 
 	XsdGoPkgHasElems_Tip
 
-	XsdGoPkgHasAttr_Onmouseover_XsdtString_
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAttr_Onmouseup_XsdtString_
+	XsdGoPkgHasElems_Programlisting
 
-	XsdGoPkgHasElems_Orderedlist
+	XsdGoPkgHasAttr_Onkeydown_XsdtString_
 
-	XsdGoPkgHasElems_Revhistory
+	XsdGoPkgHasElems_Screen
 
-	XsdGoPkgHasElems_Qandaset
+	XsdGoPkgHasElems_Informalequation
 
-	XsdGoPkgHasElems_Destructorsynopsis
+	XsdGoPkgHasElems_Procedure
 
-	XsdGoPkgHasElems_Epigraph
+	XsdGoPkgHasElems_Screenshot
 
-	XsdGoPkgHasAttr_Onkeypress_XsdtString_
+	XsdGoPkgHasAttr_Onkeyup_XsdtString_
 
-	XsdGoPkgHasElems_Mediaobject
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasAttr_Onmousemove_XsdtString_
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasAttr_Onclick_XsdtString_
 
 	XsdGoPkgHasElems_Equation
 
 	XsdGoPkgHasElems_Literallayout
 
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAttr_Onmouseout_XsdtString_
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Warning
-
 	XsdGoPkgHasAttr_Class_XsdtString_
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasAttr_Ondblclick_XsdtString_
-
-	XsdGoPkgHasAttr_Style_XsdtString_
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasCdata
 
 	XsdGoPkgHasElems_Example
 
-	XsdGoPkgHasElems_Programlisting
+	XsdGoPkgHasElems_Formalpara
 
-	XsdGoPkgHasElems_Blockquote
+	XsdGoPkgHasAttr_Onmouseover_XsdtString_
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Mediaobject
 
 }
 
 type XsdGoPkgHasElem_Caption struct {
 	Caption *TxsdCaption `xml:"http://docbook.org/ns/docbook caption"`
+
+}
+
+type XsdGoPkgHasAttr_Orient_TxsdTableOrient_ struct {
+	Orient TxsdInformaltableOrient `xml:"http://docbook.org/ns/docbook orient,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Shortentry_TxsdTableShortentry_ struct {
+	Shortentry TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook shortentry,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Rowsep_TxsdTableRowsep_ struct {
+	Rowsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook rowsep,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Pgwide_TxsdTablePgwide_ struct {
+	Pgwide TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook pgwide,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Colsep_TxsdTableColsep_ struct {
+	Colsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook colsep,attr"`
+
+}
+
+type XsdGoPkgHasElem_Titleabbrev struct {
+	Titleabbrev *TxsdCitation `xml:"http://docbook.org/ns/docbook titleabbrev"`
+
+}
+
+type XsdGoPkgHasAttr_Rules_TxsdTableRules_ struct {
+	Rules TxsdInformaltableRules `xml:"http://docbook.org/ns/docbook rules,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Frame_TxsdTableFrame_ struct {
+	Frame TxsdInformaltableFrame `xml:"http://docbook.org/ns/docbook frame,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Rowheader_TxsdTableRowheader_ struct {
+	Rowheader TxsdInformaltableRowheader `xml:"http://docbook.org/ns/docbook rowheader,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Tocentry_TxsdTableTocentry_ struct {
+	Tocentry TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook tocentry,attr"`
+
+}
+
+type TxsdTable struct {
+	XsdGoPkgHasAttr_Ondblclick_XsdtString_
+
+	XsdGoPkgHasAttr_Onmousedown_XsdtString_
+
+	XsdGoPkgHasElem_Caption
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasAttr_Orient_TxsdTableOrient_
+
+	XsdGoPkgHasElem_Thead
+
+	XsdGoPkgHasElems_Tgroup
+
+	XsdGoPkgHasAttr_Onclick_XsdtString_
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasAttr_Title_XsdtString_
+
+	XsdGoPkgHasAttr_Summary_XsdtString_
+
+	XsdGoPkgHasAttr_Onkeyup_XsdtString_
+
+	XsdGoPkgHasAttr_Shortentry_TxsdTableShortentry_
+
+	XsdGoPkgHasAttr_Class_XsdtString_
+
+	XsdGoPkgHasAttr_Border_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Onkeydown_XsdtString_
+
+	XsdGoPkgHasAttr_Rowsep_TxsdTableRowsep_
+
+	XsdGoPkgHasAttr_Pgwide_TxsdTablePgwide_
+
+	XsdGoPkgHasAttr_Onmouseout_XsdtString_
+
+	XsdGoPkgHasAttr_Onmousemove_XsdtString_
+
+	XsdGoPkgHasAttr_Onmouseup_XsdtString_
+
+	XsdGoPkgHasElems_Colgroup
+
+	XsdGoPkgHasAttr_Colsep_TxsdTableColsep_
+
+	XsdGoPkgHasAttr_Cellpadding_XsdtString_
+
+	XsdGoPkgHasElem_Titleabbrev
+
+	XsdGoPkgHasElems_Tbody
+
+	XsdGoPkgHasElems_Textobject
+
+	XsdGoPkgHasAttr_Rules_TxsdTableRules_
+
+	XsdGoPkgHasElems_Col
+
+	XsdGoPkgHasAttr_Style_XsdtString_
+
+	XsdGoPkgHasAttr_Floatstyle_XsdtString_
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasAttr_Onmouseover_XsdtString_
+
+	XsdGoPkgHasAttr_Tabstyle_XsdtString_
+
+	XsdGoPkgHasAttr_Width_XsdtString_
+
+	XsdGoPkgHasElems_Tr
+
+	XsdGoPkgHasElem_Title
+
+	XsdGoPkgHasAttr_Frame_TxsdTableFrame_
+
+	XsdGoPkgHasAttr_Rowheader_TxsdTableRowheader_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Cellspacing_XsdtString_
+
+	XsdGoPkgHasElem_Tfoot
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Tocentry_TxsdTableTocentry_
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasAttr_Lang_XsdtString_
+
+	XsdGoPkgHasAttr_Onkeypress_XsdtString_
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_Table struct {
+	Tables []*TxsdTable `xml:"http://docbook.org/ns/docbook table"`
+
+}
+
+type TxsdPara struct {
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Info
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Menuchoice
+
+}
+
+type XsdGoPkgHasElems_Para struct {
+	Paras []*TxsdPara `xml:"http://docbook.org/ns/docbook para"`
+
+}
+
+type TxsdPersonblurb struct {
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Para
+
+}
+
+type XsdGoPkgHasElems_Personblurb struct {
+	Personblurbs []*TxsdPersonblurb `xml:"http://docbook.org/ns/docbook personblurb"`
+
+}
+
+type TxsdPerson struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Affiliation
+
+	XsdGoPkgHasElem_Personname
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Personblurb
+
+}
+
+type XsdGoPkgHasElems_Person struct {
+	Persons []*TxsdPerson `xml:"http://docbook.org/ns/docbook person"`
+
+}
+
+type TxsdRefentrytitle struct {
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+}
+
+type XsdGoPkgHasElem_Refentrytitle struct {
+	Refentrytitle *TxsdRefentrytitle `xml:"http://docbook.org/ns/docbook refentrytitle"`
+
+}
+
+type TxsdCiterefentry struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElem_Refentrytitle
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElem_Manvolnum
+
+}
+
+type XsdGoPkgHasElems_Citerefentry struct {
+	Citerefentries []*TxsdCiterefentry `xml:"http://docbook.org/ns/docbook citerefentry"`
+
+}
+
+type TxsdTermdef struct {
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasAttr_Sortas_XsdtString_
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasAttr_Baseform_XsdtString_
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Ooexception
+
+}
+
+type XsdGoPkgHasElems_Termdef struct {
+	Termdefs []*TxsdTermdef `xml:"http://docbook.org/ns/docbook termdef"`
+
+}
+
+type TxsdUserinput struct {
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Co
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Computeroutput
+
+}
+
+type XsdGoPkgHasElems_Userinput struct {
+	Userinputs []*TxsdUserinput `xml:"http://docbook.org/ns/docbook userinput"`
+
+}
+
+type TxsdEmphasis struct {
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Guimenu
+
+}
+
+type XsdGoPkgHasElems_Emphasis struct {
+	Emphasises []*TxsdEmphasis `xml:"http://docbook.org/ns/docbook emphasis"`
+
+}
+
+type TxsdMathphrase struct {
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Remark
+
+}
+
+type XsdGoPkgHasElems_Mathphrase struct {
+	Mathphrases []*TxsdMathphrase `xml:"http://docbook.org/ns/docbook mathphrase"`
 
 }
 
@@ -11892,31 +16465,31 @@ type XsdGoPkgHasAttr_Pgwide_TxsdEquationPgwide_ struct {
 }
 
 type TxsdEquation struct {
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElem_Alt
-
-	XsdGoPkgHasAttr_Floatstyle_XsdtString_
-
-	XsdGoPkgHasElem_Caption
-
-	XsdGoPkgHasAttr_Pgwide_TxsdEquationPgwide_
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Titleabbrev
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasElems_Mediaobject
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasAttr_Pgwide_TxsdEquationPgwide_
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElem_Caption
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Floatstyle_XsdtString_
+
+	XsdGoPkgHasElem_Alt
 
 	XsdGoPkgHasElems_Mathphrase
+
+	XsdGoPkgHasElems_Title
 
 }
 
@@ -11925,3026 +16498,128 @@ type XsdGoPkgHasElems_Equation struct {
 
 }
 
-type TxsdNote struct {
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Tip
-
-}
-
-type XsdGoPkgHasElems_Note struct {
-	Notes []*TxsdNote `xml:"http://docbook.org/ns/docbook note"`
-
-}
-
-type TxsdTip struct {
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Remark
-
-}
-
-type XsdGoPkgHasElems_Tip struct {
-	Tips []*TxsdTip `xml:"http://docbook.org/ns/docbook tip"`
-
-}
-
-type TxsdConstraintdef struct {
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Glosslist
-
-}
-
-type XsdGoPkgHasElems_Constraintdef struct {
-	Constraintdefs []*TxsdConstraintdef `xml:"http://docbook.org/ns/docbook constraintdef"`
-
-}
-
-type TxsdWarning struct {
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Productionset
-
-}
-
-type XsdGoPkgHasElems_Warning struct {
-	Warnings []*TxsdWarning `xml:"http://docbook.org/ns/docbook warning"`
-
-}
-
-type TxsdPara struct {
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Info
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Personname
-
-}
-
-type XsdGoPkgHasElem_Para struct {
-	Para *TxsdPara `xml:"http://docbook.org/ns/docbook para"`
-
-}
-
-type TxsdFormalpara struct {
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElem_Para
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Formalpara struct {
-	Formalparas []*TxsdFormalpara `xml:"http://docbook.org/ns/docbook formalpara"`
-
-}
-
-type XsdGoPkgHasElem_Listitem struct {
-	Listitem *TxsdListitem `xml:"http://docbook.org/ns/docbook listitem"`
-
-}
-
-type XsdGoPkgHasElems_Term struct {
-	Terms []*TxsdSubtitle `xml:"http://docbook.org/ns/docbook term"`
-
-}
-
-type TxsdVarlistentry struct {
-	XsdGoPkgHasElem_Listitem
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Term
-
-}
-
-type XsdGoPkgHasElems_Varlistentry struct {
-	Varlistentries []*TxsdVarlistentry `xml:"http://docbook.org/ns/docbook varlistentry"`
-
-}
-
-type XsdGoPkgHasAttr_Termlength_XsdtString_ struct {
-	Termlength xsdt.String `xml:"http://docbook.org/ns/docbook termlength,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Spacing_TxsdVariablelistSpacing_ struct {
-	Spacing TxsdOrderedlistSpacing `xml:"http://docbook.org/ns/docbook spacing,attr"`
-
-}
-
-type TxsdVariablelist struct {
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasAttr_Spacing_TxsdVariablelistSpacing_
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Varlistentry
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasAttr_Termlength_XsdtString_
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Calloutlist
-
-}
-
-type XsdGoPkgHasElems_Variablelist struct {
-	Variablelists []*TxsdVariablelist `xml:"http://docbook.org/ns/docbook variablelist"`
-
-}
-
-type TxsdBlockquote struct {
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElem_Attribution
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Address
-
-}
-
-type XsdGoPkgHasElems_Blockquote struct {
-	Blockquotes []*TxsdBlockquote `xml:"http://docbook.org/ns/docbook blockquote"`
-
-}
-
-type XsdGoPkgHasAttr_Spacing_TxsdItemizedlistSpacing_ struct {
-	Spacing TxsdOrderedlistSpacing `xml:"http://docbook.org/ns/docbook spacing,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Mark_XsdtNmtoken_ struct {
-	Mark xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook mark,attr"`
-
-}
-
-type TxsdItemizedlist struct {
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasAttr_Mark_XsdtNmtoken_
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Spacing_TxsdItemizedlistSpacing_
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Listitem
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Screenco
-
-}
-
-type XsdGoPkgHasElems_Itemizedlist struct {
-	Itemizedlists []*TxsdItemizedlist `xml:"http://docbook.org/ns/docbook itemizedlist"`
-
-}
-
-type TxsdSidebar struct {
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Table
-
-}
-
-type XsdGoPkgHasElems_Sidebar struct {
-	Sidebars []*TxsdSidebar `xml:"http://docbook.org/ns/docbook sidebar"`
-
-}
-
-type TxsdInformalexample struct {
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasAttr_Width_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElem_Caption
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasAttr_Floatstyle_XsdtString_
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Epigraph
-
-}
-
-type XsdGoPkgHasElems_Informalexample struct {
-	Informalexamples []*TxsdInformalexample `xml:"http://docbook.org/ns/docbook informalexample"`
-
-}
-
-type TxsdImportant struct {
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Title
-
-}
-
-type XsdGoPkgHasElems_Important struct {
-	Importants []*TxsdImportant `xml:"http://docbook.org/ns/docbook important"`
-
-}
-
-type XsdGoPkgHasAttr_Headers_XsdtString_ struct {
-	Headers xsdt.String `xml:"http://docbook.org/ns/docbook headers,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Colspan_XsdtNmtoken_ struct {
-	Colspan xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook colspan,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Axis_XsdtString_ struct {
-	Axis xsdt.String `xml:"http://docbook.org/ns/docbook axis,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Valign_TxsdTdValign_ struct {
-	Valign TxsdColValign `xml:"http://docbook.org/ns/docbook valign,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Abbr_XsdtString_ struct {
-	Abbr xsdt.String `xml:"http://docbook.org/ns/docbook abbr,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Align_TxsdTdAlign_ struct {
-	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
-
-}
-
-type TxsdTdScope xsdt.Token
-
-//	Returns true if the value of this enumerated TxsdTdScope is "row".
-func (me TxsdTdScope) IsRow () bool { return me == "row" }
-
-//	Returns true if the value of this enumerated TxsdTdScope is "rowgroup".
-func (me TxsdTdScope) IsRowgroup () bool { return me == "rowgroup" }
-
-//	Since TxsdTdScope is just a simple String type, this merely returns the current string value.
-func (me TxsdTdScope) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdTdScope is "colgroup".
-func (me TxsdTdScope) IsColgroup () bool { return me == "colgroup" }
-
-//	Since TxsdTdScope is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdTdScope) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TxsdTdScope's alias type xsdt.Token.
-func (me TxsdTdScope) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdTdScope is "col".
-func (me TxsdTdScope) IsCol () bool { return me == "col" }
-
-type XsdGoPkgHasAttr_Scope_TxsdTdScope_ struct {
-	Scope TxsdTdScope `xml:"http://docbook.org/ns/docbook scope,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Rowspan_XsdtNmtoken_ struct {
-	Rowspan xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook rowspan,attr"`
-
-}
-
-type TxsdTd struct {
-	XsdGoPkgHasAttr_Class_XsdtString_
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasAttr_Onkeyup_XsdtString_
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasAttr_Onmousedown_XsdtString_
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasAttr_Headers_XsdtString_
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasAttr_Colspan_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_Onmouseover_XsdtString_
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasAttr_Onkeypress_XsdtString_
-
-	XsdGoPkgHasAttr_Axis_XsdtString_
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasAttr_Valign_TxsdTdValign_
-
-	XsdGoPkgHasAttr_Charoff_XsdtString_
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasAttr_Abbr_XsdtString_
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasAttr_Onmouseup_XsdtString_
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasAttr_Ondblclick_XsdtString_
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasAttr_Title_XsdtString_
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasAttr_Align_TxsdTdAlign_
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasAttr_Onmousemove_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeydown_XsdtString_
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasAttr_Char_XsdtString_
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasAttr_Onmouseout_XsdtString_
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasAttr_Lang_XsdtString_
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasAttr_Scope_TxsdTdScope_
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasAttr_Onclick_XsdtString_
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasAttr_Rowspan_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasAttr_Style_XsdtString_
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Returnvalue
-
-}
-
-type XsdGoPkgHasElems_Td struct {
-	Tds []*TxsdTd `xml:"http://docbook.org/ns/docbook td"`
-
-}
-
-type XsdGoPkgHasAttr_Align_TxsdThAlign_ struct {
-	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Scope_TxsdThScope_ struct {
-	Scope TxsdTdScope `xml:"http://docbook.org/ns/docbook scope,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Valign_TxsdThValign_ struct {
-	Valign TxsdColValign `xml:"http://docbook.org/ns/docbook valign,attr"`
-
-}
-
-type TxsdTh struct {
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasAttr_Axis_XsdtString_
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasAttr_Rowspan_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasAttr_Style_XsdtString_
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasAttr_Onkeydown_XsdtString_
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasAttr_Onmousedown_XsdtString_
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasAttr_Onclick_XsdtString_
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasAttr_Class_XsdtString_
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasAttr_Align_TxsdThAlign_
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasAttr_Char_XsdtString_
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasAttr_Onkeyup_XsdtString_
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasAttr_Onkeypress_XsdtString_
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasAttr_Colspan_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasAttr_Onmouseover_XsdtString_
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasAttr_Headers_XsdtString_
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasAttr_Lang_XsdtString_
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasAttr_Scope_TxsdThScope_
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasAttr_Onmousemove_XsdtString_
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasAttr_Ondblclick_XsdtString_
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasAttr_Abbr_XsdtString_
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasAttr_Title_XsdtString_
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasAttr_Valign_TxsdThValign_
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasAttr_Onmouseup_XsdtString_
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasAttr_Charoff_XsdtString_
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasAttr_Onmouseout_XsdtString_
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasCdata
-
-}
-
-type XsdGoPkgHasElems_Th struct {
-	Ths []*TxsdTh `xml:"http://docbook.org/ns/docbook th"`
-
-}
-
-type XsdGoPkgHasAttr_Valign_TxsdTrValign_ struct {
-	Valign TxsdColValign `xml:"http://docbook.org/ns/docbook valign,attr"`
-
-}
-
-type TxsdTr struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Align_TxsdTrAlign_
-
-	XsdGoPkgHasAttr_Onmouseout_XsdtString_
-
-	XsdGoPkgHasAttr_Char_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeyup_XsdtString_
-
-	XsdGoPkgHasAttr_Onclick_XsdtString_
-
-	XsdGoPkgHasAttr_Style_XsdtString_
-
-	XsdGoPkgHasAttr_Lang_XsdtString_
-
-	XsdGoPkgHasAttr_Onmousedown_XsdtString_
-
-	XsdGoPkgHasAttr_Ondblclick_XsdtString_
-
-	XsdGoPkgHasAttr_Charoff_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeypress_XsdtString_
-
-	XsdGoPkgHasElems_Td
-
-	XsdGoPkgHasAttr_Onkeydown_XsdtString_
-
-	XsdGoPkgHasElems_Th
-
-	XsdGoPkgHasAttr_Title_XsdtString_
-
-	XsdGoPkgHasAttr_Onmouseup_XsdtString_
-
-	XsdGoPkgHasAttr_Onmouseover_XsdtString_
-
-	XsdGoPkgHasAttr_Class_XsdtString_
-
-	XsdGoPkgHasAttr_Onmousemove_XsdtString_
-
-	XsdGoPkgHasAttr_Valign_TxsdTrValign_
-
-}
-
-type XsdGoPkgHasElems_Tr struct {
-	Trs []*TxsdTr `xml:"http://docbook.org/ns/docbook tr"`
-
-}
-
-type XsdGoPkgHasAttr_Align_TxsdTbodyAlign_ struct {
-	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
-
-}
-
-type TxsdTbody struct {
-	XsdGoPkgHasAttr_Onmousedown_XsdtString_
-
-	XsdGoPkgHasAttr_Onmouseup_XsdtString_
-
-	XsdGoPkgHasAttr_Class_XsdtString_
-
-	XsdGoPkgHasAttr_Valign_TxsdTbodyValign_
-
-	XsdGoPkgHasAttr_Onmouseout_XsdtString_
-
-	XsdGoPkgHasAttr_Style_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeydown_XsdtString_
-
-	XsdGoPkgHasElems_Tr
-
-	XsdGoPkgHasAttr_Onkeypress_XsdtString_
-
-	XsdGoPkgHasAttr_Lang_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Onmousemove_XsdtString_
-
-	XsdGoPkgHasAttr_Ondblclick_XsdtString_
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Row
-
-	XsdGoPkgHasAttr_Char_XsdtString_
-
-	XsdGoPkgHasAttr_Charoff_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeyup_XsdtString_
-
-	XsdGoPkgHasAttr_Onmouseover_XsdtString_
-
-	XsdGoPkgHasAttr_Align_TxsdTbodyAlign_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Onclick_XsdtString_
-
-	XsdGoPkgHasAttr_Title_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Tbody struct {
-	Tbodies []*TxsdTbody `xml:"http://docbook.org/ns/docbook tbody"`
-
-}
-
-type XsdGoPkgHasAttr_Rowsep_TxsdInformaltableRowsep_ struct {
-	Rowsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook rowsep,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Rules_TxsdInformaltableRules_ struct {
-	Rules TxsdTableRules `xml:"http://docbook.org/ns/docbook rules,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Colsep_TxsdInformaltableColsep_ struct {
-	Colsep TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook colsep,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Pgwide_TxsdInformaltablePgwide_ struct {
-	Pgwide TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook pgwide,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Frame_TxsdInformaltableFrame_ struct {
-	Frame TxsdTableFrame `xml:"http://docbook.org/ns/docbook frame,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Orient_TxsdInformaltableOrient_ struct {
-	Orient TxsdTableOrient `xml:"http://docbook.org/ns/docbook orient,attr"`
-
-}
-
-type TxsdInformaltable struct {
-	XsdGoPkgHasAttr_Onkeypress_XsdtString_
-
-	XsdGoPkgHasElems_Tbody
-
-	XsdGoPkgHasElems_Colgroup
-
-	XsdGoPkgHasAttr_Title_XsdtString_
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeydown_XsdtString_
-
-	XsdGoPkgHasAttr_Rowsep_TxsdInformaltableRowsep_
-
-	XsdGoPkgHasAttr_Onmousemove_XsdtString_
-
-	XsdGoPkgHasAttr_Onmousedown_XsdtString_
-
-	XsdGoPkgHasAttr_Style_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Rules_TxsdInformaltableRules_
-
-	XsdGoPkgHasAttr_Onmouseout_XsdtString_
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Tr
-
-	XsdGoPkgHasAttr_Colsep_TxsdInformaltableColsep_
-
-	XsdGoPkgHasAttr_Cellpadding_XsdtString_
-
-	XsdGoPkgHasAttr_Cellspacing_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Pgwide_TxsdInformaltablePgwide_
-
-	XsdGoPkgHasElems_Tgroup
-
-	XsdGoPkgHasElems_Textobject
-
-	XsdGoPkgHasAttr_Ondblclick_XsdtString_
-
-	XsdGoPkgHasAttr_Floatstyle_XsdtString_
-
-	XsdGoPkgHasElem_Thead
-
-	XsdGoPkgHasAttr_Frame_TxsdInformaltableFrame_
-
-	XsdGoPkgHasAttr_Orient_TxsdInformaltableOrient_
-
-	XsdGoPkgHasElem_Tfoot
-
-	XsdGoPkgHasAttr_Onmouseover_XsdtString_
-
-	XsdGoPkgHasAttr_Summary_XsdtString_
-
-	XsdGoPkgHasAttr_Onclick_XsdtString_
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasAttr_Onmouseup_XsdtString_
-
-	XsdGoPkgHasAttr_Tabstyle_XsdtString_
-
-	XsdGoPkgHasAttr_Onkeyup_XsdtString_
-
-	XsdGoPkgHasAttr_Class_XsdtString_
-
-	XsdGoPkgHasElems_Col
-
-	XsdGoPkgHasAttr_Border_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_Rowheader_TxsdInformaltableRowheader_
-
-	XsdGoPkgHasAttr_Width_XsdtString_
-
-	XsdGoPkgHasAttr_Lang_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Informaltable struct {
-	Informaltables []*TxsdInformaltable `xml:"http://docbook.org/ns/docbook informaltable"`
-
-}
-
-type TxsdRevdescription struct {
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Procedure
-
-}
-
-type XsdGoPkgHasElem_Revdescription struct {
-	Revdescription *TxsdRevdescription `xml:"http://docbook.org/ns/docbook revdescription"`
-
-}
-
-type TxsdRevision struct {
-	XsdGoPkgHasElems_Authorinitials
-
-	XsdGoPkgHasElem_Date
-
-	XsdGoPkgHasElem_Revnumber
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElem_Revremark
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElem_Revdescription
-
-}
-
-type XsdGoPkgHasElems_Revision struct {
-	Revisions []*TxsdRevision `xml:"http://docbook.org/ns/docbook revision"`
-
-}
-
-type TxsdRevhistory struct {
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Revision
-
-	XsdGoPkgHasElems_Titleabbrev
-
-}
-
-type XsdGoPkgHasElems_Revhistory struct {
-	Revhistories []*TxsdRevhistory `xml:"http://docbook.org/ns/docbook revhistory"`
-
-}
-
 type TxsdMsgexplan struct {
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Informalexample
+	XsdGoPkgHasElems_Remark
 
 	XsdGoPkgHasElems_Address
 
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Example
+	XsdGoPkgHasElems_Anchor
 
 	XsdGoPkgHasElems_Note
 
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Mediaobject
-
 	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Productionset
 
 	XsdGoPkgHasElems_Sidebar
 
-	XsdGoPkgHasElems_Para
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Tip
 
 	XsdGoPkgHasElems_Screen
 
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
 	XsdGoPkgHasElems_Cmdsynopsis
 
-	XsdGoPkgHasElems_Synopsis
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Blockquote
 
 }
 
@@ -14953,42 +16628,151 @@ type XsdGoPkgHasElems_Msgexplan struct {
 
 }
 
-type XsdGoPkgHasAttr_Msglevel_XsdtString_ struct {
-	Msglevel xsdt.String `xml:"http://docbook.org/ns/docbook msglevel,attr"`
-
-}
-
 type XsdGoPkgHasAttr_Msgaud_XsdtString_ struct {
 	Msgaud xsdt.String `xml:"http://docbook.org/ns/docbook msgaud,attr"`
 
 }
 
-type XsdGoPkgHasAttr_Msgorig_XsdtString_ struct {
-	Msgorig xsdt.String `xml:"http://docbook.org/ns/docbook msgorig,attr"`
+type TxsdMsgtext struct {
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Note
 
 }
 
 type XsdGoPkgHasElem_Msgtext struct {
-	Msgtext *TxsdRevdescription `xml:"http://docbook.org/ns/docbook msgtext"`
+	Msgtext *TxsdMsgtext `xml:"http://docbook.org/ns/docbook msgtext"`
 
 }
 
 type TxsdSimplemsgentry struct {
-	XsdGoPkgHasAttr_Msgaud_XsdtString_
-
-	XsdGoPkgHasAttr_Msgorig_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
 	XsdGoPkgHasElem_Msgtext
-
-	XsdGoPkgHasElems_Msgexplan
-
-	XsdGoPkgHasAttr_Role_XsdtString_
 
 	XsdGoPkgHasAttr_Msglevel_XsdtString_
 
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Msgorig_XsdtString_
+
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Msgexplan
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Msgaud_XsdtString_
 
 }
 
@@ -14997,91 +16781,33 @@ type XsdGoPkgHasElems_Simplemsgentry struct {
 
 }
 
-type TxsdMsgmain struct {
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElem_Msgtext
-
-}
-
-type XsdGoPkgHasElem_Msgmain struct {
-	Msgmain *TxsdMsgmain `xml:"http://docbook.org/ns/docbook msgmain"`
-
-}
-
-type XsdGoPkgHasElems_Msgrel struct {
-	Msgrels []*TxsdMsgmain `xml:"http://docbook.org/ns/docbook msgrel"`
-
-}
-
-type XsdGoPkgHasElems_Msgsub struct {
-	Msgsubs []*TxsdMsgmain `xml:"http://docbook.org/ns/docbook msgsub"`
-
-}
-
-type TxsdMsg struct {
-	XsdGoPkgHasElems_Msgsub
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElem_Msgmain
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Msgrel
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Msg struct {
-	Msgs []*TxsdMsg `xml:"http://docbook.org/ns/docbook msg"`
-
-}
-
 type XsdGoPkgHasElems_Msglevel struct {
-	Msglevels []*TxsdAccel `xml:"http://docbook.org/ns/docbook msglevel"`
+	Msglevels []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook msglevel"`
 
 }
 
 type XsdGoPkgHasElems_Msgorig struct {
-	Msgorigs []*TxsdAccel `xml:"http://docbook.org/ns/docbook msgorig"`
+	Msgorigs []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook msgorig"`
 
 }
 
 type XsdGoPkgHasElems_Msgaud struct {
-	Msgauds []*TxsdAccel `xml:"http://docbook.org/ns/docbook msgaud"`
+	Msgauds []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook msgaud"`
 
 }
 
 type TxsdMsginfo struct {
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAtts_DbCommonAttributes
+	XsdGoPkgHasElems_Msglevel
 
 	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Msglevel
 
 	XsdGoPkgHasElems_Msgorig
 
 	XsdGoPkgHasElems_Msgaud
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
@@ -15090,12 +16816,70 @@ type XsdGoPkgHasElem_Msginfo struct {
 
 }
 
+type TxsdMsgsub struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElem_Msgtext
+
+}
+
+type XsdGoPkgHasElems_Msgsub struct {
+	Msgsubs []*TxsdMsgsub `xml:"http://docbook.org/ns/docbook msgsub"`
+
+}
+
+type XsdGoPkgHasElem_Msgmain struct {
+	Msgmain *TxsdMsgsub `xml:"http://docbook.org/ns/docbook msgmain"`
+
+}
+
+type XsdGoPkgHasElems_Msgrel struct {
+	Msgrels []*TxsdMsgsub `xml:"http://docbook.org/ns/docbook msgrel"`
+
+}
+
+type TxsdMsg struct {
+	XsdGoPkgHasElems_Msgrel
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Msgsub
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElem_Msgmain
+
+}
+
+type XsdGoPkgHasElems_Msg struct {
+	Msgs []*TxsdMsg `xml:"http://docbook.org/ns/docbook msg"`
+
+}
+
 type TxsdMsgentry struct {
-	XsdGoPkgHasElem_Msginfo
+	XsdGoPkgHasAttr_Role_XsdtString_
 
 	XsdGoPkgHasElems_Msgexplan
 
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasElem_Msginfo
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
@@ -15111,21 +16895,21 @@ type XsdGoPkgHasElems_Msgentry struct {
 }
 
 type TxsdMsgset struct {
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasElems_Title
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+	XsdGoPkgHasElems_Simplemsgentry
 
 	XsdGoPkgHasElems_Msgentry
 
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Simplemsgentry
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
@@ -15134,2783 +16918,8 @@ type XsdGoPkgHasElems_Msgset struct {
 
 }
 
-type XsdGoPkgHasAttr_Arearefs_XsdtIdrefs_ struct {
-	Arearefs xsdt.Idrefs `xml:"http://docbook.org/ns/docbook arearefs,attr"`
-
-}
-
-type TxsdCallout struct {
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasAttr_Arearefs_XsdtIdrefs_
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Simpara
-
-}
-
-type XsdGoPkgHasElems_Callout struct {
-	Callouts []*TxsdCallout `xml:"http://docbook.org/ns/docbook callout"`
-
-}
-
-type TxsdCalloutlist struct {
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Callout
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Address
-
-}
-
-type XsdGoPkgHasElems_Calloutlist struct {
-	Calloutlists []*TxsdCalloutlist `xml:"http://docbook.org/ns/docbook calloutlist"`
-
-}
-
-type TxsdImageobjectco struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Imageobject
-
-	XsdGoPkgHasElem_Areaspec
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElem_Info
-
-}
-
-type XsdGoPkgHasElems_Imageobjectco struct {
-	Imageobjectcos []*TxsdImageobjectco `xml:"http://docbook.org/ns/docbook imageobjectco"`
-
-}
-
-type TxsdMediaobject struct {
-	XsdGoPkgHasElems_Audioobject
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Imageobjectco
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElem_Caption
-
-	XsdGoPkgHasElems_Imageobject
-
-	XsdGoPkgHasElems_Videoobject
-
-	XsdGoPkgHasElem_Alt
-
-	XsdGoPkgHasElems_Textobject
-
-}
-
-type XsdGoPkgHasElem_Mediaobject struct {
-	Mediaobject *TxsdMediaobject `xml:"http://docbook.org/ns/docbook mediaobject"`
-
-}
-
-type TxsdScreenshot struct {
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElem_Mediaobject
-
-	XsdGoPkgHasElems_Titleabbrev
-
-}
-
-type XsdGoPkgHasElems_Screenshot struct {
-	Screenshots []*TxsdScreenshot `xml:"http://docbook.org/ns/docbook screenshot"`
-
-}
-
-type TxsdCaution struct {
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-}
-
-type XsdGoPkgHasElems_Caution struct {
-	Cautions []*TxsdCaution `xml:"http://docbook.org/ns/docbook caution"`
-
-}
-
-type XsdGoPkgHasAttr_Label_XsdtNmtoken_ struct {
-	Label xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook label,attr"`
-
-}
-
-type TxsdFootnote struct {
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasAttr_Label_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Screen
-
-}
-
-type XsdGoPkgHasElems_Footnote struct {
-	Footnotes []*TxsdFootnote `xml:"http://docbook.org/ns/docbook footnote"`
-
-}
-
-type TxsdRefentrytitle struct {
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Foreignphrase
-
-}
-
-type XsdGoPkgHasElem_Refentrytitle struct {
-	Refentrytitle *TxsdRefentrytitle `xml:"http://docbook.org/ns/docbook refentrytitle"`
-
-}
-
-type TxsdCiterefentry struct {
-	XsdGoPkgHasElem_Manvolnum
-
-	XsdGoPkgHasElem_Refentrytitle
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-}
-
-type XsdGoPkgHasElems_Citerefentry struct {
-	Citerefentries []*TxsdCiterefentry `xml:"http://docbook.org/ns/docbook citerefentry"`
-
-}
-
-type TxsdSimpara struct {
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Info
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-}
-
-type XsdGoPkgHasElems_Simpara struct {
-	Simparas []*TxsdSimpara `xml:"http://docbook.org/ns/docbook simpara"`
-
-}
-
-type TxsdPersonblurb struct {
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Title
-
-}
-
-type XsdGoPkgHasElems_Personblurb struct {
-	Personblurbs []*TxsdPersonblurb `xml:"http://docbook.org/ns/docbook personblurb"`
-
-}
-
-type TxsdPerson struct {
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Affiliation
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElem_Personname
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Personblurb
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-}
-
-type XsdGoPkgHasElems_Person struct {
-	Persons []*TxsdPerson `xml:"http://docbook.org/ns/docbook person"`
-
-}
-
-type XsdGoPkgHasAttr_Baseform_XsdtString_ struct {
-	Baseform xsdt.String `xml:"http://docbook.org/ns/docbook baseform,attr"`
-
-}
-
-type TxsdTermdef struct {
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasAttr_Baseform_XsdtString_
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasAttr_Sortas_XsdtString_
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Subscript
-
-}
-
-type XsdGoPkgHasElems_Termdef struct {
-	Termdefs []*TxsdTermdef `xml:"http://docbook.org/ns/docbook termdef"`
-
-}
-
-type TxsdOrgdiv struct {
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Property
-
-}
-
-type XsdGoPkgHasElems_Orgdiv struct {
-	Orgdivs []*TxsdOrgdiv `xml:"http://docbook.org/ns/docbook orgdiv"`
-
-}
-
-type TxsdEditor struct {
-	XsdGoPkgHasElems_Orgdiv
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElem_Orgname
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElem_Personname
-
-	XsdGoPkgHasElems_Personblurb
-
-	XsdGoPkgHasElems_Contrib
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Affiliation
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-}
-
-type XsdGoPkgHasElems_Editor struct {
-	Editors []*TxsdEditor `xml:"http://docbook.org/ns/docbook editor"`
-
-}
-
-type TxsdQuote struct {
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Inlineequation
-
-}
-
-type XsdGoPkgHasElems_Quote struct {
-	Quotes []*TxsdQuote `xml:"http://docbook.org/ns/docbook quote"`
-
-}
-
-type TxsdFirstterm struct {
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasAttr_Baseform_XsdtString_
-
-	XsdGoPkgHasElems_Ooexception
-
-}
-
-type XsdGoPkgHasElems_Firstterm struct {
-	Firstterms []*TxsdFirstterm `xml:"http://docbook.org/ns/docbook firstterm"`
-
-}
-
-type TxsdCitation struct {
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Anchor
-
-}
-
-type XsdGoPkgHasElems_Citation struct {
-	Citations []*TxsdCitation `xml:"http://docbook.org/ns/docbook citation"`
-
-}
-
-type TxsdLink struct {
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasAttr_Endterm_XsdtIdref_
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasAttr_Xrefstyle_XsdtString_
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Function
-
-}
-
-type XsdGoPkgHasElems_Link struct {
-	Links []*TxsdLink `xml:"http://docbook.org/ns/docbook link"`
-
-}
-
-type TxsdPackage struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Phrase
-
-}
-
-type XsdGoPkgHasElems_Package struct {
-	Packages []*TxsdPackage `xml:"http://docbook.org/ns/docbook package"`
-
-}
-
-type XsdGoPkgHasElem_Interfacename struct {
-	Interfacename *TxsdAccel `xml:"http://docbook.org/ns/docbook interfacename"`
-
-}
-
-type TxsdOointerface struct {
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElem_Interfacename
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-}
-
-type XsdGoPkgHasElems_Oointerface struct {
-	Oointerfaces []*TxsdOointerface `xml:"http://docbook.org/ns/docbook oointerface"`
-
-}
-
-type XsdGoPkgHasAttr_Continuation_TxsdClasssynopsisinfoContinuation_ struct {
-	Continuation TxsdAddressContinuation `xml:"http://docbook.org/ns/docbook continuation,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Linenumbering_TxsdClasssynopsisinfoLinenumbering_ struct {
-	Linenumbering TxsdAddressLinenumbering `xml:"http://docbook.org/ns/docbook linenumbering,attr"`
-
-}
-
-type TxsdClasssynopsisinfo struct {
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasAttr_Continuation_TxsdClasssynopsisinfoContinuation_
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasAttr_Language_XsdtString_
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Info
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Uri
-
-	xml.XsdGoPkgHasAttr_Space
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Textobject
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasAttr_Linenumbering_TxsdClasssynopsisinfoLinenumbering_
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasAttr_Startinglinenumber_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Lineannotation
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Co
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-}
-
-type XsdGoPkgHasElems_Classsynopsisinfo struct {
-	Classsynopsisinfos []*TxsdClasssynopsisinfo `xml:"http://docbook.org/ns/docbook classsynopsisinfo"`
-
-}
-
-type TxsdClasssynopsisClass xsdt.Token
-
-//	Returns true if the value of this enumerated TxsdClasssynopsisClass is "class".
-func (me TxsdClasssynopsisClass) IsClass () bool { return me == "class" }
-
-//	Since TxsdClasssynopsisClass is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdClasssynopsisClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdClasssynopsisClass is "interface".
-func (me TxsdClasssynopsisClass) IsInterface () bool { return me == "interface" }
-
-//	This convenience method just performs a simple type conversion to TxsdClasssynopsisClass's alias type xsdt.Token.
-func (me TxsdClasssynopsisClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Since TxsdClasssynopsisClass is just a simple String type, this merely returns the current string value.
-func (me TxsdClasssynopsisClass) String () string { return xsdt.Token(me).String() }
-
-type XsdGoPkgHasAttr_Class_TxsdClasssynopsisClass_ struct {
-	Class TxsdClasssynopsisClass `xml:"http://docbook.org/ns/docbook class,attr"`
-
-}
-
-type TxsdClasssynopsis struct {
-	XsdGoPkgHasAttr_Language_XsdtString_
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Classsynopsisinfo
-
-	XsdGoPkgHasAttr_Class_TxsdClasssynopsisClass_
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Classsynopsis struct {
-	Classsynopsises []*TxsdClasssynopsis `xml:"http://docbook.org/ns/docbook classsynopsis"`
+type XsdGoPkgHasElem_Phrase struct {
+	Phrase *TxsdPhrase `xml:"http://docbook.org/ns/docbook phrase"`
 
 }
 
@@ -17920,17 +16929,17 @@ type XsdGoPkgHasAttr_Encoding_XsdtString_ struct {
 }
 
 type TxsdTextdata struct {
+	XsdGoPkgHasElem_Info
+
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Entityref_XsdtEntity_
+
+	XsdGoPkgHasAttr_Format_XsdtString_
 
 	XsdGoPkgHasAttr_Fileref_XsdtString_
 
 	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAttr_Format_XsdtString_
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasAttr_Entityref_XsdtEntity_
 
 	XsdGoPkgHasAttr_Encoding_XsdtString_
 
@@ -17941,133 +16950,128 @@ type XsdGoPkgHasElem_Textdata struct {
 
 }
 
-type XsdGoPkgHasElem_Phrase struct {
-	Phrase *TxsdPhrase `xml:"http://docbook.org/ns/docbook phrase"`
-
-}
-
 type TxsdTextobject struct {
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Mediaobject
+	XsdGoPkgHasElems_Screenco
 
 	XsdGoPkgHasElems_Tip
 
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Epigraph
+	XsdGoPkgHasElems_Methodsynopsis
 
 	XsdGoPkgHasElems_Msgset
 
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElem_Textdata
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Anchor
-
 	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElem_Phrase
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Segmentedlist
 
 	XsdGoPkgHasElems_Informaltable
 
-	XsdGoPkgHasElems_Screenco
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Task
 
 	XsdGoPkgHasElems_Informalfigure
 
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElem_Phrase
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElem_Textdata
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Itemizedlist
+
 	XsdGoPkgHasElems_Programlisting
 
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
 	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Simplelist
 
 }
 
@@ -18076,632 +17080,162 @@ type XsdGoPkgHasElems_Textobject struct {
 
 }
 
-type TxsdInlinemediaobject struct {
-	XsdGoPkgHasElems_Audioobject
+type XsdGoPkgHasAttr_Scalefit_TxsdVideodataScalefit_ struct {
+	Scalefit TxsdImagedataScalefit `xml:"http://docbook.org/ns/docbook scalefit,attr"`
 
-	XsdGoPkgHasElem_Alt
+}
 
-	XsdGoPkgHasElems_Videoobject
+type XsdGoPkgHasAttr_Align_TxsdVideodataAlign_ struct {
+	Align TxsdImagedataAlign `xml:"http://docbook.org/ns/docbook align,attr"`
 
+}
+
+type XsdGoPkgHasAttr_Valign_TxsdVideodataValign_ struct {
+	Valign TxsdImagedataValign `xml:"http://docbook.org/ns/docbook valign,attr"`
+
+}
+
+type TxsdVideodata struct {
+	XsdGoPkgHasAttr_Contentdepth_XsdtString_
+
+	XsdGoPkgHasAttr_Contentwidth_XsdtString_
+
+	XsdGoPkgHasAttr_Scale_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Align_TxsdVideodataAlign_
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasAttr_Valign_TxsdVideodataValign_
+
+	XsdGoPkgHasAttr_Format_XsdtString_
+
+	XsdGoPkgHasAttr_Entityref_XsdtEntity_
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Fileref_XsdtString_
+
+	XsdGoPkgHasAttr_Scalefit_TxsdVideodataScalefit_
+
+	XsdGoPkgHasAttr_Width_XsdtString_
+
+	XsdGoPkgHasAttr_Depth_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+}
+
+type XsdGoPkgHasElem_Videodata struct {
+	Videodata *TxsdVideodata `xml:"http://docbook.org/ns/docbook videodata"`
+
+}
+
+type TxsdVideoobject struct {
+	XsdGoPkgHasElem_Videodata
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+}
+
+type XsdGoPkgHasElems_Videoobject struct {
+	Videoobjects []*TxsdVideoobject `xml:"http://docbook.org/ns/docbook videoobject"`
+
+}
+
+type TxsdAudiodata struct {
+	XsdGoPkgHasAttr_Format_XsdtString_
+
+	XsdGoPkgHasAttr_Fileref_XsdtString_
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasAttr_Entityref_XsdtEntity_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+}
+
+type XsdGoPkgHasElem_Audiodata struct {
+	Audiodata *TxsdAudiodata `xml:"http://docbook.org/ns/docbook audiodata"`
+
+}
+
+type TxsdAudioobject struct {
 	XsdGoPkgHasAttr_Role_XsdtString_
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasElems_Textobject
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasElems_Imageobjectco
+	XsdGoPkgHasElem_Audiodata
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+}
+
+type XsdGoPkgHasElems_Audioobject struct {
+	Audioobjects []*TxsdAudioobject `xml:"http://docbook.org/ns/docbook audioobject"`
+
+}
+
+type TxsdImageobjectco struct {
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElem_Areaspec
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElem_Info
 
 	XsdGoPkgHasElems_Imageobject
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-}
-
-type XsdGoPkgHasElems_Inlinemediaobject struct {
-	Inlinemediaobjects []*TxsdInlinemediaobject `xml:"http://docbook.org/ns/docbook inlinemediaobject"`
-
-}
-
-type TxsdAlt struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
 	XsdGoPkgHasAttr_Role_XsdtString_
 
-	XsdGoPkgHasCdata
+}
+
+type XsdGoPkgHasElems_Imageobjectco struct {
+	Imageobjectcos []*TxsdImageobjectco `xml:"http://docbook.org/ns/docbook imageobjectco"`
 
 }
 
-type XsdGoPkgHasElems_Alt struct {
-	Alts []*TxsdAlt `xml:"http://docbook.org/ns/docbook alt"`
-
-}
-
-type TxsdMousebutton struct {
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Subscript
-
-}
-
-type XsdGoPkgHasElems_Mousebutton struct {
-	Mousebuttons []*TxsdMousebutton `xml:"http://docbook.org/ns/docbook mousebutton"`
-
-}
-
-type XsdGoPkgHasAttr_Targetptr_XsdtString_ struct {
-	Targetptr xsdt.String `xml:"http://docbook.org/ns/docbook targetptr,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Targetdoc_XsdtString_ struct {
-	Targetdoc xsdt.String `xml:"http://docbook.org/ns/docbook targetdoc,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Localinfo_XsdtString_ struct {
-	Localinfo xsdt.String `xml:"http://docbook.org/ns/docbook localinfo,attr"`
-
-}
-
-type TxsdOlink struct {
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasAttr_Targetptr_XsdtString_
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasAttr_Targetdoc_XsdtString_
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasAttr_Localinfo_XsdtString_
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasAttr_Xrefstyle_XsdtString_
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Phrase
-
-}
-
-type XsdGoPkgHasElems_Olink struct {
-	Olinks []*TxsdOlink `xml:"http://docbook.org/ns/docbook olink"`
-
-}
-
-type TxsdSuperscript struct {
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasCdata
-
-}
-
-type XsdGoPkgHasElems_Superscript struct {
-	Superscripts []*TxsdSuperscript `xml:"http://docbook.org/ns/docbook superscript"`
-
-}
-
-type TxsdSubscript struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-}
-
-type XsdGoPkgHasElems_Subscript struct {
-	Subscripts []*TxsdSubscript `xml:"http://docbook.org/ns/docbook subscript"`
-
-}
-
-type TxsdRemark struct {
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Phrase
-
-}
-
-type XsdGoPkgHasElems_Remark struct {
-	Remarks []*TxsdRemark `xml:"http://docbook.org/ns/docbook remark"`
-
-}
-
-type TxsdPagenums struct {
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Link
-
-}
-
-type XsdGoPkgHasElems_Pagenums struct {
-	Pagenumses []*TxsdPagenums `xml:"http://docbook.org/ns/docbook pagenums"`
-
-}
-
-type TxsdInfo struct {
-	XsdGoPkgHasElems_Abstract
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Seriesvolnums
-
-	XsdGoPkgHasElems_Bibliomisc
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Bibliorelation
-
-	XsdGoPkgHasElems_Printhistory
-
-	XsdGoPkgHasElems_Volumenum
-
-	XsdGoPkgHasElems_Bibliocoverage
-
-	XsdGoPkgHasElems_Extendedlink
-
-	XsdGoPkgHasElems_Contractsponsor
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Artpagenums
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Subjectset
-
-	XsdGoPkgHasElems_Contractnum
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Collab
-
-	XsdGoPkgHasElems_Publishername
-
-	XsdGoPkgHasElems_Publisher
-
-	XsdGoPkgHasElems_Authorinitials
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Biblioid
-
-	XsdGoPkgHasElems_Pagenums
-
-	XsdGoPkgHasElems_Keywordset
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Authorgroup
-
-	XsdGoPkgHasElems_Pubdate
-
-	XsdGoPkgHasElems_Cover
-
-	XsdGoPkgHasElems_Copyright
-
-	XsdGoPkgHasElems_Edition
-
-	XsdGoPkgHasElems_Bibliomset
-
-	XsdGoPkgHasElems_Biblioset
-
-	XsdGoPkgHasElems_Confgroup
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Itermset
-
-	XsdGoPkgHasElems_Legalnotice
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Bibliosource
-
-	XsdGoPkgHasElems_Issuenum
-
-	XsdGoPkgHasElems_Othercredit
-
-	XsdGoPkgHasElems_Releaseinfo
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-}
-
-type XsdGoPkgHasElem_Info struct {
-	Info *TxsdInfo `xml:"http://docbook.org/ns/docbook info"`
-
-}
-
-type TxsdInformalequation struct {
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElem_Alt
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Mediaobject
-
+type TxsdMediaobject struct {
 	XsdGoPkgHasElem_Caption
-
-	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasElems_Mathphrase
+	XsdGoPkgHasElem_Alt
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Videoobject
+
+	XsdGoPkgHasElems_Audioobject
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Imageobjectco
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Imageobject
+
+	XsdGoPkgHasElems_Textobject
 
 }
 
-type XsdGoPkgHasElems_Informalequation struct {
-	Informalequations []*TxsdInformalequation `xml:"http://docbook.org/ns/docbook informalequation"`
+type XsdGoPkgHasElems_Mediaobject struct {
+	Mediaobjects []*TxsdMediaobject `xml:"http://docbook.org/ns/docbook mediaobject"`
 
 }
 
@@ -18711,127 +17245,127 @@ type XsdGoPkgHasAttr_Annotates_XsdtString_ struct {
 }
 
 type TxsdAnnotation struct {
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Screen
+	XsdGoPkgHasElems_Segmentedlist
 
 	XsdGoPkgHasElems_Qandaset
 
-	XsdGoPkgHasElems_Tip
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasAttr_Annotates_XsdtString_
+
+	XsdGoPkgHasElems_Screenshot
 
 	XsdGoPkgHasElems_Example
 
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Orderedlist
+
 	XsdGoPkgHasElems_Constraintdef
 
-	XsdGoPkgHasElems_Programlistingco
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Calloutlist
 
 	XsdGoPkgHasElems_Simplelist
 
 	XsdGoPkgHasElems_Classsynopsis
 
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasAttr_Annotates_XsdtString_
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Programlisting
+	XsdGoPkgHasElems_Cmdsynopsis
 
 	XsdGoPkgHasElems_Itemizedlist
 
-	XsdGoPkgHasElem_Info
+	XsdGoPkgHasElems_Destructorsynopsis
 
-	XsdGoPkgHasElems_Para
+	XsdGoPkgHasElems_Task
 
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Title
+	XsdGoPkgHasElems_Blockquote
 
 }
 
@@ -18840,58 +17374,359 @@ type XsdGoPkgHasElems_Annotation struct {
 
 }
 
-type TxsdReplaceableClass xsdt.Token
+type TxsdJobtitle struct {
+	XsdGoPkgHasElems_Olink
 
-//	This convenience method just performs a simple type conversion to TxsdReplaceableClass's alias type xsdt.Token.
-func (me TxsdReplaceableClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+	XsdGoPkgHasCdata
 
-//	Returns true if the value of this enumerated TxsdReplaceableClass is "function".
-func (me TxsdReplaceableClass) IsFunction () bool { return me == "function" }
+	XsdGoPkgHasElems_Remark
 
-//	Returns true if the value of this enumerated TxsdReplaceableClass is "command".
-func (me TxsdReplaceableClass) IsCommand () bool { return me == "command" }
+	XsdGoPkgHasElems_Phrase
 
-//	Returns true if the value of this enumerated TxsdReplaceableClass is "parameter".
-func (me TxsdReplaceableClass) IsParameter () bool { return me == "parameter" }
+	XsdGoPkgHasElems_Replaceable
 
-//	Returns true if the value of this enumerated TxsdReplaceableClass is "option".
-func (me TxsdReplaceableClass) IsOption () bool { return me == "option" }
+	XsdGoPkgHasAtts_DbCommonAttributes
 
-//	Since TxsdReplaceableClass is just a simple String type, this merely returns the current string value.
-func (me TxsdReplaceableClass) String () string { return xsdt.Token(me).String() }
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-//	Since TxsdReplaceableClass is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdReplaceableClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+	XsdGoPkgHasElems_Inlinemediaobject
 
-type XsdGoPkgHasAttr_Class_TxsdReplaceableClass_ struct {
-	Class TxsdReplaceableClass `xml:"http://docbook.org/ns/docbook class,attr"`
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Link
+
+}
+
+type XsdGoPkgHasElems_Jobtitle struct {
+	Jobtitles []*TxsdJobtitle `xml:"http://docbook.org/ns/docbook jobtitle"`
+
+}
+
+type XsdGoPkgHasElem_Org struct {
+	Org *TxsdOrg `xml:"http://docbook.org/ns/docbook org"`
+
+}
+
+type XsdGoPkgHasElem_Shortaffil struct {
+	Shortaffil *TxsdJobtitle `xml:"http://docbook.org/ns/docbook shortaffil"`
+
+}
+
+type TxsdAffiliation struct {
+	XsdGoPkgHasElem_Shortaffil
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Orgdiv
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElem_Orgname
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElem_Org
+
+}
+
+type XsdGoPkgHasElems_Affiliation struct {
+	Affiliations []*TxsdAffiliation `xml:"http://docbook.org/ns/docbook affiliation"`
+
+}
+
+type TxsdEditor struct {
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Affiliation
+
+	XsdGoPkgHasElems_Orgdiv
+
+	XsdGoPkgHasElems_Contrib
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Personblurb
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElem_Personname
+
+	XsdGoPkgHasElem_Orgname
+
+}
+
+type XsdGoPkgHasElems_Editor struct {
+	Editors []*TxsdEditor `xml:"http://docbook.org/ns/docbook editor"`
+
+}
+
+type XsdGoPkgHasAttr_Targetptr_XsdtString_ struct {
+	Targetptr xsdt.String `xml:"http://docbook.org/ns/docbook targetptr,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Localinfo_XsdtString_ struct {
+	Localinfo xsdt.String `xml:"http://docbook.org/ns/docbook localinfo,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Targetdoc_XsdtString_ struct {
+	Targetdoc xsdt.String `xml:"http://docbook.org/ns/docbook targetdoc,attr"`
+
+}
+
+type TxsdOlink struct {
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasAttr_Xrefstyle_XsdtString_
+
+	XsdGoPkgHasAttr_Targetptr_XsdtString_
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Localinfo_XsdtString_
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasAttr_Targetdoc_XsdtString_
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Ooclass
+
+}
+
+type XsdGoPkgHasElems_Olink struct {
+	Olinks []*TxsdOlink `xml:"http://docbook.org/ns/docbook olink"`
 
 }
 
 type TxsdReplaceable struct {
-	XsdGoPkgHasAttr_Class_TxsdReplaceableClass_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
 	XsdGoPkgHasElems_Subscript
 
-	XsdGoPkgHasElems_Anchor
+	XsdGoPkgHasElems_Link
 
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Inlinemediaobject
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasElems_Alt
 
@@ -18899,15 +17734,33 @@ type TxsdReplaceable struct {
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
+	XsdGoPkgHasAttr_Role_XsdtString_
+
 	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Anchor
 
 	XsdGoPkgHasCdata
 
+	XsdGoPkgHasAttr_Class_TxsdReplaceableClass_
+
 	XsdGoPkgHasElems_Co
 
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Annotation
+	XsdGoPkgHasElems_Inlinemediaobject
 
 }
 
@@ -18916,470 +17769,1273 @@ type XsdGoPkgHasElems_Replaceable struct {
 
 }
 
-type TxsdGuimenu struct {
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Phrase
+type TxsdCode struct {
+	XsdGoPkgHasElems_Biblioref
 
 	XsdGoPkgHasElems_Alt
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Superscript
-
-}
-
-type XsdGoPkgHasElems_Guimenu struct {
-	Guimenus []*TxsdGuimenu `xml:"http://docbook.org/ns/docbook guimenu"`
-
-}
-
-type TxsdGlossterm struct {
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasAttr_Baseform_XsdtString_
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Foreignphrase
-
 	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Abbrev
 
 	XsdGoPkgHasElems_Oointerface
 
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasAttr_Language_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_Code struct {
+	Codes []*TxsdCode `xml:"http://docbook.org/ns/docbook code"`
+
+}
+
+type TxsdLink struct {
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasAttr_Xrefstyle_XsdtString_
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Guiicon
+
 	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasAttr_Endterm_XsdtIdref_
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Envar
+
+}
+
+type XsdGoPkgHasElems_Link struct {
+	Links []*TxsdLink `xml:"http://docbook.org/ns/docbook link"`
+
+}
+
+type TxsdRevremark struct {
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Biblioref
+
+}
+
+type XsdGoPkgHasElem_Revremark struct {
+	Revremark *TxsdRevremark `xml:"http://docbook.org/ns/docbook revremark"`
+
+}
+
+type XsdGoPkgHasElem_Revnumber struct {
+	Revnumber *TxsdRevremark `xml:"http://docbook.org/ns/docbook revnumber"`
+
+}
+
+type XsdGoPkgHasElem_Revdescription struct {
+	Revdescription *TxsdMsgtext `xml:"http://docbook.org/ns/docbook revdescription"`
+
+}
+
+type XsdGoPkgHasElem_Date struct {
+	Date *TxsdDate `xml:"http://docbook.org/ns/docbook date"`
+
+}
+
+type TxsdRevision struct {
+	XsdGoPkgHasElem_Revdescription
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Authorinitials
+
+	XsdGoPkgHasElem_Date
+
+	XsdGoPkgHasElem_Revremark
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElem_Revnumber
+
+}
+
+type XsdGoPkgHasElems_Revision struct {
+	Revisions []*TxsdRevision `xml:"http://docbook.org/ns/docbook revision"`
+
+}
+
+type TxsdRevhistory struct {
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Revision
+
+	XsdGoPkgHasElems_Titleabbrev
+
+}
+
+type XsdGoPkgHasElems_Revhistory struct {
+	Revhistories []*TxsdRevhistory `xml:"http://docbook.org/ns/docbook revhistory"`
+
+}
+
+type XsdGoPkgHasAttr_Label_XsdtNmtoken_ struct {
+	Label xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook label,attr"`
+
+}
+
+type TxsdFootnote struct {
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasAttr_Label_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Informalequation
+
+}
+
+type XsdGoPkgHasElems_Footnote struct {
+	Footnotes []*TxsdFootnote `xml:"http://docbook.org/ns/docbook footnote"`
+
+}
+
+type XsdGoPkgHasAttr_Otherrenderas_XsdtNmtoken_ struct {
+	Otherrenderas xsdt.Nmtoken `xml:"http://docbook.org/ns/docbook otherrenderas,attr"`
+
+}
+
+type TxsdBridgeheadRenderas xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdBridgeheadRenderas is "sect5".
+func (me TxsdBridgeheadRenderas) IsSect5 () bool { return me == "sect5" }
+
+//	Since TxsdBridgeheadRenderas is just a simple String type, this merely returns the current string value.
+func (me TxsdBridgeheadRenderas) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TxsdBridgeheadRenderas is "sect4".
+func (me TxsdBridgeheadRenderas) IsSect4 () bool { return me == "sect4" }
+
+//	Since TxsdBridgeheadRenderas is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdBridgeheadRenderas) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdBridgeheadRenderas's alias type xsdt.Token.
+func (me TxsdBridgeheadRenderas) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdBridgeheadRenderas is "sect2".
+func (me TxsdBridgeheadRenderas) IsSect2 () bool { return me == "sect2" }
+
+//	Returns true if the value of this enumerated TxsdBridgeheadRenderas is "other".
+func (me TxsdBridgeheadRenderas) IsOther () bool { return me == "other" }
+
+//	Returns true if the value of this enumerated TxsdBridgeheadRenderas is "sect1".
+func (me TxsdBridgeheadRenderas) IsSect1 () bool { return me == "sect1" }
+
+//	Returns true if the value of this enumerated TxsdBridgeheadRenderas is "sect3".
+func (me TxsdBridgeheadRenderas) IsSect3 () bool { return me == "sect3" }
+
+type XsdGoPkgHasAttr_Renderas_TxsdBridgeheadRenderas_ struct {
+	Renderas TxsdBridgeheadRenderas `xml:"http://docbook.org/ns/docbook renderas,attr"`
+
+}
+
+type TxsdBridgehead struct {
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Uri
 
 	XsdGoPkgHasElems_Org
 
 	XsdGoPkgHasElems_Termdef
 
-	XsdGoPkgHasElems_Citerefentry
+	XsdGoPkgHasElems_Ooclass
 
-	XsdGoPkgHasElems_Personname
+	XsdGoPkgHasElems_Option
 
-	XsdGoPkgHasElems_Uri
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Errorcode
 
 	XsdGoPkgHasElems_Guibutton
 
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Firstterm
+	XsdGoPkgHasElems_Author
 
 	XsdGoPkgHasElems_Guilabel
 
-	XsdGoPkgHasElems_Quote
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Replaceable
 
 	XsdGoPkgHasElems_Command
 
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasAttr_Otherrenderas_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Personname
+
 	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Type
 
 	XsdGoPkgHasElems_Citetitle
 
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasAttr_Renderas_TxsdBridgeheadRenderas_
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Guisubmenu
+
 }
 
-type XsdGoPkgHasElems_Glossterm struct {
-	Glossterms []*TxsdGlossterm `xml:"http://docbook.org/ns/docbook glossterm"`
+type XsdGoPkgHasElems_Bridgehead struct {
+	Bridgeheads []*TxsdBridgehead `xml:"http://docbook.org/ns/docbook bridgehead"`
+
+}
+
+type TxsdCover struct {
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Variablelist
+
+}
+
+type XsdGoPkgHasElems_Cover struct {
+	Covers []*TxsdCover `xml:"http://docbook.org/ns/docbook cover"`
+
+}
+
+type TxsdInfo struct {
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Copyright
+
+	XsdGoPkgHasElems_Artpagenums
+
+	XsdGoPkgHasElems_Abstract
+
+	XsdGoPkgHasElems_Itermset
+
+	XsdGoPkgHasElems_Biblioset
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Pubdate
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Extendedlink
+
+	XsdGoPkgHasElems_Cover
+
+	XsdGoPkgHasElems_Authorgroup
+
+	XsdGoPkgHasElems_Contractsponsor
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Edition
+
+	XsdGoPkgHasElems_Bibliosource
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Bibliomisc
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Subjectset
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Contractnum
+
+	XsdGoPkgHasElems_Issuenum
+
+	XsdGoPkgHasElems_Publisher
+
+	XsdGoPkgHasElems_Collab
+
+	XsdGoPkgHasElems_Bibliorelation
+
+	XsdGoPkgHasElems_Publishername
+
+	XsdGoPkgHasElems_Othercredit
+
+	XsdGoPkgHasElems_Biblioid
+
+	XsdGoPkgHasElems_Bibliocoverage
+
+	XsdGoPkgHasElems_Printhistory
+
+	XsdGoPkgHasElems_Authorinitials
+
+	XsdGoPkgHasElems_Volumenum
+
+	XsdGoPkgHasElems_Keywordset
+
+	XsdGoPkgHasElems_Releaseinfo
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Seriesvolnums
+
+	XsdGoPkgHasElems_Pagenums
+
+	XsdGoPkgHasElems_Legalnotice
+
+	XsdGoPkgHasElems_Confgroup
+
+	XsdGoPkgHasElems_Bibliomset
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Orgname
+
+}
+
+type XsdGoPkgHasElem_Info struct {
+	Info *TxsdInfo `xml:"http://docbook.org/ns/docbook info"`
+
+}
+
+type TxsdInlinemediaobject struct {
+	XsdGoPkgHasElem_Alt
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Imageobjectco
+
+	XsdGoPkgHasElems_Audioobject
+
+	XsdGoPkgHasElems_Imageobject
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Videoobject
+
+	XsdGoPkgHasElems_Textobject
+
+}
+
+type XsdGoPkgHasElems_Inlinemediaobject struct {
+	Inlinemediaobjects []*TxsdInlinemediaobject `xml:"http://docbook.org/ns/docbook inlinemediaobject"`
+
+}
+
+type TxsdErrortype struct {
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Anchor
+
+}
+
+type XsdGoPkgHasElems_Errortype struct {
+	Errortypes []*TxsdErrortype `xml:"http://docbook.org/ns/docbook errortype"`
 
 }
 
 type TxsdPhrase struct {
-	XsdGoPkgHasElems_Coref
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Inlineequation
 
 	XsdGoPkgHasElems_Hardware
 
-	XsdGoPkgHasElems_Constant
+	XsdGoPkgHasElems_Annotation
 
-	XsdGoPkgHasElems_Emphasis
+	XsdGoPkgHasElems_Indexterm
 
-	XsdGoPkgHasElems_Returnvalue
+	XsdGoPkgHasElems_Trademark
 
-	XsdGoPkgHasElems_Envar
+	XsdGoPkgHasElems_Foreignphrase
 
-	XsdGoPkgHasElems_Guisubmenu
+	XsdGoPkgHasElems_Footnote
 
-	XsdGoPkgHasElems_Guimenu
+	XsdGoPkgHasElems_Remark
 
-	XsdGoPkgHasElems_Errorname
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Link
 
 	XsdGoPkgHasElems_Parameter
 
-	XsdGoPkgHasElems_Interfacename
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Org
 
 	XsdGoPkgHasElems_Guimenuitem
 
 	XsdGoPkgHasElems_Accel
 
-	XsdGoPkgHasElems_Token
+	XsdGoPkgHasElems_Alt
 
-	XsdGoPkgHasElems_Olink
+	XsdGoPkgHasElems_Exceptionname
 
-	XsdGoPkgHasElems_Wordasword
+	XsdGoPkgHasElems_Abbrev
 
-	XsdGoPkgHasElems_Markup
+	XsdGoPkgHasElems_Guimenu
 
-	XsdGoPkgHasElems_Person
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Property
 
 	XsdGoPkgHasElems_Tag
 
-	XsdGoPkgHasElems_Guibutton
+	XsdGoPkgHasElems_Orgname
 
-	XsdGoPkgHasElems_Superscript
+	XsdGoPkgHasElems_Symbol
 
-	XsdGoPkgHasElems_Glossterm
+	XsdGoPkgHasElems_Systemitem
 
-	XsdGoPkgHasElems_Anchor
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Package
 
 	XsdGoPkgHasElems_Option
 
-	XsdGoPkgHasElems_Remark
+	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasElems_Literal
+	XsdGoPkgHasElems_Superscript
 
-	XsdGoPkgHasElems_Editor
+	XsdGoPkgHasCdata
 
-	XsdGoPkgHasElems_Ooclass
+	XsdGoPkgHasElems_Subscript
 
-	XsdGoPkgHasElems_Userinput
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Citerefentry
 
 	XsdGoPkgHasElems_Shortcut
 
 	XsdGoPkgHasElems_Database
 
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Command
-
 	XsdGoPkgHasElems_Application
 
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Prompt
+	XsdGoPkgHasElems_Wordasword
 
 	XsdGoPkgHasElems_Oointerface
 
-	XsdGoPkgHasElems_Date
+	XsdGoPkgHasElems_Citation
 
-	XsdGoPkgHasElems_Foreignphrase
+	XsdGoPkgHasElems_Constant
 
-	XsdGoPkgHasElems_Phrase
+	XsdGoPkgHasElems_Mousebutton
 
-	XsdGoPkgHasElems_Varname
+	XsdGoPkgHasElems_Modifier
 
-	XsdGoPkgHasElems_Subscript
+	XsdGoPkgHasElems_Editor
 
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Termdef
+	XsdGoPkgHasElems_Guibutton
 
 	XsdGoPkgHasAttr_Role_XsdtString_
 
-	XsdGoPkgHasElems_Citerefentry
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Person
 
 	XsdGoPkgHasElems_Keysym
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Literal
+
 	XsdGoPkgHasElems_Menuchoice
 
-	XsdGoPkgHasElems_Package
+	XsdGoPkgHasElems_Function
 
-	XsdGoPkgHasElems_Systemitem
+	XsdGoPkgHasElems_Varname
 
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Guiicon
+	XsdGoPkgHasElems_Acronym
 
 	XsdGoPkgHasElems_Author
 
 	XsdGoPkgHasElems_Errortext
 
-	XsdGoPkgHasElems_Quote
+	XsdGoPkgHasElems_Guiicon
 
-	XsdGoPkgHasElems_Guilabel
+	XsdGoPkgHasElems_Coref
 
-	XsdGoPkgHasElems_Personname
+	XsdGoPkgHasElems_Command
 
-	XsdGoPkgHasElems_Inlineequation
+	XsdGoPkgHasElems_Prompt
 
-	XsdGoPkgHasElems_Keycap
+	XsdGoPkgHasElems_Envar
 
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Keycode
+	XsdGoPkgHasElems_Filename
 
 	XsdGoPkgHasElems_Xref
 
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Computeroutput
-
 	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Uri
 
 }
 
@@ -19388,273 +19044,379 @@ type XsdGoPkgHasElems_Phrase struct {
 
 }
 
-type TxsdPrompt struct {
+type TxsdSubscript struct {
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Link
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Co
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasElems_Alt
 
 	XsdGoPkgHasElems_Anchor
 
 	XsdGoPkgHasElems_Phrase
 
-	XsdGoPkgHasCdata
+	XsdGoPkgHasElems_Subscript
 
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Indexterm
+	XsdGoPkgHasElems_Annotation
 
 	XsdGoPkgHasElems_Inlinemediaobject
 
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Subscript
-
-}
-
-type XsdGoPkgHasElems_Prompt struct {
-	Prompts []*TxsdPrompt `xml:"http://docbook.org/ns/docbook prompt"`
-
-}
-
-type TxsdPrimary struct {
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasAttr_Sortas_XsdtString_
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Guimenu
+	XsdGoPkgHasAttr_Role_XsdtString_
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasElems_Constant
+	XsdGoPkgHasElems_Xref
 
-	XsdGoPkgHasElems_Optional
+	XsdGoPkgHasElems_Remark
 
-	XsdGoPkgHasElems_Footnoteref
+	XsdGoPkgHasElems_Superscript
 
-	XsdGoPkgHasElems_Interfacename
+	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasElems_Anchor
+	XsdGoPkgHasCdata
 
-	XsdGoPkgHasElems_Citation
+	XsdGoPkgHasElems_Olink
 
-	XsdGoPkgHasElems_Option
+}
 
-	XsdGoPkgHasElems_Computeroutput
+type XsdGoPkgHasElems_Subscript struct {
+	Subscripts []*TxsdSubscript `xml:"http://docbook.org/ns/docbook subscript"`
 
-	XsdGoPkgHasElems_Editor
+}
 
-	XsdGoPkgHasElems_Firstterm
+type TxsdRemark struct {
+	XsdGoPkgHasCdata
 
-	XsdGoPkgHasElems_Subscript
+	XsdGoPkgHasElems_Superscript
 
 	XsdGoPkgHasElems_Alt
 
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Biblioref
+
 	XsdGoPkgHasAttr_Role_XsdtString_
 
-	XsdGoPkgHasElems_Foreignphrase
+	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Phrase
+	XsdGoPkgHasElems_Remark
 
-	XsdGoPkgHasElems_Property
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Inlinemediaobject
 
 	XsdGoPkgHasElems_Xref
 
-	XsdGoPkgHasElems_Ooclass
+	XsdGoPkgHasElems_Phrase
 
-	XsdGoPkgHasElems_Guiicon
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Replaceable
+
+}
+
+type XsdGoPkgHasElems_Remark struct {
+	Remarks []*TxsdRemark `xml:"http://docbook.org/ns/docbook remark"`
+
+}
+
+type TxsdHardware struct {
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Phrase
+
+}
+
+type XsdGoPkgHasElems_Hardware struct {
+	Hardwares []*TxsdHardware `xml:"http://docbook.org/ns/docbook hardware"`
+
+}
+
+type TxsdSecondary struct {
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Property
 
 	XsdGoPkgHasElems_Returnvalue
 
-	XsdGoPkgHasElems_Org
+	XsdGoPkgHasElems_Link
 
-	XsdGoPkgHasElems_Replaceable
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Footnoteref
 
 	XsdGoPkgHasElems_Errorname
 
 	XsdGoPkgHasElems_Oointerface
 
-	XsdGoPkgHasElems_Inlinemediaobject
+	XsdGoPkgHasElems_Orgname
 
-	XsdGoPkgHasElems_Quote
+	XsdGoPkgHasElems_Org
 
-	XsdGoPkgHasElems_Jobtitle
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasElems_Trademark
+	XsdGoPkgHasElems_Coref
 
-	XsdGoPkgHasElems_Envar
+	XsdGoPkgHasElems_Olink
 
-	XsdGoPkgHasElems_Accel
+	XsdGoPkgHasElems_Systemitem
 
-	XsdGoPkgHasElems_Application
+	XsdGoPkgHasElems_Guiicon
 
-	XsdGoPkgHasElems_Methodname
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Tag
 
 	XsdGoPkgHasElems_Token
 
-	XsdGoPkgHasElems_Orgname
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Classname
 
 	XsdGoPkgHasElems_Keycombo
 
-}
+	XsdGoPkgHasElems_Command
 
-type XsdGoPkgHasElem_Primary struct {
-	Primary *TxsdPrimary `xml:"http://docbook.org/ns/docbook primary"`
+	XsdGoPkgHasElems_Xref
 
-}
+	XsdGoPkgHasElems_Constant
 
-type XsdGoPkgHasElem_Tertiary struct {
-	Tertiary *TxsdPrimary `xml:"http://docbook.org/ns/docbook tertiary"`
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasAttr_Sortas_XsdtString_
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Author
 
 }
 
 type XsdGoPkgHasElem_Secondary struct {
-	Secondary *TxsdPrimary `xml:"http://docbook.org/ns/docbook secondary"`
+	Secondary *TxsdSecondary `xml:"http://docbook.org/ns/docbook secondary"`
+
+}
+
+type TxsdIndextermScope xsdt.Token
+
+//	Since TxsdIndextermScope is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdIndextermScope) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdIndextermScope is "all".
+func (me TxsdIndextermScope) IsAll () bool { return me == "all" }
+
+//	Returns true if the value of this enumerated TxsdIndextermScope is "global".
+func (me TxsdIndextermScope) IsGlobal () bool { return me == "global" }
+
+//	Returns true if the value of this enumerated TxsdIndextermScope is "local".
+func (me TxsdIndextermScope) IsLocal () bool { return me == "local" }
+
+//	Since TxsdIndextermScope is just a simple String type, this merely returns the current string value.
+func (me TxsdIndextermScope) String () string { return xsdt.Token(me).String() }
+
+//	This convenience method just performs a simple type conversion to TxsdIndextermScope's alias type xsdt.Token.
+func (me TxsdIndextermScope) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+type XsdGoPkgHasAttr_Scope_TxsdIndextermScope_ struct {
+	Scope TxsdIndextermScope `xml:"http://docbook.org/ns/docbook scope,attr"`
+
+}
+
+type XsdGoPkgHasElems_Seealso struct {
+	Seealsos []*TxsdPhrase `xml:"http://docbook.org/ns/docbook seealso"`
 
 }
 
@@ -19663,43 +19425,13 @@ type XsdGoPkgHasAttr_Startref_XsdtIdref_ struct {
 
 }
 
+type XsdGoPkgHasElem_Tertiary struct {
+	Tertiary *TxsdSecondary `xml:"http://docbook.org/ns/docbook tertiary"`
+
+}
+
 type XsdGoPkgHasAttr_Zone_XsdtIdrefs_ struct {
 	Zone xsdt.Idrefs `xml:"http://docbook.org/ns/docbook zone,attr"`
-
-}
-
-type XsdGoPkgHasElem_See struct {
-	See *TxsdPhrase `xml:"http://docbook.org/ns/docbook see"`
-
-}
-
-type XsdGoPkgHasAttr_Pagenum_XsdtString_ struct {
-	Pagenum xsdt.String `xml:"http://docbook.org/ns/docbook pagenum,attr"`
-
-}
-
-type TxsdIndextermScope xsdt.Token
-
-//	This convenience method just performs a simple type conversion to TxsdIndextermScope's alias type xsdt.Token.
-func (me TxsdIndextermScope) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdIndextermScope is "all".
-func (me TxsdIndextermScope) IsAll () bool { return me == "all" }
-
-//	Since TxsdIndextermScope is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdIndextermScope) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdIndextermScope is "global".
-func (me TxsdIndextermScope) IsGlobal () bool { return me == "global" }
-
-//	Since TxsdIndextermScope is just a simple String type, this merely returns the current string value.
-func (me TxsdIndextermScope) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdIndextermScope is "local".
-func (me TxsdIndextermScope) IsLocal () bool { return me == "local" }
-
-type XsdGoPkgHasAttr_Scope_TxsdIndextermScope_ struct {
-	Scope TxsdIndextermScope `xml:"http://docbook.org/ns/docbook scope,attr"`
 
 }
 
@@ -19711,11 +19443,11 @@ func (me TxsdIndextermSignificance) IsPreferred () bool { return me == "preferre
 //	This convenience method just performs a simple type conversion to TxsdIndextermSignificance's alias type xsdt.Token.
 func (me TxsdIndextermSignificance) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
 
-//	Since TxsdIndextermSignificance is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdIndextermSignificance) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
 //	Since TxsdIndextermSignificance is just a simple String type, this merely returns the current string value.
 func (me TxsdIndextermSignificance) String () string { return xsdt.Token(me).String() }
+
+//	Since TxsdIndextermSignificance is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdIndextermSignificance) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
 
 //	Returns true if the value of this enumerated TxsdIndextermSignificance is "normal".
 func (me TxsdIndextermSignificance) IsNormal () bool { return me == "normal" }
@@ -19725,15 +19457,34 @@ type XsdGoPkgHasAttr_Significance_TxsdIndextermSignificance_ struct {
 
 }
 
-type XsdGoPkgHasElems_Seealso struct {
-	Seealsos []*TxsdPhrase `xml:"http://docbook.org/ns/docbook seealso"`
+type XsdGoPkgHasAttr_Pagenum_XsdtString_ struct {
+	Pagenum xsdt.String `xml:"http://docbook.org/ns/docbook pagenum,attr"`
+
+}
+
+type XsdGoPkgHasElem_See struct {
+	See *TxsdPhrase `xml:"http://docbook.org/ns/docbook see"`
+
+}
+
+type XsdGoPkgHasElem_Primary struct {
+	Primary *TxsdSecondary `xml:"http://docbook.org/ns/docbook primary"`
 
 }
 
 type TxsdIndextermClass xsdt.Token
 
+//	This convenience method just performs a simple type conversion to TxsdIndextermClass's alias type xsdt.Token.
+func (me TxsdIndextermClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
 //	Since TxsdIndextermClass is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdIndextermClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdIndextermClass is "startofrange".
+func (me TxsdIndextermClass) IsStartofrange () bool { return me == "startofrange" }
+
+//	Since TxsdIndextermClass is just a simple String type, this merely returns the current string value.
+func (me TxsdIndextermClass) String () string { return xsdt.Token(me).String() }
 
 //	Returns true if the value of this enumerated TxsdIndextermClass is "endofrange".
 func (me TxsdIndextermClass) IsEndofrange () bool { return me == "endofrange" }
@@ -19741,50 +19492,41 @@ func (me TxsdIndextermClass) IsEndofrange () bool { return me == "endofrange" }
 //	Returns true if the value of this enumerated TxsdIndextermClass is "singular".
 func (me TxsdIndextermClass) IsSingular () bool { return me == "singular" }
 
-//	This convenience method just performs a simple type conversion to TxsdIndextermClass's alias type xsdt.Token.
-func (me TxsdIndextermClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Since TxsdIndextermClass is just a simple String type, this merely returns the current string value.
-func (me TxsdIndextermClass) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdIndextermClass is "startofrange".
-func (me TxsdIndextermClass) IsStartofrange () bool { return me == "startofrange" }
-
 type XsdGoPkgHasAttr_Class_TxsdIndextermClass_ struct {
 	Class TxsdIndextermClass `xml:"http://docbook.org/ns/docbook class,attr"`
 
 }
 
 type TxsdIndexterm struct {
-	XsdGoPkgHasAttr_Pagenum_XsdtString_
-
-	XsdGoPkgHasAttr_Scope_TxsdIndextermScope_
+	XsdGoPkgHasAttr_Significance_TxsdIndextermSignificance_
 
 	XsdGoPkgHasAttr_Type_XsdtString_
 
-	XsdGoPkgHasAttr_Significance_TxsdIndextermSignificance_
-
-	XsdGoPkgHasElems_Seealso
-
-	XsdGoPkgHasAttr_Class_TxsdIndextermClass_
-
-	XsdGoPkgHasElem_Primary
-
 	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElem_Tertiary
-
-	XsdGoPkgHasElem_Secondary
-
-	XsdGoPkgHasAttr_Startref_XsdtIdref_
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasAttr_Zone_XsdtIdrefs_
+	XsdGoPkgHasAttr_Pagenum_XsdtString_
 
 	XsdGoPkgHasElem_See
+
+	XsdGoPkgHasElem_Primary
+
+	XsdGoPkgHasAttr_Class_TxsdIndextermClass_
+
+	XsdGoPkgHasElem_Secondary
+
+	XsdGoPkgHasAttr_Scope_TxsdIndextermScope_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Seealso
+
+	XsdGoPkgHasAttr_Startref_XsdtIdref_
+
+	XsdGoPkgHasElem_Tertiary
+
+	XsdGoPkgHasAttr_Zone_XsdtIdrefs_
 
 }
 
@@ -19793,220 +19535,308 @@ type XsdGoPkgHasElems_Indexterm struct {
 
 }
 
-type TxsdTitle struct {
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Symbol
-
+type TxsdSuperscript struct {
 	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Author
 
 	XsdGoPkgHasElems_Olink
 
-	XsdGoPkgHasElems_Option
+	XsdGoPkgHasElems_Biblioref
 
-	XsdGoPkgHasElems_Computeroutput
+	XsdGoPkgHasElems_Anchor
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasElems_Link
 
 	XsdGoPkgHasElems_Superscript
 
-	XsdGoPkgHasElems_Alt
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Errortype
+	XsdGoPkgHasElems_Annotation
 
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Initializer
+	XsdGoPkgHasElems_Remark
 
 	XsdGoPkgHasElems_Phrase
 
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Subscript
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Filename
+	XsdGoPkgHasAttr_Role_XsdtString_
 
-	XsdGoPkgHasElems_Type
+	XsdGoPkgHasElems_Xref
 
-	XsdGoPkgHasElems_Exceptionname
+	XsdGoPkgHasElems_Alt
 
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Optional
+	XsdGoPkgHasElems_Inlinemediaobject
 
 }
 
-type XsdGoPkgHasElems_Title struct {
-	Titles []*TxsdTitle `xml:"http://docbook.org/ns/docbook title"`
+type XsdGoPkgHasElems_Superscript struct {
+	Superscripts []*TxsdSuperscript `xml:"http://docbook.org/ns/docbook superscript"`
+
+}
+
+type TxsdToken struct {
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Replaceable
+
+}
+
+type XsdGoPkgHasElems_Token struct {
+	Tokens []*TxsdToken `xml:"http://docbook.org/ns/docbook token"`
+
+}
+
+type TxsdTitle struct {
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Superscript
+
+}
+
+type XsdGoPkgHasElem_Title struct {
+	Title *TxsdTitle `xml:"http://docbook.org/ns/docbook title"`
 
 }
 
 type XsdGoPkgHasElem_Subtitle struct {
-	Subtitle *TxsdSubtitle `xml:"http://docbook.org/ns/docbook subtitle"`
+	Subtitle *TxsdCitation `xml:"http://docbook.org/ns/docbook subtitle"`
 
 }
 
@@ -20121,7 +19951,7 @@ type XsdGoPkgHasElem_Segmentedlist struct {
 }
 
 type XsdGoPkgHasElem_Segtitle struct {
-	Segtitle *TxsdSubtitle `xml:"http://docbook.org/ns/docbook segtitle"`
+	Segtitle *TxsdCitation `xml:"http://docbook.org/ns/docbook segtitle"`
 
 }
 
@@ -20131,7 +19961,7 @@ type XsdGoPkgHasElem_Seglistitem struct {
 }
 
 type XsdGoPkgHasElem_Seg struct {
-	Seg *TxsdSubtitle `xml:"http://docbook.org/ns/docbook seg"`
+	Seg *TxsdCitation `xml:"http://docbook.org/ns/docbook seg"`
 
 }
 
@@ -20141,7 +19971,7 @@ type XsdGoPkgHasElem_Simplelist struct {
 }
 
 type XsdGoPkgHasElem_Member struct {
-	Member *TxsdSubtitle `xml:"http://docbook.org/ns/docbook member"`
+	Member *TxsdCitation `xml:"http://docbook.org/ns/docbook member"`
 
 }
 
@@ -20156,7 +19986,7 @@ type XsdGoPkgHasElem_Varlistentry struct {
 }
 
 type XsdGoPkgHasElem_Term struct {
-	Term *TxsdSubtitle `xml:"http://docbook.org/ns/docbook term"`
+	Term *TxsdCitation `xml:"http://docbook.org/ns/docbook term"`
 
 }
 
@@ -20246,47 +20076,47 @@ type XsdGoPkgHasElem_Address struct {
 }
 
 type XsdGoPkgHasElem_Street struct {
-	Street *TxsdAccel `xml:"http://docbook.org/ns/docbook street"`
+	Street *TxsdFuncparams `xml:"http://docbook.org/ns/docbook street"`
 
 }
 
 type XsdGoPkgHasElem_Pob struct {
-	Pob *TxsdAccel `xml:"http://docbook.org/ns/docbook pob"`
+	Pob *TxsdFuncparams `xml:"http://docbook.org/ns/docbook pob"`
 
 }
 
 type XsdGoPkgHasElem_Postcode struct {
-	Postcode *TxsdAccel `xml:"http://docbook.org/ns/docbook postcode"`
+	Postcode *TxsdFuncparams `xml:"http://docbook.org/ns/docbook postcode"`
 
 }
 
 type XsdGoPkgHasElem_City struct {
-	City *TxsdAccel `xml:"http://docbook.org/ns/docbook city"`
+	City *TxsdFuncparams `xml:"http://docbook.org/ns/docbook city"`
 
 }
 
 type XsdGoPkgHasElem_State struct {
-	State *TxsdAccel `xml:"http://docbook.org/ns/docbook state"`
+	State *TxsdFuncparams `xml:"http://docbook.org/ns/docbook state"`
 
 }
 
 type XsdGoPkgHasElem_Country struct {
-	Country *TxsdAccel `xml:"http://docbook.org/ns/docbook country"`
+	Country *TxsdFuncparams `xml:"http://docbook.org/ns/docbook country"`
 
 }
 
 type XsdGoPkgHasElem_Phone struct {
-	Phone *TxsdAccel `xml:"http://docbook.org/ns/docbook phone"`
+	Phone *TxsdFuncparams `xml:"http://docbook.org/ns/docbook phone"`
 
 }
 
 type XsdGoPkgHasElem_Fax struct {
-	Fax *TxsdAccel `xml:"http://docbook.org/ns/docbook fax"`
+	Fax *TxsdFuncparams `xml:"http://docbook.org/ns/docbook fax"`
 
 }
 
 type XsdGoPkgHasElem_Otheraddr struct {
-	Otheraddr *TxsdAccel `xml:"http://docbook.org/ns/docbook otheraddr"`
+	Otheraddr *TxsdFuncparams `xml:"http://docbook.org/ns/docbook otheraddr"`
 
 }
 
@@ -20296,12 +20126,12 @@ type XsdGoPkgHasElem_Affiliation struct {
 }
 
 type XsdGoPkgHasElems_Shortaffil struct {
-	Shortaffils []*TxsdAccel `xml:"http://docbook.org/ns/docbook shortaffil"`
+	Shortaffils []*TxsdJobtitle `xml:"http://docbook.org/ns/docbook shortaffil"`
 
 }
 
 type XsdGoPkgHasElem_Jobtitle struct {
-	Jobtitle *TxsdAccel `xml:"http://docbook.org/ns/docbook jobtitle"`
+	Jobtitle *TxsdJobtitle `xml:"http://docbook.org/ns/docbook jobtitle"`
 
 }
 
@@ -20311,7 +20141,7 @@ type XsdGoPkgHasElem_Orgdiv struct {
 }
 
 type XsdGoPkgHasElem_Artpagenums struct {
-	Artpagenums *TxsdAccel `xml:"http://docbook.org/ns/docbook artpagenums"`
+	Artpagenums *TxsdFuncparams `xml:"http://docbook.org/ns/docbook artpagenums"`
 
 }
 
@@ -20331,7 +20161,7 @@ type XsdGoPkgHasElem_Collab struct {
 }
 
 type XsdGoPkgHasElem_Authorinitials struct {
-	Authorinitials *TxsdAccel `xml:"http://docbook.org/ns/docbook authorinitials"`
+	Authorinitials *TxsdFuncparams `xml:"http://docbook.org/ns/docbook authorinitials"`
 
 }
 
@@ -20346,32 +20176,32 @@ type XsdGoPkgHasElem_Confgroup struct {
 }
 
 type XsdGoPkgHasElem_Confdates struct {
-	Confdates *TxsdAccel `xml:"http://docbook.org/ns/docbook confdates"`
+	Confdates *TxsdFuncparams `xml:"http://docbook.org/ns/docbook confdates"`
 
 }
 
 type XsdGoPkgHasElem_Conftitle struct {
-	Conftitle *TxsdAccel `xml:"http://docbook.org/ns/docbook conftitle"`
+	Conftitle *TxsdFuncparams `xml:"http://docbook.org/ns/docbook conftitle"`
 
 }
 
 type XsdGoPkgHasElem_Confnum struct {
-	Confnum *TxsdAccel `xml:"http://docbook.org/ns/docbook confnum"`
+	Confnum *TxsdFuncparams `xml:"http://docbook.org/ns/docbook confnum"`
 
 }
 
 type XsdGoPkgHasElem_Confsponsor struct {
-	Confsponsor *TxsdAccel `xml:"http://docbook.org/ns/docbook confsponsor"`
+	Confsponsor *TxsdFuncparams `xml:"http://docbook.org/ns/docbook confsponsor"`
 
 }
 
 type XsdGoPkgHasElem_Contractnum struct {
-	Contractnum *TxsdAccel `xml:"http://docbook.org/ns/docbook contractnum"`
+	Contractnum *TxsdFuncparams `xml:"http://docbook.org/ns/docbook contractnum"`
 
 }
 
 type XsdGoPkgHasElem_Contractsponsor struct {
-	Contractsponsor *TxsdAccel `xml:"http://docbook.org/ns/docbook contractsponsor"`
+	Contractsponsor *TxsdFuncparams `xml:"http://docbook.org/ns/docbook contractsponsor"`
 
 }
 
@@ -20381,12 +20211,12 @@ type XsdGoPkgHasElem_Copyright struct {
 }
 
 type XsdGoPkgHasElem_Year struct {
-	Year *TxsdAccel `xml:"http://docbook.org/ns/docbook year"`
+	Year *TxsdFuncparams `xml:"http://docbook.org/ns/docbook year"`
 
 }
 
 type XsdGoPkgHasElem_Holder struct {
-	Holder *TxsdAccel `xml:"http://docbook.org/ns/docbook holder"`
+	Holder *TxsdFuncparams `xml:"http://docbook.org/ns/docbook holder"`
 
 }
 
@@ -20396,7 +20226,7 @@ type XsdGoPkgHasElem_Cover struct {
 }
 
 type XsdGoPkgHasElem_Edition struct {
-	Edition *TxsdAccel `xml:"http://docbook.org/ns/docbook edition"`
+	Edition *TxsdFuncparams `xml:"http://docbook.org/ns/docbook edition"`
 
 }
 
@@ -20431,7 +20261,7 @@ type XsdGoPkgHasElem_Bibliocoverage struct {
 }
 
 type XsdGoPkgHasElem_Legalnotice struct {
-	Legalnotice *TxsdTaskprerequisites `xml:"http://docbook.org/ns/docbook legalnotice"`
+	Legalnotice *TxsdTip `xml:"http://docbook.org/ns/docbook legalnotice"`
 
 }
 
@@ -20441,37 +20271,37 @@ type XsdGoPkgHasElem_Othercredit struct {
 }
 
 type XsdGoPkgHasElem_Pagenums struct {
-	Pagenums *TxsdPagenums `xml:"http://docbook.org/ns/docbook pagenums"`
+	Pagenums *TxsdFuncparams `xml:"http://docbook.org/ns/docbook pagenums"`
 
 }
 
 type XsdGoPkgHasElem_Contrib struct {
-	Contrib *TxsdAccel `xml:"http://docbook.org/ns/docbook contrib"`
+	Contrib *TxsdFuncparams `xml:"http://docbook.org/ns/docbook contrib"`
 
 }
 
 type XsdGoPkgHasElem_Honorific struct {
-	Honorific *TxsdAccel `xml:"http://docbook.org/ns/docbook honorific"`
+	Honorific *TxsdFuncparams `xml:"http://docbook.org/ns/docbook honorific"`
 
 }
 
 type XsdGoPkgHasElem_Firstname struct {
-	Firstname *TxsdAccel `xml:"http://docbook.org/ns/docbook firstname"`
+	Firstname *TxsdFuncparams `xml:"http://docbook.org/ns/docbook firstname"`
 
 }
 
 type XsdGoPkgHasElem_Surname struct {
-	Surname *TxsdAccel `xml:"http://docbook.org/ns/docbook surname"`
+	Surname *TxsdFuncparams `xml:"http://docbook.org/ns/docbook surname"`
 
 }
 
 type XsdGoPkgHasElem_Lineage struct {
-	Lineage *TxsdAccel `xml:"http://docbook.org/ns/docbook lineage"`
+	Lineage *TxsdFuncparams `xml:"http://docbook.org/ns/docbook lineage"`
 
 }
 
 type XsdGoPkgHasElem_Othername struct {
-	Othername *TxsdAccel `xml:"http://docbook.org/ns/docbook othername"`
+	Othername *TxsdFuncparams `xml:"http://docbook.org/ns/docbook othername"`
 
 }
 
@@ -20491,7 +20321,7 @@ type XsdGoPkgHasElem_Publisher struct {
 }
 
 type XsdGoPkgHasElem_Releaseinfo struct {
-	Releaseinfo *TxsdAccel `xml:"http://docbook.org/ns/docbook releaseinfo"`
+	Releaseinfo *TxsdFuncparams `xml:"http://docbook.org/ns/docbook releaseinfo"`
 
 }
 
@@ -20506,47 +20336,47 @@ type XsdGoPkgHasElem_Revision struct {
 }
 
 type XsdGoPkgHasElems_Revnumber struct {
-	Revnumbers []*TxsdAccel `xml:"http://docbook.org/ns/docbook revnumber"`
+	Revnumbers []*TxsdRevremark `xml:"http://docbook.org/ns/docbook revnumber"`
 
 }
 
 type XsdGoPkgHasElems_Revremark struct {
-	Revremarks []*TxsdAccel `xml:"http://docbook.org/ns/docbook revremark"`
+	Revremarks []*TxsdRevremark `xml:"http://docbook.org/ns/docbook revremark"`
 
 }
 
 type XsdGoPkgHasElems_Revdescription struct {
-	Revdescriptions []*TxsdRevdescription `xml:"http://docbook.org/ns/docbook revdescription"`
+	Revdescriptions []*TxsdMsgtext `xml:"http://docbook.org/ns/docbook revdescription"`
 
 }
 
 type XsdGoPkgHasElem_Seriesvolnums struct {
-	Seriesvolnums *TxsdAccel `xml:"http://docbook.org/ns/docbook seriesvolnums"`
+	Seriesvolnums *TxsdFuncparams `xml:"http://docbook.org/ns/docbook seriesvolnums"`
 
 }
 
 type XsdGoPkgHasElem_Volumenum struct {
-	Volumenum *TxsdAccel `xml:"http://docbook.org/ns/docbook volumenum"`
+	Volumenum *TxsdFuncparams `xml:"http://docbook.org/ns/docbook volumenum"`
 
 }
 
 type XsdGoPkgHasElem_Issuenum struct {
-	Issuenum *TxsdAccel `xml:"http://docbook.org/ns/docbook issuenum"`
+	Issuenum *TxsdFuncparams `xml:"http://docbook.org/ns/docbook issuenum"`
 
 }
 
 type XsdGoPkgHasElem_Package struct {
-	Package *TxsdPackage `xml:"http://docbook.org/ns/docbook package"`
+	Package *TxsdFuncparams `xml:"http://docbook.org/ns/docbook package"`
 
 }
 
 type XsdGoPkgHasElem_Email struct {
-	Email *TxsdAccel `xml:"http://docbook.org/ns/docbook email"`
+	Email *TxsdFuncparams `xml:"http://docbook.org/ns/docbook email"`
 
 }
 
 type XsdGoPkgHasElem_Lineannotation struct {
-	Lineannotation *TxsdAccel `xml:"http://docbook.org/ns/docbook lineannotation"`
+	Lineannotation *TxsdFuncparams `xml:"http://docbook.org/ns/docbook lineannotation"`
 
 }
 
@@ -20576,7 +20406,7 @@ type XsdGoPkgHasElems_Refentrytitle struct {
 }
 
 type XsdGoPkgHasElems_Manvolnum struct {
-	Manvolnums []*TxsdAccel `xml:"http://docbook.org/ns/docbook manvolnum"`
+	Manvolnums []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook manvolnum"`
 
 }
 
@@ -20616,12 +20446,12 @@ type XsdGoPkgHasElem_Trademark struct {
 }
 
 type XsdGoPkgHasElem_Wordasword struct {
-	Wordasword *TxsdAccel `xml:"http://docbook.org/ns/docbook wordasword"`
+	Wordasword *TxsdFuncparams `xml:"http://docbook.org/ns/docbook wordasword"`
 
 }
 
 type XsdGoPkgHasElem_Footnoteref struct {
-	Footnoteref *TxsdCoref `xml:"http://docbook.org/ns/docbook footnoteref"`
+	Footnoteref *TxsdFootnoteref `xml:"http://docbook.org/ns/docbook footnoteref"`
 
 }
 
@@ -20645,753 +20475,212 @@ type XsdGoPkgHasElem_Anchor struct {
 
 }
 
-type TxsdSecondaryie struct {
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Personname
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Editor
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Productname
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasAttr_Linkends_XsdtIdrefs_
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Code
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Firstterm
-
-}
-
-type XsdGoPkgHasElems_Secondaryie struct {
-	Secondaryies []*TxsdSecondaryie `xml:"http://docbook.org/ns/docbook secondaryie"`
-
-}
-
-type XsdGoPkgHasElems_Tertiaryie struct {
-	Tertiaryies []*TxsdSecondaryie `xml:"http://docbook.org/ns/docbook tertiaryie"`
-
-}
-
-type XsdGoPkgHasElem_Primaryie struct {
-	Primaryie *TxsdSecondaryie `xml:"http://docbook.org/ns/docbook primaryie"`
-
-}
-
-type XsdGoPkgHasElems_Seeie struct {
-	Seeies []*TxsdTitle `xml:"http://docbook.org/ns/docbook seeie"`
-
-}
-
-type XsdGoPkgHasElems_Seealsoie struct {
-	Seealsoies []*TxsdSecondaryie `xml:"http://docbook.org/ns/docbook seealsoie"`
-
-}
-
-type TxsdIndexentry struct {
-	XsdGoPkgHasElems_Seeie
-
-	XsdGoPkgHasElems_Seealsoie
-
-	XsdGoPkgHasElems_Secondaryie
-
-	XsdGoPkgHasElems_Tertiaryie
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElem_Primaryie
-
-}
-
-type XsdGoPkgHasElems_Indexentry struct {
-	Indexentries []*TxsdIndexentry `xml:"http://docbook.org/ns/docbook indexentry"`
-
-}
-
-type XsdGoPkgHasAttr_Status_XsdtString_ struct {
-	Status xsdt.String `xml:"http://docbook.org/ns/docbook status,attr"`
-
-}
-
-type TxsdIndexdiv struct {
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Indexentry
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElem_Segmentedlist
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Indexdiv struct {
-	Indexdivs []*TxsdIndexdiv `xml:"http://docbook.org/ns/docbook indexdiv"`
-
-}
-
-type TxsdSetindex struct {
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Indexentry
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Indexdiv
-
-}
-
-type XsdGoPkgHasElem_Setindex struct {
-	Setindex *TxsdSetindex `xml:"http://docbook.org/ns/docbook setindex"`
-
-}
-
 type TxsdTocentry struct {
-	XsdGoPkgHasElems_Command
-
-	XsdGoPkgHasElems_Initializer
-
-	XsdGoPkgHasElems_Citation
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Mousebutton
-
-	XsdGoPkgHasElems_Interfacename
-
-	XsdGoPkgHasElems_Prompt
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Date
-
-	XsdGoPkgHasElems_Glossterm
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_Quote
-
-	XsdGoPkgHasElems_Token
-
-	XsdGoPkgHasElems_Returnvalue
-
-	XsdGoPkgHasElems_Envar
-
-	XsdGoPkgHasElems_Guimenu
-
-	XsdGoPkgHasElems_Ooclass
-
-	XsdGoPkgHasElems_Menuchoice
-
-	XsdGoPkgHasElems_Option
-
-	XsdGoPkgHasElems_Wordasword
-
-	XsdGoPkgHasElems_Systemitem
-
-	XsdGoPkgHasElems_Constant
-
-	XsdGoPkgHasElems_Guilabel
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Parameter
-
-	XsdGoPkgHasElems_Filename
-
-	XsdGoPkgHasElems_Oointerface
-
-	XsdGoPkgHasElems_Citetitle
-
-	XsdGoPkgHasElems_Ooexception
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Errortext
-
-	XsdGoPkgHasElems_Email
-
-	XsdGoPkgHasElems_Jobtitle
-
-	XsdGoPkgHasElems_Emphasis
-
-	XsdGoPkgHasElems_Code
-
 	XsdGoPkgHasElems_Replaceable
 
-	XsdGoPkgHasElems_Guibutton
-
-	XsdGoPkgHasElems_Productnumber
-
-	XsdGoPkgHasElems_Errorname
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Abbrev
-
-	XsdGoPkgHasElems_Optional
-
-	XsdGoPkgHasElems_Property
-
-	XsdGoPkgHasElems_Markup
-
-	XsdGoPkgHasElems_Keycode
-
-	XsdGoPkgHasElems_Guiicon
-
-	XsdGoPkgHasElems_Errorcode
-
-	XsdGoPkgHasElems_Modifier
-
-	XsdGoPkgHasElems_Package
-
-	XsdGoPkgHasElems_Type
-
-	XsdGoPkgHasElems_Guisubmenu
-
-	XsdGoPkgHasElems_Citebiblioid
-
-	XsdGoPkgHasElems_Footnoteref
-
-	XsdGoPkgHasElems_Person
-
-	XsdGoPkgHasElems_Hardware
-
-	XsdGoPkgHasElems_Userinput
-
-	XsdGoPkgHasElems_Nonterminal
-
-	XsdGoPkgHasElems_Literal
-
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Orgname
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Org
-
-	XsdGoPkgHasElems_Database
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Keysym
-
-	XsdGoPkgHasElems_Firstterm
-
-	XsdGoPkgHasElems_Errortype
-
-	XsdGoPkgHasElems_Author
-
-	XsdGoPkgHasElems_Footnote
-
-	XsdGoPkgHasElems_Varname
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Methodname
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Coref
-
-	XsdGoPkgHasElems_Acronym
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasElems_Application
-
-	XsdGoPkgHasElems_Uri
-
-	XsdGoPkgHasElems_Anchor
-
 	XsdGoPkgHasElems_Termdef
-
-	XsdGoPkgHasElems_Trademark
-
-	XsdGoPkgHasElems_Computeroutput
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Guimenuitem
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Accel
-
-	XsdGoPkgHasElems_Keycombo
-
-	XsdGoPkgHasElems_Exceptionname
-
-	XsdGoPkgHasElems_Keycap
-
-	XsdGoPkgHasElems_Citerefentry
-
-	XsdGoPkgHasElems_Tag
-
-	XsdGoPkgHasElems_Shortcut
-
-	XsdGoPkgHasElems_Inlineequation
-
-	XsdGoPkgHasElems_Classname
-
-	XsdGoPkgHasElems_Foreignphrase
-
-	XsdGoPkgHasElems_Editor
 
 	XsdGoPkgHasAttr_Pagenum_XsdtString_
 
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Menuchoice
+
 	XsdGoPkgHasElems_Personname
 
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Foreignphrase
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Author
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Guilabel
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Errortype
+
 	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Userinput
+
+	XsdGoPkgHasElems_Footnoteref
 
 }
 
@@ -21401,135 +20690,135 @@ type XsdGoPkgHasElems_Tocentry struct {
 }
 
 type TxsdTocdiv struct {
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Revhistory
+	XsdGoPkgHasElems_Anchor
 
 	XsdGoPkgHasElems_Qandaset
 
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasAttr_Pagenum_XsdtString_
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Tocentry
+	XsdGoPkgHasElems_Task
 
 	XsdGoPkgHasElems_Formalpara
 
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Tocdiv
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Productionset
+	XsdGoPkgHasElems_Literallayout
 
 	XsdGoPkgHasElems_Warning
 
-	XsdGoPkgHasElems_Bibliolist
+	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Literallayout
+	XsdGoPkgHasElems_Revhistory
 
-	XsdGoPkgHasElems_Epigraph
+	XsdGoPkgHasElems_Caution
 
 	XsdGoPkgHasElems_Simpara
 
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Figure
-
 	XsdGoPkgHasElems_Synopsis
 
-	XsdGoPkgHasElems_Constructorsynopsis
+	XsdGoPkgHasElems_Programlistingco
 
-	XsdGoPkgHasElems_Informalequation
+	XsdGoPkgHasElems_Address
 
-	XsdGoPkgHasElems_Table
+	XsdGoPkgHasElems_Epigraph
 
 	XsdGoPkgHasElems_Tip
 
-	XsdGoPkgHasAtts_DbCommonAttributes
+	XsdGoPkgHasElems_Destructorsynopsis
 
-	XsdGoPkgHasElems_Anchor
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasElems_Screen
+	XsdGoPkgHasElems_Fieldsynopsis
 
-	XsdGoPkgHasElems_Equation
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Remark
 
 	XsdGoPkgHasElems_Subtitle
 
-	XsdGoPkgHasElems_Important
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Figure
 
 	XsdGoPkgHasElems_Glosslist
 
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasAttr_Pagenum_XsdtString_
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Tocdiv
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Blockquote
+
 	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Tocentry
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Titleabbrev
 
 }
 
@@ -21539,131 +20828,131 @@ type XsdGoPkgHasElems_Tocdiv struct {
 }
 
 type TxsdToc struct {
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Tocentry
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Tocdiv
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Warning
-
 	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Literallayout
 
 	XsdGoPkgHasElems_Blockquote
 
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Anchor
+	XsdGoPkgHasElems_Msgset
 
 	XsdGoPkgHasElems_Cmdsynopsis
 
-	XsdGoPkgHasElems_Classsynopsis
+	XsdGoPkgHasElems_Procedure
 
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Informalexample
+	XsdGoPkgHasElems_Tocdiv
 
 	XsdGoPkgHasElems_Bridgehead
 
 	XsdGoPkgHasElems_Annotation
 
-	XsdGoPkgHasElems_Indexterm
+	XsdGoPkgHasElems_Mediaobject
 
-	XsdGoPkgHasElems_Destructorsynopsis
+	XsdGoPkgHasElems_Informaltable
 
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Note
+	XsdGoPkgHasElems_Fieldsynopsis
 
 	XsdGoPkgHasElems_Constraintdef
 
 	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Tocentry
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Important
 
 }
 
@@ -21672,134 +20961,426 @@ type XsdGoPkgHasElem_Toc struct {
 
 }
 
-type TxsdSimplesect struct {
-	XsdGoPkgHasElems_Informaltable
+type XsdGoPkgHasElems_Set struct {
+	Sets []*TxsdSet `xml:"http://docbook.org/ns/docbook set"`
 
-	XsdGoPkgHasElems_Simplelist
+}
 
-	XsdGoPkgHasElems_Bridgehead
+type XsdGoPkgHasAttr_Status_XsdtString_ struct {
+	Status xsdt.String `xml:"http://docbook.org/ns/docbook status,attr"`
 
-	XsdGoPkgHasElems_Programlisting
+}
 
-	XsdGoPkgHasElems_Remark
+type TxsdBibliodiv struct {
+	XsdGoPkgHasElems_Programlistingco
 
-	XsdGoPkgHasElems_Title
+	XsdGoPkgHasElems_Methodsynopsis
 
-	XsdGoPkgHasElems_Cmdsynopsis
+	XsdGoPkgHasElems_Itemizedlist
 
 	XsdGoPkgHasElems_Constructorsynopsis
 
-	XsdGoPkgHasElems_Productionset
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Msgset
 
 	XsdGoPkgHasElems_Segmentedlist
 
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Glosslist
+
 	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Figure
 
 	XsdGoPkgHasElems_Important
 
-	XsdGoPkgHasElems_Procedure
+	XsdGoPkgHasElems_Figure
 
-	XsdGoPkgHasElems_Literallayout
+	XsdGoPkgHasElems_Annotation
 
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasElems_Classsynopsis
 
 	XsdGoPkgHasElems_Formalpara
 
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Informalexample
+
 	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Biblioentry
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Procedure
 
 	XsdGoPkgHasElems_Titleabbrev
 
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Bibliomixed
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Mediaobject
+
+}
+
+type XsdGoPkgHasElems_Bibliodiv struct {
+	Bibliodivs []*TxsdBibliodiv `xml:"http://docbook.org/ns/docbook bibliodiv"`
+
+}
+
+type TxsdBibliography struct {
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Biblioentry
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Bibliodiv
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Bibliomixed
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Methodsynopsis
+
 	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Simplelist
+
+}
+
+type XsdGoPkgHasElems_Bibliography struct {
+	Bibliographies []*TxsdBibliography `xml:"http://docbook.org/ns/docbook bibliography"`
+
+}
+
+type TxsdSimplesect struct {
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Title
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasElems_Note
 
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Classsynopsis
+	XsdGoPkgHasElems_Tip
 
 	XsdGoPkgHasElems_Address
 
-	XsdGoPkgHasElems_Itemizedlist
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Simplelist
 
 	XsdGoPkgHasAttr_Status_XsdtString_
 
-	XsdGoPkgHasElems_Screenshot
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Table
 
 	XsdGoPkgHasElems_Glosslist
 
-	XsdGoPkgHasElems_Subtitle
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Indexterm
 
 	XsdGoPkgHasElems_Constraintdef
 
 	XsdGoPkgHasElems_Epigraph
 
-	XsdGoPkgHasElems_Task
+	XsdGoPkgHasElems_Informalfigure
 
-	XsdGoPkgHasElems_Screenco
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Informaltable
 
 	XsdGoPkgHasElems_Para
 
-	XsdGoPkgHasElems_Destructorsynopsis
+	XsdGoPkgHasElems_Bibliolist
 
-	XsdGoPkgHasElems_Simpara
+	XsdGoPkgHasElems_Bridgehead
 
-	XsdGoPkgHasElems_Table
+	XsdGoPkgHasAttr_Label_XsdtString_
 
-	XsdGoPkgHasElems_Revhistory
+	XsdGoPkgHasElems_Annotation
 
-	XsdGoPkgHasElems_Methodsynopsis
+	XsdGoPkgHasElems_Classsynopsis
 
-	XsdGoPkgHasElems_Screen
+	XsdGoPkgHasElems_Titleabbrev
 
-	XsdGoPkgHasElems_Informalequation
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Qandaset
 
 }
 
@@ -21808,26 +21389,2088 @@ type XsdGoPkgHasElems_Simplesect struct {
 
 }
 
-type TxsdRefclass struct {
-	XsdGoPkgHasCdata
+type TxsdPrimaryie struct {
+	XsdGoPkgHasElems_Inlineequation
+
+	XsdGoPkgHasElems_Errortext
+
+	XsdGoPkgHasElems_Guilabel
 
 	XsdGoPkgHasAttr_Role_XsdtString_
 
+	XsdGoPkgHasElems_Type
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Guiicon
+
+	XsdGoPkgHasElems_Emphasis
+
+	XsdGoPkgHasElems_Envar
+
+	XsdGoPkgHasElems_Guisubmenu
+
+	XsdGoPkgHasElems_Nonterminal
+
+	XsdGoPkgHasElems_Termdef
+
+	XsdGoPkgHasElems_Guibutton
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasElems_Shortcut
+
+	XsdGoPkgHasAttr_Linkends_XsdtIdrefs_
+
+	XsdGoPkgHasElems_Option
+
+	XsdGoPkgHasElems_Exceptionname
+
+	XsdGoPkgHasElems_Foreignphrase
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
+	XsdGoPkgHasElems_Keycode
+
+	XsdGoPkgHasElems_Methodname
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Citerefentry
+
+	XsdGoPkgHasElems_Quote
+
+	XsdGoPkgHasElems_Accel
+
+	XsdGoPkgHasElems_Glossterm
+
+	XsdGoPkgHasElems_Varname
+
+	XsdGoPkgHasElems_Productnumber
+
+	XsdGoPkgHasElems_Property
+
+	XsdGoPkgHasElems_Keysym
+
+	XsdGoPkgHasElems_Jobtitle
+
+	XsdGoPkgHasElems_Code
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Ooexception
+
+	XsdGoPkgHasElems_Package
+
+	XsdGoPkgHasElems_Footnote
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Hardware
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Literal
+
+	XsdGoPkgHasElems_Date
+
+	XsdGoPkgHasElems_Command
+
+	XsdGoPkgHasElems_Classname
+
+	XsdGoPkgHasElems_Oointerface
+
+	XsdGoPkgHasElems_Footnoteref
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Guimenuitem
+
+	XsdGoPkgHasElems_Ooclass
+
+	XsdGoPkgHasElems_Guimenu
+
+	XsdGoPkgHasElems_Abbrev
+
+	XsdGoPkgHasElems_Menuchoice
+
+	XsdGoPkgHasElems_Editor
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Personname
+
+	XsdGoPkgHasElems_Coref
+
+	XsdGoPkgHasElems_Productname
+
+	XsdGoPkgHasElems_Computeroutput
+
+	XsdGoPkgHasElems_Markup
+
+	XsdGoPkgHasElems_Person
+
+	XsdGoPkgHasElems_Optional
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Orgname
+
+	XsdGoPkgHasElems_Modifier
+
+	XsdGoPkgHasElems_Prompt
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Userinput
+
 	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasElems_Acronym
+
+	XsdGoPkgHasElems_Database
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Returnvalue
+
+	XsdGoPkgHasElems_Uri
+
+	XsdGoPkgHasElems_Token
+
+	XsdGoPkgHasElems_Mousebutton
+
+	XsdGoPkgHasElems_Tag
+
+	XsdGoPkgHasElems_Firstterm
+
+	XsdGoPkgHasElems_Interfacename
+
+	XsdGoPkgHasElems_Citation
+
+	XsdGoPkgHasElems_Systemitem
+
+	XsdGoPkgHasElems_Errorname
+
+	XsdGoPkgHasElems_Wordasword
+
+	XsdGoPkgHasElems_Errorcode
+
+	XsdGoPkgHasElems_Constant
+
+	XsdGoPkgHasElems_Keycombo
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Parameter
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasElems_Email
+
+	XsdGoPkgHasElems_Initializer
+
+	XsdGoPkgHasElems_Org
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Keycap
+
+	XsdGoPkgHasElems_Errortype
+
+	XsdGoPkgHasElems_Citebiblioid
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Trademark
+
+	XsdGoPkgHasElems_Filename
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Citetitle
+
+	XsdGoPkgHasElems_Author
+
+}
+
+type XsdGoPkgHasElem_Primaryie struct {
+	Primaryie *TxsdPrimaryie `xml:"http://docbook.org/ns/docbook primaryie"`
+
+}
+
+type XsdGoPkgHasElems_Tertiaryie struct {
+	Tertiaryies []*TxsdPrimaryie `xml:"http://docbook.org/ns/docbook tertiaryie"`
+
+}
+
+type XsdGoPkgHasElems_Seeie struct {
+	Seeies []*TxsdTitle `xml:"http://docbook.org/ns/docbook seeie"`
+
+}
+
+type XsdGoPkgHasElems_Secondaryie struct {
+	Secondaryies []*TxsdPrimaryie `xml:"http://docbook.org/ns/docbook secondaryie"`
+
+}
+
+type XsdGoPkgHasElems_Seealsoie struct {
+	Seealsoies []*TxsdPrimaryie `xml:"http://docbook.org/ns/docbook seealsoie"`
+
+}
+
+type TxsdIndexentry struct {
+	XsdGoPkgHasElems_Seealsoie
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElem_Primaryie
+
+	XsdGoPkgHasElems_Tertiaryie
+
+	XsdGoPkgHasElems_Seeie
+
+	XsdGoPkgHasElems_Secondaryie
+
+	XsdGoPkgHasAttr_Role_XsdtString_
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 }
 
-type XsdGoPkgHasElems_Refclass struct {
-	Refclasses []*TxsdRefclass `xml:"http://docbook.org/ns/docbook refclass"`
+type XsdGoPkgHasElems_Indexentry struct {
+	Indexentries []*TxsdIndexentry `xml:"http://docbook.org/ns/docbook indexentry"`
 
 }
 
-type XsdGoPkgHasElems_Refname struct {
-	Refnames []*TxsdTitle `xml:"http://docbook.org/ns/docbook refname"`
+type TxsdIndexdiv struct {
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Indexentry
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElem_Segmentedlist
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Important
+
+}
+
+type XsdGoPkgHasElems_Indexdiv struct {
+	Indexdivs []*TxsdIndexdiv `xml:"http://docbook.org/ns/docbook indexdiv"`
+
+}
+
+type TxsdIndex struct {
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Indexdiv
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Indexentry
+
+	XsdGoPkgHasElem_Segmentedlist
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+}
+
+type XsdGoPkgHasElems_Index struct {
+	Indexs []*TxsdIndex `xml:"http://docbook.org/ns/docbook index"`
+
+}
+
+type XsdGoPkgHasElems_Toc struct {
+	Tocs []*TxsdToc `xml:"http://docbook.org/ns/docbook toc"`
+
+}
+
+type TxsdGlossdiv struct {
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Glossentry
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Informaltable
+
+}
+
+type XsdGoPkgHasElems_Glossdiv struct {
+	Glossdivs []*TxsdGlossdiv `xml:"http://docbook.org/ns/docbook glossdiv"`
+
+}
+
+type XsdGoPkgHasElem_Bibliography struct {
+	Bibliography *TxsdBibliography `xml:"http://docbook.org/ns/docbook bibliography"`
+
+}
+
+type TxsdGlossary struct {
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElem_Bibliography
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Glossentry
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Glossdiv
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_Glossary struct {
+	Glossaries []*TxsdGlossary `xml:"http://docbook.org/ns/docbook glossary"`
+
+}
+
+type TxsdSect5 struct {
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Simplesect
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Bibliography
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Glossary
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Toc
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Index
+
+	XsdGoPkgHasElems_Constraintdef
+
+}
+
+type XsdGoPkgHasElems_Sect5 struct {
+	Sect5s []*TxsdSect5 `xml:"http://docbook.org/ns/docbook sect5"`
+
+}
+
+type TxsdSect4 struct {
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Simplesect
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Glossary
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Sect5
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Index
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Toc
+
+	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Bibliography
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+}
+
+type XsdGoPkgHasElems_Sect4 struct {
+	Sect4s []*TxsdSect4 `xml:"http://docbook.org/ns/docbook sect4"`
+
+}
+
+type TxsdSect3 struct {
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Sect4
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Bibliography
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Simplesect
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Glossary
+
+	XsdGoPkgHasElems_Index
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Toc
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Caution
+
+}
+
+type XsdGoPkgHasElems_Sect3 struct {
+	Sect3s []*TxsdSect3 `xml:"http://docbook.org/ns/docbook sect3"`
+
+}
+
+type TxsdSect2 struct {
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Sect3
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Glossary
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Bibliography
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Simplesect
+
+	XsdGoPkgHasElems_Index
+
+	XsdGoPkgHasElems_Toc
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Formalpara
+
+}
+
+type XsdGoPkgHasElems_Sect2 struct {
+	Sect2s []*TxsdSect2 `xml:"http://docbook.org/ns/docbook sect2"`
+
+}
+
+type TxsdSect1 struct {
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Index
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Sect2
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Glossary
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Simplesect
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Toc
+
+	XsdGoPkgHasElems_Bibliography
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Example
+
+}
+
+type XsdGoPkgHasElems_Sect1 struct {
+	Sect1s []*TxsdSect1 `xml:"http://docbook.org/ns/docbook sect1"`
+
+}
+
+type TxsdRefmiscinfoClass xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdRefmiscinfoClass is "sectdesc".
+func (me TxsdRefmiscinfoClass) IsSectdesc () bool { return me == "sectdesc" }
+
+//	Since TxsdRefmiscinfoClass is just a simple String type, this merely returns the current string value.
+func (me TxsdRefmiscinfoClass) String () string { return xsdt.Token(me).String() }
+
+//	This convenience method just performs a simple type conversion to TxsdRefmiscinfoClass's alias type xsdt.Token.
+func (me TxsdRefmiscinfoClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Since TxsdRefmiscinfoClass is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdRefmiscinfoClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdRefmiscinfoClass is "manual".
+func (me TxsdRefmiscinfoClass) IsManual () bool { return me == "manual" }
+
+//	Returns true if the value of this enumerated TxsdRefmiscinfoClass is "version".
+func (me TxsdRefmiscinfoClass) IsVersion () bool { return me == "version" }
+
+//	Returns true if the value of this enumerated TxsdRefmiscinfoClass is "other".
+func (me TxsdRefmiscinfoClass) IsOther () bool { return me == "other" }
+
+//	Returns true if the value of this enumerated TxsdRefmiscinfoClass is "software".
+func (me TxsdRefmiscinfoClass) IsSoftware () bool { return me == "software" }
+
+//	Returns true if the value of this enumerated TxsdRefmiscinfoClass is "source".
+func (me TxsdRefmiscinfoClass) IsSource () bool { return me == "source" }
+
+type XsdGoPkgHasAttr_Class_TxsdRefmiscinfoClass_ struct {
+	Class TxsdRefmiscinfoClass `xml:"http://docbook.org/ns/docbook class,attr"`
+
+}
+
+type TxsdRefmiscinfo struct {
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Olink
+
+	XsdGoPkgHasElems_Replaceable
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Subscript
+
+	XsdGoPkgHasElems_Biblioref
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasAttr_Otherclass_XsdtString_
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_Inlinemediaobject
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Superscript
+
+	XsdGoPkgHasElems_Phrase
+
+	XsdGoPkgHasElems_Alt
+
+	XsdGoPkgHasElems_Xref
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasAttr_Class_TxsdRefmiscinfoClass_
+
+}
+
+type XsdGoPkgHasElems_Refmiscinfo struct {
+	Refmiscinfos []*TxsdRefmiscinfo `xml:"http://docbook.org/ns/docbook refmiscinfo"`
+
+}
+
+type TxsdRefmeta struct {
+	XsdGoPkgHasElems_Refmiscinfo
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElem_Refentrytitle
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElem_Manvolnum
+
+}
+
+type XsdGoPkgHasElem_Refmeta struct {
+	Refmeta *TxsdRefmeta `xml:"http://docbook.org/ns/docbook refmeta"`
+
+}
+
+type TxsdRefsection struct {
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Refsection
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Blockquote
+
+}
+
+type XsdGoPkgHasElems_Refsection struct {
+	Refsections []*TxsdRefsection `xml:"http://docbook.org/ns/docbook refsection"`
+
+}
+
+type XsdGoPkgHasElems_Refsect3 struct {
+	Refsect3s []*TxsdSimplesect `xml:"http://docbook.org/ns/docbook refsect3"`
+
+}
+
+type TxsdRefsect2 struct {
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Refsect3
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Simpara
+
+}
+
+type XsdGoPkgHasElems_Refsect2 struct {
+	Refsect2s []*TxsdRefsect2 `xml:"http://docbook.org/ns/docbook refsect2"`
+
+}
+
+type TxsdRefsynopsisdiv struct {
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Refsection
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Refsect2
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Itemizedlist
+
+}
+
+type XsdGoPkgHasElem_Refsynopsisdiv struct {
+	Refsynopsisdiv *TxsdRefsynopsisdiv `xml:"http://docbook.org/ns/docbook refsynopsisdiv"`
 
 }
 
@@ -21841,20 +23484,43 @@ type XsdGoPkgHasElem_Refdescriptor struct {
 
 }
 
-type TxsdRefnamediv struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
+type XsdGoPkgHasElems_Refname struct {
+	Refnames []*TxsdTitle `xml:"http://docbook.org/ns/docbook refname"`
 
-	XsdGoPkgHasElems_Refclass
+}
 
-	XsdGoPkgHasElems_Refname
+type TxsdRefclass struct {
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasAttr_Role_XsdtString_
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Application
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+}
+
+type XsdGoPkgHasElems_Refclass struct {
+	Refclasses []*TxsdRefclass `xml:"http://docbook.org/ns/docbook refclass"`
+
+}
+
+type TxsdRefnamediv struct {
+	XsdGoPkgHasElems_Refclass
 
 	XsdGoPkgHasElem_Refpurpose
 
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
 	XsdGoPkgHasElem_Refdescriptor
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Refname
 
 }
 
@@ -21863,657 +23529,136 @@ type XsdGoPkgHasElems_Refnamediv struct {
 
 }
 
-type TxsdRefmiscinfoClass xsdt.Token
-
-//	Since TxsdRefmiscinfoClass is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdRefmiscinfoClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Since TxsdRefmiscinfoClass is just a simple String type, this merely returns the current string value.
-func (me TxsdRefmiscinfoClass) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdRefmiscinfoClass is "other".
-func (me TxsdRefmiscinfoClass) IsOther () bool { return me == "other" }
-
-//	Returns true if the value of this enumerated TxsdRefmiscinfoClass is "sectdesc".
-func (me TxsdRefmiscinfoClass) IsSectdesc () bool { return me == "sectdesc" }
-
-//	Returns true if the value of this enumerated TxsdRefmiscinfoClass is "software".
-func (me TxsdRefmiscinfoClass) IsSoftware () bool { return me == "software" }
-
-//	Returns true if the value of this enumerated TxsdRefmiscinfoClass is "manual".
-func (me TxsdRefmiscinfoClass) IsManual () bool { return me == "manual" }
-
-//	This convenience method just performs a simple type conversion to TxsdRefmiscinfoClass's alias type xsdt.Token.
-func (me TxsdRefmiscinfoClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdRefmiscinfoClass is "source".
-func (me TxsdRefmiscinfoClass) IsSource () bool { return me == "source" }
-
-//	Returns true if the value of this enumerated TxsdRefmiscinfoClass is "version".
-func (me TxsdRefmiscinfoClass) IsVersion () bool { return me == "version" }
-
-type XsdGoPkgHasAttr_Class_TxsdRefmiscinfoClass_ struct {
-	Class TxsdRefmiscinfoClass `xml:"http://docbook.org/ns/docbook class,attr"`
-
-}
-
-type TxsdRefmiscinfo struct {
-	XsdGoPkgHasElems_Inlinemediaobject
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Biblioref
-
-	XsdGoPkgHasElems_Subscript
-
-	XsdGoPkgHasAttr_Otherclass_XsdtString_
-
-	XsdGoPkgHasAttr_Class_TxsdRefmiscinfoClass_
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_Olink
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Replaceable
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Phrase
-
-	XsdGoPkgHasElems_Alt
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Superscript
-
-	XsdGoPkgHasElems_Xref
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-}
-
-type XsdGoPkgHasElems_Refmiscinfo struct {
-	Refmiscinfos []*TxsdRefmiscinfo `xml:"http://docbook.org/ns/docbook refmiscinfo"`
-
-}
-
-type TxsdRefmeta struct {
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElem_Manvolnum
-
-	XsdGoPkgHasElems_Refmiscinfo
-
-	XsdGoPkgHasElem_Refentrytitle
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Indexterm
-
-}
-
-type XsdGoPkgHasElem_Refmeta struct {
-	Refmeta *TxsdRefmeta `xml:"http://docbook.org/ns/docbook refmeta"`
-
-}
-
-type XsdGoPkgHasElems_Refsect3 struct {
-	Refsect3s []*TxsdSimplesect `xml:"http://docbook.org/ns/docbook refsect3"`
-
-}
-
-type TxsdRefsect2 struct {
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Refsect3
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-}
-
-type XsdGoPkgHasElems_Refsect2 struct {
-	Refsect2s []*TxsdRefsect2 `xml:"http://docbook.org/ns/docbook refsect2"`
-
-}
-
-type TxsdRefsection struct {
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Refsection
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Refsection struct {
-	Refsections []*TxsdRefsection `xml:"http://docbook.org/ns/docbook refsection"`
-
-}
-
-type TxsdRefsynopsisdiv struct {
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Refsection
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Refsect2
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Constraintdef
-
-}
-
-type XsdGoPkgHasElem_Refsynopsisdiv struct {
-	Refsynopsisdiv *TxsdRefsynopsisdiv `xml:"http://docbook.org/ns/docbook refsynopsisdiv"`
-
-}
-
 type TxsdRefsect1 struct {
-	XsdGoPkgHasElems_Literallayout
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Formalpara
 
 	XsdGoPkgHasElems_Simplelist
 
-	XsdGoPkgHasElems_Destructorsynopsis
+	XsdGoPkgHasElems_Annotation
 
-	XsdGoPkgHasElems_Productionset
+	XsdGoPkgHasElems_Warning
 
-	XsdGoPkgHasElems_Title
+	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Blockquote
+	XsdGoPkgHasElems_Revhistory
 
-	XsdGoPkgHasElems_Note
+	XsdGoPkgHasElems_Funcsynopsis
 
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasElems_Informalequation
 
 	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasElems_Remark
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Tip
 
 	XsdGoPkgHasElems_Bridgehead
 
-	XsdGoPkgHasElems_Glosslist
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Example
 
 	XsdGoPkgHasElems_Figure
 
-	XsdGoPkgHasElems_Tip
+	XsdGoPkgHasElems_Task
 
 	XsdGoPkgHasElems_Classsynopsis
 
 	XsdGoPkgHasElems_Programlisting
 
-	XsdGoPkgHasElems_Address
+	XsdGoPkgHasElems_Literallayout
 
-	XsdGoPkgHasElems_Formalpara
+	XsdGoPkgHasElems_Constructorsynopsis
 
-	XsdGoPkgHasElems_Itemizedlist
+	XsdGoPkgHasElems_Procedure
 
-	XsdGoPkgHasElems_Refsect2
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Epigraph
 
 	XsdGoPkgHasElems_Segmentedlist
 
 	XsdGoPkgHasElems_Anchor
 
-	XsdGoPkgHasElems_Bibliolist
+	XsdGoPkgHasElems_Informaltable
 
-	XsdGoPkgHasElems_Example
+	XsdGoPkgHasElems_Blockquote
 
-	XsdGoPkgHasElems_Subtitle
+	XsdGoPkgHasElems_Glosslist
 
-	XsdGoPkgHasAttr_Label_XsdtString_
+	XsdGoPkgHasElems_Refsect2
 
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Fieldsynopsis
+	XsdGoPkgHasElems_Screenco
 
 	XsdGoPkgHasAttr_Status_XsdtString_
 
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Screenshot
-
 	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Constructorsynopsis
 
 	XsdGoPkgHasElems_Informalfigure
 
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Msgset
+	XsdGoPkgHasElems_Informalexample
 
 }
 
@@ -22523,29 +23668,29 @@ type XsdGoPkgHasElems_Refsect1 struct {
 }
 
 type TxsdRefentry struct {
-	XsdGoPkgHasElems_Refnamediv
+	XsdGoPkgHasElems_Refsect1
 
 	XsdGoPkgHasAttr_Role_XsdtString_
 
 	XsdGoPkgHasElem_Refmeta
 
-	XsdGoPkgHasElem_Refsynopsisdiv
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Refsection
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Refsect1
-
 	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasElems_Indexterm
 
+	XsdGoPkgHasElem_Refsynopsisdiv
+
 	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Refsection
+
+	XsdGoPkgHasElems_Refnamediv
 
 }
 
@@ -22554,862 +23699,148 @@ type XsdGoPkgHasElems_Refentry struct {
 
 }
 
-type TxsdBibliodiv struct {
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Bibliomixed
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Biblioentry
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Programlisting
-
-}
-
-type XsdGoPkgHasElems_Bibliodiv struct {
-	Bibliodivs []*TxsdBibliodiv `xml:"http://docbook.org/ns/docbook bibliodiv"`
-
-}
-
-type TxsdBibliography struct {
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Bibliomixed
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Bibliodiv
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Biblioentry
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Informalfigure
-
-}
-
-type XsdGoPkgHasElem_Bibliography struct {
-	Bibliography *TxsdBibliography `xml:"http://docbook.org/ns/docbook bibliography"`
-
-}
-
-type TxsdGlossdiv struct {
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Glossentry
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_Glossdiv struct {
-	Glossdivs []*TxsdGlossdiv `xml:"http://docbook.org/ns/docbook glossdiv"`
-
-}
-
-type TxsdGlossary struct {
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Glossdiv
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Glossentry
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElem_Bibliography
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Simpara
-
-}
-
-type XsdGoPkgHasElems_Glossary struct {
-	Glossaries []*TxsdGlossary `xml:"http://docbook.org/ns/docbook glossary"`
-
-}
-
-type XsdGoPkgHasElems_Toc struct {
-	Tocs []*TxsdToc `xml:"http://docbook.org/ns/docbook toc"`
-
-}
-
-type XsdGoPkgHasElems_Bibliography struct {
-	Bibliographies []*TxsdBibliography `xml:"http://docbook.org/ns/docbook bibliography"`
-
-}
-
-type TxsdIndex struct {
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Indexentry
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElem_Segmentedlist
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Indexdiv
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Figure
-
-}
-
-type XsdGoPkgHasElems_Index struct {
-	Indexs []*TxsdIndex `xml:"http://docbook.org/ns/docbook index"`
-
-}
-
 type TxsdSection struct {
-	XsdGoPkgHasElems_Constraintdef
+	XsdGoPkgHasElems_Calloutlist
 
-	XsdGoPkgHasElems_Title
+	XsdGoPkgHasElems_Simpara
 
-	XsdGoPkgHasElems_Simplesect
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Classsynopsis
+	XsdGoPkgHasElem_Info
 
 	XsdGoPkgHasElems_Section
 
-	XsdGoPkgHasElems_Epigraph
+	XsdGoPkgHasElems_Screenshot
 
-	XsdGoPkgHasElems_Screen
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Destructorsynopsis
 
 	XsdGoPkgHasElems_Para
 
+	XsdGoPkgHasElems_Glossary
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Formalpara
+
 	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Sidebar
 
 	XsdGoPkgHasElems_Cmdsynopsis
 
-	XsdGoPkgHasElems_Informalequation
+	XsdGoPkgHasElems_Tip
 
-	XsdGoPkgHasElems_Equation
+	XsdGoPkgHasElems_Index
 
-	XsdGoPkgHasElems_Fieldsynopsis
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Note
 
 	XsdGoPkgHasElems_Qandaset
 
 	XsdGoPkgHasElems_Methodsynopsis
 
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
 	XsdGoPkgHasElems_Programlistingco
 
-	XsdGoPkgHasElems_Glossary
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Toc
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Refentry
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Informalfigure
+	XsdGoPkgHasElems_Example
 
 	XsdGoPkgHasElems_Synopsis
 
-	XsdGoPkgHasElems_Subtitle
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Simplesect
+
+	XsdGoPkgHasElems_Informalequation
+
+	XsdGoPkgHasElems_Equation
 
 	XsdGoPkgHasElems_Bibliography
 
-	XsdGoPkgHasElems_Index
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Orderedlist
-
 	XsdGoPkgHasElems_Segmentedlist
 
-	XsdGoPkgHasElems_Remark
+	XsdGoPkgHasElems_Programlisting
 
-	XsdGoPkgHasElems_Note
+	XsdGoPkgHasElems_Toc
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Refentry
 
 	XsdGoPkgHasAttr_Status_XsdtString_
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasElems_Title
 
-	XsdGoPkgHasElems_Productionset
+	XsdGoPkgHasElems_Simplelist
 
-	XsdGoPkgHasElems_Itemizedlist
+	XsdGoPkgHasElems_Annotation
 
 	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Fieldsynopsis
 
 }
 
@@ -23418,937 +23849,155 @@ type XsdGoPkgHasElems_Section struct {
 
 }
 
-type TxsdSect5 struct {
-	XsdGoPkgHasElems_Example
+type TxsdPreface struct {
+	XsdGoPkgHasElems_Informalexample
 
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Simplesect
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Bibliography
+	XsdGoPkgHasAttr_Status_XsdtString_
 
 	XsdGoPkgHasElems_Constructorsynopsis
 
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Itemizedlist
-
 	XsdGoPkgHasElems_Glossary
 
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Remark
+	XsdGoPkgHasElems_Simplelist
 
 	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Toc
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Index
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Bridgehead
-
-}
-
-type XsdGoPkgHasElems_Sect5 struct {
-	Sect5s []*TxsdSect5 `xml:"http://docbook.org/ns/docbook sect5"`
-
-}
-
-type TxsdSect4 struct {
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Simplesect
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Index
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Revhistory
 
 	XsdGoPkgHasElems_Epigraph
 
 	XsdGoPkgHasElems_Figure
 
-	XsdGoPkgHasElems_Bibliography
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Toc
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Sect5
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Glossary
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Screen
-
-}
-
-type XsdGoPkgHasElems_Sect4 struct {
-	Sect4s []*TxsdSect4 `xml:"http://docbook.org/ns/docbook sect4"`
-
-}
-
-type TxsdSect3 struct {
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Index
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Sect4
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Simplesect
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Glossary
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Constraintdef
-
 	XsdGoPkgHasElems_Calloutlist
 
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Bibliography
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Toc
-
-}
-
-type XsdGoPkgHasElems_Sect3 struct {
-	Sect3s []*TxsdSect3 `xml:"http://docbook.org/ns/docbook sect3"`
-
-}
-
-type TxsdSect2 struct {
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Simplesect
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Sect3
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Bibliography
-
-	XsdGoPkgHasElems_Itemizedlist
+	XsdGoPkgHasElems_Important
 
 	XsdGoPkgHasElems_Remark
 
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Productionset
-
 	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Toc
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Glossary
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Index
-
-}
-
-type XsdGoPkgHasElems_Sect2 struct {
-	Sect2s []*TxsdSect2 `xml:"http://docbook.org/ns/docbook sect2"`
-
-}
-
-type TxsdSect1 struct {
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Table
 
 	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Index
-
-	XsdGoPkgHasElems_Toc
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Sect2
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Simplesect
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Informalexample
 
 	XsdGoPkgHasElems_Indexterm
 
 	XsdGoPkgHasElems_Informalequation
 
-	XsdGoPkgHasElems_Anchor
+	XsdGoPkgHasElems_Formalpara
 
-	XsdGoPkgHasElems_Figure
+	XsdGoPkgHasElems_Itemizedlist
 
 	XsdGoPkgHasElems_Simpara
 
-	XsdGoPkgHasElems_Screenshot
-
 	XsdGoPkgHasElems_Equation
 
-	XsdGoPkgHasElems_Sidebar
+	XsdGoPkgHasElems_Screenco
 
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Glossary
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Bibliography
-
-}
-
-type XsdGoPkgHasElems_Sect1 struct {
-	Sect1s []*TxsdSect1 `xml:"http://docbook.org/ns/docbook sect1"`
-
-}
-
-type TxsdChapter struct {
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Simplesect
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Refentry
-
-	XsdGoPkgHasElems_Destructorsynopsis
-
-	XsdGoPkgHasElems_Titleabbrev
+	XsdGoPkgHasElems_Msgset
 
 	XsdGoPkgHasElems_Section
 
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Bibliography
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Index
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Toc
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasElems_Mediaobject
 
 	XsdGoPkgHasElems_Annotation
 
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Classsynopsis
-
 	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Sect1
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Glossary
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Segmentedlist
 
 	XsdGoPkgHasElems_Bibliolist
 
-	XsdGoPkgHasElems_Screenco
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Index
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Refentry
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Simplesect
+
+	XsdGoPkgHasElems_Bibliography
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Toc
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Sect1
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Fieldsynopsis
 
 	XsdGoPkgHasElems_Orderedlist
 
-}
+	XsdGoPkgHasElems_Methodsynopsis
 
-type XsdGoPkgHasElems_Chapter struct {
-	Chapters []*TxsdChapter `xml:"http://docbook.org/ns/docbook chapter"`
+	XsdGoPkgHasElems_Address
 
-}
+	XsdGoPkgHasElems_Procedure
 
-type XsdGoPkgHasElems_Appendix struct {
-	Appendixs []*TxsdChapter `xml:"http://docbook.org/ns/docbook appendix"`
+	XsdGoPkgHasElems_Example
 
 }
 
-type TxsdArticleClass xsdt.Token
-
-//	This convenience method just performs a simple type conversion to TxsdArticleClass's alias type xsdt.Token.
-func (me TxsdArticleClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdArticleClass is "faq".
-func (me TxsdArticleClass) IsFaq () bool { return me == "faq" }
-
-//	Since TxsdArticleClass is just a simple String type, this merely returns the current string value.
-func (me TxsdArticleClass) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdArticleClass is "whitepaper".
-func (me TxsdArticleClass) IsWhitepaper () bool { return me == "whitepaper" }
-
-//	Since TxsdArticleClass is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdArticleClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdArticleClass is "journalarticle".
-func (me TxsdArticleClass) IsJournalarticle () bool { return me == "journalarticle" }
-
-//	Returns true if the value of this enumerated TxsdArticleClass is "productsheet".
-func (me TxsdArticleClass) IsProductsheet () bool { return me == "productsheet" }
-
-//	Returns true if the value of this enumerated TxsdArticleClass is "techreport".
-func (me TxsdArticleClass) IsTechreport () bool { return me == "techreport" }
-
-//	Returns true if the value of this enumerated TxsdArticleClass is "specification".
-func (me TxsdArticleClass) IsSpecification () bool { return me == "specification" }
-
-type XsdGoPkgHasAttr_Class_TxsdArticleClass_ struct {
-	Class TxsdArticleClass `xml:"http://docbook.org/ns/docbook class,attr"`
-
-}
-
-type XsdGoPkgHasElems_Colophon struct {
-	Colophons []*TxsdSimplesect `xml:"http://docbook.org/ns/docbook colophon"`
+type XsdGoPkgHasElems_Preface struct {
+	Prefaces []*TxsdPreface `xml:"http://docbook.org/ns/docbook preface"`
 
 }
 
@@ -24357,158 +24006,202 @@ type XsdGoPkgHasElems_Acknowledgements struct {
 
 }
 
+type XsdGoPkgHasElems_Colophon struct {
+	Colophons []*TxsdSimplesect `xml:"http://docbook.org/ns/docbook colophon"`
+
+}
+
+type XsdGoPkgHasElems_Appendix struct {
+	Appendixs []*TxsdPreface `xml:"http://docbook.org/ns/docbook appendix"`
+
+}
+
+type TxsdArticleClass xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdArticleClass is "productsheet".
+func (me TxsdArticleClass) IsProductsheet () bool { return me == "productsheet" }
+
+//	Returns true if the value of this enumerated TxsdArticleClass is "journalarticle".
+func (me TxsdArticleClass) IsJournalarticle () bool { return me == "journalarticle" }
+
+//	Returns true if the value of this enumerated TxsdArticleClass is "whitepaper".
+func (me TxsdArticleClass) IsWhitepaper () bool { return me == "whitepaper" }
+
+//	Returns true if the value of this enumerated TxsdArticleClass is "techreport".
+func (me TxsdArticleClass) IsTechreport () bool { return me == "techreport" }
+
+//	Since TxsdArticleClass is just a simple String type, this merely returns the current string value.
+func (me TxsdArticleClass) String () string { return xsdt.Token(me).String() }
+
+//	Since TxsdArticleClass is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdArticleClass) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdArticleClass's alias type xsdt.Token.
+func (me TxsdArticleClass) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Returns true if the value of this enumerated TxsdArticleClass is "specification".
+func (me TxsdArticleClass) IsSpecification () bool { return me == "specification" }
+
+//	Returns true if the value of this enumerated TxsdArticleClass is "faq".
+func (me TxsdArticleClass) IsFaq () bool { return me == "faq" }
+
+type XsdGoPkgHasAttr_Class_TxsdArticleClass_ struct {
+	Class TxsdArticleClass `xml:"http://docbook.org/ns/docbook class,attr"`
+
+}
+
 type TxsdArticle struct {
-	XsdGoPkgHasElems_Variablelist
+	XsdGoPkgHasAttr_Label_XsdtString_
 
-	XsdGoPkgHasElems_Index
+	XsdGoPkgHasElems_Mediaobject
 
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Fieldsynopsis
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
 	XsdGoPkgHasElems_Note
 
-	XsdGoPkgHasElems_Section
+	XsdGoPkgHasElems_Bibliography
 
-	XsdGoPkgHasElems_Warning
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Revhistory
 
 	XsdGoPkgHasElems_Screenshot
 
-	XsdGoPkgHasElems_Sect1
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Colophon
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Classsynopsis
 
 	XsdGoPkgHasElems_Simpara
 
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Glossary
+
+	XsdGoPkgHasElems_Refentry
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Index
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Toc
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Anchor
+
 	XsdGoPkgHasElems_Funcsynopsis
 
-	XsdGoPkgHasElems_Destructorsynopsis
+	XsdGoPkgHasElems_Important
 
 	XsdGoPkgHasElems_Subtitle
 
 	XsdGoPkgHasElems_Figure
 
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasElems_Glossary
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Programlisting
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Toc
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Simplesect
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Tip
-
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Bridgehead
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Acknowledgements
-
-	XsdGoPkgHasElems_Refentry
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Anchor
+	XsdGoPkgHasElems_Task
 
 	XsdGoPkgHasElems_Bibliolist
 
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Synopsis
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Bibliography
-
-	XsdGoPkgHasElems_Appendix
-
 	XsdGoPkgHasElems_Para
 
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasAttr_Class_TxsdArticleClass_
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Colophon
+	XsdGoPkgHasElems_Msgset
 
 	XsdGoPkgHasElems_Informalequation
 
-	XsdGoPkgHasElems_Remark
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Table
 
 	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Simplesect
+
+	XsdGoPkgHasElems_Section
+
+	XsdGoPkgHasElems_Sect1
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Appendix
+
+	XsdGoPkgHasElems_Acknowledgements
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasAttr_Class_TxsdArticleClass_
+
+	XsdGoPkgHasAttr_Status_XsdtString_
 
 }
 
@@ -24517,142 +24210,147 @@ type XsdGoPkgHasElems_Article struct {
 
 }
 
+type XsdGoPkgHasElems_Dedication struct {
+	Dedications []*TxsdSimplesect `xml:"http://docbook.org/ns/docbook dedication"`
+
+}
+
 type TxsdPartintro struct {
-	XsdGoPkgHasElems_Segmentedlist
-
-	XsdGoPkgHasElems_Revhistory
-
-	XsdGoPkgHasElems_Task
-
-	XsdGoPkgHasElems_Simplelist
-
-	XsdGoPkgHasElems_Simplesect
-
-	XsdGoPkgHasElems_Note
-
-	XsdGoPkgHasElems_Variablelist
-
-	XsdGoPkgHasElems_Informalexample
-
-	XsdGoPkgHasElems_Screen
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Address
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Literallayout
-
-	XsdGoPkgHasElems_Screenco
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Caution
-
-	XsdGoPkgHasElems_Informalequation
-
-	XsdGoPkgHasElems_Itemizedlist
-
-	XsdGoPkgHasAtts_DbCommonAttributes
-
-	XsdGoPkgHasElems_Qandaset
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Fieldsynopsis
-
-	XsdGoPkgHasElems_Indexterm
-
-	XsdGoPkgHasElems_Constraintdef
-
-	XsdGoPkgHasElems_Cmdsynopsis
-
-	XsdGoPkgHasElems_Informaltable
-
-	XsdGoPkgHasElems_Bibliolist
-
-	XsdGoPkgHasElems_Programlisting
-
 	XsdGoPkgHasElems_Figure
-
-	XsdGoPkgHasElems_Important
-
-	XsdGoPkgHasElems_Remark
-
-	XsdGoPkgHasElems_Equation
-
-	XsdGoPkgHasElems_Anchor
-
-	XsdGoPkgHasElems_Calloutlist
-
-	XsdGoPkgHasElems_Procedure
-
-	XsdGoPkgHasElems_Refentry
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-	XsdGoPkgHasElems_Section
-
-	XsdGoPkgHasElems_Screenshot
-
-	XsdGoPkgHasElems_Blockquote
-
-	XsdGoPkgHasElems_Productionset
-
-	XsdGoPkgHasElems_Programlistingco
-
-	XsdGoPkgHasElems_Orderedlist
-
-	XsdGoPkgHasElems_Epigraph
-
-	XsdGoPkgHasElems_Constructorsynopsis
-
-	XsdGoPkgHasElems_Classsynopsis
-
-	XsdGoPkgHasElems_Methodsynopsis
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Msgset
-
-	XsdGoPkgHasElems_Table
-
-	XsdGoPkgHasElems_Informalfigure
-
-	XsdGoPkgHasElems_Warning
-
-	XsdGoPkgHasElems_Para
-
-	XsdGoPkgHasElems_Formalpara
-
-	XsdGoPkgHasElems_Annotation
-
-	XsdGoPkgHasElems_Funcsynopsis
-
-	XsdGoPkgHasElems_Mediaobject
-
-	XsdGoPkgHasElems_Example
-
-	XsdGoPkgHasElems_Subtitle
-
-	XsdGoPkgHasElems_Sidebar
-
-	XsdGoPkgHasElems_Simpara
-
-	XsdGoPkgHasElems_Glosslist
-
-	XsdGoPkgHasElems_Tip
 
 	XsdGoPkgHasElems_Destructorsynopsis
 
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Indexterm
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Qandaset
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Section
+
+	XsdGoPkgHasElems_Simpara
+
 	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Simplesect
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Informalequation
 
 	XsdGoPkgHasElems_Sect1
 
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Glosslist
+
+	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonAttributes
+
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasElems_Constraintdef
+
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Classsynopsis
+
 	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Refentry
+
+	XsdGoPkgHasElems_Blockquote
 
 }
 
@@ -24661,38 +24359,28 @@ type XsdGoPkgHasElem_Partintro struct {
 
 }
 
-type XsdGoPkgHasElems_Preface struct {
-	Prefaces []*TxsdChapter `xml:"http://docbook.org/ns/docbook preface"`
-
-}
-
-type XsdGoPkgHasElems_Dedication struct {
-	Dedications []*TxsdSimplesect `xml:"http://docbook.org/ns/docbook dedication"`
-
-}
-
 type TxsdReference struct {
-	XsdGoPkgHasElems_Title
+	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElem_Partintro
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElems_Titleabbrev
 
 	XsdGoPkgHasElems_Subtitle
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
 	XsdGoPkgHasAtts_DbCommonAttributes
 
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Title
+
 	XsdGoPkgHasElems_Refentry
-
-	XsdGoPkgHasElem_Partintro
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElem_Info
 
 }
 
@@ -24701,52 +24389,57 @@ type XsdGoPkgHasElems_Reference struct {
 
 }
 
+type XsdGoPkgHasElems_Chapter struct {
+	Chapters []*TxsdPreface `xml:"http://docbook.org/ns/docbook chapter"`
+
+}
+
 type TxsdPart struct {
+	XsdGoPkgHasElems_Appendix
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
 	XsdGoPkgHasElems_Reference
 
-	XsdGoPkgHasElems_Colophon
-
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElems_Bibliography
-
-	XsdGoPkgHasElem_Partintro
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Index
-
-	XsdGoPkgHasElem_Info
+	XsdGoPkgHasElems_Toc
 
 	XsdGoPkgHasElems_Preface
 
-	XsdGoPkgHasElems_Glossary
-
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-	XsdGoPkgHasElems_Appendix
+	XsdGoPkgHasElems_Subtitle
 
 	XsdGoPkgHasElems_Chapter
 
 	XsdGoPkgHasElems_Refentry
 
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasElem_Partintro
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAttr_Status_XsdtString_
 
 	XsdGoPkgHasElems_Article
 
-	XsdGoPkgHasElems_Acknowledgements
+	XsdGoPkgHasElems_Bibliography
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Colophon
+
+	XsdGoPkgHasElems_Glossary
+
+	XsdGoPkgHasAttr_Label_XsdtString_
 
 	XsdGoPkgHasElems_Dedication
 
-	XsdGoPkgHasElems_Subtitle
+	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasElems_Toc
+	XsdGoPkgHasElems_Acknowledgements
 
-	XsdGoPkgHasAttr_Label_XsdtString_
+	XsdGoPkgHasElems_Index
 
 }
 
@@ -24756,49 +24449,49 @@ type XsdGoPkgHasElems_Part struct {
 }
 
 type TxsdBook struct {
+	XsdGoPkgHasElems_Chapter
+
 	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Bibliography
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Preface
+
+	XsdGoPkgHasElems_Acknowledgements
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Toc
+
+	XsdGoPkgHasElems_Article
+
+	XsdGoPkgHasElems_Titleabbrev
 
 	XsdGoPkgHasElems_Glossary
 
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Bibliography
-
-	XsdGoPkgHasElems_Part
-
-	XsdGoPkgHasElems_Titleabbrev
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasAttr_Label_XsdtString_
-
-	XsdGoPkgHasElems_Colophon
-
-	XsdGoPkgHasElems_Acknowledgements
-
-	XsdGoPkgHasElems_Dedication
-
 	XsdGoPkgHasElems_Index
-
-	XsdGoPkgHasElem_Info
-
-	XsdGoPkgHasElems_Preface
 
 	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasElems_Reference
+	XsdGoPkgHasElem_Info
 
-	XsdGoPkgHasElems_Chapter
+	XsdGoPkgHasElems_Dedication
+
+	XsdGoPkgHasElems_Part
 
 	XsdGoPkgHasElems_Subtitle
 
-	XsdGoPkgHasElems_Article
+	XsdGoPkgHasElems_Reference
 
 	XsdGoPkgHasElems_Appendix
 
-	XsdGoPkgHasElems_Toc
-
-	XsdGoPkgHasAttr_Role_XsdtString_
+	XsdGoPkgHasElems_Colophon
 
 }
 
@@ -24807,37 +24500,174 @@ type XsdGoPkgHasElems_Book struct {
 
 }
 
-type TxsdSet struct {
-	XsdGoPkgHasElems_Subtitle
+type TxsdSetindex struct {
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
 
-	XsdGoPkgHasAttr_Role_XsdtString_
-
-	XsdGoPkgHasElem_Setindex
+	XsdGoPkgHasElems_Glosslist
 
 	XsdGoPkgHasElems_Title
 
-	XsdGoPkgHasElems_Set
+	XsdGoPkgHasElems_Itemizedlist
+
+	XsdGoPkgHasElems_Screen
+
+	XsdGoPkgHasElems_Indexentry
+
+	XsdGoPkgHasElems_Variablelist
+
+	XsdGoPkgHasElems_Bibliolist
+
+	XsdGoPkgHasElems_Simplelist
+
+	XsdGoPkgHasElems_Funcsynopsis
+
+	XsdGoPkgHasElems_Figure
+
+	XsdGoPkgHasElems_Cmdsynopsis
+
+	XsdGoPkgHasElems_Orderedlist
+
+	XsdGoPkgHasElems_Synopsis
+
+	XsdGoPkgHasElems_Revhistory
+
+	XsdGoPkgHasElems_Annotation
+
+	XsdGoPkgHasElems_Indexdiv
+
+	XsdGoPkgHasElems_Methodsynopsis
+
+	XsdGoPkgHasElems_Programlisting
+
+	XsdGoPkgHasElems_Table
+
+	XsdGoPkgHasElems_Formalpara
+
+	XsdGoPkgHasElems_Mediaobject
+
+	XsdGoPkgHasElems_Epigraph
+
+	XsdGoPkgHasElems_Para
+
+	XsdGoPkgHasElems_Note
+
+	XsdGoPkgHasElems_Blockquote
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasElems_Segmentedlist
+
+	XsdGoPkgHasElems_Important
+
+	XsdGoPkgHasElems_Classsynopsis
+
+	XsdGoPkgHasElems_Destructorsynopsis
+
+	XsdGoPkgHasElems_Address
+
+	XsdGoPkgHasElems_Caution
+
+	XsdGoPkgHasElems_Msgset
+
+	XsdGoPkgHasElems_Example
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasElems_Productionset
+
+	XsdGoPkgHasElems_Task
+
+	XsdGoPkgHasElems_Constraintdef
 
 	XsdGoPkgHasElems_Titleabbrev
 
-	XsdGoPkgHasAttr_Status_XsdtString_
-
-	XsdGoPkgHasElem_Toc
-
-	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+	XsdGoPkgHasElems_Indexterm
 
 	XsdGoPkgHasElem_Info
 
+	XsdGoPkgHasElems_Screenco
+
+	XsdGoPkgHasElems_Screenshot
+
+	XsdGoPkgHasElems_Tip
+
+	XsdGoPkgHasElems_Programlistingco
+
+	XsdGoPkgHasElems_Anchor
+
+	XsdGoPkgHasElems_Warning
+
+	XsdGoPkgHasElems_Informaltable
+
+	XsdGoPkgHasElems_Remark
+
+	XsdGoPkgHasElems_Informalfigure
+
+	XsdGoPkgHasElems_Sidebar
+
+	XsdGoPkgHasElems_Calloutlist
+
+	XsdGoPkgHasElems_Informalexample
+
+	XsdGoPkgHasElems_Simpara
+
+	XsdGoPkgHasElems_Fieldsynopsis
+
 	XsdGoPkgHasAtts_DbCommonAttributes
 
-	XsdGoPkgHasElems_Book
+	XsdGoPkgHasElems_Bridgehead
+
+	XsdGoPkgHasElems_Equation
+
+	XsdGoPkgHasElems_Constructorsynopsis
+
+	XsdGoPkgHasElems_Literallayout
+
+	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasElems_Procedure
+
+	XsdGoPkgHasElems_Informalequation
 
 	XsdGoPkgHasAttr_Label_XsdtString_
 
+	XsdGoPkgHasElems_Qandaset
+
 }
 
-type XsdGoPkgHasElems_Set struct {
-	Sets []*TxsdSet `xml:"http://docbook.org/ns/docbook set"`
+type XsdGoPkgHasElem_Setindex struct {
+	Setindex *TxsdSetindex `xml:"http://docbook.org/ns/docbook setindex"`
+
+}
+
+type TxsdSet struct {
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Book
+
+	XsdGoPkgHasElem_Info
+
+	XsdGoPkgHasElem_Setindex
+
+	XsdGoPkgHasAttr_Role_XsdtString_
+
+	XsdGoPkgHasAtts_DbCommonLinkingAttributes
+
+	XsdGoPkgHasElem_Toc
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAttr_Status_XsdtString_
+
+	XsdGoPkgHasAttr_Label_XsdtString_
+
+	XsdGoPkgHasElems_Titleabbrev
+
+	XsdGoPkgHasElems_Subtitle
+
+	XsdGoPkgHasAtts_DbCommonAttributes
 
 }
 
@@ -24867,12 +24697,12 @@ type XsdGoPkgHasElem_Colophon struct {
 }
 
 type XsdGoPkgHasElem_Appendix struct {
-	Appendix *TxsdChapter `xml:"http://docbook.org/ns/docbook appendix"`
+	Appendix *TxsdPreface `xml:"http://docbook.org/ns/docbook appendix"`
 
 }
 
 type XsdGoPkgHasElem_Chapter struct {
-	Chapter *TxsdChapter `xml:"http://docbook.org/ns/docbook chapter"`
+	Chapter *TxsdPreface `xml:"http://docbook.org/ns/docbook chapter"`
 
 }
 
@@ -24882,7 +24712,7 @@ type XsdGoPkgHasElem_Part struct {
 }
 
 type XsdGoPkgHasElem_Preface struct {
-	Preface *TxsdChapter `xml:"http://docbook.org/ns/docbook preface"`
+	Preface *TxsdPreface `xml:"http://docbook.org/ns/docbook preface"`
 
 }
 
@@ -25087,7 +24917,7 @@ type XsdGoPkgHasElem_Bibliomset struct {
 }
 
 type XsdGoPkgHasElem_Bibliomisc struct {
-	Bibliomisc *TxsdAccel `xml:"http://docbook.org/ns/docbook bibliomisc"`
+	Bibliomisc *TxsdFuncparams `xml:"http://docbook.org/ns/docbook bibliomisc"`
 
 }
 
@@ -25117,17 +24947,17 @@ type XsdGoPkgHasElem_Indexterm struct {
 }
 
 type XsdGoPkgHasElems_Primary struct {
-	Primaries []*TxsdPrimary `xml:"http://docbook.org/ns/docbook primary"`
+	Primaries []*TxsdSecondary `xml:"http://docbook.org/ns/docbook primary"`
 
 }
 
 type XsdGoPkgHasElems_Secondary struct {
-	Secondaries []*TxsdPrimary `xml:"http://docbook.org/ns/docbook secondary"`
+	Secondaries []*TxsdSecondary `xml:"http://docbook.org/ns/docbook secondary"`
 
 }
 
 type XsdGoPkgHasElems_Tertiary struct {
-	Tertiaries []*TxsdPrimary `xml:"http://docbook.org/ns/docbook tertiary"`
+	Tertiaries []*TxsdSecondary `xml:"http://docbook.org/ns/docbook tertiary"`
 
 }
 
@@ -25162,17 +24992,17 @@ type XsdGoPkgHasElem_Indexentry struct {
 }
 
 type XsdGoPkgHasElems_Primaryie struct {
-	Primaryies []*TxsdSecondaryie `xml:"http://docbook.org/ns/docbook primaryie"`
+	Primaryies []*TxsdPrimaryie `xml:"http://docbook.org/ns/docbook primaryie"`
 
 }
 
 type XsdGoPkgHasElem_Secondaryie struct {
-	Secondaryie *TxsdSecondaryie `xml:"http://docbook.org/ns/docbook secondaryie"`
+	Secondaryie *TxsdPrimaryie `xml:"http://docbook.org/ns/docbook secondaryie"`
 
 }
 
 type XsdGoPkgHasElem_Tertiaryie struct {
-	Tertiaryie *TxsdSecondaryie `xml:"http://docbook.org/ns/docbook tertiaryie"`
+	Tertiaryie *TxsdPrimaryie `xml:"http://docbook.org/ns/docbook tertiaryie"`
 
 }
 
@@ -25182,7 +25012,7 @@ type XsdGoPkgHasElem_Seeie struct {
 }
 
 type XsdGoPkgHasElem_Seealsoie struct {
-	Seealsoie *TxsdSecondaryie `xml:"http://docbook.org/ns/docbook seealsoie"`
+	Seealsoie *TxsdPrimaryie `xml:"http://docbook.org/ns/docbook seealsoie"`
 
 }
 
@@ -25202,17 +25032,17 @@ type XsdGoPkgHasElem_Task struct {
 }
 
 type XsdGoPkgHasElems_Tasksummary struct {
-	Tasksummaries []*TxsdTaskprerequisites `xml:"http://docbook.org/ns/docbook tasksummary"`
+	Tasksummaries []*TxsdTasksummary `xml:"http://docbook.org/ns/docbook tasksummary"`
 
 }
 
 type XsdGoPkgHasElems_Taskprerequisites struct {
-	Taskprerequisiteses []*TxsdTaskprerequisites `xml:"http://docbook.org/ns/docbook taskprerequisites"`
+	Taskprerequisiteses []*TxsdTasksummary `xml:"http://docbook.org/ns/docbook taskprerequisites"`
 
 }
 
 type XsdGoPkgHasElems_Taskrelated struct {
-	Taskrelateds []*TxsdTaskprerequisites `xml:"http://docbook.org/ns/docbook taskrelated"`
+	Taskrelateds []*TxsdTasksummary `xml:"http://docbook.org/ns/docbook taskrelated"`
 
 }
 
@@ -25262,7 +25092,7 @@ type XsdGoPkgHasElem_Co struct {
 }
 
 type XsdGoPkgHasElem_Coref struct {
-	Coref *TxsdCoref `xml:"http://docbook.org/ns/docbook coref"`
+	Coref *TxsdFootnoteref `xml:"http://docbook.org/ns/docbook coref"`
 
 }
 
@@ -25402,22 +25232,22 @@ type XsdGoPkgHasElem_Msg struct {
 }
 
 type XsdGoPkgHasElems_Msgmain struct {
-	Msgmains []*TxsdMsgmain `xml:"http://docbook.org/ns/docbook msgmain"`
+	Msgmains []*TxsdMsgsub `xml:"http://docbook.org/ns/docbook msgmain"`
 
 }
 
 type XsdGoPkgHasElem_Msgsub struct {
-	Msgsub *TxsdMsgmain `xml:"http://docbook.org/ns/docbook msgsub"`
+	Msgsub *TxsdMsgsub `xml:"http://docbook.org/ns/docbook msgsub"`
 
 }
 
 type XsdGoPkgHasElem_Msgrel struct {
-	Msgrel *TxsdMsgmain `xml:"http://docbook.org/ns/docbook msgrel"`
+	Msgrel *TxsdMsgsub `xml:"http://docbook.org/ns/docbook msgrel"`
 
 }
 
 type XsdGoPkgHasElems_Msgtext struct {
-	Msgtexts []*TxsdRevdescription `xml:"http://docbook.org/ns/docbook msgtext"`
+	Msgtexts []*TxsdMsgtext `xml:"http://docbook.org/ns/docbook msgtext"`
 
 }
 
@@ -25427,17 +25257,17 @@ type XsdGoPkgHasElems_Msginfo struct {
 }
 
 type XsdGoPkgHasElem_Msglevel struct {
-	Msglevel *TxsdAccel `xml:"http://docbook.org/ns/docbook msglevel"`
+	Msglevel *TxsdFuncparams `xml:"http://docbook.org/ns/docbook msglevel"`
 
 }
 
 type XsdGoPkgHasElem_Msgorig struct {
-	Msgorig *TxsdAccel `xml:"http://docbook.org/ns/docbook msgorig"`
+	Msgorig *TxsdFuncparams `xml:"http://docbook.org/ns/docbook msgorig"`
 
 }
 
 type XsdGoPkgHasElem_Msgaud struct {
-	Msgaud *TxsdAccel `xml:"http://docbook.org/ns/docbook msgaud"`
+	Msgaud *TxsdFuncparams `xml:"http://docbook.org/ns/docbook msgaud"`
 
 }
 
@@ -25472,7 +25302,7 @@ type XsdGoPkgHasElem_Answer struct {
 }
 
 type XsdGoPkgHasElems_Label struct {
-	Labels []*TxsdAccel `xml:"http://docbook.org/ns/docbook label"`
+	Labels []*TxsdFuncparams `xml:"http://docbook.org/ns/docbook label"`
 
 }
 
@@ -25497,7 +25327,7 @@ type XsdGoPkgHasElem_Mathphrase struct {
 }
 
 type XsdGoPkgHasElem_Markup struct {
-	Markup *TxsdAccel `xml:"http://docbook.org/ns/docbook markup"`
+	Markup *TxsdFuncparams `xml:"http://docbook.org/ns/docbook markup"`
 
 }
 
@@ -25512,12 +25342,12 @@ type XsdGoPkgHasElem_Symbol struct {
 }
 
 type XsdGoPkgHasElem_Token struct {
-	Token *TxsdAccel `xml:"http://docbook.org/ns/docbook token"`
+	Token *TxsdToken `xml:"http://docbook.org/ns/docbook token"`
 
 }
 
 type XsdGoPkgHasElem_Literal struct {
-	Literal *TxsdAccel `xml:"http://docbook.org/ns/docbook literal"`
+	Literal *TxsdFuncparams `xml:"http://docbook.org/ns/docbook literal"`
 
 }
 
@@ -25537,7 +25367,7 @@ type XsdGoPkgHasElem_Productname struct {
 }
 
 type XsdGoPkgHasElem_Productnumber struct {
-	Productnumber *TxsdAccel `xml:"http://docbook.org/ns/docbook productnumber"`
+	Productnumber *TxsdFuncparams `xml:"http://docbook.org/ns/docbook productnumber"`
 
 }
 
@@ -25552,37 +25382,37 @@ type XsdGoPkgHasElem_Application struct {
 }
 
 type XsdGoPkgHasElem_Hardware struct {
-	Hardware *TxsdAccel `xml:"http://docbook.org/ns/docbook hardware"`
+	Hardware *TxsdHardware `xml:"http://docbook.org/ns/docbook hardware"`
 
 }
 
 type XsdGoPkgHasElem_Guibutton struct {
-	Guibutton *TxsdGuimenuitem `xml:"http://docbook.org/ns/docbook guibutton"`
+	Guibutton *TxsdGuiicon `xml:"http://docbook.org/ns/docbook guibutton"`
 
 }
 
 type XsdGoPkgHasElem_Guiicon struct {
-	Guiicon *TxsdGuimenuitem `xml:"http://docbook.org/ns/docbook guiicon"`
+	Guiicon *TxsdGuiicon `xml:"http://docbook.org/ns/docbook guiicon"`
 
 }
 
 type XsdGoPkgHasElem_Guilabel struct {
-	Guilabel *TxsdGuimenuitem `xml:"http://docbook.org/ns/docbook guilabel"`
+	Guilabel *TxsdGuiicon `xml:"http://docbook.org/ns/docbook guilabel"`
 
 }
 
 type XsdGoPkgHasElem_Guimenu struct {
-	Guimenu *TxsdGuimenu `xml:"http://docbook.org/ns/docbook guimenu"`
+	Guimenu *TxsdGuiicon `xml:"http://docbook.org/ns/docbook guimenu"`
 
 }
 
 type XsdGoPkgHasElem_Guimenuitem struct {
-	Guimenuitem *TxsdGuimenuitem `xml:"http://docbook.org/ns/docbook guimenuitem"`
+	Guimenuitem *TxsdGuiicon `xml:"http://docbook.org/ns/docbook guimenuitem"`
 
 }
 
 type XsdGoPkgHasElem_Guisubmenu struct {
-	Guisubmenu *TxsdGuimenuitem `xml:"http://docbook.org/ns/docbook guisubmenu"`
+	Guisubmenu *TxsdGuiicon `xml:"http://docbook.org/ns/docbook guisubmenu"`
 
 }
 
@@ -25592,7 +25422,7 @@ type XsdGoPkgHasElem_Menuchoice struct {
 }
 
 type XsdGoPkgHasElem_Mousebutton struct {
-	Mousebutton *TxsdMousebutton `xml:"http://docbook.org/ns/docbook mousebutton"`
+	Mousebutton *TxsdFuncparams `xml:"http://docbook.org/ns/docbook mousebutton"`
 
 }
 
@@ -25602,7 +25432,7 @@ type XsdGoPkgHasElem_Keycap struct {
 }
 
 type XsdGoPkgHasElem_Keycode struct {
-	Keycode *TxsdAccel `xml:"http://docbook.org/ns/docbook keycode"`
+	Keycode *TxsdFuncparams `xml:"http://docbook.org/ns/docbook keycode"`
 
 }
 
@@ -25612,12 +25442,12 @@ type XsdGoPkgHasElem_Keycombo struct {
 }
 
 type XsdGoPkgHasElem_Keysym struct {
-	Keysym *TxsdAccel `xml:"http://docbook.org/ns/docbook keysym"`
+	Keysym *TxsdFuncparams `xml:"http://docbook.org/ns/docbook keysym"`
 
 }
 
 type XsdGoPkgHasElem_Accel struct {
-	Accel *TxsdAccel `xml:"http://docbook.org/ns/docbook accel"`
+	Accel *TxsdFuncparams `xml:"http://docbook.org/ns/docbook accel"`
 
 }
 
@@ -25627,7 +25457,7 @@ type XsdGoPkgHasElem_Prompt struct {
 }
 
 type XsdGoPkgHasElem_Envar struct {
-	Envar *TxsdAccel `xml:"http://docbook.org/ns/docbook envar"`
+	Envar *TxsdFuncparams `xml:"http://docbook.org/ns/docbook envar"`
 
 }
 
@@ -25637,7 +25467,7 @@ type XsdGoPkgHasElem_Filename struct {
 }
 
 type XsdGoPkgHasElem_Command struct {
-	Command *TxsdAccel `xml:"http://docbook.org/ns/docbook command"`
+	Command *TxsdFuncparams `xml:"http://docbook.org/ns/docbook command"`
 
 }
 
@@ -25707,7 +25537,7 @@ type XsdGoPkgHasElems_Funcdef struct {
 }
 
 type XsdGoPkgHasElem_Function struct {
-	Function *TxsdAccel `xml:"http://docbook.org/ns/docbook function"`
+	Function *TxsdFuncparams `xml:"http://docbook.org/ns/docbook function"`
 
 }
 
@@ -25762,12 +25592,12 @@ type XsdGoPkgHasElem_Fieldsynopsis struct {
 }
 
 type XsdGoPkgHasElem_Constructorsynopsis struct {
-	Constructorsynopsis *TxsdConstructorsynopsis `xml:"http://docbook.org/ns/docbook constructorsynopsis"`
+	Constructorsynopsis *TxsdDestructorsynopsis `xml:"http://docbook.org/ns/docbook constructorsynopsis"`
 
 }
 
 type XsdGoPkgHasElem_Destructorsynopsis struct {
-	Destructorsynopsis *TxsdConstructorsynopsis `xml:"http://docbook.org/ns/docbook destructorsynopsis"`
+	Destructorsynopsis *TxsdDestructorsynopsis `xml:"http://docbook.org/ns/docbook destructorsynopsis"`
 
 }
 
@@ -25782,7 +25612,7 @@ type XsdGoPkgHasElem_Methodparam struct {
 }
 
 type XsdGoPkgHasElem_Returnvalue struct {
-	Returnvalue *TxsdAccel `xml:"http://docbook.org/ns/docbook returnvalue"`
+	Returnvalue *TxsdFuncparams `xml:"http://docbook.org/ns/docbook returnvalue"`
 
 }
 
@@ -25812,22 +25642,22 @@ type XsdGoPkgHasElem_Warning struct {
 }
 
 type XsdGoPkgHasElem_Errorcode struct {
-	Errorcode *TxsdAccel `xml:"http://docbook.org/ns/docbook errorcode"`
+	Errorcode *TxsdFuncparams `xml:"http://docbook.org/ns/docbook errorcode"`
 
 }
 
 type XsdGoPkgHasElem_Errorname struct {
-	Errorname *TxsdAccel `xml:"http://docbook.org/ns/docbook errorname"`
+	Errorname *TxsdFuncparams `xml:"http://docbook.org/ns/docbook errorname"`
 
 }
 
 type XsdGoPkgHasElem_Errortext struct {
-	Errortext *TxsdAccel `xml:"http://docbook.org/ns/docbook errortext"`
+	Errortext *TxsdFuncparams `xml:"http://docbook.org/ns/docbook errortext"`
 
 }
 
 type XsdGoPkgHasElem_Errortype struct {
-	Errortype *TxsdAccel `xml:"http://docbook.org/ns/docbook errortype"`
+	Errortype *TxsdErrortype `xml:"http://docbook.org/ns/docbook errortype"`
 
 }
 
@@ -25837,16 +25667,16 @@ type XsdGoPkgHasElem_Systemitem struct {
 }
 
 type XsdGoPkgHasElem_Option struct {
-	Option *TxsdAccel `xml:"http://docbook.org/ns/docbook option"`
+	Option *TxsdFuncparams `xml:"http://docbook.org/ns/docbook option"`
 
 }
 
 type XsdGoPkgHasElem_Optional struct {
-	Optional *TxsdAccel `xml:"http://docbook.org/ns/docbook optional"`
+	Optional *TxsdFuncparams `xml:"http://docbook.org/ns/docbook optional"`
 
 }
 
 type XsdGoPkgHasElem_Property struct {
-	Property *TxsdAccel `xml:"http://docbook.org/ns/docbook property"`
+	Property *TxsdFuncparams `xml:"http://docbook.org/ns/docbook property"`
 
 }

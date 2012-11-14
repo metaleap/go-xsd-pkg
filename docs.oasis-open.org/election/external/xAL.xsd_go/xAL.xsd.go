@@ -37,8 +37,8 @@ type XsdGoPkgHasAtts_GrPostal struct {
 
 //	Root element for a list of addresses
 //	This container defines the details of the address. Can define multiple addresses including tracking address history
-//	Postal authorities use specific postal service data to expedient delivery of mail
-//	Required for some postal services
+//	Container for Address lines
+//	Free format address representation. An address can have more than one line. The order of the AddressLine elements must be preserved.
 //	Postal, residential, corporate, etc
 type XsdGoPkgHasAttr_Type_XsdtString_ struct {
 //	Postal, residential, corporate, etc
@@ -51,33 +51,1759 @@ type XsdGoPkgHasCdata struct {
 
 }
 
-type TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode struct {
+type TxsdAddressLine struct {
 	XsdGoPkgHasAtts_GrPostal
 
-//	Specific to postal service
+//	Defines the type of address line. eg. Street, Address Line 1, etc.
 	XsdGoPkgHasAttr_Type_XsdtString_
 
 	XsdGoPkgHasCdata
 
 }
 
-type XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_ struct {
-//	Required for some postal services
-	KeyLineCode *TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 KeyLineCode"`
+type XsdGoPkgHasElems_AddressLine struct {
+//	Free format address representation. An address can have more than one line. The order of the AddressLine elements must be preserved.
+	AddressLines []*TxsdAddressLine `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLine"`
 
 }
 
-//	Directly affects postal service distribution
-type XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_ struct {
-//	Directly affects postal service distribution
-	EndorsementLineCode *TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 EndorsementLineCode"`
+type TAddressLinesType struct {
+	XsdGoPkgHasElems_AddressLine
+
+}
+
+type XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_ struct {
+//	Container for Address lines
+	AddressLines *TAddressLinesType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLines"`
+
+}
+
+//	Start Date of the validity of address
+type XsdGoPkgHasAttr_ValidFromDate_XsdtString_ struct {
+//	Start Date of the validity of address
+	ValidFromDate xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ValidFromDate,attr"`
+
+}
+
+//	Key identifier for the element for not reinforced references from other elements. Not required to be unique for the document to be valid, but application may get confused if not unique. Extend this schema adding unique contraint if needed.
+type XsdGoPkgHasAttr_AddressDetailsKey_XsdtString_ struct {
+//	Key identifier for the element for not reinforced references from other elements. Not required to be unique for the document to be valid, but application may get confused if not unique. Extend this schema adding unique contraint if needed.
+	AddressDetailsKey xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressDetailsKey,attr"`
+
+}
+
+//	Examples of administrative areas are provinces counties, special regions (such as "Rijnmond"), etc.
+//	Eg. Erode (Dist) where (Dist) is the Indicator
+type XsdGoPkgHasAttr_Indicator_XsdtString_ struct {
+//	Eg. Erode (Dist) where (Dist) is the Indicator
+	Indicator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Indicator,attr"`
+
+}
+
+//	Locality is one level lower than adminisstrative area. Eg.: cities, reservations and any other built-up areas.
+//	Name of the locality
+type XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_ struct {
+//	Name of the locality
+	LocalityNames []*TxsdAddressLine `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 LocalityName"`
+
+}
+
+//	Specification of a postbox like mail delivery point. Only a single postbox number can be specified. Examples of postboxes are POBox, free mail numbers, etc.
+//	PostalCode is the container element for either simple or complex (extended) postal codes. Type: Area Code, Postcode, etc.
+//	A post town is not the same as a locality. A post town can encompass a collection of (small) localities. It can also be a subpart of a locality. An actual post town in Norway is "Bergen".
+//	GENERAL PO in MIAMI GENERAL PO
+type TxsdPostalCodeSequencePostTownSequencePostTownSuffix struct {
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_GrPostal
+
+}
+
+type XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_ struct {
+//	GENERAL PO in MIAMI GENERAL PO
+	PostTownSuffix *TxsdPostalCodeSequencePostTownSequencePostTownSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostTownSuffix"`
+
+}
+
+//	Name of the post town
+type XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_ struct {
+//	Name of the post town
+	PostTownNames []*TxsdAddressLine `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostTownName"`
+
+}
+
+type TxsdPostalCodeSequencePostTown struct {
+//	GENERAL PO in MIAMI GENERAL PO
+	XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_
+
+//	eg. village, town, suburb, etc
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+//	Name of the post town
+	XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_
+
+	XsdGoPkgHasElems_AddressLine
+
+}
+
+type XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_ struct {
+//	A post town is not the same as a locality. A post town can encompass a collection of (small) localities. It can also be a subpart of a locality. An actual post town in Norway is "Bergen".
+	PostTown *TxsdPostalCodeSequencePostTown `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostTown"`
+
+}
+
+//	Examples are: 1234 (USA), 1G (UK), etc.
+//	The separator between postal code number and the extension. Eg. "-"
+type XsdGoPkgHasAttr_NumberExtensionSeparator_XsdtString_ struct {
+//	The separator between postal code number and the extension. Eg. "-"
+	NumberExtensionSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberExtensionSeparator,attr"`
+
+}
+
+type TxsdPostalCodeSequencePostalCodeNumberExtension struct {
+	XsdGoPkgHasAtts_GrPostal
+
+	XsdGoPkgHasCdata
+
+//	The separator between postal code number and the extension. Eg. "-"
+	XsdGoPkgHasAttr_NumberExtensionSeparator_XsdtString_
+
+//	Delivery Point Suffix, New Postal Code, etc..
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_ struct {
+//	Examples are: 1234 (USA), 1G (UK), etc.
+	PostalCodeNumberExtensions []*TxsdPostalCodeSequencePostalCodeNumberExtension `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalCodeNumberExtension"`
+
+}
+
+//	Specification of a postcode. The postcode is formatted according to country-specific rules. Example: SW3 0A8-1A, 600074, 2067
+type XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_ struct {
+//	Specification of a postcode. The postcode is formatted according to country-specific rules. Example: SW3 0A8-1A, 600074, 2067
+	PostalCodeNumbers []*TxsdAddressLine `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalCodeNumber"`
+
+}
+
+type TxsdPostalCode struct {
+	XsdGoPkgHasElems_AddressLine
+
+//	Examples are: 1234 (USA), 1G (UK), etc.
+	XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_
+
+//	Specification of a postcode. The postcode is formatted according to country-specific rules. Example: SW3 0A8-1A, 600074, 2067
+	XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_
+
+//	Area Code, Postcode, Delivery code as in NZ, etc
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+//	A post town is not the same as a locality. A post town can encompass a collection of (small) localities. It can also be a subpart of a locality. An actual post town in Norway is "Bergen".
+	XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_
+
+}
+
+type XsdGoPkgHasElem_PostalCode struct {
+//	PostalCode is the container element for either simple or complex (extended) postal codes. Type: Area Code, Postcode, etc.
+	PostalCode *TxsdPostalCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalCode"`
+
+}
+
+//	Specification of the number of a postbox
+type XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_ struct {
+//	Specification of the number of a postbox
+	PostBoxNumber *TxsdPostalCodeSequencePostTownSequencePostTownSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBoxNumber"`
+
+}
+
+//	Specification of the suffix of the post box number. eg. A in POBox:123A
+//	12-A where 12 is number and A is suffix and "-" is the separator
+type XsdGoPkgHasAttr_NumberSuffixSeparator_XsdtString_ struct {
+//	12-A where 12 is number and A is suffix and "-" is the separator
+	NumberSuffixSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberSuffixSeparator,attr"`
+
+}
+
+type TxsdPostBoxSequencePostBoxNumberSuffix struct {
+//	12-A where 12 is number and A is suffix and "-" is the separator
+	XsdGoPkgHasAttr_NumberSuffixSeparator_XsdtString_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_GrPostal
+
+}
+
+type XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_ struct {
+//	Specification of the suffix of the post box number. eg. A in POBox:123A
+	PostBoxNumberSuffix *TxsdPostBoxSequencePostBoxNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBoxNumberSuffix"`
+
+}
+
+//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from
+//	a large mail user address, which contains no street.
+//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
+//	Number of the Mail stop. eg. 123 in MS 123
+//	"-" in MS-123
+type XsdGoPkgHasAttr_NameNumberSeparator_XsdtString_ struct {
+//	"-" in MS-123
+	NameNumberSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NameNumberSeparator,attr"`
+
+}
+
+type TxsdMailStopTypeSequenceMailStopNumber struct {
+	XsdGoPkgHasAtts_GrPostal
+
+//	"-" in MS-123
+	XsdGoPkgHasAttr_NameNumberSeparator_XsdtString_
+
+	XsdGoPkgHasCdata
+
+}
+
+type XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_ struct {
+//	Number of the Mail stop. eg. 123 in MS 123
+	MailStopNumber *TxsdMailStopTypeSequenceMailStopNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 MailStopNumber"`
+
+}
+
+//	Name of the the Mail Stop. eg. MSP, MS, etc
+type XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_ struct {
+//	Name of the the Mail Stop. eg. MSP, MS, etc
+	MailStopName *TxsdAddressLine `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 MailStopName"`
+
+}
+
+type TMailStopType struct {
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasElems_AddressLine
+
+//	Number of the Mail stop. eg. 123 in MS 123
+	XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_
+
+//	Name of the the Mail Stop. eg. MSP, MS, etc
+	XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_
+
+}
+
+type XsdGoPkgHasElem_MailStopsequenceFirmTypeschema_MailStop_TMailStopType_ struct {
+//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
+	MailStop *TMailStopType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 MailStop"`
+
+}
+
+//	Name of the firm
+type XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_ struct {
+//	Name of the firm
+	FirmNames []*TxsdAddressLine `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 FirmName"`
+
+}
+
+//	Subdivision in the firm: School of Physics at Victoria University (School of Physics is the department)
+//	Specification of the name of a department.
+type XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_ struct {
+//	Specification of the name of a department.
+	DepartmentNames []*TxsdAddressLine `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DepartmentName"`
+
+}
+
+type TxsdDepartment struct {
+	XsdGoPkgHasElem_PostalCode
+
+//	School in Physics School, Division in Radiology division of school of physics
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasElems_AddressLine
+
+//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
+	XsdGoPkgHasElem_MailStopsequenceFirmTypeschema_MailStop_TMailStopType_
+
+//	Specification of the name of a department.
+	XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_
+
+}
+
+type XsdGoPkgHasElems_Department struct {
+//	Subdivision in the firm: School of Physics at Victoria University (School of Physics is the department)
+	Departments []*TxsdDepartment `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Department"`
+
+}
+
+type TFirmType struct {
+//	Name of the firm
+	XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_
+
+	XsdGoPkgHasElems_AddressLine
+
+	XsdGoPkgHasElems_Department
+
+	XsdGoPkgHasElem_PostalCode
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
+	XsdGoPkgHasElem_MailStopsequenceFirmTypeschema_MailStop_TMailStopType_
+
+}
+
+type XsdGoPkgHasElem_FirmsequencePostBoxschema_Firm_TFirmType_ struct {
+//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from
+//	a large mail user address, which contains no street.
+	Firm *TFirmType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Firm"`
+
+}
+
+//	Specification of the prefix of the post box number. eg. A in POBox:A-123
+//	A-12 where 12 is number and A is prefix and "-" is the separator
+type XsdGoPkgHasAttr_NumberPrefixSeparator_XsdtString_ struct {
+//	A-12 where 12 is number and A is prefix and "-" is the separator
+	NumberPrefixSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberPrefixSeparator,attr"`
+
+}
+
+type TxsdPostBoxSequencePostBoxNumberPrefix struct {
+//	A-12 where 12 is number and A is prefix and "-" is the separator
+	XsdGoPkgHasAttr_NumberPrefixSeparator_XsdtString_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_GrPostal
+
+}
+
+type XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_ struct {
+//	Specification of the prefix of the post box number. eg. A in POBox:A-123
+	PostBoxNumberPrefix *TxsdPostBoxSequencePostBoxNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBoxNumberPrefix"`
+
+}
+
+//	Some countries like USA have POBox as 12345-123
+type TxsdPostBoxSequencePostBoxNumberExtension struct {
+//	"-" is the NumberExtensionSeparator in POBOX:12345-123
+	XsdGoPkgHasAttr_NumberExtensionSeparator_XsdtString_
+
+	XsdGoPkgHasCdata
+
+}
+
+type XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_ struct {
+//	Some countries like USA have POBox as 12345-123
+	PostBoxNumberExtension *TxsdPostBoxSequencePostBoxNumberExtension `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBoxNumberExtension"`
+
+}
+
+type TxsdPostBox struct {
+//	Specification of the number of a postbox
+	XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_
+
+//	Specification of the suffix of the post box number. eg. A in POBox:123A
+	XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_
+
+	XsdGoPkgHasElems_AddressLine
+
+//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from
+//	a large mail user address, which contains no street.
+	XsdGoPkgHasElem_FirmsequencePostBoxschema_Firm_TFirmType_
+
+//	Specification of the prefix of the post box number. eg. A in POBox:A-123
+	XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_
+
+//	Some countries like USA have POBox as 12345-123
+	XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_
+
+//	LOCKED BAG NO:1234 where the Indicator is NO: and Type is LOCKED BAG
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+	XsdGoPkgHasElem_PostalCode
+
+//	Possible values are, not limited to: POBox and Freepost.
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+}
+
+type XsdGoPkgHasElem_PostBox struct {
+//	Specification of a postbox like mail delivery point. Only a single postbox number can be specified. Examples of postboxes are POBox, free mail numbers, etc.
+	PostBox *TxsdPostBox `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBox"`
+
+}
+
+//	Specification of a thoroughfare. A thoroughfare could be a rd, street, canal, river, etc.  Note dependentlocality in a street. For example, in some countries, a large street will
+//	have many subdivisions with numbers. Normally the subdivision name is the same as the road name, but with a number to identifiy it. Eg. SOI SUKUMVIT 3, SUKUMVIT RD, BANGKOK
+//	DependentThroughfare is related to a street; occurs in GB, IE, ES, PT
+//	Specification of the name of a Thoroughfare (also dependant street name): street name, canal name, etc.
+type ThoroughfareNameType struct {
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasAtts_GrPostal
+
+	XsdGoPkgHasCdata
+
+}
+
+type XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_ struct {
+//	Specification of the name of a Thoroughfare (also dependant street name): street name, canal name, etc.
+	ThoroughfareNames []*ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareName"`
+
+}
+
+//	North Baker Street, where North is the pre-direction. The direction appears before the name.
+type ThoroughfarePreDirectionType struct {
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasAtts_GrPostal
+
+	XsdGoPkgHasCdata
+
+}
+
+type XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_ struct {
+//	North Baker Street, where North is the pre-direction. The direction appears before the name.
+	ThoroughfarePreDirection *ThoroughfarePreDirectionType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfarePreDirection"`
+
+}
+
+//	221-bis Baker Street North, where North is the post-direction. The post-direction appears after the name.
+type ThoroughfarePostDirectionType struct {
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_GrPostal
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+}
+
+type XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_ struct {
+//	221-bis Baker Street North, where North is the post-direction. The post-direction appears after the name.
+	ThoroughfarePostDirection *ThoroughfarePostDirectionType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfarePostDirection"`
+
+}
+
+//	Appears before the thoroughfare name. Ed. Spanish: Avenida Aurora, where Avenida is the leading type / French: Rue Moliere, where Rue is the leading type.
+type ThoroughfareLeadingTypeType struct {
+	XsdGoPkgHasAtts_GrPostal
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasCdata
+
+}
+
+type XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_ struct {
+//	Appears before the thoroughfare name. Ed. Spanish: Avenida Aurora, where Avenida is the leading type / French: Rue Moliere, where Rue is the leading type.
+	ThoroughfareLeadingType *ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareLeadingType"`
+
+}
+
+//	Appears after the thoroughfare name. Ed. British: Baker Lane, where Lane is the trailing type.
+type ThoroughfareTrailingTypeType struct {
+	XsdGoPkgHasAtts_GrPostal
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+}
+
+type XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_ struct {
+//	Appears after the thoroughfare name. Ed. British: Baker Lane, where Lane is the trailing type.
+	ThoroughfareTrailingType *ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareTrailingType"`
+
+}
+
+type TxsdThoroughfareSequenceDependentThoroughfare struct {
+//	221-bis Baker Street North, where North is the post-direction. The post-direction appears after the name.
+	XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_
+
+//	Appears before the thoroughfare name. Ed. Spanish: Avenida Aurora, where Avenida is the leading type / French: Rue Moliere, where Rue is the leading type.
+	XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_
+
+	XsdGoPkgHasElems_AddressLine
+
+//	Appears after the thoroughfare name. Ed. British: Baker Lane, where Lane is the trailing type.
+	XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_
+
+//	Specification of the name of a Thoroughfare (also dependant street name): street name, canal name, etc.
+	XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_
+
+//	North Baker Street, where North is the pre-direction. The direction appears before the name.
+	XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+}
+
+type XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_ struct {
+//	DependentThroughfare is related to a street; occurs in GB, IE, ES, PT
+	DependentThoroughfare *TxsdThoroughfareSequenceDependentThoroughfare `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfare"`
+
+}
+
+//	Corner of Street1 AND Street 2 where AND is the Connector
+type XsdGoPkgHasAttr_DependentThoroughfaresConnector_XsdtString_ struct {
+//	Corner of Street1 AND Street 2 where AND is the Connector
+	DependentThoroughfaresConnector xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfaresConnector,attr"`
+
+}
+
+//	Dependent localities are Districts within cities/towns, locality divisions, postal
+//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
+//	Number of the dependent locality. Some areas are numbered. Eg. SECTOR 5 in a Suburb as in India or SOI SUKUMVIT 10 as in Thailand
+//	Eg. SECTOR occurs before 5 in SECTOR 5
+type TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence xsdt.Nmtoken
+
+//	Returns true if the value of this enumerated TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence is "After".
+func (me TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence) IsAfter () bool { return me == "After" }
+
+//	Returns true if the value of this enumerated TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence is "Before".
+func (me TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence) IsBefore () bool { return me == "Before" }
+
+//	This convenience method just performs a simple type conversion to TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence's alias type xsdt.Nmtoken.
+func (me TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence) ToXsdtNmtoken () xsdt.Nmtoken { return xsdt.Nmtoken(me) }
+
+//	Since TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence) SetFromString (s string)  { (*xsdt.Nmtoken)(me).SetFromString(s) }
+
+//	Since TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence is just a simple String type, this merely returns the current string value.
+func (me TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence) String () string { return xsdt.Nmtoken(me).String() }
+
+type XsdGoPkgHasAttr_NameNumberOccurrence_TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence_ struct {
+//	Eg. SECTOR occurs before 5 in SECTOR 5
+	NameNumberOccurrence TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NameNumberOccurrence,attr"`
+
+}
+
+type TxsdDependentLocalityTypeSequenceDependentLocalityNumber struct {
+//	Eg. SECTOR occurs before 5 in SECTOR 5
+	XsdGoPkgHasAttr_NameNumberOccurrence_TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_GrPostal
+
+}
+
+type XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_ struct {
+//	Number of the dependent locality. Some areas are numbered. Eg. SECTOR 5 in a Suburb as in India or SOI SUKUMVIT 10 as in Thailand
+	DependentLocalityNumber *TxsdDependentLocalityTypeSequenceDependentLocalityNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentLocalityNumber"`
+
+}
+
+//	Specification of a single premise, for example a house or a building. The premise as a whole has a unique premise (house) number or a premise name.  There could be more than
+//	one premise in a street referenced in an address. For example a building address near a major shopping centre or raiwlay station
+//	DES, DE, LA, LA, DU in RUE DU BOIS. These terms connect a premise/thoroughfare type and premise/thoroughfare name. Terms may appear with names AVE DU BOIS
+type XsdGoPkgHasAttr_PremiseThoroughfareConnector_XsdtString_ struct {
+//	DES, DE, LA, LA, DU in RUE DU BOIS. These terms connect a premise/thoroughfare type and premise/thoroughfare name. Terms may appear with names AVE DU BOIS
+	PremiseThoroughfareConnector xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseThoroughfareConnector,attr"`
+
+}
+
+//	A in 12A
+type TxsdPremiseNumberSuffix struct {
+	XsdGoPkgHasCdata
+
+//	12-A where 12 is number and A is suffix and "-" is the separator
+	XsdGoPkgHasAttr_NumberSuffixSeparator_XsdtString_
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasAtts_GrPostal
+
+}
+
+type XsdGoPkgHasElems_PremiseNumberSuffix struct {
+//	A in 12A
+	PremiseNumberSuffixs []*TxsdPremiseNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberSuffix"`
+
+}
+
+//	STREET, PREMISE, SUBPREMISE, PARK, FARM, etc
+type XsdGoPkgHasAttr_PremiseDependency_XsdtString_ struct {
+//	STREET, PREMISE, SUBPREMISE, PARK, FARM, etc
+	PremiseDependency xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseDependency,attr"`
+
+}
+
+//	Specification of the identifier of the premise (house, building, etc). Premises in a street are often uniquely identified by means of consecutive identifiers. The identifier can be a number, a letter or any combination of the two.
+//	No. occurs before 12 No.12
+type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdPremiseNumberIndicatorOccurrence_ struct {
+//	No. occurs before 12 No.12
+	IndicatorOccurrence TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
+
+}
+
+//	Building 12-14 is "Range" and Building 12 is "Single"
+type TxsdPremiseNumberNumberType xsdt.Nmtoken
+
+//	Since TxsdPremiseNumberNumberType is just a simple String type, this merely returns the current string value.
+func (me TxsdPremiseNumberNumberType) String () string { return xsdt.Nmtoken(me).String() }
+
+//	Returns true if the value of this enumerated TxsdPremiseNumberNumberType is "Range".
+func (me TxsdPremiseNumberNumberType) IsRange () bool { return me == "Range" }
+
+//	Returns true if the value of this enumerated TxsdPremiseNumberNumberType is "Single".
+func (me TxsdPremiseNumberNumberType) IsSingle () bool { return me == "Single" }
+
+//	This convenience method just performs a simple type conversion to TxsdPremiseNumberNumberType's alias type xsdt.Nmtoken.
+func (me TxsdPremiseNumberNumberType) ToXsdtNmtoken () xsdt.Nmtoken { return xsdt.Nmtoken(me) }
+
+//	Since TxsdPremiseNumberNumberType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPremiseNumberNumberType) SetFromString (s string)  { (*xsdt.Nmtoken)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_NumberType_TxsdPremiseNumberNumberType_ struct {
+//	Building 12-14 is "Range" and Building 12 is "Single"
+	NumberType TxsdPremiseNumberNumberType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberType,attr"`
+
+}
+
+//	12 in BUILDING 12 occurs "after" premise type BUILDING
+type XsdGoPkgHasAttr_NumberTypeOccurrence_TxsdPremiseNumberNumberTypeOccurrence_ struct {
+//	12 in BUILDING 12 occurs "after" premise type BUILDING
+	NumberTypeOccurrence TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberTypeOccurrence,attr"`
+
+}
+
+type TxsdPremiseNumber struct {
+//	Building 12-14 is "Range" and Building 12 is "Single"
+	XsdGoPkgHasAttr_NumberType_TxsdPremiseNumberNumberType_
+
+//	12 in BUILDING 12 occurs "after" premise type BUILDING
+	XsdGoPkgHasAttr_NumberTypeOccurrence_TxsdPremiseNumberNumberTypeOccurrence_
+
+	XsdGoPkgHasAtts_GrPostal
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+//	No. in House No.12, # in #12, etc.
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+	XsdGoPkgHasCdata
+
+//	No. occurs before 12 No.12
+	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdPremiseNumberIndicatorOccurrence_
+
+}
+
+type XsdGoPkgHasElems_PremiseNumber struct {
+//	Specification of the identifier of the premise (house, building, etc). Premises in a street are often uniquely identified by means of consecutive identifiers. The identifier can be a number, a letter or any combination of the two.
+	PremiseNumbers []*TxsdPremiseNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumber"`
+
+}
+
+//	NEAR, ADJACENT TO, etc
+type XsdGoPkgHasAttr_PremiseDependencyType_XsdtString_ struct {
+//	NEAR, ADJACENT TO, etc
+	PremiseDependencyType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseDependencyType,attr"`
+
+}
+
+//	A in A12
+type TxsdPremiseNumberPrefix struct {
+	XsdGoPkgValue xsdt.String `xml:",chardata"`
+
+	XsdGoPkgHasAtts_GrPostal
+
+//	A-12 where 12 is number and A is prefix and "-" is the separator
+	XsdGoPkgHasAttr_NumberPrefixSeparator_XsdtString_
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_PremiseNumberPrefix struct {
+//	A in A12
+	PremiseNumberPrefixs []*TxsdPremiseNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberPrefix"`
+
+}
+
+//	Specification of the name of a building.
+//	Occurrence of the building name before/after the type. eg. EGIS BUILDING where name appears before type
+type XsdGoPkgHasAttr_TypeOccurrence_TxsdBuildingNameTypeTypeOccurrence_ struct {
+//	Occurrence of the building name before/after the type. eg. EGIS BUILDING where name appears before type
+	TypeOccurrence TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 TypeOccurrence,attr"`
+
+}
+
+type TBuildingNameType struct {
+	XsdGoPkgHasAtts_GrPostal
+
+	XsdGoPkgHasCdata
+
+//	Occurrence of the building name before/after the type. eg. EGIS BUILDING where name appears before type
+	XsdGoPkgHasAttr_TypeOccurrence_TxsdBuildingNameTypeTypeOccurrence_
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_BuildingNamesequencePremiseschema_BuildingName_TBuildingNameType_ struct {
+//	Specification of the name of a building.
+	BuildingNames []*TBuildingNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 BuildingName"`
+
+}
+
+//	Specification of a single sub-premise. Examples of sub-premises are apartments and suites. Each sub-premise should be uniquely identifiable.
+//	Name of the SubPremise Location. eg. LOBBY, BASEMENT, GROUND FLOOR, etc...
+type XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_ struct {
+//	Name of the SubPremise Location. eg. LOBBY, BASEMENT, GROUND FLOOR, etc...
+	SubPremiseLocation *TxsdPostalCodeSequencePostTownSequencePostTownSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremiseLocation"`
+
+}
+
+//	Suffix of the sub premise number. eg. A in 12A
+type XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_ struct {
+//	Suffix of the sub premise number. eg. A in 12A
+	SubPremiseNumberSuffixs []*TxsdPremiseNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremiseNumberSuffix"`
+
+}
+
+//	Specification of the identifier of a sub-premise. Examples of sub-premises are apartments and suites. sub-premises in a building are often uniquely identified by means of consecutive
+//	identifiers. The identifier can be a number, a letter or any combination of the two. In the latter case, the identifier includes exactly one variable (range) part, which is either a
+//	number or a single letter that is surrounded by fixed parts at the left (prefix) or the right (postfix).
+//	"/" in 12/14 Archer Street where 12 is sub-premise number and 14 is premise number
+type XsdGoPkgHasAttr_PremiseNumberSeparator_XsdtString_ struct {
+//	"/" in 12/14 Archer Street where 12 is sub-premise number and 14 is premise number
+	PremiseNumberSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberSeparator,attr"`
+
+}
+
+//	"No." occurs before 1 in No.1, or TH occurs after 12 in 12TH
+type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumberIndicatorOccurrence_ struct {
+//	"No." occurs before 1 in No.1, or TH occurs after 12 in 12TH
+	IndicatorOccurrence TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
+
+}
+
+//	12TH occurs "before" FLOOR (a type of subpremise) in 12TH FLOOR
+type XsdGoPkgHasAttr_NumberTypeOccurrence_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumberNumberTypeOccurrence_ struct {
+//	12TH occurs "before" FLOOR (a type of subpremise) in 12TH FLOOR
+	NumberTypeOccurrence TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberTypeOccurrence,attr"`
+
+}
+
+type TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber struct {
+	XsdGoPkgHasAtts_GrPostal
+
+//	"TH" in 12TH which is a floor number, "NO." in NO.1, "#" in APT #12, etc.
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+	XsdGoPkgHasCdata
+
+//	12TH occurs "before" FLOOR (a type of subpremise) in 12TH FLOOR
+	XsdGoPkgHasAttr_NumberTypeOccurrence_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumberNumberTypeOccurrence_
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+//	"/" in 12/14 Archer Street where 12 is sub-premise number and 14 is premise number
+	XsdGoPkgHasAttr_PremiseNumberSeparator_XsdtString_
+
+//	"No." occurs before 1 in No.1, or TH occurs after 12 in 12TH
+	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumberIndicatorOccurrence_
+
+}
+
+type XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_ struct {
+//	Specification of the identifier of a sub-premise. Examples of sub-premises are apartments and suites. sub-premises in a building are often uniquely identified by means of consecutive
+//	identifiers. The identifier can be a number, a letter or any combination of the two. In the latter case, the identifier includes exactly one variable (range) part, which is either a
+//	number or a single letter that is surrounded by fixed parts at the left (prefix) or the right (postfix).
+	SubPremiseNumbers []*TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremiseNumber"`
+
+}
+
+//	Prefix of the sub premise number. eg. A in A-12
+type TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix struct {
+//	A-12 where 12 is number and A is prefix and "-" is the separator
+	XsdGoPkgHasAttr_NumberPrefixSeparator_XsdtString_
+
+	XsdGoPkgHasAtts_GrPostal
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_ struct {
+//	Prefix of the sub premise number. eg. A in A-12
+	SubPremiseNumberPrefixs []*TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremiseNumberPrefix"`
+
+}
+
+//	Specification of a single sub-premise. Examples of sub-premises are apartments and suites.
+//	Each sub-premise should be uniquely identifiable. SubPremiseType: Specification of the name of a sub-premise type. Possible values not limited to: Suite, Appartment, Floor, Unknown
+//	Multiple levels within a premise by recursively calling SubPremise Eg. Level 4, Suite 2, Block C
+type XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremiseType_ struct {
+//	Specification of a single sub-premise. Examples of sub-premises are apartments and suites.
+//	Each sub-premise should be uniquely identifiable. SubPremiseType: Specification of the name of a sub-premise type. Possible values not limited to: Suite, Appartment, Floor, Unknown
+//	Multiple levels within a premise by recursively calling SubPremise Eg. Level 4, Suite 2, Block C
+	SubPremise *TSubPremiseType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremise"`
+
+}
+
+//	Name of the SubPremise
+//	EGIS Building where EGIS occurs before Building
+type XsdGoPkgHasAttr_TypeOccurrence_TxsdSubPremiseTypeSequenceSubPremiseNameTypeOccurrence_ struct {
+//	EGIS Building where EGIS occurs before Building
+	TypeOccurrence TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 TypeOccurrence,attr"`
+
+}
+
+type TxsdSubPremiseTypeSequenceSubPremiseName struct {
+	XsdGoPkgHasAtts_GrPostal
+
+	XsdGoPkgHasCdata
+
+//	EGIS Building where EGIS occurs before Building
+	XsdGoPkgHasAttr_TypeOccurrence_TxsdSubPremiseTypeSequenceSubPremiseNameTypeOccurrence_
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_ struct {
+//	Name of the SubPremise
+	SubPremiseNames []*TxsdSubPremiseTypeSequenceSubPremiseName `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremiseName"`
+
+}
+
+type TSubPremiseType struct {
+//	Name of the building
+	XsdGoPkgHasElems_BuildingNamesequencePremiseschema_BuildingName_TBuildingNameType_
+
+//	Name of the SubPremise Location. eg. LOBBY, BASEMENT, GROUND FLOOR, etc...
+	XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_
+
+	XsdGoPkgHasElem_PostalCode
+
+	XsdGoPkgHasElems_AddressLine
+
+//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from a large mail user address, which contains no street.
+	XsdGoPkgHasElem_FirmsequencePostBoxschema_Firm_TFirmType_
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+//	Suffix of the sub premise number. eg. A in 12A
+	XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_
+
+//	Specification of the identifier of a sub-premise. Examples of sub-premises are apartments and suites. sub-premises in a building are often uniquely identified by means of consecutive
+//	identifiers. The identifier can be a number, a letter or any combination of the two. In the latter case, the identifier includes exactly one variable (range) part, which is either a
+//	number or a single letter that is surrounded by fixed parts at the left (prefix) or the right (postfix).
+	XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_
+
+//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
+	XsdGoPkgHasElem_MailStopsequenceFirmTypeschema_MailStop_TMailStopType_
+
+//	Prefix of the sub premise number. eg. A in A-12
+	XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_
+
+//	Specification of a single sub-premise. Examples of sub-premises are apartments and suites.
+//	Each sub-premise should be uniquely identifiable. SubPremiseType: Specification of the name of a sub-premise type. Possible values not limited to: Suite, Appartment, Floor, Unknown
+//	Multiple levels within a premise by recursively calling SubPremise Eg. Level 4, Suite 2, Block C
+	XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremiseType_
+
+//	Name of the SubPremise
+	XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_
+
+}
+
+type XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_ struct {
+//	Specification of a single sub-premise. Examples of sub-premises are apartments and suites. Each sub-premise should be uniquely identifiable.
+	SubPremises []*TSubPremiseType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremise"`
+
+}
+
+//	Specification of the name of the premise (house, building, park, farm, etc). A premise name is specified when the premise cannot be addressed using a street name plus premise (house) number.
+//	EGIS Building where EGIS occurs before Building, DES JARDINS occurs after COMPLEXE DES JARDINS
+type XsdGoPkgHasAttr_TypeOccurrence_TxsdPremiseSequencePremiseNameTypeOccurrence_ struct {
+//	EGIS Building where EGIS occurs before Building, DES JARDINS occurs after COMPLEXE DES JARDINS
+	TypeOccurrence TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 TypeOccurrence,attr"`
+
+}
+
+type TxsdPremiseSequencePremiseName struct {
+//	EGIS Building where EGIS occurs before Building, DES JARDINS occurs after COMPLEXE DES JARDINS
+	XsdGoPkgHasAttr_TypeOccurrence_TxsdPremiseSequencePremiseNameTypeOccurrence_
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_GrPostal
+
+}
+
+type XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_ struct {
+//	Specification of the name of the premise (house, building, park, farm, etc). A premise name is specified when the premise cannot be addressed using a street name plus premise (house) number.
+	PremiseNames []*TxsdPremiseSequencePremiseName `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseName"`
+
+}
+
+//	LOBBY, BASEMENT, GROUND FLOOR, etc...
+type XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_ struct {
+//	LOBBY, BASEMENT, GROUND FLOOR, etc...
+	PremiseLocation *TxsdPostalCodeSequencePostTownSequencePostTownSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseLocation"`
+
+}
+
+//	Specification for defining the premise number range. Some premises have number as Building C1-C7
+//	End number details of the premise number range
+type TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo struct {
+	XsdGoPkgHasElems_PremiseNumberPrefix
+
+	XsdGoPkgHasElems_PremiseNumber
+
+	XsdGoPkgHasElems_AddressLine
+
+	XsdGoPkgHasElems_PremiseNumberSuffix
+
+}
+
+type XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_ struct {
+//	End number details of the premise number range
+	PremiseNumberRangeTo *TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberRangeTo"`
+
+}
+
+//	Eg. Odd or even number range
+type XsdGoPkgHasAttr_RangeType_XsdtString_ struct {
+//	Eg. Odd or even number range
+	RangeType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 RangeType,attr"`
+
+}
+
+//	"-" in 12-14  or "Thru" in 12 Thru 14 etc.
+type XsdGoPkgHasAttr_Separator_XsdtString_ struct {
+//	"-" in 12-14  or "Thru" in 12 Thru 14 etc.
+	Separator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Separator,attr"`
+
+}
+
+//	Start number details of the premise number range
+type XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_ struct {
+//	Start number details of the premise number range
+	PremiseNumberRangeFrom *TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberRangeFrom"`
+
+}
+
+//	No.12-14 where "No." is before actual street number
+type XsdGoPkgHasAttr_IndicatorOccurence_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence_ struct {
+//	No.12-14 where "No." is before actual street number
+	IndicatorOccurence TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurence,attr"`
+
+}
+
+//	Building 23-25 where the number occurs after building name
+type TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence xsdt.Nmtoken
+
+//	Returns true if the value of this enumerated TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence is "BeforeType".
+func (me TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence) IsBeforeType () bool { return me == "BeforeType" }
+
+//	Returns true if the value of this enumerated TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence is "AfterType".
+func (me TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence) IsAfterType () bool { return me == "AfterType" }
+
+//	Returns true if the value of this enumerated TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence is "AfterName".
+func (me TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence) IsAfterName () bool { return me == "AfterName" }
+
+//	Since TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence) SetFromString (s string)  { (*xsdt.Nmtoken)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence is "BeforeName".
+func (me TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence) IsBeforeName () bool { return me == "BeforeName" }
+
+//	This convenience method just performs a simple type conversion to TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence's alias type xsdt.Nmtoken.
+func (me TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence) ToXsdtNmtoken () xsdt.Nmtoken { return xsdt.Nmtoken(me) }
+
+//	Since TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence is just a simple String type, this merely returns the current string value.
+func (me TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence) String () string { return xsdt.Nmtoken(me).String() }
+
+type XsdGoPkgHasAttr_NumberRangeOccurence_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence_ struct {
+//	Building 23-25 where the number occurs after building name
+	NumberRangeOccurence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberRangeOccurence,attr"`
+
+}
+
+type TxsdPremiseSequenceChoiceChoicePremiseNumberRange struct {
+//	No.12-14 where "No." is before actual street number
+	XsdGoPkgHasAttr_IndicatorOccurence_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence_
+
+//	Building 23-25 where the number occurs after building name
+	XsdGoPkgHasAttr_NumberRangeOccurence_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence_
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+//	Eg. No. in Building No:C1-C5
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+//	End number details of the premise number range
+	XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_
+
+//	Eg. Odd or even number range
+	XsdGoPkgHasAttr_RangeType_XsdtString_
+
+//	"-" in 12-14  or "Thru" in 12 Thru 14 etc.
+	XsdGoPkgHasAttr_Separator_XsdtString_
+
+//	Start number details of the premise number range
+	XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_
+
+}
+
+type XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_ struct {
+//	Specification for defining the premise number range. Some premises have number as Building C1-C7
+	PremiseNumberRange *TxsdPremiseSequenceChoiceChoicePremiseNumberRange `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberRange"`
+
+}
+
+type TxsdPremise struct {
+//	COMPLEXE in COMPLEX DES JARDINS, A building, station, etc
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasElem_PostalCode
+
+	XsdGoPkgHasElems_AddressLine
+
+	XsdGoPkgHasElems_PremiseNumberPrefix
+
+//	Specification of the name of a building.
+	XsdGoPkgHasElems_BuildingNamesequencePremiseschema_BuildingName_TBuildingNameType_
+
+//	Specification of a single sub-premise. Examples of sub-premises are apartments and suites. Each sub-premise should be uniquely identifiable.
+	XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_
+
+//	Specification of the name of the premise (house, building, park, farm, etc). A premise name is specified when the premise cannot be addressed using a street name plus premise (house) number.
+	XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_
+
+//	LOBBY, BASEMENT, GROUND FLOOR, etc...
+	XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_
+
+//	Specification for defining the premise number range. Some premises have number as Building C1-C7
+	XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_
+
+//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
+	XsdGoPkgHasElem_MailStopsequenceFirmTypeschema_MailStop_TMailStopType_
+
+//	DES, DE, LA, LA, DU in RUE DU BOIS. These terms connect a premise/thoroughfare type and premise/thoroughfare name. Terms may appear with names AVE DU BOIS
+	XsdGoPkgHasAttr_PremiseThoroughfareConnector_XsdtString_
+
+	XsdGoPkgHasElems_PremiseNumberSuffix
+
+	XsdGoPkgHasElem_Premise
+
+//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from a large mail user address, which contains no street.
+	XsdGoPkgHasElem_FirmsequencePostBoxschema_Firm_TFirmType_
+
+//	STREET, PREMISE, SUBPREMISE, PARK, FARM, etc
+	XsdGoPkgHasAttr_PremiseDependency_XsdtString_
+
+	XsdGoPkgHasElems_PremiseNumber
+
+//	NEAR, ADJACENT TO, etc
+	XsdGoPkgHasAttr_PremiseDependencyType_XsdtString_
+
+}
+
+type XsdGoPkgHasElem_Premise struct {
+//	Specification of a single premise, for example a house or a building. The premise as a whole has a unique premise (house) number or a premise name.  There could be more than
+//	one premise in a street referenced in an address. For example a building address near a major shopping centre or raiwlay station
+	Premise *TxsdPremise `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Premise"`
+
+}
+
+//	"VIA" as in Hill Top VIA Parish where Parish is a locality and Hill Top is a dependent locality
+type XsdGoPkgHasAttr_Connector_XsdtString_ struct {
+//	"VIA" as in Hill Top VIA Parish where Parish is a locality and Hill Top is a dependent locality
+	Connector xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Connector,attr"`
+
+}
+
+//	Specification of a post office. Examples are a rural post office where post is delivered and a post office containing post office boxes.
+//	Specification of the name of the post office. This can be a rural postoffice where post is delivered or a post office containing post office boxes.
+type XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_ struct {
+//	Specification of the name of the post office. This can be a rural postoffice where post is delivered or a post office containing post office boxes.
+	PostOfficeNames []*ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostOfficeName"`
+
+}
+
+//	Specification of the number of the postoffice. Common in rural postoffices
+//	MS occurs before 62 in MS 62
+type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdPostOfficeSequenceChoicePostOfficeNumberIndicatorOccurrence_ struct {
+//	MS occurs before 62 in MS 62
+	IndicatorOccurrence TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
+
+}
+
+type TxsdPostOfficeSequenceChoicePostOfficeNumber struct {
+	XsdGoPkgHasCdata
+
+//	MS occurs before 62 in MS 62
+	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdPostOfficeSequenceChoicePostOfficeNumberIndicatorOccurrence_
+
+	XsdGoPkgHasAtts_GrPostal
+
+//	MS in MS 62, # in MS # 12, etc.
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+}
+
+type XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_ struct {
+//	Specification of the number of the postoffice. Common in rural postoffices
+	PostOfficeNumber *TxsdPostOfficeSequenceChoicePostOfficeNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostOfficeNumber"`
+
+}
+
+//	A Postal van is specific for a route as in Is`rael, Rural route
+//	Number of the Postal Route
+type XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_ struct {
+//	Number of the Postal Route
+	PostalRouteNumber *TxsdPostalCodeSequencePostTownSequencePostTownSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalRouteNumber"`
+
+}
+
+//	Name of the Postal Route
+type XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_ struct {
+//	Name of the Postal Route
+	PostalRouteNames []*ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalRouteName"`
+
+}
+
+type TPostalRouteType struct {
+//	Number of the Postal Route
+	XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_
+
+//	Name of the Postal Route
+	XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasElems_AddressLine
+
+	XsdGoPkgHasElem_PostBox
+
+}
+
+type XsdGoPkgHasElem_PostalRoutesequencePostOfficeschema_PostalRoute_TPostalRouteType_ struct {
+//	A Postal van is specific for a route as in Is`rael, Rural route
+	PostalRoute *TPostalRouteType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalRoute"`
+
+}
+
+type TxsdPostOffice struct {
+//	Could be a Mobile Postoffice Van as in Isreal
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasElem_PostalCode
+
+//	Specification of the name of the post office. This can be a rural postoffice where post is delivered or a post office containing post office boxes.
+	XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_
+
+//	Specification of the number of the postoffice. Common in rural postoffices
+	XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_
+
+	XsdGoPkgHasElems_AddressLine
+
+//	eg. Kottivakkam (P.O) here (P.O) is the Indicator
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+//	A Postal van is specific for a route as in Is`rael, Rural route
+	XsdGoPkgHasElem_PostalRoutesequencePostOfficeschema_PostalRoute_TPostalRouteType_
+
+	XsdGoPkgHasElem_PostBox
+
+}
+
+type XsdGoPkgHasElem_PostOffice struct {
+//	Specification of a post office. Examples are a rural post office where post is delivered and a post office containing post office boxes.
+	PostOffice *TxsdPostOffice `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostOffice"`
+
+}
+
+//	Dependent localities are Districts within cities/towns, locality divisions, postal
+//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
+type XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_ struct {
+//	Dependent localities are Districts within cities/towns, locality divisions, postal
+//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
+	DependentLocality *TDependentLocalityType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentLocality"`
+
+}
+
+//	Name of the dependent locality
+type XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_ struct {
+//	Name of the dependent locality
+	DependentLocalityNames []*ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentLocalityName"`
+
+}
+
+//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
+type XsdGoPkgHasAttr_UsageType_XsdtString_ struct {
+//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
+	UsageType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 UsageType,attr"`
+
+}
+
+//	Specification of a large mail user address. Examples of large mail users are postal companies, companies in France with a cedex number, hospitals and airports with their own post code. Large mail user addresses do not have a street name with premise name or premise number in countries like Netherlands. But they have a POBox and street also in countries like France
+//	Name of the large mail user. eg. Smith Ford International airport
+type TxsdLargeMailUserTypeSequenceLargeMailUserName struct {
+	XsdGoPkgHasCdata
+
+//	Airport, Hospital, etc
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasAttr_Code_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_ struct {
+//	Name of the large mail user. eg. Smith Ford International airport
+	LargeMailUserNames []*TxsdLargeMailUserTypeSequenceLargeMailUserName `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 LargeMailUserName"`
+
+}
+
+//	Subdivision in the firm: School of Physics at Victoria University (School of Physics is the department)
+type XsdGoPkgHasElem_Department struct {
+//	Subdivision in the firm: School of Physics at Victoria University (School of Physics is the department)
+	Department *TxsdDepartment `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Department"`
+
+}
+
+//	Specification of the identification number of a large mail user. An example are the Cedex codes in France.
+type TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier struct {
+	XsdGoPkgHasCdata
+
+//	CEDEX Code
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+//	eg. Building 429 in which Building is the Indicator
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+	XsdGoPkgHasAtts_GrPostal
+
+}
+
+type XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_ struct {
+//	Specification of the identification number of a large mail user. An example are the Cedex codes in France.
+	LargeMailUserIdentifier *TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 LargeMailUserIdentifier"`
+
+}
+
+type TLargeMailUserType struct {
+	XsdGoPkgHasElem_PostBox
+
+//	Name of the large mail user. eg. Smith Ford International airport
+	XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_
+
+	XsdGoPkgHasElem_Department
+
+//	Specification of the identification number of a large mail user. An example are the Cedex codes in France.
+	XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasElems_AddressLine
+
+	XsdGoPkgHasElem_Thoroughfare
+
+//	Name of the building
+	XsdGoPkgHasElems_BuildingNamesequencePremiseschema_BuildingName_TBuildingNameType_
+
+	XsdGoPkgHasElem_PostalCode
+
+}
+
+type XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_ struct {
+//	Specification of a large mail user address. Examples of large mail users are postal companies, companies in France with a cedex number, hospitals and airports with their own post code. Large mail user addresses do not have a street name with premise name or premise number in countries like Netherlands. But they have a POBox and street also in countries like France
+	LargeMailUser *TLargeMailUserType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 LargeMailUser"`
+
+}
+
+type TDependentLocalityType struct {
+	XsdGoPkgHasElem_PostOffice
+
+	XsdGoPkgHasElem_PostalCode
+
+//	Dependent localities are Districts within cities/towns, locality divisions, postal
+//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
+	XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_
+
+//	A Postal van is specific for a route as in Is`rael, Rural route
+	XsdGoPkgHasElem_PostalRoutesequencePostOfficeschema_PostalRoute_TPostalRouteType_
+
+//	Name of the dependent locality
+	XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_
+
+//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
+	XsdGoPkgHasAttr_UsageType_XsdtString_
+
+	XsdGoPkgHasElem_PostBox
+
+//	Eg. Erode (Dist) where (Dist) is the Indicator
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+	XsdGoPkgHasElem_Thoroughfare
+
+//	Specification of a large mail user address. Examples of large mail users are postal companies, companies in France with a cedex number, hospitals and airports with their own post code. Large mail user addresses do not have a street name with premise name or premise number in countries like Netherlands. But they have a POBox and street also in countries like France
+	XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_
+
+//	Number of the dependent locality. Some areas are numbered. Eg. SECTOR 5 in a Suburb as in India or SOI SUKUMVIT 10 as in Thailand
+	XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_
+
+	XsdGoPkgHasElem_Premise
+
+//	"VIA" as in Hill Top VIA Parish where Parish is a locality and Hill Top is a dependent locality
+	XsdGoPkgHasAttr_Connector_XsdtString_
+
+	XsdGoPkgHasElems_AddressLine
+
+//	City or IndustrialEstate, etc
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+}
+
+type XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_ struct {
+//	Dependent localities are Districts within cities/towns, locality divisions, postal
+//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
+	DependentLocality *TDependentLocalityType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentLocality"`
+
+}
+
+//	Corner of, Intersection of
+type XsdGoPkgHasAttr_DependentThoroughfaresIndicator_XsdtString_ struct {
+//	Corner of, Intersection of
+	DependentThoroughfaresIndicator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfaresIndicator,attr"`
+
+}
+
+//	Prefix before the number. A in A12 Archer Street
+type XsdGoPkgHasElems_ThoroughfareNumberPrefix struct {
+//	Prefix before the number. A in A12 Archer Street
+	ThoroughfareNumberPrefixs []*TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberPrefix"`
+
+}
+
+//	Eg.: 23 Archer street or 25/15 Zero Avenue, etc
+//	12 Archer Street is "Single" and 12-14 Archer Street is "Range"
+type XsdGoPkgHasAttr_NumberType_TxsdThoroughfareNumberNumberType_ struct {
+//	12 Archer Street is "Single" and 12-14 Archer Street is "Range"
+	NumberType TxsdPremiseNumberNumberType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberType,attr"`
+
+}
+
+//	23 Archer St, Archer Street 23, St Archer 23
+type XsdGoPkgHasAttr_NumberOccurrence_TxsdThoroughfareNumberNumberOccurrence_ struct {
+//	23 Archer St, Archer Street 23, St Archer 23
+	NumberOccurrence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberOccurrence,attr"`
+
+}
+
+//	No.12 where "No." is before actual street number
+type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdThoroughfareNumberIndicatorOccurrence_ struct {
+//	No.12 where "No." is before actual street number
+	IndicatorOccurrence TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
+
+}
+
+type TxsdThoroughfareNumber struct {
+//	12 Archer Street is "Single" and 12-14 Archer Street is "Range"
+	XsdGoPkgHasAttr_NumberType_TxsdThoroughfareNumberNumberType_
+
+	XsdGoPkgHasAtts_GrPostal
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+//	23 Archer St, Archer Street 23, St Archer 23
+	XsdGoPkgHasAttr_NumberOccurrence_TxsdThoroughfareNumberNumberOccurrence_
+
+//	No. in Street No.12 or "#" in Street # 12, etc.
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+//	No.12 where "No." is before actual street number
+	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdThoroughfareNumberIndicatorOccurrence_
+
+	XsdGoPkgHasCdata
+
+}
+
+type XsdGoPkgHasElems_ThoroughfareNumber struct {
+//	Eg.: 23 Archer street or 25/15 Zero Avenue, etc
+	ThoroughfareNumbers []*TxsdThoroughfareNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumber"`
+
+}
+
+//	A container to represent a range of numbers (from x thru y)for a thoroughfare. eg. 1-2 Albert Av
+//	Thoroughfare number ranges are odd or even
+type TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType xsdt.Nmtoken
+
+//	This convenience method just performs a simple type conversion to TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType's alias type xsdt.Nmtoken.
+func (me TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType) ToXsdtNmtoken () xsdt.Nmtoken { return xsdt.Nmtoken(me) }
+
+//	Returns true if the value of this enumerated TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType is "Even".
+func (me TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType) IsEven () bool { return me == "Even" }
+
+//	Returns true if the value of this enumerated TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType is "Odd".
+func (me TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType) IsOdd () bool { return me == "Odd" }
+
+//	Since TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType is just a simple String type, this merely returns the current string value.
+func (me TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType) String () string { return xsdt.Nmtoken(me).String() }
+
+//	Since TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType) SetFromString (s string)  { (*xsdt.Nmtoken)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_RangeType_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType_ struct {
+//	Thoroughfare number ranges are odd or even
+	RangeType TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 RangeType,attr"`
+
+}
+
+//	Starting number in the range
+//	Suffix after the number. A in 12A Archer Street
+type XsdGoPkgHasElems_ThoroughfareNumberSuffix struct {
+//	Suffix after the number. A in 12A Archer Street
+	ThoroughfareNumberSuffixs []*TxsdPremiseNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberSuffix"`
+
+}
+
+type TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom struct {
+	XsdGoPkgHasElems_ThoroughfareNumber
+
+	XsdGoPkgHasElems_ThoroughfareNumberPrefix
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_AddressLine
+
+	XsdGoPkgHasElems_ThoroughfareNumberSuffix
+
+	XsdGoPkgHasAtts_GrPostal
+
+}
+
+type XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_ struct {
+//	Starting number in the range
+	ThoroughfareNumberFrom *TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberFrom"`
+
+}
+
+//	Ending number in the range
+type XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_ struct {
+//	Ending number in the range
+	ThoroughfareNumberTo *TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberTo"`
+
+}
+
+//	No.12-14 where "No." is before actual street number
+type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeIndicatorOccurrence_ struct {
+//	No.12-14 where "No." is before actual street number
+	IndicatorOccurrence TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
+
+}
+
+//	23-25 Archer St, where number appears before name
+type XsdGoPkgHasAttr_NumberRangeOccurrence_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeNumberRangeOccurrence_ struct {
+//	23-25 Archer St, where number appears before name
+	NumberRangeOccurrence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberRangeOccurrence,attr"`
+
+}
+
+type TxsdThoroughfareSequenceChoiceThoroughfareNumberRange struct {
+//	Thoroughfare number ranges are odd or even
+	XsdGoPkgHasAttr_RangeType_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType_
+
+//	Starting number in the range
+	XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_
+
+//	Ending number in the range
+	XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_
+
+//	No.12-14 where "No." is before actual street number
+	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeIndicatorOccurrence_
+
+//	23-25 Archer St, where number appears before name
+	XsdGoPkgHasAttr_NumberRangeOccurrence_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeNumberRangeOccurrence_
+
+	XsdGoPkgHasAtts_GrPostal
+
+	XsdGoPkgHasElems_AddressLine
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+//	"-" in 12-14  or "Thru" in 12 Thru 14 etc.
+	XsdGoPkgHasAttr_Separator_XsdtString_
+
+//	"No." No.12-13
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_ struct {
+//	A container to represent a range of numbers (from x thru y)for a thoroughfare. eg. 1-2 Albert Av
+	ThoroughfareNumberRanges []*TxsdThoroughfareSequenceChoiceThoroughfareNumberRange `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberRange"`
+
+}
+
+//	Does this thoroughfare have a a dependent thoroughfare? Corner of street X, etc
+type TxsdThoroughfareDependentThoroughfares xsdt.Nmtoken
+
+//	Returns true if the value of this enumerated TxsdThoroughfareDependentThoroughfares is "No".
+func (me TxsdThoroughfareDependentThoroughfares) IsNo () bool { return me == "No" }
+
+//	Since TxsdThoroughfareDependentThoroughfares is just a simple String type, this merely returns the current string value.
+func (me TxsdThoroughfareDependentThoroughfares) String () string { return xsdt.Nmtoken(me).String() }
+
+//	Returns true if the value of this enumerated TxsdThoroughfareDependentThoroughfares is "Yes".
+func (me TxsdThoroughfareDependentThoroughfares) IsYes () bool { return me == "Yes" }
+
+//	Since TxsdThoroughfareDependentThoroughfares is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdThoroughfareDependentThoroughfares) SetFromString (s string)  { (*xsdt.Nmtoken)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdThoroughfareDependentThoroughfares's alias type xsdt.Nmtoken.
+func (me TxsdThoroughfareDependentThoroughfares) ToXsdtNmtoken () xsdt.Nmtoken { return xsdt.Nmtoken(me) }
+
+type XsdGoPkgHasAttr_DependentThoroughfares_TxsdThoroughfareDependentThoroughfares_ struct {
+//	Does this thoroughfare have a a dependent thoroughfare? Corner of street X, etc
+	DependentThoroughfares TxsdThoroughfareDependentThoroughfares `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfares,attr"`
+
+}
+
+//	STS in GEORGE and ADELAIDE STS, RDS IN A and B RDS, etc. Use only when both the street types are the same
+type XsdGoPkgHasAttr_DependentThoroughfaresType_XsdtString_ struct {
+//	STS in GEORGE and ADELAIDE STS, RDS IN A and B RDS, etc. Use only when both the street types are the same
+	DependentThoroughfaresType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfaresType,attr"`
+
+}
+
+type TxsdThoroughfare struct {
+	XsdGoPkgHasElems_ThoroughfareNumber
+
+//	A container to represent a range of numbers (from x thru y)for a thoroughfare. eg. 1-2 Albert Av
+	XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_
+
+//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from
+//	a large mail user address, which contains no street.
+	XsdGoPkgHasElem_FirmsequencePostBoxschema_Firm_TFirmType_
+
+	XsdGoPkgHasElems_AddressLine
+
+	XsdGoPkgHasElem_PostalCode
+
+	XsdGoPkgHasElems_ThoroughfareNumberSuffix
+
+//	Does this thoroughfare have a a dependent thoroughfare? Corner of street X, etc
+	XsdGoPkgHasAttr_DependentThoroughfares_TxsdThoroughfareDependentThoroughfares_
+
+//	North Baker Street, where North is the pre-direction. The direction appears before the name.
+	XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_
+
+	XsdGoPkgHasElem_Premise
+
+//	Appears after the thoroughfare name. Ed. British: Baker Lane, where Lane is the trailing type.
+	XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_
+
+//	STS in GEORGE and ADELAIDE STS, RDS IN A and B RDS, etc. Use only when both the street types are the same
+	XsdGoPkgHasAttr_DependentThoroughfaresType_XsdtString_
+
+//	DependentThroughfare is related to a street; occurs in GB, IE, ES, PT
+	XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_
+
+//	Corner of Street1 AND Street 2 where AND is the Connector
+	XsdGoPkgHasAttr_DependentThoroughfaresConnector_XsdtString_
+
+//	Dependent localities are Districts within cities/towns, locality divisions, postal
+//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
+	XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_
+
+//	Appears before the thoroughfare name. Ed. Spanish: Avenida Aurora, where Avenida is the leading type / French: Rue Moliere, where Rue is the leading type.
+	XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+//	Corner of, Intersection of
+	XsdGoPkgHasAttr_DependentThoroughfaresIndicator_XsdtString_
+
+//	221-bis Baker Street North, where North is the post-direction. The post-direction appears after the name.
+	XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_
+
+//	Specification of the name of a Thoroughfare (also dependant street name): street name, canal name, etc.
+	XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_
+
+	XsdGoPkgHasElems_ThoroughfareNumberPrefix
+
+}
+
+type XsdGoPkgHasElem_Thoroughfare struct {
+//	Specification of a thoroughfare. A thoroughfare could be a rd, street, canal, river, etc.  Note dependentlocality in a street. For example, in some countries, a large street will
+//	have many subdivisions with numbers. Normally the subdivision name is the same as the road name, but with a number to identifiy it. Eg. SOI SUKUMVIT 3, SUKUMVIT RD, BANGKOK
+	Thoroughfare *TxsdThoroughfare `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Thoroughfare"`
+
+}
+
+type TxsdLocality struct {
+//	Dependent localities are Districts within cities/towns, locality divisions, postal
+//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
+	XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_
+
+//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
+	XsdGoPkgHasAttr_UsageType_XsdtString_
+
+//	Possible values not limited to: City, IndustrialEstate, etc
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+//	A Postal van is specific for a route as in Is`rael, Rural route
+	XsdGoPkgHasElem_PostalRoutesequencePostOfficeschema_PostalRoute_TPostalRouteType_
+
+	XsdGoPkgHasElem_Premise
+
+//	Specification of a large mail user address. Examples of large mail users are postal companies, companies in France with a cedex number, hospitals and airports with their own post code. Large mail user addresses do not have a street name with premise name or premise number in countries like Netherlands. But they have a POBox and street also in countries like France
+	XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_
+
+	XsdGoPkgHasElem_PostalCode
+
+//	Name of the locality
+	XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_
+
+	XsdGoPkgHasElem_PostBox
+
+	XsdGoPkgHasElem_Thoroughfare
+
+//	Erode (Dist) where (Dist) is the Indicator
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+	XsdGoPkgHasElem_PostOffice
+
+	XsdGoPkgHasElems_AddressLine
+
+}
+
+type XsdGoPkgHasElem_Locality struct {
+//	Locality is one level lower than adminisstrative area. Eg.: cities, reservations and any other built-up areas.
+	Locality *TxsdLocality `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Locality"`
+
+}
+
+//	Specification of a sub-administrative area. An example of a sub-administrative areas is a county. There are two places where the name of an administrative
+//	area can be specified and in this case, one becomes sub-administrative area.
+//	Name of the sub-administrative area
+type XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_ struct {
+//	Name of the sub-administrative area
+	SubAdministrativeAreaNames []*ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubAdministrativeAreaName"`
+
+}
+
+type TxsdAdministrativeAreaSequenceSubAdministrativeArea struct {
+	XsdGoPkgHasElem_PostOffice
+
+	XsdGoPkgHasElem_PostalCode
+
+	XsdGoPkgHasElems_AddressLine
+
+//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
+	XsdGoPkgHasAttr_UsageType_XsdtString_
+
+//	Erode (Dist) where (Dist) is the Indicator
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+//	Name of the sub-administrative area
+	XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_
+
+	XsdGoPkgHasElem_Locality
+
+//	Province or State or County or Kanton, etc
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+}
+
+type XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_ struct {
+//	Specification of a sub-administrative area. An example of a sub-administrative areas is a county. There are two places where the name of an administrative
+//	area can be specified and in this case, one becomes sub-administrative area.
+	SubAdministrativeArea *TxsdAdministrativeAreaSequenceSubAdministrativeArea `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubAdministrativeArea"`
+
+}
+
+//	Name of the administrative area. eg. MI in USA, NSW in Australia
+type XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_ struct {
+//	Name of the administrative area. eg. MI in USA, NSW in Australia
+	AdministrativeAreaNames []*ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AdministrativeAreaName"`
+
+}
+
+type TxsdAdministrativeArea struct {
+	XsdGoPkgHasElem_PostalCode
+
+	XsdGoPkgHasElem_PostOffice
+
+//	Name of the administrative area. eg. MI in USA, NSW in Australia
+	XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_
+
+//	Province or State or County or Kanton, etc
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
+	XsdGoPkgHasAttr_UsageType_XsdtString_
+
+	XsdGoPkgHasElems_AddressLine
+
+//	Erode (Dist) where (Dist) is the Indicator
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+	XsdGoPkgHasElem_Locality
+
+//	Specification of a sub-administrative area. An example of a sub-administrative areas is a county. There are two places where the name of an administrative
+//	area can be specified and in this case, one becomes sub-administrative area.
+	XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_
+
+}
+
+type XsdGoPkgHasElem_AdministrativeArea struct {
+//	Examples of administrative areas are provinces counties, special regions (such as "Rijnmond"), etc.
+	AdministrativeArea *TxsdAdministrativeArea `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AdministrativeArea"`
+
+}
+
+//	Moved, Living, Investment, Deceased, etc..
+type XsdGoPkgHasAttr_CurrentStatus_XsdtString_ struct {
+//	Moved, Living, Investment, Deceased, etc..
+	CurrentStatus xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 CurrentStatus,attr"`
+
+}
+
+//	End date of the validity of address
+type XsdGoPkgHasAttr_ValidToDate_XsdtString_ struct {
+//	End date of the validity of address
+	ValidToDate xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ValidToDate,attr"`
+
+}
+
+//	Type of address. Example: Postal, residential,business, primary, secondary, etc
+type XsdGoPkgHasAttr_AddressType_XsdtString_ struct {
+//	Type of address. Example: Postal, residential,business, primary, secondary, etc
+	AddressType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressType,attr"`
+
+}
+
+//	Postal authorities use specific postal service data to expedient delivery of mail
+//	Required for some postal services
+type XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_ struct {
+//	Required for some postal services
+	KeyLineCode *ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 KeyLineCode"`
 
 }
 
 //	Longtitude direction of delivery address;N=North and S=South
 type XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_ struct {
 //	Longtitude direction of delivery address;N=North and S=South
-	AddressLongitudeDirection *TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLongitudeDirection"`
+	AddressLongitudeDirection *ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLongitudeDirection"`
+
+}
+
+//	Required for some postal services
+type XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_ struct {
+//	Required for some postal services
+	Barcode *ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Barcode"`
+
+}
+
+//	Directly affects postal service distribution
+type XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_ struct {
+//	Directly affects postal service distribution
+	EndorsementLineCode *ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 EndorsementLineCode"`
 
 }
 
@@ -90,14 +1816,14 @@ type XsdGoPkgHasAttr_IdentifierType_XsdtString_ struct {
 }
 
 type TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier struct {
-	XsdGoPkgHasAttr_Type_XsdtString_
+	XsdGoPkgHasCdata
 
 //	Type of identifier. eg. DPID as in Australia
 	XsdGoPkgHasAttr_IdentifierType_XsdtString_
 
 	XsdGoPkgHasAtts_GrPostal
 
-	XsdGoPkgHasCdata
+	XsdGoPkgHasAttr_Type_XsdtString_
 
 }
 
@@ -107,24 +1833,17 @@ type XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddr
 
 }
 
-//	Longtitude of delivery address
-type XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_ struct {
-//	Longtitude of delivery address
-	AddressLongitude *TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLongitude"`
-
-}
-
-//	Required for some postal services
-type XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_ struct {
-//	Required for some postal services
-	Barcode *TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Barcode"`
-
-}
-
 //	Latitude of delivery address
 type XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_ struct {
 //	Latitude of delivery address
-	AddressLatitude *TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLatitude"`
+	AddressLatitude *ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLatitude"`
+
+}
+
+//	Longtitude of delivery address
+type XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_ struct {
+//	Longtitude of delivery address
+	AddressLongitude *ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLongitude"`
 
 }
 
@@ -146,14 +1865,14 @@ type XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDeta
 //	Latitude direction of delivery address;N = North and S = South
 type XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_ struct {
 //	Latitude direction of delivery address;N = North and S = South
-	AddressLatitudeDirection *TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLatitudeDirection"`
+	AddressLatitudeDirection *ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLatitudeDirection"`
 
 }
 
 //	any postal service elements not covered by the container can be represented using this element
 type XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_ struct {
 //	any postal service elements not covered by the container can be represented using this element
-	SupplementaryPostalServiceDatas []*TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SupplementaryPostalServiceData"`
+	SupplementaryPostalServiceDatas []*ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SupplementaryPostalServiceData"`
 
 }
 
@@ -161,32 +1880,32 @@ type TxsdAddressDetailsSequencePostalServiceElements struct {
 //	Required for some postal services
 	XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_
 
-//	Directly affects postal service distribution
-	XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_
+//	USPS, ECMA, UN/PROLIST, etc
+	XsdGoPkgHasAttr_Type_XsdtString_
 
 //	Longtitude direction of delivery address;N=North and S=South
 	XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_
 
-//	A unique identifier of an address assigned by postal authorities. Example: DPID in Australia
-	XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_
-
-//	Longtitude of delivery address
-	XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_
-
 //	Required for some postal services
 	XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_
 
+//	Directly affects postal service distribution
+	XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_
+
+//	A unique identifier of an address assigned by postal authorities. Example: DPID in Australia
+	XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_
+
 //	Latitude of delivery address
 	XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_
+
+//	Longtitude of delivery address
+	XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_
 
 //	Used for sorting addresses. Values may for example be CEDEX 16 (France)
 	XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_
 
 //	Latitude direction of delivery address;N = North and S = South
 	XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_
-
-//	USPS, ECMA, UN/PROLIST, etc
-	XsdGoPkgHasAttr_Type_XsdtString_
 
 //	any postal service elements not covered by the container can be represented using this element
 	XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_
@@ -199,1703 +1918,7 @@ type XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalSer
 
 }
 
-//	Communication, Contact, etc.
-type XsdGoPkgHasAttr_Usage_XsdtString_ struct {
-//	Communication, Contact, etc.
-	Usage xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Usage,attr"`
-
-}
-
-//	Specification of a thoroughfare. A thoroughfare could be a rd, street, canal, river, etc.  Note dependentlocality in a street. For example, in some countries, a large street will
-//	have many subdivisions with numbers. Normally the subdivision name is the same as the road name, but with a number to identifiy it. Eg. SOI SUKUMVIT 3, SUKUMVIT RD, BANGKOK
-//	Prefix before the number. A in A12 Archer Street
-//	A-12 where 12 is number and A is prefix and "-" is the separator
-//	A-12 where 12 is number and A is prefix and "-" is the separator
-type XsdGoPkgHasAttr_NumberPrefixSeparator_XsdtString_ struct {
-//	A-12 where 12 is number and A is prefix and "-" is the separator
-	NumberPrefixSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberPrefixSeparator,attr"`
-
-}
-
-type TxsdThoroughfareNumberPrefix struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasAttr_NumberPrefixSeparator_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_ThoroughfareNumberPrefix struct {
-//	Prefix before the number. A in A12 Archer Street
-	ThoroughfareNumberPrefixs []*TxsdThoroughfareNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberPrefix"`
-
-}
-
-//	North Baker Street, where North is the pre-direction. The direction appears before the name.
-type ThoroughfarePreDirectionType struct {
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasCdata
-
-}
-
-type XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_ struct {
-//	North Baker Street, where North is the pre-direction. The direction appears before the name.
-	ThoroughfarePreDirection *ThoroughfarePreDirectionType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfarePreDirection"`
-
-}
-
-//	Appears after the thoroughfare name. Ed. British: Baker Lane, where Lane is the trailing type.
-type ThoroughfareTrailingTypeType struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-}
-
-type XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_ struct {
-//	Appears after the thoroughfare name. Ed. British: Baker Lane, where Lane is the trailing type.
-	ThoroughfareTrailingType *ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareTrailingType"`
-
-}
-
-//	221-bis Baker Street North, where North is the post-direction. The post-direction appears after the name.
-type ThoroughfarePostDirectionType struct {
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_GrPostal
-
-}
-
-type XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_ struct {
-//	221-bis Baker Street North, where North is the post-direction. The post-direction appears after the name.
-	ThoroughfarePostDirection *ThoroughfarePostDirectionType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfarePostDirection"`
-
-}
-
-//	Appears before the thoroughfare name. Ed. Spanish: Avenida Aurora, where Avenida is the leading type / French: Rue Moliere, where Rue is the leading type.
-type ThoroughfareLeadingTypeType struct {
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasCdata
-
-}
-
-type XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_ struct {
-//	Appears before the thoroughfare name. Ed. Spanish: Avenida Aurora, where Avenida is the leading type / French: Rue Moliere, where Rue is the leading type.
-	ThoroughfareLeadingType *ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareLeadingType"`
-
-}
-
-//	Free format address representation. An address can have more than one line. The order of the AddressLine elements must be preserved.
-type XsdGoPkgHasElems_AddressLine struct {
-//	Free format address representation. An address can have more than one line. The order of the AddressLine elements must be preserved.
-	AddressLines []*ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLine"`
-
-}
-
-//	Eg.: 23 Archer street or 25/15 Zero Avenue, etc
-//	No.12 where "No." is before actual street number
-type TxsdThoroughfareNumberIndicatorOccurrence xsdt.Nmtoken
-
-//	Since TxsdThoroughfareNumberIndicatorOccurrence is just a simple String type, this merely returns the current string value.
-func (me TxsdThoroughfareNumberIndicatorOccurrence) String () string { return xsdt.Nmtoken(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdThoroughfareNumberIndicatorOccurrence's alias type xsdt.Nmtoken.
-func (me TxsdThoroughfareNumberIndicatorOccurrence) ToXsdtNmtoken () xsdt.Nmtoken { return xsdt.Nmtoken(me) }
-
-//	Since TxsdThoroughfareNumberIndicatorOccurrence is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdThoroughfareNumberIndicatorOccurrence) SetFromString (s string)  { (*xsdt.Nmtoken)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdThoroughfareNumberIndicatorOccurrence is "Before".
-func (me TxsdThoroughfareNumberIndicatorOccurrence) IsBefore () bool { return me == "Before" }
-
-//	Returns true if the value of this enumerated TxsdThoroughfareNumberIndicatorOccurrence is "After".
-func (me TxsdThoroughfareNumberIndicatorOccurrence) IsAfter () bool { return me == "After" }
-
-type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdThoroughfareNumberIndicatorOccurrence_ struct {
-//	No.12 where "No." is before actual street number
-	IndicatorOccurrence TxsdThoroughfareNumberIndicatorOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
-
-}
-
-//	Eg. Erode (Dist) where (Dist) is the Indicator
-type XsdGoPkgHasAttr_Indicator_XsdtString_ struct {
-//	Eg. Erode (Dist) where (Dist) is the Indicator
-	Indicator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Indicator,attr"`
-
-}
-
-//	12 Archer Street is "Single" and 12-14 Archer Street is "Range"
-type TxsdThoroughfareNumberNumberType xsdt.Nmtoken
-
-//	Returns true if the value of this enumerated TxsdThoroughfareNumberNumberType is "Single".
-func (me TxsdThoroughfareNumberNumberType) IsSingle () bool { return me == "Single" }
-
-//	Returns true if the value of this enumerated TxsdThoroughfareNumberNumberType is "Range".
-func (me TxsdThoroughfareNumberNumberType) IsRange () bool { return me == "Range" }
-
-//	This convenience method just performs a simple type conversion to TxsdThoroughfareNumberNumberType's alias type xsdt.Nmtoken.
-func (me TxsdThoroughfareNumberNumberType) ToXsdtNmtoken () xsdt.Nmtoken { return xsdt.Nmtoken(me) }
-
-//	Since TxsdThoroughfareNumberNumberType is just a simple String type, this merely returns the current string value.
-func (me TxsdThoroughfareNumberNumberType) String () string { return xsdt.Nmtoken(me).String() }
-
-//	Since TxsdThoroughfareNumberNumberType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdThoroughfareNumberNumberType) SetFromString (s string)  { (*xsdt.Nmtoken)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_NumberType_TxsdThoroughfareNumberNumberType_ struct {
-//	12 Archer Street is "Single" and 12-14 Archer Street is "Range"
-	NumberType TxsdThoroughfareNumberNumberType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberType,attr"`
-
-}
-
-//	23 Archer St, Archer Street 23, St Archer 23
-type TxsdThoroughfareNumberNumberOccurrence xsdt.Nmtoken
-
-//	Since TxsdThoroughfareNumberNumberOccurrence is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdThoroughfareNumberNumberOccurrence) SetFromString (s string)  { (*xsdt.Nmtoken)(me).SetFromString(s) }
-
-//	Since TxsdThoroughfareNumberNumberOccurrence is just a simple String type, this merely returns the current string value.
-func (me TxsdThoroughfareNumberNumberOccurrence) String () string { return xsdt.Nmtoken(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdThoroughfareNumberNumberOccurrence's alias type xsdt.Nmtoken.
-func (me TxsdThoroughfareNumberNumberOccurrence) ToXsdtNmtoken () xsdt.Nmtoken { return xsdt.Nmtoken(me) }
-
-//	Returns true if the value of this enumerated TxsdThoroughfareNumberNumberOccurrence is "BeforeName".
-func (me TxsdThoroughfareNumberNumberOccurrence) IsBeforeName () bool { return me == "BeforeName" }
-
-//	Returns true if the value of this enumerated TxsdThoroughfareNumberNumberOccurrence is "AfterType".
-func (me TxsdThoroughfareNumberNumberOccurrence) IsAfterType () bool { return me == "AfterType" }
-
-//	Returns true if the value of this enumerated TxsdThoroughfareNumberNumberOccurrence is "BeforeType".
-func (me TxsdThoroughfareNumberNumberOccurrence) IsBeforeType () bool { return me == "BeforeType" }
-
-//	Returns true if the value of this enumerated TxsdThoroughfareNumberNumberOccurrence is "AfterName".
-func (me TxsdThoroughfareNumberNumberOccurrence) IsAfterName () bool { return me == "AfterName" }
-
-type XsdGoPkgHasAttr_NumberOccurrence_TxsdThoroughfareNumberNumberOccurrence_ struct {
-//	23 Archer St, Archer Street 23, St Archer 23
-	NumberOccurrence TxsdThoroughfareNumberNumberOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberOccurrence,attr"`
-
-}
-
-type TxsdThoroughfareNumber struct {
-//	No. in Street No.12 or "#" in Street # 12, etc.
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-
-//	12 Archer Street is "Single" and 12-14 Archer Street is "Range"
-	XsdGoPkgHasAttr_NumberType_TxsdThoroughfareNumberNumberType_
-
-	XsdGoPkgHasAtts_GrPostal
-
-//	23 Archer St, Archer Street 23, St Archer 23
-	XsdGoPkgHasAttr_NumberOccurrence_TxsdThoroughfareNumberNumberOccurrence_
-
-	XsdGoPkgHasCdata
-
-//	No.12 where "No." is before actual street number
-	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdThoroughfareNumberIndicatorOccurrence_
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_ThoroughfareNumber struct {
-//	Eg.: 23 Archer street or 25/15 Zero Avenue, etc
-	ThoroughfareNumbers []*TxsdThoroughfareNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumber"`
-
-}
-
-//	Specification of a single premise, for example a house or a building. The premise as a whole has a unique premise (house) number or a premise name.  There could be more than
-//	one premise in a street referenced in an address. For example a building address near a major shopping centre or raiwlay station
-//	A in A12
-type TxsdPremiseNumberPrefix struct {
-	XsdGoPkgValue xsdt.String `xml:",chardata"`
-
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-//	A-12 where 12 is number and A is prefix and "-" is the separator
-	XsdGoPkgHasAttr_NumberPrefixSeparator_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_PremiseNumberPrefix struct {
-//	A in A12
-	PremiseNumberPrefixs []*TxsdPremiseNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberPrefix"`
-
-}
-
-//	Specification for defining the premise number range. Some premises have number as Building C1-C7
-//	Eg. Odd or even number range
-type XsdGoPkgHasAttr_RangeType_XsdtString_ struct {
-//	Eg. Odd or even number range
-	RangeType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 RangeType,attr"`
-
-}
-
-//	Building 23-25 where the number occurs after building name
-type XsdGoPkgHasAttr_NumberRangeOccurence_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence_ struct {
-//	Building 23-25 where the number occurs after building name
-	NumberRangeOccurence TxsdThoroughfareNumberNumberOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberRangeOccurence,attr"`
-
-}
-
-//	End number details of the premise number range
-//	A in 12A
-//	12-A where 12 is number and A is suffix and "-" is the separator
-type XsdGoPkgHasAttr_NumberSuffixSeparator_XsdtString_ struct {
-//	12-A where 12 is number and A is suffix and "-" is the separator
-	NumberSuffixSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberSuffixSeparator,attr"`
-
-}
-
-type TxsdPremiseNumberSuffix struct {
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_GrPostal
-
-//	12-A where 12 is number and A is suffix and "-" is the separator
-	XsdGoPkgHasAttr_NumberSuffixSeparator_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_PremiseNumberSuffix struct {
-//	A in 12A
-	PremiseNumberSuffixs []*TxsdPremiseNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberSuffix"`
-
-}
-
-//	Specification of the identifier of the premise (house, building, etc). Premises in a street are often uniquely identified by means of consecutive identifiers. The identifier can be a number, a letter or any combination of the two.
-//	Building 12-14 is "Range" and Building 12 is "Single"
-type XsdGoPkgHasAttr_NumberType_TxsdPremiseNumberNumberType_ struct {
-//	Building 12-14 is "Range" and Building 12 is "Single"
-	NumberType TxsdThoroughfareNumberNumberType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberType,attr"`
-
-}
-
-//	12 in BUILDING 12 occurs "after" premise type BUILDING
-type XsdGoPkgHasAttr_NumberTypeOccurrence_TxsdPremiseNumberNumberTypeOccurrence_ struct {
-//	12 in BUILDING 12 occurs "after" premise type BUILDING
-	NumberTypeOccurrence TxsdThoroughfareNumberIndicatorOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberTypeOccurrence,attr"`
-
-}
-
-//	No. occurs before 12 No.12
-type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdPremiseNumberIndicatorOccurrence_ struct {
-//	No. occurs before 12 No.12
-	IndicatorOccurrence TxsdThoroughfareNumberIndicatorOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
-
-}
-
-type TxsdPremiseNumber struct {
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-//	No. occurs before 12 No.12
-	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdPremiseNumberIndicatorOccurrence_
-
-//	Building 12-14 is "Range" and Building 12 is "Single"
-	XsdGoPkgHasAttr_NumberType_TxsdPremiseNumberNumberType_
-
-	XsdGoPkgHasCdata
-
-//	12 in BUILDING 12 occurs "after" premise type BUILDING
-	XsdGoPkgHasAttr_NumberTypeOccurrence_TxsdPremiseNumberNumberTypeOccurrence_
-
-//	No. in House No.12, # in #12, etc.
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_PremiseNumber struct {
-//	Specification of the identifier of the premise (house, building, etc). Premises in a street are often uniquely identified by means of consecutive identifiers. The identifier can be a number, a letter or any combination of the two.
-	PremiseNumbers []*TxsdPremiseNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumber"`
-
-}
-
-type TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo struct {
-	XsdGoPkgHasElems_PremiseNumberPrefix
-
-	XsdGoPkgHasElems_PremiseNumberSuffix
-
-	XsdGoPkgHasElems_PremiseNumber
-
-	XsdGoPkgHasElems_AddressLine
-
-}
-
-type XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_ struct {
-//	End number details of the premise number range
-	PremiseNumberRangeTo *TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberRangeTo"`
-
-}
-
-//	No.12-14 where "No." is before actual street number
-type XsdGoPkgHasAttr_IndicatorOccurence_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence_ struct {
-//	No.12-14 where "No." is before actual street number
-	IndicatorOccurence TxsdThoroughfareNumberIndicatorOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurence,attr"`
-
-}
-
-//	"-" in 12-14  or "Thru" in 12 Thru 14 etc.
-type XsdGoPkgHasAttr_Separator_XsdtString_ struct {
-//	"-" in 12-14  or "Thru" in 12 Thru 14 etc.
-	Separator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Separator,attr"`
-
-}
-
-//	Start number details of the premise number range
-type XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_ struct {
-//	Start number details of the premise number range
-	PremiseNumberRangeFrom *TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberRangeFrom"`
-
-}
-
-type TxsdPremiseSequenceChoiceChoicePremiseNumberRange struct {
-//	Start number details of the premise number range
-	XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-//	Eg. No. in Building No:C1-C5
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-
-//	Eg. Odd or even number range
-	XsdGoPkgHasAttr_RangeType_XsdtString_
-
-//	Building 23-25 where the number occurs after building name
-	XsdGoPkgHasAttr_NumberRangeOccurence_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence_
-
-//	End number details of the premise number range
-	XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_
-
-//	No.12-14 where "No." is before actual street number
-	XsdGoPkgHasAttr_IndicatorOccurence_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence_
-
-//	"-" in 12-14  or "Thru" in 12 Thru 14 etc.
-	XsdGoPkgHasAttr_Separator_XsdtString_
-
-}
-
-type XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_ struct {
-//	Specification for defining the premise number range. Some premises have number as Building C1-C7
-	PremiseNumberRange *TxsdPremiseSequenceChoiceChoicePremiseNumberRange `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberRange"`
-
-}
-
-//	LOBBY, BASEMENT, GROUND FLOOR, etc...
-type TxsdPremiseSequenceChoicePremiseLocation struct {
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasCdata
-
-}
-
-type XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_ struct {
-//	LOBBY, BASEMENT, GROUND FLOOR, etc...
-	PremiseLocation *TxsdPremiseSequenceChoicePremiseLocation `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseLocation"`
-
-}
-
-//	DES, DE, LA, LA, DU in RUE DU BOIS. These terms connect a premise/thoroughfare type and premise/thoroughfare name. Terms may appear with names AVE DU BOIS
-type XsdGoPkgHasAttr_PremiseThoroughfareConnector_XsdtString_ struct {
-//	DES, DE, LA, LA, DU in RUE DU BOIS. These terms connect a premise/thoroughfare type and premise/thoroughfare name. Terms may appear with names AVE DU BOIS
-	PremiseThoroughfareConnector xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseThoroughfareConnector,attr"`
-
-}
-
-//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
-//	Name of the the Mail Stop. eg. MSP, MS, etc
-type XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_ struct {
-//	Name of the the Mail Stop. eg. MSP, MS, etc
-	MailStopName *ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 MailStopName"`
-
-}
-
-//	Number of the Mail stop. eg. 123 in MS 123
-//	"-" in MS-123
-type XsdGoPkgHasAttr_NameNumberSeparator_XsdtString_ struct {
-//	"-" in MS-123
-	NameNumberSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NameNumberSeparator,attr"`
-
-}
-
-type TxsdMailStopTypeSequenceMailStopNumber struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_GrPostal
-
-//	"-" in MS-123
-	XsdGoPkgHasAttr_NameNumberSeparator_XsdtString_
-
-}
-
-type XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_ struct {
-//	Number of the Mail stop. eg. 123 in MS 123
-	MailStopNumber *TxsdMailStopTypeSequenceMailStopNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 MailStopNumber"`
-
-}
-
-type TMailStopType struct {
-//	Name of the the Mail Stop. eg. MSP, MS, etc
-	XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasElems_AddressLine
-
-//	Number of the Mail stop. eg. 123 in MS 123
-	XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_
-
-}
-
-type XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_ struct {
-//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
-	MailStop *TMailStopType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 MailStop"`
-
-}
-
-//	PostalCode is the container element for either simple or complex (extended) postal codes. Type: Area Code, Postcode, etc.
-//	A post town is not the same as a locality. A post town can encompass a collection of (small) localities. It can also be a subpart of a locality. An actual post town in Norway is "Bergen".
-//	Name of the post town
-type XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_ struct {
-//	Name of the post town
-	PostTownNames []*ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostTownName"`
-
-}
-
-//	GENERAL PO in MIAMI GENERAL PO
-type XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_ struct {
-//	GENERAL PO in MIAMI GENERAL PO
-	PostTownSuffix *TxsdPremiseSequenceChoicePremiseLocation `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostTownSuffix"`
-
-}
-
-type TxsdPostalCodeSequencePostTown struct {
-//	GENERAL PO in MIAMI GENERAL PO
-	XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_
-
-	XsdGoPkgHasElems_AddressLine
-
-//	Name of the post town
-	XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_
-
-//	eg. village, town, suburb, etc
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-}
-
-type XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_ struct {
-//	A post town is not the same as a locality. A post town can encompass a collection of (small) localities. It can also be a subpart of a locality. An actual post town in Norway is "Bergen".
-	PostTown *TxsdPostalCodeSequencePostTown `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostTown"`
-
-}
-
-//	Specification of a postcode. The postcode is formatted according to country-specific rules. Example: SW3 0A8-1A, 600074, 2067
-type XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_ struct {
-//	Specification of a postcode. The postcode is formatted according to country-specific rules. Example: SW3 0A8-1A, 600074, 2067
-	PostalCodeNumbers []*ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalCodeNumber"`
-
-}
-
-//	Examples are: 1234 (USA), 1G (UK), etc.
-//	The separator between postal code number and the extension. Eg. "-"
-type XsdGoPkgHasAttr_NumberExtensionSeparator_XsdtString_ struct {
-//	The separator between postal code number and the extension. Eg. "-"
-	NumberExtensionSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberExtensionSeparator,attr"`
-
-}
-
-type TxsdPostalCodeSequencePostalCodeNumberExtension struct {
-	XsdGoPkgHasAtts_GrPostal
-
-//	Delivery Point Suffix, New Postal Code, etc..
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-//	The separator between postal code number and the extension. Eg. "-"
-	XsdGoPkgHasAttr_NumberExtensionSeparator_XsdtString_
-
-	XsdGoPkgHasCdata
-
-}
-
-type XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_ struct {
-//	Examples are: 1234 (USA), 1G (UK), etc.
-	PostalCodeNumberExtensions []*TxsdPostalCodeSequencePostalCodeNumberExtension `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalCodeNumberExtension"`
-
-}
-
-type TxsdPostalCode struct {
-//	Specification of a postcode. The postcode is formatted according to country-specific rules. Example: SW3 0A8-1A, 600074, 2067
-	XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_
-
-	XsdGoPkgHasElems_AddressLine
-
-//	Examples are: 1234 (USA), 1G (UK), etc.
-	XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_
-
-//	Area Code, Postcode, Delivery code as in NZ, etc
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-//	A post town is not the same as a locality. A post town can encompass a collection of (small) localities. It can also be a subpart of a locality. An actual post town in Norway is "Bergen".
-	XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_
-
-}
-
-type XsdGoPkgHasElem_PostalCode struct {
-//	PostalCode is the container element for either simple or complex (extended) postal codes. Type: Area Code, Postcode, etc.
-	PostalCode *TxsdPostalCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalCode"`
-
-}
-
-//	Specification of a single sub-premise. Examples of sub-premises are apartments and suites. Each sub-premise should be uniquely identifiable.
-//	Specification of the identifier of a sub-premise. Examples of sub-premises are apartments and suites. sub-premises in a building are often uniquely identified by means of consecutive
-//	identifiers. The identifier can be a number, a letter or any combination of the two. In the latter case, the identifier includes exactly one variable (range) part, which is either a
-//	number or a single letter that is surrounded by fixed parts at the left (prefix) or the right (postfix).
-//	12TH occurs "before" FLOOR (a type of subpremise) in 12TH FLOOR
-type XsdGoPkgHasAttr_NumberTypeOccurrence_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumberNumberTypeOccurrence_ struct {
-//	12TH occurs "before" FLOOR (a type of subpremise) in 12TH FLOOR
-	NumberTypeOccurrence TxsdThoroughfareNumberIndicatorOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberTypeOccurrence,attr"`
-
-}
-
-//	"No." occurs before 1 in No.1, or TH occurs after 12 in 12TH
-type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumberIndicatorOccurrence_ struct {
-//	"No." occurs before 1 in No.1, or TH occurs after 12 in 12TH
-	IndicatorOccurrence TxsdThoroughfareNumberIndicatorOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
-
-}
-
-//	"/" in 12/14 Archer Street where 12 is sub-premise number and 14 is premise number
-type XsdGoPkgHasAttr_PremiseNumberSeparator_XsdtString_ struct {
-//	"/" in 12/14 Archer Street where 12 is sub-premise number and 14 is premise number
-	PremiseNumberSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberSeparator,attr"`
-
-}
-
-type TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber struct {
-//	12TH occurs "before" FLOOR (a type of subpremise) in 12TH FLOOR
-	XsdGoPkgHasAttr_NumberTypeOccurrence_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumberNumberTypeOccurrence_
-
-//	"No." occurs before 1 in No.1, or TH occurs after 12 in 12TH
-	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumberIndicatorOccurrence_
-
-	XsdGoPkgHasCdata
-
-//	"/" in 12/14 Archer Street where 12 is sub-premise number and 14 is premise number
-	XsdGoPkgHasAttr_PremiseNumberSeparator_XsdtString_
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasAtts_GrPostal
-
-//	"TH" in 12TH which is a floor number, "NO." in NO.1, "#" in APT #12, etc.
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_ struct {
-//	Specification of the identifier of a sub-premise. Examples of sub-premises are apartments and suites. sub-premises in a building are often uniquely identified by means of consecutive
-//	identifiers. The identifier can be a number, a letter or any combination of the two. In the latter case, the identifier includes exactly one variable (range) part, which is either a
-//	number or a single letter that is surrounded by fixed parts at the left (prefix) or the right (postfix).
-	SubPremiseNumbers []*TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremiseNumber"`
-
-}
-
-//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from a large mail user address, which contains no street.
-//	Name of the firm
-type XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_ struct {
-//	Name of the firm
-	FirmNames []*ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 FirmName"`
-
-}
-
-//	Subdivision in the firm: School of Physics at Victoria University (School of Physics is the department)
-//	Specification of the name of a department.
-type XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_ struct {
-//	Specification of the name of a department.
-	DepartmentNames []*ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DepartmentName"`
-
-}
-
-type TxsdDepartment struct {
-//	School in Physics School, Division in Radiology division of school of physics
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-//	Specification of the name of a department.
-	XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_
-
-	XsdGoPkgHasElems_AddressLine
-
-//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
-	XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_
-
-	XsdGoPkgHasElem_PostalCode
-
-}
-
-type XsdGoPkgHasElems_Department struct {
-//	Subdivision in the firm: School of Physics at Victoria University (School of Physics is the department)
-	Departments []*TxsdDepartment `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Department"`
-
-}
-
-type TFirmType struct {
-	XsdGoPkgHasElems_Department
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasElem_PostalCode
-
-//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
-	XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_
-
-	XsdGoPkgHasElems_AddressLine
-
-//	Name of the firm
-	XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_
-
-}
-
-type XsdGoPkgHasElem_FirmsequenceSubPremiseTypeschema_Firm_TFirmType_ struct {
-//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from a large mail user address, which contains no street.
-	Firm *TFirmType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Firm"`
-
-}
-
-//	Specification of a single sub-premise. Examples of sub-premises are apartments and suites.
-//	Each sub-premise should be uniquely identifiable. SubPremiseType: Specification of the name of a sub-premise type. Possible values not limited to: Suite, Appartment, Floor, Unknown
-//	Multiple levels within a premise by recursively calling SubPremise Eg. Level 4, Suite 2, Block C
-type XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremiseType_ struct {
-//	Specification of a single sub-premise. Examples of sub-premises are apartments and suites.
-//	Each sub-premise should be uniquely identifiable. SubPremiseType: Specification of the name of a sub-premise type. Possible values not limited to: Suite, Appartment, Floor, Unknown
-//	Multiple levels within a premise by recursively calling SubPremise Eg. Level 4, Suite 2, Block C
-	SubPremise *TSubPremiseType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremise"`
-
-}
-
-//	Prefix of the sub premise number. eg. A in A-12
-type XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_ struct {
-//	Prefix of the sub premise number. eg. A in A-12
-	SubPremiseNumberPrefixs []*TxsdThoroughfareNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremiseNumberPrefix"`
-
-}
-
-//	Suffix of the sub premise number. eg. A in 12A
-type XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_ struct {
-//	Suffix of the sub premise number. eg. A in 12A
-	SubPremiseNumberSuffixs []*TxsdPremiseNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremiseNumberSuffix"`
-
-}
-
-//	Name of the SubPremise Location. eg. LOBBY, BASEMENT, GROUND FLOOR, etc...
-type XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_ struct {
-//	Name of the SubPremise Location. eg. LOBBY, BASEMENT, GROUND FLOOR, etc...
-	SubPremiseLocation *TxsdPremiseSequenceChoicePremiseLocation `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremiseLocation"`
-
-}
-
-//	Name of the SubPremise
-//	EGIS Building where EGIS occurs before Building
-type XsdGoPkgHasAttr_TypeOccurrence_TxsdSubPremiseTypeSequenceSubPremiseNameTypeOccurrence_ struct {
-//	EGIS Building where EGIS occurs before Building
-	TypeOccurrence TxsdThoroughfareNumberIndicatorOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 TypeOccurrence,attr"`
-
-}
-
-type TxsdSubPremiseTypeSequenceSubPremiseName struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-//	EGIS Building where EGIS occurs before Building
-	XsdGoPkgHasAttr_TypeOccurrence_TxsdSubPremiseTypeSequenceSubPremiseNameTypeOccurrence_
-
-}
-
-type XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_ struct {
-//	Name of the SubPremise
-	SubPremiseNames []*TxsdSubPremiseTypeSequenceSubPremiseName `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremiseName"`
-
-}
-
-//	Name of the building
-//	Occurrence of the building name before/after the type. eg. EGIS BUILDING where name appears before type
-type XsdGoPkgHasAttr_TypeOccurrence_TxsdBuildingNameTypeTypeOccurrence_ struct {
-//	Occurrence of the building name before/after the type. eg. EGIS BUILDING where name appears before type
-	TypeOccurrence TxsdThoroughfareNumberIndicatorOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 TypeOccurrence,attr"`
-
-}
-
-type TBuildingNameType struct {
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-//	Occurrence of the building name before/after the type. eg. EGIS BUILDING where name appears before type
-	XsdGoPkgHasAttr_TypeOccurrence_TxsdBuildingNameTypeTypeOccurrence_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_GrPostal
-
-}
-
-type XsdGoPkgHasElems_BuildingNamesequenceSubPremiseTypeschema_BuildingName_TBuildingNameType_ struct {
-//	Name of the building
-	BuildingNames []*TBuildingNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 BuildingName"`
-
-}
-
-type TSubPremiseType struct {
-	XsdGoPkgHasElems_AddressLine
-
-	XsdGoPkgHasElem_PostalCode
-
-//	Name of the SubPremise
-	XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_
-
-//	Name of the building
-	XsdGoPkgHasElems_BuildingNamesequenceSubPremiseTypeschema_BuildingName_TBuildingNameType_
-
-//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
-	XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_
-
-//	Specification of the identifier of a sub-premise. Examples of sub-premises are apartments and suites. sub-premises in a building are often uniquely identified by means of consecutive
-//	identifiers. The identifier can be a number, a letter or any combination of the two. In the latter case, the identifier includes exactly one variable (range) part, which is either a
-//	number or a single letter that is surrounded by fixed parts at the left (prefix) or the right (postfix).
-	XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_
-
-//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from a large mail user address, which contains no street.
-	XsdGoPkgHasElem_FirmsequenceSubPremiseTypeschema_Firm_TFirmType_
-
-//	Specification of a single sub-premise. Examples of sub-premises are apartments and suites.
-//	Each sub-premise should be uniquely identifiable. SubPremiseType: Specification of the name of a sub-premise type. Possible values not limited to: Suite, Appartment, Floor, Unknown
-//	Multiple levels within a premise by recursively calling SubPremise Eg. Level 4, Suite 2, Block C
-	XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremiseType_
-
-//	Prefix of the sub premise number. eg. A in A-12
-	XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-//	Suffix of the sub premise number. eg. A in 12A
-	XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_
-
-//	Name of the SubPremise Location. eg. LOBBY, BASEMENT, GROUND FLOOR, etc...
-	XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_
-
-}
-
-type XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_ struct {
-//	Specification of a single sub-premise. Examples of sub-premises are apartments and suites. Each sub-premise should be uniquely identifiable.
-	SubPremises []*TSubPremiseType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremise"`
-
-}
-
-//	STREET, PREMISE, SUBPREMISE, PARK, FARM, etc
-type XsdGoPkgHasAttr_PremiseDependency_XsdtString_ struct {
-//	STREET, PREMISE, SUBPREMISE, PARK, FARM, etc
-	PremiseDependency xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseDependency,attr"`
-
-}
-
-//	Specification of the name of the premise (house, building, park, farm, etc). A premise name is specified when the premise cannot be addressed using a street name plus premise (house) number.
-//	EGIS Building where EGIS occurs before Building, DES JARDINS occurs after COMPLEXE DES JARDINS
-type XsdGoPkgHasAttr_TypeOccurrence_TxsdPremiseSequencePremiseNameTypeOccurrence_ struct {
-//	EGIS Building where EGIS occurs before Building, DES JARDINS occurs after COMPLEXE DES JARDINS
-	TypeOccurrence TxsdThoroughfareNumberIndicatorOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 TypeOccurrence,attr"`
-
-}
-
-type TxsdPremiseSequencePremiseName struct {
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasCdata
-
-//	EGIS Building where EGIS occurs before Building, DES JARDINS occurs after COMPLEXE DES JARDINS
-	XsdGoPkgHasAttr_TypeOccurrence_TxsdPremiseSequencePremiseNameTypeOccurrence_
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_ struct {
-//	Specification of the name of the premise (house, building, park, farm, etc). A premise name is specified when the premise cannot be addressed using a street name plus premise (house) number.
-	PremiseNames []*TxsdPremiseSequencePremiseName `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseName"`
-
-}
-
-//	NEAR, ADJACENT TO, etc
-type XsdGoPkgHasAttr_PremiseDependencyType_XsdtString_ struct {
-//	NEAR, ADJACENT TO, etc
-	PremiseDependencyType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseDependencyType,attr"`
-
-}
-
-type TxsdPremise struct {
-//	Specification of a single sub-premise. Examples of sub-premises are apartments and suites. Each sub-premise should be uniquely identifiable.
-	XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_
-
-	XsdGoPkgHasElems_PremiseNumberSuffix
-
-//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from a large mail user address, which contains no street.
-	XsdGoPkgHasElem_FirmsequenceSubPremiseTypeschema_Firm_TFirmType_
-
-//	Specification of the name of a building.
-	XsdGoPkgHasElems_BuildingNamesequenceSubPremiseTypeschema_BuildingName_TBuildingNameType_
-
-//	COMPLEXE in COMPLEX DES JARDINS, A building, station, etc
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasElems_PremiseNumber
-
-//	STREET, PREMISE, SUBPREMISE, PARK, FARM, etc
-	XsdGoPkgHasAttr_PremiseDependency_XsdtString_
-
-//	Specification of the name of the premise (house, building, park, farm, etc). A premise name is specified when the premise cannot be addressed using a street name plus premise (house) number.
-	XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_
-
-//	NEAR, ADJACENT TO, etc
-	XsdGoPkgHasAttr_PremiseDependencyType_XsdtString_
-
-	XsdGoPkgHasElem_Premise
-
-	XsdGoPkgHasElems_PremiseNumberPrefix
-
-//	Specification for defining the premise number range. Some premises have number as Building C1-C7
-	XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_
-
-//	LOBBY, BASEMENT, GROUND FLOOR, etc...
-	XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_
-
-//	DES, DE, LA, LA, DU in RUE DU BOIS. These terms connect a premise/thoroughfare type and premise/thoroughfare name. Terms may appear with names AVE DU BOIS
-	XsdGoPkgHasAttr_PremiseThoroughfareConnector_XsdtString_
-
-//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
-	XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_
-
-	XsdGoPkgHasElems_AddressLine
-
-	XsdGoPkgHasElem_PostalCode
-
-}
-
-type XsdGoPkgHasElem_Premise struct {
-//	Specification of a single premise, for example a house or a building. The premise as a whole has a unique premise (house) number or a premise name.  There could be more than
-//	one premise in a street referenced in an address. For example a building address near a major shopping centre or raiwlay station
-	Premise *TxsdPremise `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Premise"`
-
-}
-
-//	STS in GEORGE and ADELAIDE STS, RDS IN A and B RDS, etc. Use only when both the street types are the same
-type XsdGoPkgHasAttr_DependentThoroughfaresType_XsdtString_ struct {
-//	STS in GEORGE and ADELAIDE STS, RDS IN A and B RDS, etc. Use only when both the street types are the same
-	DependentThoroughfaresType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfaresType,attr"`
-
-}
-
-//	Dependent localities are Districts within cities/towns, locality divisions, postal
-//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
-//	Specification of a large mail user address. Examples of large mail users are postal companies, companies in France with a cedex number, hospitals and airports with their own post code. Large mail user addresses do not have a street name with premise name or premise number in countries like Netherlands. But they have a POBox and street also in countries like France
-//	Specification of the identification number of a large mail user. An example are the Cedex codes in France.
-type TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier struct {
-	XsdGoPkgHasCdata
-
-//	eg. Building 429 in which Building is the Indicator
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-
-//	CEDEX Code
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasAtts_GrPostal
-
-}
-
-type XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_ struct {
-//	Specification of the identification number of a large mail user. An example are the Cedex codes in France.
-	LargeMailUserIdentifier *TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 LargeMailUserIdentifier"`
-
-}
-
-//	Name of the large mail user. eg. Smith Ford International airport
-type TxsdLargeMailUserTypeSequenceLargeMailUserName struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Code_XsdtString_
-
-//	Airport, Hospital, etc
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_ struct {
-//	Name of the large mail user. eg. Smith Ford International airport
-	LargeMailUserNames []*TxsdLargeMailUserTypeSequenceLargeMailUserName `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 LargeMailUserName"`
-
-}
-
-//	Specification of a postbox like mail delivery point. Only a single postbox number can be specified. Examples of postboxes are POBox, free mail numbers, etc.
-//	Some countries like USA have POBox as 12345-123
-type TxsdPostBoxSequencePostBoxNumberExtension struct {
-//	"-" is the NumberExtensionSeparator in POBOX:12345-123
-	XsdGoPkgHasAttr_NumberExtensionSeparator_XsdtString_
-
-	XsdGoPkgHasCdata
-
-}
-
-type XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_ struct {
-//	Some countries like USA have POBox as 12345-123
-	PostBoxNumberExtension *TxsdPostBoxSequencePostBoxNumberExtension `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBoxNumberExtension"`
-
-}
-
-//	Specification of the suffix of the post box number. eg. A in POBox:123A
-type TxsdPostBoxSequencePostBoxNumberSuffix struct {
-	XsdGoPkgHasAtts_GrPostal
-
-//	12-A where 12 is number and A is suffix and "-" is the separator
-	XsdGoPkgHasAttr_NumberSuffixSeparator_XsdtString_
-
-	XsdGoPkgHasCdata
-
-}
-
-type XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_ struct {
-//	Specification of the suffix of the post box number. eg. A in POBox:123A
-	PostBoxNumberSuffix *TxsdPostBoxSequencePostBoxNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBoxNumberSuffix"`
-
-}
-
-//	Specification of the prefix of the post box number. eg. A in POBox:A-123
-type TxsdPostBoxSequencePostBoxNumberPrefix struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_GrPostal
-
-//	A-12 where 12 is number and A is prefix and "-" is the separator
-	XsdGoPkgHasAttr_NumberPrefixSeparator_XsdtString_
-
-}
-
-type XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_ struct {
-//	Specification of the prefix of the post box number. eg. A in POBox:A-123
-	PostBoxNumberPrefix *TxsdPostBoxSequencePostBoxNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBoxNumberPrefix"`
-
-}
-
-//	Specification of the number of a postbox
-type XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_ struct {
-//	Specification of the number of a postbox
-	PostBoxNumber *TxsdPremiseSequenceChoicePremiseLocation `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBoxNumber"`
-
-}
-
-type TxsdPostBox struct {
-//	Specification of the prefix of the post box number. eg. A in POBox:A-123
-	XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_
-
-	XsdGoPkgHasElem_PostalCode
-
-//	Possible values are, not limited to: POBox and Freepost.
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasElems_AddressLine
-
-//	Specification of the number of a postbox
-	XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_
-
-//	Some countries like USA have POBox as 12345-123
-	XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_
-
-//	LOCKED BAG NO:1234 where the Indicator is NO: and Type is LOCKED BAG
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-
-//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from
-//	a large mail user address, which contains no street.
-	XsdGoPkgHasElem_FirmsequenceSubPremiseTypeschema_Firm_TFirmType_
-
-//	Specification of the suffix of the post box number. eg. A in POBox:123A
-	XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_
-
-}
-
-type XsdGoPkgHasElem_PostBox struct {
-//	Specification of a postbox like mail delivery point. Only a single postbox number can be specified. Examples of postboxes are POBox, free mail numbers, etc.
-	PostBox *TxsdPostBox `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBox"`
-
-}
-
-//	Subdivision in the firm: School of Physics at Victoria University (School of Physics is the department)
-type XsdGoPkgHasElem_Department struct {
-//	Subdivision in the firm: School of Physics at Victoria University (School of Physics is the department)
-	Department *TxsdDepartment `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Department"`
-
-}
-
-type TLargeMailUserType struct {
-	XsdGoPkgHasElem_Department
-
-	XsdGoPkgHasElem_PostalCode
-
-//	Specification of the identification number of a large mail user. An example are the Cedex codes in France.
-	XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_
-
-//	Name of the large mail user. eg. Smith Ford International airport
-	XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_
-
-//	Name of the building
-	XsdGoPkgHasElems_BuildingNamesequenceSubPremiseTypeschema_BuildingName_TBuildingNameType_
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasElems_AddressLine
-
-	XsdGoPkgHasElem_PostBox
-
-	XsdGoPkgHasElem_Thoroughfare
-
-}
-
-type XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_ struct {
-//	Specification of a large mail user address. Examples of large mail users are postal companies, companies in France with a cedex number, hospitals and airports with their own post code. Large mail user addresses do not have a street name with premise name or premise number in countries like Netherlands. But they have a POBox and street also in countries like France
-	LargeMailUser *TLargeMailUserType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 LargeMailUser"`
-
-}
-
-//	Number of the dependent locality. Some areas are numbered. Eg. SECTOR 5 in a Suburb as in India or SOI SUKUMVIT 10 as in Thailand
-//	Eg. SECTOR occurs before 5 in SECTOR 5
-type XsdGoPkgHasAttr_NameNumberOccurrence_TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence_ struct {
-//	Eg. SECTOR occurs before 5 in SECTOR 5
-	NameNumberOccurrence TxsdThoroughfareNumberIndicatorOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NameNumberOccurrence,attr"`
-
-}
-
-type TxsdDependentLocalityTypeSequenceDependentLocalityNumber struct {
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasCdata
-
-//	Eg. SECTOR occurs before 5 in SECTOR 5
-	XsdGoPkgHasAttr_NameNumberOccurrence_TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence_
-
-}
-
-type XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_ struct {
-//	Number of the dependent locality. Some areas are numbered. Eg. SECTOR 5 in a Suburb as in India or SOI SUKUMVIT 10 as in Thailand
-	DependentLocalityNumber *TxsdDependentLocalityTypeSequenceDependentLocalityNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentLocalityNumber"`
-
-}
-
-//	A Postal van is specific for a route as in Is`rael, Rural route
-//	Name of the Postal Route
-type XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_ struct {
-//	Name of the Postal Route
-	PostalRouteNames []*ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalRouteName"`
-
-}
-
-//	Number of the Postal Route
-type XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_ struct {
-//	Number of the Postal Route
-	PostalRouteNumber *TxsdPremiseSequenceChoicePremiseLocation `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalRouteNumber"`
-
-}
-
-type TPostalRouteType struct {
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasElem_PostBox
-
-//	Name of the Postal Route
-	XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_
-
-	XsdGoPkgHasElems_AddressLine
-
-//	Number of the Postal Route
-	XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_
-
-}
-
-type XsdGoPkgHasElem_PostalRoutechoicesequenceDependentLocalityTypeschema_PostalRoute_TPostalRouteType_ struct {
-//	A Postal van is specific for a route as in Is`rael, Rural route
-	PostalRoute *TPostalRouteType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalRoute"`
-
-}
-
-//	Name of the dependent locality
-type XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_ struct {
-//	Name of the dependent locality
-	DependentLocalityNames []*ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentLocalityName"`
-
-}
-
-//	"VIA" as in Hill Top VIA Parish where Parish is a locality and Hill Top is a dependent locality
-type XsdGoPkgHasAttr_Connector_XsdtString_ struct {
-//	"VIA" as in Hill Top VIA Parish where Parish is a locality and Hill Top is a dependent locality
-	Connector xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Connector,attr"`
-
-}
-
-//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
-type XsdGoPkgHasAttr_UsageType_XsdtString_ struct {
-//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
-	UsageType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 UsageType,attr"`
-
-}
-
-//	Specification of a post office. Examples are a rural post office where post is delivered and a post office containing post office boxes.
-//	Specification of the name of the post office. This can be a rural postoffice where post is delivered or a post office containing post office boxes.
-type XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_ struct {
-//	Specification of the name of the post office. This can be a rural postoffice where post is delivered or a post office containing post office boxes.
-	PostOfficeNames []*ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostOfficeName"`
-
-}
-
-//	Specification of the number of the postoffice. Common in rural postoffices
-//	MS occurs before 62 in MS 62
-type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdPostOfficeSequenceChoicePostOfficeNumberIndicatorOccurrence_ struct {
-//	MS occurs before 62 in MS 62
-	IndicatorOccurrence TxsdThoroughfareNumberIndicatorOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
-
-}
-
-type TxsdPostOfficeSequenceChoicePostOfficeNumber struct {
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasCdata
-
-//	MS in MS 62, # in MS # 12, etc.
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-
-//	MS occurs before 62 in MS 62
-	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdPostOfficeSequenceChoicePostOfficeNumberIndicatorOccurrence_
-
-}
-
-type XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_ struct {
-//	Specification of the number of the postoffice. Common in rural postoffices
-	PostOfficeNumber *TxsdPostOfficeSequenceChoicePostOfficeNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostOfficeNumber"`
-
-}
-
-type TxsdPostOffice struct {
-//	A Postal van is specific for a route as in Is`rael, Rural route
-	XsdGoPkgHasElem_PostalRoutechoicesequenceDependentLocalityTypeschema_PostalRoute_TPostalRouteType_
-
-//	Could be a Mobile Postoffice Van as in Isreal
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-//	Specification of the number of the postoffice. Common in rural postoffices
-	XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_
-
-	XsdGoPkgHasElems_AddressLine
-
-	XsdGoPkgHasElem_PostalCode
-
-	XsdGoPkgHasElem_PostBox
-
-//	eg. Kottivakkam (P.O) here (P.O) is the Indicator
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-
-//	Specification of the name of the post office. This can be a rural postoffice where post is delivered or a post office containing post office boxes.
-	XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_
-
-}
-
-type XsdGoPkgHasElem_PostOffice struct {
-//	Specification of a post office. Examples are a rural post office where post is delivered and a post office containing post office boxes.
-	PostOffice *TxsdPostOffice `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostOffice"`
-
-}
-
-//	Dependent localities are Districts within cities/towns, locality divisions, postal
-//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
-type XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_ struct {
-//	Dependent localities are Districts within cities/towns, locality divisions, postal
-//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
-	DependentLocality *TDependentLocalityType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentLocality"`
-
-}
-
-type TDependentLocalityType struct {
-//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
-	XsdGoPkgHasAttr_UsageType_XsdtString_
-
-	XsdGoPkgHasElems_AddressLine
-
-	XsdGoPkgHasElem_PostOffice
-
-//	Dependent localities are Districts within cities/towns, locality divisions, postal
-//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
-	XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_
-
-	XsdGoPkgHasElem_Thoroughfare
-
-//	City or IndustrialEstate, etc
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasElem_PostalCode
-
-	XsdGoPkgHasElem_Premise
-
-//	Specification of a large mail user address. Examples of large mail users are postal companies, companies in France with a cedex number, hospitals and airports with their own post code. Large mail user addresses do not have a street name with premise name or premise number in countries like Netherlands. But they have a POBox and street also in countries like France
-	XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_
-
-	XsdGoPkgHasElem_PostBox
-
-//	Number of the dependent locality. Some areas are numbered. Eg. SECTOR 5 in a Suburb as in India or SOI SUKUMVIT 10 as in Thailand
-	XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_
-
-//	A Postal van is specific for a route as in Is`rael, Rural route
-	XsdGoPkgHasElem_PostalRoutechoicesequenceDependentLocalityTypeschema_PostalRoute_TPostalRouteType_
-
-//	Eg. Erode (Dist) where (Dist) is the Indicator
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-
-//	Name of the dependent locality
-	XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_
-
-//	"VIA" as in Hill Top VIA Parish where Parish is a locality and Hill Top is a dependent locality
-	XsdGoPkgHasAttr_Connector_XsdtString_
-
-}
-
-type XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_ struct {
-//	Dependent localities are Districts within cities/towns, locality divisions, postal
-//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
-	DependentLocality *TDependentLocalityType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentLocality"`
-
-}
-
-//	Suffix after the number. A in 12A Archer Street
-type XsdGoPkgHasElems_ThoroughfareNumberSuffix struct {
-//	Suffix after the number. A in 12A Archer Street
-	ThoroughfareNumberSuffixs []*TxsdPremiseNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberSuffix"`
-
-}
-
-//	Specification of the name of a Thoroughfare (also dependant street name): street name, canal name, etc.
-type ThoroughfareNameType struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-}
-
-type XsdGoPkgHasElems_ThoroughfareNamesequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_ struct {
-//	Specification of the name of a Thoroughfare (also dependant street name): street name, canal name, etc.
-	ThoroughfareNames []*ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareName"`
-
-}
-
-//	Does this thoroughfare have a a dependent thoroughfare? Corner of street X, etc
-type TxsdThoroughfareDependentThoroughfares xsdt.Nmtoken
-
-//	Returns true if the value of this enumerated TxsdThoroughfareDependentThoroughfares is "No".
-func (me TxsdThoroughfareDependentThoroughfares) IsNo () bool { return me == "No" }
-
-//	Since TxsdThoroughfareDependentThoroughfares is just a simple String type, this merely returns the current string value.
-func (me TxsdThoroughfareDependentThoroughfares) String () string { return xsdt.Nmtoken(me).String() }
-
-//	Since TxsdThoroughfareDependentThoroughfares is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdThoroughfareDependentThoroughfares) SetFromString (s string)  { (*xsdt.Nmtoken)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TxsdThoroughfareDependentThoroughfares's alias type xsdt.Nmtoken.
-func (me TxsdThoroughfareDependentThoroughfares) ToXsdtNmtoken () xsdt.Nmtoken { return xsdt.Nmtoken(me) }
-
-//	Returns true if the value of this enumerated TxsdThoroughfareDependentThoroughfares is "Yes".
-func (me TxsdThoroughfareDependentThoroughfares) IsYes () bool { return me == "Yes" }
-
-type XsdGoPkgHasAttr_DependentThoroughfares_TxsdThoroughfareDependentThoroughfares_ struct {
-//	Does this thoroughfare have a a dependent thoroughfare? Corner of street X, etc
-	DependentThoroughfares TxsdThoroughfareDependentThoroughfares `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfares,attr"`
-
-}
-
-//	Corner of, Intersection of
-type XsdGoPkgHasAttr_DependentThoroughfaresIndicator_XsdtString_ struct {
-//	Corner of, Intersection of
-	DependentThoroughfaresIndicator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfaresIndicator,attr"`
-
-}
-
-//	A container to represent a range of numbers (from x thru y)for a thoroughfare. eg. 1-2 Albert Av
-//	Ending number in the range
-type TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo struct {
-	XsdGoPkgHasElems_AddressLine
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_ThoroughfareNumberSuffix
-
-	XsdGoPkgHasElems_ThoroughfareNumber
-
-	XsdGoPkgHasElems_ThoroughfareNumberPrefix
-
-	XsdGoPkgHasAtts_GrPostal
-
-}
-
-type XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_ struct {
-//	Ending number in the range
-	ThoroughfareNumberTo *TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberTo"`
-
-}
-
-//	Starting number in the range
-type XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_ struct {
-//	Starting number in the range
-	ThoroughfareNumberFrom *TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberFrom"`
-
-}
-
-//	No.12-14 where "No." is before actual street number
-type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeIndicatorOccurrence_ struct {
-//	No.12-14 where "No." is before actual street number
-	IndicatorOccurrence TxsdThoroughfareNumberIndicatorOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
-
-}
-
-//	Thoroughfare number ranges are odd or even
-type TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType xsdt.Nmtoken
-
-//	Since TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType) SetFromString (s string)  { (*xsdt.Nmtoken)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType is "Even".
-func (me TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType) IsEven () bool { return me == "Even" }
-
-//	This convenience method just performs a simple type conversion to TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType's alias type xsdt.Nmtoken.
-func (me TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType) ToXsdtNmtoken () xsdt.Nmtoken { return xsdt.Nmtoken(me) }
-
-//	Since TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType is just a simple String type, this merely returns the current string value.
-func (me TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType) String () string { return xsdt.Nmtoken(me).String() }
-
-//	Returns true if the value of this enumerated TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType is "Odd".
-func (me TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType) IsOdd () bool { return me == "Odd" }
-
-type XsdGoPkgHasAttr_RangeType_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType_ struct {
-//	Thoroughfare number ranges are odd or even
-	RangeType TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 RangeType,attr"`
-
-}
-
-//	23-25 Archer St, where number appears before name
-type XsdGoPkgHasAttr_NumberRangeOccurrence_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeNumberRangeOccurrence_ struct {
-//	23-25 Archer St, where number appears before name
-	NumberRangeOccurrence TxsdThoroughfareNumberNumberOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberRangeOccurrence,attr"`
-
-}
-
-type TxsdThoroughfareSequenceChoiceThoroughfareNumberRange struct {
-	XsdGoPkgHasElems_AddressLine
-
-//	"-" in 12-14  or "Thru" in 12 Thru 14 etc.
-	XsdGoPkgHasAttr_Separator_XsdtString_
-
-//	"No." No.12-13
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-
-//	Thoroughfare number ranges are odd or even
-	XsdGoPkgHasAttr_RangeType_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType_
-
-//	23-25 Archer St, where number appears before name
-	XsdGoPkgHasAttr_NumberRangeOccurrence_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeNumberRangeOccurrence_
-
-//	Ending number in the range
-	XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_
-
-//	Starting number in the range
-	XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_
-
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-//	No.12-14 where "No." is before actual street number
-	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeIndicatorOccurrence_
-
-}
-
-type XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_ struct {
-//	A container to represent a range of numbers (from x thru y)for a thoroughfare. eg. 1-2 Albert Av
-	ThoroughfareNumberRanges []*TxsdThoroughfareSequenceChoiceThoroughfareNumberRange `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberRange"`
-
-}
-
-//	Corner of Street1 AND Street 2 where AND is the Connector
-type XsdGoPkgHasAttr_DependentThoroughfaresConnector_XsdtString_ struct {
-//	Corner of Street1 AND Street 2 where AND is the Connector
-	DependentThoroughfaresConnector xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfaresConnector,attr"`
-
-}
-
-//	DependentThroughfare is related to a street; occurs in GB, IE, ES, PT
-type TxsdThoroughfareSequenceDependentThoroughfare struct {
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-//	Specification of the name of a Thoroughfare (also dependant street name): street name, canal name, etc.
-	XsdGoPkgHasElems_ThoroughfareNamesequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_
-
-	XsdGoPkgHasElems_AddressLine
-
-//	North Baker Street, where North is the pre-direction. The direction appears before the name.
-	XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_
-
-//	Appears before the thoroughfare name. Ed. Spanish: Avenida Aurora, where Avenida is the leading type / French: Rue Moliere, where Rue is the leading type.
-	XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_
-
-//	221-bis Baker Street North, where North is the post-direction. The post-direction appears after the name.
-	XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_
-
-//	Appears after the thoroughfare name. Ed. British: Baker Lane, where Lane is the trailing type.
-	XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_
-
-}
-
-type XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_ struct {
-//	DependentThroughfare is related to a street; occurs in GB, IE, ES, PT
-	DependentThoroughfare *TxsdThoroughfareSequenceDependentThoroughfare `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfare"`
-
-}
-
-type TxsdThoroughfare struct {
-//	Appears after the thoroughfare name. Ed. British: Baker Lane, where Lane is the trailing type.
-	XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_
-
-//	221-bis Baker Street North, where North is the post-direction. The post-direction appears after the name.
-	XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_
-
-//	Appears before the thoroughfare name. Ed. Spanish: Avenida Aurora, where Avenida is the leading type / French: Rue Moliere, where Rue is the leading type.
-	XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_
-
-	XsdGoPkgHasElems_AddressLine
-
-	XsdGoPkgHasElems_ThoroughfareNumber
-
-	XsdGoPkgHasElem_Premise
-
-//	STS in GEORGE and ADELAIDE STS, RDS IN A and B RDS, etc. Use only when both the street types are the same
-	XsdGoPkgHasAttr_DependentThoroughfaresType_XsdtString_
-
-//	Dependent localities are Districts within cities/towns, locality divisions, postal
-//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
-	XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_
-
-	XsdGoPkgHasElem_PostalCode
-
-	XsdGoPkgHasElems_ThoroughfareNumberSuffix
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-//	Specification of the name of a Thoroughfare (also dependant street name): street name, canal name, etc.
-	XsdGoPkgHasElems_ThoroughfareNamesequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_
-
-//	Does this thoroughfare have a a dependent thoroughfare? Corner of street X, etc
-	XsdGoPkgHasAttr_DependentThoroughfares_TxsdThoroughfareDependentThoroughfares_
-
-//	Corner of, Intersection of
-	XsdGoPkgHasAttr_DependentThoroughfaresIndicator_XsdtString_
-
-//	A container to represent a range of numbers (from x thru y)for a thoroughfare. eg. 1-2 Albert Av
-	XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_
-
-//	Corner of Street1 AND Street 2 where AND is the Connector
-	XsdGoPkgHasAttr_DependentThoroughfaresConnector_XsdtString_
-
-//	DependentThroughfare is related to a street; occurs in GB, IE, ES, PT
-	XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_
-
-//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from
-//	a large mail user address, which contains no street.
-	XsdGoPkgHasElem_FirmsequenceSubPremiseTypeschema_Firm_TFirmType_
-
-	XsdGoPkgHasElems_ThoroughfareNumberPrefix
-
-//	North Baker Street, where North is the pre-direction. The direction appears before the name.
-	XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_
-
-}
-
-type XsdGoPkgHasElem_Thoroughfare struct {
-//	Specification of a thoroughfare. A thoroughfare could be a rd, street, canal, river, etc.  Note dependentlocality in a street. For example, in some countries, a large street will
-//	have many subdivisions with numbers. Normally the subdivision name is the same as the road name, but with a number to identifiy it. Eg. SOI SUKUMVIT 3, SUKUMVIT RD, BANGKOK
-	Thoroughfare *TxsdThoroughfare `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Thoroughfare"`
-
-}
-
-//	Locality is one level lower than adminisstrative area. Eg.: cities, reservations and any other built-up areas.
-//	Name of the locality
-type XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_ struct {
-//	Name of the locality
-	LocalityNames []*ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 LocalityName"`
-
-}
-
-type TxsdLocality struct {
-	XsdGoPkgHasElems_AddressLine
-
-//	Dependent localities are Districts within cities/towns, locality divisions, postal
-//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
-	XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_
-
-	XsdGoPkgHasElem_PostalCode
-
-//	A Postal van is specific for a route as in Is`rael, Rural route
-	XsdGoPkgHasElem_PostalRoutechoicesequenceDependentLocalityTypeschema_PostalRoute_TPostalRouteType_
-
-	XsdGoPkgHasElem_Thoroughfare
-
-	XsdGoPkgHasElem_PostOffice
-
-//	Erode (Dist) where (Dist) is the Indicator
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-
-//	Name of the locality
-	XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_
-
-	XsdGoPkgHasElem_Premise
-
-//	Specification of a large mail user address. Examples of large mail users are postal companies, companies in France with a cedex number, hospitals and airports with their own post code. Large mail user addresses do not have a street name with premise name or premise number in countries like Netherlands. But they have a POBox and street also in countries like France
-	XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_
-
-//	Possible values not limited to: City, IndustrialEstate, etc
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
-	XsdGoPkgHasAttr_UsageType_XsdtString_
-
-	XsdGoPkgHasElem_PostBox
-
-}
-
-type XsdGoPkgHasElem_Locality struct {
-//	Locality is one level lower than adminisstrative area. Eg.: cities, reservations and any other built-up areas.
-	Locality *TxsdLocality `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Locality"`
-
-}
-
-//	Container for Address lines
-type TAddressLinesType struct {
-	XsdGoPkgHasElems_AddressLine
-
-}
-
-type XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_ struct {
-//	Container for Address lines
-	AddressLines *TAddressLinesType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLines"`
-
-}
-
-//	Examples of administrative areas are provinces counties, special regions (such as "Rijnmond"), etc.
-//	Specification of a sub-administrative area. An example of a sub-administrative areas is a county. There are two places where the name of an administrative
-//	area can be specified and in this case, one becomes sub-administrative area.
-//	Name of the sub-administrative area
-type XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_ struct {
-//	Name of the sub-administrative area
-	SubAdministrativeAreaNames []*ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubAdministrativeAreaName"`
-
-}
-
-type TxsdAdministrativeAreaSequenceSubAdministrativeArea struct {
-	XsdGoPkgHasElems_AddressLine
-
-	XsdGoPkgHasElem_Locality
-
-//	Erode (Dist) where (Dist) is the Indicator
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-
-	XsdGoPkgHasElem_PostOffice
-
-//	Name of the sub-administrative area
-	XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_
-
-//	Province or State or County or Kanton, etc
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasElem_PostalCode
-
-//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
-	XsdGoPkgHasAttr_UsageType_XsdtString_
-
-}
-
-type XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_ struct {
-//	Specification of a sub-administrative area. An example of a sub-administrative areas is a county. There are two places where the name of an administrative
-//	area can be specified and in this case, one becomes sub-administrative area.
-	SubAdministrativeArea *TxsdAdministrativeAreaSequenceSubAdministrativeArea `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubAdministrativeArea"`
-
-}
-
-//	Name of the administrative area. eg. MI in USA, NSW in Australia
-type XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_ struct {
-//	Name of the administrative area. eg. MI in USA, NSW in Australia
-	AdministrativeAreaNames []*ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AdministrativeAreaName"`
-
-}
-
-type TxsdAdministrativeArea struct {
-	XsdGoPkgHasElem_PostalCode
-
-//	Province or State or County or Kanton, etc
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasElem_PostOffice
-
-//	Specification of a sub-administrative area. An example of a sub-administrative areas is a county. There are two places where the name of an administrative
-//	area can be specified and in this case, one becomes sub-administrative area.
-	XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_
-
-//	Name of the administrative area. eg. MI in USA, NSW in Australia
-	XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_
-
-	XsdGoPkgHasElem_Locality
-
-	XsdGoPkgHasElems_AddressLine
-
-//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
-	XsdGoPkgHasAttr_UsageType_XsdtString_
-
-//	Erode (Dist) where (Dist) is the Indicator
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-
-}
-
-type XsdGoPkgHasElem_AdministrativeArea struct {
-//	Examples of administrative areas are provinces counties, special regions (such as "Rijnmond"), etc.
-	AdministrativeArea *TxsdAdministrativeArea `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AdministrativeArea"`
-
-}
-
 //	Specification of a country
-//	Specification of the name of a country.
-type XsdGoPkgHasElems_CountryName struct {
-//	Specification of the name of a country.
-	CountryNames []*ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 CountryName"`
-
-}
-
 //	A country code according to the specified scheme
 //	Country code scheme possible values, but not limited to: iso.3166-2, iso.3166-3 for two and three character country codes.
 type XsdGoPkgHasAttr_Scheme_XsdtString_ struct {
@@ -1905,12 +1928,12 @@ type XsdGoPkgHasAttr_Scheme_XsdtString_ struct {
 }
 
 type TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode struct {
-//	Country code scheme possible values, but not limited to: iso.3166-2, iso.3166-3 for two and three character country codes.
-	XsdGoPkgHasAttr_Scheme_XsdtString_
-
 	XsdGoPkgHasCdata
 
 	XsdGoPkgHasAtts_GrPostal
+
+//	Country code scheme possible values, but not limited to: iso.3166-2, iso.3166-3 for two and three character country codes.
+	XsdGoPkgHasAttr_Scheme_XsdtString_
 
 }
 
@@ -1920,10 +1943,17 @@ type XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetails
 
 }
 
-type TxsdAddressDetailsSequenceChoiceCountry struct {
-	XsdGoPkgHasElems_CountryName
+//	Specification of the name of a country.
+type XsdGoPkgHasElems_CountryName struct {
+//	Specification of the name of a country.
+	CountryNames []*ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 CountryName"`
 
+}
+
+type TxsdAddressDetailsSequenceChoiceCountry struct {
 	XsdGoPkgHasElem_AdministrativeArea
+
+	XsdGoPkgHasElems_AddressLine
 
 	XsdGoPkgHasElem_Locality
 
@@ -1932,7 +1962,7 @@ type TxsdAddressDetailsSequenceChoiceCountry struct {
 
 	XsdGoPkgHasElem_Thoroughfare
 
-	XsdGoPkgHasElems_AddressLine
+	XsdGoPkgHasElems_CountryName
 
 }
 
@@ -1942,51 +1972,33 @@ type XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddre
 
 }
 
-//	Type of address. Example: Postal, residential,business, primary, secondary, etc
-type XsdGoPkgHasAttr_AddressType_XsdtString_ struct {
-//	Type of address. Example: Postal, residential,business, primary, secondary, etc
-	AddressType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressType,attr"`
+//	Communication, Contact, etc.
+type XsdGoPkgHasAttr_Usage_XsdtString_ struct {
+//	Communication, Contact, etc.
+	Usage xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Usage,attr"`
 
 }
 
 //	Address as one line of free text
 type XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_ struct {
 //	Address as one line of free text
-	Address *ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Address"`
-
-}
-
-//	Key identifier for the element for not reinforced references from other elements. Not required to be unique for the document to be valid, but application may get confused if not unique. Extend this schema adding unique contraint if needed.
-type XsdGoPkgHasAttr_AddressDetailsKey_XsdtString_ struct {
-//	Key identifier for the element for not reinforced references from other elements. Not required to be unique for the document to be valid, but application may get confused if not unique. Extend this schema adding unique contraint if needed.
-	AddressDetailsKey xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressDetailsKey,attr"`
-
-}
-
-//	Start Date of the validity of address
-type XsdGoPkgHasAttr_ValidFromDate_XsdtString_ struct {
-//	Start Date of the validity of address
-	ValidFromDate xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ValidFromDate,attr"`
-
-}
-
-//	Moved, Living, Investment, Deceased, etc..
-type XsdGoPkgHasAttr_CurrentStatus_XsdtString_ struct {
-//	Moved, Living, Investment, Deceased, etc..
-	CurrentStatus xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 CurrentStatus,attr"`
-
-}
-
-//	End date of the validity of address
-type XsdGoPkgHasAttr_ValidToDate_XsdtString_ struct {
-//	End date of the validity of address
-	ValidToDate xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ValidToDate,attr"`
+	Address *ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Address"`
 
 }
 
 type TAddressDetails struct {
+//	Use the most suitable option. Country contains the most detailed information while Locality is missing Country and AdminArea
+//	Container for Address lines
+	XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_
+
 //	Start Date of the validity of address
 	XsdGoPkgHasAttr_ValidFromDate_XsdtString_
+
+//	Key identifier for the element for not reinforced references from other elements. Not required to be unique for the document to be valid, but application may get confused if not unique. Extend this schema adding unique contraint if needed.
+	XsdGoPkgHasAttr_AddressDetailsKey_XsdtString_
+
+//	Use the most suitable option. Country contains the most detailed information while Locality is missing Country and AdminArea
+	XsdGoPkgHasElem_AdministrativeArea
 
 //	Moved, Living, Investment, Deceased, etc..
 	XsdGoPkgHasAttr_CurrentStatus_XsdtString_
@@ -1994,40 +2006,30 @@ type TAddressDetails struct {
 //	End date of the validity of address
 	XsdGoPkgHasAttr_ValidToDate_XsdtString_
 
+//	Type of address. Example: Postal, residential,business, primary, secondary, etc
+	XsdGoPkgHasAttr_AddressType_XsdtString_
+
 //	Postal authorities use specific postal service data to expedient delivery of mail
 	XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_
-
-//	Communication, Contact, etc.
-	XsdGoPkgHasAttr_Usage_XsdtString_
-
-	XsdGoPkgHasAtts_GrPostal
-
-//	Use the most suitable option. Country contains the most detailed information while Locality is missing Country and AdminArea
-	XsdGoPkgHasElem_Thoroughfare
-
-//	Use the most suitable option. Country contains the most detailed information while Locality is missing Country and AdminArea
-	XsdGoPkgHasElem_Locality
-
-//	Use the most suitable option. Country contains the most detailed information while Locality is missing Country and AdminArea
-//	Container for Address lines
-	XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_
-
-//	Use the most suitable option. Country contains the most detailed information while Locality is missing Country and AdminArea
-	XsdGoPkgHasElem_AdministrativeArea
 
 //	Use the most suitable option. Country contains the most detailed information while Locality is missing Country and AdminArea
 //	Specification of a country
 	XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_
 
-//	Type of address. Example: Postal, residential,business, primary, secondary, etc
-	XsdGoPkgHasAttr_AddressType_XsdtString_
+//	Communication, Contact, etc.
+	XsdGoPkgHasAttr_Usage_XsdtString_
+
+//	Use the most suitable option. Country contains the most detailed information while Locality is missing Country and AdminArea
+	XsdGoPkgHasElem_Thoroughfare
+
+	XsdGoPkgHasAtts_GrPostal
 
 //	Use the most suitable option. Country contains the most detailed information while Locality is missing Country and AdminArea
 //	Address as one line of free text
 	XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_
 
-//	Key identifier for the element for not reinforced references from other elements. Not required to be unique for the document to be valid, but application may get confused if not unique. Extend this schema adding unique contraint if needed.
-	XsdGoPkgHasAttr_AddressDetailsKey_XsdtString_
+//	Use the most suitable option. Country contains the most detailed information while Locality is missing Country and AdminArea
+	XsdGoPkgHasElem_Locality
 
 }
 
@@ -2052,16 +2054,16 @@ type TxsdXal struct {
 
 }
 
-type XsdGoPkgHasElem_Xal struct {
+type XsdGoPkgHasElems_Xal struct {
 //	Root element for a list of addresses
-	Xal *TxsdXal `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 xAL"`
+	Xals []*TxsdXal `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 xAL"`
 
 }
 
 //	Root element for a list of addresses
-type XsdGoPkgHasElems_Xal struct {
+type XsdGoPkgHasElem_Xal struct {
 //	Root element for a list of addresses
-	Xals []*TxsdXal `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 xAL"`
+	Xal *TxsdXal `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 xAL"`
 
 }
 
@@ -2075,7 +2077,7 @@ type XsdGoPkgHasElem_AddressDetails struct {
 //	Free format address representation. An address can have more than one line. The order of the AddressLine elements must be preserved.
 type XsdGoPkgHasElem_AddressLine struct {
 //	Free format address representation. An address can have more than one line. The order of the AddressLine elements must be preserved.
-	AddressLine *ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLine"`
+	AddressLine *TxsdAddressLine `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLine"`
 
 }
 
@@ -2135,7 +2137,7 @@ type XsdGoPkgHasElems_Premise struct {
 //	Prefix before the number. A in A12 Archer Street
 type XsdGoPkgHasElem_ThoroughfareNumberPrefix struct {
 //	Prefix before the number. A in A12 Archer Street
-	ThoroughfareNumberPrefix *TxsdThoroughfareNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberPrefix"`
+	ThoroughfareNumberPrefix *TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberPrefix"`
 
 }
 
@@ -2177,6 +2179,6 @@ type XsdGoPkgHasElem_PremiseNumberSuffix struct {
 //	Specification of the name of a country.
 type XsdGoPkgHasElem_CountryName struct {
 //	Specification of the name of a country.
-	CountryName *ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 CountryName"`
+	CountryName *ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 CountryName"`
 
 }

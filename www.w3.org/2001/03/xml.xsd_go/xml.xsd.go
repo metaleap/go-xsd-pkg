@@ -84,14 +84,14 @@ type TxsdSpace xsdt.NCName
 //	Since TxsdSpace is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdSpace) SetFromString (s string)  { (*xsdt.NCName)(me).SetFromString(s) }
 
-//	Since TxsdSpace is just a simple String type, this merely returns the current string value.
-func (me TxsdSpace) String () string { return xsdt.NCName(me).String() }
+//	This convenience method just performs a simple type conversion to TxsdSpace's alias type xsdt.NCName.
+func (me TxsdSpace) ToXsdtNCName () xsdt.NCName { return xsdt.NCName(me) }
 
 //	Returns true if the value of this enumerated TxsdSpace is "preserve".
 func (me TxsdSpace) IsPreserve () bool { return me == "preserve" }
 
-//	This convenience method just performs a simple type conversion to TxsdSpace's alias type xsdt.NCName.
-func (me TxsdSpace) ToXsdtNCName () xsdt.NCName { return xsdt.NCName(me) }
+//	Since TxsdSpace is just a simple String type, this merely returns the current string value.
+func (me TxsdSpace) String () string { return xsdt.NCName(me).String() }
 
 //	Returns true if the value of this enumerated TxsdSpace is "default".
 func (me TxsdSpace) IsDefault () bool { return me == "default" }
@@ -114,9 +114,9 @@ type XsdGoPkgHasAttr_Base struct {
 }
 
 type XsdGoPkgHasAtts_SpecialAttrs struct {
-	XsdGoPkgHasAttr_Lang
-
 	XsdGoPkgHasAttr_Base
+
+	XsdGoPkgHasAttr_Lang
 
 	XsdGoPkgHasAttr_Space
 

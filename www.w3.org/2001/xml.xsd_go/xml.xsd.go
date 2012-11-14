@@ -28,8 +28,11 @@ type XsdGoPkgHasAttr_Lang struct {
 
 type TxsdSpace xsdt.NCName
 
-//	Returns true if the value of this enumerated TxsdSpace is "default".
-func (me TxsdSpace) IsDefault () bool { return me == "default" }
+//	Since TxsdSpace is just a simple String type, this merely returns the current string value.
+func (me TxsdSpace) String () string { return xsdt.NCName(me).String() }
+
+//	Since TxsdSpace is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdSpace) SetFromString (s string)  { (*xsdt.NCName)(me).SetFromString(s) }
 
 //	Returns true if the value of this enumerated TxsdSpace is "preserve".
 func (me TxsdSpace) IsPreserve () bool { return me == "preserve" }
@@ -37,11 +40,8 @@ func (me TxsdSpace) IsPreserve () bool { return me == "preserve" }
 //	This convenience method just performs a simple type conversion to TxsdSpace's alias type xsdt.NCName.
 func (me TxsdSpace) ToXsdtNCName () xsdt.NCName { return xsdt.NCName(me) }
 
-//	Since TxsdSpace is just a simple String type, this merely returns the current string value.
-func (me TxsdSpace) String () string { return xsdt.NCName(me).String() }
-
-//	Since TxsdSpace is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdSpace) SetFromString (s string)  { (*xsdt.NCName)(me).SetFromString(s) }
+//	Returns true if the value of this enumerated TxsdSpace is "default".
+func (me TxsdSpace) IsDefault () bool { return me == "default" }
 
 type XsdGoPkgHasAttr_Space struct {
 	Space TxsdSpace `xml:"http://www.w3.org/XML/1998/namespace space,attr"`
@@ -59,12 +59,12 @@ type XsdGoPkgHasAttr_Id struct {
 }
 
 type XsdGoPkgHasAtts_SpecialAttrs struct {
-	XsdGoPkgHasAttr_Id
+	XsdGoPkgHasAttr_Space
 
 	XsdGoPkgHasAttr_Base
 
-	XsdGoPkgHasAttr_Space
-
 	XsdGoPkgHasAttr_Lang
+
+	XsdGoPkgHasAttr_Id
 
 }
