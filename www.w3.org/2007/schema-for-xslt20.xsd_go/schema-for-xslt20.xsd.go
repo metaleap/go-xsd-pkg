@@ -51,471 +51,70 @@ package gopkg_WwwW3Org2007SchemaForXslt20Xsd
 //	literal-result-element-attributes, which can be included in the
 //	definition of any literal result element.
 //	PART D: definitions of simple types used in stylesheet attributes
+
+
 import (
 	xsdt "github.com/metaleap/go-xsd/types"
 )
 
-type XsdGoPkgHasCdata struct { CombinedCharDatas string `xml:",chardata"` }
+//	One of the values "yes" or "no".
+type TyesOrNo xsdt.Token
 
-//	This type is used for all attributes that allow an attribute value template.
-//	The general rules for the syntax of attribute value templates, and the specific
-//	rules for each such attribute, are described in the XSLT 2.0 Recommendation.
-type Tavt xsdt.String
+//	Returns true if the value of this enumerated TyesOrNo is "yes".
+func (me TyesOrNo) IsYes () bool { return me == "yes" }
 
-//	Since Tavt is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tavt) SetFromString (s string) { (*xsdt.String)(me).SetFromString(s) }
+//	Since TyesOrNo is just a simple String type, this merely sets the current value from the specified string.
+func (me *TyesOrNo) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
 
-//	Since Tavt is just a simple String type, this merely returns the current string value.
-func (me Tavt) String () string { return xsdt.String(me).String() }
+//	Since TyesOrNo is just a simple String type, this merely returns the current string value.
+func (me TyesOrNo) String () string { return xsdt.Token(me).String() }
 
-//	This convenience method just performs a simple type conversion to Tavt's alias type xsdt.String
-func (me Tavt) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	Returns true if the value of this enumerated TyesOrNo is "no".
+func (me TyesOrNo) IsNo () bool { return me == "no" }
 
-//	A string containing exactly one character.
-type Tchar xsdt.String
+//	This convenience method just performs a simple type conversion to TyesOrNo's alias type xsdt.Token.
+func (me TyesOrNo) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
 
-//	Since Tchar is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tchar) SetFromString (s string) { (*xsdt.String)(me).SetFromString(s) }
+type XsdGoPkgHasAttr_InheritNamespaces_TyesOrNo_Yes struct {
+	InheritNamespaces TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform inherit-namespaces,attr"`
 
-//	Since Tchar is just a simple String type, this merely returns the current string value.
-func (me Tchar) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to Tchar's alias type xsdt.String
-func (me Tchar) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	An XPath 2.0 expression.
-type Texpression xsdt.Token
-
-//	Since Texpression is just a simple String type, this merely sets the current value from the specified string.
-func (me *Texpression) SetFromString (s string) { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Since Texpression is just a simple String type, this merely returns the current string value.
-func (me Texpression) String () string { return xsdt.Token(me).String() }
-
-//	This convenience method just performs a simple type conversion to Texpression's alias type xsdt.Token
-func (me Texpression) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Describes how type annotations in source documents are handled.
-type TinputTypeAnnotationsType xsdt.Token
-
-//	Since TinputTypeAnnotationsType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TinputTypeAnnotationsType) SetFromString (s string) { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Since TinputTypeAnnotationsType is just a simple String type, this merely returns the current string value.
-func (me TinputTypeAnnotationsType) String () string { return xsdt.Token(me).String() }
-
-//	This convenience method just performs a simple type conversion to TinputTypeAnnotationsType's alias type xsdt.Token
-func (me TinputTypeAnnotationsType) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TinputTypeAnnotationsType is "preserve".
-func (me TinputTypeAnnotationsType) IsPreserve () bool { return me == "preserve" }
-
-//	Returns true if the value of this enumerated TinputTypeAnnotationsType is "strip".
-func (me TinputTypeAnnotationsType) IsStrip () bool { return me == "strip" }
-
-//	Returns true if the value of this enumerated TinputTypeAnnotationsType is "unspecified".
-func (me TinputTypeAnnotationsType) IsUnspecified () bool { return me == "unspecified" }
-
-//	The level attribute of xsl:number:
-//	one of single, multiple, or any.
-type Tlevel xsdt.NCName
-
-//	Since Tlevel is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tlevel) SetFromString (s string) { (*xsdt.NCName)(me).SetFromString(s) }
-
-//	Since Tlevel is just a simple String type, this merely returns the current string value.
-func (me Tlevel) String () string { return xsdt.NCName(me).String() }
-
-//	This convenience method just performs a simple type conversion to Tlevel's alias type xsdt.NCName
-func (me Tlevel) ToXsdtNCName () xsdt.NCName { return xsdt.NCName(me) }
-
-//	Returns true if the value of this enumerated Tlevel is "single".
-func (me Tlevel) IsSingle () bool { return me == "single" }
-
-//	Returns true if the value of this enumerated Tlevel is "multiple".
-func (me Tlevel) IsMultiple () bool { return me == "multiple" }
-
-//	Returns true if the value of this enumerated Tlevel is "any".
-func (me Tlevel) IsAny () bool { return me == "any" }
-
-//	The mode attribute of xsl:apply-templates:
-//	either a QName, or #current, or #default.
-type Tmode xsdt.String
-
-//	Since Tmode is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tmode) SetFromString (s string) { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since Tmode is just a simple String type, this merely returns the current string value.
-func (me Tmode) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to Tmode's alias type xsdt.String
-func (me Tmode) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type TxsdModeUnion xsdt.Token
-
-//	Since TxsdModeUnion is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdModeUnion) SetFromString (s string) { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Since TxsdModeUnion is just a simple String type, this merely returns the current string value.
-func (me TxsdModeUnion) String () string { return xsdt.Token(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdModeUnion's alias type xsdt.Token
-func (me TxsdModeUnion) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdModeUnion is "#default".
-func (me TxsdModeUnion) IsDefault () bool { return me == "#default" }
-
-//	Returns true if the value of this enumerated TxsdModeUnion is "#current".
-func (me TxsdModeUnion) IsCurrent () bool { return me == "#current" }
-
-//	Tmode is an XSD union type of several types. This is a simple type conversion to TQName, but keep in mind the actual value may or may not be a valid TQName value.
-func (me Tmode) ToTQName () TQName { return TQName(me) }
-
-//	Tmode is an XSD union type of several types. This is a simple type conversion to TxsdModeUnion, but keep in mind the actual value may or may not be a valid TxsdModeUnion value.
-func (me Tmode) ToTxsdModeUnion () TxsdModeUnion { return TxsdModeUnion(me) }
-
-//	The mode attribute of xsl:template:
-//	either a list, each member being either a QName or #default;
-//	or the value #all
-type Tmodes xsdt.String
-
-//	Since Tmodes is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tmodes) SetFromString (s string) { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since Tmodes is just a simple String type, this merely returns the current string value.
-func (me Tmodes) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to Tmodes's alias type xsdt.String
-func (me Tmodes) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type TxsdModesUnion xsdt.String
-
-//	Since TxsdModesUnion is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdModesUnion) SetFromString (s string) { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TxsdModesUnion is just a simple String type, this merely returns the current string value.
-func (me TxsdModesUnion) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdModesUnion's alias type xsdt.String
-func (me TxsdModesUnion) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type TxsdModesUnionTxsdModesUnionList xsdt.String
-
-//	Since TxsdModesUnionTxsdModesUnionList is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdModesUnionTxsdModesUnionList) SetFromString (s string) { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TxsdModesUnionTxsdModesUnionList is just a simple String type, this merely returns the current string value.
-func (me TxsdModesUnionTxsdModesUnionList) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdModesUnionTxsdModesUnionList's alias type xsdt.String
-func (me TxsdModesUnionTxsdModesUnionList) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type TxsdModesUnionTxsdModesUnionListTxsdModesUnionTxsdModesUnionListUnion xsdt.Token
-
-//	Since TxsdModesUnionTxsdModesUnionListTxsdModesUnionTxsdModesUnionListUnion is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdModesUnionTxsdModesUnionListTxsdModesUnionTxsdModesUnionListUnion) SetFromString (s string) { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Since TxsdModesUnionTxsdModesUnionListTxsdModesUnionTxsdModesUnionListUnion is just a simple String type, this merely returns the current string value.
-func (me TxsdModesUnionTxsdModesUnionListTxsdModesUnionTxsdModesUnionListUnion) String () string { return xsdt.Token(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdModesUnionTxsdModesUnionListTxsdModesUnionTxsdModesUnionListUnion's alias type xsdt.Token
-func (me TxsdModesUnionTxsdModesUnionListTxsdModesUnionTxsdModesUnionListUnion) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdModesUnionTxsdModesUnionListTxsdModesUnionTxsdModesUnionListUnion is "#default".
-func (me TxsdModesUnionTxsdModesUnionListTxsdModesUnionTxsdModesUnionListUnion) IsDefault () bool { return me == "#default" }
-
-//	TxsdModesUnionTxsdModesUnionList is an XSD union type of several types. This is a simple type conversion to TQName, but keep in mind the actual value may or may not be a valid TQName value.
-func (me TxsdModesUnionTxsdModesUnionList) ToTQName () TQName { return TQName(me) }
-
-//	TxsdModesUnionTxsdModesUnionList is an XSD union type of several types. This is a simple type conversion to TxsdModesUnionTxsdModesUnionListTxsdModesUnionTxsdModesUnionListUnion, but keep in mind the actual value may or may not be a valid TxsdModesUnionTxsdModesUnionListTxsdModesUnionTxsdModesUnionListUnion value.
-func (me TxsdModesUnionTxsdModesUnionList) ToTxsdModesUnionTxsdModesUnionListTxsdModesUnionTxsdModesUnionListUnion () TxsdModesUnionTxsdModesUnionListTxsdModesUnionTxsdModesUnionListUnion { return TxsdModesUnionTxsdModesUnionListTxsdModesUnionTxsdModesUnionListUnion(me) }
-
-//	TxsdModesUnion defines a String containing a whitespace-separated list of TxsdModesUnionTxsdModesUnionList values. This Values() method creates and returns a slice of all elements in that list.
-func (me TxsdModesUnion) Values () (list []TxsdModesUnionTxsdModesUnionList) {
-	var svals = xsdt.ListValues(string(me))
-	list = make([]TxsdModesUnionTxsdModesUnionList, len(svals))
-	for i, s := range svals { list[i] = TxsdModesUnionTxsdModesUnionList(s) }
-	return
 }
-		
-type TxsdModesUnion1 xsdt.Token
 
-//	Since TxsdModesUnion1 is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdModesUnion1) SetFromString (s string) { (*xsdt.Token)(me).SetFromString(s) }
+//	Returns the default value for InheritNamespaces -- "yes"
+func (me XsdGoPkgHasAttr_InheritNamespaces_TyesOrNo_Yes) InheritNamespacesDefault () TyesOrNo { return TyesOrNo("yes") }
 
-//	Since TxsdModesUnion1 is just a simple String type, this merely returns the current string value.
-func (me TxsdModesUnion1) String () string { return xsdt.Token(me).String() }
+type XsdGoPkgHasAttr_XpathDefaultNamespace_XsdtAnyURI_ struct {
+	XpathDefaultNamespace xsdt.AnyURI `xml:"http://www.w3.org/1999/XSL/Transform xpath-default-namespace,attr"`
 
-//	This convenience method just performs a simple type conversion to TxsdModesUnion1's alias type xsdt.Token
-func (me TxsdModesUnion1) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdModesUnion1 is "#all".
-func (me TxsdModesUnion1) IsAll () bool { return me == "#all" }
-
-//	Tmodes is an XSD union type of several types. This is a simple type conversion to TxsdModesUnion, but keep in mind the actual value may or may not be a valid TxsdModesUnion value.
-func (me Tmodes) ToTxsdModesUnion () TxsdModesUnion { return TxsdModesUnion(me) }
-
-//	Tmodes is an XSD union type of several types. This is a simple type conversion to TxsdModesUnion1, but keep in mind the actual value may or may not be a valid TxsdModesUnion1 value.
-func (me Tmodes) ToTxsdModesUnion1 () TxsdModesUnion1 { return TxsdModesUnion1(me) }
-
-//	A list of NameTests, as defined in the XPath 2.0 Recommendation.
-//	Each NameTest is either a QName, or "*", or "prefix:*", or "*:localname"
-type Tnametests xsdt.String
-
-//	Since Tnametests is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tnametests) SetFromString (s string) { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since Tnametests is just a simple String type, this merely returns the current string value.
-func (me Tnametests) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to Tnametests's alias type xsdt.String
-func (me Tnametests) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type TxsdNametestsList xsdt.String
-
-//	Since TxsdNametestsList is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdNametestsList) SetFromString (s string) { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TxsdNametestsList is just a simple String type, this merely returns the current string value.
-func (me TxsdNametestsList) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdNametestsList's alias type xsdt.String
-func (me TxsdNametestsList) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type TxsdNametestsListTxsdNametestsListUnion xsdt.Token
-
-//	Since TxsdNametestsListTxsdNametestsListUnion is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdNametestsListTxsdNametestsListUnion) SetFromString (s string) { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Since TxsdNametestsListTxsdNametestsListUnion is just a simple String type, this merely returns the current string value.
-func (me TxsdNametestsListTxsdNametestsListUnion) String () string { return xsdt.Token(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdNametestsListTxsdNametestsListUnion's alias type xsdt.Token
-func (me TxsdNametestsListTxsdNametestsListUnion) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdNametestsListTxsdNametestsListUnion is "*".
-func (me TxsdNametestsListTxsdNametestsListUnion) Is () bool { return me == "*" }
-
-type TxsdNametestsListTxsdNametestsListUnion1 xsdt.Token
-
-//	Since TxsdNametestsListTxsdNametestsListUnion1 is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdNametestsListTxsdNametestsListUnion1) SetFromString (s string) { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Since TxsdNametestsListTxsdNametestsListUnion1 is just a simple String type, this merely returns the current string value.
-func (me TxsdNametestsListTxsdNametestsListUnion1) String () string { return xsdt.Token(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdNametestsListTxsdNametestsListUnion1's alias type xsdt.Token
-func (me TxsdNametestsListTxsdNametestsListUnion1) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	TxsdNametestsList is an XSD union type of several types. This is a simple type conversion to TQName, but keep in mind the actual value may or may not be a valid TQName value.
-func (me TxsdNametestsList) ToTQName () TQName { return TQName(me) }
-
-//	TxsdNametestsList is an XSD union type of several types. This is a simple type conversion to TxsdNametestsListTxsdNametestsListUnion, but keep in mind the actual value may or may not be a valid TxsdNametestsListTxsdNametestsListUnion value.
-func (me TxsdNametestsList) ToTxsdNametestsListTxsdNametestsListUnion () TxsdNametestsListTxsdNametestsListUnion { return TxsdNametestsListTxsdNametestsListUnion(me) }
-
-//	TxsdNametestsList is an XSD union type of several types. This is a simple type conversion to TxsdNametestsListTxsdNametestsListUnion1, but keep in mind the actual value may or may not be a valid TxsdNametestsListTxsdNametestsListUnion1 value.
-func (me TxsdNametestsList) ToTxsdNametestsListTxsdNametestsListUnion1 () TxsdNametestsListTxsdNametestsListUnion1 { return TxsdNametestsListTxsdNametestsListUnion1(me) }
-
-//	Tnametests defines a String containing a whitespace-separated list of TxsdNametestsList values. This Values() method creates and returns a slice of all elements in that list.
-func (me Tnametests) Values () (list []TxsdNametestsList) {
-	var svals = xsdt.ListValues(string(me))
-	list = make([]TxsdNametestsList, len(svals))
-	for i, s := range svals { list[i] = TxsdNametestsList(s) }
-	return
 }
-		
+
 type Tprefixes xsdt.String
 
+//	Tprefixes defines a String containing a whitespace-separated list of xsdt.NCName values. This Values() method creates and returns a slice of all elements in that list.
+func (me Tprefixes) Values () (list []xsdt.NCName) { var svals = xsdt.ListValues(string(me)); list = make([]xsdt.NCName, len(svals)); for i, s := range svals { list[i] = xsdt.NCName(s) }; return }
+
+//	This convenience method just performs a simple type conversion to Tprefixes's alias type xsdt.String.
+func (me Tprefixes) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
 //	Since Tprefixes is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tprefixes) SetFromString (s string) { (*xsdt.String)(me).SetFromString(s) }
+func (me *Tprefixes) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 //	Since Tprefixes is just a simple String type, this merely returns the current string value.
 func (me Tprefixes) String () string { return xsdt.String(me).String() }
 
-//	This convenience method just performs a simple type conversion to Tprefixes's alias type xsdt.String
-func (me Tprefixes) ToXsdtString () xsdt.String { return xsdt.String(me) }
+type XsdGoPkgHasAttr_ExtensionElementPrefixes_Tprefixes_ struct {
+	ExtensionElementPrefixes Tprefixes `xml:"http://www.w3.org/1999/XSL/Transform extension-element-prefixes,attr"`
 
-//	Tprefixes defines a String containing a whitespace-separated list of xsdt.NCName values. This Values() method creates and returns a slice of all elements in that list.
-func (me Tprefixes) Values () (list []xsdt.NCName) {
-	var svals = xsdt.ListValues(string(me))
-	list = make([]xsdt.NCName, len(svals))
-	for i, s := range svals { list[i] = xsdt.NCName(s) }
-	return
 }
-		
-type TprefixListOrAll xsdt.String
 
-//	Since TprefixListOrAll is just a simple String type, this merely sets the current value from the specified string.
-func (me *TprefixListOrAll) SetFromString (s string) { (*xsdt.String)(me).SetFromString(s) }
+type XsdGoPkgHasAttr_ExcludeResultPrefixes_Tprefixes_ struct {
+	ExcludeResultPrefixes Tprefixes `xml:"http://www.w3.org/1999/XSL/Transform exclude-result-prefixes,attr"`
 
-//	Since TprefixListOrAll is just a simple String type, this merely returns the current string value.
-func (me TprefixListOrAll) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TprefixListOrAll's alias type xsdt.String
-func (me TprefixListOrAll) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type TxsdPrefixListOrAllUnion xsdt.Token
-
-//	Since TxsdPrefixListOrAllUnion is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPrefixListOrAllUnion) SetFromString (s string) { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Since TxsdPrefixListOrAllUnion is just a simple String type, this merely returns the current string value.
-func (me TxsdPrefixListOrAllUnion) String () string { return xsdt.Token(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdPrefixListOrAllUnion's alias type xsdt.Token
-func (me TxsdPrefixListOrAllUnion) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdPrefixListOrAllUnion is "#all".
-func (me TxsdPrefixListOrAllUnion) IsAll () bool { return me == "#all" }
-
-//	TprefixListOrAll is an XSD union type of several types. This is a simple type conversion to TprefixList, but keep in mind the actual value may or may not be a valid TprefixList value.
-func (me TprefixListOrAll) ToTprefixList () TprefixList { return TprefixList(me) }
-
-//	TprefixListOrAll is an XSD union type of several types. This is a simple type conversion to TxsdPrefixListOrAllUnion, but keep in mind the actual value may or may not be a valid TxsdPrefixListOrAllUnion value.
-func (me TprefixListOrAll) ToTxsdPrefixListOrAllUnion () TxsdPrefixListOrAllUnion { return TxsdPrefixListOrAllUnion(me) }
-
-type TprefixList xsdt.String
-
-//	Since TprefixList is just a simple String type, this merely sets the current value from the specified string.
-func (me *TprefixList) SetFromString (s string) { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TprefixList is just a simple String type, this merely returns the current string value.
-func (me TprefixList) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TprefixList's alias type xsdt.String
-func (me TprefixList) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	TprefixList defines a String containing a whitespace-separated list of TprefixOrDefault values. This Values() method creates and returns a slice of all elements in that list.
-func (me TprefixList) Values () (list []TprefixOrDefault) {
-	var svals = xsdt.ListValues(string(me))
-	list = make([]TprefixOrDefault, len(svals))
-	for i, s := range svals { list[i] = TprefixOrDefault(s) }
-	return
 }
-		
-//	The method attribute of xsl:output:
-//	Either one of the recognized names "xml", "xhtml", "html", "text",
-//	or a QName that must include a prefix.
-type Tmethod xsdt.String
-
-//	Since Tmethod is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tmethod) SetFromString (s string) { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since Tmethod is just a simple String type, this merely returns the current string value.
-func (me Tmethod) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to Tmethod's alias type xsdt.String
-func (me Tmethod) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type TxsdMethodUnion xsdt.NCName
-
-//	Since TxsdMethodUnion is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdMethodUnion) SetFromString (s string) { (*xsdt.NCName)(me).SetFromString(s) }
-
-//	Since TxsdMethodUnion is just a simple String type, this merely returns the current string value.
-func (me TxsdMethodUnion) String () string { return xsdt.NCName(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdMethodUnion's alias type xsdt.NCName
-func (me TxsdMethodUnion) ToXsdtNCName () xsdt.NCName { return xsdt.NCName(me) }
-
-//	Returns true if the value of this enumerated TxsdMethodUnion is "xml".
-func (me TxsdMethodUnion) IsXml () bool { return me == "xml" }
-
-//	Returns true if the value of this enumerated TxsdMethodUnion is "xhtml".
-func (me TxsdMethodUnion) IsXhtml () bool { return me == "xhtml" }
-
-//	Returns true if the value of this enumerated TxsdMethodUnion is "html".
-func (me TxsdMethodUnion) IsHtml () bool { return me == "html" }
-
-//	Returns true if the value of this enumerated TxsdMethodUnion is "text".
-func (me TxsdMethodUnion) IsText () bool { return me == "text" }
-
-type TxsdMethodUnion1 TQName
-
-//	Since TxsdMethodUnion1 is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdMethodUnion1) SetFromString (s string) { (*TQName)(me).SetFromString(s) }
-
-//	Since TxsdMethodUnion1 is just a simple String type, this merely returns the current string value.
-func (me TxsdMethodUnion1) String () string { return TQName(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdMethodUnion1's alias type TQName
-func (me TxsdMethodUnion1) ToTQName () TQName { return TQName(me) }
-
-//	Tmethod is an XSD union type of several types. This is a simple type conversion to TxsdMethodUnion, but keep in mind the actual value may or may not be a valid TxsdMethodUnion value.
-func (me Tmethod) ToTxsdMethodUnion () TxsdMethodUnion { return TxsdMethodUnion(me) }
-
-//	Tmethod is an XSD union type of several types. This is a simple type conversion to TxsdMethodUnion1, but keep in mind the actual value may or may not be a valid TxsdMethodUnion1 value.
-func (me Tmethod) ToTxsdMethodUnion1 () TxsdMethodUnion1 { return TxsdMethodUnion1(me) }
-
-//	A match pattern as defined in the XSLT 2.0 Recommendation.
-//	The syntax for patterns is a restricted form of the syntax for
-//	XPath 2.0 expressions.
-type Tpattern Texpression
-
-//	Since Tpattern is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tpattern) SetFromString (s string) { (*Texpression)(me).SetFromString(s) }
-
-//	Since Tpattern is just a simple String type, this merely returns the current string value.
-func (me Tpattern) String () string { return Texpression(me).String() }
-
-//	This convenience method just performs a simple type conversion to Tpattern's alias type Texpression
-func (me Tpattern) ToTexpression () Texpression { return Texpression(me) }
-
-//	Either a namespace prefix, or #default.
-//	Used in the xsl:namespace-alias element.
-type TprefixOrDefault xsdt.String
-
-//	Since TprefixOrDefault is just a simple String type, this merely sets the current value from the specified string.
-func (me *TprefixOrDefault) SetFromString (s string) { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TprefixOrDefault is just a simple String type, this merely returns the current string value.
-func (me TprefixOrDefault) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TprefixOrDefault's alias type xsdt.String
-func (me TprefixOrDefault) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type TxsdPrefixOrDefaultUnion xsdt.Token
-
-//	Since TxsdPrefixOrDefaultUnion is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPrefixOrDefaultUnion) SetFromString (s string) { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Since TxsdPrefixOrDefaultUnion is just a simple String type, this merely returns the current string value.
-func (me TxsdPrefixOrDefaultUnion) String () string { return xsdt.Token(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdPrefixOrDefaultUnion's alias type xsdt.Token
-func (me TxsdPrefixOrDefaultUnion) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TxsdPrefixOrDefaultUnion is "#default".
-func (me TxsdPrefixOrDefaultUnion) IsDefault () bool { return me == "#default" }
-
-//	TprefixOrDefault is an XSD union type of several types. This is a simple type conversion to XsdtNCName, but keep in mind the actual value may or may not be a valid XsdtNCName value.
-func (me TprefixOrDefault) ToXsdtNCName () xsdt.NCName { return xsdt.NCName(me) }
-
-//	TprefixOrDefault is an XSD union type of several types. This is a simple type conversion to TxsdPrefixOrDefaultUnion, but keep in mind the actual value may or may not be a valid TxsdPrefixOrDefaultUnion value.
-func (me TprefixOrDefault) ToTxsdPrefixOrDefaultUnion () TxsdPrefixOrDefaultUnion { return TxsdPrefixOrDefaultUnion(me) }
 
 //	A list of QNames.
 //	Used in the [xsl:]use-attribute-sets attribute of various elements,
 //	and in the cdata-section-elements attribute of xsl:output
-type TQNames xsdt.String
-
-//	Since TQNames is just a simple String type, this merely sets the current value from the specified string.
-func (me *TQNames) SetFromString (s string) { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TQNames is just a simple String type, this merely returns the current string value.
-func (me TQNames) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TQNames's alias type xsdt.String
-func (me TQNames) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	TQNames defines a String containing a whitespace-separated list of TQName values. This Values() method creates and returns a slice of all elements in that list.
-func (me TQNames) Values () (list []TQName) {
-	var svals = xsdt.ListValues(string(me))
-	list = make([]TQName, len(svals))
-	for i, s := range svals { list[i] = TQName(s) }
-	return
-}
-		
 //	A QName.
 //	This schema does not use the built-in type xs:QName, but rather defines its own
 //	QName type. Although xs:QName would define the correct validation on these attributes,
@@ -526,198 +125,466 @@ func (me TQNames) Values () (list []TQName) {
 //	so that it can only contain one colon which must not be the first or last character.
 type TQName xsdt.Name
 
-//	Since TQName is just a simple String type, this merely sets the current value from the specified string.
-func (me *TQName) SetFromString (s string) { (*xsdt.Name)(me).SetFromString(s) }
+//	This convenience method just performs a simple type conversion to TQName's alias type xsdt.Name.
+func (me TQName) ToXsdtName () xsdt.Name { return xsdt.Name(me) }
 
 //	Since TQName is just a simple String type, this merely returns the current string value.
 func (me TQName) String () string { return xsdt.Name(me).String() }
 
-//	This convenience method just performs a simple type conversion to TQName's alias type xsdt.Name
-func (me TQName) ToXsdtName () xsdt.Name { return xsdt.Name(me) }
+//	Since TQName is just a simple String type, this merely sets the current value from the specified string.
+func (me *TQName) SetFromString (s string)  { (*xsdt.Name)(me).SetFromString(s) }
 
-//	The description of a data type, conforming to the
-//	SequenceType production defined in the XPath 2.0 Recommendation
-type TsequenceType xsdt.Token
+type TQNames xsdt.String
 
-//	Since TsequenceType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TsequenceType) SetFromString (s string) { (*xsdt.Token)(me).SetFromString(s) }
+//	Since TQNames is just a simple String type, this merely returns the current string value.
+func (me TQNames) String () string { return xsdt.String(me).String() }
 
-//	Since TsequenceType is just a simple String type, this merely returns the current string value.
-func (me TsequenceType) String () string { return xsdt.Token(me).String() }
+//	This convenience method just performs a simple type conversion to TQNames's alias type xsdt.String.
+func (me TQNames) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
-//	This convenience method just performs a simple type conversion to TsequenceType's alias type xsdt.Token
-func (me TsequenceType) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+//	Since TQNames is just a simple String type, this merely sets the current value from the specified string.
+func (me *TQNames) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
-type TuriList xsdt.String
+//	TQNames defines a String containing a whitespace-separated list of TQName values. This Values() method creates and returns a slice of all elements in that list.
+func (me TQNames) Values () (list []TQName) { var svals = xsdt.ListValues(string(me)); list = make([]TQName, len(svals)); for i, s := range svals { list[i] = TQName(s) }; return }
 
-//	Since TuriList is just a simple String type, this merely sets the current value from the specified string.
-func (me *TuriList) SetFromString (s string) { (*xsdt.String)(me).SetFromString(s) }
+type XsdGoPkgHasAttr_UseAttributeSets_TQNames_ struct {
+	UseAttributeSets TQNames `xml:"http://www.w3.org/1999/XSL/Transform use-attribute-sets,attr"`
 
-//	Since TuriList is just a simple String type, this merely returns the current string value.
-func (me TuriList) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TuriList's alias type xsdt.String
-func (me TuriList) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	TuriList defines a String containing a whitespace-separated list of xsdt.AnyURI values. This Values() method creates and returns a slice of all elements in that list.
-func (me TuriList) Values () (list []xsdt.AnyURI) {
-	var svals = xsdt.ListValues(string(me))
-	list = make([]xsdt.AnyURI, len(svals))
-	for i, s := range svals { list[i] = xsdt.AnyURI(s) }
-	return
 }
-		
-//	Describes different ways of type-annotating an element or attribute.
-type TvalidationStripOrPreserve TvalidationType
-
-//	Since TvalidationStripOrPreserve is just a simple String type, this merely sets the current value from the specified string.
-func (me *TvalidationStripOrPreserve) SetFromString (s string) { (*TvalidationType)(me).SetFromString(s) }
-
-//	Since TvalidationStripOrPreserve is just a simple String type, this merely returns the current string value.
-func (me TvalidationStripOrPreserve) String () string { return TvalidationType(me).String() }
-
-//	This convenience method just performs a simple type conversion to TvalidationStripOrPreserve's alias type TvalidationType
-func (me TvalidationStripOrPreserve) ToTvalidationType () TvalidationType { return TvalidationType(me) }
-
-//	Returns true if the value of this enumerated TvalidationStripOrPreserve is "preserve".
-func (me TvalidationStripOrPreserve) IsPreserve () bool { return me == "preserve" }
-
-//	Returns true if the value of this enumerated TvalidationStripOrPreserve is "strip".
-func (me TvalidationStripOrPreserve) IsStrip () bool { return me == "strip" }
 
 //	Describes different ways of type-annotating an element or attribute.
 type TvalidationType xsdt.Token
 
-//	Since TvalidationType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TvalidationType) SetFromString (s string) { (*xsdt.Token)(me).SetFromString(s) }
-
 //	Since TvalidationType is just a simple String type, this merely returns the current string value.
 func (me TvalidationType) String () string { return xsdt.Token(me).String() }
-
-//	This convenience method just performs a simple type conversion to TvalidationType's alias type xsdt.Token
-func (me TvalidationType) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TvalidationType is "strict".
-func (me TvalidationType) IsStrict () bool { return me == "strict" }
-
-//	Returns true if the value of this enumerated TvalidationType is "lax".
-func (me TvalidationType) IsLax () bool { return me == "lax" }
 
 //	Returns true if the value of this enumerated TvalidationType is "preserve".
 func (me TvalidationType) IsPreserve () bool { return me == "preserve" }
 
+//	Returns true if the value of this enumerated TvalidationType is "lax".
+func (me TvalidationType) IsLax () bool { return me == "lax" }
+
+//	Since TvalidationType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TvalidationType) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
 //	Returns true if the value of this enumerated TvalidationType is "strip".
 func (me TvalidationType) IsStrip () bool { return me == "strip" }
 
-//	One of the values "yes" or "no".
-type TyesOrNo xsdt.Token
+//	Returns true if the value of this enumerated TvalidationType is "strict".
+func (me TvalidationType) IsStrict () bool { return me == "strict" }
 
-//	Since TyesOrNo is just a simple String type, this merely sets the current value from the specified string.
-func (me *TyesOrNo) SetFromString (s string) { (*xsdt.Token)(me).SetFromString(s) }
+//	This convenience method just performs a simple type conversion to TvalidationType's alias type xsdt.Token.
+func (me TvalidationType) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
 
-//	Since TyesOrNo is just a simple String type, this merely returns the current string value.
-func (me TyesOrNo) String () string { return xsdt.Token(me).String() }
+type XsdGoPkgHasAttr_Validation_TvalidationType_ struct {
+	Validation TvalidationType `xml:"http://www.w3.org/1999/XSL/Transform validation,attr"`
 
-//	This convenience method just performs a simple type conversion to TyesOrNo's alias type xsdt.Token
-func (me TyesOrNo) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TyesOrNo is "yes".
-func (me TyesOrNo) IsYes () bool { return me == "yes" }
-
-//	Returns true if the value of this enumerated TyesOrNo is "no".
-func (me TyesOrNo) IsNo () bool { return me == "no" }
-
-//	One of the values "yes" or "no" or "omit".
-type TyesOrNoOrOmit xsdt.Token
-
-//	Since TyesOrNoOrOmit is just a simple String type, this merely sets the current value from the specified string.
-func (me *TyesOrNoOrOmit) SetFromString (s string) { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Since TyesOrNoOrOmit is just a simple String type, this merely returns the current string value.
-func (me TyesOrNoOrOmit) String () string { return xsdt.Token(me).String() }
-
-//	This convenience method just performs a simple type conversion to TyesOrNoOrOmit's alias type xsdt.Token
-func (me TyesOrNoOrOmit) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TyesOrNoOrOmit is "yes".
-func (me TyesOrNoOrOmit) IsYes () bool { return me == "yes" }
-
-//	Returns true if the value of this enumerated TyesOrNoOrOmit is "no".
-func (me TyesOrNoOrOmit) IsNo () bool { return me == "no" }
-
-//	Returns true if the value of this enumerated TyesOrNoOrOmit is "omit".
-func (me TyesOrNoOrOmit) IsOmit () bool { return me == "omit" }
-
-type XsdGoPkgHasAttr_DefaultCollation_TuriList_ struct {
-	DefaultCollation TuriList `xml:"http://www.w3.org/1999/XSL/Transform default-collation,attr"`
-}
-
-type XsdGoPkgHasAttr_ExtensionElementPrefixes_Tprefixes_ struct {
-	ExtensionElementPrefixes Tprefixes `xml:"http://www.w3.org/1999/XSL/Transform extension-element-prefixes,attr"`
-}
-
-type XsdGoPkgHasAttr_ExcludeResultPrefixes_Tprefixes_ struct {
-	ExcludeResultPrefixes Tprefixes `xml:"http://www.w3.org/1999/XSL/Transform exclude-result-prefixes,attr"`
-}
-
-type XsdGoPkgHasAttr_XpathDefaultNamespace_XsdtAnyURI_ struct {
-	XpathDefaultNamespace xsdt.AnyURI `xml:"http://www.w3.org/1999/XSL/Transform xpath-default-namespace,attr"`
-}
-
-type XsdGoPkgHasAttr_InheritNamespaces_TyesOrNo_Yes struct {
-	InheritNamespaces TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform inherit-namespaces,attr"`
-}
-
-//	Returns the Default value for InheritNamespaces -- "yes"
-func (me *XsdGoPkgHasAttr_InheritNamespaces_TyesOrNo_Yes) InheritNamespacesDefault () TyesOrNo { return TyesOrNo("yes") }
-
-type XsdGoPkgHasAttr_UseAttributeSets_TQNames_ struct {
-	UseAttributeSets TQNames `xml:"http://www.w3.org/1999/XSL/Transform use-attribute-sets,attr"`
-}
-
-type XsdGoPkgHasAttr_UseWhen_Texpression_ struct {
-	UseWhen Texpression `xml:"http://www.w3.org/1999/XSL/Transform use-when,attr"`
 }
 
 type XsdGoPkgHasAttr_Version_XsdtDecimal_ struct {
 	Version xsdt.Decimal `xml:"http://www.w3.org/1999/XSL/Transform version,attr"`
+
 }
 
 type XsdGoPkgHasAttr_Type_TQName_ struct {
 	Type TQName `xml:"http://www.w3.org/1999/XSL/Transform type,attr"`
+
 }
 
-type XsdGoPkgHasAttr_Validation_TvalidationType_ struct {
-	Validation TvalidationType `xml:"http://www.w3.org/1999/XSL/Transform validation,attr"`
+type TuriList xsdt.String
+
+//	Since TuriList is just a simple String type, this merely sets the current value from the specified string.
+func (me *TuriList) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TuriList is just a simple String type, this merely returns the current string value.
+func (me TuriList) String () string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TuriList's alias type xsdt.String.
+func (me TuriList) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	TuriList defines a String containing a whitespace-separated list of xsdt.AnyURI values. This Values() method creates and returns a slice of all elements in that list.
+func (me TuriList) Values () (list []xsdt.AnyURI) { var svals = xsdt.ListValues(string(me)); list = make([]xsdt.AnyURI, len(svals)); for i, s := range svals { list[i] = xsdt.AnyURI(s) }; return }
+
+type XsdGoPkgHasAttr_DefaultCollation_TuriList_ struct {
+	DefaultCollation TuriList `xml:"http://www.w3.org/1999/XSL/Transform default-collation,attr"`
+
+}
+
+//	An XPath 2.0 expression.
+type Texpression xsdt.Token
+
+//	Since Texpression is just a simple String type, this merely returns the current string value.
+func (me Texpression) String () string { return xsdt.Token(me).String() }
+
+//	This convenience method just performs a simple type conversion to Texpression's alias type xsdt.Token.
+func (me Texpression) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Since Texpression is just a simple String type, this merely sets the current value from the specified string.
+func (me *Texpression) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_UseWhen_Texpression_ struct {
+	UseWhen Texpression `xml:"http://www.w3.org/1999/XSL/Transform use-when,attr"`
+
 }
 
 type XsdGoPkgHasAtts_LiteralResultElementAttributes struct {
-	XsdGoPkgHasAttr_DefaultCollation_TuriList_
-	XsdGoPkgHasAttr_ExtensionElementPrefixes_Tprefixes_
-	XsdGoPkgHasAttr_ExcludeResultPrefixes_Tprefixes_
-	XsdGoPkgHasAttr_XpathDefaultNamespace_XsdtAnyURI_
 	XsdGoPkgHasAttr_InheritNamespaces_TyesOrNo_Yes
+
+	XsdGoPkgHasAttr_XpathDefaultNamespace_XsdtAnyURI_
+
+	XsdGoPkgHasAttr_ExtensionElementPrefixes_Tprefixes_
+
+	XsdGoPkgHasAttr_ExcludeResultPrefixes_Tprefixes_
+
 	XsdGoPkgHasAttr_UseAttributeSets_TQNames_
-	XsdGoPkgHasAttr_UseWhen_Texpression_
-	XsdGoPkgHasAttr_Version_XsdtDecimal_
-	XsdGoPkgHasAttr_Type_TQName_
+
 	XsdGoPkgHasAttr_Validation_TvalidationType_
+
+	XsdGoPkgHasAttr_Version_XsdtDecimal_
+
+	XsdGoPkgHasAttr_Type_TQName_
+
+	XsdGoPkgHasAttr_DefaultCollation_TuriList_
+
+	XsdGoPkgHasAttr_UseWhen_Texpression_
+
 }
 
-type XsdGoPkgHasAttr_ExcludeResultPrefixes_TprefixListOrAll_ struct {
-	ExcludeResultPrefixes TprefixListOrAll `xml:"http://www.w3.org/1999/XSL/Transform exclude-result-prefixes,attr"`
+type XsdGoPkgHasAttr_DoctypeSystem_XsdtString_ struct {
+	DoctypeSystem xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform doctype-system,attr"`
+
 }
+
+//	One of the values "yes" or "no" or "omit".
+type TyesOrNoOrOmit xsdt.Token
+
+//	Returns true if the value of this enumerated TyesOrNoOrOmit is "omit".
+func (me TyesOrNoOrOmit) IsOmit () bool { return me == "omit" }
+
+//	Returns true if the value of this enumerated TyesOrNoOrOmit is "no".
+func (me TyesOrNoOrOmit) IsNo () bool { return me == "no" }
+
+//	Since TyesOrNoOrOmit is just a simple String type, this merely sets the current value from the specified string.
+func (me *TyesOrNoOrOmit) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Since TyesOrNoOrOmit is just a simple String type, this merely returns the current string value.
+func (me TyesOrNoOrOmit) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TyesOrNoOrOmit is "yes".
+func (me TyesOrNoOrOmit) IsYes () bool { return me == "yes" }
+
+//	This convenience method just performs a simple type conversion to TyesOrNoOrOmit's alias type xsdt.Token.
+func (me TyesOrNoOrOmit) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+type XsdGoPkgHasAttr_Standalone_TyesOrNoOrOmit_ struct {
+	Standalone TyesOrNoOrOmit `xml:"http://www.w3.org/1999/XSL/Transform standalone,attr"`
+
+}
+
+type XsdGoPkgHasAttr_ByteOrderMark_TyesOrNo_ struct {
+	ByteOrderMark TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform byte-order-mark,attr"`
+
+}
+
+type XsdGoPkgHasAttr_EscapeUriAttributes_TyesOrNo_ struct {
+	EscapeUriAttributes TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform escape-uri-attributes,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Indent_TyesOrNo_ struct {
+	Indent TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform indent,attr"`
+
+}
+
+type XsdGoPkgHasAttr_MediaType_XsdtString_ struct {
+	MediaType xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform media-type,attr"`
+
+}
+
+//	The method attribute of xsl:output:
+//	Either one of the recognized names "xml", "xhtml", "html", "text",
+//	or a QName that must include a prefix.
+type Tmethod xsdt.String
+
+//	This convenience method just performs a simple type conversion to Tmethod's alias type xsdt.String.
+func (me Tmethod) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since Tmethod is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tmethod) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since Tmethod is just a simple String type, this merely returns the current string value.
+func (me Tmethod) String () string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_Method_Tmethod_ struct {
+	Method Tmethod `xml:"http://www.w3.org/1999/XSL/Transform method,attr"`
+
+}
+
+type XsdGoPkgHasAttr_OmitXmlDeclaration_TyesOrNo_ struct {
+	OmitXmlDeclaration TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform omit-xml-declaration,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Encoding_XsdtString_ struct {
+	Encoding xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform encoding,attr"`
+
+}
+
+type XsdGoPkgHasCdata struct {
+	XsdGoPkgCDATA string `xml:",chardata"`
+
+}
+
+type XsdGoPkgHasAttr_UndeclarePrefixes_TyesOrNo_ struct {
+	UndeclarePrefixes TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform undeclare-prefixes,attr"`
+
+}
+
+type XsdGoPkgHasAttr_DoctypePublic_XsdtString_ struct {
+	DoctypePublic xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform doctype-public,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Version_XsdtNmtoken_ struct {
+	Version xsdt.Nmtoken `xml:"http://www.w3.org/1999/XSL/Transform version,attr"`
+
+}
+
+//	Either a namespace prefix, or #default.
+//	Used in the xsl:namespace-alias element.
+type TprefixOrDefault xsdt.String
+
+//	This convenience method just performs a simple type conversion to TprefixOrDefault's alias type xsdt.String.
+func (me TprefixOrDefault) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TprefixOrDefault is just a simple String type, this merely returns the current string value.
+func (me TprefixOrDefault) String () string { return xsdt.String(me).String() }
+
+//	Since TprefixOrDefault is just a simple String type, this merely sets the current value from the specified string.
+func (me *TprefixOrDefault) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+type TprefixList xsdt.String
+
+//	Since TprefixList is just a simple String type, this merely returns the current string value.
+func (me TprefixList) String () string { return xsdt.String(me).String() }
+
+//	TprefixList defines a String containing a whitespace-separated list of TprefixOrDefault values. This Values() method creates and returns a slice of all elements in that list.
+func (me TprefixList) Values () (list []TprefixOrDefault) { var svals = xsdt.ListValues(string(me)); list = make([]TprefixOrDefault, len(svals)); for i, s := range svals { list[i] = TprefixOrDefault(s) }; return }
+
+//	Since TprefixList is just a simple String type, this merely sets the current value from the specified string.
+func (me *TprefixList) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TprefixList's alias type xsdt.String.
+func (me TprefixList) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 type XsdGoPkgHasAttr_ExtensionElementPrefixes_TprefixList_ struct {
 	ExtensionElementPrefixes TprefixList `xml:"http://www.w3.org/1999/XSL/Transform extension-element-prefixes,attr"`
+
+}
+
+type TprefixListOrAll xsdt.String
+
+//	Since TprefixListOrAll is just a simple String type, this merely returns the current string value.
+func (me TprefixListOrAll) String () string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TprefixListOrAll's alias type xsdt.String.
+func (me TprefixListOrAll) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TprefixListOrAll is just a simple String type, this merely sets the current value from the specified string.
+func (me *TprefixListOrAll) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_ExcludeResultPrefixes_TprefixListOrAll_ struct {
+	ExcludeResultPrefixes TprefixListOrAll `xml:"http://www.w3.org/1999/XSL/Transform exclude-result-prefixes,attr"`
+
 }
 
 type TgenericElementType struct {
 	XsdGoPkgHasCdata
 
+	XsdGoPkgHasAttr_ExtensionElementPrefixes_TprefixList_
+
 	XsdGoPkgHasAttr_ExcludeResultPrefixes_TprefixListOrAll_
 
-	XsdGoPkgHasAttr_ExtensionElementPrefixes_TprefixList_
+}
+
+type XsdGoPkgHasAttr_NormalizationForm_XsdtNmtoken_ struct {
+	NormalizationForm xsdt.Nmtoken `xml:"http://www.w3.org/1999/XSL/Transform normalization-form,attr"`
+
+}
+
+type XsdGoPkgHasAttr_IncludeContentType_TyesOrNo_ struct {
+	IncludeContentType TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform include-content-type,attr"`
+
+}
+
+type XsdGoPkgHasAttr_CdataSectionElements_TQNames_ struct {
+	CdataSectionElements TQNames `xml:"http://www.w3.org/1999/XSL/Transform cdata-section-elements,attr"`
+
+}
+
+type TxsdOutput struct {
+	XsdGoPkgHasAttr_EscapeUriAttributes_TyesOrNo_
+
+	XsdGoPkgHasAttr_Indent_TyesOrNo_
+
+	XsdGoPkgHasAttr_MediaType_XsdtString_
+
+	XsdGoPkgHasAttr_Method_Tmethod_
+
+	XsdGoPkgHasAttr_OmitXmlDeclaration_TyesOrNo_
+
+	XsdGoPkgHasAttr_Encoding_XsdtString_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_UndeclarePrefixes_TyesOrNo_
+
+	XsdGoPkgHasAttr_DoctypePublic_XsdtString_
+
+	XsdGoPkgHasAttr_Version_XsdtNmtoken_
+
+	TgenericElementType
+
+	XsdGoPkgHasAttr_NormalizationForm_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_IncludeContentType_TyesOrNo_
+
+	XsdGoPkgHasAttr_CdataSectionElements_TQNames_
+
+	XsdGoPkgHasAttr_DoctypeSystem_XsdtString_
+
+	XsdGoPkgHasAttr_Standalone_TyesOrNoOrOmit_
+
+	XsdGoPkgHasAttr_ByteOrderMark_TyesOrNo_
+
+}
+
+type XsdGoPkgHasElems_Output struct {
+	Outputs []*TxsdOutput `xml:"http://www.w3.org/1999/XSL/Transform output"`
+
+}
+
+type XsdGoPkgHasAttr_Use_Texpression_ struct {
+	Use Texpression `xml:"http://www.w3.org/1999/XSL/Transform use,attr"`
+
+}
+
+//	A match pattern as defined in the XSLT 2.0 Recommendation.
+//	The syntax for patterns is a restricted form of the syntax for
+//	XPath 2.0 expressions.
+type Tpattern Texpression
+
+//	Since Tpattern is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tpattern) SetFromString (s string)  { (*Texpression)(me).SetFromString(s) }
+
+//	Since Tpattern is just a simple String type, this merely returns the current string value.
+func (me Tpattern) String () string { return Texpression(me).String() }
+
+//	This convenience method just performs a simple type conversion to Tpattern's alias type Texpression.
+func (me Tpattern) ToTexpression () Texpression { return Texpression(me) }
+
+type XsdGoPkgHasAttr_Match_Tpattern_ struct {
+	Match Tpattern `xml:"http://www.w3.org/1999/XSL/Transform match,attr"`
+
+}
+
+type TxsdVariable struct {
+	TsequenceConstructor
+
+	XsdGoPkgHasCdata
+
+}
+
+type XsdGoPkgHasElem_Variable struct {
+	Variable *TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform variable"`
+
+}
+
+type XsdGoPkgHasElem_Comment struct {
+	Comment *TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform comment"`
+
+}
+
+type XsdGoPkgHasAttr_GroupBy_Texpression_ struct {
+	GroupBy Texpression `xml:"http://www.w3.org/1999/XSL/Transform group-by,attr"`
+
+}
+
+//	This type is used for all attributes that allow an attribute value template.
+//	The general rules for the syntax of attribute value templates, and the specific
+//	rules for each such attribute, are described in the XSLT 2.0 Recommendation.
+type Tavt xsdt.String
+
+//	Since Tavt is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tavt) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to Tavt's alias type xsdt.String.
+func (me Tavt) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since Tavt is just a simple String type, this merely returns the current string value.
+func (me Tavt) String () string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_CaseOrder_Tavt_ struct {
+	CaseOrder Tavt `xml:"http://www.w3.org/1999/XSL/Transform case-order,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Order_Tavt_Ascending struct {
+	Order Tavt `xml:"http://www.w3.org/1999/XSL/Transform order,attr"`
+
+}
+
+//	Returns the default value for Order -- "ascending"
+func (me XsdGoPkgHasAttr_Order_Tavt_Ascending) OrderDefault () Tavt { return Tavt("ascending") }
+
+type XsdGoPkgHasAttr_DataType_Tavt_Text struct {
+	DataType Tavt `xml:"http://www.w3.org/1999/XSL/Transform data-type,attr"`
+
+}
+
+//	Returns the default value for DataType -- "text"
+func (me XsdGoPkgHasAttr_DataType_Tavt_Text) DataTypeDefault () Tavt { return Tavt("text") }
+
+type XsdGoPkgHasAttr_Collation_Tavt_ struct {
+	Collation Tavt `xml:"http://www.w3.org/1999/XSL/Transform collation,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Stable_TyesOrNo_ struct {
+	Stable TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform stable,attr"`
+
+}
+
+type TxsdSort struct {
+	XsdGoPkgHasAttr_Collation_Tavt_
+
+	XsdGoPkgHasAttr_Stable_TyesOrNo_
+
+	XsdGoPkgHasAttr_CaseOrder_Tavt_
+
+	XsdGoPkgHasAttr_Order_Tavt_Ascending
+
+	XsdGoPkgHasAttr_DataType_Tavt_Text
+
+	TsequenceConstructor
+
+	XsdGoPkgHasCdata
+
+}
+
+type XsdGoPkgHasElems_Sort struct {
+	Sorts []*TxsdSort `xml:"http://www.w3.org/1999/XSL/Transform sort"`
+
+}
+
+type XsdGoPkgHasAttr_Collation_XsdtAnyURI_ struct {
+	Collation xsdt.AnyURI `xml:"http://www.w3.org/1999/XSL/Transform collation,attr"`
+
+}
+
+type XsdGoPkgHasAttr_GroupEndingWith_Tpattern_ struct {
+	GroupEndingWith Tpattern `xml:"http://www.w3.org/1999/XSL/Transform group-ending-with,attr"`
 
 }
 
@@ -728,394 +595,59 @@ type TversionedElementType struct {
 
 }
 
-type TelementOnlyVersionedElementType struct {
-	TversionedElementType
+type XsdGoPkgHasAttr_GroupAdjacent_Texpression_ struct {
+	GroupAdjacent Texpression `xml:"http://www.w3.org/1999/XSL/Transform group-adjacent,attr"`
 
 }
 
-type TsequenceConstructor struct {
-	TversionedElementType
+type XsdGoPkgHasAttr_GroupStartingWith_Tpattern_ struct {
+	GroupStartingWith Tpattern `xml:"http://www.w3.org/1999/XSL/Transform group-starting-with,attr"`
+
+}
+
+type TxsdForEachGroup struct {
+	XsdGoPkgHasAttr_GroupStartingWith_Tpattern_
 
 	XsdGoPkgHasCdata
 
 	XsdGoPkgHasGroup_SequenceConstructorGroup
 
-}
-
-type TxsdTextElementBaseTypeSimpleContentRestriction xsdt.String
-
-//	Since TxsdTextElementBaseTypeSimpleContentRestriction is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdTextElementBaseTypeSimpleContentRestriction) SetFromString (s string) { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TxsdTextElementBaseTypeSimpleContentRestriction is just a simple String type, this merely returns the current string value.
-func (me TxsdTextElementBaseTypeSimpleContentRestriction) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdTextElementBaseTypeSimpleContentRestriction's alias type xsdt.String
-func (me TxsdTextElementBaseTypeSimpleContentRestriction) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type TtextElementBaseType struct {
-	XsdGoPkgValue TversionedElementType `xml:",chardata"`
-
-}
-
-type TtransformElementBaseType struct {
-	TelementOnlyVersionedElementType
-
-}
-
-type XsdGoPkgHasElem_Declaration struct {
-	Declaration *TgenericElementType `xml:"http://www.w3.org/1999/XSL/Transform declaration"`
-
-	XsdGoPkgHasElem_AttributeSet
-
-	XsdGoPkgHasElem_CharacterMap
-
-	XsdGoPkgHasElem_DecimalFormat
-
-	XsdGoPkgHasElem_Function
-
-	XsdGoPkgHasElem_ImportSchema
-
-	XsdGoPkgHasElem_Include
-
-	XsdGoPkgHasElem_Key
-
-	XsdGoPkgHasElem_NamespaceAlias
-
-	XsdGoPkgHasElem_Output
-
-	XsdGoPkgHasElem_PreserveSpace
-
-	XsdGoPkgHasElem_StripSpace
-
-	XsdGoPkgHasElem_Template
-
-}
-
-type XsdGoPkgHasElems_Declaration struct {
-	Declarations []*TgenericElementType `xml:"http://www.w3.org/1999/XSL/Transform declaration"`
-
-	XsdGoPkgHasElems_AttributeSet
-
-	XsdGoPkgHasElems_CharacterMap
-
-	XsdGoPkgHasElems_DecimalFormat
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_ImportSchema
-
-	XsdGoPkgHasElems_Include
-
-	XsdGoPkgHasElems_Key
-
-	XsdGoPkgHasElems_NamespaceAlias
-
-	XsdGoPkgHasElems_Output
-
-	XsdGoPkgHasElems_PreserveSpace
-
-	XsdGoPkgHasElems_StripSpace
-
-	XsdGoPkgHasElems_Template
-
-}
-
-type XsdGoPkgHasElems_Instruction struct {
-	Instructions []*TversionedElementType `xml:"http://www.w3.org/1999/XSL/Transform instruction"`
-
-	XsdGoPkgHasElems_AnalyzeString
-
-	XsdGoPkgHasElems_ApplyImports
-
-	XsdGoPkgHasElems_ApplyTemplates
-
-	XsdGoPkgHasElems_Attribute
-
-	XsdGoPkgHasElems_CallTemplate
-
-	XsdGoPkgHasElems_Choose
-
-	XsdGoPkgHasElems_Comment
-
-	XsdGoPkgHasElems_Copy
-
-	XsdGoPkgHasElems_CopyOf
-
-	XsdGoPkgHasElems_Document
-
-	XsdGoPkgHasElems_Element
-
-	XsdGoPkgHasElems_Fallback
-
-	XsdGoPkgHasElems_ForEach
-
-	XsdGoPkgHasElems_ForEachGroup
-
-	XsdGoPkgHasElems_If
-
-	XsdGoPkgHasElems_Message
-
-	XsdGoPkgHasElems_Namespace
-
-	XsdGoPkgHasElems_NextMatch
-
-	XsdGoPkgHasElems_Number
-
-	XsdGoPkgHasElems_PerformSort
-
-	XsdGoPkgHasElems_ProcessingInstruction
-
-	XsdGoPkgHasElems_ResultDocument
-
-	XsdGoPkgHasElems_Sequence
-
-	XsdGoPkgHasElems_Text
-
-	XsdGoPkgHasElems_ValueOf
-
-}
-
-type XsdGoPkgHasElem_Instruction struct {
-	Instruction *TversionedElementType `xml:"http://www.w3.org/1999/XSL/Transform instruction"`
-
-	XsdGoPkgHasElem_AnalyzeString
-
-	XsdGoPkgHasElem_ApplyImports
-
-	XsdGoPkgHasElem_ApplyTemplates
-
-	XsdGoPkgHasElem_Attribute
-
-	XsdGoPkgHasElem_CallTemplate
-
-	XsdGoPkgHasElem_Choose
-
-	XsdGoPkgHasElem_Comment
-
-	XsdGoPkgHasElem_Copy
-
-	XsdGoPkgHasElem_CopyOf
-
-	XsdGoPkgHasElem_Document
-
-	XsdGoPkgHasElem_Element
-
-	XsdGoPkgHasElem_Fallback
-
-	XsdGoPkgHasElem_ForEach
-
-	XsdGoPkgHasElem_ForEachGroup
-
-	XsdGoPkgHasElem_If
-
-	XsdGoPkgHasElem_Message
-
-	XsdGoPkgHasElem_Namespace
-
-	XsdGoPkgHasElem_NextMatch
-
-	XsdGoPkgHasElem_Number
-
-	XsdGoPkgHasElem_PerformSort
-
-	XsdGoPkgHasElem_ProcessingInstruction
-
-	XsdGoPkgHasElem_ResultDocument
-
-	XsdGoPkgHasElem_Sequence
-
-	XsdGoPkgHasElem_Text
-
-	XsdGoPkgHasElem_ValueOf
-
-}
-
-type XsdGoPkgHasAttr_Select_Texpression_ struct {
-	Select Texpression `xml:"http://www.w3.org/1999/XSL/Transform select,attr"`
-}
-
-type XsdGoPkgHasAttr_Regex_Tavt_ struct {
-	Regex Tavt `xml:"http://www.w3.org/1999/XSL/Transform regex,attr"`
-}
-
-type XsdGoPkgHasAttr_Flags_Tavt_ struct {
-	Flags Tavt `xml:"http://www.w3.org/1999/XSL/Transform flags,attr"`
-}
-
-type TxsdAnalyzeString struct {
-	TelementOnlyVersionedElementType
-
-	XsdGoPkgHasElem_MatchingSubstring
-
-	XsdGoPkgHasElem_NonMatchingSubstring
-
-	XsdGoPkgHasElems_Fallback
-
-	XsdGoPkgHasAttr_Regex_Tavt_
-
-	XsdGoPkgHasAttr_Select_Texpression_
-
-	XsdGoPkgHasAttr_Flags_Tavt_
-
-}
-
-type XsdGoPkgHasElems_AnalyzeString struct {
-	AnalyzeStrings []*TxsdAnalyzeString `xml:"http://www.w3.org/1999/XSL/Transform analyze-string"`
-
-}
-
-type XsdGoPkgHasElem_AnalyzeString struct {
-	AnalyzeString *TxsdAnalyzeString `xml:"http://www.w3.org/1999/XSL/Transform analyze-string"`
-
-}
-
-type TxsdApplyImports struct {
-	TelementOnlyVersionedElementType
-
-	XsdGoPkgHasElems_WithParam
-
-}
-
-type XsdGoPkgHasElems_ApplyImports struct {
-	ApplyImportses []*TxsdApplyImports `xml:"http://www.w3.org/1999/XSL/Transform apply-imports"`
-
-}
-
-type XsdGoPkgHasElem_ApplyImports struct {
-	ApplyImports *TxsdApplyImports `xml:"http://www.w3.org/1999/XSL/Transform apply-imports"`
-
-}
-
-type XsdGoPkgHasAttr_Select_Texpression_ChildNode struct {
-	Select Texpression `xml:"http://www.w3.org/1999/XSL/Transform select,attr"`
-}
-
-//	Returns the Default value for Select -- "child::node()"
-func (me *XsdGoPkgHasAttr_Select_Texpression_ChildNode) SelectDefault () Texpression { return Texpression("child::node()") }
-
-type XsdGoPkgHasAttr_Mode_Tmode_ struct {
-	Mode Tmode `xml:"http://www.w3.org/1999/XSL/Transform mode,attr"`
-}
-
-type TxsdApplyTemplates struct {
-	TelementOnlyVersionedElementType
+	XsdGoPkgHasAttr_GroupBy_Texpression_
 
 	XsdGoPkgHasElems_Sort
 
-	XsdGoPkgHasElems_WithParam
+	XsdGoPkgHasAttr_Collation_XsdtAnyURI_
 
-	XsdGoPkgHasAttr_Select_Texpression_ChildNode
+	XsdGoPkgHasAttr_GroupEndingWith_Tpattern_
 
-	XsdGoPkgHasAttr_Mode_Tmode_
+	TversionedElementType
 
-}
-
-type XsdGoPkgHasElems_ApplyTemplates struct {
-	ApplyTemplateses []*TxsdApplyTemplates `xml:"http://www.w3.org/1999/XSL/Transform apply-templates"`
+	XsdGoPkgHasAttr_GroupAdjacent_Texpression_
 
 }
 
-type XsdGoPkgHasElem_ApplyTemplates struct {
-	ApplyTemplates *TxsdApplyTemplates `xml:"http://www.w3.org/1999/XSL/Transform apply-templates"`
+type XsdGoPkgHasElem_ForEachGroup struct {
+	ForEachGroup *TxsdForEachGroup `xml:"http://www.w3.org/1999/XSL/Transform for-each-group"`
 
 }
 
-type XsdGoPkgHasAttr_Name_Tavt_ struct {
-	Name Tavt `xml:"http://www.w3.org/1999/XSL/Transform name,attr"`
-}
-
-type XsdGoPkgHasAttr_Namespace_Tavt_ struct {
-	Namespace Tavt `xml:"http://www.w3.org/1999/XSL/Transform namespace,attr"`
-}
-
-type XsdGoPkgHasAttr_Separator_Tavt_ struct {
-	Separator Tavt `xml:"http://www.w3.org/1999/XSL/Transform separator,attr"`
-}
-
-type TxsdAttribute struct {
-	TsequenceConstructor
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Namespace_Tavt_
-
-	XsdGoPkgHasAttr_Name_Tavt_
-
-	XsdGoPkgHasAttr_Separator_Tavt_
+type XsdGoPkgHasElem_ProcessingInstruction struct {
+	ProcessingInstruction *TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform processing-instruction"`
 
 }
 
-type XsdGoPkgHasElem_Attribute struct {
-	Attribute *TxsdAttribute `xml:"http://www.w3.org/1999/XSL/Transform attribute"`
+type TelementOnlyVersionedElementType struct {
+	TversionedElementType
 
 }
 
-type XsdGoPkgHasElems_Attribute struct {
-	Attributes []*TxsdAttribute `xml:"http://www.w3.org/1999/XSL/Transform attribute"`
+type XsdGoPkgHasElems_When struct {
+	Whens []*TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform when"`
 
 }
 
-type XsdGoPkgHasAttr_Name_TQName_ struct {
-	Name TQName `xml:"http://www.w3.org/1999/XSL/Transform name,attr"`
-}
-
-type TxsdAttributeSet struct {
-	TelementOnlyVersionedElementType
-
-	XsdGoPkgHasElems_Attribute
-
-	XsdGoPkgHasAttr_Name_TQName_
-
-}
-
-type XsdGoPkgHasElem_AttributeSet struct {
-	AttributeSet *TxsdAttributeSet `xml:"http://www.w3.org/1999/XSL/Transform attribute-set"`
-
-}
-
-type XsdGoPkgHasElems_AttributeSet struct {
-	AttributeSets []*TxsdAttributeSet `xml:"http://www.w3.org/1999/XSL/Transform attribute-set"`
-
-}
-
-type TxsdCallTemplate struct {
-	TelementOnlyVersionedElementType
-
-	XsdGoPkgHasElems_WithParam
-
-}
-
-type XsdGoPkgHasElems_CallTemplate struct {
-	CallTemplates []*TxsdCallTemplate `xml:"http://www.w3.org/1999/XSL/Transform call-template"`
-
-}
-
-type XsdGoPkgHasElem_CallTemplate struct {
-	CallTemplate *TxsdCallTemplate `xml:"http://www.w3.org/1999/XSL/Transform call-template"`
-
-}
-
-type XsdGoPkgHasAttr_UseCharacterMaps_TQNames_ struct {
-	UseCharacterMaps TQNames `xml:"http://www.w3.org/1999/XSL/Transform use-character-maps,attr"`
-}
-
-type TxsdCharacterMap struct {
-	TelementOnlyVersionedElementType
-
-	XsdGoPkgHasElems_OutputCharacter
-
-	XsdGoPkgHasAttr_UseCharacterMaps_TQNames_
-
-}
-
-type XsdGoPkgHasElem_CharacterMap struct {
-	CharacterMap *TxsdCharacterMap `xml:"http://www.w3.org/1999/XSL/Transform character-map"`
-
-}
-
-type XsdGoPkgHasElems_CharacterMap struct {
-	CharacterMaps []*TxsdCharacterMap `xml:"http://www.w3.org/1999/XSL/Transform character-map"`
+type XsdGoPkgHasElem_Otherwise struct {
+	Otherwise *TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform otherwise"`
 
 }
 
@@ -1128,39 +660,35 @@ type TxsdChoose struct {
 
 }
 
-type XsdGoPkgHasElems_Choose struct {
-	Chooses []*TxsdChoose `xml:"http://www.w3.org/1999/XSL/Transform choose"`
-
-}
-
 type XsdGoPkgHasElem_Choose struct {
 	Choose *TxsdChoose `xml:"http://www.w3.org/1999/XSL/Transform choose"`
 
 }
 
-type TxsdComment struct {
-	TsequenceConstructor
-
-	XsdGoPkgHasCdata
+type XsdGoPkgHasElems_WithParam struct {
+	WithParams []*TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform with-param"`
 
 }
 
-type XsdGoPkgHasElem_Comment struct {
-	Comment *TxsdComment `xml:"http://www.w3.org/1999/XSL/Transform comment"`
+type TxsdCallTemplate struct {
+	TelementOnlyVersionedElementType
+
+	XsdGoPkgHasElems_WithParam
 
 }
 
-type XsdGoPkgHasElems_Comment struct {
-	Comments []*TxsdComment `xml:"http://www.w3.org/1999/XSL/Transform comment"`
+type XsdGoPkgHasElem_CallTemplate struct {
+	CallTemplate *TxsdCallTemplate `xml:"http://www.w3.org/1999/XSL/Transform call-template"`
 
 }
 
 type XsdGoPkgHasAttr_CopyNamespaces_TyesOrNo_Yes struct {
 	CopyNamespaces TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform copy-namespaces,attr"`
+
 }
 
-//	Returns the Default value for CopyNamespaces -- "yes"
-func (me *XsdGoPkgHasAttr_CopyNamespaces_TyesOrNo_Yes) CopyNamespacesDefault () TyesOrNo { return TyesOrNo("yes") }
+//	Returns the default value for CopyNamespaces -- "yes"
+func (me XsdGoPkgHasAttr_CopyNamespaces_TyesOrNo_Yes) CopyNamespacesDefault () TyesOrNo { return TyesOrNo("yes") }
 
 type TxsdCopy struct {
 	TsequenceConstructor
@@ -1176,164 +704,13 @@ type XsdGoPkgHasElem_Copy struct {
 
 }
 
-type XsdGoPkgHasElems_Copy struct {
-	Copies []*TxsdCopy `xml:"http://www.w3.org/1999/XSL/Transform copy"`
+type XsdGoPkgHasAttr_Flags_Tavt_ struct {
+	Flags Tavt `xml:"http://www.w3.org/1999/XSL/Transform flags,attr"`
 
 }
 
-type TxsdCopyOf struct {
-	TversionedElementType
-
-	XsdGoPkgHasCdata
-
-}
-
-type XsdGoPkgHasElems_CopyOf struct {
-	CopyOfs []*TxsdCopyOf `xml:"http://www.w3.org/1999/XSL/Transform copy-of"`
-
-}
-
-type XsdGoPkgHasElem_CopyOf struct {
-	CopyOf *TxsdCopyOf `xml:"http://www.w3.org/1999/XSL/Transform copy-of"`
-
-}
-
-type TxsdDocument struct {
-	TsequenceConstructor
-
-	XsdGoPkgHasCdata
-
-}
-
-type XsdGoPkgHasElem_Document struct {
-	Document *TxsdDocument `xml:"http://www.w3.org/1999/XSL/Transform document"`
-
-}
-
-type XsdGoPkgHasElems_Document struct {
-	Documents []*TxsdDocument `xml:"http://www.w3.org/1999/XSL/Transform document"`
-
-}
-
-type XsdGoPkgHasAttr_DecimalSeparator_Tchar_ struct {
-	DecimalSeparator Tchar `xml:"http://www.w3.org/1999/XSL/Transform decimal-separator,attr"`
-}
-
-//	Returns the Default value for DecimalSeparator -- "."
-func (me *XsdGoPkgHasAttr_DecimalSeparator_Tchar_) DecimalSeparatorDefault () Tchar { return Tchar(".") }
-
-type XsdGoPkgHasAttr_GroupingSeparator_Tchar_ struct {
-	GroupingSeparator Tchar `xml:"http://www.w3.org/1999/XSL/Transform grouping-separator,attr"`
-}
-
-//	Returns the Default value for GroupingSeparator -- ","
-func (me *XsdGoPkgHasAttr_GroupingSeparator_Tchar_) GroupingSeparatorDefault () Tchar { return Tchar(",") }
-
-type XsdGoPkgHasAttr_Infinity_XsdtString_Infinity struct {
-	Infinity xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform infinity,attr"`
-}
-
-//	Returns the Default value for Infinity -- "Infinity"
-func (me *XsdGoPkgHasAttr_Infinity_XsdtString_Infinity) InfinityDefault () xsdt.String { return xsdt.String("Infinity") }
-
-type XsdGoPkgHasAttr_MinusSign_Tchar_ struct {
-	MinusSign Tchar `xml:"http://www.w3.org/1999/XSL/Transform minus-sign,attr"`
-}
-
-//	Returns the Default value for MinusSign -- "-"
-func (me *XsdGoPkgHasAttr_MinusSign_Tchar_) MinusSignDefault () Tchar { return Tchar("-") }
-
-type XsdGoPkgHasAttr_NaN_XsdtString_NaN struct {
-	NaN xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform NaN,attr"`
-}
-
-//	Returns the Default value for NaN -- "NaN"
-func (me *XsdGoPkgHasAttr_NaN_XsdtString_NaN) NaNDefault () xsdt.String { return xsdt.String("NaN") }
-
-type XsdGoPkgHasAttr_Percent_Tchar_ struct {
-	Percent Tchar `xml:"http://www.w3.org/1999/XSL/Transform percent,attr"`
-}
-
-//	Returns the Default value for Percent -- "%"
-func (me *XsdGoPkgHasAttr_Percent_Tchar_) PercentDefault () Tchar { return Tchar("%") }
-
-type XsdGoPkgHasAttr_PerMille_Tchar_ struct {
-	PerMille Tchar `xml:"http://www.w3.org/1999/XSL/Transform per-mille,attr"`
-}
-
-//	Returns the Default value for PerMille -- "‰"
-func (me *XsdGoPkgHasAttr_PerMille_Tchar_) PerMilleDefault () Tchar { return Tchar("‰") }
-
-type XsdGoPkgHasAttr_ZeroDigit_Tchar_0 struct {
-	ZeroDigit Tchar `xml:"http://www.w3.org/1999/XSL/Transform zero-digit,attr"`
-}
-
-//	Returns the Default value for ZeroDigit -- "0"
-func (me *XsdGoPkgHasAttr_ZeroDigit_Tchar_0) ZeroDigitDefault () Tchar { return Tchar("0") }
-
-type XsdGoPkgHasAttr_Digit_Tchar_ struct {
-	Digit Tchar `xml:"http://www.w3.org/1999/XSL/Transform digit,attr"`
-}
-
-//	Returns the Default value for Digit -- "#"
-func (me *XsdGoPkgHasAttr_Digit_Tchar_) DigitDefault () Tchar { return Tchar("#") }
-
-type XsdGoPkgHasAttr_PatternSeparator_Tchar_ struct {
-	PatternSeparator Tchar `xml:"http://www.w3.org/1999/XSL/Transform pattern-separator,attr"`
-}
-
-//	Returns the Default value for PatternSeparator -- ";"
-func (me *XsdGoPkgHasAttr_PatternSeparator_Tchar_) PatternSeparatorDefault () Tchar { return Tchar(";") }
-
-type TxsdDecimalFormat struct {
-	TelementOnlyVersionedElementType
-
-	XsdGoPkgHasAttr_ZeroDigit_Tchar_0
-
-	XsdGoPkgHasAttr_DecimalSeparator_Tchar_
-
-	XsdGoPkgHasAttr_GroupingSeparator_Tchar_
-
-	XsdGoPkgHasAttr_Digit_Tchar_
-
-	XsdGoPkgHasAttr_Infinity_XsdtString_Infinity
-
-	XsdGoPkgHasAttr_PatternSeparator_Tchar_
-
-	XsdGoPkgHasAttr_NaN_XsdtString_NaN
-
-	XsdGoPkgHasAttr_Percent_Tchar_
-
-	XsdGoPkgHasAttr_MinusSign_Tchar_
-
-	XsdGoPkgHasAttr_PerMille_Tchar_
-
-}
-
-type XsdGoPkgHasElems_DecimalFormat struct {
-	DecimalFormats []*TxsdDecimalFormat `xml:"http://www.w3.org/1999/XSL/Transform decimal-format"`
-
-}
-
-type XsdGoPkgHasElem_DecimalFormat struct {
-	DecimalFormat *TxsdDecimalFormat `xml:"http://www.w3.org/1999/XSL/Transform decimal-format"`
-
-}
-
-type TxsdElement struct {
-	TsequenceConstructor
-
-	XsdGoPkgHasCdata
-
-}
-
-type XsdGoPkgHasElem_Element struct {
-	Element *TxsdElement `xml:"http://www.w3.org/1999/XSL/Transform element"`
-
-}
-
-type XsdGoPkgHasElems_Element struct {
-	Elements []*TxsdElement `xml:"http://www.w3.org/1999/XSL/Transform element"`
+type XsdGoPkgHasAttr_Regex_Tavt_ struct {
+	Regex Tavt `xml:"http://www.w3.org/1999/XSL/Transform regex,attr"`
 
 }
 
@@ -1342,333 +719,13 @@ type XsdGoPkgHasElems_Fallback struct {
 
 }
 
-type XsdGoPkgHasElem_Fallback struct {
-	Fallback *TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform fallback"`
-
-}
-
-type TxsdForEach struct {
-	TversionedElementType
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Sort
-
-	XsdGoPkgHasGroup_SequenceConstructorGroup
-
-}
-
-type XsdGoPkgHasElems_ForEach struct {
-	ForEachs []*TxsdForEach `xml:"http://www.w3.org/1999/XSL/Transform for-each"`
-
-}
-
-type XsdGoPkgHasElem_ForEach struct {
-	ForEach *TxsdForEach `xml:"http://www.w3.org/1999/XSL/Transform for-each"`
-
-}
-
-type XsdGoPkgHasAttr_GroupBy_Texpression_ struct {
-	GroupBy Texpression `xml:"http://www.w3.org/1999/XSL/Transform group-by,attr"`
-}
-
-type XsdGoPkgHasAttr_GroupAdjacent_Texpression_ struct {
-	GroupAdjacent Texpression `xml:"http://www.w3.org/1999/XSL/Transform group-adjacent,attr"`
-}
-
-type XsdGoPkgHasAttr_GroupStartingWith_Tpattern_ struct {
-	GroupStartingWith Tpattern `xml:"http://www.w3.org/1999/XSL/Transform group-starting-with,attr"`
-}
-
-type XsdGoPkgHasAttr_GroupEndingWith_Tpattern_ struct {
-	GroupEndingWith Tpattern `xml:"http://www.w3.org/1999/XSL/Transform group-ending-with,attr"`
-}
-
-type XsdGoPkgHasAttr_Collation_XsdtAnyURI_ struct {
-	Collation xsdt.AnyURI `xml:"http://www.w3.org/1999/XSL/Transform collation,attr"`
-}
-
-type TxsdForEachGroup struct {
-	TversionedElementType
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Sort
-
-	XsdGoPkgHasGroup_SequenceConstructorGroup
-
-	XsdGoPkgHasAttr_GroupAdjacent_Texpression_
-
-	XsdGoPkgHasAttr_GroupStartingWith_Tpattern_
-
-	XsdGoPkgHasAttr_GroupBy_Texpression_
-
-	XsdGoPkgHasAttr_Collation_XsdtAnyURI_
-
-	XsdGoPkgHasAttr_GroupEndingWith_Tpattern_
-
-}
-
-type XsdGoPkgHasElems_ForEachGroup struct {
-	ForEachGroups []*TxsdForEachGroup `xml:"http://www.w3.org/1999/XSL/Transform for-each-group"`
-
-}
-
-type XsdGoPkgHasElem_ForEachGroup struct {
-	ForEachGroup *TxsdForEachGroup `xml:"http://www.w3.org/1999/XSL/Transform for-each-group"`
-
-}
-
-type XsdGoPkgHasAttr_Override_TyesOrNo_Yes struct {
-	Override TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform override,attr"`
-}
-
-//	Returns the Default value for Override -- "yes"
-func (me *XsdGoPkgHasAttr_Override_TyesOrNo_Yes) OverrideDefault () TyesOrNo { return TyesOrNo("yes") }
-
-type XsdGoPkgHasAttr_As_TsequenceType_Item struct {
-	As TsequenceType `xml:"http://www.w3.org/1999/XSL/Transform as,attr"`
-}
-
-//	Returns the Default value for As -- "item()*"
-func (me *XsdGoPkgHasAttr_As_TsequenceType_Item) AsDefault () TsequenceType { return TsequenceType("item()*") }
-
-type TxsdFunction struct {
-	TversionedElementType
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Param
-
-	XsdGoPkgHasGroup_SequenceConstructorGroup
-
-	XsdGoPkgHasAttr_As_TsequenceType_Item
-
-	XsdGoPkgHasAttr_Override_TyesOrNo_Yes
-
-}
-
-type XsdGoPkgHasElem_Function struct {
-	Function *TxsdFunction `xml:"http://www.w3.org/1999/XSL/Transform function"`
-
-}
-
-type XsdGoPkgHasElems_Function struct {
-	Functions []*TxsdFunction `xml:"http://www.w3.org/1999/XSL/Transform function"`
-
-}
-
-type XsdGoPkgHasAttr_Test_Texpression_ struct {
-	Test Texpression `xml:"http://www.w3.org/1999/XSL/Transform test,attr"`
-}
-
-type TxsdIf struct {
-	TsequenceConstructor
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Test_Texpression_
-
-}
-
-type XsdGoPkgHasElems_If struct {
-	Ifs []*TxsdIf `xml:"http://www.w3.org/1999/XSL/Transform if"`
-
-}
-
-type XsdGoPkgHasElem_If struct {
-	If *TxsdIf `xml:"http://www.w3.org/1999/XSL/Transform if"`
-
-}
-
-type XsdGoPkgHasAttr_Href_XsdtAnyURI_ struct {
-	Href xsdt.AnyURI `xml:"http://www.w3.org/1999/XSL/Transform href,attr"`
-}
-
-type TxsdImport struct {
-	TelementOnlyVersionedElementType
-
-	XsdGoPkgHasAttr_Href_XsdtAnyURI_
-
-}
-
-type XsdGoPkgHasElem_Import struct {
-	Import *TxsdImport `xml:"http://www.w3.org/1999/XSL/Transform import"`
-
-}
-
-type XsdGoPkgHasElems_Import struct {
-	Imports []*TxsdImport `xml:"http://www.w3.org/1999/XSL/Transform import"`
-
-}
-
-type XsdGoPkgHasAttr_Namespace_XsdtAnyURI_ struct {
-	Namespace xsdt.AnyURI `xml:"http://www.w3.org/1999/XSL/Transform namespace,attr"`
-}
-
-type XsdGoPkgHasAttr_SchemaLocation_XsdtAnyURI_ struct {
-	SchemaLocation xsdt.AnyURI `xml:"http://www.w3.org/1999/XSL/Transform schema-location,attr"`
-}
-
-type TxsdImportSchema struct {
-	TelementOnlyVersionedElementType
-
-	XsdGoPkgHasAttr_SchemaLocation_XsdtAnyURI_
-
-	XsdGoPkgHasAttr_Namespace_XsdtAnyURI_
-
-}
-
-type XsdGoPkgHasElems_ImportSchema struct {
-	ImportSchemas []*TxsdImportSchema `xml:"http://www.w3.org/1999/XSL/Transform import-schema"`
-
-}
-
-type XsdGoPkgHasElem_ImportSchema struct {
-	ImportSchema *TxsdImportSchema `xml:"http://www.w3.org/1999/XSL/Transform import-schema"`
-
-}
-
-type TxsdInclude struct {
-	TelementOnlyVersionedElementType
-
-}
-
-type XsdGoPkgHasElems_Include struct {
-	Includes []*TxsdInclude `xml:"http://www.w3.org/1999/XSL/Transform include"`
-
-}
-
-type XsdGoPkgHasElem_Include struct {
-	Include *TxsdInclude `xml:"http://www.w3.org/1999/XSL/Transform include"`
-
-}
-
-type XsdGoPkgHasAttr_Match_Tpattern_ struct {
-	Match Tpattern `xml:"http://www.w3.org/1999/XSL/Transform match,attr"`
-}
-
-type XsdGoPkgHasAttr_Use_Texpression_ struct {
-	Use Texpression `xml:"http://www.w3.org/1999/XSL/Transform use,attr"`
-}
-
-type TxsdKey struct {
-	TsequenceConstructor
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Use_Texpression_
-
-	XsdGoPkgHasAttr_Match_Tpattern_
-
-}
-
-type XsdGoPkgHasElems_Key struct {
-	Keys []*TxsdKey `xml:"http://www.w3.org/1999/XSL/Transform key"`
-
-}
-
-type XsdGoPkgHasElem_Key struct {
-	Key *TxsdKey `xml:"http://www.w3.org/1999/XSL/Transform key"`
-
-}
-
-type XsdGoPkgHasElems_MatchingSubstring struct {
-	MatchingSubstrings []*TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform matching-substring"`
-
-}
-
 type XsdGoPkgHasElem_MatchingSubstring struct {
 	MatchingSubstring *TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform matching-substring"`
 
 }
 
-type XsdGoPkgHasAttr_Terminate_Tavt_No struct {
-	Terminate Tavt `xml:"http://www.w3.org/1999/XSL/Transform terminate,attr"`
-}
-
-//	Returns the Default value for Terminate -- "no"
-func (me *XsdGoPkgHasAttr_Terminate_Tavt_No) TerminateDefault () Tavt { return Tavt("no") }
-
-type TxsdMessage struct {
-	TsequenceConstructor
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Terminate_Tavt_No
-
-}
-
-type XsdGoPkgHasElem_Message struct {
-	Message *TxsdMessage `xml:"http://www.w3.org/1999/XSL/Transform message"`
-
-}
-
-type XsdGoPkgHasElems_Message struct {
-	Messages []*TxsdMessage `xml:"http://www.w3.org/1999/XSL/Transform message"`
-
-}
-
-type TxsdNamespace struct {
-	TsequenceConstructor
-
-	XsdGoPkgHasCdata
-
-}
-
-type XsdGoPkgHasElem_Namespace struct {
-	Namespace *TxsdNamespace `xml:"http://www.w3.org/1999/XSL/Transform namespace"`
-
-}
-
-type XsdGoPkgHasElems_Namespace struct {
-	Namespaces []*TxsdNamespace `xml:"http://www.w3.org/1999/XSL/Transform namespace"`
-
-}
-
-type XsdGoPkgHasAttr_StylesheetPrefix_TprefixOrDefault_ struct {
-	StylesheetPrefix TprefixOrDefault `xml:"http://www.w3.org/1999/XSL/Transform stylesheet-prefix,attr"`
-}
-
-type XsdGoPkgHasAttr_ResultPrefix_TprefixOrDefault_ struct {
-	ResultPrefix TprefixOrDefault `xml:"http://www.w3.org/1999/XSL/Transform result-prefix,attr"`
-}
-
-type TxsdNamespaceAlias struct {
-	TelementOnlyVersionedElementType
-
-	XsdGoPkgHasAttr_ResultPrefix_TprefixOrDefault_
-
-	XsdGoPkgHasAttr_StylesheetPrefix_TprefixOrDefault_
-
-}
-
-type XsdGoPkgHasElem_NamespaceAlias struct {
-	NamespaceAlias *TxsdNamespaceAlias `xml:"http://www.w3.org/1999/XSL/Transform namespace-alias"`
-
-}
-
-type XsdGoPkgHasElems_NamespaceAlias struct {
-	NamespaceAliases []*TxsdNamespaceAlias `xml:"http://www.w3.org/1999/XSL/Transform namespace-alias"`
-
-}
-
-type TxsdNextMatch struct {
-	TelementOnlyVersionedElementType
-
-	XsdGoPkgHasElems_WithParam
-
-	XsdGoPkgHasElems_Fallback
-
-}
-
-type XsdGoPkgHasElem_NextMatch struct {
-	NextMatch *TxsdNextMatch `xml:"http://www.w3.org/1999/XSL/Transform next-match"`
-
-}
-
-type XsdGoPkgHasElems_NextMatch struct {
-	NextMatchs []*TxsdNextMatch `xml:"http://www.w3.org/1999/XSL/Transform next-match"`
+type XsdGoPkgHasAttr_Select_Texpression_ struct {
+	Select Texpression `xml:"http://www.w3.org/1999/XSL/Transform select,attr"`
 
 }
 
@@ -1677,79 +734,479 @@ type XsdGoPkgHasElem_NonMatchingSubstring struct {
 
 }
 
-type XsdGoPkgHasElems_NonMatchingSubstring struct {
-	NonMatchingSubstrings []*TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform non-matching-substring"`
+type TxsdAnalyzeString struct {
+	XsdGoPkgHasAttr_Flags_Tavt_
+
+	XsdGoPkgHasAttr_Regex_Tavt_
+
+	XsdGoPkgHasElems_Fallback
+
+	XsdGoPkgHasElem_MatchingSubstring
+
+	XsdGoPkgHasAttr_Select_Texpression_
+
+	XsdGoPkgHasElem_NonMatchingSubstring
+
+	TelementOnlyVersionedElementType
+
+}
+
+type XsdGoPkgHasElem_AnalyzeString struct {
+	AnalyzeString *TxsdAnalyzeString `xml:"http://www.w3.org/1999/XSL/Transform analyze-string"`
+
+}
+
+type XsdGoPkgHasElem_Namespace struct {
+	Namespace *TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform namespace"`
+
+}
+
+type XsdGoPkgHasAttr_Namespace_Tavt_ struct {
+	Namespace Tavt `xml:"http://www.w3.org/1999/XSL/Transform namespace,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Name_Tavt_ struct {
+	Name Tavt `xml:"http://www.w3.org/1999/XSL/Transform name,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Separator_Tavt_ struct {
+	Separator Tavt `xml:"http://www.w3.org/1999/XSL/Transform separator,attr"`
+
+}
+
+type TxsdAttribute struct {
+	XsdGoPkgHasAttr_Name_Tavt_
+
+	XsdGoPkgHasAttr_Separator_Tavt_
+
+	XsdGoPkgHasAttr_Namespace_Tavt_
+
+	XsdGoPkgHasCdata
+
+	TsequenceConstructor
+
+}
+
+type XsdGoPkgHasElem_Attribute struct {
+	Attribute *TxsdAttribute `xml:"http://www.w3.org/1999/XSL/Transform attribute"`
+
+}
+
+type XsdGoPkgHasElem_Element struct {
+	Element *TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform element"`
+
+}
+
+type XsdGoPkgHasElem_Document struct {
+	Document *TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform document"`
+
+}
+
+type TxsdPerformSort struct {
+	XsdGoPkgHasGroup_SequenceConstructorGroup
+
+	XsdGoPkgHasElems_Sort
+
+	TversionedElementType
+
+	XsdGoPkgHasCdata
+
+}
+
+type XsdGoPkgHasElem_PerformSort struct {
+	PerformSort *TxsdPerformSort `xml:"http://www.w3.org/1999/XSL/Transform perform-sort"`
+
+}
+
+type XsdGoPkgHasAttr_Select_Texpression_ChildNode struct {
+	Select Texpression `xml:"http://www.w3.org/1999/XSL/Transform select,attr"`
+
+}
+
+//	Returns the default value for Select -- "child::node()"
+func (me XsdGoPkgHasAttr_Select_Texpression_ChildNode) SelectDefault () Texpression { return Texpression("child::node()") }
+
+//	The mode attribute of xsl:apply-templates:
+//	either a QName, or #current, or #default.
+type Tmode xsdt.String
+
+//	Since Tmode is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tmode) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to Tmode's alias type xsdt.String.
+func (me Tmode) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since Tmode is just a simple String type, this merely returns the current string value.
+func (me Tmode) String () string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_Mode_Tmode_ struct {
+	Mode Tmode `xml:"http://www.w3.org/1999/XSL/Transform mode,attr"`
+
+}
+
+type TxsdApplyTemplates struct {
+	XsdGoPkgHasElems_WithParam
+
+	XsdGoPkgHasAttr_Select_Texpression_ChildNode
+
+	TelementOnlyVersionedElementType
+
+	XsdGoPkgHasElems_Sort
+
+	XsdGoPkgHasAttr_Mode_Tmode_
+
+}
+
+type XsdGoPkgHasElem_ApplyTemplates struct {
+	ApplyTemplates *TxsdApplyTemplates `xml:"http://www.w3.org/1999/XSL/Transform apply-templates"`
+
+}
+
+type TxsdSequence struct {
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Fallback
+
+	TelementOnlyVersionedElementType
+
+}
+
+type XsdGoPkgHasElem_Sequence struct {
+	Sequence *TxsdSequence `xml:"http://www.w3.org/1999/XSL/Transform sequence"`
+
+}
+
+type XsdGoPkgHasElem_ForEach struct {
+	ForEach *TxsdPerformSort `xml:"http://www.w3.org/1999/XSL/Transform for-each"`
+
+}
+
+type XsdGoPkgHasElem_Fallback struct {
+	Fallback *TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform fallback"`
+
+}
+
+type XsdGoPkgHasAttr_DisableOutputEscaping_TyesOrNo_No struct {
+	DisableOutputEscaping TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform disable-output-escaping,attr"`
+
+}
+
+//	Returns the default value for DisableOutputEscaping -- "no"
+func (me XsdGoPkgHasAttr_DisableOutputEscaping_TyesOrNo_No) DisableOutputEscapingDefault () TyesOrNo { return TyesOrNo("no") }
+
+type TtextElementBaseType struct {
+	XsdGoPkgValue TversionedElementType `xml:",chardata"`
+
+}
+
+type TxsdText struct {
+	XsdGoPkgValue TtextElementBaseType `xml:",chardata"`
+
+	XsdGoPkgHasAttr_DisableOutputEscaping_TyesOrNo_No
+
+}
+
+type XsdGoPkgHasElem_Text struct {
+	Text *TxsdText `xml:"http://www.w3.org/1999/XSL/Transform text"`
+
+}
+
+type TxsdCopyOf struct {
+	XsdGoPkgHasCdata
+
+	TversionedElementType
+
+}
+
+type XsdGoPkgHasElem_CopyOf struct {
+	CopyOf *TxsdCopyOf `xml:"http://www.w3.org/1999/XSL/Transform copy-of"`
+
+}
+
+type XsdGoPkgHasAttr_Terminate_Tavt_No struct {
+	Terminate Tavt `xml:"http://www.w3.org/1999/XSL/Transform terminate,attr"`
+
+}
+
+//	Returns the default value for Terminate -- "no"
+func (me XsdGoPkgHasAttr_Terminate_Tavt_No) TerminateDefault () Tavt { return Tavt("no") }
+
+type TxsdMessage struct {
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Terminate_Tavt_No
+
+	TsequenceConstructor
+
+}
+
+type XsdGoPkgHasElem_Message struct {
+	Message *TxsdMessage `xml:"http://www.w3.org/1999/XSL/Transform message"`
+
+}
+
+type XsdGoPkgHasElem_ValueOf struct {
+	ValueOf *TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform value-of"`
+
+}
+
+type XsdGoPkgHasAttr_Href_Tavt_ struct {
+	Href Tavt `xml:"http://www.w3.org/1999/XSL/Transform href,attr"`
+
+}
+
+type XsdGoPkgHasAttr_UndeclarePrefixes_Tavt_ struct {
+	UndeclarePrefixes Tavt `xml:"http://www.w3.org/1999/XSL/Transform undeclare-prefixes,attr"`
+
+}
+
+type XsdGoPkgHasAttr_OmitXmlDeclaration_Tavt_ struct {
+	OmitXmlDeclaration Tavt `xml:"http://www.w3.org/1999/XSL/Transform omit-xml-declaration,attr"`
+
+}
+
+type XsdGoPkgHasAttr_IncludeContentType_Tavt_ struct {
+	IncludeContentType Tavt `xml:"http://www.w3.org/1999/XSL/Transform include-content-type,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Encoding_Tavt_ struct {
+	Encoding Tavt `xml:"http://www.w3.org/1999/XSL/Transform encoding,attr"`
+
+}
+
+type XsdGoPkgHasAttr_MediaType_Tavt_ struct {
+	MediaType Tavt `xml:"http://www.w3.org/1999/XSL/Transform media-type,attr"`
+
+}
+
+type XsdGoPkgHasAttr_DoctypePublic_Tavt_ struct {
+	DoctypePublic Tavt `xml:"http://www.w3.org/1999/XSL/Transform doctype-public,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Indent_Tavt_ struct {
+	Indent Tavt `xml:"http://www.w3.org/1999/XSL/Transform indent,attr"`
+
+}
+
+type XsdGoPkgHasAttr_OutputVersion_Tavt_ struct {
+	OutputVersion Tavt `xml:"http://www.w3.org/1999/XSL/Transform output-version,attr"`
+
+}
+
+type XsdGoPkgHasAttr_ByteOrderMark_Tavt_ struct {
+	ByteOrderMark Tavt `xml:"http://www.w3.org/1999/XSL/Transform byte-order-mark,attr"`
+
+}
+
+type XsdGoPkgHasAttr_DoctypeSystem_Tavt_ struct {
+	DoctypeSystem Tavt `xml:"http://www.w3.org/1999/XSL/Transform doctype-system,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Format_Tavt_ struct {
+	Format Tavt `xml:"http://www.w3.org/1999/XSL/Transform format,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Standalone_Tavt_ struct {
+	Standalone Tavt `xml:"http://www.w3.org/1999/XSL/Transform standalone,attr"`
+
+}
+
+type XsdGoPkgHasAttr_EscapeUriAttributes_Tavt_ struct {
+	EscapeUriAttributes Tavt `xml:"http://www.w3.org/1999/XSL/Transform escape-uri-attributes,attr"`
+
+}
+
+type XsdGoPkgHasAttr_NormalizationForm_Tavt_ struct {
+	NormalizationForm Tavt `xml:"http://www.w3.org/1999/XSL/Transform normalization-form,attr"`
+
+}
+
+type XsdGoPkgHasAttr_CdataSectionElements_Tavt_ struct {
+	CdataSectionElements Tavt `xml:"http://www.w3.org/1999/XSL/Transform cdata-section-elements,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Method_Tavt_ struct {
+	Method Tavt `xml:"http://www.w3.org/1999/XSL/Transform method,attr"`
+
+}
+
+type TxsdResultDocument struct {
+	XsdGoPkgHasAttr_Href_Tavt_
+
+	XsdGoPkgHasAttr_UndeclarePrefixes_Tavt_
+
+	XsdGoPkgHasAttr_OmitXmlDeclaration_Tavt_
+
+	XsdGoPkgHasAttr_IncludeContentType_Tavt_
+
+	XsdGoPkgHasAttr_Encoding_Tavt_
+
+	XsdGoPkgHasAttr_MediaType_Tavt_
+
+	XsdGoPkgHasAttr_DoctypePublic_Tavt_
+
+	XsdGoPkgHasAttr_Indent_Tavt_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_OutputVersion_Tavt_
+
+	XsdGoPkgHasAttr_ByteOrderMark_Tavt_
+
+	XsdGoPkgHasAttr_DoctypeSystem_Tavt_
+
+	XsdGoPkgHasAttr_Format_Tavt_
+
+	XsdGoPkgHasAttr_Standalone_Tavt_
+
+	XsdGoPkgHasAttr_EscapeUriAttributes_Tavt_
+
+	TsequenceConstructor
+
+	XsdGoPkgHasAttr_NormalizationForm_Tavt_
+
+	XsdGoPkgHasAttr_CdataSectionElements_Tavt_
+
+	XsdGoPkgHasAttr_Method_Tavt_
+
+}
+
+type XsdGoPkgHasElem_ResultDocument struct {
+	ResultDocument *TxsdResultDocument `xml:"http://www.w3.org/1999/XSL/Transform result-document"`
+
+}
+
+type XsdGoPkgHasAttr_Test_Texpression_ struct {
+	Test Texpression `xml:"http://www.w3.org/1999/XSL/Transform test,attr"`
+
+}
+
+type TxsdIf struct {
+	XsdGoPkgHasCdata
+
+	TsequenceConstructor
+
+	XsdGoPkgHasAttr_Test_Texpression_
+
+}
+
+type XsdGoPkgHasElem_If struct {
+	If *TxsdIf `xml:"http://www.w3.org/1999/XSL/Transform if"`
+
+}
+
+type XsdGoPkgHasElem_ApplyImports struct {
+	ApplyImports *TxsdCallTemplate `xml:"http://www.w3.org/1999/XSL/Transform apply-imports"`
+
+}
+
+type XsdGoPkgHasAttr_Count_Tpattern_ struct {
+	Count Tpattern `xml:"http://www.w3.org/1999/XSL/Transform count,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Format_Tavt_1 struct {
+	Format Tavt `xml:"http://www.w3.org/1999/XSL/Transform format,attr"`
+
+}
+
+//	Returns the default value for Format -- "1"
+func (me XsdGoPkgHasAttr_Format_Tavt_1) FormatDefault () Tavt { return Tavt("1") }
+
+type XsdGoPkgHasAttr_GroupingSize_Tavt_ struct {
+	GroupingSize Tavt `xml:"http://www.w3.org/1999/XSL/Transform grouping-size,attr"`
+
+}
+
+//	The level attribute of xsl:number:
+//	one of single, multiple, or any.
+type Tlevel xsdt.NCName
+
+//	This convenience method just performs a simple type conversion to Tlevel's alias type xsdt.NCName.
+func (me Tlevel) ToXsdtNCName () xsdt.NCName { return xsdt.NCName(me) }
+
+//	Returns true if the value of this enumerated Tlevel is "multiple".
+func (me Tlevel) IsMultiple () bool { return me == "multiple" }
+
+//	Returns true if the value of this enumerated Tlevel is "single".
+func (me Tlevel) IsSingle () bool { return me == "single" }
+
+//	Since Tlevel is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tlevel) SetFromString (s string)  { (*xsdt.NCName)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated Tlevel is "any".
+func (me Tlevel) IsAny () bool { return me == "any" }
+
+//	Since Tlevel is just a simple String type, this merely returns the current string value.
+func (me Tlevel) String () string { return xsdt.NCName(me).String() }
+
+type XsdGoPkgHasAttr_Level_Tlevel_Single struct {
+	Level Tlevel `xml:"http://www.w3.org/1999/XSL/Transform level,attr"`
+
+}
+
+//	Returns the default value for Level -- "single"
+func (me XsdGoPkgHasAttr_Level_Tlevel_Single) LevelDefault () Tlevel { return Tlevel("single") }
+
+type XsdGoPkgHasAttr_GroupingSeparator_Tavt_ struct {
+	GroupingSeparator Tavt `xml:"http://www.w3.org/1999/XSL/Transform grouping-separator,attr"`
+
+}
+
+type XsdGoPkgHasAttr_LetterValue_Tavt_ struct {
+	LetterValue Tavt `xml:"http://www.w3.org/1999/XSL/Transform letter-value,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Ordinal_Tavt_ struct {
+	Ordinal Tavt `xml:"http://www.w3.org/1999/XSL/Transform ordinal,attr"`
+
+}
+
+type XsdGoPkgHasAttr_From_Tpattern_ struct {
+	From Tpattern `xml:"http://www.w3.org/1999/XSL/Transform from,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Lang_Tavt_ struct {
+	Lang Tavt `xml:"http://www.w3.org/1999/XSL/Transform lang,attr"`
 
 }
 
 type XsdGoPkgHasAttr_Value_Texpression_ struct {
 	Value Texpression `xml:"http://www.w3.org/1999/XSL/Transform value,attr"`
-}
 
-type XsdGoPkgHasAttr_Level_Tlevel_Single struct {
-	Level Tlevel `xml:"http://www.w3.org/1999/XSL/Transform level,attr"`
-}
-
-//	Returns the Default value for Level -- "single"
-func (me *XsdGoPkgHasAttr_Level_Tlevel_Single) LevelDefault () Tlevel { return Tlevel("single") }
-
-type XsdGoPkgHasAttr_Count_Tpattern_ struct {
-	Count Tpattern `xml:"http://www.w3.org/1999/XSL/Transform count,attr"`
-}
-
-type XsdGoPkgHasAttr_From_Tpattern_ struct {
-	From Tpattern `xml:"http://www.w3.org/1999/XSL/Transform from,attr"`
-}
-
-type XsdGoPkgHasAttr_Format_Tavt_1 struct {
-	Format Tavt `xml:"http://www.w3.org/1999/XSL/Transform format,attr"`
-}
-
-//	Returns the Default value for Format -- "1"
-func (me *XsdGoPkgHasAttr_Format_Tavt_1) FormatDefault () Tavt { return Tavt("1") }
-
-type XsdGoPkgHasAttr_Lang_Tavt_ struct {
-	Lang Tavt `xml:"http://www.w3.org/1999/XSL/Transform lang,attr"`
-}
-
-type XsdGoPkgHasAttr_LetterValue_Tavt_ struct {
-	LetterValue Tavt `xml:"http://www.w3.org/1999/XSL/Transform letter-value,attr"`
-}
-
-type XsdGoPkgHasAttr_Ordinal_Tavt_ struct {
-	Ordinal Tavt `xml:"http://www.w3.org/1999/XSL/Transform ordinal,attr"`
-}
-
-type XsdGoPkgHasAttr_GroupingSeparator_Tavt_ struct {
-	GroupingSeparator Tavt `xml:"http://www.w3.org/1999/XSL/Transform grouping-separator,attr"`
-}
-
-type XsdGoPkgHasAttr_GroupingSize_Tavt_ struct {
-	GroupingSize Tavt `xml:"http://www.w3.org/1999/XSL/Transform grouping-size,attr"`
 }
 
 type TxsdNumber struct {
-	TversionedElementType
+	XsdGoPkgHasAttr_GroupingSeparator_Tavt_
 
-	XsdGoPkgHasCdata
+	XsdGoPkgHasAttr_LetterValue_Tavt_
+
+	XsdGoPkgHasAttr_Ordinal_Tavt_
 
 	XsdGoPkgHasAttr_From_Tpattern_
 
 	XsdGoPkgHasAttr_Lang_Tavt_
 
-	XsdGoPkgHasAttr_Count_Tpattern_
+	XsdGoPkgHasCdata
 
-	XsdGoPkgHasAttr_LetterValue_Tavt_
+	XsdGoPkgHasAttr_Value_Texpression_
+
+	TversionedElementType
+
+	XsdGoPkgHasAttr_Count_Tpattern_
 
 	XsdGoPkgHasAttr_Format_Tavt_1
 
 	XsdGoPkgHasAttr_GroupingSize_Tavt_
-
-	XsdGoPkgHasAttr_Ordinal_Tavt_
-
-	XsdGoPkgHasAttr_Value_Texpression_
-
-	XsdGoPkgHasAttr_GroupingSeparator_Tavt_
 
 	XsdGoPkgHasAttr_Level_Tlevel_Single
 
@@ -1760,177 +1217,162 @@ type XsdGoPkgHasElem_Number struct {
 
 }
 
-type XsdGoPkgHasElems_Number struct {
-	Numbers []*TxsdNumber `xml:"http://www.w3.org/1999/XSL/Transform number"`
+type TxsdNextMatch struct {
+	TelementOnlyVersionedElementType
+
+	XsdGoPkgHasElems_Fallback
+
+	XsdGoPkgHasElems_WithParam
 
 }
 
-type XsdGoPkgHasElems_Otherwise struct {
-	Otherwises []*TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform otherwise"`
+type XsdGoPkgHasElem_NextMatch struct {
+	NextMatch *TxsdNextMatch `xml:"http://www.w3.org/1999/XSL/Transform next-match"`
 
 }
 
-type XsdGoPkgHasElem_Otherwise struct {
-	Otherwise *TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform otherwise"`
+type XsdGoPkgHasElem_Instruction struct {
+	Instruction *TversionedElementType `xml:"http://www.w3.org/1999/XSL/Transform instruction"`
+
+	XsdGoPkgHasElem_Copy
+
+	XsdGoPkgHasElem_AnalyzeString
+
+	XsdGoPkgHasElem_Namespace
+
+	XsdGoPkgHasElem_Attribute
+
+	XsdGoPkgHasElem_Element
+
+	XsdGoPkgHasElem_Document
+
+	XsdGoPkgHasElem_PerformSort
+
+	XsdGoPkgHasElem_ApplyTemplates
+
+	XsdGoPkgHasElem_Sequence
+
+	XsdGoPkgHasElem_ForEach
+
+	XsdGoPkgHasElem_Fallback
+
+	XsdGoPkgHasElem_Text
+
+	XsdGoPkgHasElem_CopyOf
+
+	XsdGoPkgHasElem_Message
+
+	XsdGoPkgHasElem_ValueOf
+
+	XsdGoPkgHasElem_ResultDocument
+
+	XsdGoPkgHasElem_If
+
+	XsdGoPkgHasElem_ApplyImports
+
+	XsdGoPkgHasElem_Number
+
+	XsdGoPkgHasElem_NextMatch
+
+	XsdGoPkgHasElem_Comment
+
+	XsdGoPkgHasElem_ForEachGroup
+
+	XsdGoPkgHasElem_ProcessingInstruction
+
+	XsdGoPkgHasElem_Choose
+
+	XsdGoPkgHasElem_CallTemplate
 
 }
 
-type XsdGoPkgHasAttr_Method_Tmethod_ struct {
-	Method Tmethod `xml:"http://www.w3.org/1999/XSL/Transform method,attr"`
+type XsdGoPkgHasElem_LiteralResultElement struct {
+	LiteralResultElement xsdt.AnyType `xml:"http://www.w3.org/1999/XSL/Transform literal-result-element"`
+
 }
 
-type XsdGoPkgHasAttr_ByteOrderMark_TyesOrNo_ struct {
-	ByteOrderMark TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform byte-order-mark,attr"`
+type XsdGoPkgHasGroup_ResultElements struct {
+	XsdGoPkgHasElem_LiteralResultElement
+
 }
 
-type XsdGoPkgHasAttr_CdataSectionElements_TQNames_ struct {
-	CdataSectionElements TQNames `xml:"http://www.w3.org/1999/XSL/Transform cdata-section-elements,attr"`
+type XsdGoPkgHasGroup_SequenceConstructorGroup struct {
+	XsdGoPkgHasElem_Variable
+
+	XsdGoPkgHasElem_Instruction
+
+	XsdGoPkgHasGroup_ResultElements
+
 }
 
-type XsdGoPkgHasAttr_DoctypePublic_XsdtString_ struct {
-	DoctypePublic xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform doctype-public,attr"`
-}
+type TsequenceConstructor struct {
+	XsdGoPkgHasGroup_SequenceConstructorGroup
 
-type XsdGoPkgHasAttr_DoctypeSystem_XsdtString_ struct {
-	DoctypeSystem xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform doctype-system,attr"`
-}
-
-type XsdGoPkgHasAttr_Encoding_XsdtString_ struct {
-	Encoding xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform encoding,attr"`
-}
-
-type XsdGoPkgHasAttr_EscapeUriAttributes_TyesOrNo_ struct {
-	EscapeUriAttributes TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform escape-uri-attributes,attr"`
-}
-
-type XsdGoPkgHasAttr_IncludeContentType_TyesOrNo_ struct {
-	IncludeContentType TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform include-content-type,attr"`
-}
-
-type XsdGoPkgHasAttr_Indent_TyesOrNo_ struct {
-	Indent TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform indent,attr"`
-}
-
-type XsdGoPkgHasAttr_MediaType_XsdtString_ struct {
-	MediaType xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform media-type,attr"`
-}
-
-type XsdGoPkgHasAttr_NormalizationForm_XsdtNmtoken_ struct {
-	NormalizationForm xsdt.Nmtoken `xml:"http://www.w3.org/1999/XSL/Transform normalization-form,attr"`
-}
-
-type XsdGoPkgHasAttr_OmitXmlDeclaration_TyesOrNo_ struct {
-	OmitXmlDeclaration TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform omit-xml-declaration,attr"`
-}
-
-type XsdGoPkgHasAttr_Standalone_TyesOrNoOrOmit_ struct {
-	Standalone TyesOrNoOrOmit `xml:"http://www.w3.org/1999/XSL/Transform standalone,attr"`
-}
-
-type XsdGoPkgHasAttr_UndeclarePrefixes_TyesOrNo_ struct {
-	UndeclarePrefixes TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform undeclare-prefixes,attr"`
-}
-
-type XsdGoPkgHasAttr_Version_XsdtNmtoken_ struct {
-	Version xsdt.Nmtoken `xml:"http://www.w3.org/1999/XSL/Transform version,attr"`
-}
-
-type TxsdOutput struct {
-	TgenericElementType
+	TversionedElementType
 
 	XsdGoPkgHasCdata
 
-	XsdGoPkgHasAttr_DoctypeSystem_XsdtString_
-
-	XsdGoPkgHasAttr_OmitXmlDeclaration_TyesOrNo_
-
-	XsdGoPkgHasAttr_IncludeContentType_TyesOrNo_
-
-	XsdGoPkgHasAttr_NormalizationForm_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_MediaType_XsdtString_
-
-	XsdGoPkgHasAttr_Version_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_Standalone_TyesOrNoOrOmit_
-
-	XsdGoPkgHasAttr_EscapeUriAttributes_TyesOrNo_
-
-	XsdGoPkgHasAttr_DoctypePublic_XsdtString_
-
-	XsdGoPkgHasAttr_CdataSectionElements_TQNames_
-
-	XsdGoPkgHasAttr_Method_Tmethod_
-
-	XsdGoPkgHasAttr_Indent_TyesOrNo_
-
-	XsdGoPkgHasAttr_ByteOrderMark_TyesOrNo_
-
-	XsdGoPkgHasAttr_UndeclarePrefixes_TyesOrNo_
-
-	XsdGoPkgHasAttr_Encoding_XsdtString_
-
 }
 
-type XsdGoPkgHasElem_Output struct {
-	Output *TxsdOutput `xml:"http://www.w3.org/1999/XSL/Transform output"`
+type TxsdKey struct {
+	XsdGoPkgHasAttr_Match_Tpattern_
 
-}
-
-type XsdGoPkgHasElems_Output struct {
-	Outputs []*TxsdOutput `xml:"http://www.w3.org/1999/XSL/Transform output"`
-
-}
-
-type XsdGoPkgHasAttr_Character_Tchar_ struct {
-	Character Tchar `xml:"http://www.w3.org/1999/XSL/Transform character,attr"`
-}
-
-type XsdGoPkgHasAttr_String_XsdtString_ struct {
-	String xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform string,attr"`
-}
-
-type TxsdOutputCharacter struct {
-	TelementOnlyVersionedElementType
-
-	XsdGoPkgHasAttr_String_XsdtString_
-
-	XsdGoPkgHasAttr_Character_Tchar_
-
-}
-
-type XsdGoPkgHasElems_OutputCharacter struct {
-	OutputCharacters []*TxsdOutputCharacter `xml:"http://www.w3.org/1999/XSL/Transform output-character"`
-
-}
-
-type XsdGoPkgHasElem_OutputCharacter struct {
-	OutputCharacter *TxsdOutputCharacter `xml:"http://www.w3.org/1999/XSL/Transform output-character"`
-
-}
-
-type XsdGoPkgHasAttr_As_TsequenceType_ struct {
-	As TsequenceType `xml:"http://www.w3.org/1999/XSL/Transform as,attr"`
-}
-
-type XsdGoPkgHasAttr_Required_TyesOrNo_ struct {
-	Required TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform required,attr"`
-}
-
-type XsdGoPkgHasAttr_Tunnel_TyesOrNo_ struct {
-	Tunnel TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform tunnel,attr"`
-}
-
-type TxsdParam struct {
 	TsequenceConstructor
 
 	XsdGoPkgHasCdata
 
-	XsdGoPkgHasAttr_As_TsequenceType_
+	XsdGoPkgHasAttr_Use_Texpression_
+
+}
+
+type XsdGoPkgHasElems_Key struct {
+	Keys []*TxsdKey `xml:"http://www.w3.org/1999/XSL/Transform key"`
+
+}
+
+type XsdGoPkgHasAttr_Priority_XsdtDecimal_ struct {
+	Priority xsdt.Decimal `xml:"http://www.w3.org/1999/XSL/Transform priority,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Tunnel_TyesOrNo_ struct {
+	Tunnel TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform tunnel,attr"`
+
+}
+
+//	The description of a data type, conforming to the
+//	SequenceType production defined in the XPath 2.0 Recommendation
+type TsequenceType xsdt.Token
+
+//	Since TsequenceType is just a simple String type, this merely returns the current string value.
+func (me TsequenceType) String () string { return xsdt.Token(me).String() }
+
+//	This convenience method just performs a simple type conversion to TsequenceType's alias type xsdt.Token.
+func (me TsequenceType) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
+//	Since TsequenceType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TsequenceType) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_As_TsequenceType_ struct {
+	As TsequenceType `xml:"http://www.w3.org/1999/XSL/Transform as,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Required_TyesOrNo_ struct {
+	Required TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform required,attr"`
+
+}
+
+type TxsdParam struct {
+	XsdGoPkgHasAttr_Required_TyesOrNo_
+
+	XsdGoPkgHasCdata
 
 	XsdGoPkgHasAttr_Tunnel_TyesOrNo_
 
-	XsdGoPkgHasAttr_Required_TyesOrNo_
+	TsequenceConstructor
+
+	XsdGoPkgHasAttr_As_TsequenceType_
 
 }
 
@@ -1939,258 +1381,279 @@ type XsdGoPkgHasElems_Param struct {
 
 }
 
-type XsdGoPkgHasElem_Param struct {
-	Param *TxsdParam `xml:"http://www.w3.org/1999/XSL/Transform param"`
+//	The mode attribute of xsl:template:
+//	either a list, each member being either a QName or #default;
+//	or the value #all
+type Tmodes xsdt.String
+
+//	Since Tmodes is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tmodes) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to Tmodes's alias type xsdt.String.
+func (me Tmodes) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since Tmodes is just a simple String type, this merely returns the current string value.
+func (me Tmodes) String () string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_Mode_Tmodes_ struct {
+	Mode Tmodes `xml:"http://www.w3.org/1999/XSL/Transform mode,attr"`
 
 }
 
-type TxsdPerformSort struct {
+type TxsdTemplate struct {
+	XsdGoPkgHasAttr_Priority_XsdtDecimal_
+
+	XsdGoPkgHasGroup_SequenceConstructorGroup
+
+	XsdGoPkgHasElems_Param
+
+	XsdGoPkgHasAttr_Mode_Tmodes_
+
 	TversionedElementType
 
 	XsdGoPkgHasCdata
 
-	XsdGoPkgHasElems_Sort
+}
 
-	XsdGoPkgHasGroup_SequenceConstructorGroup
+type XsdGoPkgHasElems_Template struct {
+	Templates []*TxsdTemplate `xml:"http://www.w3.org/1999/XSL/Transform template"`
 
 }
 
-type XsdGoPkgHasElems_PerformSort struct {
-	PerformSorts []*TxsdPerformSort `xml:"http://www.w3.org/1999/XSL/Transform perform-sort"`
+type XsdGoPkgHasAttr_SchemaLocation_XsdtAnyURI_ struct {
+	SchemaLocation xsdt.AnyURI `xml:"http://www.w3.org/1999/XSL/Transform schema-location,attr"`
 
 }
 
-type XsdGoPkgHasElem_PerformSort struct {
-	PerformSort *TxsdPerformSort `xml:"http://www.w3.org/1999/XSL/Transform perform-sort"`
+type XsdGoPkgHasAttr_Namespace_XsdtAnyURI_ struct {
+	Namespace xsdt.AnyURI `xml:"http://www.w3.org/1999/XSL/Transform namespace,attr"`
 
 }
 
-type XsdGoPkgHasAttr_Elements_Tnametests_ struct {
-	Elements Tnametests `xml:"http://www.w3.org/1999/XSL/Transform elements,attr"`
-}
-
-type TxsdPreserveSpace struct {
+type TxsdImportSchema struct {
 	TelementOnlyVersionedElementType
 
-	XsdGoPkgHasAttr_Elements_Tnametests_
+	XsdGoPkgHasAttr_Namespace_XsdtAnyURI_
+
+	XsdGoPkgHasAttr_SchemaLocation_XsdtAnyURI_
 
 }
 
-type XsdGoPkgHasElems_PreserveSpace struct {
-	PreserveSpaces []*TxsdPreserveSpace `xml:"http://www.w3.org/1999/XSL/Transform preserve-space"`
+type XsdGoPkgHasElems_ImportSchema struct {
+	ImportSchemas []*TxsdImportSchema `xml:"http://www.w3.org/1999/XSL/Transform import-schema"`
 
 }
 
-type XsdGoPkgHasElem_PreserveSpace struct {
-	PreserveSpace *TxsdPreserveSpace `xml:"http://www.w3.org/1999/XSL/Transform preserve-space"`
+//	A string containing exactly one character.
+type Tchar xsdt.String
+
+//	Since Tchar is just a simple String type, this merely returns the current string value.
+func (me Tchar) String () string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to Tchar's alias type xsdt.String.
+func (me Tchar) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since Tchar is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tchar) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_Percent_Tchar_ struct {
+	Percent Tchar `xml:"http://www.w3.org/1999/XSL/Transform percent,attr"`
 
 }
 
-type TxsdProcessingInstruction struct {
-	TsequenceConstructor
+//	Returns the default value for Percent -- "%"
+func (me XsdGoPkgHasAttr_Percent_Tchar_) PercentDefault () Tchar { return Tchar("%") }
 
-	XsdGoPkgHasCdata
-
-}
-
-type XsdGoPkgHasElems_ProcessingInstruction struct {
-	ProcessingInstructions []*TxsdProcessingInstruction `xml:"http://www.w3.org/1999/XSL/Transform processing-instruction"`
+type XsdGoPkgHasAttr_PatternSeparator_Tchar_ struct {
+	PatternSeparator Tchar `xml:"http://www.w3.org/1999/XSL/Transform pattern-separator,attr"`
 
 }
 
-type XsdGoPkgHasElem_ProcessingInstruction struct {
-	ProcessingInstruction *TxsdProcessingInstruction `xml:"http://www.w3.org/1999/XSL/Transform processing-instruction"`
+//	Returns the default value for PatternSeparator -- ";"
+func (me XsdGoPkgHasAttr_PatternSeparator_Tchar_) PatternSeparatorDefault () Tchar { return Tchar(";") }
+
+type XsdGoPkgHasAttr_ZeroDigit_Tchar_0 struct {
+	ZeroDigit Tchar `xml:"http://www.w3.org/1999/XSL/Transform zero-digit,attr"`
 
 }
 
-type XsdGoPkgHasAttr_Format_Tavt_ struct {
-	Format Tavt `xml:"http://www.w3.org/1999/XSL/Transform format,attr"`
-}
+//	Returns the default value for ZeroDigit -- "0"
+func (me XsdGoPkgHasAttr_ZeroDigit_Tchar_0) ZeroDigitDefault () Tchar { return Tchar("0") }
 
-type XsdGoPkgHasAttr_Href_Tavt_ struct {
-	Href Tavt `xml:"http://www.w3.org/1999/XSL/Transform href,attr"`
-}
-
-type XsdGoPkgHasAttr_Method_Tavt_ struct {
-	Method Tavt `xml:"http://www.w3.org/1999/XSL/Transform method,attr"`
-}
-
-type XsdGoPkgHasAttr_ByteOrderMark_Tavt_ struct {
-	ByteOrderMark Tavt `xml:"http://www.w3.org/1999/XSL/Transform byte-order-mark,attr"`
-}
-
-type XsdGoPkgHasAttr_CdataSectionElements_Tavt_ struct {
-	CdataSectionElements Tavt `xml:"http://www.w3.org/1999/XSL/Transform cdata-section-elements,attr"`
-}
-
-type XsdGoPkgHasAttr_DoctypePublic_Tavt_ struct {
-	DoctypePublic Tavt `xml:"http://www.w3.org/1999/XSL/Transform doctype-public,attr"`
-}
-
-type XsdGoPkgHasAttr_DoctypeSystem_Tavt_ struct {
-	DoctypeSystem Tavt `xml:"http://www.w3.org/1999/XSL/Transform doctype-system,attr"`
-}
-
-type XsdGoPkgHasAttr_Encoding_Tavt_ struct {
-	Encoding Tavt `xml:"http://www.w3.org/1999/XSL/Transform encoding,attr"`
-}
-
-type XsdGoPkgHasAttr_EscapeUriAttributes_Tavt_ struct {
-	EscapeUriAttributes Tavt `xml:"http://www.w3.org/1999/XSL/Transform escape-uri-attributes,attr"`
-}
-
-type XsdGoPkgHasAttr_IncludeContentType_Tavt_ struct {
-	IncludeContentType Tavt `xml:"http://www.w3.org/1999/XSL/Transform include-content-type,attr"`
-}
-
-type XsdGoPkgHasAttr_Indent_Tavt_ struct {
-	Indent Tavt `xml:"http://www.w3.org/1999/XSL/Transform indent,attr"`
-}
-
-type XsdGoPkgHasAttr_MediaType_Tavt_ struct {
-	MediaType Tavt `xml:"http://www.w3.org/1999/XSL/Transform media-type,attr"`
-}
-
-type XsdGoPkgHasAttr_NormalizationForm_Tavt_ struct {
-	NormalizationForm Tavt `xml:"http://www.w3.org/1999/XSL/Transform normalization-form,attr"`
-}
-
-type XsdGoPkgHasAttr_OmitXmlDeclaration_Tavt_ struct {
-	OmitXmlDeclaration Tavt `xml:"http://www.w3.org/1999/XSL/Transform omit-xml-declaration,attr"`
-}
-
-type XsdGoPkgHasAttr_Standalone_Tavt_ struct {
-	Standalone Tavt `xml:"http://www.w3.org/1999/XSL/Transform standalone,attr"`
-}
-
-type XsdGoPkgHasAttr_UndeclarePrefixes_Tavt_ struct {
-	UndeclarePrefixes Tavt `xml:"http://www.w3.org/1999/XSL/Transform undeclare-prefixes,attr"`
-}
-
-type XsdGoPkgHasAttr_OutputVersion_Tavt_ struct {
-	OutputVersion Tavt `xml:"http://www.w3.org/1999/XSL/Transform output-version,attr"`
-}
-
-type TxsdResultDocument struct {
-	TsequenceConstructor
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_DoctypePublic_Tavt_
-
-	XsdGoPkgHasAttr_Href_Tavt_
-
-	XsdGoPkgHasAttr_CdataSectionElements_Tavt_
-
-	XsdGoPkgHasAttr_Indent_Tavt_
-
-	XsdGoPkgHasAttr_Method_Tavt_
-
-	XsdGoPkgHasAttr_ByteOrderMark_Tavt_
-
-	XsdGoPkgHasAttr_OutputVersion_Tavt_
-
-	XsdGoPkgHasAttr_OmitXmlDeclaration_Tavt_
-
-	XsdGoPkgHasAttr_UndeclarePrefixes_Tavt_
-
-	XsdGoPkgHasAttr_MediaType_Tavt_
-
-	XsdGoPkgHasAttr_NormalizationForm_Tavt_
-
-	XsdGoPkgHasAttr_Standalone_Tavt_
-
-	XsdGoPkgHasAttr_DoctypeSystem_Tavt_
-
-	XsdGoPkgHasAttr_IncludeContentType_Tavt_
-
-	XsdGoPkgHasAttr_Encoding_Tavt_
-
-	XsdGoPkgHasAttr_Format_Tavt_
-
-	XsdGoPkgHasAttr_EscapeUriAttributes_Tavt_
+type XsdGoPkgHasAttr_Digit_Tchar_ struct {
+	Digit Tchar `xml:"http://www.w3.org/1999/XSL/Transform digit,attr"`
 
 }
 
-type XsdGoPkgHasElem_ResultDocument struct {
-	ResultDocument *TxsdResultDocument `xml:"http://www.w3.org/1999/XSL/Transform result-document"`
+//	Returns the default value for Digit -- "#"
+func (me XsdGoPkgHasAttr_Digit_Tchar_) DigitDefault () Tchar { return Tchar("#") }
+
+type XsdGoPkgHasAttr_DecimalSeparator_Tchar_ struct {
+	DecimalSeparator Tchar `xml:"http://www.w3.org/1999/XSL/Transform decimal-separator,attr"`
 
 }
 
-type XsdGoPkgHasElems_ResultDocument struct {
-	ResultDocuments []*TxsdResultDocument `xml:"http://www.w3.org/1999/XSL/Transform result-document"`
+//	Returns the default value for DecimalSeparator -- "."
+func (me XsdGoPkgHasAttr_DecimalSeparator_Tchar_) DecimalSeparatorDefault () Tchar { return Tchar(".") }
+
+type XsdGoPkgHasAttr_NaN_XsdtString_NaN struct {
+	NaN xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform NaN,attr"`
 
 }
 
-type TxsdSequence struct {
+//	Returns the default value for NaN -- "NaN"
+func (me XsdGoPkgHasAttr_NaN_XsdtString_NaN) NaNDefault () xsdt.String { return xsdt.String("NaN") }
+
+type XsdGoPkgHasAttr_Infinity_XsdtString_Infinity struct {
+	Infinity xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform infinity,attr"`
+
+}
+
+//	Returns the default value for Infinity -- "Infinity"
+func (me XsdGoPkgHasAttr_Infinity_XsdtString_Infinity) InfinityDefault () xsdt.String { return xsdt.String("Infinity") }
+
+type XsdGoPkgHasAttr_MinusSign_Tchar_ struct {
+	MinusSign Tchar `xml:"http://www.w3.org/1999/XSL/Transform minus-sign,attr"`
+
+}
+
+//	Returns the default value for MinusSign -- "-"
+func (me XsdGoPkgHasAttr_MinusSign_Tchar_) MinusSignDefault () Tchar { return Tchar("-") }
+
+type XsdGoPkgHasAttr_GroupingSeparator_Tchar_ struct {
+	GroupingSeparator Tchar `xml:"http://www.w3.org/1999/XSL/Transform grouping-separator,attr"`
+
+}
+
+//	Returns the default value for GroupingSeparator -- ","
+func (me XsdGoPkgHasAttr_GroupingSeparator_Tchar_) GroupingSeparatorDefault () Tchar { return Tchar(",") }
+
+type XsdGoPkgHasAttr_PerMille_Tchar_ struct {
+	PerMille Tchar `xml:"http://www.w3.org/1999/XSL/Transform per-mille,attr"`
+
+}
+
+//	Returns the default value for PerMille -- "‰"
+func (me XsdGoPkgHasAttr_PerMille_Tchar_) PerMilleDefault () Tchar { return Tchar("‰") }
+
+type TxsdDecimalFormat struct {
+	XsdGoPkgHasAttr_Percent_Tchar_
+
+	XsdGoPkgHasAttr_PatternSeparator_Tchar_
+
+	XsdGoPkgHasAttr_ZeroDigit_Tchar_0
+
+	XsdGoPkgHasAttr_Digit_Tchar_
+
+	XsdGoPkgHasAttr_DecimalSeparator_Tchar_
+
+	XsdGoPkgHasAttr_NaN_XsdtString_NaN
+
 	TelementOnlyVersionedElementType
 
-	XsdGoPkgHasCdata
+	XsdGoPkgHasAttr_Infinity_XsdtString_Infinity
 
-	XsdGoPkgHasElems_Fallback
+	XsdGoPkgHasAttr_MinusSign_Tchar_
 
-}
+	XsdGoPkgHasAttr_GroupingSeparator_Tchar_
 
-type XsdGoPkgHasElems_Sequence struct {
-	Sequences []*TxsdSequence `xml:"http://www.w3.org/1999/XSL/Transform sequence"`
-
-}
-
-type XsdGoPkgHasElem_Sequence struct {
-	Sequence *TxsdSequence `xml:"http://www.w3.org/1999/XSL/Transform sequence"`
+	XsdGoPkgHasAttr_PerMille_Tchar_
 
 }
 
-type XsdGoPkgHasAttr_DataType_Tavt_Text struct {
-	DataType Tavt `xml:"http://www.w3.org/1999/XSL/Transform data-type,attr"`
-}
-
-//	Returns the Default value for DataType -- "text"
-func (me *XsdGoPkgHasAttr_DataType_Tavt_Text) DataTypeDefault () Tavt { return Tavt("text") }
-
-type XsdGoPkgHasAttr_Order_Tavt_Ascending struct {
-	Order Tavt `xml:"http://www.w3.org/1999/XSL/Transform order,attr"`
-}
-
-//	Returns the Default value for Order -- "ascending"
-func (me *XsdGoPkgHasAttr_Order_Tavt_Ascending) OrderDefault () Tavt { return Tavt("ascending") }
-
-type XsdGoPkgHasAttr_CaseOrder_Tavt_ struct {
-	CaseOrder Tavt `xml:"http://www.w3.org/1999/XSL/Transform case-order,attr"`
-}
-
-type XsdGoPkgHasAttr_Collation_Tavt_ struct {
-	Collation Tavt `xml:"http://www.w3.org/1999/XSL/Transform collation,attr"`
-}
-
-type XsdGoPkgHasAttr_Stable_TyesOrNo_ struct {
-	Stable TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform stable,attr"`
-}
-
-type TxsdSort struct {
-	TsequenceConstructor
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Order_Tavt_Ascending
-
-	XsdGoPkgHasAttr_Stable_TyesOrNo_
-
-	XsdGoPkgHasAttr_CaseOrder_Tavt_
-
-	XsdGoPkgHasAttr_DataType_Tavt_Text
-
-	XsdGoPkgHasAttr_Collation_Tavt_
+type XsdGoPkgHasElems_DecimalFormat struct {
+	DecimalFormats []*TxsdDecimalFormat `xml:"http://www.w3.org/1999/XSL/Transform decimal-format"`
 
 }
 
-type XsdGoPkgHasElems_Sort struct {
-	Sorts []*TxsdSort `xml:"http://www.w3.org/1999/XSL/Transform sort"`
+type XsdGoPkgHasAttr_Character_Tchar_ struct {
+	Character Tchar `xml:"http://www.w3.org/1999/XSL/Transform character,attr"`
 
 }
 
-type XsdGoPkgHasElem_Sort struct {
-	Sort *TxsdSort `xml:"http://www.w3.org/1999/XSL/Transform sort"`
+type XsdGoPkgHasAttr_String_XsdtString_ struct {
+	String xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform string,attr"`
+
+}
+
+type TxsdOutputCharacter struct {
+	XsdGoPkgHasAttr_Character_Tchar_
+
+	XsdGoPkgHasAttr_String_XsdtString_
+
+	TelementOnlyVersionedElementType
+
+}
+
+type XsdGoPkgHasElems_OutputCharacter struct {
+	OutputCharacters []*TxsdOutputCharacter `xml:"http://www.w3.org/1999/XSL/Transform output-character"`
+
+}
+
+type XsdGoPkgHasAttr_UseCharacterMaps_TQNames_ struct {
+	UseCharacterMaps TQNames `xml:"http://www.w3.org/1999/XSL/Transform use-character-maps,attr"`
+
+}
+
+type TxsdCharacterMap struct {
+	TelementOnlyVersionedElementType
+
+	XsdGoPkgHasElems_OutputCharacter
+
+	XsdGoPkgHasAttr_UseCharacterMaps_TQNames_
+
+}
+
+type XsdGoPkgHasElems_CharacterMap struct {
+	CharacterMaps []*TxsdCharacterMap `xml:"http://www.w3.org/1999/XSL/Transform character-map"`
+
+}
+
+type XsdGoPkgHasElems_Attribute struct {
+	Attributes []*TxsdAttribute `xml:"http://www.w3.org/1999/XSL/Transform attribute"`
+
+}
+
+type XsdGoPkgHasAttr_Name_TQName_ struct {
+	Name TQName `xml:"http://www.w3.org/1999/XSL/Transform name,attr"`
+
+}
+
+type TxsdAttributeSet struct {
+	TelementOnlyVersionedElementType
+
+	XsdGoPkgHasAttr_Name_TQName_
+
+	XsdGoPkgHasElems_Attribute
+
+}
+
+type XsdGoPkgHasElems_AttributeSet struct {
+	AttributeSets []*TxsdAttributeSet `xml:"http://www.w3.org/1999/XSL/Transform attribute-set"`
+
+}
+
+type XsdGoPkgHasAttr_ResultPrefix_TprefixOrDefault_ struct {
+	ResultPrefix TprefixOrDefault `xml:"http://www.w3.org/1999/XSL/Transform result-prefix,attr"`
+
+}
+
+type XsdGoPkgHasAttr_StylesheetPrefix_TprefixOrDefault_ struct {
+	StylesheetPrefix TprefixOrDefault `xml:"http://www.w3.org/1999/XSL/Transform stylesheet-prefix,attr"`
+
+}
+
+type TxsdNamespaceAlias struct {
+	XsdGoPkgHasAttr_StylesheetPrefix_TprefixOrDefault_
+
+	TelementOnlyVersionedElementType
+
+	XsdGoPkgHasAttr_ResultPrefix_TprefixOrDefault_
+
+}
+
+type XsdGoPkgHasElems_NamespaceAlias struct {
+	NamespaceAliases []*TxsdNamespaceAlias `xml:"http://www.w3.org/1999/XSL/Transform namespace-alias"`
 
 }
 
@@ -2204,8 +1667,414 @@ type XsdGoPkgHasElems_StripSpace struct {
 
 }
 
+type XsdGoPkgHasAttr_As_TsequenceType_Item struct {
+	As TsequenceType `xml:"http://www.w3.org/1999/XSL/Transform as,attr"`
+
+}
+
+//	Returns the default value for As -- "item()*"
+func (me XsdGoPkgHasAttr_As_TsequenceType_Item) AsDefault () TsequenceType { return TsequenceType("item()*") }
+
+type XsdGoPkgHasAttr_Override_TyesOrNo_Yes struct {
+	Override TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform override,attr"`
+
+}
+
+//	Returns the default value for Override -- "yes"
+func (me XsdGoPkgHasAttr_Override_TyesOrNo_Yes) OverrideDefault () TyesOrNo { return TyesOrNo("yes") }
+
+type TxsdFunction struct {
+	XsdGoPkgHasAttr_As_TsequenceType_Item
+
+	XsdGoPkgHasAttr_Override_TyesOrNo_Yes
+
+	TversionedElementType
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_Param
+
+	XsdGoPkgHasGroup_SequenceConstructorGroup
+
+}
+
+type XsdGoPkgHasElems_Function struct {
+	Functions []*TxsdFunction `xml:"http://www.w3.org/1999/XSL/Transform function"`
+
+}
+
+type XsdGoPkgHasElems_Include struct {
+	Includes []*TxsdStripSpace `xml:"http://www.w3.org/1999/XSL/Transform include"`
+
+}
+
+//	A list of NameTests, as defined in the XPath 2.0 Recommendation.
+//	Each NameTest is either a QName, or "*", or "prefix:*", or "*:localname"
+type Tnametests xsdt.String
+
+//	Since Tnametests is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tnametests) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to Tnametests's alias type xsdt.String.
+func (me Tnametests) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since Tnametests is just a simple String type, this merely returns the current string value.
+func (me Tnametests) String () string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_Elements_Tnametests_ struct {
+	Elements Tnametests `xml:"http://www.w3.org/1999/XSL/Transform elements,attr"`
+
+}
+
+type TxsdPreserveSpace struct {
+	XsdGoPkgHasAttr_Elements_Tnametests_
+
+	TelementOnlyVersionedElementType
+
+}
+
+type XsdGoPkgHasElems_PreserveSpace struct {
+	PreserveSpaces []*TxsdPreserveSpace `xml:"http://www.w3.org/1999/XSL/Transform preserve-space"`
+
+}
+
+type XsdGoPkgHasElems_Declaration struct {
+	Declarations []*TgenericElementType `xml:"http://www.w3.org/1999/XSL/Transform declaration"`
+
+	XsdGoPkgHasElems_Output
+
+	XsdGoPkgHasElems_Key
+
+	XsdGoPkgHasElems_Template
+
+	XsdGoPkgHasElems_ImportSchema
+
+	XsdGoPkgHasElems_DecimalFormat
+
+	XsdGoPkgHasElems_CharacterMap
+
+	XsdGoPkgHasElems_AttributeSet
+
+	XsdGoPkgHasElems_NamespaceAlias
+
+	XsdGoPkgHasElems_StripSpace
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Include
+
+	XsdGoPkgHasElems_PreserveSpace
+
+}
+
+type XsdGoPkgHasElem_Include struct {
+	Include *TxsdStripSpace `xml:"http://www.w3.org/1999/XSL/Transform include"`
+
+}
+
+type XsdGoPkgHasElem_Template struct {
+	Template *TxsdTemplate `xml:"http://www.w3.org/1999/XSL/Transform template"`
+
+}
+
+type XsdGoPkgHasElem_Key struct {
+	Key *TxsdKey `xml:"http://www.w3.org/1999/XSL/Transform key"`
+
+}
+
+type XsdGoPkgHasElem_PreserveSpace struct {
+	PreserveSpace *TxsdPreserveSpace `xml:"http://www.w3.org/1999/XSL/Transform preserve-space"`
+
+}
+
+type XsdGoPkgHasElem_ImportSchema struct {
+	ImportSchema *TxsdImportSchema `xml:"http://www.w3.org/1999/XSL/Transform import-schema"`
+
+}
+
+type XsdGoPkgHasElem_Function struct {
+	Function *TxsdFunction `xml:"http://www.w3.org/1999/XSL/Transform function"`
+
+}
+
+type XsdGoPkgHasElem_DecimalFormat struct {
+	DecimalFormat *TxsdDecimalFormat `xml:"http://www.w3.org/1999/XSL/Transform decimal-format"`
+
+}
+
 type XsdGoPkgHasElem_StripSpace struct {
 	StripSpace *TxsdStripSpace `xml:"http://www.w3.org/1999/XSL/Transform strip-space"`
+
+}
+
+type XsdGoPkgHasElem_CharacterMap struct {
+	CharacterMap *TxsdCharacterMap `xml:"http://www.w3.org/1999/XSL/Transform character-map"`
+
+}
+
+type XsdGoPkgHasElem_Output struct {
+	Output *TxsdOutput `xml:"http://www.w3.org/1999/XSL/Transform output"`
+
+}
+
+type XsdGoPkgHasElem_AttributeSet struct {
+	AttributeSet *TxsdAttributeSet `xml:"http://www.w3.org/1999/XSL/Transform attribute-set"`
+
+}
+
+type XsdGoPkgHasElem_NamespaceAlias struct {
+	NamespaceAlias *TxsdNamespaceAlias `xml:"http://www.w3.org/1999/XSL/Transform namespace-alias"`
+
+}
+
+type XsdGoPkgHasElem_Declaration struct {
+	Declaration *TgenericElementType `xml:"http://www.w3.org/1999/XSL/Transform declaration"`
+
+	XsdGoPkgHasElem_StripSpace
+
+	XsdGoPkgHasElem_CharacterMap
+
+	XsdGoPkgHasElem_Output
+
+	XsdGoPkgHasElem_AttributeSet
+
+	XsdGoPkgHasElem_NamespaceAlias
+
+	XsdGoPkgHasElem_Include
+
+	XsdGoPkgHasElem_Template
+
+	XsdGoPkgHasElem_Key
+
+	XsdGoPkgHasElem_PreserveSpace
+
+	XsdGoPkgHasElem_ImportSchema
+
+	XsdGoPkgHasElem_Function
+
+	XsdGoPkgHasElem_DecimalFormat
+
+}
+
+type XsdGoPkgHasElems_ResultDocument struct {
+	ResultDocuments []*TxsdResultDocument `xml:"http://www.w3.org/1999/XSL/Transform result-document"`
+
+}
+
+type XsdGoPkgHasElems_Document struct {
+	Documents []*TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform document"`
+
+}
+
+type XsdGoPkgHasElems_Element struct {
+	Elements []*TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform element"`
+
+}
+
+type XsdGoPkgHasElems_Copy struct {
+	Copies []*TxsdCopy `xml:"http://www.w3.org/1999/XSL/Transform copy"`
+
+}
+
+type XsdGoPkgHasElems_ApplyTemplates struct {
+	ApplyTemplateses []*TxsdApplyTemplates `xml:"http://www.w3.org/1999/XSL/Transform apply-templates"`
+
+}
+
+type XsdGoPkgHasElems_ForEachGroup struct {
+	ForEachGroups []*TxsdForEachGroup `xml:"http://www.w3.org/1999/XSL/Transform for-each-group"`
+
+}
+
+type XsdGoPkgHasElems_CopyOf struct {
+	CopyOfs []*TxsdCopyOf `xml:"http://www.w3.org/1999/XSL/Transform copy-of"`
+
+}
+
+type XsdGoPkgHasElems_CallTemplate struct {
+	CallTemplates []*TxsdCallTemplate `xml:"http://www.w3.org/1999/XSL/Transform call-template"`
+
+}
+
+type XsdGoPkgHasElems_AnalyzeString struct {
+	AnalyzeStrings []*TxsdAnalyzeString `xml:"http://www.w3.org/1999/XSL/Transform analyze-string"`
+
+}
+
+type XsdGoPkgHasElems_Comment struct {
+	Comments []*TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform comment"`
+
+}
+
+type XsdGoPkgHasElems_Sequence struct {
+	Sequences []*TxsdSequence `xml:"http://www.w3.org/1999/XSL/Transform sequence"`
+
+}
+
+type XsdGoPkgHasElems_ProcessingInstruction struct {
+	ProcessingInstructions []*TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform processing-instruction"`
+
+}
+
+type XsdGoPkgHasElems_ApplyImports struct {
+	ApplyImportses []*TxsdCallTemplate `xml:"http://www.w3.org/1999/XSL/Transform apply-imports"`
+
+}
+
+type XsdGoPkgHasElems_If struct {
+	Ifs []*TxsdIf `xml:"http://www.w3.org/1999/XSL/Transform if"`
+
+}
+
+type XsdGoPkgHasElems_Choose struct {
+	Chooses []*TxsdChoose `xml:"http://www.w3.org/1999/XSL/Transform choose"`
+
+}
+
+type XsdGoPkgHasElems_Number struct {
+	Numbers []*TxsdNumber `xml:"http://www.w3.org/1999/XSL/Transform number"`
+
+}
+
+type XsdGoPkgHasElems_ValueOf struct {
+	ValueOfs []*TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform value-of"`
+
+}
+
+type XsdGoPkgHasElems_ForEach struct {
+	ForEachs []*TxsdPerformSort `xml:"http://www.w3.org/1999/XSL/Transform for-each"`
+
+}
+
+type XsdGoPkgHasElems_NextMatch struct {
+	NextMatchs []*TxsdNextMatch `xml:"http://www.w3.org/1999/XSL/Transform next-match"`
+
+}
+
+type XsdGoPkgHasElems_PerformSort struct {
+	PerformSorts []*TxsdPerformSort `xml:"http://www.w3.org/1999/XSL/Transform perform-sort"`
+
+}
+
+type XsdGoPkgHasElems_Text struct {
+	Texts []*TxsdText `xml:"http://www.w3.org/1999/XSL/Transform text"`
+
+}
+
+type XsdGoPkgHasElems_Namespace struct {
+	Namespaces []*TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform namespace"`
+
+}
+
+type XsdGoPkgHasElems_Message struct {
+	Messages []*TxsdMessage `xml:"http://www.w3.org/1999/XSL/Transform message"`
+
+}
+
+type XsdGoPkgHasElems_Instruction struct {
+	Instructions []*TversionedElementType `xml:"http://www.w3.org/1999/XSL/Transform instruction"`
+
+	XsdGoPkgHasElems_Sequence
+
+	XsdGoPkgHasElems_ProcessingInstruction
+
+	XsdGoPkgHasElems_ApplyImports
+
+	XsdGoPkgHasElems_If
+
+	XsdGoPkgHasElems_Choose
+
+	XsdGoPkgHasElems_Number
+
+	XsdGoPkgHasElems_Attribute
+
+	XsdGoPkgHasElems_ValueOf
+
+	XsdGoPkgHasElems_Fallback
+
+	XsdGoPkgHasElems_ForEach
+
+	XsdGoPkgHasElems_NextMatch
+
+	XsdGoPkgHasElems_PerformSort
+
+	XsdGoPkgHasElems_Text
+
+	XsdGoPkgHasElems_Namespace
+
+	XsdGoPkgHasElems_Message
+
+	XsdGoPkgHasElems_ResultDocument
+
+	XsdGoPkgHasElems_Document
+
+	XsdGoPkgHasElems_Element
+
+	XsdGoPkgHasElems_Copy
+
+	XsdGoPkgHasElems_ApplyTemplates
+
+	XsdGoPkgHasElems_ForEachGroup
+
+	XsdGoPkgHasElems_CopyOf
+
+	XsdGoPkgHasElems_CallTemplate
+
+	XsdGoPkgHasElems_AnalyzeString
+
+	XsdGoPkgHasElems_Comment
+
+}
+
+type XsdGoPkgHasAttr_Href_XsdtAnyURI_ struct {
+	Href xsdt.AnyURI `xml:"http://www.w3.org/1999/XSL/Transform href,attr"`
+
+}
+
+type TxsdImport struct {
+	XsdGoPkgHasAttr_Href_XsdtAnyURI_
+
+	TelementOnlyVersionedElementType
+
+}
+
+type XsdGoPkgHasElems_Import struct {
+	Imports []*TxsdImport `xml:"http://www.w3.org/1999/XSL/Transform import"`
+
+}
+
+type XsdGoPkgHasElem_Import struct {
+	Import *TxsdImport `xml:"http://www.w3.org/1999/XSL/Transform import"`
+
+}
+
+type XsdGoPkgHasElems_MatchingSubstring struct {
+	MatchingSubstrings []*TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform matching-substring"`
+
+}
+
+type XsdGoPkgHasElems_NonMatchingSubstring struct {
+	NonMatchingSubstrings []*TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform non-matching-substring"`
+
+}
+
+type XsdGoPkgHasElems_Otherwise struct {
+	Otherwises []*TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform otherwise"`
+
+}
+
+type XsdGoPkgHasElem_OutputCharacter struct {
+	OutputCharacter *TxsdOutputCharacter `xml:"http://www.w3.org/1999/XSL/Transform output-character"`
+
+}
+
+type XsdGoPkgHasElem_Param struct {
+	Param *TxsdParam `xml:"http://www.w3.org/1999/XSL/Transform param"`
+
+}
+
+type XsdGoPkgHasElem_Sort struct {
+	Sort *TxsdSort `xml:"http://www.w3.org/1999/XSL/Transform sort"`
 
 }
 
@@ -2219,104 +2088,92 @@ type XsdGoPkgHasElems_Stylesheet struct {
 
 }
 
-type XsdGoPkgHasAttr_Priority_XsdtDecimal_ struct {
-	Priority xsdt.Decimal `xml:"http://www.w3.org/1999/XSL/Transform priority,attr"`
-}
-
-type XsdGoPkgHasAttr_Mode_Tmodes_ struct {
-	Mode Tmodes `xml:"http://www.w3.org/1999/XSL/Transform mode,attr"`
-}
-
-type TxsdTemplate struct {
-	TversionedElementType
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Param
-
-	XsdGoPkgHasGroup_SequenceConstructorGroup
-
-	XsdGoPkgHasAttr_Mode_Tmodes_
-
-	XsdGoPkgHasAttr_Priority_XsdtDecimal_
-
-}
-
-type XsdGoPkgHasElem_Template struct {
-	Template *TxsdTemplate `xml:"http://www.w3.org/1999/XSL/Transform template"`
-
-}
-
-type XsdGoPkgHasElems_Template struct {
-	Templates []*TxsdTemplate `xml:"http://www.w3.org/1999/XSL/Transform template"`
-
-}
-
-type XsdGoPkgHasAttr_DisableOutputEscaping_TyesOrNo_No struct {
-	DisableOutputEscaping TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform disable-output-escaping,attr"`
-}
-
-//	Returns the Default value for DisableOutputEscaping -- "no"
-func (me *XsdGoPkgHasAttr_DisableOutputEscaping_TyesOrNo_No) DisableOutputEscapingDefault () TyesOrNo { return TyesOrNo("no") }
-
-type TxsdText struct {
-	XsdGoPkgValue TtextElementBaseType `xml:",chardata"`
-
-	XsdGoPkgHasAttr_DisableOutputEscaping_TyesOrNo_No
-
-}
-
-type XsdGoPkgHasElems_Text struct {
-	Texts []*TxsdText `xml:"http://www.w3.org/1999/XSL/Transform text"`
-
-}
-
-type XsdGoPkgHasElem_Text struct {
-	Text *TxsdText `xml:"http://www.w3.org/1999/XSL/Transform text"`
+type XsdGoPkgHasElems_Variable struct {
+	Variables []*TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform variable"`
 
 }
 
 type XsdGoPkgHasAttr_Id_XsdtId_ struct {
 	Id xsdt.Id `xml:"http://www.w3.org/1999/XSL/Transform id,attr"`
+
 }
+
+//	Describes different ways of type-annotating an element or attribute.
+type TvalidationStripOrPreserve TvalidationType
+
+//	Returns true if the value of this enumerated TvalidationStripOrPreserve is "strip".
+func (me TvalidationStripOrPreserve) IsStrip () bool { return me == "strip" }
+
+//	Returns true if the value of this enumerated TvalidationStripOrPreserve is "preserve".
+func (me TvalidationStripOrPreserve) IsPreserve () bool { return me == "preserve" }
+
+//	This convenience method just performs a simple type conversion to TvalidationStripOrPreserve's alias type TvalidationType.
+func (me TvalidationStripOrPreserve) ToTvalidationType () TvalidationType { return TvalidationType(me) }
+
+//	Since TvalidationStripOrPreserve is just a simple String type, this merely sets the current value from the specified string.
+func (me *TvalidationStripOrPreserve) SetFromString (s string)  { (*TvalidationType)(me).SetFromString(s) }
+
+//	Since TvalidationStripOrPreserve is just a simple String type, this merely returns the current string value.
+func (me TvalidationStripOrPreserve) String () string { return TvalidationType(me).String() }
 
 type XsdGoPkgHasAttr_DefaultValidation_TvalidationStripOrPreserve_Strip struct {
 	DefaultValidation TvalidationStripOrPreserve `xml:"http://www.w3.org/1999/XSL/Transform default-validation,attr"`
+
 }
 
-//	Returns the Default value for DefaultValidation -- "strip"
-func (me *XsdGoPkgHasAttr_DefaultValidation_TvalidationStripOrPreserve_Strip) DefaultValidationDefault () TvalidationStripOrPreserve { return TvalidationStripOrPreserve("strip") }
+//	Returns the default value for DefaultValidation -- "strip"
+func (me XsdGoPkgHasAttr_DefaultValidation_TvalidationStripOrPreserve_Strip) DefaultValidationDefault () TvalidationStripOrPreserve { return TvalidationStripOrPreserve("strip") }
+
+//	Describes how type annotations in source documents are handled.
+type TinputTypeAnnotationsType xsdt.Token
+
+//	Since TinputTypeAnnotationsType is just a simple String type, this merely returns the current string value.
+func (me TinputTypeAnnotationsType) String () string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TinputTypeAnnotationsType is "preserve".
+func (me TinputTypeAnnotationsType) IsPreserve () bool { return me == "preserve" }
+
+//	Since TinputTypeAnnotationsType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TinputTypeAnnotationsType) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TinputTypeAnnotationsType is "strip".
+func (me TinputTypeAnnotationsType) IsStrip () bool { return me == "strip" }
+
+//	Returns true if the value of this enumerated TinputTypeAnnotationsType is "unspecified".
+func (me TinputTypeAnnotationsType) IsUnspecified () bool { return me == "unspecified" }
+
+//	This convenience method just performs a simple type conversion to TinputTypeAnnotationsType's alias type xsdt.Token.
+func (me TinputTypeAnnotationsType) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
 
 type XsdGoPkgHasAttr_InputTypeAnnotations_TinputTypeAnnotationsType_Unspecified struct {
 	InputTypeAnnotations TinputTypeAnnotationsType `xml:"http://www.w3.org/1999/XSL/Transform input-type-annotations,attr"`
+
 }
 
-//	Returns the Default value for InputTypeAnnotations -- "unspecified"
-func (me *XsdGoPkgHasAttr_InputTypeAnnotations_TinputTypeAnnotationsType_Unspecified) InputTypeAnnotationsDefault () TinputTypeAnnotationsType { return TinputTypeAnnotationsType("unspecified") }
+//	Returns the default value for InputTypeAnnotations -- "unspecified"
+func (me XsdGoPkgHasAttr_InputTypeAnnotations_TinputTypeAnnotationsType_Unspecified) InputTypeAnnotationsDefault () TinputTypeAnnotationsType { return TinputTypeAnnotationsType("unspecified") }
+
+type TtransformElementBaseType struct {
+	TelementOnlyVersionedElementType
+
+}
 
 type TxsdTransform struct {
-	TtransformElementBaseType
-
 	XsdGoPkgHasElems_Declaration
 
 	XsdGoPkgHasElems_Variable
 
-	XsdGoPkgHasElems_Param
+	XsdGoPkgHasAttr_Id_XsdtId_
+
+	XsdGoPkgHasAttr_DefaultValidation_TvalidationStripOrPreserve_Strip
 
 	XsdGoPkgHasElems_Import
 
 	XsdGoPkgHasAttr_InputTypeAnnotations_TinputTypeAnnotationsType_Unspecified
 
-	XsdGoPkgHasAttr_DefaultValidation_TvalidationStripOrPreserve_Strip
+	XsdGoPkgHasElems_Param
 
-	XsdGoPkgHasAttr_Id_XsdtId_
-
-}
-
-type XsdGoPkgHasElems_Transform struct {
-	Transforms []*TxsdTransform `xml:"http://www.w3.org/1999/XSL/Transform transform"`
-
-	XsdGoPkgHasElems_Stylesheet
+	TtransformElementBaseType
 
 }
 
@@ -2327,94 +2184,24 @@ type XsdGoPkgHasElem_Transform struct {
 
 }
 
-type TxsdValueOf struct {
-	TsequenceConstructor
+type XsdGoPkgHasElems_Transform struct {
+	Transforms []*TxsdTransform `xml:"http://www.w3.org/1999/XSL/Transform transform"`
 
-	XsdGoPkgHasCdata
-
-}
-
-type XsdGoPkgHasElems_ValueOf struct {
-	ValueOfs []*TxsdValueOf `xml:"http://www.w3.org/1999/XSL/Transform value-of"`
-
-}
-
-type XsdGoPkgHasElem_ValueOf struct {
-	ValueOf *TxsdValueOf `xml:"http://www.w3.org/1999/XSL/Transform value-of"`
-
-}
-
-type TxsdVariable struct {
-	TsequenceConstructor
-
-	XsdGoPkgHasCdata
-
-}
-
-type XsdGoPkgHasElems_Variable struct {
-	Variables []*TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform variable"`
-
-}
-
-type XsdGoPkgHasElem_Variable struct {
-	Variable *TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform variable"`
-
-}
-
-type TxsdWhen struct {
-	TsequenceConstructor
-
-	XsdGoPkgHasCdata
+	XsdGoPkgHasElems_Stylesheet
 
 }
 
 type XsdGoPkgHasElem_When struct {
-	When *TxsdWhen `xml:"http://www.w3.org/1999/XSL/Transform when"`
-
-}
-
-type XsdGoPkgHasElems_When struct {
-	Whens []*TxsdWhen `xml:"http://www.w3.org/1999/XSL/Transform when"`
-
-}
-
-type TxsdWithParam struct {
-	TsequenceConstructor
-
-	XsdGoPkgHasCdata
+	When *TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform when"`
 
 }
 
 type XsdGoPkgHasElem_WithParam struct {
-	WithParam *TxsdWithParam `xml:"http://www.w3.org/1999/XSL/Transform with-param"`
-
-}
-
-type XsdGoPkgHasElems_WithParam struct {
-	WithParams []*TxsdWithParam `xml:"http://www.w3.org/1999/XSL/Transform with-param"`
+	WithParam *TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform with-param"`
 
 }
 
 type XsdGoPkgHasElems_LiteralResultElement struct {
 	LiteralResultElements []xsdt.AnyType `xml:"http://www.w3.org/1999/XSL/Transform literal-result-element"`
-
-}
-
-type XsdGoPkgHasElem_LiteralResultElement struct {
-	LiteralResultElement xsdt.AnyType `xml:"http://www.w3.org/1999/XSL/Transform literal-result-element"`
-
-}
-
-type XsdGoPkgHasGroup_SequenceConstructorGroup struct {
-	XsdGoPkgHasElem_Variable
-
-	XsdGoPkgHasElem_Instruction
-
-	XsdGoPkgHasGroup_ResultElements
-
-}
-
-type XsdGoPkgHasGroup_ResultElements struct {
-	XsdGoPkgHasElem_LiteralResultElement
 
 }
