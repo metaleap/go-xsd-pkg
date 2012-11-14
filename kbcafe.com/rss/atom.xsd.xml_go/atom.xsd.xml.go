@@ -22,13 +22,27 @@ type XsdGoPkgHasAtts_CommonAttributes struct {
 }
 
 //	The Atom feed construct is defined in section 4.1.1 of the format spec.
-//	The Atom text construct is defined in section 3.1 of the format spec.
-type XsdGoPkgHasCdata struct {
-	XsdGoPkgCDATA string `xml:",chardata"`
+//	The Atom icon construct is defined in section 4.2.5 of the format spec.
+type TiconType struct {
+	XsdGoPkgValue xsdt.AnyURI `xml:",chardata"`
+
+	XsdGoPkgHasAtts_CommonAttributes
 
 }
 
+type XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_ struct {
+	Icons []*TiconType `xml:"http://www.w3.org/2005/Atom icon"`
+
+}
+
+//	The Atom text construct is defined in section 3.1 of the format spec.
 type TxsdTextTypeType xsdt.Token
+
+//	Returns true if the value of this enumerated TxsdTextTypeType is "xhtml".
+func (me TxsdTextTypeType) IsXhtml () bool { return me == "xhtml" }
+
+//	Returns true if the value of this enumerated TxsdTextTypeType is "text".
+func (me TxsdTextTypeType) IsText () bool { return me == "text" }
 
 //	Returns true if the value of this enumerated TxsdTextTypeType is "html".
 func (me TxsdTextTypeType) IsHtml () bool { return me == "html" }
@@ -36,54 +50,66 @@ func (me TxsdTextTypeType) IsHtml () bool { return me == "html" }
 //	Since TxsdTextTypeType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdTextTypeType) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
 
-//	Since TxsdTextTypeType is just a simple String type, this merely returns the current string value.
-func (me TxsdTextTypeType) String () string { return xsdt.Token(me).String() }
-
-//	Returns true if the value of this enumerated TxsdTextTypeType is "xhtml".
-func (me TxsdTextTypeType) IsXhtml () bool { return me == "xhtml" }
-
 //	This convenience method just performs a simple type conversion to TxsdTextTypeType's alias type xsdt.Token.
 func (me TxsdTextTypeType) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
 
-//	Returns true if the value of this enumerated TxsdTextTypeType is "text".
-func (me TxsdTextTypeType) IsText () bool { return me == "text" }
+//	Since TxsdTextTypeType is just a simple String type, this merely returns the current string value.
+func (me TxsdTextTypeType) String () string { return xsdt.Token(me).String() }
 
 type XsdGoPkgHasAttr_Type_TxsdTextTypeType_ struct {
 	Type TxsdTextTypeType `xml:"http://www.w3.org/2005/Atom type,attr"`
 
 }
 
+type XsdGoPkgHasCdata struct {
+	XsdGoPkgCDATA string `xml:",chardata"`
+
+}
+
 type TtextType struct {
 	XsdGoPkgHasCdata
 
+	XsdGoPkgHasAtts_CommonAttributes
+
 	XsdGoPkgHasAttr_Type_TxsdTextTypeType_
+
+}
+
+type XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_ struct {
+	Subtitles []*TtextType `xml:"http://www.w3.org/2005/Atom subtitle"`
+
+}
+
+//	The Atom entry construct is defined in section 4.1.2 of the format spec.
+type TdateTimeType struct {
+	XsdGoPkgValue xsdt.DateTime `xml:",chardata"`
 
 	XsdGoPkgHasAtts_CommonAttributes
 
 }
 
-type XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_ struct {
+type XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_ struct {
+	Publisheds []*TdateTimeType `xml:"http://www.w3.org/2005/Atom published"`
+
+}
+
+type XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_ struct {
 	Rightses []*TtextType `xml:"http://www.w3.org/2005/Atom rights"`
 
 }
 
 //	The Atom person construct is defined in section 3.2 of the format spec.
-type XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_ struct {
-	Names []xsdt.String `xml:"http://www.w3.org/2005/Atom name"`
-
-}
-
 //	Schema definition for an email address.
 type TemailType xsdt.NormalizedString
+
+//	This convenience method just performs a simple type conversion to TemailType's alias type xsdt.NormalizedString.
+func (me TemailType) ToXsdtNormalizedString () xsdt.NormalizedString { return xsdt.NormalizedString(me) }
 
 //	Since TemailType is just a simple String type, this merely returns the current string value.
 func (me TemailType) String () string { return xsdt.NormalizedString(me).String() }
 
 //	Since TemailType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TemailType) SetFromString (s string)  { (*xsdt.NormalizedString)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TemailType's alias type xsdt.NormalizedString.
-func (me TemailType) ToXsdtNormalizedString () xsdt.NormalizedString { return xsdt.NormalizedString(me) }
 
 type XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_ struct {
 	Emails []TemailType `xml:"http://www.w3.org/2005/Atom email"`
@@ -102,19 +128,74 @@ type XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_ struct {
 
 }
 
+type XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_ struct {
+	Names []xsdt.String `xml:"http://www.w3.org/2005/Atom name"`
+
+}
+
 type TpersonType struct {
 	XsdGoPkgHasAtts_CommonAttributes
+
+	XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_
 
 	XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_
 
 	XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_
 
-	XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_
+}
+
+type XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_ struct {
+	Authors []*TpersonType `xml:"http://www.w3.org/2005/Atom author"`
 
 }
 
-type XsdGoPkgHasElems_authorchoicefeedTypeschema_Author_TpersonType_ struct {
-	Authors []*TpersonType `xml:"http://www.w3.org/2005/Atom author"`
+//	The Atom id construct is defined in section 4.2.6 of the format spec.
+type TidType struct {
+	XsdGoPkgValue xsdt.AnyURI `xml:",chardata"`
+
+	XsdGoPkgHasAtts_CommonAttributes
+
+}
+
+type XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_ struct {
+	Ids []*TidType `xml:"http://www.w3.org/2005/Atom id"`
+
+}
+
+//	The Atom content construct is defined in section 4.1.3 of the format spec.
+type XsdGoPkgHasAttr_Src_XsdtAnyURI_ struct {
+	Src xsdt.AnyURI `xml:"http://www.w3.org/2005/Atom src,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Type_XsdtString_ struct {
+	Type xsdt.String `xml:"http://www.w3.org/2005/Atom type,attr"`
+
+}
+
+type TcontentType struct {
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasAtts_CommonAttributes
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Src_XsdtAnyURI_
+
+}
+
+type XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_ struct {
+	Contents []*TcontentType `xml:"http://www.w3.org/2005/Atom content"`
+
+}
+
+type XsdGoPkgHasElems_updatedchoiceentryTypeschema_Updated_TdateTimeType_ struct {
+	Updateds []*TdateTimeType `xml:"http://www.w3.org/2005/Atom updated"`
+
+}
+
+type XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_ struct {
+	Titles []*TtextType `xml:"http://www.w3.org/2005/Atom title"`
 
 }
 
@@ -135,52 +216,29 @@ type XsdGoPkgHasAttr_Term_XsdtString_ struct {
 }
 
 type TcategoryType struct {
-	XsdGoPkgHasAttr_Scheme_XsdtAnyURI_
-
 	XsdGoPkgHasAtts_CommonAttributes
 
 	XsdGoPkgHasAttr_Term_XsdtString_
 
 	XsdGoPkgHasAttr_Label_XsdtString_
 
+	XsdGoPkgHasAttr_Scheme_XsdtAnyURI_
+
 }
 
-type XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_ struct {
+type XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_ struct {
 	Categories []*TcategoryType `xml:"http://www.w3.org/2005/Atom category"`
 
 }
 
-//	The Atom entry construct is defined in section 4.1.2 of the format spec.
-//	The Atom content construct is defined in section 4.1.3 of the format spec.
-type XsdGoPkgHasAttr_Src_XsdtAnyURI_ struct {
-	Src xsdt.AnyURI `xml:"http://www.w3.org/2005/Atom src,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Type_XsdtString_ struct {
-	Type xsdt.String `xml:"http://www.w3.org/2005/Atom type,attr"`
-
-}
-
-type TcontentType struct {
-	XsdGoPkgHasAttr_Src_XsdtAnyURI_
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_CommonAttributes
-
-}
-
-type XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_ struct {
-	Contents []*TcontentType `xml:"http://www.w3.org/2005/Atom content"`
-
-}
-
 //	The Atom link construct is defined in section 3.4 of the format spec.
-type XsdGoPkgHasAttr_Title_XsdtString_ struct {
-	Title xsdt.String `xml:"http://www.w3.org/2005/Atom title,attr"`
+type XsdGoPkgHasAttr_Hreflang_XsdtNmtoken_ struct {
+	Hreflang xsdt.Nmtoken `xml:"http://www.w3.org/2005/Atom hreflang,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Rel_XsdtString_ struct {
+	Rel xsdt.String `xml:"http://www.w3.org/2005/Atom rel,attr"`
 
 }
 
@@ -194,30 +252,27 @@ type XsdGoPkgHasAttr_Href_XsdtAnyURI_ struct {
 
 }
 
-type XsdGoPkgHasAttr_Hreflang_XsdtNmtoken_ struct {
-	Hreflang xsdt.Nmtoken `xml:"http://www.w3.org/2005/Atom hreflang,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Rel_XsdtString_ struct {
-	Rel xsdt.String `xml:"http://www.w3.org/2005/Atom rel,attr"`
+type XsdGoPkgHasAttr_Title_XsdtString_ struct {
+	Title xsdt.String `xml:"http://www.w3.org/2005/Atom title,attr"`
 
 }
 
 type TlinkType struct {
-	XsdGoPkgHasAttr_Title_XsdtString_
+	XsdGoPkgHasAttr_Rel_XsdtString_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_CommonAttributes
 
 	XsdGoPkgHasAttr_Length_XsdtPositiveInteger_
 
 	XsdGoPkgHasAttr_Href_XsdtAnyURI_
 
-	XsdGoPkgHasAtts_CommonAttributes
+	XsdGoPkgHasAttr_Title_XsdtString_
 
-	XsdGoPkgHasCdata
+	XsdGoPkgHasAttr_Type_XsdtString_
 
 	XsdGoPkgHasAttr_Hreflang_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_Rel_XsdtString_
 
 }
 
@@ -226,48 +281,8 @@ type XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_ struct {
 
 }
 
-type XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_ struct {
-	Sources []*TtextType `xml:"http://www.w3.org/2005/Atom source"`
-
-}
-
-type TdateTimeType struct {
-	XsdGoPkgValue xsdt.DateTime `xml:",chardata"`
-
-	XsdGoPkgHasAtts_CommonAttributes
-
-}
-
-type XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_ struct {
-	Publisheds []*TdateTimeType `xml:"http://www.w3.org/2005/Atom published"`
-
-}
-
-//	The Atom id construct is defined in section 4.2.6 of the format spec.
-type TidType struct {
-	XsdGoPkgValue xsdt.AnyURI `xml:",chardata"`
-
-	XsdGoPkgHasAtts_CommonAttributes
-
-}
-
-type XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_ struct {
-	Ids []*TidType `xml:"http://www.w3.org/2005/Atom id"`
-
-}
-
 type XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_ struct {
 	Contributors []*TpersonType `xml:"http://www.w3.org/2005/Atom contributor"`
-
-}
-
-type XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_ struct {
-	Titles []*TtextType `xml:"http://www.w3.org/2005/Atom title"`
-
-}
-
-type XsdGoPkgHasElems_updatedchoiceentryTypeschema_Updated_TdateTimeType_ struct {
-	Updateds []*TdateTimeType `xml:"http://www.w3.org/2005/Atom updated"`
 
 }
 
@@ -276,42 +291,42 @@ type XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_ struct {
 
 }
 
+type XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_ struct {
+	Sources []*TtextType `xml:"http://www.w3.org/2005/Atom source"`
+
+}
+
 type TentryType struct {
+	XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_
+
+	XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_
+
+	XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_
+
+	XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_
+
+	XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_
+
 	XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_
 
-	XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_
+	XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_
+
+	XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_
 
 	XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_
 
-	XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_
+	XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_
+
+	XsdGoPkgHasElems_updatedchoiceentryTypeschema_Updated_TdateTimeType_
 
 	XsdGoPkgHasAtts_CommonAttributes
 
 	XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_
 
-	XsdGoPkgHasElems_updatedchoiceentryTypeschema_Updated_TdateTimeType_
-
-	XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_
-
-	XsdGoPkgHasElems_authorchoicefeedTypeschema_Author_TpersonType_
-
-	XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_
-
-	XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_
-
-	XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_
-
-	XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_
-
 }
 
 type XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_ struct {
 	Entries []*TentryType `xml:"http://www.w3.org/2005/Atom entry"`
-
-}
-
-type XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_ struct {
-	Subtitles []*TtextType `xml:"http://www.w3.org/2005/Atom subtitle"`
 
 }
 
@@ -328,38 +343,25 @@ type XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_ struct {
 
 }
 
-//	The Atom icon construct is defined in section 4.2.5 of the format spec.
-type TiconType struct {
-	XsdGoPkgValue xsdt.AnyURI `xml:",chardata"`
-
-	XsdGoPkgHasAtts_CommonAttributes
-
-}
-
-type XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_ struct {
-	Icons []*TiconType `xml:"http://www.w3.org/2005/Atom icon"`
-
-}
-
 //	The Atom generator element is defined in section 4.2.4 of the format spec.
-type XsdGoPkgHasAttr_Version_XsdtString_ struct {
-	Version xsdt.String `xml:"http://www.w3.org/2005/Atom version,attr"`
-
-}
-
 type XsdGoPkgHasAttr_Uri_XsdtAnyURI_ struct {
 	Uri xsdt.AnyURI `xml:"http://www.w3.org/2005/Atom uri,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Version_XsdtString_ struct {
+	Version xsdt.String `xml:"http://www.w3.org/2005/Atom version,attr"`
 
 }
 
 type TgeneratorType struct {
 	XsdGoPkgValue xsdt.String `xml:",chardata"`
 
-	XsdGoPkgHasAttr_Version_XsdtString_
-
 	XsdGoPkgHasAttr_Uri_XsdtAnyURI_
 
 	XsdGoPkgHasAtts_CommonAttributes
+
+	XsdGoPkgHasAttr_Version_XsdtString_
 
 }
 
@@ -369,43 +371,43 @@ type XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_ st
 }
 
 type TfeedType struct {
-	XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_
+	XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_
 
-	XsdGoPkgHasElems_authorchoicefeedTypeschema_Author_TpersonType_
-
-	XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_
-
-	XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_
-
-	XsdGoPkgHasElems_updatedchoiceentryTypeschema_Updated_TdateTimeType_
-
-	XsdGoPkgHasAtts_CommonAttributes
-
-	XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_
+	XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_
 
 	XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_
 
-	XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_
-
-	XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_
-
-	XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_
+	XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_
 
 	XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_
 
+	XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_
+
+	XsdGoPkgHasAtts_CommonAttributes
+
+	XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_
+
 	XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_
 
-	XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_
+	XsdGoPkgHasElems_updatedchoiceentryTypeschema_Updated_TdateTimeType_
 
-}
+	XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_
 
-type XsdGoPkgHasElem_Feed struct {
-	Feed *TfeedType `xml:"http://www.w3.org/2005/Atom feed"`
+	XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_
+
+	XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_
+
+	XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_
 
 }
 
 type XsdGoPkgHasElems_Feed struct {
 	Feeds []*TfeedType `xml:"http://www.w3.org/2005/Atom feed"`
+
+}
+
+type XsdGoPkgHasElem_Feed struct {
+	Feed *TfeedType `xml:"http://www.w3.org/2005/Atom feed"`
 
 }
 

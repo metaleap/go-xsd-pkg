@@ -9,8 +9,8 @@ package gopkg_SchemasOpengisNetKml220Ogckml22Xsd
 
 
 import (
-	xsdt "github.com/metaleap/go-xsd/types"
 	atom "github.com/metaleap/go-xsd-pkg/schemas.opengis.net/kml/2.2.0/atom-author-link.xsd_go"
+	xsdt "github.com/metaleap/go-xsd/types"
 	xal "github.com/metaleap/go-xsd-pkg/docs.oasis-open.org/election/external/xAL.xsd_go"
 )
 
@@ -25,14 +25,9 @@ type XsdGoPkgHasAttr_TargetId_XsdtNCName_ struct {
 }
 
 type XsdGoPkgHasAtts_IdAttributes struct {
-	XsdGoPkgHasAttr_Id_XsdtId_
-
 	XsdGoPkgHasAttr_TargetId_XsdtNCName_
 
-}
-
-type XsdGoPkgHasElem_Address struct {
-	Address xsdt.String `xml:"http://www.opengis.net/kml/2.2 address"`
+	XsdGoPkgHasAttr_Id_XsdtId_
 
 }
 
@@ -41,13 +36,10 @@ type XsdGoPkgHasElems_Address struct {
 
 }
 
-type XsdGoPkgHasElems_Altitude struct {
-	Altitudes []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 altitude"`
+type XsdGoPkgHasElem_Address struct {
+	Address xsdt.String `xml:"http://www.opengis.net/kml/2.2 address"`
 
 }
-
-//	Returns the default value for Altitude -- 0.0
-func (me XsdGoPkgHasElems_Altitude) AltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElem_Altitude struct {
 	Altitude xsdt.Double `xml:"http://www.opengis.net/kml/2.2 altitude"`
@@ -57,25 +49,33 @@ type XsdGoPkgHasElem_Altitude struct {
 //	Returns the default value for Altitude -- 0.0
 func (me XsdGoPkgHasElem_Altitude) AltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
 
+type XsdGoPkgHasElems_Altitude struct {
+	Altitudes []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 altitude"`
+
+}
+
+//	Returns the default value for Altitude -- 0.0
+func (me XsdGoPkgHasElems_Altitude) AltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
+
 type TaltitudeModeEnumType xsdt.String
 
-//	Since TaltitudeModeEnumType is just a simple String type, this merely returns the current string value.
-func (me TaltitudeModeEnumType) String () string { return xsdt.String(me).String() }
-
-//	Since TaltitudeModeEnumType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TaltitudeModeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TaltitudeModeEnumType is "relativeToGround".
-func (me TaltitudeModeEnumType) IsRelativeToGround () bool { return me == "relativeToGround" }
-
-//	This convenience method just performs a simple type conversion to TaltitudeModeEnumType's alias type xsdt.String.
-func (me TaltitudeModeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	Returns true if the value of this enumerated TaltitudeModeEnumType is "clampToGround".
+func (me TaltitudeModeEnumType) IsClampToGround () bool { return me == "clampToGround" }
 
 //	Returns true if the value of this enumerated TaltitudeModeEnumType is "absolute".
 func (me TaltitudeModeEnumType) IsAbsolute () bool { return me == "absolute" }
 
-//	Returns true if the value of this enumerated TaltitudeModeEnumType is "clampToGround".
-func (me TaltitudeModeEnumType) IsClampToGround () bool { return me == "clampToGround" }
+//	Since TaltitudeModeEnumType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TaltitudeModeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TaltitudeModeEnumType is just a simple String type, this merely returns the current string value.
+func (me TaltitudeModeEnumType) String () string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TaltitudeModeEnumType's alias type xsdt.String.
+func (me TaltitudeModeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TaltitudeModeEnumType is "relativeToGround".
+func (me TaltitudeModeEnumType) IsRelativeToGround () bool { return me == "relativeToGround" }
 
 type XsdGoPkgHasElem_AltitudeMode struct {
 	AltitudeMode TaltitudeModeEnumType `xml:"http://www.opengis.net/kml/2.2 altitudeMode"`
@@ -112,12 +112,6 @@ type TdateTimeType xsdt.String
 //	Since TdateTimeType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TdateTimeType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
-//	TdateTimeType is an XSD union-type of several types. This is a simple type conversion to XsdtGYearMonth, but keep in mind the actual value may or may not be a valid XsdtGYearMonth value.
-func (me TdateTimeType) ToXsdtGYearMonth () xsdt.GYearMonth { return xsdt.GYearMonth(me) }
-
-//	TdateTimeType is an XSD union-type of several types. This is a simple type conversion to XsdtDateTime, but keep in mind the actual value may or may not be a valid XsdtDateTime value.
-func (me TdateTimeType) ToXsdtDateTime () xsdt.DateTime { return xsdt.DateTime(me) }
-
 //	TdateTimeType is an XSD union-type of several types. This is a simple type conversion to XsdtGYear, but keep in mind the actual value may or may not be a valid XsdtGYear value.
 func (me TdateTimeType) ToXsdtGYear () xsdt.GYear { return xsdt.GYear(me) }
 
@@ -126,6 +120,12 @@ func (me TdateTimeType) ToXsdtDate () xsdt.Date { return xsdt.Date(me) }
 
 //	This convenience method just performs a simple type conversion to TdateTimeType's alias type xsdt.String.
 func (me TdateTimeType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	TdateTimeType is an XSD union-type of several types. This is a simple type conversion to XsdtGYearMonth, but keep in mind the actual value may or may not be a valid XsdtGYearMonth value.
+func (me TdateTimeType) ToXsdtGYearMonth () xsdt.GYearMonth { return xsdt.GYearMonth(me) }
+
+//	TdateTimeType is an XSD union-type of several types. This is a simple type conversion to XsdtDateTime, but keep in mind the actual value may or may not be a valid XsdtDateTime value.
+func (me TdateTimeType) ToXsdtDateTime () xsdt.DateTime { return xsdt.DateTime(me) }
 
 //	Since TdateTimeType is just a simple String type, this merely returns the current string value.
 func (me TdateTimeType) String () string { return xsdt.String(me).String() }
@@ -154,14 +154,6 @@ func (me *TcolorType) SetFromString (s string)  { (*xsdt.HexBinary)(me).SetFromS
 //	This convenience method just performs a simple type conversion to TcolorType's alias type xsdt.HexBinary.
 func (me TcolorType) ToXsdtHexBinary () xsdt.HexBinary { return xsdt.HexBinary(me) }
 
-type XsdGoPkgHasElems_BgColor struct {
-	BgColors []TcolorType `xml:"http://www.opengis.net/kml/2.2 bgColor"`
-
-}
-
-//	Returns the default value for BgColor -- "ffffffff"
-func (me XsdGoPkgHasElems_BgColor) BgColorDefault () TcolorType { return TcolorType("ffffffff") }
-
 type XsdGoPkgHasElem_BgColor struct {
 	BgColor TcolorType `xml:"http://www.opengis.net/kml/2.2 bgColor"`
 
@@ -170,16 +162,24 @@ type XsdGoPkgHasElem_BgColor struct {
 //	Returns the default value for BgColor -- "ffffffff"
 func (me XsdGoPkgHasElem_BgColor) BgColorDefault () TcolorType { return TcolorType("ffffffff") }
 
+type XsdGoPkgHasElems_BgColor struct {
+	BgColors []TcolorType `xml:"http://www.opengis.net/kml/2.2 bgColor"`
+
+}
+
+//	Returns the default value for BgColor -- "ffffffff"
+func (me XsdGoPkgHasElems_BgColor) BgColorDefault () TcolorType { return TcolorType("ffffffff") }
+
 type Tangle90Type xsdt.Double
 
 //	Returns a string representation of this Tangle90Type's current non-string scalar value.
 func (me Tangle90Type) String () string { return xsdt.Double(me).String() }
 
-//	Since Tangle90Type is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
-func (me *Tangle90Type) SetFromString (s string)  { (*xsdt.Double)(me).SetFromString(s) }
-
 //	This convenience method just performs a simple type conversion to Tangle90Type's alias type xsdt.Double.
 func (me Tangle90Type) ToXsdtDouble () xsdt.Double { return xsdt.Double(me) }
+
+//	Since Tangle90Type is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
+func (me *Tangle90Type) SetFromString (s string)  { (*xsdt.Double)(me).SetFromString(s) }
 
 type XsdGoPkgHasElem_BottomFov struct {
 	BottomFov Tangle90Type `xml:"http://www.opengis.net/kml/2.2 bottomFov"`
@@ -215,28 +215,20 @@ func (me XsdGoPkgHasElems_Color) ColorDefault () TcolorType { return TcolorType(
 
 type TcolorModeEnumType xsdt.String
 
+//	Since TcolorModeEnumType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TcolorModeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TcolorModeEnumType is just a simple String type, this merely returns the current string value.
+func (me TcolorModeEnumType) String () string { return xsdt.String(me).String() }
+
 //	This convenience method just performs a simple type conversion to TcolorModeEnumType's alias type xsdt.String.
 func (me TcolorModeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 //	Returns true if the value of this enumerated TcolorModeEnumType is "random".
 func (me TcolorModeEnumType) IsRandom () bool { return me == "random" }
 
-//	Since TcolorModeEnumType is just a simple String type, this merely returns the current string value.
-func (me TcolorModeEnumType) String () string { return xsdt.String(me).String() }
-
 //	Returns true if the value of this enumerated TcolorModeEnumType is "normal".
 func (me TcolorModeEnumType) IsNormal () bool { return me == "normal" }
-
-//	Since TcolorModeEnumType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TcolorModeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-type XsdGoPkgHasElem_ColorMode struct {
-	ColorMode TcolorModeEnumType `xml:"http://www.opengis.net/kml/2.2 colorMode"`
-
-}
-
-//	Returns the default value for ColorMode -- "normal"
-func (me XsdGoPkgHasElem_ColorMode) ColorModeDefault () TcolorModeEnumType { return TcolorModeEnumType("normal") }
 
 type XsdGoPkgHasElems_ColorMode struct {
 	ColorModes []TcolorModeEnumType `xml:"http://www.opengis.net/kml/2.2 colorMode"`
@@ -246,29 +238,37 @@ type XsdGoPkgHasElems_ColorMode struct {
 //	Returns the default value for ColorMode -- "normal"
 func (me XsdGoPkgHasElems_ColorMode) ColorModeDefault () TcolorModeEnumType { return TcolorModeEnumType("normal") }
 
-type XsdGoPkgHasElem_Cookie struct {
-	Cookie xsdt.String `xml:"http://www.opengis.net/kml/2.2 cookie"`
+type XsdGoPkgHasElem_ColorMode struct {
+	ColorMode TcolorModeEnumType `xml:"http://www.opengis.net/kml/2.2 colorMode"`
 
 }
+
+//	Returns the default value for ColorMode -- "normal"
+func (me XsdGoPkgHasElem_ColorMode) ColorModeDefault () TcolorModeEnumType { return TcolorModeEnumType("normal") }
 
 type XsdGoPkgHasElems_Cookie struct {
 	Cookies []xsdt.String `xml:"http://www.opengis.net/kml/2.2 cookie"`
 
 }
 
+type XsdGoPkgHasElem_Cookie struct {
+	Cookie xsdt.String `xml:"http://www.opengis.net/kml/2.2 cookie"`
+
+}
+
 type TcoordinatesType xsdt.String
-
-//	Since TcoordinatesType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TcoordinatesType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TcoordinatesType's alias type xsdt.String.
-func (me TcoordinatesType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 //	TcoordinatesType defines a String containing a whitespace-separated list of xsdt.String values. This Values() method creates and returns a slice of all elements in that list.
 func (me TcoordinatesType) Values () (list []xsdt.String) { var svals = xsdt.ListValues(string(me)); list = make([]xsdt.String, len(svals)); for i, s := range svals { list[i] = xsdt.String(s) }; return }
 
+//	This convenience method just performs a simple type conversion to TcoordinatesType's alias type xsdt.String.
+func (me TcoordinatesType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
 //	Since TcoordinatesType is just a simple String type, this merely returns the current string value.
 func (me TcoordinatesType) String () string { return xsdt.String(me).String() }
+
+//	Since TcoordinatesType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TcoordinatesType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 type XsdGoPkgHasElem_Coordinates struct {
 	Coordinates TcoordinatesType `xml:"http://www.opengis.net/kml/2.2 coordinates"`
@@ -280,18 +280,13 @@ type XsdGoPkgHasElems_Coordinates struct {
 
 }
 
-type XsdGoPkgHasElem_Description struct {
-	Description xsdt.String `xml:"http://www.opengis.net/kml/2.2 description"`
-
-}
-
 type XsdGoPkgHasElems_Description struct {
 	Descriptions []xsdt.String `xml:"http://www.opengis.net/kml/2.2 description"`
 
 }
 
-type XsdGoPkgHasElems_DisplayName struct {
-	DisplayNames []xsdt.String `xml:"http://www.opengis.net/kml/2.2 displayName"`
+type XsdGoPkgHasElem_Description struct {
+	Description xsdt.String `xml:"http://www.opengis.net/kml/2.2 description"`
 
 }
 
@@ -300,22 +295,27 @@ type XsdGoPkgHasElem_DisplayName struct {
 
 }
 
+type XsdGoPkgHasElems_DisplayName struct {
+	DisplayNames []xsdt.String `xml:"http://www.opengis.net/kml/2.2 displayName"`
+
+}
+
 type TdisplayModeEnumType xsdt.String
-
-//	Since TdisplayModeEnumType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TdisplayModeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TdisplayModeEnumType is "hide".
-func (me TdisplayModeEnumType) IsHide () bool { return me == "hide" }
 
 //	This convenience method just performs a simple type conversion to TdisplayModeEnumType's alias type xsdt.String.
 func (me TdisplayModeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
-//	Returns true if the value of this enumerated TdisplayModeEnumType is "default".
-func (me TdisplayModeEnumType) IsDefault () bool { return me == "default" }
+//	Returns true if the value of this enumerated TdisplayModeEnumType is "hide".
+func (me TdisplayModeEnumType) IsHide () bool { return me == "hide" }
 
 //	Since TdisplayModeEnumType is just a simple String type, this merely returns the current string value.
 func (me TdisplayModeEnumType) String () string { return xsdt.String(me).String() }
+
+//	Since TdisplayModeEnumType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TdisplayModeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TdisplayModeEnumType is "default".
+func (me TdisplayModeEnumType) IsDefault () bool { return me == "default" }
 
 type XsdGoPkgHasElems_DisplayMode struct {
 	DisplayModes []TdisplayModeEnumType `xml:"http://www.opengis.net/kml/2.2 displayMode"`
@@ -333,14 +333,6 @@ type XsdGoPkgHasElem_DisplayMode struct {
 //	Returns the default value for DisplayMode -- "default"
 func (me XsdGoPkgHasElem_DisplayMode) DisplayModeDefault () TdisplayModeEnumType { return TdisplayModeEnumType("default") }
 
-type XsdGoPkgHasElem_DrawOrder struct {
-	DrawOrder xsdt.Int `xml:"http://www.opengis.net/kml/2.2 drawOrder"`
-
-}
-
-//	Returns the default value for DrawOrder -- 0
-func (me XsdGoPkgHasElem_DrawOrder) DrawOrderDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("0"); return *x }
-
 type XsdGoPkgHasElems_DrawOrder struct {
 	DrawOrders []xsdt.Int `xml:"http://www.opengis.net/kml/2.2 drawOrder"`
 
@@ -349,16 +341,24 @@ type XsdGoPkgHasElems_DrawOrder struct {
 //	Returns the default value for DrawOrder -- 0
 func (me XsdGoPkgHasElems_DrawOrder) DrawOrderDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("0"); return *x }
 
+type XsdGoPkgHasElem_DrawOrder struct {
+	DrawOrder xsdt.Int `xml:"http://www.opengis.net/kml/2.2 drawOrder"`
+
+}
+
+//	Returns the default value for DrawOrder -- 0
+func (me XsdGoPkgHasElem_DrawOrder) DrawOrderDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("0"); return *x }
+
 type Tangle180Type xsdt.Double
 
 //	Returns a string representation of this Tangle180Type's current non-string scalar value.
 func (me Tangle180Type) String () string { return xsdt.Double(me).String() }
 
-//	Since Tangle180Type is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
-func (me *Tangle180Type) SetFromString (s string)  { (*xsdt.Double)(me).SetFromString(s) }
-
 //	This convenience method just performs a simple type conversion to Tangle180Type's alias type xsdt.Double.
 func (me Tangle180Type) ToXsdtDouble () xsdt.Double { return xsdt.Double(me) }
+
+//	Since Tangle180Type is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
+func (me *Tangle180Type) SetFromString (s string)  { (*xsdt.Double)(me).SetFromString(s) }
 
 type XsdGoPkgHasElem_East struct {
 	East Tangle180Type `xml:"http://www.opengis.net/kml/2.2 east"`
@@ -376,18 +376,13 @@ type XsdGoPkgHasElems_East struct {
 //	Returns the default value for East -- 180.0
 func (me XsdGoPkgHasElems_East) EastDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("180.0"); return *x }
 
-type XsdGoPkgHasElems_End struct {
-	Ends []TdateTimeType `xml:"http://www.opengis.net/kml/2.2 end"`
-
-}
-
 type XsdGoPkgHasElem_End struct {
 	End TdateTimeType `xml:"http://www.opengis.net/kml/2.2 end"`
 
 }
 
-type XsdGoPkgHasElem_Expires struct {
-	Expires TdateTimeType `xml:"http://www.opengis.net/kml/2.2 expires"`
+type XsdGoPkgHasElems_End struct {
+	Ends []TdateTimeType `xml:"http://www.opengis.net/kml/2.2 end"`
 
 }
 
@@ -396,13 +391,10 @@ type XsdGoPkgHasElems_Expires struct {
 
 }
 
-type XsdGoPkgHasElem_Extrude struct {
-	Extrude xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 extrude"`
+type XsdGoPkgHasElem_Expires struct {
+	Expires TdateTimeType `xml:"http://www.opengis.net/kml/2.2 expires"`
 
 }
-
-//	Returns the default value for Extrude -- 0
-func (me XsdGoPkgHasElem_Extrude) ExtrudeDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
 
 type XsdGoPkgHasElems_Extrude struct {
 	Extrudes []xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 extrude"`
@@ -411,6 +403,14 @@ type XsdGoPkgHasElems_Extrude struct {
 
 //	Returns the default value for Extrude -- 0
 func (me XsdGoPkgHasElems_Extrude) ExtrudeDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
+
+type XsdGoPkgHasElem_Extrude struct {
+	Extrude xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 extrude"`
+
+}
+
+//	Returns the default value for Extrude -- 0
+func (me XsdGoPkgHasElem_Extrude) ExtrudeDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
 
 type XsdGoPkgHasElems_Fill struct {
 	Fills []xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 fill"`
@@ -446,28 +446,20 @@ func (me XsdGoPkgHasElems_FlyToView) FlyToViewDefault () xsdt.Boolean { var x = 
 
 type TgridOriginEnumType xsdt.String
 
-//	Since TgridOriginEnumType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TgridOriginEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
 //	Since TgridOriginEnumType is just a simple String type, this merely returns the current string value.
 func (me TgridOriginEnumType) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TgridOriginEnumType is "upperLeft".
-func (me TgridOriginEnumType) IsUpperLeft () bool { return me == "upperLeft" }
 
 //	This convenience method just performs a simple type conversion to TgridOriginEnumType's alias type xsdt.String.
 func (me TgridOriginEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
+//	Returns true if the value of this enumerated TgridOriginEnumType is "upperLeft".
+func (me TgridOriginEnumType) IsUpperLeft () bool { return me == "upperLeft" }
+
 //	Returns true if the value of this enumerated TgridOriginEnumType is "lowerLeft".
 func (me TgridOriginEnumType) IsLowerLeft () bool { return me == "lowerLeft" }
 
-type XsdGoPkgHasElems_GridOrigin struct {
-	GridOrigins []TgridOriginEnumType `xml:"http://www.opengis.net/kml/2.2 gridOrigin"`
-
-}
-
-//	Returns the default value for GridOrigin -- "lowerLeft"
-func (me XsdGoPkgHasElems_GridOrigin) GridOriginDefault () TgridOriginEnumType { return TgridOriginEnumType("lowerLeft") }
+//	Since TgridOriginEnumType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TgridOriginEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 type XsdGoPkgHasElem_GridOrigin struct {
 	GridOrigin TgridOriginEnumType `xml:"http://www.opengis.net/kml/2.2 gridOrigin"`
@@ -477,24 +469,24 @@ type XsdGoPkgHasElem_GridOrigin struct {
 //	Returns the default value for GridOrigin -- "lowerLeft"
 func (me XsdGoPkgHasElem_GridOrigin) GridOriginDefault () TgridOriginEnumType { return TgridOriginEnumType("lowerLeft") }
 
+type XsdGoPkgHasElems_GridOrigin struct {
+	GridOrigins []TgridOriginEnumType `xml:"http://www.opengis.net/kml/2.2 gridOrigin"`
+
+}
+
+//	Returns the default value for GridOrigin -- "lowerLeft"
+func (me XsdGoPkgHasElems_GridOrigin) GridOriginDefault () TgridOriginEnumType { return TgridOriginEnumType("lowerLeft") }
+
 type Tangle360Type xsdt.Double
-
-//	This convenience method just performs a simple type conversion to Tangle360Type's alias type xsdt.Double.
-func (me Tangle360Type) ToXsdtDouble () xsdt.Double { return xsdt.Double(me) }
-
-//	Returns a string representation of this Tangle360Type's current non-string scalar value.
-func (me Tangle360Type) String () string { return xsdt.Double(me).String() }
 
 //	Since Tangle360Type is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
 func (me *Tangle360Type) SetFromString (s string)  { (*xsdt.Double)(me).SetFromString(s) }
 
-type XsdGoPkgHasElems_Heading struct {
-	Headings []Tangle360Type `xml:"http://www.opengis.net/kml/2.2 heading"`
+//	Returns a string representation of this Tangle360Type's current non-string scalar value.
+func (me Tangle360Type) String () string { return xsdt.Double(me).String() }
 
-}
-
-//	Returns the default value for Heading -- 0.0
-func (me XsdGoPkgHasElems_Heading) HeadingDefault () Tangle360Type { var x = new(Tangle360Type); x.SetFromString("0.0"); return *x }
+//	This convenience method just performs a simple type conversion to Tangle360Type's alias type xsdt.Double.
+func (me Tangle360Type) ToXsdtDouble () xsdt.Double { return xsdt.Double(me) }
 
 type XsdGoPkgHasElem_Heading struct {
 	Heading Tangle360Type `xml:"http://www.opengis.net/kml/2.2 heading"`
@@ -503,6 +495,14 @@ type XsdGoPkgHasElem_Heading struct {
 
 //	Returns the default value for Heading -- 0.0
 func (me XsdGoPkgHasElem_Heading) HeadingDefault () Tangle360Type { var x = new(Tangle360Type); x.SetFromString("0.0"); return *x }
+
+type XsdGoPkgHasElems_Heading struct {
+	Headings []Tangle360Type `xml:"http://www.opengis.net/kml/2.2 heading"`
+
+}
+
+//	Returns the default value for Heading -- 0.0
+func (me XsdGoPkgHasElems_Heading) HeadingDefault () Tangle360Type { var x = new(Tangle360Type); x.SetFromString("0.0"); return *x }
 
 //	not anyURI due to $[x] substitution in
 //	PhotoOverlay
@@ -540,34 +540,6 @@ type XsdGoPkgHasAttr_X_XsdtDouble_10 struct {
 //	Returns the default value for X -- 1.0
 func (me XsdGoPkgHasAttr_X_XsdtDouble_10) XDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
 
-type TunitsEnumType xsdt.String
-
-//	Since TunitsEnumType is just a simple String type, this merely returns the current string value.
-func (me TunitsEnumType) String () string { return xsdt.String(me).String() }
-
-//	Since TunitsEnumType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TunitsEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TunitsEnumType's alias type xsdt.String.
-func (me TunitsEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TunitsEnumType is "insetPixels".
-func (me TunitsEnumType) IsInsetPixels () bool { return me == "insetPixels" }
-
-//	Returns true if the value of this enumerated TunitsEnumType is "fraction".
-func (me TunitsEnumType) IsFraction () bool { return me == "fraction" }
-
-//	Returns true if the value of this enumerated TunitsEnumType is "pixels".
-func (me TunitsEnumType) IsPixels () bool { return me == "pixels" }
-
-type XsdGoPkgHasAttr_Xunits_TunitsEnumType_Fraction struct {
-	Xunits TunitsEnumType `xml:"http://www.opengis.net/kml/2.2 xunits,attr"`
-
-}
-
-//	Returns the default value for Xunits -- "fraction"
-func (me XsdGoPkgHasAttr_Xunits_TunitsEnumType_Fraction) XunitsDefault () TunitsEnumType { return TunitsEnumType("fraction") }
-
 type XsdGoPkgHasAttr_Y_XsdtDouble_10 struct {
 	Y xsdt.Double `xml:"http://www.opengis.net/kml/2.2 y,attr"`
 
@@ -575,6 +547,26 @@ type XsdGoPkgHasAttr_Y_XsdtDouble_10 struct {
 
 //	Returns the default value for Y -- 1.0
 func (me XsdGoPkgHasAttr_Y_XsdtDouble_10) YDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
+
+type TunitsEnumType xsdt.String
+
+//	Since TunitsEnumType is just a simple String type, this merely returns the current string value.
+func (me TunitsEnumType) String () string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TunitsEnumType's alias type xsdt.String.
+func (me TunitsEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TunitsEnumType is "fraction".
+func (me TunitsEnumType) IsFraction () bool { return me == "fraction" }
+
+//	Returns true if the value of this enumerated TunitsEnumType is "pixels".
+func (me TunitsEnumType) IsPixels () bool { return me == "pixels" }
+
+//	Returns true if the value of this enumerated TunitsEnumType is "insetPixels".
+func (me TunitsEnumType) IsInsetPixels () bool { return me == "insetPixels" }
+
+//	Since TunitsEnumType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TunitsEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 type XsdGoPkgHasAttr_Yunits_TunitsEnumType_Fraction struct {
 	Yunits TunitsEnumType `xml:"http://www.opengis.net/kml/2.2 yunits,attr"`
@@ -584,14 +576,22 @@ type XsdGoPkgHasAttr_Yunits_TunitsEnumType_Fraction struct {
 //	Returns the default value for Yunits -- "fraction"
 func (me XsdGoPkgHasAttr_Yunits_TunitsEnumType_Fraction) YunitsDefault () TunitsEnumType { return TunitsEnumType("fraction") }
 
-type Tvec2Type struct {
-	XsdGoPkgHasAttr_Y_XsdtDouble_10
+type XsdGoPkgHasAttr_Xunits_TunitsEnumType_Fraction struct {
+	Xunits TunitsEnumType `xml:"http://www.opengis.net/kml/2.2 xunits,attr"`
 
+}
+
+//	Returns the default value for Xunits -- "fraction"
+func (me XsdGoPkgHasAttr_Xunits_TunitsEnumType_Fraction) XunitsDefault () TunitsEnumType { return TunitsEnumType("fraction") }
+
+type Tvec2Type struct {
 	XsdGoPkgHasAttr_Yunits_TunitsEnumType_Fraction
+
+	XsdGoPkgHasAttr_Xunits_TunitsEnumType_Fraction
 
 	XsdGoPkgHasAttr_X_XsdtDouble_10
 
-	XsdGoPkgHasAttr_Xunits_TunitsEnumType_Fraction
+	XsdGoPkgHasAttr_Y_XsdtDouble_10
 
 }
 
@@ -607,11 +607,11 @@ type XsdGoPkgHasElem_HotSpot struct {
 
 type TstyleStateEnumType xsdt.String
 
-//	Since TstyleStateEnumType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TstyleStateEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
 //	Since TstyleStateEnumType is just a simple String type, this merely returns the current string value.
 func (me TstyleStateEnumType) String () string { return xsdt.String(me).String() }
+
+//	Since TstyleStateEnumType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TstyleStateEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 //	Returns true if the value of this enumerated TstyleStateEnumType is "highlight".
 func (me TstyleStateEnumType) IsHighlight () bool { return me == "highlight" }
@@ -622,14 +622,6 @@ func (me TstyleStateEnumType) IsNormal () bool { return me == "normal" }
 //	This convenience method just performs a simple type conversion to TstyleStateEnumType's alias type xsdt.String.
 func (me TstyleStateEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
-type XsdGoPkgHasElem_Key struct {
-	Key TstyleStateEnumType `xml:"http://www.opengis.net/kml/2.2 key"`
-
-}
-
-//	Returns the default value for Key -- "normal"
-func (me XsdGoPkgHasElem_Key) KeyDefault () TstyleStateEnumType { return TstyleStateEnumType("normal") }
-
 type XsdGoPkgHasElems_Key struct {
 	Keys []TstyleStateEnumType `xml:"http://www.opengis.net/kml/2.2 key"`
 
@@ -638,13 +630,13 @@ type XsdGoPkgHasElems_Key struct {
 //	Returns the default value for Key -- "normal"
 func (me XsdGoPkgHasElems_Key) KeyDefault () TstyleStateEnumType { return TstyleStateEnumType("normal") }
 
-type XsdGoPkgHasElems_Latitude struct {
-	Latitudes []Tangle90Type `xml:"http://www.opengis.net/kml/2.2 latitude"`
+type XsdGoPkgHasElem_Key struct {
+	Key TstyleStateEnumType `xml:"http://www.opengis.net/kml/2.2 key"`
 
 }
 
-//	Returns the default value for Latitude -- 0.0
-func (me XsdGoPkgHasElems_Latitude) LatitudeDefault () Tangle90Type { var x = new(Tangle90Type); x.SetFromString("0.0"); return *x }
+//	Returns the default value for Key -- "normal"
+func (me XsdGoPkgHasElem_Key) KeyDefault () TstyleStateEnumType { return TstyleStateEnumType("normal") }
 
 type XsdGoPkgHasElem_Latitude struct {
 	Latitude Tangle90Type `xml:"http://www.opengis.net/kml/2.2 latitude"`
@@ -654,13 +646,13 @@ type XsdGoPkgHasElem_Latitude struct {
 //	Returns the default value for Latitude -- 0.0
 func (me XsdGoPkgHasElem_Latitude) LatitudeDefault () Tangle90Type { var x = new(Tangle90Type); x.SetFromString("0.0"); return *x }
 
-type XsdGoPkgHasElem_LeftFov struct {
-	LeftFov Tangle180Type `xml:"http://www.opengis.net/kml/2.2 leftFov"`
+type XsdGoPkgHasElems_Latitude struct {
+	Latitudes []Tangle90Type `xml:"http://www.opengis.net/kml/2.2 latitude"`
 
 }
 
-//	Returns the default value for LeftFov -- 0.0
-func (me XsdGoPkgHasElem_LeftFov) LeftFovDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("0.0"); return *x }
+//	Returns the default value for Latitude -- 0.0
+func (me XsdGoPkgHasElems_Latitude) LatitudeDefault () Tangle90Type { var x = new(Tangle90Type); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElems_LeftFov struct {
 	LeftFovs []Tangle180Type `xml:"http://www.opengis.net/kml/2.2 leftFov"`
@@ -670,13 +662,21 @@ type XsdGoPkgHasElems_LeftFov struct {
 //	Returns the default value for LeftFov -- 0.0
 func (me XsdGoPkgHasElems_LeftFov) LeftFovDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("0.0"); return *x }
 
-type XsdGoPkgHasElems_LinkDescription struct {
-	LinkDescriptions []xsdt.String `xml:"http://www.opengis.net/kml/2.2 linkDescription"`
+type XsdGoPkgHasElem_LeftFov struct {
+	LeftFov Tangle180Type `xml:"http://www.opengis.net/kml/2.2 leftFov"`
 
 }
 
+//	Returns the default value for LeftFov -- 0.0
+func (me XsdGoPkgHasElem_LeftFov) LeftFovDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("0.0"); return *x }
+
 type XsdGoPkgHasElem_LinkDescription struct {
 	LinkDescription xsdt.String `xml:"http://www.opengis.net/kml/2.2 linkDescription"`
+
+}
+
+type XsdGoPkgHasElems_LinkDescription struct {
+	LinkDescriptions []xsdt.String `xml:"http://www.opengis.net/kml/2.2 linkDescription"`
 
 }
 
@@ -705,38 +705,38 @@ type TSnippetType struct {
 
 }
 
-type XsdGoPkgHasElem_LinkSnippet struct {
-	LinkSnippet *TSnippetType `xml:"http://www.opengis.net/kml/2.2 linkSnippet"`
-
-}
-
 type XsdGoPkgHasElems_LinkSnippet struct {
 	LinkSnippets []*TSnippetType `xml:"http://www.opengis.net/kml/2.2 linkSnippet"`
 
 }
 
+type XsdGoPkgHasElem_LinkSnippet struct {
+	LinkSnippet *TSnippetType `xml:"http://www.opengis.net/kml/2.2 linkSnippet"`
+
+}
+
 type TlistItemTypeEnumType xsdt.String
-
-//	This convenience method just performs a simple type conversion to TlistItemTypeEnumType's alias type xsdt.String.
-func (me TlistItemTypeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TlistItemTypeEnumType is "checkHideChildren".
-func (me TlistItemTypeEnumType) IsCheckHideChildren () bool { return me == "checkHideChildren" }
 
 //	Returns true if the value of this enumerated TlistItemTypeEnumType is "checkOffOnly".
 func (me TlistItemTypeEnumType) IsCheckOffOnly () bool { return me == "checkOffOnly" }
 
-//	Returns true if the value of this enumerated TlistItemTypeEnumType is "radioFolder".
-func (me TlistItemTypeEnumType) IsRadioFolder () bool { return me == "radioFolder" }
-
-//	Since TlistItemTypeEnumType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TlistItemTypeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+//	Returns true if the value of this enumerated TlistItemTypeEnumType is "checkHideChildren".
+func (me TlistItemTypeEnumType) IsCheckHideChildren () bool { return me == "checkHideChildren" }
 
 //	Returns true if the value of this enumerated TlistItemTypeEnumType is "check".
 func (me TlistItemTypeEnumType) IsCheck () bool { return me == "check" }
 
 //	Since TlistItemTypeEnumType is just a simple String type, this merely returns the current string value.
 func (me TlistItemTypeEnumType) String () string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TlistItemTypeEnumType's alias type xsdt.String.
+func (me TlistItemTypeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TlistItemTypeEnumType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TlistItemTypeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TlistItemTypeEnumType is "radioFolder".
+func (me TlistItemTypeEnumType) IsRadioFolder () bool { return me == "radioFolder" }
 
 type XsdGoPkgHasElems_ListItemType struct {
 	ListItemTypes []TlistItemTypeEnumType `xml:"http://www.opengis.net/kml/2.2 listItemType"`
@@ -754,14 +754,6 @@ type XsdGoPkgHasElem_ListItemType struct {
 //	Returns the default value for ListItemType -- "check"
 func (me XsdGoPkgHasElem_ListItemType) ListItemTypeDefault () TlistItemTypeEnumType { return TlistItemTypeEnumType("check") }
 
-type XsdGoPkgHasElems_Longitude struct {
-	Longitudes []Tangle180Type `xml:"http://www.opengis.net/kml/2.2 longitude"`
-
-}
-
-//	Returns the default value for Longitude -- 0.0
-func (me XsdGoPkgHasElems_Longitude) LongitudeDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("0.0"); return *x }
-
 type XsdGoPkgHasElem_Longitude struct {
 	Longitude Tangle180Type `xml:"http://www.opengis.net/kml/2.2 longitude"`
 
@@ -770,13 +762,13 @@ type XsdGoPkgHasElem_Longitude struct {
 //	Returns the default value for Longitude -- 0.0
 func (me XsdGoPkgHasElem_Longitude) LongitudeDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("0.0"); return *x }
 
-type XsdGoPkgHasElems_MaxSnippetLines struct {
-	MaxSnippetLineses []xsdt.Int `xml:"http://www.opengis.net/kml/2.2 maxSnippetLines"`
+type XsdGoPkgHasElems_Longitude struct {
+	Longitudes []Tangle180Type `xml:"http://www.opengis.net/kml/2.2 longitude"`
 
 }
 
-//	Returns the default value for MaxSnippetLines -- 2
-func (me XsdGoPkgHasElems_MaxSnippetLines) MaxSnippetLinesDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("2"); return *x }
+//	Returns the default value for Longitude -- 0.0
+func (me XsdGoPkgHasElems_Longitude) LongitudeDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElem_MaxSnippetLines struct {
 	MaxSnippetLines xsdt.Int `xml:"http://www.opengis.net/kml/2.2 maxSnippetLines"`
@@ -785,6 +777,14 @@ type XsdGoPkgHasElem_MaxSnippetLines struct {
 
 //	Returns the default value for MaxSnippetLines -- 2
 func (me XsdGoPkgHasElem_MaxSnippetLines) MaxSnippetLinesDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("2"); return *x }
+
+type XsdGoPkgHasElems_MaxSnippetLines struct {
+	MaxSnippetLineses []xsdt.Int `xml:"http://www.opengis.net/kml/2.2 maxSnippetLines"`
+
+}
+
+//	Returns the default value for MaxSnippetLines -- 2
+func (me XsdGoPkgHasElems_MaxSnippetLines) MaxSnippetLinesDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("2"); return *x }
 
 type XsdGoPkgHasElem_MaxSessionLength struct {
 	MaxSessionLength xsdt.Double `xml:"http://www.opengis.net/kml/2.2 maxSessionLength"`
@@ -812,14 +812,6 @@ type XsdGoPkgHasElem_Message struct {
 
 }
 
-type XsdGoPkgHasElems_MinAltitude struct {
-	MinAltitudes []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 minAltitude"`
-
-}
-
-//	Returns the default value for MinAltitude -- 0.0
-func (me XsdGoPkgHasElems_MinAltitude) MinAltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
-
 type XsdGoPkgHasElem_MinAltitude struct {
 	MinAltitude xsdt.Double `xml:"http://www.opengis.net/kml/2.2 minAltitude"`
 
@@ -827,6 +819,14 @@ type XsdGoPkgHasElem_MinAltitude struct {
 
 //	Returns the default value for MinAltitude -- 0.0
 func (me XsdGoPkgHasElem_MinAltitude) MinAltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
+
+type XsdGoPkgHasElems_MinAltitude struct {
+	MinAltitudes []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 minAltitude"`
+
+}
+
+//	Returns the default value for MinAltitude -- 0.0
+func (me XsdGoPkgHasElems_MinAltitude) MinAltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElems_MinFadeExtent struct {
 	MinFadeExtents []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 minFadeExtent"`
@@ -876,14 +876,6 @@ type XsdGoPkgHasElems_MinRefreshPeriod struct {
 //	Returns the default value for MinRefreshPeriod -- 0.0
 func (me XsdGoPkgHasElems_MinRefreshPeriod) MinRefreshPeriodDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
 
-type XsdGoPkgHasElems_MaxAltitude struct {
-	MaxAltitudes []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 maxAltitude"`
-
-}
-
-//	Returns the default value for MaxAltitude -- 0.0
-func (me XsdGoPkgHasElems_MaxAltitude) MaxAltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
-
 type XsdGoPkgHasElem_MaxAltitude struct {
 	MaxAltitude xsdt.Double `xml:"http://www.opengis.net/kml/2.2 maxAltitude"`
 
@@ -891,6 +883,14 @@ type XsdGoPkgHasElem_MaxAltitude struct {
 
 //	Returns the default value for MaxAltitude -- 0.0
 func (me XsdGoPkgHasElem_MaxAltitude) MaxAltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
+
+type XsdGoPkgHasElems_MaxAltitude struct {
+	MaxAltitudes []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 maxAltitude"`
+
+}
+
+//	Returns the default value for MaxAltitude -- 0.0
+func (me XsdGoPkgHasElems_MaxAltitude) MaxAltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElems_MaxFadeExtent struct {
 	MaxFadeExtents []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 maxFadeExtent"`
@@ -908,14 +908,6 @@ type XsdGoPkgHasElem_MaxFadeExtent struct {
 //	Returns the default value for MaxFadeExtent -- 0.0
 func (me XsdGoPkgHasElem_MaxFadeExtent) MaxFadeExtentDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
 
-type XsdGoPkgHasElems_MaxLodPixels struct {
-	MaxLodPixelses []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 maxLodPixels"`
-
-}
-
-//	Returns the default value for MaxLodPixels -- -1.0
-func (me XsdGoPkgHasElems_MaxLodPixels) MaxLodPixelsDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("-1.0"); return *x }
-
 type XsdGoPkgHasElem_MaxLodPixels struct {
 	MaxLodPixels xsdt.Double `xml:"http://www.opengis.net/kml/2.2 maxLodPixels"`
 
@@ -923,6 +915,14 @@ type XsdGoPkgHasElem_MaxLodPixels struct {
 
 //	Returns the default value for MaxLodPixels -- -1.0
 func (me XsdGoPkgHasElem_MaxLodPixels) MaxLodPixelsDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("-1.0"); return *x }
+
+type XsdGoPkgHasElems_MaxLodPixels struct {
+	MaxLodPixelses []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 maxLodPixels"`
+
+}
+
+//	Returns the default value for MaxLodPixels -- -1.0
+func (me XsdGoPkgHasElems_MaxLodPixels) MaxLodPixelsDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("-1.0"); return *x }
 
 type XsdGoPkgHasElems_MaxHeight struct {
 	MaxHeights []xsdt.Int `xml:"http://www.opengis.net/kml/2.2 maxHeight"`
@@ -940,14 +940,6 @@ type XsdGoPkgHasElem_MaxHeight struct {
 //	Returns the default value for MaxHeight -- 0
 func (me XsdGoPkgHasElem_MaxHeight) MaxHeightDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("0"); return *x }
 
-type XsdGoPkgHasElems_MaxWidth struct {
-	MaxWidths []xsdt.Int `xml:"http://www.opengis.net/kml/2.2 maxWidth"`
-
-}
-
-//	Returns the default value for MaxWidth -- 0
-func (me XsdGoPkgHasElems_MaxWidth) MaxWidthDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("0"); return *x }
-
 type XsdGoPkgHasElem_MaxWidth struct {
 	MaxWidth xsdt.Int `xml:"http://www.opengis.net/kml/2.2 maxWidth"`
 
@@ -955,6 +947,14 @@ type XsdGoPkgHasElem_MaxWidth struct {
 
 //	Returns the default value for MaxWidth -- 0
 func (me XsdGoPkgHasElem_MaxWidth) MaxWidthDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("0"); return *x }
+
+type XsdGoPkgHasElems_MaxWidth struct {
+	MaxWidths []xsdt.Int `xml:"http://www.opengis.net/kml/2.2 maxWidth"`
+
+}
+
+//	Returns the default value for MaxWidth -- 0
+func (me XsdGoPkgHasElems_MaxWidth) MaxWidthDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("0"); return *x }
 
 type XsdGoPkgHasElem_Name struct {
 	Name xsdt.String `xml:"http://www.opengis.net/kml/2.2 name"`
@@ -966,14 +966,6 @@ type XsdGoPkgHasElems_Name struct {
 
 }
 
-type XsdGoPkgHasElem_Near struct {
-	Near xsdt.Double `xml:"http://www.opengis.net/kml/2.2 near"`
-
-}
-
-//	Returns the default value for Near -- 0.0
-func (me XsdGoPkgHasElem_Near) NearDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
-
 type XsdGoPkgHasElems_Near struct {
 	Nears []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 near"`
 
@@ -981,6 +973,14 @@ type XsdGoPkgHasElems_Near struct {
 
 //	Returns the default value for Near -- 0.0
 func (me XsdGoPkgHasElems_Near) NearDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
+
+type XsdGoPkgHasElem_Near struct {
+	Near xsdt.Double `xml:"http://www.opengis.net/kml/2.2 near"`
+
+}
+
+//	Returns the default value for Near -- 0.0
+func (me XsdGoPkgHasElem_Near) NearDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElem_North struct {
 	North Tangle180Type `xml:"http://www.opengis.net/kml/2.2 north"`
@@ -1030,13 +1030,13 @@ type XsdGoPkgHasElems_Outline struct {
 //	Returns the default value for Outline -- 1
 func (me XsdGoPkgHasElems_Outline) OutlineDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("1"); return *x }
 
-type XsdGoPkgHasElems_OverlayXY struct {
-	OverlayXYs []*Tvec2Type `xml:"http://www.opengis.net/kml/2.2 overlayXY"`
+type XsdGoPkgHasElem_OverlayXY struct {
+	OverlayXY *Tvec2Type `xml:"http://www.opengis.net/kml/2.2 overlayXY"`
 
 }
 
-type XsdGoPkgHasElem_OverlayXY struct {
-	OverlayXY *Tvec2Type `xml:"http://www.opengis.net/kml/2.2 overlayXY"`
+type XsdGoPkgHasElems_OverlayXY struct {
+	OverlayXYs []*Tvec2Type `xml:"http://www.opengis.net/kml/2.2 overlayXY"`
 
 }
 
@@ -1068,23 +1068,23 @@ func (me XsdGoPkgHasElems_Range) RangeDefault () xsdt.Double { var x = new(xsdt.
 
 type TrefreshModeEnumType xsdt.String
 
-//	Since TrefreshModeEnumType is just a simple String type, this merely returns the current string value.
-func (me TrefreshModeEnumType) String () string { return xsdt.String(me).String() }
-
 //	This convenience method just performs a simple type conversion to TrefreshModeEnumType's alias type xsdt.String.
 func (me TrefreshModeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
-//	Returns true if the value of this enumerated TrefreshModeEnumType is "onExpire".
-func (me TrefreshModeEnumType) IsOnExpire () bool { return me == "onExpire" }
-
 //	Since TrefreshModeEnumType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TrefreshModeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TrefreshModeEnumType is "onExpire".
+func (me TrefreshModeEnumType) IsOnExpire () bool { return me == "onExpire" }
 
 //	Returns true if the value of this enumerated TrefreshModeEnumType is "onChange".
 func (me TrefreshModeEnumType) IsOnChange () bool { return me == "onChange" }
 
 //	Returns true if the value of this enumerated TrefreshModeEnumType is "onInterval".
 func (me TrefreshModeEnumType) IsOnInterval () bool { return me == "onInterval" }
+
+//	Since TrefreshModeEnumType is just a simple String type, this merely returns the current string value.
+func (me TrefreshModeEnumType) String () string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasElems_RefreshMode struct {
 	RefreshModes []TrefreshModeEnumType `xml:"http://www.opengis.net/kml/2.2 refreshMode"`
@@ -1102,14 +1102,6 @@ type XsdGoPkgHasElem_RefreshMode struct {
 //	Returns the default value for RefreshMode -- "onChange"
 func (me XsdGoPkgHasElem_RefreshMode) RefreshModeDefault () TrefreshModeEnumType { return TrefreshModeEnumType("onChange") }
 
-type XsdGoPkgHasElems_RefreshInterval struct {
-	RefreshIntervals []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 refreshInterval"`
-
-}
-
-//	Returns the default value for RefreshInterval -- 4.0
-func (me XsdGoPkgHasElems_RefreshInterval) RefreshIntervalDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("4.0"); return *x }
-
 type XsdGoPkgHasElem_RefreshInterval struct {
 	RefreshInterval xsdt.Double `xml:"http://www.opengis.net/kml/2.2 refreshInterval"`
 
@@ -1117,6 +1109,14 @@ type XsdGoPkgHasElem_RefreshInterval struct {
 
 //	Returns the default value for RefreshInterval -- 4.0
 func (me XsdGoPkgHasElem_RefreshInterval) RefreshIntervalDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("4.0"); return *x }
+
+type XsdGoPkgHasElems_RefreshInterval struct {
+	RefreshIntervals []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 refreshInterval"`
+
+}
+
+//	Returns the default value for RefreshInterval -- 4.0
+func (me XsdGoPkgHasElems_RefreshInterval) RefreshIntervalDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("4.0"); return *x }
 
 type XsdGoPkgHasElems_RefreshVisibility struct {
 	RefreshVisibilities []xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 refreshVisibility"`
@@ -1134,14 +1134,6 @@ type XsdGoPkgHasElem_RefreshVisibility struct {
 //	Returns the default value for RefreshVisibility -- 0
 func (me XsdGoPkgHasElem_RefreshVisibility) RefreshVisibilityDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
 
-type XsdGoPkgHasElems_RightFov struct {
-	RightFovs []Tangle180Type `xml:"http://www.opengis.net/kml/2.2 rightFov"`
-
-}
-
-//	Returns the default value for RightFov -- 0.0
-func (me XsdGoPkgHasElems_RightFov) RightFovDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("0.0"); return *x }
-
 type XsdGoPkgHasElem_RightFov struct {
 	RightFov Tangle180Type `xml:"http://www.opengis.net/kml/2.2 rightFov"`
 
@@ -1149,6 +1141,14 @@ type XsdGoPkgHasElem_RightFov struct {
 
 //	Returns the default value for RightFov -- 0.0
 func (me XsdGoPkgHasElem_RightFov) RightFovDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("0.0"); return *x }
+
+type XsdGoPkgHasElems_RightFov struct {
+	RightFovs []Tangle180Type `xml:"http://www.opengis.net/kml/2.2 rightFov"`
+
+}
+
+//	Returns the default value for RightFov -- 0.0
+func (me XsdGoPkgHasElems_RightFov) RightFovDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElems_Roll struct {
 	Rolls []Tangle180Type `xml:"http://www.opengis.net/kml/2.2 roll"`
@@ -1182,13 +1182,13 @@ type XsdGoPkgHasElem_Rotation struct {
 //	Returns the default value for Rotation -- 0.0
 func (me XsdGoPkgHasElem_Rotation) RotationDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("0.0"); return *x }
 
-type XsdGoPkgHasElem_RotationXY struct {
-	RotationXY *Tvec2Type `xml:"http://www.opengis.net/kml/2.2 rotationXY"`
+type XsdGoPkgHasElems_RotationXY struct {
+	RotationXYs []*Tvec2Type `xml:"http://www.opengis.net/kml/2.2 rotationXY"`
 
 }
 
-type XsdGoPkgHasElems_RotationXY struct {
-	RotationXYs []*Tvec2Type `xml:"http://www.opengis.net/kml/2.2 rotationXY"`
+type XsdGoPkgHasElem_RotationXY struct {
+	RotationXY *Tvec2Type `xml:"http://www.opengis.net/kml/2.2 rotationXY"`
 
 }
 
@@ -1223,6 +1223,9 @@ type TshapeEnumType xsdt.String
 //	Returns true if the value of this enumerated TshapeEnumType is "cylinder".
 func (me TshapeEnumType) IsCylinder () bool { return me == "cylinder" }
 
+//	Since TshapeEnumType is just a simple String type, this merely returns the current string value.
+func (me TshapeEnumType) String () string { return xsdt.String(me).String() }
+
 //	Returns true if the value of this enumerated TshapeEnumType is "sphere".
 func (me TshapeEnumType) IsSphere () bool { return me == "sphere" }
 
@@ -1235,8 +1238,13 @@ func (me TshapeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 //	Since TshapeEnumType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TshapeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
-//	Since TshapeEnumType is just a simple String type, this merely returns the current string value.
-func (me TshapeEnumType) String () string { return xsdt.String(me).String() }
+type XsdGoPkgHasElems_Shape struct {
+	Shapes []TshapeEnumType `xml:"http://www.opengis.net/kml/2.2 shape"`
+
+}
+
+//	Returns the default value for Shape -- "rectangle"
+func (me XsdGoPkgHasElems_Shape) ShapeDefault () TshapeEnumType { return TshapeEnumType("rectangle") }
 
 type XsdGoPkgHasElem_Shape struct {
 	Shape TshapeEnumType `xml:"http://www.opengis.net/kml/2.2 shape"`
@@ -1246,31 +1254,15 @@ type XsdGoPkgHasElem_Shape struct {
 //	Returns the default value for Shape -- "rectangle"
 func (me XsdGoPkgHasElem_Shape) ShapeDefault () TshapeEnumType { return TshapeEnumType("rectangle") }
 
-type XsdGoPkgHasElems_Shape struct {
-	Shapes []TshapeEnumType `xml:"http://www.opengis.net/kml/2.2 shape"`
-
-}
-
-//	Returns the default value for Shape -- "rectangle"
-func (me XsdGoPkgHasElems_Shape) ShapeDefault () TshapeEnumType { return TshapeEnumType("rectangle") }
-
-type XsdGoPkgHasElem_Size struct {
-	Size *Tvec2Type `xml:"http://www.opengis.net/kml/2.2 size"`
-
-}
-
 type XsdGoPkgHasElems_Size struct {
 	Sizes []*Tvec2Type `xml:"http://www.opengis.net/kml/2.2 size"`
 
 }
 
-type XsdGoPkgHasElem_South struct {
-	South Tangle180Type `xml:"http://www.opengis.net/kml/2.2 south"`
+type XsdGoPkgHasElem_Size struct {
+	Size *Tvec2Type `xml:"http://www.opengis.net/kml/2.2 size"`
 
 }
-
-//	Returns the default value for South -- -180.0
-func (me XsdGoPkgHasElem_South) SouthDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("-180.0"); return *x }
 
 type XsdGoPkgHasElems_South struct {
 	Souths []Tangle180Type `xml:"http://www.opengis.net/kml/2.2 south"`
@@ -1279,6 +1271,14 @@ type XsdGoPkgHasElems_South struct {
 
 //	Returns the default value for South -- -180.0
 func (me XsdGoPkgHasElems_South) SouthDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("-180.0"); return *x }
+
+type XsdGoPkgHasElem_South struct {
+	South Tangle180Type `xml:"http://www.opengis.net/kml/2.2 south"`
+
+}
+
+//	Returns the default value for South -- -180.0
+func (me XsdGoPkgHasElem_South) SouthDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("-180.0"); return *x }
 
 type XsdGoPkgHasElem_SourceHref struct {
 	SourceHref xsdt.AnyURI `xml:"http://www.opengis.net/kml/2.2 sourceHref"`
@@ -1302,34 +1302,40 @@ type XsdGoPkgHasElems_Snippet struct {
 
 type TitemIconStateEnumType xsdt.String
 
-//	Returns true if the value of this enumerated TitemIconStateEnumType is "fetching2".
-func (me TitemIconStateEnumType) IsFetching2 () bool { return me == "fetching2" }
-
-//	Since TitemIconStateEnumType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TitemIconStateEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TitemIconStateEnumType is "error".
-func (me TitemIconStateEnumType) IsError () bool { return me == "error" }
-
-//	Returns true if the value of this enumerated TitemIconStateEnumType is "open".
-func (me TitemIconStateEnumType) IsOpen () bool { return me == "open" }
-
-//	Returns true if the value of this enumerated TitemIconStateEnumType is "closed".
-func (me TitemIconStateEnumType) IsClosed () bool { return me == "closed" }
-
-//	Since TitemIconStateEnumType is just a simple String type, this merely returns the current string value.
-func (me TitemIconStateEnumType) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TitemIconStateEnumType's alias type xsdt.String.
-func (me TitemIconStateEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	Returns true if the value of this enumerated TitemIconStateEnumType is "fetching0".
+func (me TitemIconStateEnumType) IsFetching0 () bool { return me == "fetching0" }
 
 //	Returns true if the value of this enumerated TitemIconStateEnumType is "fetching1".
 func (me TitemIconStateEnumType) IsFetching1 () bool { return me == "fetching1" }
 
-//	Returns true if the value of this enumerated TitemIconStateEnumType is "fetching0".
-func (me TitemIconStateEnumType) IsFetching0 () bool { return me == "fetching0" }
+//	Returns true if the value of this enumerated TitemIconStateEnumType is "fetching2".
+func (me TitemIconStateEnumType) IsFetching2 () bool { return me == "fetching2" }
+
+//	Returns true if the value of this enumerated TitemIconStateEnumType is "open".
+func (me TitemIconStateEnumType) IsOpen () bool { return me == "open" }
+
+//	Since TitemIconStateEnumType is just a simple String type, this merely returns the current string value.
+func (me TitemIconStateEnumType) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TitemIconStateEnumType is "error".
+func (me TitemIconStateEnumType) IsError () bool { return me == "error" }
+
+//	Returns true if the value of this enumerated TitemIconStateEnumType is "closed".
+func (me TitemIconStateEnumType) IsClosed () bool { return me == "closed" }
+
+//	Since TitemIconStateEnumType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TitemIconStateEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TitemIconStateEnumType's alias type xsdt.String.
+func (me TitemIconStateEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 type TitemIconStateType xsdt.String
+
+//	Since TitemIconStateType is just a simple String type, this merely returns the current string value.
+func (me TitemIconStateType) String () string { return xsdt.String(me).String() }
+
+//	TitemIconStateType defines a String containing a whitespace-separated list of TitemIconStateEnumType values. This Values() method creates and returns a slice of all elements in that list.
+func (me TitemIconStateType) Values () (list []TitemIconStateEnumType) { var svals = xsdt.ListValues(string(me)); list = make([]TitemIconStateEnumType, len(svals)); for i, s := range svals { list[i] = TitemIconStateEnumType(s) }; return }
 
 //	This convenience method just performs a simple type conversion to TitemIconStateType's alias type xsdt.String.
 func (me TitemIconStateType) ToXsdtString () xsdt.String { return xsdt.String(me) }
@@ -1337,29 +1343,23 @@ func (me TitemIconStateType) ToXsdtString () xsdt.String { return xsdt.String(me
 //	Since TitemIconStateType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TitemIconStateType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
-//	TitemIconStateType defines a String containing a whitespace-separated list of TitemIconStateEnumType values. This Values() method creates and returns a slice of all elements in that list.
-func (me TitemIconStateType) Values () (list []TitemIconStateEnumType) { var svals = xsdt.ListValues(string(me)); list = make([]TitemIconStateEnumType, len(svals)); for i, s := range svals { list[i] = TitemIconStateEnumType(s) }; return }
+type XsdGoPkgHasElem_State struct {
+	State TitemIconStateType `xml:"http://www.opengis.net/kml/2.2 state"`
 
-//	Since TitemIconStateType is just a simple String type, this merely returns the current string value.
-func (me TitemIconStateType) String () string { return xsdt.String(me).String() }
+}
 
 type XsdGoPkgHasElems_State struct {
 	States []TitemIconStateType `xml:"http://www.opengis.net/kml/2.2 state"`
 
 }
 
-type XsdGoPkgHasElem_State struct {
-	State TitemIconStateType `xml:"http://www.opengis.net/kml/2.2 state"`
+type XsdGoPkgHasElem_StyleUrl struct {
+	StyleUrl xsdt.AnyURI `xml:"http://www.opengis.net/kml/2.2 styleUrl"`
 
 }
 
 type XsdGoPkgHasElems_StyleUrl struct {
 	StyleUrls []xsdt.AnyURI `xml:"http://www.opengis.net/kml/2.2 styleUrl"`
-
-}
-
-type XsdGoPkgHasElem_StyleUrl struct {
-	StyleUrl xsdt.AnyURI `xml:"http://www.opengis.net/kml/2.2 styleUrl"`
 
 }
 
@@ -1389,13 +1389,13 @@ type XsdGoPkgHasElems_Tessellate struct {
 //	Returns the default value for Tessellate -- 0
 func (me XsdGoPkgHasElems_Tessellate) TessellateDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
 
-type XsdGoPkgHasElem_Text struct {
-	Text xsdt.String `xml:"http://www.opengis.net/kml/2.2 text"`
+type XsdGoPkgHasElems_Text struct {
+	Texts []xsdt.String `xml:"http://www.opengis.net/kml/2.2 text"`
 
 }
 
-type XsdGoPkgHasElems_Text struct {
-	Texts []xsdt.String `xml:"http://www.opengis.net/kml/2.2 text"`
+type XsdGoPkgHasElem_Text struct {
+	Text xsdt.String `xml:"http://www.opengis.net/kml/2.2 text"`
 
 }
 
@@ -1433,22 +1433,14 @@ func (me XsdGoPkgHasElem_TileSize) TileSizeDefault () xsdt.Int { var x = new(xsd
 
 type Tanglepos180Type xsdt.Double
 
-//	This convenience method just performs a simple type conversion to Tanglepos180Type's alias type xsdt.Double.
-func (me Tanglepos180Type) ToXsdtDouble () xsdt.Double { return xsdt.Double(me) }
-
 //	Returns a string representation of this Tanglepos180Type's current non-string scalar value.
 func (me Tanglepos180Type) String () string { return xsdt.Double(me).String() }
 
+//	This convenience method just performs a simple type conversion to Tanglepos180Type's alias type xsdt.Double.
+func (me Tanglepos180Type) ToXsdtDouble () xsdt.Double { return xsdt.Double(me) }
+
 //	Since Tanglepos180Type is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
 func (me *Tanglepos180Type) SetFromString (s string)  { (*xsdt.Double)(me).SetFromString(s) }
-
-type XsdGoPkgHasElem_Tilt struct {
-	Tilt Tanglepos180Type `xml:"http://www.opengis.net/kml/2.2 tilt"`
-
-}
-
-//	Returns the default value for Tilt -- 0.0
-func (me XsdGoPkgHasElem_Tilt) TiltDefault () Tanglepos180Type { var x = new(Tanglepos180Type); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElems_Tilt struct {
 	Tilts []Tanglepos180Type `xml:"http://www.opengis.net/kml/2.2 tilt"`
@@ -1458,13 +1450,13 @@ type XsdGoPkgHasElems_Tilt struct {
 //	Returns the default value for Tilt -- 0.0
 func (me XsdGoPkgHasElems_Tilt) TiltDefault () Tanglepos180Type { var x = new(Tanglepos180Type); x.SetFromString("0.0"); return *x }
 
-type XsdGoPkgHasElem_TopFov struct {
-	TopFov Tangle90Type `xml:"http://www.opengis.net/kml/2.2 topFov"`
+type XsdGoPkgHasElem_Tilt struct {
+	Tilt Tanglepos180Type `xml:"http://www.opengis.net/kml/2.2 tilt"`
 
 }
 
-//	Returns the default value for TopFov -- 0.0
-func (me XsdGoPkgHasElem_TopFov) TopFovDefault () Tangle90Type { var x = new(Tangle90Type); x.SetFromString("0.0"); return *x }
+//	Returns the default value for Tilt -- 0.0
+func (me XsdGoPkgHasElem_Tilt) TiltDefault () Tanglepos180Type { var x = new(Tanglepos180Type); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElems_TopFov struct {
 	TopFovs []Tangle90Type `xml:"http://www.opengis.net/kml/2.2 topFov"`
@@ -1473,6 +1465,14 @@ type XsdGoPkgHasElems_TopFov struct {
 
 //	Returns the default value for TopFov -- 0.0
 func (me XsdGoPkgHasElems_TopFov) TopFovDefault () Tangle90Type { var x = new(Tangle90Type); x.SetFromString("0.0"); return *x }
+
+type XsdGoPkgHasElem_TopFov struct {
+	TopFov Tangle90Type `xml:"http://www.opengis.net/kml/2.2 topFov"`
+
+}
+
+//	Returns the default value for TopFov -- 0.0
+func (me XsdGoPkgHasElem_TopFov) TopFovDefault () Tangle90Type { var x = new(Tangle90Type); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElems_Value struct {
 	Values []xsdt.String `xml:"http://www.opengis.net/kml/2.2 value"`
@@ -1484,14 +1484,6 @@ type XsdGoPkgHasElem_Value struct {
 
 }
 
-type XsdGoPkgHasElems_ViewBoundScale struct {
-	ViewBoundScales []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 viewBoundScale"`
-
-}
-
-//	Returns the default value for ViewBoundScale -- 1.0
-func (me XsdGoPkgHasElems_ViewBoundScale) ViewBoundScaleDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
-
 type XsdGoPkgHasElem_ViewBoundScale struct {
 	ViewBoundScale xsdt.Double `xml:"http://www.opengis.net/kml/2.2 viewBoundScale"`
 
@@ -1500,32 +1492,34 @@ type XsdGoPkgHasElem_ViewBoundScale struct {
 //	Returns the default value for ViewBoundScale -- 1.0
 func (me XsdGoPkgHasElem_ViewBoundScale) ViewBoundScaleDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
 
-type XsdGoPkgHasElems_ViewFormat struct {
-	ViewFormats []xsdt.String `xml:"http://www.opengis.net/kml/2.2 viewFormat"`
+type XsdGoPkgHasElems_ViewBoundScale struct {
+	ViewBoundScales []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 viewBoundScale"`
 
 }
+
+//	Returns the default value for ViewBoundScale -- 1.0
+func (me XsdGoPkgHasElems_ViewBoundScale) ViewBoundScaleDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
 
 type XsdGoPkgHasElem_ViewFormat struct {
 	ViewFormat xsdt.String `xml:"http://www.opengis.net/kml/2.2 viewFormat"`
 
 }
 
+type XsdGoPkgHasElems_ViewFormat struct {
+	ViewFormats []xsdt.String `xml:"http://www.opengis.net/kml/2.2 viewFormat"`
+
+}
+
 type TviewRefreshModeEnumType xsdt.String
-
-//	Returns true if the value of this enumerated TviewRefreshModeEnumType is "onRegion".
-func (me TviewRefreshModeEnumType) IsOnRegion () bool { return me == "onRegion" }
-
-//	This convenience method just performs a simple type conversion to TviewRefreshModeEnumType's alias type xsdt.String.
-func (me TviewRefreshModeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 //	Since TviewRefreshModeEnumType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TviewRefreshModeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
-//	Returns true if the value of this enumerated TviewRefreshModeEnumType is "onStop".
-func (me TviewRefreshModeEnumType) IsOnStop () bool { return me == "onStop" }
-
 //	Since TviewRefreshModeEnumType is just a simple String type, this merely returns the current string value.
 func (me TviewRefreshModeEnumType) String () string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TviewRefreshModeEnumType's alias type xsdt.String.
+func (me TviewRefreshModeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 //	Returns true if the value of this enumerated TviewRefreshModeEnumType is "onRequest".
 func (me TviewRefreshModeEnumType) IsOnRequest () bool { return me == "onRequest" }
@@ -1533,13 +1527,11 @@ func (me TviewRefreshModeEnumType) IsOnRequest () bool { return me == "onRequest
 //	Returns true if the value of this enumerated TviewRefreshModeEnumType is "never".
 func (me TviewRefreshModeEnumType) IsNever () bool { return me == "never" }
 
-type XsdGoPkgHasElems_ViewRefreshMode struct {
-	ViewRefreshModes []TviewRefreshModeEnumType `xml:"http://www.opengis.net/kml/2.2 viewRefreshMode"`
+//	Returns true if the value of this enumerated TviewRefreshModeEnumType is "onRegion".
+func (me TviewRefreshModeEnumType) IsOnRegion () bool { return me == "onRegion" }
 
-}
-
-//	Returns the default value for ViewRefreshMode -- "never"
-func (me XsdGoPkgHasElems_ViewRefreshMode) ViewRefreshModeDefault () TviewRefreshModeEnumType { return TviewRefreshModeEnumType("never") }
+//	Returns true if the value of this enumerated TviewRefreshModeEnumType is "onStop".
+func (me TviewRefreshModeEnumType) IsOnStop () bool { return me == "onStop" }
 
 type XsdGoPkgHasElem_ViewRefreshMode struct {
 	ViewRefreshMode TviewRefreshModeEnumType `xml:"http://www.opengis.net/kml/2.2 viewRefreshMode"`
@@ -1549,13 +1541,13 @@ type XsdGoPkgHasElem_ViewRefreshMode struct {
 //	Returns the default value for ViewRefreshMode -- "never"
 func (me XsdGoPkgHasElem_ViewRefreshMode) ViewRefreshModeDefault () TviewRefreshModeEnumType { return TviewRefreshModeEnumType("never") }
 
-type XsdGoPkgHasElems_ViewRefreshTime struct {
-	ViewRefreshTimes []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 viewRefreshTime"`
+type XsdGoPkgHasElems_ViewRefreshMode struct {
+	ViewRefreshModes []TviewRefreshModeEnumType `xml:"http://www.opengis.net/kml/2.2 viewRefreshMode"`
 
 }
 
-//	Returns the default value for ViewRefreshTime -- 4.0
-func (me XsdGoPkgHasElems_ViewRefreshTime) ViewRefreshTimeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("4.0"); return *x }
+//	Returns the default value for ViewRefreshMode -- "never"
+func (me XsdGoPkgHasElems_ViewRefreshMode) ViewRefreshModeDefault () TviewRefreshModeEnumType { return TviewRefreshModeEnumType("never") }
 
 type XsdGoPkgHasElem_ViewRefreshTime struct {
 	ViewRefreshTime xsdt.Double `xml:"http://www.opengis.net/kml/2.2 viewRefreshTime"`
@@ -1564,6 +1556,14 @@ type XsdGoPkgHasElem_ViewRefreshTime struct {
 
 //	Returns the default value for ViewRefreshTime -- 4.0
 func (me XsdGoPkgHasElem_ViewRefreshTime) ViewRefreshTimeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("4.0"); return *x }
+
+type XsdGoPkgHasElems_ViewRefreshTime struct {
+	ViewRefreshTimes []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 viewRefreshTime"`
+
+}
+
+//	Returns the default value for ViewRefreshTime -- 4.0
+func (me XsdGoPkgHasElems_ViewRefreshTime) ViewRefreshTimeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("4.0"); return *x }
 
 type XsdGoPkgHasElem_Visibility struct {
 	Visibility xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 visibility"`
@@ -1607,14 +1607,6 @@ type XsdGoPkgHasElems_When struct {
 
 }
 
-type XsdGoPkgHasElem_Width struct {
-	Width xsdt.Double `xml:"http://www.opengis.net/kml/2.2 width"`
-
-}
-
-//	Returns the default value for Width -- 1.0
-func (me XsdGoPkgHasElem_Width) WidthDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
-
 type XsdGoPkgHasElems_Width struct {
 	Widths []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 width"`
 
@@ -1622,6 +1614,14 @@ type XsdGoPkgHasElems_Width struct {
 
 //	Returns the default value for Width -- 1.0
 func (me XsdGoPkgHasElems_Width) WidthDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
+
+type XsdGoPkgHasElem_Width struct {
+	Width xsdt.Double `xml:"http://www.opengis.net/kml/2.2 width"`
+
+}
+
+//	Returns the default value for Width -- 1.0
+func (me XsdGoPkgHasElem_Width) WidthDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
 
 type XsdGoPkgHasElem_X struct {
 	X xsdt.Double `xml:"http://www.opengis.net/kml/2.2 x"`
@@ -1655,14 +1655,6 @@ type XsdGoPkgHasElem_Y struct {
 //	Returns the default value for Y -- 1.0
 func (me XsdGoPkgHasElem_Y) YDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
 
-type XsdGoPkgHasElem_Z struct {
-	Z xsdt.Double `xml:"http://www.opengis.net/kml/2.2 z"`
-
-}
-
-//	Returns the default value for Z -- 1.0
-func (me XsdGoPkgHasElem_Z) ZDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
-
 type XsdGoPkgHasElems_Z struct {
 	Zs []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 z"`
 
@@ -1671,18 +1663,26 @@ type XsdGoPkgHasElems_Z struct {
 //	Returns the default value for Z -- 1.0
 func (me XsdGoPkgHasElems_Z) ZDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
 
-type XsdGoPkgHasElem_BoundaryObjectExtensionGroup struct {
-	BoundaryObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 BoundaryObjectExtensionGroup"`
+type XsdGoPkgHasElem_Z struct {
+	Z xsdt.Double `xml:"http://www.opengis.net/kml/2.2 z"`
 
 }
 
-type XsdGoPkgHasElem_DocumentObjectExtensionGroup struct {
-	DocumentObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 DocumentObjectExtensionGroup"`
+//	Returns the default value for Z -- 1.0
+func (me XsdGoPkgHasElem_Z) ZDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
+
+type XsdGoPkgHasElems_AbstractViewObjectExtensionGroup struct {
+	AbstractViewObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractViewObjectExtensionGroup"`
 
 }
 
-type XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup struct {
-	LatLonBoxSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LatLonBoxSimpleExtensionGroup"`
+type XsdGoPkgHasElems_TimeSpanObjectExtensionGroup struct {
+	TimeSpanObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 TimeSpanObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_LookAtObjectExtensionGroup struct {
+	LookAtObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LookAtObjectExtensionGroup"`
 
 }
 
@@ -1691,8 +1691,8 @@ type XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup struct {
 
 }
 
-type XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup struct {
-	AbstractLatLonBoxObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractLatLonBoxObjectExtensionGroup"`
+type XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup struct {
+	LatLonAltBoxSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LatLonAltBoxSimpleExtensionGroup"`
 
 }
 
@@ -1702,9 +1702,14 @@ type XsdGoPkgHasElems_ObjectSimpleExtensionGroup struct {
 }
 
 type TAbstractObjectType struct {
+	XsdGoPkgHasAtts_IdAttributes
+
 	XsdGoPkgHasElems_ObjectSimpleExtensionGroup
 
-	XsdGoPkgHasAtts_IdAttributes
+}
+
+type XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup struct {
+	AbstractLatLonBoxObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractLatLonBoxObjectExtensionGroup"`
 
 }
 
@@ -1714,213 +1719,187 @@ type XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup struct {
 }
 
 type TAbstractLatLonBoxType struct {
-	XsdGoPkgHasElem_South
+	XsdGoPkgHasElem_North
 
-	XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup
+	XsdGoPkgHasElem_South
 
 	XsdGoPkgHasElem_West
 
-	XsdGoPkgHasElem_North
-
 	TAbstractObjectType
 
-	XsdGoPkgHasElem_East
+	XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup
 
 	XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup
 
+	XsdGoPkgHasElem_East
+
 }
 
-type TLatLonBoxType struct {
+type XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup struct {
+	LatLonAltBoxObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LatLonAltBoxObjectExtensionGroup"`
+
+}
+
+type TLatLonAltBoxType struct {
+	XsdGoPkgHasElem_AltitudeModeGroup
+
 	TAbstractLatLonBoxType
 
-	XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup
+	XsdGoPkgHasElem_MaxAltitude
 
-	XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup
+	XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup
 
-	XsdGoPkgHasElem_Rotation
+	XsdGoPkgHasElem_MinAltitude
 
-}
-
-type XsdGoPkgHasElem_LatLonBox struct {
-	LatLonBox *TLatLonBoxType `xml:"http://www.opengis.net/kml/2.2 LatLonBox"`
+	XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup
 
 }
 
-type XsdGoPkgHasElem_ItemIconObjectExtensionGroup struct {
-	ItemIconObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ItemIconObjectExtensionGroup"`
+type XsdGoPkgHasElems_LatLonAltBox struct {
+	LatLonAltBoxs []*TLatLonAltBoxType `xml:"http://www.opengis.net/kml/2.2 LatLonAltBox"`
 
 }
 
-type XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup struct {
-	MultiGeometryObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 MultiGeometryObjectExtensionGroup"`
+type XsdGoPkgHasElems_IconStyleObjectExtensionGroup struct {
+	IconStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 IconStyleObjectExtensionGroup"`
 
 }
 
-type XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup struct {
-	AbstractOverlayObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractOverlayObjectExtensionGroup"`
+type XsdGoPkgHasElems_StyleObjectExtensionGroup struct {
+	StyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 StyleObjectExtensionGroup"`
 
 }
 
-type XsdGoPkgHasElems_AbstractViewObjectExtensionGroup struct {
-	AbstractViewObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractViewObjectExtensionGroup"`
+type XsdGoPkgHasElems_StyleSimpleExtensionGroup struct {
+	StyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 StyleSimpleExtensionGroup"`
 
 }
 
-type XsdGoPkgHasElems_AbstractViewSimpleExtensionGroup struct {
-	AbstractViewSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractViewSimpleExtensionGroup"`
+type XsdGoPkgHasElems_ListStyleSimpleExtensionGroup struct {
+	ListStyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ListStyleSimpleExtensionGroup"`
 
 }
 
-type TAbstractViewType struct {
-	XsdGoPkgHasElems_AbstractViewSimpleExtensionGroup
+type XsdGoPkgHasElems_ItemIconObjectExtensionGroup struct {
+	ItemIconObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ItemIconObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_ItemIconSimpleExtensionGroup struct {
+	ItemIconSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ItemIconSimpleExtensionGroup"`
+
+}
+
+type TItemIconType struct {
+	XsdGoPkgHasElem_Href
+
+	XsdGoPkgHasElem_State
+
+	XsdGoPkgHasElems_ItemIconObjectExtensionGroup
 
 	TAbstractObjectType
 
-	XsdGoPkgHasElems_AbstractViewObjectExtensionGroup
+	XsdGoPkgHasElems_ItemIconSimpleExtensionGroup
 
 }
 
-type XsdGoPkgHasElems_CameraSimpleExtensionGroup struct {
-	CameraSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 CameraSimpleExtensionGroup"`
+type XsdGoPkgHasElems_ItemIcon struct {
+	ItemIcons []*TItemIconType `xml:"http://www.opengis.net/kml/2.2 ItemIcon"`
 
 }
 
-type XsdGoPkgHasElems_CameraObjectExtensionGroup struct {
-	CameraObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 CameraObjectExtensionGroup"`
+type XsdGoPkgHasElems_ListStyleObjectExtensionGroup struct {
+	ListStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ListStyleObjectExtensionGroup"`
 
 }
 
-type TCameraType struct {
-	XsdGoPkgHasElem_Longitude
-
-	XsdGoPkgHasElem_Heading
-
-	XsdGoPkgHasElems_CameraObjectExtensionGroup
-
-	XsdGoPkgHasElem_Altitude
-
-	TAbstractViewType
-
-	XsdGoPkgHasElem_Roll
-
-	XsdGoPkgHasElem_AltitudeModeGroup
-
-	XsdGoPkgHasElem_Latitude
-
-	XsdGoPkgHasElems_CameraSimpleExtensionGroup
-
-	XsdGoPkgHasElem_Tilt
+type XsdGoPkgHasElems_AbstractSubStyleSimpleExtensionGroup struct {
+	AbstractSubStyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractSubStyleSimpleExtensionGroup"`
 
 }
 
-type XsdGoPkgHasElem_Camera struct {
-	Camera *TCameraType `xml:"http://www.opengis.net/kml/2.2 Camera"`
+type XsdGoPkgHasElems_AbstractSubStyleObjectExtensionGroup struct {
+	AbstractSubStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractSubStyleObjectExtensionGroup"`
 
 }
 
-type XsdGoPkgHasElems_LookAtObjectExtensionGroup struct {
-	LookAtObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LookAtObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_LookAtSimpleExtensionGroup struct {
-	LookAtSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LookAtSimpleExtensionGroup"`
-
-}
-
-type TLookAtType struct {
-	XsdGoPkgHasElem_Longitude
-
-	XsdGoPkgHasElem_Heading
-
-	XsdGoPkgHasElem_Altitude
-
-	XsdGoPkgHasElem_Tilt
-
-	XsdGoPkgHasElem_Range
-
-	XsdGoPkgHasElem_AltitudeModeGroup
-
-	XsdGoPkgHasElems_LookAtObjectExtensionGroup
-
-	XsdGoPkgHasElem_Latitude
-
-	TAbstractViewType
-
-	XsdGoPkgHasElems_LookAtSimpleExtensionGroup
-
-}
-
-type XsdGoPkgHasElem_LookAt struct {
-	LookAt *TLookAtType `xml:"http://www.opengis.net/kml/2.2 LookAt"`
-
-}
-
-type XsdGoPkgHasElem_AbstractViewGroup struct {
-	AbstractViewGroup *TAbstractViewType `xml:"http://www.opengis.net/kml/2.2 AbstractViewGroup"`
-
-	XsdGoPkgHasElem_Camera
-
-	XsdGoPkgHasElem_LookAt
-
-}
-
-type XsdGoPkgHasElem_ListStyleObjectExtensionGroup struct {
-	ListStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ListStyleObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_ResourceMapObjectExtensionGroup struct {
-	ResourceMapObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ResourceMapObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup struct {
-	ResourceMapSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ResourceMapSimpleExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_AliasObjectExtensionGroup struct {
-	AliasObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AliasObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_AliasSimpleExtensionGroup struct {
-	AliasSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AliasSimpleExtensionGroup"`
-
-}
-
-type TAliasType struct {
-	XsdGoPkgHasElem_SourceHref
-
-	XsdGoPkgHasElem_TargetHref
-
+type TAbstractSubStyleType struct {
 	TAbstractObjectType
 
-	XsdGoPkgHasElems_AliasObjectExtensionGroup
+	XsdGoPkgHasElems_AbstractSubStyleSimpleExtensionGroup
 
-	XsdGoPkgHasElems_AliasSimpleExtensionGroup
-
-}
-
-type XsdGoPkgHasElems_Alias struct {
-	Aliases []*TAliasType `xml:"http://www.opengis.net/kml/2.2 Alias"`
+	XsdGoPkgHasElems_AbstractSubStyleObjectExtensionGroup
 
 }
 
-type TResourceMapType struct {
-	XsdGoPkgHasElems_ResourceMapObjectExtensionGroup
+type TListStyleType struct {
+	XsdGoPkgHasElems_ListStyleSimpleExtensionGroup
 
-	XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup
+	XsdGoPkgHasElem_BgColor
 
-	TAbstractObjectType
+	XsdGoPkgHasElems_ItemIcon
 
-	XsdGoPkgHasElems_Alias
+	XsdGoPkgHasElems_ListStyleObjectExtensionGroup
+
+	TAbstractSubStyleType
+
+	XsdGoPkgHasElem_ListItemType
+
+	XsdGoPkgHasElem_MaxSnippetLines
 
 }
 
-type XsdGoPkgHasElem_ResourceMap struct {
-	ResourceMap *TResourceMapType `xml:"http://www.opengis.net/kml/2.2 ResourceMap"`
+type XsdGoPkgHasElem_ListStyle struct {
+	ListStyle *TListStyleType `xml:"http://www.opengis.net/kml/2.2 ListStyle"`
+
+}
+
+type XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup struct {
+	AbstractColorStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractColorStyleObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_AbstractColorStyleSimpleExtensionGroup struct {
+	AbstractColorStyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractColorStyleSimpleExtensionGroup"`
+
+}
+
+type TAbstractColorStyleType struct {
+	XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup
+
+	XsdGoPkgHasElems_AbstractColorStyleSimpleExtensionGroup
+
+	TAbstractSubStyleType
+
+	XsdGoPkgHasElem_ColorMode
+
+	XsdGoPkgHasElem_Color
+
+}
+
+type XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup struct {
+	LabelStyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LabelStyleSimpleExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_LabelStyleObjectExtensionGroup struct {
+	LabelStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LabelStyleObjectExtensionGroup"`
+
+}
+
+type TLabelStyleType struct {
+	XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup
+
+	XsdGoPkgHasElems_LabelStyleObjectExtensionGroup
+
+	XsdGoPkgHasElem_Scale
+
+	TAbstractColorStyleType
+
+}
+
+type XsdGoPkgHasElem_LabelStyle struct {
+	LabelStyle *TLabelStyleType `xml:"http://www.opengis.net/kml/2.2 LabelStyle"`
 
 }
 
@@ -1935,180 +1914,11 @@ type XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup struct {
 }
 
 type TAbstractStyleSelectorType struct {
-	TAbstractObjectType
-
 	XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup
 
+	TAbstractObjectType
+
 	XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup
-
-}
-
-type XsdGoPkgHasElems_StyleMapSimpleExtensionGroup struct {
-	StyleMapSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 StyleMapSimpleExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_StyleMapObjectExtensionGroup struct {
-	StyleMapObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 StyleMapObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_Pair struct {
-	Pairs []*TPairType `xml:"http://www.opengis.net/kml/2.2 Pair"`
-
-}
-
-type TStyleMapType struct {
-	XsdGoPkgHasElems_StyleMapObjectExtensionGroup
-
-	XsdGoPkgHasElems_Pair
-
-	TAbstractStyleSelectorType
-
-	XsdGoPkgHasElems_StyleMapSimpleExtensionGroup
-
-}
-
-type XsdGoPkgHasElem_StyleMap struct {
-	StyleMap *TStyleMapType `xml:"http://www.opengis.net/kml/2.2 StyleMap"`
-
-}
-
-type XsdGoPkgHasElems_StyleSimpleExtensionGroup struct {
-	StyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 StyleSimpleExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_LabelStyleObjectExtensionGroup struct {
-	LabelStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LabelStyleObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup struct {
-	AbstractColorStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractColorStyleObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_AbstractSubStyleObjectExtensionGroup struct {
-	AbstractSubStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractSubStyleObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_AbstractSubStyleSimpleExtensionGroup struct {
-	AbstractSubStyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractSubStyleSimpleExtensionGroup"`
-
-}
-
-type TAbstractSubStyleType struct {
-	XsdGoPkgHasElems_AbstractSubStyleObjectExtensionGroup
-
-	TAbstractObjectType
-
-	XsdGoPkgHasElems_AbstractSubStyleSimpleExtensionGroup
-
-}
-
-type XsdGoPkgHasElems_AbstractColorStyleSimpleExtensionGroup struct {
-	AbstractColorStyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractColorStyleSimpleExtensionGroup"`
-
-}
-
-type TAbstractColorStyleType struct {
-	XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup
-
-	TAbstractSubStyleType
-
-	XsdGoPkgHasElem_Color
-
-	XsdGoPkgHasElem_ColorMode
-
-	XsdGoPkgHasElems_AbstractColorStyleSimpleExtensionGroup
-
-}
-
-type XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup struct {
-	LabelStyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LabelStyleSimpleExtensionGroup"`
-
-}
-
-type TLabelStyleType struct {
-	XsdGoPkgHasElems_LabelStyleObjectExtensionGroup
-
-	TAbstractColorStyleType
-
-	XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup
-
-	XsdGoPkgHasElem_Scale
-
-}
-
-type XsdGoPkgHasElem_LabelStyle struct {
-	LabelStyle *TLabelStyleType `xml:"http://www.opengis.net/kml/2.2 LabelStyle"`
-
-}
-
-type XsdGoPkgHasElems_ListStyleSimpleExtensionGroup struct {
-	ListStyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ListStyleSimpleExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_ListStyleObjectExtensionGroup struct {
-	ListStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ListStyleObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_ItemIconSimpleExtensionGroup struct {
-	ItemIconSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ItemIconSimpleExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_ItemIconObjectExtensionGroup struct {
-	ItemIconObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ItemIconObjectExtensionGroup"`
-
-}
-
-type TItemIconType struct {
-	XsdGoPkgHasElems_ItemIconObjectExtensionGroup
-
-	TAbstractObjectType
-
-	XsdGoPkgHasElem_Href
-
-	XsdGoPkgHasElem_State
-
-	XsdGoPkgHasElems_ItemIconSimpleExtensionGroup
-
-}
-
-type XsdGoPkgHasElems_ItemIcon struct {
-	ItemIcons []*TItemIconType `xml:"http://www.opengis.net/kml/2.2 ItemIcon"`
-
-}
-
-type TListStyleType struct {
-	XsdGoPkgHasElems_ListStyleObjectExtensionGroup
-
-	XsdGoPkgHasElem_BgColor
-
-	TAbstractSubStyleType
-
-	XsdGoPkgHasElems_ItemIcon
-
-	XsdGoPkgHasElems_ListStyleSimpleExtensionGroup
-
-	XsdGoPkgHasElem_ListItemType
-
-	XsdGoPkgHasElem_MaxSnippetLines
-
-}
-
-type XsdGoPkgHasElem_ListStyle struct {
-	ListStyle *TListStyleType `xml:"http://www.opengis.net/kml/2.2 ListStyle"`
-
-}
-
-type XsdGoPkgHasElems_StyleObjectExtensionGroup struct {
-	StyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 StyleObjectExtensionGroup"`
 
 }
 
@@ -2123,13 +1933,13 @@ type XsdGoPkgHasElems_LineStyleObjectExtensionGroup struct {
 }
 
 type TLineStyleType struct {
-	XsdGoPkgHasElems_LineStyleObjectExtensionGroup
-
-	TAbstractColorStyleType
-
 	XsdGoPkgHasElem_Width
 
+	XsdGoPkgHasElems_LineStyleObjectExtensionGroup
+
 	XsdGoPkgHasElems_LineStyleSimpleExtensionGroup
+
+	TAbstractColorStyleType
 
 }
 
@@ -2138,61 +1948,31 @@ type XsdGoPkgHasElem_LineStyle struct {
 
 }
 
-type XsdGoPkgHasElems_IconStyleSimpleExtensionGroup struct {
-	IconStyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 IconStyleSimpleExtensionGroup"`
+type XsdGoPkgHasElems_PolyStyleObjectExtensionGroup struct {
+	PolyStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 PolyStyleObjectExtensionGroup"`
 
 }
 
-type XsdGoPkgHasElems_BasicLinkObjectExtensionGroup struct {
-	BasicLinkObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 BasicLinkObjectExtensionGroup"`
+type XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup struct {
+	PolyStyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PolyStyleSimpleExtensionGroup"`
 
 }
 
-type XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup struct {
-	BasicLinkSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 BasicLinkSimpleExtensionGroup"`
+type TPolyStyleType struct {
+	XsdGoPkgHasElems_PolyStyleObjectExtensionGroup
 
-}
-
-type TBasicLinkType struct {
-	XsdGoPkgHasElem_Href
-
-	XsdGoPkgHasElems_BasicLinkObjectExtensionGroup
-
-	TAbstractObjectType
-
-	XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup
-
-}
-
-type XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_ struct {
-	Icon *TBasicLinkType `xml:"http://www.opengis.net/kml/2.2 Icon"`
-
-}
-
-type XsdGoPkgHasElems_IconStyleObjectExtensionGroup struct {
-	IconStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 IconStyleObjectExtensionGroup"`
-
-}
-
-type TIconStyleType struct {
-	XsdGoPkgHasElems_IconStyleSimpleExtensionGroup
-
-	XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_
-
-	XsdGoPkgHasElem_Heading
-
-	XsdGoPkgHasElem_Scale
+	XsdGoPkgHasElem_Outline
 
 	TAbstractColorStyleType
 
-	XsdGoPkgHasElems_IconStyleObjectExtensionGroup
+	XsdGoPkgHasElem_Fill
 
-	XsdGoPkgHasElem_HotSpot
+	XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup
 
 }
 
-type XsdGoPkgHasElem_IconStyle struct {
-	IconStyle *TIconStyleType `xml:"http://www.opengis.net/kml/2.2 IconStyle"`
+type XsdGoPkgHasElem_PolyStyle struct {
+	PolyStyle *TPolyStyleType `xml:"http://www.opengis.net/kml/2.2 PolyStyle"`
 
 }
 
@@ -2207,21 +1987,21 @@ type XsdGoPkgHasElems_BalloonStyleObjectExtensionGroup struct {
 }
 
 type TBalloonStyleType struct {
-	XsdGoPkgHasElem_Text
-
 //	color deprecated in 2.1
 	XsdGoPkgHasElem_BgColor
 
-	XsdGoPkgHasElem_DisplayMode
-
 	XsdGoPkgHasElems_BalloonStyleSimpleExtensionGroup
+
+	XsdGoPkgHasElem_TextColor
 
 //	color deprecated in 2.1
 	XsdGoPkgHasElem_Color
 
-	XsdGoPkgHasElem_TextColor
-
 	XsdGoPkgHasElems_BalloonStyleObjectExtensionGroup
+
+	XsdGoPkgHasElem_DisplayMode
+
+	XsdGoPkgHasElem_Text
 
 	TAbstractSubStyleType
 
@@ -2232,52 +2012,77 @@ type XsdGoPkgHasElem_BalloonStyle struct {
 
 }
 
-type XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup struct {
-	PolyStyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PolyStyleSimpleExtensionGroup"`
+type XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup struct {
+	BasicLinkSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 BasicLinkSimpleExtensionGroup"`
 
 }
 
-type XsdGoPkgHasElems_PolyStyleObjectExtensionGroup struct {
-	PolyStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 PolyStyleObjectExtensionGroup"`
+type XsdGoPkgHasElems_BasicLinkObjectExtensionGroup struct {
+	BasicLinkObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 BasicLinkObjectExtensionGroup"`
 
 }
 
-type TPolyStyleType struct {
+type TBasicLinkType struct {
+	XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup
+
+	XsdGoPkgHasElems_BasicLinkObjectExtensionGroup
+
+	XsdGoPkgHasElem_Href
+
+	TAbstractObjectType
+
+}
+
+type XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_ struct {
+	Icon *TBasicLinkType `xml:"http://www.opengis.net/kml/2.2 Icon"`
+
+}
+
+type XsdGoPkgHasElems_IconStyleSimpleExtensionGroup struct {
+	IconStyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 IconStyleSimpleExtensionGroup"`
+
+}
+
+type TIconStyleType struct {
 	TAbstractColorStyleType
 
-	XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup
+	XsdGoPkgHasElems_IconStyleSimpleExtensionGroup
 
-	XsdGoPkgHasElem_Fill
+	XsdGoPkgHasElem_Heading
 
-	XsdGoPkgHasElem_Outline
+	XsdGoPkgHasElem_HotSpot
 
-	XsdGoPkgHasElems_PolyStyleObjectExtensionGroup
+	XsdGoPkgHasElem_Scale
+
+	XsdGoPkgHasElems_IconStyleObjectExtensionGroup
+
+	XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_
 
 }
 
-type XsdGoPkgHasElem_PolyStyle struct {
-	PolyStyle *TPolyStyleType `xml:"http://www.opengis.net/kml/2.2 PolyStyle"`
+type XsdGoPkgHasElem_IconStyle struct {
+	IconStyle *TIconStyleType `xml:"http://www.opengis.net/kml/2.2 IconStyle"`
 
 }
 
 type TStyleType struct {
 	TAbstractStyleSelectorType
 
-	XsdGoPkgHasElems_StyleSimpleExtensionGroup
-
-	XsdGoPkgHasElem_LabelStyle
-
-	XsdGoPkgHasElem_ListStyle
-
-	XsdGoPkgHasElems_StyleObjectExtensionGroup
-
 	XsdGoPkgHasElem_LineStyle
 
-	XsdGoPkgHasElem_IconStyle
+	XsdGoPkgHasElem_PolyStyle
 
 	XsdGoPkgHasElem_BalloonStyle
 
-	XsdGoPkgHasElem_PolyStyle
+	XsdGoPkgHasElem_IconStyle
+
+	XsdGoPkgHasElems_StyleObjectExtensionGroup
+
+	XsdGoPkgHasElems_StyleSimpleExtensionGroup
+
+	XsdGoPkgHasElem_ListStyle
+
+	XsdGoPkgHasElem_LabelStyle
 
 }
 
@@ -2286,17 +2091,38 @@ type XsdGoPkgHasElem_Style struct {
 
 }
 
-type XsdGoPkgHasElem_AbstractStyleSelectorGroup struct {
-	AbstractStyleSelectorGroup *TAbstractStyleSelectorType `xml:"http://www.opengis.net/kml/2.2 AbstractStyleSelectorGroup"`
-
-	XsdGoPkgHasElem_Style
-
-	XsdGoPkgHasElem_StyleMap
+type XsdGoPkgHasElems_StyleMapSimpleExtensionGroup struct {
+	StyleMapSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 StyleMapSimpleExtensionGroup"`
 
 }
 
-type XsdGoPkgHasElems_PairObjectExtensionGroup struct {
-	PairObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 PairObjectExtensionGroup"`
+type XsdGoPkgHasElems_StyleMapObjectExtensionGroup struct {
+	StyleMapObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 StyleMapObjectExtensionGroup"`
+
+}
+
+type TStyleMapType struct {
+	XsdGoPkgHasElems_Pair
+
+	XsdGoPkgHasElems_StyleMapSimpleExtensionGroup
+
+	XsdGoPkgHasElems_StyleMapObjectExtensionGroup
+
+	TAbstractStyleSelectorType
+
+}
+
+type XsdGoPkgHasElem_StyleMap struct {
+	StyleMap *TStyleMapType `xml:"http://www.opengis.net/kml/2.2 StyleMap"`
+
+}
+
+type XsdGoPkgHasElem_AbstractStyleSelectorGroup struct {
+	AbstractStyleSelectorGroup *TAbstractStyleSelectorType `xml:"http://www.opengis.net/kml/2.2 AbstractStyleSelectorGroup"`
+
+	XsdGoPkgHasElem_StyleMap
+
+	XsdGoPkgHasElem_Style
 
 }
 
@@ -2305,222 +2131,43 @@ type XsdGoPkgHasElems_PairSimpleExtensionGroup struct {
 
 }
 
+type XsdGoPkgHasElems_PairObjectExtensionGroup struct {
+	PairObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 PairObjectExtensionGroup"`
+
+}
+
 type TPairType struct {
-	XsdGoPkgHasElems_PairSimpleExtensionGroup
-
 	TAbstractObjectType
-
-	XsdGoPkgHasElem_StyleUrl
 
 	XsdGoPkgHasElem_Key
 
+	XsdGoPkgHasElem_StyleUrl
+
 	XsdGoPkgHasElem_AbstractStyleSelectorGroup
+
+	XsdGoPkgHasElems_PairSimpleExtensionGroup
 
 	XsdGoPkgHasElems_PairObjectExtensionGroup
 
 }
 
-type XsdGoPkgHasElem_Pair struct {
-	Pair *TPairType `xml:"http://www.opengis.net/kml/2.2 Pair"`
+type XsdGoPkgHasElems_Pair struct {
+	Pairs []*TPairType `xml:"http://www.opengis.net/kml/2.2 Pair"`
 
 }
 
-type XsdGoPkgHasElem_OrientationObjectExtensionGroup struct {
-	OrientationObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 OrientationObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_StyleMapObjectExtensionGroup struct {
-	StyleMapObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 StyleMapObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup struct {
-	AbstractLatLonBoxObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractLatLonBoxObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup struct {
-	TimeSpanSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 TimeSpanSimpleExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup struct {
-	AbstractTimePrimitiveObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup struct {
-	AbstractTimePrimitiveSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveSimpleExtensionGroup"`
-
-}
-
-type TAbstractTimePrimitiveType struct {
-	XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup
-
-	TAbstractObjectType
-
-	XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup
-
-}
-
-type XsdGoPkgHasElems_TimeSpanObjectExtensionGroup struct {
-	TimeSpanObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 TimeSpanObjectExtensionGroup"`
-
-}
-
-type TimeSpanType struct {
-	XsdGoPkgHasElem_Begin
-
-	XsdGoPkgHasElems_TimeSpanObjectExtensionGroup
-
-	XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup
-
-	TAbstractTimePrimitiveType
-
-	XsdGoPkgHasElem_End
-
-}
-
-type XsdGoPkgHasElem_TimeSpan struct {
-	TimeSpan *TimeSpanType `xml:"http://www.opengis.net/kml/2.2 TimeSpan"`
-
-}
-
-type XsdGoPkgHasElems_TimeStampSimpleExtensionGroup struct {
-	TimeStampSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 TimeStampSimpleExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_TimeStampObjectExtensionGroup struct {
-	TimeStampObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 TimeStampObjectExtensionGroup"`
-
-}
-
-type TimeStampType struct {
-	XsdGoPkgHasElems_TimeStampSimpleExtensionGroup
-
-	XsdGoPkgHasElems_TimeStampObjectExtensionGroup
-
-	TAbstractTimePrimitiveType
-
-	XsdGoPkgHasElem_When
-
-}
-
-type XsdGoPkgHasElem_TimeStamp struct {
-	TimeStamp *TimeStampType `xml:"http://www.opengis.net/kml/2.2 TimeStamp"`
-
-}
-
-type XsdGoPkgHasElem_AbstractTimePrimitiveGroup struct {
-	AbstractTimePrimitiveGroup *TAbstractTimePrimitiveType `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveGroup"`
-
-	XsdGoPkgHasElem_TimeSpan
-
-	XsdGoPkgHasElem_TimeStamp
-
-}
-
-type XsdGoPkgHasElem_Alias struct {
-	Alias *TAliasType `xml:"http://www.opengis.net/kml/2.2 Alias"`
-
-}
-
-type XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup struct {
-	AbstractContainerObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractContainerObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup struct {
-	AbstractSubStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractSubStyleObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_CameraObjectExtensionGroup struct {
-	CameraObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 CameraObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_LinkObjectExtensionGroup struct {
-	LinkObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LinkObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_LinkSimpleExtensionGroup struct {
-	LinkSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LinkSimpleExtensionGroup"`
-
-}
-
-type TLinkType struct {
-	XsdGoPkgHasElem_ViewBoundScale
-
-	XsdGoPkgHasElem_RefreshMode
-
-	XsdGoPkgHasElem_ViewRefreshTime
-
-	XsdGoPkgHasElems_LinkSimpleExtensionGroup
-
-	TBasicLinkType
-
-	XsdGoPkgHasElems_LinkObjectExtensionGroup
-
-	XsdGoPkgHasElem_RefreshInterval
-
-	XsdGoPkgHasElem_ViewRefreshMode
-
-	XsdGoPkgHasElem_HttpQuery
-
-	XsdGoPkgHasElem_ViewFormat
-
-}
-
-type XsdGoPkgHasElem_Icon struct {
-	Icon *TLinkType `xml:"http://www.opengis.net/kml/2.2 Icon"`
-
-}
-
-type XsdGoPkgHasElem_LinearRingObjectExtensionGroup struct {
-	LinearRingObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LinearRingObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup struct {
-	ScreenOverlayObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ScreenOverlayObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_IconStyleObjectExtensionGroup struct {
-	IconStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 IconStyleObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_PolygonSimpleExtensionGroup struct {
-	PolygonSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PolygonSimpleExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup struct {
-	AbstractGeometrySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractGeometrySimpleExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup struct {
-	AbstractGeometryObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractGeometryObjectExtensionGroup"`
-
-}
-
-type TAbstractGeometryType struct {
-	XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup
-
-	XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup
-
-	TAbstractObjectType
+type XsdGoPkgHasElems_AliasObjectExtensionGroup struct {
+	AliasObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AliasObjectExtensionGroup"`
 
 }
 
 type XsdGoPkgHasElems_BoundarySimpleExtensionGroup struct {
 	BoundarySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 BoundarySimpleExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_BoundaryObjectExtensionGroup struct {
+	BoundaryObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 BoundaryObjectExtensionGroup"`
 
 }
 
@@ -2534,20 +2181,39 @@ type XsdGoPkgHasElems_LinearRingSimpleExtensionGroup struct {
 
 }
 
+type XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup struct {
+	AbstractGeometryObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractGeometryObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup struct {
+	AbstractGeometrySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractGeometrySimpleExtensionGroup"`
+
+}
+
+type TAbstractGeometryType struct {
+	TAbstractObjectType
+
+	XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup
+
+	XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup
+
+}
+
 type TLinearRingType struct {
-	XsdGoPkgHasElem_Extrude
-
-	XsdGoPkgHasElem_AltitudeModeGroup
-
-	XsdGoPkgHasElems_LinearRingSimpleExtensionGroup
-
 	TAbstractGeometryType
 
-	XsdGoPkgHasElem_Tessellate
+	XsdGoPkgHasElem_Extrude
 
 	XsdGoPkgHasElem_Coordinates
 
+	XsdGoPkgHasElem_Tessellate
+
 	XsdGoPkgHasElems_LinearRingObjectExtensionGroup
+
+	XsdGoPkgHasElems_LinearRingSimpleExtensionGroup
+
+	XsdGoPkgHasElem_AltitudeModeGroup
 
 }
 
@@ -2556,22 +2222,12 @@ type XsdGoPkgHasElem_LinearRing struct {
 
 }
 
-type XsdGoPkgHasElems_BoundaryObjectExtensionGroup struct {
-	BoundaryObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 BoundaryObjectExtensionGroup"`
-
-}
-
 type TBoundaryType struct {
-	XsdGoPkgHasElems_BoundarySimpleExtensionGroup
+	XsdGoPkgHasElems_BoundaryObjectExtensionGroup
 
 	XsdGoPkgHasElem_LinearRing
 
-	XsdGoPkgHasElems_BoundaryObjectExtensionGroup
-
-}
-
-type XsdGoPkgHasElem_OuterBoundaryIs struct {
-	OuterBoundaryIs *TBoundaryType `xml:"http://www.opengis.net/kml/2.2 outerBoundaryIs"`
+	XsdGoPkgHasElems_BoundarySimpleExtensionGroup
 
 }
 
@@ -2585,42 +2241,37 @@ type XsdGoPkgHasElems_PolygonObjectExtensionGroup struct {
 
 }
 
-type TPolygonType struct {
-	XsdGoPkgHasElems_InnerBoundaryIs
-
-	XsdGoPkgHasElems_PolygonObjectExtensionGroup
-
-	XsdGoPkgHasElem_Tessellate
-
-	XsdGoPkgHasElem_AltitudeModeGroup
-
-	XsdGoPkgHasElems_PolygonSimpleExtensionGroup
-
-	XsdGoPkgHasElem_Extrude
-
-	TAbstractGeometryType
-
-	XsdGoPkgHasElem_OuterBoundaryIs
+type XsdGoPkgHasElem_OuterBoundaryIs struct {
+	OuterBoundaryIs *TBoundaryType `xml:"http://www.opengis.net/kml/2.2 outerBoundaryIs"`
 
 }
 
-type XsdGoPkgHasElem_Polygon struct {
-	Polygon *TPolygonType `xml:"http://www.opengis.net/kml/2.2 Polygon"`
+type XsdGoPkgHasElems_PolygonSimpleExtensionGroup struct {
+	PolygonSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PolygonSimpleExtensionGroup"`
+
+}
+
+type TPolygonType struct {
+	XsdGoPkgHasElems_PolygonObjectExtensionGroup
+
+	XsdGoPkgHasElem_OuterBoundaryIs
+
+	XsdGoPkgHasElem_Extrude
+
+	XsdGoPkgHasElem_AltitudeModeGroup
+
+	XsdGoPkgHasElem_Tessellate
+
+	TAbstractGeometryType
+
+	XsdGoPkgHasElems_PolygonSimpleExtensionGroup
+
+	XsdGoPkgHasElems_InnerBoundaryIs
 
 }
 
 type XsdGoPkgHasElems_Polygon struct {
 	Polygons []*TPolygonType `xml:"http://www.opengis.net/kml/2.2 Polygon"`
-
-}
-
-type XsdGoPkgHasElems_MultiGeometry struct {
-	MultiGeometries []*TMultiGeometryType `xml:"http://www.opengis.net/kml/2.2 MultiGeometry"`
-
-}
-
-type XsdGoPkgHasElems_LinearRing struct {
-	LinearRings []*TLinearRingType `xml:"http://www.opengis.net/kml/2.2 LinearRing"`
 
 }
 
@@ -2635,17 +2286,17 @@ type XsdGoPkgHasElems_PointSimpleExtensionGroup struct {
 }
 
 type TPointType struct {
-	XsdGoPkgHasElem_Coordinates
-
-	XsdGoPkgHasElem_AltitudeModeGroup
-
 	XsdGoPkgHasElems_PointObjectExtensionGroup
 
 	TAbstractGeometryType
 
+	XsdGoPkgHasElems_PointSimpleExtensionGroup
+
 	XsdGoPkgHasElem_Extrude
 
-	XsdGoPkgHasElems_PointSimpleExtensionGroup
+	XsdGoPkgHasElem_Coordinates
+
+	XsdGoPkgHasElem_AltitudeModeGroup
 
 }
 
@@ -2654,40 +2305,156 @@ type XsdGoPkgHasElems_Point struct {
 
 }
 
-type XsdGoPkgHasElems_LineStringObjectExtensionGroup struct {
-	LineStringObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LineStringObjectExtensionGroup"`
+type XsdGoPkgHasElems_LinearRing struct {
+	LinearRings []*TLinearRingType `xml:"http://www.opengis.net/kml/2.2 LinearRing"`
 
 }
 
-type XsdGoPkgHasElems_LineStringSimpleExtensionGroup struct {
-	LineStringSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LineStringSimpleExtensionGroup"`
+type XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup struct {
+	MultiGeometryObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 MultiGeometryObjectExtensionGroup"`
 
 }
 
-type TLineStringType struct {
-	XsdGoPkgHasElem_AltitudeModeGroup
+type XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup struct {
+	MultiGeometrySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 MultiGeometrySimpleExtensionGroup"`
 
-	XsdGoPkgHasElems_LineStringSimpleExtensionGroup
+}
 
+type TMultiGeometryType struct {
 	TAbstractGeometryType
 
-	XsdGoPkgHasElems_LineStringObjectExtensionGroup
+	XsdGoPkgHasElems_AbstractGeometryGroup
 
-	XsdGoPkgHasElem_Extrude
+	XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup
 
-	XsdGoPkgHasElem_Coordinates
-
-	XsdGoPkgHasElem_Tessellate
+	XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup
 
 }
 
-type XsdGoPkgHasElems_LineString struct {
-	LineStrings []*TLineStringType `xml:"http://www.opengis.net/kml/2.2 LineString"`
+type XsdGoPkgHasElems_MultiGeometry struct {
+	MultiGeometries []*TMultiGeometryType `xml:"http://www.opengis.net/kml/2.2 MultiGeometry"`
+
+}
+
+type XsdGoPkgHasElems_LinkObjectExtensionGroup struct {
+	LinkObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LinkObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_LinkSimpleExtensionGroup struct {
+	LinkSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LinkSimpleExtensionGroup"`
+
+}
+
+type TLinkType struct {
+	TBasicLinkType
+
+	XsdGoPkgHasElems_LinkSimpleExtensionGroup
+
+	XsdGoPkgHasElem_ViewFormat
+
+	XsdGoPkgHasElems_LinkObjectExtensionGroup
+
+	XsdGoPkgHasElem_RefreshMode
+
+	XsdGoPkgHasElem_HttpQuery
+
+	XsdGoPkgHasElem_RefreshInterval
+
+	XsdGoPkgHasElem_ViewRefreshTime
+
+	XsdGoPkgHasElem_ViewRefreshMode
+
+	XsdGoPkgHasElem_ViewBoundScale
 
 }
 
 type XsdGoPkgHasElem_Link struct {
 	Link *TLinkType `xml:"http://www.opengis.net/kml/2.2 Link"`
+
+}
+
+type XsdGoPkgHasElems_ModelSimpleExtensionGroup struct {
+	ModelSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ModelSimpleExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_LocationSimpleExtensionGroup struct {
+	LocationSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LocationSimpleExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_LocationObjectExtensionGroup struct {
+	LocationObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LocationObjectExtensionGroup"`
+
+}
+
+type TLocationType struct {
+	XsdGoPkgHasElem_Longitude
+
+	XsdGoPkgHasElems_LocationSimpleExtensionGroup
+
+	XsdGoPkgHasElems_LocationObjectExtensionGroup
+
+	XsdGoPkgHasElem_Latitude
+
+	XsdGoPkgHasElem_Altitude
+
+	TAbstractObjectType
+
+}
+
+type XsdGoPkgHasElem_Location struct {
+	Location *TLocationType `xml:"http://www.opengis.net/kml/2.2 Location"`
+
+}
+
+type XsdGoPkgHasElems_AliasSimpleExtensionGroup struct {
+	AliasSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AliasSimpleExtensionGroup"`
+
+}
+
+type TAliasType struct {
+	XsdGoPkgHasElem_TargetHref
+
+	XsdGoPkgHasElems_AliasSimpleExtensionGroup
+
+	TAbstractObjectType
+
+	XsdGoPkgHasElem_SourceHref
+
+	XsdGoPkgHasElems_AliasObjectExtensionGroup
+
+}
+
+type XsdGoPkgHasElems_Alias struct {
+	Aliases []*TAliasType `xml:"http://www.opengis.net/kml/2.2 Alias"`
+
+}
+
+type XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup struct {
+	ResourceMapSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ResourceMapSimpleExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_ResourceMapObjectExtensionGroup struct {
+	ResourceMapObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ResourceMapObjectExtensionGroup"`
+
+}
+
+type TResourceMapType struct {
+	XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup
+
+	XsdGoPkgHasElems_ResourceMapObjectExtensionGroup
+
+	TAbstractObjectType
+
+	XsdGoPkgHasElems_Alias
+
+}
+
+type XsdGoPkgHasElem_ResourceMap struct {
+	ResourceMap *TResourceMapType `xml:"http://www.opengis.net/kml/2.2 ResourceMap"`
 
 }
 
@@ -2704,15 +2471,15 @@ type XsdGoPkgHasElems_OrientationObjectExtensionGroup struct {
 type TOrientationType struct {
 	XsdGoPkgHasElems_OrientationObjectExtensionGroup
 
-	XsdGoPkgHasElem_Roll
-
 	XsdGoPkgHasElem_Tilt
+
+	TAbstractObjectType
+
+	XsdGoPkgHasElem_Roll
 
 	XsdGoPkgHasElem_Heading
 
 	XsdGoPkgHasElems_OrientationSimpleExtensionGroup
-
-	TAbstractObjectType
 
 }
 
@@ -2726,43 +2493,10 @@ type XsdGoPkgHasElems_ModelObjectExtensionGroup struct {
 
 }
 
-type XsdGoPkgHasElems_LocationSimpleExtensionGroup struct {
-	LocationSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LocationSimpleExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_LocationObjectExtensionGroup struct {
-	LocationObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LocationObjectExtensionGroup"`
-
-}
-
-type TLocationType struct {
-	XsdGoPkgHasElems_LocationObjectExtensionGroup
-
-	XsdGoPkgHasElem_Latitude
-
-	TAbstractObjectType
-
-	XsdGoPkgHasElem_Altitude
-
-	XsdGoPkgHasElem_Longitude
-
-	XsdGoPkgHasElems_LocationSimpleExtensionGroup
-
-}
-
-type XsdGoPkgHasElem_Location struct {
-	Location *TLocationType `xml:"http://www.opengis.net/kml/2.2 Location"`
-
-}
-
-type XsdGoPkgHasElems_ModelSimpleExtensionGroup struct {
-	ModelSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ModelSimpleExtensionGroup"`
-
-}
-
 type TModelType struct {
-	XsdGoPkgHasElem_AltitudeModeGroup
+	XsdGoPkgHasElem_Location
+
+	XsdGoPkgHasElem_ResourceMap
 
 	XsdGoPkgHasElem_Orientation
 
@@ -2770,15 +2504,13 @@ type TModelType struct {
 
 	TAbstractGeometryType
 
-	XsdGoPkgHasElem_Scale
-
-	XsdGoPkgHasElem_Location
+	XsdGoPkgHasElem_Link
 
 	XsdGoPkgHasElems_ModelSimpleExtensionGroup
 
-	XsdGoPkgHasElem_ResourceMap
+	XsdGoPkgHasElem_Scale
 
-	XsdGoPkgHasElem_Link
+	XsdGoPkgHasElem_AltitudeModeGroup
 
 }
 
@@ -2787,300 +2519,79 @@ type XsdGoPkgHasElems_Model struct {
 
 }
 
+type XsdGoPkgHasElems_LineStringSimpleExtensionGroup struct {
+	LineStringSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LineStringSimpleExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_LineStringObjectExtensionGroup struct {
+	LineStringObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LineStringObjectExtensionGroup"`
+
+}
+
+type TLineStringType struct {
+	XsdGoPkgHasElems_LineStringObjectExtensionGroup
+
+	XsdGoPkgHasElem_AltitudeModeGroup
+
+	XsdGoPkgHasElem_Extrude
+
+	XsdGoPkgHasElem_Tessellate
+
+	TAbstractGeometryType
+
+	XsdGoPkgHasElems_LineStringSimpleExtensionGroup
+
+	XsdGoPkgHasElem_Coordinates
+
+}
+
+type XsdGoPkgHasElems_LineString struct {
+	LineStrings []*TLineStringType `xml:"http://www.opengis.net/kml/2.2 LineString"`
+
+}
+
 type XsdGoPkgHasElems_AbstractGeometryGroup struct {
 	AbstractGeometryGroups []*TAbstractGeometryType `xml:"http://www.opengis.net/kml/2.2 AbstractGeometryGroup"`
 
 	XsdGoPkgHasElems_Polygon
 
-	XsdGoPkgHasElems_MultiGeometry
+	XsdGoPkgHasElems_Point
 
 	XsdGoPkgHasElems_LinearRing
 
-	XsdGoPkgHasElems_Point
-
-	XsdGoPkgHasElems_LineString
+	XsdGoPkgHasElems_MultiGeometry
 
 	XsdGoPkgHasElems_Model
 
-}
-
-type XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup struct {
-	MultiGeometrySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 MultiGeometrySimpleExtensionGroup"`
+	XsdGoPkgHasElems_LineString
 
 }
 
-type XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup struct {
-	MultiGeometryObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 MultiGeometryObjectExtensionGroup"`
-
-}
-
-type TMultiGeometryType struct {
-	XsdGoPkgHasElems_AbstractGeometryGroup
-
-	XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup
-
-	XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup
-
-	TAbstractGeometryType
-
-}
-
-type XsdGoPkgHasElem_MultiGeometry struct {
-	MultiGeometry *TMultiGeometryType `xml:"http://www.opengis.net/kml/2.2 MultiGeometry"`
-
-}
-
-type XsdGoPkgHasElem_Point struct {
-	Point *TPointType `xml:"http://www.opengis.net/kml/2.2 Point"`
-
-}
-
-type XsdGoPkgHasElem_LineString struct {
-	LineString *TLineStringType `xml:"http://www.opengis.net/kml/2.2 LineString"`
-
-}
-
-type XsdGoPkgHasElem_Model struct {
-	Model *TModelType `xml:"http://www.opengis.net/kml/2.2 Model"`
-
-}
-
-type XsdGoPkgHasElem_AbstractGeometryGroup struct {
-	AbstractGeometryGroup *TAbstractGeometryType `xml:"http://www.opengis.net/kml/2.2 AbstractGeometryGroup"`
-
-	XsdGoPkgHasElem_Polygon
-
-	XsdGoPkgHasElem_MultiGeometry
-
-	XsdGoPkgHasElem_LinearRing
-
-	XsdGoPkgHasElem_Point
-
-	XsdGoPkgHasElem_LineString
-
-	XsdGoPkgHasElem_Model
-
-}
-
-type XsdGoPkgHasElem_PointObjectExtensionGroup struct {
-	PointObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PointObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_AbstractViewObjectExtensionGroup struct {
-	AbstractViewObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractViewObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup struct {
-	AbstractGeometryObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractGeometryObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_LabelStyleObjectExtensionGroup struct {
-	LabelStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LabelStyleObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup struct {
-	LatLonAltBoxObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LatLonAltBoxObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup struct {
-	AbstractColorStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractColorStyleObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup struct {
-	AbstractFeatureObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractFeatureObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup struct {
-	PhotoOverlayObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PhotoOverlayObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_LookAtObjectExtensionGroup struct {
-	LookAtObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LookAtObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_ResourceMapObjectExtensionGroup struct {
-	ResourceMapObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ResourceMapObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_BasicLinkObjectExtensionGroup struct {
-	BasicLinkObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 BasicLinkObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup struct {
-	ViewVolumeObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ViewVolumeObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_PairObjectExtensionGroup struct {
-	PairObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PairObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup struct {
-	NetworkLinkObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 NetworkLinkObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_KmlObjectExtensionGroup struct {
-	KmlObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 KmlObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup struct {
-	AbstractStyleSelectorObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractStyleSelectorObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup struct {
-	AbstractTimePrimitiveObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveObjectExtensionGroup"`
+type XsdGoPkgHasElems_ScaleObjectExtensionGroup struct {
+	ScaleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ScaleObjectExtensionGroup"`
 
 }
 
 //	Url deprecated in 2.2
-type XsdGoPkgHasElem_Url struct {
+type XsdGoPkgHasElems_Url struct {
 //	Url deprecated in 2.2
-	Url *TLinkType `xml:"http://www.opengis.net/kml/2.2 Url"`
+	Urls []*TLinkType `xml:"http://www.opengis.net/kml/2.2 Url"`
 
 }
 
-type XsdGoPkgHasElems_LodObjectExtensionGroup struct {
-	LodObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LodObjectExtensionGroup"`
+type XsdGoPkgHasElems_PlacemarkObjectExtensionGroup struct {
+	PlacemarkObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 PlacemarkObjectExtensionGroup"`
 
 }
 
-type XsdGoPkgHasElems_LodSimpleExtensionGroup struct {
-	LodSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LodSimpleExtensionGroup"`
+type XsdGoPkgHasElems_KmlObjectExtensionGroup struct {
+	KmlObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 KmlObjectExtensionGroup"`
 
 }
 
-type TLodType struct {
-	XsdGoPkgHasElem_MaxLodPixels
-
-	XsdGoPkgHasElems_LodObjectExtensionGroup
-
-	TAbstractObjectType
-
-	XsdGoPkgHasElem_MaxFadeExtent
-
-	XsdGoPkgHasElems_LodSimpleExtensionGroup
-
-	XsdGoPkgHasElem_MinLodPixels
-
-	XsdGoPkgHasElem_MinFadeExtent
-
-}
-
-type XsdGoPkgHasElem_Lod struct {
-	Lod *TLodType `xml:"http://www.opengis.net/kml/2.2 Lod"`
-
-}
-
-type XsdGoPkgHasElems_RegionObjectExtensionGroup struct {
-	RegionObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 RegionObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup struct {
-	LatLonAltBoxObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LatLonAltBoxObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup struct {
-	LatLonAltBoxSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LatLonAltBoxSimpleExtensionGroup"`
-
-}
-
-type TLatLonAltBoxType struct {
-	XsdGoPkgHasElem_AltitudeModeGroup
-
-	TAbstractLatLonBoxType
-
-	XsdGoPkgHasElem_MinAltitude
-
-	XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup
-
-	XsdGoPkgHasElem_MaxAltitude
-
-	XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup
-
-}
-
-type XsdGoPkgHasElem_LatLonAltBox struct {
-	LatLonAltBox *TLatLonAltBoxType `xml:"http://www.opengis.net/kml/2.2 LatLonAltBox"`
-
-}
-
-type XsdGoPkgHasElems_RegionSimpleExtensionGroup struct {
-	RegionSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 RegionSimpleExtensionGroup"`
-
-}
-
-type TRegionType struct {
-	XsdGoPkgHasElem_Lod
-
-	XsdGoPkgHasElems_RegionObjectExtensionGroup
-
-	XsdGoPkgHasElem_LatLonAltBox
-
-	XsdGoPkgHasElems_RegionSimpleExtensionGroup
-
-	TAbstractObjectType
-
-}
-
-type XsdGoPkgHasElem_Region struct {
-	Region *TRegionType `xml:"http://www.opengis.net/kml/2.2 Region"`
-
-}
-
-type XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup struct {
-	AbstractFeatureSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractFeatureSimpleExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_StyleMap struct {
-	StyleMaps []*TStyleMapType `xml:"http://www.opengis.net/kml/2.2 StyleMap"`
-
-}
-
-type XsdGoPkgHasElems_Style struct {
-	Styles []*TStyleType `xml:"http://www.opengis.net/kml/2.2 Style"`
-
-}
-
-type XsdGoPkgHasElems_AbstractStyleSelectorGroup struct {
-	AbstractStyleSelectorGroups []*TAbstractStyleSelectorType `xml:"http://www.opengis.net/kml/2.2 AbstractStyleSelectorGroup"`
-
-	XsdGoPkgHasElems_StyleMap
-
-	XsdGoPkgHasElems_Style
-
-}
-
-//	Metadata deprecated in 2.2
-//	MetadataType deprecated in 2.2
-type TMetadataType struct {
-}
-
-type XsdGoPkgHasElem_Metadata struct {
-//	Metadata deprecated in 2.2
-	Metadata *TMetadataType `xml:"http://www.opengis.net/kml/2.2 Metadata"`
-
-}
-
-type XsdGoPkgHasAttr_SchemaUrl_XsdtAnyURI_ struct {
-	SchemaUrl xsdt.AnyURI `xml:"http://www.opengis.net/kml/2.2 schemaUrl,attr"`
+type XsdGoPkgHasElems_SchemaDataExtension struct {
+	SchemaDataExtensions []xsdt.String `xml:"http://www.opengis.net/kml/2.2 SchemaDataExtension"`
 
 }
 
@@ -3101,15 +2612,15 @@ type XsdGoPkgHasElems_SimpleData struct {
 
 }
 
-type XsdGoPkgHasElems_SchemaDataExtension struct {
-	SchemaDataExtensions []xsdt.String `xml:"http://www.opengis.net/kml/2.2 SchemaDataExtension"`
+type XsdGoPkgHasAttr_SchemaUrl_XsdtAnyURI_ struct {
+	SchemaUrl xsdt.AnyURI `xml:"http://www.opengis.net/kml/2.2 schemaUrl,attr"`
 
 }
 
 type TSchemaDataType struct {
-	XsdGoPkgHasAttr_SchemaUrl_XsdtAnyURI_
-
 	XsdGoPkgHasElems_SimpleData
+
+	XsdGoPkgHasAttr_SchemaUrl_XsdtAnyURI_
 
 	TAbstractObjectType
 
@@ -3122,909 +2633,34 @@ type XsdGoPkgHasElems_SchemaData struct {
 
 }
 
-type XsdGoPkgHasElems_DataExtension struct {
-	DataExtensions []xsdt.String `xml:"http://www.opengis.net/kml/2.2 DataExtension"`
-
-}
-
-type TDataType struct {
-	TAbstractObjectType
-
-	XsdGoPkgHasElem_Value
-
-	XsdGoPkgHasElem_DisplayName
-
-	XsdGoPkgHasElems_DataExtension
-
-}
-
-type XsdGoPkgHasElems_Data struct {
-	Datas []*TDataType `xml:"http://www.opengis.net/kml/2.2 Data"`
-
-}
-
-type TExtendedDataType struct {
-	XsdGoPkgHasElems_SchemaData
-
-	XsdGoPkgHasElems_Data
-
-}
-
-type XsdGoPkgHasElem_ExtendedData struct {
-	ExtendedData *TExtendedDataType `xml:"http://www.opengis.net/kml/2.2 ExtendedData"`
-
-}
-
-type XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup struct {
-	AbstractFeatureObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractFeatureObjectExtensionGroup"`
-
-}
-
-type TAbstractFeatureType struct {
-	XsdGoPkgHasElem_Name
-
-	atom.XsdGoPkgHasElem_Author
-
-	xal.XsdGoPkgHasElem_AddressDetails
-
-	XsdGoPkgHasElem_Region
-
-	TAbstractObjectType
-
-	XsdGoPkgHasElem_AbstractViewGroup
-
-	XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup
-
-	XsdGoPkgHasElem_Visibility
-
-	XsdGoPkgHasElem_Description
-
-	atom.XsdGoPkgHasElem_Link
-
-	XsdGoPkgHasElems_AbstractStyleSelectorGroup
-
-//	Snippet deprecated in 2.2
-	XsdGoPkgHasElem_Snippet
-
-//	Metadata deprecated in 2.2
-	XsdGoPkgHasElem_Metadata
-
-	XsdGoPkgHasElem_AbstractTimePrimitiveGroup
-
-//	Metadata deprecated in 2.2
-	XsdGoPkgHasElem_ExtendedData
-
-	XsdGoPkgHasElem_StyleUrl
-
-	XsdGoPkgHasElem_PhoneNumber
-
-	XsdGoPkgHasElem_Address
-
-	XsdGoPkgHasElem_Open
-
-	XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup
-
-}
-
-type XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup struct {
-	NetworkLinkObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 NetworkLinkObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup struct {
-	NetworkLinkSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 NetworkLinkSimpleExtensionGroup"`
-
-}
-
-type TNetworkLinkType struct {
-//	Url deprecated in 2.2
-	XsdGoPkgHasElem_Url
-
-	TAbstractFeatureType
-
-//	Url deprecated in 2.2
-	XsdGoPkgHasElem_Link
-
-	XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup
-
-	XsdGoPkgHasElem_RefreshVisibility
-
-	XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup
-
-	XsdGoPkgHasElem_FlyToView
-
-}
-
-type XsdGoPkgHasElem_NetworkLink struct {
-	NetworkLink *TNetworkLinkType `xml:"http://www.opengis.net/kml/2.2 NetworkLink"`
-
-}
-
-type XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup struct {
-	GroundOverlayObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 GroundOverlayObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup struct {
-	GroundOverlaySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 GroundOverlaySimpleExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup struct {
-	AbstractOverlayObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractOverlayObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup struct {
-	AbstractOverlaySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractOverlaySimpleExtensionGroup"`
-
-}
-
-type TAbstractOverlayType struct {
-	XsdGoPkgHasElem_DrawOrder
-
-	TAbstractFeatureType
-
-	XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup
-
-	XsdGoPkgHasElem_Color
-
-	XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup
-
-	XsdGoPkgHasElem_Icon
-
-}
-
-type TGroundOverlayType struct {
-	XsdGoPkgHasElem_AltitudeModeGroup
-
-	XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup
-
-	XsdGoPkgHasElem_LatLonBox
-
-	XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup
-
-	TAbstractOverlayType
-
-	XsdGoPkgHasElem_Altitude
-
-}
-
-type XsdGoPkgHasElem_GroundOverlay struct {
-	GroundOverlay *TGroundOverlayType `xml:"http://www.opengis.net/kml/2.2 GroundOverlay"`
-
-}
-
-type XsdGoPkgHasElems_ViewVolumeSimpleExtensionGroup struct {
-	ViewVolumeSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ViewVolumeSimpleExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_ViewVolumeObjectExtensionGroup struct {
-	ViewVolumeObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ViewVolumeObjectExtensionGroup"`
-
-}
-
-type TViewVolumeType struct {
-	XsdGoPkgHasElem_TopFov
-
-	XsdGoPkgHasElem_Near
-
-	XsdGoPkgHasElems_ViewVolumeSimpleExtensionGroup
-
-	XsdGoPkgHasElem_BottomFov
-
-	TAbstractObjectType
-
-	XsdGoPkgHasElems_ViewVolumeObjectExtensionGroup
-
-	XsdGoPkgHasElem_LeftFov
-
-	XsdGoPkgHasElem_RightFov
-
-}
-
-type XsdGoPkgHasElem_ViewVolume struct {
-	ViewVolume *TViewVolumeType `xml:"http://www.opengis.net/kml/2.2 ViewVolume"`
-
-}
-
 type XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup struct {
 	PhotoOverlayObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 PhotoOverlayObjectExtensionGroup"`
 
 }
 
-type XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup struct {
-	PhotoOverlaySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PhotoOverlaySimpleExtensionGroup"`
+type XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup struct {
+	LatLonBoxSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LatLonBoxSimpleExtensionGroup"`
 
 }
 
-type XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup struct {
-	ImagePyramidSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ImagePyramidSimpleExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup struct {
-	ImagePyramidObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ImagePyramidObjectExtensionGroup"`
-
-}
-
-type TImagePyramidType struct {
-	XsdGoPkgHasElem_GridOrigin
-
-	XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup
-
-	XsdGoPkgHasElem_TileSize
-
-	XsdGoPkgHasElem_MaxWidth
-
-	TAbstractObjectType
-
-	XsdGoPkgHasElem_MaxHeight
-
-	XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup
-
-}
-
-type XsdGoPkgHasElem_ImagePyramid struct {
-	ImagePyramid *TImagePyramidType `xml:"http://www.opengis.net/kml/2.2 ImagePyramid"`
-
-}
-
-type TPhotoOverlayType struct {
-	TAbstractOverlayType
-
-	XsdGoPkgHasElem_ImagePyramid
-
-	XsdGoPkgHasElem_ViewVolume
-
-	XsdGoPkgHasElem_Point
-
+type TLatLonBoxType struct {
 	XsdGoPkgHasElem_Rotation
 
-	XsdGoPkgHasElem_Shape
+	XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup
 
-	XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup
+	TAbstractLatLonBoxType
 
-	XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup
+	XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup
 
 }
 
-type XsdGoPkgHasElem_PhotoOverlay struct {
-	PhotoOverlay *TPhotoOverlayType `xml:"http://www.opengis.net/kml/2.2 PhotoOverlay"`
+type XsdGoPkgHasElems_LatLonBox struct {
+	LatLonBoxs []*TLatLonBoxType `xml:"http://www.opengis.net/kml/2.2 LatLonBox"`
 
 }
 
-type XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup struct {
-	ScreenOverlaySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ScreenOverlaySimpleExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup struct {
-	ScreenOverlayObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ScreenOverlayObjectExtensionGroup"`
-
-}
-
-type TScreenOverlayType struct {
-	XsdGoPkgHasElem_Size
-
-	XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup
-
-	XsdGoPkgHasElem_ScreenXY
-
-	XsdGoPkgHasElem_Rotation
-
-	XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup
-
-	XsdGoPkgHasElem_OverlayXY
-
-	TAbstractOverlayType
-
-	XsdGoPkgHasElem_RotationXY
-
-}
-
-type XsdGoPkgHasElem_ScreenOverlay struct {
-	ScreenOverlay *TScreenOverlayType `xml:"http://www.opengis.net/kml/2.2 ScreenOverlay"`
-
-}
-
-type XsdGoPkgHasElem_AbstractOverlayGroup struct {
-	AbstractOverlayGroup *TAbstractOverlayType `xml:"http://www.opengis.net/kml/2.2 AbstractOverlayGroup"`
-
-	XsdGoPkgHasElem_GroundOverlay
-
-	XsdGoPkgHasElem_PhotoOverlay
-
-	XsdGoPkgHasElem_ScreenOverlay
-
-}
-
-type XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup struct {
-	PlacemarkSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PlacemarkSimpleExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_PlacemarkObjectExtensionGroup struct {
-	PlacemarkObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 PlacemarkObjectExtensionGroup"`
-
-}
-
-type TPlacemarkType struct {
-	XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup
-
-	XsdGoPkgHasElems_PlacemarkObjectExtensionGroup
-
-	TAbstractFeatureType
-
-	XsdGoPkgHasElem_AbstractGeometryGroup
-
-}
-
-type XsdGoPkgHasElem_Placemark struct {
-	Placemark *TPlacemarkType `xml:"http://www.opengis.net/kml/2.2 Placemark"`
-
-}
-
-type XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup struct {
-	AbstractContainerObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractContainerObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_AbstractContainerSimpleExtensionGroup struct {
-	AbstractContainerSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractContainerSimpleExtensionGroup"`
-
-}
-
-type TAbstractContainerType struct {
-	XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup
-
-	TAbstractFeatureType
-
-	XsdGoPkgHasElems_AbstractContainerSimpleExtensionGroup
-
-}
-
-type XsdGoPkgHasElems_FolderObjectExtensionGroup struct {
-	FolderObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 FolderObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_Folder struct {
-	Folders []*TFolderType `xml:"http://www.opengis.net/kml/2.2 Folder"`
-
-}
-
-type XsdGoPkgHasElems_SchemaExtension struct {
-	SchemaExtensions []xsdt.String `xml:"http://www.opengis.net/kml/2.2 SchemaExtension"`
-
-}
-
-type XsdGoPkgHasAttr_Type_XsdtString_ struct {
-	Type xsdt.String `xml:"http://www.opengis.net/kml/2.2 type,attr"`
-
-}
-
-type XsdGoPkgHasElems_SimpleFieldExtension struct {
-	SimpleFieldExtensions []xsdt.String `xml:"http://www.opengis.net/kml/2.2 SimpleFieldExtension"`
-
-}
-
-type TSimpleFieldType struct {
-	XsdGoPkgHasElem_DisplayName
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasElems_SimpleFieldExtension
-
-}
-
-type XsdGoPkgHasElems_SimpleField struct {
-	SimpleFields []*TSimpleFieldType `xml:"http://www.opengis.net/kml/2.2 SimpleField"`
-
-}
-
-type TSchemaType struct {
-	XsdGoPkgHasElems_SchemaExtension
-
-	XsdGoPkgHasElems_SimpleField
-
-}
-
-type XsdGoPkgHasElems_Schema struct {
-	Schemas []*TSchemaType `xml:"http://www.opengis.net/kml/2.2 Schema"`
-
-}
-
-type XsdGoPkgHasElems_DocumentObjectExtensionGroup struct {
-	DocumentObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 DocumentObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_DocumentSimpleExtensionGroup struct {
-	DocumentSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 DocumentSimpleExtensionGroup"`
-
-}
-
-type TDocumentType struct {
-	XsdGoPkgHasElems_DocumentSimpleExtensionGroup
-
-	XsdGoPkgHasElems_AbstractFeatureGroup
-
-	TAbstractContainerType
-
-	XsdGoPkgHasElems_Schema
-
-	XsdGoPkgHasElems_DocumentObjectExtensionGroup
-
-}
-
-type XsdGoPkgHasElems_Document struct {
-	Documents []*TDocumentType `xml:"http://www.opengis.net/kml/2.2 Document"`
-
-}
-
-type XsdGoPkgHasElems_AbstractContainerGroup struct {
-	AbstractContainerGroups []*TAbstractContainerType `xml:"http://www.opengis.net/kml/2.2 AbstractContainerGroup"`
-
-	XsdGoPkgHasElems_Folder
-
-	XsdGoPkgHasElems_Document
-
-}
-
-type XsdGoPkgHasElems_NetworkLink struct {
-	NetworkLinks []*TNetworkLinkType `xml:"http://www.opengis.net/kml/2.2 NetworkLink"`
-
-}
-
-type XsdGoPkgHasElems_PhotoOverlay struct {
-	PhotoOverlays []*TPhotoOverlayType `xml:"http://www.opengis.net/kml/2.2 PhotoOverlay"`
-
-}
-
-type XsdGoPkgHasElems_ScreenOverlay struct {
-	ScreenOverlays []*TScreenOverlayType `xml:"http://www.opengis.net/kml/2.2 ScreenOverlay"`
-
-}
-
-type XsdGoPkgHasElems_GroundOverlay struct {
-	GroundOverlays []*TGroundOverlayType `xml:"http://www.opengis.net/kml/2.2 GroundOverlay"`
-
-}
-
-type XsdGoPkgHasElems_AbstractOverlayGroup struct {
-	AbstractOverlayGroups []*TAbstractOverlayType `xml:"http://www.opengis.net/kml/2.2 AbstractOverlayGroup"`
-
-	XsdGoPkgHasElems_ScreenOverlay
-
-	XsdGoPkgHasElems_GroundOverlay
-
-	XsdGoPkgHasElems_PhotoOverlay
-
-}
-
-type XsdGoPkgHasElems_Placemark struct {
-	Placemarks []*TPlacemarkType `xml:"http://www.opengis.net/kml/2.2 Placemark"`
-
-}
-
-type XsdGoPkgHasElems_AbstractFeatureGroup struct {
-	AbstractFeatureGroups []*TAbstractFeatureType `xml:"http://www.opengis.net/kml/2.2 AbstractFeatureGroup"`
-
-	XsdGoPkgHasElems_Placemark
-
-	XsdGoPkgHasElems_AbstractContainerGroup
-
-	XsdGoPkgHasElems_NetworkLink
-
-	XsdGoPkgHasElems_AbstractOverlayGroup
-
-}
-
-type XsdGoPkgHasElems_FolderSimpleExtensionGroup struct {
-	FolderSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 FolderSimpleExtensionGroup"`
-
-}
-
-type TFolderType struct {
-	XsdGoPkgHasElems_AbstractFeatureGroup
-
-	XsdGoPkgHasElems_FolderSimpleExtensionGroup
-
-	TAbstractContainerType
-
-	XsdGoPkgHasElems_FolderObjectExtensionGroup
-
-}
-
-type XsdGoPkgHasElem_Folder struct {
-	Folder *TFolderType `xml:"http://www.opengis.net/kml/2.2 Folder"`
-
-}
-
-type XsdGoPkgHasElem_Document struct {
-	Document *TDocumentType `xml:"http://www.opengis.net/kml/2.2 Document"`
-
-}
-
-type XsdGoPkgHasElem_AbstractContainerGroup struct {
-	AbstractContainerGroup *TAbstractContainerType `xml:"http://www.opengis.net/kml/2.2 AbstractContainerGroup"`
-
-	XsdGoPkgHasElem_Folder
-
-	XsdGoPkgHasElem_Document
-
-}
-
-type XsdGoPkgHasElem_AbstractFeatureGroup struct {
-	AbstractFeatureGroup *TAbstractFeatureType `xml:"http://www.opengis.net/kml/2.2 AbstractFeatureGroup"`
-
-	XsdGoPkgHasElem_Placemark
-
-	XsdGoPkgHasElem_AbstractContainerGroup
-
-	XsdGoPkgHasElem_NetworkLink
-
-	XsdGoPkgHasElem_AbstractOverlayGroup
-
-}
-
-type XsdGoPkgHasElem_PolyStyleObjectExtensionGroup struct {
-	PolyStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PolyStyleObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_ItemIcon struct {
-	ItemIcon *TItemIconType `xml:"http://www.opengis.net/kml/2.2 ItemIcon"`
-
-}
-
-type XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup struct {
-	GroundOverlayObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 GroundOverlayObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_LineStringObjectExtensionGroup struct {
-	LineStringObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LineStringObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_Data struct {
-	Data *TDataType `xml:"http://www.opengis.net/kml/2.2 Data"`
-
-}
-
-type XsdGoPkgHasElem_AbstractColorStyleGroup struct {
-	AbstractColorStyleGroup *TAbstractColorStyleType `xml:"http://www.opengis.net/kml/2.2 AbstractColorStyleGroup"`
-
-	XsdGoPkgHasElem_IconStyle
-
-	XsdGoPkgHasElem_LabelStyle
-
-	XsdGoPkgHasElem_PolyStyle
-
-	XsdGoPkgHasElem_LineStyle
-
-}
-
-type XsdGoPkgHasElem_AbstractSubStyleGroup struct {
-	AbstractSubStyleGroup *TAbstractSubStyleType `xml:"http://www.opengis.net/kml/2.2 AbstractSubStyleGroup"`
-
-	XsdGoPkgHasElem_ListStyle
-
-	XsdGoPkgHasElem_BalloonStyle
-
-	XsdGoPkgHasElem_AbstractColorStyleGroup
-
-}
-
-type XsdGoPkgHasElem_TimeSpanObjectExtensionGroup struct {
-	TimeSpanObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 TimeSpanObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_LocationObjectExtensionGroup struct {
-	LocationObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LocationObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_AliasObjectExtensionGroup struct {
-	AliasObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AliasObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup struct {
-	BalloonStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 BalloonStyleObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_StyleObjectExtensionGroup struct {
-	StyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 StyleObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_PolygonObjectExtensionGroup struct {
-	PolygonObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PolygonObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_LinkObjectExtensionGroup struct {
-	LinkObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LinkObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_LineStyleObjectExtensionGroup struct {
-	LineStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LineStyleObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_RegionObjectExtensionGroup struct {
-	RegionObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 RegionObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_ScaleObjectExtensionGroup struct {
-	ScaleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ScaleObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_FolderObjectExtensionGroup struct {
-	FolderObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 FolderObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup struct {
-	LatLonBoxObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LatLonBoxObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_PlacemarkObjectExtensionGroup struct {
-	PlacemarkObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PlacemarkObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_LodObjectExtensionGroup struct {
-	LodObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LodObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_SchemaData struct {
-	SchemaData *TSchemaDataType `xml:"http://www.opengis.net/kml/2.2 SchemaData"`
-
-}
-
-type XsdGoPkgHasElem_TimeStampObjectExtensionGroup struct {
-	TimeStampObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 TimeStampObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup struct {
-	NetworkLinkControlObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 NetworkLinkControlObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_ModelObjectExtensionGroup struct {
-	ModelObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ModelObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup struct {
-	ImagePyramidObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ImagePyramidObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElem_AbstractObjectGroup struct {
-	AbstractObjectGroup *TAbstractObjectType `xml:"http://www.opengis.net/kml/2.2 AbstractObjectGroup"`
-
-	XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup
-
-	XsdGoPkgHasElem_LineStringObjectExtensionGroup
-
-	XsdGoPkgHasElem_LatLonAltBox
-
-	XsdGoPkgHasElem_Data
-
-	XsdGoPkgHasElem_AbstractSubStyleGroup
-
-	XsdGoPkgHasElem_TimeSpanObjectExtensionGroup
-
-	XsdGoPkgHasElem_LocationObjectExtensionGroup
-
-	XsdGoPkgHasElem_AliasObjectExtensionGroup
-
-	XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup
-
-	XsdGoPkgHasElem_Region
-
-	XsdGoPkgHasElem_StyleObjectExtensionGroup
-
-	XsdGoPkgHasElem_PolygonObjectExtensionGroup
-
-	XsdGoPkgHasElem_LinkObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractStyleSelectorGroup
-
-	XsdGoPkgHasElem_ImagePyramid
-
-	XsdGoPkgHasElem_Lod
-
-	XsdGoPkgHasElem_Scale
-
-	XsdGoPkgHasElem_LineStyleObjectExtensionGroup
-
-	XsdGoPkgHasElem_ViewVolume
-
-	XsdGoPkgHasElem_RegionObjectExtensionGroup
-
-	XsdGoPkgHasElem_ScaleObjectExtensionGroup
-
-	XsdGoPkgHasElem_FolderObjectExtensionGroup
-
-	XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup
-
-//	Url deprecated in 2.2
-	XsdGoPkgHasElem_Url
-
-	XsdGoPkgHasElem_PlacemarkObjectExtensionGroup
-
-	XsdGoPkgHasElem_LodObjectExtensionGroup
-
-	XsdGoPkgHasElem_SchemaData
-
-	XsdGoPkgHasElem_TimeStampObjectExtensionGroup
-
-	XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup
-
-	XsdGoPkgHasElem_ModelObjectExtensionGroup
-
-	XsdGoPkgHasElem_Link
-
-	XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup
-
-	XsdGoPkgHasElem_BoundaryObjectExtensionGroup
-
-	XsdGoPkgHasElem_DocumentObjectExtensionGroup
-
-	XsdGoPkgHasElem_LatLonBox
-
-	XsdGoPkgHasElem_ItemIconObjectExtensionGroup
-
-	XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractViewGroup
-
-	XsdGoPkgHasElem_ListStyleObjectExtensionGroup
-
-	XsdGoPkgHasElem_ResourceMap
-
-	XsdGoPkgHasElem_Pair
-
-	XsdGoPkgHasElem_OrientationObjectExtensionGroup
-
-	XsdGoPkgHasElem_StyleMapObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractTimePrimitiveGroup
-
-	XsdGoPkgHasElem_Alias
-
-	XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup
-
-	XsdGoPkgHasElem_CameraObjectExtensionGroup
-
-	XsdGoPkgHasElem_Icon
-
-	XsdGoPkgHasElem_LinearRingObjectExtensionGroup
-
-	XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup
-
-	XsdGoPkgHasElem_IconStyleObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractGeometryGroup
-
-	XsdGoPkgHasElem_Location
-
-	XsdGoPkgHasElem_PointObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractViewObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup
-
-	XsdGoPkgHasElem_LabelStyleObjectExtensionGroup
-
-	XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup
-
-	XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup
-
-	XsdGoPkgHasElem_LookAtObjectExtensionGroup
-
-	XsdGoPkgHasElem_ResourceMapObjectExtensionGroup
-
-	XsdGoPkgHasElem_BasicLinkObjectExtensionGroup
-
-	XsdGoPkgHasElem_Orientation
-
-	XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup
-
-	XsdGoPkgHasElem_PairObjectExtensionGroup
-
-	XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup
-
-	XsdGoPkgHasElem_KmlObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractFeatureGroup
-
-	XsdGoPkgHasElem_PolyStyleObjectExtensionGroup
-
-	XsdGoPkgHasElem_ItemIcon
-
-}
-
-type XsdGoPkgHasElems_ImagePyramid struct {
-	ImagePyramids []*TImagePyramidType `xml:"http://www.opengis.net/kml/2.2 ImagePyramid"`
-
-}
-
-type XsdGoPkgHasElems_Link struct {
-	Links []*TLinkType `xml:"http://www.opengis.net/kml/2.2 Link"`
-
-}
-
-type XsdGoPkgHasElems_Icon struct {
-	Icons []*TLinkType `xml:"http://www.opengis.net/kml/2.2 Icon"`
-
-}
-
-type XsdGoPkgHasElems_Lod struct {
-	Lods []*TLodType `xml:"http://www.opengis.net/kml/2.2 Lod"`
-
-}
-
-type XsdGoPkgHasElems_ViewVolume struct {
-	ViewVolumes []*TViewVolumeType `xml:"http://www.opengis.net/kml/2.2 ViewVolume"`
-
-}
-
-type XsdGoPkgHasElems_Orientation struct {
-	Orientations []*TOrientationType `xml:"http://www.opengis.net/kml/2.2 Orientation"`
-
-}
-
-type XsdGoPkgHasElems_TimeSpan struct {
-	TimeSpans []*TimeSpanType `xml:"http://www.opengis.net/kml/2.2 TimeSpan"`
-
-}
-
-type XsdGoPkgHasElems_TimeStamp struct {
-	TimeStamps []*TimeStampType `xml:"http://www.opengis.net/kml/2.2 TimeStamp"`
-
-}
-
-type XsdGoPkgHasElems_AbstractTimePrimitiveGroup struct {
-	AbstractTimePrimitiveGroups []*TAbstractTimePrimitiveType `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveGroup"`
-
-	XsdGoPkgHasElems_TimeStamp
-
-	XsdGoPkgHasElems_TimeSpan
-
-}
-
-type XsdGoPkgHasElems_ListStyle struct {
-	ListStyles []*TListStyleType `xml:"http://www.opengis.net/kml/2.2 ListStyle"`
+type XsdGoPkgHasElems_ResourceMap struct {
+	ResourceMaps []*TResourceMapType `xml:"http://www.opengis.net/kml/2.2 ResourceMap"`
 
 }
 
@@ -4056,44 +2692,310 @@ type XsdGoPkgHasElems_PolyStyle struct {
 type XsdGoPkgHasElems_AbstractColorStyleGroup struct {
 	AbstractColorStyleGroups []*TAbstractColorStyleType `xml:"http://www.opengis.net/kml/2.2 AbstractColorStyleGroup"`
 
-	XsdGoPkgHasElems_LabelStyle
-
 	XsdGoPkgHasElems_LineStyle
 
 	XsdGoPkgHasElems_IconStyle
 
 	XsdGoPkgHasElems_PolyStyle
 
+	XsdGoPkgHasElems_LabelStyle
+
+}
+
+type XsdGoPkgHasElems_ListStyle struct {
+	ListStyles []*TListStyleType `xml:"http://www.opengis.net/kml/2.2 ListStyle"`
+
 }
 
 type XsdGoPkgHasElems_AbstractSubStyleGroup struct {
 	AbstractSubStyleGroups []*TAbstractSubStyleType `xml:"http://www.opengis.net/kml/2.2 AbstractSubStyleGroup"`
 
-	XsdGoPkgHasElems_ListStyle
-
 	XsdGoPkgHasElems_BalloonStyle
 
 	XsdGoPkgHasElems_AbstractColorStyleGroup
 
-}
-
-type XsdGoPkgHasElems_LatLonAltBox struct {
-	LatLonAltBoxs []*TLatLonAltBoxType `xml:"http://www.opengis.net/kml/2.2 LatLonAltBox"`
+	XsdGoPkgHasElems_ListStyle
 
 }
 
-type XsdGoPkgHasElems_KmlObjectExtensionGroup struct {
-	KmlObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 KmlObjectExtensionGroup"`
+type XsdGoPkgHasElems_Orientation struct {
+	Orientations []*TOrientationType `xml:"http://www.opengis.net/kml/2.2 Orientation"`
 
 }
 
-type XsdGoPkgHasElems_LatLonBox struct {
-	LatLonBoxs []*TLatLonBoxType `xml:"http://www.opengis.net/kml/2.2 LatLonBox"`
+type XsdGoPkgHasElems_RegionObjectExtensionGroup struct {
+	RegionObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 RegionObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_Link struct {
+	Links []*TLinkType `xml:"http://www.opengis.net/kml/2.2 Link"`
+
+}
+
+type XsdGoPkgHasElem_LatLonAltBox struct {
+	LatLonAltBox *TLatLonAltBoxType `xml:"http://www.opengis.net/kml/2.2 LatLonAltBox"`
+
+}
+
+type XsdGoPkgHasElems_LodSimpleExtensionGroup struct {
+	LodSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LodSimpleExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_LodObjectExtensionGroup struct {
+	LodObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LodObjectExtensionGroup"`
+
+}
+
+type TLodType struct {
+	XsdGoPkgHasElems_LodSimpleExtensionGroup
+
+	TAbstractObjectType
+
+	XsdGoPkgHasElem_MaxFadeExtent
+
+	XsdGoPkgHasElems_LodObjectExtensionGroup
+
+	XsdGoPkgHasElem_MaxLodPixels
+
+	XsdGoPkgHasElem_MinFadeExtent
+
+	XsdGoPkgHasElem_MinLodPixels
+
+}
+
+type XsdGoPkgHasElem_Lod struct {
+	Lod *TLodType `xml:"http://www.opengis.net/kml/2.2 Lod"`
+
+}
+
+type XsdGoPkgHasElems_RegionSimpleExtensionGroup struct {
+	RegionSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 RegionSimpleExtensionGroup"`
+
+}
+
+type TRegionType struct {
+	XsdGoPkgHasElems_RegionObjectExtensionGroup
+
+	TAbstractObjectType
+
+	XsdGoPkgHasElem_Lod
+
+	XsdGoPkgHasElems_RegionSimpleExtensionGroup
+
+	XsdGoPkgHasElem_LatLonAltBox
+
+}
+
+type XsdGoPkgHasElems_Region struct {
+	Regions []*TRegionType `xml:"http://www.opengis.net/kml/2.2 Region"`
+
+}
+
+type XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup struct {
+	NetworkLinkObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 NetworkLinkObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_Lod struct {
+	Lods []*TLodType `xml:"http://www.opengis.net/kml/2.2 Lod"`
+
+}
+
+type XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup struct {
+	NetworkLinkControlObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 NetworkLinkControlObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_ViewVolumeObjectExtensionGroup struct {
+	ViewVolumeObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ViewVolumeObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup struct {
+	ScreenOverlayObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ScreenOverlayObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup struct {
+	TimeSpanSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 TimeSpanSimpleExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup struct {
+	AbstractTimePrimitiveSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveSimpleExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup struct {
+	AbstractTimePrimitiveObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveObjectExtensionGroup"`
+
+}
+
+type TAbstractTimePrimitiveType struct {
+	XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup
+
+	TAbstractObjectType
+
+	XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup
+
+}
+
+type TimeSpanType struct {
+	XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup
+
+	TAbstractTimePrimitiveType
+
+	XsdGoPkgHasElem_End
+
+	XsdGoPkgHasElem_Begin
+
+	XsdGoPkgHasElems_TimeSpanObjectExtensionGroup
+
+}
+
+type XsdGoPkgHasElems_TimeSpan struct {
+	TimeSpans []*TimeSpanType `xml:"http://www.opengis.net/kml/2.2 TimeSpan"`
+
+}
+
+type XsdGoPkgHasElems_TimeStampObjectExtensionGroup struct {
+	TimeStampObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 TimeStampObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_TimeStampSimpleExtensionGroup struct {
+	TimeStampSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 TimeStampSimpleExtensionGroup"`
+
+}
+
+type TimeStampType struct {
+	XsdGoPkgHasElems_TimeStampSimpleExtensionGroup
+
+	XsdGoPkgHasElem_When
+
+	TAbstractTimePrimitiveType
+
+	XsdGoPkgHasElems_TimeStampObjectExtensionGroup
+
+}
+
+type XsdGoPkgHasElems_TimeStamp struct {
+	TimeStamps []*TimeStampType `xml:"http://www.opengis.net/kml/2.2 TimeStamp"`
+
+}
+
+type XsdGoPkgHasElems_AbstractTimePrimitiveGroup struct {
+	AbstractTimePrimitiveGroups []*TAbstractTimePrimitiveType `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveGroup"`
+
+	XsdGoPkgHasElems_TimeSpan
+
+	XsdGoPkgHasElems_TimeStamp
+
+}
+
+type XsdGoPkgHasElems_StyleMap struct {
+	StyleMaps []*TStyleMapType `xml:"http://www.opengis.net/kml/2.2 StyleMap"`
+
+}
+
+type XsdGoPkgHasElems_Style struct {
+	Styles []*TStyleType `xml:"http://www.opengis.net/kml/2.2 Style"`
+
+}
+
+type XsdGoPkgHasElems_AbstractStyleSelectorGroup struct {
+	AbstractStyleSelectorGroups []*TAbstractStyleSelectorType `xml:"http://www.opengis.net/kml/2.2 AbstractStyleSelectorGroup"`
+
+	XsdGoPkgHasElems_StyleMap
+
+	XsdGoPkgHasElems_Style
+
+}
+
+type XsdGoPkgHasElems_FolderObjectExtensionGroup struct {
+	FolderObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 FolderObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_CameraObjectExtensionGroup struct {
+	CameraObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 CameraObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_AbstractViewSimpleExtensionGroup struct {
+	AbstractViewSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractViewSimpleExtensionGroup"`
+
+}
+
+type TAbstractViewType struct {
+	XsdGoPkgHasElems_AbstractViewSimpleExtensionGroup
+
+	XsdGoPkgHasElems_AbstractViewObjectExtensionGroup
+
+	TAbstractObjectType
+
+}
+
+type XsdGoPkgHasElems_CameraSimpleExtensionGroup struct {
+	CameraSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 CameraSimpleExtensionGroup"`
+
+}
+
+type TCameraType struct {
+	XsdGoPkgHasElem_Tilt
+
+	XsdGoPkgHasElem_Heading
+
+	XsdGoPkgHasElem_Altitude
+
+	TAbstractViewType
+
+	XsdGoPkgHasElems_CameraSimpleExtensionGroup
+
+	XsdGoPkgHasElem_Roll
+
+	XsdGoPkgHasElem_Longitude
+
+	XsdGoPkgHasElem_Latitude
+
+	XsdGoPkgHasElems_CameraObjectExtensionGroup
+
+	XsdGoPkgHasElem_AltitudeModeGroup
 
 }
 
 type XsdGoPkgHasElems_Camera struct {
 	Cameras []*TCameraType `xml:"http://www.opengis.net/kml/2.2 Camera"`
+
+}
+
+type XsdGoPkgHasElems_LookAtSimpleExtensionGroup struct {
+	LookAtSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LookAtSimpleExtensionGroup"`
+
+}
+
+type TLookAtType struct {
+	XsdGoPkgHasElem_Heading
+
+	XsdGoPkgHasElems_LookAtSimpleExtensionGroup
+
+	TAbstractViewType
+
+	XsdGoPkgHasElem_Range
+
+	XsdGoPkgHasElems_LookAtObjectExtensionGroup
+
+	XsdGoPkgHasElem_AltitudeModeGroup
+
+	XsdGoPkgHasElem_Altitude
+
+	XsdGoPkgHasElem_Tilt
+
+	XsdGoPkgHasElem_Latitude
+
+	XsdGoPkgHasElem_Longitude
 
 }
 
@@ -4111,195 +3013,1301 @@ type XsdGoPkgHasElems_AbstractViewGroup struct {
 
 }
 
+type XsdGoPkgHasElems_DocumentObjectExtensionGroup struct {
+	DocumentObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 DocumentObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup struct {
+	PlacemarkSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PlacemarkSimpleExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_LineString struct {
+	LineString *TLineStringType `xml:"http://www.opengis.net/kml/2.2 LineString"`
+
+}
+
+type XsdGoPkgHasElem_Point struct {
+	Point *TPointType `xml:"http://www.opengis.net/kml/2.2 Point"`
+
+}
+
+type XsdGoPkgHasElem_Model struct {
+	Model *TModelType `xml:"http://www.opengis.net/kml/2.2 Model"`
+
+}
+
+type XsdGoPkgHasElem_Polygon struct {
+	Polygon *TPolygonType `xml:"http://www.opengis.net/kml/2.2 Polygon"`
+
+}
+
+type XsdGoPkgHasElem_MultiGeometry struct {
+	MultiGeometry *TMultiGeometryType `xml:"http://www.opengis.net/kml/2.2 MultiGeometry"`
+
+}
+
+type XsdGoPkgHasElem_AbstractGeometryGroup struct {
+	AbstractGeometryGroup *TAbstractGeometryType `xml:"http://www.opengis.net/kml/2.2 AbstractGeometryGroup"`
+
+	XsdGoPkgHasElem_Model
+
+	XsdGoPkgHasElem_Polygon
+
+	XsdGoPkgHasElem_MultiGeometry
+
+	XsdGoPkgHasElem_LinearRing
+
+	XsdGoPkgHasElem_LineString
+
+	XsdGoPkgHasElem_Point
+
+}
+
+type XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup struct {
+	AbstractFeatureObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractFeatureObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup struct {
+	AbstractFeatureSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractFeatureSimpleExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_TimeSpan struct {
+	TimeSpan *TimeSpanType `xml:"http://www.opengis.net/kml/2.2 TimeSpan"`
+
+}
+
+type XsdGoPkgHasElem_TimeStamp struct {
+	TimeStamp *TimeStampType `xml:"http://www.opengis.net/kml/2.2 TimeStamp"`
+
+}
+
+type XsdGoPkgHasElem_AbstractTimePrimitiveGroup struct {
+	AbstractTimePrimitiveGroup *TAbstractTimePrimitiveType `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveGroup"`
+
+	XsdGoPkgHasElem_TimeSpan
+
+	XsdGoPkgHasElem_TimeStamp
+
+}
+
+//	Metadata deprecated in 2.2
+//	MetadataType deprecated in 2.2
+type TMetadataType struct {
+}
+
+type XsdGoPkgHasElem_Metadata struct {
+//	Metadata deprecated in 2.2
+	Metadata *TMetadataType `xml:"http://www.opengis.net/kml/2.2 Metadata"`
+
+}
+
+type XsdGoPkgHasElem_Region struct {
+	Region *TRegionType `xml:"http://www.opengis.net/kml/2.2 Region"`
+
+}
+
+type XsdGoPkgHasElems_DataExtension struct {
+	DataExtensions []xsdt.String `xml:"http://www.opengis.net/kml/2.2 DataExtension"`
+
+}
+
+type TDataType struct {
+	XsdGoPkgHasElem_DisplayName
+
+	TAbstractObjectType
+
+	XsdGoPkgHasAttr_Name_XsdtString_
+
+	XsdGoPkgHasElem_Value
+
+	XsdGoPkgHasElems_DataExtension
+
+}
+
+type XsdGoPkgHasElems_Data struct {
+	Datas []*TDataType `xml:"http://www.opengis.net/kml/2.2 Data"`
+
+}
+
+type TExtendedDataType struct {
+	XsdGoPkgHasElems_SchemaData
+
+	XsdGoPkgHasElems_Data
+
+}
+
+type XsdGoPkgHasElem_ExtendedData struct {
+	ExtendedData *TExtendedDataType `xml:"http://www.opengis.net/kml/2.2 ExtendedData"`
+
+}
+
+type XsdGoPkgHasElem_Camera struct {
+	Camera *TCameraType `xml:"http://www.opengis.net/kml/2.2 Camera"`
+
+}
+
+type XsdGoPkgHasElem_LookAt struct {
+	LookAt *TLookAtType `xml:"http://www.opengis.net/kml/2.2 LookAt"`
+
+}
+
+type XsdGoPkgHasElem_AbstractViewGroup struct {
+	AbstractViewGroup *TAbstractViewType `xml:"http://www.opengis.net/kml/2.2 AbstractViewGroup"`
+
+	XsdGoPkgHasElem_Camera
+
+	XsdGoPkgHasElem_LookAt
+
+}
+
+type TAbstractFeatureType struct {
+	XsdGoPkgHasElem_Name
+
+//	Metadata deprecated in 2.2
+	XsdGoPkgHasElem_Metadata
+
+	XsdGoPkgHasElem_Description
+
+	XsdGoPkgHasElem_Region
+
+	XsdGoPkgHasElem_Address
+
+//	Metadata deprecated in 2.2
+	XsdGoPkgHasElem_ExtendedData
+
+	XsdGoPkgHasElem_AbstractViewGroup
+
+	XsdGoPkgHasElem_StyleUrl
+
+	XsdGoPkgHasElem_Visibility
+
+	XsdGoPkgHasElems_AbstractStyleSelectorGroup
+
+	TAbstractObjectType
+
+	XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup
+
+//	Snippet deprecated in 2.2
+	XsdGoPkgHasElem_Snippet
+
+	XsdGoPkgHasElem_Open
+
+	XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup
+
+	xal.XsdGoPkgHasElem_AddressDetails
+
+	XsdGoPkgHasElem_PhoneNumber
+
+	XsdGoPkgHasElem_AbstractTimePrimitiveGroup
+
+	atom.XsdGoPkgHasElem_Author
+
+	atom.XsdGoPkgHasElem_Link
+
+}
+
+type TPlacemarkType struct {
+	TAbstractFeatureType
+
+	XsdGoPkgHasElems_PlacemarkObjectExtensionGroup
+
+	XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup
+
+	XsdGoPkgHasElem_AbstractGeometryGroup
+
+}
+
+type XsdGoPkgHasElems_Placemark struct {
+	Placemarks []*TPlacemarkType `xml:"http://www.opengis.net/kml/2.2 Placemark"`
+
+}
+
+type XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup struct {
+	AbstractContainerObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractContainerObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_AbstractContainerSimpleExtensionGroup struct {
+	AbstractContainerSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractContainerSimpleExtensionGroup"`
+
+}
+
+type TAbstractContainerType struct {
+	XsdGoPkgHasElems_AbstractContainerSimpleExtensionGroup
+
+	TAbstractFeatureType
+
+	XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup
+
+}
+
+type XsdGoPkgHasElems_SchemaExtension struct {
+	SchemaExtensions []xsdt.String `xml:"http://www.opengis.net/kml/2.2 SchemaExtension"`
+
+}
+
+type XsdGoPkgHasElems_SimpleFieldExtension struct {
+	SimpleFieldExtensions []xsdt.String `xml:"http://www.opengis.net/kml/2.2 SimpleFieldExtension"`
+
+}
+
+type XsdGoPkgHasAttr_Type_XsdtString_ struct {
+	Type xsdt.String `xml:"http://www.opengis.net/kml/2.2 type,attr"`
+
+}
+
+type TSimpleFieldType struct {
+	XsdGoPkgHasAttr_Name_XsdtString_
+
+	XsdGoPkgHasElem_DisplayName
+
+	XsdGoPkgHasElems_SimpleFieldExtension
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_SimpleField struct {
+	SimpleFields []*TSimpleFieldType `xml:"http://www.opengis.net/kml/2.2 SimpleField"`
+
+}
+
+type TSchemaType struct {
+	XsdGoPkgHasElems_SchemaExtension
+
+	XsdGoPkgHasAttr_Id_XsdtId_
+
+	XsdGoPkgHasElems_SimpleField
+
+	XsdGoPkgHasAttr_Name_XsdtString_
+
+}
+
+type XsdGoPkgHasElems_Schema struct {
+	Schemas []*TSchemaType `xml:"http://www.opengis.net/kml/2.2 Schema"`
+
+}
+
+type XsdGoPkgHasElems_DocumentSimpleExtensionGroup struct {
+	DocumentSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 DocumentSimpleExtensionGroup"`
+
+}
+
+type TDocumentType struct {
+	XsdGoPkgHasElems_AbstractFeatureGroup
+
+	TAbstractContainerType
+
+	XsdGoPkgHasElems_DocumentObjectExtensionGroup
+
+	XsdGoPkgHasElems_Schema
+
+	XsdGoPkgHasElems_DocumentSimpleExtensionGroup
+
+}
+
+type XsdGoPkgHasElems_Document struct {
+	Documents []*TDocumentType `xml:"http://www.opengis.net/kml/2.2 Document"`
+
+}
+
+type XsdGoPkgHasElems_FolderSimpleExtensionGroup struct {
+	FolderSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 FolderSimpleExtensionGroup"`
+
+}
+
+type TFolderType struct {
+	XsdGoPkgHasElems_AbstractFeatureGroup
+
+	XsdGoPkgHasElems_FolderObjectExtensionGroup
+
+	TAbstractContainerType
+
+	XsdGoPkgHasElems_FolderSimpleExtensionGroup
+
+}
+
+type XsdGoPkgHasElems_Folder struct {
+	Folders []*TFolderType `xml:"http://www.opengis.net/kml/2.2 Folder"`
+
+}
+
+type XsdGoPkgHasElems_AbstractContainerGroup struct {
+	AbstractContainerGroups []*TAbstractContainerType `xml:"http://www.opengis.net/kml/2.2 AbstractContainerGroup"`
+
+	XsdGoPkgHasElems_Document
+
+	XsdGoPkgHasElems_Folder
+
+}
+
+type XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup struct {
+	NetworkLinkSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 NetworkLinkSimpleExtensionGroup"`
+
+}
+
+//	Url deprecated in 2.2
+type XsdGoPkgHasElem_Url struct {
+//	Url deprecated in 2.2
+	Url *TLinkType `xml:"http://www.opengis.net/kml/2.2 Url"`
+
+}
+
+type TNetworkLinkType struct {
+	XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup
+
+	XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup
+
+//	Url deprecated in 2.2
+	XsdGoPkgHasElem_Link
+
+	TAbstractFeatureType
+
+//	Url deprecated in 2.2
+	XsdGoPkgHasElem_Url
+
+	XsdGoPkgHasElem_RefreshVisibility
+
+	XsdGoPkgHasElem_FlyToView
+
+}
+
+type XsdGoPkgHasElems_NetworkLink struct {
+	NetworkLinks []*TNetworkLinkType `xml:"http://www.opengis.net/kml/2.2 NetworkLink"`
+
+}
+
+type XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup struct {
+	AbstractOverlaySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractOverlaySimpleExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_Icon struct {
+	Icon *TLinkType `xml:"http://www.opengis.net/kml/2.2 Icon"`
+
+}
+
+type XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup struct {
+	AbstractOverlayObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractOverlayObjectExtensionGroup"`
+
+}
+
+type TAbstractOverlayType struct {
+	XsdGoPkgHasElem_DrawOrder
+
+	XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup
+
+	XsdGoPkgHasElem_Color
+
+	XsdGoPkgHasElem_Icon
+
+	TAbstractFeatureType
+
+	XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup
+
+}
+
+type XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup struct {
+	ScreenOverlaySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ScreenOverlaySimpleExtensionGroup"`
+
+}
+
+type TScreenOverlayType struct {
+	XsdGoPkgHasElem_OverlayXY
+
+	TAbstractOverlayType
+
+	XsdGoPkgHasElem_Rotation
+
+	XsdGoPkgHasElem_RotationXY
+
+	XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup
+
+	XsdGoPkgHasElem_Size
+
+	XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup
+
+	XsdGoPkgHasElem_ScreenXY
+
+}
+
+type XsdGoPkgHasElems_ScreenOverlay struct {
+	ScreenOverlays []*TScreenOverlayType `xml:"http://www.opengis.net/kml/2.2 ScreenOverlay"`
+
+}
+
+type XsdGoPkgHasElem_LatLonBox struct {
+	LatLonBox *TLatLonBoxType `xml:"http://www.opengis.net/kml/2.2 LatLonBox"`
+
+}
+
+type XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup struct {
+	GroundOverlayObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 GroundOverlayObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup struct {
+	GroundOverlaySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 GroundOverlaySimpleExtensionGroup"`
+
+}
+
+type TGroundOverlayType struct {
+	XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup
+
+	XsdGoPkgHasElem_Altitude
+
+	XsdGoPkgHasElem_AltitudeModeGroup
+
+	XsdGoPkgHasElem_LatLonBox
+
+	TAbstractOverlayType
+
+	XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup
+
+}
+
+type XsdGoPkgHasElems_GroundOverlay struct {
+	GroundOverlays []*TGroundOverlayType `xml:"http://www.opengis.net/kml/2.2 GroundOverlay"`
+
+}
+
+type XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup struct {
+	ImagePyramidSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ImagePyramidSimpleExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup struct {
+	ImagePyramidObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ImagePyramidObjectExtensionGroup"`
+
+}
+
+type TImagePyramidType struct {
+	XsdGoPkgHasElem_MaxWidth
+
+	XsdGoPkgHasElem_TileSize
+
+	XsdGoPkgHasElem_MaxHeight
+
+	XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup
+
+	XsdGoPkgHasElem_GridOrigin
+
+	XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup
+
+	TAbstractObjectType
+
+}
+
+type XsdGoPkgHasElem_ImagePyramid struct {
+	ImagePyramid *TImagePyramidType `xml:"http://www.opengis.net/kml/2.2 ImagePyramid"`
+
+}
+
+type XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup struct {
+	PhotoOverlaySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PhotoOverlaySimpleExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElems_ViewVolumeSimpleExtensionGroup struct {
+	ViewVolumeSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ViewVolumeSimpleExtensionGroup"`
+
+}
+
+type TViewVolumeType struct {
+	XsdGoPkgHasElem_Near
+
+	XsdGoPkgHasElem_LeftFov
+
+	TAbstractObjectType
+
+	XsdGoPkgHasElem_RightFov
+
+	XsdGoPkgHasElem_TopFov
+
+	XsdGoPkgHasElems_ViewVolumeSimpleExtensionGroup
+
+	XsdGoPkgHasElems_ViewVolumeObjectExtensionGroup
+
+	XsdGoPkgHasElem_BottomFov
+
+}
+
+type XsdGoPkgHasElem_ViewVolume struct {
+	ViewVolume *TViewVolumeType `xml:"http://www.opengis.net/kml/2.2 ViewVolume"`
+
+}
+
+type TPhotoOverlayType struct {
+	XsdGoPkgHasElem_Rotation
+
+	XsdGoPkgHasElem_ImagePyramid
+
+	TAbstractOverlayType
+
+	XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup
+
+	XsdGoPkgHasElem_Shape
+
+	XsdGoPkgHasElem_ViewVolume
+
+	XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup
+
+	XsdGoPkgHasElem_Point
+
+}
+
+type XsdGoPkgHasElems_PhotoOverlay struct {
+	PhotoOverlays []*TPhotoOverlayType `xml:"http://www.opengis.net/kml/2.2 PhotoOverlay"`
+
+}
+
+type XsdGoPkgHasElems_AbstractOverlayGroup struct {
+	AbstractOverlayGroups []*TAbstractOverlayType `xml:"http://www.opengis.net/kml/2.2 AbstractOverlayGroup"`
+
+	XsdGoPkgHasElems_GroundOverlay
+
+	XsdGoPkgHasElems_PhotoOverlay
+
+	XsdGoPkgHasElems_ScreenOverlay
+
+}
+
+type XsdGoPkgHasElems_AbstractFeatureGroup struct {
+	AbstractFeatureGroups []*TAbstractFeatureType `xml:"http://www.opengis.net/kml/2.2 AbstractFeatureGroup"`
+
+	XsdGoPkgHasElems_AbstractContainerGroup
+
+	XsdGoPkgHasElems_NetworkLink
+
+	XsdGoPkgHasElems_AbstractOverlayGroup
+
+	XsdGoPkgHasElems_Placemark
+
+}
+
+type XsdGoPkgHasElems_ViewVolume struct {
+	ViewVolumes []*TViewVolumeType `xml:"http://www.opengis.net/kml/2.2 ViewVolume"`
+
+}
+
+type XsdGoPkgHasElems_Icon struct {
+	Icons []*TLinkType `xml:"http://www.opengis.net/kml/2.2 Icon"`
+
+}
+
 type XsdGoPkgHasElems_Location struct {
 	Locations []*TLocationType `xml:"http://www.opengis.net/kml/2.2 Location"`
 
 }
 
-type XsdGoPkgHasElems_Region struct {
-	Regions []*TRegionType `xml:"http://www.opengis.net/kml/2.2 Region"`
-
-}
-
-//	Url deprecated in 2.2
-type XsdGoPkgHasElems_Url struct {
-//	Url deprecated in 2.2
-	Urls []*TLinkType `xml:"http://www.opengis.net/kml/2.2 Url"`
-
-}
-
-type XsdGoPkgHasElems_ScaleObjectExtensionGroup struct {
-	ScaleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ScaleObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup struct {
-	NetworkLinkControlObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 NetworkLinkControlObjectExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_ResourceMap struct {
-	ResourceMaps []*TResourceMapType `xml:"http://www.opengis.net/kml/2.2 ResourceMap"`
+type XsdGoPkgHasElems_ImagePyramid struct {
+	ImagePyramids []*TImagePyramidType `xml:"http://www.opengis.net/kml/2.2 ImagePyramid"`
 
 }
 
 type XsdGoPkgHasElems_AbstractObjectGroup struct {
 	AbstractObjectGroups []*TAbstractObjectType `xml:"http://www.opengis.net/kml/2.2 AbstractObjectGroup"`
 
-	XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup
+	XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup
 
-	XsdGoPkgHasElems_ViewVolumeObjectExtensionGroup
+	XsdGoPkgHasElems_LabelStyleObjectExtensionGroup
+
+	XsdGoPkgHasElems_CameraObjectExtensionGroup
+
+	XsdGoPkgHasElems_Icon
 
 	XsdGoPkgHasElems_Data
 
 	XsdGoPkgHasElems_Location
 
-	XsdGoPkgHasElems_ModelObjectExtensionGroup
+	XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup
 
-	XsdGoPkgHasElems_PlacemarkObjectExtensionGroup
+	XsdGoPkgHasElems_LodObjectExtensionGroup
 
-	XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup
-
-	XsdGoPkgHasElems_Region
-
-	XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup
-
-	XsdGoPkgHasElems_DocumentObjectExtensionGroup
-
-	XsdGoPkgHasElems_FolderObjectExtensionGroup
-
-	XsdGoPkgHasElems_ItemIcon
+	XsdGoPkgHasElems_ImagePyramid
 
 	XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup
 
-	XsdGoPkgHasElems_BoundaryObjectExtensionGroup
+	XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup
 
-	XsdGoPkgHasElems_OrientationObjectExtensionGroup
+	XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup
+
+	XsdGoPkgHasElems_Alias
+
+	XsdGoPkgHasElems_LineStyleObjectExtensionGroup
+
+	XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup
+
+	XsdGoPkgHasElems_TimeStampObjectExtensionGroup
+
+	XsdGoPkgHasElems_AbstractViewObjectExtensionGroup
+
+	XsdGoPkgHasElems_TimeSpanObjectExtensionGroup
+
+	XsdGoPkgHasElems_LookAtObjectExtensionGroup
+
+	XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup
+
+	XsdGoPkgHasElems_LatLonAltBox
+
+	XsdGoPkgHasElems_IconStyleObjectExtensionGroup
+
+	XsdGoPkgHasElems_Pair
+
+	XsdGoPkgHasElems_AbstractSubStyleObjectExtensionGroup
+
+	XsdGoPkgHasElems_AliasObjectExtensionGroup
+
+	XsdGoPkgHasElems_AbstractGeometryGroup
+
+	XsdGoPkgHasElems_ScaleObjectExtensionGroup
+
+	XsdGoPkgHasElems_StyleObjectExtensionGroup
+
+	XsdGoPkgHasElems_Scale
 
 //	Url deprecated in 2.2
 	XsdGoPkgHasElems_Url
 
-	XsdGoPkgHasElems_TimeSpanObjectExtensionGroup
-
-	XsdGoPkgHasElems_LinearRingObjectExtensionGroup
-
-	XsdGoPkgHasElems_SchemaData
+	XsdGoPkgHasElems_PlacemarkObjectExtensionGroup
 
 	XsdGoPkgHasElems_StyleMapObjectExtensionGroup
 
-	XsdGoPkgHasElems_ScaleObjectExtensionGroup
+	XsdGoPkgHasElems_KmlObjectExtensionGroup
 
-	XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup
+	XsdGoPkgHasElems_SchemaData
 
-	XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup
+	XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup
 
-	XsdGoPkgHasElems_Scale
+	XsdGoPkgHasElems_LatLonBox
 
-	XsdGoPkgHasElems_AbstractStyleSelectorGroup
+	XsdGoPkgHasElems_ItemIconObjectExtensionGroup
 
-	XsdGoPkgHasElems_AbstractSubStyleObjectExtensionGroup
+	XsdGoPkgHasElems_BasicLinkObjectExtensionGroup
 
-	XsdGoPkgHasElems_LocationObjectExtensionGroup
+	XsdGoPkgHasElems_ModelObjectExtensionGroup
 
-	XsdGoPkgHasElems_RegionObjectExtensionGroup
-
-	XsdGoPkgHasElems_StyleObjectExtensionGroup
+	XsdGoPkgHasElems_PolygonObjectExtensionGroup
 
 	XsdGoPkgHasElems_ResourceMap
 
-	XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup
+	XsdGoPkgHasElems_ItemIcon
 
-	XsdGoPkgHasElems_AbstractFeatureGroup
+	XsdGoPkgHasElems_BalloonStyleObjectExtensionGroup
 
-	XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup
-
-	XsdGoPkgHasElems_IconStyleObjectExtensionGroup
+	XsdGoPkgHasElems_AbstractSubStyleGroup
 
 	XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup
 
-	XsdGoPkgHasElems_Alias
+	XsdGoPkgHasElems_Orientation
 
-	XsdGoPkgHasElems_ImagePyramid
+	XsdGoPkgHasElems_RegionObjectExtensionGroup
 
-	XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup
+	XsdGoPkgHasElems_LinearRingObjectExtensionGroup
+
+	XsdGoPkgHasElems_Link
+
+	XsdGoPkgHasElems_PairObjectExtensionGroup
+
+	XsdGoPkgHasElems_Region
+
+	XsdGoPkgHasElems_LineStringObjectExtensionGroup
+
+	XsdGoPkgHasElems_ResourceMapObjectExtensionGroup
+
+	XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup
+
+	XsdGoPkgHasElems_Lod
+
+	XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup
+
+	XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup
+
+	XsdGoPkgHasElems_ListStyleObjectExtensionGroup
+
+	XsdGoPkgHasElems_ViewVolumeObjectExtensionGroup
+
+	XsdGoPkgHasElems_LinkObjectExtensionGroup
+
+	XsdGoPkgHasElems_OrientationObjectExtensionGroup
+
+	XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup
+
+	XsdGoPkgHasElems_AbstractTimePrimitiveGroup
+
+	XsdGoPkgHasElems_BoundaryObjectExtensionGroup
+
+	XsdGoPkgHasElems_LocationObjectExtensionGroup
+
+	XsdGoPkgHasElems_AbstractStyleSelectorGroup
+
+	XsdGoPkgHasElems_PolyStyleObjectExtensionGroup
+
+	XsdGoPkgHasElems_FolderObjectExtensionGroup
+
+	XsdGoPkgHasElems_AbstractViewGroup
+
+	XsdGoPkgHasElems_DocumentObjectExtensionGroup
+
+	XsdGoPkgHasElems_AbstractFeatureGroup
 
 	XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup
 
 	XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup
 
-	XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup
-
 	XsdGoPkgHasElems_PointObjectExtensionGroup
-
-	XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup
-
-	XsdGoPkgHasElems_Link
-
-	XsdGoPkgHasElems_AbstractGeometryGroup
-
-	XsdGoPkgHasElems_PolyStyleObjectExtensionGroup
-
-	XsdGoPkgHasElems_BasicLinkObjectExtensionGroup
-
-	XsdGoPkgHasElems_Icon
-
-	XsdGoPkgHasElems_AbstractViewObjectExtensionGroup
-
-	XsdGoPkgHasElems_LinkObjectExtensionGroup
-
-	XsdGoPkgHasElems_Lod
-
-	XsdGoPkgHasElems_CameraObjectExtensionGroup
-
-	XsdGoPkgHasElems_ListStyleObjectExtensionGroup
-
-	XsdGoPkgHasElems_LodObjectExtensionGroup
 
 	XsdGoPkgHasElems_ViewVolume
 
-	XsdGoPkgHasElems_PolygonObjectExtensionGroup
-
-	XsdGoPkgHasElems_Orientation
+	XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup
 
 	XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup
 
-	XsdGoPkgHasElems_PairObjectExtensionGroup
+}
 
-	XsdGoPkgHasElems_AbstractTimePrimitiveGroup
+type XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup struct {
+	AbstractGeometryObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractGeometryObjectExtensionGroup"`
 
-	XsdGoPkgHasElems_LineStyleObjectExtensionGroup
+}
 
-	XsdGoPkgHasElems_AbstractSubStyleGroup
+type XsdGoPkgHasElem_LodObjectExtensionGroup struct {
+	LodObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LodObjectExtensionGroup"`
 
-	XsdGoPkgHasElems_ItemIconObjectExtensionGroup
+}
 
-	XsdGoPkgHasElems_TimeStampObjectExtensionGroup
+type XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup struct {
+	LatLonAltBoxObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LatLonAltBoxObjectExtensionGroup"`
 
-	XsdGoPkgHasElems_LineStringObjectExtensionGroup
+}
 
-	XsdGoPkgHasElems_LatLonAltBox
+type XsdGoPkgHasElem_FolderObjectExtensionGroup struct {
+	FolderObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 FolderObjectExtensionGroup"`
 
-	XsdGoPkgHasElems_KmlObjectExtensionGroup
+}
 
-	XsdGoPkgHasElems_LatLonBox
+type XsdGoPkgHasElem_CameraObjectExtensionGroup struct {
+	CameraObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 CameraObjectExtensionGroup"`
 
-	XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup
+}
 
-	XsdGoPkgHasElems_AbstractViewGroup
+type XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup struct {
+	ScreenOverlayObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ScreenOverlayObjectExtensionGroup"`
 
-	XsdGoPkgHasElems_LookAtObjectExtensionGroup
+}
 
-	XsdGoPkgHasElems_Pair
+type XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup struct {
+	AbstractOverlayObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractOverlayObjectExtensionGroup"`
 
-	XsdGoPkgHasElems_BalloonStyleObjectExtensionGroup
+}
 
-	XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup
+type XsdGoPkgHasElem_PolygonObjectExtensionGroup struct {
+	PolygonObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PolygonObjectExtensionGroup"`
 
-	XsdGoPkgHasElems_AliasObjectExtensionGroup
+}
 
-	XsdGoPkgHasElems_ResourceMapObjectExtensionGroup
+type XsdGoPkgHasElem_Data struct {
+	Data *TDataType `xml:"http://www.opengis.net/kml/2.2 Data"`
 
-	XsdGoPkgHasElems_LabelStyleObjectExtensionGroup
+}
+
+type XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup struct {
+	ImagePyramidObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ImagePyramidObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_IconStyleObjectExtensionGroup struct {
+	IconStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 IconStyleObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_KmlObjectExtensionGroup struct {
+	KmlObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 KmlObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup struct {
+	AbstractTimePrimitiveObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_BoundaryObjectExtensionGroup struct {
+	BoundaryObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 BoundaryObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_ResourceMapObjectExtensionGroup struct {
+	ResourceMapObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ResourceMapObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_ItemIcon struct {
+	ItemIcon *TItemIconType `xml:"http://www.opengis.net/kml/2.2 ItemIcon"`
+
+}
+
+type XsdGoPkgHasElem_PointObjectExtensionGroup struct {
+	PointObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PointObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup struct {
+	NetworkLinkObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 NetworkLinkObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup struct {
+	GroundOverlayObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 GroundOverlayObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_PlacemarkObjectExtensionGroup struct {
+	PlacemarkObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PlacemarkObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_LineStringObjectExtensionGroup struct {
+	LineStringObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LineStringObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup struct {
+	NetworkLinkControlObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 NetworkLinkControlObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_BasicLinkObjectExtensionGroup struct {
+	BasicLinkObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 BasicLinkObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup struct {
+	BalloonStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 BalloonStyleObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup struct {
+	AbstractContainerObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractContainerObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_PolyStyleObjectExtensionGroup struct {
+	PolyStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PolyStyleObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_LineStyleObjectExtensionGroup struct {
+	LineStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LineStyleObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_PairObjectExtensionGroup struct {
+	PairObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PairObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_AbstractViewObjectExtensionGroup struct {
+	AbstractViewObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractViewObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_LabelStyleObjectExtensionGroup struct {
+	LabelStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LabelStyleObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup struct {
+	AbstractStyleSelectorObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractStyleSelectorObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup struct {
+	ViewVolumeObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ViewVolumeObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_SchemaData struct {
+	SchemaData *TSchemaDataType `xml:"http://www.opengis.net/kml/2.2 SchemaData"`
+
+}
+
+type XsdGoPkgHasElem_LinkObjectExtensionGroup struct {
+	LinkObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LinkObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_RegionObjectExtensionGroup struct {
+	RegionObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 RegionObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_LookAtObjectExtensionGroup struct {
+	LookAtObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LookAtObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_TimeStampObjectExtensionGroup struct {
+	TimeStampObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 TimeStampObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup struct {
+	PhotoOverlayObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PhotoOverlayObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_StyleObjectExtensionGroup struct {
+	StyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 StyleObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup struct {
+	AbstractSubStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractSubStyleObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_TimeSpanObjectExtensionGroup struct {
+	TimeSpanObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 TimeSpanObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_OrientationObjectExtensionGroup struct {
+	OrientationObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 OrientationObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_LinearRingObjectExtensionGroup struct {
+	LinearRingObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LinearRingObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_ModelObjectExtensionGroup struct {
+	ModelObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ModelObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup struct {
+	AbstractLatLonBoxObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractLatLonBoxObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_Placemark struct {
+	Placemark *TPlacemarkType `xml:"http://www.opengis.net/kml/2.2 Placemark"`
+
+}
+
+type XsdGoPkgHasElem_PhotoOverlay struct {
+	PhotoOverlay *TPhotoOverlayType `xml:"http://www.opengis.net/kml/2.2 PhotoOverlay"`
+
+}
+
+type XsdGoPkgHasElem_ScreenOverlay struct {
+	ScreenOverlay *TScreenOverlayType `xml:"http://www.opengis.net/kml/2.2 ScreenOverlay"`
+
+}
+
+type XsdGoPkgHasElem_GroundOverlay struct {
+	GroundOverlay *TGroundOverlayType `xml:"http://www.opengis.net/kml/2.2 GroundOverlay"`
+
+}
+
+type XsdGoPkgHasElem_AbstractOverlayGroup struct {
+	AbstractOverlayGroup *TAbstractOverlayType `xml:"http://www.opengis.net/kml/2.2 AbstractOverlayGroup"`
+
+	XsdGoPkgHasElem_GroundOverlay
+
+	XsdGoPkgHasElem_PhotoOverlay
+
+	XsdGoPkgHasElem_ScreenOverlay
+
+}
+
+type XsdGoPkgHasElem_Folder struct {
+	Folder *TFolderType `xml:"http://www.opengis.net/kml/2.2 Folder"`
+
+}
+
+type XsdGoPkgHasElem_Document struct {
+	Document *TDocumentType `xml:"http://www.opengis.net/kml/2.2 Document"`
+
+}
+
+type XsdGoPkgHasElem_AbstractContainerGroup struct {
+	AbstractContainerGroup *TAbstractContainerType `xml:"http://www.opengis.net/kml/2.2 AbstractContainerGroup"`
+
+	XsdGoPkgHasElem_Document
+
+	XsdGoPkgHasElem_Folder
+
+}
+
+type XsdGoPkgHasElem_NetworkLink struct {
+	NetworkLink *TNetworkLinkType `xml:"http://www.opengis.net/kml/2.2 NetworkLink"`
+
+}
+
+type XsdGoPkgHasElem_AbstractFeatureGroup struct {
+	AbstractFeatureGroup *TAbstractFeatureType `xml:"http://www.opengis.net/kml/2.2 AbstractFeatureGroup"`
+
+	XsdGoPkgHasElem_Placemark
+
+	XsdGoPkgHasElem_AbstractOverlayGroup
+
+	XsdGoPkgHasElem_AbstractContainerGroup
+
+	XsdGoPkgHasElem_NetworkLink
+
+}
+
+type XsdGoPkgHasElem_LocationObjectExtensionGroup struct {
+	LocationObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LocationObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup struct {
+	AbstractFeatureObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractFeatureObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_ItemIconObjectExtensionGroup struct {
+	ItemIconObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ItemIconObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup struct {
+	MultiGeometryObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 MultiGeometryObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup struct {
+	AbstractColorStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractColorStyleObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_AliasObjectExtensionGroup struct {
+	AliasObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AliasObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_Pair struct {
+	Pair *TPairType `xml:"http://www.opengis.net/kml/2.2 Pair"`
+
+}
+
+type XsdGoPkgHasElem_DocumentObjectExtensionGroup struct {
+	DocumentObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 DocumentObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_StyleMapObjectExtensionGroup struct {
+	StyleMapObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 StyleMapObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_AbstractColorStyleGroup struct {
+	AbstractColorStyleGroup *TAbstractColorStyleType `xml:"http://www.opengis.net/kml/2.2 AbstractColorStyleGroup"`
+
+	XsdGoPkgHasElem_IconStyle
+
+	XsdGoPkgHasElem_LabelStyle
+
+	XsdGoPkgHasElem_PolyStyle
+
+	XsdGoPkgHasElem_LineStyle
+
+}
+
+type XsdGoPkgHasElem_AbstractSubStyleGroup struct {
+	AbstractSubStyleGroup *TAbstractSubStyleType `xml:"http://www.opengis.net/kml/2.2 AbstractSubStyleGroup"`
+
+	XsdGoPkgHasElem_ListStyle
+
+	XsdGoPkgHasElem_AbstractColorStyleGroup
+
+	XsdGoPkgHasElem_BalloonStyle
+
+}
+
+type XsdGoPkgHasElem_ScaleObjectExtensionGroup struct {
+	ScaleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ScaleObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup struct {
+	LatLonBoxObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LatLonBoxObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_ListStyleObjectExtensionGroup struct {
+	ListStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ListStyleObjectExtensionGroup"`
+
+}
+
+type XsdGoPkgHasElem_Alias struct {
+	Alias *TAliasType `xml:"http://www.opengis.net/kml/2.2 Alias"`
+
+}
+
+type XsdGoPkgHasElem_AbstractObjectGroup struct {
+	AbstractObjectGroup *TAbstractObjectType `xml:"http://www.opengis.net/kml/2.2 AbstractObjectGroup"`
+
+	XsdGoPkgHasElem_BoundaryObjectExtensionGroup
+
+	XsdGoPkgHasElem_ResourceMapObjectExtensionGroup
+
+	XsdGoPkgHasElem_Location
+
+	XsdGoPkgHasElem_ItemIcon
+
+	XsdGoPkgHasElem_PointObjectExtensionGroup
+
+	XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup
+
+	XsdGoPkgHasElem_LatLonAltBox
+
+	XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup
+
+	XsdGoPkgHasElem_PlacemarkObjectExtensionGroup
+
+	XsdGoPkgHasElem_LineStringObjectExtensionGroup
+
+	XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup
+
+	XsdGoPkgHasElem_LatLonBox
+
+	XsdGoPkgHasElem_BasicLinkObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractTimePrimitiveGroup
+
+	XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup
+
+	XsdGoPkgHasElem_PolyStyleObjectExtensionGroup
+
+	XsdGoPkgHasElem_LineStyleObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractStyleSelectorGroup
+
+	XsdGoPkgHasElem_PairObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractViewObjectExtensionGroup
+
+	XsdGoPkgHasElem_LabelStyleObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup
+
+	XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup
+
+	XsdGoPkgHasElem_Link
+
+	XsdGoPkgHasElem_SchemaData
+
+	XsdGoPkgHasElem_LinkObjectExtensionGroup
+
+	XsdGoPkgHasElem_RegionObjectExtensionGroup
+
+	XsdGoPkgHasElem_LookAtObjectExtensionGroup
+
+	XsdGoPkgHasElem_TimeStampObjectExtensionGroup
+
+	XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup
+
+	XsdGoPkgHasElem_StyleObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup
+
+	XsdGoPkgHasElem_ImagePyramid
+
+	XsdGoPkgHasElem_TimeSpanObjectExtensionGroup
+
+	XsdGoPkgHasElem_OrientationObjectExtensionGroup
+
+	XsdGoPkgHasElem_LinearRingObjectExtensionGroup
+
+	XsdGoPkgHasElem_ModelObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup
+
+	XsdGoPkgHasElem_Orientation
+
+//	Url deprecated in 2.2
+	XsdGoPkgHasElem_Url
+
+	XsdGoPkgHasElem_AbstractFeatureGroup
+
+	XsdGoPkgHasElem_Region
+
+	XsdGoPkgHasElem_LocationObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractGeometryGroup
+
+	XsdGoPkgHasElem_ViewVolume
+
+	XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup
+
+	XsdGoPkgHasElem_ItemIconObjectExtensionGroup
+
+	XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractViewGroup
+
+	XsdGoPkgHasElem_AliasObjectExtensionGroup
+
+	XsdGoPkgHasElem_Pair
+
+	XsdGoPkgHasElem_DocumentObjectExtensionGroup
+
+	XsdGoPkgHasElem_StyleMapObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractSubStyleGroup
+
+	XsdGoPkgHasElem_ScaleObjectExtensionGroup
+
+	XsdGoPkgHasElem_Lod
+
+	XsdGoPkgHasElem_Icon
+
+	XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup
+
+	XsdGoPkgHasElem_ListStyleObjectExtensionGroup
+
+	XsdGoPkgHasElem_Alias
+
+	XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup
+
+	XsdGoPkgHasElem_LodObjectExtensionGroup
+
+	XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup
+
+	XsdGoPkgHasElem_FolderObjectExtensionGroup
+
+	XsdGoPkgHasElem_CameraObjectExtensionGroup
+
+	XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup
+
+	XsdGoPkgHasElem_PolygonObjectExtensionGroup
+
+	XsdGoPkgHasElem_Data
+
+	XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup
+
+	XsdGoPkgHasElem_Scale
+
+	XsdGoPkgHasElem_IconStyleObjectExtensionGroup
+
+	XsdGoPkgHasElem_ResourceMap
+
+	XsdGoPkgHasElem_KmlObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup
 
 }
 
@@ -4381,18 +4389,8 @@ type XsdGoPkgHasElem_AbstractTimePrimitiveSimpleExtensionGroup struct {
 }
 
 //	<kml> is the root element.
-type XsdGoPkgHasElems_KmlSimpleExtensionGroup struct {
-	KmlSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 KmlSimpleExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup struct {
-	NetworkLinkControlSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 NetworkLinkControlSimpleExtensionGroup"`
-
-}
-
-type XsdGoPkgHasElems_UpdateExtensionGroup struct {
-	UpdateExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 UpdateExtensionGroup"`
+type XsdGoPkgHasAttr_Hint_XsdtString_ struct {
+	Hint xsdt.String `xml:"http://www.opengis.net/kml/2.2 hint,attr"`
 
 }
 
@@ -4403,16 +4401,6 @@ type TChangeType struct {
 
 type XsdGoPkgHasElems_Change struct {
 	Changes []*TChangeType `xml:"http://www.opengis.net/kml/2.2 Change"`
-
-}
-
-type TDeleteType struct {
-	XsdGoPkgHasElems_AbstractFeatureGroup
-
-}
-
-type XsdGoPkgHasElems_Delete struct {
-	Deletes []*TDeleteType `xml:"http://www.opengis.net/kml/2.2 Delete"`
 
 }
 
@@ -4431,18 +4419,33 @@ type XsdGoPkgHasElems_UpdateOpExtensionGroup struct {
 
 }
 
+type XsdGoPkgHasElems_UpdateExtensionGroup struct {
+	UpdateExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 UpdateExtensionGroup"`
+
+}
+
+type TDeleteType struct {
+	XsdGoPkgHasElems_AbstractFeatureGroup
+
+}
+
+type XsdGoPkgHasElems_Delete struct {
+	Deletes []*TDeleteType `xml:"http://www.opengis.net/kml/2.2 Delete"`
+
+}
+
 type TUpdateType struct {
-	XsdGoPkgHasElem_TargetHref
-
-	XsdGoPkgHasElems_UpdateOpExtensionGroup
-
 	XsdGoPkgHasElems_UpdateExtensionGroup
 
-	XsdGoPkgHasElems_Change
+	XsdGoPkgHasElem_TargetHref
 
 	XsdGoPkgHasElems_Delete
 
+	XsdGoPkgHasElems_Change
+
 	XsdGoPkgHasElems_Create
+
+	XsdGoPkgHasElems_UpdateOpExtensionGroup
 
 }
 
@@ -4451,30 +4454,35 @@ type XsdGoPkgHasElem_Update struct {
 
 }
 
+type XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup struct {
+	NetworkLinkControlSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 NetworkLinkControlSimpleExtensionGroup"`
+
+}
+
 type TNetworkLinkControlType struct {
-	XsdGoPkgHasElem_LinkSnippet
-
-	XsdGoPkgHasElem_AbstractViewGroup
-
-	XsdGoPkgHasElem_LinkDescription
-
-	XsdGoPkgHasElem_Expires
-
-	XsdGoPkgHasElem_MinRefreshPeriod
-
-	XsdGoPkgHasElem_LinkName
-
-	XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup
-
-	XsdGoPkgHasElem_Message
+	XsdGoPkgHasElem_Cookie
 
 	XsdGoPkgHasElem_Update
 
-	XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup
+	XsdGoPkgHasElem_LinkSnippet
+
+	XsdGoPkgHasElem_LinkDescription
+
+	XsdGoPkgHasElem_MinRefreshPeriod
 
 	XsdGoPkgHasElem_MaxSessionLength
 
-	XsdGoPkgHasElem_Cookie
+	XsdGoPkgHasElem_AbstractViewGroup
+
+	XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup
+
+	XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup
+
+	XsdGoPkgHasElem_Expires
+
+	XsdGoPkgHasElem_LinkName
+
+	XsdGoPkgHasElem_Message
 
 }
 
@@ -4483,21 +4491,21 @@ type XsdGoPkgHasElem_NetworkLinkControl struct {
 
 }
 
-type XsdGoPkgHasAttr_Hint_XsdtString_ struct {
-	Hint xsdt.String `xml:"http://www.opengis.net/kml/2.2 hint,attr"`
+type XsdGoPkgHasElems_KmlSimpleExtensionGroup struct {
+	KmlSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 KmlSimpleExtensionGroup"`
 
 }
 
 type TKmlType struct {
 	XsdGoPkgHasElem_AbstractFeatureGroup
 
-	XsdGoPkgHasElem_NetworkLinkControl
-
-	XsdGoPkgHasAttr_Hint_XsdtString_
-
 	XsdGoPkgHasElems_KmlObjectExtensionGroup
 
+	XsdGoPkgHasElem_NetworkLinkControl
+
 	XsdGoPkgHasElems_KmlSimpleExtensionGroup
+
+	XsdGoPkgHasAttr_Hint_XsdtString_
 
 }
 

@@ -23,13 +23,13 @@ type XsdGoPkgHasElem_Name struct {
 
 }
 
-type XsdGoPkgHasElems_Uri struct {
-	Uris []xsdt.String `xml:"http://www.w3.org/2005/Atom uri"`
+type XsdGoPkgHasElem_Uri struct {
+	Uri xsdt.String `xml:"http://www.w3.org/2005/Atom uri"`
 
 }
 
-type XsdGoPkgHasElem_Uri struct {
-	Uri xsdt.String `xml:"http://www.w3.org/2005/Atom uri"`
+type XsdGoPkgHasElems_Uri struct {
+	Uris []xsdt.String `xml:"http://www.w3.org/2005/Atom uri"`
 
 }
 
@@ -38,19 +38,19 @@ type TatomEmailAddress xsdt.String
 //	Since TatomEmailAddress is just a simple String type, this merely returns the current string value.
 func (me TatomEmailAddress) String () string { return xsdt.String(me).String() }
 
-//	This convenience method just performs a simple type conversion to TatomEmailAddress's alias type xsdt.String.
-func (me TatomEmailAddress) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
 //	Since TatomEmailAddress is just a simple String type, this merely sets the current value from the specified string.
 func (me *TatomEmailAddress) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
-type XsdGoPkgHasElems_Email struct {
-	Emails []TatomEmailAddress `xml:"http://www.w3.org/2005/Atom email"`
-
-}
+//	This convenience method just performs a simple type conversion to TatomEmailAddress's alias type xsdt.String.
+func (me TatomEmailAddress) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 type XsdGoPkgHasElem_Email struct {
 	Email TatomEmailAddress `xml:"http://www.w3.org/2005/Atom email"`
+
+}
+
+type XsdGoPkgHasElems_Email struct {
+	Emails []TatomEmailAddress `xml:"http://www.w3.org/2005/Atom email"`
 
 }
 
@@ -63,23 +63,33 @@ type TatomPersonConstruct struct {
 
 }
 
-type XsdGoPkgHasElems_Author struct {
-	Authors []*TatomPersonConstruct `xml:"http://www.w3.org/2005/Atom author"`
-
-}
-
 type XsdGoPkgHasElem_Author struct {
 	Author *TatomPersonConstruct `xml:"http://www.w3.org/2005/Atom author"`
 
 }
 
-type TatomMediaType xsdt.String
+type XsdGoPkgHasElems_Author struct {
+	Authors []*TatomPersonConstruct `xml:"http://www.w3.org/2005/Atom author"`
 
-//	Since TatomMediaType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TatomMediaType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+}
+
+type XsdGoPkgHasAttr_Rel_XsdtString_ struct {
+	Rel xsdt.String `xml:"http://www.w3.org/2005/Atom rel,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Title_XsdtString_ struct {
+	Title xsdt.String `xml:"http://www.w3.org/2005/Atom title,attr"`
+
+}
+
+type TatomMediaType xsdt.String
 
 //	This convenience method just performs a simple type conversion to TatomMediaType's alias type xsdt.String.
 func (me TatomMediaType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TatomMediaType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TatomMediaType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 //	Since TatomMediaType is just a simple String type, this merely returns the current string value.
 func (me TatomMediaType) String () string { return xsdt.String(me).String() }
@@ -89,19 +99,8 @@ type XsdGoPkgHasAttr_Type_TatomMediaType_ struct {
 
 }
 
-type TatomLanguageTag xsdt.String
-
-//	This convenience method just performs a simple type conversion to TatomLanguageTag's alias type xsdt.String.
-func (me TatomLanguageTag) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TatomLanguageTag is just a simple String type, this merely sets the current value from the specified string.
-func (me *TatomLanguageTag) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TatomLanguageTag is just a simple String type, this merely returns the current string value.
-func (me TatomLanguageTag) String () string { return xsdt.String(me).String() }
-
-type XsdGoPkgHasAttr_Hreflang_TatomLanguageTag_ struct {
-	Hreflang TatomLanguageTag `xml:"http://www.w3.org/2005/Atom hreflang,attr"`
+type XsdGoPkgHasAttr_Href_XsdtString_ struct {
+	Href xsdt.String `xml:"http://www.w3.org/2005/Atom href,attr"`
 
 }
 
@@ -110,42 +109,43 @@ type XsdGoPkgHasAttr_Length_XsdtString_ struct {
 
 }
 
-type XsdGoPkgHasAttr_Href_XsdtString_ struct {
-	Href xsdt.String `xml:"http://www.w3.org/2005/Atom href,attr"`
+type TatomLanguageTag xsdt.String
 
-}
+//	Since TatomLanguageTag is just a simple String type, this merely returns the current string value.
+func (me TatomLanguageTag) String () string { return xsdt.String(me).String() }
 
-type XsdGoPkgHasAttr_Title_XsdtString_ struct {
-	Title xsdt.String `xml:"http://www.w3.org/2005/Atom title,attr"`
+//	This convenience method just performs a simple type conversion to TatomLanguageTag's alias type xsdt.String.
+func (me TatomLanguageTag) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
-}
+//	Since TatomLanguageTag is just a simple String type, this merely sets the current value from the specified string.
+func (me *TatomLanguageTag) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
-type XsdGoPkgHasAttr_Rel_XsdtString_ struct {
-	Rel xsdt.String `xml:"http://www.w3.org/2005/Atom rel,attr"`
+type XsdGoPkgHasAttr_Hreflang_TatomLanguageTag_ struct {
+	Hreflang TatomLanguageTag `xml:"http://www.w3.org/2005/Atom hreflang,attr"`
 
 }
 
 type TxsdLink struct {
-	XsdGoPkgHasAttr_Rel_XsdtString_
-
-	XsdGoPkgHasAttr_Type_TatomMediaType_
+	XsdGoPkgHasAttr_Length_XsdtString_
 
 	XsdGoPkgHasAttr_Hreflang_TatomLanguageTag_
 
-	XsdGoPkgHasAttr_Length_XsdtString_
-
-	XsdGoPkgHasAttr_Href_XsdtString_
+	XsdGoPkgHasAttr_Rel_XsdtString_
 
 	XsdGoPkgHasAttr_Title_XsdtString_
 
-}
+	XsdGoPkgHasAttr_Type_TatomMediaType_
 
-type XsdGoPkgHasElems_Link struct {
-	Links []*TxsdLink `xml:"http://www.w3.org/2005/Atom link"`
+	XsdGoPkgHasAttr_Href_XsdtString_
 
 }
 
 type XsdGoPkgHasElem_Link struct {
 	Link *TxsdLink `xml:"http://www.w3.org/2005/Atom link"`
+
+}
+
+type XsdGoPkgHasElems_Link struct {
+	Links []*TxsdLink `xml:"http://www.w3.org/2005/Atom link"`
 
 }

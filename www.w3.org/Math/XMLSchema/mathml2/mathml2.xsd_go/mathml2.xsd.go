@@ -13,11 +13,6 @@ import (
 	xsdt "github.com/metaleap/go-xsd/types"
 )
 
-type XsdGoPkgHasAttr_Type_XsdtString_ struct {
-	Type xsdt.String `xml:"http://www.w3.org/1998/Math/MathML type,attr"`
-
-}
-
 type XsdGoPkgHasAttr_Height_XsdtString_ struct {
 	Height xsdt.String `xml:"http://www.w3.org/1998/Math/MathML height,attr"`
 
@@ -28,28 +23,43 @@ type XsdGoPkgHasAttr_Width_XsdtString_ struct {
 
 }
 
+type XsdGoPkgHasAttr_Alttext_XsdtString_ struct {
+	Alttext xsdt.String `xml:"http://www.w3.org/1998/Math/MathML alttext,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Type_XsdtString_ struct {
+	Type xsdt.String `xml:"http://www.w3.org/1998/Math/MathML type,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Altimg_XsdtAnyURI_ struct {
+	Altimg xsdt.AnyURI `xml:"http://www.w3.org/1998/Math/MathML altimg,attr"`
+
+}
+
 type TxsdBrowserInterfaceAttribOverflow xsdt.String
-
-//	Returns true if the value of this enumerated TxsdBrowserInterfaceAttribOverflow is "scale".
-func (me TxsdBrowserInterfaceAttribOverflow) IsScale () bool { return me == "scale" }
-
-//	Returns true if the value of this enumerated TxsdBrowserInterfaceAttribOverflow is "scroll".
-func (me TxsdBrowserInterfaceAttribOverflow) IsScroll () bool { return me == "scroll" }
-
-//	Returns true if the value of this enumerated TxsdBrowserInterfaceAttribOverflow is "truncate".
-func (me TxsdBrowserInterfaceAttribOverflow) IsTruncate () bool { return me == "truncate" }
-
-//	Since TxsdBrowserInterfaceAttribOverflow is just a simple String type, this merely returns the current string value.
-func (me TxsdBrowserInterfaceAttribOverflow) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdBrowserInterfaceAttribOverflow is "elide".
-func (me TxsdBrowserInterfaceAttribOverflow) IsElide () bool { return me == "elide" }
 
 //	This convenience method just performs a simple type conversion to TxsdBrowserInterfaceAttribOverflow's alias type xsdt.String.
 func (me TxsdBrowserInterfaceAttribOverflow) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
+//	Returns true if the value of this enumerated TxsdBrowserInterfaceAttribOverflow is "scroll".
+func (me TxsdBrowserInterfaceAttribOverflow) IsScroll () bool { return me == "scroll" }
+
+//	Returns true if the value of this enumerated TxsdBrowserInterfaceAttribOverflow is "scale".
+func (me TxsdBrowserInterfaceAttribOverflow) IsScale () bool { return me == "scale" }
+
+//	Returns true if the value of this enumerated TxsdBrowserInterfaceAttribOverflow is "truncate".
+func (me TxsdBrowserInterfaceAttribOverflow) IsTruncate () bool { return me == "truncate" }
+
 //	Since TxsdBrowserInterfaceAttribOverflow is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdBrowserInterfaceAttribOverflow) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdBrowserInterfaceAttribOverflow is "elide".
+func (me TxsdBrowserInterfaceAttribOverflow) IsElide () bool { return me == "elide" }
+
+//	Since TxsdBrowserInterfaceAttribOverflow is just a simple String type, this merely returns the current string value.
+func (me TxsdBrowserInterfaceAttribOverflow) String () string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasAttr_Overflow_TxsdBrowserInterfaceAttribOverflow_Scroll struct {
 	Overflow TxsdBrowserInterfaceAttribOverflow `xml:"http://www.w3.org/1998/Math/MathML overflow,attr"`
@@ -59,57 +69,32 @@ type XsdGoPkgHasAttr_Overflow_TxsdBrowserInterfaceAttribOverflow_Scroll struct {
 //	Returns the default value for Overflow -- "scroll"
 func (me XsdGoPkgHasAttr_Overflow_TxsdBrowserInterfaceAttribOverflow_Scroll) OverflowDefault () TxsdBrowserInterfaceAttribOverflow { return TxsdBrowserInterfaceAttribOverflow("scroll") }
 
-type XsdGoPkgHasAttr_Name_XsdtString_ struct {
-	Name xsdt.String `xml:"http://www.w3.org/1998/Math/MathML name,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Alttext_XsdtString_ struct {
-	Alttext xsdt.String `xml:"http://www.w3.org/1998/Math/MathML alttext,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Altimg_XsdtAnyURI_ struct {
-	Altimg xsdt.AnyURI `xml:"http://www.w3.org/1998/Math/MathML altimg,attr"`
-
-}
-
 type XsdGoPkgHasAttr_Baseline_XsdtString_ struct {
 	Baseline xsdt.String `xml:"http://www.w3.org/1998/Math/MathML baseline,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Name_XsdtString_ struct {
+	Name xsdt.String `xml:"http://www.w3.org/1998/Math/MathML name,attr"`
 
 }
 
 type XsdGoPkgHasAtts_BrowserInterfaceAttrib struct {
 	XsdGoPkgHasAttr_Type_XsdtString_
 
+	XsdGoPkgHasAttr_Altimg_XsdtAnyURI_
+
+	XsdGoPkgHasAttr_Overflow_TxsdBrowserInterfaceAttribOverflow_Scroll
+
+	XsdGoPkgHasAttr_Baseline_XsdtString_
+
+	XsdGoPkgHasAttr_Name_XsdtString_
+
 	XsdGoPkgHasAttr_Height_XsdtString_
 
 	XsdGoPkgHasAttr_Width_XsdtString_
 
-	XsdGoPkgHasAttr_Overflow_TxsdBrowserInterfaceAttribOverflow_Scroll
-
-	XsdGoPkgHasAttr_Name_XsdtString_
-
 	XsdGoPkgHasAttr_Alttext_XsdtString_
-
-	XsdGoPkgHasAttr_Altimg_XsdtAnyURI_
-
-	XsdGoPkgHasAttr_Baseline_XsdtString_
-
-}
-
-type XsdGoPkgHasAttr_Macros_XsdtString_ struct {
-	Macros xsdt.String `xml:"http://www.w3.org/1998/Math/MathML macros,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Class_XsdtNmtokens_ struct {
-	Class xsdt.Nmtokens `xml:"http://www.w3.org/1998/Math/MathML class,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Style_XsdtString_ struct {
-	Style xsdt.String `xml:"http://www.w3.org/1998/Math/MathML style,attr"`
 
 }
 
@@ -123,14 +108,24 @@ type XsdGoPkgHasAttr_Xref_XsdtIdref_ struct {
 
 }
 
+type XsdGoPkgHasAttr_Style_XsdtString_ struct {
+	Style xsdt.String `xml:"http://www.w3.org/1998/Math/MathML style,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Class_XsdtNmtokens_ struct {
+	Class xsdt.Nmtokens `xml:"http://www.w3.org/1998/Math/MathML class,attr"`
+
+}
+
 type XsdGoPkgHasAtts_CommonAttrib struct {
-	xlink.XsdGoPkgHasAttr_Href
+	XsdGoPkgHasAttr_Class_XsdtNmtokens_
 
 	XsdGoPkgHasAttr_Id_XsdtId_
 
-	XsdGoPkgHasAttr_Xref_XsdtIdref_
+	xlink.XsdGoPkgHasAttr_Href
 
-	XsdGoPkgHasAttr_Class_XsdtNmtokens_
+	XsdGoPkgHasAttr_Xref_XsdtIdref_
 
 	XsdGoPkgHasAttr_Style_XsdtString_
 
@@ -141,17 +136,17 @@ type TxsdMathAttlistDisplay xsdt.String
 //	Returns true if the value of this enumerated TxsdMathAttlistDisplay is "inline".
 func (me TxsdMathAttlistDisplay) IsInline () bool { return me == "inline" }
 
-//	Returns true if the value of this enumerated TxsdMathAttlistDisplay is "block".
-func (me TxsdMathAttlistDisplay) IsBlock () bool { return me == "block" }
-
 //	Since TxsdMathAttlistDisplay is just a simple String type, this merely returns the current string value.
 func (me TxsdMathAttlistDisplay) String () string { return xsdt.String(me).String() }
 
-//	This convenience method just performs a simple type conversion to TxsdMathAttlistDisplay's alias type xsdt.String.
-func (me TxsdMathAttlistDisplay) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	Returns true if the value of this enumerated TxsdMathAttlistDisplay is "block".
+func (me TxsdMathAttlistDisplay) IsBlock () bool { return me == "block" }
 
 //	Since TxsdMathAttlistDisplay is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdMathAttlistDisplay) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdMathAttlistDisplay's alias type xsdt.String.
+func (me TxsdMathAttlistDisplay) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 type XsdGoPkgHasAttr_Display_TxsdMathAttlistDisplay_Inline struct {
 	Display TxsdMathAttlistDisplay `xml:"http://www.w3.org/1998/Math/MathML display,attr"`
@@ -161,33 +156,43 @@ type XsdGoPkgHasAttr_Display_TxsdMathAttlistDisplay_Inline struct {
 //	Returns the default value for Display -- "inline"
 func (me XsdGoPkgHasAttr_Display_TxsdMathAttlistDisplay_Inline) DisplayDefault () TxsdMathAttlistDisplay { return TxsdMathAttlistDisplay("inline") }
 
+type XsdGoPkgHasAttr_Macros_XsdtString_ struct {
+	Macros xsdt.String `xml:"http://www.w3.org/1998/Math/MathML macros,attr"`
+
+}
+
 type XsdGoPkgHasAtts_MathAttlist struct {
+	XsdGoPkgHasAtts_BrowserInterfaceAttrib
+
 	XsdGoPkgHasAtts_CommonAttrib
 
 	XsdGoPkgHasAttr_Display_TxsdMathAttlistDisplay_Inline
-
-	XsdGoPkgHasAtts_BrowserInterfaceAttrib
 
 	XsdGoPkgHasAttr_Macros_XsdtString_
 
 }
 
+type XsdGoPkgHasAttr_Mathcolor_XsdtString_ struct {
+	Mathcolor xsdt.String `xml:"http://www.w3.org/1998/Math/MathML mathcolor,attr"`
+
+}
+
 type TsimpleSize xsdt.String
-
-//	Since TsimpleSize is just a simple String type, this merely returns the current string value.
-func (me TsimpleSize) String () string { return xsdt.String(me).String() }
-
-//	Since TsimpleSize is just a simple String type, this merely sets the current value from the specified string.
-func (me *TsimpleSize) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TsimpleSize is "big".
-func (me TsimpleSize) IsBig () bool { return me == "big" }
 
 //	Returns true if the value of this enumerated TsimpleSize is "small".
 func (me TsimpleSize) IsSmall () bool { return me == "small" }
 
 //	This convenience method just performs a simple type conversion to TsimpleSize's alias type xsdt.String.
 func (me TsimpleSize) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TsimpleSize is just a simple String type, this merely sets the current value from the specified string.
+func (me *TsimpleSize) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TsimpleSize is just a simple String type, this merely returns the current string value.
+func (me TsimpleSize) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TsimpleSize is "big".
+func (me TsimpleSize) IsBig () bool { return me == "big" }
 
 //	Returns true if the value of this enumerated TsimpleSize is "normal".
 func (me TsimpleSize) IsNormal () bool { return me == "normal" }
@@ -197,16 +202,19 @@ type TlengthWithUnit xsdt.String
 //	Since TlengthWithUnit is just a simple String type, this merely sets the current value from the specified string.
 func (me *TlengthWithUnit) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
-//	Since TlengthWithUnit is just a simple String type, this merely returns the current string value.
-func (me TlengthWithUnit) String () string { return xsdt.String(me).String() }
-
 //	This convenience method just performs a simple type conversion to TlengthWithUnit's alias type xsdt.String.
 func (me TlengthWithUnit) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
+//	Since TlengthWithUnit is just a simple String type, this merely returns the current string value.
+func (me TlengthWithUnit) String () string { return xsdt.String(me).String() }
+
 type TxsdTokenStyleAttribMathsize xsdt.String
 
-//	Since TxsdTokenStyleAttribMathsize is just a simple String type, this merely returns the current string value.
-func (me TxsdTokenStyleAttribMathsize) String () string { return xsdt.String(me).String() }
+//	Since TxsdTokenStyleAttribMathsize is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdTokenStyleAttribMathsize) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdTokenStyleAttribMathsize's alias type xsdt.String.
+func (me TxsdTokenStyleAttribMathsize) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 //	TxsdTokenStyleAttribMathsize is an XSD union-type of several types. This is a simple type conversion to TsimpleSize, but keep in mind the actual value may or may not be a valid TsimpleSize value.
 func (me TxsdTokenStyleAttribMathsize) ToTsimpleSize () TsimpleSize { return TsimpleSize(me) }
@@ -214,11 +222,8 @@ func (me TxsdTokenStyleAttribMathsize) ToTsimpleSize () TsimpleSize { return Tsi
 //	TxsdTokenStyleAttribMathsize is an XSD union-type of several types. This is a simple type conversion to TlengthWithUnit, but keep in mind the actual value may or may not be a valid TlengthWithUnit value.
 func (me TxsdTokenStyleAttribMathsize) ToTlengthWithUnit () TlengthWithUnit { return TlengthWithUnit(me) }
 
-//	Since TxsdTokenStyleAttribMathsize is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdTokenStyleAttribMathsize) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TxsdTokenStyleAttribMathsize's alias type xsdt.String.
-func (me TxsdTokenStyleAttribMathsize) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	Since TxsdTokenStyleAttribMathsize is just a simple String type, this merely returns the current string value.
+func (me TxsdTokenStyleAttribMathsize) String () string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasAttr_Mathsize_TxsdTokenStyleAttribMathsize_ struct {
 	Mathsize TxsdTokenStyleAttribMathsize `xml:"http://www.w3.org/1998/Math/MathML mathsize,attr"`
@@ -227,8 +232,11 @@ type XsdGoPkgHasAttr_Mathsize_TxsdTokenStyleAttribMathsize_ struct {
 
 type TxsdTokenStyleAttribMathvariant xsdt.String
 
-//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "bold-italic".
-func (me TxsdTokenStyleAttribMathvariant) IsBoldItalic () bool { return me == "bold-italic" }
+//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "bold".
+func (me TxsdTokenStyleAttribMathvariant) IsBold () bool { return me == "bold" }
+
+//	This convenience method just performs a simple type conversion to TxsdTokenStyleAttribMathvariant's alias type xsdt.String.
+func (me TxsdTokenStyleAttribMathvariant) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 //	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "script".
 func (me TxsdTokenStyleAttribMathvariant) IsScript () bool { return me == "script" }
@@ -236,47 +244,44 @@ func (me TxsdTokenStyleAttribMathvariant) IsScript () bool { return me == "scrip
 //	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "sans-serif-italic".
 func (me TxsdTokenStyleAttribMathvariant) IsSansSerifItalic () bool { return me == "sans-serif-italic" }
 
+//	Since TxsdTokenStyleAttribMathvariant is just a simple String type, this merely returns the current string value.
+func (me TxsdTokenStyleAttribMathvariant) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "fraktur".
+func (me TxsdTokenStyleAttribMathvariant) IsFraktur () bool { return me == "fraktur" }
+
+//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "bold-italic".
+func (me TxsdTokenStyleAttribMathvariant) IsBoldItalic () bool { return me == "bold-italic" }
+
+//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "italic".
+func (me TxsdTokenStyleAttribMathvariant) IsItalic () bool { return me == "italic" }
+
+//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "bold-fraktur".
+func (me TxsdTokenStyleAttribMathvariant) IsBoldFraktur () bool { return me == "bold-fraktur" }
+
+//	Since TxsdTokenStyleAttribMathvariant is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdTokenStyleAttribMathvariant) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "sans-serif".
+func (me TxsdTokenStyleAttribMathvariant) IsSansSerif () bool { return me == "sans-serif" }
+
 //	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "double-struck".
 func (me TxsdTokenStyleAttribMathvariant) IsDoubleStruck () bool { return me == "double-struck" }
 
-//	Since TxsdTokenStyleAttribMathvariant is just a simple String type, this merely returns the current string value.
-func (me TxsdTokenStyleAttribMathvariant) String () string { return xsdt.String(me).String() }
+//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "monospace".
+func (me TxsdTokenStyleAttribMathvariant) IsMonospace () bool { return me == "monospace" }
+
+//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "normal".
+func (me TxsdTokenStyleAttribMathvariant) IsNormal () bool { return me == "normal" }
+
+//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "bold-sans-serif".
+func (me TxsdTokenStyleAttribMathvariant) IsBoldSansSerif () bool { return me == "bold-sans-serif" }
 
 //	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "sans-serif-bold-italic".
 func (me TxsdTokenStyleAttribMathvariant) IsSansSerifBoldItalic () bool { return me == "sans-serif-bold-italic" }
 
 //	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "bold-script".
 func (me TxsdTokenStyleAttribMathvariant) IsBoldScript () bool { return me == "bold-script" }
-
-//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "bold-sans-serif".
-func (me TxsdTokenStyleAttribMathvariant) IsBoldSansSerif () bool { return me == "bold-sans-serif" }
-
-//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "fraktur".
-func (me TxsdTokenStyleAttribMathvariant) IsFraktur () bool { return me == "fraktur" }
-
-//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "italic".
-func (me TxsdTokenStyleAttribMathvariant) IsItalic () bool { return me == "italic" }
-
-//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "normal".
-func (me TxsdTokenStyleAttribMathvariant) IsNormal () bool { return me == "normal" }
-
-//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "bold-fraktur".
-func (me TxsdTokenStyleAttribMathvariant) IsBoldFraktur () bool { return me == "bold-fraktur" }
-
-//	This convenience method just performs a simple type conversion to TxsdTokenStyleAttribMathvariant's alias type xsdt.String.
-func (me TxsdTokenStyleAttribMathvariant) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "monospace".
-func (me TxsdTokenStyleAttribMathvariant) IsMonospace () bool { return me == "monospace" }
-
-//	Since TxsdTokenStyleAttribMathvariant is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdTokenStyleAttribMathvariant) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "bold".
-func (me TxsdTokenStyleAttribMathvariant) IsBold () bool { return me == "bold" }
-
-//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "sans-serif".
-func (me TxsdTokenStyleAttribMathvariant) IsSansSerif () bool { return me == "sans-serif" }
 
 type XsdGoPkgHasAttr_Mathvariant_TxsdTokenStyleAttribMathvariant_ struct {
 	Mathvariant TxsdTokenStyleAttribMathvariant `xml:"http://www.w3.org/1998/Math/MathML mathvariant,attr"`
@@ -285,11 +290,6 @@ type XsdGoPkgHasAttr_Mathvariant_TxsdTokenStyleAttribMathvariant_ struct {
 
 type XsdGoPkgHasAttr_Mathbackground_XsdtString_ struct {
 	Mathbackground xsdt.String `xml:"http://www.w3.org/1998/Math/MathML mathbackground,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Mathcolor_XsdtString_ struct {
-	Mathcolor xsdt.String `xml:"http://www.w3.org/1998/Math/MathML mathcolor,attr"`
 
 }
 
@@ -304,129 +304,13 @@ type XsdGoPkgHasAtts_TokenStyleAttrib struct {
 
 }
 
-type TnamedSpace xsdt.String
-
-//	Since TnamedSpace is just a simple String type, this merely returns the current string value.
-func (me TnamedSpace) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TnamedSpace is "thinmathspace".
-func (me TnamedSpace) IsThinmathspace () bool { return me == "thinmathspace" }
-
-//	Returns true if the value of this enumerated TnamedSpace is "mediummathspace".
-func (me TnamedSpace) IsMediummathspace () bool { return me == "mediummathspace" }
-
-//	Returns true if the value of this enumerated TnamedSpace is "verythinmathspace".
-func (me TnamedSpace) IsVerythinmathspace () bool { return me == "verythinmathspace" }
-
-//	Since TnamedSpace is just a simple String type, this merely sets the current value from the specified string.
-func (me *TnamedSpace) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TnamedSpace's alias type xsdt.String.
-func (me TnamedSpace) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TnamedSpace is "veryverythinmathspace".
-func (me TnamedSpace) IsVeryverythinmathspace () bool { return me == "veryverythinmathspace" }
-
-//	Returns true if the value of this enumerated TnamedSpace is "verythickmathspace".
-func (me TnamedSpace) IsVerythickmathspace () bool { return me == "verythickmathspace" }
-
-//	Returns true if the value of this enumerated TnamedSpace is "veryverythickmathspace".
-func (me TnamedSpace) IsVeryverythickmathspace () bool { return me == "veryverythickmathspace" }
-
-//	Returns true if the value of this enumerated TnamedSpace is "thickmathspace".
-func (me TnamedSpace) IsThickmathspace () bool { return me == "thickmathspace" }
-
-type TxsdOperatorAttribRspace xsdt.String
-
-//	TxsdOperatorAttribRspace is an XSD union-type of several types. This is a simple type conversion to TnamedSpace, but keep in mind the actual value may or may not be a valid TnamedSpace value.
-func (me TxsdOperatorAttribRspace) ToTnamedSpace () TnamedSpace { return TnamedSpace(me) }
-
-//	This convenience method just performs a simple type conversion to TxsdOperatorAttribRspace's alias type xsdt.String.
-func (me TxsdOperatorAttribRspace) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TxsdOperatorAttribRspace is just a simple String type, this merely returns the current string value.
-func (me TxsdOperatorAttribRspace) String () string { return xsdt.String(me).String() }
-
-//	TxsdOperatorAttribRspace is an XSD union-type of several types. This is a simple type conversion to TlengthWithUnit, but keep in mind the actual value may or may not be a valid TlengthWithUnit value.
-func (me TxsdOperatorAttribRspace) ToTlengthWithUnit () TlengthWithUnit { return TlengthWithUnit(me) }
-
-//	Since TxsdOperatorAttribRspace is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdOperatorAttribRspace) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_Rspace_TxsdOperatorAttribRspace_ struct {
-	Rspace TxsdOperatorAttribRspace `xml:"http://www.w3.org/1998/Math/MathML rspace,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Stretchy_XsdtBoolean_ struct {
-	Stretchy xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML stretchy,attr"`
-
-}
-
-type Tinfinity xsdt.String
-
-//	Since Tinfinity is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tinfinity) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since Tinfinity is just a simple String type, this merely returns the current string value.
-func (me Tinfinity) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to Tinfinity's alias type xsdt.String.
-func (me Tinfinity) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated Tinfinity is "infinity".
-func (me Tinfinity) IsInfinity () bool { return me == "infinity" }
-
-type TxsdOperatorAttribMaxsize xsdt.String
-
-//	TxsdOperatorAttribMaxsize is an XSD union-type of several types. This is a simple type conversion to TnamedSpace, but keep in mind the actual value may or may not be a valid TnamedSpace value.
-func (me TxsdOperatorAttribMaxsize) ToTnamedSpace () TnamedSpace { return TnamedSpace(me) }
-
-//	TxsdOperatorAttribMaxsize is an XSD union-type of several types. This is a simple type conversion to Tinfinity, but keep in mind the actual value may or may not be a valid Tinfinity value.
-func (me TxsdOperatorAttribMaxsize) ToTinfinity () Tinfinity { return Tinfinity(me) }
-
-//	Since TxsdOperatorAttribMaxsize is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdOperatorAttribMaxsize) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	TxsdOperatorAttribMaxsize is an XSD union-type of several types. This is a simple type conversion to TlengthWithUnit, but keep in mind the actual value may or may not be a valid TlengthWithUnit value.
-func (me TxsdOperatorAttribMaxsize) ToTlengthWithUnit () TlengthWithUnit { return TlengthWithUnit(me) }
-
-//	TxsdOperatorAttribMaxsize is an XSD union-type of several types. This is a simple type conversion to XsdtFloat, but keep in mind the actual value may or may not be a valid XsdtFloat value.
-func (me TxsdOperatorAttribMaxsize) ToXsdtFloat () xsdt.Float { var x = new(xsdt.Float); x.SetFromString(me.String()); return *x }
-
-//	This convenience method just performs a simple type conversion to TxsdOperatorAttribMaxsize's alias type xsdt.String.
-func (me TxsdOperatorAttribMaxsize) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TxsdOperatorAttribMaxsize is just a simple String type, this merely returns the current string value.
-func (me TxsdOperatorAttribMaxsize) String () string { return xsdt.String(me).String() }
-
-type XsdGoPkgHasAttr_Maxsize_TxsdOperatorAttribMaxsize_ struct {
-	Maxsize TxsdOperatorAttribMaxsize `xml:"http://www.w3.org/1998/Math/MathML maxsize,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Accent_XsdtBoolean_ struct {
-	Accent xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML accent,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Minsize_TxsdOperatorAttribMinsize_ struct {
-	Minsize TxsdOperatorAttribRspace `xml:"http://www.w3.org/1998/Math/MathML minsize,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Separator_XsdtBoolean_ struct {
-	Separator xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML separator,attr"`
-
-}
-
 type TxsdOperatorAttribForm xsdt.String
-
-//	Returns true if the value of this enumerated TxsdOperatorAttribForm is "postfix".
-func (me TxsdOperatorAttribForm) IsPostfix () bool { return me == "postfix" }
 
 //	Since TxsdOperatorAttribForm is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdOperatorAttribForm) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdOperatorAttribForm is "postfix".
+func (me TxsdOperatorAttribForm) IsPostfix () bool { return me == "postfix" }
 
 //	This convenience method just performs a simple type conversion to TxsdOperatorAttribForm's alias type xsdt.String.
 func (me TxsdOperatorAttribForm) ToXsdtString () xsdt.String { return xsdt.String(me) }
@@ -445,13 +329,119 @@ type XsdGoPkgHasAttr_Form_TxsdOperatorAttribForm_ struct {
 
 }
 
-type XsdGoPkgHasAttr_Largeop_XsdtBoolean_ struct {
-	Largeop xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML largeop,attr"`
+type XsdGoPkgHasAttr_Movablelimits_XsdtBoolean_ struct {
+	Movablelimits xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML movablelimits,attr"`
 
 }
 
+type XsdGoPkgHasAttr_Accent_XsdtBoolean_ struct {
+	Accent xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML accent,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Separator_XsdtBoolean_ struct {
+	Separator xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML separator,attr"`
+
+}
+
+type TnamedSpace xsdt.String
+
+//	Returns true if the value of this enumerated TnamedSpace is "thickmathspace".
+func (me TnamedSpace) IsThickmathspace () bool { return me == "thickmathspace" }
+
+//	Returns true if the value of this enumerated TnamedSpace is "verythinmathspace".
+func (me TnamedSpace) IsVerythinmathspace () bool { return me == "verythinmathspace" }
+
+//	Since TnamedSpace is just a simple String type, this merely returns the current string value.
+func (me TnamedSpace) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TnamedSpace is "mediummathspace".
+func (me TnamedSpace) IsMediummathspace () bool { return me == "mediummathspace" }
+
+//	Since TnamedSpace is just a simple String type, this merely sets the current value from the specified string.
+func (me *TnamedSpace) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TnamedSpace's alias type xsdt.String.
+func (me TnamedSpace) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TnamedSpace is "veryverythinmathspace".
+func (me TnamedSpace) IsVeryverythinmathspace () bool { return me == "veryverythinmathspace" }
+
+//	Returns true if the value of this enumerated TnamedSpace is "verythickmathspace".
+func (me TnamedSpace) IsVerythickmathspace () bool { return me == "verythickmathspace" }
+
+//	Returns true if the value of this enumerated TnamedSpace is "veryverythickmathspace".
+func (me TnamedSpace) IsVeryverythickmathspace () bool { return me == "veryverythickmathspace" }
+
+//	Returns true if the value of this enumerated TnamedSpace is "thinmathspace".
+func (me TnamedSpace) IsThinmathspace () bool { return me == "thinmathspace" }
+
+type TxsdOperatorAttribLspace xsdt.String
+
+//	TxsdOperatorAttribLspace is an XSD union-type of several types. This is a simple type conversion to TnamedSpace, but keep in mind the actual value may or may not be a valid TnamedSpace value.
+func (me TxsdOperatorAttribLspace) ToTnamedSpace () TnamedSpace { return TnamedSpace(me) }
+
+//	Since TxsdOperatorAttribLspace is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdOperatorAttribLspace) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdOperatorAttribLspace's alias type xsdt.String.
+func (me TxsdOperatorAttribLspace) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TxsdOperatorAttribLspace is just a simple String type, this merely returns the current string value.
+func (me TxsdOperatorAttribLspace) String () string { return xsdt.String(me).String() }
+
+//	TxsdOperatorAttribLspace is an XSD union-type of several types. This is a simple type conversion to TlengthWithUnit, but keep in mind the actual value may or may not be a valid TlengthWithUnit value.
+func (me TxsdOperatorAttribLspace) ToTlengthWithUnit () TlengthWithUnit { return TlengthWithUnit(me) }
+
 type XsdGoPkgHasAttr_Lspace_TxsdOperatorAttribLspace_ struct {
-	Lspace TxsdOperatorAttribRspace `xml:"http://www.w3.org/1998/Math/MathML lspace,attr"`
+	Lspace TxsdOperatorAttribLspace `xml:"http://www.w3.org/1998/Math/MathML lspace,attr"`
+
+}
+
+type Tinfinity xsdt.String
+
+//	Returns true if the value of this enumerated Tinfinity is "infinity".
+func (me Tinfinity) IsInfinity () bool { return me == "infinity" }
+
+//	Since Tinfinity is just a simple String type, this merely returns the current string value.
+func (me Tinfinity) String () string { return xsdt.String(me).String() }
+
+//	Since Tinfinity is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tinfinity) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to Tinfinity's alias type xsdt.String.
+func (me Tinfinity) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+type TxsdOperatorAttribMaxsize xsdt.String
+
+//	TxsdOperatorAttribMaxsize is an XSD union-type of several types. This is a simple type conversion to TlengthWithUnit, but keep in mind the actual value may or may not be a valid TlengthWithUnit value.
+func (me TxsdOperatorAttribMaxsize) ToTlengthWithUnit () TlengthWithUnit { return TlengthWithUnit(me) }
+
+//	Since TxsdOperatorAttribMaxsize is just a simple String type, this merely returns the current string value.
+func (me TxsdOperatorAttribMaxsize) String () string { return xsdt.String(me).String() }
+
+//	TxsdOperatorAttribMaxsize is an XSD union-type of several types. This is a simple type conversion to TnamedSpace, but keep in mind the actual value may or may not be a valid TnamedSpace value.
+func (me TxsdOperatorAttribMaxsize) ToTnamedSpace () TnamedSpace { return TnamedSpace(me) }
+
+//	This convenience method just performs a simple type conversion to TxsdOperatorAttribMaxsize's alias type xsdt.String.
+func (me TxsdOperatorAttribMaxsize) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	TxsdOperatorAttribMaxsize is an XSD union-type of several types. This is a simple type conversion to Tinfinity, but keep in mind the actual value may or may not be a valid Tinfinity value.
+func (me TxsdOperatorAttribMaxsize) ToTinfinity () Tinfinity { return Tinfinity(me) }
+
+//	TxsdOperatorAttribMaxsize is an XSD union-type of several types. This is a simple type conversion to XsdtFloat, but keep in mind the actual value may or may not be a valid XsdtFloat value.
+func (me TxsdOperatorAttribMaxsize) ToXsdtFloat () xsdt.Float { var x = new(xsdt.Float); x.SetFromString(me.String()); return *x }
+
+//	Since TxsdOperatorAttribMaxsize is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdOperatorAttribMaxsize) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_Maxsize_TxsdOperatorAttribMaxsize_ struct {
+	Maxsize TxsdOperatorAttribMaxsize `xml:"http://www.w3.org/1998/Math/MathML maxsize,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Minsize_TxsdOperatorAttribMinsize_ struct {
+	Minsize TxsdOperatorAttribLspace `xml:"http://www.w3.org/1998/Math/MathML minsize,attr"`
 
 }
 
@@ -460,45 +450,50 @@ type XsdGoPkgHasAttr_Symmetric_XsdtBoolean_ struct {
 
 }
 
+type XsdGoPkgHasAttr_Largeop_XsdtBoolean_ struct {
+	Largeop xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML largeop,attr"`
+
+}
+
 type XsdGoPkgHasAttr_Fence_XsdtBoolean_ struct {
 	Fence xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML fence,attr"`
 
 }
 
-type XsdGoPkgHasAttr_Movablelimits_XsdtBoolean_ struct {
-	Movablelimits xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML movablelimits,attr"`
+type XsdGoPkgHasAttr_Rspace_TxsdOperatorAttribRspace_ struct {
+	Rspace TxsdOperatorAttribLspace `xml:"http://www.w3.org/1998/Math/MathML rspace,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Stretchy_XsdtBoolean_ struct {
+	Stretchy xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML stretchy,attr"`
 
 }
 
 type XsdGoPkgHasAtts_OperatorAttrib struct {
-	XsdGoPkgHasAttr_Movablelimits_XsdtBoolean_
+	XsdGoPkgHasAttr_Fence_XsdtBoolean_
 
 	XsdGoPkgHasAttr_Rspace_TxsdOperatorAttribRspace_
 
 	XsdGoPkgHasAttr_Stretchy_XsdtBoolean_
 
-	XsdGoPkgHasAttr_Maxsize_TxsdOperatorAttribMaxsize_
+	XsdGoPkgHasAttr_Form_TxsdOperatorAttribForm_
+
+	XsdGoPkgHasAttr_Movablelimits_XsdtBoolean_
 
 	XsdGoPkgHasAttr_Accent_XsdtBoolean_
 
-	XsdGoPkgHasAttr_Minsize_TxsdOperatorAttribMinsize_
-
 	XsdGoPkgHasAttr_Separator_XsdtBoolean_
-
-	XsdGoPkgHasAttr_Form_TxsdOperatorAttribForm_
-
-	XsdGoPkgHasAttr_Largeop_XsdtBoolean_
 
 	XsdGoPkgHasAttr_Lspace_TxsdOperatorAttribLspace_
 
+	XsdGoPkgHasAttr_Maxsize_TxsdOperatorAttribMaxsize_
+
+	XsdGoPkgHasAttr_Minsize_TxsdOperatorAttribMinsize_
+
 	XsdGoPkgHasAttr_Symmetric_XsdtBoolean_
 
-	XsdGoPkgHasAttr_Fence_XsdtBoolean_
-
-}
-
-type XsdGoPkgHasAttr_Alt_XsdtString_ struct {
-	Alt xsdt.String `xml:"http://www.w3.org/1998/Math/MathML alt,attr"`
+	XsdGoPkgHasAttr_Largeop_XsdtBoolean_
 
 }
 
@@ -512,6 +507,11 @@ type XsdGoPkgHasAttr_Index_XsdtPositiveInteger_ struct {
 
 }
 
+type XsdGoPkgHasAttr_Alt_XsdtString_ struct {
+	Alt xsdt.String `xml:"http://www.w3.org/1998/Math/MathML alt,attr"`
+
+}
+
 type XsdGoPkgHasAtts_MglyphAttlist struct {
 	XsdGoPkgHasAttr_Alt_XsdtString_
 
@@ -522,9 +522,9 @@ type XsdGoPkgHasAtts_MglyphAttlist struct {
 }
 
 type XsdGoPkgHasAtts_MiAttlist struct {
-	XsdGoPkgHasAtts_CommonAttrib
-
 	XsdGoPkgHasAtts_TokenStyleAttrib
+
+	XsdGoPkgHasAtts_CommonAttrib
 
 }
 
@@ -554,13 +554,13 @@ type XsdGoPkgHasAttr_Rquote_XsdtString_ struct {
 func (me XsdGoPkgHasAttr_Rquote_XsdtString_) RquoteDefault () xsdt.String { return xsdt.String("\"") }
 
 type XsdGoPkgHasAtts_MsAttlist struct {
-	XsdGoPkgHasAtts_TokenStyleAttrib
-
 	XsdGoPkgHasAttr_Lquote_XsdtString_
+
+	XsdGoPkgHasAtts_CommonAttrib
 
 	XsdGoPkgHasAttr_Rquote_XsdtString_
 
-	XsdGoPkgHasAtts_CommonAttrib
+	XsdGoPkgHasAtts_TokenStyleAttrib
 
 }
 
@@ -589,7 +589,11 @@ type XsdGoPkgHasAtts_MsupAttlist struct {
 }
 
 type XsdGoPkgHasAtts_MsubsupAttlist struct {
+	XsdGoPkgHasAttr_Subscriptshift_TlengthWithUnit_
+
 	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasAttr_Superscriptshift_TlengthWithUnit_
 
 }
 
@@ -605,58 +609,26 @@ type XsdGoPkgHasAtts_MunderAttlist struct {
 
 }
 
-type TxsdMspaceAttlistLinebreak xsdt.String
+type XsdGoPkgHasAtts_MoverAttlist struct {
+	XsdGoPkgHasAtts_CommonAttrib
 
-//	This convenience method just performs a simple type conversion to TxsdMspaceAttlistLinebreak's alias type xsdt.String.
-func (me TxsdMspaceAttlistLinebreak) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "nobreak".
-func (me TxsdMspaceAttlistLinebreak) IsNobreak () bool { return me == "nobreak" }
-
-//	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "auto".
-func (me TxsdMspaceAttlistLinebreak) IsAuto () bool { return me == "auto" }
-
-//	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "indentingnewline".
-func (me TxsdMspaceAttlistLinebreak) IsIndentingnewline () bool { return me == "indentingnewline" }
-
-//	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "goodbreak".
-func (me TxsdMspaceAttlistLinebreak) IsGoodbreak () bool { return me == "goodbreak" }
-
-//	Since TxsdMspaceAttlistLinebreak is just a simple String type, this merely returns the current string value.
-func (me TxsdMspaceAttlistLinebreak) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "newline".
-func (me TxsdMspaceAttlistLinebreak) IsNewline () bool { return me == "newline" }
-
-//	Since TxsdMspaceAttlistLinebreak is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdMspaceAttlistLinebreak) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "badbreak".
-func (me TxsdMspaceAttlistLinebreak) IsBadbreak () bool { return me == "badbreak" }
-
-type XsdGoPkgHasAttr_Linebreak_TxsdMspaceAttlistLinebreak_Auto struct {
-	Linebreak TxsdMspaceAttlistLinebreak `xml:"http://www.w3.org/1998/Math/MathML linebreak,attr"`
+	XsdGoPkgHasAttr_Accent_XsdtBoolean_
 
 }
 
-//	Returns the default value for Linebreak -- "auto"
-func (me XsdGoPkgHasAttr_Linebreak_TxsdMspaceAttlistLinebreak_Auto) LinebreakDefault () TxsdMspaceAttlistLinebreak { return TxsdMspaceAttlistLinebreak("auto") }
+type XsdGoPkgHasAtts_MunderoverAttlist struct {
+	XsdGoPkgHasAttr_Accent_XsdtBoolean_
 
-type XsdGoPkgHasAttr_Width_TxsdMspaceAttlistWidth_0Em struct {
-	Width TxsdOperatorAttribRspace `xml:"http://www.w3.org/1998/Math/MathML width,attr"`
+	XsdGoPkgHasAtts_CommonAttrib
 
-}
-
-//	Returns the default value for Width -- "0em"
-func (me XsdGoPkgHasAttr_Width_TxsdMspaceAttlistWidth_0Em) WidthDefault () TxsdOperatorAttribRspace { return TxsdOperatorAttribRspace("0em") }
-
-type XsdGoPkgHasAttr_Height_TlengthWithUnit_0Ex struct {
-	Height TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML height,attr"`
+	XsdGoPkgHasAttr_Accentunder_XsdtBoolean_
 
 }
 
-//	Returns the default value for Height -- "0ex"
-func (me XsdGoPkgHasAttr_Height_TlengthWithUnit_0Ex) HeightDefault () TlengthWithUnit { return TlengthWithUnit("0ex") }
+type XsdGoPkgHasAtts_MmultiscriptsAttlist struct {
+	XsdGoPkgHasAtts_CommonAttrib
+
+}
 
 type XsdGoPkgHasAttr_Depth_TlengthWithUnit_0Ex struct {
 	Depth TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML depth,attr"`
@@ -666,66 +638,147 @@ type XsdGoPkgHasAttr_Depth_TlengthWithUnit_0Ex struct {
 //	Returns the default value for Depth -- "0ex"
 func (me XsdGoPkgHasAttr_Depth_TlengthWithUnit_0Ex) DepthDefault () TlengthWithUnit { return TlengthWithUnit("0ex") }
 
-type XsdGoPkgHasAtts_MspaceAttlist struct {
-	XsdGoPkgHasAttr_Height_TlengthWithUnit_0Ex
-
-	XsdGoPkgHasAtts_CommonAttrib
-
-	XsdGoPkgHasAttr_Depth_TlengthWithUnit_0Ex
-
-	XsdGoPkgHasAttr_Linebreak_TxsdMspaceAttlistLinebreak_Auto
-
-	XsdGoPkgHasAttr_Width_TxsdMspaceAttlistWidth_0Em
+type XsdGoPkgHasAttr_Width_TxsdMspaceAttlistWidth_0Em struct {
+	Width TxsdOperatorAttribLspace `xml:"http://www.w3.org/1998/Math/MathML width,attr"`
 
 }
 
+//	Returns the default value for Width -- "0em"
+func (me XsdGoPkgHasAttr_Width_TxsdMspaceAttlistWidth_0Em) WidthDefault () TxsdOperatorAttribLspace { return TxsdOperatorAttribLspace("0em") }
+
+type XsdGoPkgHasAttr_Height_TlengthWithUnit_0Ex struct {
+	Height TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML height,attr"`
+
+}
+
+//	Returns the default value for Height -- "0ex"
+func (me XsdGoPkgHasAttr_Height_TlengthWithUnit_0Ex) HeightDefault () TlengthWithUnit { return TlengthWithUnit("0ex") }
+
+type TxsdMspaceAttlistLinebreak xsdt.String
+
+//	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "indentingnewline".
+func (me TxsdMspaceAttlistLinebreak) IsIndentingnewline () bool { return me == "indentingnewline" }
+
+//	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "badbreak".
+func (me TxsdMspaceAttlistLinebreak) IsBadbreak () bool { return me == "badbreak" }
+
+//	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "nobreak".
+func (me TxsdMspaceAttlistLinebreak) IsNobreak () bool { return me == "nobreak" }
+
+//	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "goodbreak".
+func (me TxsdMspaceAttlistLinebreak) IsGoodbreak () bool { return me == "goodbreak" }
+
+//	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "newline".
+func (me TxsdMspaceAttlistLinebreak) IsNewline () bool { return me == "newline" }
+
+//	Since TxsdMspaceAttlistLinebreak is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdMspaceAttlistLinebreak) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdMspaceAttlistLinebreak's alias type xsdt.String.
+func (me TxsdMspaceAttlistLinebreak) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TxsdMspaceAttlistLinebreak is just a simple String type, this merely returns the current string value.
+func (me TxsdMspaceAttlistLinebreak) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "auto".
+func (me TxsdMspaceAttlistLinebreak) IsAuto () bool { return me == "auto" }
+
+type XsdGoPkgHasAttr_Linebreak_TxsdMspaceAttlistLinebreak_Auto struct {
+	Linebreak TxsdMspaceAttlistLinebreak `xml:"http://www.w3.org/1998/Math/MathML linebreak,attr"`
+
+}
+
+//	Returns the default value for Linebreak -- "auto"
+func (me XsdGoPkgHasAttr_Linebreak_TxsdMspaceAttlistLinebreak_Auto) LinebreakDefault () TxsdMspaceAttlistLinebreak { return TxsdMspaceAttlistLinebreak("auto") }
+
+type XsdGoPkgHasAtts_MspaceAttlist struct {
+	XsdGoPkgHasAttr_Width_TxsdMspaceAttlistWidth_0Em
+
+	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasAttr_Height_TlengthWithUnit_0Ex
+
+	XsdGoPkgHasAttr_Linebreak_TxsdMspaceAttlistLinebreak_Auto
+
+	XsdGoPkgHasAttr_Depth_TlengthWithUnit_0Ex
+
+}
+
+type Tcentering xsdt.String
+
+//	Since Tcentering is just a simple String type, this merely returns the current string value.
+func (me Tcentering) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated Tcentering is "left".
+func (me Tcentering) IsLeft () bool { return me == "left" }
+
+//	Since Tcentering is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tcentering) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated Tcentering is "right".
+func (me Tcentering) IsRight () bool { return me == "right" }
+
+//	Returns true if the value of this enumerated Tcentering is "center".
+func (me Tcentering) IsCenter () bool { return me == "center" }
+
+//	This convenience method just performs a simple type conversion to Tcentering's alias type xsdt.String.
+func (me Tcentering) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+type XsdGoPkgHasAttr_Denomalign_Tcentering_Center struct {
+	Denomalign Tcentering `xml:"http://www.w3.org/1998/Math/MathML denomalign,attr"`
+
+}
+
+//	Returns the default value for Denomalign -- "center"
+func (me XsdGoPkgHasAttr_Denomalign_Tcentering_Center) DenomalignDefault () Tcentering { return Tcentering("center") }
+
 type TlengthWithOptionalUnit xsdt.String
-
-//	Since TlengthWithOptionalUnit is just a simple String type, this merely sets the current value from the specified string.
-func (me *TlengthWithOptionalUnit) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TlengthWithOptionalUnit's alias type xsdt.String.
-func (me TlengthWithOptionalUnit) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 //	Since TlengthWithOptionalUnit is just a simple String type, this merely returns the current string value.
 func (me TlengthWithOptionalUnit) String () string { return xsdt.String(me).String() }
 
+//	This convenience method just performs a simple type conversion to TlengthWithOptionalUnit's alias type xsdt.String.
+func (me TlengthWithOptionalUnit) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TlengthWithOptionalUnit is just a simple String type, this merely sets the current value from the specified string.
+func (me *TlengthWithOptionalUnit) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
 type Tthickness xsdt.String
-
-//	Since Tthickness is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tthickness) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to Tthickness's alias type xsdt.String.
-func (me Tthickness) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated Tthickness is "thick".
-func (me Tthickness) IsThick () bool { return me == "thick" }
-
-//	Returns true if the value of this enumerated Tthickness is "thin".
-func (me Tthickness) IsThin () bool { return me == "thin" }
 
 //	Since Tthickness is just a simple String type, this merely returns the current string value.
 func (me Tthickness) String () string { return xsdt.String(me).String() }
 
+//	Since Tthickness is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tthickness) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated Tthickness is "thin".
+func (me Tthickness) IsThin () bool { return me == "thin" }
+
 //	Returns true if the value of this enumerated Tthickness is "medium".
 func (me Tthickness) IsMedium () bool { return me == "medium" }
 
-type TxsdMfracAttlistLinethickness xsdt.String
+//	Returns true if the value of this enumerated Tthickness is "thick".
+func (me Tthickness) IsThick () bool { return me == "thick" }
 
-//	TxsdMfracAttlistLinethickness is an XSD union-type of several types. This is a simple type conversion to TlengthWithOptionalUnit, but keep in mind the actual value may or may not be a valid TlengthWithOptionalUnit value.
-func (me TxsdMfracAttlistLinethickness) ToTlengthWithOptionalUnit () TlengthWithOptionalUnit { return TlengthWithOptionalUnit(me) }
+//	This convenience method just performs a simple type conversion to Tthickness's alias type xsdt.String.
+func (me Tthickness) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+type TxsdMfracAttlistLinethickness xsdt.String
 
 //	Since TxsdMfracAttlistLinethickness is just a simple String type, this merely returns the current string value.
 func (me TxsdMfracAttlistLinethickness) String () string { return xsdt.String(me).String() }
 
-//	TxsdMfracAttlistLinethickness is an XSD union-type of several types. This is a simple type conversion to Tthickness, but keep in mind the actual value may or may not be a valid Tthickness value.
-func (me TxsdMfracAttlistLinethickness) ToTthickness () Tthickness { return Tthickness(me) }
+//	Since TxsdMfracAttlistLinethickness is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdMfracAttlistLinethickness) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 //	This convenience method just performs a simple type conversion to TxsdMfracAttlistLinethickness's alias type xsdt.String.
 func (me TxsdMfracAttlistLinethickness) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
-//	Since TxsdMfracAttlistLinethickness is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdMfracAttlistLinethickness) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+//	TxsdMfracAttlistLinethickness is an XSD union-type of several types. This is a simple type conversion to TlengthWithOptionalUnit, but keep in mind the actual value may or may not be a valid TlengthWithOptionalUnit value.
+func (me TxsdMfracAttlistLinethickness) ToTlengthWithOptionalUnit () TlengthWithOptionalUnit { return TlengthWithOptionalUnit(me) }
+
+//	TxsdMfracAttlistLinethickness is an XSD union-type of several types. This is a simple type conversion to Tthickness, but keep in mind the actual value may or may not be a valid Tthickness value.
+func (me TxsdMfracAttlistLinethickness) ToTthickness () Tthickness { return Tthickness(me) }
 
 type XsdGoPkgHasAttr_Linethickness_TxsdMfracAttlistLinethickness_1 struct {
 	Linethickness TxsdMfracAttlistLinethickness `xml:"http://www.w3.org/1998/Math/MathML linethickness,attr"`
@@ -740,26 +793,6 @@ type XsdGoPkgHasAttr_Bevelled_XsdtBoolean_ struct {
 
 }
 
-type Tcentering xsdt.String
-
-//	This convenience method just performs a simple type conversion to Tcentering's alias type xsdt.String.
-func (me Tcentering) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since Tcentering is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tcentering) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated Tcentering is "right".
-func (me Tcentering) IsRight () bool { return me == "right" }
-
-//	Since Tcentering is just a simple String type, this merely returns the current string value.
-func (me Tcentering) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated Tcentering is "center".
-func (me Tcentering) IsCenter () bool { return me == "center" }
-
-//	Returns true if the value of this enumerated Tcentering is "left".
-func (me Tcentering) IsLeft () bool { return me == "left" }
-
 type XsdGoPkgHasAttr_Numalign_Tcentering_Center struct {
 	Numalign Tcentering `xml:"http://www.w3.org/1998/Math/MathML numalign,attr"`
 
@@ -768,34 +801,42 @@ type XsdGoPkgHasAttr_Numalign_Tcentering_Center struct {
 //	Returns the default value for Numalign -- "center"
 func (me XsdGoPkgHasAttr_Numalign_Tcentering_Center) NumalignDefault () Tcentering { return Tcentering("center") }
 
-type XsdGoPkgHasAttr_Denomalign_Tcentering_Center struct {
-	Denomalign Tcentering `xml:"http://www.w3.org/1998/Math/MathML denomalign,attr"`
-
-}
-
-//	Returns the default value for Denomalign -- "center"
-func (me XsdGoPkgHasAttr_Denomalign_Tcentering_Center) DenomalignDefault () Tcentering { return Tcentering("center") }
-
 type XsdGoPkgHasAtts_MfracAttlist struct {
-	XsdGoPkgHasAtts_CommonAttrib
-
-	XsdGoPkgHasAttr_Denomalign_Tcentering_Center
-
 	XsdGoPkgHasAttr_Linethickness_TxsdMfracAttlistLinethickness_1
 
 	XsdGoPkgHasAttr_Bevelled_XsdtBoolean_
 
+	XsdGoPkgHasAtts_CommonAttrib
+
 	XsdGoPkgHasAttr_Numalign_Tcentering_Center
+
+	XsdGoPkgHasAttr_Denomalign_Tcentering_Center
+
+}
+
+type TmpaddedWidthSpace xsdt.String
+
+//	This convenience method just performs a simple type conversion to TmpaddedWidthSpace's alias type xsdt.String.
+func (me TmpaddedWidthSpace) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TmpaddedWidthSpace is just a simple String type, this merely sets the current value from the specified string.
+func (me *TmpaddedWidthSpace) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TmpaddedWidthSpace is just a simple String type, this merely returns the current string value.
+func (me TmpaddedWidthSpace) String () string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_Width_TmpaddedWidthSpace_ struct {
+	Width TmpaddedWidthSpace `xml:"http://www.w3.org/1998/Math/MathML width,attr"`
 
 }
 
 type TmpaddedSpace xsdt.String
 
-//	Since TmpaddedSpace is just a simple String type, this merely returns the current string value.
-func (me TmpaddedSpace) String () string { return xsdt.String(me).String() }
-
 //	Since TmpaddedSpace is just a simple String type, this merely sets the current value from the specified string.
 func (me *TmpaddedSpace) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TmpaddedSpace is just a simple String type, this merely returns the current string value.
+func (me TmpaddedSpace) String () string { return xsdt.String(me).String() }
 
 //	This convenience method just performs a simple type conversion to TmpaddedSpace's alias type xsdt.String.
 func (me TmpaddedSpace) ToXsdtString () xsdt.String { return xsdt.String(me) }
@@ -805,60 +846,28 @@ type XsdGoPkgHasAttr_Depth_TmpaddedSpace_ struct {
 
 }
 
-type XsdGoPkgHasAttr_Height_TmpaddedSpace_ struct {
-	Height TmpaddedSpace `xml:"http://www.w3.org/1998/Math/MathML height,attr"`
-
-}
-
-type TmpaddedWidthSpace xsdt.String
-
-//	This convenience method just performs a simple type conversion to TmpaddedWidthSpace's alias type xsdt.String.
-func (me TmpaddedWidthSpace) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TmpaddedWidthSpace is just a simple String type, this merely returns the current string value.
-func (me TmpaddedWidthSpace) String () string { return xsdt.String(me).String() }
-
-//	Since TmpaddedWidthSpace is just a simple String type, this merely sets the current value from the specified string.
-func (me *TmpaddedWidthSpace) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_Width_TmpaddedWidthSpace_ struct {
-	Width TmpaddedWidthSpace `xml:"http://www.w3.org/1998/Math/MathML width,attr"`
-
-}
-
 type XsdGoPkgHasAttr_Lspace_TmpaddedSpace_ struct {
 	Lspace TmpaddedSpace `xml:"http://www.w3.org/1998/Math/MathML lspace,attr"`
 
 }
 
+type XsdGoPkgHasAttr_Height_TmpaddedSpace_ struct {
+	Height TmpaddedSpace `xml:"http://www.w3.org/1998/Math/MathML height,attr"`
+
+}
+
 type XsdGoPkgHasAtts_MpaddedAttlist struct {
-	XsdGoPkgHasAttr_Lspace_TmpaddedSpace_
+	XsdGoPkgHasAttr_Width_TmpaddedWidthSpace_
 
 	XsdGoPkgHasAttr_Depth_TmpaddedSpace_
+
+	XsdGoPkgHasAttr_Lspace_TmpaddedSpace_
 
 	XsdGoPkgHasAtts_CommonAttrib
 
 	XsdGoPkgHasAttr_Height_TmpaddedSpace_
 
-	XsdGoPkgHasAttr_Width_TmpaddedWidthSpace_
-
 }
-
-type XsdGoPkgHasAttr_Close_XsdtString_ struct {
-	Close xsdt.String `xml:"http://www.w3.org/1998/Math/MathML close,attr"`
-
-}
-
-//	Returns the default value for Close -- ")"
-func (me XsdGoPkgHasAttr_Close_XsdtString_) CloseDefault () xsdt.String { return xsdt.String(")") }
-
-type XsdGoPkgHasAttr_Open_XsdtString_ struct {
-	Open xsdt.String `xml:"http://www.w3.org/1998/Math/MathML open,attr"`
-
-}
-
-//	Returns the default value for Open -- "("
-func (me XsdGoPkgHasAttr_Open_XsdtString_) OpenDefault () xsdt.String { return xsdt.String("(") }
 
 type XsdGoPkgHasAttr_Separators_XsdtString_ struct {
 	Separators xsdt.String `xml:"http://www.w3.org/1998/Math/MathML separators,attr"`
@@ -868,36 +877,67 @@ type XsdGoPkgHasAttr_Separators_XsdtString_ struct {
 //	Returns the default value for Separators -- ","
 func (me XsdGoPkgHasAttr_Separators_XsdtString_) SeparatorsDefault () xsdt.String { return xsdt.String(",") }
 
+type XsdGoPkgHasAttr_Open_XsdtString_ struct {
+	Open xsdt.String `xml:"http://www.w3.org/1998/Math/MathML open,attr"`
+
+}
+
+//	Returns the default value for Open -- "("
+func (me XsdGoPkgHasAttr_Open_XsdtString_) OpenDefault () xsdt.String { return xsdt.String("(") }
+
+type XsdGoPkgHasAttr_Close_XsdtString_ struct {
+	Close xsdt.String `xml:"http://www.w3.org/1998/Math/MathML close,attr"`
+
+}
+
+//	Returns the default value for Close -- ")"
+func (me XsdGoPkgHasAttr_Close_XsdtString_) CloseDefault () xsdt.String { return xsdt.String(")") }
+
 type XsdGoPkgHasAtts_MfencedAttlist struct {
-	XsdGoPkgHasAttr_Close_XsdtString_
+	XsdGoPkgHasAttr_Separators_XsdtString_
 
 	XsdGoPkgHasAttr_Open_XsdtString_
 
-	XsdGoPkgHasAttr_Separators_XsdtString_
-
 	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasAttr_Close_XsdtString_
 
 }
 
 type TxsdMencloseAttlistNotation xsdt.String
 
-//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "updiagonalstrike".
-func (me TxsdMencloseAttlistNotation) IsUpdiagonalstrike () bool { return me == "updiagonalstrike" }
+//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "top".
+func (me TxsdMencloseAttlistNotation) IsTop () bool { return me == "top" }
 
 //	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "horizontalstrike".
 func (me TxsdMencloseAttlistNotation) IsHorizontalstrike () bool { return me == "horizontalstrike" }
 
+//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "right".
+func (me TxsdMencloseAttlistNotation) IsRight () bool { return me == "right" }
+
+//	Since TxsdMencloseAttlistNotation is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdMencloseAttlistNotation) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "circle".
+func (me TxsdMencloseAttlistNotation) IsCircle () bool { return me == "circle" }
+
+//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "box".
+func (me TxsdMencloseAttlistNotation) IsBox () bool { return me == "box" }
+
 //	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "longdiv".
 func (me TxsdMencloseAttlistNotation) IsLongdiv () bool { return me == "longdiv" }
 
-//	This convenience method just performs a simple type conversion to TxsdMencloseAttlistNotation's alias type xsdt.String.
-func (me TxsdMencloseAttlistNotation) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "left".
+func (me TxsdMencloseAttlistNotation) IsLeft () bool { return me == "left" }
 
 //	Since TxsdMencloseAttlistNotation is just a simple String type, this merely returns the current string value.
 func (me TxsdMencloseAttlistNotation) String () string { return xsdt.String(me).String() }
 
-//	Since TxsdMencloseAttlistNotation is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdMencloseAttlistNotation) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "radical".
+func (me TxsdMencloseAttlistNotation) IsRadical () bool { return me == "radical" }
+
+//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "roundedbox".
+func (me TxsdMencloseAttlistNotation) IsRoundedbox () bool { return me == "roundedbox" }
 
 //	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "bottom".
 func (me TxsdMencloseAttlistNotation) IsBottom () bool { return me == "bottom" }
@@ -905,32 +945,17 @@ func (me TxsdMencloseAttlistNotation) IsBottom () bool { return me == "bottom" }
 //	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "actuarial".
 func (me TxsdMencloseAttlistNotation) IsActuarial () bool { return me == "actuarial" }
 
-//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "circle".
-func (me TxsdMencloseAttlistNotation) IsCircle () bool { return me == "circle" }
-
-//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "left".
-func (me TxsdMencloseAttlistNotation) IsLeft () bool { return me == "left" }
-
-//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "right".
-func (me TxsdMencloseAttlistNotation) IsRight () bool { return me == "right" }
-
 //	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "downdiagonalstrike".
 func (me TxsdMencloseAttlistNotation) IsDowndiagonalstrike () bool { return me == "downdiagonalstrike" }
+
+//	This convenience method just performs a simple type conversion to TxsdMencloseAttlistNotation's alias type xsdt.String.
+func (me TxsdMencloseAttlistNotation) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 //	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "verticalstrike".
 func (me TxsdMencloseAttlistNotation) IsVerticalstrike () bool { return me == "verticalstrike" }
 
-//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "box".
-func (me TxsdMencloseAttlistNotation) IsBox () bool { return me == "box" }
-
-//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "top".
-func (me TxsdMencloseAttlistNotation) IsTop () bool { return me == "top" }
-
-//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "roundedbox".
-func (me TxsdMencloseAttlistNotation) IsRoundedbox () bool { return me == "roundedbox" }
-
-//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "radical".
-func (me TxsdMencloseAttlistNotation) IsRadical () bool { return me == "radical" }
+//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "updiagonalstrike".
+func (me TxsdMencloseAttlistNotation) IsUpdiagonalstrike () bool { return me == "updiagonalstrike" }
 
 type XsdGoPkgHasAttr_Notation_TxsdMencloseAttlistNotation_Longdiv struct {
 	Notation TxsdMencloseAttlistNotation `xml:"http://www.w3.org/1998/Math/MathML notation,attr"`
@@ -941,46 +966,46 @@ type XsdGoPkgHasAttr_Notation_TxsdMencloseAttlistNotation_Longdiv struct {
 func (me XsdGoPkgHasAttr_Notation_TxsdMencloseAttlistNotation_Longdiv) NotationDefault () TxsdMencloseAttlistNotation { return TxsdMencloseAttlistNotation("longdiv") }
 
 type XsdGoPkgHasAtts_MencloseAttlist struct {
-	XsdGoPkgHasAtts_CommonAttrib
-
 	XsdGoPkgHasAttr_Notation_TxsdMencloseAttlistNotation_Longdiv
+
+	XsdGoPkgHasAtts_CommonAttrib
 
 }
 
 type XsdGoPkgHasAttr_Rowalign_TxsdTableAlignmentAttribRowalign_Baseline struct {
-	Rowalign TmpaddedWidthSpace `xml:"http://www.w3.org/1998/Math/MathML rowalign,attr"`
+	Rowalign TmpaddedSpace `xml:"http://www.w3.org/1998/Math/MathML rowalign,attr"`
 
 }
 
 //	Returns the default value for Rowalign -- "baseline"
-func (me XsdGoPkgHasAttr_Rowalign_TxsdTableAlignmentAttribRowalign_Baseline) RowalignDefault () TmpaddedWidthSpace { return TmpaddedWidthSpace("baseline") }
-
-type XsdGoPkgHasAttr_Columnalign_TxsdTableAlignmentAttribColumnalign_Center struct {
-	Columnalign TmpaddedWidthSpace `xml:"http://www.w3.org/1998/Math/MathML columnalign,attr"`
-
-}
-
-//	Returns the default value for Columnalign -- "center"
-func (me XsdGoPkgHasAttr_Columnalign_TxsdTableAlignmentAttribColumnalign_Center) ColumnalignDefault () TmpaddedWidthSpace { return TmpaddedWidthSpace("center") }
+func (me XsdGoPkgHasAttr_Rowalign_TxsdTableAlignmentAttribRowalign_Baseline) RowalignDefault () TmpaddedSpace { return TmpaddedSpace("baseline") }
 
 type XsdGoPkgHasAttr_Groupalign_XsdtString_ struct {
 	Groupalign xsdt.String `xml:"http://www.w3.org/1998/Math/MathML groupalign,attr"`
 
 }
 
+type XsdGoPkgHasAttr_Columnalign_TxsdTableAlignmentAttribColumnalign_Center struct {
+	Columnalign TmpaddedSpace `xml:"http://www.w3.org/1998/Math/MathML columnalign,attr"`
+
+}
+
+//	Returns the default value for Columnalign -- "center"
+func (me XsdGoPkgHasAttr_Columnalign_TxsdTableAlignmentAttribColumnalign_Center) ColumnalignDefault () TmpaddedSpace { return TmpaddedSpace("center") }
+
 type XsdGoPkgHasAtts_TableAlignmentAttrib struct {
 	XsdGoPkgHasAttr_Rowalign_TxsdTableAlignmentAttribRowalign_Baseline
 
-	XsdGoPkgHasAttr_Columnalign_TxsdTableAlignmentAttribColumnalign_Center
-
 	XsdGoPkgHasAttr_Groupalign_XsdtString_
+
+	XsdGoPkgHasAttr_Columnalign_TxsdTableAlignmentAttribColumnalign_Center
 
 }
 
 type XsdGoPkgHasAtts_MtrAttlist struct {
-	XsdGoPkgHasAtts_CommonAttrib
-
 	XsdGoPkgHasAtts_TableAlignmentAttrib
+
+	XsdGoPkgHasAtts_CommonAttrib
 
 }
 
@@ -1003,13 +1028,105 @@ func (me XsdGoPkgHasAttr_Columnspan_XsdtPositiveInteger_1) ColumnspanDefault () 
 type XsdGoPkgHasAtts_MtdAttlist struct {
 	XsdGoPkgHasAttr_Rowspan_XsdtPositiveInteger_1
 
+	XsdGoPkgHasAtts_CommonAttrib
+
 	XsdGoPkgHasAttr_Columnspan_XsdtPositiveInteger_1
 
 	XsdGoPkgHasAtts_TableAlignmentAttrib
 
-	XsdGoPkgHasAtts_CommonAttrib
+}
+
+type TxsdMtableAttlistFrame xsdt.String
+
+//	Returns true if the value of this enumerated TxsdMtableAttlistFrame is "none".
+func (me TxsdMtableAttlistFrame) IsNone () bool { return me == "none" }
+
+//	Since TxsdMtableAttlistFrame is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdMtableAttlistFrame) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdMtableAttlistFrame is "solid".
+func (me TxsdMtableAttlistFrame) IsSolid () bool { return me == "solid" }
+
+//	Since TxsdMtableAttlistFrame is just a simple String type, this merely returns the current string value.
+func (me TxsdMtableAttlistFrame) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdMtableAttlistFrame is "dashed".
+func (me TxsdMtableAttlistFrame) IsDashed () bool { return me == "dashed" }
+
+//	This convenience method just performs a simple type conversion to TxsdMtableAttlistFrame's alias type xsdt.String.
+func (me TxsdMtableAttlistFrame) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+type XsdGoPkgHasAttr_Frame_TxsdMtableAttlistFrame_None struct {
+	Frame TxsdMtableAttlistFrame `xml:"http://www.w3.org/1998/Math/MathML frame,attr"`
 
 }
+
+//	Returns the default value for Frame -- "none"
+func (me XsdGoPkgHasAttr_Frame_TxsdMtableAttlistFrame_None) FrameDefault () TxsdMtableAttlistFrame { return TxsdMtableAttlistFrame("none") }
+
+type XsdGoPkgHasAttr_Equalcolumns_XsdtBoolean_False struct {
+	Equalcolumns xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML equalcolumns,attr"`
+
+}
+
+//	Returns the default value for Equalcolumns -- false
+func (me XsdGoPkgHasAttr_Equalcolumns_XsdtBoolean_False) EqualcolumnsDefault () xsdt.Boolean { return xsdt.Boolean(false) }
+
+type XsdGoPkgHasAttr_Columnspacing_XsdtString_08Em struct {
+	Columnspacing xsdt.String `xml:"http://www.w3.org/1998/Math/MathML columnspacing,attr"`
+
+}
+
+//	Returns the default value for Columnspacing -- "0.8em"
+func (me XsdGoPkgHasAttr_Columnspacing_XsdtString_08Em) ColumnspacingDefault () xsdt.String { return xsdt.String("0.8em") }
+
+type XsdGoPkgHasAttr_Framespacing_XsdtString_04Em05Ex struct {
+	Framespacing xsdt.String `xml:"http://www.w3.org/1998/Math/MathML framespacing,attr"`
+
+}
+
+//	Returns the default value for Framespacing -- "0.4em 0.5ex"
+func (me XsdGoPkgHasAttr_Framespacing_XsdtString_04Em05Ex) FramespacingDefault () xsdt.String { return xsdt.String("0.4em 0.5ex") }
+
+type XsdGoPkgHasAttr_Width_XsdtString_Auto struct {
+	Width xsdt.String `xml:"http://www.w3.org/1998/Math/MathML width,attr"`
+
+}
+
+//	Returns the default value for Width -- "auto"
+func (me XsdGoPkgHasAttr_Width_XsdtString_Auto) WidthDefault () xsdt.String { return xsdt.String("auto") }
+
+type XsdGoPkgHasAttr_Rowspacing_XsdtString_10Ex struct {
+	Rowspacing xsdt.String `xml:"http://www.w3.org/1998/Math/MathML rowspacing,attr"`
+
+}
+
+//	Returns the default value for Rowspacing -- "1.0ex"
+func (me XsdGoPkgHasAttr_Rowspacing_XsdtString_10Ex) RowspacingDefault () xsdt.String { return xsdt.String("1.0ex") }
+
+type XsdGoPkgHasAttr_Columnwidth_XsdtString_Auto struct {
+	Columnwidth xsdt.String `xml:"http://www.w3.org/1998/Math/MathML columnwidth,attr"`
+
+}
+
+//	Returns the default value for Columnwidth -- "auto"
+func (me XsdGoPkgHasAttr_Columnwidth_XsdtString_Auto) ColumnwidthDefault () xsdt.String { return xsdt.String("auto") }
+
+type XsdGoPkgHasAttr_Rowlines_XsdtString_None struct {
+	Rowlines xsdt.String `xml:"http://www.w3.org/1998/Math/MathML rowlines,attr"`
+
+}
+
+//	Returns the default value for Rowlines -- "none"
+func (me XsdGoPkgHasAttr_Rowlines_XsdtString_None) RowlinesDefault () xsdt.String { return xsdt.String("none") }
+
+type XsdGoPkgHasAttr_Columnlines_XsdtString_None struct {
+	Columnlines xsdt.String `xml:"http://www.w3.org/1998/Math/MathML columnlines,attr"`
+
+}
+
+//	Returns the default value for Columnlines -- "none"
+func (me XsdGoPkgHasAttr_Columnlines_XsdtString_None) ColumnlinesDefault () xsdt.String { return xsdt.String("none") }
 
 type XsdGoPkgHasAttr_Displaystyle_XsdtBoolean_False struct {
 	Displaystyle xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML displaystyle,attr"`
@@ -1024,20 +1141,20 @@ type TxsdMtableAttlistSide xsdt.String
 //	Returns true if the value of this enumerated TxsdMtableAttlistSide is "right".
 func (me TxsdMtableAttlistSide) IsRight () bool { return me == "right" }
 
+//	Returns true if the value of this enumerated TxsdMtableAttlistSide is "leftoverlap".
+func (me TxsdMtableAttlistSide) IsLeftoverlap () bool { return me == "leftoverlap" }
+
+//	Since TxsdMtableAttlistSide is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdMtableAttlistSide) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TxsdMtableAttlistSide is just a simple String type, this merely returns the current string value.
+func (me TxsdMtableAttlistSide) String () string { return xsdt.String(me).String() }
+
 //	Returns true if the value of this enumerated TxsdMtableAttlistSide is "left".
 func (me TxsdMtableAttlistSide) IsLeft () bool { return me == "left" }
 
 //	Returns true if the value of this enumerated TxsdMtableAttlistSide is "rightoverlap".
 func (me TxsdMtableAttlistSide) IsRightoverlap () bool { return me == "rightoverlap" }
-
-//	Returns true if the value of this enumerated TxsdMtableAttlistSide is "leftoverlap".
-func (me TxsdMtableAttlistSide) IsLeftoverlap () bool { return me == "leftoverlap" }
-
-//	Since TxsdMtableAttlistSide is just a simple String type, this merely returns the current string value.
-func (me TxsdMtableAttlistSide) String () string { return xsdt.String(me).String() }
-
-//	Since TxsdMtableAttlistSide is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdMtableAttlistSide) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 //	This convenience method just performs a simple type conversion to TxsdMtableAttlistSide's alias type xsdt.String.
 func (me TxsdMtableAttlistSide) ToXsdtString () xsdt.String { return xsdt.String(me) }
@@ -1050,90 +1167,6 @@ type XsdGoPkgHasAttr_Side_TxsdMtableAttlistSide_Right struct {
 //	Returns the default value for Side -- "right"
 func (me XsdGoPkgHasAttr_Side_TxsdMtableAttlistSide_Right) SideDefault () TxsdMtableAttlistSide { return TxsdMtableAttlistSide("right") }
 
-type XsdGoPkgHasAttr_Columnspacing_XsdtString_08Em struct {
-	Columnspacing xsdt.String `xml:"http://www.w3.org/1998/Math/MathML columnspacing,attr"`
-
-}
-
-//	Returns the default value for Columnspacing -- "0.8em"
-func (me XsdGoPkgHasAttr_Columnspacing_XsdtString_08Em) ColumnspacingDefault () xsdt.String { return xsdt.String("0.8em") }
-
-type XsdGoPkgHasAttr_Equalcolumns_XsdtBoolean_False struct {
-	Equalcolumns xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML equalcolumns,attr"`
-
-}
-
-//	Returns the default value for Equalcolumns -- false
-func (me XsdGoPkgHasAttr_Equalcolumns_XsdtBoolean_False) EqualcolumnsDefault () xsdt.Boolean { return xsdt.Boolean(false) }
-
-type XsdGoPkgHasAttr_Width_XsdtString_Auto struct {
-	Width xsdt.String `xml:"http://www.w3.org/1998/Math/MathML width,attr"`
-
-}
-
-//	Returns the default value for Width -- "auto"
-func (me XsdGoPkgHasAttr_Width_XsdtString_Auto) WidthDefault () xsdt.String { return xsdt.String("auto") }
-
-type XsdGoPkgHasAttr_Framespacing_XsdtString_04Em05Ex struct {
-	Framespacing xsdt.String `xml:"http://www.w3.org/1998/Math/MathML framespacing,attr"`
-
-}
-
-//	Returns the default value for Framespacing -- "0.4em 0.5ex"
-func (me XsdGoPkgHasAttr_Framespacing_XsdtString_04Em05Ex) FramespacingDefault () xsdt.String { return xsdt.String("0.4em 0.5ex") }
-
-type TxsdMtableAttlistFrame xsdt.String
-
-//	Since TxsdMtableAttlistFrame is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdMtableAttlistFrame) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdMtableAttlistFrame is "none".
-func (me TxsdMtableAttlistFrame) IsNone () bool { return me == "none" }
-
-//	Returns true if the value of this enumerated TxsdMtableAttlistFrame is "solid".
-func (me TxsdMtableAttlistFrame) IsSolid () bool { return me == "solid" }
-
-//	Returns true if the value of this enumerated TxsdMtableAttlistFrame is "dashed".
-func (me TxsdMtableAttlistFrame) IsDashed () bool { return me == "dashed" }
-
-//	This convenience method just performs a simple type conversion to TxsdMtableAttlistFrame's alias type xsdt.String.
-func (me TxsdMtableAttlistFrame) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TxsdMtableAttlistFrame is just a simple String type, this merely returns the current string value.
-func (me TxsdMtableAttlistFrame) String () string { return xsdt.String(me).String() }
-
-type XsdGoPkgHasAttr_Frame_TxsdMtableAttlistFrame_None struct {
-	Frame TxsdMtableAttlistFrame `xml:"http://www.w3.org/1998/Math/MathML frame,attr"`
-
-}
-
-//	Returns the default value for Frame -- "none"
-func (me XsdGoPkgHasAttr_Frame_TxsdMtableAttlistFrame_None) FrameDefault () TxsdMtableAttlistFrame { return TxsdMtableAttlistFrame("none") }
-
-type XsdGoPkgHasAttr_Align_XsdtString_Axis struct {
-	Align xsdt.String `xml:"http://www.w3.org/1998/Math/MathML align,attr"`
-
-}
-
-//	Returns the default value for Align -- "axis"
-func (me XsdGoPkgHasAttr_Align_XsdtString_Axis) AlignDefault () xsdt.String { return xsdt.String("axis") }
-
-type XsdGoPkgHasAttr_Rowspacing_XsdtString_10Ex struct {
-	Rowspacing xsdt.String `xml:"http://www.w3.org/1998/Math/MathML rowspacing,attr"`
-
-}
-
-//	Returns the default value for Rowspacing -- "1.0ex"
-func (me XsdGoPkgHasAttr_Rowspacing_XsdtString_10Ex) RowspacingDefault () xsdt.String { return xsdt.String("1.0ex") }
-
-type XsdGoPkgHasAttr_Alignmentscope_TxsdMtableAttlistAlignmentscope_True struct {
-	Alignmentscope TmpaddedWidthSpace `xml:"http://www.w3.org/1998/Math/MathML alignmentscope,attr"`
-
-}
-
-//	Returns the default value for Alignmentscope -- "true"
-func (me XsdGoPkgHasAttr_Alignmentscope_TxsdMtableAttlistAlignmentscope_True) AlignmentscopeDefault () TmpaddedWidthSpace { return TmpaddedWidthSpace("true") }
-
 type XsdGoPkgHasAttr_Minlabelspacing_TlengthWithUnit_08Em struct {
 	Minlabelspacing TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML minlabelspacing,attr"`
 
@@ -1142,13 +1175,13 @@ type XsdGoPkgHasAttr_Minlabelspacing_TlengthWithUnit_08Em struct {
 //	Returns the default value for Minlabelspacing -- "0.8em"
 func (me XsdGoPkgHasAttr_Minlabelspacing_TlengthWithUnit_08Em) MinlabelspacingDefault () TlengthWithUnit { return TlengthWithUnit("0.8em") }
 
-type XsdGoPkgHasAttr_Columnlines_XsdtString_None struct {
-	Columnlines xsdt.String `xml:"http://www.w3.org/1998/Math/MathML columnlines,attr"`
+type XsdGoPkgHasAttr_Alignmentscope_TxsdMtableAttlistAlignmentscope_True struct {
+	Alignmentscope TmpaddedSpace `xml:"http://www.w3.org/1998/Math/MathML alignmentscope,attr"`
 
 }
 
-//	Returns the default value for Columnlines -- "none"
-func (me XsdGoPkgHasAttr_Columnlines_XsdtString_None) ColumnlinesDefault () xsdt.String { return xsdt.String("none") }
+//	Returns the default value for Alignmentscope -- "true"
+func (me XsdGoPkgHasAttr_Alignmentscope_TxsdMtableAttlistAlignmentscope_True) AlignmentscopeDefault () TmpaddedSpace { return TmpaddedSpace("true") }
 
 type XsdGoPkgHasAttr_Equalrows_XsdtBoolean_False struct {
 	Equalrows xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML equalrows,attr"`
@@ -1158,81 +1191,73 @@ type XsdGoPkgHasAttr_Equalrows_XsdtBoolean_False struct {
 //	Returns the default value for Equalrows -- false
 func (me XsdGoPkgHasAttr_Equalrows_XsdtBoolean_False) EqualrowsDefault () xsdt.Boolean { return xsdt.Boolean(false) }
 
-type XsdGoPkgHasAttr_Rowlines_XsdtString_None struct {
-	Rowlines xsdt.String `xml:"http://www.w3.org/1998/Math/MathML rowlines,attr"`
+type XsdGoPkgHasAttr_Align_XsdtString_Axis struct {
+	Align xsdt.String `xml:"http://www.w3.org/1998/Math/MathML align,attr"`
 
 }
 
-//	Returns the default value for Rowlines -- "none"
-func (me XsdGoPkgHasAttr_Rowlines_XsdtString_None) RowlinesDefault () xsdt.String { return xsdt.String("none") }
-
-type XsdGoPkgHasAttr_Columnwidth_XsdtString_Auto struct {
-	Columnwidth xsdt.String `xml:"http://www.w3.org/1998/Math/MathML columnwidth,attr"`
-
-}
-
-//	Returns the default value for Columnwidth -- "auto"
-func (me XsdGoPkgHasAttr_Columnwidth_XsdtString_Auto) ColumnwidthDefault () xsdt.String { return xsdt.String("auto") }
+//	Returns the default value for Align -- "axis"
+func (me XsdGoPkgHasAttr_Align_XsdtString_Axis) AlignDefault () xsdt.String { return xsdt.String("axis") }
 
 type XsdGoPkgHasAtts_MtableAttlist struct {
+	XsdGoPkgHasAttr_Frame_TxsdMtableAttlistFrame_None
+
+	XsdGoPkgHasAttr_Equalcolumns_XsdtBoolean_False
+
+	XsdGoPkgHasAttr_Columnspacing_XsdtString_08Em
+
+	XsdGoPkgHasAttr_Framespacing_XsdtString_04Em05Ex
+
+	XsdGoPkgHasAttr_Width_XsdtString_Auto
+
+	XsdGoPkgHasAttr_Rowspacing_XsdtString_10Ex
+
+	XsdGoPkgHasAtts_TableAlignmentAttrib
+
 	XsdGoPkgHasAttr_Columnwidth_XsdtString_Auto
+
+	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasAttr_Rowlines_XsdtString_None
+
+	XsdGoPkgHasAttr_Columnlines_XsdtString_None
 
 	XsdGoPkgHasAttr_Displaystyle_XsdtBoolean_False
 
 	XsdGoPkgHasAttr_Side_TxsdMtableAttlistSide_Right
 
-	XsdGoPkgHasAttr_Columnspacing_XsdtString_08Em
-
-	XsdGoPkgHasAttr_Equalcolumns_XsdtBoolean_False
-
-	XsdGoPkgHasAttr_Width_XsdtString_Auto
-
-	XsdGoPkgHasAttr_Framespacing_XsdtString_04Em05Ex
-
-	XsdGoPkgHasAttr_Frame_TxsdMtableAttlistFrame_None
-
-	XsdGoPkgHasAttr_Align_XsdtString_Axis
-
-	XsdGoPkgHasAttr_Rowspacing_XsdtString_10Ex
+	XsdGoPkgHasAttr_Minlabelspacing_TlengthWithUnit_08Em
 
 	XsdGoPkgHasAttr_Alignmentscope_TxsdMtableAttlistAlignmentscope_True
 
-	XsdGoPkgHasAttr_Minlabelspacing_TlengthWithUnit_08Em
-
-	XsdGoPkgHasAttr_Columnlines_XsdtString_None
-
 	XsdGoPkgHasAttr_Equalrows_XsdtBoolean_False
 
-	XsdGoPkgHasAttr_Rowlines_XsdtString_None
-
-	XsdGoPkgHasAtts_CommonAttrib
-
-	XsdGoPkgHasAtts_TableAlignmentAttrib
+	XsdGoPkgHasAttr_Align_XsdtString_Axis
 
 }
 
 type TxsdMaligngroupAttlistGroupalign xsdt.String
 
+//	Returns true if the value of this enumerated TxsdMaligngroupAttlistGroupalign is "center".
+func (me TxsdMaligngroupAttlistGroupalign) IsCenter () bool { return me == "center" }
+
 //	Returns true if the value of this enumerated TxsdMaligngroupAttlistGroupalign is "left".
 func (me TxsdMaligngroupAttlistGroupalign) IsLeft () bool { return me == "left" }
+
+//	Since TxsdMaligngroupAttlistGroupalign is just a simple String type, this merely returns the current string value.
+func (me TxsdMaligngroupAttlistGroupalign) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdMaligngroupAttlistGroupalign is "right".
+func (me TxsdMaligngroupAttlistGroupalign) IsRight () bool { return me == "right" }
+
+//	Since TxsdMaligngroupAttlistGroupalign is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdMaligngroupAttlistGroupalign) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 //	Returns true if the value of this enumerated TxsdMaligngroupAttlistGroupalign is "decimalpoint".
 func (me TxsdMaligngroupAttlistGroupalign) IsDecimalpoint () bool { return me == "decimalpoint" }
 
 //	This convenience method just performs a simple type conversion to TxsdMaligngroupAttlistGroupalign's alias type xsdt.String.
 func (me TxsdMaligngroupAttlistGroupalign) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdMaligngroupAttlistGroupalign is "right".
-func (me TxsdMaligngroupAttlistGroupalign) IsRight () bool { return me == "right" }
-
-//	Returns true if the value of this enumerated TxsdMaligngroupAttlistGroupalign is "center".
-func (me TxsdMaligngroupAttlistGroupalign) IsCenter () bool { return me == "center" }
-
-//	Since TxsdMaligngroupAttlistGroupalign is just a simple String type, this merely returns the current string value.
-func (me TxsdMaligngroupAttlistGroupalign) String () string { return xsdt.String(me).String() }
-
-//	Since TxsdMaligngroupAttlistGroupalign is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdMaligngroupAttlistGroupalign) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 type XsdGoPkgHasAttr_Groupalign_TxsdMaligngroupAttlistGroupalign_ struct {
 	Groupalign TxsdMaligngroupAttlistGroupalign `xml:"http://www.w3.org/1998/Math/MathML groupalign,attr"`
@@ -1248,20 +1273,20 @@ type XsdGoPkgHasAtts_MaligngroupAttlist struct {
 
 type TxsdMalignmarkAttlistEdge xsdt.String
 
-//	Returns true if the value of this enumerated TxsdMalignmarkAttlistEdge is "left".
-func (me TxsdMalignmarkAttlistEdge) IsLeft () bool { return me == "left" }
-
-//	Since TxsdMalignmarkAttlistEdge is just a simple String type, this merely returns the current string value.
-func (me TxsdMalignmarkAttlistEdge) String () string { return xsdt.String(me).String() }
-
 //	Returns true if the value of this enumerated TxsdMalignmarkAttlistEdge is "right".
 func (me TxsdMalignmarkAttlistEdge) IsRight () bool { return me == "right" }
+
+//	Returns true if the value of this enumerated TxsdMalignmarkAttlistEdge is "left".
+func (me TxsdMalignmarkAttlistEdge) IsLeft () bool { return me == "left" }
 
 //	Since TxsdMalignmarkAttlistEdge is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdMalignmarkAttlistEdge) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 //	This convenience method just performs a simple type conversion to TxsdMalignmarkAttlistEdge's alias type xsdt.String.
 func (me TxsdMalignmarkAttlistEdge) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TxsdMalignmarkAttlistEdge is just a simple String type, this merely returns the current string value.
+func (me TxsdMalignmarkAttlistEdge) String () string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasAttr_Edge_TxsdMalignmarkAttlistEdge_Left struct {
 	Edge TxsdMalignmarkAttlistEdge `xml:"http://www.w3.org/1998/Math/MathML edge,attr"`
@@ -1272,19 +1297,19 @@ type XsdGoPkgHasAttr_Edge_TxsdMalignmarkAttlistEdge_Left struct {
 func (me XsdGoPkgHasAttr_Edge_TxsdMalignmarkAttlistEdge_Left) EdgeDefault () TxsdMalignmarkAttlistEdge { return TxsdMalignmarkAttlistEdge("left") }
 
 type XsdGoPkgHasAtts_MalignmarkAttlist struct {
-	XsdGoPkgHasAtts_CommonAttrib
-
 	XsdGoPkgHasAttr_Edge_TxsdMalignmarkAttlistEdge_Left
 
-}
-
-type XsdGoPkgHasAttr_Verythinmathspace_TlengthWithUnit_0111111Em struct {
-	Verythinmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML verythinmathspace,attr"`
+	XsdGoPkgHasAtts_CommonAttrib
 
 }
 
-//	Returns the default value for Verythinmathspace -- "0.111111em"
-func (me XsdGoPkgHasAttr_Verythinmathspace_TlengthWithUnit_0111111Em) VerythinmathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.111111em") }
+type XsdGoPkgHasAttr_Linethickness_TxsdMstyleAttlistLinethickness_1 struct {
+	Linethickness TxsdMfracAttlistLinethickness `xml:"http://www.w3.org/1998/Math/MathML linethickness,attr"`
+
+}
+
+//	Returns the default value for Linethickness -- "1"
+func (me XsdGoPkgHasAttr_Linethickness_TxsdMstyleAttlistLinethickness_1) LinethicknessDefault () TxsdMfracAttlistLinethickness { return TxsdMfracAttlistLinethickness("1") }
 
 type XsdGoPkgHasAttr_Verythickmathspace_TlengthWithUnit_0333333Em struct {
 	Verythickmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML verythickmathspace,attr"`
@@ -1294,27 +1319,6 @@ type XsdGoPkgHasAttr_Verythickmathspace_TlengthWithUnit_0333333Em struct {
 //	Returns the default value for Verythickmathspace -- "0.333333em"
 func (me XsdGoPkgHasAttr_Verythickmathspace_TlengthWithUnit_0333333Em) VerythickmathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.333333em") }
 
-type XsdGoPkgHasAttr_Scriptminsize_TlengthWithUnit_8Pt struct {
-	Scriptminsize TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML scriptminsize,attr"`
-
-}
-
-//	Returns the default value for Scriptminsize -- "8pt"
-func (me XsdGoPkgHasAttr_Scriptminsize_TlengthWithUnit_8Pt) ScriptminsizeDefault () TlengthWithUnit { return TlengthWithUnit("8pt") }
-
-type XsdGoPkgHasAttr_Thickmathspace_TlengthWithUnit_0277778Em struct {
-	Thickmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML thickmathspace,attr"`
-
-}
-
-//	Returns the default value for Thickmathspace -- "0.277778em"
-func (me XsdGoPkgHasAttr_Thickmathspace_TlengthWithUnit_0277778Em) ThickmathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.277778em") }
-
-type XsdGoPkgHasAttr_Color_XsdtString_ struct {
-	Color xsdt.String `xml:"http://www.w3.org/1998/Math/MathML color,attr"`
-
-}
-
 type XsdGoPkgHasAttr_Background_XsdtString_Transparent struct {
 	Background xsdt.String `xml:"http://www.w3.org/1998/Math/MathML background,attr"`
 
@@ -1323,13 +1327,10 @@ type XsdGoPkgHasAttr_Background_XsdtString_Transparent struct {
 //	Returns the default value for Background -- "transparent"
 func (me XsdGoPkgHasAttr_Background_XsdtString_Transparent) BackgroundDefault () xsdt.String { return xsdt.String("transparent") }
 
-type XsdGoPkgHasAttr_Veryverythinmathspace_TlengthWithUnit_00555556Em struct {
-	Veryverythinmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML veryverythinmathspace,attr"`
+type XsdGoPkgHasAttr_Color_XsdtString_ struct {
+	Color xsdt.String `xml:"http://www.w3.org/1998/Math/MathML color,attr"`
 
 }
-
-//	Returns the default value for Veryverythinmathspace -- "0.0555556em"
-func (me XsdGoPkgHasAttr_Veryverythinmathspace_TlengthWithUnit_00555556Em) VeryverythinmathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.0555556em") }
 
 type XsdGoPkgHasAttr_Scriptlevel_XsdtInteger_ struct {
 	Scriptlevel xsdt.Integer `xml:"http://www.w3.org/1998/Math/MathML scriptlevel,attr"`
@@ -1344,26 +1345,42 @@ type XsdGoPkgHasAttr_Mediummathspace_TlengthWithUnit_0222222Em struct {
 //	Returns the default value for Mediummathspace -- "0.222222em"
 func (me XsdGoPkgHasAttr_Mediummathspace_TlengthWithUnit_0222222Em) MediummathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.222222em") }
 
+type XsdGoPkgHasAttr_Veryverythinmathspace_TlengthWithUnit_00555556Em struct {
+	Veryverythinmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML veryverythinmathspace,attr"`
+
+}
+
+//	Returns the default value for Veryverythinmathspace -- "0.0555556em"
+func (me XsdGoPkgHasAttr_Veryverythinmathspace_TlengthWithUnit_00555556Em) VeryverythinmathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.0555556em") }
+
 type XsdGoPkgHasAttr_Displaystyle_XsdtBoolean_ struct {
 	Displaystyle xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML displaystyle,attr"`
 
 }
 
-type XsdGoPkgHasAttr_Thinmathspace_TlengthWithUnit_0166667Em struct {
-	Thinmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML thinmathspace,attr"`
+type XsdGoPkgHasAttr_Thickmathspace_TlengthWithUnit_0277778Em struct {
+	Thickmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML thickmathspace,attr"`
 
 }
 
-//	Returns the default value for Thinmathspace -- "0.166667em"
-func (me XsdGoPkgHasAttr_Thinmathspace_TlengthWithUnit_0166667Em) ThinmathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.166667em") }
+//	Returns the default value for Thickmathspace -- "0.277778em"
+func (me XsdGoPkgHasAttr_Thickmathspace_TlengthWithUnit_0277778Em) ThickmathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.277778em") }
 
-type XsdGoPkgHasAttr_Linethickness_TxsdMstyleAttlistLinethickness_1 struct {
-	Linethickness TxsdMfracAttlistLinethickness `xml:"http://www.w3.org/1998/Math/MathML linethickness,attr"`
+type XsdGoPkgHasAttr_Scriptminsize_TlengthWithUnit_8Pt struct {
+	Scriptminsize TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML scriptminsize,attr"`
 
 }
 
-//	Returns the default value for Linethickness -- "1"
-func (me XsdGoPkgHasAttr_Linethickness_TxsdMstyleAttlistLinethickness_1) LinethicknessDefault () TxsdMfracAttlistLinethickness { return TxsdMfracAttlistLinethickness("1") }
+//	Returns the default value for Scriptminsize -- "8pt"
+func (me XsdGoPkgHasAttr_Scriptminsize_TlengthWithUnit_8Pt) ScriptminsizeDefault () TlengthWithUnit { return TlengthWithUnit("8pt") }
+
+type XsdGoPkgHasAttr_Verythinmathspace_TlengthWithUnit_0111111Em struct {
+	Verythinmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML verythinmathspace,attr"`
+
+}
+
+//	Returns the default value for Verythinmathspace -- "0.111111em"
+func (me XsdGoPkgHasAttr_Verythinmathspace_TlengthWithUnit_0111111Em) VerythinmathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.111111em") }
 
 type XsdGoPkgHasAttr_Veryverythickmathspace_TlengthWithUnit_0388889Em struct {
 	Veryverythickmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML veryverythickmathspace,attr"`
@@ -1381,45 +1398,48 @@ type XsdGoPkgHasAttr_Scriptsizemultiplier_XsdtDecimal_071 struct {
 //	Returns the default value for Scriptsizemultiplier -- "0.71"
 func (me XsdGoPkgHasAttr_Scriptsizemultiplier_XsdtDecimal_071) ScriptsizemultiplierDefault () xsdt.Decimal { return xsdt.Decimal("0.71") }
 
+type XsdGoPkgHasAttr_Thinmathspace_TlengthWithUnit_0166667Em struct {
+	Thinmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML thinmathspace,attr"`
+
+}
+
+//	Returns the default value for Thinmathspace -- "0.166667em"
+func (me XsdGoPkgHasAttr_Thinmathspace_TlengthWithUnit_0166667Em) ThinmathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.166667em") }
+
 type XsdGoPkgHasAtts_MstyleAttlist struct {
-	XsdGoPkgHasAttr_Veryverythickmathspace_TlengthWithUnit_0388889Em
-
-	XsdGoPkgHasAttr_Scriptsizemultiplier_XsdtDecimal_071
-
 	XsdGoPkgHasAttr_Verythinmathspace_TlengthWithUnit_0111111Em
-
-	XsdGoPkgHasAttr_Verythickmathspace_TlengthWithUnit_0333333Em
-
-	XsdGoPkgHasAttr_Scriptminsize_TlengthWithUnit_8Pt
-
-	XsdGoPkgHasAttr_Thickmathspace_TlengthWithUnit_0277778Em
-
-	XsdGoPkgHasAttr_Color_XsdtString_
-
-	XsdGoPkgHasAtts_TokenStyleAttrib
-
-	XsdGoPkgHasAttr_Background_XsdtString_Transparent
-
-	XsdGoPkgHasAttr_Veryverythinmathspace_TlengthWithUnit_00555556Em
-
-	XsdGoPkgHasAttr_Scriptlevel_XsdtInteger_
 
 	XsdGoPkgHasAtts_OperatorAttrib
 
-	XsdGoPkgHasAttr_Mediummathspace_TlengthWithUnit_0222222Em
+	XsdGoPkgHasAttr_Veryverythickmathspace_TlengthWithUnit_0388889Em
 
-	XsdGoPkgHasAttr_Displaystyle_XsdtBoolean_
-
-	XsdGoPkgHasAtts_CommonAttrib
+	XsdGoPkgHasAttr_Scriptsizemultiplier_XsdtDecimal_071
 
 	XsdGoPkgHasAttr_Thinmathspace_TlengthWithUnit_0166667Em
 
 	XsdGoPkgHasAttr_Linethickness_TxsdMstyleAttlistLinethickness_1
 
-}
+	XsdGoPkgHasAttr_Verythickmathspace_TlengthWithUnit_0333333Em
 
-type XsdGoPkgHasAttr_Actiontype_XsdtString_ struct {
-	Actiontype xsdt.String `xml:"http://www.w3.org/1998/Math/MathML actiontype,attr"`
+	XsdGoPkgHasAttr_Background_XsdtString_Transparent
+
+	XsdGoPkgHasAttr_Color_XsdtString_
+
+	XsdGoPkgHasAttr_Scriptlevel_XsdtInteger_
+
+	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasAttr_Mediummathspace_TlengthWithUnit_0222222Em
+
+	XsdGoPkgHasAttr_Veryverythinmathspace_TlengthWithUnit_00555556Em
+
+	XsdGoPkgHasAttr_Displaystyle_XsdtBoolean_
+
+	XsdGoPkgHasAttr_Thickmathspace_TlengthWithUnit_0277778Em
+
+	XsdGoPkgHasAtts_TokenStyleAttrib
+
+	XsdGoPkgHasAttr_Scriptminsize_TlengthWithUnit_8Pt
 
 }
 
@@ -1431,12 +1451,17 @@ type XsdGoPkgHasAttr_Selection_XsdtPositiveInteger_1 struct {
 //	Returns the default value for Selection -- 1
 func (me XsdGoPkgHasAttr_Selection_XsdtPositiveInteger_1) SelectionDefault () xsdt.PositiveInteger { return xsdt.PositiveInteger(1) }
 
+type XsdGoPkgHasAttr_Actiontype_XsdtString_ struct {
+	Actiontype xsdt.String `xml:"http://www.w3.org/1998/Math/MathML actiontype,attr"`
+
+}
+
 type XsdGoPkgHasAtts_MactionAttlist struct {
 	XsdGoPkgHasAtts_CommonAttrib
 
-	XsdGoPkgHasAttr_Actiontype_XsdtString_
-
 	XsdGoPkgHasAttr_Selection_XsdtPositiveInteger_1
+
+	XsdGoPkgHasAttr_Actiontype_XsdtString_
 
 }
 
@@ -1457,71 +1482,80 @@ type XsdGoPkgHasAtts_DefinitionAttrib struct {
 
 }
 
-type TxsdCnAttlistBase xsdt.PositiveInteger
-
-//	This convenience method just performs a simple type conversion to TxsdCnAttlistBase's alias type xsdt.PositiveInteger.
-func (me TxsdCnAttlistBase) ToXsdtPositiveInteger () xsdt.PositiveInteger { return xsdt.PositiveInteger(me) }
-
-//	Returns a string representation of this TxsdCnAttlistBase's current non-string scalar value.
-func (me TxsdCnAttlistBase) String () string { return xsdt.PositiveInteger(me).String() }
-
-//	Since TxsdCnAttlistBase is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
-func (me *TxsdCnAttlistBase) SetFromString (s string)  { (*xsdt.PositiveInteger)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_Base_TxsdCnAttlistBase_ struct {
-	Base TxsdCnAttlistBase `xml:"http://www.w3.org/1998/Math/MathML base,attr"`
-
-}
-
 type TxsdCnAttlistType xsdt.Nmtoken
-
-//	This convenience method just performs a simple type conversion to TxsdCnAttlistType's alias type xsdt.Nmtoken.
-func (me TxsdCnAttlistType) ToXsdtNmtoken () xsdt.Nmtoken { return xsdt.Nmtoken(me) }
-
-//	Returns true if the value of this enumerated TxsdCnAttlistType is "complex-cartesian".
-func (me TxsdCnAttlistType) IsComplexCartesian () bool { return me == "complex-cartesian" }
-
-//	Returns true if the value of this enumerated TxsdCnAttlistType is "rational".
-func (me TxsdCnAttlistType) IsRational () bool { return me == "rational" }
 
 //	Returns true if the value of this enumerated TxsdCnAttlistType is "e-notation".
 func (me TxsdCnAttlistType) IsENotation () bool { return me == "e-notation" }
 
+//	Since TxsdCnAttlistType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdCnAttlistType) SetFromString (s string)  { (*xsdt.Nmtoken)(me).SetFromString(s) }
+
 //	Returns true if the value of this enumerated TxsdCnAttlistType is "real".
 func (me TxsdCnAttlistType) IsReal () bool { return me == "real" }
+
+//	Returns true if the value of this enumerated TxsdCnAttlistType is "complex-cartesian".
+func (me TxsdCnAttlistType) IsComplexCartesian () bool { return me == "complex-cartesian" }
+
+//	Returns true if the value of this enumerated TxsdCnAttlistType is "integer".
+func (me TxsdCnAttlistType) IsInteger () bool { return me == "integer" }
 
 //	Since TxsdCnAttlistType is just a simple String type, this merely returns the current string value.
 func (me TxsdCnAttlistType) String () string { return xsdt.Nmtoken(me).String() }
 
+//	Returns true if the value of this enumerated TxsdCnAttlistType is "rational".
+func (me TxsdCnAttlistType) IsRational () bool { return me == "rational" }
+
+//	This convenience method just performs a simple type conversion to TxsdCnAttlistType's alias type xsdt.Nmtoken.
+func (me TxsdCnAttlistType) ToXsdtNmtoken () xsdt.Nmtoken { return xsdt.Nmtoken(me) }
+
 //	Returns true if the value of this enumerated TxsdCnAttlistType is "constant".
 func (me TxsdCnAttlistType) IsConstant () bool { return me == "constant" }
 
-//	Since TxsdCnAttlistType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdCnAttlistType) SetFromString (s string)  { (*xsdt.Nmtoken)(me).SetFromString(s) }
-
 //	Returns true if the value of this enumerated TxsdCnAttlistType is "complex-polar".
 func (me TxsdCnAttlistType) IsComplexPolar () bool { return me == "complex-polar" }
-
-//	Returns true if the value of this enumerated TxsdCnAttlistType is "integer".
-func (me TxsdCnAttlistType) IsInteger () bool { return me == "integer" }
 
 type XsdGoPkgHasAttr_Type_TxsdCnAttlistType_ struct {
 	Type TxsdCnAttlistType `xml:"http://www.w3.org/1998/Math/MathML type,attr"`
 
 }
 
-type XsdGoPkgHasAtts_CnAttlist struct {
-	XsdGoPkgHasAttr_Base_TxsdCnAttlistBase_
+type TxsdCnAttlistBase xsdt.PositiveInteger
 
+//	Since TxsdCnAttlistBase is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
+func (me *TxsdCnAttlistBase) SetFromString (s string)  { (*xsdt.PositiveInteger)(me).SetFromString(s) }
+
+//	Returns a string representation of this TxsdCnAttlistBase's current non-string scalar value.
+func (me TxsdCnAttlistBase) String () string { return xsdt.PositiveInteger(me).String() }
+
+//	This convenience method just performs a simple type conversion to TxsdCnAttlistBase's alias type xsdt.PositiveInteger.
+func (me TxsdCnAttlistBase) ToXsdtPositiveInteger () xsdt.PositiveInteger { return xsdt.PositiveInteger(me) }
+
+type XsdGoPkgHasAttr_Base_TxsdCnAttlistBase_ struct {
+	Base TxsdCnAttlistBase `xml:"http://www.w3.org/1998/Math/MathML base,attr"`
+
+}
+
+type XsdGoPkgHasAtts_CnAttlist struct {
 	XsdGoPkgHasAtts_DefinitionAttrib
 
-	XsdGoPkgHasAttr_Type_TxsdCnAttlistType_
+	XsdGoPkgHasAttr_Base_TxsdCnAttlistBase_
 
 	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasAttr_Type_TxsdCnAttlistType_
 
 }
 
 type XsdGoPkgHasAtts_CiAttlist struct {
+	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasAtts_DefinitionAttrib
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+}
+
+type XsdGoPkgHasAtts_CsymbolAttlist struct {
 	XsdGoPkgHasAtts_DefinitionAttrib
 
 	XsdGoPkgHasAtts_CommonAttrib
@@ -1530,26 +1564,26 @@ type XsdGoPkgHasAtts_CiAttlist struct {
 
 type TxsdIntervalAttlistClosure xsdt.String
 
-//	Returns true if the value of this enumerated TxsdIntervalAttlistClosure is "closed".
-func (me TxsdIntervalAttlistClosure) IsClosed () bool { return me == "closed" }
-
-//	This convenience method just performs a simple type conversion to TxsdIntervalAttlistClosure's alias type xsdt.String.
-func (me TxsdIntervalAttlistClosure) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdIntervalAttlistClosure is "closed-open".
-func (me TxsdIntervalAttlistClosure) IsClosedOpen () bool { return me == "closed-open" }
-
-//	Since TxsdIntervalAttlistClosure is just a simple String type, this merely returns the current string value.
-func (me TxsdIntervalAttlistClosure) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdIntervalAttlistClosure is "open-closed".
-func (me TxsdIntervalAttlistClosure) IsOpenClosed () bool { return me == "open-closed" }
-
 //	Since TxsdIntervalAttlistClosure is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdIntervalAttlistClosure) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 //	Returns true if the value of this enumerated TxsdIntervalAttlistClosure is "open".
 func (me TxsdIntervalAttlistClosure) IsOpen () bool { return me == "open" }
+
+//	Returns true if the value of this enumerated TxsdIntervalAttlistClosure is "open-closed".
+func (me TxsdIntervalAttlistClosure) IsOpenClosed () bool { return me == "open-closed" }
+
+//	This convenience method just performs a simple type conversion to TxsdIntervalAttlistClosure's alias type xsdt.String.
+func (me TxsdIntervalAttlistClosure) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TxsdIntervalAttlistClosure is "closed".
+func (me TxsdIntervalAttlistClosure) IsClosed () bool { return me == "closed" }
+
+//	Since TxsdIntervalAttlistClosure is just a simple String type, this merely returns the current string value.
+func (me TxsdIntervalAttlistClosure) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdIntervalAttlistClosure is "closed-open".
+func (me TxsdIntervalAttlistClosure) IsClosedOpen () bool { return me == "closed-open" }
 
 type XsdGoPkgHasAttr_Closure_TxsdIntervalAttlistClosure_Closed struct {
 	Closure TxsdIntervalAttlistClosure `xml:"http://www.w3.org/1998/Math/MathML closure,attr"`
@@ -1576,11 +1610,6 @@ type XsdGoPkgHasAttr_Scope_XsdtString_ struct {
 
 }
 
-type XsdGoPkgHasAttr_Nargs_XsdtNonNegativeInteger_ struct {
-	Nargs xsdt.NonNegativeInteger `xml:"http://www.w3.org/1998/Math/MathML nargs,attr"`
-
-}
-
 type TxsdDeclareAttlistOccurrence xsdt.String
 
 //	Since TxsdDeclareAttlistOccurrence is just a simple String type, this merely returns the current string value.
@@ -1589,27 +1618,34 @@ func (me TxsdDeclareAttlistOccurrence) String () string { return xsdt.String(me)
 //	Since TxsdDeclareAttlistOccurrence is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdDeclareAttlistOccurrence) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
-//	Returns true if the value of this enumerated TxsdDeclareAttlistOccurrence is "infix".
-func (me TxsdDeclareAttlistOccurrence) IsInfix () bool { return me == "infix" }
-
-//	Returns true if the value of this enumerated TxsdDeclareAttlistOccurrence is "function-model".
-func (me TxsdDeclareAttlistOccurrence) IsFunctionModel () bool { return me == "function-model" }
-
 //	Returns true if the value of this enumerated TxsdDeclareAttlistOccurrence is "prefix".
 func (me TxsdDeclareAttlistOccurrence) IsPrefix () bool { return me == "prefix" }
 
+//	Returns true if the value of this enumerated TxsdDeclareAttlistOccurrence is "infix".
+func (me TxsdDeclareAttlistOccurrence) IsInfix () bool { return me == "infix" }
+
 //	This convenience method just performs a simple type conversion to TxsdDeclareAttlistOccurrence's alias type xsdt.String.
 func (me TxsdDeclareAttlistOccurrence) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TxsdDeclareAttlistOccurrence is "function-model".
+func (me TxsdDeclareAttlistOccurrence) IsFunctionModel () bool { return me == "function-model" }
 
 type XsdGoPkgHasAttr_Occurrence_TxsdDeclareAttlistOccurrence_ struct {
 	Occurrence TxsdDeclareAttlistOccurrence `xml:"http://www.w3.org/1998/Math/MathML occurrence,attr"`
 
 }
 
-type XsdGoPkgHasAtts_DeclareAttlist struct {
-	XsdGoPkgHasAttr_Scope_XsdtString_
+type XsdGoPkgHasAttr_Nargs_XsdtNonNegativeInteger_ struct {
+	Nargs xsdt.NonNegativeInteger `xml:"http://www.w3.org/1998/Math/MathML nargs,attr"`
 
+}
+
+type XsdGoPkgHasAtts_DeclareAttlist struct {
 	XsdGoPkgHasAttr_Nargs_XsdtNonNegativeInteger_
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasAttr_Scope_XsdtString_
 
 	XsdGoPkgHasAtts_DefinitionAttrib
 
@@ -1617,7 +1653,36 @@ type XsdGoPkgHasAtts_DeclareAttlist struct {
 
 }
 
+type XsdGoPkgHasAtts_AnnotationAttlist struct {
+	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasAttr_Encoding_XsdtString_
+
+}
+
+type XsdGoPkgHasAtts_SemanticsAttlist struct {
+	XsdGoPkgHasAttr_DefinitionURL_XsdtAnyURI_
+
+	XsdGoPkgHasAttr_Encoding_XsdtString_
+
+	XsdGoPkgHasAtts_CommonAttrib
+
+}
+
+type XsdGoPkgHasAtts_SetAttlist struct {
+	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+}
+
 type TxsdListAttlistOrder xsdt.String
+
+//	This convenience method just performs a simple type conversion to TxsdListAttlistOrder's alias type xsdt.String.
+func (me TxsdListAttlistOrder) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TxsdListAttlistOrder is just a simple String type, this merely returns the current string value.
+func (me TxsdListAttlistOrder) String () string { return xsdt.String(me).String() }
 
 //	Returns true if the value of this enumerated TxsdListAttlistOrder is "lexicographic".
 func (me TxsdListAttlistOrder) IsLexicographic () bool { return me == "lexicographic" }
@@ -1625,14 +1690,8 @@ func (me TxsdListAttlistOrder) IsLexicographic () bool { return me == "lexicogra
 //	Returns true if the value of this enumerated TxsdListAttlistOrder is "numeric".
 func (me TxsdListAttlistOrder) IsNumeric () bool { return me == "numeric" }
 
-//	Since TxsdListAttlistOrder is just a simple String type, this merely returns the current string value.
-func (me TxsdListAttlistOrder) String () string { return xsdt.String(me).String() }
-
 //	Since TxsdListAttlistOrder is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdListAttlistOrder) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TxsdListAttlistOrder's alias type xsdt.String.
-func (me TxsdListAttlistOrder) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 type XsdGoPkgHasAttr_Order_TxsdListAttlistOrder_ struct {
 	Order TxsdListAttlistOrder `xml:"http://www.w3.org/1998/Math/MathML order,attr"`
@@ -1646,177 +1705,95 @@ type XsdGoPkgHasAtts_ListAttlist struct {
 
 }
 
-type TArithType struct {
-	XsdGoPkgHasAtts_DefinitionAttrib
-
+type TElementaryFunctionsType struct {
 	XsdGoPkgHasAtts_CommonAttrib
 
-}
-
-type XsdGoPkgHasElem_Factorial struct {
-	Factorial *TArithType `xml:"http://www.w3.org/1998/Math/MathML factorial"`
+	XsdGoPkgHasAtts_DefinitionAttrib
 
 }
 
-type XsdGoPkgHasElem_Floor struct {
-	Floor *TArithType `xml:"http://www.w3.org/1998/Math/MathML floor"`
+type XsdGoPkgHasElem_Arccos struct {
+	Arccos *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccos"`
 
 }
 
-type XsdGoPkgHasElem_Conjugate struct {
-	Conjugate *TArithType `xml:"http://www.w3.org/1998/Math/MathML conjugate"`
+type XsdGoPkgHasElem_Arccsch struct {
+	Arccsch *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccsch"`
 
 }
 
-type XsdGoPkgHasElem_Times struct {
-	Times *TArithType `xml:"http://www.w3.org/1998/Math/MathML times"`
+type XsdGoPkgHasElem_Tanh struct {
+	Tanh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML tanh"`
 
 }
 
-type XsdGoPkgHasElem_Rem struct {
-	Rem *TArithType `xml:"http://www.w3.org/1998/Math/MathML rem"`
+type XsdGoPkgHasElem_Arccsc struct {
+	Arccsc *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccsc"`
 
 }
 
-type XsdGoPkgHasElem_Sum struct {
-	Sum *TArithType `xml:"http://www.w3.org/1998/Math/MathML sum"`
+type XsdGoPkgHasElem_Csc struct {
+	Csc *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML csc"`
 
 }
 
-type XsdGoPkgHasElem_Divide struct {
-	Divide *TArithType `xml:"http://www.w3.org/1998/Math/MathML divide"`
+type XsdGoPkgHasElem_Arcsec struct {
+	Arcsec *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsec"`
 
 }
 
-type XsdGoPkgHasElem_Ceiling struct {
-	Ceiling *TArithType `xml:"http://www.w3.org/1998/Math/MathML ceiling"`
+type XsdGoPkgHasElem_Arcsech struct {
+	Arcsech *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsech"`
 
 }
 
-type XsdGoPkgHasElem_Product struct {
-	Product *TArithType `xml:"http://www.w3.org/1998/Math/MathML product"`
+type XsdGoPkgHasElem_Arccosh struct {
+	Arccosh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccosh"`
 
 }
 
-type XsdGoPkgHasElem_Abs struct {
-	Abs *TArithType `xml:"http://www.w3.org/1998/Math/MathML abs"`
+type XsdGoPkgHasElem_Arctanh struct {
+	Arctanh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arctanh"`
 
 }
 
-type XsdGoPkgHasElem_Power struct {
-	Power *TArithType `xml:"http://www.w3.org/1998/Math/MathML power"`
+type XsdGoPkgHasElem_Tan struct {
+	Tan *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML tan"`
 
 }
 
-type XsdGoPkgHasElem_Max struct {
-	Max *TArithType `xml:"http://www.w3.org/1998/Math/MathML max"`
+type XsdGoPkgHasElem_Sech struct {
+	Sech *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sech"`
 
 }
 
-type XsdGoPkgHasElem_Plus struct {
-	Plus *TArithType `xml:"http://www.w3.org/1998/Math/MathML plus"`
+type XsdGoPkgHasElem_Sinh struct {
+	Sinh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sinh"`
 
 }
 
-type XsdGoPkgHasElem_Minus struct {
-	Minus *TArithType `xml:"http://www.w3.org/1998/Math/MathML minus"`
+type XsdGoPkgHasElem_Log struct {
+	Log *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML log"`
 
 }
 
-type XsdGoPkgHasElem_Lcm struct {
-	Lcm *TArithType `xml:"http://www.w3.org/1998/Math/MathML lcm"`
+type XsdGoPkgHasElem_Exp struct {
+	Exp *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML exp"`
 
 }
 
-type XsdGoPkgHasElem_Real struct {
-	Real *TArithType `xml:"http://www.w3.org/1998/Math/MathML real"`
+type XsdGoPkgHasElem_Arcsinh struct {
+	Arcsinh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsinh"`
 
 }
 
-type XsdGoPkgHasElem_Gcd struct {
-	Gcd *TArithType `xml:"http://www.w3.org/1998/Math/MathML gcd"`
+type XsdGoPkgHasElem_Arccot struct {
+	Arccot *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccot"`
 
 }
 
-type XsdGoPkgHasElem_Arg struct {
-	Arg *TArithType `xml:"http://www.w3.org/1998/Math/MathML arg"`
-
-}
-
-type XsdGoPkgHasElem_Imaginary struct {
-	Imaginary *TArithType `xml:"http://www.w3.org/1998/Math/MathML imaginary"`
-
-}
-
-type XsdGoPkgHasElem_Root struct {
-	Root *TArithType `xml:"http://www.w3.org/1998/Math/MathML root"`
-
-}
-
-type XsdGoPkgHasElem_Min struct {
-	Min *TArithType `xml:"http://www.w3.org/1998/Math/MathML min"`
-
-}
-
-type XsdGoPkgHasElem_Quotient struct {
-	Quotient *TArithType `xml:"http://www.w3.org/1998/Math/MathML quotient"`
-
-}
-
-type XsdGoPkgHasGroup_ContentArithClass struct {
-	XsdGoPkgHasElem_Ceiling
-
-	XsdGoPkgHasElem_Product
-
-	XsdGoPkgHasElem_Abs
-
-	XsdGoPkgHasElem_Power
-
-	XsdGoPkgHasElem_Max
-
-	XsdGoPkgHasElem_Plus
-
-	XsdGoPkgHasElem_Minus
-
-	XsdGoPkgHasElem_Lcm
-
-	XsdGoPkgHasElem_Real
-
-	XsdGoPkgHasElem_Gcd
-
-	XsdGoPkgHasElem_Arg
-
-	XsdGoPkgHasElem_Imaginary
-
-	XsdGoPkgHasElem_Root
-
-	XsdGoPkgHasElem_Min
-
-	XsdGoPkgHasElem_Quotient
-
-	XsdGoPkgHasElem_Factorial
-
-	XsdGoPkgHasElem_Floor
-
-	XsdGoPkgHasElem_Conjugate
-
-	XsdGoPkgHasElem_Times
-
-	XsdGoPkgHasElem_Rem
-
-	XsdGoPkgHasElem_Sum
-
-	XsdGoPkgHasElem_Divide
-
-}
-
-type TmeanType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Mean struct {
-	Mean *TmeanType `xml:"http://www.w3.org/1998/Math/MathML mean"`
+type XsdGoPkgHasElem_Cot struct {
+	Cot *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cot"`
 
 }
 
@@ -1827,261 +1804,25 @@ type XsdGoPkgHasGroup_PresentationExprClass struct {
 
 }
 
-type TmsubType struct {
-	XsdGoPkgHasGroup_PresentationExprClass
-
-	XsdGoPkgHasAtts_MsubAttlist
-
-}
-
-type XsdGoPkgHasElem_Msub struct {
-	Msub *TmsubType `xml:"http://www.w3.org/1998/Math/MathML msub"`
-
-}
-
-type TmsupType struct {
-	XsdGoPkgHasGroup_PresentationExprClass
-
-	XsdGoPkgHasAtts_MsupAttlist
-
-}
-
-type XsdGoPkgHasElem_Msup struct {
-	Msup *TmsupType `xml:"http://www.w3.org/1998/Math/MathML msup"`
-
-}
-
-type TmprescriptsType struct {
-}
-
-type XsdGoPkgHasElem_Mprescripts struct {
-	Mprescripts *TmprescriptsType `xml:"http://www.w3.org/1998/Math/MathML mprescripts"`
-
-}
-
-type TnoneType struct {
-}
-
-type XsdGoPkgHasElem_None struct {
-	None *TnoneType `xml:"http://www.w3.org/1998/Math/MathML none"`
-
-}
-
-type XsdGoPkgHasGroup_PresentationExprOrNoneClass struct {
-	XsdGoPkgHasElem_None
-
+type XsdGoPkgHasGroup_MstyleContent struct {
 	XsdGoPkgHasGroup_PresentationExprClass
 
 }
 
-type XsdGoPkgHasGroup_MmultiscriptsContent struct {
-	XsdGoPkgHasGroup_PresentationExprClass
+type TmstyleType struct {
+	XsdGoPkgHasAtts_MstyleAttlist
 
-	XsdGoPkgHasElem_Mprescripts
-
-	XsdGoPkgHasGroup_PresentationExprOrNoneClass
+	XsdGoPkgHasGroup_MstyleContent
 
 }
 
-type TmmultiscriptsType struct {
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-	XsdGoPkgHasGroup_MmultiscriptsContent
-
-}
-
-type XsdGoPkgHasElem_Mmultiscripts struct {
-	Mmultiscripts *TmmultiscriptsType `xml:"http://www.w3.org/1998/Math/MathML mmultiscripts"`
-
-}
-
-type TmsubsupType struct {
-	XsdGoPkgHasGroup_PresentationExprClass
-
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-}
-
-type XsdGoPkgHasElem_Msubsup struct {
-	Msubsup *TmsubsupType `xml:"http://www.w3.org/1998/Math/MathML msubsup"`
-
-}
-
-type TmoverType struct {
-	XsdGoPkgHasGroup_PresentationExprClass
-
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-}
-
-type XsdGoPkgHasElem_Mover struct {
-	Mover *TmoverType `xml:"http://www.w3.org/1998/Math/MathML mover"`
-
-}
-
-type TmunderType struct {
-	XsdGoPkgHasAtts_MunderAttlist
-
-	XsdGoPkgHasGroup_PresentationExprClass
-
-}
-
-type XsdGoPkgHasElem_Munder struct {
-	Munder *TmunderType `xml:"http://www.w3.org/1998/Math/MathML munder"`
-
-}
-
-type TmunderoverType struct {
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-	XsdGoPkgHasGroup_PresentationExprClass
-
-}
-
-type XsdGoPkgHasElem_Munderover struct {
-	Munderover *TmunderoverType `xml:"http://www.w3.org/1998/Math/MathML munderover"`
-
-}
-
-type XsdGoPkgHasGroup_PresentationScriptClass struct {
-	XsdGoPkgHasElem_Mmultiscripts
-
-	XsdGoPkgHasElem_Msubsup
-
-	XsdGoPkgHasElem_Mover
-
-	XsdGoPkgHasElem_Munder
-
-	XsdGoPkgHasElem_Munderover
-
-	XsdGoPkgHasElem_Msub
-
-	XsdGoPkgHasElem_Msup
-
-}
-
-type TmsqrtType struct {
-	XsdGoPkgHasGroup_PresentationExprClass
-
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-}
-
-type XsdGoPkgHasElem_Msqrt struct {
-	Msqrt *TmsqrtType `xml:"http://www.w3.org/1998/Math/MathML msqrt"`
-
-}
-
-type TmphantomType struct {
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-	XsdGoPkgHasGroup_PresentationExprClass
-
-}
-
-type XsdGoPkgHasElem_Mphantom struct {
-	Mphantom *TmphantomType `xml:"http://www.w3.org/1998/Math/MathML mphantom"`
-
-}
-
-type TmencloseType struct {
-	XsdGoPkgHasAtts_MencloseAttlist
-
-	XsdGoPkgHasGroup_PresentationExprClass
-
-}
-
-type XsdGoPkgHasElem_Menclose struct {
-	Menclose *TmencloseType `xml:"http://www.w3.org/1998/Math/MathML menclose"`
-
-}
-
-type TmrootType struct {
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-	XsdGoPkgHasGroup_PresentationExprClass
-
-}
-
-type XsdGoPkgHasElem_Mroot struct {
-	Mroot *TmrootType `xml:"http://www.w3.org/1998/Math/MathML mroot"`
-
-}
-
-type TmrowType struct {
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-	XsdGoPkgHasGroup_PresentationExprClass
-
-}
-
-type XsdGoPkgHasElem_Mrow struct {
-	Mrow *TmrowType `xml:"http://www.w3.org/1998/Math/MathML mrow"`
-
-}
-
-type TmfracType struct {
-	XsdGoPkgHasAtts_MfracAttlist
-
-	XsdGoPkgHasGroup_PresentationExprClass
-
-}
-
-type XsdGoPkgHasElem_Mfrac struct {
-	Mfrac *TmfracType `xml:"http://www.w3.org/1998/Math/MathML mfrac"`
-
-}
-
-type TmfencedType struct {
-	XsdGoPkgHasAtts_MfencedAttlist
-
-	XsdGoPkgHasGroup_PresentationExprClass
-
-}
-
-type XsdGoPkgHasElem_Mfenced struct {
-	Mfenced *TmfencedType `xml:"http://www.w3.org/1998/Math/MathML mfenced"`
-
-}
-
-type TmpaddedType struct {
-	XsdGoPkgHasAtts_MpaddedAttlist
-
-	XsdGoPkgHasGroup_PresentationExprClass
-
-}
-
-type XsdGoPkgHasElem_Mpadded struct {
-	Mpadded *TmpaddedType `xml:"http://www.w3.org/1998/Math/MathML mpadded"`
-
-}
-
-type XsdGoPkgHasGroup_PresentationLayoutClass struct {
-	XsdGoPkgHasElem_Mroot
-
-	XsdGoPkgHasElem_Mrow
-
-	XsdGoPkgHasElem_Mfrac
-
-	XsdGoPkgHasElem_Mfenced
-
-	XsdGoPkgHasElem_Mpadded
-
-	XsdGoPkgHasElem_Msqrt
-
-	XsdGoPkgHasElem_Mphantom
-
-	XsdGoPkgHasElem_Menclose
-
-}
-
-type XsdGoPkgHasGroup_MactionContent struct {
-	XsdGoPkgHasGroup_PresentationExprClass
+type XsdGoPkgHasElem_Mstyle struct {
+	Mstyle *TmstyleType `xml:"http://www.w3.org/1998/Math/MathML mstyle"`
 
 }
 
 type TmactionType struct {
-	XsdGoPkgHasGroup_MactionContent
+	XsdGoPkgHasGroup_MstyleContent
 
 	XsdGoPkgHasAtts_MactionAttlist
 
@@ -2092,18 +1833,30 @@ type XsdGoPkgHasElem_Maction struct {
 
 }
 
-type TmaligngroupType struct {
-	XsdGoPkgHasAtts_MaligngroupAttlist
+type TmspaceType struct {
+	XsdGoPkgHasAtts_MspaceAttlist
 
 }
 
-type XsdGoPkgHasElem_Maligngroup struct {
-	Maligngroup *TmaligngroupType `xml:"http://www.w3.org/1998/Math/MathML maligngroup"`
+type XsdGoPkgHasElem_Mspace struct {
+	Mspace *TmspaceType `xml:"http://www.w3.org/1998/Math/MathML mspace"`
+
+}
+
+type TmerrorType struct {
+	XsdGoPkgHasGroup_MstyleContent
+
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+}
+
+type XsdGoPkgHasElem_Merror struct {
+	Merror *TmerrorType `xml:"http://www.w3.org/1998/Math/MathML merror"`
 
 }
 
 type TmtdType struct {
-	XsdGoPkgHasGroup_MactionContent
+	XsdGoPkgHasGroup_MstyleContent
 
 	XsdGoPkgHasAtts_MtdAttlist
 
@@ -2114,27 +1867,15 @@ type XsdGoPkgHasElem_Mtd struct {
 
 }
 
-type XsdGoPkgHasGroup_MlabeledtrContent struct {
+type XsdGoPkgHasGroup_MtrContent struct {
 	XsdGoPkgHasElem_Mtd
 
 }
 
-type TmlabeledtrType struct {
-	XsdGoPkgHasAtts_MtrAttlist
-
-	XsdGoPkgHasGroup_MlabeledtrContent
-
-}
-
-type XsdGoPkgHasElem_Mlabeledtr struct {
-	Mlabeledtr *TmlabeledtrType `xml:"http://www.w3.org/1998/Math/MathML mlabeledtr"`
-
-}
-
 type TmtrType struct {
-	XsdGoPkgHasGroup_MlabeledtrContent
-
 	XsdGoPkgHasAtts_MtrAttlist
+
+	XsdGoPkgHasGroup_MtrContent
 
 }
 
@@ -2143,10 +1884,22 @@ type XsdGoPkgHasElem_Mtr struct {
 
 }
 
-type XsdGoPkgHasGroup_MtableContent struct {
-	XsdGoPkgHasElem_Mtr
+type TmlabeledtrType struct {
+	XsdGoPkgHasAtts_MtrAttlist
 
+	XsdGoPkgHasGroup_MtrContent
+
+}
+
+type XsdGoPkgHasElem_Mlabeledtr struct {
+	Mlabeledtr *TmlabeledtrType `xml:"http://www.w3.org/1998/Math/MathML mlabeledtr"`
+
+}
+
+type XsdGoPkgHasGroup_MtableContent struct {
 	XsdGoPkgHasElem_Mlabeledtr
+
+	XsdGoPkgHasElem_Mtr
 
 }
 
@@ -2162,6 +1915,16 @@ type XsdGoPkgHasElem_Mtable struct {
 
 }
 
+type TmaligngroupType struct {
+	XsdGoPkgHasAtts_MaligngroupAttlist
+
+}
+
+type XsdGoPkgHasElem_Maligngroup struct {
+	Maligngroup *TmaligngroupType `xml:"http://www.w3.org/1998/Math/MathML maligngroup"`
+
+}
+
 type TmalignmarkType struct {
 	XsdGoPkgHasAtts_MalignmarkAttlist
 
@@ -2173,33 +1936,131 @@ type XsdGoPkgHasElem_Malignmark struct {
 }
 
 type XsdGoPkgHasGroup_PresentationTableClass struct {
-	XsdGoPkgHasElem_Malignmark
-
 	XsdGoPkgHasElem_Maligngroup
+
+	XsdGoPkgHasElem_Malignmark
 
 	XsdGoPkgHasElem_Mtable
 
 }
 
-type TmstyleType struct {
-	XsdGoPkgHasAtts_MstyleAttlist
+type TmrowType struct {
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
 
-	XsdGoPkgHasGroup_MactionContent
-
-}
-
-type XsdGoPkgHasElem_Mstyle struct {
-	Mstyle *TmstyleType `xml:"http://www.w3.org/1998/Math/MathML mstyle"`
+	XsdGoPkgHasGroup_PresentationExprClass
 
 }
 
-type TmspaceType struct {
-	XsdGoPkgHasAtts_MspaceAttlist
+type XsdGoPkgHasElem_Mrow struct {
+	Mrow *TmrowType `xml:"http://www.w3.org/1998/Math/MathML mrow"`
 
 }
 
-type XsdGoPkgHasElem_Mspace struct {
-	Mspace *TmspaceType `xml:"http://www.w3.org/1998/Math/MathML mspace"`
+type TmsqrtType struct {
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+	XsdGoPkgHasGroup_PresentationExprClass
+
+}
+
+type XsdGoPkgHasElem_Msqrt struct {
+	Msqrt *TmsqrtType `xml:"http://www.w3.org/1998/Math/MathML msqrt"`
+
+}
+
+type TmphantomType struct {
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+	XsdGoPkgHasGroup_PresentationExprClass
+
+}
+
+type XsdGoPkgHasElem_Mphantom struct {
+	Mphantom *TmphantomType `xml:"http://www.w3.org/1998/Math/MathML mphantom"`
+
+}
+
+type TmfencedType struct {
+	XsdGoPkgHasAtts_MfencedAttlist
+
+	XsdGoPkgHasGroup_PresentationExprClass
+
+}
+
+type XsdGoPkgHasElem_Mfenced struct {
+	Mfenced *TmfencedType `xml:"http://www.w3.org/1998/Math/MathML mfenced"`
+
+}
+
+type TmfracType struct {
+	XsdGoPkgHasAtts_MfracAttlist
+
+	XsdGoPkgHasGroup_PresentationExprClass
+
+}
+
+type XsdGoPkgHasElem_Mfrac struct {
+	Mfrac *TmfracType `xml:"http://www.w3.org/1998/Math/MathML mfrac"`
+
+}
+
+type TmrootType struct {
+	XsdGoPkgHasGroup_PresentationExprClass
+
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+}
+
+type XsdGoPkgHasElem_Mroot struct {
+	Mroot *TmrootType `xml:"http://www.w3.org/1998/Math/MathML mroot"`
+
+}
+
+type TmpaddedType struct {
+	XsdGoPkgHasAtts_MpaddedAttlist
+
+	XsdGoPkgHasGroup_PresentationExprClass
+
+}
+
+type XsdGoPkgHasElem_Mpadded struct {
+	Mpadded *TmpaddedType `xml:"http://www.w3.org/1998/Math/MathML mpadded"`
+
+}
+
+type TmencloseType struct {
+	XsdGoPkgHasGroup_PresentationExprClass
+
+	XsdGoPkgHasAtts_MencloseAttlist
+
+}
+
+type XsdGoPkgHasElem_Menclose struct {
+	Menclose *TmencloseType `xml:"http://www.w3.org/1998/Math/MathML menclose"`
+
+}
+
+type XsdGoPkgHasGroup_PresentationLayoutClass struct {
+	XsdGoPkgHasElem_Mfenced
+
+	XsdGoPkgHasElem_Mfrac
+
+	XsdGoPkgHasElem_Mroot
+
+	XsdGoPkgHasElem_Mpadded
+
+	XsdGoPkgHasElem_Menclose
+
+	XsdGoPkgHasElem_Mrow
+
+	XsdGoPkgHasElem_Msqrt
+
+	XsdGoPkgHasElem_Mphantom
+
+}
+
+type XsdGoPkgHasCdata struct {
+	XsdGoPkgCDATA string `xml:",chardata"`
 
 }
 
@@ -2220,31 +2081,12 @@ type XsdGoPkgHasGroup_GlyphAlignmarkClass struct {
 
 }
 
-type XsdGoPkgHasCdata struct {
-	XsdGoPkgCDATA string `xml:",chardata"`
-
-}
-
-type TmiType struct {
-	XsdGoPkgHasGroup_GlyphAlignmarkClass
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_MiAttlist
-
-}
-
-type XsdGoPkgHasElem_Mi struct {
-	Mi *TmiType `xml:"http://www.w3.org/1998/Math/MathML mi"`
-
-}
-
 type TmnType struct {
 	XsdGoPkgHasGroup_GlyphAlignmarkClass
 
-	XsdGoPkgHasAtts_MiAttlist
-
 	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_MiAttlist
 
 }
 
@@ -2253,26 +2095,12 @@ type XsdGoPkgHasElem_Mn struct {
 
 }
 
-type TmtextType struct {
-	XsdGoPkgHasGroup_GlyphAlignmarkClass
-
-	XsdGoPkgHasAtts_MiAttlist
-
+type TmoType struct {
 	XsdGoPkgHasCdata
 
-}
-
-type XsdGoPkgHasElem_Mtext struct {
-	Mtext *TmtextType `xml:"http://www.w3.org/1998/Math/MathML mtext"`
-
-}
-
-type TmoType struct {
 	XsdGoPkgHasAtts_MoAttlist
 
 	XsdGoPkgHasGroup_GlyphAlignmarkClass
-
-	XsdGoPkgHasCdata
 
 }
 
@@ -2295,12 +2123,40 @@ type XsdGoPkgHasElem_Ms struct {
 
 }
 
-type XsdGoPkgHasGroup_PresentationTokenClass struct {
-	XsdGoPkgHasElem_Mtext
+type TmtextType struct {
+	XsdGoPkgHasCdata
 
+	XsdGoPkgHasGroup_GlyphAlignmarkClass
+
+	XsdGoPkgHasAtts_MiAttlist
+
+}
+
+type XsdGoPkgHasElem_Mtext struct {
+	Mtext *TmtextType `xml:"http://www.w3.org/1998/Math/MathML mtext"`
+
+}
+
+type TmiType struct {
+	XsdGoPkgHasAtts_MiAttlist
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasGroup_GlyphAlignmarkClass
+
+}
+
+type XsdGoPkgHasElem_Mi struct {
+	Mi *TmiType `xml:"http://www.w3.org/1998/Math/MathML mi"`
+
+}
+
+type XsdGoPkgHasGroup_PresentationTokenClass struct {
 	XsdGoPkgHasElem_Mo
 
 	XsdGoPkgHasElem_Ms
+
+	XsdGoPkgHasElem_Mtext
 
 	XsdGoPkgHasElem_Mi
 
@@ -2308,34 +2164,155 @@ type XsdGoPkgHasGroup_PresentationTokenClass struct {
 
 }
 
-type TmerrorType struct {
-	XsdGoPkgHasAtts_MsubsupAttlist
+type TmunderoverType struct {
+	XsdGoPkgHasGroup_PresentationExprClass
 
-	XsdGoPkgHasGroup_MactionContent
+	XsdGoPkgHasAtts_MunderoverAttlist
 
 }
 
-type XsdGoPkgHasElem_Merror struct {
-	Merror *TmerrorType `xml:"http://www.w3.org/1998/Math/MathML merror"`
+type XsdGoPkgHasElem_Munderover struct {
+	Munderover *TmunderoverType `xml:"http://www.w3.org/1998/Math/MathML munderover"`
+
+}
+
+type TmsubType struct {
+	XsdGoPkgHasGroup_PresentationExprClass
+
+	XsdGoPkgHasAtts_MsubAttlist
+
+}
+
+type XsdGoPkgHasElem_Msub struct {
+	Msub *TmsubType `xml:"http://www.w3.org/1998/Math/MathML msub"`
+
+}
+
+type TmunderType struct {
+	XsdGoPkgHasAtts_MunderAttlist
+
+	XsdGoPkgHasGroup_PresentationExprClass
+
+}
+
+type XsdGoPkgHasElem_Munder struct {
+	Munder *TmunderType `xml:"http://www.w3.org/1998/Math/MathML munder"`
+
+}
+
+type TmsubsupType struct {
+	XsdGoPkgHasAtts_MsubsupAttlist
+
+	XsdGoPkgHasGroup_PresentationExprClass
+
+}
+
+type XsdGoPkgHasElem_Msubsup struct {
+	Msubsup *TmsubsupType `xml:"http://www.w3.org/1998/Math/MathML msubsup"`
+
+}
+
+type TnoneType struct {
+}
+
+type XsdGoPkgHasElem_None struct {
+	None *TnoneType `xml:"http://www.w3.org/1998/Math/MathML none"`
+
+}
+
+type XsdGoPkgHasGroup_PresentationExprOrNoneClass struct {
+	XsdGoPkgHasGroup_PresentationExprClass
+
+	XsdGoPkgHasElem_None
+
+}
+
+type TmprescriptsType struct {
+}
+
+type XsdGoPkgHasElem_Mprescripts struct {
+	Mprescripts *TmprescriptsType `xml:"http://www.w3.org/1998/Math/MathML mprescripts"`
+
+}
+
+type XsdGoPkgHasGroup_MmultiscriptsContent struct {
+	XsdGoPkgHasElem_Mprescripts
+
+	XsdGoPkgHasGroup_PresentationExprClass
+
+	XsdGoPkgHasGroup_PresentationExprOrNoneClass
+
+}
+
+type TmmultiscriptsType struct {
+	XsdGoPkgHasGroup_MmultiscriptsContent
+
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+}
+
+type XsdGoPkgHasElem_Mmultiscripts struct {
+	Mmultiscripts *TmmultiscriptsType `xml:"http://www.w3.org/1998/Math/MathML mmultiscripts"`
+
+}
+
+type TmsupType struct {
+	XsdGoPkgHasAtts_MsupAttlist
+
+	XsdGoPkgHasGroup_PresentationExprClass
+
+}
+
+type XsdGoPkgHasElem_Msup struct {
+	Msup *TmsupType `xml:"http://www.w3.org/1998/Math/MathML msup"`
+
+}
+
+type TmoverType struct {
+	XsdGoPkgHasGroup_PresentationExprClass
+
+	XsdGoPkgHasAtts_MoverAttlist
+
+}
+
+type XsdGoPkgHasElem_Mover struct {
+	Mover *TmoverType `xml:"http://www.w3.org/1998/Math/MathML mover"`
+
+}
+
+type XsdGoPkgHasGroup_PresentationScriptClass struct {
+	XsdGoPkgHasElem_Msup
+
+	XsdGoPkgHasElem_Mover
+
+	XsdGoPkgHasElem_Munderover
+
+	XsdGoPkgHasElem_Msub
+
+	XsdGoPkgHasElem_Munder
+
+	XsdGoPkgHasElem_Msubsup
+
+	XsdGoPkgHasElem_Mmultiscripts
 
 }
 
 type XsdGoPkgHasGroup_PresExprClass struct {
-	XsdGoPkgHasGroup_PresentationScriptClass
-
-	XsdGoPkgHasGroup_PresentationLayoutClass
-
 	XsdGoPkgHasElem_Maction
-
-	XsdGoPkgHasGroup_PresentationTableClass
-
-	XsdGoPkgHasElem_Mstyle
 
 	XsdGoPkgHasElem_Mspace
 
+	XsdGoPkgHasElem_Merror
+
+	XsdGoPkgHasGroup_PresentationTableClass
+
+	XsdGoPkgHasGroup_PresentationLayoutClass
+
 	XsdGoPkgHasGroup_PresentationTokenClass
 
-	XsdGoPkgHasElem_Merror
+	XsdGoPkgHasGroup_PresentationScriptClass
+
+	XsdGoPkgHasElem_Mstyle
 
 }
 
@@ -2346,649 +2323,15 @@ type XsdGoPkgHasGroup_ContentExprClass struct {
 
 }
 
-type XsdGoPkgHasGroup_MomentaboutContent struct {
+type XsdGoPkgHasGroup_LogbaseContent struct {
 	XsdGoPkgHasGroup_ContentExprClass
-
-}
-
-type TmomentaboutType struct {
-	XsdGoPkgHasGroup_MomentaboutContent
-
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Momentabout struct {
-	Momentabout *TmomentaboutType `xml:"http://www.w3.org/1998/Math/MathML momentabout"`
-
-}
-
-type TmomentType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Moment struct {
-	Moment *TmomentType `xml:"http://www.w3.org/1998/Math/MathML moment"`
-
-}
-
-type TmodeType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Mode struct {
-	Mode *TmodeType `xml:"http://www.w3.org/1998/Math/MathML mode"`
-
-}
-
-type TsdevType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Sdev struct {
-	Sdev *TsdevType `xml:"http://www.w3.org/1998/Math/MathML sdev"`
-
-}
-
-type TvarianceType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Variance struct {
-	Variance *TvarianceType `xml:"http://www.w3.org/1998/Math/MathML variance"`
-
-}
-
-type TmedianType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Median struct {
-	Median *TmedianType `xml:"http://www.w3.org/1998/Math/MathML median"`
-
-}
-
-type XsdGoPkgHasGroup_ContentStatisticsClass struct {
-	XsdGoPkgHasElem_Momentabout
-
-	XsdGoPkgHasElem_Moment
-
-	XsdGoPkgHasElem_Mode
-
-	XsdGoPkgHasElem_Sdev
-
-	XsdGoPkgHasElem_Variance
-
-	XsdGoPkgHasElem_Median
-
-	XsdGoPkgHasElem_Mean
-
-}
-
-type TlistType struct {
-	XsdGoPkgHasAtts_ListAttlist
-
-	XsdGoPkgHasGroup_MomentaboutContent
-
-}
-
-type XsdGoPkgHasElem_List struct {
-	List *TlistType `xml:"http://www.w3.org/1998/Math/MathML list"`
-
-}
-
-type TprsubsetType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Prsubset struct {
-	Prsubset *TprsubsetType `xml:"http://www.w3.org/1998/Math/MathML prsubset"`
-
-}
-
-type TnotprsubsetType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Notprsubset struct {
-	Notprsubset *TnotprsubsetType `xml:"http://www.w3.org/1998/Math/MathML notprsubset"`
-
-}
-
-type TcardType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Card struct {
-	Card *TcardType `xml:"http://www.w3.org/1998/Math/MathML card"`
-
-}
-
-type TnotinType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Notin struct {
-	Notin *TnotinType `xml:"http://www.w3.org/1998/Math/MathML notin"`
-
-}
-
-type TcartesianproductType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Cartesianproduct struct {
-	Cartesianproduct *TcartesianproductType `xml:"http://www.w3.org/1998/Math/MathML cartesianproduct"`
-
-}
-
-type TsubsetType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Subset struct {
-	Subset *TsubsetType `xml:"http://www.w3.org/1998/Math/MathML subset"`
-
-}
-
-type TinType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_In struct {
-	In *TinType `xml:"http://www.w3.org/1998/Math/MathML in"`
-
-}
-
-type TunionType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Union struct {
-	Union *TunionType `xml:"http://www.w3.org/1998/Math/MathML union"`
-
-}
-
-type TintersectType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Intersect struct {
-	Intersect *TintersectType `xml:"http://www.w3.org/1998/Math/MathML intersect"`
-
-}
-
-type TsetdiffType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Setdiff struct {
-	Setdiff *TsetdiffType `xml:"http://www.w3.org/1998/Math/MathML setdiff"`
-
-}
-
-type TnotsubsetType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Notsubset struct {
-	Notsubset *TnotsubsetType `xml:"http://www.w3.org/1998/Math/MathML notsubset"`
-
-}
-
-type TsetType struct {
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-	XsdGoPkgHasGroup_MomentaboutContent
-
-}
-
-type XsdGoPkgHasElem_Set struct {
-	Set *TsetType `xml:"http://www.w3.org/1998/Math/MathML set"`
-
-}
-
-type XsdGoPkgHasGroup_ContentSetsClass struct {
-	XsdGoPkgHasElem_Subset
-
-	XsdGoPkgHasElem_In
-
-	XsdGoPkgHasElem_Union
-
-	XsdGoPkgHasElem_Intersect
-
-	XsdGoPkgHasElem_Setdiff
-
-	XsdGoPkgHasElem_Notsubset
-
-	XsdGoPkgHasElem_Set
-
-	XsdGoPkgHasElem_List
-
-	XsdGoPkgHasElem_Prsubset
-
-	XsdGoPkgHasElem_Notprsubset
-
-	XsdGoPkgHasElem_Card
-
-	XsdGoPkgHasElem_Notin
-
-	XsdGoPkgHasElem_Cartesianproduct
-
-}
-
-type TannotationXmlType struct {
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-	TnoneType
-
-}
-
-type XsdGoPkgHasElem_AnnotationXml struct {
-	AnnotationXml *TannotationXmlType `xml:"http://www.w3.org/1998/Math/MathML annotation-xml"`
-
-}
-
-type TannotationType struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-}
-
-type XsdGoPkgHasElem_Annotation struct {
-	Annotation *TannotationType `xml:"http://www.w3.org/1998/Math/MathML annotation"`
-
-}
-
-type XsdGoPkgHasGroup_AnnotationClass struct {
-	XsdGoPkgHasElem_AnnotationXml
-
-	XsdGoPkgHasElem_Annotation
-
-}
-
-type XsdGoPkgHasGroup_SemanticsContent struct {
-	XsdGoPkgHasGroup_ContentExprClass
-
-	XsdGoPkgHasGroup_AnnotationClass
-
-}
-
-type TsemanticsType struct {
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-	XsdGoPkgHasGroup_SemanticsContent
-
-}
-
-type XsdGoPkgHasElem_Semantics struct {
-	Semantics *TsemanticsType `xml:"http://www.w3.org/1998/Math/MathML semantics"`
-
-}
-
-type TselectorType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Selector struct {
-	Selector *TselectorType `xml:"http://www.w3.org/1998/Math/MathML selector"`
-
-}
-
-type TtransposeType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Transpose struct {
-	Transpose *TtransposeType `xml:"http://www.w3.org/1998/Math/MathML transpose"`
-
-}
-
-type TvectorType struct {
-	XsdGoPkgHasGroup_MomentaboutContent
-
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-}
-
-type XsdGoPkgHasElem_Vector struct {
-	Vector *TvectorType `xml:"http://www.w3.org/1998/Math/MathML vector"`
-
-}
-
-type TdeterminantType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Determinant struct {
-	Determinant *TdeterminantType `xml:"http://www.w3.org/1998/Math/MathML determinant"`
-
-}
-
-type TvectorproductType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Vectorproduct struct {
-	Vectorproduct *TvectorproductType `xml:"http://www.w3.org/1998/Math/MathML vectorproduct"`
-
-}
-
-type TscalarproductType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Scalarproduct struct {
-	Scalarproduct *TscalarproductType `xml:"http://www.w3.org/1998/Math/MathML scalarproduct"`
-
-}
-
-type TouterproductType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Outerproduct struct {
-	Outerproduct *TouterproductType `xml:"http://www.w3.org/1998/Math/MathML outerproduct"`
-
-}
-
-type TmatrixrowType struct {
-	XsdGoPkgHasGroup_MomentaboutContent
-
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-}
-
-type XsdGoPkgHasElem_Matrixrow struct {
-	Matrixrow *TmatrixrowType `xml:"http://www.w3.org/1998/Math/MathML matrixrow"`
-
-}
-
-type XsdGoPkgHasGroup_MatrixContent struct {
-	XsdGoPkgHasElem_Matrixrow
-
-}
-
-type TmatrixType struct {
-	XsdGoPkgHasGroup_MatrixContent
-
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-}
-
-type XsdGoPkgHasElem_Matrix struct {
-	Matrix *TmatrixType `xml:"http://www.w3.org/1998/Math/MathML matrix"`
-
-}
-
-type XsdGoPkgHasGroup_ContentLinearAlgebraClass struct {
-	XsdGoPkgHasElem_Matrix
-
-	XsdGoPkgHasElem_Selector
-
-	XsdGoPkgHasElem_Transpose
-
-	XsdGoPkgHasElem_Vector
-
-	XsdGoPkgHasElem_Determinant
-
-	XsdGoPkgHasElem_Vectorproduct
-
-	XsdGoPkgHasElem_Scalarproduct
-
-	XsdGoPkgHasElem_Outerproduct
-
-}
-
-type TConstantType struct {
-	XsdGoPkgHasAtts_CommonAttrib
-
-	XsdGoPkgHasAtts_DefinitionAttrib
-
-}
-
-type XsdGoPkgHasElem_Eulergamma struct {
-	Eulergamma *TConstantType `xml:"http://www.w3.org/1998/Math/MathML eulergamma"`
-
-}
-
-type XsdGoPkgHasElem_Infinity struct {
-	Infinity *TConstantType `xml:"http://www.w3.org/1998/Math/MathML infinity"`
-
-}
-
-type XsdGoPkgHasElem_Imaginaryi struct {
-	Imaginaryi *TConstantType `xml:"http://www.w3.org/1998/Math/MathML imaginaryi"`
-
-}
-
-type XsdGoPkgHasElem_Complexes struct {
-	Complexes *TConstantType `xml:"http://www.w3.org/1998/Math/MathML complexes"`
-
-}
-
-type XsdGoPkgHasElem_Exponentiale struct {
-	Exponentiale *TConstantType `xml:"http://www.w3.org/1998/Math/MathML exponentiale"`
-
-}
-
-type XsdGoPkgHasElem_Naturalnumbers struct {
-	Naturalnumbers *TConstantType `xml:"http://www.w3.org/1998/Math/MathML naturalnumbers"`
-
-}
-
-type XsdGoPkgHasElem_False struct {
-	False *TConstantType `xml:"http://www.w3.org/1998/Math/MathML false"`
-
-}
-
-type XsdGoPkgHasElem_True struct {
-	True *TConstantType `xml:"http://www.w3.org/1998/Math/MathML true"`
-
-}
-
-type XsdGoPkgHasElem_Reals struct {
-	Reals *TConstantType `xml:"http://www.w3.org/1998/Math/MathML reals"`
-
-}
-
-type XsdGoPkgHasElem_Rationals struct {
-	Rationals *TConstantType `xml:"http://www.w3.org/1998/Math/MathML rationals"`
-
-}
-
-type XsdGoPkgHasElem_Emptyset struct {
-	Emptyset *TConstantType `xml:"http://www.w3.org/1998/Math/MathML emptyset"`
-
-}
-
-type XsdGoPkgHasElem_Pi struct {
-	Pi *TConstantType `xml:"http://www.w3.org/1998/Math/MathML pi"`
-
-}
-
-type XsdGoPkgHasElem_Primes struct {
-	Primes *TConstantType `xml:"http://www.w3.org/1998/Math/MathML primes"`
-
-}
-
-type XsdGoPkgHasElem_Notanumber struct {
-	Notanumber *TConstantType `xml:"http://www.w3.org/1998/Math/MathML notanumber"`
-
-}
-
-type XsdGoPkgHasElem_Integers struct {
-	Integers *TConstantType `xml:"http://www.w3.org/1998/Math/MathML integers"`
-
-}
-
-type XsdGoPkgHasGroup_ContentConstantsClass struct {
-	XsdGoPkgHasElem_False
-
-	XsdGoPkgHasElem_True
-
-	XsdGoPkgHasElem_Reals
-
-	XsdGoPkgHasElem_Rationals
-
-	XsdGoPkgHasElem_Emptyset
-
-	XsdGoPkgHasElem_Pi
-
-	XsdGoPkgHasElem_Primes
-
-	XsdGoPkgHasElem_Notanumber
-
-	XsdGoPkgHasElem_Integers
-
-	XsdGoPkgHasElem_Eulergamma
-
-	XsdGoPkgHasElem_Infinity
-
-	XsdGoPkgHasElem_Imaginaryi
-
-	XsdGoPkgHasElem_Complexes
-
-	XsdGoPkgHasElem_Exponentiale
-
-	XsdGoPkgHasElem_Naturalnumbers
-
-}
-
-type TElementaryFunctionsType struct {
-	XsdGoPkgHasAtts_CommonAttrib
-
-	XsdGoPkgHasAtts_DefinitionAttrib
-
-}
-
-type XsdGoPkgHasElem_Tan struct {
-	Tan *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML tan"`
-
-}
-
-type XsdGoPkgHasElem_Exp struct {
-	Exp *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML exp"`
-
-}
-
-type XsdGoPkgHasElem_Ln struct {
-	Ln *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML ln"`
-
-}
-
-type XsdGoPkgHasElem_Arcsin struct {
-	Arcsin *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsin"`
-
-}
-
-type XsdGoPkgHasElem_Arctanh struct {
-	Arctanh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arctanh"`
-
-}
-
-type XsdGoPkgHasElem_Csc struct {
-	Csc *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML csc"`
-
-}
-
-type XsdGoPkgHasElem_Coth struct {
-	Coth *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML coth"`
-
-}
-
-type XsdGoPkgHasElem_Arccsc struct {
-	Arccsc *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccsc"`
-
-}
-
-type XsdGoPkgHasElem_Cot struct {
-	Cot *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cot"`
-
-}
-
-type XsdGoPkgHasElem_Sec struct {
-	Sec *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sec"`
-
-}
-
-type XsdGoPkgHasElem_Cos struct {
-	Cos *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cos"`
-
-}
-
-type XsdGoPkgHasElem_Csch struct {
-	Csch *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML csch"`
-
-}
-
-type XsdGoPkgHasElem_Arctan struct {
-	Arctan *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arctan"`
-
-}
-
-type XsdGoPkgHasElem_Arccosh struct {
-	Arccosh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccosh"`
-
-}
-
-type XsdGoPkgHasElem_Arccsch struct {
-	Arccsch *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccsch"`
-
-}
-
-type XsdGoPkgHasElem_Arcsech struct {
-	Arcsech *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsech"`
-
-}
-
-type XsdGoPkgHasElem_Cosh struct {
-	Cosh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cosh"`
-
-}
-
-type XsdGoPkgHasElem_Arcsec struct {
-	Arcsec *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsec"`
-
-}
-
-type XsdGoPkgHasElem_Arccot struct {
-	Arccot *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccot"`
-
-}
-
-type XsdGoPkgHasElem_Sinh struct {
-	Sinh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sinh"`
 
 }
 
 type TlogbaseType struct {
-	XsdGoPkgHasAtts_CommonAttrib
+	XsdGoPkgHasGroup_LogbaseContent
 
-	XsdGoPkgHasGroup_MomentaboutContent
+	XsdGoPkgHasAtts_CommonAttrib
 
 }
 
@@ -2997,18 +2340,28 @@ type XsdGoPkgHasElem_Logbase struct {
 
 }
 
-type XsdGoPkgHasElem_Sin struct {
-	Sin *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sin"`
+type XsdGoPkgHasElem_Arctan struct {
+	Arctan *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arctan"`
 
 }
 
-type XsdGoPkgHasElem_Sech struct {
-	Sech *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sech"`
+type XsdGoPkgHasElem_Csch struct {
+	Csch *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML csch"`
 
 }
 
-type XsdGoPkgHasElem_Arccos struct {
-	Arccos *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccos"`
+type XsdGoPkgHasElem_Sec struct {
+	Sec *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sec"`
+
+}
+
+type XsdGoPkgHasElem_Coth struct {
+	Coth *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML coth"`
+
+}
+
+type XsdGoPkgHasElem_Ln struct {
+	Ln *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML ln"`
 
 }
 
@@ -3017,77 +2370,246 @@ type XsdGoPkgHasElem_Arccoth struct {
 
 }
 
-type XsdGoPkgHasElem_Log struct {
-	Log *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML log"`
+type XsdGoPkgHasElem_Sin struct {
+	Sin *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sin"`
 
 }
 
-type XsdGoPkgHasElem_Arcsinh struct {
-	Arcsinh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsinh"`
+type XsdGoPkgHasElem_Arcsin struct {
+	Arcsin *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsin"`
 
 }
 
-type XsdGoPkgHasElem_Tanh struct {
-	Tanh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML tanh"`
+type XsdGoPkgHasElem_Cos struct {
+	Cos *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cos"`
+
+}
+
+type XsdGoPkgHasElem_Cosh struct {
+	Cosh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cosh"`
 
 }
 
 type XsdGoPkgHasGroup_ContentElementaryFunctionsClass struct {
-	XsdGoPkgHasElem_Arcsec
-
-	XsdGoPkgHasElem_Arccot
-
-	XsdGoPkgHasElem_Sinh
-
-	XsdGoPkgHasElem_Logbase
-
-	XsdGoPkgHasElem_Sin
-
-	XsdGoPkgHasElem_Sech
-
 	XsdGoPkgHasElem_Arccos
-
-	XsdGoPkgHasElem_Arccoth
-
-	XsdGoPkgHasElem_Log
-
-	XsdGoPkgHasElem_Arcsinh
-
-	XsdGoPkgHasElem_Tanh
-
-	XsdGoPkgHasElem_Tan
-
-	XsdGoPkgHasElem_Exp
-
-	XsdGoPkgHasElem_Ln
-
-	XsdGoPkgHasElem_Arcsin
-
-	XsdGoPkgHasElem_Arctanh
-
-	XsdGoPkgHasElem_Csc
-
-	XsdGoPkgHasElem_Coth
-
-	XsdGoPkgHasElem_Arccsc
-
-	XsdGoPkgHasElem_Cot
-
-	XsdGoPkgHasElem_Sec
-
-	XsdGoPkgHasElem_Cos
-
-	XsdGoPkgHasElem_Csch
-
-	XsdGoPkgHasElem_Arctan
-
-	XsdGoPkgHasElem_Arccosh
 
 	XsdGoPkgHasElem_Arccsch
 
+	XsdGoPkgHasElem_Tanh
+
+	XsdGoPkgHasElem_Arccsc
+
+	XsdGoPkgHasElem_Csc
+
+	XsdGoPkgHasElem_Arcsec
+
 	XsdGoPkgHasElem_Arcsech
 
+	XsdGoPkgHasElem_Arccosh
+
+	XsdGoPkgHasElem_Arctanh
+
+	XsdGoPkgHasElem_Tan
+
+	XsdGoPkgHasElem_Sech
+
+	XsdGoPkgHasElem_Sinh
+
+	XsdGoPkgHasElem_Log
+
+	XsdGoPkgHasElem_Exp
+
+	XsdGoPkgHasElem_Arcsinh
+
+	XsdGoPkgHasElem_Arccot
+
+	XsdGoPkgHasElem_Cot
+
+	XsdGoPkgHasElem_Logbase
+
+	XsdGoPkgHasElem_Arctan
+
+	XsdGoPkgHasElem_Csch
+
+	XsdGoPkgHasElem_Sec
+
+	XsdGoPkgHasElem_Coth
+
+	XsdGoPkgHasElem_Ln
+
+	XsdGoPkgHasElem_Arccoth
+
+	XsdGoPkgHasElem_Sin
+
+	XsdGoPkgHasElem_Arcsin
+
+	XsdGoPkgHasElem_Cos
+
 	XsdGoPkgHasElem_Cosh
+
+}
+
+type TArithType struct {
+	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasAtts_DefinitionAttrib
+
+}
+
+type XsdGoPkgHasElem_Floor struct {
+	Floor *TArithType `xml:"http://www.w3.org/1998/Math/MathML floor"`
+
+}
+
+type XsdGoPkgHasElem_Sum struct {
+	Sum *TArithType `xml:"http://www.w3.org/1998/Math/MathML sum"`
+
+}
+
+type XsdGoPkgHasElem_Abs struct {
+	Abs *TArithType `xml:"http://www.w3.org/1998/Math/MathML abs"`
+
+}
+
+type XsdGoPkgHasElem_Gcd struct {
+	Gcd *TArithType `xml:"http://www.w3.org/1998/Math/MathML gcd"`
+
+}
+
+type XsdGoPkgHasElem_Ceiling struct {
+	Ceiling *TArithType `xml:"http://www.w3.org/1998/Math/MathML ceiling"`
+
+}
+
+type XsdGoPkgHasElem_Rem struct {
+	Rem *TArithType `xml:"http://www.w3.org/1998/Math/MathML rem"`
+
+}
+
+type XsdGoPkgHasElem_Power struct {
+	Power *TArithType `xml:"http://www.w3.org/1998/Math/MathML power"`
+
+}
+
+type XsdGoPkgHasElem_Max struct {
+	Max *TArithType `xml:"http://www.w3.org/1998/Math/MathML max"`
+
+}
+
+type XsdGoPkgHasElem_Plus struct {
+	Plus *TArithType `xml:"http://www.w3.org/1998/Math/MathML plus"`
+
+}
+
+type XsdGoPkgHasElem_Conjugate struct {
+	Conjugate *TArithType `xml:"http://www.w3.org/1998/Math/MathML conjugate"`
+
+}
+
+type XsdGoPkgHasElem_Arg struct {
+	Arg *TArithType `xml:"http://www.w3.org/1998/Math/MathML arg"`
+
+}
+
+type XsdGoPkgHasElem_Root struct {
+	Root *TArithType `xml:"http://www.w3.org/1998/Math/MathML root"`
+
+}
+
+type XsdGoPkgHasElem_Times struct {
+	Times *TArithType `xml:"http://www.w3.org/1998/Math/MathML times"`
+
+}
+
+type XsdGoPkgHasElem_Divide struct {
+	Divide *TArithType `xml:"http://www.w3.org/1998/Math/MathML divide"`
+
+}
+
+type XsdGoPkgHasElem_Lcm struct {
+	Lcm *TArithType `xml:"http://www.w3.org/1998/Math/MathML lcm"`
+
+}
+
+type XsdGoPkgHasElem_Real struct {
+	Real *TArithType `xml:"http://www.w3.org/1998/Math/MathML real"`
+
+}
+
+type XsdGoPkgHasElem_Quotient struct {
+	Quotient *TArithType `xml:"http://www.w3.org/1998/Math/MathML quotient"`
+
+}
+
+type XsdGoPkgHasElem_Minus struct {
+	Minus *TArithType `xml:"http://www.w3.org/1998/Math/MathML minus"`
+
+}
+
+type XsdGoPkgHasElem_Product struct {
+	Product *TArithType `xml:"http://www.w3.org/1998/Math/MathML product"`
+
+}
+
+type XsdGoPkgHasElem_Imaginary struct {
+	Imaginary *TArithType `xml:"http://www.w3.org/1998/Math/MathML imaginary"`
+
+}
+
+type XsdGoPkgHasElem_Min struct {
+	Min *TArithType `xml:"http://www.w3.org/1998/Math/MathML min"`
+
+}
+
+type XsdGoPkgHasElem_Factorial struct {
+	Factorial *TArithType `xml:"http://www.w3.org/1998/Math/MathML factorial"`
+
+}
+
+type XsdGoPkgHasGroup_ContentArithClass struct {
+	XsdGoPkgHasElem_Quotient
+
+	XsdGoPkgHasElem_Minus
+
+	XsdGoPkgHasElem_Product
+
+	XsdGoPkgHasElem_Imaginary
+
+	XsdGoPkgHasElem_Min
+
+	XsdGoPkgHasElem_Factorial
+
+	XsdGoPkgHasElem_Floor
+
+	XsdGoPkgHasElem_Sum
+
+	XsdGoPkgHasElem_Abs
+
+	XsdGoPkgHasElem_Gcd
+
+	XsdGoPkgHasElem_Ceiling
+
+	XsdGoPkgHasElem_Rem
+
+	XsdGoPkgHasElem_Power
+
+	XsdGoPkgHasElem_Max
+
+	XsdGoPkgHasElem_Plus
+
+	XsdGoPkgHasElem_Conjugate
+
+	XsdGoPkgHasElem_Arg
+
+	XsdGoPkgHasElem_Root
+
+	XsdGoPkgHasElem_Times
+
+	XsdGoPkgHasElem_Divide
+
+	XsdGoPkgHasElem_Lcm
+
+	XsdGoPkgHasElem_Real
 
 }
 
@@ -3098,20 +2620,15 @@ type TFunctionsType struct {
 
 }
 
-type XsdGoPkgHasElem_Image struct {
-	Image *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML image"`
-
-}
-
-type XsdGoPkgHasElem_Domain struct {
-	Domain *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML domain"`
+type XsdGoPkgHasElem_Codomain struct {
+	Codomain *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML codomain"`
 
 }
 
 type TdomainofapplicationType struct {
-	XsdGoPkgHasAtts_CommonAttrib
+	XsdGoPkgHasGroup_LogbaseContent
 
-	XsdGoPkgHasGroup_MomentaboutContent
+	XsdGoPkgHasAtts_CommonAttrib
 
 	XsdGoPkgHasAtts_DefinitionAttrib
 
@@ -3122,8 +2639,13 @@ type XsdGoPkgHasElem_Domainofapplication struct {
 
 }
 
-type XsdGoPkgHasElem_Codomain struct {
-	Codomain *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML codomain"`
+type XsdGoPkgHasElem_Ident struct {
+	Ident *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML ident"`
+
+}
+
+type XsdGoPkgHasElem_Domain struct {
+	Domain *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML domain"`
 
 }
 
@@ -3132,23 +2654,51 @@ type XsdGoPkgHasElem_Compose struct {
 
 }
 
-type XsdGoPkgHasElem_Ident struct {
-	Ident *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML ident"`
+type XsdGoPkgHasElem_Image struct {
+	Image *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML image"`
 
 }
 
 type XsdGoPkgHasGroup_ContentFunctionsClass struct {
-	XsdGoPkgHasElem_Compose
-
-	XsdGoPkgHasElem_Ident
-
 	XsdGoPkgHasElem_Image
 
-	XsdGoPkgHasElem_Domain
+	XsdGoPkgHasElem_Codomain
 
 	XsdGoPkgHasElem_Domainofapplication
 
-	XsdGoPkgHasElem_Codomain
+	XsdGoPkgHasElem_Ident
+
+	XsdGoPkgHasElem_Domain
+
+	XsdGoPkgHasElem_Compose
+
+}
+
+type TciType struct {
+	XsdGoPkgHasAtts_CiAttlist
+
+	XsdGoPkgHasGroup_MstyleContent
+
+	XsdGoPkgHasCdata
+
+}
+
+type XsdGoPkgHasElem_Ci struct {
+	Ci *TciType `xml:"http://www.w3.org/1998/Math/MathML ci"`
+
+}
+
+type TcsymbolType struct {
+	XsdGoPkgHasGroup_MstyleContent
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Csymbol struct {
+	Csymbol *TcsymbolType `xml:"http://www.w3.org/1998/Math/MathML csymbol"`
 
 }
 
@@ -3168,11 +2718,11 @@ type XsdGoPkgHasGroup_CnContent struct {
 }
 
 type TcnType struct {
+	XsdGoPkgHasGroup_CnContent
+
 	XsdGoPkgHasAtts_CnAttlist
 
 	XsdGoPkgHasCdata
-
-	XsdGoPkgHasGroup_CnContent
 
 }
 
@@ -3181,47 +2731,676 @@ type XsdGoPkgHasElem_Cn struct {
 
 }
 
-type TcsymbolType struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_CiAttlist
-
-	XsdGoPkgHasGroup_MactionContent
-
-}
-
-type XsdGoPkgHasElem_Csymbol struct {
-	Csymbol *TcsymbolType `xml:"http://www.w3.org/1998/Math/MathML csymbol"`
-
-}
-
-type TciType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasGroup_MactionContent
-
-}
-
-type XsdGoPkgHasElem_Ci struct {
-	Ci *TciType `xml:"http://www.w3.org/1998/Math/MathML ci"`
-
-}
-
 type XsdGoPkgHasGroup_ContentTokensClass struct {
 	XsdGoPkgHasElem_Csymbol
 
+	XsdGoPkgHasElem_Cn
+
 	XsdGoPkgHasElem_Ci
 
-	XsdGoPkgHasElem_Cn
+}
+
+type TannotationXmlType struct {
+	TsepType
+
+	XsdGoPkgHasAtts_AnnotationAttlist
+
+}
+
+type XsdGoPkgHasElem_AnnotationXml struct {
+	AnnotationXml *TannotationXmlType `xml:"http://www.w3.org/1998/Math/MathML annotation-xml"`
+
+}
+
+type TannotationType struct {
+	XsdGoPkgHasAtts_AnnotationAttlist
+
+	XsdGoPkgHasCdata
+
+}
+
+type XsdGoPkgHasElem_Annotation struct {
+	Annotation *TannotationType `xml:"http://www.w3.org/1998/Math/MathML annotation"`
+
+}
+
+type XsdGoPkgHasGroup_AnnotationClass struct {
+	XsdGoPkgHasElem_Annotation
+
+	XsdGoPkgHasElem_AnnotationXml
+
+}
+
+type XsdGoPkgHasGroup_SemanticsContent struct {
+	XsdGoPkgHasGroup_ContentExprClass
+
+	XsdGoPkgHasGroup_AnnotationClass
+
+}
+
+type TsemanticsType struct {
+	XsdGoPkgHasGroup_SemanticsContent
+
+	XsdGoPkgHasAtts_SemanticsAttlist
+
+}
+
+type XsdGoPkgHasElem_Semantics struct {
+	Semantics *TsemanticsType `xml:"http://www.w3.org/1998/Math/MathML semantics"`
+
+}
+
+type TLogicType struct {
+	XsdGoPkgHasAtts_DefinitionAttrib
+
+	XsdGoPkgHasAtts_CommonAttrib
+
+}
+
+type XsdGoPkgHasElem_Exists struct {
+	Exists *TLogicType `xml:"http://www.w3.org/1998/Math/MathML exists"`
+
+}
+
+type XsdGoPkgHasElem_And struct {
+	And *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML and"`
+
+}
+
+type XsdGoPkgHasElem_Forall struct {
+	Forall *TLogicType `xml:"http://www.w3.org/1998/Math/MathML forall"`
+
+}
+
+type XsdGoPkgHasElem_Or struct {
+	Or *TLogicType `xml:"http://www.w3.org/1998/Math/MathML or"`
+
+}
+
+type XsdGoPkgHasElem_Not struct {
+	Not *TLogicType `xml:"http://www.w3.org/1998/Math/MathML not"`
+
+}
+
+type XsdGoPkgHasElem_Xor struct {
+	Xor *TLogicType `xml:"http://www.w3.org/1998/Math/MathML xor"`
+
+}
+
+type XsdGoPkgHasElem_Implies struct {
+	Implies *TLogicType `xml:"http://www.w3.org/1998/Math/MathML implies"`
+
+}
+
+type XsdGoPkgHasGroup_ContentLogicClass struct {
+	XsdGoPkgHasElem_Or
+
+	XsdGoPkgHasElem_Not
+
+	XsdGoPkgHasElem_Xor
+
+	XsdGoPkgHasElem_Implies
+
+	XsdGoPkgHasElem_Exists
+
+	XsdGoPkgHasElem_And
+
+	XsdGoPkgHasElem_Forall
+
+}
+
+type TscalarproductType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Scalarproduct struct {
+	Scalarproduct *TscalarproductType `xml:"http://www.w3.org/1998/Math/MathML scalarproduct"`
+
+}
+
+type TdeterminantType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Determinant struct {
+	Determinant *TdeterminantType `xml:"http://www.w3.org/1998/Math/MathML determinant"`
+
+}
+
+type TouterproductType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Outerproduct struct {
+	Outerproduct *TouterproductType `xml:"http://www.w3.org/1998/Math/MathML outerproduct"`
+
+}
+
+type TvectorproductType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Vectorproduct struct {
+	Vectorproduct *TvectorproductType `xml:"http://www.w3.org/1998/Math/MathML vectorproduct"`
+
+}
+
+type TtransposeType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Transpose struct {
+	Transpose *TtransposeType `xml:"http://www.w3.org/1998/Math/MathML transpose"`
+
+}
+
+type TvectorType struct {
+	XsdGoPkgHasGroup_LogbaseContent
+
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+}
+
+type XsdGoPkgHasElem_Vector struct {
+	Vector *TvectorType `xml:"http://www.w3.org/1998/Math/MathML vector"`
+
+}
+
+type TselectorType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Selector struct {
+	Selector *TselectorType `xml:"http://www.w3.org/1998/Math/MathML selector"`
+
+}
+
+type TmatrixrowType struct {
+	XsdGoPkgHasGroup_LogbaseContent
+
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+}
+
+type XsdGoPkgHasElem_Matrixrow struct {
+	Matrixrow *TmatrixrowType `xml:"http://www.w3.org/1998/Math/MathML matrixrow"`
+
+}
+
+type XsdGoPkgHasGroup_MatrixContent struct {
+	XsdGoPkgHasElem_Matrixrow
+
+}
+
+type TmatrixType struct {
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+	XsdGoPkgHasGroup_MatrixContent
+
+}
+
+type XsdGoPkgHasElem_Matrix struct {
+	Matrix *TmatrixType `xml:"http://www.w3.org/1998/Math/MathML matrix"`
+
+}
+
+type XsdGoPkgHasGroup_ContentLinearAlgebraClass struct {
+	XsdGoPkgHasElem_Scalarproduct
+
+	XsdGoPkgHasElem_Determinant
+
+	XsdGoPkgHasElem_Outerproduct
+
+	XsdGoPkgHasElem_Vectorproduct
+
+	XsdGoPkgHasElem_Transpose
+
+	XsdGoPkgHasElem_Vector
+
+	XsdGoPkgHasElem_Selector
+
+	XsdGoPkgHasElem_Matrix
+
+}
+
+type TunionType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Union struct {
+	Union *TunionType `xml:"http://www.w3.org/1998/Math/MathML union"`
+
+}
+
+type TsubsetType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Subset struct {
+	Subset *TsubsetType `xml:"http://www.w3.org/1998/Math/MathML subset"`
+
+}
+
+type TnotprsubsetType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Notprsubset struct {
+	Notprsubset *TnotprsubsetType `xml:"http://www.w3.org/1998/Math/MathML notprsubset"`
+
+}
+
+type TsetdiffType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Setdiff struct {
+	Setdiff *TsetdiffType `xml:"http://www.w3.org/1998/Math/MathML setdiff"`
+
+}
+
+type TcardType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Card struct {
+	Card *TcardType `xml:"http://www.w3.org/1998/Math/MathML card"`
+
+}
+
+type TnotsubsetType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Notsubset struct {
+	Notsubset *TnotsubsetType `xml:"http://www.w3.org/1998/Math/MathML notsubset"`
+
+}
+
+type TprsubsetType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Prsubset struct {
+	Prsubset *TprsubsetType `xml:"http://www.w3.org/1998/Math/MathML prsubset"`
+
+}
+
+type TlistType struct {
+	XsdGoPkgHasGroup_LogbaseContent
+
+	XsdGoPkgHasAtts_ListAttlist
+
+}
+
+type XsdGoPkgHasElem_List struct {
+	List *TlistType `xml:"http://www.w3.org/1998/Math/MathML list"`
+
+}
+
+type TinType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_In struct {
+	In *TinType `xml:"http://www.w3.org/1998/Math/MathML in"`
+
+}
+
+type TnotinType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Notin struct {
+	Notin *TnotinType `xml:"http://www.w3.org/1998/Math/MathML notin"`
+
+}
+
+type TcartesianproductType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Cartesianproduct struct {
+	Cartesianproduct *TcartesianproductType `xml:"http://www.w3.org/1998/Math/MathML cartesianproduct"`
+
+}
+
+type TintersectType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Intersect struct {
+	Intersect *TintersectType `xml:"http://www.w3.org/1998/Math/MathML intersect"`
+
+}
+
+type TsetType struct {
+	XsdGoPkgHasAtts_SetAttlist
+
+	XsdGoPkgHasGroup_LogbaseContent
+
+}
+
+type XsdGoPkgHasElem_Set struct {
+	Set *TsetType `xml:"http://www.w3.org/1998/Math/MathML set"`
+
+}
+
+type XsdGoPkgHasGroup_ContentSetsClass struct {
+	XsdGoPkgHasElem_Notsubset
+
+	XsdGoPkgHasElem_Prsubset
+
+	XsdGoPkgHasElem_List
+
+	XsdGoPkgHasElem_In
+
+	XsdGoPkgHasElem_Notin
+
+	XsdGoPkgHasElem_Cartesianproduct
+
+	XsdGoPkgHasElem_Intersect
+
+	XsdGoPkgHasElem_Set
+
+	XsdGoPkgHasElem_Union
+
+	XsdGoPkgHasElem_Subset
+
+	XsdGoPkgHasElem_Notprsubset
+
+	XsdGoPkgHasElem_Setdiff
+
+	XsdGoPkgHasElem_Card
+
+}
+
+type TvarianceType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Variance struct {
+	Variance *TvarianceType `xml:"http://www.w3.org/1998/Math/MathML variance"`
+
+}
+
+type TmedianType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Median struct {
+	Median *TmedianType `xml:"http://www.w3.org/1998/Math/MathML median"`
+
+}
+
+type TsdevType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Sdev struct {
+	Sdev *TsdevType `xml:"http://www.w3.org/1998/Math/MathML sdev"`
+
+}
+
+type TmomentType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Moment struct {
+	Moment *TmomentType `xml:"http://www.w3.org/1998/Math/MathML moment"`
+
+}
+
+type TmomentaboutType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+	XsdGoPkgHasGroup_LogbaseContent
+
+}
+
+type XsdGoPkgHasElem_Momentabout struct {
+	Momentabout *TmomentaboutType `xml:"http://www.w3.org/1998/Math/MathML momentabout"`
+
+}
+
+type TmeanType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Mean struct {
+	Mean *TmeanType `xml:"http://www.w3.org/1998/Math/MathML mean"`
+
+}
+
+type TmodeType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Mode struct {
+	Mode *TmodeType `xml:"http://www.w3.org/1998/Math/MathML mode"`
+
+}
+
+type XsdGoPkgHasGroup_ContentStatisticsClass struct {
+	XsdGoPkgHasElem_Sdev
+
+	XsdGoPkgHasElem_Moment
+
+	XsdGoPkgHasElem_Momentabout
+
+	XsdGoPkgHasElem_Mean
+
+	XsdGoPkgHasElem_Mode
+
+	XsdGoPkgHasElem_Variance
+
+	XsdGoPkgHasElem_Median
+
+}
+
+type TintervalType struct {
+	XsdGoPkgHasGroup_ContentExprClass
+
+	XsdGoPkgHasAtts_IntervalAttlist
+
+}
+
+type XsdGoPkgHasElem_Interval struct {
+	Interval *TintervalType `xml:"http://www.w3.org/1998/Math/MathML interval"`
+
+}
+
+type TotherwiseType struct {
+	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasGroup_LogbaseContent
+
+}
+
+type XsdGoPkgHasElem_Otherwise struct {
+	Otherwise *TotherwiseType `xml:"http://www.w3.org/1998/Math/MathML otherwise"`
+
+}
+
+type TpieceType struct {
+	XsdGoPkgHasGroup_LogbaseContent
+
+}
+
+type XsdGoPkgHasElems_Piece struct {
+	Pieces []*TpieceType `xml:"http://www.w3.org/1998/Math/MathML piece"`
+
+}
+
+type XsdGoPkgHasGroup_PiecewiseContent struct {
+	XsdGoPkgHasElem_Otherwise
+
+	XsdGoPkgHasElems_Piece
+
+}
+
+type TpiecewiseType struct {
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+	XsdGoPkgHasGroup_PiecewiseContent
+
+}
+
+type XsdGoPkgHasElem_Piecewise struct {
+	Piecewise *TpiecewiseType `xml:"http://www.w3.org/1998/Math/MathML piecewise"`
+
+}
+
+type TdeclareType struct {
+	XsdGoPkgHasAtts_DeclareAttlist
+
+	XsdGoPkgHasGroup_LogbaseContent
+
+}
+
+type XsdGoPkgHasElem_Declare struct {
+	Declare *TdeclareType `xml:"http://www.w3.org/1998/Math/MathML declare"`
+
+}
+
+type TconditionType struct {
+	XsdGoPkgHasAtts_ConditionAttlist
+
+	XsdGoPkgHasGroup_LogbaseContent
+
+}
+
+type XsdGoPkgHasElem_Condition struct {
+	Condition *TconditionType `xml:"http://www.w3.org/1998/Math/MathML condition"`
+
+}
+
+type TapplyType struct {
+	XsdGoPkgHasGroup_LogbaseContent
+
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+}
+
+type XsdGoPkgHasElem_Apply struct {
+	Apply *TapplyType `xml:"http://www.w3.org/1998/Math/MathML apply"`
+
+}
+
+type TinverseType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Inverse struct {
+	Inverse *TinverseType `xml:"http://www.w3.org/1998/Math/MathML inverse"`
+
+}
+
+type TbvarType struct {
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+	XsdGoPkgHasGroup_LogbaseContent
+
+}
+
+type XsdGoPkgHasElem_Bvar struct {
+	Bvar *TbvarType `xml:"http://www.w3.org/1998/Math/MathML bvar"`
+
+}
+
+type TlambdaType struct {
+	XsdGoPkgHasGroup_LogbaseContent
+
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+}
+
+type XsdGoPkgHasElem_Lambda struct {
+	Lambda *TlambdaType `xml:"http://www.w3.org/1998/Math/MathML lambda"`
+
+}
+
+type TdegreeType struct {
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+	XsdGoPkgHasGroup_LogbaseContent
+
+}
+
+type XsdGoPkgHasElem_Degree struct {
+	Degree *TdegreeType `xml:"http://www.w3.org/1998/Math/MathML degree"`
+
+}
+
+type XsdGoPkgHasGroup_ContentConstructsClass struct {
+	XsdGoPkgHasElem_Piecewise
+
+	XsdGoPkgHasElem_Declare
+
+	XsdGoPkgHasElem_Condition
+
+	XsdGoPkgHasElem_Apply
+
+	XsdGoPkgHasElem_Inverse
+
+	XsdGoPkgHasElem_Bvar
+
+	XsdGoPkgHasElem_Lambda
+
+	XsdGoPkgHasElem_Degree
+
+	XsdGoPkgHasElem_Interval
+
+}
+
+type TdiffType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Diff struct {
+	Diff *TdiffType `xml:"http://www.w3.org/1998/Math/MathML diff"`
+
+}
+
+type TlimitType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Limit struct {
+	Limit *TlimitType `xml:"http://www.w3.org/1998/Math/MathML limit"`
 
 }
 
 type TuplimitType struct {
-	XsdGoPkgHasGroup_MomentaboutContent
+	XsdGoPkgHasGroup_LogbaseContent
 
-	XsdGoPkgHasAtts_CiAttlist
+	XsdGoPkgHasAtts_CsymbolAttlist
 
 }
 
@@ -3230,15 +3409,13 @@ type XsdGoPkgHasElem_Uplimit struct {
 
 }
 
-type TlowlimitType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-	XsdGoPkgHasGroup_MomentaboutContent
+type TintType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
 
 }
 
-type XsdGoPkgHasElem_Lowlimit struct {
-	Lowlimit *TlowlimitType `xml:"http://www.w3.org/1998/Math/MathML lowlimit"`
+type XsdGoPkgHasElem_Int struct {
+	Int *TintType `xml:"http://www.w3.org/1998/Math/MathML int"`
 
 }
 
@@ -3252,38 +3429,8 @@ type XsdGoPkgHasElem_Tendsto struct {
 
 }
 
-type TdiffType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Diff struct {
-	Diff *TdiffType `xml:"http://www.w3.org/1998/Math/MathML diff"`
-
-}
-
-type TintType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Int struct {
-	Int *TintType `xml:"http://www.w3.org/1998/Math/MathML int"`
-
-}
-
-type TlimitType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Limit struct {
-	Limit *TlimitType `xml:"http://www.w3.org/1998/Math/MathML limit"`
-
-}
-
 type TpartialdiffType struct {
-	XsdGoPkgHasAtts_CiAttlist
+	XsdGoPkgHasAtts_CsymbolAttlist
 
 }
 
@@ -3292,20 +3439,147 @@ type XsdGoPkgHasElem_Partialdiff struct {
 
 }
 
+type TlowlimitType struct {
+	XsdGoPkgHasGroup_LogbaseContent
+
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Lowlimit struct {
+	Lowlimit *TlowlimitType `xml:"http://www.w3.org/1998/Math/MathML lowlimit"`
+
+}
+
 type XsdGoPkgHasGroup_ContentCalculusClass struct {
-	XsdGoPkgHasElem_Lowlimit
+	XsdGoPkgHasElem_Int
 
 	XsdGoPkgHasElem_Tendsto
 
-	XsdGoPkgHasElem_Diff
+	XsdGoPkgHasElem_Partialdiff
 
-	XsdGoPkgHasElem_Int
+	XsdGoPkgHasElem_Lowlimit
+
+	XsdGoPkgHasElem_Diff
 
 	XsdGoPkgHasElem_Limit
 
-	XsdGoPkgHasElem_Partialdiff
-
 	XsdGoPkgHasElem_Uplimit
+
+}
+
+type TConstantType struct {
+	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasAtts_DefinitionAttrib
+
+}
+
+type XsdGoPkgHasElem_Emptyset struct {
+	Emptyset *TConstantType `xml:"http://www.w3.org/1998/Math/MathML emptyset"`
+
+}
+
+type XsdGoPkgHasElem_Infinity struct {
+	Infinity *TConstantType `xml:"http://www.w3.org/1998/Math/MathML infinity"`
+
+}
+
+type XsdGoPkgHasElem_Naturalnumbers struct {
+	Naturalnumbers *TConstantType `xml:"http://www.w3.org/1998/Math/MathML naturalnumbers"`
+
+}
+
+type XsdGoPkgHasElem_True struct {
+	True *TConstantType `xml:"http://www.w3.org/1998/Math/MathML true"`
+
+}
+
+type XsdGoPkgHasElem_Exponentiale struct {
+	Exponentiale *TConstantType `xml:"http://www.w3.org/1998/Math/MathML exponentiale"`
+
+}
+
+type XsdGoPkgHasElem_False struct {
+	False *TConstantType `xml:"http://www.w3.org/1998/Math/MathML false"`
+
+}
+
+type XsdGoPkgHasElem_Integers struct {
+	Integers *TConstantType `xml:"http://www.w3.org/1998/Math/MathML integers"`
+
+}
+
+type XsdGoPkgHasElem_Complexes struct {
+	Complexes *TConstantType `xml:"http://www.w3.org/1998/Math/MathML complexes"`
+
+}
+
+type XsdGoPkgHasElem_Reals struct {
+	Reals *TConstantType `xml:"http://www.w3.org/1998/Math/MathML reals"`
+
+}
+
+type XsdGoPkgHasElem_Notanumber struct {
+	Notanumber *TConstantType `xml:"http://www.w3.org/1998/Math/MathML notanumber"`
+
+}
+
+type XsdGoPkgHasElem_Rationals struct {
+	Rationals *TConstantType `xml:"http://www.w3.org/1998/Math/MathML rationals"`
+
+}
+
+type XsdGoPkgHasElem_Primes struct {
+	Primes *TConstantType `xml:"http://www.w3.org/1998/Math/MathML primes"`
+
+}
+
+type XsdGoPkgHasElem_Eulergamma struct {
+	Eulergamma *TConstantType `xml:"http://www.w3.org/1998/Math/MathML eulergamma"`
+
+}
+
+type XsdGoPkgHasElem_Imaginaryi struct {
+	Imaginaryi *TConstantType `xml:"http://www.w3.org/1998/Math/MathML imaginaryi"`
+
+}
+
+type XsdGoPkgHasElem_Pi struct {
+	Pi *TConstantType `xml:"http://www.w3.org/1998/Math/MathML pi"`
+
+}
+
+type XsdGoPkgHasGroup_ContentConstantsClass struct {
+	XsdGoPkgHasElem_Reals
+
+	XsdGoPkgHasElem_Notanumber
+
+	XsdGoPkgHasElem_Rationals
+
+	XsdGoPkgHasElem_Primes
+
+	XsdGoPkgHasElem_Eulergamma
+
+	XsdGoPkgHasElem_Imaginaryi
+
+	XsdGoPkgHasElem_Pi
+
+	XsdGoPkgHasElem_Emptyset
+
+	XsdGoPkgHasElem_Infinity
+
+	XsdGoPkgHasElem_Naturalnumbers
+
+	XsdGoPkgHasElem_True
+
+	XsdGoPkgHasElem_Exponentiale
+
+	XsdGoPkgHasElem_False
+
+	XsdGoPkgHasElem_Integers
+
+	XsdGoPkgHasElem_Complexes
 
 }
 
@@ -3316,18 +3590,13 @@ type TRelationsType struct {
 
 }
 
-type XsdGoPkgHasElem_Leq struct {
-	Leq *TRelationsType `xml:"http://www.w3.org/1998/Math/MathML leq"`
-
-}
-
-type XsdGoPkgHasElem_Geq struct {
-	Geq *TRelationsType `xml:"http://www.w3.org/1998/Math/MathML geq"`
-
-}
-
 type XsdGoPkgHasElem_Equivalent struct {
 	Equivalent *TRelationsType `xml:"http://www.w3.org/1998/Math/MathML equivalent"`
+
+}
+
+type XsdGoPkgHasElem_Gt struct {
+	Gt *TRelationsType `xml:"http://www.w3.org/1998/Math/MathML gt"`
 
 }
 
@@ -3336,8 +3605,18 @@ type XsdGoPkgHasElem_Neq struct {
 
 }
 
+type XsdGoPkgHasElem_Eq struct {
+	Eq *TRelationsType `xml:"http://www.w3.org/1998/Math/MathML eq"`
+
+}
+
 type XsdGoPkgHasElem_Factorof struct {
 	Factorof *TRelationsType `xml:"http://www.w3.org/1998/Math/MathML factorof"`
+
+}
+
+type XsdGoPkgHasElem_Leq struct {
+	Leq *TRelationsType `xml:"http://www.w3.org/1998/Math/MathML leq"`
 
 }
 
@@ -3351,225 +3630,34 @@ type XsdGoPkgHasElem_Lt struct {
 
 }
 
-type XsdGoPkgHasElem_Gt struct {
-	Gt *TRelationsType `xml:"http://www.w3.org/1998/Math/MathML gt"`
-
-}
-
-type XsdGoPkgHasElem_Eq struct {
-	Eq *TRelationsType `xml:"http://www.w3.org/1998/Math/MathML eq"`
+type XsdGoPkgHasElem_Geq struct {
+	Geq *TRelationsType `xml:"http://www.w3.org/1998/Math/MathML geq"`
 
 }
 
 type XsdGoPkgHasGroup_ContentRelationsClass struct {
-	XsdGoPkgHasElem_Eq
-
-	XsdGoPkgHasElem_Leq
-
-	XsdGoPkgHasElem_Geq
-
 	XsdGoPkgHasElem_Equivalent
+
+	XsdGoPkgHasElem_Gt
 
 	XsdGoPkgHasElem_Neq
 
+	XsdGoPkgHasElem_Eq
+
 	XsdGoPkgHasElem_Factorof
+
+	XsdGoPkgHasElem_Leq
 
 	XsdGoPkgHasElem_Approx
 
 	XsdGoPkgHasElem_Lt
 
-	XsdGoPkgHasElem_Gt
-
-}
-
-type TintervalType struct {
-	XsdGoPkgHasAtts_IntervalAttlist
-
-	XsdGoPkgHasGroup_ContentExprClass
-
-}
-
-type XsdGoPkgHasElem_Interval struct {
-	Interval *TintervalType `xml:"http://www.w3.org/1998/Math/MathML interval"`
-
-}
-
-type TdegreeType struct {
-	XsdGoPkgHasGroup_MomentaboutContent
-
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-}
-
-type XsdGoPkgHasElem_Degree struct {
-	Degree *TdegreeType `xml:"http://www.w3.org/1998/Math/MathML degree"`
-
-}
-
-type TdeclareType struct {
-	XsdGoPkgHasAtts_DeclareAttlist
-
-	XsdGoPkgHasGroup_MomentaboutContent
-
-}
-
-type XsdGoPkgHasElem_Declare struct {
-	Declare *TdeclareType `xml:"http://www.w3.org/1998/Math/MathML declare"`
-
-}
-
-type TapplyType struct {
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-	XsdGoPkgHasGroup_MomentaboutContent
-
-}
-
-type XsdGoPkgHasElem_Apply struct {
-	Apply *TapplyType `xml:"http://www.w3.org/1998/Math/MathML apply"`
-
-}
-
-type TlambdaType struct {
-	XsdGoPkgHasGroup_MomentaboutContent
-
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-}
-
-type XsdGoPkgHasElem_Lambda struct {
-	Lambda *TlambdaType `xml:"http://www.w3.org/1998/Math/MathML lambda"`
-
-}
-
-type TconditionType struct {
-	XsdGoPkgHasAtts_ConditionAttlist
-
-	XsdGoPkgHasGroup_MomentaboutContent
-
-}
-
-type XsdGoPkgHasElem_Condition struct {
-	Condition *TconditionType `xml:"http://www.w3.org/1998/Math/MathML condition"`
-
-}
-
-type TpieceType struct {
-	XsdGoPkgHasGroup_MomentaboutContent
-
-}
-
-type XsdGoPkgHasElems_Piece struct {
-	Pieces []*TpieceType `xml:"http://www.w3.org/1998/Math/MathML piece"`
-
-}
-
-type TotherwiseType struct {
-	XsdGoPkgHasGroup_MomentaboutContent
-
-	XsdGoPkgHasAtts_CommonAttrib
-
-}
-
-type XsdGoPkgHasElem_Otherwise struct {
-	Otherwise *TotherwiseType `xml:"http://www.w3.org/1998/Math/MathML otherwise"`
-
-}
-
-type XsdGoPkgHasGroup_PiecewiseContent struct {
-	XsdGoPkgHasElems_Piece
-
-	XsdGoPkgHasElem_Otherwise
-
-}
-
-type TpiecewiseType struct {
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-	XsdGoPkgHasGroup_PiecewiseContent
-
-}
-
-type XsdGoPkgHasElem_Piecewise struct {
-	Piecewise *TpiecewiseType `xml:"http://www.w3.org/1998/Math/MathML piecewise"`
-
-}
-
-type TbvarType struct {
-	XsdGoPkgHasAtts_MsubsupAttlist
-
-	XsdGoPkgHasGroup_MomentaboutContent
-
-}
-
-type XsdGoPkgHasElem_Bvar struct {
-	Bvar *TbvarType `xml:"http://www.w3.org/1998/Math/MathML bvar"`
-
-}
-
-type TinverseType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Inverse struct {
-	Inverse *TinverseType `xml:"http://www.w3.org/1998/Math/MathML inverse"`
-
-}
-
-type XsdGoPkgHasGroup_ContentConstructsClass struct {
-	XsdGoPkgHasElem_Lambda
-
-	XsdGoPkgHasElem_Condition
-
-	XsdGoPkgHasElem_Piecewise
-
-	XsdGoPkgHasElem_Bvar
-
-	XsdGoPkgHasElem_Inverse
-
-	XsdGoPkgHasElem_Interval
-
-	XsdGoPkgHasElem_Degree
-
-	XsdGoPkgHasElem_Declare
-
-	XsdGoPkgHasElem_Apply
-
-}
-
-type TdivergenceType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Divergence struct {
-	Divergence *TdivergenceType `xml:"http://www.w3.org/1998/Math/MathML divergence"`
-
-}
-
-type TcurlType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Curl struct {
-	Curl *TcurlType `xml:"http://www.w3.org/1998/Math/MathML curl"`
-
-}
-
-type TgradType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-type XsdGoPkgHasElem_Grad struct {
-	Grad *TgradType `xml:"http://www.w3.org/1998/Math/MathML grad"`
+	XsdGoPkgHasElem_Geq
 
 }
 
 type TlaplacianType struct {
-	XsdGoPkgHasAtts_CiAttlist
+	XsdGoPkgHasAtts_CsymbolAttlist
 
 }
 
@@ -3578,111 +3666,82 @@ type XsdGoPkgHasElem_Laplacian struct {
 
 }
 
+type TgradType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Grad struct {
+	Grad *TgradType `xml:"http://www.w3.org/1998/Math/MathML grad"`
+
+}
+
+type TcurlType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Curl struct {
+	Curl *TcurlType `xml:"http://www.w3.org/1998/Math/MathML curl"`
+
+}
+
+type TdivergenceType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+type XsdGoPkgHasElem_Divergence struct {
+	Divergence *TdivergenceType `xml:"http://www.w3.org/1998/Math/MathML divergence"`
+
+}
+
 type XsdGoPkgHasGroup_ContentVectorCalculusClass struct {
 	XsdGoPkgHasElem_Curl
 
-	XsdGoPkgHasElem_Grad
+	XsdGoPkgHasElem_Divergence
 
 	XsdGoPkgHasElem_Laplacian
 
-	XsdGoPkgHasElem_Divergence
-
-}
-
-type TLogicType struct {
-	XsdGoPkgHasAtts_DefinitionAttrib
-
-	XsdGoPkgHasAtts_CommonAttrib
-
-}
-
-type XsdGoPkgHasElem_Implies struct {
-	Implies *TLogicType `xml:"http://www.w3.org/1998/Math/MathML implies"`
-
-}
-
-type XsdGoPkgHasElem_And struct {
-	And *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML and"`
-
-}
-
-type XsdGoPkgHasElem_Xor struct {
-	Xor *TLogicType `xml:"http://www.w3.org/1998/Math/MathML xor"`
-
-}
-
-type XsdGoPkgHasElem_Not struct {
-	Not *TLogicType `xml:"http://www.w3.org/1998/Math/MathML not"`
-
-}
-
-type XsdGoPkgHasElem_Or struct {
-	Or *TLogicType `xml:"http://www.w3.org/1998/Math/MathML or"`
-
-}
-
-type XsdGoPkgHasElem_Forall struct {
-	Forall *TLogicType `xml:"http://www.w3.org/1998/Math/MathML forall"`
-
-}
-
-type XsdGoPkgHasElem_Exists struct {
-	Exists *TLogicType `xml:"http://www.w3.org/1998/Math/MathML exists"`
-
-}
-
-type XsdGoPkgHasGroup_ContentLogicClass struct {
-	XsdGoPkgHasElem_Exists
-
-	XsdGoPkgHasElem_Implies
-
-	XsdGoPkgHasElem_And
-
-	XsdGoPkgHasElem_Xor
-
-	XsdGoPkgHasElem_Not
-
-	XsdGoPkgHasElem_Or
-
-	XsdGoPkgHasElem_Forall
+	XsdGoPkgHasElem_Grad
 
 }
 
 type XsdGoPkgHasGroup_ContExprClass struct {
-	XsdGoPkgHasGroup_ContentSetsClass
-
 	XsdGoPkgHasElem_Semantics
+
+	XsdGoPkgHasGroup_ContentLogicClass
 
 	XsdGoPkgHasGroup_ContentLinearAlgebraClass
 
+	XsdGoPkgHasGroup_ContentSetsClass
+
+	XsdGoPkgHasGroup_ContentStatisticsClass
+
+	XsdGoPkgHasGroup_ContentConstructsClass
+
+	XsdGoPkgHasGroup_ContentCalculusClass
+
 	XsdGoPkgHasGroup_ContentConstantsClass
 
+	XsdGoPkgHasGroup_ContentRelationsClass
+
+	XsdGoPkgHasGroup_ContentVectorCalculusClass
+
 	XsdGoPkgHasGroup_ContentElementaryFunctionsClass
+
+	XsdGoPkgHasGroup_ContentArithClass
 
 	XsdGoPkgHasGroup_ContentFunctionsClass
 
 	XsdGoPkgHasGroup_ContentTokensClass
 
-	XsdGoPkgHasGroup_ContentCalculusClass
-
-	XsdGoPkgHasGroup_ContentRelationsClass
-
-	XsdGoPkgHasGroup_ContentConstructsClass
-
-	XsdGoPkgHasGroup_ContentVectorCalculusClass
-
-	XsdGoPkgHasGroup_ContentLogicClass
-
-	XsdGoPkgHasGroup_ContentArithClass
-
-	XsdGoPkgHasGroup_ContentStatisticsClass
-
 }
 
 type XsdGoPkgHasGroup_MathContent struct {
-	XsdGoPkgHasGroup_ContExprClass
-
 	XsdGoPkgHasGroup_PresExprClass
+
+	XsdGoPkgHasGroup_ContExprClass
 
 }
 
