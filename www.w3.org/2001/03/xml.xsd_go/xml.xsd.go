@@ -2,7 +2,7 @@
 //		github.com/metaleap/go-xsd
 //	Comments on types and fields (if any) are from the XSD file located at:
 //		www.w3.org/2001/03/xml.xsd
-package gopkg_WwwW3Org200103XmlXsd
+package go_Xml
 
 //	See http://www.w3.org/XML/1998/namespace.html and
 //	http://www.w3.org/TR/REC-xml for information about this namespace.
@@ -73,26 +73,28 @@ import (
 //	In due course, we should install the relevant ISO 2- and 3-letter
 //	codes as the enumerated possible values . . .
 type XsdGoPkgHasAttr_Lang struct {
+//	In due course, we should install the relevant ISO 2- and 3-letter
+//	codes as the enumerated possible values . . .
 	Lang xsdt.Language `xml:"http://www.w3.org/XML/1998/namespace lang,attr"`
 
 }
 
 type TxsdSpace xsdt.NCName
 
-//	Returns true if the value of this enumerated TxsdSpace is "default".
-func (me TxsdSpace) IsDefault () bool { return me == "default" }
+//	Since TxsdSpace is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdSpace) SetFromString (s string)  { (*xsdt.NCName)(me).SetFromString(s) }
 
 //	Since TxsdSpace is just a simple String type, this merely returns the current string value.
 func (me TxsdSpace) String () string { return xsdt.NCName(me).String() }
 
-//	Since TxsdSpace is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdSpace) SetFromString (s string)  { (*xsdt.NCName)(me).SetFromString(s) }
+//	Returns true if the value of this enumerated TxsdSpace is "preserve".
+func (me TxsdSpace) IsPreserve () bool { return me == "preserve" }
 
 //	This convenience method just performs a simple type conversion to TxsdSpace's alias type xsdt.NCName.
 func (me TxsdSpace) ToXsdtNCName () xsdt.NCName { return xsdt.NCName(me) }
 
-//	Returns true if the value of this enumerated TxsdSpace is "preserve".
-func (me TxsdSpace) IsPreserve () bool { return me == "preserve" }
+//	Returns true if the value of this enumerated TxsdSpace is "default".
+func (me TxsdSpace) IsDefault () bool { return me == "default" }
 
 type XsdGoPkgHasAttr_Space struct {
 	Space TxsdSpace `xml:"http://www.w3.org/XML/1998/namespace space,attr"`
@@ -105,14 +107,16 @@ func (me XsdGoPkgHasAttr_Space) SpaceDefault () TxsdSpace { return TxsdSpace("pr
 //	See http://www.w3.org/TR/xmlbase/ for
 //	information about this attribute.
 type XsdGoPkgHasAttr_Base struct {
+//	See http://www.w3.org/TR/xmlbase/ for
+//	information about this attribute.
 	Base xsdt.AnyURI `xml:"http://www.w3.org/XML/1998/namespace base,attr"`
 
 }
 
 type XsdGoPkgHasAtts_SpecialAttrs struct {
-	XsdGoPkgHasAttr_Base
-
 	XsdGoPkgHasAttr_Lang
+
+	XsdGoPkgHasAttr_Base
 
 	XsdGoPkgHasAttr_Space
 

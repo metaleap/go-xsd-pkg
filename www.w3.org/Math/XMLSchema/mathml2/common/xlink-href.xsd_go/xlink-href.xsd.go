@@ -2,7 +2,7 @@
 //		github.com/metaleap/go-xsd
 //	Comments on types and fields (if any) are from the XSD file located at:
 //		www.w3.org/Math/XMLSchema/mathml2/common/xlink-href.xsd
-package gopkg_WwwW3OrgMathXMLSchemaMathml2CommonXlinkHrefXsd
+package go_XlinkHref
 
 //	This schema provides the XLink href attribute for use in the MathML2
 //	schema. Written by Max Froumentin, W3C.

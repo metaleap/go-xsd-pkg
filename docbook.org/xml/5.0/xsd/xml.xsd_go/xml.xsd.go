@@ -2,7 +2,7 @@
 //		github.com/metaleap/go-xsd
 //	Comments on types and fields (if any) are from the XSD file located at:
 //		docbook.org/xml/5.0/xsd/xml.xsd
-package gopkg_DocbookOrgXml50XsdXmlXsd
+package go_Xml
 
 
 
@@ -27,6 +27,9 @@ type XsdGoPkgHasAttr_Base struct {
 
 type TxsdSpace xsdt.Token
 
+//	This convenience method just performs a simple type conversion to TxsdSpace's alias type xsdt.Token.
+func (me TxsdSpace) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
+
 //	Since TxsdSpace is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdSpace) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
 
@@ -35,9 +38,6 @@ func (me TxsdSpace) String () string { return xsdt.Token(me).String() }
 
 //	Returns true if the value of this enumerated TxsdSpace is "preserve".
 func (me TxsdSpace) IsPreserve () bool { return me == "preserve" }
-
-//	This convenience method just performs a simple type conversion to TxsdSpace's alias type xsdt.Token.
-func (me TxsdSpace) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
 
 type XsdGoPkgHasAttr_Space struct {
 	Space TxsdSpace `xml:"http://www.w3.org/XML/1998/namespace space,attr"`
