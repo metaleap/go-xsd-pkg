@@ -31,8 +31,8 @@ type XsdGoPkgHasAttr_Lang struct {
 
 type TxsdSpace xsdt.String
 
-//	Since TxsdSpace is just a simple String type, this merely returns the current string value.
-func (me TxsdSpace) String () string { return xsdt.String(me).String() }
+//	Returns true if the value of this enumerated TxsdSpace is "default".
+func (me TxsdSpace) IsDefault () bool { return me == "default" }
 
 //	Since TxsdSpace is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdSpace) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
@@ -43,8 +43,8 @@ func (me TxsdSpace) ToXsdtString () xsdt.String { return xsdt.String(me) }
 //	Returns true if the value of this enumerated TxsdSpace is "preserve".
 func (me TxsdSpace) IsPreserve () bool { return me == "preserve" }
 
-//	Returns true if the value of this enumerated TxsdSpace is "default".
-func (me TxsdSpace) IsDefault () bool { return me == "default" }
+//	Since TxsdSpace is just a simple String type, this merely returns the current string value.
+func (me TxsdSpace) String () string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasAttr_Space struct {
 	Space TxsdSpace `xml:"http://www.w3.org/XML/1998/namespace space,attr"`
