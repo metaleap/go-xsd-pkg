@@ -17,65 +17,24 @@ import (
 	xsdt "github.com/metaleap/go-xsd/types"
 )
 
-//	The last time the content of the channel changed.
-//	A date-time displayed in RFC-822 format.
-//	Using the regexp definiton of rfc-822 date by Sam Ruby at http://www.intertwingly.net/blog/1360.html
-type TRfc822FormatDate xsdt.String
-
-//	Since TRfc822FormatDate is just a simple String type, this merely sets the current value from the specified string.
-func (me *TRfc822FormatDate) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TRfc822FormatDate is just a simple String type, this merely returns the current string value.
-func (me TRfc822FormatDate) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TRfc822FormatDate's alias type xsdt.String.
-func (me TRfc822FormatDate) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type XsdGoPkgHasElems_lastBuildDatechoicesequenceRssChannelschema_LastBuildDate_TRfc822FormatDate_ struct {
-//	The last time the content of the channel changed.
-	LastBuildDates []TRfc822FormatDate `xml:"lastBuildDate"`
+type XsdGoPkgHasAttr_Version_XsdtDecimal_20 struct {
+	Version xsdt.Decimal `xml:"version,attr"`
 
 }
 
-//	If the W.XsdGoPkgHasElems_lastBuildDatechoicesequenceRssChannelschema_LastBuildDate_TRfc822FormatDate_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_lastBuildDatechoicesequenceRssChannelschema_LastBuildDate_TRfc822FormatDate_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_lastBuildDatechoicesequenceRssChannelschema_LastBuildDate_TRfc822FormatDate_ instance.
-func (me *XsdGoPkgHasElems_lastBuildDatechoicesequenceRssChannelschema_LastBuildDate_TRfc822FormatDate_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_lastBuildDatechoicesequenceRssChannelschema_LastBuildDate_TRfc822FormatDate_; fn != nil { fn(me) }
- }
+//	Returns the fixed value for Version -- "2.0"
+func (me XsdGoPkgHasAttr_Version_XsdtDecimal_20) VersionFixed () xsdt.Decimal { return xsdt.Decimal("2.0") }
 
-//	Email address for person responsible for technical issues relating to channel.
-//	Using the regexp definiton of E-Mail Address by Lucadean from the .NET RegExp Pattern Repository at http://www.3leaf.com/default/NetRegExpRepository.aspx
-type TEmailAddress xsdt.String
-
-//	This convenience method just performs a simple type conversion to TEmailAddress's alias type xsdt.String.
-func (me TEmailAddress) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TEmailAddress is just a simple String type, this merely returns the current string value.
-func (me TEmailAddress) String () string { return xsdt.String(me).String() }
-
-//	Since TEmailAddress is just a simple String type, this merely sets the current value from the specified string.
-func (me *TEmailAddress) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-type XsdGoPkgHasElems_webMasterchoicesequenceRssChannelschema_WebMaster_TEmailAddress_ struct {
-//	Email address for person responsible for technical issues relating to channel.
-	WebMasters []TEmailAddress `xml:"webMaster"`
+//	Phrase or sentence describing the channel.
+type XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_ struct {
+//	Phrase or sentence describing the channel.
+	Descriptions []xsdt.String `xml:"description"`
 
 }
 
-//	If the W.XsdGoPkgHasElems_webMasterchoicesequenceRssChannelschema_WebMaster_TEmailAddress_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_webMasterchoicesequenceRssChannelschema_WebMaster_TEmailAddress_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_webMasterchoicesequenceRssChannelschema_WebMaster_TEmailAddress_ instance.
-func (me *XsdGoPkgHasElems_webMasterchoicesequenceRssChannelschema_WebMaster_TEmailAddress_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_webMasterchoicesequenceRssChannelschema_WebMaster_TEmailAddress_; fn != nil { fn(me) }
- }
-
-//	The language the channel is written in. This allows aggregators to group all Italian language sites, for example, on a single page. A list of allowable values for this element, as provided by Netscape, is here. You may also use values defined by the W3C.
-type XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_ struct {
-//	The language the channel is written in. This allows aggregators to group all Italian language sites, for example, on a single page. A list of allowable values for this element, as provided by Netscape, is here. You may also use values defined by the W3C.
-	Languages []xsdt.Language `xml:"language"`
-
-}
-
-//	If the W.XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_ instance.
-func (me *XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_ instance.
+func (me *XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_; fn != nil { fn(me) }
  }
 
 //	A URL that points to the documentation for the format used in the RSS file. It's probably a pointer to this page. It's for people who might stumble across an RSS file on a Web server 25 years from now and wonder what it is.
@@ -85,21 +44,9 @@ type XsdGoPkgHasElems_docschoicesequenceRssChannelschema_Docs_XsdtAnyURI_ struct
 
 }
 
-//	If the W.XsdGoPkgHasElems_docschoicesequenceRssChannelschema_Docs_XsdtAnyURI_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_docschoicesequenceRssChannelschema_Docs_XsdtAnyURI_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_docschoicesequenceRssChannelschema_Docs_XsdtAnyURI_ instance.
+//	If the WalkHandlers.XsdGoPkgHasElems_docschoicesequenceRssChannelschema_Docs_XsdtAnyURI_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_docschoicesequenceRssChannelschema_Docs_XsdtAnyURI_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_docschoicesequenceRssChannelschema_Docs_XsdtAnyURI_ instance.
 func (me *XsdGoPkgHasElems_docschoicesequenceRssChannelschema_Docs_XsdtAnyURI_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_docschoicesequenceRssChannelschema_Docs_XsdtAnyURI_; fn != nil { fn(me) }
- }
-
-//	Phrase or sentence describing the channel.
-type XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_ struct {
-//	Phrase or sentence describing the channel.
-	Descriptions []xsdt.String `xml:"description"`
-
-}
-
-//	If the W.XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_ instance.
-func (me *XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_; fn != nil { fn(me) }
+	if fn := WalkHandlers.XsdGoPkgHasElems_docschoicesequenceRssChannelschema_Docs_XsdtAnyURI_; fn != nil { fn(me) }
  }
 
 //	The name of the channel. It's how people refer to your service. If you have an HTML website that contains the same information as your RSS file, the title of your channel should be the same as the title of your website.
@@ -109,254 +56,13 @@ type XsdGoPkgHasElems_titlechoicesequenceRssChannelschema_Title_XsdtString_ stru
 
 }
 
-//	If the W.XsdGoPkgHasElems_titlechoicesequenceRssChannelschema_Title_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_titlechoicesequenceRssChannelschema_Title_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_titlechoicesequenceRssChannelschema_Title_XsdtString_ instance.
+//	If the WalkHandlers.XsdGoPkgHasElems_titlechoicesequenceRssChannelschema_Title_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_titlechoicesequenceRssChannelschema_Title_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_titlechoicesequenceRssChannelschema_Title_XsdtString_ instance.
 func (me *XsdGoPkgHasElems_titlechoicesequenceRssChannelschema_Title_XsdtString_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_titlechoicesequenceRssChannelschema_Title_XsdtString_; fn != nil { fn(me) }
- }
-
-//	A hint for aggregators telling them which hours they can skip.
-//	A time in GMT when aggregators should not request the channel data. The hour beginning at midnight is hour zero.
-type TSkipHour xsdt.NonNegativeInteger
-
-//	This convenience method just performs a simple type conversion to TSkipHour's alias type xsdt.NonNegativeInteger.
-func (me TSkipHour) ToXsdtNonNegativeInteger () xsdt.NonNegativeInteger { return xsdt.NonNegativeInteger(me) }
-
-//	Returns a string representation of this TSkipHour's current non-string scalar value.
-func (me TSkipHour) String () string { return xsdt.NonNegativeInteger(me).String() }
-
-//	Since TSkipHour is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
-func (me *TSkipHour) SetFromString (s string)  { (*xsdt.NonNegativeInteger)(me).SetFromString(s) }
-
-type XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_ struct {
-	Hours []TSkipHour `xml:"hour"`
-
-}
-
-//	If the W.XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_ instance.
-func (me *XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_; fn != nil { fn(me) }
- }
-
-type TSkipHoursList struct {
-	XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_
-
-}
-
-//	If the W.TSkipHoursList function is not nil (ie. was set by outside code), calls it with this TSkipHoursList instance as the single argument. Then calls the Walk() method on 1/1 embed(s) and 0/0 field(s) belonging to this TSkipHoursList instance.
-func (me *TSkipHoursList) Walk ()  { 
-	if fn := W.TSkipHoursList; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_.Walk()
- }
-
-type XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_ struct {
-//	A hint for aggregators telling them which hours they can skip.
-	SkipHourses []*TSkipHoursList `xml:"skipHours"`
-
-}
-
-//	If the W.XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_ instance.
-func (me *XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_; fn != nil { fn(me) }
-	for _, x := range me.SkipHourses { x.Walk() }
- }
-
-//	The publication date for the content in the channel. All date-times in RSS conform to the Date and Time Specification of RFC 822, with the exception that the year may be expressed with two characters or four characters (four preferred).
-type XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_ struct {
-//	The publication date for the content in the channel. All date-times in RSS conform to the Date and Time Specification of RFC 822, with the exception that the year may be expressed with two characters or four characters (four preferred).
-	PubDates []TRfc822FormatDate `xml:"pubDate"`
-
-}
-
-//	If the W.XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_ instance.
-func (me *XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_; fn != nil { fn(me) }
- }
-
-//	A string indicating the program used to generate the channel.
-type XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_ struct {
-//	A string indicating the program used to generate the channel.
-	Generators []xsdt.String `xml:"generator"`
-
-}
-
-//	If the W.XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_ instance.
-func (me *XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_; fn != nil { fn(me) }
- }
-
-//	ttl stands for time to live. It's a number of minutes that indicates how long a channel can be cached before refreshing from the source.
-type XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_ struct {
-//	ttl stands for time to live. It's a number of minutes that indicates how long a channel can be cached before refreshing from the source.
-	Ttls []xsdt.NonNegativeInteger `xml:"ttl"`
-
-}
-
-//	If the W.XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_ instance.
-func (me *XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_; fn != nil { fn(me) }
- }
-
-//	Specifies a GIF, JPEG or PNG image that can be displayed with the channel.
-//	The height of the image in pixels.
-//	The height of the image in pixels.
-type TImageHeight xsdt.PositiveInteger
-
-//	Returns a string representation of this TImageHeight's current non-string scalar value.
-func (me TImageHeight) String () string { return xsdt.PositiveInteger(me).String() }
-
-//	Since TImageHeight is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
-func (me *TImageHeight) SetFromString (s string)  { (*xsdt.PositiveInteger)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TImageHeight's alias type xsdt.PositiveInteger.
-func (me TImageHeight) ToXsdtPositiveInteger () xsdt.PositiveInteger { return xsdt.PositiveInteger(me) }
-
-type XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31 struct {
-//	The height of the image in pixels.
-	Height TImageHeight `xml:"height"`
-
-}
-
-//	Returns the default value for Height -- 31
-func (me XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31) HeightDefault () TImageHeight { return TImageHeight(31) }
-
-//	If the W.XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31 function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31 instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31 instance.
-func (me *XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31) Walk ()  { 
-	if fn := W.XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31; fn != nil { fn(me) }
- }
-
-//	The URL of the image file.
-type XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_ struct {
-//	The URL of the image file.
-	Url xsdt.AnyURI `xml:"url"`
-
-}
-
-//	If the W.XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_ instance.
-func (me *XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_; fn != nil { fn(me) }
- }
-
-//	Text that is included in the TITLE attribute of the link formed around the image in the HTML rendering.
-type XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_ struct {
-//	Text that is included in the TITLE attribute of the link formed around the image in the HTML rendering.
-	Description xsdt.String `xml:"description"`
-
-}
-
-//	If the W.XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_ instance.
-func (me *XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_; fn != nil { fn(me) }
- }
-
-//	Describes the image, it's used in the ALT attribute of the HTML <img> tag when the channel is rendered in HTML.
-type XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_ struct {
-//	Describes the image, it's used in the ALT attribute of the HTML <img> tag when the channel is rendered in HTML.
-	Title xsdt.String `xml:"title"`
-
-}
-
-//	If the W.XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_ instance.
-func (me *XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_; fn != nil { fn(me) }
- }
-
-//	The width of the image in pixels.
-//	The width of the image in pixels.
-type TImageWidth xsdt.PositiveInteger
-
-//	Returns a string representation of this TImageWidth's current non-string scalar value.
-func (me TImageWidth) String () string { return xsdt.PositiveInteger(me).String() }
-
-//	This convenience method just performs a simple type conversion to TImageWidth's alias type xsdt.PositiveInteger.
-func (me TImageWidth) ToXsdtPositiveInteger () xsdt.PositiveInteger { return xsdt.PositiveInteger(me) }
-
-//	Since TImageWidth is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
-func (me *TImageWidth) SetFromString (s string)  { (*xsdt.PositiveInteger)(me).SetFromString(s) }
-
-type XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88 struct {
-//	The width of the image in pixels.
-	Width TImageWidth `xml:"width"`
-
-}
-
-//	Returns the default value for Width -- 88
-func (me XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88) WidthDefault () TImageWidth { return TImageWidth(88) }
-
-//	If the W.XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88 function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88 instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88 instance.
-func (me *XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88) Walk ()  { 
-	if fn := W.XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88; fn != nil { fn(me) }
- }
-
-//	The URL of the site, when the channel is rendered, the image is a link to the site. (Note, in practice the image <title> and <link> should have the same value as the channel's <title> and <link>.
-type XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_ struct {
-//	The URL of the site, when the channel is rendered, the image is a link to the site. (Note, in practice the image <title> and <link> should have the same value as the channel's <title> and <link>.
-	Link xsdt.AnyURI `xml:"link"`
-
-}
-
-//	If the W.XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_ instance.
-func (me *XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_; fn != nil { fn(me) }
- }
-
-type TImage struct {
-//	The URL of the image file.
-	XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_
-
-//	Text that is included in the TITLE attribute of the link formed around the image in the HTML rendering.
-	XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_
-
-//	Describes the image, it's used in the ALT attribute of the HTML <img> tag when the channel is rendered in HTML.
-	XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_
-
-//	The width of the image in pixels.
-	XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88
-
-//	The URL of the site, when the channel is rendered, the image is a link to the site. (Note, in practice the image <title> and <link> should have the same value as the channel's <title> and <link>.
-	XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_
-
-//	The height of the image in pixels.
-	XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31
-
-}
-
-//	If the W.TImage function is not nil (ie. was set by outside code), calls it with this TImage instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this TImage instance.
-func (me *TImage) Walk ()  { 
-	if fn := W.TImage; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_.Walk()
-	me.XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31.Walk()
-	me.XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_.Walk()
-	me.XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_.Walk()
-	me.XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_.Walk()
-	me.XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88.Walk()
- }
-
-type XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_ struct {
-//	Specifies a GIF, JPEG or PNG image that can be displayed with the channel.
-	Images []*TImage `xml:"image"`
-
-}
-
-//	If the W.XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_ instance.
-func (me *XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_; fn != nil { fn(me) }
-	for _, x := range me.Images { x.Walk() }
+	if fn := WalkHandlers.XsdGoPkgHasElems_titlechoicesequenceRssChannelschema_Title_XsdtString_; fn != nil { fn(me) }
  }
 
 //	Specifies a text input box that can be displayed with the channel.
 //	The purpose of this element is something of a mystery! You can use it to specify a search engine box. Or to allow a reader to provide feedback. Most aggregators ignore it.
-//	The label of the Submit button in the text input area.
-type XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_ struct {
-//	The label of the Submit button in the text input area.
-	Title xsdt.String `xml:"title"`
-
-}
-
-//	If the W.XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_ instance.
-func (me *XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_; fn != nil { fn(me) }
- }
-
 //	Explains the text input area.
 type XsdGoPkgHasElem_descriptionallTextInputschema_Description_XsdtString_ struct {
 //	Explains the text input area.
@@ -364,9 +70,21 @@ type XsdGoPkgHasElem_descriptionallTextInputschema_Description_XsdtString_ struc
 
 }
 
-//	If the W.XsdGoPkgHasElem_descriptionallTextInputschema_Description_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_descriptionallTextInputschema_Description_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_descriptionallTextInputschema_Description_XsdtString_ instance.
+//	If the WalkHandlers.XsdGoPkgHasElem_descriptionallTextInputschema_Description_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_descriptionallTextInputschema_Description_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_descriptionallTextInputschema_Description_XsdtString_ instance.
 func (me *XsdGoPkgHasElem_descriptionallTextInputschema_Description_XsdtString_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElem_descriptionallTextInputschema_Description_XsdtString_; fn != nil { fn(me) }
+	if fn := WalkHandlers.XsdGoPkgHasElem_descriptionallTextInputschema_Description_XsdtString_; fn != nil { fn(me) }
+ }
+
+//	The label of the Submit button in the text input area.
+type XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_ struct {
+//	The label of the Submit button in the text input area.
+	Title xsdt.String `xml:"title"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_ instance.
+func (me *XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_; fn != nil { fn(me) }
  }
 
 //	The name of the text object in the text input area.
@@ -376,9 +94,9 @@ type XsdGoPkgHasElem_nameallTextInputschema_Name_XsdtString_ struct {
 
 }
 
-//	If the W.XsdGoPkgHasElem_nameallTextInputschema_Name_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_nameallTextInputschema_Name_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_nameallTextInputschema_Name_XsdtString_ instance.
+//	If the WalkHandlers.XsdGoPkgHasElem_nameallTextInputschema_Name_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_nameallTextInputschema_Name_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_nameallTextInputschema_Name_XsdtString_ instance.
 func (me *XsdGoPkgHasElem_nameallTextInputschema_Name_XsdtString_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElem_nameallTextInputschema_Name_XsdtString_; fn != nil { fn(me) }
+	if fn := WalkHandlers.XsdGoPkgHasElem_nameallTextInputschema_Name_XsdtString_; fn != nil { fn(me) }
  }
 
 //	The URL of the CGI script that processes text input requests.
@@ -388,14 +106,14 @@ type XsdGoPkgHasElem_linkallTextInputschema_Link_XsdtAnyURI_ struct {
 
 }
 
-//	If the W.XsdGoPkgHasElem_linkallTextInputschema_Link_XsdtAnyURI_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_linkallTextInputschema_Link_XsdtAnyURI_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_linkallTextInputschema_Link_XsdtAnyURI_ instance.
+//	If the WalkHandlers.XsdGoPkgHasElem_linkallTextInputschema_Link_XsdtAnyURI_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_linkallTextInputschema_Link_XsdtAnyURI_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_linkallTextInputschema_Link_XsdtAnyURI_ instance.
 func (me *XsdGoPkgHasElem_linkallTextInputschema_Link_XsdtAnyURI_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElem_linkallTextInputschema_Link_XsdtAnyURI_; fn != nil { fn(me) }
+	if fn := WalkHandlers.XsdGoPkgHasElem_linkallTextInputschema_Link_XsdtAnyURI_; fn != nil { fn(me) }
  }
 
 type TextInput struct {
-//	Explains the text input area.
-	XsdGoPkgHasElem_descriptionallTextInputschema_Description_XsdtString_
+//	The label of the Submit button in the text input area.
+	XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_
 
 //	The name of the text object in the text input area.
 	XsdGoPkgHasElem_nameallTextInputschema_Name_XsdtString_
@@ -403,18 +121,18 @@ type TextInput struct {
 //	The URL of the CGI script that processes text input requests.
 	XsdGoPkgHasElem_linkallTextInputschema_Link_XsdtAnyURI_
 
-//	The label of the Submit button in the text input area.
-	XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_
+//	Explains the text input area.
+	XsdGoPkgHasElem_descriptionallTextInputschema_Description_XsdtString_
 
 }
 
-//	If the W.TextInput function is not nil (ie. was set by outside code), calls it with this TextInput instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TextInput instance.
+//	If the WalkHandlers.TextInput function is not nil (ie. was set by outside code), calls it with this TextInput instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TextInput instance.
 func (me *TextInput) Walk ()  { 
-	if fn := W.TextInput; fn != nil { fn(me) }
+	if fn := WalkHandlers.TextInput; fn != nil { fn(me) }
 	me.XsdGoPkgHasElem_descriptionallTextInputschema_Description_XsdtString_.Walk()
+	me.XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_.Walk()
 	me.XsdGoPkgHasElem_nameallTextInputschema_Name_XsdtString_.Walk()
 	me.XsdGoPkgHasElem_linkallTextInputschema_Link_XsdtAnyURI_.Walk()
-	me.XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_.Walk()
  }
 
 type XsdGoPkgHasElems_textInputchoicesequenceRssChannelschema_TextInput_TextInput_ struct {
@@ -423,10 +141,159 @@ type XsdGoPkgHasElems_textInputchoicesequenceRssChannelschema_TextInput_TextInpu
 
 }
 
-//	If the W.XsdGoPkgHasElems_textInputchoicesequenceRssChannelschema_TextInput_TextInput_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_textInputchoicesequenceRssChannelschema_TextInput_TextInput_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_textInputchoicesequenceRssChannelschema_TextInput_TextInput_ instance.
+//	If the WalkHandlers.XsdGoPkgHasElems_textInputchoicesequenceRssChannelschema_TextInput_TextInput_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_textInputchoicesequenceRssChannelschema_TextInput_TextInput_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_textInputchoicesequenceRssChannelschema_TextInput_TextInput_ instance.
 func (me *XsdGoPkgHasElems_textInputchoicesequenceRssChannelschema_TextInput_TextInput_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_textInputchoicesequenceRssChannelschema_TextInput_TextInput_; fn != nil { fn(me) }
+	if fn := WalkHandlers.XsdGoPkgHasElems_textInputchoicesequenceRssChannelschema_TextInput_TextInput_; fn != nil { fn(me) }
 	for _, x := range me.TextInputs { x.Walk() }
+ }
+
+//	Specify one or more categories that the channel belongs to.
+type XsdGoPkgHasAttr_Domain_XsdtString_ struct {
+	Domain xsdt.String `xml:"domain,attr"`
+
+}
+
+type TCategory struct {
+	XsdGoPkgValue xsdt.String `xml:",chardata"`
+
+	XsdGoPkgHasAttr_Domain_XsdtString_
+
+}
+
+//	If the WalkHandlers.TCategory function is not nil (ie. was set by outside code), calls it with this TCategory instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/1 field(s) belonging to this TCategory instance.
+func (me *TCategory) Walk ()  { 
+	if fn := WalkHandlers.TCategory; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_ struct {
+//	Specify one or more categories that the channel belongs to.
+	Categories []*TCategory `xml:"category"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_ instance.
+func (me *XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_; fn != nil { fn(me) }
+	for _, x := range me.Categories { x.Walk() }
+ }
+
+//	A hint for aggregators telling them which days they can skip.
+//	A time in GMT, when aggregators should not request the channel data. The hour beginning at midnight is hour zero.
+//	A day when aggregators should not request the channel data.
+type TSkipDay xsdt.String
+
+//	Returns true if the value of this enumerated TSkipDay is "Wednesday".
+func (me TSkipDay) IsWednesday () bool { return me == "Wednesday" }
+
+//	Since TSkipDay is just a simple String type, this merely sets the current value from the specified string.
+func (me *TSkipDay) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TSkipDay is "Sunday".
+func (me TSkipDay) IsSunday () bool { return me == "Sunday" }
+
+//	Returns true if the value of this enumerated TSkipDay is "Saturday".
+func (me TSkipDay) IsSaturday () bool { return me == "Saturday" }
+
+//	Returns true if the value of this enumerated TSkipDay is "Thursday".
+func (me TSkipDay) IsThursday () bool { return me == "Thursday" }
+
+//	Since TSkipDay is just a simple String type, this merely returns the current string value.
+func (me TSkipDay) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TSkipDay is "Monday".
+func (me TSkipDay) IsMonday () bool { return me == "Monday" }
+
+//	Returns true if the value of this enumerated TSkipDay is "Friday".
+func (me TSkipDay) IsFriday () bool { return me == "Friday" }
+
+//	This convenience method just performs a simple type conversion to TSkipDay's alias type xsdt.String.
+func (me TSkipDay) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TSkipDay is "Tuesday".
+func (me TSkipDay) IsTuesday () bool { return me == "Tuesday" }
+
+type XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_ struct {
+//	A time in GMT, when aggregators should not request the channel data. The hour beginning at midnight is hour zero.
+	Days []TSkipDay `xml:"day"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_ instance.
+func (me *XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_; fn != nil { fn(me) }
+ }
+
+type TSkipDaysList struct {
+//	A time in GMT, when aggregators should not request the channel data. The hour beginning at midnight is hour zero.
+	XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_
+
+}
+
+//	If the WalkHandlers.TSkipDaysList function is not nil (ie. was set by outside code), calls it with this TSkipDaysList instance as the single argument. Then calls the Walk() method on 1/1 embed(s) and 0/0 field(s) belonging to this TSkipDaysList instance.
+func (me *TSkipDaysList) Walk ()  { 
+	if fn := WalkHandlers.TSkipDaysList; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_.Walk()
+ }
+
+type XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_ struct {
+//	A hint for aggregators telling them which days they can skip.
+	SkipDayses []*TSkipDaysList `xml:"skipDays"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_ instance.
+func (me *XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_; fn != nil { fn(me) }
+	for _, x := range me.SkipDayses { x.Walk() }
+ }
+
+//	The publication date for the content in the channel. All date-times in RSS conform to the Date and Time Specification of RFC 822, with the exception that the year may be expressed with two characters or four characters (four preferred).
+//	A date-time displayed in RFC-822 format.
+//	Using the regexp definiton of rfc-822 date by Sam Ruby at http://www.intertwingly.net/blog/1360.html
+type TRfc822FormatDate xsdt.String
+
+//	Since TRfc822FormatDate is just a simple String type, this merely returns the current string value.
+func (me TRfc822FormatDate) String () string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TRfc822FormatDate's alias type xsdt.String.
+func (me TRfc822FormatDate) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TRfc822FormatDate is just a simple String type, this merely sets the current value from the specified string.
+func (me *TRfc822FormatDate) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+type XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_ struct {
+//	The publication date for the content in the channel. All date-times in RSS conform to the Date and Time Specification of RFC 822, with the exception that the year may be expressed with two characters or four characters (four preferred).
+	PubDates []TRfc822FormatDate `xml:"pubDate"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_ instance.
+func (me *XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_; fn != nil { fn(me) }
+ }
+
+//	Email address for person responsible for technical issues relating to channel.
+//	Using the regexp definiton of E-Mail Address by Lucadean from the .NET RegExp Pattern Repository at http://www.3leaf.com/default/NetRegExpRepository.aspx
+type TEmailAddress xsdt.String
+
+//	Since TEmailAddress is just a simple String type, this merely returns the current string value.
+func (me TEmailAddress) String () string { return xsdt.String(me).String() }
+
+//	Since TEmailAddress is just a simple String type, this merely sets the current value from the specified string.
+func (me *TEmailAddress) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TEmailAddress's alias type xsdt.String.
+func (me TEmailAddress) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+type XsdGoPkgHasElems_webMasterchoicesequenceRssChannelschema_WebMaster_TEmailAddress_ struct {
+//	Email address for person responsible for technical issues relating to channel.
+	WebMasters []TEmailAddress `xml:"webMaster"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_webMasterchoicesequenceRssChannelschema_WebMaster_TEmailAddress_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_webMasterchoicesequenceRssChannelschema_WebMaster_TEmailAddress_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_webMasterchoicesequenceRssChannelschema_WebMaster_TEmailAddress_ instance.
+func (me *XsdGoPkgHasElems_webMasterchoicesequenceRssChannelschema_WebMaster_TEmailAddress_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_webMasterchoicesequenceRssChannelschema_WebMaster_TEmailAddress_; fn != nil { fn(me) }
  }
 
 //	Allows processes to register with a cloud to be notified of updates to the channel, implementing a lightweight publish-subscribe protocol for RSS feeds.
@@ -436,22 +303,27 @@ type XsdGoPkgHasAttr_Path_XsdtString_ struct {
 
 }
 
-type TCloudProtocol xsdt.String
+type XsdGoPkgHasAttr_RegisterProcedure_XsdtString_ struct {
+	RegisterProcedure xsdt.String `xml:"registerProcedure,attr"`
 
-//	Since TCloudProtocol is just a simple String type, this merely sets the current value from the specified string.
-func (me *TCloudProtocol) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+}
+
+type TCloudProtocol xsdt.String
 
 //	Returns true if the value of this enumerated TCloudProtocol is "http-post".
 func (me TCloudProtocol) IsHttpPost () bool { return me == "http-post" }
 
-//	This convenience method just performs a simple type conversion to TCloudProtocol's alias type xsdt.String.
-func (me TCloudProtocol) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	Since TCloudProtocol is just a simple String type, this merely returns the current string value.
+func (me TCloudProtocol) String () string { return xsdt.String(me).String() }
 
 //	Returns true if the value of this enumerated TCloudProtocol is "xml-rpc".
 func (me TCloudProtocol) IsXmlRpc () bool { return me == "xml-rpc" }
 
-//	Since TCloudProtocol is just a simple String type, this merely returns the current string value.
-func (me TCloudProtocol) String () string { return xsdt.String(me).String() }
+//	This convenience method just performs a simple type conversion to TCloudProtocol's alias type xsdt.String.
+func (me TCloudProtocol) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TCloudProtocol is just a simple String type, this merely sets the current value from the specified string.
+func (me *TCloudProtocol) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 //	Returns true if the value of this enumerated TCloudProtocol is "soap".
 func (me TCloudProtocol) IsSoap () bool { return me == "soap" }
@@ -461,27 +333,17 @@ type XsdGoPkgHasAttr_Protocol_TCloudProtocol_ struct {
 
 }
 
-type XsdGoPkgHasAttr_RegisterProcedure_XsdtString_ struct {
-	RegisterProcedure xsdt.String `xml:"registerProcedure,attr"`
-
-}
-
 type XsdGoPkgHasAttr_Port_XsdtPositiveInteger_ struct {
 	Port xsdt.PositiveInteger `xml:"port,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Domain_XsdtString_ struct {
-	Domain xsdt.String `xml:"domain,attr"`
 
 }
 
 type TCloud struct {
 	XsdGoPkgHasAttr_Path_XsdtString_
 
-	XsdGoPkgHasAttr_Protocol_TCloudProtocol_
-
 	XsdGoPkgHasAttr_RegisterProcedure_XsdtString_
+
+	XsdGoPkgHasAttr_Protocol_TCloudProtocol_
 
 	XsdGoPkgHasAttr_Port_XsdtPositiveInteger_
 
@@ -489,9 +351,9 @@ type TCloud struct {
 
 }
 
-//	If the W.TCloud function is not nil (ie. was set by outside code), calls it with this TCloud instance as the single argument. Then calls the Walk() method on 0/5 embed(s) and 0/0 field(s) belonging to this TCloud instance.
+//	If the WalkHandlers.TCloud function is not nil (ie. was set by outside code), calls it with this TCloud instance as the single argument. Then calls the Walk() method on 0/5 embed(s) and 0/0 field(s) belonging to this TCloud instance.
 func (me *TCloud) Walk ()  { 
-	if fn := W.TCloud; fn != nil { fn(me) }
+	if fn := WalkHandlers.TCloud; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElems_cloudchoicesequenceRssChannelschema_Cloud_TCloud_ struct {
@@ -500,23 +362,59 @@ type XsdGoPkgHasElems_cloudchoicesequenceRssChannelschema_Cloud_TCloud_ struct {
 
 }
 
-//	If the W.XsdGoPkgHasElems_cloudchoicesequenceRssChannelschema_Cloud_TCloud_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_cloudchoicesequenceRssChannelschema_Cloud_TCloud_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_cloudchoicesequenceRssChannelschema_Cloud_TCloud_ instance.
+//	If the WalkHandlers.XsdGoPkgHasElems_cloudchoicesequenceRssChannelschema_Cloud_TCloud_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_cloudchoicesequenceRssChannelschema_Cloud_TCloud_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_cloudchoicesequenceRssChannelschema_Cloud_TCloud_ instance.
 func (me *XsdGoPkgHasElems_cloudchoicesequenceRssChannelschema_Cloud_TCloud_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_cloudchoicesequenceRssChannelschema_Cloud_TCloud_; fn != nil { fn(me) }
+	if fn := WalkHandlers.XsdGoPkgHasElems_cloudchoicesequenceRssChannelschema_Cloud_TCloud_; fn != nil { fn(me) }
 	for _, x := range me.Clouds { x.Walk() }
  }
 
-//	An item may represent a "story" -- much like a story in a newspaper or magazine; if so its description is a synopsis of the story, and the link points to the full story. An item may also be complete in itself, if so, the description contains the text (entity-encoded HTML is allowed), and the link and title may be omitted.
-//	Email address of the author of the item.
-type XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_ struct {
-//	Email address of the author of the item.
-	Authors []TEmailAddress `xml:"author"`
+//	Copyright notice for content in the channel.
+type XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_ struct {
+//	Copyright notice for content in the channel.
+	Copyrights []xsdt.String `xml:"copyright"`
 
 }
 
-//	If the W.XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_ instance.
-func (me *XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_ instance.
+func (me *XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_; fn != nil { fn(me) }
+ }
+
+//	Email address for person responsible for editorial content.
+type XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_ struct {
+//	Email address for person responsible for editorial content.
+	ManagingEditors []TEmailAddress `xml:"managingEditor"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_ instance.
+func (me *XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_; fn != nil { fn(me) }
+ }
+
+//	An item may represent a "story" -- much like a story in a newspaper or magazine; if so its description is a synopsis of the story, and the link points to the full story. An item may also be complete in itself, if so, the description contains the text (entity-encoded HTML is allowed), and the link and title may be omitted.
+//	The title of the item.
+type XsdGoPkgHasElems_titlechoicesequenceRssItemschema_Title_XsdtString_ struct {
+//	The title of the item.
+	Titles []xsdt.String `xml:"title"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_titlechoicesequenceRssItemschema_Title_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_titlechoicesequenceRssItemschema_Title_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_titlechoicesequenceRssItemschema_Title_XsdtString_ instance.
+func (me *XsdGoPkgHasElems_titlechoicesequenceRssItemschema_Title_XsdtString_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_titlechoicesequenceRssItemschema_Title_XsdtString_; fn != nil { fn(me) }
+ }
+
+//	The URL of the item.
+type XsdGoPkgHasElems_linkchoicesequenceRssItemschema_Link_XsdtAnyURI_ struct {
+//	The URL of the item.
+	Links []xsdt.AnyURI `xml:"link"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_linkchoicesequenceRssItemschema_Link_XsdtAnyURI_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_linkchoicesequenceRssItemschema_Link_XsdtAnyURI_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_linkchoicesequenceRssItemschema_Link_XsdtAnyURI_ instance.
+func (me *XsdGoPkgHasElems_linkchoicesequenceRssItemschema_Link_XsdtAnyURI_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_linkchoicesequenceRssItemschema_Link_XsdtAnyURI_; fn != nil { fn(me) }
  }
 
 //	guid or permalink URL for this entry
@@ -535,9 +433,9 @@ type TGuid struct {
 
 }
 
-//	If the W.TGuid function is not nil (ie. was set by outside code), calls it with this TGuid instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/1 field(s) belonging to this TGuid instance.
+//	If the WalkHandlers.TGuid function is not nil (ie. was set by outside code), calls it with this TGuid instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/1 field(s) belonging to this TGuid instance.
 func (me *TGuid) Walk ()  { 
-	if fn := W.TGuid; fn != nil { fn(me) }
+	if fn := WalkHandlers.TGuid; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElems_guidchoicesequenceRssItemschema_Guid_TGuid_ struct {
@@ -546,10 +444,34 @@ type XsdGoPkgHasElems_guidchoicesequenceRssItemschema_Guid_TGuid_ struct {
 
 }
 
-//	If the W.XsdGoPkgHasElems_guidchoicesequenceRssItemschema_Guid_TGuid_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_guidchoicesequenceRssItemschema_Guid_TGuid_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_guidchoicesequenceRssItemschema_Guid_TGuid_ instance.
+//	If the WalkHandlers.XsdGoPkgHasElems_guidchoicesequenceRssItemschema_Guid_TGuid_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_guidchoicesequenceRssItemschema_Guid_TGuid_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_guidchoicesequenceRssItemschema_Guid_TGuid_ instance.
 func (me *XsdGoPkgHasElems_guidchoicesequenceRssItemschema_Guid_TGuid_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_guidchoicesequenceRssItemschema_Guid_TGuid_; fn != nil { fn(me) }
+	if fn := WalkHandlers.XsdGoPkgHasElems_guidchoicesequenceRssItemschema_Guid_TGuid_; fn != nil { fn(me) }
 	for _, x := range me.Guids { x.Walk() }
+ }
+
+//	Email address of the author of the item.
+type XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_ struct {
+//	Email address of the author of the item.
+	Authors []TEmailAddress `xml:"author"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_ instance.
+func (me *XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_; fn != nil { fn(me) }
+ }
+
+//	URL of a page for comments relating to the item.
+type XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_ struct {
+//	URL of a page for comments relating to the item.
+	Commentses []xsdt.AnyURI `xml:"comments"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_ instance.
+func (me *XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_; fn != nil { fn(me) }
  }
 
 //	Describes a media object that is attached to the item.
@@ -586,9 +508,9 @@ type TEnclosure struct {
 
 }
 
-//	If the W.TEnclosure function is not nil (ie. was set by outside code), calls it with this TEnclosure instance as the single argument. Then calls the Walk() method on 0/3 embed(s) and 0/1 field(s) belonging to this TEnclosure instance.
+//	If the WalkHandlers.TEnclosure function is not nil (ie. was set by outside code), calls it with this TEnclosure instance as the single argument. Then calls the Walk() method on 0/3 embed(s) and 0/1 field(s) belonging to this TEnclosure instance.
 func (me *TEnclosure) Walk ()  { 
-	if fn := W.TEnclosure; fn != nil { fn(me) }
+	if fn := WalkHandlers.TEnclosure; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_ struct {
@@ -597,10 +519,35 @@ type XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_
 
 }
 
-//	If the W.XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_ instance.
+//	If the WalkHandlers.XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_ instance.
 func (me *XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_; fn != nil { fn(me) }
+	if fn := WalkHandlers.XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_; fn != nil { fn(me) }
 	for _, x := range me.Enclosures { x.Walk() }
+ }
+
+//	Indicates when the item was published.
+type XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_ struct {
+//	Indicates when the item was published.
+	PubDates []TRfc822FormatDate `xml:"pubDate"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_ instance.
+func (me *XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_; fn != nil { fn(me) }
+ }
+
+//	Includes the item in one or more categories.
+type XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_ struct {
+//	Includes the item in one or more categories.
+	Categories []*TCategory `xml:"category"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_ instance.
+func (me *XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_; fn != nil { fn(me) }
+	for _, x := range me.Categories { x.Walk() }
  }
 
 //	The RSS channel that the item came from.
@@ -611,9 +558,9 @@ type TSource struct {
 
 }
 
-//	If the W.TSource function is not nil (ie. was set by outside code), calls it with this TSource instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/1 field(s) belonging to this TSource instance.
+//	If the WalkHandlers.TSource function is not nil (ie. was set by outside code), calls it with this TSource instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/1 field(s) belonging to this TSource instance.
 func (me *TSource) Walk ()  { 
-	if fn := W.TSource; fn != nil { fn(me) }
+	if fn := WalkHandlers.TSource; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_ struct {
@@ -622,71 +569,10 @@ type XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_ struct {
 
 }
 
-//	If the W.XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_ instance.
+//	If the WalkHandlers.XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_ instance.
 func (me *XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_; fn != nil { fn(me) }
+	if fn := WalkHandlers.XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_; fn != nil { fn(me) }
 	for _, x := range me.Sources { x.Walk() }
- }
-
-//	Includes the item in one or more categories.
-type TCategory struct {
-	XsdGoPkgValue xsdt.String `xml:",chardata"`
-
-	XsdGoPkgHasAttr_Domain_XsdtString_
-
-}
-
-//	If the W.TCategory function is not nil (ie. was set by outside code), calls it with this TCategory instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/1 field(s) belonging to this TCategory instance.
-func (me *TCategory) Walk ()  { 
-	if fn := W.TCategory; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_ struct {
-//	Includes the item in one or more categories.
-	Categories []*TCategory `xml:"category"`
-
-}
-
-//	If the W.XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_ instance.
-func (me *XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_; fn != nil { fn(me) }
-	for _, x := range me.Categories { x.Walk() }
- }
-
-//	URL of a page for comments relating to the item.
-type XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_ struct {
-//	URL of a page for comments relating to the item.
-	Commentses []xsdt.AnyURI `xml:"comments"`
-
-}
-
-//	If the W.XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_ instance.
-func (me *XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_; fn != nil { fn(me) }
- }
-
-//	The title of the item.
-type XsdGoPkgHasElems_titlechoicesequenceRssItemschema_Title_XsdtString_ struct {
-//	The title of the item.
-	Titles []xsdt.String `xml:"title"`
-
-}
-
-//	If the W.XsdGoPkgHasElems_titlechoicesequenceRssItemschema_Title_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_titlechoicesequenceRssItemschema_Title_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_titlechoicesequenceRssItemschema_Title_XsdtString_ instance.
-func (me *XsdGoPkgHasElems_titlechoicesequenceRssItemschema_Title_XsdtString_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_titlechoicesequenceRssItemschema_Title_XsdtString_; fn != nil { fn(me) }
- }
-
-//	The URL of the item.
-type XsdGoPkgHasElems_linkchoicesequenceRssItemschema_Link_XsdtAnyURI_ struct {
-//	The URL of the item.
-	Links []xsdt.AnyURI `xml:"link"`
-
-}
-
-//	If the W.XsdGoPkgHasElems_linkchoicesequenceRssItemschema_Link_XsdtAnyURI_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_linkchoicesequenceRssItemschema_Link_XsdtAnyURI_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_linkchoicesequenceRssItemschema_Link_XsdtAnyURI_ instance.
-func (me *XsdGoPkgHasElems_linkchoicesequenceRssItemschema_Link_XsdtAnyURI_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_linkchoicesequenceRssItemschema_Link_XsdtAnyURI_; fn != nil { fn(me) }
  }
 
 //	The item synopsis.
@@ -696,69 +582,57 @@ type XsdGoPkgHasElems_descriptionchoicesequenceRssItemschema_Description_XsdtStr
 
 }
 
-//	If the W.XsdGoPkgHasElems_descriptionchoicesequenceRssItemschema_Description_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_descriptionchoicesequenceRssItemschema_Description_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_descriptionchoicesequenceRssItemschema_Description_XsdtString_ instance.
+//	If the WalkHandlers.XsdGoPkgHasElems_descriptionchoicesequenceRssItemschema_Description_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_descriptionchoicesequenceRssItemschema_Description_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_descriptionchoicesequenceRssItemschema_Description_XsdtString_ instance.
 func (me *XsdGoPkgHasElems_descriptionchoicesequenceRssItemschema_Description_XsdtString_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_descriptionchoicesequenceRssItemschema_Description_XsdtString_; fn != nil { fn(me) }
- }
-
-//	Indicates when the item was published.
-type XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_ struct {
-//	Indicates when the item was published.
-	PubDates []TRfc822FormatDate `xml:"pubDate"`
-
-}
-
-//	If the W.XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_ instance.
-func (me *XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_; fn != nil { fn(me) }
+	if fn := WalkHandlers.XsdGoPkgHasElems_descriptionchoicesequenceRssItemschema_Description_XsdtString_; fn != nil { fn(me) }
  }
 
 type TRssItem struct {
-//	Describes a media object that is attached to the item.
-	XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_
-
-//	The RSS channel that the item came from.
-	XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_
-
-//	Includes the item in one or more categories.
-	XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_
-
-//	URL of a page for comments relating to the item.
-	XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_
-
 //	The title of the item.
 	XsdGoPkgHasElems_titlechoicesequenceRssItemschema_Title_XsdtString_
 
 //	The URL of the item.
 	XsdGoPkgHasElems_linkchoicesequenceRssItemschema_Link_XsdtAnyURI_
 
-//	The item synopsis.
-	XsdGoPkgHasElems_descriptionchoicesequenceRssItemschema_Description_XsdtString_
-
-//	Indicates when the item was published.
-	XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_
+//	guid or permalink URL for this entry
+	XsdGoPkgHasElems_guidchoicesequenceRssItemschema_Guid_TGuid_
 
 //	Email address of the author of the item.
 	XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_
 
-//	guid or permalink URL for this entry
-	XsdGoPkgHasElems_guidchoicesequenceRssItemschema_Guid_TGuid_
+//	URL of a page for comments relating to the item.
+	XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_
+
+//	Describes a media object that is attached to the item.
+	XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_
+
+//	Indicates when the item was published.
+	XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_
+
+//	Includes the item in one or more categories.
+	XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_
+
+//	The RSS channel that the item came from.
+	XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_
+
+//	The item synopsis.
+	XsdGoPkgHasElems_descriptionchoicesequenceRssItemschema_Description_XsdtString_
 
 }
 
-//	If the W.TRssItem function is not nil (ie. was set by outside code), calls it with this TRssItem instance as the single argument. Then calls the Walk() method on 10/10 embed(s) and 0/0 field(s) belonging to this TRssItem instance.
+//	If the WalkHandlers.TRssItem function is not nil (ie. was set by outside code), calls it with this TRssItem instance as the single argument. Then calls the Walk() method on 10/10 embed(s) and 0/0 field(s) belonging to this TRssItem instance.
 func (me *TRssItem) Walk ()  { 
-	if fn := W.TRssItem; fn != nil { fn(me) }
+	if fn := WalkHandlers.TRssItem; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_.Walk()
+	me.XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_.Walk()
+	me.XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_.Walk()
+	me.XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_.Walk()
+	me.XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_.Walk()
+	me.XsdGoPkgHasElems_descriptionchoicesequenceRssItemschema_Description_XsdtString_.Walk()
 	me.XsdGoPkgHasElems_titlechoicesequenceRssItemschema_Title_XsdtString_.Walk()
 	me.XsdGoPkgHasElems_linkchoicesequenceRssItemschema_Link_XsdtAnyURI_.Walk()
-	me.XsdGoPkgHasElems_descriptionchoicesequenceRssItemschema_Description_XsdtString_.Walk()
-	me.XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_.Walk()
-	me.XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_.Walk()
 	me.XsdGoPkgHasElems_guidchoicesequenceRssItemschema_Guid_TGuid_.Walk()
-	me.XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_.Walk()
-	me.XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_.Walk()
-	me.XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_.Walk()
-	me.XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_.Walk()
+	me.XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_.Walk()
  }
 
 type XsdGoPkgHasElems_itemsequenceRssChannelschema_Item_TRssItem_ struct {
@@ -766,23 +640,10 @@ type XsdGoPkgHasElems_itemsequenceRssChannelschema_Item_TRssItem_ struct {
 
 }
 
-//	If the W.XsdGoPkgHasElems_itemsequenceRssChannelschema_Item_TRssItem_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_itemsequenceRssChannelschema_Item_TRssItem_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_itemsequenceRssChannelschema_Item_TRssItem_ instance.
+//	If the WalkHandlers.XsdGoPkgHasElems_itemsequenceRssChannelschema_Item_TRssItem_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_itemsequenceRssChannelschema_Item_TRssItem_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_itemsequenceRssChannelschema_Item_TRssItem_ instance.
 func (me *XsdGoPkgHasElems_itemsequenceRssChannelschema_Item_TRssItem_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_itemsequenceRssChannelschema_Item_TRssItem_; fn != nil { fn(me) }
+	if fn := WalkHandlers.XsdGoPkgHasElems_itemsequenceRssChannelschema_Item_TRssItem_; fn != nil { fn(me) }
 	for _, x := range me.Items { x.Walk() }
- }
-
-//	Specify one or more categories that the channel belongs to.
-type XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_ struct {
-//	Specify one or more categories that the channel belongs to.
-	Categories []*TCategory `xml:"category"`
-
-}
-
-//	If the W.XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_ instance.
-func (me *XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_; fn != nil { fn(me) }
-	for _, x := range me.Categories { x.Walk() }
  }
 
 //	The PICS rating for the channel.
@@ -792,79 +653,9 @@ type XsdGoPkgHasElems_ratingchoicesequenceRssChannelschema_Rating_XsdtString_ st
 
 }
 
-//	If the W.XsdGoPkgHasElems_ratingchoicesequenceRssChannelschema_Rating_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ratingchoicesequenceRssChannelschema_Rating_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ratingchoicesequenceRssChannelschema_Rating_XsdtString_ instance.
+//	If the WalkHandlers.XsdGoPkgHasElems_ratingchoicesequenceRssChannelschema_Rating_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ratingchoicesequenceRssChannelschema_Rating_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ratingchoicesequenceRssChannelschema_Rating_XsdtString_ instance.
 func (me *XsdGoPkgHasElems_ratingchoicesequenceRssChannelschema_Rating_XsdtString_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_ratingchoicesequenceRssChannelschema_Rating_XsdtString_; fn != nil { fn(me) }
- }
-
-//	A hint for aggregators telling them which days they can skip.
-//	A time in GMT, when aggregators should not request the channel data. The hour beginning at midnight is hour zero.
-//	A day when aggregators should not request the channel data.
-type TSkipDay xsdt.String
-
-//	Since TSkipDay is just a simple String type, this merely returns the current string value.
-func (me TSkipDay) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TSkipDay is "Saturday".
-func (me TSkipDay) IsSaturday () bool { return me == "Saturday" }
-
-//	Returns true if the value of this enumerated TSkipDay is "Sunday".
-func (me TSkipDay) IsSunday () bool { return me == "Sunday" }
-
-//	Returns true if the value of this enumerated TSkipDay is "Thursday".
-func (me TSkipDay) IsThursday () bool { return me == "Thursday" }
-
-//	Returns true if the value of this enumerated TSkipDay is "Monday".
-func (me TSkipDay) IsMonday () bool { return me == "Monday" }
-
-//	Returns true if the value of this enumerated TSkipDay is "Wednesday".
-func (me TSkipDay) IsWednesday () bool { return me == "Wednesday" }
-
-//	Since TSkipDay is just a simple String type, this merely sets the current value from the specified string.
-func (me *TSkipDay) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TSkipDay's alias type xsdt.String.
-func (me TSkipDay) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TSkipDay is "Tuesday".
-func (me TSkipDay) IsTuesday () bool { return me == "Tuesday" }
-
-//	Returns true if the value of this enumerated TSkipDay is "Friday".
-func (me TSkipDay) IsFriday () bool { return me == "Friday" }
-
-type XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_ struct {
-//	A time in GMT, when aggregators should not request the channel data. The hour beginning at midnight is hour zero.
-	Days []TSkipDay `xml:"day"`
-
-}
-
-//	If the W.XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_ instance.
-func (me *XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_; fn != nil { fn(me) }
- }
-
-type TSkipDaysList struct {
-//	A time in GMT, when aggregators should not request the channel data. The hour beginning at midnight is hour zero.
-	XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_
-
-}
-
-//	If the W.TSkipDaysList function is not nil (ie. was set by outside code), calls it with this TSkipDaysList instance as the single argument. Then calls the Walk() method on 1/1 embed(s) and 0/0 field(s) belonging to this TSkipDaysList instance.
-func (me *TSkipDaysList) Walk ()  { 
-	if fn := W.TSkipDaysList; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_.Walk()
- }
-
-type XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_ struct {
-//	A hint for aggregators telling them which days they can skip.
-	SkipDayses []*TSkipDaysList `xml:"skipDays"`
-
-}
-
-//	If the W.XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_ instance.
-func (me *XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_; fn != nil { fn(me) }
-	for _, x := range me.SkipDayses { x.Walk() }
+	if fn := WalkHandlers.XsdGoPkgHasElems_ratingchoicesequenceRssChannelschema_Rating_XsdtString_; fn != nil { fn(me) }
  }
 
 //	The URL to the HTML website corresponding to the channel.
@@ -874,120 +665,337 @@ type XsdGoPkgHasElems_linkchoicesequenceRssChannelschema_Link_XsdtAnyURI_ struct
 
 }
 
-//	If the W.XsdGoPkgHasElems_linkchoicesequenceRssChannelschema_Link_XsdtAnyURI_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_linkchoicesequenceRssChannelschema_Link_XsdtAnyURI_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_linkchoicesequenceRssChannelschema_Link_XsdtAnyURI_ instance.
+//	If the WalkHandlers.XsdGoPkgHasElems_linkchoicesequenceRssChannelschema_Link_XsdtAnyURI_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_linkchoicesequenceRssChannelschema_Link_XsdtAnyURI_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_linkchoicesequenceRssChannelschema_Link_XsdtAnyURI_ instance.
 func (me *XsdGoPkgHasElems_linkchoicesequenceRssChannelschema_Link_XsdtAnyURI_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_linkchoicesequenceRssChannelschema_Link_XsdtAnyURI_; fn != nil { fn(me) }
+	if fn := WalkHandlers.XsdGoPkgHasElems_linkchoicesequenceRssChannelschema_Link_XsdtAnyURI_; fn != nil { fn(me) }
  }
 
-//	Email address for person responsible for editorial content.
-type XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_ struct {
-//	Email address for person responsible for editorial content.
-	ManagingEditors []TEmailAddress `xml:"managingEditor"`
+//	The language the channel is written in. This allows aggregators to group all Italian language sites, for example, on a single page. A list of allowable values for this element, as provided by Netscape, is here. You may also use values defined by the W3C.
+type XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_ struct {
+//	The language the channel is written in. This allows aggregators to group all Italian language sites, for example, on a single page. A list of allowable values for this element, as provided by Netscape, is here. You may also use values defined by the W3C.
+	Languages []xsdt.Language `xml:"language"`
 
 }
 
-//	If the W.XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_ instance.
-func (me *XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_ instance.
+func (me *XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_; fn != nil { fn(me) }
  }
 
-//	Copyright notice for content in the channel.
-type XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_ struct {
-//	Copyright notice for content in the channel.
-	Copyrights []xsdt.String `xml:"copyright"`
+//	ttl stands for time to live. It's a number of minutes that indicates how long a channel can be cached before refreshing from the source.
+type XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_ struct {
+//	ttl stands for time to live. It's a number of minutes that indicates how long a channel can be cached before refreshing from the source.
+	Ttls []xsdt.NonNegativeInteger `xml:"ttl"`
 
 }
 
-//	If the W.XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_ instance.
-func (me *XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_ instance.
+func (me *XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_; fn != nil { fn(me) }
+ }
+
+//	The last time the content of the channel changed.
+type XsdGoPkgHasElems_lastBuildDatechoicesequenceRssChannelschema_LastBuildDate_TRfc822FormatDate_ struct {
+//	The last time the content of the channel changed.
+	LastBuildDates []TRfc822FormatDate `xml:"lastBuildDate"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_lastBuildDatechoicesequenceRssChannelschema_LastBuildDate_TRfc822FormatDate_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_lastBuildDatechoicesequenceRssChannelschema_LastBuildDate_TRfc822FormatDate_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_lastBuildDatechoicesequenceRssChannelschema_LastBuildDate_TRfc822FormatDate_ instance.
+func (me *XsdGoPkgHasElems_lastBuildDatechoicesequenceRssChannelschema_LastBuildDate_TRfc822FormatDate_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_lastBuildDatechoicesequenceRssChannelschema_LastBuildDate_TRfc822FormatDate_; fn != nil { fn(me) }
+ }
+
+//	Specifies a GIF, JPEG or PNG image that can be displayed with the channel.
+//	The URL of the image file.
+type XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_ struct {
+//	The URL of the image file.
+	Url xsdt.AnyURI `xml:"url"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_ instance.
+func (me *XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_; fn != nil { fn(me) }
+ }
+
+//	The URL of the site, when the channel is rendered, the image is a link to the site. (Note, in practice the image <title> and <link> should have the same value as the channel's <title> and <link>.
+type XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_ struct {
+//	The URL of the site, when the channel is rendered, the image is a link to the site. (Note, in practice the image <title> and <link> should have the same value as the channel's <title> and <link>.
+	Link xsdt.AnyURI `xml:"link"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_ instance.
+func (me *XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_; fn != nil { fn(me) }
+ }
+
+//	Text that is included in the TITLE attribute of the link formed around the image in the HTML rendering.
+type XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_ struct {
+//	Text that is included in the TITLE attribute of the link formed around the image in the HTML rendering.
+	Description xsdt.String `xml:"description"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_ instance.
+func (me *XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_; fn != nil { fn(me) }
+ }
+
+//	The width of the image in pixels.
+//	The width of the image in pixels.
+type TImageWidth xsdt.PositiveInteger
+
+//	Since TImageWidth is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
+func (me *TImageWidth) SetFromString (s string)  { (*xsdt.PositiveInteger)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TImageWidth's alias type xsdt.PositiveInteger.
+func (me TImageWidth) ToXsdtPositiveInteger () xsdt.PositiveInteger { return xsdt.PositiveInteger(me) }
+
+//	Returns a string representation of this TImageWidth's current non-string scalar value.
+func (me TImageWidth) String () string { return xsdt.PositiveInteger(me).String() }
+
+type XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88 struct {
+//	The width of the image in pixels.
+	Width TImageWidth `xml:"width"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88 function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88 instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88 instance.
+func (me *XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88; fn != nil { fn(me) }
+ }
+
+//	Returns the default value for Width -- 88
+func (me XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88) WidthDefault () TImageWidth { return TImageWidth(88) }
+
+//	The height of the image in pixels.
+//	The height of the image in pixels.
+type TImageHeight xsdt.PositiveInteger
+
+//	Since TImageHeight is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
+func (me *TImageHeight) SetFromString (s string)  { (*xsdt.PositiveInteger)(me).SetFromString(s) }
+
+//	Returns a string representation of this TImageHeight's current non-string scalar value.
+func (me TImageHeight) String () string { return xsdt.PositiveInteger(me).String() }
+
+//	This convenience method just performs a simple type conversion to TImageHeight's alias type xsdt.PositiveInteger.
+func (me TImageHeight) ToXsdtPositiveInteger () xsdt.PositiveInteger { return xsdt.PositiveInteger(me) }
+
+type XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31 struct {
+//	The height of the image in pixels.
+	Height TImageHeight `xml:"height"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31 function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31 instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31 instance.
+func (me *XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31; fn != nil { fn(me) }
+ }
+
+//	Returns the default value for Height -- 31
+func (me XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31) HeightDefault () TImageHeight { return TImageHeight(31) }
+
+//	Describes the image, it's used in the ALT attribute of the HTML <img> tag when the channel is rendered in HTML.
+type XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_ struct {
+//	Describes the image, it's used in the ALT attribute of the HTML <img> tag when the channel is rendered in HTML.
+	Title xsdt.String `xml:"title"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_ instance.
+func (me *XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_; fn != nil { fn(me) }
+ }
+
+type TImage struct {
+//	The URL of the site, when the channel is rendered, the image is a link to the site. (Note, in practice the image <title> and <link> should have the same value as the channel's <title> and <link>.
+	XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_
+
+//	Text that is included in the TITLE attribute of the link formed around the image in the HTML rendering.
+	XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_
+
+//	The width of the image in pixels.
+	XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88
+
+//	The height of the image in pixels.
+	XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31
+
+//	Describes the image, it's used in the ALT attribute of the HTML <img> tag when the channel is rendered in HTML.
+	XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_
+
+//	The URL of the image file.
+	XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_
+
+}
+
+//	If the WalkHandlers.TImage function is not nil (ie. was set by outside code), calls it with this TImage instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this TImage instance.
+func (me *TImage) Walk ()  { 
+	if fn := WalkHandlers.TImage; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_.Walk()
+	me.XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_.Walk()
+	me.XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_.Walk()
+	me.XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_.Walk()
+	me.XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88.Walk()
+	me.XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31.Walk()
+ }
+
+type XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_ struct {
+//	Specifies a GIF, JPEG or PNG image that can be displayed with the channel.
+	Images []*TImage `xml:"image"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_ instance.
+func (me *XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_; fn != nil { fn(me) }
+	for _, x := range me.Images { x.Walk() }
+ }
+
+//	A string indicating the program used to generate the channel.
+type XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_ struct {
+//	A string indicating the program used to generate the channel.
+	Generators []xsdt.String `xml:"generator"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_ instance.
+func (me *XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_; fn != nil { fn(me) }
+ }
+
+//	A hint for aggregators telling them which hours they can skip.
+//	A time in GMT when aggregators should not request the channel data. The hour beginning at midnight is hour zero.
+type TSkipHour xsdt.NonNegativeInteger
+
+//	This convenience method just performs a simple type conversion to TSkipHour's alias type xsdt.NonNegativeInteger.
+func (me TSkipHour) ToXsdtNonNegativeInteger () xsdt.NonNegativeInteger { return xsdt.NonNegativeInteger(me) }
+
+//	Returns a string representation of this TSkipHour's current non-string scalar value.
+func (me TSkipHour) String () string { return xsdt.NonNegativeInteger(me).String() }
+
+//	Since TSkipHour is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
+func (me *TSkipHour) SetFromString (s string)  { (*xsdt.NonNegativeInteger)(me).SetFromString(s) }
+
+type XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_ struct {
+	Hours []TSkipHour `xml:"hour"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_ instance.
+func (me *XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_; fn != nil { fn(me) }
+ }
+
+type TSkipHoursList struct {
+	XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_
+
+}
+
+//	If the WalkHandlers.TSkipHoursList function is not nil (ie. was set by outside code), calls it with this TSkipHoursList instance as the single argument. Then calls the Walk() method on 1/1 embed(s) and 0/0 field(s) belonging to this TSkipHoursList instance.
+func (me *TSkipHoursList) Walk ()  { 
+	if fn := WalkHandlers.TSkipHoursList; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_.Walk()
+ }
+
+type XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_ struct {
+//	A hint for aggregators telling them which hours they can skip.
+	SkipHourses []*TSkipHoursList `xml:"skipHours"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_ instance.
+func (me *XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_; fn != nil { fn(me) }
+	for _, x := range me.SkipHourses { x.Walk() }
  }
 
 type TRssChannel struct {
-//	Allows processes to register with a cloud to be notified of updates to the channel, implementing a lightweight publish-subscribe protocol for RSS feeds.
-	XsdGoPkgHasElems_cloudchoicesequenceRssChannelschema_Cloud_TCloud_
-
-	XsdGoPkgHasElems_itemsequenceRssChannelschema_Item_TRssItem_
-
-//	Specify one or more categories that the channel belongs to.
-	XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_
-
-//	The PICS rating for the channel.
-	XsdGoPkgHasElems_ratingchoicesequenceRssChannelschema_Rating_XsdtString_
-
-//	A hint for aggregators telling them which days they can skip.
-	XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_
-
-//	The URL to the HTML website corresponding to the channel.
-	XsdGoPkgHasElems_linkchoicesequenceRssChannelschema_Link_XsdtAnyURI_
-
-//	Email address for person responsible for editorial content.
-	XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_
-
-//	Copyright notice for content in the channel.
-	XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_
-
-//	The last time the content of the channel changed.
-	XsdGoPkgHasElems_lastBuildDatechoicesequenceRssChannelschema_LastBuildDate_TRfc822FormatDate_
-
-//	Email address for person responsible for technical issues relating to channel.
-	XsdGoPkgHasElems_webMasterchoicesequenceRssChannelschema_WebMaster_TEmailAddress_
-
-//	The language the channel is written in. This allows aggregators to group all Italian language sites, for example, on a single page. A list of allowable values for this element, as provided by Netscape, is here. You may also use values defined by the W3C.
-	XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_
-
-//	A URL that points to the documentation for the format used in the RSS file. It's probably a pointer to this page. It's for people who might stumble across an RSS file on a Web server 25 years from now and wonder what it is.
-	XsdGoPkgHasElems_docschoicesequenceRssChannelschema_Docs_XsdtAnyURI_
-
-//	Phrase or sentence describing the channel.
-	XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_
-
 //	The name of the channel. It's how people refer to your service. If you have an HTML website that contains the same information as your RSS file, the title of your channel should be the same as the title of your website.
 	XsdGoPkgHasElems_titlechoicesequenceRssChannelschema_Title_XsdtString_
-
-//	A hint for aggregators telling them which hours they can skip.
-	XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_
-
-//	The publication date for the content in the channel. All date-times in RSS conform to the Date and Time Specification of RFC 822, with the exception that the year may be expressed with two characters or four characters (four preferred).
-	XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_
-
-//	A string indicating the program used to generate the channel.
-	XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_
-
-//	ttl stands for time to live. It's a number of minutes that indicates how long a channel can be cached before refreshing from the source.
-	XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_
-
-//	Specifies a GIF, JPEG or PNG image that can be displayed with the channel.
-	XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_
 
 //	Specifies a text input box that can be displayed with the channel.
 	XsdGoPkgHasElems_textInputchoicesequenceRssChannelschema_TextInput_TextInput_
 
+//	Specify one or more categories that the channel belongs to.
+	XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_
+
+//	A hint for aggregators telling them which days they can skip.
+	XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_
+
+//	The publication date for the content in the channel. All date-times in RSS conform to the Date and Time Specification of RFC 822, with the exception that the year may be expressed with two characters or four characters (four preferred).
+	XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_
+
+//	Email address for person responsible for technical issues relating to channel.
+	XsdGoPkgHasElems_webMasterchoicesequenceRssChannelschema_WebMaster_TEmailAddress_
+
+//	Allows processes to register with a cloud to be notified of updates to the channel, implementing a lightweight publish-subscribe protocol for RSS feeds.
+	XsdGoPkgHasElems_cloudchoicesequenceRssChannelschema_Cloud_TCloud_
+
+//	Copyright notice for content in the channel.
+	XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_
+
+//	Email address for person responsible for editorial content.
+	XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_
+
+	XsdGoPkgHasElems_itemsequenceRssChannelschema_Item_TRssItem_
+
+//	The PICS rating for the channel.
+	XsdGoPkgHasElems_ratingchoicesequenceRssChannelschema_Rating_XsdtString_
+
+//	The URL to the HTML website corresponding to the channel.
+	XsdGoPkgHasElems_linkchoicesequenceRssChannelschema_Link_XsdtAnyURI_
+
+//	The language the channel is written in. This allows aggregators to group all Italian language sites, for example, on a single page. A list of allowable values for this element, as provided by Netscape, is here. You may also use values defined by the W3C.
+	XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_
+
+//	ttl stands for time to live. It's a number of minutes that indicates how long a channel can be cached before refreshing from the source.
+	XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_
+
+//	The last time the content of the channel changed.
+	XsdGoPkgHasElems_lastBuildDatechoicesequenceRssChannelschema_LastBuildDate_TRfc822FormatDate_
+
+//	Specifies a GIF, JPEG or PNG image that can be displayed with the channel.
+	XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_
+
+//	A string indicating the program used to generate the channel.
+	XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_
+
+//	A hint for aggregators telling them which hours they can skip.
+	XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_
+
+//	Phrase or sentence describing the channel.
+	XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_
+
+//	A URL that points to the documentation for the format used in the RSS file. It's probably a pointer to this page. It's for people who might stumble across an RSS file on a Web server 25 years from now and wonder what it is.
+	XsdGoPkgHasElems_docschoicesequenceRssChannelschema_Docs_XsdtAnyURI_
+
 }
 
-//	If the W.TRssChannel function is not nil (ie. was set by outside code), calls it with this TRssChannel instance as the single argument. Then calls the Walk() method on 20/20 embed(s) and 0/0 field(s) belonging to this TRssChannel instance.
+//	If the WalkHandlers.TRssChannel function is not nil (ie. was set by outside code), calls it with this TRssChannel instance as the single argument. Then calls the Walk() method on 20/20 embed(s) and 0/0 field(s) belonging to this TRssChannel instance.
 func (me *TRssChannel) Walk ()  { 
-	if fn := W.TRssChannel; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_.Walk()
-	me.XsdGoPkgHasElems_ratingchoicesequenceRssChannelschema_Rating_XsdtString_.Walk()
-	me.XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_.Walk()
-	me.XsdGoPkgHasElems_linkchoicesequenceRssChannelschema_Link_XsdtAnyURI_.Walk()
-	me.XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_.Walk()
-	me.XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_.Walk()
-	me.XsdGoPkgHasElems_lastBuildDatechoicesequenceRssChannelschema_LastBuildDate_TRfc822FormatDate_.Walk()
-	me.XsdGoPkgHasElems_webMasterchoicesequenceRssChannelschema_WebMaster_TEmailAddress_.Walk()
+	if fn := WalkHandlers.TRssChannel; fn != nil { fn(me) }
 	me.XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_.Walk()
-	me.XsdGoPkgHasElems_docschoicesequenceRssChannelschema_Docs_XsdtAnyURI_.Walk()
-	me.XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_.Walk()
-	me.XsdGoPkgHasElems_titlechoicesequenceRssChannelschema_Title_XsdtString_.Walk()
-	me.XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_.Walk()
-	me.XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_.Walk()
-	me.XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_.Walk()
 	me.XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_.Walk()
+	me.XsdGoPkgHasElems_lastBuildDatechoicesequenceRssChannelschema_LastBuildDate_TRfc822FormatDate_.Walk()
 	me.XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_.Walk()
+	me.XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_.Walk()
+	me.XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_.Walk()
+	me.XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_.Walk()
+	me.XsdGoPkgHasElems_docschoicesequenceRssChannelschema_Docs_XsdtAnyURI_.Walk()
+	me.XsdGoPkgHasElems_titlechoicesequenceRssChannelschema_Title_XsdtString_.Walk()
 	me.XsdGoPkgHasElems_textInputchoicesequenceRssChannelschema_TextInput_TextInput_.Walk()
+	me.XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_.Walk()
+	me.XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_.Walk()
+	me.XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_.Walk()
+	me.XsdGoPkgHasElems_webMasterchoicesequenceRssChannelschema_WebMaster_TEmailAddress_.Walk()
 	me.XsdGoPkgHasElems_cloudchoicesequenceRssChannelschema_Cloud_TCloud_.Walk()
+	me.XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_.Walk()
+	me.XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_.Walk()
 	me.XsdGoPkgHasElems_itemsequenceRssChannelschema_Item_TRssItem_.Walk()
+	me.XsdGoPkgHasElems_ratingchoicesequenceRssChannelschema_Rating_XsdtString_.Walk()
+	me.XsdGoPkgHasElems_linkchoicesequenceRssChannelschema_Link_XsdtAnyURI_.Walk()
  }
 
 type XsdGoPkgHasElem_channelsequencerssschema_Channel_TRssChannel_ struct {
@@ -995,42 +1003,23 @@ type XsdGoPkgHasElem_channelsequencerssschema_Channel_TRssChannel_ struct {
 
 }
 
-//	If the W.XsdGoPkgHasElem_channelsequencerssschema_Channel_TRssChannel_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_channelsequencerssschema_Channel_TRssChannel_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_channelsequencerssschema_Channel_TRssChannel_ instance.
+//	If the WalkHandlers.XsdGoPkgHasElem_channelsequencerssschema_Channel_TRssChannel_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_channelsequencerssschema_Channel_TRssChannel_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_channelsequencerssschema_Channel_TRssChannel_ instance.
 func (me *XsdGoPkgHasElem_channelsequencerssschema_Channel_TRssChannel_) Walk ()  { 
-	if fn := W.XsdGoPkgHasElem_channelsequencerssschema_Channel_TRssChannel_; fn != nil { fn(me) }
+	if fn := WalkHandlers.XsdGoPkgHasElem_channelsequencerssschema_Channel_TRssChannel_; fn != nil { fn(me) }
 	me.Channel.Walk()
  }
 
-type XsdGoPkgHasAttr_Version_XsdtDecimal_20 struct {
-	Version xsdt.Decimal `xml:"version,attr"`
-
-}
-
-//	Returns the fixed value for Version -- "2.0"
-func (me XsdGoPkgHasAttr_Version_XsdtDecimal_20) VersionFixed () xsdt.Decimal { return xsdt.Decimal("2.0") }
-
 type TxsdRss struct {
-	XsdGoPkgHasElem_channelsequencerssschema_Channel_TRssChannel_
-
 	XsdGoPkgHasAttr_Version_XsdtDecimal_20
 
+	XsdGoPkgHasElem_channelsequencerssschema_Channel_TRssChannel_
+
 }
 
-//	If the W.TxsdRss function is not nil (ie. was set by outside code), calls it with this TxsdRss instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TxsdRss instance.
+//	If the WalkHandlers.TxsdRss function is not nil (ie. was set by outside code), calls it with this TxsdRss instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TxsdRss instance.
 func (me *TxsdRss) Walk ()  { 
-	if fn := W.TxsdRss; fn != nil { fn(me) }
+	if fn := WalkHandlers.TxsdRss; fn != nil { fn(me) }
 	me.XsdGoPkgHasElem_channelsequencerssschema_Channel_TRssChannel_.Walk()
- }
-
-type XsdGoPkgHasElems_Rss struct {
-	Rsses []*TxsdRss `xml:"rss"`
-
-}
-
-//	If the W.XsdGoPkgHasElems_Rss function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Rss instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Rss instance.
-func (me *XsdGoPkgHasElems_Rss) Walk ()  { 
-	if fn := W.XsdGoPkgHasElems_Rss; fn != nil { fn(me) }
-	for _, x := range me.Rsses { x.Walk() }
  }
 
 type XsdGoPkgHasElem_Rss struct {
@@ -1038,69 +1027,82 @@ type XsdGoPkgHasElem_Rss struct {
 
 }
 
-//	If the W.XsdGoPkgHasElem_Rss function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Rss instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Rss instance.
+//	If the WalkHandlers.XsdGoPkgHasElem_Rss function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Rss instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Rss instance.
 func (me *XsdGoPkgHasElem_Rss) Walk ()  { 
-	if fn := W.XsdGoPkgHasElem_Rss; fn != nil { fn(me) }
+	if fn := WalkHandlers.XsdGoPkgHasElem_Rss; fn != nil { fn(me) }
 	me.Rss.Walk()
  }
 
+type XsdGoPkgHasElems_Rss struct {
+	Rsses []*TxsdRss `xml:"rss"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Rss function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Rss instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Rss instance.
+func (me *XsdGoPkgHasElems_Rss) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Rss; fn != nil { fn(me) }
+	for _, x := range me.Rsses { x.Walk() }
+ }
+
 //	Provides 57 strong-typed hooks for your own custom handler functions to be invoked when the Walk() method is called on any instance of any (non-attribute-related) struct type defined in this package.
-var W = struct {
-	XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31 func (o *XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31)
-	XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_ func (o *XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_)
-	TImage func (o *TImage)
-	XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_ func (o *XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_)
-	XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_ func (o *XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_)
-	XsdGoPkgHasElems_linkchoicesequenceRssItemschema_Link_XsdtAnyURI_ func (o *XsdGoPkgHasElems_linkchoicesequenceRssItemschema_Link_XsdtAnyURI_)
-	XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_ func (o *XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_)
-	XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_ func (o *XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_)
-	TGuid func (o *TGuid)
-	XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_ func (o *XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_)
-	XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_ func (o *XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_)
-	XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_ func (o *XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_)
-	XsdGoPkgHasElem_Rss func (o *XsdGoPkgHasElem_Rss)
-	XsdGoPkgHasElems_Rss func (o *XsdGoPkgHasElems_Rss)
-	XsdGoPkgHasElems_guidchoicesequenceRssItemschema_Guid_TGuid_ func (o *XsdGoPkgHasElems_guidchoicesequenceRssItemschema_Guid_TGuid_)
-	TxsdRss func (o *TxsdRss)
-	XsdGoPkgHasElems_descriptionchoicesequenceRssItemschema_Description_XsdtString_ func (o *XsdGoPkgHasElems_descriptionchoicesequenceRssItemschema_Description_XsdtString_)
-	XsdGoPkgHasElems_itemsequenceRssChannelschema_Item_TRssItem_ func (o *XsdGoPkgHasElems_itemsequenceRssChannelschema_Item_TRssItem_)
-	XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88 func (o *XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88)
-	XsdGoPkgHasElems_ratingchoicesequenceRssChannelschema_Rating_XsdtString_ func (o *XsdGoPkgHasElems_ratingchoicesequenceRssChannelschema_Rating_XsdtString_)
-	XsdGoPkgHasElems_titlechoicesequenceRssItemschema_Title_XsdtString_ func (o *XsdGoPkgHasElems_titlechoicesequenceRssItemschema_Title_XsdtString_)
-	TSkipHoursList func (o *TSkipHoursList)
-	TextInput func (o *TextInput)
-	XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_ func (o *XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_)
-	XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_ func (o *XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_)
+var WalkHandlers = &XsdGoPkgWalkHandlers {}
+
+type XsdGoPkgWalkHandlers struct {
 	XsdGoPkgHasElems_webMasterchoicesequenceRssChannelschema_WebMaster_TEmailAddress_ func (o *XsdGoPkgHasElems_webMasterchoicesequenceRssChannelschema_WebMaster_TEmailAddress_)
-	XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_ func (o *XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_)
-	XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_ func (o *XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_)
-	XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_ func (o *XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_)
-	XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_ func (o *XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_)
-	XsdGoPkgHasElem_linkallTextInputschema_Link_XsdtAnyURI_ func (o *XsdGoPkgHasElem_linkallTextInputschema_Link_XsdtAnyURI_)
-	XsdGoPkgHasElem_channelsequencerssschema_Channel_TRssChannel_ func (o *XsdGoPkgHasElem_channelsequencerssschema_Channel_TRssChannel_)
-	XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_ func (o *XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_)
-	XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_ func (o *XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_)
-	XsdGoPkgHasElem_descriptionallTextInputschema_Description_XsdtString_ func (o *XsdGoPkgHasElem_descriptionallTextInputschema_Description_XsdtString_)
-	XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_ func (o *XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_)
-	XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_ func (o *XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_)
-	XsdGoPkgHasElems_docschoicesequenceRssChannelschema_Docs_XsdtAnyURI_ func (o *XsdGoPkgHasElems_docschoicesequenceRssChannelschema_Docs_XsdtAnyURI_)
-	XsdGoPkgHasElems_textInputchoicesequenceRssChannelschema_TextInput_TextInput_ func (o *XsdGoPkgHasElems_textInputchoicesequenceRssChannelschema_TextInput_TextInput_)
-	TRssItem func (o *TRssItem)
-	XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_ func (o *XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_)
-	XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_ func (o *XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_)
-	XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_ func (o *XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_)
-	XsdGoPkgHasElem_nameallTextInputschema_Name_XsdtString_ func (o *XsdGoPkgHasElem_nameallTextInputschema_Name_XsdtString_)
-	TCloud func (o *TCloud)
+	XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_ func (o *XsdGoPkgHasElems_languagechoicesequenceRssChannelschema_Language_XsdtLanguage_)
 	TSource func (o *TSource)
-	XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_ func (o *XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_)
 	TEnclosure func (o *TEnclosure)
+	TSkipHoursList func (o *TSkipHoursList)
+	XsdGoPkgHasElems_guidchoicesequenceRssItemschema_Guid_TGuid_ func (o *XsdGoPkgHasElems_guidchoicesequenceRssItemschema_Guid_TGuid_)
+	XsdGoPkgHasElem_channelsequencerssschema_Channel_TRssChannel_ func (o *XsdGoPkgHasElem_channelsequencerssschema_Channel_TRssChannel_)
+	XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_ func (o *XsdGoPkgHasElems_pubDatechoicesequenceRssChannelschema_PubDate_TRfc822FormatDate_)
+	XsdGoPkgHasElems_Rss func (o *XsdGoPkgHasElems_Rss)
+	XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_ func (o *XsdGoPkgHasElems_pubDatechoicesequenceRssItemschema_PubDate_TRfc822FormatDate_)
+	XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_ func (o *XsdGoPkgHasElems_daysequenceSkipDaysListschema_Day_TSkipDay_)
+	XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_ func (o *XsdGoPkgHasElems_categorychoicesequenceRssItemschema_Category_TCategory_)
+	TextInput func (o *TextInput)
+	XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_ func (o *XsdGoPkgHasElems_descriptionchoicesequenceRssChannelschema_Description_XsdtString_)
+	XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31 func (o *XsdGoPkgHasElem_heightallImageschema_Height_TImageHeight_31)
+	TRssItem func (o *TRssItem)
+	XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_ func (o *XsdGoPkgHasElems_hoursequenceSkipHoursListschema_Hour_TSkipHour_)
+	TGuid func (o *TGuid)
 	TSkipDaysList func (o *TSkipDaysList)
-	XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_ func (o *XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_)
-	XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_ func (o *XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_)
-	TCategory func (o *TCategory)
-	XsdGoPkgHasElems_linkchoicesequenceRssChannelschema_Link_XsdtAnyURI_ func (o *XsdGoPkgHasElems_linkchoicesequenceRssChannelschema_Link_XsdtAnyURI_)
+	XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_ func (o *XsdGoPkgHasElem_titleallTextInputschema_Title_XsdtString_)
+	XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_ func (o *XsdGoPkgHasElems_copyrightchoicesequenceRssChannelschema_Copyright_XsdtString_)
+	XsdGoPkgHasElems_itemsequenceRssChannelschema_Item_TRssItem_ func (o *XsdGoPkgHasElems_itemsequenceRssChannelschema_Item_TRssItem_)
+	XsdGoPkgHasElems_titlechoicesequenceRssItemschema_Title_XsdtString_ func (o *XsdGoPkgHasElems_titlechoicesequenceRssItemschema_Title_XsdtString_)
+	XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_ func (o *XsdGoPkgHasElems_imagechoicesequenceRssChannelschema_Image_TImage_)
+	XsdGoPkgHasElem_nameallTextInputschema_Name_XsdtString_ func (o *XsdGoPkgHasElem_nameallTextInputschema_Name_XsdtString_)
 	XsdGoPkgHasElems_lastBuildDatechoicesequenceRssChannelschema_LastBuildDate_TRfc822FormatDate_ func (o *XsdGoPkgHasElems_lastBuildDatechoicesequenceRssChannelschema_LastBuildDate_TRfc822FormatDate_)
+	XsdGoPkgHasElem_descriptionallTextInputschema_Description_XsdtString_ func (o *XsdGoPkgHasElem_descriptionallTextInputschema_Description_XsdtString_)
+	XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88 func (o *XsdGoPkgHasElem_widthallImageschema_Width_TImageWidth_88)
+	XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_ func (o *XsdGoPkgHasElems_authorchoicesequenceRssItemschema_Author_TEmailAddress_)
+	XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_ func (o *XsdGoPkgHasElem_linkallImageschema_Link_XsdtAnyURI_)
+	TxsdRss func (o *TxsdRss)
+	TCategory func (o *TCategory)
 	XsdGoPkgHasElems_cloudchoicesequenceRssChannelschema_Cloud_TCloud_ func (o *XsdGoPkgHasElems_cloudchoicesequenceRssChannelschema_Cloud_TCloud_)
+	XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_ func (o *XsdGoPkgHasElems_managingEditorchoicesequenceRssChannelschema_ManagingEditor_TEmailAddress_)
+	XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_ func (o *XsdGoPkgHasElems_sourcechoicesequenceRssItemschema_Source_TSource_)
+	XsdGoPkgHasElems_textInputchoicesequenceRssChannelschema_TextInput_TextInput_ func (o *XsdGoPkgHasElems_textInputchoicesequenceRssChannelschema_TextInput_TextInput_)
+	XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_ func (o *XsdGoPkgHasElem_urlallImageschema_Url_XsdtAnyURI_)
+	XsdGoPkgHasElems_descriptionchoicesequenceRssItemschema_Description_XsdtString_ func (o *XsdGoPkgHasElems_descriptionchoicesequenceRssItemschema_Description_XsdtString_)
+	XsdGoPkgHasElems_ratingchoicesequenceRssChannelschema_Rating_XsdtString_ func (o *XsdGoPkgHasElems_ratingchoicesequenceRssChannelschema_Rating_XsdtString_)
+	XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_ func (o *XsdGoPkgHasElems_categorychoicesequenceRssChannelschema_Category_TCategory_)
+	XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_ func (o *XsdGoPkgHasElems_enclosurechoicesequenceRssItemschema_Enclosure_TEnclosure_)
+	TImage func (o *TImage)
+	XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_ func (o *XsdGoPkgHasElem_titleallImageschema_Title_XsdtString_)
+	XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_ func (o *XsdGoPkgHasElems_generatorchoicesequenceRssChannelschema_Generator_XsdtString_)
+	XsdGoPkgHasElems_linkchoicesequenceRssItemschema_Link_XsdtAnyURI_ func (o *XsdGoPkgHasElems_linkchoicesequenceRssItemschema_Link_XsdtAnyURI_)
+	XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_ func (o *XsdGoPkgHasElems_commentschoicesequenceRssItemschema_Comments_XsdtAnyURI_)
+	XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_ func (o *XsdGoPkgHasElems_skipHourschoicesequenceRssChannelschema_SkipHours_TSkipHoursList_)
+	XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_ func (o *XsdGoPkgHasElems_ttlchoicesequenceRssChannelschema_Ttl_XsdtNonNegativeInteger_)
+	TCloud func (o *TCloud)
+	XsdGoPkgHasElem_Rss func (o *XsdGoPkgHasElem_Rss)
+	XsdGoPkgHasElems_linkchoicesequenceRssChannelschema_Link_XsdtAnyURI_ func (o *XsdGoPkgHasElems_linkchoicesequenceRssChannelschema_Link_XsdtAnyURI_)
+	XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_ func (o *XsdGoPkgHasElem_descriptionallImageschema_Description_XsdtString_)
+	XsdGoPkgHasElem_linkallTextInputschema_Link_XsdtAnyURI_ func (o *XsdGoPkgHasElem_linkallTextInputschema_Link_XsdtAnyURI_)
+	XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_ func (o *XsdGoPkgHasElems_skipDayschoicesequenceRssChannelschema_SkipDays_TSkipDaysList_)
+	XsdGoPkgHasElems_docschoicesequenceRssChannelschema_Docs_XsdtAnyURI_ func (o *XsdGoPkgHasElems_docschoicesequenceRssChannelschema_Docs_XsdtAnyURI_)
 	TRssChannel func (o *TRssChannel)
 	XsdGoPkgHasElems_titlechoicesequenceRssChannelschema_Title_XsdtString_ func (o *XsdGoPkgHasElems_titlechoicesequenceRssChannelschema_Title_XsdtString_)
-} {}
+}
