@@ -7,7 +7,7 @@ Contains various Go packages that have been auto-generated with the **go-xsd** (
 - To easily *encoding/xml.Unmarshal()* **Atom** documents:
 
 
-    import **atom** "github.com/metaleap/go-xsd-pkg/kbcafe.com/rss/atom.xsd.xml_go"
+        import **atom** "github.com/metaleap/go-xsd-pkg/kbcafe.com/rss/atom.xsd.xml_go"
 
 
 - import **rss** "github.com/metaleap/go-xsd-pkg/thearchitect.co.uk/schemas/rss-2_0.xsd_go"
