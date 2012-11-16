@@ -2,7 +2,7 @@ go-xsd-pkg
 ==========
 
 
-Contains various Go packages that have been auto-generated with the **go-xsd** ( http://github.com/metaleap/go-xsd ) package and that you can simply **go get**:
+Contains various Go packages to easily *encoding/xml.Unmarshal()* common XML formats; these have all been auto-generated with the **go-xsd** ( http://github.com/metaleap/go-xsd ) package and that you can simply **go get**:
 
 - To easily *encoding/xml.Unmarshal()* **Atom** documents:
 
