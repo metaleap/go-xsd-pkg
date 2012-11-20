@@ -13,43 +13,38 @@ import (
 	xlink "github.com/metaleap/go-xsd-pkg/www.w3.org/Math/XMLSchema/mathml2/common/xlink-href.xsd_go"
 )
 
-type XsdGoPkgHasAttr_Altimg_XsdtAnyURI_ struct {
-	Altimg xsdt.AnyURI `xml:"http://www.w3.org/1998/Math/MathML altimg,attr"`
-
-}
-
 type XsdGoPkgHasAttr_Alttext_XsdtString_ struct {
 	Alttext xsdt.String `xml:"http://www.w3.org/1998/Math/MathML alttext,attr"`
 
 }
 
-type XsdGoPkgHasAttr_Width_XsdtString_ struct {
-	Width xsdt.String `xml:"http://www.w3.org/1998/Math/MathML width,attr"`
+type XsdGoPkgHasAttr_Baseline_XsdtString_ struct {
+	Baseline xsdt.String `xml:"http://www.w3.org/1998/Math/MathML baseline,attr"`
 
 }
 
 type TxsdBrowserInterfaceAttribOverflow xsdt.String
 
-//	Returns true if the value of this enumerated TxsdBrowserInterfaceAttribOverflow is "scroll".
-func (me TxsdBrowserInterfaceAttribOverflow) IsScroll () bool { return me == "scroll" }
-
 //	Returns true if the value of this enumerated TxsdBrowserInterfaceAttribOverflow is "truncate".
 func (me TxsdBrowserInterfaceAttribOverflow) IsTruncate () bool { return me == "truncate" }
-
-//	This convenience method just performs a simple type conversion to TxsdBrowserInterfaceAttribOverflow's alias type xsdt.String.
-func (me TxsdBrowserInterfaceAttribOverflow) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TxsdBrowserInterfaceAttribOverflow is just a simple String type, this merely returns the current string value.
-func (me TxsdBrowserInterfaceAttribOverflow) String () string { return xsdt.String(me).String() }
-
-//	Since TxsdBrowserInterfaceAttribOverflow is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdBrowserInterfaceAttribOverflow) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 //	Returns true if the value of this enumerated TxsdBrowserInterfaceAttribOverflow is "elide".
 func (me TxsdBrowserInterfaceAttribOverflow) IsElide () bool { return me == "elide" }
 
 //	Returns true if the value of this enumerated TxsdBrowserInterfaceAttribOverflow is "scale".
 func (me TxsdBrowserInterfaceAttribOverflow) IsScale () bool { return me == "scale" }
+
+//	Since TxsdBrowserInterfaceAttribOverflow is just a simple String type, this merely returns the current string value.
+func (me TxsdBrowserInterfaceAttribOverflow) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdBrowserInterfaceAttribOverflow is "scroll".
+func (me TxsdBrowserInterfaceAttribOverflow) IsScroll () bool { return me == "scroll" }
+
+//	Since TxsdBrowserInterfaceAttribOverflow is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdBrowserInterfaceAttribOverflow) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdBrowserInterfaceAttribOverflow's alias type xsdt.String.
+func (me TxsdBrowserInterfaceAttribOverflow) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 type XsdGoPkgHasAttr_Overflow_TxsdBrowserInterfaceAttribOverflow_Scroll struct {
 	Overflow TxsdBrowserInterfaceAttribOverflow `xml:"http://www.w3.org/1998/Math/MathML overflow,attr"`
@@ -59,8 +54,8 @@ type XsdGoPkgHasAttr_Overflow_TxsdBrowserInterfaceAttribOverflow_Scroll struct {
 //	Returns the default value for Overflow -- "scroll"
 func (me XsdGoPkgHasAttr_Overflow_TxsdBrowserInterfaceAttribOverflow_Scroll) OverflowDefault () TxsdBrowserInterfaceAttribOverflow { return TxsdBrowserInterfaceAttribOverflow("scroll") }
 
-type XsdGoPkgHasAttr_Baseline_XsdtString_ struct {
-	Baseline xsdt.String `xml:"http://www.w3.org/1998/Math/MathML baseline,attr"`
+type XsdGoPkgHasAttr_Altimg_XsdtAnyURI_ struct {
+	Altimg xsdt.AnyURI `xml:"http://www.w3.org/1998/Math/MathML altimg,attr"`
 
 }
 
@@ -69,32 +64,37 @@ type XsdGoPkgHasAttr_Type_XsdtString_ struct {
 
 }
 
-type XsdGoPkgHasAttr_Name_XsdtString_ struct {
-	Name xsdt.String `xml:"http://www.w3.org/1998/Math/MathML name,attr"`
-
-}
-
 type XsdGoPkgHasAttr_Height_XsdtString_ struct {
 	Height xsdt.String `xml:"http://www.w3.org/1998/Math/MathML height,attr"`
 
 }
 
+type XsdGoPkgHasAttr_Name_XsdtString_ struct {
+	Name xsdt.String `xml:"http://www.w3.org/1998/Math/MathML name,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Width_XsdtString_ struct {
+	Width xsdt.String `xml:"http://www.w3.org/1998/Math/MathML width,attr"`
+
+}
+
 type XsdGoPkgHasAtts_BrowserInterfaceAttrib struct {
-	XsdGoPkgHasAttr_Name_XsdtString_
-
-	XsdGoPkgHasAttr_Height_XsdtString_
-
-	XsdGoPkgHasAttr_Altimg_XsdtAnyURI_
-
 	XsdGoPkgHasAttr_Alttext_XsdtString_
-
-	XsdGoPkgHasAttr_Width_XsdtString_
-
-	XsdGoPkgHasAttr_Overflow_TxsdBrowserInterfaceAttribOverflow_Scroll
 
 	XsdGoPkgHasAttr_Baseline_XsdtString_
 
+	XsdGoPkgHasAttr_Overflow_TxsdBrowserInterfaceAttribOverflow_Scroll
+
+	XsdGoPkgHasAttr_Altimg_XsdtAnyURI_
+
 	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasAttr_Height_XsdtString_
+
+	XsdGoPkgHasAttr_Name_XsdtString_
+
+	XsdGoPkgHasAttr_Width_XsdtString_
 
 }
 
@@ -108,8 +108,8 @@ type XsdGoPkgHasAttr_Xref_XsdtIdref_ struct {
 
 }
 
-type XsdGoPkgHasAttr_Id_XsdtId_ struct {
-	Id xsdt.Id `xml:"http://www.w3.org/1998/Math/MathML id,attr"`
+type XsdGoPkgHasAttr_Class_XsdtNmtokens_ struct {
+	Class xsdt.Nmtokens `xml:"http://www.w3.org/1998/Math/MathML class,attr"`
 
 }
 
@@ -118,21 +118,21 @@ type XsdGoPkgHasAttr_Style_XsdtString_ struct {
 
 }
 
-type XsdGoPkgHasAttr_Class_XsdtNmtokens_ struct {
-	Class xsdt.Nmtokens `xml:"http://www.w3.org/1998/Math/MathML class,attr"`
+type XsdGoPkgHasAttr_Id_XsdtId_ struct {
+	Id xsdt.Id `xml:"http://www.w3.org/1998/Math/MathML id,attr"`
 
 }
 
 type XsdGoPkgHasAtts_CommonAttrib struct {
-	xlink.XsdGoPkgHasAttr_Href
+	XsdGoPkgHasAttr_Id_XsdtId_
 
 	XsdGoPkgHasAttr_Xref_XsdtIdref_
 
-	XsdGoPkgHasAttr_Id_XsdtId_
+	XsdGoPkgHasAttr_Class_XsdtNmtokens_
+
+	xlink.XsdGoPkgHasAttr_Href
 
 	XsdGoPkgHasAttr_Style_XsdtString_
-
-	XsdGoPkgHasAttr_Class_XsdtNmtokens_
 
 }
 
@@ -172,56 +172,8 @@ type XsdGoPkgHasAtts_MathAttlist struct {
 
 }
 
-type TlengthWithUnit xsdt.String
-
-//	Since TlengthWithUnit is just a simple String type, this merely returns the current string value.
-func (me TlengthWithUnit) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TlengthWithUnit's alias type xsdt.String.
-func (me TlengthWithUnit) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TlengthWithUnit is just a simple String type, this merely sets the current value from the specified string.
-func (me *TlengthWithUnit) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-type TsimpleSize xsdt.String
-
-//	Returns true if the value of this enumerated TsimpleSize is "small".
-func (me TsimpleSize) IsSmall () bool { return me == "small" }
-
-//	Since TsimpleSize is just a simple String type, this merely returns the current string value.
-func (me TsimpleSize) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TsimpleSize is "normal".
-func (me TsimpleSize) IsNormal () bool { return me == "normal" }
-
-//	This convenience method just performs a simple type conversion to TsimpleSize's alias type xsdt.String.
-func (me TsimpleSize) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TsimpleSize is just a simple String type, this merely sets the current value from the specified string.
-func (me *TsimpleSize) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TsimpleSize is "big".
-func (me TsimpleSize) IsBig () bool { return me == "big" }
-
-type TxsdTokenStyleAttribMathsize xsdt.String
-
-//	Since TxsdTokenStyleAttribMathsize is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdTokenStyleAttribMathsize) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	TxsdTokenStyleAttribMathsize is an XSD union-type of several types. This is a simple type conversion to TlengthWithUnit, but keep in mind the actual value may or may not be a valid TlengthWithUnit value.
-func (me TxsdTokenStyleAttribMathsize) ToTlengthWithUnit () TlengthWithUnit { return TlengthWithUnit(me) }
-
-//	TxsdTokenStyleAttribMathsize is an XSD union-type of several types. This is a simple type conversion to TsimpleSize, but keep in mind the actual value may or may not be a valid TsimpleSize value.
-func (me TxsdTokenStyleAttribMathsize) ToTsimpleSize () TsimpleSize { return TsimpleSize(me) }
-
-//	This convenience method just performs a simple type conversion to TxsdTokenStyleAttribMathsize's alias type xsdt.String.
-func (me TxsdTokenStyleAttribMathsize) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TxsdTokenStyleAttribMathsize is just a simple String type, this merely returns the current string value.
-func (me TxsdTokenStyleAttribMathsize) String () string { return xsdt.String(me).String() }
-
-type XsdGoPkgHasAttr_Mathsize_TxsdTokenStyleAttribMathsize_ struct {
-	Mathsize TxsdTokenStyleAttribMathsize `xml:"http://www.w3.org/1998/Math/MathML mathsize,attr"`
+type XsdGoPkgHasAttr_Mathcolor_XsdtString_ struct {
+	Mathcolor xsdt.String `xml:"http://www.w3.org/1998/Math/MathML mathcolor,attr"`
 
 }
 
@@ -232,23 +184,41 @@ type XsdGoPkgHasAttr_Mathbackground_XsdtString_ struct {
 
 type TxsdTokenStyleAttribMathvariant xsdt.String
 
+//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "normal".
+func (me TxsdTokenStyleAttribMathvariant) IsNormal () bool { return me == "normal" }
+
+//	This convenience method just performs a simple type conversion to TxsdTokenStyleAttribMathvariant's alias type xsdt.String.
+func (me TxsdTokenStyleAttribMathvariant) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "bold".
+func (me TxsdTokenStyleAttribMathvariant) IsBold () bool { return me == "bold" }
+
+//	Since TxsdTokenStyleAttribMathvariant is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdTokenStyleAttribMathvariant) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "fraktur".
+func (me TxsdTokenStyleAttribMathvariant) IsFraktur () bool { return me == "fraktur" }
+
+//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "bold-fraktur".
+func (me TxsdTokenStyleAttribMathvariant) IsBoldFraktur () bool { return me == "bold-fraktur" }
+
 //	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "sans-serif-bold-italic".
 func (me TxsdTokenStyleAttribMathvariant) IsSansSerifBoldItalic () bool { return me == "sans-serif-bold-italic" }
 
 //	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "double-struck".
 func (me TxsdTokenStyleAttribMathvariant) IsDoubleStruck () bool { return me == "double-struck" }
 
-//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "bold-sans-serif".
-func (me TxsdTokenStyleAttribMathvariant) IsBoldSansSerif () bool { return me == "bold-sans-serif" }
+//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "bold-italic".
+func (me TxsdTokenStyleAttribMathvariant) IsBoldItalic () bool { return me == "bold-italic" }
 
-//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "normal".
-func (me TxsdTokenStyleAttribMathvariant) IsNormal () bool { return me == "normal" }
+//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "sans-serif".
+func (me TxsdTokenStyleAttribMathvariant) IsSansSerif () bool { return me == "sans-serif" }
 
-//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "bold".
-func (me TxsdTokenStyleAttribMathvariant) IsBold () bool { return me == "bold" }
+//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "italic".
+func (me TxsdTokenStyleAttribMathvariant) IsItalic () bool { return me == "italic" }
 
-//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "bold-fraktur".
-func (me TxsdTokenStyleAttribMathvariant) IsBoldFraktur () bool { return me == "bold-fraktur" }
+//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "sans-serif-italic".
+func (me TxsdTokenStyleAttribMathvariant) IsSansSerifItalic () bool { return me == "sans-serif-italic" }
 
 //	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "script".
 func (me TxsdTokenStyleAttribMathvariant) IsScript () bool { return me == "script" }
@@ -256,115 +226,81 @@ func (me TxsdTokenStyleAttribMathvariant) IsScript () bool { return me == "scrip
 //	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "monospace".
 func (me TxsdTokenStyleAttribMathvariant) IsMonospace () bool { return me == "monospace" }
 
-//	Since TxsdTokenStyleAttribMathvariant is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdTokenStyleAttribMathvariant) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "sans-serif".
-func (me TxsdTokenStyleAttribMathvariant) IsSansSerif () bool { return me == "sans-serif" }
-
-//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "sans-serif-italic".
-func (me TxsdTokenStyleAttribMathvariant) IsSansSerifItalic () bool { return me == "sans-serif-italic" }
-
-//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "fraktur".
-func (me TxsdTokenStyleAttribMathvariant) IsFraktur () bool { return me == "fraktur" }
-
 //	Since TxsdTokenStyleAttribMathvariant is just a simple String type, this merely returns the current string value.
 func (me TxsdTokenStyleAttribMathvariant) String () string { return xsdt.String(me).String() }
 
 //	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "bold-script".
 func (me TxsdTokenStyleAttribMathvariant) IsBoldScript () bool { return me == "bold-script" }
 
-//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "italic".
-func (me TxsdTokenStyleAttribMathvariant) IsItalic () bool { return me == "italic" }
-
-//	This convenience method just performs a simple type conversion to TxsdTokenStyleAttribMathvariant's alias type xsdt.String.
-func (me TxsdTokenStyleAttribMathvariant) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "bold-italic".
-func (me TxsdTokenStyleAttribMathvariant) IsBoldItalic () bool { return me == "bold-italic" }
+//	Returns true if the value of this enumerated TxsdTokenStyleAttribMathvariant is "bold-sans-serif".
+func (me TxsdTokenStyleAttribMathvariant) IsBoldSansSerif () bool { return me == "bold-sans-serif" }
 
 type XsdGoPkgHasAttr_Mathvariant_TxsdTokenStyleAttribMathvariant_ struct {
 	Mathvariant TxsdTokenStyleAttribMathvariant `xml:"http://www.w3.org/1998/Math/MathML mathvariant,attr"`
 
 }
 
-type XsdGoPkgHasAttr_Mathcolor_XsdtString_ struct {
-	Mathcolor xsdt.String `xml:"http://www.w3.org/1998/Math/MathML mathcolor,attr"`
+type TlengthWithUnit xsdt.String
+
+//	Since TlengthWithUnit is just a simple String type, this merely sets the current value from the specified string.
+func (me *TlengthWithUnit) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TlengthWithUnit's alias type xsdt.String.
+func (me TlengthWithUnit) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TlengthWithUnit is just a simple String type, this merely returns the current string value.
+func (me TlengthWithUnit) String () string { return xsdt.String(me).String() }
+
+type TsimpleSize xsdt.String
+
+//	Since TsimpleSize is just a simple String type, this merely returns the current string value.
+func (me TsimpleSize) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TsimpleSize is "normal".
+func (me TsimpleSize) IsNormal () bool { return me == "normal" }
+
+//	Since TsimpleSize is just a simple String type, this merely sets the current value from the specified string.
+func (me *TsimpleSize) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TsimpleSize is "small".
+func (me TsimpleSize) IsSmall () bool { return me == "small" }
+
+//	This convenience method just performs a simple type conversion to TsimpleSize's alias type xsdt.String.
+func (me TsimpleSize) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TsimpleSize is "big".
+func (me TsimpleSize) IsBig () bool { return me == "big" }
+
+type TxsdTokenStyleAttribMathsize xsdt.String
+
+//	This convenience method just performs a simple type conversion to TxsdTokenStyleAttribMathsize's alias type xsdt.String.
+func (me TxsdTokenStyleAttribMathsize) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	TxsdTokenStyleAttribMathsize is an XSD union-type of several types. This is a simple type conversion to TsimpleSize, but keep in mind the actual value may or may not be a valid TsimpleSize value.
+func (me TxsdTokenStyleAttribMathsize) ToTsimpleSize () TsimpleSize { return TsimpleSize(me) }
+
+//	Since TxsdTokenStyleAttribMathsize is just a simple String type, this merely returns the current string value.
+func (me TxsdTokenStyleAttribMathsize) String () string { return xsdt.String(me).String() }
+
+//	Since TxsdTokenStyleAttribMathsize is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdTokenStyleAttribMathsize) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	TxsdTokenStyleAttribMathsize is an XSD union-type of several types. This is a simple type conversion to TlengthWithUnit, but keep in mind the actual value may or may not be a valid TlengthWithUnit value.
+func (me TxsdTokenStyleAttribMathsize) ToTlengthWithUnit () TlengthWithUnit { return TlengthWithUnit(me) }
+
+type XsdGoPkgHasAttr_Mathsize_TxsdTokenStyleAttribMathsize_ struct {
+	Mathsize TxsdTokenStyleAttribMathsize `xml:"http://www.w3.org/1998/Math/MathML mathsize,attr"`
 
 }
 
 type XsdGoPkgHasAtts_TokenStyleAttrib struct {
-	XsdGoPkgHasAttr_Mathsize_TxsdTokenStyleAttribMathsize_
+	XsdGoPkgHasAttr_Mathcolor_XsdtString_
 
 	XsdGoPkgHasAttr_Mathbackground_XsdtString_
 
 	XsdGoPkgHasAttr_Mathvariant_TxsdTokenStyleAttribMathvariant_
 
-	XsdGoPkgHasAttr_Mathcolor_XsdtString_
-
-}
-
-type TnamedSpace xsdt.String
-
-//	Returns true if the value of this enumerated TnamedSpace is "verythinmathspace".
-func (me TnamedSpace) IsVerythinmathspace () bool { return me == "verythinmathspace" }
-
-//	This convenience method just performs a simple type conversion to TnamedSpace's alias type xsdt.String.
-func (me TnamedSpace) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TnamedSpace is "mediummathspace".
-func (me TnamedSpace) IsMediummathspace () bool { return me == "mediummathspace" }
-
-//	Returns true if the value of this enumerated TnamedSpace is "veryverythickmathspace".
-func (me TnamedSpace) IsVeryverythickmathspace () bool { return me == "veryverythickmathspace" }
-
-//	Returns true if the value of this enumerated TnamedSpace is "verythickmathspace".
-func (me TnamedSpace) IsVerythickmathspace () bool { return me == "verythickmathspace" }
-
-//	Returns true if the value of this enumerated TnamedSpace is "thinmathspace".
-func (me TnamedSpace) IsThinmathspace () bool { return me == "thinmathspace" }
-
-//	Returns true if the value of this enumerated TnamedSpace is "thickmathspace".
-func (me TnamedSpace) IsThickmathspace () bool { return me == "thickmathspace" }
-
-//	Since TnamedSpace is just a simple String type, this merely returns the current string value.
-func (me TnamedSpace) String () string { return xsdt.String(me).String() }
-
-//	Since TnamedSpace is just a simple String type, this merely sets the current value from the specified string.
-func (me *TnamedSpace) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TnamedSpace is "veryverythinmathspace".
-func (me TnamedSpace) IsVeryverythinmathspace () bool { return me == "veryverythinmathspace" }
-
-type TxsdOperatorAttribRspace xsdt.String
-
-//	This convenience method just performs a simple type conversion to TxsdOperatorAttribRspace's alias type xsdt.String.
-func (me TxsdOperatorAttribRspace) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TxsdOperatorAttribRspace is just a simple String type, this merely returns the current string value.
-func (me TxsdOperatorAttribRspace) String () string { return xsdt.String(me).String() }
-
-//	TxsdOperatorAttribRspace is an XSD union-type of several types. This is a simple type conversion to TlengthWithUnit, but keep in mind the actual value may or may not be a valid TlengthWithUnit value.
-func (me TxsdOperatorAttribRspace) ToTlengthWithUnit () TlengthWithUnit { return TlengthWithUnit(me) }
-
-//	TxsdOperatorAttribRspace is an XSD union-type of several types. This is a simple type conversion to TnamedSpace, but keep in mind the actual value may or may not be a valid TnamedSpace value.
-func (me TxsdOperatorAttribRspace) ToTnamedSpace () TnamedSpace { return TnamedSpace(me) }
-
-//	Since TxsdOperatorAttribRspace is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdOperatorAttribRspace) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_Rspace_TxsdOperatorAttribRspace_ struct {
-	Rspace TxsdOperatorAttribRspace `xml:"http://www.w3.org/1998/Math/MathML rspace,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Lspace_TxsdOperatorAttribLspace_ struct {
-	Lspace TxsdOperatorAttribRspace `xml:"http://www.w3.org/1998/Math/MathML lspace,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Symmetric_XsdtBoolean_ struct {
-	Symmetric xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML symmetric,attr"`
+	XsdGoPkgHasAttr_Mathsize_TxsdTokenStyleAttribMathsize_
 
 }
 
@@ -373,21 +309,113 @@ type XsdGoPkgHasAttr_Stretchy_XsdtBoolean_ struct {
 
 }
 
-type XsdGoPkgHasAttr_Movablelimits_XsdtBoolean_ struct {
-	Movablelimits xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML movablelimits,attr"`
+type Tinfinity xsdt.String
+
+//	Since Tinfinity is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tinfinity) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to Tinfinity's alias type xsdt.String.
+func (me Tinfinity) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since Tinfinity is just a simple String type, this merely returns the current string value.
+func (me Tinfinity) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated Tinfinity is "infinity".
+func (me Tinfinity) IsInfinity () bool { return me == "infinity" }
+
+type TnamedSpace xsdt.String
+
+//	Returns true if the value of this enumerated TnamedSpace is "mediummathspace".
+func (me TnamedSpace) IsMediummathspace () bool { return me == "mediummathspace" }
+
+//	Returns true if the value of this enumerated TnamedSpace is "veryverythinmathspace".
+func (me TnamedSpace) IsVeryverythinmathspace () bool { return me == "veryverythinmathspace" }
+
+//	Returns true if the value of this enumerated TnamedSpace is "verythickmathspace".
+func (me TnamedSpace) IsVerythickmathspace () bool { return me == "verythickmathspace" }
+
+//	Returns true if the value of this enumerated TnamedSpace is "verythinmathspace".
+func (me TnamedSpace) IsVerythinmathspace () bool { return me == "verythinmathspace" }
+
+//	This convenience method just performs a simple type conversion to TnamedSpace's alias type xsdt.String.
+func (me TnamedSpace) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TnamedSpace is just a simple String type, this merely returns the current string value.
+func (me TnamedSpace) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TnamedSpace is "thickmathspace".
+func (me TnamedSpace) IsThickmathspace () bool { return me == "thickmathspace" }
+
+//	Returns true if the value of this enumerated TnamedSpace is "veryverythickmathspace".
+func (me TnamedSpace) IsVeryverythickmathspace () bool { return me == "veryverythickmathspace" }
+
+//	Returns true if the value of this enumerated TnamedSpace is "thinmathspace".
+func (me TnamedSpace) IsThinmathspace () bool { return me == "thinmathspace" }
+
+//	Since TnamedSpace is just a simple String type, this merely sets the current value from the specified string.
+func (me *TnamedSpace) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+type TxsdOperatorAttribMaxsize xsdt.String
+
+//	Since TxsdOperatorAttribMaxsize is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdOperatorAttribMaxsize) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdOperatorAttribMaxsize's alias type xsdt.String.
+func (me TxsdOperatorAttribMaxsize) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	TxsdOperatorAttribMaxsize is an XSD union-type of several types. This is a simple type conversion to TlengthWithUnit, but keep in mind the actual value may or may not be a valid TlengthWithUnit value.
+func (me TxsdOperatorAttribMaxsize) ToTlengthWithUnit () TlengthWithUnit { return TlengthWithUnit(me) }
+
+//	TxsdOperatorAttribMaxsize is an XSD union-type of several types. This is a simple type conversion to Tinfinity, but keep in mind the actual value may or may not be a valid Tinfinity value.
+func (me TxsdOperatorAttribMaxsize) ToTinfinity () Tinfinity { return Tinfinity(me) }
+
+//	Since TxsdOperatorAttribMaxsize is just a simple String type, this merely returns the current string value.
+func (me TxsdOperatorAttribMaxsize) String () string { return xsdt.String(me).String() }
+
+//	TxsdOperatorAttribMaxsize is an XSD union-type of several types. This is a simple type conversion to TnamedSpace, but keep in mind the actual value may or may not be a valid TnamedSpace value.
+func (me TxsdOperatorAttribMaxsize) ToTnamedSpace () TnamedSpace { return TnamedSpace(me) }
+
+//	TxsdOperatorAttribMaxsize is an XSD union-type of several types. This is a simple type conversion to XsdtFloat, but keep in mind the actual value may or may not be a valid XsdtFloat value.
+func (me TxsdOperatorAttribMaxsize) ToXsdtFloat () xsdt.Float { var x = new(xsdt.Float); x.SetFromString(me.String()); return *x }
+
+type XsdGoPkgHasAttr_Maxsize_TxsdOperatorAttribMaxsize_ struct {
+	Maxsize TxsdOperatorAttribMaxsize `xml:"http://www.w3.org/1998/Math/MathML maxsize,attr"`
+
+}
+
+type TxsdOperatorAttribMinsize xsdt.String
+
+//	TxsdOperatorAttribMinsize is an XSD union-type of several types. This is a simple type conversion to TlengthWithUnit, but keep in mind the actual value may or may not be a valid TlengthWithUnit value.
+func (me TxsdOperatorAttribMinsize) ToTlengthWithUnit () TlengthWithUnit { return TlengthWithUnit(me) }
+
+//	Since TxsdOperatorAttribMinsize is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdOperatorAttribMinsize) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdOperatorAttribMinsize's alias type xsdt.String.
+func (me TxsdOperatorAttribMinsize) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	TxsdOperatorAttribMinsize is an XSD union-type of several types. This is a simple type conversion to TnamedSpace, but keep in mind the actual value may or may not be a valid TnamedSpace value.
+func (me TxsdOperatorAttribMinsize) ToTnamedSpace () TnamedSpace { return TnamedSpace(me) }
+
+//	Since TxsdOperatorAttribMinsize is just a simple String type, this merely returns the current string value.
+func (me TxsdOperatorAttribMinsize) String () string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_Minsize_TxsdOperatorAttribMinsize_ struct {
+	Minsize TxsdOperatorAttribMinsize `xml:"http://www.w3.org/1998/Math/MathML minsize,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Symmetric_XsdtBoolean_ struct {
+	Symmetric xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML symmetric,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Lspace_TxsdOperatorAttribLspace_ struct {
+	Lspace TxsdOperatorAttribMinsize `xml:"http://www.w3.org/1998/Math/MathML lspace,attr"`
 
 }
 
 type TxsdOperatorAttribForm xsdt.String
-
-//	This convenience method just performs a simple type conversion to TxsdOperatorAttribForm's alias type xsdt.String.
-func (me TxsdOperatorAttribForm) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdOperatorAttribForm is "prefix".
-func (me TxsdOperatorAttribForm) IsPrefix () bool { return me == "prefix" }
-
-//	Returns true if the value of this enumerated TxsdOperatorAttribForm is "infix".
-func (me TxsdOperatorAttribForm) IsInfix () bool { return me == "infix" }
 
 //	Since TxsdOperatorAttribForm is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdOperatorAttribForm) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
@@ -395,16 +423,20 @@ func (me *TxsdOperatorAttribForm) SetFromString (s string)  { (*xsdt.String)(me)
 //	Returns true if the value of this enumerated TxsdOperatorAttribForm is "postfix".
 func (me TxsdOperatorAttribForm) IsPostfix () bool { return me == "postfix" }
 
+//	Returns true if the value of this enumerated TxsdOperatorAttribForm is "infix".
+func (me TxsdOperatorAttribForm) IsInfix () bool { return me == "infix" }
+
 //	Since TxsdOperatorAttribForm is just a simple String type, this merely returns the current string value.
 func (me TxsdOperatorAttribForm) String () string { return xsdt.String(me).String() }
 
+//	Returns true if the value of this enumerated TxsdOperatorAttribForm is "prefix".
+func (me TxsdOperatorAttribForm) IsPrefix () bool { return me == "prefix" }
+
+//	This convenience method just performs a simple type conversion to TxsdOperatorAttribForm's alias type xsdt.String.
+func (me TxsdOperatorAttribForm) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
 type XsdGoPkgHasAttr_Form_TxsdOperatorAttribForm_ struct {
 	Form TxsdOperatorAttribForm `xml:"http://www.w3.org/1998/Math/MathML form,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Accent_XsdtBoolean_ struct {
-	Accent xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML accent,attr"`
 
 }
 
@@ -413,13 +445,8 @@ type XsdGoPkgHasAttr_Separator_XsdtBoolean_ struct {
 
 }
 
-type XsdGoPkgHasAttr_Minsize_TxsdOperatorAttribMinsize_ struct {
-	Minsize TxsdOperatorAttribRspace `xml:"http://www.w3.org/1998/Math/MathML minsize,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Largeop_XsdtBoolean_ struct {
-	Largeop xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML largeop,attr"`
+type XsdGoPkgHasAttr_Accent_XsdtBoolean_ struct {
+	Accent xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML accent,attr"`
 
 }
 
@@ -428,72 +455,45 @@ type XsdGoPkgHasAttr_Fence_XsdtBoolean_ struct {
 
 }
 
-type Tinfinity xsdt.String
+type XsdGoPkgHasAttr_Largeop_XsdtBoolean_ struct {
+	Largeop xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML largeop,attr"`
 
-//	Returns true if the value of this enumerated Tinfinity is "infinity".
-func (me Tinfinity) IsInfinity () bool { return me == "infinity" }
+}
 
-//	Since Tinfinity is just a simple String type, this merely returns the current string value.
-func (me Tinfinity) String () string { return xsdt.String(me).String() }
+type XsdGoPkgHasAttr_Movablelimits_XsdtBoolean_ struct {
+	Movablelimits xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML movablelimits,attr"`
 
-//	Since Tinfinity is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tinfinity) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+}
 
-//	This convenience method just performs a simple type conversion to Tinfinity's alias type xsdt.String.
-func (me Tinfinity) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type TxsdOperatorAttribMaxsize xsdt.String
-
-//	TxsdOperatorAttribMaxsize is an XSD union-type of several types. This is a simple type conversion to Tinfinity, but keep in mind the actual value may or may not be a valid Tinfinity value.
-func (me TxsdOperatorAttribMaxsize) ToTinfinity () Tinfinity { return Tinfinity(me) }
-
-//	This convenience method just performs a simple type conversion to TxsdOperatorAttribMaxsize's alias type xsdt.String.
-func (me TxsdOperatorAttribMaxsize) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	TxsdOperatorAttribMaxsize is an XSD union-type of several types. This is a simple type conversion to XsdtFloat, but keep in mind the actual value may or may not be a valid XsdtFloat value.
-func (me TxsdOperatorAttribMaxsize) ToXsdtFloat () xsdt.Float { var x = new(xsdt.Float); x.SetFromString(me.String()); return *x }
-
-//	TxsdOperatorAttribMaxsize is an XSD union-type of several types. This is a simple type conversion to TnamedSpace, but keep in mind the actual value may or may not be a valid TnamedSpace value.
-func (me TxsdOperatorAttribMaxsize) ToTnamedSpace () TnamedSpace { return TnamedSpace(me) }
-
-//	Since TxsdOperatorAttribMaxsize is just a simple String type, this merely returns the current string value.
-func (me TxsdOperatorAttribMaxsize) String () string { return xsdt.String(me).String() }
-
-//	Since TxsdOperatorAttribMaxsize is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdOperatorAttribMaxsize) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	TxsdOperatorAttribMaxsize is an XSD union-type of several types. This is a simple type conversion to TlengthWithUnit, but keep in mind the actual value may or may not be a valid TlengthWithUnit value.
-func (me TxsdOperatorAttribMaxsize) ToTlengthWithUnit () TlengthWithUnit { return TlengthWithUnit(me) }
-
-type XsdGoPkgHasAttr_Maxsize_TxsdOperatorAttribMaxsize_ struct {
-	Maxsize TxsdOperatorAttribMaxsize `xml:"http://www.w3.org/1998/Math/MathML maxsize,attr"`
+type XsdGoPkgHasAttr_Rspace_TxsdOperatorAttribRspace_ struct {
+	Rspace TxsdOperatorAttribMinsize `xml:"http://www.w3.org/1998/Math/MathML rspace,attr"`
 
 }
 
 type XsdGoPkgHasAtts_OperatorAttrib struct {
-	XsdGoPkgHasAttr_Fence_XsdtBoolean_
-
-	XsdGoPkgHasAttr_Maxsize_TxsdOperatorAttribMaxsize_
-
-	XsdGoPkgHasAttr_Rspace_TxsdOperatorAttribRspace_
-
-	XsdGoPkgHasAttr_Lspace_TxsdOperatorAttribLspace_
-
-	XsdGoPkgHasAttr_Symmetric_XsdtBoolean_
-
-	XsdGoPkgHasAttr_Stretchy_XsdtBoolean_
-
-	XsdGoPkgHasAttr_Movablelimits_XsdtBoolean_
-
 	XsdGoPkgHasAttr_Form_TxsdOperatorAttribForm_
-
-	XsdGoPkgHasAttr_Accent_XsdtBoolean_
 
 	XsdGoPkgHasAttr_Separator_XsdtBoolean_
 
-	XsdGoPkgHasAttr_Minsize_TxsdOperatorAttribMinsize_
+	XsdGoPkgHasAttr_Accent_XsdtBoolean_
+
+	XsdGoPkgHasAttr_Fence_XsdtBoolean_
 
 	XsdGoPkgHasAttr_Largeop_XsdtBoolean_
+
+	XsdGoPkgHasAttr_Movablelimits_XsdtBoolean_
+
+	XsdGoPkgHasAttr_Rspace_TxsdOperatorAttribRspace_
+
+	XsdGoPkgHasAttr_Stretchy_XsdtBoolean_
+
+	XsdGoPkgHasAttr_Maxsize_TxsdOperatorAttribMaxsize_
+
+	XsdGoPkgHasAttr_Minsize_TxsdOperatorAttribMinsize_
+
+	XsdGoPkgHasAttr_Symmetric_XsdtBoolean_
+
+	XsdGoPkgHasAttr_Lspace_TxsdOperatorAttribLspace_
 
 }
 
@@ -502,48 +502,40 @@ type XsdGoPkgHasAttr_Index_XsdtPositiveInteger_ struct {
 
 }
 
-type XsdGoPkgHasAttr_Alt_XsdtString_ struct {
-	Alt xsdt.String `xml:"http://www.w3.org/1998/Math/MathML alt,attr"`
-
-}
-
 type XsdGoPkgHasAttr_Fontfamily_XsdtString_ struct {
 	Fontfamily xsdt.String `xml:"http://www.w3.org/1998/Math/MathML fontfamily,attr"`
 
 }
 
+type XsdGoPkgHasAttr_Alt_XsdtString_ struct {
+	Alt xsdt.String `xml:"http://www.w3.org/1998/Math/MathML alt,attr"`
+
+}
+
 type XsdGoPkgHasAtts_MglyphAttlist struct {
-	XsdGoPkgHasAttr_Index_XsdtPositiveInteger_
+	XsdGoPkgHasAttr_Fontfamily_XsdtString_
 
 	XsdGoPkgHasAttr_Alt_XsdtString_
 
-	XsdGoPkgHasAttr_Fontfamily_XsdtString_
+	XsdGoPkgHasAttr_Index_XsdtPositiveInteger_
 
 }
 
 type XsdGoPkgHasAtts_MiAttlist struct {
-	XsdGoPkgHasAtts_CommonAttrib
-
 	XsdGoPkgHasAtts_TokenStyleAttrib
+
+	XsdGoPkgHasAtts_CommonAttrib
 
 }
 
 type XsdGoPkgHasAtts_MoAttlist struct {
-	XsdGoPkgHasAtts_OperatorAttrib
-
 	XsdGoPkgHasAtts_TokenStyleAttrib
 
 	XsdGoPkgHasAtts_CommonAttrib
 
-}
-
-type XsdGoPkgHasAttr_Rquote_XsdtString_ struct {
-	Rquote xsdt.String `xml:"http://www.w3.org/1998/Math/MathML rquote,attr"`
+	XsdGoPkgHasAtts_OperatorAttrib
 
 }
-
-//	Returns the default value for Rquote -- "\""
-func (me XsdGoPkgHasAttr_Rquote_XsdtString_) RquoteDefault () xsdt.String { return xsdt.String("\"") }
 
 type XsdGoPkgHasAttr_Lquote_XsdtString_ struct {
 	Lquote xsdt.String `xml:"http://www.w3.org/1998/Math/MathML lquote,attr"`
@@ -553,14 +545,22 @@ type XsdGoPkgHasAttr_Lquote_XsdtString_ struct {
 //	Returns the default value for Lquote -- "\""
 func (me XsdGoPkgHasAttr_Lquote_XsdtString_) LquoteDefault () xsdt.String { return xsdt.String("\"") }
 
+type XsdGoPkgHasAttr_Rquote_XsdtString_ struct {
+	Rquote xsdt.String `xml:"http://www.w3.org/1998/Math/MathML rquote,attr"`
+
+}
+
+//	Returns the default value for Rquote -- "\""
+func (me XsdGoPkgHasAttr_Rquote_XsdtString_) RquoteDefault () xsdt.String { return xsdt.String("\"") }
+
 type XsdGoPkgHasAtts_MsAttlist struct {
-	XsdGoPkgHasAttr_Lquote_XsdtString_
+	XsdGoPkgHasAttr_Rquote_XsdtString_
 
 	XsdGoPkgHasAtts_TokenStyleAttrib
 
-	XsdGoPkgHasAttr_Rquote_XsdtString_
-
 	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasAttr_Lquote_XsdtString_
 
 }
 
@@ -589,11 +589,11 @@ type XsdGoPkgHasAtts_MsupAttlist struct {
 }
 
 type XsdGoPkgHasAtts_MsubsupAttlist struct {
-	XsdGoPkgHasAttr_Subscriptshift_TlengthWithUnit_
+	XsdGoPkgHasAtts_CommonAttrib
 
 	XsdGoPkgHasAttr_Superscriptshift_TlengthWithUnit_
 
-	XsdGoPkgHasAtts_CommonAttrib
+	XsdGoPkgHasAttr_Subscriptshift_TlengthWithUnit_
 
 }
 
@@ -603,9 +603,9 @@ type XsdGoPkgHasAttr_Accentunder_XsdtBoolean_ struct {
 }
 
 type XsdGoPkgHasAtts_MunderAttlist struct {
-	XsdGoPkgHasAtts_CommonAttrib
-
 	XsdGoPkgHasAttr_Accentunder_XsdtBoolean_
+
+	XsdGoPkgHasAtts_CommonAttrib
 
 }
 
@@ -619,9 +619,9 @@ type XsdGoPkgHasAtts_MoverAttlist struct {
 type XsdGoPkgHasAtts_MunderoverAttlist struct {
 	XsdGoPkgHasAttr_Accentunder_XsdtBoolean_
 
-	XsdGoPkgHasAtts_CommonAttrib
-
 	XsdGoPkgHasAttr_Accent_XsdtBoolean_
+
+	XsdGoPkgHasAtts_CommonAttrib
 
 }
 
@@ -629,14 +629,6 @@ type XsdGoPkgHasAtts_MmultiscriptsAttlist struct {
 	XsdGoPkgHasAtts_CommonAttrib
 
 }
-
-type XsdGoPkgHasAttr_Width_TxsdMspaceAttlistWidth_0Em struct {
-	Width TxsdOperatorAttribRspace `xml:"http://www.w3.org/1998/Math/MathML width,attr"`
-
-}
-
-//	Returns the default value for Width -- "0em"
-func (me XsdGoPkgHasAttr_Width_TxsdMspaceAttlistWidth_0Em) WidthDefault () TxsdOperatorAttribRspace { return TxsdOperatorAttribRspace("0em") }
 
 type XsdGoPkgHasAttr_Height_TlengthWithUnit_0Ex struct {
 	Height TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML height,attr"`
@@ -654,34 +646,42 @@ type XsdGoPkgHasAttr_Depth_TlengthWithUnit_0Ex struct {
 //	Returns the default value for Depth -- "0ex"
 func (me XsdGoPkgHasAttr_Depth_TlengthWithUnit_0Ex) DepthDefault () TlengthWithUnit { return TlengthWithUnit("0ex") }
 
+type XsdGoPkgHasAttr_Width_TxsdMspaceAttlistWidth_0Em struct {
+	Width TxsdOperatorAttribMinsize `xml:"http://www.w3.org/1998/Math/MathML width,attr"`
+
+}
+
+//	Returns the default value for Width -- "0em"
+func (me XsdGoPkgHasAttr_Width_TxsdMspaceAttlistWidth_0Em) WidthDefault () TxsdOperatorAttribMinsize { return TxsdOperatorAttribMinsize("0em") }
+
 type TxsdMspaceAttlistLinebreak xsdt.String
-
-//	This convenience method just performs a simple type conversion to TxsdMspaceAttlistLinebreak's alias type xsdt.String.
-func (me TxsdMspaceAttlistLinebreak) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TxsdMspaceAttlistLinebreak is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdMspaceAttlistLinebreak) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "goodbreak".
-func (me TxsdMspaceAttlistLinebreak) IsGoodbreak () bool { return me == "goodbreak" }
-
-//	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "nobreak".
-func (me TxsdMspaceAttlistLinebreak) IsNobreak () bool { return me == "nobreak" }
 
 //	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "badbreak".
 func (me TxsdMspaceAttlistLinebreak) IsBadbreak () bool { return me == "badbreak" }
 
+//	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "auto".
+func (me TxsdMspaceAttlistLinebreak) IsAuto () bool { return me == "auto" }
+
+//	Since TxsdMspaceAttlistLinebreak is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdMspaceAttlistLinebreak) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
 //	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "newline".
 func (me TxsdMspaceAttlistLinebreak) IsNewline () bool { return me == "newline" }
 
-//	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "auto".
-func (me TxsdMspaceAttlistLinebreak) IsAuto () bool { return me == "auto" }
+//	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "nobreak".
+func (me TxsdMspaceAttlistLinebreak) IsNobreak () bool { return me == "nobreak" }
+
+//	Since TxsdMspaceAttlistLinebreak is just a simple String type, this merely returns the current string value.
+func (me TxsdMspaceAttlistLinebreak) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "goodbreak".
+func (me TxsdMspaceAttlistLinebreak) IsGoodbreak () bool { return me == "goodbreak" }
 
 //	Returns true if the value of this enumerated TxsdMspaceAttlistLinebreak is "indentingnewline".
 func (me TxsdMspaceAttlistLinebreak) IsIndentingnewline () bool { return me == "indentingnewline" }
 
-//	Since TxsdMspaceAttlistLinebreak is just a simple String type, this merely returns the current string value.
-func (me TxsdMspaceAttlistLinebreak) String () string { return xsdt.String(me).String() }
+//	This convenience method just performs a simple type conversion to TxsdMspaceAttlistLinebreak's alias type xsdt.String.
+func (me TxsdMspaceAttlistLinebreak) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 type XsdGoPkgHasAttr_Linebreak_TxsdMspaceAttlistLinebreak_Auto struct {
 	Linebreak TxsdMspaceAttlistLinebreak `xml:"http://www.w3.org/1998/Math/MathML linebreak,attr"`
@@ -692,25 +692,22 @@ type XsdGoPkgHasAttr_Linebreak_TxsdMspaceAttlistLinebreak_Auto struct {
 func (me XsdGoPkgHasAttr_Linebreak_TxsdMspaceAttlistLinebreak_Auto) LinebreakDefault () TxsdMspaceAttlistLinebreak { return TxsdMspaceAttlistLinebreak("auto") }
 
 type XsdGoPkgHasAtts_MspaceAttlist struct {
+	XsdGoPkgHasAttr_Height_TlengthWithUnit_0Ex
+
 	XsdGoPkgHasAttr_Depth_TlengthWithUnit_0Ex
+
+	XsdGoPkgHasAttr_Width_TxsdMspaceAttlistWidth_0Em
 
 	XsdGoPkgHasAtts_CommonAttrib
 
 	XsdGoPkgHasAttr_Linebreak_TxsdMspaceAttlistLinebreak_Auto
 
-	XsdGoPkgHasAttr_Width_TxsdMspaceAttlistWidth_0Em
-
-	XsdGoPkgHasAttr_Height_TlengthWithUnit_0Ex
-
 }
 
 type Tcentering xsdt.String
 
-//	Returns true if the value of this enumerated Tcentering is "left".
-func (me Tcentering) IsLeft () bool { return me == "left" }
-
-//	Since Tcentering is just a simple String type, this merely returns the current string value.
-func (me Tcentering) String () string { return xsdt.String(me).String() }
+//	This convenience method just performs a simple type conversion to Tcentering's alias type xsdt.String.
+func (me Tcentering) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 //	Returns true if the value of this enumerated Tcentering is "center".
 func (me Tcentering) IsCenter () bool { return me == "center" }
@@ -718,11 +715,14 @@ func (me Tcentering) IsCenter () bool { return me == "center" }
 //	Since Tcentering is just a simple String type, this merely sets the current value from the specified string.
 func (me *Tcentering) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
-//	This convenience method just performs a simple type conversion to Tcentering's alias type xsdt.String.
-func (me Tcentering) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	Returns true if the value of this enumerated Tcentering is "left".
+func (me Tcentering) IsLeft () bool { return me == "left" }
 
 //	Returns true if the value of this enumerated Tcentering is "right".
 func (me Tcentering) IsRight () bool { return me == "right" }
+
+//	Since Tcentering is just a simple String type, this merely returns the current string value.
+func (me Tcentering) String () string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasAttr_Denomalign_Tcentering_Center struct {
 	Denomalign Tcentering `xml:"http://www.w3.org/1998/Math/MathML denomalign,attr"`
@@ -731,62 +731,6 @@ type XsdGoPkgHasAttr_Denomalign_Tcentering_Center struct {
 
 //	Returns the default value for Denomalign -- "center"
 func (me XsdGoPkgHasAttr_Denomalign_Tcentering_Center) DenomalignDefault () Tcentering { return Tcentering("center") }
-
-type TlengthWithOptionalUnit xsdt.String
-
-//	Since TlengthWithOptionalUnit is just a simple String type, this merely returns the current string value.
-func (me TlengthWithOptionalUnit) String () string { return xsdt.String(me).String() }
-
-//	Since TlengthWithOptionalUnit is just a simple String type, this merely sets the current value from the specified string.
-func (me *TlengthWithOptionalUnit) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TlengthWithOptionalUnit's alias type xsdt.String.
-func (me TlengthWithOptionalUnit) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type Tthickness xsdt.String
-
-//	Returns true if the value of this enumerated Tthickness is "thin".
-func (me Tthickness) IsThin () bool { return me == "thin" }
-
-//	Since Tthickness is just a simple String type, this merely returns the current string value.
-func (me Tthickness) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to Tthickness's alias type xsdt.String.
-func (me Tthickness) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since Tthickness is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tthickness) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated Tthickness is "thick".
-func (me Tthickness) IsThick () bool { return me == "thick" }
-
-//	Returns true if the value of this enumerated Tthickness is "medium".
-func (me Tthickness) IsMedium () bool { return me == "medium" }
-
-type TxsdMfracAttlistLinethickness xsdt.String
-
-//	This convenience method just performs a simple type conversion to TxsdMfracAttlistLinethickness's alias type xsdt.String.
-func (me TxsdMfracAttlistLinethickness) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	TxsdMfracAttlistLinethickness is an XSD union-type of several types. This is a simple type conversion to Tthickness, but keep in mind the actual value may or may not be a valid Tthickness value.
-func (me TxsdMfracAttlistLinethickness) ToTthickness () Tthickness { return Tthickness(me) }
-
-//	Since TxsdMfracAttlistLinethickness is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdMfracAttlistLinethickness) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TxsdMfracAttlistLinethickness is just a simple String type, this merely returns the current string value.
-func (me TxsdMfracAttlistLinethickness) String () string { return xsdt.String(me).String() }
-
-//	TxsdMfracAttlistLinethickness is an XSD union-type of several types. This is a simple type conversion to TlengthWithOptionalUnit, but keep in mind the actual value may or may not be a valid TlengthWithOptionalUnit value.
-func (me TxsdMfracAttlistLinethickness) ToTlengthWithOptionalUnit () TlengthWithOptionalUnit { return TlengthWithOptionalUnit(me) }
-
-type XsdGoPkgHasAttr_Linethickness_TxsdMfracAttlistLinethickness_1 struct {
-	Linethickness TxsdMfracAttlistLinethickness `xml:"http://www.w3.org/1998/Math/MathML linethickness,attr"`
-
-}
-
-//	Returns the default value for Linethickness -- "1"
-func (me XsdGoPkgHasAttr_Linethickness_TxsdMfracAttlistLinethickness_1) LinethicknessDefault () TxsdMfracAttlistLinethickness { return TxsdMfracAttlistLinethickness("1") }
 
 type XsdGoPkgHasAttr_Numalign_Tcentering_Center struct {
 	Numalign Tcentering `xml:"http://www.w3.org/1998/Math/MathML numalign,attr"`
@@ -801,50 +745,85 @@ type XsdGoPkgHasAttr_Bevelled_XsdtBoolean_ struct {
 
 }
 
-type XsdGoPkgHasAtts_MfracAttlist struct {
-	XsdGoPkgHasAttr_Denomalign_Tcentering_Center
+type TlengthWithOptionalUnit xsdt.String
 
-	XsdGoPkgHasAtts_CommonAttrib
+//	This convenience method just performs a simple type conversion to TlengthWithOptionalUnit's alias type xsdt.String.
+func (me TlengthWithOptionalUnit) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TlengthWithOptionalUnit is just a simple String type, this merely returns the current string value.
+func (me TlengthWithOptionalUnit) String () string { return xsdt.String(me).String() }
+
+//	Since TlengthWithOptionalUnit is just a simple String type, this merely sets the current value from the specified string.
+func (me *TlengthWithOptionalUnit) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+type Tthickness xsdt.String
+
+//	Returns true if the value of this enumerated Tthickness is "medium".
+func (me Tthickness) IsMedium () bool { return me == "medium" }
+
+//	Since Tthickness is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tthickness) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since Tthickness is just a simple String type, this merely returns the current string value.
+func (me Tthickness) String () string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to Tthickness's alias type xsdt.String.
+func (me Tthickness) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated Tthickness is "thick".
+func (me Tthickness) IsThick () bool { return me == "thick" }
+
+//	Returns true if the value of this enumerated Tthickness is "thin".
+func (me Tthickness) IsThin () bool { return me == "thin" }
+
+type TxsdMfracAttlistLinethickness xsdt.String
+
+//	This convenience method just performs a simple type conversion to TxsdMfracAttlistLinethickness's alias type xsdt.String.
+func (me TxsdMfracAttlistLinethickness) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	TxsdMfracAttlistLinethickness is an XSD union-type of several types. This is a simple type conversion to Tthickness, but keep in mind the actual value may or may not be a valid Tthickness value.
+func (me TxsdMfracAttlistLinethickness) ToTthickness () Tthickness { return Tthickness(me) }
+
+//	Since TxsdMfracAttlistLinethickness is just a simple String type, this merely returns the current string value.
+func (me TxsdMfracAttlistLinethickness) String () string { return xsdt.String(me).String() }
+
+//	Since TxsdMfracAttlistLinethickness is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdMfracAttlistLinethickness) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	TxsdMfracAttlistLinethickness is an XSD union-type of several types. This is a simple type conversion to TlengthWithOptionalUnit, but keep in mind the actual value may or may not be a valid TlengthWithOptionalUnit value.
+func (me TxsdMfracAttlistLinethickness) ToTlengthWithOptionalUnit () TlengthWithOptionalUnit { return TlengthWithOptionalUnit(me) }
+
+type XsdGoPkgHasAttr_Linethickness_TxsdMfracAttlistLinethickness_1 struct {
+	Linethickness TxsdMfracAttlistLinethickness `xml:"http://www.w3.org/1998/Math/MathML linethickness,attr"`
+
+}
+
+//	Returns the default value for Linethickness -- "1"
+func (me XsdGoPkgHasAttr_Linethickness_TxsdMfracAttlistLinethickness_1) LinethicknessDefault () TxsdMfracAttlistLinethickness { return TxsdMfracAttlistLinethickness("1") }
+
+type XsdGoPkgHasAtts_MfracAttlist struct {
+	XsdGoPkgHasAttr_Bevelled_XsdtBoolean_
 
 	XsdGoPkgHasAttr_Linethickness_TxsdMfracAttlistLinethickness_1
 
-	XsdGoPkgHasAttr_Numalign_Tcentering_Center
+	XsdGoPkgHasAtts_CommonAttrib
 
-	XsdGoPkgHasAttr_Bevelled_XsdtBoolean_
+	XsdGoPkgHasAttr_Denomalign_Tcentering_Center
+
+	XsdGoPkgHasAttr_Numalign_Tcentering_Center
 
 }
 
 type TmpaddedSpace xsdt.String
+
+//	Since TmpaddedSpace is just a simple String type, this merely sets the current value from the specified string.
+func (me *TmpaddedSpace) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 //	This convenience method just performs a simple type conversion to TmpaddedSpace's alias type xsdt.String.
 func (me TmpaddedSpace) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 //	Since TmpaddedSpace is just a simple String type, this merely returns the current string value.
 func (me TmpaddedSpace) String () string { return xsdt.String(me).String() }
-
-//	Since TmpaddedSpace is just a simple String type, this merely sets the current value from the specified string.
-func (me *TmpaddedSpace) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_Height_TmpaddedSpace_ struct {
-	Height TmpaddedSpace `xml:"http://www.w3.org/1998/Math/MathML height,attr"`
-
-}
-
-type TmpaddedWidthSpace xsdt.String
-
-//	This convenience method just performs a simple type conversion to TmpaddedWidthSpace's alias type xsdt.String.
-func (me TmpaddedWidthSpace) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TmpaddedWidthSpace is just a simple String type, this merely returns the current string value.
-func (me TmpaddedWidthSpace) String () string { return xsdt.String(me).String() }
-
-//	Since TmpaddedWidthSpace is just a simple String type, this merely sets the current value from the specified string.
-func (me *TmpaddedWidthSpace) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_Width_TmpaddedWidthSpace_ struct {
-	Width TmpaddedWidthSpace `xml:"http://www.w3.org/1998/Math/MathML width,attr"`
-
-}
 
 type XsdGoPkgHasAttr_Depth_TmpaddedSpace_ struct {
 	Depth TmpaddedSpace `xml:"http://www.w3.org/1998/Math/MathML depth,attr"`
@@ -856,16 +835,37 @@ type XsdGoPkgHasAttr_Lspace_TmpaddedSpace_ struct {
 
 }
 
+type TmpaddedWidthSpace xsdt.String
+
+//	This convenience method just performs a simple type conversion to TmpaddedWidthSpace's alias type xsdt.String.
+func (me TmpaddedWidthSpace) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TmpaddedWidthSpace is just a simple String type, this merely sets the current value from the specified string.
+func (me *TmpaddedWidthSpace) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TmpaddedWidthSpace is just a simple String type, this merely returns the current string value.
+func (me TmpaddedWidthSpace) String () string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_Width_TmpaddedWidthSpace_ struct {
+	Width TmpaddedWidthSpace `xml:"http://www.w3.org/1998/Math/MathML width,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Height_TmpaddedSpace_ struct {
+	Height TmpaddedSpace `xml:"http://www.w3.org/1998/Math/MathML height,attr"`
+
+}
+
 type XsdGoPkgHasAtts_MpaddedAttlist struct {
-	XsdGoPkgHasAttr_Lspace_TmpaddedSpace_
+	XsdGoPkgHasAttr_Width_TmpaddedWidthSpace_
 
 	XsdGoPkgHasAttr_Height_TmpaddedSpace_
 
-	XsdGoPkgHasAttr_Width_TmpaddedWidthSpace_
+	XsdGoPkgHasAtts_CommonAttrib
 
 	XsdGoPkgHasAttr_Depth_TmpaddedSpace_
 
-	XsdGoPkgHasAtts_CommonAttrib
+	XsdGoPkgHasAttr_Lspace_TmpaddedSpace_
 
 }
 
@@ -877,14 +877,6 @@ type XsdGoPkgHasAttr_Close_XsdtString_ struct {
 //	Returns the default value for Close -- ")"
 func (me XsdGoPkgHasAttr_Close_XsdtString_) CloseDefault () xsdt.String { return xsdt.String(")") }
 
-type XsdGoPkgHasAttr_Separators_XsdtString_ struct {
-	Separators xsdt.String `xml:"http://www.w3.org/1998/Math/MathML separators,attr"`
-
-}
-
-//	Returns the default value for Separators -- ","
-func (me XsdGoPkgHasAttr_Separators_XsdtString_) SeparatorsDefault () xsdt.String { return xsdt.String(",") }
-
 type XsdGoPkgHasAttr_Open_XsdtString_ struct {
 	Open xsdt.String `xml:"http://www.w3.org/1998/Math/MathML open,attr"`
 
@@ -893,12 +885,20 @@ type XsdGoPkgHasAttr_Open_XsdtString_ struct {
 //	Returns the default value for Open -- "("
 func (me XsdGoPkgHasAttr_Open_XsdtString_) OpenDefault () xsdt.String { return xsdt.String("(") }
 
+type XsdGoPkgHasAttr_Separators_XsdtString_ struct {
+	Separators xsdt.String `xml:"http://www.w3.org/1998/Math/MathML separators,attr"`
+
+}
+
+//	Returns the default value for Separators -- ","
+func (me XsdGoPkgHasAttr_Separators_XsdtString_) SeparatorsDefault () xsdt.String { return xsdt.String(",") }
+
 type XsdGoPkgHasAtts_MfencedAttlist struct {
 	XsdGoPkgHasAtts_CommonAttrib
 
-	XsdGoPkgHasAttr_Open_XsdtString_
-
 	XsdGoPkgHasAttr_Close_XsdtString_
+
+	XsdGoPkgHasAttr_Open_XsdtString_
 
 	XsdGoPkgHasAttr_Separators_XsdtString_
 
@@ -906,11 +906,8 @@ type XsdGoPkgHasAtts_MfencedAttlist struct {
 
 type TxsdMencloseAttlistNotation xsdt.String
 
-//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "bottom".
-func (me TxsdMencloseAttlistNotation) IsBottom () bool { return me == "bottom" }
-
-//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "horizontalstrike".
-func (me TxsdMencloseAttlistNotation) IsHorizontalstrike () bool { return me == "horizontalstrike" }
+//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "radical".
+func (me TxsdMencloseAttlistNotation) IsRadical () bool { return me == "radical" }
 
 //	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "left".
 func (me TxsdMencloseAttlistNotation) IsLeft () bool { return me == "left" }
@@ -918,44 +915,47 @@ func (me TxsdMencloseAttlistNotation) IsLeft () bool { return me == "left" }
 //	This convenience method just performs a simple type conversion to TxsdMencloseAttlistNotation's alias type xsdt.String.
 func (me TxsdMencloseAttlistNotation) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
-//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "radical".
-func (me TxsdMencloseAttlistNotation) IsRadical () bool { return me == "radical" }
-
-//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "box".
-func (me TxsdMencloseAttlistNotation) IsBox () bool { return me == "box" }
-
-//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "roundedbox".
-func (me TxsdMencloseAttlistNotation) IsRoundedbox () bool { return me == "roundedbox" }
-
-//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "actuarial".
-func (me TxsdMencloseAttlistNotation) IsActuarial () bool { return me == "actuarial" }
-
-//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "circle".
-func (me TxsdMencloseAttlistNotation) IsCircle () bool { return me == "circle" }
-
 //	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "longdiv".
 func (me TxsdMencloseAttlistNotation) IsLongdiv () bool { return me == "longdiv" }
-
-//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "downdiagonalstrike".
-func (me TxsdMencloseAttlistNotation) IsDowndiagonalstrike () bool { return me == "downdiagonalstrike" }
-
-//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "verticalstrike".
-func (me TxsdMencloseAttlistNotation) IsVerticalstrike () bool { return me == "verticalstrike" }
-
-//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "updiagonalstrike".
-func (me TxsdMencloseAttlistNotation) IsUpdiagonalstrike () bool { return me == "updiagonalstrike" }
-
-//	Since TxsdMencloseAttlistNotation is just a simple String type, this merely returns the current string value.
-func (me TxsdMencloseAttlistNotation) String () string { return xsdt.String(me).String() }
 
 //	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "top".
 func (me TxsdMencloseAttlistNotation) IsTop () bool { return me == "top" }
 
+//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "bottom".
+func (me TxsdMencloseAttlistNotation) IsBottom () bool { return me == "bottom" }
+
+//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "downdiagonalstrike".
+func (me TxsdMencloseAttlistNotation) IsDowndiagonalstrike () bool { return me == "downdiagonalstrike" }
+
+//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "actuarial".
+func (me TxsdMencloseAttlistNotation) IsActuarial () bool { return me == "actuarial" }
+
+//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "roundedbox".
+func (me TxsdMencloseAttlistNotation) IsRoundedbox () bool { return me == "roundedbox" }
+
 //	Since TxsdMencloseAttlistNotation is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdMencloseAttlistNotation) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
+//	Since TxsdMencloseAttlistNotation is just a simple String type, this merely returns the current string value.
+func (me TxsdMencloseAttlistNotation) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "verticalstrike".
+func (me TxsdMencloseAttlistNotation) IsVerticalstrike () bool { return me == "verticalstrike" }
+
+//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "horizontalstrike".
+func (me TxsdMencloseAttlistNotation) IsHorizontalstrike () bool { return me == "horizontalstrike" }
+
+//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "box".
+func (me TxsdMencloseAttlistNotation) IsBox () bool { return me == "box" }
+
+//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "circle".
+func (me TxsdMencloseAttlistNotation) IsCircle () bool { return me == "circle" }
+
 //	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "right".
 func (me TxsdMencloseAttlistNotation) IsRight () bool { return me == "right" }
+
+//	Returns true if the value of this enumerated TxsdMencloseAttlistNotation is "updiagonalstrike".
+func (me TxsdMencloseAttlistNotation) IsUpdiagonalstrike () bool { return me == "updiagonalstrike" }
 
 type XsdGoPkgHasAttr_Notation_TxsdMencloseAttlistNotation_Longdiv struct {
 	Notation TxsdMencloseAttlistNotation `xml:"http://www.w3.org/1998/Math/MathML notation,attr"`
@@ -994,11 +994,11 @@ type XsdGoPkgHasAttr_Columnalign_TxsdTableAlignmentAttribColumnalign_Center stru
 func (me XsdGoPkgHasAttr_Columnalign_TxsdTableAlignmentAttribColumnalign_Center) ColumnalignDefault () TmpaddedWidthSpace { return TmpaddedWidthSpace("center") }
 
 type XsdGoPkgHasAtts_TableAlignmentAttrib struct {
+	XsdGoPkgHasAttr_Groupalign_XsdtString_
+
 	XsdGoPkgHasAttr_Columnalign_TxsdTableAlignmentAttribColumnalign_Center
 
 	XsdGoPkgHasAttr_Rowalign_TxsdTableAlignmentAttribRowalign_Baseline
-
-	XsdGoPkgHasAttr_Groupalign_XsdtString_
 
 }
 
@@ -1026,20 +1026,72 @@ type XsdGoPkgHasAttr_Rowspan_XsdtPositiveInteger_1 struct {
 func (me XsdGoPkgHasAttr_Rowspan_XsdtPositiveInteger_1) RowspanDefault () xsdt.PositiveInteger { return xsdt.PositiveInteger(1) }
 
 type XsdGoPkgHasAtts_MtdAttlist struct {
-	XsdGoPkgHasAtts_TableAlignmentAttrib
-
 	XsdGoPkgHasAttr_Columnspan_XsdtPositiveInteger_1
-
-	XsdGoPkgHasAttr_Rowspan_XsdtPositiveInteger_1
 
 	XsdGoPkgHasAtts_CommonAttrib
 
+	XsdGoPkgHasAtts_TableAlignmentAttrib
+
+	XsdGoPkgHasAttr_Rowspan_XsdtPositiveInteger_1
+
 }
+
+type TxsdMtableAttlistFrame xsdt.String
+
+//	Returns true if the value of this enumerated TxsdMtableAttlistFrame is "solid".
+func (me TxsdMtableAttlistFrame) IsSolid () bool { return me == "solid" }
+
+//	Returns true if the value of this enumerated TxsdMtableAttlistFrame is "dashed".
+func (me TxsdMtableAttlistFrame) IsDashed () bool { return me == "dashed" }
+
+//	This convenience method just performs a simple type conversion to TxsdMtableAttlistFrame's alias type xsdt.String.
+func (me TxsdMtableAttlistFrame) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TxsdMtableAttlistFrame is just a simple String type, this merely returns the current string value.
+func (me TxsdMtableAttlistFrame) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdMtableAttlistFrame is "none".
+func (me TxsdMtableAttlistFrame) IsNone () bool { return me == "none" }
+
+//	Since TxsdMtableAttlistFrame is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdMtableAttlistFrame) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_Frame_TxsdMtableAttlistFrame_None struct {
+	Frame TxsdMtableAttlistFrame `xml:"http://www.w3.org/1998/Math/MathML frame,attr"`
+
+}
+
+//	Returns the default value for Frame -- "none"
+func (me XsdGoPkgHasAttr_Frame_TxsdMtableAttlistFrame_None) FrameDefault () TxsdMtableAttlistFrame { return TxsdMtableAttlistFrame("none") }
+
+type XsdGoPkgHasAttr_Rowlines_XsdtString_None struct {
+	Rowlines xsdt.String `xml:"http://www.w3.org/1998/Math/MathML rowlines,attr"`
+
+}
+
+//	Returns the default value for Rowlines -- "none"
+func (me XsdGoPkgHasAttr_Rowlines_XsdtString_None) RowlinesDefault () xsdt.String { return xsdt.String("none") }
+
+type XsdGoPkgHasAttr_Columnspacing_XsdtString_08Em struct {
+	Columnspacing xsdt.String `xml:"http://www.w3.org/1998/Math/MathML columnspacing,attr"`
+
+}
+
+//	Returns the default value for Columnspacing -- "0.8em"
+func (me XsdGoPkgHasAttr_Columnspacing_XsdtString_08Em) ColumnspacingDefault () xsdt.String { return xsdt.String("0.8em") }
+
+type XsdGoPkgHasAttr_Equalcolumns_XsdtBoolean_False struct {
+	Equalcolumns xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML equalcolumns,attr"`
+
+}
+
+//	Returns the default value for Equalcolumns -- false
+func (me XsdGoPkgHasAttr_Equalcolumns_XsdtBoolean_False) EqualcolumnsDefault () xsdt.Boolean { return xsdt.Boolean(false) }
 
 type TxsdMtableAttlistSide xsdt.String
 
-//	Returns true if the value of this enumerated TxsdMtableAttlistSide is "leftoverlap".
-func (me TxsdMtableAttlistSide) IsLeftoverlap () bool { return me == "leftoverlap" }
+//	Returns true if the value of this enumerated TxsdMtableAttlistSide is "rightoverlap".
+func (me TxsdMtableAttlistSide) IsRightoverlap () bool { return me == "rightoverlap" }
 
 //	Returns true if the value of this enumerated TxsdMtableAttlistSide is "left".
 func (me TxsdMtableAttlistSide) IsLeft () bool { return me == "left" }
@@ -1053,11 +1105,11 @@ func (me *TxsdMtableAttlistSide) SetFromString (s string)  { (*xsdt.String)(me).
 //	Returns true if the value of this enumerated TxsdMtableAttlistSide is "right".
 func (me TxsdMtableAttlistSide) IsRight () bool { return me == "right" }
 
+//	Returns true if the value of this enumerated TxsdMtableAttlistSide is "leftoverlap".
+func (me TxsdMtableAttlistSide) IsLeftoverlap () bool { return me == "leftoverlap" }
+
 //	This convenience method just performs a simple type conversion to TxsdMtableAttlistSide's alias type xsdt.String.
 func (me TxsdMtableAttlistSide) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdMtableAttlistSide is "rightoverlap".
-func (me TxsdMtableAttlistSide) IsRightoverlap () bool { return me == "rightoverlap" }
 
 type XsdGoPkgHasAttr_Side_TxsdMtableAttlistSide_Right struct {
 	Side TxsdMtableAttlistSide `xml:"http://www.w3.org/1998/Math/MathML side,attr"`
@@ -1066,114 +1118,6 @@ type XsdGoPkgHasAttr_Side_TxsdMtableAttlistSide_Right struct {
 
 //	Returns the default value for Side -- "right"
 func (me XsdGoPkgHasAttr_Side_TxsdMtableAttlistSide_Right) SideDefault () TxsdMtableAttlistSide { return TxsdMtableAttlistSide("right") }
-
-type XsdGoPkgHasAttr_Minlabelspacing_TlengthWithUnit_08Em struct {
-	Minlabelspacing TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML minlabelspacing,attr"`
-
-}
-
-//	Returns the default value for Minlabelspacing -- "0.8em"
-func (me XsdGoPkgHasAttr_Minlabelspacing_TlengthWithUnit_08Em) MinlabelspacingDefault () TlengthWithUnit { return TlengthWithUnit("0.8em") }
-
-type XsdGoPkgHasAttr_Columnwidth_XsdtString_Auto struct {
-	Columnwidth xsdt.String `xml:"http://www.w3.org/1998/Math/MathML columnwidth,attr"`
-
-}
-
-//	Returns the default value for Columnwidth -- "auto"
-func (me XsdGoPkgHasAttr_Columnwidth_XsdtString_Auto) ColumnwidthDefault () xsdt.String { return xsdt.String("auto") }
-
-type XsdGoPkgHasAttr_Width_XsdtString_Auto struct {
-	Width xsdt.String `xml:"http://www.w3.org/1998/Math/MathML width,attr"`
-
-}
-
-//	Returns the default value for Width -- "auto"
-func (me XsdGoPkgHasAttr_Width_XsdtString_Auto) WidthDefault () xsdt.String { return xsdt.String("auto") }
-
-type XsdGoPkgHasAttr_Displaystyle_XsdtBoolean_False struct {
-	Displaystyle xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML displaystyle,attr"`
-
-}
-
-//	Returns the default value for Displaystyle -- false
-func (me XsdGoPkgHasAttr_Displaystyle_XsdtBoolean_False) DisplaystyleDefault () xsdt.Boolean { return xsdt.Boolean(false) }
-
-type XsdGoPkgHasAttr_Equalrows_XsdtBoolean_False struct {
-	Equalrows xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML equalrows,attr"`
-
-}
-
-//	Returns the default value for Equalrows -- false
-func (me XsdGoPkgHasAttr_Equalrows_XsdtBoolean_False) EqualrowsDefault () xsdt.Boolean { return xsdt.Boolean(false) }
-
-type XsdGoPkgHasAttr_Equalcolumns_XsdtBoolean_False struct {
-	Equalcolumns xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML equalcolumns,attr"`
-
-}
-
-//	Returns the default value for Equalcolumns -- false
-func (me XsdGoPkgHasAttr_Equalcolumns_XsdtBoolean_False) EqualcolumnsDefault () xsdt.Boolean { return xsdt.Boolean(false) }
-
-type XsdGoPkgHasAttr_Columnspacing_XsdtString_08Em struct {
-	Columnspacing xsdt.String `xml:"http://www.w3.org/1998/Math/MathML columnspacing,attr"`
-
-}
-
-//	Returns the default value for Columnspacing -- "0.8em"
-func (me XsdGoPkgHasAttr_Columnspacing_XsdtString_08Em) ColumnspacingDefault () xsdt.String { return xsdt.String("0.8em") }
-
-type TxsdMtableAttlistFrame xsdt.String
-
-//	This convenience method just performs a simple type conversion to TxsdMtableAttlistFrame's alias type xsdt.String.
-func (me TxsdMtableAttlistFrame) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdMtableAttlistFrame is "solid".
-func (me TxsdMtableAttlistFrame) IsSolid () bool { return me == "solid" }
-
-//	Returns true if the value of this enumerated TxsdMtableAttlistFrame is "dashed".
-func (me TxsdMtableAttlistFrame) IsDashed () bool { return me == "dashed" }
-
-//	Since TxsdMtableAttlistFrame is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdMtableAttlistFrame) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdMtableAttlistFrame is "none".
-func (me TxsdMtableAttlistFrame) IsNone () bool { return me == "none" }
-
-//	Since TxsdMtableAttlistFrame is just a simple String type, this merely returns the current string value.
-func (me TxsdMtableAttlistFrame) String () string { return xsdt.String(me).String() }
-
-type XsdGoPkgHasAttr_Frame_TxsdMtableAttlistFrame_None struct {
-	Frame TxsdMtableAttlistFrame `xml:"http://www.w3.org/1998/Math/MathML frame,attr"`
-
-}
-
-//	Returns the default value for Frame -- "none"
-func (me XsdGoPkgHasAttr_Frame_TxsdMtableAttlistFrame_None) FrameDefault () TxsdMtableAttlistFrame { return TxsdMtableAttlistFrame("none") }
-
-type XsdGoPkgHasAttr_Alignmentscope_TxsdMtableAttlistAlignmentscope_True struct {
-	Alignmentscope TmpaddedWidthSpace `xml:"http://www.w3.org/1998/Math/MathML alignmentscope,attr"`
-
-}
-
-//	Returns the default value for Alignmentscope -- "true"
-func (me XsdGoPkgHasAttr_Alignmentscope_TxsdMtableAttlistAlignmentscope_True) AlignmentscopeDefault () TmpaddedWidthSpace { return TmpaddedWidthSpace("true") }
-
-type XsdGoPkgHasAttr_Rowlines_XsdtString_None struct {
-	Rowlines xsdt.String `xml:"http://www.w3.org/1998/Math/MathML rowlines,attr"`
-
-}
-
-//	Returns the default value for Rowlines -- "none"
-func (me XsdGoPkgHasAttr_Rowlines_XsdtString_None) RowlinesDefault () xsdt.String { return xsdt.String("none") }
-
-type XsdGoPkgHasAttr_Rowspacing_XsdtString_10Ex struct {
-	Rowspacing xsdt.String `xml:"http://www.w3.org/1998/Math/MathML rowspacing,attr"`
-
-}
-
-//	Returns the default value for Rowspacing -- "1.0ex"
-func (me XsdGoPkgHasAttr_Rowspacing_XsdtString_10Ex) RowspacingDefault () xsdt.String { return xsdt.String("1.0ex") }
 
 type XsdGoPkgHasAttr_Align_XsdtString_Axis struct {
 	Align xsdt.String `xml:"http://www.w3.org/1998/Math/MathML align,attr"`
@@ -1191,6 +1135,46 @@ type XsdGoPkgHasAttr_Columnlines_XsdtString_None struct {
 //	Returns the default value for Columnlines -- "none"
 func (me XsdGoPkgHasAttr_Columnlines_XsdtString_None) ColumnlinesDefault () xsdt.String { return xsdt.String("none") }
 
+type XsdGoPkgHasAttr_Minlabelspacing_TlengthWithUnit_08Em struct {
+	Minlabelspacing TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML minlabelspacing,attr"`
+
+}
+
+//	Returns the default value for Minlabelspacing -- "0.8em"
+func (me XsdGoPkgHasAttr_Minlabelspacing_TlengthWithUnit_08Em) MinlabelspacingDefault () TlengthWithUnit { return TlengthWithUnit("0.8em") }
+
+type XsdGoPkgHasAttr_Alignmentscope_TxsdMtableAttlistAlignmentscope_True struct {
+	Alignmentscope TmpaddedWidthSpace `xml:"http://www.w3.org/1998/Math/MathML alignmentscope,attr"`
+
+}
+
+//	Returns the default value for Alignmentscope -- "true"
+func (me XsdGoPkgHasAttr_Alignmentscope_TxsdMtableAttlistAlignmentscope_True) AlignmentscopeDefault () TmpaddedWidthSpace { return TmpaddedWidthSpace("true") }
+
+type XsdGoPkgHasAttr_Displaystyle_XsdtBoolean_False struct {
+	Displaystyle xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML displaystyle,attr"`
+
+}
+
+//	Returns the default value for Displaystyle -- false
+func (me XsdGoPkgHasAttr_Displaystyle_XsdtBoolean_False) DisplaystyleDefault () xsdt.Boolean { return xsdt.Boolean(false) }
+
+type XsdGoPkgHasAttr_Width_XsdtString_Auto struct {
+	Width xsdt.String `xml:"http://www.w3.org/1998/Math/MathML width,attr"`
+
+}
+
+//	Returns the default value for Width -- "auto"
+func (me XsdGoPkgHasAttr_Width_XsdtString_Auto) WidthDefault () xsdt.String { return xsdt.String("auto") }
+
+type XsdGoPkgHasAttr_Columnwidth_XsdtString_Auto struct {
+	Columnwidth xsdt.String `xml:"http://www.w3.org/1998/Math/MathML columnwidth,attr"`
+
+}
+
+//	Returns the default value for Columnwidth -- "auto"
+func (me XsdGoPkgHasAttr_Columnwidth_XsdtString_Auto) ColumnwidthDefault () xsdt.String { return xsdt.String("auto") }
+
 type XsdGoPkgHasAttr_Framespacing_XsdtString_04Em05Ex struct {
 	Framespacing xsdt.String `xml:"http://www.w3.org/1998/Math/MathML framespacing,attr"`
 
@@ -1199,65 +1183,81 @@ type XsdGoPkgHasAttr_Framespacing_XsdtString_04Em05Ex struct {
 //	Returns the default value for Framespacing -- "0.4em 0.5ex"
 func (me XsdGoPkgHasAttr_Framespacing_XsdtString_04Em05Ex) FramespacingDefault () xsdt.String { return xsdt.String("0.4em 0.5ex") }
 
+type XsdGoPkgHasAttr_Rowspacing_XsdtString_10Ex struct {
+	Rowspacing xsdt.String `xml:"http://www.w3.org/1998/Math/MathML rowspacing,attr"`
+
+}
+
+//	Returns the default value for Rowspacing -- "1.0ex"
+func (me XsdGoPkgHasAttr_Rowspacing_XsdtString_10Ex) RowspacingDefault () xsdt.String { return xsdt.String("1.0ex") }
+
+type XsdGoPkgHasAttr_Equalrows_XsdtBoolean_False struct {
+	Equalrows xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML equalrows,attr"`
+
+}
+
+//	Returns the default value for Equalrows -- false
+func (me XsdGoPkgHasAttr_Equalrows_XsdtBoolean_False) EqualrowsDefault () xsdt.Boolean { return xsdt.Boolean(false) }
+
 type XsdGoPkgHasAtts_MtableAttlist struct {
-	XsdGoPkgHasAttr_Side_TxsdMtableAttlistSide_Right
+	XsdGoPkgHasAttr_Framespacing_XsdtString_04Em05Ex
 
-	XsdGoPkgHasAttr_Minlabelspacing_TlengthWithUnit_08Em
-
-	XsdGoPkgHasAttr_Columnwidth_XsdtString_Auto
-
-	XsdGoPkgHasAttr_Width_XsdtString_Auto
-
-	XsdGoPkgHasAttr_Displaystyle_XsdtBoolean_False
+	XsdGoPkgHasAttr_Rowspacing_XsdtString_10Ex
 
 	XsdGoPkgHasAttr_Equalrows_XsdtBoolean_False
 
-	XsdGoPkgHasAttr_Equalcolumns_XsdtBoolean_False
-
-	XsdGoPkgHasAtts_CommonAttrib
-
-	XsdGoPkgHasAttr_Columnspacing_XsdtString_08Em
-
 	XsdGoPkgHasAttr_Frame_TxsdMtableAttlistFrame_None
-
-	XsdGoPkgHasAttr_Alignmentscope_TxsdMtableAttlistAlignmentscope_True
 
 	XsdGoPkgHasAttr_Rowlines_XsdtString_None
 
-	XsdGoPkgHasAttr_Rowspacing_XsdtString_10Ex
+	XsdGoPkgHasAtts_TableAlignmentAttrib
+
+	XsdGoPkgHasAttr_Columnspacing_XsdtString_08Em
+
+	XsdGoPkgHasAttr_Equalcolumns_XsdtBoolean_False
+
+	XsdGoPkgHasAttr_Side_TxsdMtableAttlistSide_Right
 
 	XsdGoPkgHasAttr_Align_XsdtString_Axis
 
 	XsdGoPkgHasAttr_Columnlines_XsdtString_None
 
-	XsdGoPkgHasAttr_Framespacing_XsdtString_04Em05Ex
+	XsdGoPkgHasAtts_CommonAttrib
 
-	XsdGoPkgHasAtts_TableAlignmentAttrib
+	XsdGoPkgHasAttr_Minlabelspacing_TlengthWithUnit_08Em
+
+	XsdGoPkgHasAttr_Alignmentscope_TxsdMtableAttlistAlignmentscope_True
+
+	XsdGoPkgHasAttr_Displaystyle_XsdtBoolean_False
+
+	XsdGoPkgHasAttr_Width_XsdtString_Auto
+
+	XsdGoPkgHasAttr_Columnwidth_XsdtString_Auto
 
 }
 
 type TxsdMaligngroupAttlistGroupalign xsdt.String
 
-//	Since TxsdMaligngroupAttlistGroupalign is just a simple String type, this merely returns the current string value.
-func (me TxsdMaligngroupAttlistGroupalign) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdMaligngroupAttlistGroupalign is "center".
-func (me TxsdMaligngroupAttlistGroupalign) IsCenter () bool { return me == "center" }
+//	Returns true if the value of this enumerated TxsdMaligngroupAttlistGroupalign is "decimalpoint".
+func (me TxsdMaligngroupAttlistGroupalign) IsDecimalpoint () bool { return me == "decimalpoint" }
 
 //	Returns true if the value of this enumerated TxsdMaligngroupAttlistGroupalign is "left".
 func (me TxsdMaligngroupAttlistGroupalign) IsLeft () bool { return me == "left" }
 
-//	This convenience method just performs a simple type conversion to TxsdMaligngroupAttlistGroupalign's alias type xsdt.String.
-func (me TxsdMaligngroupAttlistGroupalign) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	Returns true if the value of this enumerated TxsdMaligngroupAttlistGroupalign is "center".
+func (me TxsdMaligngroupAttlistGroupalign) IsCenter () bool { return me == "center" }
 
-//	Returns true if the value of this enumerated TxsdMaligngroupAttlistGroupalign is "decimalpoint".
-func (me TxsdMaligngroupAttlistGroupalign) IsDecimalpoint () bool { return me == "decimalpoint" }
+//	Returns true if the value of this enumerated TxsdMaligngroupAttlistGroupalign is "right".
+func (me TxsdMaligngroupAttlistGroupalign) IsRight () bool { return me == "right" }
 
 //	Since TxsdMaligngroupAttlistGroupalign is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdMaligngroupAttlistGroupalign) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
-//	Returns true if the value of this enumerated TxsdMaligngroupAttlistGroupalign is "right".
-func (me TxsdMaligngroupAttlistGroupalign) IsRight () bool { return me == "right" }
+//	This convenience method just performs a simple type conversion to TxsdMaligngroupAttlistGroupalign's alias type xsdt.String.
+func (me TxsdMaligngroupAttlistGroupalign) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TxsdMaligngroupAttlistGroupalign is just a simple String type, this merely returns the current string value.
+func (me TxsdMaligngroupAttlistGroupalign) String () string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasAttr_Groupalign_TxsdMaligngroupAttlistGroupalign_ struct {
 	Groupalign TxsdMaligngroupAttlistGroupalign `xml:"http://www.w3.org/1998/Math/MathML groupalign,attr"`
@@ -1265,13 +1265,16 @@ type XsdGoPkgHasAttr_Groupalign_TxsdMaligngroupAttlistGroupalign_ struct {
 }
 
 type XsdGoPkgHasAtts_MaligngroupAttlist struct {
-	XsdGoPkgHasAtts_CommonAttrib
-
 	XsdGoPkgHasAttr_Groupalign_TxsdMaligngroupAttlistGroupalign_
+
+	XsdGoPkgHasAtts_CommonAttrib
 
 }
 
 type TxsdMalignmarkAttlistEdge xsdt.String
+
+//	Returns true if the value of this enumerated TxsdMalignmarkAttlistEdge is "right".
+func (me TxsdMalignmarkAttlistEdge) IsRight () bool { return me == "right" }
 
 //	Since TxsdMalignmarkAttlistEdge is just a simple String type, this merely returns the current string value.
 func (me TxsdMalignmarkAttlistEdge) String () string { return xsdt.String(me).String() }
@@ -1279,14 +1282,11 @@ func (me TxsdMalignmarkAttlistEdge) String () string { return xsdt.String(me).St
 //	This convenience method just performs a simple type conversion to TxsdMalignmarkAttlistEdge's alias type xsdt.String.
 func (me TxsdMalignmarkAttlistEdge) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
-//	Since TxsdMalignmarkAttlistEdge is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdMalignmarkAttlistEdge) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
 //	Returns true if the value of this enumerated TxsdMalignmarkAttlistEdge is "left".
 func (me TxsdMalignmarkAttlistEdge) IsLeft () bool { return me == "left" }
 
-//	Returns true if the value of this enumerated TxsdMalignmarkAttlistEdge is "right".
-func (me TxsdMalignmarkAttlistEdge) IsRight () bool { return me == "right" }
+//	Since TxsdMalignmarkAttlistEdge is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdMalignmarkAttlistEdge) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 type XsdGoPkgHasAttr_Edge_TxsdMalignmarkAttlistEdge_Left struct {
 	Edge TxsdMalignmarkAttlistEdge `xml:"http://www.w3.org/1998/Math/MathML edge,attr"`
@@ -1303,6 +1303,51 @@ type XsdGoPkgHasAtts_MalignmarkAttlist struct {
 
 }
 
+type XsdGoPkgHasAttr_Verythickmathspace_TlengthWithUnit_0333333Em struct {
+	Verythickmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML verythickmathspace,attr"`
+
+}
+
+//	Returns the default value for Verythickmathspace -- "0.333333em"
+func (me XsdGoPkgHasAttr_Verythickmathspace_TlengthWithUnit_0333333Em) VerythickmathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.333333em") }
+
+type XsdGoPkgHasAttr_Thickmathspace_TlengthWithUnit_0277778Em struct {
+	Thickmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML thickmathspace,attr"`
+
+}
+
+//	Returns the default value for Thickmathspace -- "0.277778em"
+func (me XsdGoPkgHasAttr_Thickmathspace_TlengthWithUnit_0277778Em) ThickmathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.277778em") }
+
+type XsdGoPkgHasAttr_Scriptminsize_TlengthWithUnit_8Pt struct {
+	Scriptminsize TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML scriptminsize,attr"`
+
+}
+
+//	Returns the default value for Scriptminsize -- "8pt"
+func (me XsdGoPkgHasAttr_Scriptminsize_TlengthWithUnit_8Pt) ScriptminsizeDefault () TlengthWithUnit { return TlengthWithUnit("8pt") }
+
+type XsdGoPkgHasAttr_Linethickness_TxsdMstyleAttlistLinethickness_1 struct {
+	Linethickness TxsdMfracAttlistLinethickness `xml:"http://www.w3.org/1998/Math/MathML linethickness,attr"`
+
+}
+
+//	Returns the default value for Linethickness -- "1"
+func (me XsdGoPkgHasAttr_Linethickness_TxsdMstyleAttlistLinethickness_1) LinethicknessDefault () TxsdMfracAttlistLinethickness { return TxsdMfracAttlistLinethickness("1") }
+
+type XsdGoPkgHasAttr_Scriptlevel_XsdtInteger_ struct {
+	Scriptlevel xsdt.Integer `xml:"http://www.w3.org/1998/Math/MathML scriptlevel,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Mediummathspace_TlengthWithUnit_0222222Em struct {
+	Mediummathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML mediummathspace,attr"`
+
+}
+
+//	Returns the default value for Mediummathspace -- "0.222222em"
+func (me XsdGoPkgHasAttr_Mediummathspace_TlengthWithUnit_0222222Em) MediummathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.222222em") }
+
 type XsdGoPkgHasAttr_Thinmathspace_TlengthWithUnit_0166667Em struct {
 	Thinmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML thinmathspace,attr"`
 
@@ -1310,19 +1355,6 @@ type XsdGoPkgHasAttr_Thinmathspace_TlengthWithUnit_0166667Em struct {
 
 //	Returns the default value for Thinmathspace -- "0.166667em"
 func (me XsdGoPkgHasAttr_Thinmathspace_TlengthWithUnit_0166667Em) ThinmathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.166667em") }
-
-type XsdGoPkgHasAttr_Displaystyle_XsdtBoolean_ struct {
-	Displaystyle xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML displaystyle,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Verythinmathspace_TlengthWithUnit_0111111Em struct {
-	Verythinmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML verythinmathspace,attr"`
-
-}
-
-//	Returns the default value for Verythinmathspace -- "0.111111em"
-func (me XsdGoPkgHasAttr_Verythinmathspace_TlengthWithUnit_0111111Em) VerythinmathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.111111em") }
 
 type XsdGoPkgHasAttr_Veryverythinmathspace_TlengthWithUnit_00555556Em struct {
 	Veryverythinmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML veryverythinmathspace,attr"`
@@ -1332,8 +1364,16 @@ type XsdGoPkgHasAttr_Veryverythinmathspace_TlengthWithUnit_00555556Em struct {
 //	Returns the default value for Veryverythinmathspace -- "0.0555556em"
 func (me XsdGoPkgHasAttr_Veryverythinmathspace_TlengthWithUnit_00555556Em) VeryverythinmathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.0555556em") }
 
-type XsdGoPkgHasAttr_Scriptlevel_XsdtInteger_ struct {
-	Scriptlevel xsdt.Integer `xml:"http://www.w3.org/1998/Math/MathML scriptlevel,attr"`
+type XsdGoPkgHasAttr_Verythinmathspace_TlengthWithUnit_0111111Em struct {
+	Verythinmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML verythinmathspace,attr"`
+
+}
+
+//	Returns the default value for Verythinmathspace -- "0.111111em"
+func (me XsdGoPkgHasAttr_Verythinmathspace_TlengthWithUnit_0111111Em) VerythinmathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.111111em") }
+
+type XsdGoPkgHasAttr_Displaystyle_XsdtBoolean_ struct {
+	Displaystyle xsdt.Boolean `xml:"http://www.w3.org/1998/Math/MathML displaystyle,attr"`
 
 }
 
@@ -1353,30 +1393,6 @@ type XsdGoPkgHasAttr_Scriptsizemultiplier_XsdtDecimal_071 struct {
 //	Returns the default value for Scriptsizemultiplier -- "0.71"
 func (me XsdGoPkgHasAttr_Scriptsizemultiplier_XsdtDecimal_071) ScriptsizemultiplierDefault () xsdt.Decimal { return xsdt.Decimal("0.71") }
 
-type XsdGoPkgHasAttr_Linethickness_TxsdMstyleAttlistLinethickness_1 struct {
-	Linethickness TxsdMfracAttlistLinethickness `xml:"http://www.w3.org/1998/Math/MathML linethickness,attr"`
-
-}
-
-//	Returns the default value for Linethickness -- "1"
-func (me XsdGoPkgHasAttr_Linethickness_TxsdMstyleAttlistLinethickness_1) LinethicknessDefault () TxsdMfracAttlistLinethickness { return TxsdMfracAttlistLinethickness("1") }
-
-type XsdGoPkgHasAttr_Verythickmathspace_TlengthWithUnit_0333333Em struct {
-	Verythickmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML verythickmathspace,attr"`
-
-}
-
-//	Returns the default value for Verythickmathspace -- "0.333333em"
-func (me XsdGoPkgHasAttr_Verythickmathspace_TlengthWithUnit_0333333Em) VerythickmathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.333333em") }
-
-type XsdGoPkgHasAttr_Thickmathspace_TlengthWithUnit_0277778Em struct {
-	Thickmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML thickmathspace,attr"`
-
-}
-
-//	Returns the default value for Thickmathspace -- "0.277778em"
-func (me XsdGoPkgHasAttr_Thickmathspace_TlengthWithUnit_0277778Em) ThickmathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.277778em") }
-
 type XsdGoPkgHasAttr_Veryverythickmathspace_TlengthWithUnit_0388889Em struct {
 	Veryverythickmathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML veryverythickmathspace,attr"`
 
@@ -1385,61 +1401,45 @@ type XsdGoPkgHasAttr_Veryverythickmathspace_TlengthWithUnit_0388889Em struct {
 //	Returns the default value for Veryverythickmathspace -- "0.388889em"
 func (me XsdGoPkgHasAttr_Veryverythickmathspace_TlengthWithUnit_0388889Em) VeryverythickmathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.388889em") }
 
-type XsdGoPkgHasAttr_Scriptminsize_TlengthWithUnit_8Pt struct {
-	Scriptminsize TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML scriptminsize,attr"`
-
-}
-
-//	Returns the default value for Scriptminsize -- "8pt"
-func (me XsdGoPkgHasAttr_Scriptminsize_TlengthWithUnit_8Pt) ScriptminsizeDefault () TlengthWithUnit { return TlengthWithUnit("8pt") }
-
-type XsdGoPkgHasAttr_Mediummathspace_TlengthWithUnit_0222222Em struct {
-	Mediummathspace TlengthWithUnit `xml:"http://www.w3.org/1998/Math/MathML mediummathspace,attr"`
-
-}
-
-//	Returns the default value for Mediummathspace -- "0.222222em"
-func (me XsdGoPkgHasAttr_Mediummathspace_TlengthWithUnit_0222222Em) MediummathspaceDefault () TlengthWithUnit { return TlengthWithUnit("0.222222em") }
-
 type XsdGoPkgHasAttr_Color_XsdtString_ struct {
 	Color xsdt.String `xml:"http://www.w3.org/1998/Math/MathML color,attr"`
 
 }
 
 type XsdGoPkgHasAtts_MstyleAttlist struct {
-	XsdGoPkgHasAttr_Scriptlevel_XsdtInteger_
-
-	XsdGoPkgHasAttr_Background_XsdtString_Transparent
-
-	XsdGoPkgHasAttr_Scriptsizemultiplier_XsdtDecimal_071
-
-	XsdGoPkgHasAttr_Linethickness_TxsdMstyleAttlistLinethickness_1
-
-	XsdGoPkgHasAtts_CommonAttrib
-
 	XsdGoPkgHasAttr_Verythickmathspace_TlengthWithUnit_0333333Em
 
 	XsdGoPkgHasAttr_Thickmathspace_TlengthWithUnit_0277778Em
 
-	XsdGoPkgHasAttr_Veryverythickmathspace_TlengthWithUnit_0388889Em
-
 	XsdGoPkgHasAttr_Scriptminsize_TlengthWithUnit_8Pt
+
+	XsdGoPkgHasAttr_Linethickness_TxsdMstyleAttlistLinethickness_1
+
+	XsdGoPkgHasAttr_Scriptlevel_XsdtInteger_
+
+	XsdGoPkgHasAtts_TokenStyleAttrib
 
 	XsdGoPkgHasAttr_Mediummathspace_TlengthWithUnit_0222222Em
 
-	XsdGoPkgHasAttr_Color_XsdtString_
-
-	XsdGoPkgHasAtts_OperatorAttrib
-
 	XsdGoPkgHasAttr_Thinmathspace_TlengthWithUnit_0166667Em
-
-	XsdGoPkgHasAttr_Displaystyle_XsdtBoolean_
-
-	XsdGoPkgHasAttr_Verythinmathspace_TlengthWithUnit_0111111Em
 
 	XsdGoPkgHasAttr_Veryverythinmathspace_TlengthWithUnit_00555556Em
 
-	XsdGoPkgHasAtts_TokenStyleAttrib
+	XsdGoPkgHasAttr_Verythinmathspace_TlengthWithUnit_0111111Em
+
+	XsdGoPkgHasAttr_Displaystyle_XsdtBoolean_
+
+	XsdGoPkgHasAttr_Background_XsdtString_Transparent
+
+	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasAtts_OperatorAttrib
+
+	XsdGoPkgHasAttr_Scriptsizemultiplier_XsdtDecimal_071
+
+	XsdGoPkgHasAttr_Veryverythickmathspace_TlengthWithUnit_0388889Em
+
+	XsdGoPkgHasAttr_Color_XsdtString_
 
 }
 
@@ -1459,9 +1459,9 @@ func (me XsdGoPkgHasAttr_Selection_XsdtPositiveInteger_1) SelectionDefault () xs
 type XsdGoPkgHasAtts_MactionAttlist struct {
 	XsdGoPkgHasAttr_Selection_XsdtPositiveInteger_1
 
-	XsdGoPkgHasAtts_CommonAttrib
-
 	XsdGoPkgHasAttr_Actiontype_XsdtString_
+
+	XsdGoPkgHasAtts_CommonAttrib
 
 }
 
@@ -1476,19 +1476,19 @@ type XsdGoPkgHasAttr_Encoding_XsdtString_ struct {
 }
 
 type XsdGoPkgHasAtts_DefinitionAttrib struct {
-	XsdGoPkgHasAttr_Encoding_XsdtString_
-
 	XsdGoPkgHasAttr_DefinitionURL_XsdtAnyURI_
+
+	XsdGoPkgHasAttr_Encoding_XsdtString_
 
 }
 
 type TxsdCnAttlistBase xsdt.PositiveInteger
 
-//	This convenience method just performs a simple type conversion to TxsdCnAttlistBase's alias type xsdt.PositiveInteger.
-func (me TxsdCnAttlistBase) ToXsdtPositiveInteger () xsdt.PositiveInteger { return xsdt.PositiveInteger(me) }
-
 //	Since TxsdCnAttlistBase is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
 func (me *TxsdCnAttlistBase) SetFromString (s string)  { (*xsdt.PositiveInteger)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdCnAttlistBase's alias type xsdt.PositiveInteger.
+func (me TxsdCnAttlistBase) ToXsdtPositiveInteger () xsdt.PositiveInteger { return xsdt.PositiveInteger(me) }
 
 //	Returns a string representation of this TxsdCnAttlistBase's current non-string scalar value.
 func (me TxsdCnAttlistBase) String () string { return xsdt.PositiveInteger(me).String() }
@@ -1500,35 +1500,35 @@ type XsdGoPkgHasAttr_Base_TxsdCnAttlistBase_ struct {
 
 type TxsdCnAttlistType xsdt.Nmtoken
 
-//	This convenience method just performs a simple type conversion to TxsdCnAttlistType's alias type xsdt.Nmtoken.
-func (me TxsdCnAttlistType) ToXsdtNmtoken () xsdt.Nmtoken { return xsdt.Nmtoken(me) }
-
-//	Returns true if the value of this enumerated TxsdCnAttlistType is "constant".
-func (me TxsdCnAttlistType) IsConstant () bool { return me == "constant" }
-
-//	Returns true if the value of this enumerated TxsdCnAttlistType is "real".
-func (me TxsdCnAttlistType) IsReal () bool { return me == "real" }
-
-//	Returns true if the value of this enumerated TxsdCnAttlistType is "complex-cartesian".
-func (me TxsdCnAttlistType) IsComplexCartesian () bool { return me == "complex-cartesian" }
-
-//	Returns true if the value of this enumerated TxsdCnAttlistType is "e-notation".
-func (me TxsdCnAttlistType) IsENotation () bool { return me == "e-notation" }
-
-//	Since TxsdCnAttlistType is just a simple String type, this merely returns the current string value.
-func (me TxsdCnAttlistType) String () string { return xsdt.Nmtoken(me).String() }
-
 //	Returns true if the value of this enumerated TxsdCnAttlistType is "complex-polar".
 func (me TxsdCnAttlistType) IsComplexPolar () bool { return me == "complex-polar" }
 
 //	Returns true if the value of this enumerated TxsdCnAttlistType is "rational".
 func (me TxsdCnAttlistType) IsRational () bool { return me == "rational" }
 
-//	Returns true if the value of this enumerated TxsdCnAttlistType is "integer".
-func (me TxsdCnAttlistType) IsInteger () bool { return me == "integer" }
+//	Returns true if the value of this enumerated TxsdCnAttlistType is "e-notation".
+func (me TxsdCnAttlistType) IsENotation () bool { return me == "e-notation" }
 
 //	Since TxsdCnAttlistType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdCnAttlistType) SetFromString (s string)  { (*xsdt.Nmtoken)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdCnAttlistType is "constant".
+func (me TxsdCnAttlistType) IsConstant () bool { return me == "constant" }
+
+//	This convenience method just performs a simple type conversion to TxsdCnAttlistType's alias type xsdt.Nmtoken.
+func (me TxsdCnAttlistType) ToXsdtNmtoken () xsdt.Nmtoken { return xsdt.Nmtoken(me) }
+
+//	Since TxsdCnAttlistType is just a simple String type, this merely returns the current string value.
+func (me TxsdCnAttlistType) String () string { return xsdt.Nmtoken(me).String() }
+
+//	Returns true if the value of this enumerated TxsdCnAttlistType is "integer".
+func (me TxsdCnAttlistType) IsInteger () bool { return me == "integer" }
+
+//	Returns true if the value of this enumerated TxsdCnAttlistType is "complex-cartesian".
+func (me TxsdCnAttlistType) IsComplexCartesian () bool { return me == "complex-cartesian" }
+
+//	Returns true if the value of this enumerated TxsdCnAttlistType is "real".
+func (me TxsdCnAttlistType) IsReal () bool { return me == "real" }
 
 type XsdGoPkgHasAttr_Type_TxsdCnAttlistType_ struct {
 	Type TxsdCnAttlistType `xml:"http://www.w3.org/1998/Math/MathML type,attr"`
@@ -1536,22 +1536,22 @@ type XsdGoPkgHasAttr_Type_TxsdCnAttlistType_ struct {
 }
 
 type XsdGoPkgHasAtts_CnAttlist struct {
-	XsdGoPkgHasAtts_DefinitionAttrib
-
-	XsdGoPkgHasAtts_CommonAttrib
+	XsdGoPkgHasAttr_Type_TxsdCnAttlistType_
 
 	XsdGoPkgHasAttr_Base_TxsdCnAttlistBase_
 
-	XsdGoPkgHasAttr_Type_TxsdCnAttlistType_
+	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasAtts_DefinitionAttrib
 
 }
 
 type XsdGoPkgHasAtts_CiAttlist struct {
 	XsdGoPkgHasAtts_CommonAttrib
 
-	XsdGoPkgHasAttr_Type_XsdtString_
-
 	XsdGoPkgHasAtts_DefinitionAttrib
+
+	XsdGoPkgHasAttr_Type_XsdtString_
 
 }
 
@@ -1564,14 +1564,8 @@ type XsdGoPkgHasAtts_CsymbolAttlist struct {
 
 type TxsdIntervalAttlistClosure xsdt.String
 
-//	Returns true if the value of this enumerated TxsdIntervalAttlistClosure is "closed-open".
-func (me TxsdIntervalAttlistClosure) IsClosedOpen () bool { return me == "closed-open" }
-
-//	Since TxsdIntervalAttlistClosure is just a simple String type, this merely returns the current string value.
-func (me TxsdIntervalAttlistClosure) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdIntervalAttlistClosure is "open-closed".
-func (me TxsdIntervalAttlistClosure) IsOpenClosed () bool { return me == "open-closed" }
+//	This convenience method just performs a simple type conversion to TxsdIntervalAttlistClosure's alias type xsdt.String.
+func (me TxsdIntervalAttlistClosure) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 //	Since TxsdIntervalAttlistClosure is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdIntervalAttlistClosure) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
@@ -1579,11 +1573,17 @@ func (me *TxsdIntervalAttlistClosure) SetFromString (s string)  { (*xsdt.String)
 //	Returns true if the value of this enumerated TxsdIntervalAttlistClosure is "closed".
 func (me TxsdIntervalAttlistClosure) IsClosed () bool { return me == "closed" }
 
+//	Returns true if the value of this enumerated TxsdIntervalAttlistClosure is "open-closed".
+func (me TxsdIntervalAttlistClosure) IsOpenClosed () bool { return me == "open-closed" }
+
 //	Returns true if the value of this enumerated TxsdIntervalAttlistClosure is "open".
 func (me TxsdIntervalAttlistClosure) IsOpen () bool { return me == "open" }
 
-//	This convenience method just performs a simple type conversion to TxsdIntervalAttlistClosure's alias type xsdt.String.
-func (me TxsdIntervalAttlistClosure) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	Since TxsdIntervalAttlistClosure is just a simple String type, this merely returns the current string value.
+func (me TxsdIntervalAttlistClosure) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdIntervalAttlistClosure is "closed-open".
+func (me TxsdIntervalAttlistClosure) IsClosedOpen () bool { return me == "closed-open" }
 
 type XsdGoPkgHasAttr_Closure_TxsdIntervalAttlistClosure_Closed struct {
 	Closure TxsdIntervalAttlistClosure `xml:"http://www.w3.org/1998/Math/MathML closure,attr"`
@@ -1607,11 +1607,17 @@ type XsdGoPkgHasAtts_ConditionAttlist struct {
 
 type TxsdDeclareAttlistOccurrence xsdt.String
 
-//	Returns true if the value of this enumerated TxsdDeclareAttlistOccurrence is "infix".
-func (me TxsdDeclareAttlistOccurrence) IsInfix () bool { return me == "infix" }
-
 //	Returns true if the value of this enumerated TxsdDeclareAttlistOccurrence is "function-model".
 func (me TxsdDeclareAttlistOccurrence) IsFunctionModel () bool { return me == "function-model" }
+
+//	This convenience method just performs a simple type conversion to TxsdDeclareAttlistOccurrence's alias type xsdt.String.
+func (me TxsdDeclareAttlistOccurrence) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TxsdDeclareAttlistOccurrence is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdDeclareAttlistOccurrence) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdDeclareAttlistOccurrence is "infix".
+func (me TxsdDeclareAttlistOccurrence) IsInfix () bool { return me == "infix" }
 
 //	Since TxsdDeclareAttlistOccurrence is just a simple String type, this merely returns the current string value.
 func (me TxsdDeclareAttlistOccurrence) String () string { return xsdt.String(me).String() }
@@ -1619,19 +1625,8 @@ func (me TxsdDeclareAttlistOccurrence) String () string { return xsdt.String(me)
 //	Returns true if the value of this enumerated TxsdDeclareAttlistOccurrence is "prefix".
 func (me TxsdDeclareAttlistOccurrence) IsPrefix () bool { return me == "prefix" }
 
-//	Since TxsdDeclareAttlistOccurrence is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdDeclareAttlistOccurrence) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TxsdDeclareAttlistOccurrence's alias type xsdt.String.
-func (me TxsdDeclareAttlistOccurrence) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
 type XsdGoPkgHasAttr_Occurrence_TxsdDeclareAttlistOccurrence_ struct {
 	Occurrence TxsdDeclareAttlistOccurrence `xml:"http://www.w3.org/1998/Math/MathML occurrence,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Nargs_XsdtNonNegativeInteger_ struct {
-	Nargs xsdt.NonNegativeInteger `xml:"http://www.w3.org/1998/Math/MathML nargs,attr"`
 
 }
 
@@ -1640,23 +1635,28 @@ type XsdGoPkgHasAttr_Scope_XsdtString_ struct {
 
 }
 
+type XsdGoPkgHasAttr_Nargs_XsdtNonNegativeInteger_ struct {
+	Nargs xsdt.NonNegativeInteger `xml:"http://www.w3.org/1998/Math/MathML nargs,attr"`
+
+}
+
 type XsdGoPkgHasAtts_DeclareAttlist struct {
 	XsdGoPkgHasAttr_Occurrence_TxsdDeclareAttlistOccurrence_
 
-	XsdGoPkgHasAttr_Nargs_XsdtNonNegativeInteger_
-
 	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasAtts_DefinitionAttrib
 
 	XsdGoPkgHasAttr_Scope_XsdtString_
 
-	XsdGoPkgHasAtts_DefinitionAttrib
+	XsdGoPkgHasAttr_Nargs_XsdtNonNegativeInteger_
 
 }
 
 type XsdGoPkgHasAtts_AnnotationAttlist struct {
-	XsdGoPkgHasAttr_Encoding_XsdtString_
-
 	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasAttr_Encoding_XsdtString_
 
 }
 
@@ -1670,13 +1670,22 @@ type XsdGoPkgHasAtts_SemanticsAttlist struct {
 }
 
 type XsdGoPkgHasAtts_SetAttlist struct {
-	XsdGoPkgHasAtts_CommonAttrib
-
 	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasAtts_CommonAttrib
 
 }
 
 type TxsdListAttlistOrder xsdt.String
+
+//	Returns true if the value of this enumerated TxsdListAttlistOrder is "numeric".
+func (me TxsdListAttlistOrder) IsNumeric () bool { return me == "numeric" }
+
+//	This convenience method just performs a simple type conversion to TxsdListAttlistOrder's alias type xsdt.String.
+func (me TxsdListAttlistOrder) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TxsdListAttlistOrder is "lexicographic".
+func (me TxsdListAttlistOrder) IsLexicographic () bool { return me == "lexicographic" }
 
 //	Since TxsdListAttlistOrder is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdListAttlistOrder) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
@@ -1684,1268 +1693,37 @@ func (me *TxsdListAttlistOrder) SetFromString (s string)  { (*xsdt.String)(me).S
 //	Since TxsdListAttlistOrder is just a simple String type, this merely returns the current string value.
 func (me TxsdListAttlistOrder) String () string { return xsdt.String(me).String() }
 
-//	Returns true if the value of this enumerated TxsdListAttlistOrder is "numeric".
-func (me TxsdListAttlistOrder) IsNumeric () bool { return me == "numeric" }
-
-//	Returns true if the value of this enumerated TxsdListAttlistOrder is "lexicographic".
-func (me TxsdListAttlistOrder) IsLexicographic () bool { return me == "lexicographic" }
-
-//	This convenience method just performs a simple type conversion to TxsdListAttlistOrder's alias type xsdt.String.
-func (me TxsdListAttlistOrder) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
 type XsdGoPkgHasAttr_Order_TxsdListAttlistOrder_ struct {
 	Order TxsdListAttlistOrder `xml:"http://www.w3.org/1998/Math/MathML order,attr"`
 
 }
 
 type XsdGoPkgHasAtts_ListAttlist struct {
+	XsdGoPkgHasAtts_CommonAttrib
+
 	XsdGoPkgHasAttr_Order_TxsdListAttlistOrder_
 
-	XsdGoPkgHasAtts_CommonAttrib
-
-}
-
-type XsdGoPkgHasCdata struct {
-	XsdGoPkgCDATA string `xml:",chardata"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasCdata function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasCdata instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasCdata instance.
-func (me *XsdGoPkgHasCdata) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasCdata; fn != nil { fn(me) }
- }
-
-type TmglyphType struct {
-	XsdGoPkgHasAtts_MglyphAttlist
-
-}
-
-//	If the WalkHandlers.TmglyphType function is not nil (ie. was set by outside code), calls it with this TmglyphType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TmglyphType instance.
-func (me *TmglyphType) Walk ()  { 
-	if fn := WalkHandlers.TmglyphType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Mglyph struct {
-	Mglyph *TmglyphType `xml:"http://www.w3.org/1998/Math/MathML mglyph"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Mglyph function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mglyph instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mglyph instance.
-func (me *XsdGoPkgHasElem_Mglyph) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mglyph; fn != nil { fn(me) }
-	me.Mglyph.Walk()
- }
-
-type TmalignmarkType struct {
-	XsdGoPkgHasAtts_MalignmarkAttlist
-
-}
-
-//	If the WalkHandlers.TmalignmarkType function is not nil (ie. was set by outside code), calls it with this TmalignmarkType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TmalignmarkType instance.
-func (me *TmalignmarkType) Walk ()  { 
-	if fn := WalkHandlers.TmalignmarkType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Malignmark struct {
-	Malignmark *TmalignmarkType `xml:"http://www.w3.org/1998/Math/MathML malignmark"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Malignmark function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Malignmark instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Malignmark instance.
-func (me *XsdGoPkgHasElem_Malignmark) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Malignmark; fn != nil { fn(me) }
-	me.Malignmark.Walk()
- }
-
-type XsdGoPkgHasGroup_GlyphAlignmarkClass struct {
-	XsdGoPkgHasElem_Mglyph
-
-	XsdGoPkgHasElem_Malignmark
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_GlyphAlignmarkClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_GlyphAlignmarkClass instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_GlyphAlignmarkClass instance.
-func (me *XsdGoPkgHasGroup_GlyphAlignmarkClass) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_GlyphAlignmarkClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Mglyph.Walk()
-	me.XsdGoPkgHasElem_Malignmark.Walk()
- }
-
-type TmsType struct {
-	XsdGoPkgHasAtts_MsAttlist
-
-	XsdGoPkgHasGroup_GlyphAlignmarkClass
-
-	XsdGoPkgHasCdata
-
-}
-
-//	If the WalkHandlers.TmsType function is not nil (ie. was set by outside code), calls it with this TmsType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TmsType instance.
-func (me *TmsType) Walk ()  { 
-	if fn := WalkHandlers.TmsType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_GlyphAlignmarkClass.Walk()
-	me.XsdGoPkgHasCdata.Walk()
- }
-
-type XsdGoPkgHasElem_Ms struct {
-	Ms *TmsType `xml:"http://www.w3.org/1998/Math/MathML ms"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Ms function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Ms instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Ms instance.
-func (me *XsdGoPkgHasElem_Ms) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Ms; fn != nil { fn(me) }
-	me.Ms.Walk()
- }
-
-type TmoType struct {
-	XsdGoPkgHasAtts_MoAttlist
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasGroup_GlyphAlignmarkClass
-
-}
-
-//	If the WalkHandlers.TmoType function is not nil (ie. was set by outside code), calls it with this TmoType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TmoType instance.
-func (me *TmoType) Walk ()  { 
-	if fn := WalkHandlers.TmoType; fn != nil { fn(me) }
-	me.XsdGoPkgHasCdata.Walk()
-	me.XsdGoPkgHasGroup_GlyphAlignmarkClass.Walk()
- }
-
-type XsdGoPkgHasElem_Mo struct {
-	Mo *TmoType `xml:"http://www.w3.org/1998/Math/MathML mo"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Mo function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mo instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mo instance.
-func (me *XsdGoPkgHasElem_Mo) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mo; fn != nil { fn(me) }
-	me.Mo.Walk()
- }
-
-type TmtextType struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_MiAttlist
-
-	XsdGoPkgHasGroup_GlyphAlignmarkClass
-
-}
-
-//	If the WalkHandlers.TmtextType function is not nil (ie. was set by outside code), calls it with this TmtextType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TmtextType instance.
-func (me *TmtextType) Walk ()  { 
-	if fn := WalkHandlers.TmtextType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_GlyphAlignmarkClass.Walk()
-	me.XsdGoPkgHasCdata.Walk()
- }
-
-type XsdGoPkgHasElem_Mtext struct {
-	Mtext *TmtextType `xml:"http://www.w3.org/1998/Math/MathML mtext"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Mtext function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mtext instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mtext instance.
-func (me *XsdGoPkgHasElem_Mtext) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mtext; fn != nil { fn(me) }
-	me.Mtext.Walk()
- }
-
-type TmnType struct {
-	XsdGoPkgHasAtts_MiAttlist
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasGroup_GlyphAlignmarkClass
-
-}
-
-//	If the WalkHandlers.TmnType function is not nil (ie. was set by outside code), calls it with this TmnType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TmnType instance.
-func (me *TmnType) Walk ()  { 
-	if fn := WalkHandlers.TmnType; fn != nil { fn(me) }
-	me.XsdGoPkgHasCdata.Walk()
-	me.XsdGoPkgHasGroup_GlyphAlignmarkClass.Walk()
- }
-
-type XsdGoPkgHasElem_Mn struct {
-	Mn *TmnType `xml:"http://www.w3.org/1998/Math/MathML mn"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Mn function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mn instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mn instance.
-func (me *XsdGoPkgHasElem_Mn) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mn; fn != nil { fn(me) }
-	me.Mn.Walk()
- }
-
-type TmiType struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasGroup_GlyphAlignmarkClass
-
-	XsdGoPkgHasAtts_MiAttlist
-
-}
-
-//	If the WalkHandlers.TmiType function is not nil (ie. was set by outside code), calls it with this TmiType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TmiType instance.
-func (me *TmiType) Walk ()  { 
-	if fn := WalkHandlers.TmiType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_GlyphAlignmarkClass.Walk()
-	me.XsdGoPkgHasCdata.Walk()
- }
-
-type XsdGoPkgHasElem_Mi struct {
-	Mi *TmiType `xml:"http://www.w3.org/1998/Math/MathML mi"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Mi function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mi instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mi instance.
-func (me *XsdGoPkgHasElem_Mi) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mi; fn != nil { fn(me) }
-	me.Mi.Walk()
- }
-
-type XsdGoPkgHasGroup_PresentationTokenClass struct {
-	XsdGoPkgHasElem_Mtext
-
-	XsdGoPkgHasElem_Mn
-
-	XsdGoPkgHasElem_Mi
-
-	XsdGoPkgHasElem_Ms
-
-	XsdGoPkgHasElem_Mo
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_PresentationTokenClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_PresentationTokenClass instance as the single argument. Then calls the Walk() method on 5/5 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_PresentationTokenClass instance.
-func (me *XsdGoPkgHasGroup_PresentationTokenClass) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_PresentationTokenClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Ms.Walk()
-	me.XsdGoPkgHasElem_Mo.Walk()
-	me.XsdGoPkgHasElem_Mtext.Walk()
-	me.XsdGoPkgHasElem_Mn.Walk()
-	me.XsdGoPkgHasElem_Mi.Walk()
- }
-
-type TLogicType struct {
-	XsdGoPkgHasAtts_DefinitionAttrib
-
-	XsdGoPkgHasAtts_CommonAttrib
-
-}
-
-//	If the WalkHandlers.TLogicType function is not nil (ie. was set by outside code), calls it with this TLogicType instance as the single argument. Then calls the Walk() method on 0/2 embed(s) and 0/0 field(s) belonging to this TLogicType instance.
-func (me *TLogicType) Walk ()  { 
-	if fn := WalkHandlers.TLogicType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Implies struct {
-	Implies *TLogicType `xml:"http://www.w3.org/1998/Math/MathML implies"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Implies function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Implies instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Implies instance.
-func (me *XsdGoPkgHasElem_Implies) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Implies; fn != nil { fn(me) }
-	me.Implies.Walk()
- }
-
-type XsdGoPkgHasElem_Xor struct {
-	Xor *TLogicType `xml:"http://www.w3.org/1998/Math/MathML xor"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Xor function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Xor instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Xor instance.
-func (me *XsdGoPkgHasElem_Xor) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Xor; fn != nil { fn(me) }
-	me.Xor.Walk()
- }
-
-type XsdGoPkgHasElem_Forall struct {
-	Forall *TLogicType `xml:"http://www.w3.org/1998/Math/MathML forall"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Forall function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Forall instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Forall instance.
-func (me *XsdGoPkgHasElem_Forall) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Forall; fn != nil { fn(me) }
-	me.Forall.Walk()
- }
-
-type XsdGoPkgHasElem_Or struct {
-	Or *TLogicType `xml:"http://www.w3.org/1998/Math/MathML or"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Or function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Or instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Or instance.
-func (me *XsdGoPkgHasElem_Or) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Or; fn != nil { fn(me) }
-	me.Or.Walk()
- }
-
-type TElementaryFunctionsType struct {
-	XsdGoPkgHasAtts_DefinitionAttrib
-
-	XsdGoPkgHasAtts_CommonAttrib
-
-}
-
-//	If the WalkHandlers.TElementaryFunctionsType function is not nil (ie. was set by outside code), calls it with this TElementaryFunctionsType instance as the single argument. Then calls the Walk() method on 0/2 embed(s) and 0/0 field(s) belonging to this TElementaryFunctionsType instance.
-func (me *TElementaryFunctionsType) Walk ()  { 
-	if fn := WalkHandlers.TElementaryFunctionsType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_And struct {
-	And *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML and"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_And function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_And instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_And instance.
-func (me *XsdGoPkgHasElem_And) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_And; fn != nil { fn(me) }
-	me.And.Walk()
- }
-
-type XsdGoPkgHasElem_Not struct {
-	Not *TLogicType `xml:"http://www.w3.org/1998/Math/MathML not"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Not function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Not instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Not instance.
-func (me *XsdGoPkgHasElem_Not) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Not; fn != nil { fn(me) }
-	me.Not.Walk()
- }
-
-type XsdGoPkgHasElem_Exists struct {
-	Exists *TLogicType `xml:"http://www.w3.org/1998/Math/MathML exists"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Exists function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Exists instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Exists instance.
-func (me *XsdGoPkgHasElem_Exists) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Exists; fn != nil { fn(me) }
-	me.Exists.Walk()
- }
-
-type XsdGoPkgHasGroup_ContentLogicClass struct {
-	XsdGoPkgHasElem_And
-
-	XsdGoPkgHasElem_Not
-
-	XsdGoPkgHasElem_Exists
-
-	XsdGoPkgHasElem_Implies
-
-	XsdGoPkgHasElem_Xor
-
-	XsdGoPkgHasElem_Forall
-
-	XsdGoPkgHasElem_Or
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_ContentLogicClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentLogicClass instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentLogicClass instance.
-func (me *XsdGoPkgHasGroup_ContentLogicClass) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentLogicClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Exists.Walk()
-	me.XsdGoPkgHasElem_Implies.Walk()
-	me.XsdGoPkgHasElem_Xor.Walk()
-	me.XsdGoPkgHasElem_Forall.Walk()
-	me.XsdGoPkgHasElem_Or.Walk()
-	me.XsdGoPkgHasElem_And.Walk()
-	me.XsdGoPkgHasElem_Not.Walk()
- }
-
-type TgradType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TgradType function is not nil (ie. was set by outside code), calls it with this TgradType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TgradType instance.
-func (me *TgradType) Walk ()  { 
-	if fn := WalkHandlers.TgradType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Grad struct {
-	Grad *TgradType `xml:"http://www.w3.org/1998/Math/MathML grad"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Grad function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Grad instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Grad instance.
-func (me *XsdGoPkgHasElem_Grad) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Grad; fn != nil { fn(me) }
-	me.Grad.Walk()
- }
-
-type TdivergenceType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TdivergenceType function is not nil (ie. was set by outside code), calls it with this TdivergenceType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TdivergenceType instance.
-func (me *TdivergenceType) Walk ()  { 
-	if fn := WalkHandlers.TdivergenceType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Divergence struct {
-	Divergence *TdivergenceType `xml:"http://www.w3.org/1998/Math/MathML divergence"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Divergence function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Divergence instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Divergence instance.
-func (me *XsdGoPkgHasElem_Divergence) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Divergence; fn != nil { fn(me) }
-	me.Divergence.Walk()
- }
-
-type TlaplacianType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TlaplacianType function is not nil (ie. was set by outside code), calls it with this TlaplacianType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TlaplacianType instance.
-func (me *TlaplacianType) Walk ()  { 
-	if fn := WalkHandlers.TlaplacianType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Laplacian struct {
-	Laplacian *TlaplacianType `xml:"http://www.w3.org/1998/Math/MathML laplacian"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Laplacian function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Laplacian instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Laplacian instance.
-func (me *XsdGoPkgHasElem_Laplacian) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Laplacian; fn != nil { fn(me) }
-	me.Laplacian.Walk()
- }
-
-type TcurlType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TcurlType function is not nil (ie. was set by outside code), calls it with this TcurlType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TcurlType instance.
-func (me *TcurlType) Walk ()  { 
-	if fn := WalkHandlers.TcurlType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Curl struct {
-	Curl *TcurlType `xml:"http://www.w3.org/1998/Math/MathML curl"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Curl function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Curl instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Curl instance.
-func (me *XsdGoPkgHasElem_Curl) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Curl; fn != nil { fn(me) }
-	me.Curl.Walk()
- }
-
-type XsdGoPkgHasGroup_ContentVectorCalculusClass struct {
-	XsdGoPkgHasElem_Grad
-
-	XsdGoPkgHasElem_Divergence
-
-	XsdGoPkgHasElem_Laplacian
-
-	XsdGoPkgHasElem_Curl
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_ContentVectorCalculusClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentVectorCalculusClass instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentVectorCalculusClass instance.
-func (me *XsdGoPkgHasGroup_ContentVectorCalculusClass) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentVectorCalculusClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Grad.Walk()
-	me.XsdGoPkgHasElem_Divergence.Walk()
-	me.XsdGoPkgHasElem_Laplacian.Walk()
-	me.XsdGoPkgHasElem_Curl.Walk()
- }
-
-type XsdGoPkgHasGroup_ContentExprClass struct {
-	XsdGoPkgHasGroup_ContExprClass
-
-	XsdGoPkgHasGroup_PresExprClass
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_ContentExprClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentExprClass instance as the single argument. Then calls the Walk() method on 0/2 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentExprClass instance.
-func (me *XsdGoPkgHasGroup_ContentExprClass) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentExprClass; fn != nil { fn(me) }
- }
-
-type TannotationType struct {
-	XsdGoPkgHasAtts_AnnotationAttlist
-
-	XsdGoPkgHasCdata
-
-}
-
-//	If the WalkHandlers.TannotationType function is not nil (ie. was set by outside code), calls it with this TannotationType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TannotationType instance.
-func (me *TannotationType) Walk ()  { 
-	if fn := WalkHandlers.TannotationType; fn != nil { fn(me) }
-	me.XsdGoPkgHasCdata.Walk()
- }
-
-type XsdGoPkgHasElem_Annotation struct {
-	Annotation *TannotationType `xml:"http://www.w3.org/1998/Math/MathML annotation"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Annotation function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Annotation instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Annotation instance.
-func (me *XsdGoPkgHasElem_Annotation) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Annotation; fn != nil { fn(me) }
-	me.Annotation.Walk()
- }
-
-type XsdGoPkgHasGroup_AnnotationXmlContent struct {
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_AnnotationXmlContent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_AnnotationXmlContent instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_AnnotationXmlContent instance.
-func (me *XsdGoPkgHasGroup_AnnotationXmlContent) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_AnnotationXmlContent; fn != nil { fn(me) }
- }
-
-type TannotationXmlType struct {
-	XsdGoPkgHasGroup_AnnotationXmlContent
-
-	XsdGoPkgHasAtts_AnnotationAttlist
-
-}
-
-//	If the WalkHandlers.TannotationXmlType function is not nil (ie. was set by outside code), calls it with this TannotationXmlType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TannotationXmlType instance.
-func (me *TannotationXmlType) Walk ()  { 
-	if fn := WalkHandlers.TannotationXmlType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_AnnotationXmlContent.Walk()
- }
-
-type XsdGoPkgHasElem_AnnotationXml struct {
-	AnnotationXml *TannotationXmlType `xml:"http://www.w3.org/1998/Math/MathML annotation-xml"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AnnotationXml function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AnnotationXml instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AnnotationXml instance.
-func (me *XsdGoPkgHasElem_AnnotationXml) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AnnotationXml; fn != nil { fn(me) }
-	me.AnnotationXml.Walk()
- }
-
-type XsdGoPkgHasGroup_AnnotationClass struct {
-	XsdGoPkgHasElem_Annotation
-
-	XsdGoPkgHasElem_AnnotationXml
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_AnnotationClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_AnnotationClass instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_AnnotationClass instance.
-func (me *XsdGoPkgHasGroup_AnnotationClass) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_AnnotationClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_AnnotationXml.Walk()
-	me.XsdGoPkgHasElem_Annotation.Walk()
- }
-
-type XsdGoPkgHasGroup_SemanticsContent struct {
-	XsdGoPkgHasGroup_AnnotationClass
-
-	XsdGoPkgHasGroup_ContentExprClass
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_SemanticsContent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_SemanticsContent instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_SemanticsContent instance.
-func (me *XsdGoPkgHasGroup_SemanticsContent) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_SemanticsContent; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_AnnotationClass.Walk()
-	me.XsdGoPkgHasGroup_ContentExprClass.Walk()
- }
-
-type TsemanticsType struct {
-	XsdGoPkgHasGroup_SemanticsContent
-
-	XsdGoPkgHasAtts_SemanticsAttlist
-
-}
-
-//	If the WalkHandlers.TsemanticsType function is not nil (ie. was set by outside code), calls it with this TsemanticsType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TsemanticsType instance.
-func (me *TsemanticsType) Walk ()  { 
-	if fn := WalkHandlers.TsemanticsType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_SemanticsContent.Walk()
- }
-
-type XsdGoPkgHasElem_Semantics struct {
-	Semantics *TsemanticsType `xml:"http://www.w3.org/1998/Math/MathML semantics"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Semantics function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Semantics instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Semantics instance.
-func (me *XsdGoPkgHasElem_Semantics) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Semantics; fn != nil { fn(me) }
-	me.Semantics.Walk()
- }
-
-type TintersectType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TintersectType function is not nil (ie. was set by outside code), calls it with this TintersectType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TintersectType instance.
-func (me *TintersectType) Walk ()  { 
-	if fn := WalkHandlers.TintersectType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Intersect struct {
-	Intersect *TintersectType `xml:"http://www.w3.org/1998/Math/MathML intersect"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Intersect function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Intersect instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Intersect instance.
-func (me *XsdGoPkgHasElem_Intersect) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Intersect; fn != nil { fn(me) }
-	me.Intersect.Walk()
- }
-
-type TnotsubsetType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TnotsubsetType function is not nil (ie. was set by outside code), calls it with this TnotsubsetType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TnotsubsetType instance.
-func (me *TnotsubsetType) Walk ()  { 
-	if fn := WalkHandlers.TnotsubsetType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Notsubset struct {
-	Notsubset *TnotsubsetType `xml:"http://www.w3.org/1998/Math/MathML notsubset"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Notsubset function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Notsubset instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Notsubset instance.
-func (me *XsdGoPkgHasElem_Notsubset) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Notsubset; fn != nil { fn(me) }
-	me.Notsubset.Walk()
- }
-
-type TsetdiffType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TsetdiffType function is not nil (ie. was set by outside code), calls it with this TsetdiffType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TsetdiffType instance.
-func (me *TsetdiffType) Walk ()  { 
-	if fn := WalkHandlers.TsetdiffType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Setdiff struct {
-	Setdiff *TsetdiffType `xml:"http://www.w3.org/1998/Math/MathML setdiff"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Setdiff function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Setdiff instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Setdiff instance.
-func (me *XsdGoPkgHasElem_Setdiff) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Setdiff; fn != nil { fn(me) }
-	me.Setdiff.Walk()
- }
-
-type TcartesianproductType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TcartesianproductType function is not nil (ie. was set by outside code), calls it with this TcartesianproductType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TcartesianproductType instance.
-func (me *TcartesianproductType) Walk ()  { 
-	if fn := WalkHandlers.TcartesianproductType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Cartesianproduct struct {
-	Cartesianproduct *TcartesianproductType `xml:"http://www.w3.org/1998/Math/MathML cartesianproduct"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Cartesianproduct function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Cartesianproduct instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Cartesianproduct instance.
-func (me *XsdGoPkgHasElem_Cartesianproduct) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Cartesianproduct; fn != nil { fn(me) }
-	me.Cartesianproduct.Walk()
- }
-
-type TnotprsubsetType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TnotprsubsetType function is not nil (ie. was set by outside code), calls it with this TnotprsubsetType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TnotprsubsetType instance.
-func (me *TnotprsubsetType) Walk ()  { 
-	if fn := WalkHandlers.TnotprsubsetType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Notprsubset struct {
-	Notprsubset *TnotprsubsetType `xml:"http://www.w3.org/1998/Math/MathML notprsubset"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Notprsubset function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Notprsubset instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Notprsubset instance.
-func (me *XsdGoPkgHasElem_Notprsubset) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Notprsubset; fn != nil { fn(me) }
-	me.Notprsubset.Walk()
- }
-
-type TinType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TinType function is not nil (ie. was set by outside code), calls it with this TinType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TinType instance.
-func (me *TinType) Walk ()  { 
-	if fn := WalkHandlers.TinType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_In struct {
-	In *TinType `xml:"http://www.w3.org/1998/Math/MathML in"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_In function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_In instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_In instance.
-func (me *XsdGoPkgHasElem_In) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_In; fn != nil { fn(me) }
-	me.In.Walk()
- }
-
-type TunionType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TunionType function is not nil (ie. was set by outside code), calls it with this TunionType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TunionType instance.
-func (me *TunionType) Walk ()  { 
-	if fn := WalkHandlers.TunionType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Union struct {
-	Union *TunionType `xml:"http://www.w3.org/1998/Math/MathML union"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Union function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Union instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Union instance.
-func (me *XsdGoPkgHasElem_Union) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Union; fn != nil { fn(me) }
-	me.Union.Walk()
- }
-
-type XsdGoPkgHasGroup_SetContent struct {
-	XsdGoPkgHasGroup_ContentExprClass
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_SetContent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_SetContent instance as the single argument. Then calls the Walk() method on 1/1 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_SetContent instance.
-func (me *XsdGoPkgHasGroup_SetContent) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_SetContent; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_ContentExprClass.Walk()
- }
-
-type TsetType struct {
-	XsdGoPkgHasAtts_SetAttlist
-
-	XsdGoPkgHasGroup_SetContent
-
-}
-
-//	If the WalkHandlers.TsetType function is not nil (ie. was set by outside code), calls it with this TsetType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TsetType instance.
-func (me *TsetType) Walk ()  { 
-	if fn := WalkHandlers.TsetType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_SetContent.Walk()
- }
-
-type XsdGoPkgHasElem_Set struct {
-	Set *TsetType `xml:"http://www.w3.org/1998/Math/MathML set"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Set function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Set instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Set instance.
-func (me *XsdGoPkgHasElem_Set) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Set; fn != nil { fn(me) }
-	me.Set.Walk()
- }
-
-type TsubsetType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TsubsetType function is not nil (ie. was set by outside code), calls it with this TsubsetType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TsubsetType instance.
-func (me *TsubsetType) Walk ()  { 
-	if fn := WalkHandlers.TsubsetType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Subset struct {
-	Subset *TsubsetType `xml:"http://www.w3.org/1998/Math/MathML subset"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Subset function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Subset instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Subset instance.
-func (me *XsdGoPkgHasElem_Subset) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Subset; fn != nil { fn(me) }
-	me.Subset.Walk()
- }
-
-type TcardType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TcardType function is not nil (ie. was set by outside code), calls it with this TcardType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TcardType instance.
-func (me *TcardType) Walk ()  { 
-	if fn := WalkHandlers.TcardType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Card struct {
-	Card *TcardType `xml:"http://www.w3.org/1998/Math/MathML card"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Card function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Card instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Card instance.
-func (me *XsdGoPkgHasElem_Card) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Card; fn != nil { fn(me) }
-	me.Card.Walk()
- }
-
-type TlistType struct {
-	XsdGoPkgHasGroup_SetContent
-
-	XsdGoPkgHasAtts_ListAttlist
-
-}
-
-//	If the WalkHandlers.TlistType function is not nil (ie. was set by outside code), calls it with this TlistType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TlistType instance.
-func (me *TlistType) Walk ()  { 
-	if fn := WalkHandlers.TlistType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_SetContent.Walk()
- }
-
-type XsdGoPkgHasElem_List struct {
-	List *TlistType `xml:"http://www.w3.org/1998/Math/MathML list"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_List function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_List instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_List instance.
-func (me *XsdGoPkgHasElem_List) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_List; fn != nil { fn(me) }
-	me.List.Walk()
- }
-
-type TnotinType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TnotinType function is not nil (ie. was set by outside code), calls it with this TnotinType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TnotinType instance.
-func (me *TnotinType) Walk ()  { 
-	if fn := WalkHandlers.TnotinType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Notin struct {
-	Notin *TnotinType `xml:"http://www.w3.org/1998/Math/MathML notin"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Notin function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Notin instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Notin instance.
-func (me *XsdGoPkgHasElem_Notin) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Notin; fn != nil { fn(me) }
-	me.Notin.Walk()
- }
-
-type TprsubsetType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TprsubsetType function is not nil (ie. was set by outside code), calls it with this TprsubsetType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TprsubsetType instance.
-func (me *TprsubsetType) Walk ()  { 
-	if fn := WalkHandlers.TprsubsetType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Prsubset struct {
-	Prsubset *TprsubsetType `xml:"http://www.w3.org/1998/Math/MathML prsubset"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Prsubset function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Prsubset instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Prsubset instance.
-func (me *XsdGoPkgHasElem_Prsubset) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Prsubset; fn != nil { fn(me) }
-	me.Prsubset.Walk()
- }
-
-type XsdGoPkgHasGroup_ContentSetsClass struct {
-	XsdGoPkgHasElem_Intersect
-
-	XsdGoPkgHasElem_Notsubset
-
-	XsdGoPkgHasElem_Setdiff
-
-	XsdGoPkgHasElem_Cartesianproduct
-
-	XsdGoPkgHasElem_Notprsubset
-
-	XsdGoPkgHasElem_In
-
-	XsdGoPkgHasElem_Union
-
-	XsdGoPkgHasElem_Set
-
-	XsdGoPkgHasElem_Subset
-
-	XsdGoPkgHasElem_Card
-
-	XsdGoPkgHasElem_List
-
-	XsdGoPkgHasElem_Notin
-
-	XsdGoPkgHasElem_Prsubset
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_ContentSetsClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentSetsClass instance as the single argument. Then calls the Walk() method on 13/13 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentSetsClass instance.
-func (me *XsdGoPkgHasGroup_ContentSetsClass) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentSetsClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Notprsubset.Walk()
-	me.XsdGoPkgHasElem_In.Walk()
-	me.XsdGoPkgHasElem_Union.Walk()
-	me.XsdGoPkgHasElem_Set.Walk()
-	me.XsdGoPkgHasElem_Subset.Walk()
-	me.XsdGoPkgHasElem_Card.Walk()
-	me.XsdGoPkgHasElem_List.Walk()
-	me.XsdGoPkgHasElem_Notin.Walk()
-	me.XsdGoPkgHasElem_Prsubset.Walk()
-	me.XsdGoPkgHasElem_Intersect.Walk()
-	me.XsdGoPkgHasElem_Notsubset.Walk()
-	me.XsdGoPkgHasElem_Setdiff.Walk()
-	me.XsdGoPkgHasElem_Cartesianproduct.Walk()
- }
-
-type TArithType struct {
-	XsdGoPkgHasAtts_CommonAttrib
-
-	XsdGoPkgHasAtts_DefinitionAttrib
-
-}
-
-//	If the WalkHandlers.TArithType function is not nil (ie. was set by outside code), calls it with this TArithType instance as the single argument. Then calls the Walk() method on 0/2 embed(s) and 0/0 field(s) belonging to this TArithType instance.
-func (me *TArithType) Walk ()  { 
-	if fn := WalkHandlers.TArithType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Gcd struct {
-	Gcd *TArithType `xml:"http://www.w3.org/1998/Math/MathML gcd"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Gcd function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Gcd instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Gcd instance.
-func (me *XsdGoPkgHasElem_Gcd) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Gcd; fn != nil { fn(me) }
-	me.Gcd.Walk()
- }
-
-type XsdGoPkgHasElem_Quotient struct {
-	Quotient *TArithType `xml:"http://www.w3.org/1998/Math/MathML quotient"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Quotient function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Quotient instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Quotient instance.
-func (me *XsdGoPkgHasElem_Quotient) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Quotient; fn != nil { fn(me) }
-	me.Quotient.Walk()
- }
-
-type XsdGoPkgHasElem_Real struct {
-	Real *TArithType `xml:"http://www.w3.org/1998/Math/MathML real"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Real function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Real instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Real instance.
-func (me *XsdGoPkgHasElem_Real) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Real; fn != nil { fn(me) }
-	me.Real.Walk()
- }
-
-type XsdGoPkgHasElem_Power struct {
-	Power *TArithType `xml:"http://www.w3.org/1998/Math/MathML power"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Power function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Power instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Power instance.
-func (me *XsdGoPkgHasElem_Power) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Power; fn != nil { fn(me) }
-	me.Power.Walk()
- }
-
-type XsdGoPkgHasElem_Minus struct {
-	Minus *TArithType `xml:"http://www.w3.org/1998/Math/MathML minus"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Minus function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Minus instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Minus instance.
-func (me *XsdGoPkgHasElem_Minus) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Minus; fn != nil { fn(me) }
-	me.Minus.Walk()
- }
-
-type XsdGoPkgHasElem_Plus struct {
-	Plus *TArithType `xml:"http://www.w3.org/1998/Math/MathML plus"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Plus function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Plus instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Plus instance.
-func (me *XsdGoPkgHasElem_Plus) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Plus; fn != nil { fn(me) }
-	me.Plus.Walk()
- }
-
-type XsdGoPkgHasElem_Arg struct {
-	Arg *TArithType `xml:"http://www.w3.org/1998/Math/MathML arg"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Arg function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arg instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arg instance.
-func (me *XsdGoPkgHasElem_Arg) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Arg; fn != nil { fn(me) }
-	me.Arg.Walk()
- }
-
-type XsdGoPkgHasElem_Abs struct {
-	Abs *TArithType `xml:"http://www.w3.org/1998/Math/MathML abs"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Abs function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Abs instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Abs instance.
-func (me *XsdGoPkgHasElem_Abs) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Abs; fn != nil { fn(me) }
-	me.Abs.Walk()
- }
-
-type XsdGoPkgHasElem_Conjugate struct {
-	Conjugate *TArithType `xml:"http://www.w3.org/1998/Math/MathML conjugate"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Conjugate function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Conjugate instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Conjugate instance.
-func (me *XsdGoPkgHasElem_Conjugate) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Conjugate; fn != nil { fn(me) }
-	me.Conjugate.Walk()
- }
-
-type XsdGoPkgHasElem_Sum struct {
-	Sum *TArithType `xml:"http://www.w3.org/1998/Math/MathML sum"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Sum function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Sum instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Sum instance.
-func (me *XsdGoPkgHasElem_Sum) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Sum; fn != nil { fn(me) }
-	me.Sum.Walk()
- }
-
-type XsdGoPkgHasElem_Product struct {
-	Product *TArithType `xml:"http://www.w3.org/1998/Math/MathML product"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Product function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Product instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Product instance.
-func (me *XsdGoPkgHasElem_Product) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Product; fn != nil { fn(me) }
-	me.Product.Walk()
- }
-
-type XsdGoPkgHasElem_Rem struct {
-	Rem *TArithType `xml:"http://www.w3.org/1998/Math/MathML rem"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Rem function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Rem instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Rem instance.
-func (me *XsdGoPkgHasElem_Rem) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Rem; fn != nil { fn(me) }
-	me.Rem.Walk()
- }
-
-type XsdGoPkgHasElem_Imaginary struct {
-	Imaginary *TArithType `xml:"http://www.w3.org/1998/Math/MathML imaginary"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Imaginary function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Imaginary instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Imaginary instance.
-func (me *XsdGoPkgHasElem_Imaginary) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Imaginary; fn != nil { fn(me) }
-	me.Imaginary.Walk()
- }
-
-type XsdGoPkgHasElem_Lcm struct {
-	Lcm *TArithType `xml:"http://www.w3.org/1998/Math/MathML lcm"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Lcm function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Lcm instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Lcm instance.
-func (me *XsdGoPkgHasElem_Lcm) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Lcm; fn != nil { fn(me) }
-	me.Lcm.Walk()
- }
-
-type XsdGoPkgHasElem_Max struct {
-	Max *TArithType `xml:"http://www.w3.org/1998/Math/MathML max"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Max function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Max instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Max instance.
-func (me *XsdGoPkgHasElem_Max) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Max; fn != nil { fn(me) }
-	me.Max.Walk()
- }
-
-type XsdGoPkgHasElem_Root struct {
-	Root *TArithType `xml:"http://www.w3.org/1998/Math/MathML root"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Root function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Root instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Root instance.
-func (me *XsdGoPkgHasElem_Root) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Root; fn != nil { fn(me) }
-	me.Root.Walk()
- }
-
-type XsdGoPkgHasElem_Ceiling struct {
-	Ceiling *TArithType `xml:"http://www.w3.org/1998/Math/MathML ceiling"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Ceiling function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Ceiling instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Ceiling instance.
-func (me *XsdGoPkgHasElem_Ceiling) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Ceiling; fn != nil { fn(me) }
-	me.Ceiling.Walk()
- }
-
-type XsdGoPkgHasElem_Times struct {
-	Times *TArithType `xml:"http://www.w3.org/1998/Math/MathML times"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Times function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Times instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Times instance.
-func (me *XsdGoPkgHasElem_Times) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Times; fn != nil { fn(me) }
-	me.Times.Walk()
- }
-
-type XsdGoPkgHasElem_Floor struct {
-	Floor *TArithType `xml:"http://www.w3.org/1998/Math/MathML floor"`
-
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_Floor function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Floor instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Floor instance.
-func (me *XsdGoPkgHasElem_Floor) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Floor; fn != nil { fn(me) }
-	me.Floor.Walk()
- }
-
-type XsdGoPkgHasElem_Min struct {
-	Min *TArithType `xml:"http://www.w3.org/1998/Math/MathML min"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Min function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Min instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Min instance.
-func (me *XsdGoPkgHasElem_Min) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Min; fn != nil { fn(me) }
-	me.Min.Walk()
- }
-
-type XsdGoPkgHasElem_Factorial struct {
-	Factorial *TArithType `xml:"http://www.w3.org/1998/Math/MathML factorial"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Factorial function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Factorial instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Factorial instance.
-func (me *XsdGoPkgHasElem_Factorial) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Factorial; fn != nil { fn(me) }
-	me.Factorial.Walk()
- }
-
-type XsdGoPkgHasElem_Divide struct {
-	Divide *TArithType `xml:"http://www.w3.org/1998/Math/MathML divide"`
+type TmspaceType struct {
+	XsdGoPkgHasAtts_MspaceAttlist
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_Divide function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Divide instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Divide instance.
-func (me *XsdGoPkgHasElem_Divide) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Divide; fn != nil { fn(me) }
-	me.Divide.Walk()
+//	If the WalkHandlers.TmspaceType function is not nil (ie. was set by outside code), calls it with this TmspaceType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TmspaceType instance.
+func (me *TmspaceType) Walk ()  { 
+	if fn := WalkHandlers.TmspaceType; fn != nil { fn(me) }
  }
-
-type XsdGoPkgHasGroup_ContentArithClass struct {
-	XsdGoPkgHasElem_Power
-
-	XsdGoPkgHasElem_Minus
-
-	XsdGoPkgHasElem_Plus
-
-	XsdGoPkgHasElem_Arg
-
-	XsdGoPkgHasElem_Abs
-
-	XsdGoPkgHasElem_Conjugate
-
-	XsdGoPkgHasElem_Sum
-
-	XsdGoPkgHasElem_Product
-
-	XsdGoPkgHasElem_Rem
-
-	XsdGoPkgHasElem_Imaginary
-
-	XsdGoPkgHasElem_Lcm
-
-	XsdGoPkgHasElem_Max
-
-	XsdGoPkgHasElem_Root
-
-	XsdGoPkgHasElem_Ceiling
-
-	XsdGoPkgHasElem_Times
-
-	XsdGoPkgHasElem_Floor
-
-	XsdGoPkgHasElem_Min
-
-	XsdGoPkgHasElem_Factorial
-
-	XsdGoPkgHasElem_Divide
-
-	XsdGoPkgHasElem_Gcd
-
-	XsdGoPkgHasElem_Quotient
 
-	XsdGoPkgHasElem_Real
+type XsdGoPkgHasElem_Mspace struct {
+	Mspace *TmspaceType `xml:"http://www.w3.org/1998/Math/MathML mspace"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasGroup_ContentArithClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentArithClass instance as the single argument. Then calls the Walk() method on 22/22 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentArithClass instance.
-func (me *XsdGoPkgHasGroup_ContentArithClass) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentArithClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Plus.Walk()
-	me.XsdGoPkgHasElem_Arg.Walk()
-	me.XsdGoPkgHasElem_Abs.Walk()
-	me.XsdGoPkgHasElem_Conjugate.Walk()
-	me.XsdGoPkgHasElem_Sum.Walk()
-	me.XsdGoPkgHasElem_Product.Walk()
-	me.XsdGoPkgHasElem_Rem.Walk()
-	me.XsdGoPkgHasElem_Imaginary.Walk()
-	me.XsdGoPkgHasElem_Lcm.Walk()
-	me.XsdGoPkgHasElem_Max.Walk()
-	me.XsdGoPkgHasElem_Root.Walk()
-	me.XsdGoPkgHasElem_Ceiling.Walk()
-	me.XsdGoPkgHasElem_Times.Walk()
-	me.XsdGoPkgHasElem_Floor.Walk()
-	me.XsdGoPkgHasElem_Min.Walk()
-	me.XsdGoPkgHasElem_Factorial.Walk()
-	me.XsdGoPkgHasElem_Divide.Walk()
-	me.XsdGoPkgHasElem_Gcd.Walk()
-	me.XsdGoPkgHasElem_Quotient.Walk()
-	me.XsdGoPkgHasElem_Real.Walk()
-	me.XsdGoPkgHasElem_Power.Walk()
-	me.XsdGoPkgHasElem_Minus.Walk()
+//	If the WalkHandlers.XsdGoPkgHasElem_Mspace function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mspace instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mspace instance.
+func (me *XsdGoPkgHasElem_Mspace) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mspace; fn != nil { fn(me) }
+	me.Mspace.Walk()
  }
 
 type TConstantType struct {
@@ -2960,17 +1738,6 @@ func (me *TConstantType) Walk ()  {
 	if fn := WalkHandlers.TConstantType; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_Primes struct {
-	Primes *TConstantType `xml:"http://www.w3.org/1998/Math/MathML primes"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Primes function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Primes instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Primes instance.
-func (me *XsdGoPkgHasElem_Primes) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Primes; fn != nil { fn(me) }
-	me.Primes.Walk()
- }
-
 type XsdGoPkgHasElem_Rationals struct {
 	Rationals *TConstantType `xml:"http://www.w3.org/1998/Math/MathML rationals"`
 
@@ -2980,61 +1747,6 @@ type XsdGoPkgHasElem_Rationals struct {
 func (me *XsdGoPkgHasElem_Rationals) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_Rationals; fn != nil { fn(me) }
 	me.Rationals.Walk()
- }
-
-type XsdGoPkgHasElem_Notanumber struct {
-	Notanumber *TConstantType `xml:"http://www.w3.org/1998/Math/MathML notanumber"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Notanumber function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Notanumber instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Notanumber instance.
-func (me *XsdGoPkgHasElem_Notanumber) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Notanumber; fn != nil { fn(me) }
-	me.Notanumber.Walk()
- }
-
-type XsdGoPkgHasElem_False struct {
-	False *TConstantType `xml:"http://www.w3.org/1998/Math/MathML false"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_False function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_False instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_False instance.
-func (me *XsdGoPkgHasElem_False) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_False; fn != nil { fn(me) }
-	me.False.Walk()
- }
-
-type XsdGoPkgHasElem_Reals struct {
-	Reals *TConstantType `xml:"http://www.w3.org/1998/Math/MathML reals"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Reals function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Reals instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Reals instance.
-func (me *XsdGoPkgHasElem_Reals) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Reals; fn != nil { fn(me) }
-	me.Reals.Walk()
- }
-
-type XsdGoPkgHasElem_Emptyset struct {
-	Emptyset *TConstantType `xml:"http://www.w3.org/1998/Math/MathML emptyset"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Emptyset function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Emptyset instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Emptyset instance.
-func (me *XsdGoPkgHasElem_Emptyset) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Emptyset; fn != nil { fn(me) }
-	me.Emptyset.Walk()
- }
-
-type XsdGoPkgHasElem_True struct {
-	True *TConstantType `xml:"http://www.w3.org/1998/Math/MathML true"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_True function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_True instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_True instance.
-func (me *XsdGoPkgHasElem_True) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_True; fn != nil { fn(me) }
-	me.True.Walk()
  }
 
 type XsdGoPkgHasElem_Complexes struct {
@@ -3048,39 +1760,6 @@ func (me *XsdGoPkgHasElem_Complexes) Walk ()  {
 	me.Complexes.Walk()
  }
 
-type XsdGoPkgHasElem_Eulergamma struct {
-	Eulergamma *TConstantType `xml:"http://www.w3.org/1998/Math/MathML eulergamma"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Eulergamma function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Eulergamma instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Eulergamma instance.
-func (me *XsdGoPkgHasElem_Eulergamma) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Eulergamma; fn != nil { fn(me) }
-	me.Eulergamma.Walk()
- }
-
-type XsdGoPkgHasElem_Pi struct {
-	Pi *TConstantType `xml:"http://www.w3.org/1998/Math/MathML pi"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Pi function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Pi instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Pi instance.
-func (me *XsdGoPkgHasElem_Pi) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Pi; fn != nil { fn(me) }
-	me.Pi.Walk()
- }
-
-type XsdGoPkgHasElem_Integers struct {
-	Integers *TConstantType `xml:"http://www.w3.org/1998/Math/MathML integers"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Integers function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Integers instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Integers instance.
-func (me *XsdGoPkgHasElem_Integers) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Integers; fn != nil { fn(me) }
-	me.Integers.Walk()
- }
-
 type XsdGoPkgHasElem_Imaginaryi struct {
 	Imaginaryi *TConstantType `xml:"http://www.w3.org/1998/Math/MathML imaginaryi"`
 
@@ -3092,15 +1771,15 @@ func (me *XsdGoPkgHasElem_Imaginaryi) Walk ()  {
 	me.Imaginaryi.Walk()
  }
 
-type XsdGoPkgHasElem_Exponentiale struct {
-	Exponentiale *TConstantType `xml:"http://www.w3.org/1998/Math/MathML exponentiale"`
+type XsdGoPkgHasElem_Eulergamma struct {
+	Eulergamma *TConstantType `xml:"http://www.w3.org/1998/Math/MathML eulergamma"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_Exponentiale function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Exponentiale instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Exponentiale instance.
-func (me *XsdGoPkgHasElem_Exponentiale) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Exponentiale; fn != nil { fn(me) }
-	me.Exponentiale.Walk()
+//	If the WalkHandlers.XsdGoPkgHasElem_Eulergamma function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Eulergamma instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Eulergamma instance.
+func (me *XsdGoPkgHasElem_Eulergamma) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Eulergamma; fn != nil { fn(me) }
+	me.Eulergamma.Walk()
  }
 
 type XsdGoPkgHasElem_Naturalnumbers struct {
@@ -3114,6 +1793,72 @@ func (me *XsdGoPkgHasElem_Naturalnumbers) Walk ()  {
 	me.Naturalnumbers.Walk()
  }
 
+type XsdGoPkgHasElem_False struct {
+	False *TConstantType `xml:"http://www.w3.org/1998/Math/MathML false"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_False function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_False instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_False instance.
+func (me *XsdGoPkgHasElem_False) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_False; fn != nil { fn(me) }
+	me.False.Walk()
+ }
+
+type XsdGoPkgHasElem_Notanumber struct {
+	Notanumber *TConstantType `xml:"http://www.w3.org/1998/Math/MathML notanumber"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Notanumber function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Notanumber instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Notanumber instance.
+func (me *XsdGoPkgHasElem_Notanumber) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Notanumber; fn != nil { fn(me) }
+	me.Notanumber.Walk()
+ }
+
+type XsdGoPkgHasElem_Reals struct {
+	Reals *TConstantType `xml:"http://www.w3.org/1998/Math/MathML reals"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Reals function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Reals instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Reals instance.
+func (me *XsdGoPkgHasElem_Reals) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Reals; fn != nil { fn(me) }
+	me.Reals.Walk()
+ }
+
+type XsdGoPkgHasElem_Primes struct {
+	Primes *TConstantType `xml:"http://www.w3.org/1998/Math/MathML primes"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Primes function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Primes instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Primes instance.
+func (me *XsdGoPkgHasElem_Primes) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Primes; fn != nil { fn(me) }
+	me.Primes.Walk()
+ }
+
+type XsdGoPkgHasElem_True struct {
+	True *TConstantType `xml:"http://www.w3.org/1998/Math/MathML true"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_True function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_True instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_True instance.
+func (me *XsdGoPkgHasElem_True) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_True; fn != nil { fn(me) }
+	me.True.Walk()
+ }
+
+type XsdGoPkgHasElem_Exponentiale struct {
+	Exponentiale *TConstantType `xml:"http://www.w3.org/1998/Math/MathML exponentiale"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Exponentiale function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Exponentiale instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Exponentiale instance.
+func (me *XsdGoPkgHasElem_Exponentiale) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Exponentiale; fn != nil { fn(me) }
+	me.Exponentiale.Walk()
+ }
+
 type XsdGoPkgHasElem_Infinity struct {
 	Infinity *TConstantType `xml:"http://www.w3.org/1998/Math/MathML infinity"`
 
@@ -3125,672 +1870,102 @@ func (me *XsdGoPkgHasElem_Infinity) Walk ()  {
 	me.Infinity.Walk()
  }
 
+type XsdGoPkgHasElem_Emptyset struct {
+	Emptyset *TConstantType `xml:"http://www.w3.org/1998/Math/MathML emptyset"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Emptyset function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Emptyset instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Emptyset instance.
+func (me *XsdGoPkgHasElem_Emptyset) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Emptyset; fn != nil { fn(me) }
+	me.Emptyset.Walk()
+ }
+
+type XsdGoPkgHasElem_Integers struct {
+	Integers *TConstantType `xml:"http://www.w3.org/1998/Math/MathML integers"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Integers function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Integers instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Integers instance.
+func (me *XsdGoPkgHasElem_Integers) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Integers; fn != nil { fn(me) }
+	me.Integers.Walk()
+ }
+
+type XsdGoPkgHasElem_Pi struct {
+	Pi *TConstantType `xml:"http://www.w3.org/1998/Math/MathML pi"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Pi function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Pi instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Pi instance.
+func (me *XsdGoPkgHasElem_Pi) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Pi; fn != nil { fn(me) }
+	me.Pi.Walk()
+ }
+
 type XsdGoPkgHasGroup_ContentConstantsClass struct {
-	XsdGoPkgHasElem_Pi
-
-	XsdGoPkgHasElem_Integers
-
-	XsdGoPkgHasElem_Imaginaryi
-
 	XsdGoPkgHasElem_Exponentiale
-
-	XsdGoPkgHasElem_Naturalnumbers
 
 	XsdGoPkgHasElem_Infinity
 
-	XsdGoPkgHasElem_Primes
+	XsdGoPkgHasElem_Emptyset
+
+	XsdGoPkgHasElem_Integers
+
+	XsdGoPkgHasElem_Pi
 
 	XsdGoPkgHasElem_Rationals
 
-	XsdGoPkgHasElem_Notanumber
+	XsdGoPkgHasElem_Complexes
+
+	XsdGoPkgHasElem_Imaginaryi
+
+	XsdGoPkgHasElem_Eulergamma
+
+	XsdGoPkgHasElem_Naturalnumbers
 
 	XsdGoPkgHasElem_False
 
+	XsdGoPkgHasElem_Notanumber
+
 	XsdGoPkgHasElem_Reals
 
-	XsdGoPkgHasElem_Emptyset
+	XsdGoPkgHasElem_Primes
 
 	XsdGoPkgHasElem_True
-
-	XsdGoPkgHasElem_Complexes
-
-	XsdGoPkgHasElem_Eulergamma
 
 }
 
 //	If the WalkHandlers.XsdGoPkgHasGroup_ContentConstantsClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentConstantsClass instance as the single argument. Then calls the Walk() method on 15/15 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentConstantsClass instance.
 func (me *XsdGoPkgHasGroup_ContentConstantsClass) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentConstantsClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Primes.Walk()
-	me.XsdGoPkgHasElem_Rationals.Walk()
-	me.XsdGoPkgHasElem_Notanumber.Walk()
-	me.XsdGoPkgHasElem_False.Walk()
-	me.XsdGoPkgHasElem_Reals.Walk()
-	me.XsdGoPkgHasElem_Emptyset.Walk()
-	me.XsdGoPkgHasElem_True.Walk()
-	me.XsdGoPkgHasElem_Complexes.Walk()
-	me.XsdGoPkgHasElem_Eulergamma.Walk()
-	me.XsdGoPkgHasElem_Pi.Walk()
-	me.XsdGoPkgHasElem_Integers.Walk()
-	me.XsdGoPkgHasElem_Imaginaryi.Walk()
-	me.XsdGoPkgHasElem_Exponentiale.Walk()
 	me.XsdGoPkgHasElem_Naturalnumbers.Walk()
+	me.XsdGoPkgHasElem_False.Walk()
+	me.XsdGoPkgHasElem_Notanumber.Walk()
+	me.XsdGoPkgHasElem_Reals.Walk()
+	me.XsdGoPkgHasElem_Primes.Walk()
+	me.XsdGoPkgHasElem_True.Walk()
+	me.XsdGoPkgHasElem_Exponentiale.Walk()
 	me.XsdGoPkgHasElem_Infinity.Walk()
- }
-
-type TmomentaboutType struct {
-	XsdGoPkgHasGroup_SetContent
-
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TmomentaboutType function is not nil (ie. was set by outside code), calls it with this TmomentaboutType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmomentaboutType instance.
-func (me *TmomentaboutType) Walk ()  { 
-	if fn := WalkHandlers.TmomentaboutType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_SetContent.Walk()
- }
-
-type XsdGoPkgHasElem_Momentabout struct {
-	Momentabout *TmomentaboutType `xml:"http://www.w3.org/1998/Math/MathML momentabout"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Momentabout function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Momentabout instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Momentabout instance.
-func (me *XsdGoPkgHasElem_Momentabout) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Momentabout; fn != nil { fn(me) }
-	me.Momentabout.Walk()
- }
-
-type TsdevType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TsdevType function is not nil (ie. was set by outside code), calls it with this TsdevType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TsdevType instance.
-func (me *TsdevType) Walk ()  { 
-	if fn := WalkHandlers.TsdevType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Sdev struct {
-	Sdev *TsdevType `xml:"http://www.w3.org/1998/Math/MathML sdev"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Sdev function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Sdev instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Sdev instance.
-func (me *XsdGoPkgHasElem_Sdev) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Sdev; fn != nil { fn(me) }
-	me.Sdev.Walk()
- }
-
-type TvarianceType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TvarianceType function is not nil (ie. was set by outside code), calls it with this TvarianceType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TvarianceType instance.
-func (me *TvarianceType) Walk ()  { 
-	if fn := WalkHandlers.TvarianceType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Variance struct {
-	Variance *TvarianceType `xml:"http://www.w3.org/1998/Math/MathML variance"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Variance function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Variance instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Variance instance.
-func (me *XsdGoPkgHasElem_Variance) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Variance; fn != nil { fn(me) }
-	me.Variance.Walk()
- }
-
-type TmeanType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TmeanType function is not nil (ie. was set by outside code), calls it with this TmeanType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TmeanType instance.
-func (me *TmeanType) Walk ()  { 
-	if fn := WalkHandlers.TmeanType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Mean struct {
-	Mean *TmeanType `xml:"http://www.w3.org/1998/Math/MathML mean"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Mean function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mean instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mean instance.
-func (me *XsdGoPkgHasElem_Mean) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mean; fn != nil { fn(me) }
-	me.Mean.Walk()
- }
-
-type TmedianType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TmedianType function is not nil (ie. was set by outside code), calls it with this TmedianType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TmedianType instance.
-func (me *TmedianType) Walk ()  { 
-	if fn := WalkHandlers.TmedianType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Median struct {
-	Median *TmedianType `xml:"http://www.w3.org/1998/Math/MathML median"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Median function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Median instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Median instance.
-func (me *XsdGoPkgHasElem_Median) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Median; fn != nil { fn(me) }
-	me.Median.Walk()
- }
-
-type TmomentType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TmomentType function is not nil (ie. was set by outside code), calls it with this TmomentType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TmomentType instance.
-func (me *TmomentType) Walk ()  { 
-	if fn := WalkHandlers.TmomentType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Moment struct {
-	Moment *TmomentType `xml:"http://www.w3.org/1998/Math/MathML moment"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Moment function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Moment instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Moment instance.
-func (me *XsdGoPkgHasElem_Moment) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Moment; fn != nil { fn(me) }
-	me.Moment.Walk()
- }
-
-type TmodeType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TmodeType function is not nil (ie. was set by outside code), calls it with this TmodeType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TmodeType instance.
-func (me *TmodeType) Walk ()  { 
-	if fn := WalkHandlers.TmodeType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Mode struct {
-	Mode *TmodeType `xml:"http://www.w3.org/1998/Math/MathML mode"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Mode function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mode instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mode instance.
-func (me *XsdGoPkgHasElem_Mode) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mode; fn != nil { fn(me) }
-	me.Mode.Walk()
- }
-
-type XsdGoPkgHasGroup_ContentStatisticsClass struct {
-	XsdGoPkgHasElem_Mean
-
-	XsdGoPkgHasElem_Median
-
-	XsdGoPkgHasElem_Moment
-
-	XsdGoPkgHasElem_Mode
-
-	XsdGoPkgHasElem_Momentabout
-
-	XsdGoPkgHasElem_Sdev
-
-	XsdGoPkgHasElem_Variance
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_ContentStatisticsClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentStatisticsClass instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentStatisticsClass instance.
-func (me *XsdGoPkgHasGroup_ContentStatisticsClass) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentStatisticsClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Mean.Walk()
-	me.XsdGoPkgHasElem_Median.Walk()
-	me.XsdGoPkgHasElem_Moment.Walk()
-	me.XsdGoPkgHasElem_Mode.Walk()
-	me.XsdGoPkgHasElem_Momentabout.Walk()
-	me.XsdGoPkgHasElem_Sdev.Walk()
-	me.XsdGoPkgHasElem_Variance.Walk()
- }
-
-type XsdGoPkgHasElem_Cosh struct {
-	Cosh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cosh"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Cosh function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Cosh instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Cosh instance.
-func (me *XsdGoPkgHasElem_Cosh) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Cosh; fn != nil { fn(me) }
-	me.Cosh.Walk()
- }
-
-type XsdGoPkgHasElem_Arccosh struct {
-	Arccosh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccosh"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Arccosh function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arccosh instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arccosh instance.
-func (me *XsdGoPkgHasElem_Arccosh) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Arccosh; fn != nil { fn(me) }
-	me.Arccosh.Walk()
- }
-
-type XsdGoPkgHasElem_Arccsch struct {
-	Arccsch *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccsch"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Arccsch function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arccsch instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arccsch instance.
-func (me *XsdGoPkgHasElem_Arccsch) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Arccsch; fn != nil { fn(me) }
-	me.Arccsch.Walk()
- }
-
-type XsdGoPkgHasElem_Arcsin struct {
-	Arcsin *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsin"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Arcsin function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arcsin instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arcsin instance.
-func (me *XsdGoPkgHasElem_Arcsin) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Arcsin; fn != nil { fn(me) }
-	me.Arcsin.Walk()
- }
-
-type XsdGoPkgHasElem_Arccot struct {
-	Arccot *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccot"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Arccot function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arccot instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arccot instance.
-func (me *XsdGoPkgHasElem_Arccot) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Arccot; fn != nil { fn(me) }
-	me.Arccot.Walk()
- }
-
-type XsdGoPkgHasElem_Arccoth struct {
-	Arccoth *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccoth"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Arccoth function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arccoth instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arccoth instance.
-func (me *XsdGoPkgHasElem_Arccoth) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Arccoth; fn != nil { fn(me) }
-	me.Arccoth.Walk()
- }
-
-type XsdGoPkgHasElem_Arccos struct {
-	Arccos *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccos"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Arccos function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arccos instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arccos instance.
-func (me *XsdGoPkgHasElem_Arccos) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Arccos; fn != nil { fn(me) }
-	me.Arccos.Walk()
- }
-
-type XsdGoPkgHasElem_Arcsinh struct {
-	Arcsinh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsinh"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Arcsinh function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arcsinh instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arcsinh instance.
-func (me *XsdGoPkgHasElem_Arcsinh) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Arcsinh; fn != nil { fn(me) }
-	me.Arcsinh.Walk()
- }
-
-type XsdGoPkgHasElem_Arcsech struct {
-	Arcsech *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsech"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Arcsech function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arcsech instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arcsech instance.
-func (me *XsdGoPkgHasElem_Arcsech) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Arcsech; fn != nil { fn(me) }
-	me.Arcsech.Walk()
- }
-
-type XsdGoPkgHasElem_Csch struct {
-	Csch *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML csch"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Csch function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Csch instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Csch instance.
-func (me *XsdGoPkgHasElem_Csch) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Csch; fn != nil { fn(me) }
-	me.Csch.Walk()
- }
-
-type XsdGoPkgHasElem_Sin struct {
-	Sin *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sin"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Sin function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Sin instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Sin instance.
-func (me *XsdGoPkgHasElem_Sin) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Sin; fn != nil { fn(me) }
-	me.Sin.Walk()
- }
-
-type XsdGoPkgHasElem_Sinh struct {
-	Sinh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sinh"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Sinh function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Sinh instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Sinh instance.
-func (me *XsdGoPkgHasElem_Sinh) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Sinh; fn != nil { fn(me) }
-	me.Sinh.Walk()
- }
-
-type XsdGoPkgHasElem_Ln struct {
-	Ln *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML ln"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Ln function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Ln instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Ln instance.
-func (me *XsdGoPkgHasElem_Ln) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Ln; fn != nil { fn(me) }
-	me.Ln.Walk()
- }
-
-type XsdGoPkgHasElem_Csc struct {
-	Csc *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML csc"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Csc function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Csc instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Csc instance.
-func (me *XsdGoPkgHasElem_Csc) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Csc; fn != nil { fn(me) }
-	me.Csc.Walk()
- }
-
-type TlogbaseType struct {
-	XsdGoPkgHasAtts_CommonAttrib
-
-	XsdGoPkgHasGroup_SetContent
-
-}
-
-//	If the WalkHandlers.TlogbaseType function is not nil (ie. was set by outside code), calls it with this TlogbaseType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TlogbaseType instance.
-func (me *TlogbaseType) Walk ()  { 
-	if fn := WalkHandlers.TlogbaseType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_SetContent.Walk()
- }
-
-type XsdGoPkgHasElem_Logbase struct {
-	Logbase *TlogbaseType `xml:"http://www.w3.org/1998/Math/MathML logbase"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Logbase function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Logbase instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Logbase instance.
-func (me *XsdGoPkgHasElem_Logbase) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Logbase; fn != nil { fn(me) }
-	me.Logbase.Walk()
- }
-
-type XsdGoPkgHasElem_Cos struct {
-	Cos *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cos"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Cos function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Cos instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Cos instance.
-func (me *XsdGoPkgHasElem_Cos) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Cos; fn != nil { fn(me) }
-	me.Cos.Walk()
- }
-
-type XsdGoPkgHasElem_Tan struct {
-	Tan *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML tan"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Tan function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Tan instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Tan instance.
-func (me *XsdGoPkgHasElem_Tan) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Tan; fn != nil { fn(me) }
-	me.Tan.Walk()
- }
-
-type XsdGoPkgHasElem_Arccsc struct {
-	Arccsc *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccsc"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Arccsc function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arccsc instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arccsc instance.
-func (me *XsdGoPkgHasElem_Arccsc) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Arccsc; fn != nil { fn(me) }
-	me.Arccsc.Walk()
- }
-
-type XsdGoPkgHasElem_Cot struct {
-	Cot *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cot"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Cot function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Cot instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Cot instance.
-func (me *XsdGoPkgHasElem_Cot) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Cot; fn != nil { fn(me) }
-	me.Cot.Walk()
- }
-
-type XsdGoPkgHasElem_Coth struct {
-	Coth *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML coth"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Coth function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Coth instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Coth instance.
-func (me *XsdGoPkgHasElem_Coth) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Coth; fn != nil { fn(me) }
-	me.Coth.Walk()
- }
-
-type XsdGoPkgHasElem_Log struct {
-	Log *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML log"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Log function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Log instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Log instance.
-func (me *XsdGoPkgHasElem_Log) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Log; fn != nil { fn(me) }
-	me.Log.Walk()
- }
-
-type XsdGoPkgHasElem_Exp struct {
-	Exp *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML exp"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Exp function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Exp instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Exp instance.
-func (me *XsdGoPkgHasElem_Exp) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Exp; fn != nil { fn(me) }
-	me.Exp.Walk()
- }
-
-type XsdGoPkgHasElem_Arctanh struct {
-	Arctanh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arctanh"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Arctanh function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arctanh instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arctanh instance.
-func (me *XsdGoPkgHasElem_Arctanh) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Arctanh; fn != nil { fn(me) }
-	me.Arctanh.Walk()
- }
-
-type XsdGoPkgHasElem_Arctan struct {
-	Arctan *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arctan"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Arctan function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arctan instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arctan instance.
-func (me *XsdGoPkgHasElem_Arctan) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Arctan; fn != nil { fn(me) }
-	me.Arctan.Walk()
- }
-
-type XsdGoPkgHasElem_Tanh struct {
-	Tanh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML tanh"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Tanh function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Tanh instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Tanh instance.
-func (me *XsdGoPkgHasElem_Tanh) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Tanh; fn != nil { fn(me) }
-	me.Tanh.Walk()
- }
-
-type XsdGoPkgHasElem_Sec struct {
-	Sec *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sec"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Sec function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Sec instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Sec instance.
-func (me *XsdGoPkgHasElem_Sec) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Sec; fn != nil { fn(me) }
-	me.Sec.Walk()
- }
-
-type XsdGoPkgHasElem_Sech struct {
-	Sech *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sech"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Sech function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Sech instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Sech instance.
-func (me *XsdGoPkgHasElem_Sech) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Sech; fn != nil { fn(me) }
-	me.Sech.Walk()
- }
-
-type XsdGoPkgHasElem_Arcsec struct {
-	Arcsec *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsec"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Arcsec function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arcsec instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arcsec instance.
-func (me *XsdGoPkgHasElem_Arcsec) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Arcsec; fn != nil { fn(me) }
-	me.Arcsec.Walk()
- }
-
-type XsdGoPkgHasGroup_ContentElementaryFunctionsClass struct {
-	XsdGoPkgHasElem_Arctan
-
-	XsdGoPkgHasElem_Tanh
-
-	XsdGoPkgHasElem_Sec
-
-	XsdGoPkgHasElem_Sech
-
-	XsdGoPkgHasElem_Arcsec
-
-	XsdGoPkgHasElem_Cosh
-
-	XsdGoPkgHasElem_Arccosh
-
-	XsdGoPkgHasElem_Arccsch
-
-	XsdGoPkgHasElem_Arcsin
-
-	XsdGoPkgHasElem_Arccot
-
-	XsdGoPkgHasElem_Arccoth
-
-	XsdGoPkgHasElem_Arccos
-
-	XsdGoPkgHasElem_Arcsinh
-
-	XsdGoPkgHasElem_Arcsech
-
-	XsdGoPkgHasElem_Csch
-
-	XsdGoPkgHasElem_Sin
-
-	XsdGoPkgHasElem_Sinh
-
-	XsdGoPkgHasElem_Ln
-
-	XsdGoPkgHasElem_Csc
-
-	XsdGoPkgHasElem_Logbase
-
-	XsdGoPkgHasElem_Cos
-
-	XsdGoPkgHasElem_Tan
-
-	XsdGoPkgHasElem_Arccsc
-
-	XsdGoPkgHasElem_Cot
-
-	XsdGoPkgHasElem_Coth
-
-	XsdGoPkgHasElem_Log
-
-	XsdGoPkgHasElem_Exp
-
-	XsdGoPkgHasElem_Arctanh
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_ContentElementaryFunctionsClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentElementaryFunctionsClass instance as the single argument. Then calls the Walk() method on 28/28 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentElementaryFunctionsClass instance.
-func (me *XsdGoPkgHasGroup_ContentElementaryFunctionsClass) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentElementaryFunctionsClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Logbase.Walk()
-	me.XsdGoPkgHasElem_Cos.Walk()
-	me.XsdGoPkgHasElem_Tan.Walk()
-	me.XsdGoPkgHasElem_Arccsc.Walk()
-	me.XsdGoPkgHasElem_Cot.Walk()
-	me.XsdGoPkgHasElem_Coth.Walk()
-	me.XsdGoPkgHasElem_Log.Walk()
-	me.XsdGoPkgHasElem_Exp.Walk()
-	me.XsdGoPkgHasElem_Arctanh.Walk()
-	me.XsdGoPkgHasElem_Arctan.Walk()
-	me.XsdGoPkgHasElem_Tanh.Walk()
-	me.XsdGoPkgHasElem_Sec.Walk()
-	me.XsdGoPkgHasElem_Sech.Walk()
-	me.XsdGoPkgHasElem_Arcsec.Walk()
-	me.XsdGoPkgHasElem_Cosh.Walk()
-	me.XsdGoPkgHasElem_Arccosh.Walk()
-	me.XsdGoPkgHasElem_Arccsch.Walk()
-	me.XsdGoPkgHasElem_Arcsin.Walk()
-	me.XsdGoPkgHasElem_Arccot.Walk()
-	me.XsdGoPkgHasElem_Arccoth.Walk()
-	me.XsdGoPkgHasElem_Arccos.Walk()
-	me.XsdGoPkgHasElem_Arcsinh.Walk()
-	me.XsdGoPkgHasElem_Arcsech.Walk()
-	me.XsdGoPkgHasElem_Csch.Walk()
-	me.XsdGoPkgHasElem_Sin.Walk()
-	me.XsdGoPkgHasElem_Sinh.Walk()
-	me.XsdGoPkgHasElem_Ln.Walk()
-	me.XsdGoPkgHasElem_Csc.Walk()
+	me.XsdGoPkgHasElem_Emptyset.Walk()
+	me.XsdGoPkgHasElem_Integers.Walk()
+	me.XsdGoPkgHasElem_Pi.Walk()
+	me.XsdGoPkgHasElem_Rationals.Walk()
+	me.XsdGoPkgHasElem_Complexes.Walk()
+	me.XsdGoPkgHasElem_Imaginaryi.Walk()
+	me.XsdGoPkgHasElem_Eulergamma.Walk()
  }
 
 type TRelationsType struct {
-	XsdGoPkgHasAtts_DefinitionAttrib
-
 	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasAtts_DefinitionAttrib
 
 }
 
 //	If the WalkHandlers.TRelationsType function is not nil (ie. was set by outside code), calls it with this TRelationsType instance as the single argument. Then calls the Walk() method on 0/2 embed(s) and 0/0 field(s) belonging to this TRelationsType instance.
 func (me *TRelationsType) Walk ()  { 
 	if fn := WalkHandlers.TRelationsType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Geq struct {
-	Geq *TRelationsType `xml:"http://www.w3.org/1998/Math/MathML geq"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Geq function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Geq instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Geq instance.
-func (me *XsdGoPkgHasElem_Geq) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Geq; fn != nil { fn(me) }
-	me.Geq.Walk()
  }
 
 type XsdGoPkgHasElem_Gt struct {
@@ -3815,15 +1990,26 @@ func (me *XsdGoPkgHasElem_Leq) Walk ()  {
 	me.Leq.Walk()
  }
 
-type XsdGoPkgHasElem_Approx struct {
-	Approx *TRelationsType `xml:"http://www.w3.org/1998/Math/MathML approx"`
+type XsdGoPkgHasElem_Lt struct {
+	Lt *TRelationsType `xml:"http://www.w3.org/1998/Math/MathML lt"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_Approx function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Approx instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Approx instance.
-func (me *XsdGoPkgHasElem_Approx) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Approx; fn != nil { fn(me) }
-	me.Approx.Walk()
+//	If the WalkHandlers.XsdGoPkgHasElem_Lt function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Lt instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Lt instance.
+func (me *XsdGoPkgHasElem_Lt) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Lt; fn != nil { fn(me) }
+	me.Lt.Walk()
+ }
+
+type XsdGoPkgHasElem_Geq struct {
+	Geq *TRelationsType `xml:"http://www.w3.org/1998/Math/MathML geq"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Geq function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Geq instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Geq instance.
+func (me *XsdGoPkgHasElem_Geq) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Geq; fn != nil { fn(me) }
+	me.Geq.Walk()
  }
 
 type XsdGoPkgHasElem_Equivalent struct {
@@ -3835,6 +2021,28 @@ type XsdGoPkgHasElem_Equivalent struct {
 func (me *XsdGoPkgHasElem_Equivalent) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_Equivalent; fn != nil { fn(me) }
 	me.Equivalent.Walk()
+ }
+
+type XsdGoPkgHasElem_Approx struct {
+	Approx *TRelationsType `xml:"http://www.w3.org/1998/Math/MathML approx"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Approx function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Approx instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Approx instance.
+func (me *XsdGoPkgHasElem_Approx) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Approx; fn != nil { fn(me) }
+	me.Approx.Walk()
+ }
+
+type XsdGoPkgHasElem_Factorof struct {
+	Factorof *TRelationsType `xml:"http://www.w3.org/1998/Math/MathML factorof"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Factorof function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Factorof instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Factorof instance.
+func (me *XsdGoPkgHasElem_Factorof) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Factorof; fn != nil { fn(me) }
+	me.Factorof.Walk()
  }
 
 type XsdGoPkgHasElem_Eq struct {
@@ -3859,488 +2067,39 @@ func (me *XsdGoPkgHasElem_Neq) Walk ()  {
 	me.Neq.Walk()
  }
 
-type XsdGoPkgHasElem_Lt struct {
-	Lt *TRelationsType `xml:"http://www.w3.org/1998/Math/MathML lt"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Lt function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Lt instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Lt instance.
-func (me *XsdGoPkgHasElem_Lt) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Lt; fn != nil { fn(me) }
-	me.Lt.Walk()
- }
-
-type XsdGoPkgHasElem_Factorof struct {
-	Factorof *TRelationsType `xml:"http://www.w3.org/1998/Math/MathML factorof"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Factorof function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Factorof instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Factorof instance.
-func (me *XsdGoPkgHasElem_Factorof) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Factorof; fn != nil { fn(me) }
-	me.Factorof.Walk()
- }
-
 type XsdGoPkgHasGroup_ContentRelationsClass struct {
-	XsdGoPkgHasElem_Gt
+	XsdGoPkgHasElem_Geq
 
-	XsdGoPkgHasElem_Leq
+	XsdGoPkgHasElem_Equivalent
 
 	XsdGoPkgHasElem_Approx
 
-	XsdGoPkgHasElem_Equivalent
+	XsdGoPkgHasElem_Factorof
 
 	XsdGoPkgHasElem_Eq
 
 	XsdGoPkgHasElem_Neq
 
+	XsdGoPkgHasElem_Gt
+
+	XsdGoPkgHasElem_Leq
+
 	XsdGoPkgHasElem_Lt
-
-	XsdGoPkgHasElem_Factorof
-
-	XsdGoPkgHasElem_Geq
 
 }
 
 //	If the WalkHandlers.XsdGoPkgHasGroup_ContentRelationsClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentRelationsClass instance as the single argument. Then calls the Walk() method on 9/9 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentRelationsClass instance.
 func (me *XsdGoPkgHasGroup_ContentRelationsClass) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentRelationsClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Leq.Walk()
-	me.XsdGoPkgHasElem_Approx.Walk()
-	me.XsdGoPkgHasElem_Equivalent.Walk()
-	me.XsdGoPkgHasElem_Eq.Walk()
 	me.XsdGoPkgHasElem_Neq.Walk()
-	me.XsdGoPkgHasElem_Lt.Walk()
-	me.XsdGoPkgHasElem_Factorof.Walk()
-	me.XsdGoPkgHasElem_Geq.Walk()
 	me.XsdGoPkgHasElem_Gt.Walk()
- }
-
-type TdegreeType struct {
-	XsdGoPkgHasGroup_SetContent
-
-	XsdGoPkgHasAtts_MmultiscriptsAttlist
-
-}
-
-//	If the WalkHandlers.TdegreeType function is not nil (ie. was set by outside code), calls it with this TdegreeType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TdegreeType instance.
-func (me *TdegreeType) Walk ()  { 
-	if fn := WalkHandlers.TdegreeType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_SetContent.Walk()
- }
-
-type XsdGoPkgHasElem_Degree struct {
-	Degree *TdegreeType `xml:"http://www.w3.org/1998/Math/MathML degree"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Degree function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Degree instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Degree instance.
-func (me *XsdGoPkgHasElem_Degree) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Degree; fn != nil { fn(me) }
-	me.Degree.Walk()
- }
-
-type TpieceType struct {
-	XsdGoPkgHasGroup_SetContent
-
-}
-
-//	If the WalkHandlers.TpieceType function is not nil (ie. was set by outside code), calls it with this TpieceType instance as the single argument. Then calls the Walk() method on 1/1 embed(s) and 0/0 field(s) belonging to this TpieceType instance.
-func (me *TpieceType) Walk ()  { 
-	if fn := WalkHandlers.TpieceType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_SetContent.Walk()
- }
-
-type XsdGoPkgHasElems_Piece struct {
-	Pieces []*TpieceType `xml:"http://www.w3.org/1998/Math/MathML piece"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Piece function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Piece instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Piece instance.
-func (me *XsdGoPkgHasElems_Piece) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Piece; fn != nil { fn(me) }
-	for _, x := range me.Pieces { x.Walk() }
- }
-
-type TotherwiseType struct {
-	XsdGoPkgHasGroup_SetContent
-
-	XsdGoPkgHasAtts_CommonAttrib
-
-}
-
-//	If the WalkHandlers.TotherwiseType function is not nil (ie. was set by outside code), calls it with this TotherwiseType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TotherwiseType instance.
-func (me *TotherwiseType) Walk ()  { 
-	if fn := WalkHandlers.TotherwiseType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_SetContent.Walk()
- }
-
-type XsdGoPkgHasElem_Otherwise struct {
-	Otherwise *TotherwiseType `xml:"http://www.w3.org/1998/Math/MathML otherwise"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Otherwise function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Otherwise instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Otherwise instance.
-func (me *XsdGoPkgHasElem_Otherwise) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Otherwise; fn != nil { fn(me) }
-	me.Otherwise.Walk()
- }
-
-type XsdGoPkgHasGroup_PiecewiseContent struct {
-	XsdGoPkgHasElems_Piece
-
-	XsdGoPkgHasElem_Otherwise
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_PiecewiseContent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_PiecewiseContent instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_PiecewiseContent instance.
-func (me *XsdGoPkgHasGroup_PiecewiseContent) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_PiecewiseContent; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Otherwise.Walk()
-	me.XsdGoPkgHasElems_Piece.Walk()
- }
-
-type TpiecewiseType struct {
-	XsdGoPkgHasGroup_PiecewiseContent
-
-	XsdGoPkgHasAtts_MmultiscriptsAttlist
-
-}
-
-//	If the WalkHandlers.TpiecewiseType function is not nil (ie. was set by outside code), calls it with this TpiecewiseType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TpiecewiseType instance.
-func (me *TpiecewiseType) Walk ()  { 
-	if fn := WalkHandlers.TpiecewiseType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_PiecewiseContent.Walk()
- }
-
-type XsdGoPkgHasElem_Piecewise struct {
-	Piecewise *TpiecewiseType `xml:"http://www.w3.org/1998/Math/MathML piecewise"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Piecewise function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Piecewise instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Piecewise instance.
-func (me *XsdGoPkgHasElem_Piecewise) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Piecewise; fn != nil { fn(me) }
-	me.Piecewise.Walk()
- }
-
-type TlambdaType struct {
-	XsdGoPkgHasAtts_MmultiscriptsAttlist
-
-	XsdGoPkgHasGroup_SetContent
-
-}
-
-//	If the WalkHandlers.TlambdaType function is not nil (ie. was set by outside code), calls it with this TlambdaType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TlambdaType instance.
-func (me *TlambdaType) Walk ()  { 
-	if fn := WalkHandlers.TlambdaType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_SetContent.Walk()
- }
-
-type XsdGoPkgHasElem_Lambda struct {
-	Lambda *TlambdaType `xml:"http://www.w3.org/1998/Math/MathML lambda"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Lambda function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Lambda instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Lambda instance.
-func (me *XsdGoPkgHasElem_Lambda) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Lambda; fn != nil { fn(me) }
-	me.Lambda.Walk()
- }
-
-type TconditionType struct {
-	XsdGoPkgHasGroup_SetContent
-
-	XsdGoPkgHasAtts_ConditionAttlist
-
-}
-
-//	If the WalkHandlers.TconditionType function is not nil (ie. was set by outside code), calls it with this TconditionType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TconditionType instance.
-func (me *TconditionType) Walk ()  { 
-	if fn := WalkHandlers.TconditionType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_SetContent.Walk()
- }
-
-type XsdGoPkgHasElem_Condition struct {
-	Condition *TconditionType `xml:"http://www.w3.org/1998/Math/MathML condition"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Condition function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Condition instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Condition instance.
-func (me *XsdGoPkgHasElem_Condition) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Condition; fn != nil { fn(me) }
-	me.Condition.Walk()
- }
-
-type TbvarType struct {
-	XsdGoPkgHasAtts_MmultiscriptsAttlist
-
-	XsdGoPkgHasGroup_SetContent
-
-}
-
-//	If the WalkHandlers.TbvarType function is not nil (ie. was set by outside code), calls it with this TbvarType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TbvarType instance.
-func (me *TbvarType) Walk ()  { 
-	if fn := WalkHandlers.TbvarType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_SetContent.Walk()
- }
-
-type XsdGoPkgHasElem_Bvar struct {
-	Bvar *TbvarType `xml:"http://www.w3.org/1998/Math/MathML bvar"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Bvar function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Bvar instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Bvar instance.
-func (me *XsdGoPkgHasElem_Bvar) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Bvar; fn != nil { fn(me) }
-	me.Bvar.Walk()
- }
-
-type TapplyType struct {
-	XsdGoPkgHasAtts_MmultiscriptsAttlist
-
-	XsdGoPkgHasGroup_SetContent
-
-}
-
-//	If the WalkHandlers.TapplyType function is not nil (ie. was set by outside code), calls it with this TapplyType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TapplyType instance.
-func (me *TapplyType) Walk ()  { 
-	if fn := WalkHandlers.TapplyType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_SetContent.Walk()
- }
-
-type XsdGoPkgHasElem_Apply struct {
-	Apply *TapplyType `xml:"http://www.w3.org/1998/Math/MathML apply"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Apply function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Apply instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Apply instance.
-func (me *XsdGoPkgHasElem_Apply) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Apply; fn != nil { fn(me) }
-	me.Apply.Walk()
- }
-
-type TintervalType struct {
-	XsdGoPkgHasAtts_IntervalAttlist
-
-	XsdGoPkgHasGroup_ContentExprClass
-
-}
-
-//	If the WalkHandlers.TintervalType function is not nil (ie. was set by outside code), calls it with this TintervalType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TintervalType instance.
-func (me *TintervalType) Walk ()  { 
-	if fn := WalkHandlers.TintervalType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_ContentExprClass.Walk()
- }
-
-type XsdGoPkgHasElem_Interval struct {
-	Interval *TintervalType `xml:"http://www.w3.org/1998/Math/MathML interval"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Interval function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Interval instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Interval instance.
-func (me *XsdGoPkgHasElem_Interval) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Interval; fn != nil { fn(me) }
-	me.Interval.Walk()
- }
-
-type TinverseType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TinverseType function is not nil (ie. was set by outside code), calls it with this TinverseType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TinverseType instance.
-func (me *TinverseType) Walk ()  { 
-	if fn := WalkHandlers.TinverseType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Inverse struct {
-	Inverse *TinverseType `xml:"http://www.w3.org/1998/Math/MathML inverse"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Inverse function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Inverse instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Inverse instance.
-func (me *XsdGoPkgHasElem_Inverse) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Inverse; fn != nil { fn(me) }
-	me.Inverse.Walk()
- }
-
-type TdeclareType struct {
-	XsdGoPkgHasGroup_SetContent
-
-	XsdGoPkgHasAtts_DeclareAttlist
-
-}
-
-//	If the WalkHandlers.TdeclareType function is not nil (ie. was set by outside code), calls it with this TdeclareType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TdeclareType instance.
-func (me *TdeclareType) Walk ()  { 
-	if fn := WalkHandlers.TdeclareType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_SetContent.Walk()
- }
-
-type XsdGoPkgHasElem_Declare struct {
-	Declare *TdeclareType `xml:"http://www.w3.org/1998/Math/MathML declare"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Declare function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Declare instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Declare instance.
-func (me *XsdGoPkgHasElem_Declare) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Declare; fn != nil { fn(me) }
-	me.Declare.Walk()
- }
-
-type XsdGoPkgHasGroup_ContentConstructsClass struct {
-	XsdGoPkgHasElem_Inverse
-
-	XsdGoPkgHasElem_Declare
-
-	XsdGoPkgHasElem_Degree
-
-	XsdGoPkgHasElem_Piecewise
-
-	XsdGoPkgHasElem_Lambda
-
-	XsdGoPkgHasElem_Condition
-
-	XsdGoPkgHasElem_Bvar
-
-	XsdGoPkgHasElem_Apply
-
-	XsdGoPkgHasElem_Interval
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_ContentConstructsClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentConstructsClass instance as the single argument. Then calls the Walk() method on 9/9 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentConstructsClass instance.
-func (me *XsdGoPkgHasGroup_ContentConstructsClass) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentConstructsClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Inverse.Walk()
-	me.XsdGoPkgHasElem_Declare.Walk()
-	me.XsdGoPkgHasElem_Degree.Walk()
-	me.XsdGoPkgHasElem_Piecewise.Walk()
-	me.XsdGoPkgHasElem_Lambda.Walk()
-	me.XsdGoPkgHasElem_Condition.Walk()
-	me.XsdGoPkgHasElem_Bvar.Walk()
-	me.XsdGoPkgHasElem_Apply.Walk()
-	me.XsdGoPkgHasElem_Interval.Walk()
- }
-
-type TdomainofapplicationType struct {
-	XsdGoPkgHasAtts_DefinitionAttrib
-
-	XsdGoPkgHasGroup_SetContent
-
-	XsdGoPkgHasAtts_CommonAttrib
-
-}
-
-//	If the WalkHandlers.TdomainofapplicationType function is not nil (ie. was set by outside code), calls it with this TdomainofapplicationType instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TdomainofapplicationType instance.
-func (me *TdomainofapplicationType) Walk ()  { 
-	if fn := WalkHandlers.TdomainofapplicationType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_SetContent.Walk()
- }
-
-type XsdGoPkgHasElem_Domainofapplication struct {
-	Domainofapplication *TdomainofapplicationType `xml:"http://www.w3.org/1998/Math/MathML domainofapplication"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Domainofapplication function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Domainofapplication instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Domainofapplication instance.
-func (me *XsdGoPkgHasElem_Domainofapplication) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Domainofapplication; fn != nil { fn(me) }
-	me.Domainofapplication.Walk()
- }
-
-type TFunctionsType struct {
-	XsdGoPkgHasAtts_DefinitionAttrib
-
-	XsdGoPkgHasAtts_CommonAttrib
-
-}
-
-//	If the WalkHandlers.TFunctionsType function is not nil (ie. was set by outside code), calls it with this TFunctionsType instance as the single argument. Then calls the Walk() method on 0/2 embed(s) and 0/0 field(s) belonging to this TFunctionsType instance.
-func (me *TFunctionsType) Walk ()  { 
-	if fn := WalkHandlers.TFunctionsType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Ident struct {
-	Ident *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML ident"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Ident function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Ident instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Ident instance.
-func (me *XsdGoPkgHasElem_Ident) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Ident; fn != nil { fn(me) }
-	me.Ident.Walk()
- }
-
-type XsdGoPkgHasElem_Domain struct {
-	Domain *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML domain"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Domain function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Domain instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Domain instance.
-func (me *XsdGoPkgHasElem_Domain) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Domain; fn != nil { fn(me) }
-	me.Domain.Walk()
- }
-
-type XsdGoPkgHasElem_Image struct {
-	Image *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML image"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Image function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Image instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Image instance.
-func (me *XsdGoPkgHasElem_Image) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Image; fn != nil { fn(me) }
-	me.Image.Walk()
- }
-
-type XsdGoPkgHasElem_Codomain struct {
-	Codomain *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML codomain"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Codomain function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Codomain instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Codomain instance.
-func (me *XsdGoPkgHasElem_Codomain) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Codomain; fn != nil { fn(me) }
-	me.Codomain.Walk()
- }
-
-type XsdGoPkgHasElem_Compose struct {
-	Compose *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML compose"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Compose function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Compose instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Compose instance.
-func (me *XsdGoPkgHasElem_Compose) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Compose; fn != nil { fn(me) }
-	me.Compose.Walk()
- }
-
-type XsdGoPkgHasGroup_ContentFunctionsClass struct {
-	XsdGoPkgHasElem_Image
-
-	XsdGoPkgHasElem_Codomain
-
-	XsdGoPkgHasElem_Compose
-
-	XsdGoPkgHasElem_Domainofapplication
-
-	XsdGoPkgHasElem_Ident
-
-	XsdGoPkgHasElem_Domain
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_ContentFunctionsClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentFunctionsClass instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentFunctionsClass instance.
-func (me *XsdGoPkgHasGroup_ContentFunctionsClass) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentFunctionsClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Codomain.Walk()
-	me.XsdGoPkgHasElem_Compose.Walk()
-	me.XsdGoPkgHasElem_Domainofapplication.Walk()
-	me.XsdGoPkgHasElem_Ident.Walk()
-	me.XsdGoPkgHasElem_Domain.Walk()
-	me.XsdGoPkgHasElem_Image.Walk()
+	me.XsdGoPkgHasElem_Leq.Walk()
+	me.XsdGoPkgHasElem_Lt.Walk()
+	me.XsdGoPkgHasElem_Geq.Walk()
+	me.XsdGoPkgHasElem_Equivalent.Walk()
+	me.XsdGoPkgHasElem_Approx.Walk()
+	me.XsdGoPkgHasElem_Factorof.Walk()
+	me.XsdGoPkgHasElem_Eq.Walk()
  }
 
 type TvectorproductType struct {
@@ -4364,6 +2123,48 @@ func (me *XsdGoPkgHasElem_Vectorproduct) Walk ()  {
 	me.Vectorproduct.Walk()
  }
 
+type TouterproductType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TouterproductType function is not nil (ie. was set by outside code), calls it with this TouterproductType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TouterproductType instance.
+func (me *TouterproductType) Walk ()  { 
+	if fn := WalkHandlers.TouterproductType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Outerproduct struct {
+	Outerproduct *TouterproductType `xml:"http://www.w3.org/1998/Math/MathML outerproduct"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Outerproduct function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Outerproduct instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Outerproduct instance.
+func (me *XsdGoPkgHasElem_Outerproduct) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Outerproduct; fn != nil { fn(me) }
+	me.Outerproduct.Walk()
+ }
+
+type TscalarproductType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TscalarproductType function is not nil (ie. was set by outside code), calls it with this TscalarproductType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TscalarproductType instance.
+func (me *TscalarproductType) Walk ()  { 
+	if fn := WalkHandlers.TscalarproductType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Scalarproduct struct {
+	Scalarproduct *TscalarproductType `xml:"http://www.w3.org/1998/Math/MathML scalarproduct"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Scalarproduct function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Scalarproduct instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Scalarproduct instance.
+func (me *XsdGoPkgHasElem_Scalarproduct) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Scalarproduct; fn != nil { fn(me) }
+	me.Scalarproduct.Walk()
+ }
+
 type TtransposeType struct {
 	XsdGoPkgHasAtts_CsymbolAttlist
 
@@ -4385,17 +2186,61 @@ func (me *XsdGoPkgHasElem_Transpose) Walk ()  {
 	me.Transpose.Walk()
  }
 
+type TselectorType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TselectorType function is not nil (ie. was set by outside code), calls it with this TselectorType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TselectorType instance.
+func (me *TselectorType) Walk ()  { 
+	if fn := WalkHandlers.TselectorType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Selector struct {
+	Selector *TselectorType `xml:"http://www.w3.org/1998/Math/MathML selector"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Selector function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Selector instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Selector instance.
+func (me *XsdGoPkgHasElem_Selector) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Selector; fn != nil { fn(me) }
+	me.Selector.Walk()
+ }
+
+type XsdGoPkgHasGroup_ContentExprClass struct {
+	XsdGoPkgHasGroup_PresExprClass
+
+	XsdGoPkgHasGroup_ContExprClass
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_ContentExprClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentExprClass instance as the single argument. Then calls the Walk() method on 0/2 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentExprClass instance.
+func (me *XsdGoPkgHasGroup_ContentExprClass) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentExprClass; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasGroup_VectorContent struct {
+	XsdGoPkgHasGroup_ContentExprClass
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_VectorContent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_VectorContent instance as the single argument. Then calls the Walk() method on 1/1 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_VectorContent instance.
+func (me *XsdGoPkgHasGroup_VectorContent) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_VectorContent; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_ContentExprClass.Walk()
+ }
+
 type TvectorType struct {
 	XsdGoPkgHasAtts_MmultiscriptsAttlist
 
-	XsdGoPkgHasGroup_SetContent
+	XsdGoPkgHasGroup_VectorContent
 
 }
 
 //	If the WalkHandlers.TvectorType function is not nil (ie. was set by outside code), calls it with this TvectorType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TvectorType instance.
 func (me *TvectorType) Walk ()  { 
 	if fn := WalkHandlers.TvectorType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_SetContent.Walk()
+	me.XsdGoPkgHasGroup_VectorContent.Walk()
  }
 
 type XsdGoPkgHasElem_Vector struct {
@@ -4409,17 +2254,38 @@ func (me *XsdGoPkgHasElem_Vector) Walk ()  {
 	me.Vector.Walk()
  }
 
-type TmatrixrowType struct {
-	XsdGoPkgHasAtts_MmultiscriptsAttlist
+type TdeterminantType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
 
-	XsdGoPkgHasGroup_SetContent
+}
+
+//	If the WalkHandlers.TdeterminantType function is not nil (ie. was set by outside code), calls it with this TdeterminantType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TdeterminantType instance.
+func (me *TdeterminantType) Walk ()  { 
+	if fn := WalkHandlers.TdeterminantType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Determinant struct {
+	Determinant *TdeterminantType `xml:"http://www.w3.org/1998/Math/MathML determinant"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Determinant function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Determinant instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Determinant instance.
+func (me *XsdGoPkgHasElem_Determinant) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Determinant; fn != nil { fn(me) }
+	me.Determinant.Walk()
+ }
+
+type TmatrixrowType struct {
+	XsdGoPkgHasGroup_VectorContent
+
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
 
 }
 
 //	If the WalkHandlers.TmatrixrowType function is not nil (ie. was set by outside code), calls it with this TmatrixrowType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmatrixrowType instance.
 func (me *TmatrixrowType) Walk ()  { 
 	if fn := WalkHandlers.TmatrixrowType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_SetContent.Walk()
+	me.XsdGoPkgHasGroup_VectorContent.Walk()
  }
 
 type XsdGoPkgHasElem_Matrixrow struct {
@@ -4468,284 +2334,57 @@ func (me *XsdGoPkgHasElem_Matrix) Walk ()  {
 	me.Matrix.Walk()
  }
 
-type TselectorType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TselectorType function is not nil (ie. was set by outside code), calls it with this TselectorType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TselectorType instance.
-func (me *TselectorType) Walk ()  { 
-	if fn := WalkHandlers.TselectorType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Selector struct {
-	Selector *TselectorType `xml:"http://www.w3.org/1998/Math/MathML selector"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Selector function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Selector instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Selector instance.
-func (me *XsdGoPkgHasElem_Selector) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Selector; fn != nil { fn(me) }
-	me.Selector.Walk()
- }
-
-type TdeterminantType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TdeterminantType function is not nil (ie. was set by outside code), calls it with this TdeterminantType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TdeterminantType instance.
-func (me *TdeterminantType) Walk ()  { 
-	if fn := WalkHandlers.TdeterminantType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Determinant struct {
-	Determinant *TdeterminantType `xml:"http://www.w3.org/1998/Math/MathML determinant"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Determinant function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Determinant instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Determinant instance.
-func (me *XsdGoPkgHasElem_Determinant) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Determinant; fn != nil { fn(me) }
-	me.Determinant.Walk()
- }
-
-type TouterproductType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TouterproductType function is not nil (ie. was set by outside code), calls it with this TouterproductType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TouterproductType instance.
-func (me *TouterproductType) Walk ()  { 
-	if fn := WalkHandlers.TouterproductType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Outerproduct struct {
-	Outerproduct *TouterproductType `xml:"http://www.w3.org/1998/Math/MathML outerproduct"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Outerproduct function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Outerproduct instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Outerproduct instance.
-func (me *XsdGoPkgHasElem_Outerproduct) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Outerproduct; fn != nil { fn(me) }
-	me.Outerproduct.Walk()
- }
-
-type TscalarproductType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-}
-
-//	If the WalkHandlers.TscalarproductType function is not nil (ie. was set by outside code), calls it with this TscalarproductType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TscalarproductType instance.
-func (me *TscalarproductType) Walk ()  { 
-	if fn := WalkHandlers.TscalarproductType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Scalarproduct struct {
-	Scalarproduct *TscalarproductType `xml:"http://www.w3.org/1998/Math/MathML scalarproduct"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Scalarproduct function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Scalarproduct instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Scalarproduct instance.
-func (me *XsdGoPkgHasElem_Scalarproduct) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Scalarproduct; fn != nil { fn(me) }
-	me.Scalarproduct.Walk()
- }
-
 type XsdGoPkgHasGroup_ContentLinearAlgebraClass struct {
-	XsdGoPkgHasElem_Determinant
-
-	XsdGoPkgHasElem_Outerproduct
-
 	XsdGoPkgHasElem_Scalarproduct
-
-	XsdGoPkgHasElem_Vectorproduct
 
 	XsdGoPkgHasElem_Transpose
 
+	XsdGoPkgHasElem_Selector
+
 	XsdGoPkgHasElem_Vector
+
+	XsdGoPkgHasElem_Determinant
 
 	XsdGoPkgHasElem_Matrix
 
-	XsdGoPkgHasElem_Selector
+	XsdGoPkgHasElem_Vectorproduct
+
+	XsdGoPkgHasElem_Outerproduct
 
 }
 
 //	If the WalkHandlers.XsdGoPkgHasGroup_ContentLinearAlgebraClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentLinearAlgebraClass instance as the single argument. Then calls the Walk() method on 8/8 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentLinearAlgebraClass instance.
 func (me *XsdGoPkgHasGroup_ContentLinearAlgebraClass) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentLinearAlgebraClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Selector.Walk()
-	me.XsdGoPkgHasElem_Determinant.Walk()
+	me.XsdGoPkgHasElem_Matrix.Walk()
+	me.XsdGoPkgHasElem_Vectorproduct.Walk()
 	me.XsdGoPkgHasElem_Outerproduct.Walk()
 	me.XsdGoPkgHasElem_Scalarproduct.Walk()
-	me.XsdGoPkgHasElem_Vectorproduct.Walk()
 	me.XsdGoPkgHasElem_Transpose.Walk()
+	me.XsdGoPkgHasElem_Selector.Walk()
 	me.XsdGoPkgHasElem_Vector.Walk()
-	me.XsdGoPkgHasElem_Matrix.Walk()
+	me.XsdGoPkgHasElem_Determinant.Walk()
  }
 
-type XsdGoPkgHasGroup_ContentTokenContent struct {
-	XsdGoPkgHasGroup_PresentationExprClass
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_ContentTokenContent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentTokenContent instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentTokenContent instance.
-func (me *XsdGoPkgHasGroup_ContentTokenContent) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentTokenContent; fn != nil { fn(me) }
- }
-
-type TciType struct {
+type TtendstoType struct {
 	XsdGoPkgHasAtts_CiAttlist
 
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasGroup_ContentTokenContent
-
 }
 
-//	If the WalkHandlers.TciType function is not nil (ie. was set by outside code), calls it with this TciType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TciType instance.
-func (me *TciType) Walk ()  { 
-	if fn := WalkHandlers.TciType; fn != nil { fn(me) }
-	me.XsdGoPkgHasCdata.Walk()
-	me.XsdGoPkgHasGroup_ContentTokenContent.Walk()
+//	If the WalkHandlers.TtendstoType function is not nil (ie. was set by outside code), calls it with this TtendstoType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TtendstoType instance.
+func (me *TtendstoType) Walk ()  { 
+	if fn := WalkHandlers.TtendstoType; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_Ci struct {
-	Ci *TciType `xml:"http://www.w3.org/1998/Math/MathML ci"`
+type XsdGoPkgHasElem_Tendsto struct {
+	Tendsto *TtendstoType `xml:"http://www.w3.org/1998/Math/MathML tendsto"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_Ci function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Ci instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Ci instance.
-func (me *XsdGoPkgHasElem_Ci) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Ci; fn != nil { fn(me) }
-	me.Ci.Walk()
- }
-
-type TsepType struct {
-}
-
-//	If the WalkHandlers.TsepType function is not nil (ie. was set by outside code), calls it with this TsepType instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/0 field(s) belonging to this TsepType instance.
-func (me *TsepType) Walk ()  { 
-	if fn := WalkHandlers.TsepType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Sep struct {
-	Sep *TsepType `xml:"http://www.w3.org/1998/Math/MathML sep"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Sep function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Sep instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Sep instance.
-func (me *XsdGoPkgHasElem_Sep) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Sep; fn != nil { fn(me) }
-	me.Sep.Walk()
- }
-
-type XsdGoPkgHasGroup_CnContent struct {
-	XsdGoPkgHasElem_Sep
-
-	XsdGoPkgHasGroup_PresentationExprClass
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_CnContent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_CnContent instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_CnContent instance.
-func (me *XsdGoPkgHasGroup_CnContent) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_CnContent; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Sep.Walk()
- }
-
-type TcnType struct {
-	XsdGoPkgHasAtts_CnAttlist
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasGroup_CnContent
-
-}
-
-//	If the WalkHandlers.TcnType function is not nil (ie. was set by outside code), calls it with this TcnType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TcnType instance.
-func (me *TcnType) Walk ()  { 
-	if fn := WalkHandlers.TcnType; fn != nil { fn(me) }
-	me.XsdGoPkgHasCdata.Walk()
-	me.XsdGoPkgHasGroup_CnContent.Walk()
- }
-
-type XsdGoPkgHasElem_Cn struct {
-	Cn *TcnType `xml:"http://www.w3.org/1998/Math/MathML cn"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Cn function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Cn instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Cn instance.
-func (me *XsdGoPkgHasElem_Cn) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Cn; fn != nil { fn(me) }
-	me.Cn.Walk()
- }
-
-type TcsymbolType struct {
-	XsdGoPkgHasGroup_ContentTokenContent
-
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-	XsdGoPkgHasCdata
-
-}
-
-//	If the WalkHandlers.TcsymbolType function is not nil (ie. was set by outside code), calls it with this TcsymbolType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TcsymbolType instance.
-func (me *TcsymbolType) Walk ()  { 
-	if fn := WalkHandlers.TcsymbolType; fn != nil { fn(me) }
-	me.XsdGoPkgHasCdata.Walk()
-	me.XsdGoPkgHasGroup_ContentTokenContent.Walk()
- }
-
-type XsdGoPkgHasElem_Csymbol struct {
-	Csymbol *TcsymbolType `xml:"http://www.w3.org/1998/Math/MathML csymbol"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Csymbol function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Csymbol instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Csymbol instance.
-func (me *XsdGoPkgHasElem_Csymbol) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Csymbol; fn != nil { fn(me) }
-	me.Csymbol.Walk()
- }
-
-type XsdGoPkgHasGroup_ContentTokensClass struct {
-	XsdGoPkgHasElem_Csymbol
-
-	XsdGoPkgHasElem_Ci
-
-	XsdGoPkgHasElem_Cn
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_ContentTokensClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentTokensClass instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentTokensClass instance.
-func (me *XsdGoPkgHasGroup_ContentTokensClass) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentTokensClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Csymbol.Walk()
-	me.XsdGoPkgHasElem_Ci.Walk()
-	me.XsdGoPkgHasElem_Cn.Walk()
- }
-
-type TlowlimitType struct {
-	XsdGoPkgHasAtts_CsymbolAttlist
-
-	XsdGoPkgHasGroup_SetContent
-
-}
-
-//	If the WalkHandlers.TlowlimitType function is not nil (ie. was set by outside code), calls it with this TlowlimitType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TlowlimitType instance.
-func (me *TlowlimitType) Walk ()  { 
-	if fn := WalkHandlers.TlowlimitType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_SetContent.Walk()
- }
-
-type XsdGoPkgHasElem_Lowlimit struct {
-	Lowlimit *TlowlimitType `xml:"http://www.w3.org/1998/Math/MathML lowlimit"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Lowlimit function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Lowlimit instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Lowlimit instance.
-func (me *XsdGoPkgHasElem_Lowlimit) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Lowlimit; fn != nil { fn(me) }
-	me.Lowlimit.Walk()
+//	If the WalkHandlers.XsdGoPkgHasElem_Tendsto function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Tendsto instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Tendsto instance.
+func (me *XsdGoPkgHasElem_Tendsto) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Tendsto; fn != nil { fn(me) }
+	me.Tendsto.Walk()
  }
 
 type TpartialdiffType struct {
@@ -4769,17 +2408,41 @@ func (me *XsdGoPkgHasElem_Partialdiff) Walk ()  {
 	me.Partialdiff.Walk()
  }
 
+type TlowlimitType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+	XsdGoPkgHasGroup_VectorContent
+
+}
+
+//	If the WalkHandlers.TlowlimitType function is not nil (ie. was set by outside code), calls it with this TlowlimitType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TlowlimitType instance.
+func (me *TlowlimitType) Walk ()  { 
+	if fn := WalkHandlers.TlowlimitType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_VectorContent.Walk()
+ }
+
+type XsdGoPkgHasElem_Lowlimit struct {
+	Lowlimit *TlowlimitType `xml:"http://www.w3.org/1998/Math/MathML lowlimit"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Lowlimit function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Lowlimit instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Lowlimit instance.
+func (me *XsdGoPkgHasElem_Lowlimit) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Lowlimit; fn != nil { fn(me) }
+	me.Lowlimit.Walk()
+ }
+
 type TuplimitType struct {
 	XsdGoPkgHasAtts_CsymbolAttlist
 
-	XsdGoPkgHasGroup_SetContent
+	XsdGoPkgHasGroup_VectorContent
 
 }
 
 //	If the WalkHandlers.TuplimitType function is not nil (ie. was set by outside code), calls it with this TuplimitType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TuplimitType instance.
 func (me *TuplimitType) Walk ()  { 
 	if fn := WalkHandlers.TuplimitType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_SetContent.Walk()
+	me.XsdGoPkgHasGroup_VectorContent.Walk()
  }
 
 type XsdGoPkgHasElem_Uplimit struct {
@@ -4835,27 +2498,6 @@ func (me *XsdGoPkgHasElem_Int) Walk ()  {
 	me.Int.Walk()
  }
 
-type TtendstoType struct {
-	XsdGoPkgHasAtts_CiAttlist
-
-}
-
-//	If the WalkHandlers.TtendstoType function is not nil (ie. was set by outside code), calls it with this TtendstoType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TtendstoType instance.
-func (me *TtendstoType) Walk ()  { 
-	if fn := WalkHandlers.TtendstoType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Tendsto struct {
-	Tendsto *TtendstoType `xml:"http://www.w3.org/1998/Math/MathML tendsto"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Tendsto function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Tendsto instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Tendsto instance.
-func (me *XsdGoPkgHasElem_Tendsto) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Tendsto; fn != nil { fn(me) }
-	me.Tendsto.Walk()
- }
-
 type TlimitType struct {
 	XsdGoPkgHasAtts_CsymbolAttlist
 
@@ -4878,19 +2520,19 @@ func (me *XsdGoPkgHasElem_Limit) Walk ()  {
  }
 
 type XsdGoPkgHasGroup_ContentCalculusClass struct {
-	XsdGoPkgHasElem_Uplimit
-
-	XsdGoPkgHasElem_Diff
-
 	XsdGoPkgHasElem_Int
-
-	XsdGoPkgHasElem_Tendsto
 
 	XsdGoPkgHasElem_Limit
 
-	XsdGoPkgHasElem_Lowlimit
+	XsdGoPkgHasElem_Tendsto
 
 	XsdGoPkgHasElem_Partialdiff
+
+	XsdGoPkgHasElem_Lowlimit
+
+	XsdGoPkgHasElem_Uplimit
+
+	XsdGoPkgHasElem_Diff
 
 }
 
@@ -4898,68 +2540,2233 @@ type XsdGoPkgHasGroup_ContentCalculusClass struct {
 func (me *XsdGoPkgHasGroup_ContentCalculusClass) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentCalculusClass; fn != nil { fn(me) }
 	me.XsdGoPkgHasElem_Tendsto.Walk()
-	me.XsdGoPkgHasElem_Limit.Walk()
-	me.XsdGoPkgHasElem_Lowlimit.Walk()
 	me.XsdGoPkgHasElem_Partialdiff.Walk()
+	me.XsdGoPkgHasElem_Lowlimit.Walk()
 	me.XsdGoPkgHasElem_Uplimit.Walk()
 	me.XsdGoPkgHasElem_Diff.Walk()
 	me.XsdGoPkgHasElem_Int.Walk()
+	me.XsdGoPkgHasElem_Limit.Walk()
+ }
+
+type TprsubsetType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TprsubsetType function is not nil (ie. was set by outside code), calls it with this TprsubsetType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TprsubsetType instance.
+func (me *TprsubsetType) Walk ()  { 
+	if fn := WalkHandlers.TprsubsetType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Prsubset struct {
+	Prsubset *TprsubsetType `xml:"http://www.w3.org/1998/Math/MathML prsubset"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Prsubset function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Prsubset instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Prsubset instance.
+func (me *XsdGoPkgHasElem_Prsubset) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Prsubset; fn != nil { fn(me) }
+	me.Prsubset.Walk()
+ }
+
+type TsetdiffType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TsetdiffType function is not nil (ie. was set by outside code), calls it with this TsetdiffType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TsetdiffType instance.
+func (me *TsetdiffType) Walk ()  { 
+	if fn := WalkHandlers.TsetdiffType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Setdiff struct {
+	Setdiff *TsetdiffType `xml:"http://www.w3.org/1998/Math/MathML setdiff"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Setdiff function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Setdiff instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Setdiff instance.
+func (me *XsdGoPkgHasElem_Setdiff) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Setdiff; fn != nil { fn(me) }
+	me.Setdiff.Walk()
+ }
+
+type TlistType struct {
+	XsdGoPkgHasAtts_ListAttlist
+
+	XsdGoPkgHasGroup_VectorContent
+
+}
+
+//	If the WalkHandlers.TlistType function is not nil (ie. was set by outside code), calls it with this TlistType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TlistType instance.
+func (me *TlistType) Walk ()  { 
+	if fn := WalkHandlers.TlistType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_VectorContent.Walk()
+ }
+
+type XsdGoPkgHasElem_List struct {
+	List *TlistType `xml:"http://www.w3.org/1998/Math/MathML list"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_List function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_List instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_List instance.
+func (me *XsdGoPkgHasElem_List) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_List; fn != nil { fn(me) }
+	me.List.Walk()
+ }
+
+type TsetType struct {
+	XsdGoPkgHasAtts_SetAttlist
+
+	XsdGoPkgHasGroup_VectorContent
+
+}
+
+//	If the WalkHandlers.TsetType function is not nil (ie. was set by outside code), calls it with this TsetType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TsetType instance.
+func (me *TsetType) Walk ()  { 
+	if fn := WalkHandlers.TsetType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_VectorContent.Walk()
+ }
+
+type XsdGoPkgHasElem_Set struct {
+	Set *TsetType `xml:"http://www.w3.org/1998/Math/MathML set"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Set function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Set instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Set instance.
+func (me *XsdGoPkgHasElem_Set) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Set; fn != nil { fn(me) }
+	me.Set.Walk()
+ }
+
+type TinType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TinType function is not nil (ie. was set by outside code), calls it with this TinType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TinType instance.
+func (me *TinType) Walk ()  { 
+	if fn := WalkHandlers.TinType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_In struct {
+	In *TinType `xml:"http://www.w3.org/1998/Math/MathML in"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_In function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_In instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_In instance.
+func (me *XsdGoPkgHasElem_In) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_In; fn != nil { fn(me) }
+	me.In.Walk()
+ }
+
+type TintersectType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TintersectType function is not nil (ie. was set by outside code), calls it with this TintersectType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TintersectType instance.
+func (me *TintersectType) Walk ()  { 
+	if fn := WalkHandlers.TintersectType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Intersect struct {
+	Intersect *TintersectType `xml:"http://www.w3.org/1998/Math/MathML intersect"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Intersect function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Intersect instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Intersect instance.
+func (me *XsdGoPkgHasElem_Intersect) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Intersect; fn != nil { fn(me) }
+	me.Intersect.Walk()
+ }
+
+type TnotprsubsetType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TnotprsubsetType function is not nil (ie. was set by outside code), calls it with this TnotprsubsetType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TnotprsubsetType instance.
+func (me *TnotprsubsetType) Walk ()  { 
+	if fn := WalkHandlers.TnotprsubsetType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Notprsubset struct {
+	Notprsubset *TnotprsubsetType `xml:"http://www.w3.org/1998/Math/MathML notprsubset"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Notprsubset function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Notprsubset instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Notprsubset instance.
+func (me *XsdGoPkgHasElem_Notprsubset) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Notprsubset; fn != nil { fn(me) }
+	me.Notprsubset.Walk()
+ }
+
+type TnotinType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TnotinType function is not nil (ie. was set by outside code), calls it with this TnotinType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TnotinType instance.
+func (me *TnotinType) Walk ()  { 
+	if fn := WalkHandlers.TnotinType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Notin struct {
+	Notin *TnotinType `xml:"http://www.w3.org/1998/Math/MathML notin"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Notin function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Notin instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Notin instance.
+func (me *XsdGoPkgHasElem_Notin) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Notin; fn != nil { fn(me) }
+	me.Notin.Walk()
+ }
+
+type TunionType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TunionType function is not nil (ie. was set by outside code), calls it with this TunionType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TunionType instance.
+func (me *TunionType) Walk ()  { 
+	if fn := WalkHandlers.TunionType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Union struct {
+	Union *TunionType `xml:"http://www.w3.org/1998/Math/MathML union"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Union function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Union instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Union instance.
+func (me *XsdGoPkgHasElem_Union) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Union; fn != nil { fn(me) }
+	me.Union.Walk()
+ }
+
+type TnotsubsetType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TnotsubsetType function is not nil (ie. was set by outside code), calls it with this TnotsubsetType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TnotsubsetType instance.
+func (me *TnotsubsetType) Walk ()  { 
+	if fn := WalkHandlers.TnotsubsetType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Notsubset struct {
+	Notsubset *TnotsubsetType `xml:"http://www.w3.org/1998/Math/MathML notsubset"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Notsubset function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Notsubset instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Notsubset instance.
+func (me *XsdGoPkgHasElem_Notsubset) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Notsubset; fn != nil { fn(me) }
+	me.Notsubset.Walk()
+ }
+
+type TcardType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TcardType function is not nil (ie. was set by outside code), calls it with this TcardType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TcardType instance.
+func (me *TcardType) Walk ()  { 
+	if fn := WalkHandlers.TcardType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Card struct {
+	Card *TcardType `xml:"http://www.w3.org/1998/Math/MathML card"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Card function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Card instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Card instance.
+func (me *XsdGoPkgHasElem_Card) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Card; fn != nil { fn(me) }
+	me.Card.Walk()
+ }
+
+type TcartesianproductType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TcartesianproductType function is not nil (ie. was set by outside code), calls it with this TcartesianproductType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TcartesianproductType instance.
+func (me *TcartesianproductType) Walk ()  { 
+	if fn := WalkHandlers.TcartesianproductType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Cartesianproduct struct {
+	Cartesianproduct *TcartesianproductType `xml:"http://www.w3.org/1998/Math/MathML cartesianproduct"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Cartesianproduct function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Cartesianproduct instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Cartesianproduct instance.
+func (me *XsdGoPkgHasElem_Cartesianproduct) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Cartesianproduct; fn != nil { fn(me) }
+	me.Cartesianproduct.Walk()
+ }
+
+type TsubsetType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TsubsetType function is not nil (ie. was set by outside code), calls it with this TsubsetType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TsubsetType instance.
+func (me *TsubsetType) Walk ()  { 
+	if fn := WalkHandlers.TsubsetType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Subset struct {
+	Subset *TsubsetType `xml:"http://www.w3.org/1998/Math/MathML subset"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Subset function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Subset instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Subset instance.
+func (me *XsdGoPkgHasElem_Subset) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Subset; fn != nil { fn(me) }
+	me.Subset.Walk()
+ }
+
+type XsdGoPkgHasGroup_ContentSetsClass struct {
+	XsdGoPkgHasElem_Notprsubset
+
+	XsdGoPkgHasElem_Notin
+
+	XsdGoPkgHasElem_Union
+
+	XsdGoPkgHasElem_Notsubset
+
+	XsdGoPkgHasElem_Card
+
+	XsdGoPkgHasElem_Cartesianproduct
+
+	XsdGoPkgHasElem_Subset
+
+	XsdGoPkgHasElem_Prsubset
+
+	XsdGoPkgHasElem_Setdiff
+
+	XsdGoPkgHasElem_List
+
+	XsdGoPkgHasElem_Set
+
+	XsdGoPkgHasElem_In
+
+	XsdGoPkgHasElem_Intersect
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_ContentSetsClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentSetsClass instance as the single argument. Then calls the Walk() method on 13/13 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentSetsClass instance.
+func (me *XsdGoPkgHasGroup_ContentSetsClass) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentSetsClass; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Subset.Walk()
+	me.XsdGoPkgHasElem_Prsubset.Walk()
+	me.XsdGoPkgHasElem_Setdiff.Walk()
+	me.XsdGoPkgHasElem_List.Walk()
+	me.XsdGoPkgHasElem_Set.Walk()
+	me.XsdGoPkgHasElem_In.Walk()
+	me.XsdGoPkgHasElem_Intersect.Walk()
+	me.XsdGoPkgHasElem_Notprsubset.Walk()
+	me.XsdGoPkgHasElem_Notin.Walk()
+	me.XsdGoPkgHasElem_Union.Walk()
+	me.XsdGoPkgHasElem_Notsubset.Walk()
+	me.XsdGoPkgHasElem_Card.Walk()
+	me.XsdGoPkgHasElem_Cartesianproduct.Walk()
+ }
+
+type TElementaryFunctionsType struct {
+	XsdGoPkgHasAtts_DefinitionAttrib
+
+	XsdGoPkgHasAtts_CommonAttrib
+
+}
+
+//	If the WalkHandlers.TElementaryFunctionsType function is not nil (ie. was set by outside code), calls it with this TElementaryFunctionsType instance as the single argument. Then calls the Walk() method on 0/2 embed(s) and 0/0 field(s) belonging to this TElementaryFunctionsType instance.
+func (me *TElementaryFunctionsType) Walk ()  { 
+	if fn := WalkHandlers.TElementaryFunctionsType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Csc struct {
+	Csc *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML csc"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Csc function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Csc instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Csc instance.
+func (me *XsdGoPkgHasElem_Csc) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Csc; fn != nil { fn(me) }
+	me.Csc.Walk()
+ }
+
+type XsdGoPkgHasElem_Sin struct {
+	Sin *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sin"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Sin function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Sin instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Sin instance.
+func (me *XsdGoPkgHasElem_Sin) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Sin; fn != nil { fn(me) }
+	me.Sin.Walk()
+ }
+
+type XsdGoPkgHasElem_Tan struct {
+	Tan *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML tan"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Tan function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Tan instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Tan instance.
+func (me *XsdGoPkgHasElem_Tan) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Tan; fn != nil { fn(me) }
+	me.Tan.Walk()
+ }
+
+type XsdGoPkgHasElem_Arccsch struct {
+	Arccsch *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccsch"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Arccsch function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arccsch instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arccsch instance.
+func (me *XsdGoPkgHasElem_Arccsch) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Arccsch; fn != nil { fn(me) }
+	me.Arccsch.Walk()
+ }
+
+type XsdGoPkgHasElem_Arcsin struct {
+	Arcsin *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsin"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Arcsin function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arcsin instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arcsin instance.
+func (me *XsdGoPkgHasElem_Arcsin) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Arcsin; fn != nil { fn(me) }
+	me.Arcsin.Walk()
+ }
+
+type XsdGoPkgHasElem_Exp struct {
+	Exp *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML exp"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Exp function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Exp instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Exp instance.
+func (me *XsdGoPkgHasElem_Exp) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Exp; fn != nil { fn(me) }
+	me.Exp.Walk()
+ }
+
+type TlogbaseType struct {
+	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasGroup_VectorContent
+
+}
+
+//	If the WalkHandlers.TlogbaseType function is not nil (ie. was set by outside code), calls it with this TlogbaseType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TlogbaseType instance.
+func (me *TlogbaseType) Walk ()  { 
+	if fn := WalkHandlers.TlogbaseType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_VectorContent.Walk()
+ }
+
+type XsdGoPkgHasElem_Logbase struct {
+	Logbase *TlogbaseType `xml:"http://www.w3.org/1998/Math/MathML logbase"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Logbase function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Logbase instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Logbase instance.
+func (me *XsdGoPkgHasElem_Logbase) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Logbase; fn != nil { fn(me) }
+	me.Logbase.Walk()
+ }
+
+type XsdGoPkgHasElem_Arctanh struct {
+	Arctanh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arctanh"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Arctanh function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arctanh instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arctanh instance.
+func (me *XsdGoPkgHasElem_Arctanh) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Arctanh; fn != nil { fn(me) }
+	me.Arctanh.Walk()
+ }
+
+type XsdGoPkgHasElem_Arccos struct {
+	Arccos *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccos"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Arccos function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arccos instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arccos instance.
+func (me *XsdGoPkgHasElem_Arccos) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Arccos; fn != nil { fn(me) }
+	me.Arccos.Walk()
+ }
+
+type XsdGoPkgHasElem_Cosh struct {
+	Cosh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cosh"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Cosh function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Cosh instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Cosh instance.
+func (me *XsdGoPkgHasElem_Cosh) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Cosh; fn != nil { fn(me) }
+	me.Cosh.Walk()
+ }
+
+type XsdGoPkgHasElem_Cos struct {
+	Cos *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cos"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Cos function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Cos instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Cos instance.
+func (me *XsdGoPkgHasElem_Cos) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Cos; fn != nil { fn(me) }
+	me.Cos.Walk()
+ }
+
+type XsdGoPkgHasElem_Arccot struct {
+	Arccot *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccot"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Arccot function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arccot instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arccot instance.
+func (me *XsdGoPkgHasElem_Arccot) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Arccot; fn != nil { fn(me) }
+	me.Arccot.Walk()
+ }
+
+type XsdGoPkgHasElem_Csch struct {
+	Csch *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML csch"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Csch function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Csch instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Csch instance.
+func (me *XsdGoPkgHasElem_Csch) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Csch; fn != nil { fn(me) }
+	me.Csch.Walk()
+ }
+
+type XsdGoPkgHasElem_Arccoth struct {
+	Arccoth *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccoth"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Arccoth function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arccoth instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arccoth instance.
+func (me *XsdGoPkgHasElem_Arccoth) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Arccoth; fn != nil { fn(me) }
+	me.Arccoth.Walk()
+ }
+
+type XsdGoPkgHasElem_Ln struct {
+	Ln *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML ln"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Ln function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Ln instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Ln instance.
+func (me *XsdGoPkgHasElem_Ln) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Ln; fn != nil { fn(me) }
+	me.Ln.Walk()
+ }
+
+type XsdGoPkgHasElem_Arcsec struct {
+	Arcsec *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsec"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Arcsec function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arcsec instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arcsec instance.
+func (me *XsdGoPkgHasElem_Arcsec) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Arcsec; fn != nil { fn(me) }
+	me.Arcsec.Walk()
+ }
+
+type XsdGoPkgHasElem_Sinh struct {
+	Sinh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sinh"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Sinh function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Sinh instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Sinh instance.
+func (me *XsdGoPkgHasElem_Sinh) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Sinh; fn != nil { fn(me) }
+	me.Sinh.Walk()
+ }
+
+type XsdGoPkgHasElem_Arccosh struct {
+	Arccosh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccosh"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Arccosh function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arccosh instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arccosh instance.
+func (me *XsdGoPkgHasElem_Arccosh) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Arccosh; fn != nil { fn(me) }
+	me.Arccosh.Walk()
+ }
+
+type XsdGoPkgHasElem_Cot struct {
+	Cot *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML cot"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Cot function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Cot instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Cot instance.
+func (me *XsdGoPkgHasElem_Cot) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Cot; fn != nil { fn(me) }
+	me.Cot.Walk()
+ }
+
+type XsdGoPkgHasElem_Tanh struct {
+	Tanh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML tanh"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Tanh function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Tanh instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Tanh instance.
+func (me *XsdGoPkgHasElem_Tanh) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Tanh; fn != nil { fn(me) }
+	me.Tanh.Walk()
+ }
+
+type XsdGoPkgHasElem_Arcsech struct {
+	Arcsech *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsech"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Arcsech function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arcsech instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arcsech instance.
+func (me *XsdGoPkgHasElem_Arcsech) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Arcsech; fn != nil { fn(me) }
+	me.Arcsech.Walk()
+ }
+
+type XsdGoPkgHasElem_Arccsc struct {
+	Arccsc *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arccsc"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Arccsc function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arccsc instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arccsc instance.
+func (me *XsdGoPkgHasElem_Arccsc) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Arccsc; fn != nil { fn(me) }
+	me.Arccsc.Walk()
+ }
+
+type XsdGoPkgHasElem_Sech struct {
+	Sech *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sech"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Sech function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Sech instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Sech instance.
+func (me *XsdGoPkgHasElem_Sech) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Sech; fn != nil { fn(me) }
+	me.Sech.Walk()
+ }
+
+type XsdGoPkgHasElem_Arctan struct {
+	Arctan *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arctan"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Arctan function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arctan instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arctan instance.
+func (me *XsdGoPkgHasElem_Arctan) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Arctan; fn != nil { fn(me) }
+	me.Arctan.Walk()
+ }
+
+type XsdGoPkgHasElem_Coth struct {
+	Coth *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML coth"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Coth function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Coth instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Coth instance.
+func (me *XsdGoPkgHasElem_Coth) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Coth; fn != nil { fn(me) }
+	me.Coth.Walk()
+ }
+
+type XsdGoPkgHasElem_Log struct {
+	Log *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML log"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Log function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Log instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Log instance.
+func (me *XsdGoPkgHasElem_Log) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Log; fn != nil { fn(me) }
+	me.Log.Walk()
+ }
+
+type XsdGoPkgHasElem_Sec struct {
+	Sec *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML sec"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Sec function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Sec instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Sec instance.
+func (me *XsdGoPkgHasElem_Sec) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Sec; fn != nil { fn(me) }
+	me.Sec.Walk()
+ }
+
+type XsdGoPkgHasElem_Arcsinh struct {
+	Arcsinh *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML arcsinh"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Arcsinh function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arcsinh instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arcsinh instance.
+func (me *XsdGoPkgHasElem_Arcsinh) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Arcsinh; fn != nil { fn(me) }
+	me.Arcsinh.Walk()
+ }
+
+type XsdGoPkgHasGroup_ContentElementaryFunctionsClass struct {
+	XsdGoPkgHasElem_Logbase
+
+	XsdGoPkgHasElem_Arctanh
+
+	XsdGoPkgHasElem_Arccos
+
+	XsdGoPkgHasElem_Cosh
+
+	XsdGoPkgHasElem_Cos
+
+	XsdGoPkgHasElem_Arccot
+
+	XsdGoPkgHasElem_Csch
+
+	XsdGoPkgHasElem_Arccoth
+
+	XsdGoPkgHasElem_Ln
+
+	XsdGoPkgHasElem_Arcsec
+
+	XsdGoPkgHasElem_Sinh
+
+	XsdGoPkgHasElem_Arccosh
+
+	XsdGoPkgHasElem_Cot
+
+	XsdGoPkgHasElem_Tanh
+
+	XsdGoPkgHasElem_Arcsech
+
+	XsdGoPkgHasElem_Arccsc
+
+	XsdGoPkgHasElem_Sech
+
+	XsdGoPkgHasElem_Arctan
+
+	XsdGoPkgHasElem_Coth
+
+	XsdGoPkgHasElem_Log
+
+	XsdGoPkgHasElem_Sec
+
+	XsdGoPkgHasElem_Arcsinh
+
+	XsdGoPkgHasElem_Csc
+
+	XsdGoPkgHasElem_Sin
+
+	XsdGoPkgHasElem_Tan
+
+	XsdGoPkgHasElem_Arccsch
+
+	XsdGoPkgHasElem_Arcsin
+
+	XsdGoPkgHasElem_Exp
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_ContentElementaryFunctionsClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentElementaryFunctionsClass instance as the single argument. Then calls the Walk() method on 28/28 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentElementaryFunctionsClass instance.
+func (me *XsdGoPkgHasGroup_ContentElementaryFunctionsClass) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentElementaryFunctionsClass; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Csc.Walk()
+	me.XsdGoPkgHasElem_Sin.Walk()
+	me.XsdGoPkgHasElem_Tan.Walk()
+	me.XsdGoPkgHasElem_Arccsch.Walk()
+	me.XsdGoPkgHasElem_Arcsin.Walk()
+	me.XsdGoPkgHasElem_Exp.Walk()
+	me.XsdGoPkgHasElem_Logbase.Walk()
+	me.XsdGoPkgHasElem_Arctanh.Walk()
+	me.XsdGoPkgHasElem_Arccos.Walk()
+	me.XsdGoPkgHasElem_Cosh.Walk()
+	me.XsdGoPkgHasElem_Cos.Walk()
+	me.XsdGoPkgHasElem_Arccot.Walk()
+	me.XsdGoPkgHasElem_Csch.Walk()
+	me.XsdGoPkgHasElem_Arccoth.Walk()
+	me.XsdGoPkgHasElem_Ln.Walk()
+	me.XsdGoPkgHasElem_Arcsec.Walk()
+	me.XsdGoPkgHasElem_Sinh.Walk()
+	me.XsdGoPkgHasElem_Arccosh.Walk()
+	me.XsdGoPkgHasElem_Cot.Walk()
+	me.XsdGoPkgHasElem_Tanh.Walk()
+	me.XsdGoPkgHasElem_Arcsech.Walk()
+	me.XsdGoPkgHasElem_Arccsc.Walk()
+	me.XsdGoPkgHasElem_Sech.Walk()
+	me.XsdGoPkgHasElem_Arctan.Walk()
+	me.XsdGoPkgHasElem_Coth.Walk()
+	me.XsdGoPkgHasElem_Log.Walk()
+	me.XsdGoPkgHasElem_Sec.Walk()
+	me.XsdGoPkgHasElem_Arcsinh.Walk()
+ }
+
+type TLogicType struct {
+	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasAtts_DefinitionAttrib
+
+}
+
+//	If the WalkHandlers.TLogicType function is not nil (ie. was set by outside code), calls it with this TLogicType instance as the single argument. Then calls the Walk() method on 0/2 embed(s) and 0/0 field(s) belonging to this TLogicType instance.
+func (me *TLogicType) Walk ()  { 
+	if fn := WalkHandlers.TLogicType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Xor struct {
+	Xor *TLogicType `xml:"http://www.w3.org/1998/Math/MathML xor"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Xor function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Xor instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Xor instance.
+func (me *XsdGoPkgHasElem_Xor) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Xor; fn != nil { fn(me) }
+	me.Xor.Walk()
+ }
+
+type XsdGoPkgHasElem_And struct {
+	And *TElementaryFunctionsType `xml:"http://www.w3.org/1998/Math/MathML and"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_And function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_And instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_And instance.
+func (me *XsdGoPkgHasElem_And) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_And; fn != nil { fn(me) }
+	me.And.Walk()
+ }
+
+type XsdGoPkgHasElem_Not struct {
+	Not *TLogicType `xml:"http://www.w3.org/1998/Math/MathML not"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Not function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Not instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Not instance.
+func (me *XsdGoPkgHasElem_Not) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Not; fn != nil { fn(me) }
+	me.Not.Walk()
+ }
+
+type XsdGoPkgHasElem_Exists struct {
+	Exists *TLogicType `xml:"http://www.w3.org/1998/Math/MathML exists"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Exists function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Exists instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Exists instance.
+func (me *XsdGoPkgHasElem_Exists) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Exists; fn != nil { fn(me) }
+	me.Exists.Walk()
+ }
+
+type XsdGoPkgHasElem_Implies struct {
+	Implies *TLogicType `xml:"http://www.w3.org/1998/Math/MathML implies"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Implies function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Implies instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Implies instance.
+func (me *XsdGoPkgHasElem_Implies) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Implies; fn != nil { fn(me) }
+	me.Implies.Walk()
+ }
+
+type XsdGoPkgHasElem_Forall struct {
+	Forall *TLogicType `xml:"http://www.w3.org/1998/Math/MathML forall"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Forall function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Forall instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Forall instance.
+func (me *XsdGoPkgHasElem_Forall) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Forall; fn != nil { fn(me) }
+	me.Forall.Walk()
+ }
+
+type XsdGoPkgHasElem_Or struct {
+	Or *TLogicType `xml:"http://www.w3.org/1998/Math/MathML or"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Or function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Or instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Or instance.
+func (me *XsdGoPkgHasElem_Or) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Or; fn != nil { fn(me) }
+	me.Or.Walk()
+ }
+
+type XsdGoPkgHasGroup_ContentLogicClass struct {
+	XsdGoPkgHasElem_And
+
+	XsdGoPkgHasElem_Not
+
+	XsdGoPkgHasElem_Exists
+
+	XsdGoPkgHasElem_Implies
+
+	XsdGoPkgHasElem_Forall
+
+	XsdGoPkgHasElem_Or
+
+	XsdGoPkgHasElem_Xor
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_ContentLogicClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentLogicClass instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentLogicClass instance.
+func (me *XsdGoPkgHasGroup_ContentLogicClass) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentLogicClass; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Xor.Walk()
+	me.XsdGoPkgHasElem_And.Walk()
+	me.XsdGoPkgHasElem_Not.Walk()
+	me.XsdGoPkgHasElem_Exists.Walk()
+	me.XsdGoPkgHasElem_Implies.Walk()
+	me.XsdGoPkgHasElem_Forall.Walk()
+	me.XsdGoPkgHasElem_Or.Walk()
+ }
+
+type TbvarType struct {
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+	XsdGoPkgHasGroup_VectorContent
+
+}
+
+//	If the WalkHandlers.TbvarType function is not nil (ie. was set by outside code), calls it with this TbvarType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TbvarType instance.
+func (me *TbvarType) Walk ()  { 
+	if fn := WalkHandlers.TbvarType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_VectorContent.Walk()
+ }
+
+type XsdGoPkgHasElem_Bvar struct {
+	Bvar *TbvarType `xml:"http://www.w3.org/1998/Math/MathML bvar"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Bvar function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Bvar instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Bvar instance.
+func (me *XsdGoPkgHasElem_Bvar) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Bvar; fn != nil { fn(me) }
+	me.Bvar.Walk()
+ }
+
+type TapplyType struct {
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+	XsdGoPkgHasGroup_VectorContent
+
+}
+
+//	If the WalkHandlers.TapplyType function is not nil (ie. was set by outside code), calls it with this TapplyType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TapplyType instance.
+func (me *TapplyType) Walk ()  { 
+	if fn := WalkHandlers.TapplyType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_VectorContent.Walk()
+ }
+
+type XsdGoPkgHasElem_Apply struct {
+	Apply *TapplyType `xml:"http://www.w3.org/1998/Math/MathML apply"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Apply function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Apply instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Apply instance.
+func (me *XsdGoPkgHasElem_Apply) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Apply; fn != nil { fn(me) }
+	me.Apply.Walk()
+ }
+
+type TlambdaType struct {
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+	XsdGoPkgHasGroup_VectorContent
+
+}
+
+//	If the WalkHandlers.TlambdaType function is not nil (ie. was set by outside code), calls it with this TlambdaType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TlambdaType instance.
+func (me *TlambdaType) Walk ()  { 
+	if fn := WalkHandlers.TlambdaType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_VectorContent.Walk()
+ }
+
+type XsdGoPkgHasElem_Lambda struct {
+	Lambda *TlambdaType `xml:"http://www.w3.org/1998/Math/MathML lambda"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Lambda function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Lambda instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Lambda instance.
+func (me *XsdGoPkgHasElem_Lambda) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Lambda; fn != nil { fn(me) }
+	me.Lambda.Walk()
+ }
+
+type TpieceType struct {
+	XsdGoPkgHasGroup_VectorContent
+
+}
+
+//	If the WalkHandlers.TpieceType function is not nil (ie. was set by outside code), calls it with this TpieceType instance as the single argument. Then calls the Walk() method on 1/1 embed(s) and 0/0 field(s) belonging to this TpieceType instance.
+func (me *TpieceType) Walk ()  { 
+	if fn := WalkHandlers.TpieceType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_VectorContent.Walk()
+ }
+
+type XsdGoPkgHasElems_Piece struct {
+	Pieces []*TpieceType `xml:"http://www.w3.org/1998/Math/MathML piece"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Piece function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Piece instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Piece instance.
+func (me *XsdGoPkgHasElems_Piece) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Piece; fn != nil { fn(me) }
+	for _, x := range me.Pieces { x.Walk() }
+ }
+
+type TotherwiseType struct {
+	XsdGoPkgHasGroup_VectorContent
+
+	XsdGoPkgHasAtts_CommonAttrib
+
+}
+
+//	If the WalkHandlers.TotherwiseType function is not nil (ie. was set by outside code), calls it with this TotherwiseType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TotherwiseType instance.
+func (me *TotherwiseType) Walk ()  { 
+	if fn := WalkHandlers.TotherwiseType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_VectorContent.Walk()
+ }
+
+type XsdGoPkgHasElem_Otherwise struct {
+	Otherwise *TotherwiseType `xml:"http://www.w3.org/1998/Math/MathML otherwise"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Otherwise function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Otherwise instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Otherwise instance.
+func (me *XsdGoPkgHasElem_Otherwise) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Otherwise; fn != nil { fn(me) }
+	me.Otherwise.Walk()
+ }
+
+type XsdGoPkgHasGroup_PiecewiseContent struct {
+	XsdGoPkgHasElem_Otherwise
+
+	XsdGoPkgHasElems_Piece
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_PiecewiseContent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_PiecewiseContent instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_PiecewiseContent instance.
+func (me *XsdGoPkgHasGroup_PiecewiseContent) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_PiecewiseContent; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_Piece.Walk()
+	me.XsdGoPkgHasElem_Otherwise.Walk()
+ }
+
+type TpiecewiseType struct {
+	XsdGoPkgHasGroup_PiecewiseContent
+
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+}
+
+//	If the WalkHandlers.TpiecewiseType function is not nil (ie. was set by outside code), calls it with this TpiecewiseType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TpiecewiseType instance.
+func (me *TpiecewiseType) Walk ()  { 
+	if fn := WalkHandlers.TpiecewiseType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_PiecewiseContent.Walk()
+ }
+
+type XsdGoPkgHasElem_Piecewise struct {
+	Piecewise *TpiecewiseType `xml:"http://www.w3.org/1998/Math/MathML piecewise"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Piecewise function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Piecewise instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Piecewise instance.
+func (me *XsdGoPkgHasElem_Piecewise) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Piecewise; fn != nil { fn(me) }
+	me.Piecewise.Walk()
+ }
+
+type TintervalType struct {
+	XsdGoPkgHasGroup_ContentExprClass
+
+	XsdGoPkgHasAtts_IntervalAttlist
+
+}
+
+//	If the WalkHandlers.TintervalType function is not nil (ie. was set by outside code), calls it with this TintervalType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TintervalType instance.
+func (me *TintervalType) Walk ()  { 
+	if fn := WalkHandlers.TintervalType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_ContentExprClass.Walk()
+ }
+
+type XsdGoPkgHasElem_Interval struct {
+	Interval *TintervalType `xml:"http://www.w3.org/1998/Math/MathML interval"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Interval function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Interval instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Interval instance.
+func (me *XsdGoPkgHasElem_Interval) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Interval; fn != nil { fn(me) }
+	me.Interval.Walk()
+ }
+
+type TdegreeType struct {
+	XsdGoPkgHasGroup_VectorContent
+
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+}
+
+//	If the WalkHandlers.TdegreeType function is not nil (ie. was set by outside code), calls it with this TdegreeType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TdegreeType instance.
+func (me *TdegreeType) Walk ()  { 
+	if fn := WalkHandlers.TdegreeType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_VectorContent.Walk()
+ }
+
+type XsdGoPkgHasElem_Degree struct {
+	Degree *TdegreeType `xml:"http://www.w3.org/1998/Math/MathML degree"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Degree function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Degree instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Degree instance.
+func (me *XsdGoPkgHasElem_Degree) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Degree; fn != nil { fn(me) }
+	me.Degree.Walk()
+ }
+
+type TinverseType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TinverseType function is not nil (ie. was set by outside code), calls it with this TinverseType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TinverseType instance.
+func (me *TinverseType) Walk ()  { 
+	if fn := WalkHandlers.TinverseType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Inverse struct {
+	Inverse *TinverseType `xml:"http://www.w3.org/1998/Math/MathML inverse"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Inverse function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Inverse instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Inverse instance.
+func (me *XsdGoPkgHasElem_Inverse) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Inverse; fn != nil { fn(me) }
+	me.Inverse.Walk()
+ }
+
+type TdeclareType struct {
+	XsdGoPkgHasAtts_DeclareAttlist
+
+	XsdGoPkgHasGroup_VectorContent
+
+}
+
+//	If the WalkHandlers.TdeclareType function is not nil (ie. was set by outside code), calls it with this TdeclareType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TdeclareType instance.
+func (me *TdeclareType) Walk ()  { 
+	if fn := WalkHandlers.TdeclareType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_VectorContent.Walk()
+ }
+
+type XsdGoPkgHasElem_Declare struct {
+	Declare *TdeclareType `xml:"http://www.w3.org/1998/Math/MathML declare"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Declare function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Declare instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Declare instance.
+func (me *XsdGoPkgHasElem_Declare) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Declare; fn != nil { fn(me) }
+	me.Declare.Walk()
+ }
+
+type TconditionType struct {
+	XsdGoPkgHasGroup_VectorContent
+
+	XsdGoPkgHasAtts_ConditionAttlist
+
+}
+
+//	If the WalkHandlers.TconditionType function is not nil (ie. was set by outside code), calls it with this TconditionType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TconditionType instance.
+func (me *TconditionType) Walk ()  { 
+	if fn := WalkHandlers.TconditionType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_VectorContent.Walk()
+ }
+
+type XsdGoPkgHasElem_Condition struct {
+	Condition *TconditionType `xml:"http://www.w3.org/1998/Math/MathML condition"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Condition function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Condition instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Condition instance.
+func (me *XsdGoPkgHasElem_Condition) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Condition; fn != nil { fn(me) }
+	me.Condition.Walk()
+ }
+
+type XsdGoPkgHasGroup_ContentConstructsClass struct {
+	XsdGoPkgHasElem_Piecewise
+
+	XsdGoPkgHasElem_Interval
+
+	XsdGoPkgHasElem_Degree
+
+	XsdGoPkgHasElem_Inverse
+
+	XsdGoPkgHasElem_Declare
+
+	XsdGoPkgHasElem_Condition
+
+	XsdGoPkgHasElem_Bvar
+
+	XsdGoPkgHasElem_Apply
+
+	XsdGoPkgHasElem_Lambda
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_ContentConstructsClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentConstructsClass instance as the single argument. Then calls the Walk() method on 9/9 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentConstructsClass instance.
+func (me *XsdGoPkgHasGroup_ContentConstructsClass) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentConstructsClass; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Inverse.Walk()
+	me.XsdGoPkgHasElem_Declare.Walk()
+	me.XsdGoPkgHasElem_Condition.Walk()
+	me.XsdGoPkgHasElem_Bvar.Walk()
+	me.XsdGoPkgHasElem_Apply.Walk()
+	me.XsdGoPkgHasElem_Lambda.Walk()
+	me.XsdGoPkgHasElem_Piecewise.Walk()
+	me.XsdGoPkgHasElem_Interval.Walk()
+	me.XsdGoPkgHasElem_Degree.Walk()
+ }
+
+type TArithType struct {
+	XsdGoPkgHasAtts_DefinitionAttrib
+
+	XsdGoPkgHasAtts_CommonAttrib
+
+}
+
+//	If the WalkHandlers.TArithType function is not nil (ie. was set by outside code), calls it with this TArithType instance as the single argument. Then calls the Walk() method on 0/2 embed(s) and 0/0 field(s) belonging to this TArithType instance.
+func (me *TArithType) Walk ()  { 
+	if fn := WalkHandlers.TArithType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Abs struct {
+	Abs *TArithType `xml:"http://www.w3.org/1998/Math/MathML abs"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Abs function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Abs instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Abs instance.
+func (me *XsdGoPkgHasElem_Abs) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Abs; fn != nil { fn(me) }
+	me.Abs.Walk()
+ }
+
+type XsdGoPkgHasElem_Sum struct {
+	Sum *TArithType `xml:"http://www.w3.org/1998/Math/MathML sum"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Sum function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Sum instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Sum instance.
+func (me *XsdGoPkgHasElem_Sum) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Sum; fn != nil { fn(me) }
+	me.Sum.Walk()
+ }
+
+type XsdGoPkgHasElem_Power struct {
+	Power *TArithType `xml:"http://www.w3.org/1998/Math/MathML power"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Power function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Power instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Power instance.
+func (me *XsdGoPkgHasElem_Power) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Power; fn != nil { fn(me) }
+	me.Power.Walk()
+ }
+
+type XsdGoPkgHasElem_Divide struct {
+	Divide *TArithType `xml:"http://www.w3.org/1998/Math/MathML divide"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Divide function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Divide instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Divide instance.
+func (me *XsdGoPkgHasElem_Divide) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Divide; fn != nil { fn(me) }
+	me.Divide.Walk()
+ }
+
+type XsdGoPkgHasElem_Root struct {
+	Root *TArithType `xml:"http://www.w3.org/1998/Math/MathML root"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Root function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Root instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Root instance.
+func (me *XsdGoPkgHasElem_Root) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Root; fn != nil { fn(me) }
+	me.Root.Walk()
+ }
+
+type XsdGoPkgHasElem_Arg struct {
+	Arg *TArithType `xml:"http://www.w3.org/1998/Math/MathML arg"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Arg function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Arg instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Arg instance.
+func (me *XsdGoPkgHasElem_Arg) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Arg; fn != nil { fn(me) }
+	me.Arg.Walk()
+ }
+
+type XsdGoPkgHasElem_Ceiling struct {
+	Ceiling *TArithType `xml:"http://www.w3.org/1998/Math/MathML ceiling"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Ceiling function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Ceiling instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Ceiling instance.
+func (me *XsdGoPkgHasElem_Ceiling) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Ceiling; fn != nil { fn(me) }
+	me.Ceiling.Walk()
+ }
+
+type XsdGoPkgHasElem_Rem struct {
+	Rem *TArithType `xml:"http://www.w3.org/1998/Math/MathML rem"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Rem function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Rem instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Rem instance.
+func (me *XsdGoPkgHasElem_Rem) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Rem; fn != nil { fn(me) }
+	me.Rem.Walk()
+ }
+
+type XsdGoPkgHasElem_Factorial struct {
+	Factorial *TArithType `xml:"http://www.w3.org/1998/Math/MathML factorial"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Factorial function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Factorial instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Factorial instance.
+func (me *XsdGoPkgHasElem_Factorial) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Factorial; fn != nil { fn(me) }
+	me.Factorial.Walk()
+ }
+
+type XsdGoPkgHasElem_Imaginary struct {
+	Imaginary *TArithType `xml:"http://www.w3.org/1998/Math/MathML imaginary"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Imaginary function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Imaginary instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Imaginary instance.
+func (me *XsdGoPkgHasElem_Imaginary) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Imaginary; fn != nil { fn(me) }
+	me.Imaginary.Walk()
+ }
+
+type XsdGoPkgHasElem_Lcm struct {
+	Lcm *TArithType `xml:"http://www.w3.org/1998/Math/MathML lcm"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Lcm function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Lcm instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Lcm instance.
+func (me *XsdGoPkgHasElem_Lcm) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Lcm; fn != nil { fn(me) }
+	me.Lcm.Walk()
+ }
+
+type XsdGoPkgHasElem_Times struct {
+	Times *TArithType `xml:"http://www.w3.org/1998/Math/MathML times"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Times function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Times instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Times instance.
+func (me *XsdGoPkgHasElem_Times) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Times; fn != nil { fn(me) }
+	me.Times.Walk()
+ }
+
+type XsdGoPkgHasElem_Max struct {
+	Max *TArithType `xml:"http://www.w3.org/1998/Math/MathML max"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Max function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Max instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Max instance.
+func (me *XsdGoPkgHasElem_Max) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Max; fn != nil { fn(me) }
+	me.Max.Walk()
+ }
+
+type XsdGoPkgHasElem_Real struct {
+	Real *TArithType `xml:"http://www.w3.org/1998/Math/MathML real"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Real function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Real instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Real instance.
+func (me *XsdGoPkgHasElem_Real) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Real; fn != nil { fn(me) }
+	me.Real.Walk()
+ }
+
+type XsdGoPkgHasElem_Minus struct {
+	Minus *TArithType `xml:"http://www.w3.org/1998/Math/MathML minus"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Minus function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Minus instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Minus instance.
+func (me *XsdGoPkgHasElem_Minus) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Minus; fn != nil { fn(me) }
+	me.Minus.Walk()
+ }
+
+type XsdGoPkgHasElem_Quotient struct {
+	Quotient *TArithType `xml:"http://www.w3.org/1998/Math/MathML quotient"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Quotient function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Quotient instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Quotient instance.
+func (me *XsdGoPkgHasElem_Quotient) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Quotient; fn != nil { fn(me) }
+	me.Quotient.Walk()
+ }
+
+type XsdGoPkgHasElem_Plus struct {
+	Plus *TArithType `xml:"http://www.w3.org/1998/Math/MathML plus"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Plus function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Plus instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Plus instance.
+func (me *XsdGoPkgHasElem_Plus) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Plus; fn != nil { fn(me) }
+	me.Plus.Walk()
+ }
+
+type XsdGoPkgHasElem_Gcd struct {
+	Gcd *TArithType `xml:"http://www.w3.org/1998/Math/MathML gcd"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Gcd function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Gcd instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Gcd instance.
+func (me *XsdGoPkgHasElem_Gcd) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Gcd; fn != nil { fn(me) }
+	me.Gcd.Walk()
+ }
+
+type XsdGoPkgHasElem_Conjugate struct {
+	Conjugate *TArithType `xml:"http://www.w3.org/1998/Math/MathML conjugate"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Conjugate function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Conjugate instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Conjugate instance.
+func (me *XsdGoPkgHasElem_Conjugate) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Conjugate; fn != nil { fn(me) }
+	me.Conjugate.Walk()
+ }
+
+type XsdGoPkgHasElem_Product struct {
+	Product *TArithType `xml:"http://www.w3.org/1998/Math/MathML product"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Product function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Product instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Product instance.
+func (me *XsdGoPkgHasElem_Product) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Product; fn != nil { fn(me) }
+	me.Product.Walk()
+ }
+
+type XsdGoPkgHasElem_Min struct {
+	Min *TArithType `xml:"http://www.w3.org/1998/Math/MathML min"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Min function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Min instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Min instance.
+func (me *XsdGoPkgHasElem_Min) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Min; fn != nil { fn(me) }
+	me.Min.Walk()
+ }
+
+type XsdGoPkgHasElem_Floor struct {
+	Floor *TArithType `xml:"http://www.w3.org/1998/Math/MathML floor"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Floor function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Floor instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Floor instance.
+func (me *XsdGoPkgHasElem_Floor) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Floor; fn != nil { fn(me) }
+	me.Floor.Walk()
+ }
+
+type XsdGoPkgHasGroup_ContentArithClass struct {
+	XsdGoPkgHasElem_Lcm
+
+	XsdGoPkgHasElem_Times
+
+	XsdGoPkgHasElem_Max
+
+	XsdGoPkgHasElem_Real
+
+	XsdGoPkgHasElem_Minus
+
+	XsdGoPkgHasElem_Quotient
+
+	XsdGoPkgHasElem_Plus
+
+	XsdGoPkgHasElem_Gcd
+
+	XsdGoPkgHasElem_Conjugate
+
+	XsdGoPkgHasElem_Product
+
+	XsdGoPkgHasElem_Min
+
+	XsdGoPkgHasElem_Floor
+
+	XsdGoPkgHasElem_Abs
+
+	XsdGoPkgHasElem_Sum
+
+	XsdGoPkgHasElem_Power
+
+	XsdGoPkgHasElem_Divide
+
+	XsdGoPkgHasElem_Root
+
+	XsdGoPkgHasElem_Arg
+
+	XsdGoPkgHasElem_Ceiling
+
+	XsdGoPkgHasElem_Rem
+
+	XsdGoPkgHasElem_Factorial
+
+	XsdGoPkgHasElem_Imaginary
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_ContentArithClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentArithClass instance as the single argument. Then calls the Walk() method on 22/22 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentArithClass instance.
+func (me *XsdGoPkgHasGroup_ContentArithClass) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentArithClass; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Abs.Walk()
+	me.XsdGoPkgHasElem_Sum.Walk()
+	me.XsdGoPkgHasElem_Power.Walk()
+	me.XsdGoPkgHasElem_Divide.Walk()
+	me.XsdGoPkgHasElem_Root.Walk()
+	me.XsdGoPkgHasElem_Arg.Walk()
+	me.XsdGoPkgHasElem_Ceiling.Walk()
+	me.XsdGoPkgHasElem_Rem.Walk()
+	me.XsdGoPkgHasElem_Factorial.Walk()
+	me.XsdGoPkgHasElem_Imaginary.Walk()
+	me.XsdGoPkgHasElem_Lcm.Walk()
+	me.XsdGoPkgHasElem_Times.Walk()
+	me.XsdGoPkgHasElem_Max.Walk()
+	me.XsdGoPkgHasElem_Real.Walk()
+	me.XsdGoPkgHasElem_Minus.Walk()
+	me.XsdGoPkgHasElem_Quotient.Walk()
+	me.XsdGoPkgHasElem_Plus.Walk()
+	me.XsdGoPkgHasElem_Gcd.Walk()
+	me.XsdGoPkgHasElem_Conjugate.Walk()
+	me.XsdGoPkgHasElem_Product.Walk()
+	me.XsdGoPkgHasElem_Min.Walk()
+	me.XsdGoPkgHasElem_Floor.Walk()
+ }
+
+type TmomentType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TmomentType function is not nil (ie. was set by outside code), calls it with this TmomentType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TmomentType instance.
+func (me *TmomentType) Walk ()  { 
+	if fn := WalkHandlers.TmomentType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Moment struct {
+	Moment *TmomentType `xml:"http://www.w3.org/1998/Math/MathML moment"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Moment function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Moment instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Moment instance.
+func (me *XsdGoPkgHasElem_Moment) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Moment; fn != nil { fn(me) }
+	me.Moment.Walk()
+ }
+
+type TmeanType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TmeanType function is not nil (ie. was set by outside code), calls it with this TmeanType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TmeanType instance.
+func (me *TmeanType) Walk ()  { 
+	if fn := WalkHandlers.TmeanType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Mean struct {
+	Mean *TmeanType `xml:"http://www.w3.org/1998/Math/MathML mean"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Mean function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mean instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mean instance.
+func (me *XsdGoPkgHasElem_Mean) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mean; fn != nil { fn(me) }
+	me.Mean.Walk()
+ }
+
+type TmomentaboutType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+	XsdGoPkgHasGroup_VectorContent
+
+}
+
+//	If the WalkHandlers.TmomentaboutType function is not nil (ie. was set by outside code), calls it with this TmomentaboutType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmomentaboutType instance.
+func (me *TmomentaboutType) Walk ()  { 
+	if fn := WalkHandlers.TmomentaboutType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_VectorContent.Walk()
+ }
+
+type XsdGoPkgHasElem_Momentabout struct {
+	Momentabout *TmomentaboutType `xml:"http://www.w3.org/1998/Math/MathML momentabout"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Momentabout function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Momentabout instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Momentabout instance.
+func (me *XsdGoPkgHasElem_Momentabout) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Momentabout; fn != nil { fn(me) }
+	me.Momentabout.Walk()
+ }
+
+type TvarianceType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TvarianceType function is not nil (ie. was set by outside code), calls it with this TvarianceType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TvarianceType instance.
+func (me *TvarianceType) Walk ()  { 
+	if fn := WalkHandlers.TvarianceType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Variance struct {
+	Variance *TvarianceType `xml:"http://www.w3.org/1998/Math/MathML variance"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Variance function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Variance instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Variance instance.
+func (me *XsdGoPkgHasElem_Variance) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Variance; fn != nil { fn(me) }
+	me.Variance.Walk()
+ }
+
+type TmedianType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TmedianType function is not nil (ie. was set by outside code), calls it with this TmedianType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TmedianType instance.
+func (me *TmedianType) Walk ()  { 
+	if fn := WalkHandlers.TmedianType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Median struct {
+	Median *TmedianType `xml:"http://www.w3.org/1998/Math/MathML median"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Median function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Median instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Median instance.
+func (me *XsdGoPkgHasElem_Median) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Median; fn != nil { fn(me) }
+	me.Median.Walk()
+ }
+
+type TsdevType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TsdevType function is not nil (ie. was set by outside code), calls it with this TsdevType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TsdevType instance.
+func (me *TsdevType) Walk ()  { 
+	if fn := WalkHandlers.TsdevType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Sdev struct {
+	Sdev *TsdevType `xml:"http://www.w3.org/1998/Math/MathML sdev"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Sdev function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Sdev instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Sdev instance.
+func (me *XsdGoPkgHasElem_Sdev) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Sdev; fn != nil { fn(me) }
+	me.Sdev.Walk()
+ }
+
+type TmodeType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TmodeType function is not nil (ie. was set by outside code), calls it with this TmodeType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TmodeType instance.
+func (me *TmodeType) Walk ()  { 
+	if fn := WalkHandlers.TmodeType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Mode struct {
+	Mode *TmodeType `xml:"http://www.w3.org/1998/Math/MathML mode"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Mode function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mode instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mode instance.
+func (me *XsdGoPkgHasElem_Mode) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mode; fn != nil { fn(me) }
+	me.Mode.Walk()
+ }
+
+type XsdGoPkgHasGroup_ContentStatisticsClass struct {
+	XsdGoPkgHasElem_Moment
+
+	XsdGoPkgHasElem_Mean
+
+	XsdGoPkgHasElem_Momentabout
+
+	XsdGoPkgHasElem_Variance
+
+	XsdGoPkgHasElem_Median
+
+	XsdGoPkgHasElem_Sdev
+
+	XsdGoPkgHasElem_Mode
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_ContentStatisticsClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentStatisticsClass instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentStatisticsClass instance.
+func (me *XsdGoPkgHasGroup_ContentStatisticsClass) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentStatisticsClass; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Median.Walk()
+	me.XsdGoPkgHasElem_Sdev.Walk()
+	me.XsdGoPkgHasElem_Mode.Walk()
+	me.XsdGoPkgHasElem_Moment.Walk()
+	me.XsdGoPkgHasElem_Mean.Walk()
+	me.XsdGoPkgHasElem_Momentabout.Walk()
+	me.XsdGoPkgHasElem_Variance.Walk()
+ }
+
+type XsdGoPkgHasGroup_AnnotationXmlContent struct {
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_AnnotationXmlContent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_AnnotationXmlContent instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_AnnotationXmlContent instance.
+func (me *XsdGoPkgHasGroup_AnnotationXmlContent) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_AnnotationXmlContent; fn != nil { fn(me) }
+ }
+
+type TannotationXmlType struct {
+	XsdGoPkgHasGroup_AnnotationXmlContent
+
+	XsdGoPkgHasAtts_AnnotationAttlist
+
+}
+
+//	If the WalkHandlers.TannotationXmlType function is not nil (ie. was set by outside code), calls it with this TannotationXmlType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TannotationXmlType instance.
+func (me *TannotationXmlType) Walk ()  { 
+	if fn := WalkHandlers.TannotationXmlType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_AnnotationXmlContent.Walk()
+ }
+
+type XsdGoPkgHasElem_AnnotationXml struct {
+	AnnotationXml *TannotationXmlType `xml:"http://www.w3.org/1998/Math/MathML annotation-xml"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AnnotationXml function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AnnotationXml instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AnnotationXml instance.
+func (me *XsdGoPkgHasElem_AnnotationXml) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_AnnotationXml; fn != nil { fn(me) }
+	me.AnnotationXml.Walk()
+ }
+
+type XsdGoPkgHasCdata struct {
+	XsdGoPkgCDATA string `xml:",chardata"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasCdata function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasCdata instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasCdata instance.
+func (me *XsdGoPkgHasCdata) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasCdata; fn != nil { fn(me) }
+ }
+
+type TannotationType struct {
+	XsdGoPkgHasAtts_AnnotationAttlist
+
+	XsdGoPkgHasCdata
+
+}
+
+//	If the WalkHandlers.TannotationType function is not nil (ie. was set by outside code), calls it with this TannotationType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TannotationType instance.
+func (me *TannotationType) Walk ()  { 
+	if fn := WalkHandlers.TannotationType; fn != nil { fn(me) }
+	me.XsdGoPkgHasCdata.Walk()
+ }
+
+type XsdGoPkgHasElem_Annotation struct {
+	Annotation *TannotationType `xml:"http://www.w3.org/1998/Math/MathML annotation"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Annotation function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Annotation instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Annotation instance.
+func (me *XsdGoPkgHasElem_Annotation) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Annotation; fn != nil { fn(me) }
+	me.Annotation.Walk()
+ }
+
+type XsdGoPkgHasGroup_AnnotationClass struct {
+	XsdGoPkgHasElem_Annotation
+
+	XsdGoPkgHasElem_AnnotationXml
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_AnnotationClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_AnnotationClass instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_AnnotationClass instance.
+func (me *XsdGoPkgHasGroup_AnnotationClass) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_AnnotationClass; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_AnnotationXml.Walk()
+	me.XsdGoPkgHasElem_Annotation.Walk()
+ }
+
+type XsdGoPkgHasGroup_SemanticsContent struct {
+	XsdGoPkgHasGroup_AnnotationClass
+
+	XsdGoPkgHasGroup_ContentExprClass
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_SemanticsContent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_SemanticsContent instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_SemanticsContent instance.
+func (me *XsdGoPkgHasGroup_SemanticsContent) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_SemanticsContent; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_ContentExprClass.Walk()
+	me.XsdGoPkgHasGroup_AnnotationClass.Walk()
+ }
+
+type TsemanticsType struct {
+	XsdGoPkgHasAtts_SemanticsAttlist
+
+	XsdGoPkgHasGroup_SemanticsContent
+
+}
+
+//	If the WalkHandlers.TsemanticsType function is not nil (ie. was set by outside code), calls it with this TsemanticsType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TsemanticsType instance.
+func (me *TsemanticsType) Walk ()  { 
+	if fn := WalkHandlers.TsemanticsType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_SemanticsContent.Walk()
+ }
+
+type XsdGoPkgHasElem_Semantics struct {
+	Semantics *TsemanticsType `xml:"http://www.w3.org/1998/Math/MathML semantics"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Semantics function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Semantics instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Semantics instance.
+func (me *XsdGoPkgHasElem_Semantics) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Semantics; fn != nil { fn(me) }
+	me.Semantics.Walk()
+ }
+
+type TlaplacianType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TlaplacianType function is not nil (ie. was set by outside code), calls it with this TlaplacianType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TlaplacianType instance.
+func (me *TlaplacianType) Walk ()  { 
+	if fn := WalkHandlers.TlaplacianType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Laplacian struct {
+	Laplacian *TlaplacianType `xml:"http://www.w3.org/1998/Math/MathML laplacian"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Laplacian function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Laplacian instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Laplacian instance.
+func (me *XsdGoPkgHasElem_Laplacian) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Laplacian; fn != nil { fn(me) }
+	me.Laplacian.Walk()
+ }
+
+type TcurlType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TcurlType function is not nil (ie. was set by outside code), calls it with this TcurlType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TcurlType instance.
+func (me *TcurlType) Walk ()  { 
+	if fn := WalkHandlers.TcurlType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Curl struct {
+	Curl *TcurlType `xml:"http://www.w3.org/1998/Math/MathML curl"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Curl function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Curl instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Curl instance.
+func (me *XsdGoPkgHasElem_Curl) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Curl; fn != nil { fn(me) }
+	me.Curl.Walk()
+ }
+
+type TgradType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TgradType function is not nil (ie. was set by outside code), calls it with this TgradType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TgradType instance.
+func (me *TgradType) Walk ()  { 
+	if fn := WalkHandlers.TgradType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Grad struct {
+	Grad *TgradType `xml:"http://www.w3.org/1998/Math/MathML grad"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Grad function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Grad instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Grad instance.
+func (me *XsdGoPkgHasElem_Grad) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Grad; fn != nil { fn(me) }
+	me.Grad.Walk()
+ }
+
+type TdivergenceType struct {
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TdivergenceType function is not nil (ie. was set by outside code), calls it with this TdivergenceType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TdivergenceType instance.
+func (me *TdivergenceType) Walk ()  { 
+	if fn := WalkHandlers.TdivergenceType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Divergence struct {
+	Divergence *TdivergenceType `xml:"http://www.w3.org/1998/Math/MathML divergence"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Divergence function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Divergence instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Divergence instance.
+func (me *XsdGoPkgHasElem_Divergence) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Divergence; fn != nil { fn(me) }
+	me.Divergence.Walk()
+ }
+
+type XsdGoPkgHasGroup_ContentVectorCalculusClass struct {
+	XsdGoPkgHasElem_Laplacian
+
+	XsdGoPkgHasElem_Curl
+
+	XsdGoPkgHasElem_Grad
+
+	XsdGoPkgHasElem_Divergence
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_ContentVectorCalculusClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentVectorCalculusClass instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentVectorCalculusClass instance.
+func (me *XsdGoPkgHasGroup_ContentVectorCalculusClass) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentVectorCalculusClass; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Curl.Walk()
+	me.XsdGoPkgHasElem_Grad.Walk()
+	me.XsdGoPkgHasElem_Divergence.Walk()
+	me.XsdGoPkgHasElem_Laplacian.Walk()
+ }
+
+type TdomainofapplicationType struct {
+	XsdGoPkgHasAtts_DefinitionAttrib
+
+	XsdGoPkgHasAtts_CommonAttrib
+
+	XsdGoPkgHasGroup_VectorContent
+
+}
+
+//	If the WalkHandlers.TdomainofapplicationType function is not nil (ie. was set by outside code), calls it with this TdomainofapplicationType instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TdomainofapplicationType instance.
+func (me *TdomainofapplicationType) Walk ()  { 
+	if fn := WalkHandlers.TdomainofapplicationType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_VectorContent.Walk()
+ }
+
+type XsdGoPkgHasElem_Domainofapplication struct {
+	Domainofapplication *TdomainofapplicationType `xml:"http://www.w3.org/1998/Math/MathML domainofapplication"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Domainofapplication function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Domainofapplication instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Domainofapplication instance.
+func (me *XsdGoPkgHasElem_Domainofapplication) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Domainofapplication; fn != nil { fn(me) }
+	me.Domainofapplication.Walk()
+ }
+
+type TFunctionsType struct {
+	XsdGoPkgHasAtts_DefinitionAttrib
+
+	XsdGoPkgHasAtts_CommonAttrib
+
+}
+
+//	If the WalkHandlers.TFunctionsType function is not nil (ie. was set by outside code), calls it with this TFunctionsType instance as the single argument. Then calls the Walk() method on 0/2 embed(s) and 0/0 field(s) belonging to this TFunctionsType instance.
+func (me *TFunctionsType) Walk ()  { 
+	if fn := WalkHandlers.TFunctionsType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Domain struct {
+	Domain *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML domain"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Domain function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Domain instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Domain instance.
+func (me *XsdGoPkgHasElem_Domain) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Domain; fn != nil { fn(me) }
+	me.Domain.Walk()
+ }
+
+type XsdGoPkgHasElem_Ident struct {
+	Ident *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML ident"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Ident function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Ident instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Ident instance.
+func (me *XsdGoPkgHasElem_Ident) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Ident; fn != nil { fn(me) }
+	me.Ident.Walk()
+ }
+
+type XsdGoPkgHasElem_Image struct {
+	Image *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML image"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Image function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Image instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Image instance.
+func (me *XsdGoPkgHasElem_Image) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Image; fn != nil { fn(me) }
+	me.Image.Walk()
+ }
+
+type XsdGoPkgHasElem_Codomain struct {
+	Codomain *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML codomain"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Codomain function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Codomain instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Codomain instance.
+func (me *XsdGoPkgHasElem_Codomain) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Codomain; fn != nil { fn(me) }
+	me.Codomain.Walk()
+ }
+
+type XsdGoPkgHasElem_Compose struct {
+	Compose *TFunctionsType `xml:"http://www.w3.org/1998/Math/MathML compose"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Compose function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Compose instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Compose instance.
+func (me *XsdGoPkgHasElem_Compose) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Compose; fn != nil { fn(me) }
+	me.Compose.Walk()
+ }
+
+type XsdGoPkgHasGroup_ContentFunctionsClass struct {
+	XsdGoPkgHasElem_Domain
+
+	XsdGoPkgHasElem_Ident
+
+	XsdGoPkgHasElem_Image
+
+	XsdGoPkgHasElem_Codomain
+
+	XsdGoPkgHasElem_Compose
+
+	XsdGoPkgHasElem_Domainofapplication
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_ContentFunctionsClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentFunctionsClass instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentFunctionsClass instance.
+func (me *XsdGoPkgHasGroup_ContentFunctionsClass) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentFunctionsClass; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Codomain.Walk()
+	me.XsdGoPkgHasElem_Compose.Walk()
+	me.XsdGoPkgHasElem_Domainofapplication.Walk()
+	me.XsdGoPkgHasElem_Domain.Walk()
+	me.XsdGoPkgHasElem_Ident.Walk()
+	me.XsdGoPkgHasElem_Image.Walk()
+ }
+
+type XsdGoPkgHasGroup_ContentTokenContent struct {
+	XsdGoPkgHasGroup_PresentationExprClass
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_ContentTokenContent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentTokenContent instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentTokenContent instance.
+func (me *XsdGoPkgHasGroup_ContentTokenContent) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentTokenContent; fn != nil { fn(me) }
+ }
+
+type TciType struct {
+	XsdGoPkgHasGroup_ContentTokenContent
+
+	XsdGoPkgHasAtts_CiAttlist
+
+	XsdGoPkgHasCdata
+
+}
+
+//	If the WalkHandlers.TciType function is not nil (ie. was set by outside code), calls it with this TciType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TciType instance.
+func (me *TciType) Walk ()  { 
+	if fn := WalkHandlers.TciType; fn != nil { fn(me) }
+	me.XsdGoPkgHasCdata.Walk()
+	me.XsdGoPkgHasGroup_ContentTokenContent.Walk()
+ }
+
+type XsdGoPkgHasElem_Ci struct {
+	Ci *TciType `xml:"http://www.w3.org/1998/Math/MathML ci"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Ci function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Ci instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Ci instance.
+func (me *XsdGoPkgHasElem_Ci) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Ci; fn != nil { fn(me) }
+	me.Ci.Walk()
+ }
+
+type TsepType struct {
+}
+
+//	If the WalkHandlers.TsepType function is not nil (ie. was set by outside code), calls it with this TsepType instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/0 field(s) belonging to this TsepType instance.
+func (me *TsepType) Walk ()  { 
+	if fn := WalkHandlers.TsepType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Sep struct {
+	Sep *TsepType `xml:"http://www.w3.org/1998/Math/MathML sep"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Sep function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Sep instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Sep instance.
+func (me *XsdGoPkgHasElem_Sep) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Sep; fn != nil { fn(me) }
+	me.Sep.Walk()
+ }
+
+type XsdGoPkgHasGroup_CnContent struct {
+	XsdGoPkgHasGroup_PresentationExprClass
+
+	XsdGoPkgHasElem_Sep
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_CnContent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_CnContent instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_CnContent instance.
+func (me *XsdGoPkgHasGroup_CnContent) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_CnContent; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Sep.Walk()
+ }
+
+type TcnType struct {
+	XsdGoPkgHasGroup_CnContent
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_CnAttlist
+
+}
+
+//	If the WalkHandlers.TcnType function is not nil (ie. was set by outside code), calls it with this TcnType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TcnType instance.
+func (me *TcnType) Walk ()  { 
+	if fn := WalkHandlers.TcnType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_CnContent.Walk()
+	me.XsdGoPkgHasCdata.Walk()
+ }
+
+type XsdGoPkgHasElem_Cn struct {
+	Cn *TcnType `xml:"http://www.w3.org/1998/Math/MathML cn"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Cn function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Cn instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Cn instance.
+func (me *XsdGoPkgHasElem_Cn) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Cn; fn != nil { fn(me) }
+	me.Cn.Walk()
+ }
+
+type TcsymbolType struct {
+	XsdGoPkgHasGroup_ContentTokenContent
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_CsymbolAttlist
+
+}
+
+//	If the WalkHandlers.TcsymbolType function is not nil (ie. was set by outside code), calls it with this TcsymbolType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TcsymbolType instance.
+func (me *TcsymbolType) Walk ()  { 
+	if fn := WalkHandlers.TcsymbolType; fn != nil { fn(me) }
+	me.XsdGoPkgHasCdata.Walk()
+	me.XsdGoPkgHasGroup_ContentTokenContent.Walk()
+ }
+
+type XsdGoPkgHasElem_Csymbol struct {
+	Csymbol *TcsymbolType `xml:"http://www.w3.org/1998/Math/MathML csymbol"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Csymbol function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Csymbol instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Csymbol instance.
+func (me *XsdGoPkgHasElem_Csymbol) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Csymbol; fn != nil { fn(me) }
+	me.Csymbol.Walk()
+ }
+
+type XsdGoPkgHasGroup_ContentTokensClass struct {
+	XsdGoPkgHasElem_Ci
+
+	XsdGoPkgHasElem_Cn
+
+	XsdGoPkgHasElem_Csymbol
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_ContentTokensClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContentTokensClass instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContentTokensClass instance.
+func (me *XsdGoPkgHasGroup_ContentTokensClass) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_ContentTokensClass; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Ci.Walk()
+	me.XsdGoPkgHasElem_Cn.Walk()
+	me.XsdGoPkgHasElem_Csymbol.Walk()
  }
 
 type XsdGoPkgHasGroup_ContExprClass struct {
-	XsdGoPkgHasGroup_ContentArithClass
-
-	XsdGoPkgHasGroup_ContentConstantsClass
-
-	XsdGoPkgHasGroup_ContentStatisticsClass
-
-	XsdGoPkgHasGroup_ContentElementaryFunctionsClass
-
-	XsdGoPkgHasGroup_ContentRelationsClass
-
-	XsdGoPkgHasGroup_ContentConstructsClass
+	XsdGoPkgHasGroup_ContentVectorCalculusClass
 
 	XsdGoPkgHasGroup_ContentFunctionsClass
 
-	XsdGoPkgHasGroup_ContentLinearAlgebraClass
-
 	XsdGoPkgHasGroup_ContentTokensClass
+
+	XsdGoPkgHasGroup_ContentConstantsClass
+
+	XsdGoPkgHasGroup_ContentRelationsClass
+
+	XsdGoPkgHasGroup_ContentLinearAlgebraClass
 
 	XsdGoPkgHasGroup_ContentCalculusClass
 
+	XsdGoPkgHasGroup_ContentSetsClass
+
+	XsdGoPkgHasGroup_ContentElementaryFunctionsClass
+
 	XsdGoPkgHasGroup_ContentLogicClass
 
-	XsdGoPkgHasGroup_ContentVectorCalculusClass
+	XsdGoPkgHasGroup_ContentConstructsClass
+
+	XsdGoPkgHasGroup_ContentArithClass
+
+	XsdGoPkgHasGroup_ContentStatisticsClass
 
 	XsdGoPkgHasElem_Semantics
-
-	XsdGoPkgHasGroup_ContentSetsClass
 
 }
 
 //	If the WalkHandlers.XsdGoPkgHasGroup_ContExprClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_ContExprClass instance as the single argument. Then calls the Walk() method on 14/14 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_ContExprClass instance.
 func (me *XsdGoPkgHasGroup_ContExprClass) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasGroup_ContExprClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_ContentStatisticsClass.Walk()
-	me.XsdGoPkgHasGroup_ContentElementaryFunctionsClass.Walk()
-	me.XsdGoPkgHasGroup_ContentRelationsClass.Walk()
-	me.XsdGoPkgHasGroup_ContentConstructsClass.Walk()
-	me.XsdGoPkgHasGroup_ContentFunctionsClass.Walk()
 	me.XsdGoPkgHasGroup_ContentLinearAlgebraClass.Walk()
-	me.XsdGoPkgHasGroup_ContentTokensClass.Walk()
 	me.XsdGoPkgHasGroup_ContentCalculusClass.Walk()
-	me.XsdGoPkgHasGroup_ContentLogicClass.Walk()
-	me.XsdGoPkgHasGroup_ContentVectorCalculusClass.Walk()
-	me.XsdGoPkgHasElem_Semantics.Walk()
 	me.XsdGoPkgHasGroup_ContentSetsClass.Walk()
+	me.XsdGoPkgHasGroup_ContentElementaryFunctionsClass.Walk()
+	me.XsdGoPkgHasGroup_ContentLogicClass.Walk()
+	me.XsdGoPkgHasGroup_ContentConstructsClass.Walk()
 	me.XsdGoPkgHasGroup_ContentArithClass.Walk()
+	me.XsdGoPkgHasGroup_ContentStatisticsClass.Walk()
+	me.XsdGoPkgHasElem_Semantics.Walk()
+	me.XsdGoPkgHasGroup_ContentVectorCalculusClass.Walk()
+	me.XsdGoPkgHasGroup_ContentFunctionsClass.Walk()
+	me.XsdGoPkgHasGroup_ContentTokensClass.Walk()
 	me.XsdGoPkgHasGroup_ContentConstantsClass.Walk()
+	me.XsdGoPkgHasGroup_ContentRelationsClass.Walk()
  }
 
 type XsdGoPkgHasGroup_PresentationExprClass struct {
-	XsdGoPkgHasGroup_PresExprClass
-
 	XsdGoPkgHasGroup_ContExprClass
+
+	XsdGoPkgHasGroup_PresExprClass
 
 }
 
@@ -4969,28 +4776,283 @@ func (me *XsdGoPkgHasGroup_PresentationExprClass) Walk ()  {
 	me.XsdGoPkgHasGroup_ContExprClass.Walk()
  }
 
-type XsdGoPkgHasGroup_MactionContent struct {
+type TmsupType struct {
+	XsdGoPkgHasAtts_MsupAttlist
+
 	XsdGoPkgHasGroup_PresentationExprClass
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasGroup_MactionContent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_MactionContent instance as the single argument. Then calls the Walk() method on 1/1 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_MactionContent instance.
-func (me *XsdGoPkgHasGroup_MactionContent) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_MactionContent; fn != nil { fn(me) }
+//	If the WalkHandlers.TmsupType function is not nil (ie. was set by outside code), calls it with this TmsupType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmsupType instance.
+func (me *TmsupType) Walk ()  { 
+	if fn := WalkHandlers.TmsupType; fn != nil { fn(me) }
 	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
+ }
+
+type XsdGoPkgHasElem_Msup struct {
+	Msup *TmsupType `xml:"http://www.w3.org/1998/Math/MathML msup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Msup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Msup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Msup instance.
+func (me *XsdGoPkgHasElem_Msup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Msup; fn != nil { fn(me) }
+	me.Msup.Walk()
+ }
+
+type TmoverType struct {
+	XsdGoPkgHasAtts_MoverAttlist
+
+	XsdGoPkgHasGroup_PresentationExprClass
+
+}
+
+//	If the WalkHandlers.TmoverType function is not nil (ie. was set by outside code), calls it with this TmoverType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmoverType instance.
+func (me *TmoverType) Walk ()  { 
+	if fn := WalkHandlers.TmoverType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
+ }
+
+type XsdGoPkgHasElem_Mover struct {
+	Mover *TmoverType `xml:"http://www.w3.org/1998/Math/MathML mover"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Mover function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mover instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mover instance.
+func (me *XsdGoPkgHasElem_Mover) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mover; fn != nil { fn(me) }
+	me.Mover.Walk()
+ }
+
+type TmunderoverType struct {
+	XsdGoPkgHasGroup_PresentationExprClass
+
+	XsdGoPkgHasAtts_MunderoverAttlist
+
+}
+
+//	If the WalkHandlers.TmunderoverType function is not nil (ie. was set by outside code), calls it with this TmunderoverType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmunderoverType instance.
+func (me *TmunderoverType) Walk ()  { 
+	if fn := WalkHandlers.TmunderoverType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
+ }
+
+type XsdGoPkgHasElem_Munderover struct {
+	Munderover *TmunderoverType `xml:"http://www.w3.org/1998/Math/MathML munderover"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Munderover function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Munderover instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Munderover instance.
+func (me *XsdGoPkgHasElem_Munderover) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Munderover; fn != nil { fn(me) }
+	me.Munderover.Walk()
+ }
+
+type TmprescriptsType struct {
+}
+
+//	If the WalkHandlers.TmprescriptsType function is not nil (ie. was set by outside code), calls it with this TmprescriptsType instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/0 field(s) belonging to this TmprescriptsType instance.
+func (me *TmprescriptsType) Walk ()  { 
+	if fn := WalkHandlers.TmprescriptsType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Mprescripts struct {
+	Mprescripts *TmprescriptsType `xml:"http://www.w3.org/1998/Math/MathML mprescripts"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Mprescripts function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mprescripts instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mprescripts instance.
+func (me *XsdGoPkgHasElem_Mprescripts) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mprescripts; fn != nil { fn(me) }
+	me.Mprescripts.Walk()
+ }
+
+type TnoneType struct {
+}
+
+//	If the WalkHandlers.TnoneType function is not nil (ie. was set by outside code), calls it with this TnoneType instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/0 field(s) belonging to this TnoneType instance.
+func (me *TnoneType) Walk ()  { 
+	if fn := WalkHandlers.TnoneType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_None struct {
+	None *TnoneType `xml:"http://www.w3.org/1998/Math/MathML none"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_None function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_None instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_None instance.
+func (me *XsdGoPkgHasElem_None) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_None; fn != nil { fn(me) }
+	me.None.Walk()
+ }
+
+type XsdGoPkgHasGroup_PresentationExprOrNoneClass struct {
+	XsdGoPkgHasElem_None
+
+	XsdGoPkgHasGroup_PresentationExprClass
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_PresentationExprOrNoneClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_PresentationExprOrNoneClass instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_PresentationExprOrNoneClass instance.
+func (me *XsdGoPkgHasGroup_PresentationExprOrNoneClass) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_PresentationExprOrNoneClass; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_None.Walk()
+	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
+ }
+
+type XsdGoPkgHasGroup_MmultiscriptsContent struct {
+	XsdGoPkgHasElem_Mprescripts
+
+	XsdGoPkgHasGroup_PresentationExprClass
+
+	XsdGoPkgHasGroup_PresentationExprOrNoneClass
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_MmultiscriptsContent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_MmultiscriptsContent instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_MmultiscriptsContent instance.
+func (me *XsdGoPkgHasGroup_MmultiscriptsContent) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_MmultiscriptsContent; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Mprescripts.Walk()
+	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
+	me.XsdGoPkgHasGroup_PresentationExprOrNoneClass.Walk()
+ }
+
+type TmmultiscriptsType struct {
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
+
+	XsdGoPkgHasGroup_MmultiscriptsContent
+
+}
+
+//	If the WalkHandlers.TmmultiscriptsType function is not nil (ie. was set by outside code), calls it with this TmmultiscriptsType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmmultiscriptsType instance.
+func (me *TmmultiscriptsType) Walk ()  { 
+	if fn := WalkHandlers.TmmultiscriptsType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_MmultiscriptsContent.Walk()
+ }
+
+type XsdGoPkgHasElem_Mmultiscripts struct {
+	Mmultiscripts *TmmultiscriptsType `xml:"http://www.w3.org/1998/Math/MathML mmultiscripts"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Mmultiscripts function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mmultiscripts instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mmultiscripts instance.
+func (me *XsdGoPkgHasElem_Mmultiscripts) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mmultiscripts; fn != nil { fn(me) }
+	me.Mmultiscripts.Walk()
+ }
+
+type TmunderType struct {
+	XsdGoPkgHasGroup_PresentationExprClass
+
+	XsdGoPkgHasAtts_MunderAttlist
+
+}
+
+//	If the WalkHandlers.TmunderType function is not nil (ie. was set by outside code), calls it with this TmunderType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmunderType instance.
+func (me *TmunderType) Walk ()  { 
+	if fn := WalkHandlers.TmunderType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
+ }
+
+type XsdGoPkgHasElem_Munder struct {
+	Munder *TmunderType `xml:"http://www.w3.org/1998/Math/MathML munder"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Munder function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Munder instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Munder instance.
+func (me *XsdGoPkgHasElem_Munder) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Munder; fn != nil { fn(me) }
+	me.Munder.Walk()
+ }
+
+type TmsubsupType struct {
+	XsdGoPkgHasAtts_MsubsupAttlist
+
+	XsdGoPkgHasGroup_PresentationExprClass
+
+}
+
+//	If the WalkHandlers.TmsubsupType function is not nil (ie. was set by outside code), calls it with this TmsubsupType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmsubsupType instance.
+func (me *TmsubsupType) Walk ()  { 
+	if fn := WalkHandlers.TmsubsupType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
+ }
+
+type XsdGoPkgHasElem_Msubsup struct {
+	Msubsup *TmsubsupType `xml:"http://www.w3.org/1998/Math/MathML msubsup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Msubsup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Msubsup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Msubsup instance.
+func (me *XsdGoPkgHasElem_Msubsup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Msubsup; fn != nil { fn(me) }
+	me.Msubsup.Walk()
+ }
+
+type TmsubType struct {
+	XsdGoPkgHasAtts_MsubAttlist
+
+	XsdGoPkgHasGroup_PresentationExprClass
+
+}
+
+//	If the WalkHandlers.TmsubType function is not nil (ie. was set by outside code), calls it with this TmsubType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmsubType instance.
+func (me *TmsubType) Walk ()  { 
+	if fn := WalkHandlers.TmsubType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
+ }
+
+type XsdGoPkgHasElem_Msub struct {
+	Msub *TmsubType `xml:"http://www.w3.org/1998/Math/MathML msub"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Msub function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Msub instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Msub instance.
+func (me *XsdGoPkgHasElem_Msub) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Msub; fn != nil { fn(me) }
+	me.Msub.Walk()
+ }
+
+type XsdGoPkgHasGroup_PresentationScriptClass struct {
+	XsdGoPkgHasElem_Mover
+
+	XsdGoPkgHasElem_Munderover
+
+	XsdGoPkgHasElem_Mmultiscripts
+
+	XsdGoPkgHasElem_Munder
+
+	XsdGoPkgHasElem_Msubsup
+
+	XsdGoPkgHasElem_Msub
+
+	XsdGoPkgHasElem_Msup
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_PresentationScriptClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_PresentationScriptClass instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_PresentationScriptClass instance.
+func (me *XsdGoPkgHasGroup_PresentationScriptClass) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_PresentationScriptClass; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Mover.Walk()
+	me.XsdGoPkgHasElem_Munderover.Walk()
+	me.XsdGoPkgHasElem_Mmultiscripts.Walk()
+	me.XsdGoPkgHasElem_Munder.Walk()
+	me.XsdGoPkgHasElem_Msubsup.Walk()
+	me.XsdGoPkgHasElem_Msub.Walk()
+	me.XsdGoPkgHasElem_Msup.Walk()
  }
 
 type TmactionType struct {
 	XsdGoPkgHasAtts_MactionAttlist
 
-	XsdGoPkgHasGroup_MactionContent
+	XsdGoPkgHasGroup_ContentTokenContent
 
 }
 
 //	If the WalkHandlers.TmactionType function is not nil (ie. was set by outside code), calls it with this TmactionType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmactionType instance.
 func (me *TmactionType) Walk ()  { 
 	if fn := WalkHandlers.TmactionType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_MactionContent.Walk()
+	me.XsdGoPkgHasGroup_ContentTokenContent.Walk()
  }
 
 type XsdGoPkgHasElem_Maction struct {
@@ -5004,253 +5066,8 @@ func (me *XsdGoPkgHasElem_Maction) Walk ()  {
 	me.Maction.Walk()
  }
 
-type TmfencedType struct {
-	XsdGoPkgHasAtts_MfencedAttlist
-
-	XsdGoPkgHasGroup_PresentationExprClass
-
-}
-
-//	If the WalkHandlers.TmfencedType function is not nil (ie. was set by outside code), calls it with this TmfencedType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmfencedType instance.
-func (me *TmfencedType) Walk ()  { 
-	if fn := WalkHandlers.TmfencedType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
- }
-
-type XsdGoPkgHasElem_Mfenced struct {
-	Mfenced *TmfencedType `xml:"http://www.w3.org/1998/Math/MathML mfenced"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Mfenced function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mfenced instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mfenced instance.
-func (me *XsdGoPkgHasElem_Mfenced) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mfenced; fn != nil { fn(me) }
-	me.Mfenced.Walk()
- }
-
-type TmrowType struct {
-	XsdGoPkgHasGroup_PresentationExprClass
-
-	XsdGoPkgHasAtts_MmultiscriptsAttlist
-
-}
-
-//	If the WalkHandlers.TmrowType function is not nil (ie. was set by outside code), calls it with this TmrowType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmrowType instance.
-func (me *TmrowType) Walk ()  { 
-	if fn := WalkHandlers.TmrowType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
- }
-
-type XsdGoPkgHasElem_Mrow struct {
-	Mrow *TmrowType `xml:"http://www.w3.org/1998/Math/MathML mrow"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Mrow function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mrow instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mrow instance.
-func (me *XsdGoPkgHasElem_Mrow) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mrow; fn != nil { fn(me) }
-	me.Mrow.Walk()
- }
-
-type TmphantomType struct {
-	XsdGoPkgHasAtts_MmultiscriptsAttlist
-
-	XsdGoPkgHasGroup_PresentationExprClass
-
-}
-
-//	If the WalkHandlers.TmphantomType function is not nil (ie. was set by outside code), calls it with this TmphantomType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmphantomType instance.
-func (me *TmphantomType) Walk ()  { 
-	if fn := WalkHandlers.TmphantomType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
- }
-
-type XsdGoPkgHasElem_Mphantom struct {
-	Mphantom *TmphantomType `xml:"http://www.w3.org/1998/Math/MathML mphantom"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Mphantom function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mphantom instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mphantom instance.
-func (me *XsdGoPkgHasElem_Mphantom) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mphantom; fn != nil { fn(me) }
-	me.Mphantom.Walk()
- }
-
-type TmencloseType struct {
-	XsdGoPkgHasAtts_MencloseAttlist
-
-	XsdGoPkgHasGroup_PresentationExprClass
-
-}
-
-//	If the WalkHandlers.TmencloseType function is not nil (ie. was set by outside code), calls it with this TmencloseType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmencloseType instance.
-func (me *TmencloseType) Walk ()  { 
-	if fn := WalkHandlers.TmencloseType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
- }
-
-type XsdGoPkgHasElem_Menclose struct {
-	Menclose *TmencloseType `xml:"http://www.w3.org/1998/Math/MathML menclose"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Menclose function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Menclose instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Menclose instance.
-func (me *XsdGoPkgHasElem_Menclose) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Menclose; fn != nil { fn(me) }
-	me.Menclose.Walk()
- }
-
-type TmsqrtType struct {
-	XsdGoPkgHasGroup_PresentationExprClass
-
-	XsdGoPkgHasAtts_MmultiscriptsAttlist
-
-}
-
-//	If the WalkHandlers.TmsqrtType function is not nil (ie. was set by outside code), calls it with this TmsqrtType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmsqrtType instance.
-func (me *TmsqrtType) Walk ()  { 
-	if fn := WalkHandlers.TmsqrtType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
- }
-
-type XsdGoPkgHasElem_Msqrt struct {
-	Msqrt *TmsqrtType `xml:"http://www.w3.org/1998/Math/MathML msqrt"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Msqrt function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Msqrt instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Msqrt instance.
-func (me *XsdGoPkgHasElem_Msqrt) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Msqrt; fn != nil { fn(me) }
-	me.Msqrt.Walk()
- }
-
-type TmrootType struct {
-	XsdGoPkgHasGroup_PresentationExprClass
-
-	XsdGoPkgHasAtts_MmultiscriptsAttlist
-
-}
-
-//	If the WalkHandlers.TmrootType function is not nil (ie. was set by outside code), calls it with this TmrootType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmrootType instance.
-func (me *TmrootType) Walk ()  { 
-	if fn := WalkHandlers.TmrootType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
- }
-
-type XsdGoPkgHasElem_Mroot struct {
-	Mroot *TmrootType `xml:"http://www.w3.org/1998/Math/MathML mroot"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Mroot function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mroot instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mroot instance.
-func (me *XsdGoPkgHasElem_Mroot) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mroot; fn != nil { fn(me) }
-	me.Mroot.Walk()
- }
-
-type TmfracType struct {
-	XsdGoPkgHasAtts_MfracAttlist
-
-	XsdGoPkgHasGroup_PresentationExprClass
-
-}
-
-//	If the WalkHandlers.TmfracType function is not nil (ie. was set by outside code), calls it with this TmfracType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmfracType instance.
-func (me *TmfracType) Walk ()  { 
-	if fn := WalkHandlers.TmfracType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
- }
-
-type XsdGoPkgHasElem_Mfrac struct {
-	Mfrac *TmfracType `xml:"http://www.w3.org/1998/Math/MathML mfrac"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Mfrac function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mfrac instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mfrac instance.
-func (me *XsdGoPkgHasElem_Mfrac) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mfrac; fn != nil { fn(me) }
-	me.Mfrac.Walk()
- }
-
-type TmpaddedType struct {
-	XsdGoPkgHasGroup_PresentationExprClass
-
-	XsdGoPkgHasAtts_MpaddedAttlist
-
-}
-
-//	If the WalkHandlers.TmpaddedType function is not nil (ie. was set by outside code), calls it with this TmpaddedType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmpaddedType instance.
-func (me *TmpaddedType) Walk ()  { 
-	if fn := WalkHandlers.TmpaddedType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
- }
-
-type XsdGoPkgHasElem_Mpadded struct {
-	Mpadded *TmpaddedType `xml:"http://www.w3.org/1998/Math/MathML mpadded"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Mpadded function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mpadded instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mpadded instance.
-func (me *XsdGoPkgHasElem_Mpadded) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mpadded; fn != nil { fn(me) }
-	me.Mpadded.Walk()
- }
-
-type XsdGoPkgHasGroup_PresentationLayoutClass struct {
-	XsdGoPkgHasElem_Mpadded
-
-	XsdGoPkgHasElem_Mfenced
-
-	XsdGoPkgHasElem_Mrow
-
-	XsdGoPkgHasElem_Mphantom
-
-	XsdGoPkgHasElem_Menclose
-
-	XsdGoPkgHasElem_Msqrt
-
-	XsdGoPkgHasElem_Mroot
-
-	XsdGoPkgHasElem_Mfrac
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_PresentationLayoutClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_PresentationLayoutClass instance as the single argument. Then calls the Walk() method on 8/8 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_PresentationLayoutClass instance.
-func (me *XsdGoPkgHasGroup_PresentationLayoutClass) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_PresentationLayoutClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Mrow.Walk()
-	me.XsdGoPkgHasElem_Mphantom.Walk()
-	me.XsdGoPkgHasElem_Menclose.Walk()
-	me.XsdGoPkgHasElem_Msqrt.Walk()
-	me.XsdGoPkgHasElem_Mroot.Walk()
-	me.XsdGoPkgHasElem_Mfrac.Walk()
-	me.XsdGoPkgHasElem_Mpadded.Walk()
-	me.XsdGoPkgHasElem_Mfenced.Walk()
- }
-
-type TmspaceType struct {
-	XsdGoPkgHasAtts_MspaceAttlist
-
-}
-
-//	If the WalkHandlers.TmspaceType function is not nil (ie. was set by outside code), calls it with this TmspaceType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TmspaceType instance.
-func (me *TmspaceType) Walk ()  { 
-	if fn := WalkHandlers.TmspaceType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Mspace struct {
-	Mspace *TmspaceType `xml:"http://www.w3.org/1998/Math/MathML mspace"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Mspace function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mspace instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mspace instance.
-func (me *XsdGoPkgHasElem_Mspace) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mspace; fn != nil { fn(me) }
-	me.Mspace.Walk()
- }
-
 type TmerrorType struct {
-	XsdGoPkgHasGroup_MactionContent
+	XsdGoPkgHasGroup_ContentTokenContent
 
 	XsdGoPkgHasAtts_MmultiscriptsAttlist
 
@@ -5259,7 +5076,7 @@ type TmerrorType struct {
 //	If the WalkHandlers.TmerrorType function is not nil (ie. was set by outside code), calls it with this TmerrorType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmerrorType instance.
 func (me *TmerrorType) Walk ()  { 
 	if fn := WalkHandlers.TmerrorType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_MactionContent.Walk()
+	me.XsdGoPkgHasGroup_ContentTokenContent.Walk()
  }
 
 type XsdGoPkgHasElem_Merror struct {
@@ -5273,62 +5090,17 @@ func (me *XsdGoPkgHasElem_Merror) Walk ()  {
 	me.Merror.Walk()
  }
 
-type TmstyleType struct {
-	XsdGoPkgHasGroup_MactionContent
-
-	XsdGoPkgHasAtts_MstyleAttlist
-
-}
-
-//	If the WalkHandlers.TmstyleType function is not nil (ie. was set by outside code), calls it with this TmstyleType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmstyleType instance.
-func (me *TmstyleType) Walk ()  { 
-	if fn := WalkHandlers.TmstyleType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_MactionContent.Walk()
- }
-
-type XsdGoPkgHasElem_Mstyle struct {
-	Mstyle *TmstyleType `xml:"http://www.w3.org/1998/Math/MathML mstyle"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Mstyle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mstyle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mstyle instance.
-func (me *XsdGoPkgHasElem_Mstyle) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mstyle; fn != nil { fn(me) }
-	me.Mstyle.Walk()
- }
-
-type TmaligngroupType struct {
-	XsdGoPkgHasAtts_MaligngroupAttlist
-
-}
-
-//	If the WalkHandlers.TmaligngroupType function is not nil (ie. was set by outside code), calls it with this TmaligngroupType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TmaligngroupType instance.
-func (me *TmaligngroupType) Walk ()  { 
-	if fn := WalkHandlers.TmaligngroupType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Maligngroup struct {
-	Maligngroup *TmaligngroupType `xml:"http://www.w3.org/1998/Math/MathML maligngroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Maligngroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Maligngroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Maligngroup instance.
-func (me *XsdGoPkgHasElem_Maligngroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Maligngroup; fn != nil { fn(me) }
-	me.Maligngroup.Walk()
- }
-
 type TmtdType struct {
-	XsdGoPkgHasGroup_MactionContent
-
 	XsdGoPkgHasAtts_MtdAttlist
+
+	XsdGoPkgHasGroup_ContentTokenContent
 
 }
 
 //	If the WalkHandlers.TmtdType function is not nil (ie. was set by outside code), calls it with this TmtdType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmtdType instance.
 func (me *TmtdType) Walk ()  { 
 	if fn := WalkHandlers.TmtdType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_MactionContent.Walk()
+	me.XsdGoPkgHasGroup_ContentTokenContent.Walk()
  }
 
 type XsdGoPkgHasElem_Mtd struct {
@@ -5378,9 +5150,9 @@ func (me *XsdGoPkgHasElem_Mtr) Walk ()  {
  }
 
 type TmlabeledtrType struct {
-	XsdGoPkgHasAtts_MtrAttlist
-
 	XsdGoPkgHasGroup_MtrContent
+
+	XsdGoPkgHasAtts_MtrAttlist
 
 }
 
@@ -5402,17 +5174,17 @@ func (me *XsdGoPkgHasElem_Mlabeledtr) Walk ()  {
  }
 
 type XsdGoPkgHasGroup_MtableContent struct {
-	XsdGoPkgHasElem_Mlabeledtr
-
 	XsdGoPkgHasElem_Mtr
+
+	XsdGoPkgHasElem_Mlabeledtr
 
 }
 
 //	If the WalkHandlers.XsdGoPkgHasGroup_MtableContent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_MtableContent instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_MtableContent instance.
 func (me *XsdGoPkgHasGroup_MtableContent) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasGroup_MtableContent; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Mlabeledtr.Walk()
 	me.XsdGoPkgHasElem_Mtr.Walk()
+	me.XsdGoPkgHasElem_Mlabeledtr.Walk()
  }
 
 type TmtableType struct {
@@ -5439,12 +5211,54 @@ func (me *XsdGoPkgHasElem_Mtable) Walk ()  {
 	me.Mtable.Walk()
  }
 
+type TmaligngroupType struct {
+	XsdGoPkgHasAtts_MaligngroupAttlist
+
+}
+
+//	If the WalkHandlers.TmaligngroupType function is not nil (ie. was set by outside code), calls it with this TmaligngroupType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TmaligngroupType instance.
+func (me *TmaligngroupType) Walk ()  { 
+	if fn := WalkHandlers.TmaligngroupType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Maligngroup struct {
+	Maligngroup *TmaligngroupType `xml:"http://www.w3.org/1998/Math/MathML maligngroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Maligngroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Maligngroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Maligngroup instance.
+func (me *XsdGoPkgHasElem_Maligngroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Maligngroup; fn != nil { fn(me) }
+	me.Maligngroup.Walk()
+ }
+
+type TmalignmarkType struct {
+	XsdGoPkgHasAtts_MalignmarkAttlist
+
+}
+
+//	If the WalkHandlers.TmalignmarkType function is not nil (ie. was set by outside code), calls it with this TmalignmarkType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TmalignmarkType instance.
+func (me *TmalignmarkType) Walk ()  { 
+	if fn := WalkHandlers.TmalignmarkType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Malignmark struct {
+	Malignmark *TmalignmarkType `xml:"http://www.w3.org/1998/Math/MathML malignmark"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Malignmark function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Malignmark instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Malignmark instance.
+func (me *XsdGoPkgHasElem_Malignmark) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Malignmark; fn != nil { fn(me) }
+	me.Malignmark.Walk()
+ }
+
 type XsdGoPkgHasGroup_PresentationTableClass struct {
-	XsdGoPkgHasElem_Malignmark
+	XsdGoPkgHasElem_Mtable
 
 	XsdGoPkgHasElem_Maligngroup
 
-	XsdGoPkgHasElem_Mtable
+	XsdGoPkgHasElem_Malignmark
 
 }
 
@@ -5452,305 +5266,480 @@ type XsdGoPkgHasGroup_PresentationTableClass struct {
 func (me *XsdGoPkgHasGroup_PresentationTableClass) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasGroup_PresentationTableClass; fn != nil { fn(me) }
 	me.XsdGoPkgHasElem_Malignmark.Walk()
-	me.XsdGoPkgHasElem_Maligngroup.Walk()
 	me.XsdGoPkgHasElem_Mtable.Walk()
+	me.XsdGoPkgHasElem_Maligngroup.Walk()
  }
 
-type TmsubType struct {
-	XsdGoPkgHasAtts_MsubAttlist
+type TmstyleType struct {
+	XsdGoPkgHasGroup_ContentTokenContent
+
+	XsdGoPkgHasAtts_MstyleAttlist
+
+}
+
+//	If the WalkHandlers.TmstyleType function is not nil (ie. was set by outside code), calls it with this TmstyleType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmstyleType instance.
+func (me *TmstyleType) Walk ()  { 
+	if fn := WalkHandlers.TmstyleType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_ContentTokenContent.Walk()
+ }
+
+type XsdGoPkgHasElem_Mstyle struct {
+	Mstyle *TmstyleType `xml:"http://www.w3.org/1998/Math/MathML mstyle"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Mstyle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mstyle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mstyle instance.
+func (me *XsdGoPkgHasElem_Mstyle) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mstyle; fn != nil { fn(me) }
+	me.Mstyle.Walk()
+ }
+
+type TmglyphType struct {
+	XsdGoPkgHasAtts_MglyphAttlist
+
+}
+
+//	If the WalkHandlers.TmglyphType function is not nil (ie. was set by outside code), calls it with this TmglyphType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/0 field(s) belonging to this TmglyphType instance.
+func (me *TmglyphType) Walk ()  { 
+	if fn := WalkHandlers.TmglyphType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Mglyph struct {
+	Mglyph *TmglyphType `xml:"http://www.w3.org/1998/Math/MathML mglyph"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Mglyph function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mglyph instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mglyph instance.
+func (me *XsdGoPkgHasElem_Mglyph) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mglyph; fn != nil { fn(me) }
+	me.Mglyph.Walk()
+ }
+
+type XsdGoPkgHasGroup_GlyphAlignmarkClass struct {
+	XsdGoPkgHasElem_Mglyph
+
+	XsdGoPkgHasElem_Malignmark
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_GlyphAlignmarkClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_GlyphAlignmarkClass instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_GlyphAlignmarkClass instance.
+func (me *XsdGoPkgHasGroup_GlyphAlignmarkClass) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_GlyphAlignmarkClass; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Malignmark.Walk()
+	me.XsdGoPkgHasElem_Mglyph.Walk()
+ }
+
+type TmoType struct {
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasGroup_GlyphAlignmarkClass
+
+	XsdGoPkgHasAtts_MoAttlist
+
+}
+
+//	If the WalkHandlers.TmoType function is not nil (ie. was set by outside code), calls it with this TmoType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TmoType instance.
+func (me *TmoType) Walk ()  { 
+	if fn := WalkHandlers.TmoType; fn != nil { fn(me) }
+	me.XsdGoPkgHasCdata.Walk()
+	me.XsdGoPkgHasGroup_GlyphAlignmarkClass.Walk()
+ }
+
+type XsdGoPkgHasElem_Mo struct {
+	Mo *TmoType `xml:"http://www.w3.org/1998/Math/MathML mo"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Mo function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mo instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mo instance.
+func (me *XsdGoPkgHasElem_Mo) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mo; fn != nil { fn(me) }
+	me.Mo.Walk()
+ }
+
+type TmsType struct {
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasGroup_GlyphAlignmarkClass
+
+	XsdGoPkgHasAtts_MsAttlist
+
+}
+
+//	If the WalkHandlers.TmsType function is not nil (ie. was set by outside code), calls it with this TmsType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TmsType instance.
+func (me *TmsType) Walk ()  { 
+	if fn := WalkHandlers.TmsType; fn != nil { fn(me) }
+	me.XsdGoPkgHasCdata.Walk()
+	me.XsdGoPkgHasGroup_GlyphAlignmarkClass.Walk()
+ }
+
+type XsdGoPkgHasElem_Ms struct {
+	Ms *TmsType `xml:"http://www.w3.org/1998/Math/MathML ms"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Ms function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Ms instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Ms instance.
+func (me *XsdGoPkgHasElem_Ms) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Ms; fn != nil { fn(me) }
+	me.Ms.Walk()
+ }
+
+type TmiType struct {
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_MiAttlist
+
+	XsdGoPkgHasGroup_GlyphAlignmarkClass
+
+}
+
+//	If the WalkHandlers.TmiType function is not nil (ie. was set by outside code), calls it with this TmiType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TmiType instance.
+func (me *TmiType) Walk ()  { 
+	if fn := WalkHandlers.TmiType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_GlyphAlignmarkClass.Walk()
+	me.XsdGoPkgHasCdata.Walk()
+ }
+
+type XsdGoPkgHasElem_Mi struct {
+	Mi *TmiType `xml:"http://www.w3.org/1998/Math/MathML mi"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Mi function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mi instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mi instance.
+func (me *XsdGoPkgHasElem_Mi) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mi; fn != nil { fn(me) }
+	me.Mi.Walk()
+ }
+
+type TmtextType struct {
+	XsdGoPkgHasGroup_GlyphAlignmarkClass
+
+	XsdGoPkgHasAtts_MiAttlist
+
+	XsdGoPkgHasCdata
+
+}
+
+//	If the WalkHandlers.TmtextType function is not nil (ie. was set by outside code), calls it with this TmtextType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TmtextType instance.
+func (me *TmtextType) Walk ()  { 
+	if fn := WalkHandlers.TmtextType; fn != nil { fn(me) }
+	me.XsdGoPkgHasCdata.Walk()
+	me.XsdGoPkgHasGroup_GlyphAlignmarkClass.Walk()
+ }
+
+type XsdGoPkgHasElem_Mtext struct {
+	Mtext *TmtextType `xml:"http://www.w3.org/1998/Math/MathML mtext"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Mtext function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mtext instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mtext instance.
+func (me *XsdGoPkgHasElem_Mtext) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mtext; fn != nil { fn(me) }
+	me.Mtext.Walk()
+ }
+
+type TmnType struct {
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_MiAttlist
+
+	XsdGoPkgHasGroup_GlyphAlignmarkClass
+
+}
+
+//	If the WalkHandlers.TmnType function is not nil (ie. was set by outside code), calls it with this TmnType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TmnType instance.
+func (me *TmnType) Walk ()  { 
+	if fn := WalkHandlers.TmnType; fn != nil { fn(me) }
+	me.XsdGoPkgHasCdata.Walk()
+	me.XsdGoPkgHasGroup_GlyphAlignmarkClass.Walk()
+ }
+
+type XsdGoPkgHasElem_Mn struct {
+	Mn *TmnType `xml:"http://www.w3.org/1998/Math/MathML mn"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Mn function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mn instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mn instance.
+func (me *XsdGoPkgHasElem_Mn) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mn; fn != nil { fn(me) }
+	me.Mn.Walk()
+ }
+
+type XsdGoPkgHasGroup_PresentationTokenClass struct {
+	XsdGoPkgHasElem_Mo
+
+	XsdGoPkgHasElem_Ms
+
+	XsdGoPkgHasElem_Mi
+
+	XsdGoPkgHasElem_Mtext
+
+	XsdGoPkgHasElem_Mn
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_PresentationTokenClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_PresentationTokenClass instance as the single argument. Then calls the Walk() method on 5/5 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_PresentationTokenClass instance.
+func (me *XsdGoPkgHasGroup_PresentationTokenClass) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_PresentationTokenClass; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Mi.Walk()
+	me.XsdGoPkgHasElem_Mtext.Walk()
+	me.XsdGoPkgHasElem_Mn.Walk()
+	me.XsdGoPkgHasElem_Mo.Walk()
+	me.XsdGoPkgHasElem_Ms.Walk()
+ }
+
+type TmencloseType struct {
+	XsdGoPkgHasGroup_PresentationExprClass
+
+	XsdGoPkgHasAtts_MencloseAttlist
+
+}
+
+//	If the WalkHandlers.TmencloseType function is not nil (ie. was set by outside code), calls it with this TmencloseType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmencloseType instance.
+func (me *TmencloseType) Walk ()  { 
+	if fn := WalkHandlers.TmencloseType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
+ }
+
+type XsdGoPkgHasElem_Menclose struct {
+	Menclose *TmencloseType `xml:"http://www.w3.org/1998/Math/MathML menclose"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Menclose function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Menclose instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Menclose instance.
+func (me *XsdGoPkgHasElem_Menclose) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Menclose; fn != nil { fn(me) }
+	me.Menclose.Walk()
+ }
+
+type TmfracType struct {
+	XsdGoPkgHasAtts_MfracAttlist
 
 	XsdGoPkgHasGroup_PresentationExprClass
 
 }
 
-//	If the WalkHandlers.TmsubType function is not nil (ie. was set by outside code), calls it with this TmsubType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmsubType instance.
-func (me *TmsubType) Walk ()  { 
-	if fn := WalkHandlers.TmsubType; fn != nil { fn(me) }
+//	If the WalkHandlers.TmfracType function is not nil (ie. was set by outside code), calls it with this TmfracType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmfracType instance.
+func (me *TmfracType) Walk ()  { 
+	if fn := WalkHandlers.TmfracType; fn != nil { fn(me) }
 	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
  }
 
-type XsdGoPkgHasElem_Msub struct {
-	Msub *TmsubType `xml:"http://www.w3.org/1998/Math/MathML msub"`
+type XsdGoPkgHasElem_Mfrac struct {
+	Mfrac *TmfracType `xml:"http://www.w3.org/1998/Math/MathML mfrac"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_Msub function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Msub instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Msub instance.
-func (me *XsdGoPkgHasElem_Msub) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Msub; fn != nil { fn(me) }
-	me.Msub.Walk()
+//	If the WalkHandlers.XsdGoPkgHasElem_Mfrac function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mfrac instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mfrac instance.
+func (me *XsdGoPkgHasElem_Mfrac) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mfrac; fn != nil { fn(me) }
+	me.Mfrac.Walk()
  }
 
-type TmsupType struct {
-	XsdGoPkgHasAtts_MsupAttlist
+type TmphantomType struct {
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
 
 	XsdGoPkgHasGroup_PresentationExprClass
 
 }
 
-//	If the WalkHandlers.TmsupType function is not nil (ie. was set by outside code), calls it with this TmsupType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmsupType instance.
-func (me *TmsupType) Walk ()  { 
-	if fn := WalkHandlers.TmsupType; fn != nil { fn(me) }
+//	If the WalkHandlers.TmphantomType function is not nil (ie. was set by outside code), calls it with this TmphantomType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmphantomType instance.
+func (me *TmphantomType) Walk ()  { 
+	if fn := WalkHandlers.TmphantomType; fn != nil { fn(me) }
 	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
  }
 
-type XsdGoPkgHasElem_Msup struct {
-	Msup *TmsupType `xml:"http://www.w3.org/1998/Math/MathML msup"`
+type XsdGoPkgHasElem_Mphantom struct {
+	Mphantom *TmphantomType `xml:"http://www.w3.org/1998/Math/MathML mphantom"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_Msup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Msup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Msup instance.
-func (me *XsdGoPkgHasElem_Msup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Msup; fn != nil { fn(me) }
-	me.Msup.Walk()
+//	If the WalkHandlers.XsdGoPkgHasElem_Mphantom function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mphantom instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mphantom instance.
+func (me *XsdGoPkgHasElem_Mphantom) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mphantom; fn != nil { fn(me) }
+	me.Mphantom.Walk()
  }
 
-type TmunderType struct {
-	XsdGoPkgHasGroup_PresentationExprClass
-
-	XsdGoPkgHasAtts_MunderAttlist
-
-}
-
-//	If the WalkHandlers.TmunderType function is not nil (ie. was set by outside code), calls it with this TmunderType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmunderType instance.
-func (me *TmunderType) Walk ()  { 
-	if fn := WalkHandlers.TmunderType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
- }
-
-type XsdGoPkgHasElem_Munder struct {
-	Munder *TmunderType `xml:"http://www.w3.org/1998/Math/MathML munder"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Munder function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Munder instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Munder instance.
-func (me *XsdGoPkgHasElem_Munder) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Munder; fn != nil { fn(me) }
-	me.Munder.Walk()
- }
-
-type TmunderoverType struct {
-	XsdGoPkgHasGroup_PresentationExprClass
-
-	XsdGoPkgHasAtts_MunderoverAttlist
-
-}
-
-//	If the WalkHandlers.TmunderoverType function is not nil (ie. was set by outside code), calls it with this TmunderoverType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmunderoverType instance.
-func (me *TmunderoverType) Walk ()  { 
-	if fn := WalkHandlers.TmunderoverType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
- }
-
-type XsdGoPkgHasElem_Munderover struct {
-	Munderover *TmunderoverType `xml:"http://www.w3.org/1998/Math/MathML munderover"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Munderover function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Munderover instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Munderover instance.
-func (me *XsdGoPkgHasElem_Munderover) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Munderover; fn != nil { fn(me) }
-	me.Munderover.Walk()
- }
-
-type TmsubsupType struct {
-	XsdGoPkgHasAtts_MsubsupAttlist
+type TmrootType struct {
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
 
 	XsdGoPkgHasGroup_PresentationExprClass
 
 }
 
-//	If the WalkHandlers.TmsubsupType function is not nil (ie. was set by outside code), calls it with this TmsubsupType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmsubsupType instance.
-func (me *TmsubsupType) Walk ()  { 
-	if fn := WalkHandlers.TmsubsupType; fn != nil { fn(me) }
+//	If the WalkHandlers.TmrootType function is not nil (ie. was set by outside code), calls it with this TmrootType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmrootType instance.
+func (me *TmrootType) Walk ()  { 
+	if fn := WalkHandlers.TmrootType; fn != nil { fn(me) }
 	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
  }
 
-type XsdGoPkgHasElem_Msubsup struct {
-	Msubsup *TmsubsupType `xml:"http://www.w3.org/1998/Math/MathML msubsup"`
+type XsdGoPkgHasElem_Mroot struct {
+	Mroot *TmrootType `xml:"http://www.w3.org/1998/Math/MathML mroot"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_Msubsup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Msubsup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Msubsup instance.
-func (me *XsdGoPkgHasElem_Msubsup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Msubsup; fn != nil { fn(me) }
-	me.Msubsup.Walk()
+//	If the WalkHandlers.XsdGoPkgHasElem_Mroot function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mroot instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mroot instance.
+func (me *XsdGoPkgHasElem_Mroot) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mroot; fn != nil { fn(me) }
+	me.Mroot.Walk()
  }
 
-type TmoverType struct {
-	XsdGoPkgHasGroup_PresentationExprClass
-
-	XsdGoPkgHasAtts_MoverAttlist
-
-}
-
-//	If the WalkHandlers.TmoverType function is not nil (ie. was set by outside code), calls it with this TmoverType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmoverType instance.
-func (me *TmoverType) Walk ()  { 
-	if fn := WalkHandlers.TmoverType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
- }
-
-type XsdGoPkgHasElem_Mover struct {
-	Mover *TmoverType `xml:"http://www.w3.org/1998/Math/MathML mover"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Mover function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mover instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mover instance.
-func (me *XsdGoPkgHasElem_Mover) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mover; fn != nil { fn(me) }
-	me.Mover.Walk()
- }
-
-type TnoneType struct {
-}
-
-//	If the WalkHandlers.TnoneType function is not nil (ie. was set by outside code), calls it with this TnoneType instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/0 field(s) belonging to this TnoneType instance.
-func (me *TnoneType) Walk ()  { 
-	if fn := WalkHandlers.TnoneType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_None struct {
-	None *TnoneType `xml:"http://www.w3.org/1998/Math/MathML none"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_None function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_None instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_None instance.
-func (me *XsdGoPkgHasElem_None) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_None; fn != nil { fn(me) }
-	me.None.Walk()
- }
-
-type XsdGoPkgHasGroup_PresentationExprOrNoneClass struct {
-	XsdGoPkgHasElem_None
+type TmrowType struct {
+	XsdGoPkgHasAtts_MmultiscriptsAttlist
 
 	XsdGoPkgHasGroup_PresentationExprClass
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasGroup_PresentationExprOrNoneClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_PresentationExprOrNoneClass instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_PresentationExprOrNoneClass instance.
-func (me *XsdGoPkgHasGroup_PresentationExprOrNoneClass) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_PresentationExprOrNoneClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_None.Walk()
+//	If the WalkHandlers.TmrowType function is not nil (ie. was set by outside code), calls it with this TmrowType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmrowType instance.
+func (me *TmrowType) Walk ()  { 
+	if fn := WalkHandlers.TmrowType; fn != nil { fn(me) }
 	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
  }
 
-type TmprescriptsType struct {
-}
-
-//	If the WalkHandlers.TmprescriptsType function is not nil (ie. was set by outside code), calls it with this TmprescriptsType instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/0 field(s) belonging to this TmprescriptsType instance.
-func (me *TmprescriptsType) Walk ()  { 
-	if fn := WalkHandlers.TmprescriptsType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Mprescripts struct {
-	Mprescripts *TmprescriptsType `xml:"http://www.w3.org/1998/Math/MathML mprescripts"`
+type XsdGoPkgHasElem_Mrow struct {
+	Mrow *TmrowType `xml:"http://www.w3.org/1998/Math/MathML mrow"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_Mprescripts function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mprescripts instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mprescripts instance.
-func (me *XsdGoPkgHasElem_Mprescripts) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mprescripts; fn != nil { fn(me) }
-	me.Mprescripts.Walk()
+//	If the WalkHandlers.XsdGoPkgHasElem_Mrow function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mrow instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mrow instance.
+func (me *XsdGoPkgHasElem_Mrow) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mrow; fn != nil { fn(me) }
+	me.Mrow.Walk()
  }
 
-type XsdGoPkgHasGroup_MmultiscriptsContent struct {
-	XsdGoPkgHasElem_Mprescripts
-
-	XsdGoPkgHasGroup_PresentationExprOrNoneClass
-
+type TmsqrtType struct {
 	XsdGoPkgHasGroup_PresentationExprClass
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_MmultiscriptsContent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_MmultiscriptsContent instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_MmultiscriptsContent instance.
-func (me *XsdGoPkgHasGroup_MmultiscriptsContent) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_MmultiscriptsContent; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
-	me.XsdGoPkgHasElem_Mprescripts.Walk()
-	me.XsdGoPkgHasGroup_PresentationExprOrNoneClass.Walk()
- }
-
-type TmmultiscriptsType struct {
-	XsdGoPkgHasGroup_MmultiscriptsContent
 
 	XsdGoPkgHasAtts_MmultiscriptsAttlist
 
 }
 
-//	If the WalkHandlers.TmmultiscriptsType function is not nil (ie. was set by outside code), calls it with this TmmultiscriptsType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmmultiscriptsType instance.
-func (me *TmmultiscriptsType) Walk ()  { 
-	if fn := WalkHandlers.TmmultiscriptsType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_MmultiscriptsContent.Walk()
+//	If the WalkHandlers.TmsqrtType function is not nil (ie. was set by outside code), calls it with this TmsqrtType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmsqrtType instance.
+func (me *TmsqrtType) Walk ()  { 
+	if fn := WalkHandlers.TmsqrtType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
  }
 
-type XsdGoPkgHasElem_Mmultiscripts struct {
-	Mmultiscripts *TmmultiscriptsType `xml:"http://www.w3.org/1998/Math/MathML mmultiscripts"`
+type XsdGoPkgHasElem_Msqrt struct {
+	Msqrt *TmsqrtType `xml:"http://www.w3.org/1998/Math/MathML msqrt"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_Mmultiscripts function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mmultiscripts instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mmultiscripts instance.
-func (me *XsdGoPkgHasElem_Mmultiscripts) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mmultiscripts; fn != nil { fn(me) }
-	me.Mmultiscripts.Walk()
+//	If the WalkHandlers.XsdGoPkgHasElem_Msqrt function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Msqrt instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Msqrt instance.
+func (me *XsdGoPkgHasElem_Msqrt) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Msqrt; fn != nil { fn(me) }
+	me.Msqrt.Walk()
  }
 
-type XsdGoPkgHasGroup_PresentationScriptClass struct {
-	XsdGoPkgHasElem_Munder
+type TmpaddedType struct {
+	XsdGoPkgHasGroup_PresentationExprClass
 
-	XsdGoPkgHasElem_Munderover
-
-	XsdGoPkgHasElem_Msubsup
-
-	XsdGoPkgHasElem_Mover
-
-	XsdGoPkgHasElem_Mmultiscripts
-
-	XsdGoPkgHasElem_Msub
-
-	XsdGoPkgHasElem_Msup
+	XsdGoPkgHasAtts_MpaddedAttlist
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasGroup_PresentationScriptClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_PresentationScriptClass instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_PresentationScriptClass instance.
-func (me *XsdGoPkgHasGroup_PresentationScriptClass) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_PresentationScriptClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Munderover.Walk()
-	me.XsdGoPkgHasElem_Msubsup.Walk()
-	me.XsdGoPkgHasElem_Mover.Walk()
-	me.XsdGoPkgHasElem_Mmultiscripts.Walk()
-	me.XsdGoPkgHasElem_Msub.Walk()
-	me.XsdGoPkgHasElem_Msup.Walk()
-	me.XsdGoPkgHasElem_Munder.Walk()
+//	If the WalkHandlers.TmpaddedType function is not nil (ie. was set by outside code), calls it with this TmpaddedType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmpaddedType instance.
+func (me *TmpaddedType) Walk ()  { 
+	if fn := WalkHandlers.TmpaddedType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
+ }
+
+type XsdGoPkgHasElem_Mpadded struct {
+	Mpadded *TmpaddedType `xml:"http://www.w3.org/1998/Math/MathML mpadded"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Mpadded function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mpadded instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mpadded instance.
+func (me *XsdGoPkgHasElem_Mpadded) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mpadded; fn != nil { fn(me) }
+	me.Mpadded.Walk()
+ }
+
+type TmfencedType struct {
+	XsdGoPkgHasAtts_MfencedAttlist
+
+	XsdGoPkgHasGroup_PresentationExprClass
+
+}
+
+//	If the WalkHandlers.TmfencedType function is not nil (ie. was set by outside code), calls it with this TmfencedType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmfencedType instance.
+func (me *TmfencedType) Walk ()  { 
+	if fn := WalkHandlers.TmfencedType; fn != nil { fn(me) }
+	me.XsdGoPkgHasGroup_PresentationExprClass.Walk()
+ }
+
+type XsdGoPkgHasElem_Mfenced struct {
+	Mfenced *TmfencedType `xml:"http://www.w3.org/1998/Math/MathML mfenced"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Mfenced function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mfenced instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mfenced instance.
+func (me *XsdGoPkgHasElem_Mfenced) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mfenced; fn != nil { fn(me) }
+	me.Mfenced.Walk()
+ }
+
+type XsdGoPkgHasGroup_PresentationLayoutClass struct {
+	XsdGoPkgHasElem_Mpadded
+
+	XsdGoPkgHasElem_Mfenced
+
+	XsdGoPkgHasElem_Menclose
+
+	XsdGoPkgHasElem_Mfrac
+
+	XsdGoPkgHasElem_Mphantom
+
+	XsdGoPkgHasElem_Mroot
+
+	XsdGoPkgHasElem_Mrow
+
+	XsdGoPkgHasElem_Msqrt
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_PresentationLayoutClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_PresentationLayoutClass instance as the single argument. Then calls the Walk() method on 8/8 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_PresentationLayoutClass instance.
+func (me *XsdGoPkgHasGroup_PresentationLayoutClass) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasGroup_PresentationLayoutClass; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Menclose.Walk()
+	me.XsdGoPkgHasElem_Mfrac.Walk()
+	me.XsdGoPkgHasElem_Mphantom.Walk()
+	me.XsdGoPkgHasElem_Mroot.Walk()
+	me.XsdGoPkgHasElem_Mrow.Walk()
+	me.XsdGoPkgHasElem_Msqrt.Walk()
+	me.XsdGoPkgHasElem_Mpadded.Walk()
+	me.XsdGoPkgHasElem_Mfenced.Walk()
  }
 
 type XsdGoPkgHasGroup_PresExprClass struct {
-	XsdGoPkgHasElem_Merror
+	XsdGoPkgHasGroup_PresentationTableClass
 
 	XsdGoPkgHasElem_Mstyle
 
-	XsdGoPkgHasGroup_PresentationTableClass
-
-	XsdGoPkgHasGroup_PresentationScriptClass
-
 	XsdGoPkgHasGroup_PresentationTokenClass
-
-	XsdGoPkgHasElem_Maction
 
 	XsdGoPkgHasGroup_PresentationLayoutClass
 
 	XsdGoPkgHasElem_Mspace
+
+	XsdGoPkgHasGroup_PresentationScriptClass
+
+	XsdGoPkgHasElem_Maction
+
+	XsdGoPkgHasElem_Merror
 
 }
 
 //	If the WalkHandlers.XsdGoPkgHasGroup_PresExprClass function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_PresExprClass instance as the single argument. Then calls the Walk() method on 8/8 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_PresExprClass instance.
 func (me *XsdGoPkgHasGroup_PresExprClass) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasGroup_PresExprClass; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_PresentationScriptClass.Walk()
+	me.XsdGoPkgHasElem_Mstyle.Walk()
 	me.XsdGoPkgHasGroup_PresentationTokenClass.Walk()
-	me.XsdGoPkgHasElem_Maction.Walk()
 	me.XsdGoPkgHasGroup_PresentationLayoutClass.Walk()
 	me.XsdGoPkgHasElem_Mspace.Walk()
+	me.XsdGoPkgHasGroup_PresentationScriptClass.Walk()
+	me.XsdGoPkgHasElem_Maction.Walk()
 	me.XsdGoPkgHasElem_Merror.Walk()
-	me.XsdGoPkgHasElem_Mstyle.Walk()
 	me.XsdGoPkgHasGroup_PresentationTableClass.Walk()
  }
 
@@ -5769,9 +5758,9 @@ func (me *XsdGoPkgHasGroup_MathContent) Walk ()  {
  }
 
 type TmathType struct {
-	XsdGoPkgHasAtts_MathAttlist
-
 	XsdGoPkgHasGroup_MathContent
+
+	XsdGoPkgHasAtts_MathAttlist
 
 }
 
@@ -7761,503 +7750,502 @@ func (me *XsdGoPkgHasElems_Momentabout) Walk ()  {
 	for _, x := range me.Momentabouts { x.Walk() }
  }
 
-//	Provides 495 strong-typed hooks for your own custom handler functions to be invoked when the Walk() method is called on any instance of any (non-attribute-related) struct type defined in this package.
+//	Provides 494 strong-typed hooks for your own custom handler functions to be invoked when the Walk() method is called on any instance of any (non-attribute-related) struct type defined in this package.
 var WalkHandlers = &XsdGoPkgWalkHandlers {}
 
 type XsdGoPkgWalkHandlers struct {
-	XsdGoPkgHasElem_Coth func (o *XsdGoPkgHasElem_Coth)
-	TmfracType func (o *TmfracType)
-	XsdGoPkgHasGroup_AnnotationXmlContent func (o *XsdGoPkgHasGroup_AnnotationXmlContent)
-	TlistType func (o *TlistType)
-	TmsubType func (o *TmsubType)
-	XsdGoPkgHasElems_Transpose func (o *XsdGoPkgHasElems_Transpose)
-	XsdGoPkgHasElem_Infinity func (o *XsdGoPkgHasElem_Infinity)
-	XsdGoPkgHasElems_Subset func (o *XsdGoPkgHasElems_Subset)
-	TmfencedType func (o *TmfencedType)
-	TconditionType func (o *TconditionType)
-	XsdGoPkgHasElem_Gt func (o *XsdGoPkgHasElem_Gt)
-	TmglyphType func (o *TmglyphType)
-	XsdGoPkgHasElems_Setdiff func (o *XsdGoPkgHasElems_Setdiff)
-	XsdGoPkgHasElem_Mi func (o *XsdGoPkgHasElem_Mi)
-	XsdGoPkgHasElem_Msup func (o *XsdGoPkgHasElem_Msup)
-	XsdGoPkgHasElem_Set func (o *XsdGoPkgHasElem_Set)
-	XsdGoPkgHasElem_Limit func (o *XsdGoPkgHasElem_Limit)
-	XsdGoPkgHasElem_Msqrt func (o *XsdGoPkgHasElem_Msqrt)
-	XsdGoPkgHasElem_Msubsup func (o *XsdGoPkgHasElem_Msubsup)
-	XsdGoPkgHasElems_Mo func (o *XsdGoPkgHasElems_Mo)
-	TmlabeledtrType func (o *TmlabeledtrType)
-	XsdGoPkgHasElems_Munderover func (o *XsdGoPkgHasElems_Munderover)
-	XsdGoPkgHasElems_Sin func (o *XsdGoPkgHasElems_Sin)
-	XsdGoPkgHasElem_Prsubset func (o *XsdGoPkgHasElem_Prsubset)
-	XsdGoPkgHasElems_Emptyset func (o *XsdGoPkgHasElems_Emptyset)
-	XsdGoPkgHasElems_Tendsto func (o *XsdGoPkgHasElems_Tendsto)
-	XsdGoPkgHasElems_Mean func (o *XsdGoPkgHasElems_Mean)
-	TnotinType func (o *TnotinType)
-	XsdGoPkgHasElem_Lt func (o *XsdGoPkgHasElem_Lt)
-	XsdGoPkgHasElems_Implies func (o *XsdGoPkgHasElems_Implies)
-	XsdGoPkgHasElem_Arctan func (o *XsdGoPkgHasElem_Arctan)
-	XsdGoPkgHasElem_Primes func (o *XsdGoPkgHasElem_Primes)
-	XsdGoPkgHasElem_Root func (o *XsdGoPkgHasElem_Root)
-	XsdGoPkgHasElem_Domain func (o *XsdGoPkgHasElem_Domain)
-	XsdGoPkgHasGroup_ContentCalculusClass func (o *XsdGoPkgHasGroup_ContentCalculusClass)
-	XsdGoPkgHasElems_Mn func (o *XsdGoPkgHasElems_Mn)
-	XsdGoPkgHasElems_Cartesianproduct func (o *XsdGoPkgHasElems_Cartesianproduct)
-	XsdGoPkgHasElem_Laplacian func (o *XsdGoPkgHasElem_Laplacian)
-	XsdGoPkgHasElem_Mover func (o *XsdGoPkgHasElem_Mover)
 	XsdGoPkgHasElem_Notprsubset func (o *XsdGoPkgHasElem_Notprsubset)
-	XsdGoPkgHasElems_Mtable func (o *XsdGoPkgHasElems_Mtable)
-	XsdGoPkgHasGroup_MtableContent func (o *XsdGoPkgHasGroup_MtableContent)
-	XsdGoPkgHasElems_Scalarproduct func (o *XsdGoPkgHasElems_Scalarproduct)
-	XsdGoPkgHasElems_Curl func (o *XsdGoPkgHasElems_Curl)
-	XsdGoPkgHasElems_Intersect func (o *XsdGoPkgHasElems_Intersect)
-	XsdGoPkgHasElems_Tanh func (o *XsdGoPkgHasElems_Tanh)
-	XsdGoPkgHasElem_Vector func (o *XsdGoPkgHasElem_Vector)
-	XsdGoPkgHasElem_Exp func (o *XsdGoPkgHasElem_Exp)
-	XsdGoPkgHasElems_Ms func (o *XsdGoPkgHasElems_Ms)
-	TcnType func (o *TcnType)
-	XsdGoPkgHasElems_Mtext func (o *XsdGoPkgHasElems_Mtext)
-	XsdGoPkgHasElems_Exists func (o *XsdGoPkgHasElems_Exists)
-	XsdGoPkgHasElem_Outerproduct func (o *XsdGoPkgHasElem_Outerproduct)
-	XsdGoPkgHasElem_Mtext func (o *XsdGoPkgHasElem_Mtext)
-	TvectorproductType func (o *TvectorproductType)
-	XsdGoPkgHasElems_Annotation func (o *XsdGoPkgHasElems_Annotation)
-	XsdGoPkgHasElems_Mrow func (o *XsdGoPkgHasElems_Mrow)
-	XsdGoPkgHasElems_Arccsc func (o *XsdGoPkgHasElems_Arccsc)
-	XsdGoPkgHasElem_Transpose func (o *XsdGoPkgHasElem_Transpose)
-	XsdGoPkgHasElems_Union func (o *XsdGoPkgHasElems_Union)
-	XsdGoPkgHasElem_Sum func (o *XsdGoPkgHasElem_Sum)
-	XsdGoPkgHasElem_Logbase func (o *XsdGoPkgHasElem_Logbase)
-	XsdGoPkgHasElems_Lt func (o *XsdGoPkgHasElems_Lt)
-	XsdGoPkgHasElems_Cos func (o *XsdGoPkgHasElems_Cos)
-	TcardType func (o *TcardType)
-	XsdGoPkgHasElems_Complexes func (o *XsdGoPkgHasElems_Complexes)
-	XsdGoPkgHasElem_Apply func (o *XsdGoPkgHasElem_Apply)
-	XsdGoPkgHasElem_Mrow func (o *XsdGoPkgHasElem_Mrow)
-	XsdGoPkgHasElems_List func (o *XsdGoPkgHasElems_List)
-	XsdGoPkgHasElem_Union func (o *XsdGoPkgHasElem_Union)
-	XsdGoPkgHasElem_Max func (o *XsdGoPkgHasElem_Max)
-	XsdGoPkgHasElem_Mlabeledtr func (o *XsdGoPkgHasElem_Mlabeledtr)
-	XsdGoPkgHasElems_Arcsinh func (o *XsdGoPkgHasElems_Arcsinh)
-	TmerrorType func (o *TmerrorType)
-	TmodeType func (o *TmodeType)
-	XsdGoPkgHasGroup_ContentConstructsClass func (o *XsdGoPkgHasGroup_ContentConstructsClass)
-	XsdGoPkgHasElems_AnnotationXml func (o *XsdGoPkgHasElems_AnnotationXml)
-	XsdGoPkgHasElems_Minus func (o *XsdGoPkgHasElems_Minus)
-	XsdGoPkgHasElem_Cartesianproduct func (o *XsdGoPkgHasElem_Cartesianproduct)
-	XsdGoPkgHasElem_Maligngroup func (o *XsdGoPkgHasElem_Maligngroup)
-	XsdGoPkgHasElem_Grad func (o *XsdGoPkgHasElem_Grad)
-	TciType func (o *TciType)
-	XsdGoPkgHasElem_Matrix func (o *XsdGoPkgHasElem_Matrix)
-	XsdGoPkgHasElems_Arcsech func (o *XsdGoPkgHasElems_Arcsech)
-	XsdGoPkgHasElem_Mode func (o *XsdGoPkgHasElem_Mode)
-	XsdGoPkgHasElem_Semantics func (o *XsdGoPkgHasElem_Semantics)
-	XsdGoPkgHasElems_Pi func (o *XsdGoPkgHasElems_Pi)
-	TvarianceType func (o *TvarianceType)
-	TmoverType func (o *TmoverType)
-	XsdGoPkgHasElems_Csch func (o *XsdGoPkgHasElems_Csch)
-	XsdGoPkgHasElems_False func (o *XsdGoPkgHasElems_False)
-	TdivergenceType func (o *TdivergenceType)
-	XsdGoPkgHasGroup_ContentConstantsClass func (o *XsdGoPkgHasGroup_ContentConstantsClass)
-	XsdGoPkgHasElem_In func (o *XsdGoPkgHasElem_In)
-	XsdGoPkgHasElems_Lambda func (o *XsdGoPkgHasElems_Lambda)
-	XsdGoPkgHasElems_Arctanh func (o *XsdGoPkgHasElems_Arctanh)
-	XsdGoPkgHasElems_Median func (o *XsdGoPkgHasElems_Median)
-	XsdGoPkgHasElem_Rationals func (o *XsdGoPkgHasElem_Rationals)
-	XsdGoPkgHasElem_Bvar func (o *XsdGoPkgHasElem_Bvar)
-	XsdGoPkgHasElems_Root func (o *XsdGoPkgHasElems_Root)
-	XsdGoPkgHasElems_Conjugate func (o *XsdGoPkgHasElems_Conjugate)
-	XsdGoPkgHasElem_Emptyset func (o *XsdGoPkgHasElem_Emptyset)
-	XsdGoPkgHasElem_Card func (o *XsdGoPkgHasElem_Card)
-	XsdGoPkgHasElem_Annotation func (o *XsdGoPkgHasElem_Annotation)
-	XsdGoPkgHasElem_Implies func (o *XsdGoPkgHasElem_Implies)
-	XsdGoPkgHasElems_Determinant func (o *XsdGoPkgHasElems_Determinant)
-	XsdGoPkgHasElems_Vector func (o *XsdGoPkgHasElems_Vector)
-	XsdGoPkgHasElem_Reals func (o *XsdGoPkgHasElem_Reals)
-	TmphantomType func (o *TmphantomType)
-	TmtextType func (o *TmtextType)
-	TlimitType func (o *TlimitType)
-	XsdGoPkgHasElem_Maction func (o *XsdGoPkgHasElem_Maction)
-	XsdGoPkgHasElems_Times func (o *XsdGoPkgHasElems_Times)
-	XsdGoPkgHasElem_Mtable func (o *XsdGoPkgHasElem_Mtable)
-	XsdGoPkgHasElem_Geq func (o *XsdGoPkgHasElem_Geq)
-	XsdGoPkgHasElems_Degree func (o *XsdGoPkgHasElems_Degree)
-	XsdGoPkgHasGroup_MatrixContent func (o *XsdGoPkgHasGroup_MatrixContent)
-	XsdGoPkgHasElem_Ident func (o *XsdGoPkgHasElem_Ident)
-	XsdGoPkgHasGroup_ContentArithClass func (o *XsdGoPkgHasGroup_ContentArithClass)
-	XsdGoPkgHasElem_Imaginaryi func (o *XsdGoPkgHasElem_Imaginaryi)
-	XsdGoPkgHasElems_Sec func (o *XsdGoPkgHasElems_Sec)
-	XsdGoPkgHasElem_Or func (o *XsdGoPkgHasElem_Or)
-	XsdGoPkgHasElem_Inverse func (o *XsdGoPkgHasElem_Inverse)
-	TcsymbolType func (o *TcsymbolType)
-	XsdGoPkgHasGroup_PresentationScriptClass func (o *XsdGoPkgHasGroup_PresentationScriptClass)
-	XsdGoPkgHasElems_Arcsec func (o *XsdGoPkgHasElems_Arcsec)
-	XsdGoPkgHasElem_Msub func (o *XsdGoPkgHasElem_Msub)
-	XsdGoPkgHasElems_Menclose func (o *XsdGoPkgHasElems_Menclose)
-	TlaplacianType func (o *TlaplacianType)
-	XsdGoPkgHasElems_Min func (o *XsdGoPkgHasElems_Min)
-	XsdGoPkgHasElem_Arg func (o *XsdGoPkgHasElem_Arg)
-	XsdGoPkgHasElem_Leq func (o *XsdGoPkgHasElem_Leq)
-	TmatrixType func (o *TmatrixType)
-	XsdGoPkgHasElem_Real func (o *XsdGoPkgHasElem_Real)
-	XsdGoPkgHasElems_Diff func (o *XsdGoPkgHasElems_Diff)
-	XsdGoPkgHasElem_Tanh func (o *XsdGoPkgHasElem_Tanh)
-	XsdGoPkgHasElems_Mfrac func (o *XsdGoPkgHasElems_Mfrac)
-	XsdGoPkgHasElem_Csymbol func (o *XsdGoPkgHasElem_Csymbol)
-	XsdGoPkgHasElem_Domainofapplication func (o *XsdGoPkgHasElem_Domainofapplication)
-	XsdGoPkgHasElems_Arccoth func (o *XsdGoPkgHasElems_Arccoth)
-	TselectorType func (o *TselectorType)
-	XsdGoPkgHasElems_Condition func (o *XsdGoPkgHasElems_Condition)
-	XsdGoPkgHasElems_Munder func (o *XsdGoPkgHasElems_Munder)
-	XsdGoPkgHasElems_Math func (o *XsdGoPkgHasElems_Math)
-	TmsqrtType func (o *TmsqrtType)
-	XsdGoPkgHasElems_Floor func (o *XsdGoPkgHasElems_Floor)
-	XsdGoPkgHasElem_Notin func (o *XsdGoPkgHasElem_Notin)
-	XsdGoPkgHasElems_Quotient func (o *XsdGoPkgHasElems_Quotient)
-	XsdGoPkgHasElem_Compose func (o *XsdGoPkgHasElem_Compose)
-	TdomainofapplicationType func (o *TdomainofapplicationType)
-	XsdGoPkgHasElems_Leq func (o *XsdGoPkgHasElems_Leq)
-	XsdGoPkgHasElem_Diff func (o *XsdGoPkgHasElem_Diff)
-	XsdGoPkgHasElem_Image func (o *XsdGoPkgHasElem_Image)
-	XsdGoPkgHasElem_Arctanh func (o *XsdGoPkgHasElem_Arctanh)
-	XsdGoPkgHasElems_Compose func (o *XsdGoPkgHasElems_Compose)
-	XsdGoPkgHasElem_Degree func (o *XsdGoPkgHasElem_Degree)
-	XsdGoPkgHasElems_Lowlimit func (o *XsdGoPkgHasElems_Lowlimit)
-	XsdGoPkgHasElems_Arccosh func (o *XsdGoPkgHasElems_Arccosh)
-	XsdGoPkgHasElem_False func (o *XsdGoPkgHasElem_False)
-	XsdGoPkgHasElems_Arcsin func (o *XsdGoPkgHasElems_Arcsin)
-	XsdGoPkgHasElems_Int func (o *XsdGoPkgHasElems_Int)
-	XsdGoPkgHasElem_Mroot func (o *XsdGoPkgHasElem_Mroot)
-	XsdGoPkgHasElem_Xor func (o *XsdGoPkgHasElem_Xor)
-	XsdGoPkgHasElems_Factorial func (o *XsdGoPkgHasElems_Factorial)
-	TmstyleType func (o *TmstyleType)
-	TmsType func (o *TmsType)
-	TnoneType func (o *TnoneType)
-	XsdGoPkgHasElems_Xor func (o *XsdGoPkgHasElems_Xor)
-	TmrootType func (o *TmrootType)
-	XsdGoPkgHasElem_Vectorproduct func (o *XsdGoPkgHasElem_Vectorproduct)
-	XsdGoPkgHasElem_Cn func (o *XsdGoPkgHasElem_Cn)
-	XsdGoPkgHasElem_Plus func (o *XsdGoPkgHasElem_Plus)
-	TmpaddedType func (o *TmpaddedType)
-	XsdGoPkgHasElems_Msup func (o *XsdGoPkgHasElems_Msup)
-	TmeanType func (o *TmeanType)
-	XsdGoPkgHasElems_Mtd func (o *XsdGoPkgHasElems_Mtd)
-	XsdGoPkgHasElems_Codomain func (o *XsdGoPkgHasElems_Codomain)
-	XsdGoPkgHasElem_Partialdiff func (o *XsdGoPkgHasElem_Partialdiff)
-	XsdGoPkgHasElem_Arcsech func (o *XsdGoPkgHasElem_Arcsech)
-	TintervalType func (o *TintervalType)
-	XsdGoPkgHasElems_Primes func (o *XsdGoPkgHasElems_Primes)
-	XsdGoPkgHasElems_Piecewise func (o *XsdGoPkgHasElems_Piecewise)
-	XsdGoPkgHasElem_Mfenced func (o *XsdGoPkgHasElem_Mfenced)
-	XsdGoPkgHasElem_Condition func (o *XsdGoPkgHasElem_Condition)
-	XsdGoPkgHasElem_Mpadded func (o *XsdGoPkgHasElem_Mpadded)
-	XsdGoPkgHasElem_Min func (o *XsdGoPkgHasElem_Min)
-	XsdGoPkgHasElems_Sum func (o *XsdGoPkgHasElems_Sum)
-	XsdGoPkgHasElems_Notprsubset func (o *XsdGoPkgHasElems_Notprsubset)
-	XsdGoPkgHasElems_In func (o *XsdGoPkgHasElems_In)
-	XsdGoPkgHasElems_Forall func (o *XsdGoPkgHasElems_Forall)
-	XsdGoPkgHasElems_Sep func (o *XsdGoPkgHasElems_Sep)
-	TlogbaseType func (o *TlogbaseType)
-	TmunderType func (o *TmunderType)
-	XsdGoPkgHasElem_Setdiff func (o *XsdGoPkgHasElem_Setdiff)
-	XsdGoPkgHasElem_Munderover func (o *XsdGoPkgHasElem_Munderover)
-	XsdGoPkgHasElems_Moment func (o *XsdGoPkgHasElems_Moment)
-	XsdGoPkgHasElem_Neq func (o *XsdGoPkgHasElem_Neq)
-	XsdGoPkgHasElem_Sec func (o *XsdGoPkgHasElem_Sec)
-	XsdGoPkgHasGroup_AnnotationClass func (o *XsdGoPkgHasGroup_AnnotationClass)
-	XsdGoPkgHasElem_Notanumber func (o *XsdGoPkgHasElem_Notanumber)
-	XsdGoPkgHasGroup_SemanticsContent func (o *XsdGoPkgHasGroup_SemanticsContent)
-	XsdGoPkgHasGroup_ContentVectorCalculusClass func (o *XsdGoPkgHasGroup_ContentVectorCalculusClass)
-	TmomentType func (o *TmomentType)
-	XsdGoPkgHasElems_Piece func (o *XsdGoPkgHasElems_Piece)
-	XsdGoPkgHasElems_Eq func (o *XsdGoPkgHasElems_Eq)
-	XsdGoPkgHasElem_Minus func (o *XsdGoPkgHasElem_Minus)
-	XsdGoPkgHasElem_Sech func (o *XsdGoPkgHasElem_Sech)
-	TdeclareType func (o *TdeclareType)
-	XsdGoPkgHasElems_Arctan func (o *XsdGoPkgHasElems_Arctan)
-	TmathType func (o *TmathType)
-	XsdGoPkgHasElem_Ceiling func (o *XsdGoPkgHasElem_Ceiling)
-	TdeterminantType func (o *TdeterminantType)
-	XsdGoPkgHasElems_Mode func (o *XsdGoPkgHasElems_Mode)
-	XsdGoPkgHasElem_AnnotationXml func (o *XsdGoPkgHasElem_AnnotationXml)
-	XsdGoPkgHasElem_Cosh func (o *XsdGoPkgHasElem_Cosh)
-	XsdGoPkgHasElem_Mn func (o *XsdGoPkgHasElem_Mn)
-	XsdGoPkgHasElems_Product func (o *XsdGoPkgHasElems_Product)
-	TgradType func (o *TgradType)
-	XsdGoPkgHasElem_Arcsec func (o *XsdGoPkgHasElem_Arcsec)
-	XsdGoPkgHasElem_Subset func (o *XsdGoPkgHasElem_Subset)
-	XsdGoPkgHasElem_Mglyph func (o *XsdGoPkgHasElem_Mglyph)
-	XsdGoPkgHasElem_Arccos func (o *XsdGoPkgHasElem_Arccos)
-	XsdGoPkgHasElems_Outerproduct func (o *XsdGoPkgHasElems_Outerproduct)
-	TcurlType func (o *TcurlType)
-	TbvarType func (o *TbvarType)
-	TnotsubsetType func (o *TnotsubsetType)
-	XsdGoPkgHasElems_Domainofapplication func (o *XsdGoPkgHasElems_Domainofapplication)
-	XsdGoPkgHasElem_Arccosh func (o *XsdGoPkgHasElem_Arccosh)
-	XsdGoPkgHasElems_Momentabout func (o *XsdGoPkgHasElems_Momentabout)
-	XsdGoPkgHasElems_Ident func (o *XsdGoPkgHasElems_Ident)
-	XsdGoPkgHasElems_Imaginaryi func (o *XsdGoPkgHasElems_Imaginaryi)
-	TLogicType func (o *TLogicType)
-	TtransposeType func (o *TtransposeType)
-	XsdGoPkgHasElems_Factorof func (o *XsdGoPkgHasElems_Factorof)
-	TlowlimitType func (o *TlowlimitType)
-	XsdGoPkgHasElems_Ci func (o *XsdGoPkgHasElems_Ci)
-	XsdGoPkgHasElem_Intersect func (o *XsdGoPkgHasElem_Intersect)
-	XsdGoPkgHasGroup_PresentationTableClass func (o *XsdGoPkgHasGroup_PresentationTableClass)
-	TdegreeType func (o *TdegreeType)
-	XsdGoPkgHasElems_Divergence func (o *XsdGoPkgHasElems_Divergence)
-	XsdGoPkgHasElems_Coth func (o *XsdGoPkgHasElems_Coth)
-	TRelationsType func (o *TRelationsType)
-	XsdGoPkgHasElem_Mprescripts func (o *XsdGoPkgHasElem_Mprescripts)
-	XsdGoPkgHasElem_List func (o *XsdGoPkgHasElem_List)
-	XsdGoPkgHasElems_Uplimit func (o *XsdGoPkgHasElems_Uplimit)
-	XsdGoPkgHasElems_Abs func (o *XsdGoPkgHasElems_Abs)
-	TotherwiseType func (o *TotherwiseType)
-	XsdGoPkgHasElems_Mstyle func (o *XsdGoPkgHasElems_Mstyle)
-	TannotationXmlType func (o *TannotationXmlType)
-	TmtdType func (o *TmtdType)
-	TtendstoType func (o *TtendstoType)
-	XsdGoPkgHasElem_Gcd func (o *XsdGoPkgHasElem_Gcd)
-	XsdGoPkgHasElems_Not func (o *XsdGoPkgHasElems_Not)
-	XsdGoPkgHasElem_Conjugate func (o *XsdGoPkgHasElem_Conjugate)
-	XsdGoPkgHasGroup_PresentationTokenClass func (o *XsdGoPkgHasGroup_PresentationTokenClass)
-	XsdGoPkgHasElems_None func (o *XsdGoPkgHasElems_None)
-	XsdGoPkgHasElems_Merror func (o *XsdGoPkgHasElems_Merror)
-	TnotprsubsetType func (o *TnotprsubsetType)
-	XsdGoPkgHasElem_Arccoth func (o *XsdGoPkgHasElem_Arccoth)
-	XsdGoPkgHasElem_Quotient func (o *XsdGoPkgHasElem_Quotient)
-	XsdGoPkgHasElems_Set func (o *XsdGoPkgHasElems_Set)
-	XsdGoPkgHasElems_Infinity func (o *XsdGoPkgHasElems_Infinity)
-	XsdGoPkgHasElems_Eulergamma func (o *XsdGoPkgHasElems_Eulergamma)
-	XsdGoPkgHasElem_Sep func (o *XsdGoPkgHasElem_Sep)
-	XsdGoPkgHasElems_Exp func (o *XsdGoPkgHasElems_Exp)
-	XsdGoPkgHasElem_Abs func (o *XsdGoPkgHasElem_Abs)
-	XsdGoPkgHasGroup_ContentStatisticsClass func (o *XsdGoPkgHasGroup_ContentStatisticsClass)
-	XsdGoPkgHasGroup_ContentTokensClass func (o *XsdGoPkgHasGroup_ContentTokensClass)
-	XsdGoPkgHasElems_Arccot func (o *XsdGoPkgHasElems_Arccot)
-	XsdGoPkgHasElems_Gcd func (o *XsdGoPkgHasElems_Gcd)
-	XsdGoPkgHasElem_Mtd func (o *XsdGoPkgHasElem_Mtd)
-	TmsubsupType func (o *TmsubsupType)
-	XsdGoPkgHasElems_Plus func (o *XsdGoPkgHasElems_Plus)
-	XsdGoPkgHasElems_Logbase func (o *XsdGoPkgHasElems_Logbase)
-	XsdGoPkgHasElem_Arcsinh func (o *XsdGoPkgHasElem_Arcsinh)
-	XsdGoPkgHasElem_Curl func (o *XsdGoPkgHasElem_Curl)
-	XsdGoPkgHasElems_Prsubset func (o *XsdGoPkgHasElems_Prsubset)
-	XsdGoPkgHasElems_Matrixrow func (o *XsdGoPkgHasElems_Matrixrow)
-	TouterproductType func (o *TouterproductType)
-	XsdGoPkgHasElems_Image func (o *XsdGoPkgHasElems_Image)
-	XsdGoPkgHasElem_True func (o *XsdGoPkgHasElem_True)
-	XsdGoPkgHasElem_Csc func (o *XsdGoPkgHasElem_Csc)
-	XsdGoPkgHasElem_Variance func (o *XsdGoPkgHasElem_Variance)
-	XsdGoPkgHasElems_Divide func (o *XsdGoPkgHasElems_Divide)
-	XsdGoPkgHasElems_Malignmark func (o *XsdGoPkgHasElems_Malignmark)
-	XsdGoPkgHasElems_Msqrt func (o *XsdGoPkgHasElems_Msqrt)
-	XsdGoPkgHasElem_Exists func (o *XsdGoPkgHasElem_Exists)
-	XsdGoPkgHasElem_Power func (o *XsdGoPkgHasElem_Power)
-	XsdGoPkgHasElems_Lcm func (o *XsdGoPkgHasElems_Lcm)
-	XsdGoPkgHasElems_Declare func (o *XsdGoPkgHasElems_Declare)
-	XsdGoPkgHasElems_Laplacian func (o *XsdGoPkgHasElems_Laplacian)
-	XsdGoPkgHasElems_Rationals func (o *XsdGoPkgHasElems_Rationals)
-	XsdGoPkgHasElems_Csymbol func (o *XsdGoPkgHasElems_Csymbol)
-	XsdGoPkgHasElems_Equivalent func (o *XsdGoPkgHasElems_Equivalent)
-	TmprescriptsType func (o *TmprescriptsType)
-	XsdGoPkgHasElem_Divide func (o *XsdGoPkgHasElem_Divide)
-	XsdGoPkgHasGroup_ContentLinearAlgebraClass func (o *XsdGoPkgHasGroup_ContentLinearAlgebraClass)
-	XsdGoPkgHasElem_Interval func (o *XsdGoPkgHasElem_Interval)
-	XsdGoPkgHasElem_Mo func (o *XsdGoPkgHasElem_Mo)
-	XsdGoPkgHasElem_Forall func (o *XsdGoPkgHasElem_Forall)
-	XsdGoPkgHasGroup_PresentationLayoutClass func (o *XsdGoPkgHasGroup_PresentationLayoutClass)
-	XsdGoPkgHasElem_Int func (o *XsdGoPkgHasElem_Int)
-	XsdGoPkgHasElem_Arccot func (o *XsdGoPkgHasElem_Arccot)
-	TmunderoverType func (o *TmunderoverType)
-	XsdGoPkgHasElem_Log func (o *XsdGoPkgHasElem_Log)
-	TFunctionsType func (o *TFunctionsType)
-	XsdGoPkgHasElem_Approx func (o *XsdGoPkgHasElem_Approx)
-	TapplyType func (o *TapplyType)
-	TmalignmarkType func (o *TmalignmarkType)
-	TmatrixrowType func (o *TmatrixrowType)
 	XsdGoPkgHasElems_Maction func (o *XsdGoPkgHasElems_Maction)
-	TmnType func (o *TmnType)
-	XsdGoPkgHasElem_Mphantom func (o *XsdGoPkgHasElem_Mphantom)
-	XsdGoPkgHasElem_Cos func (o *XsdGoPkgHasElem_Cos)
-	XsdGoPkgHasElem_Complexes func (o *XsdGoPkgHasElem_Complexes)
-	TpieceType func (o *TpieceType)
-	TsetdiffType func (o *TsetdiffType)
-	XsdGoPkgHasElems_Interval func (o *XsdGoPkgHasElems_Interval)
-	XsdGoPkgHasElem_Piece func (o *XsdGoPkgHasElem_Piece)
-	TsepType func (o *TsepType)
-	TunionType func (o *TunionType)
-	XsdGoPkgHasElems_Mlabeledtr func (o *XsdGoPkgHasElems_Mlabeledtr)
-	XsdGoPkgHasElem_Tendsto func (o *XsdGoPkgHasElem_Tendsto)
-	TmedianType func (o *TmedianType)
-	XsdGoPkgHasElems_Imaginary func (o *XsdGoPkgHasElems_Imaginary)
-	XsdGoPkgHasElem_Sin func (o *XsdGoPkgHasElem_Sin)
-	XsdGoPkgHasElem_Floor func (o *XsdGoPkgHasElem_Floor)
-	XsdGoPkgHasGroup_ContentExprClass func (o *XsdGoPkgHasGroup_ContentExprClass)
-	XsdGoPkgHasElems_Integers func (o *XsdGoPkgHasElems_Integers)
-	XsdGoPkgHasElem_Lowlimit func (o *XsdGoPkgHasElem_Lowlimit)
-	TmmultiscriptsType func (o *TmmultiscriptsType)
-	XsdGoPkgHasElem_Math func (o *XsdGoPkgHasElem_Math)
-	XsdGoPkgHasElem_Determinant func (o *XsdGoPkgHasElem_Determinant)
-	XsdGoPkgHasElems_Notin func (o *XsdGoPkgHasElems_Notin)
-	XsdGoPkgHasGroup_ContentRelationsClass func (o *XsdGoPkgHasGroup_ContentRelationsClass)
-	XsdGoPkgHasElems_Cosh func (o *XsdGoPkgHasElems_Cosh)
-	XsdGoPkgHasGroup_CnContent func (o *XsdGoPkgHasGroup_CnContent)
-	XsdGoPkgHasElems_Semantics func (o *XsdGoPkgHasElems_Semantics)
-	XsdGoPkgHasElem_Sdev func (o *XsdGoPkgHasElem_Sdev)
-	XsdGoPkgHasGroup_SetContent func (o *XsdGoPkgHasGroup_SetContent)
-	XsdGoPkgHasElems_Neq func (o *XsdGoPkgHasElems_Neq)
-	TuplimitType func (o *TuplimitType)
-	XsdGoPkgHasElems_Otherwise func (o *XsdGoPkgHasElems_Otherwise)
-	XsdGoPkgHasElems_Vectorproduct func (o *XsdGoPkgHasElems_Vectorproduct)
-	TmactionType func (o *TmactionType)
-	TpartialdiffType func (o *TpartialdiffType)
-	XsdGoPkgHasGroup_GlyphAlignmarkClass func (o *XsdGoPkgHasGroup_GlyphAlignmarkClass)
-	XsdGoPkgHasElems_Exponentiale func (o *XsdGoPkgHasElems_Exponentiale)
-	XsdGoPkgHasElems_Mfenced func (o *XsdGoPkgHasElems_Mfenced)
-	XsdGoPkgHasElems_Gt func (o *XsdGoPkgHasElems_Gt)
-	TmaligngroupType func (o *TmaligngroupType)
-	XsdGoPkgHasElem_Sinh func (o *XsdGoPkgHasElem_Sinh)
-	XsdGoPkgHasElems_True func (o *XsdGoPkgHasElems_True)
-	XsdGoPkgHasElems_Tan func (o *XsdGoPkgHasElems_Tan)
-	XsdGoPkgHasElems_Card func (o *XsdGoPkgHasElems_Card)
-	XsdGoPkgHasElems_Real func (o *XsdGoPkgHasElems_Real)
-	TsetType func (o *TsetType)
-	XsdGoPkgHasElems_Apply func (o *XsdGoPkgHasElems_Apply)
-	XsdGoPkgHasGroup_MathContent func (o *XsdGoPkgHasGroup_MathContent)
-	XsdGoPkgHasElems_Sech func (o *XsdGoPkgHasElems_Sech)
-	XsdGoPkgHasGroup_MtrContent func (o *XsdGoPkgHasGroup_MtrContent)
-	XsdGoPkgHasElems_And func (o *XsdGoPkgHasElems_And)
-	XsdGoPkgHasElem_Ms func (o *XsdGoPkgHasElem_Ms)
-	XsdGoPkgHasElem_Factorial func (o *XsdGoPkgHasElem_Factorial)
-	XsdGoPkgHasElems_Bvar func (o *XsdGoPkgHasElems_Bvar)
-	XsdGoPkgHasElems_Mroot func (o *XsdGoPkgHasElems_Mroot)
-	XsdGoPkgHasGroup_ContentTokenContent func (o *XsdGoPkgHasGroup_ContentTokenContent)
-	XsdGoPkgHasElem_Lambda func (o *XsdGoPkgHasElem_Lambda)
-	XsdGoPkgHasElem_Scalarproduct func (o *XsdGoPkgHasElem_Scalarproduct)
-	XsdGoPkgHasElems_Mmultiscripts func (o *XsdGoPkgHasElems_Mmultiscripts)
-	TElementaryFunctionsType func (o *TElementaryFunctionsType)
-	TinType func (o *TinType)
-	XsdGoPkgHasElem_None func (o *XsdGoPkgHasElem_None)
-	XsdGoPkgHasElem_Exponentiale func (o *XsdGoPkgHasElem_Exponentiale)
-	XsdGoPkgHasGroup_ContentLogicClass func (o *XsdGoPkgHasGroup_ContentLogicClass)
-	XsdGoPkgHasElem_Matrixrow func (o *XsdGoPkgHasElem_Matrixrow)
-	XsdGoPkgHasElems_Mprescripts func (o *XsdGoPkgHasElems_Mprescripts)
-	TmoType func (o *TmoType)
-	XsdGoPkgHasElems_Inverse func (o *XsdGoPkgHasElems_Inverse)
-	XsdGoPkgHasElem_Times func (o *XsdGoPkgHasElem_Times)
-	XsdGoPkgHasElems_Reals func (o *XsdGoPkgHasElems_Reals)
-	XsdGoPkgHasElem_Selector func (o *XsdGoPkgHasElem_Selector)
-	XsdGoPkgHasGroup_ContentSetsClass func (o *XsdGoPkgHasGroup_ContentSetsClass)
-	XsdGoPkgHasElems_Arg func (o *XsdGoPkgHasElems_Arg)
-	XsdGoPkgHasElem_Mfrac func (o *XsdGoPkgHasElem_Mfrac)
-	XsdGoPkgHasElems_Ceiling func (o *XsdGoPkgHasElems_Ceiling)
-	XsdGoPkgHasElems_Csc func (o *XsdGoPkgHasElems_Csc)
-	XsdGoPkgHasElem_Naturalnumbers func (o *XsdGoPkgHasElem_Naturalnumbers)
-	XsdGoPkgHasElem_Lcm func (o *XsdGoPkgHasElem_Lcm)
-	XsdGoPkgHasElems_Cn func (o *XsdGoPkgHasElems_Cn)
-	XsdGoPkgHasElem_Product func (o *XsdGoPkgHasElem_Product)
-	XsdGoPkgHasElems_Mpadded func (o *XsdGoPkgHasElems_Mpadded)
-	XsdGoPkgHasGroup_ContExprClass func (o *XsdGoPkgHasGroup_ContExprClass)
-	XsdGoPkgHasElem_Median func (o *XsdGoPkgHasElem_Median)
-	XsdGoPkgHasGroup_PresExprClass func (o *XsdGoPkgHasGroup_PresExprClass)
-	XsdGoPkgHasElems_Notanumber func (o *XsdGoPkgHasElems_Notanumber)
-	XsdGoPkgHasGroup_MactionContent func (o *XsdGoPkgHasGroup_MactionContent)
-	XsdGoPkgHasElem_Piecewise func (o *XsdGoPkgHasElem_Piecewise)
-	XsdGoPkgHasElem_Cot func (o *XsdGoPkgHasElem_Cot)
-	XsdGoPkgHasElems_Sdev func (o *XsdGoPkgHasElems_Sdev)
-	XsdGoPkgHasElem_Rem func (o *XsdGoPkgHasElem_Rem)
-	XsdGoPkgHasElem_Mmultiscripts func (o *XsdGoPkgHasElem_Mmultiscripts)
-	XsdGoPkgHasElems_Or func (o *XsdGoPkgHasElems_Or)
-	XsdGoPkgHasElems_Variance func (o *XsdGoPkgHasElems_Variance)
-	TConstantType func (o *TConstantType)
-	XsdGoPkgHasElem_Momentabout func (o *XsdGoPkgHasElem_Momentabout)
-	XsdGoPkgHasGroup_PresentationExprClass func (o *XsdGoPkgHasGroup_PresentationExprClass)
-	XsdGoPkgHasElem_Merror func (o *XsdGoPkgHasElem_Merror)
-	XsdGoPkgHasElems_Limit func (o *XsdGoPkgHasElems_Limit)
-	TinverseType func (o *TinverseType)
-	XsdGoPkgHasElems_Sinh func (o *XsdGoPkgHasElems_Sinh)
-	TannotationType func (o *TannotationType)
-	XsdGoPkgHasGroup_ContentElementaryFunctionsClass func (o *XsdGoPkgHasGroup_ContentElementaryFunctionsClass)
-	TintType func (o *TintType)
-	TvectorType func (o *TvectorType)
-	XsdGoPkgHasElems_Notsubset func (o *XsdGoPkgHasElems_Notsubset)
-	XsdGoPkgHasElems_Partialdiff func (o *XsdGoPkgHasElems_Partialdiff)
-	XsdGoPkgHasElem_Mstyle func (o *XsdGoPkgHasElem_Mstyle)
-	XsdGoPkgHasGroup_ContentFunctionsClass func (o *XsdGoPkgHasGroup_ContentFunctionsClass)
-	TsubsetType func (o *TsubsetType)
-	XsdGoPkgHasElem_Munder func (o *XsdGoPkgHasElem_Munder)
-	XsdGoPkgHasElems_Mtr func (o *XsdGoPkgHasElems_Mtr)
-	XsdGoPkgHasElems_Matrix func (o *XsdGoPkgHasElems_Matrix)
-	XsdGoPkgHasElem_Mtr func (o *XsdGoPkgHasElem_Mtr)
-	TmtrType func (o *TmtrType)
-	XsdGoPkgHasElem_Uplimit func (o *XsdGoPkgHasElem_Uplimit)
-	XsdGoPkgHasElems_Cot func (o *XsdGoPkgHasElems_Cot)
-	XsdGoPkgHasElems_Arccsch func (o *XsdGoPkgHasElems_Arccsch)
-	TmencloseType func (o *TmencloseType)
-	TprsubsetType func (o *TprsubsetType)
-	XsdGoPkgHasElems_Arccos func (o *XsdGoPkgHasElems_Arccos)
-	TmspaceType func (o *TmspaceType)
-	XsdGoPkgHasElems_Mphantom func (o *XsdGoPkgHasElems_Mphantom)
-	XsdGoPkgHasElem_Integers func (o *XsdGoPkgHasElem_Integers)
-	XsdGoPkgHasElem_Codomain func (o *XsdGoPkgHasElem_Codomain)
-	XsdGoPkgHasElem_Tan func (o *XsdGoPkgHasElem_Tan)
-	XsdGoPkgHasElem_Eulergamma func (o *XsdGoPkgHasElem_Eulergamma)
-	XsdGoPkgHasGroup_MmultiscriptsContent func (o *XsdGoPkgHasGroup_MmultiscriptsContent)
-	XsdGoPkgHasElems_Mi func (o *XsdGoPkgHasElems_Mi)
-	TcartesianproductType func (o *TcartesianproductType)
-	TdiffType func (o *TdiffType)
-	TmomentaboutType func (o *TmomentaboutType)
-	XsdGoPkgHasCdata func (o *XsdGoPkgHasCdata)
-	XsdGoPkgHasElems_Power func (o *XsdGoPkgHasElems_Power)
-	XsdGoPkgHasElem_Menclose func (o *XsdGoPkgHasElem_Menclose)
-	XsdGoPkgHasElem_Pi func (o *XsdGoPkgHasElem_Pi)
-	XsdGoPkgHasElems_Mover func (o *XsdGoPkgHasElems_Mover)
-	TmrowType func (o *TmrowType)
-	TintersectType func (o *TintersectType)
-	TmsupType func (o *TmsupType)
-	TlambdaType func (o *TlambdaType)
-	XsdGoPkgHasElem_Mean func (o *XsdGoPkgHasElem_Mean)
-	XsdGoPkgHasElem_Malignmark func (o *XsdGoPkgHasElem_Malignmark)
-	XsdGoPkgHasElems_Selector func (o *XsdGoPkgHasElems_Selector)
-	XsdGoPkgHasElem_Arccsc func (o *XsdGoPkgHasElem_Arccsc)
-	XsdGoPkgHasElem_Declare func (o *XsdGoPkgHasElem_Declare)
-	XsdGoPkgHasElems_Approx func (o *XsdGoPkgHasElems_Approx)
-	XsdGoPkgHasElems_Max func (o *XsdGoPkgHasElems_Max)
-	XsdGoPkgHasElem_Imaginary func (o *XsdGoPkgHasElem_Imaginary)
-	XsdGoPkgHasElem_And func (o *XsdGoPkgHasElem_And)
-	XsdGoPkgHasElem_Otherwise func (o *XsdGoPkgHasElem_Otherwise)
-	XsdGoPkgHasElems_Grad func (o *XsdGoPkgHasElems_Grad)
-	TpiecewiseType func (o *TpiecewiseType)
-	XsdGoPkgHasElem_Moment func (o *XsdGoPkgHasElem_Moment)
-	XsdGoPkgHasElem_Arccsch func (o *XsdGoPkgHasElem_Arccsch)
-	XsdGoPkgHasElems_Maligngroup func (o *XsdGoPkgHasElems_Maligngroup)
-	XsdGoPkgHasElem_Arcsin func (o *XsdGoPkgHasElem_Arcsin)
-	XsdGoPkgHasElems_Geq func (o *XsdGoPkgHasElems_Geq)
+	XsdGoPkgHasElem_Transpose func (o *XsdGoPkgHasElem_Transpose)
 	XsdGoPkgHasElems_Msubsup func (o *XsdGoPkgHasElems_Msubsup)
-	XsdGoPkgHasElem_Csch func (o *XsdGoPkgHasElem_Csch)
-	XsdGoPkgHasElem_Divergence func (o *XsdGoPkgHasElem_Divergence)
-	XsdGoPkgHasElems_Msub func (o *XsdGoPkgHasElems_Msub)
+	XsdGoPkgHasElems_Mover func (o *XsdGoPkgHasElems_Mover)
+	XsdGoPkgHasElems_Mstyle func (o *XsdGoPkgHasElems_Mstyle)
+	XsdGoPkgHasElems_Selector func (o *XsdGoPkgHasElems_Selector)
+	TmstyleType func (o *TmstyleType)
+	XsdGoPkgHasElems_Lcm func (o *XsdGoPkgHasElems_Lcm)
+	XsdGoPkgHasGroup_ContentVectorCalculusClass func (o *XsdGoPkgHasGroup_ContentVectorCalculusClass)
+	XsdGoPkgHasElems_Gt func (o *XsdGoPkgHasElems_Gt)
+	XsdGoPkgHasElems_False func (o *XsdGoPkgHasElems_False)
+	TpartialdiffType func (o *TpartialdiffType)
+	TmoType func (o *TmoType)
+	XsdGoPkgHasElem_Maligngroup func (o *XsdGoPkgHasElem_Maligngroup)
+	XsdGoPkgHasElem_Int func (o *XsdGoPkgHasElem_Int)
+	TRelationsType func (o *TRelationsType)
+	XsdGoPkgHasElems_Integers func (o *XsdGoPkgHasElems_Integers)
+	XsdGoPkgHasElems_Mo func (o *XsdGoPkgHasElems_Mo)
+	TciType func (o *TciType)
+	XsdGoPkgHasElem_Msup func (o *XsdGoPkgHasElem_Msup)
+	XsdGoPkgHasElems_Uplimit func (o *XsdGoPkgHasElems_Uplimit)
+	TmatrixrowType func (o *TmatrixrowType)
+	TsepType func (o *TsepType)
+	XsdGoPkgHasElems_Real func (o *XsdGoPkgHasElems_Real)
+	XsdGoPkgHasElems_Notin func (o *XsdGoPkgHasElems_Notin)
+	XsdGoPkgHasElems_Mphantom func (o *XsdGoPkgHasElems_Mphantom)
+	XsdGoPkgHasElems_Times func (o *XsdGoPkgHasElems_Times)
+	XsdGoPkgHasElem_Variance func (o *XsdGoPkgHasElem_Variance)
+	TmedianType func (o *TmedianType)
+	XsdGoPkgHasElem_Mi func (o *XsdGoPkgHasElem_Mi)
+	TmphantomType func (o *TmphantomType)
+	XsdGoPkgHasElems_Exists func (o *XsdGoPkgHasElems_Exists)
+	XsdGoPkgHasElem_Infinity func (o *XsdGoPkgHasElem_Infinity)
+	XsdGoPkgHasElems_Mrow func (o *XsdGoPkgHasElems_Mrow)
+	XsdGoPkgHasElem_Notin func (o *XsdGoPkgHasElem_Notin)
+	TlaplacianType func (o *TlaplacianType)
+	XsdGoPkgHasElems_And func (o *XsdGoPkgHasElems_And)
+	XsdGoPkgHasElems_Outerproduct func (o *XsdGoPkgHasElems_Outerproduct)
+	XsdGoPkgHasElem_Scalarproduct func (o *XsdGoPkgHasElem_Scalarproduct)
+	TLogicType func (o *TLogicType)
+	XsdGoPkgHasElem_Mstyle func (o *XsdGoPkgHasElem_Mstyle)
+	XsdGoPkgHasElems_Scalarproduct func (o *XsdGoPkgHasElems_Scalarproduct)
+	XsdGoPkgHasElem_Semantics func (o *XsdGoPkgHasElem_Semantics)
+	XsdGoPkgHasElems_Max func (o *XsdGoPkgHasElems_Max)
+	XsdGoPkgHasElems_Image func (o *XsdGoPkgHasElems_Image)
+	XsdGoPkgHasElems_Forall func (o *XsdGoPkgHasElems_Forall)
 	XsdGoPkgHasElem_Eq func (o *XsdGoPkgHasElem_Eq)
-	TscalarproductType func (o *TscalarproductType)
-	TmtableType func (o *TmtableType)
-	TsemanticsType func (o *TsemanticsType)
-	XsdGoPkgHasElem_Ci func (o *XsdGoPkgHasElem_Ci)
-	XsdGoPkgHasElem_Factorof func (o *XsdGoPkgHasElem_Factorof)
-	XsdGoPkgHasElem_Equivalent func (o *XsdGoPkgHasElem_Equivalent)
-	TArithType func (o *TArithType)
-	TmiType func (o *TmiType)
-	TsdevType func (o *TsdevType)
-	XsdGoPkgHasElem_Mspace func (o *XsdGoPkgHasElem_Mspace)
-	XsdGoPkgHasGroup_PresentationExprOrNoneClass func (o *XsdGoPkgHasGroup_PresentationExprOrNoneClass)
-	XsdGoPkgHasElem_Ln func (o *XsdGoPkgHasElem_Ln)
-	XsdGoPkgHasElems_Mglyph func (o *XsdGoPkgHasElems_Mglyph)
-	XsdGoPkgHasElems_Log func (o *XsdGoPkgHasElems_Log)
-	XsdGoPkgHasElems_Naturalnumbers func (o *XsdGoPkgHasElems_Naturalnumbers)
-	XsdGoPkgHasGroup_PiecewiseContent func (o *XsdGoPkgHasGroup_PiecewiseContent)
+	XsdGoPkgHasElems_Munderover func (o *XsdGoPkgHasElems_Munderover)
+	XsdGoPkgHasElem_Pi func (o *XsdGoPkgHasElem_Pi)
+	XsdGoPkgHasGroup_ContentTokenContent func (o *XsdGoPkgHasGroup_ContentTokenContent)
+	XsdGoPkgHasElems_Ceiling func (o *XsdGoPkgHasElems_Ceiling)
+	XsdGoPkgHasGroup_ContentCalculusClass func (o *XsdGoPkgHasGroup_ContentCalculusClass)
+	XsdGoPkgHasElems_Geq func (o *XsdGoPkgHasElems_Geq)
+	XsdGoPkgHasElems_Semantics func (o *XsdGoPkgHasElems_Semantics)
+	TmomentaboutType func (o *TmomentaboutType)
+	XsdGoPkgHasElem_Limit func (o *XsdGoPkgHasElem_Limit)
+	XsdGoPkgHasGroup_ContentConstructsClass func (o *XsdGoPkgHasGroup_ContentConstructsClass)
+	XsdGoPkgHasElem_Minus func (o *XsdGoPkgHasElem_Minus)
+	TintersectType func (o *TintersectType)
+	TlambdaType func (o *TlambdaType)
+	XsdGoPkgHasElems_Exp func (o *XsdGoPkgHasElems_Exp)
+	XsdGoPkgHasElem_Arctanh func (o *XsdGoPkgHasElem_Arctanh)
+	TmerrorType func (o *TmerrorType)
+	XsdGoPkgHasElem_Apply func (o *XsdGoPkgHasElem_Apply)
+	XsdGoPkgHasElems_Mpadded func (o *XsdGoPkgHasElems_Mpadded)
+	XsdGoPkgHasElem_Condition func (o *XsdGoPkgHasElem_Condition)
+	TselectorType func (o *TselectorType)
+	XsdGoPkgHasElems_Csc func (o *XsdGoPkgHasElems_Csc)
+	TlimitType func (o *TlimitType)
+	XsdGoPkgHasElems_Bvar func (o *XsdGoPkgHasElems_Bvar)
+	TdeterminantType func (o *TdeterminantType)
+	XsdGoPkgHasElems_Mtd func (o *XsdGoPkgHasElems_Mtd)
+	XsdGoPkgHasElem_Divide func (o *XsdGoPkgHasElem_Divide)
+	XsdGoPkgHasElems_Msub func (o *XsdGoPkgHasElems_Msub)
+	XsdGoPkgHasElem_Lcm func (o *XsdGoPkgHasElem_Lcm)
+	TinType func (o *TinType)
+	XsdGoPkgHasElems_Matrixrow func (o *XsdGoPkgHasElems_Matrixrow)
+	XsdGoPkgHasElem_Moment func (o *XsdGoPkgHasElem_Moment)
+	XsdGoPkgHasElems_Sin func (o *XsdGoPkgHasElems_Sin)
+	XsdGoPkgHasElem_Cn func (o *XsdGoPkgHasElem_Cn)
+	TcardType func (o *TcardType)
+	XsdGoPkgHasElem_Momentabout func (o *XsdGoPkgHasElem_Momentabout)
+	XsdGoPkgHasElem_Rationals func (o *XsdGoPkgHasElem_Rationals)
+	XsdGoPkgHasElems_Card func (o *XsdGoPkgHasElems_Card)
+	XsdGoPkgHasElems_Ci func (o *XsdGoPkgHasElems_Ci)
+	TmunderType func (o *TmunderType)
+	XsdGoPkgHasElems_Transpose func (o *XsdGoPkgHasElems_Transpose)
+	XsdGoPkgHasElems_Momentabout func (o *XsdGoPkgHasElems_Momentabout)
+	TmtrType func (o *TmtrType)
+	XsdGoPkgHasElems_Or func (o *XsdGoPkgHasElems_Or)
+	XsdGoPkgHasElem_Log func (o *XsdGoPkgHasElem_Log)
+	XsdGoPkgHasElem_Mfenced func (o *XsdGoPkgHasElem_Mfenced)
+	XsdGoPkgHasElem_Mode func (o *XsdGoPkgHasElem_Mode)
+	XsdGoPkgHasElems_Root func (o *XsdGoPkgHasElems_Root)
+	XsdGoPkgHasElem_Reals func (o *XsdGoPkgHasElem_Reals)
+	XsdGoPkgHasGroup_ContentRelationsClass func (o *XsdGoPkgHasGroup_ContentRelationsClass)
+	TannotationType func (o *TannotationType)
 	XsdGoPkgHasElems_Mspace func (o *XsdGoPkgHasElems_Mspace)
-	XsdGoPkgHasElem_Not func (o *XsdGoPkgHasElem_Not)
+	TintervalType func (o *TintervalType)
+	XsdGoPkgHasElem_Rem func (o *XsdGoPkgHasElem_Rem)
+	XsdGoPkgHasElems_Arcsinh func (o *XsdGoPkgHasElems_Arcsinh)
+	XsdGoPkgHasElem_Floor func (o *XsdGoPkgHasElem_Floor)
+	XsdGoPkgHasElems_Compose func (o *XsdGoPkgHasElems_Compose)
+	XsdGoPkgHasElem_Arccos func (o *XsdGoPkgHasElem_Arccos)
+	TbvarType func (o *TbvarType)
+	TArithType func (o *TArithType)
+	XsdGoPkgHasElems_Sdev func (o *XsdGoPkgHasElems_Sdev)
+	XsdGoPkgHasElems_Arccot func (o *XsdGoPkgHasElems_Arccot)
+	XsdGoPkgHasElem_Complexes func (o *XsdGoPkgHasElem_Complexes)
+	XsdGoPkgHasElems_Arctan func (o *XsdGoPkgHasElems_Arctan)
+	XsdGoPkgHasElem_Mo func (o *XsdGoPkgHasElem_Mo)
+	XsdGoPkgHasElems_Matrix func (o *XsdGoPkgHasElems_Matrix)
+	XsdGoPkgHasElem_Exponentiale func (o *XsdGoPkgHasElem_Exponentiale)
+	TmpaddedType func (o *TmpaddedType)
+	XsdGoPkgHasElems_Moment func (o *XsdGoPkgHasElems_Moment)
+	TmfencedType func (o *TmfencedType)
+	XsdGoPkgHasElems_Leq func (o *XsdGoPkgHasElems_Leq)
+	XsdGoPkgHasElems_Cot func (o *XsdGoPkgHasElems_Cot)
+	TpieceType func (o *TpieceType)
+	XsdGoPkgHasElem_Interval func (o *XsdGoPkgHasElem_Interval)
+	XsdGoPkgHasElems_Mi func (o *XsdGoPkgHasElems_Mi)
+	XsdGoPkgHasElems_Tendsto func (o *XsdGoPkgHasElems_Tendsto)
+	TuplimitType func (o *TuplimitType)
+	TmencloseType func (o *TmencloseType)
+	XsdGoPkgHasElems_Cosh func (o *XsdGoPkgHasElems_Cosh)
+	XsdGoPkgHasElem_Vector func (o *XsdGoPkgHasElem_Vector)
+	XsdGoPkgHasElems_Codomain func (o *XsdGoPkgHasElems_Codomain)
+	XsdGoPkgHasElem_Sinh func (o *XsdGoPkgHasElem_Sinh)
+	TmodeType func (o *TmodeType)
+	XsdGoPkgHasElems_Eulergamma func (o *XsdGoPkgHasElems_Eulergamma)
+	XsdGoPkgHasElems_Arccos func (o *XsdGoPkgHasElems_Arccos)
+	XsdGoPkgHasGroup_ContentLinearAlgebraClass func (o *XsdGoPkgHasGroup_ContentLinearAlgebraClass)
+	XsdGoPkgHasElem_Matrix func (o *XsdGoPkgHasElem_Matrix)
+	XsdGoPkgHasElem_Sech func (o *XsdGoPkgHasElem_Sech)
+	XsdGoPkgHasElem_Gcd func (o *XsdGoPkgHasElem_Gcd)
+	TmoverType func (o *TmoverType)
+	TscalarproductType func (o *TscalarproductType)
+	XsdGoPkgHasGroup_ContentElementaryFunctionsClass func (o *XsdGoPkgHasGroup_ContentElementaryFunctionsClass)
+	XsdGoPkgHasElems_Reals func (o *XsdGoPkgHasElems_Reals)
+	XsdGoPkgHasElems_Intersect func (o *XsdGoPkgHasElems_Intersect)
+	XsdGoPkgHasElem_Union func (o *XsdGoPkgHasElem_Union)
+	TinverseType func (o *TinverseType)
+	XsdGoPkgHasElem_AnnotationXml func (o *XsdGoPkgHasElem_AnnotationXml)
+	XsdGoPkgHasElem_Cartesianproduct func (o *XsdGoPkgHasElem_Cartesianproduct)
+	XsdGoPkgHasElem_Malignmark func (o *XsdGoPkgHasElem_Malignmark)
+	XsdGoPkgHasElems_Abs func (o *XsdGoPkgHasElems_Abs)
+	XsdGoPkgHasGroup_AnnotationXmlContent func (o *XsdGoPkgHasGroup_AnnotationXmlContent)
+	XsdGoPkgHasElem_Tendsto func (o *XsdGoPkgHasElem_Tendsto)
+	TvectorproductType func (o *TvectorproductType)
+	XsdGoPkgHasElems_Lowlimit func (o *XsdGoPkgHasElems_Lowlimit)
+	XsdGoPkgHasElem_Msub func (o *XsdGoPkgHasElem_Msub)
+	XsdGoPkgHasElems_Complexes func (o *XsdGoPkgHasElems_Complexes)
+	XsdGoPkgHasElem_Abs func (o *XsdGoPkgHasElem_Abs)
+	XsdGoPkgHasElem_Mpadded func (o *XsdGoPkgHasElem_Mpadded)
+	XsdGoPkgHasElems_Mfrac func (o *XsdGoPkgHasElems_Mfrac)
+	XsdGoPkgHasElem_Sec func (o *XsdGoPkgHasElem_Sec)
+	XsdGoPkgHasElems_Munder func (o *XsdGoPkgHasElems_Munder)
+	TvectorType func (o *TvectorType)
+	XsdGoPkgHasGroup_ContExprClass func (o *XsdGoPkgHasGroup_ContExprClass)
+	XsdGoPkgHasElems_Arccosh func (o *XsdGoPkgHasElems_Arccosh)
+	XsdGoPkgHasElems_Cos func (o *XsdGoPkgHasElems_Cos)
+	XsdGoPkgHasElem_Arccot func (o *XsdGoPkgHasElem_Arccot)
+	XsdGoPkgHasElem_Gt func (o *XsdGoPkgHasElem_Gt)
+	XsdGoPkgHasElem_Arcsinh func (o *XsdGoPkgHasElem_Arcsinh)
+	XsdGoPkgHasElems_Merror func (o *XsdGoPkgHasElems_Merror)
+	TsetdiffType func (o *TsetdiffType)
+	TsubsetType func (o *TsubsetType)
+	XsdGoPkgHasElem_Factorial func (o *XsdGoPkgHasElem_Factorial)
+	XsdGoPkgHasElems_AnnotationXml func (o *XsdGoPkgHasElems_AnnotationXml)
+	XsdGoPkgHasElem_Cosh func (o *XsdGoPkgHasElem_Cosh)
+	XsdGoPkgHasElems_Exponentiale func (o *XsdGoPkgHasElems_Exponentiale)
+	XsdGoPkgHasElem_Munderover func (o *XsdGoPkgHasElem_Munderover)
+	TgradType func (o *TgradType)
+	XsdGoPkgHasElem_Csymbol func (o *XsdGoPkgHasElem_Csymbol)
+	TapplyType func (o *TapplyType)
+	XsdGoPkgHasGroup_ContentExprClass func (o *XsdGoPkgHasGroup_ContentExprClass)
+	XsdGoPkgHasElems_Variance func (o *XsdGoPkgHasElems_Variance)
+	TmalignmarkType func (o *TmalignmarkType)
+	XsdGoPkgHasElem_List func (o *XsdGoPkgHasElem_List)
+	XsdGoPkgHasElem_Mmultiscripts func (o *XsdGoPkgHasElem_Mmultiscripts)
+	XsdGoPkgHasGroup_ContentStatisticsClass func (o *XsdGoPkgHasGroup_ContentStatisticsClass)
+	XsdGoPkgHasElem_Ln func (o *XsdGoPkgHasElem_Ln)
+	XsdGoPkgHasElems_Mn func (o *XsdGoPkgHasElems_Mn)
+	XsdGoPkgHasElem_Approx func (o *XsdGoPkgHasElem_Approx)
+	XsdGoPkgHasElems_Csymbol func (o *XsdGoPkgHasElems_Csymbol)
+	XsdGoPkgHasGroup_CnContent func (o *XsdGoPkgHasGroup_CnContent)
+	TtransposeType func (o *TtransposeType)
+	XsdGoPkgHasGroup_AnnotationClass func (o *XsdGoPkgHasGroup_AnnotationClass)
+	TlowlimitType func (o *TlowlimitType)
+	XsdGoPkgHasElems_Partialdiff func (o *XsdGoPkgHasElems_Partialdiff)
+	TsemanticsType func (o *TsemanticsType)
+	XsdGoPkgHasElems_Product func (o *XsdGoPkgHasElems_Product)
+	XsdGoPkgHasElems_Tan func (o *XsdGoPkgHasElems_Tan)
+	TmnType func (o *TmnType)
+	XsdGoPkgHasElem_Matrixrow func (o *XsdGoPkgHasElem_Matrixrow)
+	XsdGoPkgHasElem_Outerproduct func (o *XsdGoPkgHasElem_Outerproduct)
+	XsdGoPkgHasElem_Setdiff func (o *XsdGoPkgHasElem_Setdiff)
+	XsdGoPkgHasElem_Conjugate func (o *XsdGoPkgHasElem_Conjugate)
+	TmmultiscriptsType func (o *TmmultiscriptsType)
+	XsdGoPkgHasElems_Power func (o *XsdGoPkgHasElems_Power)
+	XsdGoPkgHasElem_Cos func (o *XsdGoPkgHasElem_Cos)
+	XsdGoPkgHasElems_Curl func (o *XsdGoPkgHasElems_Curl)
+	XsdGoPkgHasElem_Mfrac func (o *XsdGoPkgHasElem_Mfrac)
+	XsdGoPkgHasElems_Lambda func (o *XsdGoPkgHasElems_Lambda)
+	XsdGoPkgHasElems_Eq func (o *XsdGoPkgHasElems_Eq)
+	XsdGoPkgHasElem_Annotation func (o *XsdGoPkgHasElem_Annotation)
+	XsdGoPkgHasElems_Tanh func (o *XsdGoPkgHasElems_Tanh)
+	XsdGoPkgHasElem_False func (o *XsdGoPkgHasElem_False)
+	XsdGoPkgHasElem_Or func (o *XsdGoPkgHasElem_Or)
+	XsdGoPkgHasElem_Logbase func (o *XsdGoPkgHasElem_Logbase)
+	TFunctionsType func (o *TFunctionsType)
+	XsdGoPkgHasElem_Lowlimit func (o *XsdGoPkgHasElem_Lowlimit)
+	TsdevType func (o *TsdevType)
+	XsdGoPkgHasElems_Arccsc func (o *XsdGoPkgHasElems_Arccsc)
+	XsdGoPkgHasElem_Plus func (o *XsdGoPkgHasElem_Plus)
+	XsdGoPkgHasElems_Divide func (o *XsdGoPkgHasElems_Divide)
+	XsdGoPkgHasElem_Munder func (o *XsdGoPkgHasElem_Munder)
+	XsdGoPkgHasElem_Msubsup func (o *XsdGoPkgHasElem_Msubsup)
+	XsdGoPkgHasElems_Malignmark func (o *XsdGoPkgHasElems_Malignmark)
+	XsdGoPkgHasElems_Logbase func (o *XsdGoPkgHasElems_Logbase)
+	XsdGoPkgHasElems_Menclose func (o *XsdGoPkgHasElems_Menclose)
+	TlogbaseType func (o *TlogbaseType)
+	XsdGoPkgHasElems_Diff func (o *XsdGoPkgHasElems_Diff)
+	XsdGoPkgHasElem_Mtr func (o *XsdGoPkgHasElem_Mtr)
+	XsdGoPkgHasElems_Sinh func (o *XsdGoPkgHasElems_Sinh)
 	XsdGoPkgHasElems_Rem func (o *XsdGoPkgHasElems_Rem)
-	XsdGoPkgHasElems_Domain func (o *XsdGoPkgHasElems_Domain)
-	XsdGoPkgHasElems_Ln func (o *XsdGoPkgHasElems_Ln)
+	XsdGoPkgHasElems_Factorof func (o *XsdGoPkgHasElems_Factorof)
+	XsdGoPkgHasElems_Plus func (o *XsdGoPkgHasElems_Plus)
+	XsdGoPkgHasGroup_GlyphAlignmarkClass func (o *XsdGoPkgHasGroup_GlyphAlignmarkClass)
+	TprsubsetType func (o *TprsubsetType)
+	TmsupType func (o *TmsupType)
+	XsdGoPkgHasElem_Tan func (o *XsdGoPkgHasElem_Tan)
+	XsdGoPkgHasElem_Prsubset func (o *XsdGoPkgHasElem_Prsubset)
+	XsdGoPkgHasElem_Real func (o *XsdGoPkgHasElem_Real)
+	XsdGoPkgHasGroup_VectorContent func (o *XsdGoPkgHasGroup_VectorContent)
+	XsdGoPkgHasElems_Implies func (o *XsdGoPkgHasElems_Implies)
+	XsdGoPkgHasElems_Factorial func (o *XsdGoPkgHasElems_Factorial)
+	XsdGoPkgHasElems_Infinity func (o *XsdGoPkgHasElems_Infinity)
+	XsdGoPkgHasElem_Mtable func (o *XsdGoPkgHasElem_Mtable)
+	XsdGoPkgHasElem_Determinant func (o *XsdGoPkgHasElem_Determinant)
+	XsdGoPkgHasElems_Imaginary func (o *XsdGoPkgHasElems_Imaginary)
+	TnotsubsetType func (o *TnotsubsetType)
+	XsdGoPkgHasGroup_MtrContent func (o *XsdGoPkgHasGroup_MtrContent)
+	XsdGoPkgHasElem_Otherwise func (o *XsdGoPkgHasElem_Otherwise)
+	XsdGoPkgHasElem_Subset func (o *XsdGoPkgHasElem_Subset)
+	XsdGoPkgHasGroup_PresentationTokenClass func (o *XsdGoPkgHasGroup_PresentationTokenClass)
+	XsdGoPkgHasElem_Domain func (o *XsdGoPkgHasElem_Domain)
+	XsdGoPkgHasElem_Quotient func (o *XsdGoPkgHasElem_Quotient)
+	XsdGoPkgHasElem_Mtd func (o *XsdGoPkgHasElem_Mtd)
+	XsdGoPkgHasElem_Mn func (o *XsdGoPkgHasElem_Mn)
+	XsdGoPkgHasElems_Minus func (o *XsdGoPkgHasElems_Minus)
+	XsdGoPkgHasElem_Diff func (o *XsdGoPkgHasElem_Diff)
+	XsdGoPkgHasElems_Approx func (o *XsdGoPkgHasElems_Approx)
+	XsdGoPkgHasElem_Piece func (o *XsdGoPkgHasElem_Piece)
+	XsdGoPkgHasElem_Tanh func (o *XsdGoPkgHasElem_Tanh)
+	TdegreeType func (o *TdegreeType)
+	XsdGoPkgHasElems_Apply func (o *XsdGoPkgHasElems_Apply)
+	TmrowType func (o *TmrowType)
+	XsdGoPkgHasElems_Domainofapplication func (o *XsdGoPkgHasElems_Domainofapplication)
+	TdiffType func (o *TdiffType)
+	XsdGoPkgHasGroup_PresentationExprClass func (o *XsdGoPkgHasGroup_PresentationExprClass)
+	TpiecewiseType func (o *TpiecewiseType)
+	XsdGoPkgHasElem_Arg func (o *XsdGoPkgHasElem_Arg)
+	TmfracType func (o *TmfracType)
+	TmunderoverType func (o *TmunderoverType)
+	XsdGoPkgHasElems_Condition func (o *XsdGoPkgHasElems_Condition)
+	XsdGoPkgHasElem_Forall func (o *XsdGoPkgHasElem_Forall)
+	XsdGoPkgHasGroup_PresentationExprOrNoneClass func (o *XsdGoPkgHasGroup_PresentationExprOrNoneClass)
+	XsdGoPkgHasElem_Maction func (o *XsdGoPkgHasElem_Maction)
+	TElementaryFunctionsType func (o *TElementaryFunctionsType)
+	TnotinType func (o *TnotinType)
+	XsdGoPkgHasElems_Rationals func (o *XsdGoPkgHasElems_Rationals)
+	XsdGoPkgHasElems_Arg func (o *XsdGoPkgHasElems_Arg)
 	XsdGoPkgHasElem_Notsubset func (o *XsdGoPkgHasElem_Notsubset)
+	XsdGoPkgHasElems_Mfenced func (o *XsdGoPkgHasElems_Mfenced)
+	TmlabeledtrType func (o *TmlabeledtrType)
+	XsdGoPkgHasElem_Bvar func (o *XsdGoPkgHasElem_Bvar)
+	XsdGoPkgHasElem_Exp func (o *XsdGoPkgHasElem_Exp)
+	XsdGoPkgHasElem_Lt func (o *XsdGoPkgHasElem_Lt)
+	XsdGoPkgHasElems_Mtext func (o *XsdGoPkgHasElems_Mtext)
+	TnoneType func (o *TnoneType)
+	XsdGoPkgHasElems_Arccsch func (o *XsdGoPkgHasElems_Arccsch)
+	XsdGoPkgHasElem_Vectorproduct func (o *XsdGoPkgHasElem_Vectorproduct)
+	TmtdType func (o *TmtdType)
+	XsdGoPkgHasElems_Imaginaryi func (o *XsdGoPkgHasElems_Imaginaryi)
+	XsdGoPkgHasElems_Ms func (o *XsdGoPkgHasElems_Ms)
+	XsdGoPkgHasElems_Sum func (o *XsdGoPkgHasElems_Sum)
+	XsdGoPkgHasElems_Arcsech func (o *XsdGoPkgHasElems_Arcsech)
+	XsdGoPkgHasElem_Arcsec func (o *XsdGoPkgHasElem_Arcsec)
+	XsdGoPkgHasElem_Imaginaryi func (o *XsdGoPkgHasElem_Imaginaryi)
+	XsdGoPkgHasElem_Naturalnumbers func (o *XsdGoPkgHasElem_Naturalnumbers)
+	TnotprsubsetType func (o *TnotprsubsetType)
+	TcurlType func (o *TcurlType)
+	TvarianceType func (o *TvarianceType)
+	XsdGoPkgHasElem_Exists func (o *XsdGoPkgHasElem_Exists)
+	XsdGoPkgHasElem_Mprescripts func (o *XsdGoPkgHasElem_Mprescripts)
+	XsdGoPkgHasElem_Mtext func (o *XsdGoPkgHasElem_Mtext)
+	XsdGoPkgHasElems_Piecewise func (o *XsdGoPkgHasElems_Piecewise)
+	TmtableType func (o *TmtableType)
+	XsdGoPkgHasGroup_ContentLogicClass func (o *XsdGoPkgHasGroup_ContentLogicClass)
+	XsdGoPkgHasElems_Naturalnumbers func (o *XsdGoPkgHasElems_Naturalnumbers)
+	XsdGoPkgHasElems_Mode func (o *XsdGoPkgHasElems_Mode)
+	TcnType func (o *TcnType)
+	XsdGoPkgHasElems_Cn func (o *XsdGoPkgHasElems_Cn)
+	XsdGoPkgHasGroup_ContentArithClass func (o *XsdGoPkgHasGroup_ContentArithClass)
+	XsdGoPkgHasElem_Image func (o *XsdGoPkgHasElem_Image)
+	TdeclareType func (o *TdeclareType)
+	XsdGoPkgHasElem_Divergence func (o *XsdGoPkgHasElem_Divergence)
+	XsdGoPkgHasElem_Power func (o *XsdGoPkgHasElem_Power)
+	XsdGoPkgHasElems_Otherwise func (o *XsdGoPkgHasElems_Otherwise)
+	XsdGoPkgHasElems_Mtr func (o *XsdGoPkgHasElems_Mtr)
+	XsdGoPkgHasElem_Mroot func (o *XsdGoPkgHasElem_Mroot)
+	TotherwiseType func (o *TotherwiseType)
+	XsdGoPkgHasElems_Median func (o *XsdGoPkgHasElems_Median)
+	XsdGoPkgHasElems_Sec func (o *XsdGoPkgHasElems_Sec)
+	XsdGoPkgHasElems_Floor func (o *XsdGoPkgHasElems_Floor)
+	XsdGoPkgHasGroup_PiecewiseContent func (o *XsdGoPkgHasGroup_PiecewiseContent)
+	XsdGoPkgHasGroup_ContentSetsClass func (o *XsdGoPkgHasGroup_ContentSetsClass)
+	TmsqrtType func (o *TmsqrtType)
+	XsdGoPkgHasElem_Declare func (o *XsdGoPkgHasElem_Declare)
+	XsdGoPkgHasElem_Sep func (o *XsdGoPkgHasElem_Sep)
+	XsdGoPkgHasElem_Implies func (o *XsdGoPkgHasElem_Implies)
+	XsdGoPkgHasElems_Inverse func (o *XsdGoPkgHasElems_Inverse)
+	XsdGoPkgHasElem_Arcsin func (o *XsdGoPkgHasElem_Arcsin)
+	XsdGoPkgHasElem_Set func (o *XsdGoPkgHasElem_Set)
+	XsdGoPkgHasElem_Degree func (o *XsdGoPkgHasElem_Degree)
+	XsdGoPkgHasElem_Root func (o *XsdGoPkgHasElem_Root)
+	XsdGoPkgHasElem_Mean func (o *XsdGoPkgHasElem_Mean)
+	XsdGoPkgHasElem_Mspace func (o *XsdGoPkgHasElem_Mspace)
+	XsdGoPkgHasElem_Emptyset func (o *XsdGoPkgHasElem_Emptyset)
+	XsdGoPkgHasElems_Notsubset func (o *XsdGoPkgHasElems_Notsubset)
+	XsdGoPkgHasElems_Coth func (o *XsdGoPkgHasElems_Coth)
+	TmspaceType func (o *TmspaceType)
+	XsdGoPkgHasElems_Laplacian func (o *XsdGoPkgHasElems_Laplacian)
+	XsdGoPkgHasElem_Median func (o *XsdGoPkgHasElem_Median)
+	TdivergenceType func (o *TdivergenceType)
+	XsdGoPkgHasElems_True func (o *XsdGoPkgHasElems_True)
+	XsdGoPkgHasElems_Limit func (o *XsdGoPkgHasElems_Limit)
+	XsdGoPkgHasElem_Partialdiff func (o *XsdGoPkgHasElem_Partialdiff)
+	XsdGoPkgHasElem_Lambda func (o *XsdGoPkgHasElem_Lambda)
+	TmsType func (o *TmsType)
+	TcsymbolType func (o *TcsymbolType)
+	XsdGoPkgHasGroup_ContentTokensClass func (o *XsdGoPkgHasGroup_ContentTokensClass)
+	XsdGoPkgHasGroup_PresentationLayoutClass func (o *XsdGoPkgHasGroup_PresentationLayoutClass)
+	XsdGoPkgHasElems_Sep func (o *XsdGoPkgHasElems_Sep)
+	XsdGoPkgHasElems_Mean func (o *XsdGoPkgHasElems_Mean)
+	XsdGoPkgHasCdata func (o *XsdGoPkgHasCdata)
+	XsdGoPkgHasElems_Min func (o *XsdGoPkgHasElems_Min)
+	TmsubsupType func (o *TmsubsupType)
+	XsdGoPkgHasElems_Not func (o *XsdGoPkgHasElems_Not)
+	XsdGoPkgHasGroup_SemanticsContent func (o *XsdGoPkgHasGroup_SemanticsContent)
+	XsdGoPkgHasElems_Ln func (o *XsdGoPkgHasElems_Ln)
+	XsdGoPkgHasElem_Sdev func (o *XsdGoPkgHasElem_Sdev)
+	XsdGoPkgHasElem_Mover func (o *XsdGoPkgHasElem_Mover)
+	XsdGoPkgHasElems_Degree func (o *XsdGoPkgHasElems_Degree)
+	XsdGoPkgHasGroup_ContentFunctionsClass func (o *XsdGoPkgHasGroup_ContentFunctionsClass)
+	XsdGoPkgHasElem_None func (o *XsdGoPkgHasElem_None)
+	XsdGoPkgHasElems_Maligngroup func (o *XsdGoPkgHasElems_Maligngroup)
+	XsdGoPkgHasElems_Emptyset func (o *XsdGoPkgHasElems_Emptyset)
+	XsdGoPkgHasElem_Integers func (o *XsdGoPkgHasElem_Integers)
+	XsdGoPkgHasElems_Mlabeledtr func (o *XsdGoPkgHasElems_Mlabeledtr)
+	TdomainofapplicationType func (o *TdomainofapplicationType)
+	XsdGoPkgHasElem_Domainofapplication func (o *XsdGoPkgHasElem_Domainofapplication)
+	XsdGoPkgHasElems_Ident func (o *XsdGoPkgHasElems_Ident)
+	XsdGoPkgHasElem_Mphantom func (o *XsdGoPkgHasElem_Mphantom)
+	TcartesianproductType func (o *TcartesianproductType)
+	XsdGoPkgHasElem_Compose func (o *XsdGoPkgHasElem_Compose)
+	XsdGoPkgHasElem_Inverse func (o *XsdGoPkgHasElem_Inverse)
+	XsdGoPkgHasElems_Union func (o *XsdGoPkgHasElems_Union)
+	XsdGoPkgHasElem_Leq func (o *XsdGoPkgHasElem_Leq)
+	XsdGoPkgHasElem_Menclose func (o *XsdGoPkgHasElem_Menclose)
+	XsdGoPkgHasElems_Pi func (o *XsdGoPkgHasElems_Pi)
+	XsdGoPkgHasElem_Equivalent func (o *XsdGoPkgHasElem_Equivalent)
+	XsdGoPkgHasElem_Imaginary func (o *XsdGoPkgHasElem_Imaginary)
+	TmaligngroupType func (o *TmaligngroupType)
+	XsdGoPkgHasElem_Arccosh func (o *XsdGoPkgHasElem_Arccosh)
+	XsdGoPkgHasElems_Mprescripts func (o *XsdGoPkgHasElems_Mprescripts)
+	TmtextType func (o *TmtextType)
+	XsdGoPkgHasElems_Log func (o *XsdGoPkgHasElems_Log)
+	XsdGoPkgHasGroup_MathContent func (o *XsdGoPkgHasGroup_MathContent)
+	XsdGoPkgHasElem_Max func (o *XsdGoPkgHasElem_Max)
+	XsdGoPkgHasElems_Set func (o *XsdGoPkgHasElems_Set)
+	XsdGoPkgHasGroup_MmultiscriptsContent func (o *XsdGoPkgHasGroup_MmultiscriptsContent)
+	XsdGoPkgHasElem_Laplacian func (o *XsdGoPkgHasElem_Laplacian)
+	XsdGoPkgHasElem_Curl func (o *XsdGoPkgHasElem_Curl)
+	XsdGoPkgHasElem_Ci func (o *XsdGoPkgHasElem_Ci)
+	TsetType func (o *TsetType)
+	XsdGoPkgHasElems_Arcsin func (o *XsdGoPkgHasElems_Arcsin)
+	TmeanType func (o *TmeanType)
+	XsdGoPkgHasElems_Vectorproduct func (o *XsdGoPkgHasElems_Vectorproduct)
+	XsdGoPkgHasElems_Mmultiscripts func (o *XsdGoPkgHasElems_Mmultiscripts)
+	XsdGoPkgHasElems_Equivalent func (o *XsdGoPkgHasElems_Equivalent)
+	XsdGoPkgHasElems_Gcd func (o *XsdGoPkgHasElems_Gcd)
+	XsdGoPkgHasElems_Math func (o *XsdGoPkgHasElems_Math)
+	TunionType func (o *TunionType)
+	XsdGoPkgHasElem_Selector func (o *XsdGoPkgHasElem_Selector)
+	XsdGoPkgHasElems_Mglyph func (o *XsdGoPkgHasElems_Mglyph)
+	XsdGoPkgHasElems_Int func (o *XsdGoPkgHasElems_Int)
+	XsdGoPkgHasElems_Csch func (o *XsdGoPkgHasElems_Csch)
+	XsdGoPkgHasElems_Neq func (o *XsdGoPkgHasElems_Neq)
+	XsdGoPkgHasElems_Xor func (o *XsdGoPkgHasElems_Xor)
+	XsdGoPkgHasElems_Domain func (o *XsdGoPkgHasElems_Domain)
+	XsdGoPkgHasElem_True func (o *XsdGoPkgHasElem_True)
+	XsdGoPkgHasGroup_MatrixContent func (o *XsdGoPkgHasGroup_MatrixContent)
+	XsdGoPkgHasElem_In func (o *XsdGoPkgHasElem_In)
+	XsdGoPkgHasElems_Notanumber func (o *XsdGoPkgHasElems_Notanumber)
+	XsdGoPkgHasElem_Intersect func (o *XsdGoPkgHasElem_Intersect)
+	XsdGoPkgHasGroup_PresExprClass func (o *XsdGoPkgHasGroup_PresExprClass)
+	XsdGoPkgHasElems_Arcsec func (o *XsdGoPkgHasElems_Arcsec)
+	XsdGoPkgHasElem_Sum func (o *XsdGoPkgHasElem_Sum)
+	XsdGoPkgHasElems_Arccoth func (o *XsdGoPkgHasElems_Arccoth)
+	XsdGoPkgHasElem_Csc func (o *XsdGoPkgHasElem_Csc)
+	XsdGoPkgHasElem_Arccsch func (o *XsdGoPkgHasElem_Arccsch)
+	XsdGoPkgHasElems_Cartesianproduct func (o *XsdGoPkgHasElems_Cartesianproduct)
+	TmathType func (o *TmathType)
+	XsdGoPkgHasElems_Prsubset func (o *XsdGoPkgHasElems_Prsubset)
+	XsdGoPkgHasElem_Csch func (o *XsdGoPkgHasElem_Csch)
+	XsdGoPkgHasElem_Arctan func (o *XsdGoPkgHasElem_Arctan)
+	TConstantType func (o *TConstantType)
+	XsdGoPkgHasElem_Card func (o *XsdGoPkgHasElem_Card)
+	XsdGoPkgHasElems_Quotient func (o *XsdGoPkgHasElems_Quotient)
+	TmsubType func (o *TmsubType)
+	TlistType func (o *TlistType)
+	XsdGoPkgHasElem_Ceiling func (o *XsdGoPkgHasElem_Ceiling)
+	XsdGoPkgHasElem_Arccoth func (o *XsdGoPkgHasElem_Arccoth)
+	XsdGoPkgHasElems_Conjugate func (o *XsdGoPkgHasElems_Conjugate)
+	XsdGoPkgHasGroup_MtableContent func (o *XsdGoPkgHasGroup_MtableContent)
+	XsdGoPkgHasElems_Divergence func (o *XsdGoPkgHasElems_Divergence)
+	XsdGoPkgHasElems_List func (o *XsdGoPkgHasElems_List)
+	TouterproductType func (o *TouterproductType)
+	XsdGoPkgHasElem_Mlabeledtr func (o *XsdGoPkgHasElem_Mlabeledtr)
+	XsdGoPkgHasElems_Sech func (o *XsdGoPkgHasElems_Sech)
+	XsdGoPkgHasElem_Codomain func (o *XsdGoPkgHasElem_Codomain)
+	XsdGoPkgHasElem_Mglyph func (o *XsdGoPkgHasElem_Mglyph)
+	XsdGoPkgHasElem_Math func (o *XsdGoPkgHasElem_Math)
+	XsdGoPkgHasElem_Grad func (o *XsdGoPkgHasElem_Grad)
+	TmprescriptsType func (o *TmprescriptsType)
+	XsdGoPkgHasGroup_PresentationTableClass func (o *XsdGoPkgHasGroup_PresentationTableClass)
+	XsdGoPkgHasElems_Notprsubset func (o *XsdGoPkgHasElems_Notprsubset)
+	XsdGoPkgHasElem_Eulergamma func (o *XsdGoPkgHasElem_Eulergamma)
+	XsdGoPkgHasElem_Times func (o *XsdGoPkgHasElem_Times)
+	TannotationXmlType func (o *TannotationXmlType)
+	TmiType func (o *TmiType)
+	XsdGoPkgHasElems_Msqrt func (o *XsdGoPkgHasElems_Msqrt)
+	XsdGoPkgHasElem_Product func (o *XsdGoPkgHasElem_Product)
+	XsdGoPkgHasElems_Setdiff func (o *XsdGoPkgHasElems_Setdiff)
+	XsdGoPkgHasElems_Mtable func (o *XsdGoPkgHasElems_Mtable)
+	XsdGoPkgHasElems_Primes func (o *XsdGoPkgHasElems_Primes)
+	XsdGoPkgHasElems_Interval func (o *XsdGoPkgHasElems_Interval)
+	TmactionType func (o *TmactionType)
+	XsdGoPkgHasElem_Merror func (o *XsdGoPkgHasElem_Merror)
+	XsdGoPkgHasElem_Ident func (o *XsdGoPkgHasElem_Ident)
+	XsdGoPkgHasElem_Ms func (o *XsdGoPkgHasElem_Ms)
+	TmglyphType func (o *TmglyphType)
+	XsdGoPkgHasGroup_ContentConstantsClass func (o *XsdGoPkgHasGroup_ContentConstantsClass)
+	XsdGoPkgHasElems_Annotation func (o *XsdGoPkgHasElems_Annotation)
+	XsdGoPkgHasElem_Neq func (o *XsdGoPkgHasElem_Neq)
+	XsdGoPkgHasElem_Min func (o *XsdGoPkgHasElem_Min)
+	TtendstoType func (o *TtendstoType)
+	XsdGoPkgHasElem_And func (o *XsdGoPkgHasElem_And)
+	TmrootType func (o *TmrootType)
+	XsdGoPkgHasElem_Msqrt func (o *XsdGoPkgHasElem_Msqrt)
+	XsdGoPkgHasElem_Arcsech func (o *XsdGoPkgHasElem_Arcsech)
+	XsdGoPkgHasElems_Lt func (o *XsdGoPkgHasElems_Lt)
+	XsdGoPkgHasElem_Cot func (o *XsdGoPkgHasElem_Cot)
+	XsdGoPkgHasElems_Subset func (o *XsdGoPkgHasElems_Subset)
+	XsdGoPkgHasElem_Coth func (o *XsdGoPkgHasElem_Coth)
+	XsdGoPkgHasElem_Factorof func (o *XsdGoPkgHasElem_Factorof)
+	XsdGoPkgHasElems_Grad func (o *XsdGoPkgHasElems_Grad)
+	XsdGoPkgHasElem_Notanumber func (o *XsdGoPkgHasElem_Notanumber)
+	XsdGoPkgHasElem_Primes func (o *XsdGoPkgHasElem_Primes)
+	XsdGoPkgHasElems_Declare func (o *XsdGoPkgHasElems_Declare)
+	TmatrixType func (o *TmatrixType)
+	XsdGoPkgHasElem_Geq func (o *XsdGoPkgHasElem_Geq)
+	XsdGoPkgHasElem_Xor func (o *XsdGoPkgHasElem_Xor)
+	XsdGoPkgHasElem_Arccsc func (o *XsdGoPkgHasElem_Arccsc)
+	TintType func (o *TintType)
+	XsdGoPkgHasElems_Arctanh func (o *XsdGoPkgHasElems_Arctanh)
+	XsdGoPkgHasElems_Mroot func (o *XsdGoPkgHasElems_Mroot)
+	XsdGoPkgHasElem_Mrow func (o *XsdGoPkgHasElem_Mrow)
+	XsdGoPkgHasElem_Piecewise func (o *XsdGoPkgHasElem_Piecewise)
+	XsdGoPkgHasElems_Vector func (o *XsdGoPkgHasElems_Vector)
+	XsdGoPkgHasElems_Msup func (o *XsdGoPkgHasElems_Msup)
+	XsdGoPkgHasElem_Sin func (o *XsdGoPkgHasElem_Sin)
+	XsdGoPkgHasElem_Uplimit func (o *XsdGoPkgHasElem_Uplimit)
+	XsdGoPkgHasElems_Determinant func (o *XsdGoPkgHasElems_Determinant)
+	TconditionType func (o *TconditionType)
+	XsdGoPkgHasGroup_PresentationScriptClass func (o *XsdGoPkgHasGroup_PresentationScriptClass)
+	XsdGoPkgHasElems_None func (o *XsdGoPkgHasElems_None)
+	TmomentType func (o *TmomentType)
+	XsdGoPkgHasElems_In func (o *XsdGoPkgHasElems_In)
+	XsdGoPkgHasElems_Piece func (o *XsdGoPkgHasElems_Piece)
+	XsdGoPkgHasElem_Not func (o *XsdGoPkgHasElem_Not)
 }

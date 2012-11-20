@@ -9,18 +9,18 @@ package go_Ogckml22
 
 
 import (
-	xsdt "github.com/metaleap/go-xsd/types"
 	xal "github.com/metaleap/go-xsd-pkg/docs.oasis-open.org/election/external/xAL.xsd_go"
+	xsdt "github.com/metaleap/go-xsd/types"
 	atom "github.com/metaleap/go-xsd-pkg/schemas.opengis.net/kml/2.2.0/atom-author-link.xsd_go"
 )
 
-type XsdGoPkgHasAttr_TargetId_XsdtNCName_ struct {
-	TargetId xsdt.NCName `xml:"http://www.opengis.net/kml/2.2 targetId,attr"`
+type XsdGoPkgHasAttr_Id_XsdtId_ struct {
+	Id xsdt.Id `xml:"http://www.opengis.net/kml/2.2 id,attr"`
 
 }
 
-type XsdGoPkgHasAttr_Id_XsdtId_ struct {
-	Id xsdt.Id `xml:"http://www.opengis.net/kml/2.2 id,attr"`
+type XsdGoPkgHasAttr_TargetId_XsdtNCName_ struct {
+	TargetId xsdt.NCName `xml:"http://www.opengis.net/kml/2.2 targetId,attr"`
 
 }
 
@@ -51,36 +51,39 @@ func (me *XsdGoPkgHasElem_Address) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElem_Address; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_Altitude struct {
-	Altitude xsdt.Double `xml:"http://www.opengis.net/kml/2.2 altitude"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Altitude function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Altitude instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Altitude instance.
-func (me *XsdGoPkgHasElem_Altitude) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Altitude; fn != nil { fn(me) }
- }
-
-//	Returns the default value for Altitude -- 0.0
-func (me XsdGoPkgHasElem_Altitude) AltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
-
 type XsdGoPkgHasElems_Altitude struct {
 	Altitudes []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 altitude"`
 
 }
-
-//	Returns the default value for Altitude -- 0.0
-func (me XsdGoPkgHasElems_Altitude) AltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Altitude function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Altitude instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Altitude instance.
 func (me *XsdGoPkgHasElems_Altitude) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_Altitude; fn != nil { fn(me) }
  }
 
+//	Returns the default value for Altitude -- 0.0
+func (me XsdGoPkgHasElems_Altitude) AltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
+
+type XsdGoPkgHasElem_Altitude struct {
+	Altitude xsdt.Double `xml:"http://www.opengis.net/kml/2.2 altitude"`
+
+}
+
+//	Returns the default value for Altitude -- 0.0
+func (me XsdGoPkgHasElem_Altitude) AltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Altitude function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Altitude instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Altitude instance.
+func (me *XsdGoPkgHasElem_Altitude) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Altitude; fn != nil { fn(me) }
+ }
+
 type TaltitudeModeEnumType xsdt.String
 
-//	Returns true if the value of this enumerated TaltitudeModeEnumType is "absolute".
-func (me TaltitudeModeEnumType) IsAbsolute () bool { return me == "absolute" }
+//	This convenience method just performs a simple type conversion to TaltitudeModeEnumType's alias type xsdt.String.
+func (me TaltitudeModeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TaltitudeModeEnumType is "relativeToGround".
+func (me TaltitudeModeEnumType) IsRelativeToGround () bool { return me == "relativeToGround" }
 
 //	Since TaltitudeModeEnumType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TaltitudeModeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
@@ -88,40 +91,11 @@ func (me *TaltitudeModeEnumType) SetFromString (s string)  { (*xsdt.String)(me).
 //	Returns true if the value of this enumerated TaltitudeModeEnumType is "clampToGround".
 func (me TaltitudeModeEnumType) IsClampToGround () bool { return me == "clampToGround" }
 
+//	Returns true if the value of this enumerated TaltitudeModeEnumType is "absolute".
+func (me TaltitudeModeEnumType) IsAbsolute () bool { return me == "absolute" }
+
 //	Since TaltitudeModeEnumType is just a simple String type, this merely returns the current string value.
 func (me TaltitudeModeEnumType) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TaltitudeModeEnumType is "relativeToGround".
-func (me TaltitudeModeEnumType) IsRelativeToGround () bool { return me == "relativeToGround" }
-
-//	This convenience method just performs a simple type conversion to TaltitudeModeEnumType's alias type xsdt.String.
-func (me TaltitudeModeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type XsdGoPkgHasElem_AltitudeMode struct {
-	AltitudeMode TaltitudeModeEnumType `xml:"http://www.opengis.net/kml/2.2 altitudeMode"`
-
-}
-
-//	Returns the default value for AltitudeMode -- "clampToGround"
-func (me XsdGoPkgHasElem_AltitudeMode) AltitudeModeDefault () TaltitudeModeEnumType { return TaltitudeModeEnumType("clampToGround") }
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AltitudeMode function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AltitudeMode instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AltitudeMode instance.
-func (me *XsdGoPkgHasElem_AltitudeMode) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AltitudeMode; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_AltitudeModeGroup struct {
-	AltitudeModeGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 altitudeModeGroup"`
-
-	XsdGoPkgHasElem_AltitudeMode
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AltitudeModeGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AltitudeModeGroup instance as the single argument. Then calls the Walk() method on 1/1 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AltitudeModeGroup instance.
-func (me *XsdGoPkgHasElem_AltitudeModeGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AltitudeModeGroup; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_AltitudeMode.Walk()
- }
 
 type XsdGoPkgHasElems_AltitudeMode struct {
 	AltitudeModes []TaltitudeModeEnumType `xml:"http://www.opengis.net/kml/2.2 altitudeMode"`
@@ -149,10 +123,36 @@ func (me *XsdGoPkgHasElems_AltitudeModeGroup) Walk ()  {
 	me.XsdGoPkgHasElems_AltitudeMode.Walk()
  }
 
+type XsdGoPkgHasElem_AltitudeMode struct {
+	AltitudeMode TaltitudeModeEnumType `xml:"http://www.opengis.net/kml/2.2 altitudeMode"`
+
+}
+
+//	Returns the default value for AltitudeMode -- "clampToGround"
+func (me XsdGoPkgHasElem_AltitudeMode) AltitudeModeDefault () TaltitudeModeEnumType { return TaltitudeModeEnumType("clampToGround") }
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AltitudeMode function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AltitudeMode instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AltitudeMode instance.
+func (me *XsdGoPkgHasElem_AltitudeMode) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_AltitudeMode; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_AltitudeModeGroup struct {
+	AltitudeModeGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 altitudeModeGroup"`
+
+	XsdGoPkgHasElem_AltitudeMode
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AltitudeModeGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AltitudeModeGroup instance as the single argument. Then calls the Walk() method on 1/1 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AltitudeModeGroup instance.
+func (me *XsdGoPkgHasElem_AltitudeModeGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_AltitudeModeGroup; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_AltitudeMode.Walk()
+ }
+
 type TdateTimeType xsdt.String
 
-//	This convenience method just performs a simple type conversion to TdateTimeType's alias type xsdt.String.
-func (me TdateTimeType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	Since TdateTimeType is just a simple String type, this merely returns the current string value.
+func (me TdateTimeType) String () string { return xsdt.String(me).String() }
 
 //	TdateTimeType is an XSD union-type of several types. This is a simple type conversion to XsdtGYear, but keep in mind the actual value may or may not be a valid XsdtGYear value.
 func (me TdateTimeType) ToXsdtGYear () xsdt.GYear { return xsdt.GYear(me) }
@@ -160,17 +160,17 @@ func (me TdateTimeType) ToXsdtGYear () xsdt.GYear { return xsdt.GYear(me) }
 //	TdateTimeType is an XSD union-type of several types. This is a simple type conversion to XsdtDate, but keep in mind the actual value may or may not be a valid XsdtDate value.
 func (me TdateTimeType) ToXsdtDate () xsdt.Date { return xsdt.Date(me) }
 
-//	Since TdateTimeType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TdateTimeType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TdateTimeType is just a simple String type, this merely returns the current string value.
-func (me TdateTimeType) String () string { return xsdt.String(me).String() }
+//	TdateTimeType is an XSD union-type of several types. This is a simple type conversion to XsdtDateTime, but keep in mind the actual value may or may not be a valid XsdtDateTime value.
+func (me TdateTimeType) ToXsdtDateTime () xsdt.DateTime { return xsdt.DateTime(me) }
 
 //	TdateTimeType is an XSD union-type of several types. This is a simple type conversion to XsdtGYearMonth, but keep in mind the actual value may or may not be a valid XsdtGYearMonth value.
 func (me TdateTimeType) ToXsdtGYearMonth () xsdt.GYearMonth { return xsdt.GYearMonth(me) }
 
-//	TdateTimeType is an XSD union-type of several types. This is a simple type conversion to XsdtDateTime, but keep in mind the actual value may or may not be a valid XsdtDateTime value.
-func (me TdateTimeType) ToXsdtDateTime () xsdt.DateTime { return xsdt.DateTime(me) }
+//	Since TdateTimeType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TdateTimeType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TdateTimeType's alias type xsdt.String.
+func (me TdateTimeType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 type XsdGoPkgHasElems_Begin struct {
 	Begins []TdateTimeType `xml:"http://www.opengis.net/kml/2.2 begin"`
@@ -200,24 +200,24 @@ type TcolorType xsdt.HexBinary
 //	This convenience method just performs a simple type conversion to TcolorType's alias type xsdt.HexBinary.
 func (me TcolorType) ToXsdtHexBinary () xsdt.HexBinary { return xsdt.HexBinary(me) }
 
-//	Since TcolorType is just a simple String type, this merely returns the current string value.
-func (me TcolorType) String () string { return xsdt.HexBinary(me).String() }
-
 //	Since TcolorType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TcolorType) SetFromString (s string)  { (*xsdt.HexBinary)(me).SetFromString(s) }
+
+//	Since TcolorType is just a simple String type, this merely returns the current string value.
+func (me TcolorType) String () string { return xsdt.HexBinary(me).String() }
 
 type XsdGoPkgHasElem_BgColor struct {
 	BgColor TcolorType `xml:"http://www.opengis.net/kml/2.2 bgColor"`
 
 }
 
-//	Returns the default value for BgColor -- "ffffffff"
-func (me XsdGoPkgHasElem_BgColor) BgColorDefault () TcolorType { return TcolorType("ffffffff") }
-
 //	If the WalkHandlers.XsdGoPkgHasElem_BgColor function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_BgColor instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_BgColor instance.
 func (me *XsdGoPkgHasElem_BgColor) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_BgColor; fn != nil { fn(me) }
  }
+
+//	Returns the default value for BgColor -- "ffffffff"
+func (me XsdGoPkgHasElem_BgColor) BgColorDefault () TcolorType { return TcolorType("ffffffff") }
 
 type XsdGoPkgHasElems_BgColor struct {
 	BgColors []TcolorType `xml:"http://www.opengis.net/kml/2.2 bgColor"`
@@ -237,24 +237,24 @@ type Tangle90Type xsdt.Double
 //	Returns a string representation of this Tangle90Type's current non-string scalar value.
 func (me Tangle90Type) String () string { return xsdt.Double(me).String() }
 
-//	Since Tangle90Type is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
-func (me *Tangle90Type) SetFromString (s string)  { (*xsdt.Double)(me).SetFromString(s) }
-
 //	This convenience method just performs a simple type conversion to Tangle90Type's alias type xsdt.Double.
 func (me Tangle90Type) ToXsdtDouble () xsdt.Double { return xsdt.Double(me) }
+
+//	Since Tangle90Type is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
+func (me *Tangle90Type) SetFromString (s string)  { (*xsdt.Double)(me).SetFromString(s) }
 
 type XsdGoPkgHasElem_BottomFov struct {
 	BottomFov Tangle90Type `xml:"http://www.opengis.net/kml/2.2 bottomFov"`
 
 }
 
-//	Returns the default value for BottomFov -- 0.0
-func (me XsdGoPkgHasElem_BottomFov) BottomFovDefault () Tangle90Type { var x = new(Tangle90Type); x.SetFromString("0.0"); return *x }
-
 //	If the WalkHandlers.XsdGoPkgHasElem_BottomFov function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_BottomFov instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_BottomFov instance.
 func (me *XsdGoPkgHasElem_BottomFov) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_BottomFov; fn != nil { fn(me) }
  }
+
+//	Returns the default value for BottomFov -- 0.0
+func (me XsdGoPkgHasElem_BottomFov) BottomFovDefault () Tangle90Type { var x = new(Tangle90Type); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElems_BottomFov struct {
 	BottomFovs []Tangle90Type `xml:"http://www.opengis.net/kml/2.2 bottomFov"`
@@ -269,19 +269,6 @@ func (me *XsdGoPkgHasElems_BottomFov) Walk ()  {
 //	Returns the default value for BottomFov -- 0.0
 func (me XsdGoPkgHasElems_BottomFov) BottomFovDefault () Tangle90Type { var x = new(Tangle90Type); x.SetFromString("0.0"); return *x }
 
-type XsdGoPkgHasElem_Color struct {
-	Color TcolorType `xml:"http://www.opengis.net/kml/2.2 color"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Color function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Color instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Color instance.
-func (me *XsdGoPkgHasElem_Color) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Color; fn != nil { fn(me) }
- }
-
-//	Returns the default value for Color -- "ffffffff"
-func (me XsdGoPkgHasElem_Color) ColorDefault () TcolorType { return TcolorType("ffffffff") }
-
 type XsdGoPkgHasElems_Color struct {
 	Colors []TcolorType `xml:"http://www.opengis.net/kml/2.2 color"`
 
@@ -295,7 +282,26 @@ func (me *XsdGoPkgHasElems_Color) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_Color; fn != nil { fn(me) }
  }
 
+type XsdGoPkgHasElem_Color struct {
+	Color TcolorType `xml:"http://www.opengis.net/kml/2.2 color"`
+
+}
+
+//	Returns the default value for Color -- "ffffffff"
+func (me XsdGoPkgHasElem_Color) ColorDefault () TcolorType { return TcolorType("ffffffff") }
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Color function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Color instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Color instance.
+func (me *XsdGoPkgHasElem_Color) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Color; fn != nil { fn(me) }
+ }
+
 type TcolorModeEnumType xsdt.String
+
+//	This convenience method just performs a simple type conversion to TcolorModeEnumType's alias type xsdt.String.
+func (me TcolorModeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TcolorModeEnumType is "normal".
+func (me TcolorModeEnumType) IsNormal () bool { return me == "normal" }
 
 //	Since TcolorModeEnumType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TcolorModeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
@@ -303,14 +309,21 @@ func (me *TcolorModeEnumType) SetFromString (s string)  { (*xsdt.String)(me).Set
 //	Since TcolorModeEnumType is just a simple String type, this merely returns the current string value.
 func (me TcolorModeEnumType) String () string { return xsdt.String(me).String() }
 
-//	Returns true if the value of this enumerated TcolorModeEnumType is "normal".
-func (me TcolorModeEnumType) IsNormal () bool { return me == "normal" }
-
 //	Returns true if the value of this enumerated TcolorModeEnumType is "random".
 func (me TcolorModeEnumType) IsRandom () bool { return me == "random" }
 
-//	This convenience method just performs a simple type conversion to TcolorModeEnumType's alias type xsdt.String.
-func (me TcolorModeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+type XsdGoPkgHasElem_ColorMode struct {
+	ColorMode TcolorModeEnumType `xml:"http://www.opengis.net/kml/2.2 colorMode"`
+
+}
+
+//	Returns the default value for ColorMode -- "normal"
+func (me XsdGoPkgHasElem_ColorMode) ColorModeDefault () TcolorModeEnumType { return TcolorModeEnumType("normal") }
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ColorMode function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ColorMode instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ColorMode instance.
+func (me *XsdGoPkgHasElem_ColorMode) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ColorMode; fn != nil { fn(me) }
+ }
 
 type XsdGoPkgHasElems_ColorMode struct {
 	ColorModes []TcolorModeEnumType `xml:"http://www.opengis.net/kml/2.2 colorMode"`
@@ -325,18 +338,15 @@ func (me *XsdGoPkgHasElems_ColorMode) Walk ()  {
 //	Returns the default value for ColorMode -- "normal"
 func (me XsdGoPkgHasElems_ColorMode) ColorModeDefault () TcolorModeEnumType { return TcolorModeEnumType("normal") }
 
-type XsdGoPkgHasElem_ColorMode struct {
-	ColorMode TcolorModeEnumType `xml:"http://www.opengis.net/kml/2.2 colorMode"`
+type XsdGoPkgHasElem_Cookie struct {
+	Cookie xsdt.String `xml:"http://www.opengis.net/kml/2.2 cookie"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_ColorMode function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ColorMode instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ColorMode instance.
-func (me *XsdGoPkgHasElem_ColorMode) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ColorMode; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_Cookie function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Cookie instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Cookie instance.
+func (me *XsdGoPkgHasElem_Cookie) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Cookie; fn != nil { fn(me) }
  }
-
-//	Returns the default value for ColorMode -- "normal"
-func (me XsdGoPkgHasElem_ColorMode) ColorModeDefault () TcolorModeEnumType { return TcolorModeEnumType("normal") }
 
 type XsdGoPkgHasElems_Cookie struct {
 	Cookies []xsdt.String `xml:"http://www.opengis.net/kml/2.2 cookie"`
@@ -348,29 +358,19 @@ func (me *XsdGoPkgHasElems_Cookie) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_Cookie; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_Cookie struct {
-	Cookie xsdt.String `xml:"http://www.opengis.net/kml/2.2 cookie"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Cookie function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Cookie instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Cookie instance.
-func (me *XsdGoPkgHasElem_Cookie) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Cookie; fn != nil { fn(me) }
- }
-
 type TcoordinatesType xsdt.String
-
-//	Since TcoordinatesType is just a simple String type, this merely returns the current string value.
-func (me TcoordinatesType) String () string { return xsdt.String(me).String() }
 
 //	TcoordinatesType defines a String containing a whitespace-separated list of xsdt.String values. This Values() method creates and returns a slice of all elements in that list.
 func (me TcoordinatesType) Values () (list []xsdt.String) { var svals = xsdt.ListValues(string(me)); list = make([]xsdt.String, len(svals)); for i, s := range svals { list[i] = xsdt.String(s) }; return }
 
+//	Since TcoordinatesType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TcoordinatesType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
 //	This convenience method just performs a simple type conversion to TcoordinatesType's alias type xsdt.String.
 func (me TcoordinatesType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
-//	Since TcoordinatesType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TcoordinatesType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+//	Since TcoordinatesType is just a simple String type, this merely returns the current string value.
+func (me TcoordinatesType) String () string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasElems_Coordinates struct {
 	Coordinateses []TcoordinatesType `xml:"http://www.opengis.net/kml/2.2 coordinates"`
@@ -434,20 +434,33 @@ func (me *XsdGoPkgHasElem_DisplayName) Walk ()  {
 
 type TdisplayModeEnumType xsdt.String
 
+//	This convenience method just performs a simple type conversion to TdisplayModeEnumType's alias type xsdt.String.
+func (me TdisplayModeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
 //	Returns true if the value of this enumerated TdisplayModeEnumType is "default".
 func (me TdisplayModeEnumType) IsDefault () bool { return me == "default" }
 
 //	Since TdisplayModeEnumType is just a simple String type, this merely returns the current string value.
 func (me TdisplayModeEnumType) String () string { return xsdt.String(me).String() }
 
-//	This convenience method just performs a simple type conversion to TdisplayModeEnumType's alias type xsdt.String.
-func (me TdisplayModeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	Returns true if the value of this enumerated TdisplayModeEnumType is "hide".
+func (me TdisplayModeEnumType) IsHide () bool { return me == "hide" }
 
 //	Since TdisplayModeEnumType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TdisplayModeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
-//	Returns true if the value of this enumerated TdisplayModeEnumType is "hide".
-func (me TdisplayModeEnumType) IsHide () bool { return me == "hide" }
+type XsdGoPkgHasElems_DisplayMode struct {
+	DisplayModes []TdisplayModeEnumType `xml:"http://www.opengis.net/kml/2.2 displayMode"`
+
+}
+
+//	Returns the default value for DisplayMode -- "default"
+func (me XsdGoPkgHasElems_DisplayMode) DisplayModeDefault () TdisplayModeEnumType { return TdisplayModeEnumType("default") }
+
+//	If the WalkHandlers.XsdGoPkgHasElems_DisplayMode function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_DisplayMode instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_DisplayMode instance.
+func (me *XsdGoPkgHasElems_DisplayMode) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_DisplayMode; fn != nil { fn(me) }
+ }
 
 type XsdGoPkgHasElem_DisplayMode struct {
 	DisplayMode TdisplayModeEnumType `xml:"http://www.opengis.net/kml/2.2 displayMode"`
@@ -462,18 +475,18 @@ func (me *XsdGoPkgHasElem_DisplayMode) Walk ()  {
 //	Returns the default value for DisplayMode -- "default"
 func (me XsdGoPkgHasElem_DisplayMode) DisplayModeDefault () TdisplayModeEnumType { return TdisplayModeEnumType("default") }
 
-type XsdGoPkgHasElems_DisplayMode struct {
-	DisplayModes []TdisplayModeEnumType `xml:"http://www.opengis.net/kml/2.2 displayMode"`
+type XsdGoPkgHasElems_DrawOrder struct {
+	DrawOrders []xsdt.Int `xml:"http://www.opengis.net/kml/2.2 drawOrder"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_DisplayMode function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_DisplayMode instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_DisplayMode instance.
-func (me *XsdGoPkgHasElems_DisplayMode) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_DisplayMode; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_DrawOrder function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_DrawOrder instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_DrawOrder instance.
+func (me *XsdGoPkgHasElems_DrawOrder) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_DrawOrder; fn != nil { fn(me) }
  }
 
-//	Returns the default value for DisplayMode -- "default"
-func (me XsdGoPkgHasElems_DisplayMode) DisplayModeDefault () TdisplayModeEnumType { return TdisplayModeEnumType("default") }
+//	Returns the default value for DrawOrder -- 0
+func (me XsdGoPkgHasElems_DrawOrder) DrawOrderDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("0"); return *x }
 
 type XsdGoPkgHasElem_DrawOrder struct {
 	DrawOrder xsdt.Int `xml:"http://www.opengis.net/kml/2.2 drawOrder"`
@@ -488,23 +501,7 @@ func (me *XsdGoPkgHasElem_DrawOrder) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElem_DrawOrder; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElems_DrawOrder struct {
-	DrawOrders []xsdt.Int `xml:"http://www.opengis.net/kml/2.2 drawOrder"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_DrawOrder function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_DrawOrder instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_DrawOrder instance.
-func (me *XsdGoPkgHasElems_DrawOrder) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_DrawOrder; fn != nil { fn(me) }
- }
-
-//	Returns the default value for DrawOrder -- 0
-func (me XsdGoPkgHasElems_DrawOrder) DrawOrderDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("0"); return *x }
-
 type Tangle180Type xsdt.Double
-
-//	This convenience method just performs a simple type conversion to Tangle180Type's alias type xsdt.Double.
-func (me Tangle180Type) ToXsdtDouble () xsdt.Double { return xsdt.Double(me) }
 
 //	Since Tangle180Type is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
 func (me *Tangle180Type) SetFromString (s string)  { (*xsdt.Double)(me).SetFromString(s) }
@@ -512,31 +509,34 @@ func (me *Tangle180Type) SetFromString (s string)  { (*xsdt.Double)(me).SetFromS
 //	Returns a string representation of this Tangle180Type's current non-string scalar value.
 func (me Tangle180Type) String () string { return xsdt.Double(me).String() }
 
+//	This convenience method just performs a simple type conversion to Tangle180Type's alias type xsdt.Double.
+func (me Tangle180Type) ToXsdtDouble () xsdt.Double { return xsdt.Double(me) }
+
 type XsdGoPkgHasElems_East struct {
 	Easts []Tangle180Type `xml:"http://www.opengis.net/kml/2.2 east"`
 
 }
+
+//	Returns the default value for East -- 180.0
+func (me XsdGoPkgHasElems_East) EastDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("180.0"); return *x }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_East function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_East instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_East instance.
 func (me *XsdGoPkgHasElems_East) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_East; fn != nil { fn(me) }
  }
 
-//	Returns the default value for East -- 180.0
-func (me XsdGoPkgHasElems_East) EastDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("180.0"); return *x }
-
 type XsdGoPkgHasElem_East struct {
 	East Tangle180Type `xml:"http://www.opengis.net/kml/2.2 east"`
 
 }
 
+//	Returns the default value for East -- 180.0
+func (me XsdGoPkgHasElem_East) EastDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("180.0"); return *x }
+
 //	If the WalkHandlers.XsdGoPkgHasElem_East function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_East instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_East instance.
 func (me *XsdGoPkgHasElem_East) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_East; fn != nil { fn(me) }
  }
-
-//	Returns the default value for East -- 180.0
-func (me XsdGoPkgHasElem_East) EastDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("180.0"); return *x }
 
 type XsdGoPkgHasElems_End struct {
 	Ends []TdateTimeType `xml:"http://www.opengis.net/kml/2.2 end"`
@@ -578,6 +578,19 @@ func (me *XsdGoPkgHasElem_Expires) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElem_Expires; fn != nil { fn(me) }
  }
 
+type XsdGoPkgHasElems_Extrude struct {
+	Extrudes []xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 extrude"`
+
+}
+
+//	Returns the default value for Extrude -- 0
+func (me XsdGoPkgHasElems_Extrude) ExtrudeDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Extrude function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Extrude instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Extrude instance.
+func (me *XsdGoPkgHasElems_Extrude) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Extrude; fn != nil { fn(me) }
+ }
+
 type XsdGoPkgHasElem_Extrude struct {
 	Extrude xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 extrude"`
 
@@ -590,19 +603,6 @@ func (me XsdGoPkgHasElem_Extrude) ExtrudeDefault () xsdt.Boolean { var x = new(x
 func (me *XsdGoPkgHasElem_Extrude) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_Extrude; fn != nil { fn(me) }
  }
-
-type XsdGoPkgHasElems_Extrude struct {
-	Extrudes []xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 extrude"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Extrude function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Extrude instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Extrude instance.
-func (me *XsdGoPkgHasElems_Extrude) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Extrude; fn != nil { fn(me) }
- }
-
-//	Returns the default value for Extrude -- 0
-func (me XsdGoPkgHasElems_Extrude) ExtrudeDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
 
 type XsdGoPkgHasElems_Fill struct {
 	Fills []xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 fill"`
@@ -622,13 +622,26 @@ type XsdGoPkgHasElem_Fill struct {
 
 }
 
+//	Returns the default value for Fill -- 1
+func (me XsdGoPkgHasElem_Fill) FillDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("1"); return *x }
+
 //	If the WalkHandlers.XsdGoPkgHasElem_Fill function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Fill instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Fill instance.
 func (me *XsdGoPkgHasElem_Fill) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_Fill; fn != nil { fn(me) }
  }
 
-//	Returns the default value for Fill -- 1
-func (me XsdGoPkgHasElem_Fill) FillDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("1"); return *x }
+type XsdGoPkgHasElem_FlyToView struct {
+	FlyToView xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 flyToView"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_FlyToView function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FlyToView instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_FlyToView instance.
+func (me *XsdGoPkgHasElem_FlyToView) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_FlyToView; fn != nil { fn(me) }
+ }
+
+//	Returns the default value for FlyToView -- 0
+func (me XsdGoPkgHasElem_FlyToView) FlyToViewDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
 
 type XsdGoPkgHasElems_FlyToView struct {
 	FlyToViews []xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 flyToView"`
@@ -643,26 +656,13 @@ func (me *XsdGoPkgHasElems_FlyToView) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_FlyToView; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_FlyToView struct {
-	FlyToView xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 flyToView"`
-
-}
-
-//	Returns the default value for FlyToView -- 0
-func (me XsdGoPkgHasElem_FlyToView) FlyToViewDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
-
-//	If the WalkHandlers.XsdGoPkgHasElem_FlyToView function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FlyToView instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_FlyToView instance.
-func (me *XsdGoPkgHasElem_FlyToView) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FlyToView; fn != nil { fn(me) }
- }
-
 type TgridOriginEnumType xsdt.String
-
-//	This convenience method just performs a simple type conversion to TgridOriginEnumType's alias type xsdt.String.
-func (me TgridOriginEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 //	Since TgridOriginEnumType is just a simple String type, this merely returns the current string value.
 func (me TgridOriginEnumType) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TgridOriginEnumType is "upperLeft".
+func (me TgridOriginEnumType) IsUpperLeft () bool { return me == "upperLeft" }
 
 //	Returns true if the value of this enumerated TgridOriginEnumType is "lowerLeft".
 func (me TgridOriginEnumType) IsLowerLeft () bool { return me == "lowerLeft" }
@@ -670,21 +670,21 @@ func (me TgridOriginEnumType) IsLowerLeft () bool { return me == "lowerLeft" }
 //	Since TgridOriginEnumType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TgridOriginEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
-//	Returns true if the value of this enumerated TgridOriginEnumType is "upperLeft".
-func (me TgridOriginEnumType) IsUpperLeft () bool { return me == "upperLeft" }
+//	This convenience method just performs a simple type conversion to TgridOriginEnumType's alias type xsdt.String.
+func (me TgridOriginEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 type XsdGoPkgHasElems_GridOrigin struct {
 	GridOrigins []TgridOriginEnumType `xml:"http://www.opengis.net/kml/2.2 gridOrigin"`
 
 }
 
+//	Returns the default value for GridOrigin -- "lowerLeft"
+func (me XsdGoPkgHasElems_GridOrigin) GridOriginDefault () TgridOriginEnumType { return TgridOriginEnumType("lowerLeft") }
+
 //	If the WalkHandlers.XsdGoPkgHasElems_GridOrigin function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_GridOrigin instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_GridOrigin instance.
 func (me *XsdGoPkgHasElems_GridOrigin) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_GridOrigin; fn != nil { fn(me) }
  }
-
-//	Returns the default value for GridOrigin -- "lowerLeft"
-func (me XsdGoPkgHasElems_GridOrigin) GridOriginDefault () TgridOriginEnumType { return TgridOriginEnumType("lowerLeft") }
 
 type XsdGoPkgHasElem_GridOrigin struct {
 	GridOrigin TgridOriginEnumType `xml:"http://www.opengis.net/kml/2.2 gridOrigin"`
@@ -704,24 +704,24 @@ type Tangle360Type xsdt.Double
 //	This convenience method just performs a simple type conversion to Tangle360Type's alias type xsdt.Double.
 func (me Tangle360Type) ToXsdtDouble () xsdt.Double { return xsdt.Double(me) }
 
-//	Since Tangle360Type is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
-func (me *Tangle360Type) SetFromString (s string)  { (*xsdt.Double)(me).SetFromString(s) }
-
 //	Returns a string representation of this Tangle360Type's current non-string scalar value.
 func (me Tangle360Type) String () string { return xsdt.Double(me).String() }
+
+//	Since Tangle360Type is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
+func (me *Tangle360Type) SetFromString (s string)  { (*xsdt.Double)(me).SetFromString(s) }
 
 type XsdGoPkgHasElem_Heading struct {
 	Heading Tangle360Type `xml:"http://www.opengis.net/kml/2.2 heading"`
 
 }
 
-//	Returns the default value for Heading -- 0.0
-func (me XsdGoPkgHasElem_Heading) HeadingDefault () Tangle360Type { var x = new(Tangle360Type); x.SetFromString("0.0"); return *x }
-
 //	If the WalkHandlers.XsdGoPkgHasElem_Heading function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Heading instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Heading instance.
 func (me *XsdGoPkgHasElem_Heading) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_Heading; fn != nil { fn(me) }
  }
+
+//	Returns the default value for Heading -- 0.0
+func (me XsdGoPkgHasElem_Heading) HeadingDefault () Tangle360Type { var x = new(Tangle360Type); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElems_Heading struct {
 	Headings []Tangle360Type `xml:"http://www.opengis.net/kml/2.2 heading"`
@@ -738,20 +738,6 @@ func (me *XsdGoPkgHasElems_Heading) Walk ()  {
 
 //	not anyURI due to $[x] substitution in
 //	PhotoOverlay
-type XsdGoPkgHasElems_Href struct {
-//	not anyURI due to $[x] substitution in
-//	PhotoOverlay
-	Hrefs []xsdt.String `xml:"http://www.opengis.net/kml/2.2 href"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Href function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Href instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Href instance.
-func (me *XsdGoPkgHasElems_Href) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Href; fn != nil { fn(me) }
- }
-
-//	not anyURI due to $[x] substitution in
-//	PhotoOverlay
 type XsdGoPkgHasElem_Href struct {
 //	not anyURI due to $[x] substitution in
 //	PhotoOverlay
@@ -764,14 +750,18 @@ func (me *XsdGoPkgHasElem_Href) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElem_Href; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_HttpQuery struct {
-	HttpQuery xsdt.String `xml:"http://www.opengis.net/kml/2.2 httpQuery"`
+//	not anyURI due to $[x] substitution in
+//	PhotoOverlay
+type XsdGoPkgHasElems_Href struct {
+//	not anyURI due to $[x] substitution in
+//	PhotoOverlay
+	Hrefs []xsdt.String `xml:"http://www.opengis.net/kml/2.2 href"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_HttpQuery function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_HttpQuery instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_HttpQuery instance.
-func (me *XsdGoPkgHasElem_HttpQuery) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_HttpQuery; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_Href function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Href instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Href instance.
+func (me *XsdGoPkgHasElems_Href) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Href; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElems_HttpQuery struct {
@@ -784,25 +774,43 @@ func (me *XsdGoPkgHasElems_HttpQuery) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_HttpQuery; fn != nil { fn(me) }
  }
 
-type TunitsEnumType xsdt.String
+type XsdGoPkgHasElem_HttpQuery struct {
+	HttpQuery xsdt.String `xml:"http://www.opengis.net/kml/2.2 httpQuery"`
 
-//	Since TunitsEnumType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TunitsEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_HttpQuery function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_HttpQuery instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_HttpQuery instance.
+func (me *XsdGoPkgHasElem_HttpQuery) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_HttpQuery; fn != nil { fn(me) }
+ }
+
+type TunitsEnumType xsdt.String
 
 //	Returns true if the value of this enumerated TunitsEnumType is "fraction".
 func (me TunitsEnumType) IsFraction () bool { return me == "fraction" }
 
-//	Returns true if the value of this enumerated TunitsEnumType is "pixels".
-func (me TunitsEnumType) IsPixels () bool { return me == "pixels" }
-
-//	Since TunitsEnumType is just a simple String type, this merely returns the current string value.
-func (me TunitsEnumType) String () string { return xsdt.String(me).String() }
+//	Returns true if the value of this enumerated TunitsEnumType is "insetPixels".
+func (me TunitsEnumType) IsInsetPixels () bool { return me == "insetPixels" }
 
 //	This convenience method just performs a simple type conversion to TunitsEnumType's alias type xsdt.String.
 func (me TunitsEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
-//	Returns true if the value of this enumerated TunitsEnumType is "insetPixels".
-func (me TunitsEnumType) IsInsetPixels () bool { return me == "insetPixels" }
+//	Since TunitsEnumType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TunitsEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TunitsEnumType is just a simple String type, this merely returns the current string value.
+func (me TunitsEnumType) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TunitsEnumType is "pixels".
+func (me TunitsEnumType) IsPixels () bool { return me == "pixels" }
+
+type XsdGoPkgHasAttr_Yunits_TunitsEnumType_Fraction struct {
+	Yunits TunitsEnumType `xml:"http://www.opengis.net/kml/2.2 yunits,attr"`
+
+}
+
+//	Returns the default value for Yunits -- "fraction"
+func (me XsdGoPkgHasAttr_Yunits_TunitsEnumType_Fraction) YunitsDefault () TunitsEnumType { return TunitsEnumType("fraction") }
 
 type XsdGoPkgHasAttr_Xunits_TunitsEnumType_Fraction struct {
 	Xunits TunitsEnumType `xml:"http://www.opengis.net/kml/2.2 xunits,attr"`
@@ -827,14 +835,6 @@ type XsdGoPkgHasAttr_X_XsdtDouble_10 struct {
 
 //	Returns the default value for X -- 1.0
 func (me XsdGoPkgHasAttr_X_XsdtDouble_10) XDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
-
-type XsdGoPkgHasAttr_Yunits_TunitsEnumType_Fraction struct {
-	Yunits TunitsEnumType `xml:"http://www.opengis.net/kml/2.2 yunits,attr"`
-
-}
-
-//	Returns the default value for Yunits -- "fraction"
-func (me XsdGoPkgHasAttr_Yunits_TunitsEnumType_Fraction) YunitsDefault () TunitsEnumType { return TunitsEnumType("fraction") }
 
 type Tvec2Type struct {
 	XsdGoPkgHasAttr_Yunits_TunitsEnumType_Fraction
@@ -879,30 +879,17 @@ type TstyleStateEnumType xsdt.String
 //	Returns true if the value of this enumerated TstyleStateEnumType is "highlight".
 func (me TstyleStateEnumType) IsHighlight () bool { return me == "highlight" }
 
-//	Returns true if the value of this enumerated TstyleStateEnumType is "normal".
-func (me TstyleStateEnumType) IsNormal () bool { return me == "normal" }
-
 //	Since TstyleStateEnumType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TstyleStateEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
-//	This convenience method just performs a simple type conversion to TstyleStateEnumType's alias type xsdt.String.
-func (me TstyleStateEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	Returns true if the value of this enumerated TstyleStateEnumType is "normal".
+func (me TstyleStateEnumType) IsNormal () bool { return me == "normal" }
 
 //	Since TstyleStateEnumType is just a simple String type, this merely returns the current string value.
 func (me TstyleStateEnumType) String () string { return xsdt.String(me).String() }
 
-type XsdGoPkgHasElems_Key struct {
-	Keys []TstyleStateEnumType `xml:"http://www.opengis.net/kml/2.2 key"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Key function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Key instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Key instance.
-func (me *XsdGoPkgHasElems_Key) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Key; fn != nil { fn(me) }
- }
-
-//	Returns the default value for Key -- "normal"
-func (me XsdGoPkgHasElems_Key) KeyDefault () TstyleStateEnumType { return TstyleStateEnumType("normal") }
+//	This convenience method just performs a simple type conversion to TstyleStateEnumType's alias type xsdt.String.
+func (me TstyleStateEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 type XsdGoPkgHasElem_Key struct {
 	Key TstyleStateEnumType `xml:"http://www.opengis.net/kml/2.2 key"`
@@ -916,6 +903,19 @@ func (me *XsdGoPkgHasElem_Key) Walk ()  {
 
 //	Returns the default value for Key -- "normal"
 func (me XsdGoPkgHasElem_Key) KeyDefault () TstyleStateEnumType { return TstyleStateEnumType("normal") }
+
+type XsdGoPkgHasElems_Key struct {
+	Keys []TstyleStateEnumType `xml:"http://www.opengis.net/kml/2.2 key"`
+
+}
+
+//	Returns the default value for Key -- "normal"
+func (me XsdGoPkgHasElems_Key) KeyDefault () TstyleStateEnumType { return TstyleStateEnumType("normal") }
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Key function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Key instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Key instance.
+func (me *XsdGoPkgHasElems_Key) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Key; fn != nil { fn(me) }
+ }
 
 type XsdGoPkgHasElem_Latitude struct {
 	Latitude Tangle90Type `xml:"http://www.opengis.net/kml/2.2 latitude"`
@@ -935,13 +935,13 @@ type XsdGoPkgHasElems_Latitude struct {
 
 }
 
+//	Returns the default value for Latitude -- 0.0
+func (me XsdGoPkgHasElems_Latitude) LatitudeDefault () Tangle90Type { var x = new(Tangle90Type); x.SetFromString("0.0"); return *x }
+
 //	If the WalkHandlers.XsdGoPkgHasElems_Latitude function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Latitude instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Latitude instance.
 func (me *XsdGoPkgHasElems_Latitude) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_Latitude; fn != nil { fn(me) }
  }
-
-//	Returns the default value for Latitude -- 0.0
-func (me XsdGoPkgHasElems_Latitude) LatitudeDefault () Tangle90Type { var x = new(Tangle90Type); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElem_LeftFov struct {
 	LeftFov Tangle180Type `xml:"http://www.opengis.net/kml/2.2 leftFov"`
@@ -989,16 +989,6 @@ func (me *XsdGoPkgHasElem_LinkDescription) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElem_LinkDescription; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_LinkName struct {
-	LinkName xsdt.String `xml:"http://www.opengis.net/kml/2.2 linkName"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_LinkName function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LinkName instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LinkName instance.
-func (me *XsdGoPkgHasElem_LinkName) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_LinkName; fn != nil { fn(me) }
- }
-
 type XsdGoPkgHasElems_LinkName struct {
 	LinkNames []xsdt.String `xml:"http://www.opengis.net/kml/2.2 linkName"`
 
@@ -1007,6 +997,16 @@ type XsdGoPkgHasElems_LinkName struct {
 //	If the WalkHandlers.XsdGoPkgHasElems_LinkName function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LinkName instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LinkName instance.
 func (me *XsdGoPkgHasElems_LinkName) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_LinkName; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_LinkName struct {
+	LinkName xsdt.String `xml:"http://www.opengis.net/kml/2.2 linkName"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_LinkName function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LinkName instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LinkName instance.
+func (me *XsdGoPkgHasElem_LinkName) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_LinkName; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasAttr_MaxLines_XsdtInt_2 struct {
@@ -1053,11 +1053,20 @@ func (me *XsdGoPkgHasElem_LinkSnippet) Walk ()  {
 
 type TlistItemTypeEnumType xsdt.String
 
+//	Returns true if the value of this enumerated TlistItemTypeEnumType is "checkOffOnly".
+func (me TlistItemTypeEnumType) IsCheckOffOnly () bool { return me == "checkOffOnly" }
+
+//	Returns true if the value of this enumerated TlistItemTypeEnumType is "checkHideChildren".
+func (me TlistItemTypeEnumType) IsCheckHideChildren () bool { return me == "checkHideChildren" }
+
+//	Since TlistItemTypeEnumType is just a simple String type, this merely returns the current string value.
+func (me TlistItemTypeEnumType) String () string { return xsdt.String(me).String() }
+
 //	Returns true if the value of this enumerated TlistItemTypeEnumType is "check".
 func (me TlistItemTypeEnumType) IsCheck () bool { return me == "check" }
 
-//	Returns true if the value of this enumerated TlistItemTypeEnumType is "checkOffOnly".
-func (me TlistItemTypeEnumType) IsCheckOffOnly () bool { return me == "checkOffOnly" }
+//	Since TlistItemTypeEnumType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TlistItemTypeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 //	Returns true if the value of this enumerated TlistItemTypeEnumType is "radioFolder".
 func (me TlistItemTypeEnumType) IsRadioFolder () bool { return me == "radioFolder" }
@@ -1065,14 +1074,18 @@ func (me TlistItemTypeEnumType) IsRadioFolder () bool { return me == "radioFolde
 //	This convenience method just performs a simple type conversion to TlistItemTypeEnumType's alias type xsdt.String.
 func (me TlistItemTypeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
-//	Returns true if the value of this enumerated TlistItemTypeEnumType is "checkHideChildren".
-func (me TlistItemTypeEnumType) IsCheckHideChildren () bool { return me == "checkHideChildren" }
+type XsdGoPkgHasElem_ListItemType struct {
+	ListItemType TlistItemTypeEnumType `xml:"http://www.opengis.net/kml/2.2 listItemType"`
 
-//	Since TlistItemTypeEnumType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TlistItemTypeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+}
 
-//	Since TlistItemTypeEnumType is just a simple String type, this merely returns the current string value.
-func (me TlistItemTypeEnumType) String () string { return xsdt.String(me).String() }
+//	Returns the default value for ListItemType -- "check"
+func (me XsdGoPkgHasElem_ListItemType) ListItemTypeDefault () TlistItemTypeEnumType { return TlistItemTypeEnumType("check") }
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ListItemType function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ListItemType instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ListItemType instance.
+func (me *XsdGoPkgHasElem_ListItemType) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ListItemType; fn != nil { fn(me) }
+ }
 
 type XsdGoPkgHasElems_ListItemType struct {
 	ListItemTypes []TlistItemTypeEnumType `xml:"http://www.opengis.net/kml/2.2 listItemType"`
@@ -1087,32 +1100,6 @@ func (me *XsdGoPkgHasElems_ListItemType) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_ListItemType; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_ListItemType struct {
-	ListItemType TlistItemTypeEnumType `xml:"http://www.opengis.net/kml/2.2 listItemType"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ListItemType function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ListItemType instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ListItemType instance.
-func (me *XsdGoPkgHasElem_ListItemType) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ListItemType; fn != nil { fn(me) }
- }
-
-//	Returns the default value for ListItemType -- "check"
-func (me XsdGoPkgHasElem_ListItemType) ListItemTypeDefault () TlistItemTypeEnumType { return TlistItemTypeEnumType("check") }
-
-type XsdGoPkgHasElem_Longitude struct {
-	Longitude Tangle180Type `xml:"http://www.opengis.net/kml/2.2 longitude"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Longitude function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Longitude instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Longitude instance.
-func (me *XsdGoPkgHasElem_Longitude) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Longitude; fn != nil { fn(me) }
- }
-
-//	Returns the default value for Longitude -- 0.0
-func (me XsdGoPkgHasElem_Longitude) LongitudeDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("0.0"); return *x }
-
 type XsdGoPkgHasElems_Longitude struct {
 	Longitudes []Tangle180Type `xml:"http://www.opengis.net/kml/2.2 longitude"`
 
@@ -1124,6 +1111,19 @@ func (me XsdGoPkgHasElems_Longitude) LongitudeDefault () Tangle180Type { var x =
 //	If the WalkHandlers.XsdGoPkgHasElems_Longitude function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Longitude instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Longitude instance.
 func (me *XsdGoPkgHasElems_Longitude) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_Longitude; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Longitude struct {
+	Longitude Tangle180Type `xml:"http://www.opengis.net/kml/2.2 longitude"`
+
+}
+
+//	Returns the default value for Longitude -- 0.0
+func (me XsdGoPkgHasElem_Longitude) LongitudeDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("0.0"); return *x }
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Longitude function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Longitude instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Longitude instance.
+func (me *XsdGoPkgHasElem_Longitude) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Longitude; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElem_MaxSnippetLines struct {
@@ -1198,19 +1198,6 @@ func (me *XsdGoPkgHasElems_Message) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_Message; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_MinAltitude struct {
-	MinAltitude xsdt.Double `xml:"http://www.opengis.net/kml/2.2 minAltitude"`
-
-}
-
-//	Returns the default value for MinAltitude -- 0.0
-func (me XsdGoPkgHasElem_MinAltitude) MinAltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
-
-//	If the WalkHandlers.XsdGoPkgHasElem_MinAltitude function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MinAltitude instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_MinAltitude instance.
-func (me *XsdGoPkgHasElem_MinAltitude) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_MinAltitude; fn != nil { fn(me) }
- }
-
 type XsdGoPkgHasElems_MinAltitude struct {
 	MinAltitudes []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 minAltitude"`
 
@@ -1223,6 +1210,19 @@ func (me *XsdGoPkgHasElems_MinAltitude) Walk ()  {
 
 //	Returns the default value for MinAltitude -- 0.0
 func (me XsdGoPkgHasElems_MinAltitude) MinAltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
+
+type XsdGoPkgHasElem_MinAltitude struct {
+	MinAltitude xsdt.Double `xml:"http://www.opengis.net/kml/2.2 minAltitude"`
+
+}
+
+//	Returns the default value for MinAltitude -- 0.0
+func (me XsdGoPkgHasElem_MinAltitude) MinAltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
+
+//	If the WalkHandlers.XsdGoPkgHasElem_MinAltitude function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MinAltitude instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_MinAltitude instance.
+func (me *XsdGoPkgHasElem_MinAltitude) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_MinAltitude; fn != nil { fn(me) }
+ }
 
 type XsdGoPkgHasElems_MinFadeExtent struct {
 	MinFadeExtents []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 minFadeExtent"`
@@ -1242,13 +1242,13 @@ type XsdGoPkgHasElem_MinFadeExtent struct {
 
 }
 
-//	Returns the default value for MinFadeExtent -- 0.0
-func (me XsdGoPkgHasElem_MinFadeExtent) MinFadeExtentDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
-
 //	If the WalkHandlers.XsdGoPkgHasElem_MinFadeExtent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MinFadeExtent instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_MinFadeExtent instance.
 func (me *XsdGoPkgHasElem_MinFadeExtent) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_MinFadeExtent; fn != nil { fn(me) }
  }
+
+//	Returns the default value for MinFadeExtent -- 0.0
+func (me XsdGoPkgHasElem_MinFadeExtent) MinFadeExtentDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElems_MinLodPixels struct {
 	MinLodPixelses []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 minLodPixels"`
@@ -1268,52 +1268,39 @@ type XsdGoPkgHasElem_MinLodPixels struct {
 
 }
 
-//	Returns the default value for MinLodPixels -- 0.0
-func (me XsdGoPkgHasElem_MinLodPixels) MinLodPixelsDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
-
 //	If the WalkHandlers.XsdGoPkgHasElem_MinLodPixels function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MinLodPixels instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_MinLodPixels instance.
 func (me *XsdGoPkgHasElem_MinLodPixels) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_MinLodPixels; fn != nil { fn(me) }
  }
+
+//	Returns the default value for MinLodPixels -- 0.0
+func (me XsdGoPkgHasElem_MinLodPixels) MinLodPixelsDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElem_MinRefreshPeriod struct {
 	MinRefreshPeriod xsdt.Double `xml:"http://www.opengis.net/kml/2.2 minRefreshPeriod"`
 
 }
 
+//	Returns the default value for MinRefreshPeriod -- 0.0
+func (me XsdGoPkgHasElem_MinRefreshPeriod) MinRefreshPeriodDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
+
 //	If the WalkHandlers.XsdGoPkgHasElem_MinRefreshPeriod function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MinRefreshPeriod instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_MinRefreshPeriod instance.
 func (me *XsdGoPkgHasElem_MinRefreshPeriod) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_MinRefreshPeriod; fn != nil { fn(me) }
  }
-
-//	Returns the default value for MinRefreshPeriod -- 0.0
-func (me XsdGoPkgHasElem_MinRefreshPeriod) MinRefreshPeriodDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElems_MinRefreshPeriod struct {
 	MinRefreshPeriods []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 minRefreshPeriod"`
 
 }
 
-//	Returns the default value for MinRefreshPeriod -- 0.0
-func (me XsdGoPkgHasElems_MinRefreshPeriod) MinRefreshPeriodDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
-
 //	If the WalkHandlers.XsdGoPkgHasElems_MinRefreshPeriod function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_MinRefreshPeriod instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_MinRefreshPeriod instance.
 func (me *XsdGoPkgHasElems_MinRefreshPeriod) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_MinRefreshPeriod; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_MaxAltitude struct {
-	MaxAltitude xsdt.Double `xml:"http://www.opengis.net/kml/2.2 maxAltitude"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_MaxAltitude function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MaxAltitude instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_MaxAltitude instance.
-func (me *XsdGoPkgHasElem_MaxAltitude) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_MaxAltitude; fn != nil { fn(me) }
- }
-
-//	Returns the default value for MaxAltitude -- 0.0
-func (me XsdGoPkgHasElem_MaxAltitude) MaxAltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
+//	Returns the default value for MinRefreshPeriod -- 0.0
+func (me XsdGoPkgHasElems_MinRefreshPeriod) MinRefreshPeriodDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElems_MaxAltitude struct {
 	MaxAltitudes []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 maxAltitude"`
@@ -1328,6 +1315,32 @@ func (me *XsdGoPkgHasElems_MaxAltitude) Walk ()  {
 //	Returns the default value for MaxAltitude -- 0.0
 func (me XsdGoPkgHasElems_MaxAltitude) MaxAltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
 
+type XsdGoPkgHasElem_MaxAltitude struct {
+	MaxAltitude xsdt.Double `xml:"http://www.opengis.net/kml/2.2 maxAltitude"`
+
+}
+
+//	Returns the default value for MaxAltitude -- 0.0
+func (me XsdGoPkgHasElem_MaxAltitude) MaxAltitudeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
+
+//	If the WalkHandlers.XsdGoPkgHasElem_MaxAltitude function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MaxAltitude instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_MaxAltitude instance.
+func (me *XsdGoPkgHasElem_MaxAltitude) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_MaxAltitude; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_MaxFadeExtent struct {
+	MaxFadeExtent xsdt.Double `xml:"http://www.opengis.net/kml/2.2 maxFadeExtent"`
+
+}
+
+//	Returns the default value for MaxFadeExtent -- 0.0
+func (me XsdGoPkgHasElem_MaxFadeExtent) MaxFadeExtentDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
+
+//	If the WalkHandlers.XsdGoPkgHasElem_MaxFadeExtent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MaxFadeExtent instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_MaxFadeExtent instance.
+func (me *XsdGoPkgHasElem_MaxFadeExtent) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_MaxFadeExtent; fn != nil { fn(me) }
+ }
+
 type XsdGoPkgHasElems_MaxFadeExtent struct {
 	MaxFadeExtents []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 maxFadeExtent"`
 
@@ -1340,19 +1353,6 @@ func (me XsdGoPkgHasElems_MaxFadeExtent) MaxFadeExtentDefault () xsdt.Double { v
 func (me *XsdGoPkgHasElems_MaxFadeExtent) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_MaxFadeExtent; fn != nil { fn(me) }
  }
-
-type XsdGoPkgHasElem_MaxFadeExtent struct {
-	MaxFadeExtent xsdt.Double `xml:"http://www.opengis.net/kml/2.2 maxFadeExtent"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_MaxFadeExtent function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MaxFadeExtent instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_MaxFadeExtent instance.
-func (me *XsdGoPkgHasElem_MaxFadeExtent) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_MaxFadeExtent; fn != nil { fn(me) }
- }
-
-//	Returns the default value for MaxFadeExtent -- 0.0
-func (me XsdGoPkgHasElem_MaxFadeExtent) MaxFadeExtentDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElems_MaxLodPixels struct {
 	MaxLodPixelses []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 maxLodPixels"`
@@ -1380,19 +1380,6 @@ func (me *XsdGoPkgHasElem_MaxLodPixels) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElem_MaxLodPixels; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_MaxHeight struct {
-	MaxHeight xsdt.Int `xml:"http://www.opengis.net/kml/2.2 maxHeight"`
-
-}
-
-//	Returns the default value for MaxHeight -- 0
-func (me XsdGoPkgHasElem_MaxHeight) MaxHeightDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("0"); return *x }
-
-//	If the WalkHandlers.XsdGoPkgHasElem_MaxHeight function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MaxHeight instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_MaxHeight instance.
-func (me *XsdGoPkgHasElem_MaxHeight) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_MaxHeight; fn != nil { fn(me) }
- }
-
 type XsdGoPkgHasElems_MaxHeight struct {
 	MaxHeights []xsdt.Int `xml:"http://www.opengis.net/kml/2.2 maxHeight"`
 
@@ -1406,18 +1393,18 @@ func (me *XsdGoPkgHasElems_MaxHeight) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_MaxHeight; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_MaxWidth struct {
-	MaxWidth xsdt.Int `xml:"http://www.opengis.net/kml/2.2 maxWidth"`
+type XsdGoPkgHasElem_MaxHeight struct {
+	MaxHeight xsdt.Int `xml:"http://www.opengis.net/kml/2.2 maxHeight"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_MaxWidth function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MaxWidth instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_MaxWidth instance.
-func (me *XsdGoPkgHasElem_MaxWidth) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_MaxWidth; fn != nil { fn(me) }
- }
+//	Returns the default value for MaxHeight -- 0
+func (me XsdGoPkgHasElem_MaxHeight) MaxHeightDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("0"); return *x }
 
-//	Returns the default value for MaxWidth -- 0
-func (me XsdGoPkgHasElem_MaxWidth) MaxWidthDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("0"); return *x }
+//	If the WalkHandlers.XsdGoPkgHasElem_MaxHeight function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MaxHeight instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_MaxHeight instance.
+func (me *XsdGoPkgHasElem_MaxHeight) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_MaxHeight; fn != nil { fn(me) }
+ }
 
 type XsdGoPkgHasElems_MaxWidth struct {
 	MaxWidths []xsdt.Int `xml:"http://www.opengis.net/kml/2.2 maxWidth"`
@@ -1431,6 +1418,19 @@ func (me *XsdGoPkgHasElems_MaxWidth) Walk ()  {
 
 //	Returns the default value for MaxWidth -- 0
 func (me XsdGoPkgHasElems_MaxWidth) MaxWidthDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("0"); return *x }
+
+type XsdGoPkgHasElem_MaxWidth struct {
+	MaxWidth xsdt.Int `xml:"http://www.opengis.net/kml/2.2 maxWidth"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_MaxWidth function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MaxWidth instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_MaxWidth instance.
+func (me *XsdGoPkgHasElem_MaxWidth) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_MaxWidth; fn != nil { fn(me) }
+ }
+
+//	Returns the default value for MaxWidth -- 0
+func (me XsdGoPkgHasElem_MaxWidth) MaxWidthDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("0"); return *x }
 
 type XsdGoPkgHasElems_Name struct {
 	Names []xsdt.String `xml:"http://www.opengis.net/kml/2.2 name"`
@@ -1452,6 +1452,19 @@ func (me *XsdGoPkgHasElem_Name) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElem_Name; fn != nil { fn(me) }
  }
 
+type XsdGoPkgHasElem_Near struct {
+	Near xsdt.Double `xml:"http://www.opengis.net/kml/2.2 near"`
+
+}
+
+//	Returns the default value for Near -- 0.0
+func (me XsdGoPkgHasElem_Near) NearDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Near function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Near instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Near instance.
+func (me *XsdGoPkgHasElem_Near) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Near; fn != nil { fn(me) }
+ }
+
 type XsdGoPkgHasElems_Near struct {
 	Nears []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 near"`
 
@@ -1465,18 +1478,18 @@ func (me *XsdGoPkgHasElems_Near) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_Near; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_Near struct {
-	Near xsdt.Double `xml:"http://www.opengis.net/kml/2.2 near"`
+type XsdGoPkgHasElem_North struct {
+	North Tangle180Type `xml:"http://www.opengis.net/kml/2.2 north"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_Near function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Near instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Near instance.
-func (me *XsdGoPkgHasElem_Near) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Near; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_North function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_North instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_North instance.
+func (me *XsdGoPkgHasElem_North) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_North; fn != nil { fn(me) }
  }
 
-//	Returns the default value for Near -- 0.0
-func (me XsdGoPkgHasElem_Near) NearDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
+//	Returns the default value for North -- 180.0
+func (me XsdGoPkgHasElem_North) NorthDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("180.0"); return *x }
 
 type XsdGoPkgHasElems_North struct {
 	Norths []Tangle180Type `xml:"http://www.opengis.net/kml/2.2 north"`
@@ -1491,44 +1504,31 @@ func (me *XsdGoPkgHasElems_North) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_North; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_North struct {
-	North Tangle180Type `xml:"http://www.opengis.net/kml/2.2 north"`
-
-}
-
-//	Returns the default value for North -- 180.0
-func (me XsdGoPkgHasElem_North) NorthDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("180.0"); return *x }
-
-//	If the WalkHandlers.XsdGoPkgHasElem_North function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_North instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_North instance.
-func (me *XsdGoPkgHasElem_North) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_North; fn != nil { fn(me) }
- }
-
 type XsdGoPkgHasElems_Open struct {
 	Opens []xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 open"`
 
 }
+
+//	Returns the default value for Open -- 0
+func (me XsdGoPkgHasElems_Open) OpenDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Open function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Open instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Open instance.
 func (me *XsdGoPkgHasElems_Open) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_Open; fn != nil { fn(me) }
  }
 
-//	Returns the default value for Open -- 0
-func (me XsdGoPkgHasElems_Open) OpenDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
-
 type XsdGoPkgHasElem_Open struct {
 	Open xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 open"`
 
 }
 
-//	Returns the default value for Open -- 0
-func (me XsdGoPkgHasElem_Open) OpenDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
-
 //	If the WalkHandlers.XsdGoPkgHasElem_Open function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Open instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Open instance.
 func (me *XsdGoPkgHasElem_Open) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_Open; fn != nil { fn(me) }
  }
+
+//	Returns the default value for Open -- 0
+func (me XsdGoPkgHasElem_Open) OpenDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
 
 type XsdGoPkgHasElem_Outline struct {
 	Outline xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 outline"`
@@ -1556,17 +1556,6 @@ func (me *XsdGoPkgHasElems_Outline) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_Outline; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElems_OverlayXY struct {
-	OverlayXYs []*Tvec2Type `xml:"http://www.opengis.net/kml/2.2 overlayXY"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_OverlayXY function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_OverlayXY instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_OverlayXY instance.
-func (me *XsdGoPkgHasElems_OverlayXY) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_OverlayXY; fn != nil { fn(me) }
-	for _, x := range me.OverlayXYs { x.Walk() }
- }
-
 type XsdGoPkgHasElem_OverlayXY struct {
 	OverlayXY *Tvec2Type `xml:"http://www.opengis.net/kml/2.2 overlayXY"`
 
@@ -1576,6 +1565,17 @@ type XsdGoPkgHasElem_OverlayXY struct {
 func (me *XsdGoPkgHasElem_OverlayXY) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_OverlayXY; fn != nil { fn(me) }
 	me.OverlayXY.Walk()
+ }
+
+type XsdGoPkgHasElems_OverlayXY struct {
+	OverlayXYs []*Tvec2Type `xml:"http://www.opengis.net/kml/2.2 overlayXY"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_OverlayXY function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_OverlayXY instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_OverlayXY instance.
+func (me *XsdGoPkgHasElems_OverlayXY) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_OverlayXY; fn != nil { fn(me) }
+	for _, x := range me.OverlayXYs { x.Walk() }
  }
 
 type XsdGoPkgHasElem_PhoneNumber struct {
@@ -1598,19 +1598,6 @@ func (me *XsdGoPkgHasElems_PhoneNumber) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_PhoneNumber; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_Range struct {
-	Range xsdt.Double `xml:"http://www.opengis.net/kml/2.2 range"`
-
-}
-
-//	Returns the default value for Range -- 0.0
-func (me XsdGoPkgHasElem_Range) RangeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Range function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Range instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Range instance.
-func (me *XsdGoPkgHasElem_Range) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Range; fn != nil { fn(me) }
- }
-
 type XsdGoPkgHasElems_Range struct {
 	Ranges []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 range"`
 
@@ -1624,7 +1611,32 @@ func (me *XsdGoPkgHasElems_Range) Walk ()  {
 //	Returns the default value for Range -- 0.0
 func (me XsdGoPkgHasElems_Range) RangeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
 
+type XsdGoPkgHasElem_Range struct {
+	Range xsdt.Double `xml:"http://www.opengis.net/kml/2.2 range"`
+
+}
+
+//	Returns the default value for Range -- 0.0
+func (me XsdGoPkgHasElem_Range) RangeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("0.0"); return *x }
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Range function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Range instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Range instance.
+func (me *XsdGoPkgHasElem_Range) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Range; fn != nil { fn(me) }
+ }
+
 type TrefreshModeEnumType xsdt.String
+
+//	Since TrefreshModeEnumType is just a simple String type, this merely returns the current string value.
+func (me TrefreshModeEnumType) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TrefreshModeEnumType is "onChange".
+func (me TrefreshModeEnumType) IsOnChange () bool { return me == "onChange" }
+
+//	Returns true if the value of this enumerated TrefreshModeEnumType is "onInterval".
+func (me TrefreshModeEnumType) IsOnInterval () bool { return me == "onInterval" }
+
+//	Returns true if the value of this enumerated TrefreshModeEnumType is "onExpire".
+func (me TrefreshModeEnumType) IsOnExpire () bool { return me == "onExpire" }
 
 //	Since TrefreshModeEnumType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TrefreshModeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
@@ -1632,30 +1644,18 @@ func (me *TrefreshModeEnumType) SetFromString (s string)  { (*xsdt.String)(me).S
 //	This convenience method just performs a simple type conversion to TrefreshModeEnumType's alias type xsdt.String.
 func (me TrefreshModeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
-//	Returns true if the value of this enumerated TrefreshModeEnumType is "onInterval".
-func (me TrefreshModeEnumType) IsOnInterval () bool { return me == "onInterval" }
-
-//	Returns true if the value of this enumerated TrefreshModeEnumType is "onChange".
-func (me TrefreshModeEnumType) IsOnChange () bool { return me == "onChange" }
-
-//	Since TrefreshModeEnumType is just a simple String type, this merely returns the current string value.
-func (me TrefreshModeEnumType) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TrefreshModeEnumType is "onExpire".
-func (me TrefreshModeEnumType) IsOnExpire () bool { return me == "onExpire" }
-
 type XsdGoPkgHasElems_RefreshMode struct {
 	RefreshModes []TrefreshModeEnumType `xml:"http://www.opengis.net/kml/2.2 refreshMode"`
 
 }
 
-//	Returns the default value for RefreshMode -- "onChange"
-func (me XsdGoPkgHasElems_RefreshMode) RefreshModeDefault () TrefreshModeEnumType { return TrefreshModeEnumType("onChange") }
-
 //	If the WalkHandlers.XsdGoPkgHasElems_RefreshMode function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_RefreshMode instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_RefreshMode instance.
 func (me *XsdGoPkgHasElems_RefreshMode) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_RefreshMode; fn != nil { fn(me) }
  }
+
+//	Returns the default value for RefreshMode -- "onChange"
+func (me XsdGoPkgHasElems_RefreshMode) RefreshModeDefault () TrefreshModeEnumType { return TrefreshModeEnumType("onChange") }
 
 type XsdGoPkgHasElem_RefreshMode struct {
 	RefreshMode TrefreshModeEnumType `xml:"http://www.opengis.net/kml/2.2 refreshMode"`
@@ -1668,19 +1668,6 @@ func (me XsdGoPkgHasElem_RefreshMode) RefreshModeDefault () TrefreshModeEnumType
 //	If the WalkHandlers.XsdGoPkgHasElem_RefreshMode function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_RefreshMode instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_RefreshMode instance.
 func (me *XsdGoPkgHasElem_RefreshMode) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_RefreshMode; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_RefreshInterval struct {
-	RefreshInterval xsdt.Double `xml:"http://www.opengis.net/kml/2.2 refreshInterval"`
-
-}
-
-//	Returns the default value for RefreshInterval -- 4.0
-func (me XsdGoPkgHasElem_RefreshInterval) RefreshIntervalDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("4.0"); return *x }
-
-//	If the WalkHandlers.XsdGoPkgHasElem_RefreshInterval function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_RefreshInterval instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_RefreshInterval instance.
-func (me *XsdGoPkgHasElem_RefreshInterval) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_RefreshInterval; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElems_RefreshInterval struct {
@@ -1696,44 +1683,44 @@ func (me *XsdGoPkgHasElems_RefreshInterval) Walk ()  {
 //	Returns the default value for RefreshInterval -- 4.0
 func (me XsdGoPkgHasElems_RefreshInterval) RefreshIntervalDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("4.0"); return *x }
 
+type XsdGoPkgHasElem_RefreshInterval struct {
+	RefreshInterval xsdt.Double `xml:"http://www.opengis.net/kml/2.2 refreshInterval"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_RefreshInterval function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_RefreshInterval instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_RefreshInterval instance.
+func (me *XsdGoPkgHasElem_RefreshInterval) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_RefreshInterval; fn != nil { fn(me) }
+ }
+
+//	Returns the default value for RefreshInterval -- 4.0
+func (me XsdGoPkgHasElem_RefreshInterval) RefreshIntervalDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("4.0"); return *x }
+
 type XsdGoPkgHasElems_RefreshVisibility struct {
 	RefreshVisibilities []xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 refreshVisibility"`
 
 }
+
+//	Returns the default value for RefreshVisibility -- 0
+func (me XsdGoPkgHasElems_RefreshVisibility) RefreshVisibilityDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_RefreshVisibility function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_RefreshVisibility instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_RefreshVisibility instance.
 func (me *XsdGoPkgHasElems_RefreshVisibility) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_RefreshVisibility; fn != nil { fn(me) }
  }
 
-//	Returns the default value for RefreshVisibility -- 0
-func (me XsdGoPkgHasElems_RefreshVisibility) RefreshVisibilityDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
-
 type XsdGoPkgHasElem_RefreshVisibility struct {
 	RefreshVisibility xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 refreshVisibility"`
 
 }
-
-//	Returns the default value for RefreshVisibility -- 0
-func (me XsdGoPkgHasElem_RefreshVisibility) RefreshVisibilityDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_RefreshVisibility function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_RefreshVisibility instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_RefreshVisibility instance.
 func (me *XsdGoPkgHasElem_RefreshVisibility) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_RefreshVisibility; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElems_RightFov struct {
-	RightFovs []Tangle180Type `xml:"http://www.opengis.net/kml/2.2 rightFov"`
-
-}
-
-//	Returns the default value for RightFov -- 0.0
-func (me XsdGoPkgHasElems_RightFov) RightFovDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("0.0"); return *x }
-
-//	If the WalkHandlers.XsdGoPkgHasElems_RightFov function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_RightFov instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_RightFov instance.
-func (me *XsdGoPkgHasElems_RightFov) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_RightFov; fn != nil { fn(me) }
- }
+//	Returns the default value for RefreshVisibility -- 0
+func (me XsdGoPkgHasElem_RefreshVisibility) RefreshVisibilityDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
 
 type XsdGoPkgHasElem_RightFov struct {
 	RightFov Tangle180Type `xml:"http://www.opengis.net/kml/2.2 rightFov"`
@@ -1748,18 +1735,31 @@ func (me *XsdGoPkgHasElem_RightFov) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElem_RightFov; fn != nil { fn(me) }
  }
 
+type XsdGoPkgHasElems_RightFov struct {
+	RightFovs []Tangle180Type `xml:"http://www.opengis.net/kml/2.2 rightFov"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_RightFov function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_RightFov instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_RightFov instance.
+func (me *XsdGoPkgHasElems_RightFov) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_RightFov; fn != nil { fn(me) }
+ }
+
+//	Returns the default value for RightFov -- 0.0
+func (me XsdGoPkgHasElems_RightFov) RightFovDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("0.0"); return *x }
+
 type XsdGoPkgHasElems_Roll struct {
 	Rolls []Tangle180Type `xml:"http://www.opengis.net/kml/2.2 roll"`
 
 }
 
+//	Returns the default value for Roll -- 0.0
+func (me XsdGoPkgHasElems_Roll) RollDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("0.0"); return *x }
+
 //	If the WalkHandlers.XsdGoPkgHasElems_Roll function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Roll instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Roll instance.
 func (me *XsdGoPkgHasElems_Roll) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_Roll; fn != nil { fn(me) }
  }
-
-//	Returns the default value for Roll -- 0.0
-func (me XsdGoPkgHasElems_Roll) RollDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElem_Roll struct {
 	Roll Tangle180Type `xml:"http://www.opengis.net/kml/2.2 roll"`
@@ -1792,12 +1792,23 @@ type XsdGoPkgHasElem_Rotation struct {
 
 }
 
-//	Returns the default value for Rotation -- 0.0
-func (me XsdGoPkgHasElem_Rotation) RotationDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("0.0"); return *x }
-
 //	If the WalkHandlers.XsdGoPkgHasElem_Rotation function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Rotation instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Rotation instance.
 func (me *XsdGoPkgHasElem_Rotation) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_Rotation; fn != nil { fn(me) }
+ }
+
+//	Returns the default value for Rotation -- 0.0
+func (me XsdGoPkgHasElem_Rotation) RotationDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("0.0"); return *x }
+
+type XsdGoPkgHasElems_RotationXY struct {
+	RotationXYs []*Tvec2Type `xml:"http://www.opengis.net/kml/2.2 rotationXY"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_RotationXY function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_RotationXY instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_RotationXY instance.
+func (me *XsdGoPkgHasElems_RotationXY) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_RotationXY; fn != nil { fn(me) }
+	for _, x := range me.RotationXYs { x.Walk() }
  }
 
 type XsdGoPkgHasElem_RotationXY struct {
@@ -1811,15 +1822,17 @@ func (me *XsdGoPkgHasElem_RotationXY) Walk ()  {
 	me.RotationXY.Walk()
  }
 
-type XsdGoPkgHasElems_RotationXY struct {
-	RotationXYs []*Tvec2Type `xml:"http://www.opengis.net/kml/2.2 rotationXY"`
+type XsdGoPkgHasElem_Scale struct {
+	Scale xsdt.Double `xml:"http://www.opengis.net/kml/2.2 scale"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_RotationXY function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_RotationXY instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_RotationXY instance.
-func (me *XsdGoPkgHasElems_RotationXY) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_RotationXY; fn != nil { fn(me) }
-	for _, x := range me.RotationXYs { x.Walk() }
+//	Returns the default value for Scale -- 1.0
+func (me XsdGoPkgHasElem_Scale) ScaleDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Scale function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Scale instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Scale instance.
+func (me *XsdGoPkgHasElem_Scale) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Scale; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElems_Scale struct {
@@ -1827,37 +1840,13 @@ type XsdGoPkgHasElems_Scale struct {
 
 }
 
-//	Returns the default value for Scale -- 1.0
-func (me XsdGoPkgHasElems_Scale) ScaleDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
-
 //	If the WalkHandlers.XsdGoPkgHasElems_Scale function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Scale instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Scale instance.
 func (me *XsdGoPkgHasElems_Scale) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_Scale; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_Scale struct {
-	Scale xsdt.Double `xml:"http://www.opengis.net/kml/2.2 scale"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Scale function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Scale instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Scale instance.
-func (me *XsdGoPkgHasElem_Scale) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Scale; fn != nil { fn(me) }
- }
-
 //	Returns the default value for Scale -- 1.0
-func (me XsdGoPkgHasElem_Scale) ScaleDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
-
-type XsdGoPkgHasElem_ScreenXY struct {
-	ScreenXY *Tvec2Type `xml:"http://www.opengis.net/kml/2.2 screenXY"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ScreenXY function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ScreenXY instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ScreenXY instance.
-func (me *XsdGoPkgHasElem_ScreenXY) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ScreenXY; fn != nil { fn(me) }
-	me.ScreenXY.Walk()
- }
+func (me XsdGoPkgHasElems_Scale) ScaleDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
 
 type XsdGoPkgHasElems_ScreenXY struct {
 	ScreenXYs []*Tvec2Type `xml:"http://www.opengis.net/kml/2.2 screenXY"`
@@ -1870,22 +1859,33 @@ func (me *XsdGoPkgHasElems_ScreenXY) Walk ()  {
 	for _, x := range me.ScreenXYs { x.Walk() }
  }
 
+type XsdGoPkgHasElem_ScreenXY struct {
+	ScreenXY *Tvec2Type `xml:"http://www.opengis.net/kml/2.2 screenXY"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ScreenXY function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ScreenXY instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ScreenXY instance.
+func (me *XsdGoPkgHasElem_ScreenXY) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ScreenXY; fn != nil { fn(me) }
+	me.ScreenXY.Walk()
+ }
+
 type TshapeEnumType xsdt.String
 
-//	Returns true if the value of this enumerated TshapeEnumType is "rectangle".
-func (me TshapeEnumType) IsRectangle () bool { return me == "rectangle" }
+//	Returns true if the value of this enumerated TshapeEnumType is "cylinder".
+func (me TshapeEnumType) IsCylinder () bool { return me == "cylinder" }
 
 //	Since TshapeEnumType is just a simple String type, this merely returns the current string value.
 func (me TshapeEnumType) String () string { return xsdt.String(me).String() }
 
-//	This convenience method just performs a simple type conversion to TshapeEnumType's alias type xsdt.String.
-func (me TshapeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	Returns true if the value of this enumerated TshapeEnumType is "rectangle".
+func (me TshapeEnumType) IsRectangle () bool { return me == "rectangle" }
 
 //	Returns true if the value of this enumerated TshapeEnumType is "sphere".
 func (me TshapeEnumType) IsSphere () bool { return me == "sphere" }
 
-//	Returns true if the value of this enumerated TshapeEnumType is "cylinder".
-func (me TshapeEnumType) IsCylinder () bool { return me == "cylinder" }
+//	This convenience method just performs a simple type conversion to TshapeEnumType's alias type xsdt.String.
+func (me TshapeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 //	Since TshapeEnumType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TshapeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
@@ -1895,13 +1895,13 @@ type XsdGoPkgHasElems_Shape struct {
 
 }
 
-//	Returns the default value for Shape -- "rectangle"
-func (me XsdGoPkgHasElems_Shape) ShapeDefault () TshapeEnumType { return TshapeEnumType("rectangle") }
-
 //	If the WalkHandlers.XsdGoPkgHasElems_Shape function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Shape instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Shape instance.
 func (me *XsdGoPkgHasElems_Shape) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_Shape; fn != nil { fn(me) }
  }
+
+//	Returns the default value for Shape -- "rectangle"
+func (me XsdGoPkgHasElems_Shape) ShapeDefault () TshapeEnumType { return TshapeEnumType("rectangle") }
 
 type XsdGoPkgHasElem_Shape struct {
 	Shape TshapeEnumType `xml:"http://www.opengis.net/kml/2.2 shape"`
@@ -1916,17 +1916,6 @@ func (me *XsdGoPkgHasElem_Shape) Walk ()  {
 //	Returns the default value for Shape -- "rectangle"
 func (me XsdGoPkgHasElem_Shape) ShapeDefault () TshapeEnumType { return TshapeEnumType("rectangle") }
 
-type XsdGoPkgHasElems_Size struct {
-	Sizes []*Tvec2Type `xml:"http://www.opengis.net/kml/2.2 size"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Size function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Size instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Size instance.
-func (me *XsdGoPkgHasElems_Size) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Size; fn != nil { fn(me) }
-	for _, x := range me.Sizes { x.Walk() }
- }
-
 type XsdGoPkgHasElem_Size struct {
 	Size *Tvec2Type `xml:"http://www.opengis.net/kml/2.2 size"`
 
@@ -1938,18 +1927,29 @@ func (me *XsdGoPkgHasElem_Size) Walk ()  {
 	me.Size.Walk()
  }
 
+type XsdGoPkgHasElems_Size struct {
+	Sizes []*Tvec2Type `xml:"http://www.opengis.net/kml/2.2 size"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Size function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Size instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Size instance.
+func (me *XsdGoPkgHasElems_Size) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Size; fn != nil { fn(me) }
+	for _, x := range me.Sizes { x.Walk() }
+ }
+
 type XsdGoPkgHasElem_South struct {
 	South Tangle180Type `xml:"http://www.opengis.net/kml/2.2 south"`
 
 }
 
+//	Returns the default value for South -- -180.0
+func (me XsdGoPkgHasElem_South) SouthDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("-180.0"); return *x }
+
 //	If the WalkHandlers.XsdGoPkgHasElem_South function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_South instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_South instance.
 func (me *XsdGoPkgHasElem_South) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_South; fn != nil { fn(me) }
  }
-
-//	Returns the default value for South -- -180.0
-func (me XsdGoPkgHasElem_South) SouthDefault () Tangle180Type { var x = new(Tangle180Type); x.SetFromString("-180.0"); return *x }
 
 type XsdGoPkgHasElems_South struct {
 	Souths []Tangle180Type `xml:"http://www.opengis.net/kml/2.2 south"`
@@ -1964,16 +1964,6 @@ func (me *XsdGoPkgHasElems_South) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_South; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElems_SourceHref struct {
-	SourceHrefs []xsdt.AnyURI `xml:"http://www.opengis.net/kml/2.2 sourceHref"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_SourceHref function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SourceHref instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SourceHref instance.
-func (me *XsdGoPkgHasElems_SourceHref) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_SourceHref; fn != nil { fn(me) }
- }
-
 type XsdGoPkgHasElem_SourceHref struct {
 	SourceHref xsdt.AnyURI `xml:"http://www.opengis.net/kml/2.2 sourceHref"`
 
@@ -1984,14 +1974,14 @@ func (me *XsdGoPkgHasElem_SourceHref) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElem_SourceHref; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElems_Snippet struct {
-	Snippets []xsdt.String `xml:"http://www.opengis.net/kml/2.2 snippet"`
+type XsdGoPkgHasElems_SourceHref struct {
+	SourceHrefs []xsdt.AnyURI `xml:"http://www.opengis.net/kml/2.2 sourceHref"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_Snippet function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Snippet instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Snippet instance.
-func (me *XsdGoPkgHasElems_Snippet) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Snippet; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_SourceHref function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SourceHref instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SourceHref instance.
+func (me *XsdGoPkgHasElems_SourceHref) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_SourceHref; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElem_Snippet struct {
@@ -2004,48 +1994,58 @@ func (me *XsdGoPkgHasElem_Snippet) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElem_Snippet; fn != nil { fn(me) }
  }
 
+type XsdGoPkgHasElems_Snippet struct {
+	Snippets []xsdt.String `xml:"http://www.opengis.net/kml/2.2 snippet"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Snippet function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Snippet instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Snippet instance.
+func (me *XsdGoPkgHasElems_Snippet) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Snippet; fn != nil { fn(me) }
+ }
+
 type TitemIconStateEnumType xsdt.String
-
-//	Since TitemIconStateEnumType is just a simple String type, this merely returns the current string value.
-func (me TitemIconStateEnumType) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TitemIconStateEnumType is "closed".
-func (me TitemIconStateEnumType) IsClosed () bool { return me == "closed" }
-
-//	Returns true if the value of this enumerated TitemIconStateEnumType is "error".
-func (me TitemIconStateEnumType) IsError () bool { return me == "error" }
-
-//	Returns true if the value of this enumerated TitemIconStateEnumType is "open".
-func (me TitemIconStateEnumType) IsOpen () bool { return me == "open" }
-
-//	Returns true if the value of this enumerated TitemIconStateEnumType is "fetching1".
-func (me TitemIconStateEnumType) IsFetching1 () bool { return me == "fetching1" }
-
-//	Since TitemIconStateEnumType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TitemIconStateEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TitemIconStateEnumType is "fetching0".
-func (me TitemIconStateEnumType) IsFetching0 () bool { return me == "fetching0" }
-
-//	Returns true if the value of this enumerated TitemIconStateEnumType is "fetching2".
-func (me TitemIconStateEnumType) IsFetching2 () bool { return me == "fetching2" }
 
 //	This convenience method just performs a simple type conversion to TitemIconStateEnumType's alias type xsdt.String.
 func (me TitemIconStateEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
+//	Returns true if the value of this enumerated TitemIconStateEnumType is "error".
+func (me TitemIconStateEnumType) IsError () bool { return me == "error" }
+
+//	Returns true if the value of this enumerated TitemIconStateEnumType is "fetching0".
+func (me TitemIconStateEnumType) IsFetching0 () bool { return me == "fetching0" }
+
+//	Returns true if the value of this enumerated TitemIconStateEnumType is "closed".
+func (me TitemIconStateEnumType) IsClosed () bool { return me == "closed" }
+
+//	Since TitemIconStateEnumType is just a simple String type, this merely returns the current string value.
+func (me TitemIconStateEnumType) String () string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TitemIconStateEnumType is "fetching1".
+func (me TitemIconStateEnumType) IsFetching1 () bool { return me == "fetching1" }
+
+//	Returns true if the value of this enumerated TitemIconStateEnumType is "open".
+func (me TitemIconStateEnumType) IsOpen () bool { return me == "open" }
+
+//	Since TitemIconStateEnumType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TitemIconStateEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TitemIconStateEnumType is "fetching2".
+func (me TitemIconStateEnumType) IsFetching2 () bool { return me == "fetching2" }
+
 type TitemIconStateType xsdt.String
-
-//	Since TitemIconStateType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TitemIconStateType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TitemIconStateType is just a simple String type, this merely returns the current string value.
-func (me TitemIconStateType) String () string { return xsdt.String(me).String() }
 
 //	TitemIconStateType defines a String containing a whitespace-separated list of TitemIconStateEnumType values. This Values() method creates and returns a slice of all elements in that list.
 func (me TitemIconStateType) Values () (list []TitemIconStateEnumType) { var svals = xsdt.ListValues(string(me)); list = make([]TitemIconStateEnumType, len(svals)); for i, s := range svals { list[i] = TitemIconStateEnumType(s) }; return }
 
+//	Since TitemIconStateType is just a simple String type, this merely returns the current string value.
+func (me TitemIconStateType) String () string { return xsdt.String(me).String() }
+
 //	This convenience method just performs a simple type conversion to TitemIconStateType's alias type xsdt.String.
 func (me TitemIconStateType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+
+//	Since TitemIconStateType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TitemIconStateType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 type XsdGoPkgHasElems_State struct {
 	States []TitemIconStateType `xml:"http://www.opengis.net/kml/2.2 state"`
@@ -2112,25 +2112,35 @@ type XsdGoPkgHasElem_Tessellate struct {
 
 }
 
+//	Returns the default value for Tessellate -- 0
+func (me XsdGoPkgHasElem_Tessellate) TessellateDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
+
 //	If the WalkHandlers.XsdGoPkgHasElem_Tessellate function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Tessellate instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Tessellate instance.
 func (me *XsdGoPkgHasElem_Tessellate) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_Tessellate; fn != nil { fn(me) }
  }
-
-//	Returns the default value for Tessellate -- 0
-func (me XsdGoPkgHasElem_Tessellate) TessellateDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
 
 type XsdGoPkgHasElems_Tessellate struct {
 	Tessellates []xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 tessellate"`
 
 }
 
-//	Returns the default value for Tessellate -- 0
-func (me XsdGoPkgHasElems_Tessellate) TessellateDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
-
 //	If the WalkHandlers.XsdGoPkgHasElems_Tessellate function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Tessellate instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Tessellate instance.
 func (me *XsdGoPkgHasElems_Tessellate) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_Tessellate; fn != nil { fn(me) }
+ }
+
+//	Returns the default value for Tessellate -- 0
+func (me XsdGoPkgHasElems_Tessellate) TessellateDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("0"); return *x }
+
+type XsdGoPkgHasElems_Text struct {
+	Texts []xsdt.String `xml:"http://www.opengis.net/kml/2.2 text"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Text function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Text instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Text instance.
+func (me *XsdGoPkgHasElems_Text) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Text; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElem_Text struct {
@@ -2141,16 +2151,6 @@ type XsdGoPkgHasElem_Text struct {
 //	If the WalkHandlers.XsdGoPkgHasElem_Text function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Text instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Text instance.
 func (me *XsdGoPkgHasElem_Text) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_Text; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_Text struct {
-	Texts []xsdt.String `xml:"http://www.opengis.net/kml/2.2 text"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Text function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Text instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Text instance.
-func (me *XsdGoPkgHasElems_Text) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Text; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElem_TextColor struct {
@@ -2171,13 +2171,13 @@ type XsdGoPkgHasElems_TextColor struct {
 
 }
 
+//	Returns the default value for TextColor -- "ff000000"
+func (me XsdGoPkgHasElems_TextColor) TextColorDefault () TcolorType { return TcolorType("ff000000") }
+
 //	If the WalkHandlers.XsdGoPkgHasElems_TextColor function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_TextColor instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_TextColor instance.
 func (me *XsdGoPkgHasElems_TextColor) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_TextColor; fn != nil { fn(me) }
  }
-
-//	Returns the default value for TextColor -- "ff000000"
-func (me XsdGoPkgHasElems_TextColor) TextColorDefault () TcolorType { return TcolorType("ff000000") }
 
 type XsdGoPkgHasElems_TileSize struct {
 	TileSizes []xsdt.Int `xml:"http://www.opengis.net/kml/2.2 tileSize"`
@@ -2197,24 +2197,24 @@ type XsdGoPkgHasElem_TileSize struct {
 
 }
 
-//	Returns the default value for TileSize -- 256
-func (me XsdGoPkgHasElem_TileSize) TileSizeDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("256"); return *x }
-
 //	If the WalkHandlers.XsdGoPkgHasElem_TileSize function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_TileSize instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_TileSize instance.
 func (me *XsdGoPkgHasElem_TileSize) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_TileSize; fn != nil { fn(me) }
  }
 
+//	Returns the default value for TileSize -- 256
+func (me XsdGoPkgHasElem_TileSize) TileSizeDefault () xsdt.Int { var x = new(xsdt.Int); x.SetFromString("256"); return *x }
+
 type Tanglepos180Type xsdt.Double
 
-//	Returns a string representation of this Tanglepos180Type's current non-string scalar value.
-func (me Tanglepos180Type) String () string { return xsdt.Double(me).String() }
+//	This convenience method just performs a simple type conversion to Tanglepos180Type's alias type xsdt.Double.
+func (me Tanglepos180Type) ToXsdtDouble () xsdt.Double { return xsdt.Double(me) }
 
 //	Since Tanglepos180Type is a non-string scalar type (either boolean or numeric), sets the current value obtained from parsing the specified string.
 func (me *Tanglepos180Type) SetFromString (s string)  { (*xsdt.Double)(me).SetFromString(s) }
 
-//	This convenience method just performs a simple type conversion to Tanglepos180Type's alias type xsdt.Double.
-func (me Tanglepos180Type) ToXsdtDouble () xsdt.Double { return xsdt.Double(me) }
+//	Returns a string representation of this Tanglepos180Type's current non-string scalar value.
+func (me Tanglepos180Type) String () string { return xsdt.Double(me).String() }
 
 type XsdGoPkgHasElems_Tilt struct {
 	Tilts []Tanglepos180Type `xml:"http://www.opengis.net/kml/2.2 tilt"`
@@ -2234,38 +2234,48 @@ type XsdGoPkgHasElem_Tilt struct {
 
 }
 
+//	Returns the default value for Tilt -- 0.0
+func (me XsdGoPkgHasElem_Tilt) TiltDefault () Tanglepos180Type { var x = new(Tanglepos180Type); x.SetFromString("0.0"); return *x }
+
 //	If the WalkHandlers.XsdGoPkgHasElem_Tilt function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Tilt instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Tilt instance.
 func (me *XsdGoPkgHasElem_Tilt) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_Tilt; fn != nil { fn(me) }
  }
-
-//	Returns the default value for Tilt -- 0.0
-func (me XsdGoPkgHasElem_Tilt) TiltDefault () Tanglepos180Type { var x = new(Tanglepos180Type); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElems_TopFov struct {
 	TopFovs []Tangle90Type `xml:"http://www.opengis.net/kml/2.2 topFov"`
 
 }
 
-//	Returns the default value for TopFov -- 0.0
-func (me XsdGoPkgHasElems_TopFov) TopFovDefault () Tangle90Type { var x = new(Tangle90Type); x.SetFromString("0.0"); return *x }
-
 //	If the WalkHandlers.XsdGoPkgHasElems_TopFov function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_TopFov instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_TopFov instance.
 func (me *XsdGoPkgHasElems_TopFov) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_TopFov; fn != nil { fn(me) }
  }
+
+//	Returns the default value for TopFov -- 0.0
+func (me XsdGoPkgHasElems_TopFov) TopFovDefault () Tangle90Type { var x = new(Tangle90Type); x.SetFromString("0.0"); return *x }
 
 type XsdGoPkgHasElem_TopFov struct {
 	TopFov Tangle90Type `xml:"http://www.opengis.net/kml/2.2 topFov"`
 
 }
 
-//	Returns the default value for TopFov -- 0.0
-func (me XsdGoPkgHasElem_TopFov) TopFovDefault () Tangle90Type { var x = new(Tangle90Type); x.SetFromString("0.0"); return *x }
-
 //	If the WalkHandlers.XsdGoPkgHasElem_TopFov function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_TopFov instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_TopFov instance.
 func (me *XsdGoPkgHasElem_TopFov) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_TopFov; fn != nil { fn(me) }
+ }
+
+//	Returns the default value for TopFov -- 0.0
+func (me XsdGoPkgHasElem_TopFov) TopFovDefault () Tangle90Type { var x = new(Tangle90Type); x.SetFromString("0.0"); return *x }
+
+type XsdGoPkgHasElem_Value struct {
+	Value xsdt.String `xml:"http://www.opengis.net/kml/2.2 value"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Value function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Value instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Value instance.
+func (me *XsdGoPkgHasElem_Value) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Value; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElems_Value struct {
@@ -2278,50 +2288,30 @@ func (me *XsdGoPkgHasElems_Value) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_Value; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_Value struct {
-	Value xsdt.String `xml:"http://www.opengis.net/kml/2.2 value"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Value function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Value instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Value instance.
-func (me *XsdGoPkgHasElem_Value) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Value; fn != nil { fn(me) }
- }
-
 type XsdGoPkgHasElems_ViewBoundScale struct {
 	ViewBoundScales []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 viewBoundScale"`
 
 }
+
+//	Returns the default value for ViewBoundScale -- 1.0
+func (me XsdGoPkgHasElems_ViewBoundScale) ViewBoundScaleDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_ViewBoundScale function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ViewBoundScale instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ViewBoundScale instance.
 func (me *XsdGoPkgHasElems_ViewBoundScale) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_ViewBoundScale; fn != nil { fn(me) }
  }
 
-//	Returns the default value for ViewBoundScale -- 1.0
-func (me XsdGoPkgHasElems_ViewBoundScale) ViewBoundScaleDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
-
 type XsdGoPkgHasElem_ViewBoundScale struct {
 	ViewBoundScale xsdt.Double `xml:"http://www.opengis.net/kml/2.2 viewBoundScale"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_ViewBoundScale function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ViewBoundScale instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ViewBoundScale instance.
-func (me *XsdGoPkgHasElem_ViewBoundScale) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ViewBoundScale; fn != nil { fn(me) }
- }
-
 //	Returns the default value for ViewBoundScale -- 1.0
 func (me XsdGoPkgHasElem_ViewBoundScale) ViewBoundScaleDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
 
-type XsdGoPkgHasElem_ViewFormat struct {
-	ViewFormat xsdt.String `xml:"http://www.opengis.net/kml/2.2 viewFormat"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ViewFormat function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ViewFormat instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ViewFormat instance.
-func (me *XsdGoPkgHasElem_ViewFormat) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ViewFormat; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_ViewBoundScale function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ViewBoundScale instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ViewBoundScale instance.
+func (me *XsdGoPkgHasElem_ViewBoundScale) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ViewBoundScale; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElems_ViewFormat struct {
@@ -2334,41 +2324,38 @@ func (me *XsdGoPkgHasElems_ViewFormat) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_ViewFormat; fn != nil { fn(me) }
  }
 
+type XsdGoPkgHasElem_ViewFormat struct {
+	ViewFormat xsdt.String `xml:"http://www.opengis.net/kml/2.2 viewFormat"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ViewFormat function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ViewFormat instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ViewFormat instance.
+func (me *XsdGoPkgHasElem_ViewFormat) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ViewFormat; fn != nil { fn(me) }
+ }
+
 type TviewRefreshModeEnumType xsdt.String
-
-//	This convenience method just performs a simple type conversion to TviewRefreshModeEnumType's alias type xsdt.String.
-func (me TviewRefreshModeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TviewRefreshModeEnumType is "onRegion".
-func (me TviewRefreshModeEnumType) IsOnRegion () bool { return me == "onRegion" }
-
-//	Since TviewRefreshModeEnumType is just a simple String type, this merely returns the current string value.
-func (me TviewRefreshModeEnumType) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TviewRefreshModeEnumType is "never".
-func (me TviewRefreshModeEnumType) IsNever () bool { return me == "never" }
 
 //	Returns true if the value of this enumerated TviewRefreshModeEnumType is "onStop".
 func (me TviewRefreshModeEnumType) IsOnStop () bool { return me == "onStop" }
 
+//	Since TviewRefreshModeEnumType is just a simple String type, this merely returns the current string value.
+func (me TviewRefreshModeEnumType) String () string { return xsdt.String(me).String() }
+
 //	Since TviewRefreshModeEnumType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TviewRefreshModeEnumType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TviewRefreshModeEnumType's alias type xsdt.String.
+func (me TviewRefreshModeEnumType) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 //	Returns true if the value of this enumerated TviewRefreshModeEnumType is "onRequest".
 func (me TviewRefreshModeEnumType) IsOnRequest () bool { return me == "onRequest" }
 
-type XsdGoPkgHasElem_ViewRefreshMode struct {
-	ViewRefreshMode TviewRefreshModeEnumType `xml:"http://www.opengis.net/kml/2.2 viewRefreshMode"`
+//	Returns true if the value of this enumerated TviewRefreshModeEnumType is "never".
+func (me TviewRefreshModeEnumType) IsNever () bool { return me == "never" }
 
-}
-
-//	Returns the default value for ViewRefreshMode -- "never"
-func (me XsdGoPkgHasElem_ViewRefreshMode) ViewRefreshModeDefault () TviewRefreshModeEnumType { return TviewRefreshModeEnumType("never") }
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ViewRefreshMode function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ViewRefreshMode instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ViewRefreshMode instance.
-func (me *XsdGoPkgHasElem_ViewRefreshMode) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ViewRefreshMode; fn != nil { fn(me) }
- }
+//	Returns true if the value of this enumerated TviewRefreshModeEnumType is "onRegion".
+func (me TviewRefreshModeEnumType) IsOnRegion () bool { return me == "onRegion" }
 
 type XsdGoPkgHasElems_ViewRefreshMode struct {
 	ViewRefreshModes []TviewRefreshModeEnumType `xml:"http://www.opengis.net/kml/2.2 viewRefreshMode"`
@@ -2382,6 +2369,19 @@ func (me XsdGoPkgHasElems_ViewRefreshMode) ViewRefreshModeDefault () TviewRefres
 func (me *XsdGoPkgHasElems_ViewRefreshMode) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_ViewRefreshMode; fn != nil { fn(me) }
  }
+
+type XsdGoPkgHasElem_ViewRefreshMode struct {
+	ViewRefreshMode TviewRefreshModeEnumType `xml:"http://www.opengis.net/kml/2.2 viewRefreshMode"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ViewRefreshMode function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ViewRefreshMode instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ViewRefreshMode instance.
+func (me *XsdGoPkgHasElem_ViewRefreshMode) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ViewRefreshMode; fn != nil { fn(me) }
+ }
+
+//	Returns the default value for ViewRefreshMode -- "never"
+func (me XsdGoPkgHasElem_ViewRefreshMode) ViewRefreshModeDefault () TviewRefreshModeEnumType { return TviewRefreshModeEnumType("never") }
 
 type XsdGoPkgHasElem_ViewRefreshTime struct {
 	ViewRefreshTime xsdt.Double `xml:"http://www.opengis.net/kml/2.2 viewRefreshTime"`
@@ -2401,13 +2401,26 @@ type XsdGoPkgHasElems_ViewRefreshTime struct {
 
 }
 
-//	Returns the default value for ViewRefreshTime -- 4.0
-func (me XsdGoPkgHasElems_ViewRefreshTime) ViewRefreshTimeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("4.0"); return *x }
-
 //	If the WalkHandlers.XsdGoPkgHasElems_ViewRefreshTime function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ViewRefreshTime instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ViewRefreshTime instance.
 func (me *XsdGoPkgHasElems_ViewRefreshTime) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_ViewRefreshTime; fn != nil { fn(me) }
  }
+
+//	Returns the default value for ViewRefreshTime -- 4.0
+func (me XsdGoPkgHasElems_ViewRefreshTime) ViewRefreshTimeDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("4.0"); return *x }
+
+type XsdGoPkgHasElems_Visibility struct {
+	Visibilities []xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 visibility"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Visibility function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Visibility instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Visibility instance.
+func (me *XsdGoPkgHasElems_Visibility) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Visibility; fn != nil { fn(me) }
+ }
+
+//	Returns the default value for Visibility -- 1
+func (me XsdGoPkgHasElems_Visibility) VisibilityDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("1"); return *x }
 
 type XsdGoPkgHasElem_Visibility struct {
 	Visibility xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 visibility"`
@@ -2420,19 +2433,6 @@ func (me XsdGoPkgHasElem_Visibility) VisibilityDefault () xsdt.Boolean { var x =
 //	If the WalkHandlers.XsdGoPkgHasElem_Visibility function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Visibility instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Visibility instance.
 func (me *XsdGoPkgHasElem_Visibility) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_Visibility; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_Visibility struct {
-	Visibilities []xsdt.Boolean `xml:"http://www.opengis.net/kml/2.2 visibility"`
-
-}
-
-//	Returns the default value for Visibility -- 1
-func (me XsdGoPkgHasElems_Visibility) VisibilityDefault () xsdt.Boolean { var x = new(xsdt.Boolean); x.SetFromString("1"); return *x }
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Visibility function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Visibility instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Visibility instance.
-func (me *XsdGoPkgHasElems_Visibility) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Visibility; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElem_West struct {
@@ -2461,16 +2461,6 @@ func (me *XsdGoPkgHasElems_West) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_West; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_When struct {
-	When TdateTimeType `xml:"http://www.opengis.net/kml/2.2 when"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_When function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_When instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_When instance.
-func (me *XsdGoPkgHasElem_When) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_When; fn != nil { fn(me) }
- }
-
 type XsdGoPkgHasElems_When struct {
 	Whens []TdateTimeType `xml:"http://www.opengis.net/kml/2.2 when"`
 
@@ -2481,70 +2471,67 @@ func (me *XsdGoPkgHasElems_When) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_When; fn != nil { fn(me) }
  }
 
+type XsdGoPkgHasElem_When struct {
+	When TdateTimeType `xml:"http://www.opengis.net/kml/2.2 when"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_When function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_When instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_When instance.
+func (me *XsdGoPkgHasElem_When) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_When; fn != nil { fn(me) }
+ }
+
 type XsdGoPkgHasElem_Width struct {
 	Width xsdt.Double `xml:"http://www.opengis.net/kml/2.2 width"`
 
 }
-
-//	Returns the default value for Width -- 1.0
-func (me XsdGoPkgHasElem_Width) WidthDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Width function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Width instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Width instance.
 func (me *XsdGoPkgHasElem_Width) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_Width; fn != nil { fn(me) }
  }
 
+//	Returns the default value for Width -- 1.0
+func (me XsdGoPkgHasElem_Width) WidthDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
+
 type XsdGoPkgHasElems_Width struct {
 	Widths []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 width"`
 
 }
-
-//	Returns the default value for Width -- 1.0
-func (me XsdGoPkgHasElems_Width) WidthDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Width function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Width instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Width instance.
 func (me *XsdGoPkgHasElems_Width) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_Width; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_X struct {
-	X xsdt.Double `xml:"http://www.opengis.net/kml/2.2 x"`
-
-}
-
-//	Returns the default value for X -- 1.0
-func (me XsdGoPkgHasElem_X) XDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
-
-//	If the WalkHandlers.XsdGoPkgHasElem_X function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_X instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_X instance.
-func (me *XsdGoPkgHasElem_X) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_X; fn != nil { fn(me) }
- }
+//	Returns the default value for Width -- 1.0
+func (me XsdGoPkgHasElems_Width) WidthDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
 
 type XsdGoPkgHasElems_X struct {
 	Xs []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 x"`
 
 }
 
-//	Returns the default value for X -- 1.0
-func (me XsdGoPkgHasElems_X) XDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
-
 //	If the WalkHandlers.XsdGoPkgHasElems_X function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_X instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_X instance.
 func (me *XsdGoPkgHasElems_X) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_X; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_Y struct {
-	Y xsdt.Double `xml:"http://www.opengis.net/kml/2.2 y"`
+//	Returns the default value for X -- 1.0
+func (me XsdGoPkgHasElems_X) XDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
+
+type XsdGoPkgHasElem_X struct {
+	X xsdt.Double `xml:"http://www.opengis.net/kml/2.2 x"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_Y function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Y instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Y instance.
-func (me *XsdGoPkgHasElem_Y) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Y; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_X function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_X instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_X instance.
+func (me *XsdGoPkgHasElem_X) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_X; fn != nil { fn(me) }
  }
 
-//	Returns the default value for Y -- 1.0
-func (me XsdGoPkgHasElem_Y) YDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
+//	Returns the default value for X -- 1.0
+func (me XsdGoPkgHasElem_X) XDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
 
 type XsdGoPkgHasElems_Y struct {
 	Ys []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 y"`
@@ -2559,397 +2546,63 @@ func (me *XsdGoPkgHasElems_Y) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_Y; fn != nil { fn(me) }
  }
 
+type XsdGoPkgHasElem_Y struct {
+	Y xsdt.Double `xml:"http://www.opengis.net/kml/2.2 y"`
+
+}
+
+//	Returns the default value for Y -- 1.0
+func (me XsdGoPkgHasElem_Y) YDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Y function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Y instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Y instance.
+func (me *XsdGoPkgHasElem_Y) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Y; fn != nil { fn(me) }
+ }
+
 type XsdGoPkgHasElem_Z struct {
 	Z xsdt.Double `xml:"http://www.opengis.net/kml/2.2 z"`
 
 }
-
-//	Returns the default value for Z -- 1.0
-func (me XsdGoPkgHasElem_Z) ZDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Z function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Z instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Z instance.
 func (me *XsdGoPkgHasElem_Z) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_Z; fn != nil { fn(me) }
  }
 
+//	Returns the default value for Z -- 1.0
+func (me XsdGoPkgHasElem_Z) ZDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
+
 type XsdGoPkgHasElems_Z struct {
 	Zs []xsdt.Double `xml:"http://www.opengis.net/kml/2.2 z"`
 
 }
-
-//	Returns the default value for Z -- 1.0
-func (me XsdGoPkgHasElems_Z) ZDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Z function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Z instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Z instance.
 func (me *XsdGoPkgHasElems_Z) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_Z; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_DocumentObjectExtensionGroup struct {
-	DocumentObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 DocumentObjectExtensionGroup"`
+//	Returns the default value for Z -- 1.0
+func (me XsdGoPkgHasElems_Z) ZDefault () xsdt.Double { var x = new(xsdt.Double); x.SetFromString("1.0"); return *x }
+
+type XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup struct {
+	PolyStyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PolyStyleSimpleExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_DocumentObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_DocumentObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_DocumentObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_DocumentObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_DocumentObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElems_ObjectSimpleExtensionGroup struct {
-	ObjectSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ObjectSimpleExtensionGroup"`
+type XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup struct {
+	AbstractColorStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractColorStyleObjectExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_ObjectSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ObjectSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ObjectSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_ObjectSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ObjectSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type TAbstractObjectType struct {
-	XsdGoPkgHasElems_ObjectSimpleExtensionGroup
-
-	XsdGoPkgHasAtts_IdAttributes
-
-}
-
-//	If the WalkHandlers.TAbstractObjectType function is not nil (ie. was set by outside code), calls it with this TAbstractObjectType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TAbstractObjectType instance.
-func (me *TAbstractObjectType) Walk ()  { 
-	if fn := WalkHandlers.TAbstractObjectType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_ObjectSimpleExtensionGroup.Walk()
- }
-
-type XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup struct {
-	ResourceMapSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ResourceMapSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_AliasSimpleExtensionGroup struct {
-	AliasSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AliasSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AliasSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AliasSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AliasSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_AliasSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AliasSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_AliasObjectExtensionGroup struct {
-	AliasObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AliasObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AliasObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AliasObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AliasObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_AliasObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AliasObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TAliasType struct {
-	TAbstractObjectType
-
-	XsdGoPkgHasElems_AliasSimpleExtensionGroup
-
-	XsdGoPkgHasElem_SourceHref
-
-	XsdGoPkgHasElems_AliasObjectExtensionGroup
-
-	XsdGoPkgHasElem_TargetHref
-
-}
-
-//	If the WalkHandlers.TAliasType function is not nil (ie. was set by outside code), calls it with this TAliasType instance as the single argument. Then calls the Walk() method on 5/5 embed(s) and 0/0 field(s) belonging to this TAliasType instance.
-func (me *TAliasType) Walk ()  { 
-	if fn := WalkHandlers.TAliasType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_SourceHref.Walk()
-	me.XsdGoPkgHasElems_AliasObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_TargetHref.Walk()
-	me.TAbstractObjectType.Walk()
-	me.XsdGoPkgHasElems_AliasSimpleExtensionGroup.Walk()
- }
-
-type XsdGoPkgHasElems_Alias struct {
-	Aliases []*TAliasType `xml:"http://www.opengis.net/kml/2.2 Alias"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Alias function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Alias instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Alias instance.
-func (me *XsdGoPkgHasElems_Alias) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Alias; fn != nil { fn(me) }
-	for _, x := range me.Aliases { x.Walk() }
- }
-
-type XsdGoPkgHasElems_ResourceMapObjectExtensionGroup struct {
-	ResourceMapObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ResourceMapObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ResourceMapObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ResourceMapObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ResourceMapObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_ResourceMapObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ResourceMapObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TResourceMapType struct {
-	XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup
-
-	XsdGoPkgHasElems_Alias
-
-	XsdGoPkgHasElems_ResourceMapObjectExtensionGroup
-
-	TAbstractObjectType
-
-}
-
-//	If the WalkHandlers.TResourceMapType function is not nil (ie. was set by outside code), calls it with this TResourceMapType instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TResourceMapType instance.
-func (me *TResourceMapType) Walk ()  { 
-	if fn := WalkHandlers.TResourceMapType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_Alias.Walk()
-	me.XsdGoPkgHasElems_ResourceMapObjectExtensionGroup.Walk()
-	me.TAbstractObjectType.Walk()
- }
-
-type XsdGoPkgHasElem_ResourceMap struct {
-	ResourceMap *TResourceMapType `xml:"http://www.opengis.net/kml/2.2 ResourceMap"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ResourceMap function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ResourceMap instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ResourceMap instance.
-func (me *XsdGoPkgHasElem_ResourceMap) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ResourceMap; fn != nil { fn(me) }
-	me.ResourceMap.Walk()
- }
-
-type XsdGoPkgHasElem_FolderObjectExtensionGroup struct {
-	FolderObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 FolderObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_FolderObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FolderObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_FolderObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_FolderObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FolderObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_LocationObjectExtensionGroup struct {
-	LocationObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LocationObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_LocationObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LocationObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LocationObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_LocationObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_LocationObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup struct {
-	AbstractStyleSelectorObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractStyleSelectorObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup struct {
-	AbstractOverlayObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractOverlayObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup struct {
-	AbstractTimePrimitiveObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup struct {
-	AbstractTimePrimitiveSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type TAbstractTimePrimitiveType struct {
-	XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup
-
-	TAbstractObjectType
-
-	XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup
-
-}
-
-//	If the WalkHandlers.TAbstractTimePrimitiveType function is not nil (ie. was set by outside code), calls it with this TAbstractTimePrimitiveType instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this TAbstractTimePrimitiveType instance.
-func (me *TAbstractTimePrimitiveType) Walk ()  { 
-	if fn := WalkHandlers.TAbstractTimePrimitiveType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup.Walk()
-	me.TAbstractObjectType.Walk()
-	me.XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup.Walk()
- }
-
-type XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup struct {
-	TimeSpanSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 TimeSpanSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_TimeSpanObjectExtensionGroup struct {
-	TimeSpanObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 TimeSpanObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_TimeSpanObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_TimeSpanObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_TimeSpanObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_TimeSpanObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_TimeSpanObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TimeSpanType struct {
-	TAbstractTimePrimitiveType
-
-	XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup
-
-	XsdGoPkgHasElem_End
-
-	XsdGoPkgHasElem_Begin
-
-	XsdGoPkgHasElems_TimeSpanObjectExtensionGroup
-
-}
-
-//	If the WalkHandlers.TimeSpanType function is not nil (ie. was set by outside code), calls it with this TimeSpanType instance as the single argument. Then calls the Walk() method on 5/5 embed(s) and 0/0 field(s) belonging to this TimeSpanType instance.
-func (me *TimeSpanType) Walk ()  { 
-	if fn := WalkHandlers.TimeSpanType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_TimeSpanObjectExtensionGroup.Walk()
-	me.TAbstractTimePrimitiveType.Walk()
-	me.XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_End.Walk()
-	me.XsdGoPkgHasElem_Begin.Walk()
- }
-
-type XsdGoPkgHasElem_TimeSpan struct {
-	TimeSpan *TimeSpanType `xml:"http://www.opengis.net/kml/2.2 TimeSpan"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_TimeSpan function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_TimeSpan instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_TimeSpan instance.
-func (me *XsdGoPkgHasElem_TimeSpan) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_TimeSpan; fn != nil { fn(me) }
-	me.TimeSpan.Walk()
- }
-
-type XsdGoPkgHasElems_TimeStampObjectExtensionGroup struct {
-	TimeStampObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 TimeStampObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_TimeStampObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_TimeStampObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_TimeStampObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_TimeStampObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_TimeStampObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_TimeStampSimpleExtensionGroup struct {
-	TimeStampSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 TimeStampSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_TimeStampSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_TimeStampSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_TimeStampSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_TimeStampSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_TimeStampSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type TimeStampType struct {
-	XsdGoPkgHasElems_TimeStampObjectExtensionGroup
-
-	XsdGoPkgHasElems_TimeStampSimpleExtensionGroup
-
-	XsdGoPkgHasElem_When
-
-	TAbstractTimePrimitiveType
-
-}
-
-//	If the WalkHandlers.TimeStampType function is not nil (ie. was set by outside code), calls it with this TimeStampType instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TimeStampType instance.
-func (me *TimeStampType) Walk ()  { 
-	if fn := WalkHandlers.TimeStampType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_TimeStampObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_TimeStampSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_When.Walk()
-	me.TAbstractTimePrimitiveType.Walk()
- }
-
-type XsdGoPkgHasElem_TimeStamp struct {
-	TimeStamp *TimeStampType `xml:"http://www.opengis.net/kml/2.2 TimeStamp"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_TimeStamp function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_TimeStamp instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_TimeStamp instance.
-func (me *XsdGoPkgHasElem_TimeStamp) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_TimeStamp; fn != nil { fn(me) }
-	me.TimeStamp.Walk()
- }
-
-type XsdGoPkgHasElem_AbstractTimePrimitiveGroup struct {
-	AbstractTimePrimitiveGroup *TAbstractTimePrimitiveType `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveGroup"`
-
-	XsdGoPkgHasElem_TimeSpan
-
-	XsdGoPkgHasElem_TimeStamp
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AbstractTimePrimitiveGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractTimePrimitiveGroup instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AbstractTimePrimitiveGroup instance.
-func (me *XsdGoPkgHasElem_AbstractTimePrimitiveGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractTimePrimitiveGroup; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_TimeSpan.Walk()
-	me.XsdGoPkgHasElem_TimeStamp.Walk()
-	me.AbstractTimePrimitiveGroup.Walk()
- }
-
-type XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup struct {
-	PhotoOverlayObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PhotoOverlayObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_PairSimpleExtensionGroup struct {
-	PairSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PairSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PairSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PairSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PairSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_PairSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_PairSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_LabelStyleObjectExtensionGroup struct {
-	LabelStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LabelStyleObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LabelStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LabelStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LabelStyleObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_LabelStyleObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LabelStyleObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElems_AbstractSubStyleObjectExtensionGroup struct {
@@ -2972,6 +2625,29 @@ func (me *XsdGoPkgHasElems_AbstractSubStyleSimpleExtensionGroup) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractSubStyleSimpleExtensionGroup; fn != nil { fn(me) }
  }
 
+type XsdGoPkgHasElems_ObjectSimpleExtensionGroup struct {
+	ObjectSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ObjectSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ObjectSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ObjectSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ObjectSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_ObjectSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_ObjectSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TAbstractObjectType struct {
+	XsdGoPkgHasAtts_IdAttributes
+
+	XsdGoPkgHasElems_ObjectSimpleExtensionGroup
+
+}
+
+//	If the WalkHandlers.TAbstractObjectType function is not nil (ie. was set by outside code), calls it with this TAbstractObjectType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TAbstractObjectType instance.
+func (me *TAbstractObjectType) Walk ()  { 
+	if fn := WalkHandlers.TAbstractObjectType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_ObjectSimpleExtensionGroup.Walk()
+ }
+
 type TAbstractSubStyleType struct {
 	XsdGoPkgHasElems_AbstractSubStyleObjectExtensionGroup
 
@@ -2984,9 +2660,9 @@ type TAbstractSubStyleType struct {
 //	If the WalkHandlers.TAbstractSubStyleType function is not nil (ie. was set by outside code), calls it with this TAbstractSubStyleType instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this TAbstractSubStyleType instance.
 func (me *TAbstractSubStyleType) Walk ()  { 
 	if fn := WalkHandlers.TAbstractSubStyleType; fn != nil { fn(me) }
-	me.TAbstractObjectType.Walk()
 	me.XsdGoPkgHasElems_AbstractSubStyleObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElems_AbstractSubStyleSimpleExtensionGroup.Walk()
+	me.TAbstractObjectType.Walk()
  }
 
 type XsdGoPkgHasElems_AbstractColorStyleSimpleExtensionGroup struct {
@@ -2999,88 +2675,27 @@ func (me *XsdGoPkgHasElems_AbstractColorStyleSimpleExtensionGroup) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractColorStyleSimpleExtensionGroup; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup struct {
-	AbstractColorStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractColorStyleObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup; fn != nil { fn(me) }
- }
-
 type TAbstractColorStyleType struct {
-	XsdGoPkgHasElem_ColorMode
+	XsdGoPkgHasElems_AbstractColorStyleSimpleExtensionGroup
+
+	XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup
 
 	TAbstractSubStyleType
 
 	XsdGoPkgHasElem_Color
 
-	XsdGoPkgHasElems_AbstractColorStyleSimpleExtensionGroup
-
-	XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup
+	XsdGoPkgHasElem_ColorMode
 
 }
 
 //	If the WalkHandlers.TAbstractColorStyleType function is not nil (ie. was set by outside code), calls it with this TAbstractColorStyleType instance as the single argument. Then calls the Walk() method on 5/5 embed(s) and 0/0 field(s) belonging to this TAbstractColorStyleType instance.
 func (me *TAbstractColorStyleType) Walk ()  { 
 	if fn := WalkHandlers.TAbstractColorStyleType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup.Walk()
 	me.TAbstractSubStyleType.Walk()
 	me.XsdGoPkgHasElem_Color.Walk()
-	me.XsdGoPkgHasElems_AbstractColorStyleSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElem_ColorMode.Walk()
- }
-
-type XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup struct {
-	LabelStyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LabelStyleSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type TLabelStyleType struct {
-	TAbstractColorStyleType
-
-	XsdGoPkgHasElem_Scale
-
-	XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup
-
-	XsdGoPkgHasElems_LabelStyleObjectExtensionGroup
-
-}
-
-//	If the WalkHandlers.TLabelStyleType function is not nil (ie. was set by outside code), calls it with this TLabelStyleType instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TLabelStyleType instance.
-func (me *TLabelStyleType) Walk ()  { 
-	if fn := WalkHandlers.TLabelStyleType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_LabelStyleObjectExtensionGroup.Walk()
-	me.TAbstractColorStyleType.Walk()
-	me.XsdGoPkgHasElem_Scale.Walk()
- }
-
-type XsdGoPkgHasElem_LabelStyle struct {
-	LabelStyle *TLabelStyleType `xml:"http://www.opengis.net/kml/2.2 LabelStyle"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_LabelStyle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LabelStyle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_LabelStyle instance.
-func (me *XsdGoPkgHasElem_LabelStyle) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_LabelStyle; fn != nil { fn(me) }
-	me.LabelStyle.Walk()
- }
-
-type XsdGoPkgHasElems_StyleSimpleExtensionGroup struct {
-	StyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 StyleSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_StyleSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_StyleSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_StyleSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_StyleSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_StyleSimpleExtensionGroup; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_AbstractColorStyleSimpleExtensionGroup.Walk()
  }
 
 type XsdGoPkgHasElems_PolyStyleObjectExtensionGroup struct {
@@ -3093,35 +2708,25 @@ func (me *XsdGoPkgHasElems_PolyStyleObjectExtensionGroup) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_PolyStyleObjectExtensionGroup; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup struct {
-	PolyStyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PolyStyleSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
 type TPolyStyleType struct {
-	XsdGoPkgHasElem_Fill
-
 	TAbstractColorStyleType
 
 	XsdGoPkgHasElems_PolyStyleObjectExtensionGroup
 
-	XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup
-
 	XsdGoPkgHasElem_Outline
+
+	XsdGoPkgHasElem_Fill
+
+	XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup
 
 }
 
 //	If the WalkHandlers.TPolyStyleType function is not nil (ie. was set by outside code), calls it with this TPolyStyleType instance as the single argument. Then calls the Walk() method on 5/5 embed(s) and 0/0 field(s) belonging to this TPolyStyleType instance.
 func (me *TPolyStyleType) Walk ()  { 
 	if fn := WalkHandlers.TPolyStyleType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup.Walk()
 	me.TAbstractColorStyleType.Walk()
 	me.XsdGoPkgHasElems_PolyStyleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup.Walk()
 	me.XsdGoPkgHasElem_Outline.Walk()
 	me.XsdGoPkgHasElem_Fill.Walk()
  }
@@ -3137,61 +2742,14 @@ func (me *XsdGoPkgHasElem_PolyStyle) Walk ()  {
 	me.PolyStyle.Walk()
  }
 
-type XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup struct {
-	AbstractStyleSelectorSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractStyleSelectorSimpleExtensionGroup"`
+type XsdGoPkgHasElems_ListStyleObjectExtensionGroup struct {
+	ListStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ListStyleObjectExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup struct {
-	AbstractStyleSelectorObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractStyleSelectorObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TAbstractStyleSelectorType struct {
-	TAbstractObjectType
-
-	XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup
-
-	XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup
-
-}
-
-//	If the WalkHandlers.TAbstractStyleSelectorType function is not nil (ie. was set by outside code), calls it with this TAbstractStyleSelectorType instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this TAbstractStyleSelectorType instance.
-func (me *TAbstractStyleSelectorType) Walk ()  { 
-	if fn := WalkHandlers.TAbstractStyleSelectorType; fn != nil { fn(me) }
-	me.TAbstractObjectType.Walk()
-	me.XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup.Walk()
- }
-
-type XsdGoPkgHasElems_StyleObjectExtensionGroup struct {
-	StyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 StyleObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_StyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_StyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_StyleObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_StyleObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_StyleObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_ItemIconObjectExtensionGroup struct {
-	ItemIconObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ItemIconObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ItemIconObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ItemIconObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ItemIconObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_ItemIconObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ItemIconObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_ListStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ListStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ListStyleObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_ListStyleObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_ListStyleObjectExtensionGroup; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElems_ItemIconSimpleExtensionGroup struct {
@@ -3204,27 +2762,37 @@ func (me *XsdGoPkgHasElems_ItemIconSimpleExtensionGroup) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_ItemIconSimpleExtensionGroup; fn != nil { fn(me) }
  }
 
+type XsdGoPkgHasElems_ItemIconObjectExtensionGroup struct {
+	ItemIconObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ItemIconObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ItemIconObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ItemIconObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ItemIconObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_ItemIconObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_ItemIconObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
 type TItemIconType struct {
-	XsdGoPkgHasElems_ItemIconObjectExtensionGroup
+	TAbstractObjectType
 
 	XsdGoPkgHasElem_Href
 
-	XsdGoPkgHasElems_ItemIconSimpleExtensionGroup
-
 	XsdGoPkgHasElem_State
 
-	TAbstractObjectType
+	XsdGoPkgHasElems_ItemIconObjectExtensionGroup
+
+	XsdGoPkgHasElems_ItemIconSimpleExtensionGroup
 
 }
 
 //	If the WalkHandlers.TItemIconType function is not nil (ie. was set by outside code), calls it with this TItemIconType instance as the single argument. Then calls the Walk() method on 5/5 embed(s) and 0/0 field(s) belonging to this TItemIconType instance.
 func (me *TItemIconType) Walk ()  { 
 	if fn := WalkHandlers.TItemIconType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_ItemIconObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_Href.Walk()
 	me.XsdGoPkgHasElems_ItemIconSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_State.Walk()
 	me.TAbstractObjectType.Walk()
+	me.XsdGoPkgHasElem_Href.Walk()
+	me.XsdGoPkgHasElem_State.Walk()
+	me.XsdGoPkgHasElems_ItemIconObjectExtensionGroup.Walk()
  }
 
 type XsdGoPkgHasElems_ItemIcon struct {
@@ -3248,30 +2816,20 @@ func (me *XsdGoPkgHasElems_ListStyleSimpleExtensionGroup) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_ListStyleSimpleExtensionGroup; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElems_ListStyleObjectExtensionGroup struct {
-	ListStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ListStyleObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ListStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ListStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ListStyleObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_ListStyleObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ListStyleObjectExtensionGroup; fn != nil { fn(me) }
- }
-
 type TListStyleType struct {
+	XsdGoPkgHasElems_ListStyleObjectExtensionGroup
+
 	XsdGoPkgHasElem_ListItemType
 
-	TAbstractSubStyleType
-
 	XsdGoPkgHasElems_ItemIcon
+
+	XsdGoPkgHasElems_ListStyleSimpleExtensionGroup
+
+	TAbstractSubStyleType
 
 	XsdGoPkgHasElem_BgColor
 
 	XsdGoPkgHasElem_MaxSnippetLines
-
-	XsdGoPkgHasElems_ListStyleSimpleExtensionGroup
-
-	XsdGoPkgHasElems_ListStyleObjectExtensionGroup
 
 }
 
@@ -3279,11 +2837,11 @@ type TListStyleType struct {
 func (me *TListStyleType) Walk ()  { 
 	if fn := WalkHandlers.TListStyleType; fn != nil { fn(me) }
 	me.XsdGoPkgHasElem_ListItemType.Walk()
-	me.TAbstractSubStyleType.Walk()
 	me.XsdGoPkgHasElems_ItemIcon.Walk()
+	me.XsdGoPkgHasElems_ListStyleSimpleExtensionGroup.Walk()
+	me.TAbstractSubStyleType.Walk()
 	me.XsdGoPkgHasElem_BgColor.Walk()
 	me.XsdGoPkgHasElem_MaxSnippetLines.Walk()
-	me.XsdGoPkgHasElems_ListStyleSimpleExtensionGroup.Walk()
 	me.XsdGoPkgHasElems_ListStyleObjectExtensionGroup.Walk()
  }
 
@@ -3296,6 +2854,127 @@ type XsdGoPkgHasElem_ListStyle struct {
 func (me *XsdGoPkgHasElem_ListStyle) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_ListStyle; fn != nil { fn(me) }
 	me.ListStyle.Walk()
+ }
+
+type XsdGoPkgHasElems_StyleSimpleExtensionGroup struct {
+	StyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 StyleSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_StyleSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_StyleSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_StyleSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_StyleSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_StyleSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_IconStyleObjectExtensionGroup struct {
+	IconStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 IconStyleObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_IconStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_IconStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_IconStyleObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_IconStyleObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_IconStyleObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_IconStyleSimpleExtensionGroup struct {
+	IconStyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 IconStyleSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_IconStyleSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_IconStyleSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_IconStyleSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_IconStyleSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_IconStyleSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_BasicLinkObjectExtensionGroup struct {
+	BasicLinkObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 BasicLinkObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_BasicLinkObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_BasicLinkObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_BasicLinkObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_BasicLinkObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_BasicLinkObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup struct {
+	BasicLinkSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 BasicLinkSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TBasicLinkType struct {
+	XsdGoPkgHasElem_Href
+
+	XsdGoPkgHasElems_BasicLinkObjectExtensionGroup
+
+	TAbstractObjectType
+
+	XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup
+
+}
+
+//	If the WalkHandlers.TBasicLinkType function is not nil (ie. was set by outside code), calls it with this TBasicLinkType instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TBasicLinkType instance.
+func (me *TBasicLinkType) Walk ()  { 
+	if fn := WalkHandlers.TBasicLinkType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Href.Walk()
+	me.XsdGoPkgHasElems_BasicLinkObjectExtensionGroup.Walk()
+	me.TAbstractObjectType.Walk()
+	me.XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup.Walk()
+ }
+
+type XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_ struct {
+	Icon *TBasicLinkType `xml:"http://www.opengis.net/kml/2.2 Icon"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_ instance.
+func (me *XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_; fn != nil { fn(me) }
+	me.Icon.Walk()
+ }
+
+type TIconStyleType struct {
+	XsdGoPkgHasElem_HotSpot
+
+	TAbstractColorStyleType
+
+	XsdGoPkgHasElem_Scale
+
+	XsdGoPkgHasElems_IconStyleObjectExtensionGroup
+
+	XsdGoPkgHasElems_IconStyleSimpleExtensionGroup
+
+	XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_
+
+	XsdGoPkgHasElem_Heading
+
+}
+
+//	If the WalkHandlers.TIconStyleType function is not nil (ie. was set by outside code), calls it with this TIconStyleType instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this TIconStyleType instance.
+func (me *TIconStyleType) Walk ()  { 
+	if fn := WalkHandlers.TIconStyleType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_HotSpot.Walk()
+	me.TAbstractColorStyleType.Walk()
+	me.XsdGoPkgHasElem_Scale.Walk()
+	me.XsdGoPkgHasElems_IconStyleObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_IconStyleSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_.Walk()
+	me.XsdGoPkgHasElem_Heading.Walk()
+ }
+
+type XsdGoPkgHasElem_IconStyle struct {
+	IconStyle *TIconStyleType `xml:"http://www.opengis.net/kml/2.2 IconStyle"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_IconStyle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_IconStyle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_IconStyle instance.
+func (me *XsdGoPkgHasElem_IconStyle) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_IconStyle; fn != nil { fn(me) }
+	me.IconStyle.Walk()
  }
 
 type XsdGoPkgHasElems_LineStyleSimpleExtensionGroup struct {
@@ -3319,21 +2998,21 @@ func (me *XsdGoPkgHasElems_LineStyleObjectExtensionGroup) Walk ()  {
  }
 
 type TLineStyleType struct {
-	XsdGoPkgHasElem_Width
-
-	XsdGoPkgHasElems_LineStyleObjectExtensionGroup
+	XsdGoPkgHasElems_LineStyleSimpleExtensionGroup
 
 	TAbstractColorStyleType
 
-	XsdGoPkgHasElems_LineStyleSimpleExtensionGroup
+	XsdGoPkgHasElem_Width
+
+	XsdGoPkgHasElems_LineStyleObjectExtensionGroup
 
 }
 
 //	If the WalkHandlers.TLineStyleType function is not nil (ie. was set by outside code), calls it with this TLineStyleType instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TLineStyleType instance.
 func (me *TLineStyleType) Walk ()  { 
 	if fn := WalkHandlers.TLineStyleType; fn != nil { fn(me) }
-	me.TAbstractColorStyleType.Walk()
 	me.XsdGoPkgHasElems_LineStyleSimpleExtensionGroup.Walk()
+	me.TAbstractColorStyleType.Walk()
 	me.XsdGoPkgHasElem_Width.Walk()
 	me.XsdGoPkgHasElems_LineStyleObjectExtensionGroup.Walk()
  }
@@ -3347,117 +3026,6 @@ type XsdGoPkgHasElem_LineStyle struct {
 func (me *XsdGoPkgHasElem_LineStyle) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_LineStyle; fn != nil { fn(me) }
 	me.LineStyle.Walk()
- }
-
-type XsdGoPkgHasElems_IconStyleObjectExtensionGroup struct {
-	IconStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 IconStyleObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_IconStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_IconStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_IconStyleObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_IconStyleObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_IconStyleObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_IconStyleSimpleExtensionGroup struct {
-	IconStyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 IconStyleSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_IconStyleSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_IconStyleSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_IconStyleSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_IconStyleSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_IconStyleSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup struct {
-	BasicLinkSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 BasicLinkSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_BasicLinkObjectExtensionGroup struct {
-	BasicLinkObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 BasicLinkObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_BasicLinkObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_BasicLinkObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_BasicLinkObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_BasicLinkObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_BasicLinkObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TBasicLinkType struct {
-	XsdGoPkgHasElems_BasicLinkObjectExtensionGroup
-
-	XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup
-
-	TAbstractObjectType
-
-	XsdGoPkgHasElem_Href
-
-}
-
-//	If the WalkHandlers.TBasicLinkType function is not nil (ie. was set by outside code), calls it with this TBasicLinkType instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TBasicLinkType instance.
-func (me *TBasicLinkType) Walk ()  { 
-	if fn := WalkHandlers.TBasicLinkType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Href.Walk()
-	me.XsdGoPkgHasElems_BasicLinkObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup.Walk()
-	me.TAbstractObjectType.Walk()
- }
-
-type XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_ struct {
-	Icon *TBasicLinkType `xml:"http://www.opengis.net/kml/2.2 Icon"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_ instance.
-func (me *XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_; fn != nil { fn(me) }
-	me.Icon.Walk()
- }
-
-type TIconStyleType struct {
-	XsdGoPkgHasElem_Heading
-
-	XsdGoPkgHasElems_IconStyleObjectExtensionGroup
-
-	XsdGoPkgHasElem_Scale
-
-	TAbstractColorStyleType
-
-	XsdGoPkgHasElems_IconStyleSimpleExtensionGroup
-
-	XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_
-
-	XsdGoPkgHasElem_HotSpot
-
-}
-
-//	If the WalkHandlers.TIconStyleType function is not nil (ie. was set by outside code), calls it with this TIconStyleType instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this TIconStyleType instance.
-func (me *TIconStyleType) Walk ()  { 
-	if fn := WalkHandlers.TIconStyleType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_IconStyleSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_.Walk()
-	me.XsdGoPkgHasElem_HotSpot.Walk()
-	me.XsdGoPkgHasElem_Heading.Walk()
-	me.XsdGoPkgHasElems_IconStyleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_Scale.Walk()
-	me.TAbstractColorStyleType.Walk()
- }
-
-type XsdGoPkgHasElem_IconStyle struct {
-	IconStyle *TIconStyleType `xml:"http://www.opengis.net/kml/2.2 IconStyle"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_IconStyle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_IconStyle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_IconStyle instance.
-func (me *XsdGoPkgHasElem_IconStyle) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_IconStyle; fn != nil { fn(me) }
-	me.IconStyle.Walk()
  }
 
 type XsdGoPkgHasElems_BalloonStyleObjectExtensionGroup struct {
@@ -3481,36 +3049,36 @@ func (me *XsdGoPkgHasElems_BalloonStyleSimpleExtensionGroup) Walk ()  {
  }
 
 type TBalloonStyleType struct {
-//	color deprecated in 2.1
-	XsdGoPkgHasElem_Color
-
 	XsdGoPkgHasElem_Text
 
-	XsdGoPkgHasElem_TextColor
-
 	XsdGoPkgHasElems_BalloonStyleObjectExtensionGroup
-
-//	color deprecated in 2.1
-	XsdGoPkgHasElem_BgColor
-
-	XsdGoPkgHasElem_DisplayMode
 
 	TAbstractSubStyleType
 
 	XsdGoPkgHasElems_BalloonStyleSimpleExtensionGroup
+
+	XsdGoPkgHasElem_DisplayMode
+
+//	color deprecated in 2.1
+	XsdGoPkgHasElem_Color
+
+//	color deprecated in 2.1
+	XsdGoPkgHasElem_BgColor
+
+	XsdGoPkgHasElem_TextColor
 
 }
 
 //	If the WalkHandlers.TBalloonStyleType function is not nil (ie. was set by outside code), calls it with this TBalloonStyleType instance as the single argument. Then calls the Walk() method on 8/8 embed(s) and 0/0 field(s) belonging to this TBalloonStyleType instance.
 func (me *TBalloonStyleType) Walk ()  { 
 	if fn := WalkHandlers.TBalloonStyleType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_DisplayMode.Walk()
+	me.XsdGoPkgHasElem_TextColor.Walk()
+	me.XsdGoPkgHasElem_Text.Walk()
+	me.XsdGoPkgHasElems_BalloonStyleObjectExtensionGroup.Walk()
 	me.TAbstractSubStyleType.Walk()
 	me.XsdGoPkgHasElems_BalloonStyleSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_DisplayMode.Walk()
 	me.XsdGoPkgHasElem_Color.Walk()
-	me.XsdGoPkgHasElem_Text.Walk()
-	me.XsdGoPkgHasElem_TextColor.Walk()
-	me.XsdGoPkgHasElems_BalloonStyleObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElem_BgColor.Walk()
  }
 
@@ -3525,39 +3093,137 @@ func (me *XsdGoPkgHasElem_BalloonStyle) Walk ()  {
 	me.BalloonStyle.Walk()
  }
 
+type XsdGoPkgHasElems_StyleObjectExtensionGroup struct {
+	StyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 StyleObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_StyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_StyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_StyleObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_StyleObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_StyleObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup struct {
+	LabelStyleSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LabelStyleSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_LabelStyleObjectExtensionGroup struct {
+	LabelStyleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LabelStyleObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LabelStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LabelStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LabelStyleObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_LabelStyleObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LabelStyleObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TLabelStyleType struct {
+	XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup
+
+	XsdGoPkgHasElem_Scale
+
+	XsdGoPkgHasElems_LabelStyleObjectExtensionGroup
+
+	TAbstractColorStyleType
+
+}
+
+//	If the WalkHandlers.TLabelStyleType function is not nil (ie. was set by outside code), calls it with this TLabelStyleType instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TLabelStyleType instance.
+func (me *TLabelStyleType) Walk ()  { 
+	if fn := WalkHandlers.TLabelStyleType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_LabelStyleObjectExtensionGroup.Walk()
+	me.TAbstractColorStyleType.Walk()
+	me.XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_Scale.Walk()
+ }
+
+type XsdGoPkgHasElem_LabelStyle struct {
+	LabelStyle *TLabelStyleType `xml:"http://www.opengis.net/kml/2.2 LabelStyle"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_LabelStyle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LabelStyle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_LabelStyle instance.
+func (me *XsdGoPkgHasElem_LabelStyle) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_LabelStyle; fn != nil { fn(me) }
+	me.LabelStyle.Walk()
+ }
+
+type XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup struct {
+	AbstractStyleSelectorObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractStyleSelectorObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup struct {
+	AbstractStyleSelectorSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractStyleSelectorSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TAbstractStyleSelectorType struct {
+	XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup
+
+	TAbstractObjectType
+
+	XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup
+
+}
+
+//	If the WalkHandlers.TAbstractStyleSelectorType function is not nil (ie. was set by outside code), calls it with this TAbstractStyleSelectorType instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this TAbstractStyleSelectorType instance.
+func (me *TAbstractStyleSelectorType) Walk ()  { 
+	if fn := WalkHandlers.TAbstractStyleSelectorType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup.Walk()
+	me.TAbstractObjectType.Walk()
+ }
+
 type TStyleType struct {
-	XsdGoPkgHasElems_StyleSimpleExtensionGroup
-
-	XsdGoPkgHasElem_PolyStyle
-
-	TAbstractStyleSelectorType
-
-	XsdGoPkgHasElems_StyleObjectExtensionGroup
-
 	XsdGoPkgHasElem_ListStyle
 
-	XsdGoPkgHasElem_LineStyle
+	XsdGoPkgHasElems_StyleSimpleExtensionGroup
 
 	XsdGoPkgHasElem_IconStyle
 
+	XsdGoPkgHasElem_LineStyle
+
 	XsdGoPkgHasElem_BalloonStyle
 
+	XsdGoPkgHasElems_StyleObjectExtensionGroup
+
 	XsdGoPkgHasElem_LabelStyle
+
+	TAbstractStyleSelectorType
+
+	XsdGoPkgHasElem_PolyStyle
 
 }
 
 //	If the WalkHandlers.TStyleType function is not nil (ie. was set by outside code), calls it with this TStyleType instance as the single argument. Then calls the Walk() method on 9/9 embed(s) and 0/0 field(s) belonging to this TStyleType instance.
 func (me *TStyleType) Walk ()  { 
 	if fn := WalkHandlers.TStyleType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_IconStyle.Walk()
-	me.XsdGoPkgHasElem_BalloonStyle.Walk()
-	me.XsdGoPkgHasElem_LabelStyle.Walk()
-	me.XsdGoPkgHasElems_StyleSimpleExtensionGroup.Walk()
 	me.XsdGoPkgHasElem_PolyStyle.Walk()
-	me.TAbstractStyleSelectorType.Walk()
-	me.XsdGoPkgHasElems_StyleObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElem_ListStyle.Walk()
+	me.XsdGoPkgHasElems_StyleSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_IconStyle.Walk()
 	me.XsdGoPkgHasElem_LineStyle.Walk()
+	me.XsdGoPkgHasElem_BalloonStyle.Walk()
+	me.XsdGoPkgHasElems_StyleObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_LabelStyle.Walk()
+	me.TAbstractStyleSelectorType.Walk()
  }
 
 type XsdGoPkgHasElem_Style struct {
@@ -3571,6 +3237,51 @@ func (me *XsdGoPkgHasElem_Style) Walk ()  {
 	me.Style.Walk()
  }
 
+type XsdGoPkgHasElems_PairSimpleExtensionGroup struct {
+	PairSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PairSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PairSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PairSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PairSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_PairSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_PairSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_PairObjectExtensionGroup struct {
+	PairObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 PairObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PairObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PairObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PairObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_PairObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_PairObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TPairType struct {
+	TAbstractObjectType
+
+	XsdGoPkgHasElems_PairObjectExtensionGroup
+
+	XsdGoPkgHasElem_StyleUrl
+
+	XsdGoPkgHasElem_Key
+
+	XsdGoPkgHasElem_AbstractStyleSelectorGroup
+
+	XsdGoPkgHasElems_PairSimpleExtensionGroup
+
+}
+
+//	If the WalkHandlers.TPairType function is not nil (ie. was set by outside code), calls it with this TPairType instance as the single argument. Then calls the Walk() method on 5/6 embed(s) and 0/0 field(s) belonging to this TPairType instance.
+func (me *TPairType) Walk ()  { 
+	if fn := WalkHandlers.TPairType; fn != nil { fn(me) }
+	me.TAbstractObjectType.Walk()
+	me.XsdGoPkgHasElems_PairObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_StyleUrl.Walk()
+	me.XsdGoPkgHasElem_Key.Walk()
+	me.XsdGoPkgHasElems_PairSimpleExtensionGroup.Walk()
+ }
+
 type XsdGoPkgHasElems_Pair struct {
 	Pairs []*TPairType `xml:"http://www.opengis.net/kml/2.2 Pair"`
 
@@ -3579,6 +3290,7 @@ type XsdGoPkgHasElems_Pair struct {
 //	If the WalkHandlers.XsdGoPkgHasElems_Pair function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Pair instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Pair instance.
 func (me *XsdGoPkgHasElems_Pair) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_Pair; fn != nil { fn(me) }
+	for _, x := range me.Pairs { x.Walk() }
  }
 
 type XsdGoPkgHasElems_StyleMapSimpleExtensionGroup struct {
@@ -3602,22 +3314,22 @@ func (me *XsdGoPkgHasElems_StyleMapObjectExtensionGroup) Walk ()  {
  }
 
 type TStyleMapType struct {
-	XsdGoPkgHasElems_Pair
-
-	TAbstractStyleSelectorType
-
 	XsdGoPkgHasElems_StyleMapSimpleExtensionGroup
 
 	XsdGoPkgHasElems_StyleMapObjectExtensionGroup
+
+	TAbstractStyleSelectorType
+
+	XsdGoPkgHasElems_Pair
 
 }
 
 //	If the WalkHandlers.TStyleMapType function is not nil (ie. was set by outside code), calls it with this TStyleMapType instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TStyleMapType instance.
 func (me *TStyleMapType) Walk ()  { 
 	if fn := WalkHandlers.TStyleMapType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_Pair.Walk()
 	me.XsdGoPkgHasElems_StyleMapSimpleExtensionGroup.Walk()
 	me.XsdGoPkgHasElems_StyleMapObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_Pair.Walk()
 	me.TAbstractStyleSelectorType.Walk()
  }
 
@@ -3635,125 +3347,28 @@ func (me *XsdGoPkgHasElem_StyleMap) Walk ()  {
 type XsdGoPkgHasElem_AbstractStyleSelectorGroup struct {
 	AbstractStyleSelectorGroup *TAbstractStyleSelectorType `xml:"http://www.opengis.net/kml/2.2 AbstractStyleSelectorGroup"`
 
-	XsdGoPkgHasElem_Style
-
 	XsdGoPkgHasElem_StyleMap
+
+	XsdGoPkgHasElem_Style
 
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_AbstractStyleSelectorGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractStyleSelectorGroup instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AbstractStyleSelectorGroup instance.
 func (me *XsdGoPkgHasElem_AbstractStyleSelectorGroup) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractStyleSelectorGroup; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_StyleMap.Walk()
 	me.XsdGoPkgHasElem_Style.Walk()
+	me.XsdGoPkgHasElem_StyleMap.Walk()
 	me.AbstractStyleSelectorGroup.Walk()
  }
 
-type XsdGoPkgHasElems_PairObjectExtensionGroup struct {
-	PairObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 PairObjectExtensionGroup"`
+type XsdGoPkgHasElem_StyleObjectExtensionGroup struct {
+	StyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 StyleObjectExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_PairObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PairObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PairObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_PairObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_PairObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TPairType struct {
-	XsdGoPkgHasElem_StyleUrl
-
-	TAbstractObjectType
-
-	XsdGoPkgHasElem_Key
-
-	XsdGoPkgHasElems_PairSimpleExtensionGroup
-
-	XsdGoPkgHasElem_AbstractStyleSelectorGroup
-
-	XsdGoPkgHasElems_PairObjectExtensionGroup
-
-}
-
-//	If the WalkHandlers.TPairType function is not nil (ie. was set by outside code), calls it with this TPairType instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this TPairType instance.
-func (me *TPairType) Walk ()  { 
-	if fn := WalkHandlers.TPairType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Key.Walk()
-	me.XsdGoPkgHasElems_PairSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_AbstractStyleSelectorGroup.Walk()
-	me.XsdGoPkgHasElems_PairObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_StyleUrl.Walk()
-	me.TAbstractObjectType.Walk()
- }
-
-type XsdGoPkgHasElem_Pair struct {
-	Pair *TPairType `xml:"http://www.opengis.net/kml/2.2 Pair"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Pair function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Pair instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Pair instance.
-func (me *XsdGoPkgHasElem_Pair) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Pair; fn != nil { fn(me) }
-	me.Pair.Walk()
- }
-
-type XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup struct {
-	ImagePyramidObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ImagePyramidObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup struct {
-	AbstractSubStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractSubStyleObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup struct {
-	ViewVolumeObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ViewVolumeObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup struct {
-	AbstractColorStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractColorStyleObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_IconStyleObjectExtensionGroup struct {
-	IconStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 IconStyleObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_IconStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_IconStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_IconStyleObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_IconStyleObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_IconStyleObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_ListStyleObjectExtensionGroup struct {
-	ListStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ListStyleObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ListStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ListStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ListStyleObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_ListStyleObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ListStyleObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_StyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_StyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_StyleObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_StyleObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_StyleObjectExtensionGroup; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElems_ViewVolumeObjectExtensionGroup struct {
@@ -3777,34 +3392,34 @@ func (me *XsdGoPkgHasElems_ViewVolumeSimpleExtensionGroup) Walk ()  {
  }
 
 type TViewVolumeType struct {
-	XsdGoPkgHasElem_TopFov
-
 	XsdGoPkgHasElem_LeftFov
 
-	XsdGoPkgHasElems_ViewVolumeObjectExtensionGroup
+	XsdGoPkgHasElems_ViewVolumeSimpleExtensionGroup
 
 	XsdGoPkgHasElem_BottomFov
-
-	XsdGoPkgHasElem_RightFov
 
 	XsdGoPkgHasElem_Near
 
 	TAbstractObjectType
 
-	XsdGoPkgHasElems_ViewVolumeSimpleExtensionGroup
+	XsdGoPkgHasElem_TopFov
+
+	XsdGoPkgHasElems_ViewVolumeObjectExtensionGroup
+
+	XsdGoPkgHasElem_RightFov
 
 }
 
 //	If the WalkHandlers.TViewVolumeType function is not nil (ie. was set by outside code), calls it with this TViewVolumeType instance as the single argument. Then calls the Walk() method on 8/8 embed(s) and 0/0 field(s) belonging to this TViewVolumeType instance.
 func (me *TViewVolumeType) Walk ()  { 
 	if fn := WalkHandlers.TViewVolumeType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_BottomFov.Walk()
 	me.XsdGoPkgHasElem_RightFov.Walk()
+	me.XsdGoPkgHasElem_LeftFov.Walk()
+	me.XsdGoPkgHasElems_ViewVolumeSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_BottomFov.Walk()
 	me.XsdGoPkgHasElem_Near.Walk()
 	me.TAbstractObjectType.Walk()
-	me.XsdGoPkgHasElems_ViewVolumeSimpleExtensionGroup.Walk()
 	me.XsdGoPkgHasElem_TopFov.Walk()
-	me.XsdGoPkgHasElem_LeftFov.Walk()
 	me.XsdGoPkgHasElems_ViewVolumeObjectExtensionGroup.Walk()
  }
 
@@ -3819,24 +3434,1089 @@ func (me *XsdGoPkgHasElem_ViewVolume) Walk ()  {
 	me.ViewVolume.Walk()
  }
 
-type XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup struct {
-	AbstractFeatureSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractFeatureSimpleExtensionGroup"`
+type XsdGoPkgHasElem_AbstractColorStyleGroup struct {
+	AbstractColorStyleGroup *TAbstractColorStyleType `xml:"http://www.opengis.net/kml/2.2 AbstractColorStyleGroup"`
+
+	XsdGoPkgHasElem_LineStyle
+
+	XsdGoPkgHasElem_IconStyle
+
+	XsdGoPkgHasElem_PolyStyle
+
+	XsdGoPkgHasElem_LabelStyle
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_AbstractColorStyleGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractColorStyleGroup instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AbstractColorStyleGroup instance.
+func (me *XsdGoPkgHasElem_AbstractColorStyleGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractColorStyleGroup; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_LineStyle.Walk()
+	me.XsdGoPkgHasElem_IconStyle.Walk()
+	me.XsdGoPkgHasElem_PolyStyle.Walk()
+	me.XsdGoPkgHasElem_LabelStyle.Walk()
+	me.AbstractColorStyleGroup.Walk()
  }
 
-type XsdGoPkgHasElems_LodObjectExtensionGroup struct {
-	LodObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LodObjectExtensionGroup"`
+type XsdGoPkgHasElem_AbstractSubStyleGroup struct {
+	AbstractSubStyleGroup *TAbstractSubStyleType `xml:"http://www.opengis.net/kml/2.2 AbstractSubStyleGroup"`
+
+	XsdGoPkgHasElem_AbstractColorStyleGroup
+
+	XsdGoPkgHasElem_ListStyle
+
+	XsdGoPkgHasElem_BalloonStyle
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_LodObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LodObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LodObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_LodObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LodObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_AbstractSubStyleGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractSubStyleGroup instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AbstractSubStyleGroup instance.
+func (me *XsdGoPkgHasElem_AbstractSubStyleGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractSubStyleGroup; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_AbstractColorStyleGroup.Walk()
+	me.XsdGoPkgHasElem_ListStyle.Walk()
+	me.XsdGoPkgHasElem_BalloonStyle.Walk()
+	me.AbstractSubStyleGroup.Walk()
+ }
+
+type XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup struct {
+	AbstractGeometryObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractGeometryObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup struct {
+	AbstractGeometrySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractGeometrySimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TAbstractGeometryType struct {
+	XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup
+
+	TAbstractObjectType
+
+	XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup
+
+}
+
+//	If the WalkHandlers.TAbstractGeometryType function is not nil (ie. was set by outside code), calls it with this TAbstractGeometryType instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this TAbstractGeometryType instance.
+func (me *TAbstractGeometryType) Walk ()  { 
+	if fn := WalkHandlers.TAbstractGeometryType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup.Walk()
+	me.TAbstractObjectType.Walk()
+ }
+
+type XsdGoPkgHasElems_LinearRingObjectExtensionGroup struct {
+	LinearRingObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LinearRingObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LinearRingObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LinearRingObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LinearRingObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_LinearRingObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LinearRingObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_LinearRingSimpleExtensionGroup struct {
+	LinearRingSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LinearRingSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LinearRingSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LinearRingSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LinearRingSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_LinearRingSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LinearRingSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TLinearRingType struct {
+	XsdGoPkgHasElem_Coordinates
+
+	TAbstractGeometryType
+
+	XsdGoPkgHasElems_LinearRingObjectExtensionGroup
+
+	XsdGoPkgHasElems_LinearRingSimpleExtensionGroup
+
+	XsdGoPkgHasElem_AltitudeModeGroup
+
+	XsdGoPkgHasElem_Extrude
+
+	XsdGoPkgHasElem_Tessellate
+
+}
+
+//	If the WalkHandlers.TLinearRingType function is not nil (ie. was set by outside code), calls it with this TLinearRingType instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this TLinearRingType instance.
+func (me *TLinearRingType) Walk ()  { 
+	if fn := WalkHandlers.TLinearRingType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Extrude.Walk()
+	me.XsdGoPkgHasElem_Tessellate.Walk()
+	me.XsdGoPkgHasElem_Coordinates.Walk()
+	me.TAbstractGeometryType.Walk()
+	me.XsdGoPkgHasElems_LinearRingObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_LinearRingSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_AltitudeModeGroup.Walk()
+ }
+
+type XsdGoPkgHasElem_LinearRing struct {
+	LinearRing *TLinearRingType `xml:"http://www.opengis.net/kml/2.2 LinearRing"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_LinearRing function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LinearRing instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_LinearRing instance.
+func (me *XsdGoPkgHasElem_LinearRing) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_LinearRing; fn != nil { fn(me) }
+	me.LinearRing.Walk()
+ }
+
+type XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup struct {
+	MultiGeometryObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 MultiGeometryObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_MultiGeometry struct {
+	MultiGeometries []*TMultiGeometryType `xml:"http://www.opengis.net/kml/2.2 MultiGeometry"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_MultiGeometry function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_MultiGeometry instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_MultiGeometry instance.
+func (me *XsdGoPkgHasElems_MultiGeometry) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_MultiGeometry; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_LinearRing struct {
+	LinearRings []*TLinearRingType `xml:"http://www.opengis.net/kml/2.2 LinearRing"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LinearRing function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LinearRing instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LinearRing instance.
+func (me *XsdGoPkgHasElems_LinearRing) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LinearRing; fn != nil { fn(me) }
+	for _, x := range me.LinearRings { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_BoundaryObjectExtensionGroup struct {
+	BoundaryObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 BoundaryObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_BoundaryObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_BoundaryObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_BoundaryObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_BoundaryObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_BoundaryObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_BoundarySimpleExtensionGroup struct {
+	BoundarySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 BoundarySimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_BoundarySimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_BoundarySimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_BoundarySimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_BoundarySimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_BoundarySimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TBoundaryType struct {
+	XsdGoPkgHasElems_BoundaryObjectExtensionGroup
+
+	XsdGoPkgHasElem_LinearRing
+
+	XsdGoPkgHasElems_BoundarySimpleExtensionGroup
+
+}
+
+//	If the WalkHandlers.TBoundaryType function is not nil (ie. was set by outside code), calls it with this TBoundaryType instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this TBoundaryType instance.
+func (me *TBoundaryType) Walk ()  { 
+	if fn := WalkHandlers.TBoundaryType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_BoundaryObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_LinearRing.Walk()
+	me.XsdGoPkgHasElems_BoundarySimpleExtensionGroup.Walk()
+ }
+
+type XsdGoPkgHasElem_OuterBoundaryIs struct {
+	OuterBoundaryIs *TBoundaryType `xml:"http://www.opengis.net/kml/2.2 outerBoundaryIs"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_OuterBoundaryIs function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_OuterBoundaryIs instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_OuterBoundaryIs instance.
+func (me *XsdGoPkgHasElem_OuterBoundaryIs) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_OuterBoundaryIs; fn != nil { fn(me) }
+	me.OuterBoundaryIs.Walk()
+ }
+
+type XsdGoPkgHasElems_PolygonObjectExtensionGroup struct {
+	PolygonObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 PolygonObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PolygonObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PolygonObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PolygonObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_PolygonObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_PolygonObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_PolygonSimpleExtensionGroup struct {
+	PolygonSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PolygonSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PolygonSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PolygonSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PolygonSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_PolygonSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_PolygonSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_InnerBoundaryIs struct {
+	InnerBoundaryIses []*TBoundaryType `xml:"http://www.opengis.net/kml/2.2 innerBoundaryIs"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_InnerBoundaryIs function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_InnerBoundaryIs instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_InnerBoundaryIs instance.
+func (me *XsdGoPkgHasElems_InnerBoundaryIs) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_InnerBoundaryIs; fn != nil { fn(me) }
+	for _, x := range me.InnerBoundaryIses { x.Walk() }
+ }
+
+type TPolygonType struct {
+	TAbstractGeometryType
+
+	XsdGoPkgHasElems_PolygonSimpleExtensionGroup
+
+	XsdGoPkgHasElems_InnerBoundaryIs
+
+	XsdGoPkgHasElem_AltitudeModeGroup
+
+	XsdGoPkgHasElem_Tessellate
+
+	XsdGoPkgHasElem_Extrude
+
+	XsdGoPkgHasElem_OuterBoundaryIs
+
+	XsdGoPkgHasElems_PolygonObjectExtensionGroup
+
+}
+
+//	If the WalkHandlers.TPolygonType function is not nil (ie. was set by outside code), calls it with this TPolygonType instance as the single argument. Then calls the Walk() method on 8/8 embed(s) and 0/0 field(s) belonging to this TPolygonType instance.
+func (me *TPolygonType) Walk ()  { 
+	if fn := WalkHandlers.TPolygonType; fn != nil { fn(me) }
+	me.TAbstractGeometryType.Walk()
+	me.XsdGoPkgHasElems_PolygonSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_InnerBoundaryIs.Walk()
+	me.XsdGoPkgHasElem_AltitudeModeGroup.Walk()
+	me.XsdGoPkgHasElem_Tessellate.Walk()
+	me.XsdGoPkgHasElem_Extrude.Walk()
+	me.XsdGoPkgHasElem_OuterBoundaryIs.Walk()
+	me.XsdGoPkgHasElems_PolygonObjectExtensionGroup.Walk()
+ }
+
+type XsdGoPkgHasElems_Polygon struct {
+	Polygons []*TPolygonType `xml:"http://www.opengis.net/kml/2.2 Polygon"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Polygon function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Polygon instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Polygon instance.
+func (me *XsdGoPkgHasElems_Polygon) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Polygon; fn != nil { fn(me) }
+	for _, x := range me.Polygons { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_PointSimpleExtensionGroup struct {
+	PointSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PointSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PointSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PointSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PointSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_PointSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_PointSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_PointObjectExtensionGroup struct {
+	PointObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 PointObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PointObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PointObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PointObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_PointObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_PointObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TPointType struct {
+	XsdGoPkgHasElems_PointSimpleExtensionGroup
+
+	XsdGoPkgHasElems_PointObjectExtensionGroup
+
+	TAbstractGeometryType
+
+	XsdGoPkgHasElem_Extrude
+
+	XsdGoPkgHasElem_Coordinates
+
+	XsdGoPkgHasElem_AltitudeModeGroup
+
+}
+
+//	If the WalkHandlers.TPointType function is not nil (ie. was set by outside code), calls it with this TPointType instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this TPointType instance.
+func (me *TPointType) Walk ()  { 
+	if fn := WalkHandlers.TPointType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Extrude.Walk()
+	me.XsdGoPkgHasElem_Coordinates.Walk()
+	me.XsdGoPkgHasElem_AltitudeModeGroup.Walk()
+	me.XsdGoPkgHasElems_PointSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_PointObjectExtensionGroup.Walk()
+	me.TAbstractGeometryType.Walk()
+ }
+
+type XsdGoPkgHasElems_Point struct {
+	Points []*TPointType `xml:"http://www.opengis.net/kml/2.2 Point"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Point function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Point instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Point instance.
+func (me *XsdGoPkgHasElems_Point) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Point; fn != nil { fn(me) }
+	for _, x := range me.Points { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_LineStringSimpleExtensionGroup struct {
+	LineStringSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LineStringSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LineStringSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LineStringSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LineStringSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_LineStringSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LineStringSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_LineStringObjectExtensionGroup struct {
+	LineStringObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LineStringObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LineStringObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LineStringObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LineStringObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_LineStringObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LineStringObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TLineStringType struct {
+	XsdGoPkgHasElems_LineStringSimpleExtensionGroup
+
+	XsdGoPkgHasElem_AltitudeModeGroup
+
+	XsdGoPkgHasElems_LineStringObjectExtensionGroup
+
+	XsdGoPkgHasElem_Tessellate
+
+	XsdGoPkgHasElem_Coordinates
+
+	XsdGoPkgHasElem_Extrude
+
+	TAbstractGeometryType
+
+}
+
+//	If the WalkHandlers.TLineStringType function is not nil (ie. was set by outside code), calls it with this TLineStringType instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this TLineStringType instance.
+func (me *TLineStringType) Walk ()  { 
+	if fn := WalkHandlers.TLineStringType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_LineStringSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_AltitudeModeGroup.Walk()
+	me.XsdGoPkgHasElems_LineStringObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_Tessellate.Walk()
+	me.XsdGoPkgHasElem_Coordinates.Walk()
+	me.XsdGoPkgHasElem_Extrude.Walk()
+	me.TAbstractGeometryType.Walk()
+ }
+
+type XsdGoPkgHasElems_LineString struct {
+	LineStrings []*TLineStringType `xml:"http://www.opengis.net/kml/2.2 LineString"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LineString function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LineString instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LineString instance.
+func (me *XsdGoPkgHasElems_LineString) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LineString; fn != nil { fn(me) }
+	for _, x := range me.LineStrings { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_LinkSimpleExtensionGroup struct {
+	LinkSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LinkSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LinkSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LinkSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LinkSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_LinkSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LinkSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_LinkObjectExtensionGroup struct {
+	LinkObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LinkObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LinkObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LinkObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LinkObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_LinkObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LinkObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TLinkType struct {
+	XsdGoPkgHasElem_ViewFormat
+
+	XsdGoPkgHasElem_HttpQuery
+
+	XsdGoPkgHasElem_ViewRefreshTime
+
+	TBasicLinkType
+
+	XsdGoPkgHasElem_RefreshMode
+
+	XsdGoPkgHasElems_LinkSimpleExtensionGroup
+
+	XsdGoPkgHasElems_LinkObjectExtensionGroup
+
+	XsdGoPkgHasElem_ViewRefreshMode
+
+	XsdGoPkgHasElem_ViewBoundScale
+
+	XsdGoPkgHasElem_RefreshInterval
+
+}
+
+//	If the WalkHandlers.TLinkType function is not nil (ie. was set by outside code), calls it with this TLinkType instance as the single argument. Then calls the Walk() method on 10/10 embed(s) and 0/0 field(s) belonging to this TLinkType instance.
+func (me *TLinkType) Walk ()  { 
+	if fn := WalkHandlers.TLinkType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_RefreshMode.Walk()
+	me.XsdGoPkgHasElems_LinkSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_LinkObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_ViewRefreshMode.Walk()
+	me.XsdGoPkgHasElem_ViewBoundScale.Walk()
+	me.XsdGoPkgHasElem_RefreshInterval.Walk()
+	me.XsdGoPkgHasElem_ViewFormat.Walk()
+	me.XsdGoPkgHasElem_HttpQuery.Walk()
+	me.XsdGoPkgHasElem_ViewRefreshTime.Walk()
+	me.TBasicLinkType.Walk()
+ }
+
+type XsdGoPkgHasElem_Link struct {
+	Link *TLinkType `xml:"http://www.opengis.net/kml/2.2 Link"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Link function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Link instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Link instance.
+func (me *XsdGoPkgHasElem_Link) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Link; fn != nil { fn(me) }
+	me.Link.Walk()
+ }
+
+type XsdGoPkgHasElems_ModelObjectExtensionGroup struct {
+	ModelObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ModelObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ModelObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ModelObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ModelObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_ModelObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_ModelObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_LocationSimpleExtensionGroup struct {
+	LocationSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LocationSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LocationSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LocationSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LocationSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_LocationSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LocationSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_LocationObjectExtensionGroup struct {
+	LocationObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LocationObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LocationObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LocationObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LocationObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_LocationObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LocationObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TLocationType struct {
+	XsdGoPkgHasElem_Altitude
+
+	XsdGoPkgHasElem_Longitude
+
+	XsdGoPkgHasElem_Latitude
+
+	TAbstractObjectType
+
+	XsdGoPkgHasElems_LocationSimpleExtensionGroup
+
+	XsdGoPkgHasElems_LocationObjectExtensionGroup
+
+}
+
+//	If the WalkHandlers.TLocationType function is not nil (ie. was set by outside code), calls it with this TLocationType instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this TLocationType instance.
+func (me *TLocationType) Walk ()  { 
+	if fn := WalkHandlers.TLocationType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Altitude.Walk()
+	me.XsdGoPkgHasElem_Longitude.Walk()
+	me.XsdGoPkgHasElem_Latitude.Walk()
+	me.TAbstractObjectType.Walk()
+	me.XsdGoPkgHasElems_LocationSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_LocationObjectExtensionGroup.Walk()
+ }
+
+type XsdGoPkgHasElem_Location struct {
+	Location *TLocationType `xml:"http://www.opengis.net/kml/2.2 Location"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Location function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Location instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Location instance.
+func (me *XsdGoPkgHasElem_Location) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Location; fn != nil { fn(me) }
+	me.Location.Walk()
+ }
+
+type XsdGoPkgHasElems_ModelSimpleExtensionGroup struct {
+	ModelSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ModelSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ModelSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ModelSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ModelSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_ModelSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_ModelSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_ResourceMapObjectExtensionGroup struct {
+	ResourceMapObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ResourceMapObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ResourceMapObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ResourceMapObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ResourceMapObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_ResourceMapObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_ResourceMapObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_AliasSimpleExtensionGroup struct {
+	AliasSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AliasSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AliasSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AliasSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AliasSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_AliasSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AliasSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_AliasObjectExtensionGroup struct {
+	AliasObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AliasObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AliasObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AliasObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AliasObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_AliasObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AliasObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TAliasType struct {
+	XsdGoPkgHasElem_SourceHref
+
+	XsdGoPkgHasElem_TargetHref
+
+	XsdGoPkgHasElems_AliasObjectExtensionGroup
+
+	TAbstractObjectType
+
+	XsdGoPkgHasElems_AliasSimpleExtensionGroup
+
+}
+
+//	If the WalkHandlers.TAliasType function is not nil (ie. was set by outside code), calls it with this TAliasType instance as the single argument. Then calls the Walk() method on 5/5 embed(s) and 0/0 field(s) belonging to this TAliasType instance.
+func (me *TAliasType) Walk ()  { 
+	if fn := WalkHandlers.TAliasType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_SourceHref.Walk()
+	me.XsdGoPkgHasElem_TargetHref.Walk()
+	me.XsdGoPkgHasElems_AliasObjectExtensionGroup.Walk()
+	me.TAbstractObjectType.Walk()
+	me.XsdGoPkgHasElems_AliasSimpleExtensionGroup.Walk()
+ }
+
+type XsdGoPkgHasElems_Alias struct {
+	Aliases []*TAliasType `xml:"http://www.opengis.net/kml/2.2 Alias"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Alias function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Alias instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Alias instance.
+func (me *XsdGoPkgHasElems_Alias) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Alias; fn != nil { fn(me) }
+	for _, x := range me.Aliases { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup struct {
+	ResourceMapSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ResourceMapSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TResourceMapType struct {
+	XsdGoPkgHasElems_Alias
+
+	XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup
+
+	XsdGoPkgHasElems_ResourceMapObjectExtensionGroup
+
+	TAbstractObjectType
+
+}
+
+//	If the WalkHandlers.TResourceMapType function is not nil (ie. was set by outside code), calls it with this TResourceMapType instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TResourceMapType instance.
+func (me *TResourceMapType) Walk ()  { 
+	if fn := WalkHandlers.TResourceMapType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_Alias.Walk()
+	me.XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_ResourceMapObjectExtensionGroup.Walk()
+	me.TAbstractObjectType.Walk()
+ }
+
+type XsdGoPkgHasElem_ResourceMap struct {
+	ResourceMap *TResourceMapType `xml:"http://www.opengis.net/kml/2.2 ResourceMap"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ResourceMap function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ResourceMap instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ResourceMap instance.
+func (me *XsdGoPkgHasElem_ResourceMap) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ResourceMap; fn != nil { fn(me) }
+	me.ResourceMap.Walk()
+ }
+
+type XsdGoPkgHasElems_OrientationObjectExtensionGroup struct {
+	OrientationObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 OrientationObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_OrientationObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_OrientationObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_OrientationObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_OrientationObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_OrientationObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_OrientationSimpleExtensionGroup struct {
+	OrientationSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 OrientationSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_OrientationSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_OrientationSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_OrientationSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_OrientationSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_OrientationSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TOrientationType struct {
+	XsdGoPkgHasElems_OrientationObjectExtensionGroup
+
+	XsdGoPkgHasElems_OrientationSimpleExtensionGroup
+
+	XsdGoPkgHasElem_Roll
+
+	TAbstractObjectType
+
+	XsdGoPkgHasElem_Tilt
+
+	XsdGoPkgHasElem_Heading
+
+}
+
+//	If the WalkHandlers.TOrientationType function is not nil (ie. was set by outside code), calls it with this TOrientationType instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this TOrientationType instance.
+func (me *TOrientationType) Walk ()  { 
+	if fn := WalkHandlers.TOrientationType; fn != nil { fn(me) }
+	me.TAbstractObjectType.Walk()
+	me.XsdGoPkgHasElem_Tilt.Walk()
+	me.XsdGoPkgHasElem_Heading.Walk()
+	me.XsdGoPkgHasElems_OrientationObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_OrientationSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_Roll.Walk()
+ }
+
+type XsdGoPkgHasElem_Orientation struct {
+	Orientation *TOrientationType `xml:"http://www.opengis.net/kml/2.2 Orientation"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Orientation function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Orientation instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Orientation instance.
+func (me *XsdGoPkgHasElem_Orientation) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Orientation; fn != nil { fn(me) }
+	me.Orientation.Walk()
+ }
+
+type TModelType struct {
+	XsdGoPkgHasElem_AltitudeModeGroup
+
+	XsdGoPkgHasElem_Link
+
+	XsdGoPkgHasElem_Scale
+
+	XsdGoPkgHasElems_ModelObjectExtensionGroup
+
+	XsdGoPkgHasElem_Location
+
+	XsdGoPkgHasElems_ModelSimpleExtensionGroup
+
+	XsdGoPkgHasElem_ResourceMap
+
+	TAbstractGeometryType
+
+	XsdGoPkgHasElem_Orientation
+
+}
+
+//	If the WalkHandlers.TModelType function is not nil (ie. was set by outside code), calls it with this TModelType instance as the single argument. Then calls the Walk() method on 9/9 embed(s) and 0/0 field(s) belonging to this TModelType instance.
+func (me *TModelType) Walk ()  { 
+	if fn := WalkHandlers.TModelType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Orientation.Walk()
+	me.XsdGoPkgHasElem_AltitudeModeGroup.Walk()
+	me.XsdGoPkgHasElem_Link.Walk()
+	me.XsdGoPkgHasElem_Scale.Walk()
+	me.XsdGoPkgHasElems_ModelObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_Location.Walk()
+	me.XsdGoPkgHasElems_ModelSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_ResourceMap.Walk()
+	me.TAbstractGeometryType.Walk()
+ }
+
+type XsdGoPkgHasElems_Model struct {
+	Models []*TModelType `xml:"http://www.opengis.net/kml/2.2 Model"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Model function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Model instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Model instance.
+func (me *XsdGoPkgHasElems_Model) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Model; fn != nil { fn(me) }
+	for _, x := range me.Models { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_AbstractGeometryGroup struct {
+	AbstractGeometryGroups []*TAbstractGeometryType `xml:"http://www.opengis.net/kml/2.2 AbstractGeometryGroup"`
+
+	XsdGoPkgHasElems_LinearRing
+
+	XsdGoPkgHasElems_Polygon
+
+	XsdGoPkgHasElems_Point
+
+	XsdGoPkgHasElems_LineString
+
+	XsdGoPkgHasElems_Model
+
+	XsdGoPkgHasElems_MultiGeometry
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractGeometryGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractGeometryGroup instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractGeometryGroup instance.
+func (me *XsdGoPkgHasElems_AbstractGeometryGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractGeometryGroup; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_LinearRing.Walk()
+	me.XsdGoPkgHasElems_Polygon.Walk()
+	me.XsdGoPkgHasElems_Point.Walk()
+	me.XsdGoPkgHasElems_LineString.Walk()
+	me.XsdGoPkgHasElems_Model.Walk()
+	me.XsdGoPkgHasElems_MultiGeometry.Walk()
+	for _, x := range me.AbstractGeometryGroups { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup struct {
+	MultiGeometrySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 MultiGeometrySimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TMultiGeometryType struct {
+	XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup
+
+	XsdGoPkgHasElems_AbstractGeometryGroup
+
+	XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup
+
+	TAbstractGeometryType
+
+}
+
+//	If the WalkHandlers.TMultiGeometryType function is not nil (ie. was set by outside code), calls it with this TMultiGeometryType instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TMultiGeometryType instance.
+func (me *TMultiGeometryType) Walk ()  { 
+	if fn := WalkHandlers.TMultiGeometryType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_AbstractGeometryGroup.Walk()
+	me.XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup.Walk()
+	me.TAbstractGeometryType.Walk()
+ }
+
+type XsdGoPkgHasElem_MultiGeometry struct {
+	MultiGeometry *TMultiGeometryType `xml:"http://www.opengis.net/kml/2.2 MultiGeometry"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_MultiGeometry function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MultiGeometry instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_MultiGeometry instance.
+func (me *XsdGoPkgHasElem_MultiGeometry) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_MultiGeometry; fn != nil { fn(me) }
+	me.MultiGeometry.Walk()
+ }
+
+type XsdGoPkgHasElem_Model struct {
+	Model *TModelType `xml:"http://www.opengis.net/kml/2.2 Model"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Model function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Model instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Model instance.
+func (me *XsdGoPkgHasElem_Model) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Model; fn != nil { fn(me) }
+	me.Model.Walk()
+ }
+
+type XsdGoPkgHasElem_Point struct {
+	Point *TPointType `xml:"http://www.opengis.net/kml/2.2 Point"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Point function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Point instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Point instance.
+func (me *XsdGoPkgHasElem_Point) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Point; fn != nil { fn(me) }
+	me.Point.Walk()
+ }
+
+type XsdGoPkgHasElem_LineString struct {
+	LineString *TLineStringType `xml:"http://www.opengis.net/kml/2.2 LineString"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_LineString function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LineString instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_LineString instance.
+func (me *XsdGoPkgHasElem_LineString) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_LineString; fn != nil { fn(me) }
+	me.LineString.Walk()
+ }
+
+type XsdGoPkgHasElem_Polygon struct {
+	Polygon *TPolygonType `xml:"http://www.opengis.net/kml/2.2 Polygon"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Polygon function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Polygon instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Polygon instance.
+func (me *XsdGoPkgHasElem_Polygon) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Polygon; fn != nil { fn(me) }
+	me.Polygon.Walk()
+ }
+
+type XsdGoPkgHasElem_AbstractGeometryGroup struct {
+	AbstractGeometryGroup *TAbstractGeometryType `xml:"http://www.opengis.net/kml/2.2 AbstractGeometryGroup"`
+
+	XsdGoPkgHasElem_Point
+
+	XsdGoPkgHasElem_LineString
+
+	XsdGoPkgHasElem_Polygon
+
+	XsdGoPkgHasElem_LinearRing
+
+	XsdGoPkgHasElem_MultiGeometry
+
+	XsdGoPkgHasElem_Model
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AbstractGeometryGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractGeometryGroup instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AbstractGeometryGroup instance.
+func (me *XsdGoPkgHasElem_AbstractGeometryGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractGeometryGroup; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_LinearRing.Walk()
+	me.XsdGoPkgHasElem_MultiGeometry.Walk()
+	me.XsdGoPkgHasElem_Model.Walk()
+	me.XsdGoPkgHasElem_Point.Walk()
+	me.XsdGoPkgHasElem_LineString.Walk()
+	me.XsdGoPkgHasElem_Polygon.Walk()
+	me.AbstractGeometryGroup.Walk()
+ }
+
+type XsdGoPkgHasElem_LinearRingObjectExtensionGroup struct {
+	LinearRingObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LinearRingObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_LinearRingObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LinearRingObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LinearRingObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_LinearRingObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_LinearRingObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_CameraObjectExtensionGroup struct {
+	CameraObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 CameraObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_CameraObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_CameraObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_CameraObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_CameraObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_CameraObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup struct {
+	NetworkLinkControlObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 NetworkLinkControlObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_Pair struct {
+	Pair *TPairType `xml:"http://www.opengis.net/kml/2.2 Pair"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Pair function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Pair instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Pair instance.
+func (me *XsdGoPkgHasElem_Pair) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Pair; fn != nil { fn(me) }
+	me.Pair.Walk()
+ }
+
+type XsdGoPkgHasElem_Icon struct {
+	Icon *TLinkType `xml:"http://www.opengis.net/kml/2.2 Icon"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Icon function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Icon instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Icon instance.
+func (me *XsdGoPkgHasElem_Icon) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Icon; fn != nil { fn(me) }
+	me.Icon.Walk()
+ }
+
+type XsdGoPkgHasElem_FolderObjectExtensionGroup struct {
+	FolderObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 FolderObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_FolderObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FolderObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_FolderObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_FolderObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_FolderObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_RegionObjectExtensionGroup struct {
+	RegionObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 RegionObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_RegionObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_RegionObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_RegionObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_RegionObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_RegionObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup struct {
+	LatLonAltBoxSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LatLonAltBoxSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup struct {
+	AbstractLatLonBoxObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractLatLonBoxObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup struct {
+	AbstractLatLonBoxSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractLatLonBoxSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TAbstractLatLonBoxType struct {
+	XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup
+
+	XsdGoPkgHasElem_East
+
+	XsdGoPkgHasElem_North
+
+	TAbstractObjectType
+
+	XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup
+
+	XsdGoPkgHasElem_South
+
+	XsdGoPkgHasElem_West
+
+}
+
+//	If the WalkHandlers.TAbstractLatLonBoxType function is not nil (ie. was set by outside code), calls it with this TAbstractLatLonBoxType instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this TAbstractLatLonBoxType instance.
+func (me *TAbstractLatLonBoxType) Walk ()  { 
+	if fn := WalkHandlers.TAbstractLatLonBoxType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_East.Walk()
+	me.XsdGoPkgHasElem_North.Walk()
+	me.TAbstractObjectType.Walk()
+	me.XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_South.Walk()
+	me.XsdGoPkgHasElem_West.Walk()
+ }
+
+type XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup struct {
+	LatLonAltBoxObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LatLonAltBoxObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TLatLonAltBoxType struct {
+	XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup
+
+	XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup
+
+	XsdGoPkgHasElem_MinAltitude
+
+	XsdGoPkgHasElem_AltitudeModeGroup
+
+	TAbstractLatLonBoxType
+
+	XsdGoPkgHasElem_MaxAltitude
+
+}
+
+//	If the WalkHandlers.TLatLonAltBoxType function is not nil (ie. was set by outside code), calls it with this TLatLonAltBoxType instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this TLatLonAltBoxType instance.
+func (me *TLatLonAltBoxType) Walk ()  { 
+	if fn := WalkHandlers.TLatLonAltBoxType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_MinAltitude.Walk()
+	me.XsdGoPkgHasElem_AltitudeModeGroup.Walk()
+	me.TAbstractLatLonBoxType.Walk()
+	me.XsdGoPkgHasElem_MaxAltitude.Walk()
+ }
+
+type XsdGoPkgHasElem_LatLonAltBox struct {
+	LatLonAltBox *TLatLonAltBoxType `xml:"http://www.opengis.net/kml/2.2 LatLonAltBox"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_LatLonAltBox function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LatLonAltBox instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_LatLonAltBox instance.
+func (me *XsdGoPkgHasElem_LatLonAltBox) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_LatLonAltBox; fn != nil { fn(me) }
+	me.LatLonAltBox.Walk()
  }
 
 type XsdGoPkgHasElems_LodSimpleExtensionGroup struct {
@@ -3849,33 +4529,43 @@ func (me *XsdGoPkgHasElems_LodSimpleExtensionGroup) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_LodSimpleExtensionGroup; fn != nil { fn(me) }
  }
 
+type XsdGoPkgHasElems_LodObjectExtensionGroup struct {
+	LodObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LodObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LodObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LodObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LodObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_LodObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LodObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
 type TLodType struct {
+	XsdGoPkgHasElem_MaxFadeExtent
+
 	TAbstractObjectType
 
+	XsdGoPkgHasElem_MaxLodPixels
+
 	XsdGoPkgHasElem_MinFadeExtent
+
+	XsdGoPkgHasElems_LodSimpleExtensionGroup
 
 	XsdGoPkgHasElems_LodObjectExtensionGroup
 
 	XsdGoPkgHasElem_MinLodPixels
-
-	XsdGoPkgHasElem_MaxFadeExtent
-
-	XsdGoPkgHasElem_MaxLodPixels
-
-	XsdGoPkgHasElems_LodSimpleExtensionGroup
 
 }
 
 //	If the WalkHandlers.TLodType function is not nil (ie. was set by outside code), calls it with this TLodType instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this TLodType instance.
 func (me *TLodType) Walk ()  { 
 	if fn := WalkHandlers.TLodType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_MinFadeExtent.Walk()
-	me.XsdGoPkgHasElems_LodObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElem_MinLodPixels.Walk()
 	me.XsdGoPkgHasElem_MaxFadeExtent.Walk()
-	me.XsdGoPkgHasElem_MaxLodPixels.Walk()
-	me.XsdGoPkgHasElems_LodSimpleExtensionGroup.Walk()
 	me.TAbstractObjectType.Walk()
+	me.XsdGoPkgHasElem_MaxLodPixels.Walk()
+	me.XsdGoPkgHasElem_MinFadeExtent.Walk()
+	me.XsdGoPkgHasElems_LodSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_LodObjectExtensionGroup.Walk()
  }
 
 type XsdGoPkgHasElem_Lod struct {
@@ -3899,130 +4589,14 @@ func (me *XsdGoPkgHasElems_RegionSimpleExtensionGroup) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_RegionSimpleExtensionGroup; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElems_RegionObjectExtensionGroup struct {
-	RegionObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 RegionObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_RegionObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_RegionObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_RegionObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_RegionObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_RegionObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup struct {
-	LatLonAltBoxSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LatLonAltBoxSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup struct {
-	LatLonAltBoxObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LatLonAltBoxObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup struct {
-	AbstractLatLonBoxSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractLatLonBoxSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup struct {
-	AbstractLatLonBoxObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractLatLonBoxObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TAbstractLatLonBoxType struct {
-	XsdGoPkgHasElem_South
-
-	XsdGoPkgHasElem_North
-
-	XsdGoPkgHasElem_East
-
-	XsdGoPkgHasElem_West
-
-	XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup
-
-	XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup
-
-	TAbstractObjectType
-
-}
-
-//	If the WalkHandlers.TAbstractLatLonBoxType function is not nil (ie. was set by outside code), calls it with this TAbstractLatLonBoxType instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this TAbstractLatLonBoxType instance.
-func (me *TAbstractLatLonBoxType) Walk ()  { 
-	if fn := WalkHandlers.TAbstractLatLonBoxType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_South.Walk()
-	me.XsdGoPkgHasElem_North.Walk()
-	me.XsdGoPkgHasElem_East.Walk()
-	me.XsdGoPkgHasElem_West.Walk()
-	me.XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup.Walk()
-	me.TAbstractObjectType.Walk()
- }
-
-type TLatLonAltBoxType struct {
-	XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup
-
-	XsdGoPkgHasElem_AltitudeModeGroup
-
-	TAbstractLatLonBoxType
-
-	XsdGoPkgHasElem_MinAltitude
-
-	XsdGoPkgHasElem_MaxAltitude
-
-	XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup
-
-}
-
-//	If the WalkHandlers.TLatLonAltBoxType function is not nil (ie. was set by outside code), calls it with this TLatLonAltBoxType instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this TLatLonAltBoxType instance.
-func (me *TLatLonAltBoxType) Walk ()  { 
-	if fn := WalkHandlers.TLatLonAltBoxType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_MinAltitude.Walk()
-	me.XsdGoPkgHasElem_MaxAltitude.Walk()
-	me.XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_AltitudeModeGroup.Walk()
-	me.TAbstractLatLonBoxType.Walk()
- }
-
-type XsdGoPkgHasElem_LatLonAltBox struct {
-	LatLonAltBox *TLatLonAltBoxType `xml:"http://www.opengis.net/kml/2.2 LatLonAltBox"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_LatLonAltBox function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LatLonAltBox instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_LatLonAltBox instance.
-func (me *XsdGoPkgHasElem_LatLonAltBox) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_LatLonAltBox; fn != nil { fn(me) }
-	me.LatLonAltBox.Walk()
- }
-
 type TRegionType struct {
 	XsdGoPkgHasElems_RegionObjectExtensionGroup
 
 	XsdGoPkgHasElem_LatLonAltBox
 
-	TAbstractObjectType
-
 	XsdGoPkgHasElem_Lod
+
+	TAbstractObjectType
 
 	XsdGoPkgHasElems_RegionSimpleExtensionGroup
 
@@ -4031,11 +4605,11 @@ type TRegionType struct {
 //	If the WalkHandlers.TRegionType function is not nil (ie. was set by outside code), calls it with this TRegionType instance as the single argument. Then calls the Walk() method on 5/5 embed(s) and 0/0 field(s) belonging to this TRegionType instance.
 func (me *TRegionType) Walk ()  { 
 	if fn := WalkHandlers.TRegionType; fn != nil { fn(me) }
-	me.TAbstractObjectType.Walk()
-	me.XsdGoPkgHasElem_Lod.Walk()
-	me.XsdGoPkgHasElems_RegionSimpleExtensionGroup.Walk()
 	me.XsdGoPkgHasElems_RegionObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElem_LatLonAltBox.Walk()
+	me.XsdGoPkgHasElem_Lod.Walk()
+	me.TAbstractObjectType.Walk()
+	me.XsdGoPkgHasElems_RegionSimpleExtensionGroup.Walk()
  }
 
 type XsdGoPkgHasElem_Region struct {
@@ -4047,6 +4621,401 @@ type XsdGoPkgHasElem_Region struct {
 func (me *XsdGoPkgHasElem_Region) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_Region; fn != nil { fn(me) }
 	me.Region.Walk()
+ }
+
+type XsdGoPkgHasElem_Alias struct {
+	Alias *TAliasType `xml:"http://www.opengis.net/kml/2.2 Alias"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Alias function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Alias instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Alias instance.
+func (me *XsdGoPkgHasElem_Alias) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Alias; fn != nil { fn(me) }
+	me.Alias.Walk()
+ }
+
+type XsdGoPkgHasElem_PlacemarkObjectExtensionGroup struct {
+	PlacemarkObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PlacemarkObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_PlacemarkObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PlacemarkObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_PlacemarkObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_PlacemarkObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_PlacemarkObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_LabelStyleObjectExtensionGroup struct {
+	LabelStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LabelStyleObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_LabelStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LabelStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LabelStyleObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_LabelStyleObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_LabelStyleObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup struct {
+	AbstractGeometryObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractGeometryObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_TimeSpanObjectExtensionGroup struct {
+	TimeSpanObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 TimeSpanObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_TimeSpanObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_TimeSpanObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_TimeSpanObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_TimeSpanObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_TimeSpanObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_DocumentObjectExtensionGroup struct {
+	DocumentObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 DocumentObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_DocumentObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_DocumentObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_DocumentObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_DocumentObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_DocumentObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_LodObjectExtensionGroup struct {
+	LodObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LodObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_LodObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LodObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LodObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_LodObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_LodObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_LineStringObjectExtensionGroup struct {
+	LineStringObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LineStringObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_LineStringObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LineStringObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LineStringObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_LineStringObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_LineStringObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup struct {
+	AbstractContainerObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractContainerObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_LocationObjectExtensionGroup struct {
+	LocationObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LocationObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_LocationObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LocationObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LocationObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_LocationObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_LocationObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_OrientationObjectExtensionGroup struct {
+	OrientationObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 OrientationObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_OrientationObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_OrientationObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_OrientationObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_OrientationObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_OrientationObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup struct {
+	AbstractOverlayObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractOverlayObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup struct {
+	GroundOverlayObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 GroundOverlayObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup struct {
+	MultiGeometryObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 MultiGeometryObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup struct {
+	AbstractSubStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractSubStyleObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup struct {
+	ScreenOverlayObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ScreenOverlayObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup struct {
+	AbstractLatLonBoxObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractLatLonBoxObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_RegionObjectExtensionGroup struct {
+	RegionObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 RegionObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_RegionObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_RegionObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_RegionObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_RegionObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_RegionObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_SchemaDataExtension struct {
+	SchemaDataExtensions []xsdt.String `xml:"http://www.opengis.net/kml/2.2 SchemaDataExtension"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_SchemaDataExtension function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SchemaDataExtension instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SchemaDataExtension instance.
+func (me *XsdGoPkgHasElems_SchemaDataExtension) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_SchemaDataExtension; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasAttr_SchemaUrl_XsdtAnyURI_ struct {
+	SchemaUrl xsdt.AnyURI `xml:"http://www.opengis.net/kml/2.2 schemaUrl,attr"`
+
+}
+
+type XsdGoPkgHasAttr_Name_XsdtString_ struct {
+	Name xsdt.String `xml:"http://www.opengis.net/kml/2.2 name,attr"`
+
+}
+
+type TSimpleDataType struct {
+	XsdGoPkgValue xsdt.String `xml:",chardata"`
+
+	XsdGoPkgHasAttr_Name_XsdtString_
+
+}
+
+//	If the WalkHandlers.TSimpleDataType function is not nil (ie. was set by outside code), calls it with this TSimpleDataType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/1 field(s) belonging to this TSimpleDataType instance.
+func (me *TSimpleDataType) Walk ()  { 
+	if fn := WalkHandlers.TSimpleDataType; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_SimpleData struct {
+	SimpleDatas []*TSimpleDataType `xml:"http://www.opengis.net/kml/2.2 SimpleData"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_SimpleData function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SimpleData instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SimpleData instance.
+func (me *XsdGoPkgHasElems_SimpleData) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_SimpleData; fn != nil { fn(me) }
+	for _, x := range me.SimpleDatas { x.Walk() }
+ }
+
+type TSchemaDataType struct {
+	XsdGoPkgHasElems_SimpleData
+
+	XsdGoPkgHasElems_SchemaDataExtension
+
+	XsdGoPkgHasAttr_SchemaUrl_XsdtAnyURI_
+
+	TAbstractObjectType
+
+}
+
+//	If the WalkHandlers.TSchemaDataType function is not nil (ie. was set by outside code), calls it with this TSchemaDataType instance as the single argument. Then calls the Walk() method on 3/4 embed(s) and 0/0 field(s) belonging to this TSchemaDataType instance.
+func (me *TSchemaDataType) Walk ()  { 
+	if fn := WalkHandlers.TSchemaDataType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_SchemaDataExtension.Walk()
+	me.TAbstractObjectType.Walk()
+	me.XsdGoPkgHasElems_SimpleData.Walk()
+ }
+
+type XsdGoPkgHasElem_SchemaData struct {
+	SchemaData *TSchemaDataType `xml:"http://www.opengis.net/kml/2.2 SchemaData"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_SchemaData function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_SchemaData instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_SchemaData instance.
+func (me *XsdGoPkgHasElem_SchemaData) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_SchemaData; fn != nil { fn(me) }
+	me.SchemaData.Walk()
+ }
+
+type XsdGoPkgHasElem_ListStyleObjectExtensionGroup struct {
+	ListStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ListStyleObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ListStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ListStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ListStyleObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_ListStyleObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ListStyleObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup struct {
+	NetworkLinkObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 NetworkLinkObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup struct {
+	BalloonStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 BalloonStyleObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup struct {
+	AbstractStyleSelectorObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractStyleSelectorObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_ScaleObjectExtensionGroup struct {
+	ScaleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ScaleObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ScaleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ScaleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ScaleObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_ScaleObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ScaleObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_ItemIconObjectExtensionGroup struct {
+	ItemIconObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ItemIconObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ItemIconObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ItemIconObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ItemIconObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_ItemIconObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ItemIconObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_ResourceMapObjectExtensionGroup struct {
+	ResourceMapObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ResourceMapObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ResourceMapObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ResourceMapObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ResourceMapObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_ResourceMapObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ResourceMapObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup struct {
+	LatLonAltBoxObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LatLonAltBoxObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_PointObjectExtensionGroup struct {
+	PointObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PointObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_PointObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PointObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_PointObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_PointObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_PointObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_AliasObjectExtensionGroup struct {
+	AliasObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AliasObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AliasObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AliasObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AliasObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_AliasObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_AliasObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_ItemIcon struct {
+	ItemIcon *TItemIconType `xml:"http://www.opengis.net/kml/2.2 ItemIcon"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ItemIcon function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ItemIcon instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ItemIcon instance.
+func (me *XsdGoPkgHasElem_ItemIcon) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ItemIcon; fn != nil { fn(me) }
+	me.ItemIcon.Walk()
+ }
+
+type XsdGoPkgHasElem_IconStyleObjectExtensionGroup struct {
+	IconStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 IconStyleObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_IconStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_IconStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_IconStyleObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_IconStyleObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_IconStyleObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup struct {
+	AbstractFeatureObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractFeatureObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup struct {
+	AbstractFeatureSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractFeatureSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElems_Style struct {
@@ -4074,28 +5043,97 @@ func (me *XsdGoPkgHasElems_StyleMap) Walk ()  {
 type XsdGoPkgHasElems_AbstractStyleSelectorGroup struct {
 	AbstractStyleSelectorGroups []*TAbstractStyleSelectorType `xml:"http://www.opengis.net/kml/2.2 AbstractStyleSelectorGroup"`
 
-	XsdGoPkgHasElems_Style
-
 	XsdGoPkgHasElems_StyleMap
+
+	XsdGoPkgHasElems_Style
 
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_AbstractStyleSelectorGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractStyleSelectorGroup instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractStyleSelectorGroup instance.
 func (me *XsdGoPkgHasElems_AbstractStyleSelectorGroup) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractStyleSelectorGroup; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Style.Walk()
 	me.XsdGoPkgHasElems_StyleMap.Walk()
+	me.XsdGoPkgHasElems_Style.Walk()
 	for _, x := range me.AbstractStyleSelectorGroups { x.Walk() }
  }
 
-type XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup struct {
-	AbstractFeatureObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractFeatureObjectExtensionGroup"`
+type XsdGoPkgHasElems_SchemaData struct {
+	SchemaDatas []*TSchemaDataType `xml:"http://www.opengis.net/kml/2.2 SchemaData"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_SchemaData function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SchemaData instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SchemaData instance.
+func (me *XsdGoPkgHasElems_SchemaData) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_SchemaData; fn != nil { fn(me) }
+	for _, x := range me.SchemaDatas { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_DataExtension struct {
+	DataExtensions []xsdt.String `xml:"http://www.opengis.net/kml/2.2 DataExtension"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_DataExtension function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_DataExtension instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_DataExtension instance.
+func (me *XsdGoPkgHasElems_DataExtension) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_DataExtension; fn != nil { fn(me) }
+ }
+
+type TDataType struct {
+	XsdGoPkgHasAttr_Name_XsdtString_
+
+	TAbstractObjectType
+
+	XsdGoPkgHasElems_DataExtension
+
+	XsdGoPkgHasElem_DisplayName
+
+	XsdGoPkgHasElem_Value
+
+}
+
+//	If the WalkHandlers.TDataType function is not nil (ie. was set by outside code), calls it with this TDataType instance as the single argument. Then calls the Walk() method on 4/5 embed(s) and 0/0 field(s) belonging to this TDataType instance.
+func (me *TDataType) Walk ()  { 
+	if fn := WalkHandlers.TDataType; fn != nil { fn(me) }
+	me.TAbstractObjectType.Walk()
+	me.XsdGoPkgHasElems_DataExtension.Walk()
+	me.XsdGoPkgHasElem_DisplayName.Walk()
+	me.XsdGoPkgHasElem_Value.Walk()
+ }
+
+type XsdGoPkgHasElems_Data struct {
+	Datas []*TDataType `xml:"http://www.opengis.net/kml/2.2 Data"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Data function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Data instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Data instance.
+func (me *XsdGoPkgHasElems_Data) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Data; fn != nil { fn(me) }
+	for _, x := range me.Datas { x.Walk() }
+ }
+
+type TExtendedDataType struct {
+	XsdGoPkgHasElems_SchemaData
+
+	XsdGoPkgHasElems_Data
+
+}
+
+//	If the WalkHandlers.TExtendedDataType function is not nil (ie. was set by outside code), calls it with this TExtendedDataType instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/0 field(s) belonging to this TExtendedDataType instance.
+func (me *TExtendedDataType) Walk ()  { 
+	if fn := WalkHandlers.TExtendedDataType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_SchemaData.Walk()
+	me.XsdGoPkgHasElems_Data.Walk()
+ }
+
+type XsdGoPkgHasElem_ExtendedData struct {
+	ExtendedData *TExtendedDataType `xml:"http://www.opengis.net/kml/2.2 ExtendedData"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ExtendedData function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ExtendedData instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ExtendedData instance.
+func (me *XsdGoPkgHasElem_ExtendedData) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ExtendedData; fn != nil { fn(me) }
+	me.ExtendedData.Walk()
  }
 
 //	Metadata deprecated in 2.2
@@ -4118,16 +5156,6 @@ type XsdGoPkgHasElem_Metadata struct {
 func (me *XsdGoPkgHasElem_Metadata) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_Metadata; fn != nil { fn(me) }
 	me.Metadata.Walk()
- }
-
-type XsdGoPkgHasElems_CameraObjectExtensionGroup struct {
-	CameraObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 CameraObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_CameraObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_CameraObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_CameraObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_CameraObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_CameraObjectExtensionGroup; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElems_AbstractViewSimpleExtensionGroup struct {
@@ -4162,9 +5190,9 @@ type TAbstractViewType struct {
 //	If the WalkHandlers.TAbstractViewType function is not nil (ie. was set by outside code), calls it with this TAbstractViewType instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this TAbstractViewType instance.
 func (me *TAbstractViewType) Walk ()  { 
 	if fn := WalkHandlers.TAbstractViewType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_AbstractViewObjectExtensionGroup.Walk()
 	me.TAbstractObjectType.Walk()
 	me.XsdGoPkgHasElems_AbstractViewSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_AbstractViewObjectExtensionGroup.Walk()
  }
 
 type XsdGoPkgHasElems_CameraSimpleExtensionGroup struct {
@@ -4177,42 +5205,52 @@ func (me *XsdGoPkgHasElems_CameraSimpleExtensionGroup) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_CameraSimpleExtensionGroup; fn != nil { fn(me) }
  }
 
+type XsdGoPkgHasElems_CameraObjectExtensionGroup struct {
+	CameraObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 CameraObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_CameraObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_CameraObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_CameraObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_CameraObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_CameraObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
 type TCameraType struct {
-	XsdGoPkgHasElem_Longitude
+	XsdGoPkgHasElem_Altitude
+
+	TAbstractViewType
 
 	XsdGoPkgHasElem_Roll
 
 	XsdGoPkgHasElem_Heading
 
-	XsdGoPkgHasElem_Altitude
-
-	XsdGoPkgHasElems_CameraObjectExtensionGroup
-
-	TAbstractViewType
-
-	XsdGoPkgHasElem_Tilt
-
-	XsdGoPkgHasElem_Latitude
-
 	XsdGoPkgHasElems_CameraSimpleExtensionGroup
 
 	XsdGoPkgHasElem_AltitudeModeGroup
+
+	XsdGoPkgHasElems_CameraObjectExtensionGroup
+
+	XsdGoPkgHasElem_Longitude
+
+	XsdGoPkgHasElem_Latitude
+
+	XsdGoPkgHasElem_Tilt
 
 }
 
 //	If the WalkHandlers.TCameraType function is not nil (ie. was set by outside code), calls it with this TCameraType instance as the single argument. Then calls the Walk() method on 10/10 embed(s) and 0/0 field(s) belonging to this TCameraType instance.
 func (me *TCameraType) Walk ()  { 
 	if fn := WalkHandlers.TCameraType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Altitude.Walk()
-	me.XsdGoPkgHasElems_CameraObjectExtensionGroup.Walk()
-	me.TAbstractViewType.Walk()
-	me.XsdGoPkgHasElem_Tilt.Walk()
-	me.XsdGoPkgHasElem_Latitude.Walk()
-	me.XsdGoPkgHasElems_CameraSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_AltitudeModeGroup.Walk()
-	me.XsdGoPkgHasElem_Longitude.Walk()
 	me.XsdGoPkgHasElem_Roll.Walk()
 	me.XsdGoPkgHasElem_Heading.Walk()
+	me.XsdGoPkgHasElems_CameraSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_AltitudeModeGroup.Walk()
+	me.XsdGoPkgHasElems_CameraObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_Longitude.Walk()
+	me.XsdGoPkgHasElem_Latitude.Walk()
+	me.XsdGoPkgHasElem_Tilt.Walk()
+	me.XsdGoPkgHasElem_Altitude.Walk()
+	me.TAbstractViewType.Walk()
  }
 
 type XsdGoPkgHasElem_Camera struct {
@@ -4226,16 +5264,6 @@ func (me *XsdGoPkgHasElem_Camera) Walk ()  {
 	me.Camera.Walk()
  }
 
-type XsdGoPkgHasElems_LookAtObjectExtensionGroup struct {
-	LookAtObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LookAtObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LookAtObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LookAtObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LookAtObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_LookAtObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LookAtObjectExtensionGroup; fn != nil { fn(me) }
- }
-
 type XsdGoPkgHasElems_LookAtSimpleExtensionGroup struct {
 	LookAtSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LookAtSimpleExtensionGroup"`
 
@@ -4246,42 +5274,52 @@ func (me *XsdGoPkgHasElems_LookAtSimpleExtensionGroup) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_LookAtSimpleExtensionGroup; fn != nil { fn(me) }
  }
 
+type XsdGoPkgHasElems_LookAtObjectExtensionGroup struct {
+	LookAtObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LookAtObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LookAtObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LookAtObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LookAtObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_LookAtObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LookAtObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
 type TLookAtType struct {
-	XsdGoPkgHasElem_AltitudeModeGroup
-
 	XsdGoPkgHasElem_Longitude
-
-	XsdGoPkgHasElem_Latitude
-
-	XsdGoPkgHasElem_Tilt
-
-	TAbstractViewType
 
 	XsdGoPkgHasElem_Heading
 
+	XsdGoPkgHasElem_Latitude
+
+	XsdGoPkgHasElems_LookAtSimpleExtensionGroup
+
 	XsdGoPkgHasElems_LookAtObjectExtensionGroup
+
+	XsdGoPkgHasElem_AltitudeModeGroup
 
 	XsdGoPkgHasElem_Altitude
 
-	XsdGoPkgHasElem_Range
+	TAbstractViewType
 
-	XsdGoPkgHasElems_LookAtSimpleExtensionGroup
+	XsdGoPkgHasElem_Tilt
+
+	XsdGoPkgHasElem_Range
 
 }
 
 //	If the WalkHandlers.TLookAtType function is not nil (ie. was set by outside code), calls it with this TLookAtType instance as the single argument. Then calls the Walk() method on 10/10 embed(s) and 0/0 field(s) belonging to this TLookAtType instance.
 func (me *TLookAtType) Walk ()  { 
 	if fn := WalkHandlers.TLookAtType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Altitude.Walk()
-	me.XsdGoPkgHasElem_Range.Walk()
-	me.XsdGoPkgHasElems_LookAtSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_AltitudeModeGroup.Walk()
 	me.XsdGoPkgHasElem_Longitude.Walk()
-	me.XsdGoPkgHasElem_Latitude.Walk()
-	me.XsdGoPkgHasElem_Tilt.Walk()
-	me.TAbstractViewType.Walk()
 	me.XsdGoPkgHasElem_Heading.Walk()
+	me.XsdGoPkgHasElem_Latitude.Walk()
+	me.XsdGoPkgHasElems_LookAtSimpleExtensionGroup.Walk()
 	me.XsdGoPkgHasElems_LookAtObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_AltitudeModeGroup.Walk()
+	me.XsdGoPkgHasElem_Altitude.Walk()
+	me.TAbstractViewType.Walk()
+	me.XsdGoPkgHasElem_Tilt.Walk()
+	me.XsdGoPkgHasElem_Range.Walk()
  }
 
 type XsdGoPkgHasElem_LookAt struct {
@@ -4298,9 +5336,9 @@ func (me *XsdGoPkgHasElem_LookAt) Walk ()  {
 type XsdGoPkgHasElem_AbstractViewGroup struct {
 	AbstractViewGroup *TAbstractViewType `xml:"http://www.opengis.net/kml/2.2 AbstractViewGroup"`
 
-	XsdGoPkgHasElem_Camera
-
 	XsdGoPkgHasElem_LookAt
+
+	XsdGoPkgHasElem_Camera
 
 }
 
@@ -4312,190 +5350,208 @@ func (me *XsdGoPkgHasElem_AbstractViewGroup) Walk ()  {
 	me.AbstractViewGroup.Walk()
  }
 
-type XsdGoPkgHasAttr_Name_XsdtString_ struct {
-	Name xsdt.String `xml:"http://www.opengis.net/kml/2.2 name,attr"`
+type XsdGoPkgHasElems_TimeStampSimpleExtensionGroup struct {
+	TimeStampSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 TimeStampSimpleExtensionGroup"`
 
 }
 
-type XsdGoPkgHasElems_DataExtension struct {
-	DataExtensions []xsdt.String `xml:"http://www.opengis.net/kml/2.2 DataExtension"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_DataExtension function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_DataExtension instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_DataExtension instance.
-func (me *XsdGoPkgHasElems_DataExtension) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_DataExtension; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_TimeStampSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_TimeStampSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_TimeStampSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_TimeStampSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_TimeStampSimpleExtensionGroup; fn != nil { fn(me) }
  }
 
-type TDataType struct {
-	XsdGoPkgHasElem_Value
+type XsdGoPkgHasElems_TimeStampObjectExtensionGroup struct {
+	TimeStampObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 TimeStampObjectExtensionGroup"`
 
-	XsdGoPkgHasAttr_Name_XsdtString_
+}
 
+//	If the WalkHandlers.XsdGoPkgHasElems_TimeStampObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_TimeStampObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_TimeStampObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_TimeStampObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_TimeStampObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup struct {
+	AbstractTimePrimitiveSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup struct {
+	AbstractTimePrimitiveObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TAbstractTimePrimitiveType struct {
 	TAbstractObjectType
 
-	XsdGoPkgHasElem_DisplayName
+	XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup
 
-	XsdGoPkgHasElems_DataExtension
+	XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup
 
 }
 
-//	If the WalkHandlers.TDataType function is not nil (ie. was set by outside code), calls it with this TDataType instance as the single argument. Then calls the Walk() method on 4/5 embed(s) and 0/0 field(s) belonging to this TDataType instance.
-func (me *TDataType) Walk ()  { 
-	if fn := WalkHandlers.TDataType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Value.Walk()
+//	If the WalkHandlers.TAbstractTimePrimitiveType function is not nil (ie. was set by outside code), calls it with this TAbstractTimePrimitiveType instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this TAbstractTimePrimitiveType instance.
+func (me *TAbstractTimePrimitiveType) Walk ()  { 
+	if fn := WalkHandlers.TAbstractTimePrimitiveType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup.Walk()
 	me.TAbstractObjectType.Walk()
-	me.XsdGoPkgHasElem_DisplayName.Walk()
-	me.XsdGoPkgHasElems_DataExtension.Walk()
+	me.XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup.Walk()
  }
 
-type XsdGoPkgHasElems_Data struct {
-	Datas []*TDataType `xml:"http://www.opengis.net/kml/2.2 Data"`
+type TimeStampType struct {
+	XsdGoPkgHasElems_TimeStampSimpleExtensionGroup
+
+	XsdGoPkgHasElems_TimeStampObjectExtensionGroup
+
+	XsdGoPkgHasElem_When
+
+	TAbstractTimePrimitiveType
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_Data function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Data instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Data instance.
-func (me *XsdGoPkgHasElems_Data) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Data; fn != nil { fn(me) }
-	for _, x := range me.Datas { x.Walk() }
+//	If the WalkHandlers.TimeStampType function is not nil (ie. was set by outside code), calls it with this TimeStampType instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TimeStampType instance.
+func (me *TimeStampType) Walk ()  { 
+	if fn := WalkHandlers.TimeStampType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_TimeStampSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_TimeStampObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_When.Walk()
+	me.TAbstractTimePrimitiveType.Walk()
  }
 
-type TSimpleDataType struct {
-	XsdGoPkgValue xsdt.String `xml:",chardata"`
-
-	XsdGoPkgHasAttr_Name_XsdtString_
+type XsdGoPkgHasElem_TimeStamp struct {
+	TimeStamp *TimeStampType `xml:"http://www.opengis.net/kml/2.2 TimeStamp"`
 
 }
 
-//	If the WalkHandlers.TSimpleDataType function is not nil (ie. was set by outside code), calls it with this TSimpleDataType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/1 field(s) belonging to this TSimpleDataType instance.
-func (me *TSimpleDataType) Walk ()  { 
-	if fn := WalkHandlers.TSimpleDataType; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_TimeStamp function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_TimeStamp instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_TimeStamp instance.
+func (me *XsdGoPkgHasElem_TimeStamp) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_TimeStamp; fn != nil { fn(me) }
+	me.TimeStamp.Walk()
  }
 
-type XsdGoPkgHasElems_SimpleData struct {
-	SimpleDatas []*TSimpleDataType `xml:"http://www.opengis.net/kml/2.2 SimpleData"`
+type XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup struct {
+	TimeSpanSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 TimeSpanSimpleExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_SimpleData function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SimpleData instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SimpleData instance.
-func (me *XsdGoPkgHasElems_SimpleData) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_SimpleData; fn != nil { fn(me) }
-	for _, x := range me.SimpleDatas { x.Walk() }
+//	If the WalkHandlers.XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasAttr_SchemaUrl_XsdtAnyURI_ struct {
-	SchemaUrl xsdt.AnyURI `xml:"http://www.opengis.net/kml/2.2 schemaUrl,attr"`
+type XsdGoPkgHasElems_TimeSpanObjectExtensionGroup struct {
+	TimeSpanObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 TimeSpanObjectExtensionGroup"`
 
 }
 
-type XsdGoPkgHasElems_SchemaDataExtension struct {
-	SchemaDataExtensions []xsdt.String `xml:"http://www.opengis.net/kml/2.2 SchemaDataExtension"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_SchemaDataExtension function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SchemaDataExtension instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SchemaDataExtension instance.
-func (me *XsdGoPkgHasElems_SchemaDataExtension) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_SchemaDataExtension; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_TimeSpanObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_TimeSpanObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_TimeSpanObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_TimeSpanObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_TimeSpanObjectExtensionGroup; fn != nil { fn(me) }
  }
 
-type TSchemaDataType struct {
-	XsdGoPkgHasAttr_SchemaUrl_XsdtAnyURI_
+type TimeSpanType struct {
+	XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup
 
-	XsdGoPkgHasElems_SchemaDataExtension
+	XsdGoPkgHasElems_TimeSpanObjectExtensionGroup
 
-	TAbstractObjectType
+	XsdGoPkgHasElem_Begin
 
-	XsdGoPkgHasElems_SimpleData
+	TAbstractTimePrimitiveType
+
+	XsdGoPkgHasElem_End
 
 }
 
-//	If the WalkHandlers.TSchemaDataType function is not nil (ie. was set by outside code), calls it with this TSchemaDataType instance as the single argument. Then calls the Walk() method on 3/4 embed(s) and 0/0 field(s) belonging to this TSchemaDataType instance.
-func (me *TSchemaDataType) Walk ()  { 
-	if fn := WalkHandlers.TSchemaDataType; fn != nil { fn(me) }
-	me.TAbstractObjectType.Walk()
-	me.XsdGoPkgHasElems_SimpleData.Walk()
-	me.XsdGoPkgHasElems_SchemaDataExtension.Walk()
+//	If the WalkHandlers.TimeSpanType function is not nil (ie. was set by outside code), calls it with this TimeSpanType instance as the single argument. Then calls the Walk() method on 5/5 embed(s) and 0/0 field(s) belonging to this TimeSpanType instance.
+func (me *TimeSpanType) Walk ()  { 
+	if fn := WalkHandlers.TimeSpanType; fn != nil { fn(me) }
+	me.TAbstractTimePrimitiveType.Walk()
+	me.XsdGoPkgHasElem_End.Walk()
+	me.XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_TimeSpanObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_Begin.Walk()
  }
 
-type XsdGoPkgHasElems_SchemaData struct {
-	SchemaDatas []*TSchemaDataType `xml:"http://www.opengis.net/kml/2.2 SchemaData"`
+type XsdGoPkgHasElem_TimeSpan struct {
+	TimeSpan *TimeSpanType `xml:"http://www.opengis.net/kml/2.2 TimeSpan"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_SchemaData function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SchemaData instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SchemaData instance.
-func (me *XsdGoPkgHasElems_SchemaData) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_SchemaData; fn != nil { fn(me) }
-	for _, x := range me.SchemaDatas { x.Walk() }
+//	If the WalkHandlers.XsdGoPkgHasElem_TimeSpan function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_TimeSpan instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_TimeSpan instance.
+func (me *XsdGoPkgHasElem_TimeSpan) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_TimeSpan; fn != nil { fn(me) }
+	me.TimeSpan.Walk()
  }
 
-type TExtendedDataType struct {
-	XsdGoPkgHasElems_Data
+type XsdGoPkgHasElem_AbstractTimePrimitiveGroup struct {
+	AbstractTimePrimitiveGroup *TAbstractTimePrimitiveType `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveGroup"`
 
-	XsdGoPkgHasElems_SchemaData
+	XsdGoPkgHasElem_TimeStamp
 
-}
-
-//	If the WalkHandlers.TExtendedDataType function is not nil (ie. was set by outside code), calls it with this TExtendedDataType instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/0 field(s) belonging to this TExtendedDataType instance.
-func (me *TExtendedDataType) Walk ()  { 
-	if fn := WalkHandlers.TExtendedDataType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Data.Walk()
-	me.XsdGoPkgHasElems_SchemaData.Walk()
- }
-
-type XsdGoPkgHasElem_ExtendedData struct {
-	ExtendedData *TExtendedDataType `xml:"http://www.opengis.net/kml/2.2 ExtendedData"`
+	XsdGoPkgHasElem_TimeSpan
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_ExtendedData function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ExtendedData instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ExtendedData instance.
-func (me *XsdGoPkgHasElem_ExtendedData) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ExtendedData; fn != nil { fn(me) }
-	me.ExtendedData.Walk()
+//	If the WalkHandlers.XsdGoPkgHasElem_AbstractTimePrimitiveGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractTimePrimitiveGroup instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AbstractTimePrimitiveGroup instance.
+func (me *XsdGoPkgHasElem_AbstractTimePrimitiveGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractTimePrimitiveGroup; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_TimeStamp.Walk()
+	me.XsdGoPkgHasElem_TimeSpan.Walk()
+	me.AbstractTimePrimitiveGroup.Walk()
  }
 
 type TAbstractFeatureType struct {
-	XsdGoPkgHasElem_Name
-
-	xal.XsdGoPkgHasElem_AddressDetails
-
-	XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup
-
-	XsdGoPkgHasElem_Description
+	XsdGoPkgHasElem_PhoneNumber
 
 	XsdGoPkgHasElem_Visibility
 
-	atom.XsdGoPkgHasElem_Link
-
-	XsdGoPkgHasElem_PhoneNumber
-
-//	Snippet deprecated in 2.2
-	XsdGoPkgHasElem_Snippet
-
-	XsdGoPkgHasElem_Open
-
 	atom.XsdGoPkgHasElem_Author
 
-	XsdGoPkgHasElem_Region
-
 	TAbstractObjectType
-
-	XsdGoPkgHasElems_AbstractStyleSelectorGroup
-
-	XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup
 
 //	Metadata deprecated in 2.2
 	XsdGoPkgHasElem_Metadata
 
+	XsdGoPkgHasElem_Name
+
 	XsdGoPkgHasElem_AbstractViewGroup
-
-//	Metadata deprecated in 2.2
-	XsdGoPkgHasElem_ExtendedData
-
-	XsdGoPkgHasElem_StyleUrl
 
 	XsdGoPkgHasElem_Address
 
 	XsdGoPkgHasElem_AbstractTimePrimitiveGroup
+
+	xal.XsdGoPkgHasElem_AddressDetails
+
+	XsdGoPkgHasElem_Region
+
+	XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup
+
+	XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup
+
+	XsdGoPkgHasElems_AbstractStyleSelectorGroup
+
+	XsdGoPkgHasElem_StyleUrl
+
+	XsdGoPkgHasElem_Description
+
+//	Metadata deprecated in 2.2
+	XsdGoPkgHasElem_ExtendedData
+
+	XsdGoPkgHasElem_Open
+
+	atom.XsdGoPkgHasElem_Link
+
+//	Snippet deprecated in 2.2
+	XsdGoPkgHasElem_Snippet
 
 }
 
@@ -4503,1213 +5559,107 @@ type TAbstractFeatureType struct {
 func (me *TAbstractFeatureType) Walk ()  { 
 	if fn := WalkHandlers.TAbstractFeatureType; fn != nil { fn(me) }
 	me.XsdGoPkgHasElem_Open.Walk()
-	me.XsdGoPkgHasElem_Region.Walk()
+	me.XsdGoPkgHasElem_Snippet.Walk()
+	me.XsdGoPkgHasElem_PhoneNumber.Walk()
+	me.XsdGoPkgHasElem_Visibility.Walk()
 	me.TAbstractObjectType.Walk()
-	me.XsdGoPkgHasElems_AbstractStyleSelectorGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElem_Metadata.Walk()
+	me.XsdGoPkgHasElem_Name.Walk()
 	me.XsdGoPkgHasElem_AbstractViewGroup.Walk()
-	me.XsdGoPkgHasElem_ExtendedData.Walk()
-	me.XsdGoPkgHasElem_StyleUrl.Walk()
 	me.XsdGoPkgHasElem_Address.Walk()
 	me.XsdGoPkgHasElem_AbstractTimePrimitiveGroup.Walk()
-	me.XsdGoPkgHasElem_Name.Walk()
+	me.XsdGoPkgHasElem_Region.Walk()
+	me.XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_AbstractStyleSelectorGroup.Walk()
+	me.XsdGoPkgHasElem_StyleUrl.Walk()
 	me.XsdGoPkgHasElem_Description.Walk()
-	me.XsdGoPkgHasElem_Visibility.Walk()
-	me.XsdGoPkgHasElem_PhoneNumber.Walk()
-	me.XsdGoPkgHasElem_Snippet.Walk()
+	me.XsdGoPkgHasElem_ExtendedData.Walk()
  }
 
-type XsdGoPkgHasElems_PlacemarkObjectExtensionGroup struct {
-	PlacemarkObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 PlacemarkObjectExtensionGroup"`
+type XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup struct {
+	NetworkLinkObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 NetworkLinkObjectExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_PlacemarkObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PlacemarkObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PlacemarkObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_PlacemarkObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_PlacemarkObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup struct {
-	PlacemarkSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PlacemarkSimpleExtensionGroup"`
+//	Url deprecated in 2.2
+type XsdGoPkgHasElem_Url struct {
+//	Url deprecated in 2.2
+	Url *TLinkType `xml:"http://www.opengis.net/kml/2.2 Url"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_Url function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Url instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Url instance.
+func (me *XsdGoPkgHasElem_Url) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Url; fn != nil { fn(me) }
+	me.Url.Walk()
  }
 
-type XsdGoPkgHasElems_BoundarySimpleExtensionGroup struct {
-	BoundarySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 BoundarySimpleExtensionGroup"`
+type XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup struct {
+	NetworkLinkSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 NetworkLinkSimpleExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_BoundarySimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_BoundarySimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_BoundarySimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_BoundarySimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_BoundarySimpleExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElems_BoundaryObjectExtensionGroup struct {
-	BoundaryObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 BoundaryObjectExtensionGroup"`
+type TNetworkLinkType struct {
+	TAbstractFeatureType
 
-}
+	XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup
 
-//	If the WalkHandlers.XsdGoPkgHasElems_BoundaryObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_BoundaryObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_BoundaryObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_BoundaryObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_BoundaryObjectExtensionGroup; fn != nil { fn(me) }
- }
+//	Url deprecated in 2.2
+	XsdGoPkgHasElem_Url
 
-type XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup struct {
-	AbstractGeometrySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractGeometrySimpleExtensionGroup"`
+	XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup
 
-}
+	XsdGoPkgHasElem_FlyToView
 
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup struct {
-	AbstractGeometryObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractGeometryObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TAbstractGeometryType struct {
-	XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup
-
-	TAbstractObjectType
-
-	XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup
-
-}
-
-//	If the WalkHandlers.TAbstractGeometryType function is not nil (ie. was set by outside code), calls it with this TAbstractGeometryType instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this TAbstractGeometryType instance.
-func (me *TAbstractGeometryType) Walk ()  { 
-	if fn := WalkHandlers.TAbstractGeometryType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup.Walk()
-	me.TAbstractObjectType.Walk()
-	me.XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup.Walk()
- }
-
-type XsdGoPkgHasElems_LinearRingSimpleExtensionGroup struct {
-	LinearRingSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LinearRingSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LinearRingSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LinearRingSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LinearRingSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_LinearRingSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LinearRingSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_LinearRingObjectExtensionGroup struct {
-	LinearRingObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LinearRingObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LinearRingObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LinearRingObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LinearRingObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_LinearRingObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LinearRingObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TLinearRingType struct {
-	XsdGoPkgHasElem_Extrude
-
-	XsdGoPkgHasElem_Coordinates
-
-	TAbstractGeometryType
-
-	XsdGoPkgHasElems_LinearRingSimpleExtensionGroup
-
-	XsdGoPkgHasElems_LinearRingObjectExtensionGroup
-
-	XsdGoPkgHasElem_AltitudeModeGroup
-
-	XsdGoPkgHasElem_Tessellate
-
-}
-
-//	If the WalkHandlers.TLinearRingType function is not nil (ie. was set by outside code), calls it with this TLinearRingType instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this TLinearRingType instance.
-func (me *TLinearRingType) Walk ()  { 
-	if fn := WalkHandlers.TLinearRingType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Extrude.Walk()
-	me.XsdGoPkgHasElem_Coordinates.Walk()
-	me.TAbstractGeometryType.Walk()
-	me.XsdGoPkgHasElems_LinearRingSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_LinearRingObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_AltitudeModeGroup.Walk()
-	me.XsdGoPkgHasElem_Tessellate.Walk()
- }
-
-type XsdGoPkgHasElem_LinearRing struct {
-	LinearRing *TLinearRingType `xml:"http://www.opengis.net/kml/2.2 LinearRing"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_LinearRing function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LinearRing instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_LinearRing instance.
-func (me *XsdGoPkgHasElem_LinearRing) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_LinearRing; fn != nil { fn(me) }
-	me.LinearRing.Walk()
- }
-
-type TBoundaryType struct {
-	XsdGoPkgHasElem_LinearRing
-
-	XsdGoPkgHasElems_BoundarySimpleExtensionGroup
-
-	XsdGoPkgHasElems_BoundaryObjectExtensionGroup
-
-}
-
-//	If the WalkHandlers.TBoundaryType function is not nil (ie. was set by outside code), calls it with this TBoundaryType instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this TBoundaryType instance.
-func (me *TBoundaryType) Walk ()  { 
-	if fn := WalkHandlers.TBoundaryType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_BoundarySimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_BoundaryObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_LinearRing.Walk()
- }
-
-type XsdGoPkgHasElem_OuterBoundaryIs struct {
-	OuterBoundaryIs *TBoundaryType `xml:"http://www.opengis.net/kml/2.2 outerBoundaryIs"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_OuterBoundaryIs function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_OuterBoundaryIs instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_OuterBoundaryIs instance.
-func (me *XsdGoPkgHasElem_OuterBoundaryIs) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_OuterBoundaryIs; fn != nil { fn(me) }
-	me.OuterBoundaryIs.Walk()
- }
-
-type XsdGoPkgHasElems_InnerBoundaryIs struct {
-	InnerBoundaryIses []*TBoundaryType `xml:"http://www.opengis.net/kml/2.2 innerBoundaryIs"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_InnerBoundaryIs function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_InnerBoundaryIs instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_InnerBoundaryIs instance.
-func (me *XsdGoPkgHasElems_InnerBoundaryIs) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_InnerBoundaryIs; fn != nil { fn(me) }
-	for _, x := range me.InnerBoundaryIses { x.Walk() }
- }
-
-type XsdGoPkgHasElems_PolygonSimpleExtensionGroup struct {
-	PolygonSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PolygonSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PolygonSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PolygonSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PolygonSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_PolygonSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_PolygonSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_PolygonObjectExtensionGroup struct {
-	PolygonObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 PolygonObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PolygonObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PolygonObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PolygonObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_PolygonObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_PolygonObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TPolygonType struct {
-	XsdGoPkgHasElem_Extrude
-
-	TAbstractGeometryType
-
-	XsdGoPkgHasElem_OuterBoundaryIs
-
-	XsdGoPkgHasElems_InnerBoundaryIs
-
-	XsdGoPkgHasElem_AltitudeModeGroup
-
-	XsdGoPkgHasElem_Tessellate
-
-	XsdGoPkgHasElems_PolygonSimpleExtensionGroup
-
-	XsdGoPkgHasElems_PolygonObjectExtensionGroup
-
-}
-
-//	If the WalkHandlers.TPolygonType function is not nil (ie. was set by outside code), calls it with this TPolygonType instance as the single argument. Then calls the Walk() method on 8/8 embed(s) and 0/0 field(s) belonging to this TPolygonType instance.
-func (me *TPolygonType) Walk ()  { 
-	if fn := WalkHandlers.TPolygonType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Extrude.Walk()
-	me.TAbstractGeometryType.Walk()
-	me.XsdGoPkgHasElem_OuterBoundaryIs.Walk()
-	me.XsdGoPkgHasElems_InnerBoundaryIs.Walk()
-	me.XsdGoPkgHasElem_AltitudeModeGroup.Walk()
-	me.XsdGoPkgHasElem_Tessellate.Walk()
-	me.XsdGoPkgHasElems_PolygonSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_PolygonObjectExtensionGroup.Walk()
- }
-
-type XsdGoPkgHasElem_Polygon struct {
-	Polygon *TPolygonType `xml:"http://www.opengis.net/kml/2.2 Polygon"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Polygon function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Polygon instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Polygon instance.
-func (me *XsdGoPkgHasElem_Polygon) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Polygon; fn != nil { fn(me) }
-	me.Polygon.Walk()
- }
-
-type XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup struct {
-	MultiGeometryObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 MultiGeometryObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_Polygon struct {
-	Polygons []*TPolygonType `xml:"http://www.opengis.net/kml/2.2 Polygon"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Polygon function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Polygon instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Polygon instance.
-func (me *XsdGoPkgHasElems_Polygon) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Polygon; fn != nil { fn(me) }
-	for _, x := range me.Polygons { x.Walk() }
- }
-
-type XsdGoPkgHasElems_MultiGeometry struct {
-	MultiGeometries []*TMultiGeometryType `xml:"http://www.opengis.net/kml/2.2 MultiGeometry"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_MultiGeometry function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_MultiGeometry instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_MultiGeometry instance.
-func (me *XsdGoPkgHasElems_MultiGeometry) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_MultiGeometry; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_LinearRing struct {
-	LinearRings []*TLinearRingType `xml:"http://www.opengis.net/kml/2.2 LinearRing"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LinearRing function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LinearRing instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LinearRing instance.
-func (me *XsdGoPkgHasElems_LinearRing) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LinearRing; fn != nil { fn(me) }
-	for _, x := range me.LinearRings { x.Walk() }
- }
-
-type XsdGoPkgHasElems_LineStringSimpleExtensionGroup struct {
-	LineStringSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LineStringSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LineStringSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LineStringSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LineStringSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_LineStringSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LineStringSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_LineStringObjectExtensionGroup struct {
-	LineStringObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LineStringObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LineStringObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LineStringObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LineStringObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_LineStringObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LineStringObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TLineStringType struct {
-	XsdGoPkgHasElem_Tessellate
-
-	XsdGoPkgHasElem_Coordinates
-
-	XsdGoPkgHasElem_AltitudeModeGroup
-
-	XsdGoPkgHasElems_LineStringSimpleExtensionGroup
-
-	XsdGoPkgHasElems_LineStringObjectExtensionGroup
-
-	TAbstractGeometryType
-
-	XsdGoPkgHasElem_Extrude
-
-}
-
-//	If the WalkHandlers.TLineStringType function is not nil (ie. was set by outside code), calls it with this TLineStringType instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this TLineStringType instance.
-func (me *TLineStringType) Walk ()  { 
-	if fn := WalkHandlers.TLineStringType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Coordinates.Walk()
-	me.XsdGoPkgHasElem_AltitudeModeGroup.Walk()
-	me.XsdGoPkgHasElems_LineStringSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_LineStringObjectExtensionGroup.Walk()
-	me.TAbstractGeometryType.Walk()
-	me.XsdGoPkgHasElem_Extrude.Walk()
-	me.XsdGoPkgHasElem_Tessellate.Walk()
- }
-
-type XsdGoPkgHasElems_LineString struct {
-	LineStrings []*TLineStringType `xml:"http://www.opengis.net/kml/2.2 LineString"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LineString function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LineString instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LineString instance.
-func (me *XsdGoPkgHasElems_LineString) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LineString; fn != nil { fn(me) }
-	for _, x := range me.LineStrings { x.Walk() }
- }
-
-type XsdGoPkgHasElems_PointObjectExtensionGroup struct {
-	PointObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 PointObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PointObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PointObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PointObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_PointObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_PointObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_PointSimpleExtensionGroup struct {
-	PointSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PointSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PointSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PointSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PointSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_PointSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_PointSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type TPointType struct {
-	XsdGoPkgHasElems_PointObjectExtensionGroup
-
-	XsdGoPkgHasElem_Coordinates
-
-	XsdGoPkgHasElem_Extrude
-
-	XsdGoPkgHasElem_AltitudeModeGroup
-
-	TAbstractGeometryType
-
-	XsdGoPkgHasElems_PointSimpleExtensionGroup
-
-}
-
-//	If the WalkHandlers.TPointType function is not nil (ie. was set by outside code), calls it with this TPointType instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this TPointType instance.
-func (me *TPointType) Walk ()  { 
-	if fn := WalkHandlers.TPointType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Coordinates.Walk()
-	me.XsdGoPkgHasElem_Extrude.Walk()
-	me.XsdGoPkgHasElem_AltitudeModeGroup.Walk()
-	me.TAbstractGeometryType.Walk()
-	me.XsdGoPkgHasElems_PointSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_PointObjectExtensionGroup.Walk()
- }
-
-type XsdGoPkgHasElems_Point struct {
-	Points []*TPointType `xml:"http://www.opengis.net/kml/2.2 Point"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Point function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Point instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Point instance.
-func (me *XsdGoPkgHasElems_Point) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Point; fn != nil { fn(me) }
-	for _, x := range me.Points { x.Walk() }
- }
-
-type XsdGoPkgHasElems_LinkSimpleExtensionGroup struct {
-	LinkSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LinkSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LinkSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LinkSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LinkSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_LinkSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LinkSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_LinkObjectExtensionGroup struct {
-	LinkObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LinkObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LinkObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LinkObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LinkObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_LinkObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LinkObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TLinkType struct {
-	XsdGoPkgHasElems_LinkSimpleExtensionGroup
-
-	XsdGoPkgHasElem_ViewRefreshMode
-
-	XsdGoPkgHasElem_ViewBoundScale
-
-	XsdGoPkgHasElem_ViewRefreshTime
-
-	XsdGoPkgHasElems_LinkObjectExtensionGroup
-
-	XsdGoPkgHasElem_ViewFormat
-
-	XsdGoPkgHasElem_HttpQuery
-
-	TBasicLinkType
-
-	XsdGoPkgHasElem_RefreshInterval
-
-	XsdGoPkgHasElem_RefreshMode
-
-}
-
-//	If the WalkHandlers.TLinkType function is not nil (ie. was set by outside code), calls it with this TLinkType instance as the single argument. Then calls the Walk() method on 10/10 embed(s) and 0/0 field(s) belonging to this TLinkType instance.
-func (me *TLinkType) Walk ()  { 
-	if fn := WalkHandlers.TLinkType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_ViewRefreshTime.Walk()
-	me.XsdGoPkgHasElems_LinkObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_ViewFormat.Walk()
-	me.XsdGoPkgHasElem_HttpQuery.Walk()
-	me.TBasicLinkType.Walk()
-	me.XsdGoPkgHasElem_RefreshInterval.Walk()
-	me.XsdGoPkgHasElem_RefreshMode.Walk()
-	me.XsdGoPkgHasElems_LinkSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_ViewRefreshMode.Walk()
-	me.XsdGoPkgHasElem_ViewBoundScale.Walk()
- }
-
-type XsdGoPkgHasElem_Link struct {
-	Link *TLinkType `xml:"http://www.opengis.net/kml/2.2 Link"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Link function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Link instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Link instance.
-func (me *XsdGoPkgHasElem_Link) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Link; fn != nil { fn(me) }
-	me.Link.Walk()
- }
-
-type XsdGoPkgHasElems_ModelObjectExtensionGroup struct {
-	ModelObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ModelObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ModelObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ModelObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ModelObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_ModelObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ModelObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_OrientationSimpleExtensionGroup struct {
-	OrientationSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 OrientationSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_OrientationSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_OrientationSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_OrientationSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_OrientationSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_OrientationSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_OrientationObjectExtensionGroup struct {
-	OrientationObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 OrientationObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_OrientationObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_OrientationObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_OrientationObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_OrientationObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_OrientationObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TOrientationType struct {
-	XsdGoPkgHasElem_Roll
-
-	XsdGoPkgHasElems_OrientationSimpleExtensionGroup
-
-	XsdGoPkgHasElems_OrientationObjectExtensionGroup
-
-	TAbstractObjectType
-
-	XsdGoPkgHasElem_Tilt
-
-	XsdGoPkgHasElem_Heading
-
-}
-
-//	If the WalkHandlers.TOrientationType function is not nil (ie. was set by outside code), calls it with this TOrientationType instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this TOrientationType instance.
-func (me *TOrientationType) Walk ()  { 
-	if fn := WalkHandlers.TOrientationType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_OrientationObjectExtensionGroup.Walk()
-	me.TAbstractObjectType.Walk()
-	me.XsdGoPkgHasElem_Tilt.Walk()
-	me.XsdGoPkgHasElem_Heading.Walk()
-	me.XsdGoPkgHasElem_Roll.Walk()
-	me.XsdGoPkgHasElems_OrientationSimpleExtensionGroup.Walk()
- }
-
-type XsdGoPkgHasElem_Orientation struct {
-	Orientation *TOrientationType `xml:"http://www.opengis.net/kml/2.2 Orientation"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Orientation function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Orientation instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Orientation instance.
-func (me *XsdGoPkgHasElem_Orientation) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Orientation; fn != nil { fn(me) }
-	me.Orientation.Walk()
- }
-
-type XsdGoPkgHasElems_ModelSimpleExtensionGroup struct {
-	ModelSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ModelSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ModelSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ModelSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ModelSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_ModelSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ModelSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_LocationSimpleExtensionGroup struct {
-	LocationSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LocationSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LocationSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LocationSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LocationSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_LocationSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LocationSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_LocationObjectExtensionGroup struct {
-	LocationObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LocationObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LocationObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LocationObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LocationObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_LocationObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LocationObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TLocationType struct {
-	XsdGoPkgHasElems_LocationSimpleExtensionGroup
-
-	TAbstractObjectType
-
-	XsdGoPkgHasElem_Longitude
-
-	XsdGoPkgHasElem_Altitude
-
-	XsdGoPkgHasElems_LocationObjectExtensionGroup
-
-	XsdGoPkgHasElem_Latitude
-
-}
-
-//	If the WalkHandlers.TLocationType function is not nil (ie. was set by outside code), calls it with this TLocationType instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this TLocationType instance.
-func (me *TLocationType) Walk ()  { 
-	if fn := WalkHandlers.TLocationType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_LocationSimpleExtensionGroup.Walk()
-	me.TAbstractObjectType.Walk()
-	me.XsdGoPkgHasElem_Longitude.Walk()
-	me.XsdGoPkgHasElem_Altitude.Walk()
-	me.XsdGoPkgHasElems_LocationObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_Latitude.Walk()
- }
-
-type XsdGoPkgHasElem_Location struct {
-	Location *TLocationType `xml:"http://www.opengis.net/kml/2.2 Location"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Location function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Location instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Location instance.
-func (me *XsdGoPkgHasElem_Location) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Location; fn != nil { fn(me) }
-	me.Location.Walk()
- }
-
-type TModelType struct {
-	XsdGoPkgHasElem_ResourceMap
-
-	XsdGoPkgHasElem_Orientation
-
-	XsdGoPkgHasElem_Scale
-
-	TAbstractGeometryType
-
-	XsdGoPkgHasElems_ModelSimpleExtensionGroup
-
-	XsdGoPkgHasElem_Location
-
-	XsdGoPkgHasElem_AltitudeModeGroup
-
+//	Url deprecated in 2.2
 	XsdGoPkgHasElem_Link
 
-	XsdGoPkgHasElems_ModelObjectExtensionGroup
+	XsdGoPkgHasElem_RefreshVisibility
 
 }
 
-//	If the WalkHandlers.TModelType function is not nil (ie. was set by outside code), calls it with this TModelType instance as the single argument. Then calls the Walk() method on 9/9 embed(s) and 0/0 field(s) belonging to this TModelType instance.
-func (me *TModelType) Walk ()  { 
-	if fn := WalkHandlers.TModelType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_AltitudeModeGroup.Walk()
+//	If the WalkHandlers.TNetworkLinkType function is not nil (ie. was set by outside code), calls it with this TNetworkLinkType instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this TNetworkLinkType instance.
+func (me *TNetworkLinkType) Walk ()  { 
+	if fn := WalkHandlers.TNetworkLinkType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_FlyToView.Walk()
 	me.XsdGoPkgHasElem_Link.Walk()
-	me.XsdGoPkgHasElems_ModelObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_ResourceMap.Walk()
-	me.XsdGoPkgHasElem_Orientation.Walk()
-	me.XsdGoPkgHasElem_Scale.Walk()
-	me.TAbstractGeometryType.Walk()
-	me.XsdGoPkgHasElems_ModelSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_Location.Walk()
- }
-
-type XsdGoPkgHasElems_Model struct {
-	Models []*TModelType `xml:"http://www.opengis.net/kml/2.2 Model"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Model function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Model instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Model instance.
-func (me *XsdGoPkgHasElems_Model) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Model; fn != nil { fn(me) }
-	for _, x := range me.Models { x.Walk() }
- }
-
-type XsdGoPkgHasElems_AbstractGeometryGroup struct {
-	AbstractGeometryGroups []*TAbstractGeometryType `xml:"http://www.opengis.net/kml/2.2 AbstractGeometryGroup"`
-
-	XsdGoPkgHasElems_Polygon
-
-	XsdGoPkgHasElems_MultiGeometry
-
-	XsdGoPkgHasElems_LinearRing
-
-	XsdGoPkgHasElems_LineString
-
-	XsdGoPkgHasElems_Point
-
-	XsdGoPkgHasElems_Model
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractGeometryGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractGeometryGroup instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractGeometryGroup instance.
-func (me *XsdGoPkgHasElems_AbstractGeometryGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractGeometryGroup; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Polygon.Walk()
-	me.XsdGoPkgHasElems_MultiGeometry.Walk()
-	me.XsdGoPkgHasElems_LinearRing.Walk()
-	me.XsdGoPkgHasElems_LineString.Walk()
-	me.XsdGoPkgHasElems_Point.Walk()
-	me.XsdGoPkgHasElems_Model.Walk()
-	for _, x := range me.AbstractGeometryGroups { x.Walk() }
- }
-
-type XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup struct {
-	MultiGeometrySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 MultiGeometrySimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type TMultiGeometryType struct {
-	XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup
-
-	XsdGoPkgHasElems_AbstractGeometryGroup
-
-	TAbstractGeometryType
-
-	XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup
-
-}
-
-//	If the WalkHandlers.TMultiGeometryType function is not nil (ie. was set by outside code), calls it with this TMultiGeometryType instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TMultiGeometryType instance.
-func (me *TMultiGeometryType) Walk ()  { 
-	if fn := WalkHandlers.TMultiGeometryType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractGeometryGroup.Walk()
-	me.TAbstractGeometryType.Walk()
- }
-
-type XsdGoPkgHasElem_MultiGeometry struct {
-	MultiGeometry *TMultiGeometryType `xml:"http://www.opengis.net/kml/2.2 MultiGeometry"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_MultiGeometry function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MultiGeometry instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_MultiGeometry instance.
-func (me *XsdGoPkgHasElem_MultiGeometry) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_MultiGeometry; fn != nil { fn(me) }
-	me.MultiGeometry.Walk()
- }
-
-type XsdGoPkgHasElem_LineString struct {
-	LineString *TLineStringType `xml:"http://www.opengis.net/kml/2.2 LineString"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_LineString function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LineString instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_LineString instance.
-func (me *XsdGoPkgHasElem_LineString) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_LineString; fn != nil { fn(me) }
-	me.LineString.Walk()
- }
-
-type XsdGoPkgHasElem_Model struct {
-	Model *TModelType `xml:"http://www.opengis.net/kml/2.2 Model"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Model function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Model instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Model instance.
-func (me *XsdGoPkgHasElem_Model) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Model; fn != nil { fn(me) }
-	me.Model.Walk()
- }
-
-type XsdGoPkgHasElem_Point struct {
-	Point *TPointType `xml:"http://www.opengis.net/kml/2.2 Point"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Point function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Point instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Point instance.
-func (me *XsdGoPkgHasElem_Point) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Point; fn != nil { fn(me) }
-	me.Point.Walk()
- }
-
-type XsdGoPkgHasElem_AbstractGeometryGroup struct {
-	AbstractGeometryGroup *TAbstractGeometryType `xml:"http://www.opengis.net/kml/2.2 AbstractGeometryGroup"`
-
-	XsdGoPkgHasElem_Polygon
-
-	XsdGoPkgHasElem_MultiGeometry
-
-	XsdGoPkgHasElem_LineString
-
-	XsdGoPkgHasElem_Model
-
-	XsdGoPkgHasElem_Point
-
-	XsdGoPkgHasElem_LinearRing
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AbstractGeometryGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractGeometryGroup instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AbstractGeometryGroup instance.
-func (me *XsdGoPkgHasElem_AbstractGeometryGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractGeometryGroup; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_LinearRing.Walk()
-	me.XsdGoPkgHasElem_Polygon.Walk()
-	me.XsdGoPkgHasElem_MultiGeometry.Walk()
-	me.XsdGoPkgHasElem_LineString.Walk()
-	me.XsdGoPkgHasElem_Model.Walk()
-	me.XsdGoPkgHasElem_Point.Walk()
-	me.AbstractGeometryGroup.Walk()
- }
-
-type TPlacemarkType struct {
-	XsdGoPkgHasElem_AbstractGeometryGroup
-
-	TAbstractFeatureType
-
-	XsdGoPkgHasElems_PlacemarkObjectExtensionGroup
-
-	XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup
-
-}
-
-//	If the WalkHandlers.TPlacemarkType function is not nil (ie. was set by outside code), calls it with this TPlacemarkType instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TPlacemarkType instance.
-func (me *TPlacemarkType) Walk ()  { 
-	if fn := WalkHandlers.TPlacemarkType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_AbstractGeometryGroup.Walk()
+	me.XsdGoPkgHasElem_RefreshVisibility.Walk()
 	me.TAbstractFeatureType.Walk()
-	me.XsdGoPkgHasElems_PlacemarkObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_Url.Walk()
  }
 
-type XsdGoPkgHasElems_Placemark struct {
-	Placemarks []*TPlacemarkType `xml:"http://www.opengis.net/kml/2.2 Placemark"`
+type XsdGoPkgHasElem_NetworkLink struct {
+	NetworkLink *TNetworkLinkType `xml:"http://www.opengis.net/kml/2.2 NetworkLink"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_Placemark function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Placemark instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Placemark instance.
-func (me *XsdGoPkgHasElems_Placemark) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Placemark; fn != nil { fn(me) }
-	for _, x := range me.Placemarks { x.Walk() }
+//	If the WalkHandlers.XsdGoPkgHasElem_NetworkLink function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_NetworkLink instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_NetworkLink instance.
+func (me *XsdGoPkgHasElem_NetworkLink) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_NetworkLink; fn != nil { fn(me) }
+	me.NetworkLink.Walk()
  }
 
-type XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup struct {
-	AbstractOverlaySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractOverlaySimpleExtensionGroup"`
+type XsdGoPkgHasElems_DocumentSimpleExtensionGroup struct {
+	DocumentSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 DocumentSimpleExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Icon struct {
-	Icon *TLinkType `xml:"http://www.opengis.net/kml/2.2 Icon"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Icon function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Icon instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Icon instance.
-func (me *XsdGoPkgHasElem_Icon) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Icon; fn != nil { fn(me) }
-	me.Icon.Walk()
- }
-
-type XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup struct {
-	AbstractOverlayObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractOverlayObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TAbstractOverlayType struct {
-	TAbstractFeatureType
-
-	XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup
-
-	XsdGoPkgHasElem_Color
-
-	XsdGoPkgHasElem_DrawOrder
-
-	XsdGoPkgHasElem_Icon
-
-	XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup
-
-}
-
-//	If the WalkHandlers.TAbstractOverlayType function is not nil (ie. was set by outside code), calls it with this TAbstractOverlayType instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this TAbstractOverlayType instance.
-func (me *TAbstractOverlayType) Walk ()  { 
-	if fn := WalkHandlers.TAbstractOverlayType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_Color.Walk()
-	me.XsdGoPkgHasElem_DrawOrder.Walk()
-	me.XsdGoPkgHasElem_Icon.Walk()
-	me.XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup.Walk()
-	me.TAbstractFeatureType.Walk()
- }
-
-type XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup struct {
-	ScreenOverlaySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ScreenOverlaySimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup struct {
-	ScreenOverlayObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ScreenOverlayObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TScreenOverlayType struct {
-	XsdGoPkgHasElem_Rotation
-
-	XsdGoPkgHasElem_RotationXY
-
-	XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup
-
-	XsdGoPkgHasElem_Size
-
-	XsdGoPkgHasElem_ScreenXY
-
-	XsdGoPkgHasElem_OverlayXY
-
-	XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup
-
-	TAbstractOverlayType
-
-}
-
-//	If the WalkHandlers.TScreenOverlayType function is not nil (ie. was set by outside code), calls it with this TScreenOverlayType instance as the single argument. Then calls the Walk() method on 8/8 embed(s) and 0/0 field(s) belonging to this TScreenOverlayType instance.
-func (me *TScreenOverlayType) Walk ()  { 
-	if fn := WalkHandlers.TScreenOverlayType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Size.Walk()
-	me.XsdGoPkgHasElem_ScreenXY.Walk()
-	me.XsdGoPkgHasElem_OverlayXY.Walk()
-	me.XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup.Walk()
-	me.TAbstractOverlayType.Walk()
-	me.XsdGoPkgHasElem_Rotation.Walk()
-	me.XsdGoPkgHasElem_RotationXY.Walk()
-	me.XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup.Walk()
- }
-
-type XsdGoPkgHasElems_ScreenOverlay struct {
-	ScreenOverlays []*TScreenOverlayType `xml:"http://www.opengis.net/kml/2.2 ScreenOverlay"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ScreenOverlay function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ScreenOverlay instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ScreenOverlay instance.
-func (me *XsdGoPkgHasElems_ScreenOverlay) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ScreenOverlay; fn != nil { fn(me) }
-	for _, x := range me.ScreenOverlays { x.Walk() }
- }
-
-type XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup struct {
-	ImagePyramidSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ImagePyramidSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup struct {
-	ImagePyramidObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ImagePyramidObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TImagePyramidType struct {
-	XsdGoPkgHasElem_GridOrigin
-
-	XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup
-
-	XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup
-
-	TAbstractObjectType
-
-	XsdGoPkgHasElem_MaxWidth
-
-	XsdGoPkgHasElem_TileSize
-
-	XsdGoPkgHasElem_MaxHeight
-
-}
-
-//	If the WalkHandlers.TImagePyramidType function is not nil (ie. was set by outside code), calls it with this TImagePyramidType instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this TImagePyramidType instance.
-func (me *TImagePyramidType) Walk ()  { 
-	if fn := WalkHandlers.TImagePyramidType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_TileSize.Walk()
-	me.XsdGoPkgHasElem_MaxHeight.Walk()
-	me.XsdGoPkgHasElem_GridOrigin.Walk()
-	me.XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup.Walk()
-	me.TAbstractObjectType.Walk()
-	me.XsdGoPkgHasElem_MaxWidth.Walk()
- }
-
-type XsdGoPkgHasElem_ImagePyramid struct {
-	ImagePyramid *TImagePyramidType `xml:"http://www.opengis.net/kml/2.2 ImagePyramid"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ImagePyramid function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ImagePyramid instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ImagePyramid instance.
-func (me *XsdGoPkgHasElem_ImagePyramid) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ImagePyramid; fn != nil { fn(me) }
-	me.ImagePyramid.Walk()
- }
-
-type XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup struct {
-	PhotoOverlaySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PhotoOverlaySimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup struct {
-	PhotoOverlayObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 PhotoOverlayObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TPhotoOverlayType struct {
-	XsdGoPkgHasElem_Point
-
-	XsdGoPkgHasElem_Shape
-
-	TAbstractOverlayType
-
-	XsdGoPkgHasElem_ImagePyramid
-
-	XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup
-
-	XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup
-
-	XsdGoPkgHasElem_ViewVolume
-
-	XsdGoPkgHasElem_Rotation
-
-}
-
-//	If the WalkHandlers.TPhotoOverlayType function is not nil (ie. was set by outside code), calls it with this TPhotoOverlayType instance as the single argument. Then calls the Walk() method on 8/8 embed(s) and 0/0 field(s) belonging to this TPhotoOverlayType instance.
-func (me *TPhotoOverlayType) Walk ()  { 
-	if fn := WalkHandlers.TPhotoOverlayType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Shape.Walk()
-	me.TAbstractOverlayType.Walk()
-	me.XsdGoPkgHasElem_ImagePyramid.Walk()
-	me.XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_ViewVolume.Walk()
-	me.XsdGoPkgHasElem_Rotation.Walk()
-	me.XsdGoPkgHasElem_Point.Walk()
- }
-
-type XsdGoPkgHasElems_PhotoOverlay struct {
-	PhotoOverlays []*TPhotoOverlayType `xml:"http://www.opengis.net/kml/2.2 PhotoOverlay"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PhotoOverlay function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PhotoOverlay instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PhotoOverlay instance.
-func (me *XsdGoPkgHasElems_PhotoOverlay) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_PhotoOverlay; fn != nil { fn(me) }
-	for _, x := range me.PhotoOverlays { x.Walk() }
- }
-
-type XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup struct {
-	GroundOverlaySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 GroundOverlaySimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup struct {
-	GroundOverlayObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 GroundOverlayObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup struct {
-	LatLonBoxSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LatLonBoxSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup struct {
-	LatLonBoxObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LatLonBoxObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type TLatLonBoxType struct {
-	XsdGoPkgHasElem_Rotation
-
-	XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup
-
-	XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup
-
-	TAbstractLatLonBoxType
-
-}
-
-//	If the WalkHandlers.TLatLonBoxType function is not nil (ie. was set by outside code), calls it with this TLatLonBoxType instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TLatLonBoxType instance.
-func (me *TLatLonBoxType) Walk ()  { 
-	if fn := WalkHandlers.TLatLonBoxType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Rotation.Walk()
-	me.XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup.Walk()
-	me.TAbstractLatLonBoxType.Walk()
- }
-
-type XsdGoPkgHasElem_LatLonBox struct {
-	LatLonBox *TLatLonBoxType `xml:"http://www.opengis.net/kml/2.2 LatLonBox"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_LatLonBox function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LatLonBox instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_LatLonBox instance.
-func (me *XsdGoPkgHasElem_LatLonBox) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_LatLonBox; fn != nil { fn(me) }
-	me.LatLonBox.Walk()
- }
-
-type TGroundOverlayType struct {
-	XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup
-
-	XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup
-
-	XsdGoPkgHasElem_LatLonBox
-
-	TAbstractOverlayType
-
-	XsdGoPkgHasElem_Altitude
-
-	XsdGoPkgHasElem_AltitudeModeGroup
-
-}
-
-//	If the WalkHandlers.TGroundOverlayType function is not nil (ie. was set by outside code), calls it with this TGroundOverlayType instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this TGroundOverlayType instance.
-func (me *TGroundOverlayType) Walk ()  { 
-	if fn := WalkHandlers.TGroundOverlayType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Altitude.Walk()
-	me.XsdGoPkgHasElem_AltitudeModeGroup.Walk()
-	me.XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_LatLonBox.Walk()
-	me.TAbstractOverlayType.Walk()
- }
-
-type XsdGoPkgHasElems_GroundOverlay struct {
-	GroundOverlays []*TGroundOverlayType `xml:"http://www.opengis.net/kml/2.2 GroundOverlay"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_GroundOverlay function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_GroundOverlay instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_GroundOverlay instance.
-func (me *XsdGoPkgHasElems_GroundOverlay) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_GroundOverlay; fn != nil { fn(me) }
-	for _, x := range me.GroundOverlays { x.Walk() }
- }
-
-type XsdGoPkgHasElems_AbstractOverlayGroup struct {
-	AbstractOverlayGroups []*TAbstractOverlayType `xml:"http://www.opengis.net/kml/2.2 AbstractOverlayGroup"`
-
-	XsdGoPkgHasElems_ScreenOverlay
-
-	XsdGoPkgHasElems_PhotoOverlay
-
-	XsdGoPkgHasElems_GroundOverlay
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractOverlayGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractOverlayGroup instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractOverlayGroup instance.
-func (me *XsdGoPkgHasElems_AbstractOverlayGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractOverlayGroup; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_PhotoOverlay.Walk()
-	me.XsdGoPkgHasElems_GroundOverlay.Walk()
-	me.XsdGoPkgHasElems_ScreenOverlay.Walk()
-	for _, x := range me.AbstractOverlayGroups { x.Walk() }
- }
-
-type XsdGoPkgHasElems_Folder struct {
-	Folders []*TFolderType `xml:"http://www.opengis.net/kml/2.2 Folder"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Folder function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Folder instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Folder instance.
-func (me *XsdGoPkgHasElems_Folder) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Folder; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_DocumentSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_DocumentSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_DocumentSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_DocumentSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_DocumentSimpleExtensionGroup; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElems_DocumentObjectExtensionGroup struct {
@@ -5722,6 +5672,11 @@ func (me *XsdGoPkgHasElems_DocumentObjectExtensionGroup) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_DocumentObjectExtensionGroup; fn != nil { fn(me) }
  }
 
+type XsdGoPkgHasAttr_Type_XsdtString_ struct {
+	Type xsdt.String `xml:"http://www.opengis.net/kml/2.2 type,attr"`
+
+}
+
 type XsdGoPkgHasElems_SimpleFieldExtension struct {
 	SimpleFieldExtensions []xsdt.String `xml:"http://www.opengis.net/kml/2.2 SimpleFieldExtension"`
 
@@ -5732,19 +5687,14 @@ func (me *XsdGoPkgHasElems_SimpleFieldExtension) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_SimpleFieldExtension; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasAttr_Type_XsdtString_ struct {
-	Type xsdt.String `xml:"http://www.opengis.net/kml/2.2 type,attr"`
-
-}
-
 type TSimpleFieldType struct {
-	XsdGoPkgHasElems_SimpleFieldExtension
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
 	XsdGoPkgHasAttr_Name_XsdtString_
 
+	XsdGoPkgHasElems_SimpleFieldExtension
+
 	XsdGoPkgHasElem_DisplayName
+
+	XsdGoPkgHasAttr_Type_XsdtString_
 
 }
 
@@ -5777,13 +5727,13 @@ func (me *XsdGoPkgHasElems_SchemaExtension) Walk ()  {
  }
 
 type TSchemaType struct {
-	XsdGoPkgHasAttr_Name_XsdtString_
-
-	XsdGoPkgHasElems_SimpleField
-
 	XsdGoPkgHasElems_SchemaExtension
 
+	XsdGoPkgHasAttr_Name_XsdtString_
+
 	XsdGoPkgHasAttr_Id_XsdtId_
+
+	XsdGoPkgHasElems_SimpleField
 
 }
 
@@ -5805,14 +5755,446 @@ func (me *XsdGoPkgHasElems_Schema) Walk ()  {
 	for _, x := range me.Schemas { x.Walk() }
  }
 
-type XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup struct {
-	AbstractContainerObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractContainerObjectExtensionGroup"`
+type XsdGoPkgHasElems_PlacemarkObjectExtensionGroup struct {
+	PlacemarkObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 PlacemarkObjectExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_PlacemarkObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PlacemarkObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PlacemarkObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_PlacemarkObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_PlacemarkObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup struct {
+	PlacemarkSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PlacemarkSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TPlacemarkType struct {
+	XsdGoPkgHasElems_PlacemarkObjectExtensionGroup
+
+	XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup
+
+	XsdGoPkgHasElem_AbstractGeometryGroup
+
+	TAbstractFeatureType
+
+}
+
+//	If the WalkHandlers.TPlacemarkType function is not nil (ie. was set by outside code), calls it with this TPlacemarkType instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TPlacemarkType instance.
+func (me *TPlacemarkType) Walk ()  { 
+	if fn := WalkHandlers.TPlacemarkType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_AbstractGeometryGroup.Walk()
+	me.TAbstractFeatureType.Walk()
+	me.XsdGoPkgHasElems_PlacemarkObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup.Walk()
+ }
+
+type XsdGoPkgHasElems_Placemark struct {
+	Placemarks []*TPlacemarkType `xml:"http://www.opengis.net/kml/2.2 Placemark"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Placemark function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Placemark instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Placemark instance.
+func (me *XsdGoPkgHasElems_Placemark) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Placemark; fn != nil { fn(me) }
+	for _, x := range me.Placemarks { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_NetworkLink struct {
+	NetworkLinks []*TNetworkLinkType `xml:"http://www.opengis.net/kml/2.2 NetworkLink"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_NetworkLink function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_NetworkLink instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_NetworkLink instance.
+func (me *XsdGoPkgHasElems_NetworkLink) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_NetworkLink; fn != nil { fn(me) }
+	for _, x := range me.NetworkLinks { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup struct {
+	ImagePyramidObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ImagePyramidObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup struct {
+	ImagePyramidSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ImagePyramidSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TImagePyramidType struct {
+	XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup
+
+	XsdGoPkgHasElem_GridOrigin
+
+	XsdGoPkgHasElem_TileSize
+
+	XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup
+
+	XsdGoPkgHasElem_MaxWidth
+
+	TAbstractObjectType
+
+	XsdGoPkgHasElem_MaxHeight
+
+}
+
+//	If the WalkHandlers.TImagePyramidType function is not nil (ie. was set by outside code), calls it with this TImagePyramidType instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this TImagePyramidType instance.
+func (me *TImagePyramidType) Walk ()  { 
+	if fn := WalkHandlers.TImagePyramidType; fn != nil { fn(me) }
+	me.TAbstractObjectType.Walk()
+	me.XsdGoPkgHasElem_MaxHeight.Walk()
+	me.XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_GridOrigin.Walk()
+	me.XsdGoPkgHasElem_TileSize.Walk()
+	me.XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_MaxWidth.Walk()
+ }
+
+type XsdGoPkgHasElem_ImagePyramid struct {
+	ImagePyramid *TImagePyramidType `xml:"http://www.opengis.net/kml/2.2 ImagePyramid"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ImagePyramid function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ImagePyramid instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ImagePyramid instance.
+func (me *XsdGoPkgHasElem_ImagePyramid) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ImagePyramid; fn != nil { fn(me) }
+	me.ImagePyramid.Walk()
+ }
+
+type XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup struct {
+	AbstractOverlaySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 AbstractOverlaySimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup struct {
+	AbstractOverlayObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractOverlayObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TAbstractOverlayType struct {
+	XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup
+
+	XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup
+
+	XsdGoPkgHasElem_DrawOrder
+
+	XsdGoPkgHasElem_Icon
+
+	XsdGoPkgHasElem_Color
+
+	TAbstractFeatureType
+
+}
+
+//	If the WalkHandlers.TAbstractOverlayType function is not nil (ie. was set by outside code), calls it with this TAbstractOverlayType instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this TAbstractOverlayType instance.
+func (me *TAbstractOverlayType) Walk ()  { 
+	if fn := WalkHandlers.TAbstractOverlayType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_DrawOrder.Walk()
+	me.XsdGoPkgHasElem_Icon.Walk()
+	me.XsdGoPkgHasElem_Color.Walk()
+	me.TAbstractFeatureType.Walk()
+ }
+
+type XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup struct {
+	PhotoOverlayObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 PhotoOverlayObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup struct {
+	PhotoOverlaySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 PhotoOverlaySimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TPhotoOverlayType struct {
+	XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup
+
+	XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup
+
+	XsdGoPkgHasElem_Shape
+
+	XsdGoPkgHasElem_Rotation
+
+	XsdGoPkgHasElem_ImagePyramid
+
+	XsdGoPkgHasElem_Point
+
+	XsdGoPkgHasElem_ViewVolume
+
+	TAbstractOverlayType
+
+}
+
+//	If the WalkHandlers.TPhotoOverlayType function is not nil (ie. was set by outside code), calls it with this TPhotoOverlayType instance as the single argument. Then calls the Walk() method on 8/8 embed(s) and 0/0 field(s) belonging to this TPhotoOverlayType instance.
+func (me *TPhotoOverlayType) Walk ()  { 
+	if fn := WalkHandlers.TPhotoOverlayType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_Shape.Walk()
+	me.XsdGoPkgHasElem_Rotation.Walk()
+	me.XsdGoPkgHasElem_ImagePyramid.Walk()
+	me.XsdGoPkgHasElem_Point.Walk()
+	me.XsdGoPkgHasElem_ViewVolume.Walk()
+	me.TAbstractOverlayType.Walk()
+ }
+
+type XsdGoPkgHasElems_PhotoOverlay struct {
+	PhotoOverlays []*TPhotoOverlayType `xml:"http://www.opengis.net/kml/2.2 PhotoOverlay"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PhotoOverlay function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PhotoOverlay instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PhotoOverlay instance.
+func (me *XsdGoPkgHasElems_PhotoOverlay) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_PhotoOverlay; fn != nil { fn(me) }
+	for _, x := range me.PhotoOverlays { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup struct {
+	GroundOverlayObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 GroundOverlayObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup struct {
+	LatLonBoxObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 LatLonBoxObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup struct {
+	LatLonBoxSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 LatLonBoxSimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TLatLonBoxType struct {
+	XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup
+
+	TAbstractLatLonBoxType
+
+	XsdGoPkgHasElem_Rotation
+
+	XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup
+
+}
+
+//	If the WalkHandlers.TLatLonBoxType function is not nil (ie. was set by outside code), calls it with this TLatLonBoxType instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TLatLonBoxType instance.
+func (me *TLatLonBoxType) Walk ()  { 
+	if fn := WalkHandlers.TLatLonBoxType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup.Walk()
+	me.TAbstractLatLonBoxType.Walk()
+	me.XsdGoPkgHasElem_Rotation.Walk()
+ }
+
+type XsdGoPkgHasElem_LatLonBox struct {
+	LatLonBox *TLatLonBoxType `xml:"http://www.opengis.net/kml/2.2 LatLonBox"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_LatLonBox function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LatLonBox instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_LatLonBox instance.
+func (me *XsdGoPkgHasElem_LatLonBox) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_LatLonBox; fn != nil { fn(me) }
+	me.LatLonBox.Walk()
+ }
+
+type XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup struct {
+	GroundOverlaySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 GroundOverlaySimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TGroundOverlayType struct {
+	XsdGoPkgHasElem_AltitudeModeGroup
+
+	XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup
+
+	XsdGoPkgHasElem_LatLonBox
+
+	XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup
+
+	XsdGoPkgHasElem_Altitude
+
+	TAbstractOverlayType
+
+}
+
+//	If the WalkHandlers.TGroundOverlayType function is not nil (ie. was set by outside code), calls it with this TGroundOverlayType instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this TGroundOverlayType instance.
+func (me *TGroundOverlayType) Walk ()  { 
+	if fn := WalkHandlers.TGroundOverlayType; fn != nil { fn(me) }
+	me.TAbstractOverlayType.Walk()
+	me.XsdGoPkgHasElem_AltitudeModeGroup.Walk()
+	me.XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_LatLonBox.Walk()
+	me.XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_Altitude.Walk()
+ }
+
+type XsdGoPkgHasElems_GroundOverlay struct {
+	GroundOverlays []*TGroundOverlayType `xml:"http://www.opengis.net/kml/2.2 GroundOverlay"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_GroundOverlay function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_GroundOverlay instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_GroundOverlay instance.
+func (me *XsdGoPkgHasElems_GroundOverlay) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_GroundOverlay; fn != nil { fn(me) }
+	for _, x := range me.GroundOverlays { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup struct {
+	ScreenOverlayObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ScreenOverlayObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup struct {
+	ScreenOverlaySimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 ScreenOverlaySimpleExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TScreenOverlayType struct {
+	TAbstractOverlayType
+
+	XsdGoPkgHasElem_Size
+
+	XsdGoPkgHasElem_OverlayXY
+
+	XsdGoPkgHasElem_RotationXY
+
+	XsdGoPkgHasElem_Rotation
+
+	XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup
+
+	XsdGoPkgHasElem_ScreenXY
+
+	XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup
+
+}
+
+//	If the WalkHandlers.TScreenOverlayType function is not nil (ie. was set by outside code), calls it with this TScreenOverlayType instance as the single argument. Then calls the Walk() method on 8/8 embed(s) and 0/0 field(s) belonging to this TScreenOverlayType instance.
+func (me *TScreenOverlayType) Walk ()  { 
+	if fn := WalkHandlers.TScreenOverlayType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_Rotation.Walk()
+	me.XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_ScreenXY.Walk()
+	me.XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup.Walk()
+	me.TAbstractOverlayType.Walk()
+	me.XsdGoPkgHasElem_Size.Walk()
+	me.XsdGoPkgHasElem_OverlayXY.Walk()
+	me.XsdGoPkgHasElem_RotationXY.Walk()
+ }
+
+type XsdGoPkgHasElems_ScreenOverlay struct {
+	ScreenOverlays []*TScreenOverlayType `xml:"http://www.opengis.net/kml/2.2 ScreenOverlay"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ScreenOverlay function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ScreenOverlay instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ScreenOverlay instance.
+func (me *XsdGoPkgHasElems_ScreenOverlay) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_ScreenOverlay; fn != nil { fn(me) }
+	for _, x := range me.ScreenOverlays { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_AbstractOverlayGroup struct {
+	AbstractOverlayGroups []*TAbstractOverlayType `xml:"http://www.opengis.net/kml/2.2 AbstractOverlayGroup"`
+
+	XsdGoPkgHasElems_GroundOverlay
+
+	XsdGoPkgHasElems_ScreenOverlay
+
+	XsdGoPkgHasElems_PhotoOverlay
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractOverlayGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractOverlayGroup instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractOverlayGroup instance.
+func (me *XsdGoPkgHasElems_AbstractOverlayGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractOverlayGroup; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_PhotoOverlay.Walk()
+	me.XsdGoPkgHasElems_GroundOverlay.Walk()
+	me.XsdGoPkgHasElems_ScreenOverlay.Walk()
+	for _, x := range me.AbstractOverlayGroups { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_Document struct {
+	Documents []*TDocumentType `xml:"http://www.opengis.net/kml/2.2 Document"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Document function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Document instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Document instance.
+func (me *XsdGoPkgHasElems_Document) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Document; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_FolderObjectExtensionGroup struct {
+	FolderObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 FolderObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_FolderObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FolderObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FolderObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_FolderObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_FolderObjectExtensionGroup; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElems_AbstractContainerSimpleExtensionGroup struct {
@@ -5825,64 +6207,71 @@ func (me *XsdGoPkgHasElems_AbstractContainerSimpleExtensionGroup) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractContainerSimpleExtensionGroup; fn != nil { fn(me) }
  }
 
-type TAbstractContainerType struct {
-	XsdGoPkgHasElems_AbstractContainerSimpleExtensionGroup
+type XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup struct {
+	AbstractContainerObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractContainerObjectExtensionGroup"`
 
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TAbstractContainerType struct {
 	XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup
 
 	TAbstractFeatureType
+
+	XsdGoPkgHasElems_AbstractContainerSimpleExtensionGroup
 
 }
 
 //	If the WalkHandlers.TAbstractContainerType function is not nil (ie. was set by outside code), calls it with this TAbstractContainerType instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this TAbstractContainerType instance.
 func (me *TAbstractContainerType) Walk ()  { 
 	if fn := WalkHandlers.TAbstractContainerType; fn != nil { fn(me) }
+	me.TAbstractFeatureType.Walk()
 	me.XsdGoPkgHasElems_AbstractContainerSimpleExtensionGroup.Walk()
 	me.XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup.Walk()
-	me.TAbstractFeatureType.Walk()
  }
 
-type XsdGoPkgHasElems_DocumentSimpleExtensionGroup struct {
-	DocumentSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 DocumentSimpleExtensionGroup"`
+type XsdGoPkgHasElems_FolderSimpleExtensionGroup struct {
+	FolderSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 FolderSimpleExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_DocumentSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_DocumentSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_DocumentSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_DocumentSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_DocumentSimpleExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_FolderSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FolderSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FolderSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_FolderSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_FolderSimpleExtensionGroup; fn != nil { fn(me) }
  }
 
-type TDocumentType struct {
-	XsdGoPkgHasElems_Schema
+type TFolderType struct {
+	XsdGoPkgHasElems_AbstractFeatureGroup
+
+	XsdGoPkgHasElems_FolderObjectExtensionGroup
 
 	TAbstractContainerType
 
-	XsdGoPkgHasElems_DocumentSimpleExtensionGroup
-
-	XsdGoPkgHasElems_DocumentObjectExtensionGroup
-
-	XsdGoPkgHasElems_AbstractFeatureGroup
+	XsdGoPkgHasElems_FolderSimpleExtensionGroup
 
 }
 
-//	If the WalkHandlers.TDocumentType function is not nil (ie. was set by outside code), calls it with this TDocumentType instance as the single argument. Then calls the Walk() method on 4/5 embed(s) and 0/0 field(s) belonging to this TDocumentType instance.
-func (me *TDocumentType) Walk ()  { 
-	if fn := WalkHandlers.TDocumentType; fn != nil { fn(me) }
+//	If the WalkHandlers.TFolderType function is not nil (ie. was set by outside code), calls it with this TFolderType instance as the single argument. Then calls the Walk() method on 3/4 embed(s) and 0/0 field(s) belonging to this TFolderType instance.
+func (me *TFolderType) Walk ()  { 
+	if fn := WalkHandlers.TFolderType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_FolderSimpleExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_FolderObjectExtensionGroup.Walk()
 	me.TAbstractContainerType.Walk()
-	me.XsdGoPkgHasElems_DocumentSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_DocumentObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_Schema.Walk()
  }
 
-type XsdGoPkgHasElems_Document struct {
-	Documents []*TDocumentType `xml:"http://www.opengis.net/kml/2.2 Document"`
+type XsdGoPkgHasElems_Folder struct {
+	Folders []*TFolderType `xml:"http://www.opengis.net/kml/2.2 Folder"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_Document function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Document instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Document instance.
-func (me *XsdGoPkgHasElems_Document) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Document; fn != nil { fn(me) }
-	for _, x := range me.Documents { x.Walk() }
+//	If the WalkHandlers.XsdGoPkgHasElems_Folder function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Folder instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Folder instance.
+func (me *XsdGoPkgHasElems_Folder) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Folder; fn != nil { fn(me) }
+	for _, x := range me.Folders { x.Walk() }
  }
 
 type XsdGoPkgHasElems_AbstractContainerGroup struct {
@@ -5897,92 +6286,17 @@ type XsdGoPkgHasElems_AbstractContainerGroup struct {
 //	If the WalkHandlers.XsdGoPkgHasElems_AbstractContainerGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractContainerGroup instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractContainerGroup instance.
 func (me *XsdGoPkgHasElems_AbstractContainerGroup) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractContainerGroup; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Folder.Walk()
 	me.XsdGoPkgHasElems_Document.Walk()
+	me.XsdGoPkgHasElems_Folder.Walk()
 	for _, x := range me.AbstractContainerGroups { x.Walk() }
- }
-
-type XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup struct {
-	NetworkLinkSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 NetworkLinkSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup struct {
-	NetworkLinkObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 NetworkLinkObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-//	Url deprecated in 2.2
-type XsdGoPkgHasElem_Url struct {
-//	Url deprecated in 2.2
-	Url *TLinkType `xml:"http://www.opengis.net/kml/2.2 Url"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Url function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Url instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Url instance.
-func (me *XsdGoPkgHasElem_Url) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Url; fn != nil { fn(me) }
-	me.Url.Walk()
- }
-
-type TNetworkLinkType struct {
-	XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup
-
-	TAbstractFeatureType
-
-	XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup
-
-	XsdGoPkgHasElem_FlyToView
-
-	XsdGoPkgHasElem_RefreshVisibility
-
-//	Url deprecated in 2.2
-	XsdGoPkgHasElem_Url
-
-//	Url deprecated in 2.2
-	XsdGoPkgHasElem_Link
-
-}
-
-//	If the WalkHandlers.TNetworkLinkType function is not nil (ie. was set by outside code), calls it with this TNetworkLinkType instance as the single argument. Then calls the Walk() method on 7/7 embed(s) and 0/0 field(s) belonging to this TNetworkLinkType instance.
-func (me *TNetworkLinkType) Walk ()  { 
-	if fn := WalkHandlers.TNetworkLinkType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_FlyToView.Walk()
-	me.XsdGoPkgHasElem_RefreshVisibility.Walk()
-	me.XsdGoPkgHasElem_Url.Walk()
-	me.XsdGoPkgHasElem_Link.Walk()
-	me.XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup.Walk()
-	me.TAbstractFeatureType.Walk()
-	me.XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup.Walk()
- }
-
-type XsdGoPkgHasElems_NetworkLink struct {
-	NetworkLinks []*TNetworkLinkType `xml:"http://www.opengis.net/kml/2.2 NetworkLink"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_NetworkLink function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_NetworkLink instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_NetworkLink instance.
-func (me *XsdGoPkgHasElems_NetworkLink) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_NetworkLink; fn != nil { fn(me) }
-	for _, x := range me.NetworkLinks { x.Walk() }
  }
 
 type XsdGoPkgHasElems_AbstractFeatureGroup struct {
 	AbstractFeatureGroups []*TAbstractFeatureType `xml:"http://www.opengis.net/kml/2.2 AbstractFeatureGroup"`
 
-	XsdGoPkgHasElems_NetworkLink
-
 	XsdGoPkgHasElems_Placemark
+
+	XsdGoPkgHasElems_NetworkLink
 
 	XsdGoPkgHasElems_AbstractOverlayGroup
 
@@ -5994,61 +6308,33 @@ type XsdGoPkgHasElems_AbstractFeatureGroup struct {
 func (me *XsdGoPkgHasElems_AbstractFeatureGroup) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractFeatureGroup; fn != nil { fn(me) }
 	me.XsdGoPkgHasElems_NetworkLink.Walk()
-	me.XsdGoPkgHasElems_Placemark.Walk()
 	me.XsdGoPkgHasElems_AbstractOverlayGroup.Walk()
 	me.XsdGoPkgHasElems_AbstractContainerGroup.Walk()
+	me.XsdGoPkgHasElems_Placemark.Walk()
 	for _, x := range me.AbstractFeatureGroups { x.Walk() }
  }
 
-type XsdGoPkgHasElems_FolderObjectExtensionGroup struct {
-	FolderObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 FolderObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_FolderObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FolderObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FolderObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_FolderObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FolderObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_FolderSimpleExtensionGroup struct {
-	FolderSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 FolderSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_FolderSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FolderSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FolderSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_FolderSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FolderSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
-type TFolderType struct {
-	XsdGoPkgHasElems_FolderObjectExtensionGroup
-
-	XsdGoPkgHasElems_FolderSimpleExtensionGroup
-
-	TAbstractContainerType
+type TDocumentType struct {
+	XsdGoPkgHasElems_Schema
 
 	XsdGoPkgHasElems_AbstractFeatureGroup
 
+	TAbstractContainerType
+
+	XsdGoPkgHasElems_DocumentSimpleExtensionGroup
+
+	XsdGoPkgHasElems_DocumentObjectExtensionGroup
+
 }
 
-//	If the WalkHandlers.TFolderType function is not nil (ie. was set by outside code), calls it with this TFolderType instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TFolderType instance.
-func (me *TFolderType) Walk ()  { 
-	if fn := WalkHandlers.TFolderType; fn != nil { fn(me) }
+//	If the WalkHandlers.TDocumentType function is not nil (ie. was set by outside code), calls it with this TDocumentType instance as the single argument. Then calls the Walk() method on 5/5 embed(s) and 0/0 field(s) belonging to this TDocumentType instance.
+func (me *TDocumentType) Walk ()  { 
+	if fn := WalkHandlers.TDocumentType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_DocumentObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_Schema.Walk()
 	me.XsdGoPkgHasElems_AbstractFeatureGroup.Walk()
-	me.XsdGoPkgHasElems_FolderObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_FolderSimpleExtensionGroup.Walk()
 	me.TAbstractContainerType.Walk()
- }
-
-type XsdGoPkgHasElem_Folder struct {
-	Folder *TFolderType `xml:"http://www.opengis.net/kml/2.2 Folder"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Folder function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Folder instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Folder instance.
-func (me *XsdGoPkgHasElem_Folder) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Folder; fn != nil { fn(me) }
-	me.Folder.Walk()
+	me.XsdGoPkgHasElems_DocumentSimpleExtensionGroup.Walk()
  }
 
 type XsdGoPkgHasElem_Document struct {
@@ -6062,12 +6348,23 @@ func (me *XsdGoPkgHasElem_Document) Walk ()  {
 	me.Document.Walk()
  }
 
+type XsdGoPkgHasElem_Folder struct {
+	Folder *TFolderType `xml:"http://www.opengis.net/kml/2.2 Folder"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Folder function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Folder instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Folder instance.
+func (me *XsdGoPkgHasElem_Folder) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Folder; fn != nil { fn(me) }
+	me.Folder.Walk()
+ }
+
 type XsdGoPkgHasElem_AbstractContainerGroup struct {
 	AbstractContainerGroup *TAbstractContainerType `xml:"http://www.opengis.net/kml/2.2 AbstractContainerGroup"`
 
-	XsdGoPkgHasElem_Document
-
 	XsdGoPkgHasElem_Folder
+
+	XsdGoPkgHasElem_Document
 
 }
 
@@ -6077,28 +6374,6 @@ func (me *XsdGoPkgHasElem_AbstractContainerGroup) Walk ()  {
 	me.XsdGoPkgHasElem_Folder.Walk()
 	me.XsdGoPkgHasElem_Document.Walk()
 	me.AbstractContainerGroup.Walk()
- }
-
-type XsdGoPkgHasElem_Placemark struct {
-	Placemark *TPlacemarkType `xml:"http://www.opengis.net/kml/2.2 Placemark"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Placemark function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Placemark instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Placemark instance.
-func (me *XsdGoPkgHasElem_Placemark) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Placemark; fn != nil { fn(me) }
-	me.Placemark.Walk()
- }
-
-type XsdGoPkgHasElem_ScreenOverlay struct {
-	ScreenOverlay *TScreenOverlayType `xml:"http://www.opengis.net/kml/2.2 ScreenOverlay"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ScreenOverlay function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ScreenOverlay instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ScreenOverlay instance.
-func (me *XsdGoPkgHasElem_ScreenOverlay) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ScreenOverlay; fn != nil { fn(me) }
-	me.ScreenOverlay.Walk()
  }
 
 type XsdGoPkgHasElem_GroundOverlay struct {
@@ -6123,6 +6398,17 @@ func (me *XsdGoPkgHasElem_PhotoOverlay) Walk ()  {
 	me.PhotoOverlay.Walk()
  }
 
+type XsdGoPkgHasElem_ScreenOverlay struct {
+	ScreenOverlay *TScreenOverlayType `xml:"http://www.opengis.net/kml/2.2 ScreenOverlay"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ScreenOverlay function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ScreenOverlay instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ScreenOverlay instance.
+func (me *XsdGoPkgHasElem_ScreenOverlay) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ScreenOverlay; fn != nil { fn(me) }
+	me.ScreenOverlay.Walk()
+ }
+
 type XsdGoPkgHasElem_AbstractOverlayGroup struct {
 	AbstractOverlayGroup *TAbstractOverlayType `xml:"http://www.opengis.net/kml/2.2 AbstractOverlayGroup"`
 
@@ -6137,115 +6423,54 @@ type XsdGoPkgHasElem_AbstractOverlayGroup struct {
 //	If the WalkHandlers.XsdGoPkgHasElem_AbstractOverlayGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractOverlayGroup instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AbstractOverlayGroup instance.
 func (me *XsdGoPkgHasElem_AbstractOverlayGroup) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractOverlayGroup; fn != nil { fn(me) }
+	me.XsdGoPkgHasElem_GroundOverlay.Walk()
 	me.XsdGoPkgHasElem_PhotoOverlay.Walk()
 	me.XsdGoPkgHasElem_ScreenOverlay.Walk()
-	me.XsdGoPkgHasElem_GroundOverlay.Walk()
 	me.AbstractOverlayGroup.Walk()
  }
 
-type XsdGoPkgHasElem_NetworkLink struct {
-	NetworkLink *TNetworkLinkType `xml:"http://www.opengis.net/kml/2.2 NetworkLink"`
+type XsdGoPkgHasElem_Placemark struct {
+	Placemark *TPlacemarkType `xml:"http://www.opengis.net/kml/2.2 Placemark"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_NetworkLink function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_NetworkLink instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_NetworkLink instance.
-func (me *XsdGoPkgHasElem_NetworkLink) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_NetworkLink; fn != nil { fn(me) }
-	me.NetworkLink.Walk()
+//	If the WalkHandlers.XsdGoPkgHasElem_Placemark function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Placemark instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Placemark instance.
+func (me *XsdGoPkgHasElem_Placemark) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Placemark; fn != nil { fn(me) }
+	me.Placemark.Walk()
  }
 
 type XsdGoPkgHasElem_AbstractFeatureGroup struct {
 	AbstractFeatureGroup *TAbstractFeatureType `xml:"http://www.opengis.net/kml/2.2 AbstractFeatureGroup"`
 
-	XsdGoPkgHasElem_Placemark
-
-	XsdGoPkgHasElem_AbstractOverlayGroup
-
 	XsdGoPkgHasElem_NetworkLink
 
 	XsdGoPkgHasElem_AbstractContainerGroup
+
+	XsdGoPkgHasElem_AbstractOverlayGroup
+
+	XsdGoPkgHasElem_Placemark
 
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_AbstractFeatureGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractFeatureGroup instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AbstractFeatureGroup instance.
 func (me *XsdGoPkgHasElem_AbstractFeatureGroup) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractFeatureGroup; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_AbstractContainerGroup.Walk()
-	me.XsdGoPkgHasElem_Placemark.Walk()
 	me.XsdGoPkgHasElem_AbstractOverlayGroup.Walk()
+	me.XsdGoPkgHasElem_Placemark.Walk()
 	me.XsdGoPkgHasElem_NetworkLink.Walk()
+	me.XsdGoPkgHasElem_AbstractContainerGroup.Walk()
 	me.AbstractFeatureGroup.Walk()
  }
 
-type XsdGoPkgHasElem_LineStyleObjectExtensionGroup struct {
-	LineStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LineStyleObjectExtensionGroup"`
+type XsdGoPkgHasElem_LinkObjectExtensionGroup struct {
+	LinkObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LinkObjectExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_LineStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LineStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LineStyleObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_LineStyleObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_LineStyleObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup struct {
-	AbstractLatLonBoxObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractLatLonBoxObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_LodObjectExtensionGroup struct {
-	LodObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LodObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_LodObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LodObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LodObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_LodObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_LodObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_LabelStyleObjectExtensionGroup struct {
-	LabelStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LabelStyleObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_LabelStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LabelStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LabelStyleObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_LabelStyleObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_LabelStyleObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_KmlObjectExtensionGroup struct {
-	KmlObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 KmlObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_KmlObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_KmlObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_KmlObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_KmlObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_KmlObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_AbstractViewObjectExtensionGroup struct {
-	AbstractViewObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractViewObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AbstractViewObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractViewObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractViewObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_AbstractViewObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractViewObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_ItemIcon struct {
-	ItemIcon *TItemIconType `xml:"http://www.opengis.net/kml/2.2 ItemIcon"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ItemIcon function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ItemIcon instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ItemIcon instance.
-func (me *XsdGoPkgHasElem_ItemIcon) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ItemIcon; fn != nil { fn(me) }
-	me.ItemIcon.Walk()
+//	If the WalkHandlers.XsdGoPkgHasElem_LinkObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LinkObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LinkObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_LinkObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_LinkObjectExtensionGroup; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElem_LookAtObjectExtensionGroup struct {
@@ -6258,24 +6483,74 @@ func (me *XsdGoPkgHasElem_LookAtObjectExtensionGroup) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElem_LookAtObjectExtensionGroup; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_AliasObjectExtensionGroup struct {
-	AliasObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AliasObjectExtensionGroup"`
+type XsdGoPkgHasElem_BasicLinkObjectExtensionGroup struct {
+	BasicLinkObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 BasicLinkObjectExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_AliasObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AliasObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AliasObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_AliasObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AliasObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_BasicLinkObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_BasicLinkObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_BasicLinkObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_BasicLinkObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_BasicLinkObjectExtensionGroup; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_ResourceMapObjectExtensionGroup struct {
-	ResourceMapObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ResourceMapObjectExtensionGroup"`
+type XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup struct {
+	ImagePyramidObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ImagePyramidObjectExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_ResourceMapObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ResourceMapObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ResourceMapObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_ResourceMapObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ResourceMapObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_PolygonObjectExtensionGroup struct {
+	PolygonObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PolygonObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_PolygonObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PolygonObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_PolygonObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_PolygonObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_PolygonObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_KmlObjectExtensionGroup struct {
+	KmlObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 KmlObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_KmlObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_KmlObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_KmlObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_KmlObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_KmlObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup struct {
+	ViewVolumeObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ViewVolumeObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_AbstractViewObjectExtensionGroup struct {
+	AbstractViewObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractViewObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AbstractViewObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractViewObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractViewObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_AbstractViewObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractViewObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup struct {
+	AbstractTimePrimitiveObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElem_TimeStampObjectExtensionGroup struct {
@@ -6286,66 +6561,6 @@ type XsdGoPkgHasElem_TimeStampObjectExtensionGroup struct {
 //	If the WalkHandlers.XsdGoPkgHasElem_TimeStampObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_TimeStampObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_TimeStampObjectExtensionGroup instance.
 func (me *XsdGoPkgHasElem_TimeStampObjectExtensionGroup) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_TimeStampObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_LinearRingObjectExtensionGroup struct {
-	LinearRingObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LinearRingObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_LinearRingObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LinearRingObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LinearRingObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_LinearRingObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_LinearRingObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_OrientationObjectExtensionGroup struct {
-	OrientationObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 OrientationObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_OrientationObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_OrientationObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_OrientationObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_OrientationObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_OrientationObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup struct {
-	AbstractGeometryObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractGeometryObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup struct {
-	ScreenOverlayObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ScreenOverlayObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_PolyStyleObjectExtensionGroup struct {
-	PolyStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PolyStyleObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PolyStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PolyStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_PolyStyleObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_PolyStyleObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_PolyStyleObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup struct {
-	AbstractFeatureObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractFeatureObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElem_Data struct {
@@ -6359,98 +6574,6 @@ func (me *XsdGoPkgHasElem_Data) Walk ()  {
 	me.Data.Walk()
  }
 
-type XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup struct {
-	AbstractTimePrimitiveObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_SchemaData struct {
-	SchemaData *TSchemaDataType `xml:"http://www.opengis.net/kml/2.2 SchemaData"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_SchemaData function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_SchemaData instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_SchemaData instance.
-func (me *XsdGoPkgHasElem_SchemaData) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_SchemaData; fn != nil { fn(me) }
-	me.SchemaData.Walk()
- }
-
-type XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup struct {
-	AbstractContainerObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractContainerObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_PolygonObjectExtensionGroup struct {
-	PolygonObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PolygonObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PolygonObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PolygonObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_PolygonObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_PolygonObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_PolygonObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_ModelObjectExtensionGroup struct {
-	ModelObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ModelObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ModelObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ModelObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ModelObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_ModelObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ModelObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup struct {
-	LatLonBoxObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LatLonBoxObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup struct {
-	NetworkLinkControlObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 NetworkLinkControlObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_Alias struct {
-	Alias *TAliasType `xml:"http://www.opengis.net/kml/2.2 Alias"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Alias function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Alias instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Alias instance.
-func (me *XsdGoPkgHasElem_Alias) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Alias; fn != nil { fn(me) }
-	me.Alias.Walk()
- }
-
-type XsdGoPkgHasElem_LinkObjectExtensionGroup struct {
-	LinkObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LinkObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_LinkObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LinkObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LinkObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_LinkObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_LinkObjectExtensionGroup; fn != nil { fn(me) }
- }
-
 type XsdGoPkgHasElem_BoundaryObjectExtensionGroup struct {
 	BoundaryObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 BoundaryObjectExtensionGroup"`
 
@@ -6461,44 +6584,14 @@ func (me *XsdGoPkgHasElem_BoundaryObjectExtensionGroup) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElem_BoundaryObjectExtensionGroup; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_PairObjectExtensionGroup struct {
-	PairObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PairObjectExtensionGroup"`
+type XsdGoPkgHasElem_PolyStyleObjectExtensionGroup struct {
+	PolyStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PolyStyleObjectExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_PairObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PairObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_PairObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_PairObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_PairObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_LineStringObjectExtensionGroup struct {
-	LineStringObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LineStringObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_LineStringObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LineStringObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LineStringObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_LineStringObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_LineStringObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_ScaleObjectExtensionGroup struct {
-	ScaleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ScaleObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ScaleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ScaleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ScaleObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_ScaleObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ScaleObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_PlacemarkObjectExtensionGroup struct {
-	PlacemarkObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PlacemarkObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PlacemarkObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PlacemarkObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_PlacemarkObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_PlacemarkObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_PlacemarkObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_PolyStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PolyStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_PolyStyleObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_PolyStyleObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_PolyStyleObjectExtensionGroup; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElem_StyleMapObjectExtensionGroup struct {
@@ -6511,421 +6604,327 @@ func (me *XsdGoPkgHasElem_StyleMapObjectExtensionGroup) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElem_StyleMapObjectExtensionGroup; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup struct {
-	LatLonAltBoxObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LatLonAltBoxObjectExtensionGroup"`
+type XsdGoPkgHasElem_LineStyleObjectExtensionGroup struct {
+	LineStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LineStyleObjectExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_LineStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LineStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LineStyleObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_LineStyleObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_LineStyleObjectExtensionGroup; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_TimeSpanObjectExtensionGroup struct {
-	TimeSpanObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 TimeSpanObjectExtensionGroup"`
+type XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup struct {
+	LatLonBoxObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 LatLonBoxObjectExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_TimeSpanObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_TimeSpanObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_TimeSpanObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_TimeSpanObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_TimeSpanObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup struct {
-	NetworkLinkObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 NetworkLinkObjectExtensionGroup"`
+type XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup struct {
+	AbstractColorStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractColorStyleObjectExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_RegionObjectExtensionGroup struct {
-	RegionObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 RegionObjectExtensionGroup"`
+type XsdGoPkgHasElem_PairObjectExtensionGroup struct {
+	PairObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PairObjectExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_RegionObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_RegionObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_RegionObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_RegionObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_RegionObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_PairObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PairObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_PairObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_PairObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_PairObjectExtensionGroup; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_BasicLinkObjectExtensionGroup struct {
-	BasicLinkObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 BasicLinkObjectExtensionGroup"`
+type XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup struct {
+	PhotoOverlayObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PhotoOverlayObjectExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_BasicLinkObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_BasicLinkObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_BasicLinkObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_BasicLinkObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_BasicLinkObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup struct {
-	BalloonStyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 BalloonStyleObjectExtensionGroup"`
+type XsdGoPkgHasElem_ModelObjectExtensionGroup struct {
+	ModelObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ModelObjectExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_ModelObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ModelObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ModelObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_ModelObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_ModelObjectExtensionGroup; fn != nil { fn(me) }
  }
 
-type XsdGoPkgHasElem_StyleObjectExtensionGroup struct {
-	StyleObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 StyleObjectExtensionGroup"`
+type XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup struct {
+	AbstractFeatureObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 AbstractFeatureObjectExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_StyleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_StyleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_StyleObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_StyleObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_StyleObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_ItemIconObjectExtensionGroup struct {
-	ItemIconObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 ItemIconObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ItemIconObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ItemIconObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_ItemIconObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_ItemIconObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ItemIconObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_PointObjectExtensionGroup struct {
-	PointObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 PointObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PointObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PointObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_PointObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_PointObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_PointObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup struct {
-	MultiGeometryObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 MultiGeometryObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_CameraObjectExtensionGroup struct {
-	CameraObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 CameraObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_CameraObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_CameraObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_CameraObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_CameraObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_CameraObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElem_AbstractColorStyleGroup struct {
-	AbstractColorStyleGroup *TAbstractColorStyleType `xml:"http://www.opengis.net/kml/2.2 AbstractColorStyleGroup"`
-
-	XsdGoPkgHasElem_LineStyle
-
-	XsdGoPkgHasElem_IconStyle
-
-	XsdGoPkgHasElem_PolyStyle
-
-	XsdGoPkgHasElem_LabelStyle
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AbstractColorStyleGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractColorStyleGroup instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AbstractColorStyleGroup instance.
-func (me *XsdGoPkgHasElem_AbstractColorStyleGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractColorStyleGroup; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_LineStyle.Walk()
-	me.XsdGoPkgHasElem_IconStyle.Walk()
-	me.XsdGoPkgHasElem_PolyStyle.Walk()
-	me.XsdGoPkgHasElem_LabelStyle.Walk()
-	me.AbstractColorStyleGroup.Walk()
- }
-
-type XsdGoPkgHasElem_AbstractSubStyleGroup struct {
-	AbstractSubStyleGroup *TAbstractSubStyleType `xml:"http://www.opengis.net/kml/2.2 AbstractSubStyleGroup"`
-
-	XsdGoPkgHasElem_ListStyle
-
-	XsdGoPkgHasElem_BalloonStyle
-
-	XsdGoPkgHasElem_AbstractColorStyleGroup
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AbstractSubStyleGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractSubStyleGroup instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AbstractSubStyleGroup instance.
-func (me *XsdGoPkgHasElem_AbstractSubStyleGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractSubStyleGroup; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_BalloonStyle.Walk()
-	me.XsdGoPkgHasElem_AbstractColorStyleGroup.Walk()
-	me.XsdGoPkgHasElem_ListStyle.Walk()
-	me.AbstractSubStyleGroup.Walk()
- }
-
-type XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup struct {
-	GroundOverlayObjectExtensionGroup xsdt.String `xml:"http://www.opengis.net/kml/2.2 GroundOverlayObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElem_AbstractObjectGroup struct {
 	AbstractObjectGroup *TAbstractObjectType `xml:"http://www.opengis.net/kml/2.2 AbstractObjectGroup"`
 
-	XsdGoPkgHasElem_LodObjectExtensionGroup
+	XsdGoPkgHasElem_BoundaryObjectExtensionGroup
 
-	XsdGoPkgHasElem_LabelStyleObjectExtensionGroup
+	XsdGoPkgHasElem_PolyStyleObjectExtensionGroup
 
-	XsdGoPkgHasElem_KmlObjectExtensionGroup
+	XsdGoPkgHasElem_StyleMapObjectExtensionGroup
 
-	XsdGoPkgHasElem_AbstractViewObjectExtensionGroup
+	XsdGoPkgHasElem_Location
 
-	XsdGoPkgHasElem_ItemIcon
+	XsdGoPkgHasElem_LineStyleObjectExtensionGroup
 
-	XsdGoPkgHasElem_LookAtObjectExtensionGroup
+	XsdGoPkgHasElem_ImagePyramid
 
-	XsdGoPkgHasElem_Lod
+	XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup
 
-	XsdGoPkgHasElem_AliasObjectExtensionGroup
+	XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup
 
-	XsdGoPkgHasElem_ResourceMapObjectExtensionGroup
+	XsdGoPkgHasElem_PairObjectExtensionGroup
 
-	XsdGoPkgHasElem_Link
+	XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup
 
-	XsdGoPkgHasElem_TimeStampObjectExtensionGroup
+	XsdGoPkgHasElem_ModelObjectExtensionGroup
+
+	XsdGoPkgHasElem_LatLonAltBox
+
+	XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup
 
 	XsdGoPkgHasElem_LatLonBox
 
-	XsdGoPkgHasElem_LinearRingObjectExtensionGroup
-
-	XsdGoPkgHasElem_OrientationObjectExtensionGroup
-
-	XsdGoPkgHasElem_Location
+	XsdGoPkgHasElem_Lod
 
 //	Url deprecated in 2.2
 	XsdGoPkgHasElem_Url
 
+	XsdGoPkgHasElem_AbstractTimePrimitiveGroup
+
+	XsdGoPkgHasElem_AbstractStyleSelectorGroup
+
+	XsdGoPkgHasElem_Scale
+
+	XsdGoPkgHasElem_StyleObjectExtensionGroup
+
+	XsdGoPkgHasElem_ViewVolume
+
+	XsdGoPkgHasElem_AbstractSubStyleGroup
+
+	XsdGoPkgHasElem_AbstractGeometryGroup
+
+	XsdGoPkgHasElem_LinearRingObjectExtensionGroup
+
+	XsdGoPkgHasElem_CameraObjectExtensionGroup
+
+	XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup
+
+	XsdGoPkgHasElem_Pair
+
+	XsdGoPkgHasElem_Icon
+
+	XsdGoPkgHasElem_FolderObjectExtensionGroup
+
 	XsdGoPkgHasElem_Region
 
+	XsdGoPkgHasElem_Alias
+
+	XsdGoPkgHasElem_ResourceMap
+
+	XsdGoPkgHasElem_PlacemarkObjectExtensionGroup
+
+	XsdGoPkgHasElem_LabelStyleObjectExtensionGroup
+
 	XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup
+
+	XsdGoPkgHasElem_TimeSpanObjectExtensionGroup
+
+	XsdGoPkgHasElem_DocumentObjectExtensionGroup
+
+	XsdGoPkgHasElem_LodObjectExtensionGroup
+
+	XsdGoPkgHasElem_LineStringObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup
+
+	XsdGoPkgHasElem_LocationObjectExtensionGroup
+
+	XsdGoPkgHasElem_OrientationObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup
+
+	XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup
+
+	XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup
+
+	XsdGoPkgHasElem_Link
+
+	XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup
 
 	XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup
 
 	XsdGoPkgHasElem_Orientation
 
-	XsdGoPkgHasElem_Scale
-
-	XsdGoPkgHasElem_PolyStyleObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup
-
-	XsdGoPkgHasElem_Data
-
-	XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup
-
-	XsdGoPkgHasElem_SchemaData
-
-	XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup
-
-	XsdGoPkgHasElem_PolygonObjectExtensionGroup
-
-	XsdGoPkgHasElem_ModelObjectExtensionGroup
-
-	XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup
-
-	XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractGeometryGroup
-
-	XsdGoPkgHasElem_Alias
-
-	XsdGoPkgHasElem_LinkObjectExtensionGroup
-
-	XsdGoPkgHasElem_BoundaryObjectExtensionGroup
-
-	XsdGoPkgHasElem_PairObjectExtensionGroup
-
-	XsdGoPkgHasElem_LineStringObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractStyleSelectorGroup
-
-	XsdGoPkgHasElem_ScaleObjectExtensionGroup
-
-	XsdGoPkgHasElem_PlacemarkObjectExtensionGroup
-
-	XsdGoPkgHasElem_StyleMapObjectExtensionGroup
-
-	XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup
-
-	XsdGoPkgHasElem_Icon
-
-	XsdGoPkgHasElem_TimeSpanObjectExtensionGroup
-
-	XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup
+	XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup
 
 	XsdGoPkgHasElem_RegionObjectExtensionGroup
 
-	XsdGoPkgHasElem_AbstractViewGroup
-
-	XsdGoPkgHasElem_BasicLinkObjectExtensionGroup
-
-	XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup
-
-	XsdGoPkgHasElem_StyleObjectExtensionGroup
-
-	XsdGoPkgHasElem_ItemIconObjectExtensionGroup
-
-	XsdGoPkgHasElem_ImagePyramid
-
-	XsdGoPkgHasElem_PointObjectExtensionGroup
-
-	XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup
-
-	XsdGoPkgHasElem_CameraObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractSubStyleGroup
-
-	XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup
-
-	XsdGoPkgHasElem_DocumentObjectExtensionGroup
-
-	XsdGoPkgHasElem_ResourceMap
-
-	XsdGoPkgHasElem_FolderObjectExtensionGroup
-
-	XsdGoPkgHasElem_LocationObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractTimePrimitiveGroup
-
-	XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup
-
-	XsdGoPkgHasElem_Pair
-
-	XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup
-
-	XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup
-
-	XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup
-
-	XsdGoPkgHasElem_IconStyleObjectExtensionGroup
+	XsdGoPkgHasElem_SchemaData
 
 	XsdGoPkgHasElem_ListStyleObjectExtensionGroup
 
-	XsdGoPkgHasElem_ViewVolume
+	XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup
+
+	XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup
+
+	XsdGoPkgHasElem_ScaleObjectExtensionGroup
+
+	XsdGoPkgHasElem_ItemIconObjectExtensionGroup
+
+	XsdGoPkgHasElem_ResourceMapObjectExtensionGroup
+
+	XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup
+
+	XsdGoPkgHasElem_PointObjectExtensionGroup
+
+	XsdGoPkgHasElem_AliasObjectExtensionGroup
+
+	XsdGoPkgHasElem_ItemIcon
+
+	XsdGoPkgHasElem_IconStyleObjectExtensionGroup
 
 	XsdGoPkgHasElem_AbstractFeatureGroup
 
-	XsdGoPkgHasElem_LineStyleObjectExtensionGroup
+	XsdGoPkgHasElem_LinkObjectExtensionGroup
 
-	XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup
+	XsdGoPkgHasElem_LookAtObjectExtensionGroup
 
-	XsdGoPkgHasElem_LatLonAltBox
+	XsdGoPkgHasElem_BasicLinkObjectExtensionGroup
+
+	XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup
+
+	XsdGoPkgHasElem_PolygonObjectExtensionGroup
+
+	XsdGoPkgHasElem_KmlObjectExtensionGroup
+
+	XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractViewObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup
+
+	XsdGoPkgHasElem_AbstractViewGroup
+
+	XsdGoPkgHasElem_TimeStampObjectExtensionGroup
+
+	XsdGoPkgHasElem_Data
 
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_AbstractObjectGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AbstractObjectGroup instance as the single argument. Then calls the Walk() method on 77/77 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AbstractObjectGroup instance.
 func (me *XsdGoPkgHasElem_AbstractObjectGroup) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElem_AbstractObjectGroup; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_OrientationObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_TimeStampObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_Data.Walk()
+	me.XsdGoPkgHasElem_BoundaryObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_PolyStyleObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_StyleMapObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElem_Location.Walk()
+	me.XsdGoPkgHasElem_LineStyleObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_ImagePyramid.Walk()
+	me.XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_PairObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_ModelObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_LatLonAltBox.Walk()
+	me.XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_LatLonBox.Walk()
+	me.XsdGoPkgHasElem_Lod.Walk()
 	me.XsdGoPkgHasElem_Url.Walk()
+	me.XsdGoPkgHasElem_AbstractTimePrimitiveGroup.Walk()
+	me.XsdGoPkgHasElem_AbstractStyleSelectorGroup.Walk()
+	me.XsdGoPkgHasElem_Scale.Walk()
+	me.XsdGoPkgHasElem_StyleObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_ViewVolume.Walk()
+	me.XsdGoPkgHasElem_AbstractSubStyleGroup.Walk()
+	me.XsdGoPkgHasElem_AbstractGeometryGroup.Walk()
+	me.XsdGoPkgHasElem_LinearRingObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_CameraObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_Pair.Walk()
+	me.XsdGoPkgHasElem_Icon.Walk()
+	me.XsdGoPkgHasElem_FolderObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElem_Region.Walk()
+	me.XsdGoPkgHasElem_Alias.Walk()
+	me.XsdGoPkgHasElem_ResourceMap.Walk()
+	me.XsdGoPkgHasElem_PlacemarkObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_LabelStyleObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_TimeSpanObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_DocumentObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_LodObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_LineStringObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_LocationObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_OrientationObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_Link.Walk()
+	me.XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElem_Orientation.Walk()
-	me.XsdGoPkgHasElem_Scale.Walk()
-	me.XsdGoPkgHasElem_PolyStyleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_Data.Walk()
-	me.XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_SchemaData.Walk()
-	me.XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_PolygonObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_ModelObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_AbstractGeometryGroup.Walk()
-	me.XsdGoPkgHasElem_Alias.Walk()
-	me.XsdGoPkgHasElem_LinkObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_BoundaryObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_PairObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_LineStringObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_AbstractStyleSelectorGroup.Walk()
-	me.XsdGoPkgHasElem_ScaleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_PlacemarkObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_StyleMapObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_Icon.Walk()
-	me.XsdGoPkgHasElem_TimeSpanObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_RegionObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_AbstractViewGroup.Walk()
-	me.XsdGoPkgHasElem_BasicLinkObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_StyleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_ItemIconObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_ImagePyramid.Walk()
-	me.XsdGoPkgHasElem_PointObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_CameraObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_AbstractSubStyleGroup.Walk()
-	me.XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_DocumentObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_ResourceMap.Walk()
-	me.XsdGoPkgHasElem_FolderObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_LocationObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_AbstractTimePrimitiveGroup.Walk()
-	me.XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_Pair.Walk()
-	me.XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_IconStyleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_ListStyleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_ViewVolume.Walk()
-	me.XsdGoPkgHasElem_AbstractFeatureGroup.Walk()
-	me.XsdGoPkgHasElem_LineStyleObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_LatLonAltBox.Walk()
-	me.XsdGoPkgHasElem_LodObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_LabelStyleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_KmlObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_AbstractViewObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_ItemIcon.Walk()
-	me.XsdGoPkgHasElem_LookAtObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_Lod.Walk()
-	me.XsdGoPkgHasElem_AliasObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_RegionObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_SchemaData.Walk()
+	me.XsdGoPkgHasElem_ListStyleObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_ScaleObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_ItemIconObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElem_ResourceMapObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_Link.Walk()
-	me.XsdGoPkgHasElem_TimeStampObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_LatLonBox.Walk()
-	me.XsdGoPkgHasElem_LinearRingObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_PointObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_AliasObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_ItemIcon.Walk()
+	me.XsdGoPkgHasElem_IconStyleObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_AbstractFeatureGroup.Walk()
+	me.XsdGoPkgHasElem_LinkObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_LookAtObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_BasicLinkObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_PolygonObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_KmlObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_AbstractViewObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_AbstractViewGroup.Walk()
 	me.AbstractObjectGroup.Walk()
  }
 
-type XsdGoPkgHasElems_LatLonBox struct {
-	LatLonBoxs []*TLatLonBoxType `xml:"http://www.opengis.net/kml/2.2 LatLonBox"`
+type XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup struct {
+	NetworkLinkControlObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 NetworkLinkControlObjectExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_LatLonBox function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LatLonBox instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LatLonBox instance.
-func (me *XsdGoPkgHasElems_LatLonBox) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LatLonBox; fn != nil { fn(me) }
-	for _, x := range me.LatLonBoxs { x.Walk() }
+//	If the WalkHandlers.XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElems_Lod struct {
@@ -6939,144 +6938,54 @@ func (me *XsdGoPkgHasElems_Lod) Walk ()  {
 	for _, x := range me.Lods { x.Walk() }
  }
 
-type XsdGoPkgHasElems_ScaleObjectExtensionGroup struct {
-	ScaleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ScaleObjectExtensionGroup"`
+type XsdGoPkgHasElems_TimeStamp struct {
+	TimeStamps []*TimeStampType `xml:"http://www.opengis.net/kml/2.2 TimeStamp"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_ScaleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ScaleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ScaleObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_ScaleObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ScaleObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_TimeStamp function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_TimeStamp instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_TimeStamp instance.
+func (me *XsdGoPkgHasElems_TimeStamp) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_TimeStamp; fn != nil { fn(me) }
+	for _, x := range me.TimeStamps { x.Walk() }
  }
 
-type XsdGoPkgHasElems_ListStyle struct {
-	ListStyles []*TListStyleType `xml:"http://www.opengis.net/kml/2.2 ListStyle"`
+type XsdGoPkgHasElems_TimeSpan struct {
+	TimeSpans []*TimeSpanType `xml:"http://www.opengis.net/kml/2.2 TimeSpan"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_ListStyle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ListStyle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ListStyle instance.
-func (me *XsdGoPkgHasElems_ListStyle) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ListStyle; fn != nil { fn(me) }
-	for _, x := range me.ListStyles { x.Walk() }
+//	If the WalkHandlers.XsdGoPkgHasElems_TimeSpan function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_TimeSpan instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_TimeSpan instance.
+func (me *XsdGoPkgHasElems_TimeSpan) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_TimeSpan; fn != nil { fn(me) }
+	for _, x := range me.TimeSpans { x.Walk() }
  }
 
-type XsdGoPkgHasElems_LineStyle struct {
-	LineStyles []*TLineStyleType `xml:"http://www.opengis.net/kml/2.2 LineStyle"`
+type XsdGoPkgHasElems_AbstractTimePrimitiveGroup struct {
+	AbstractTimePrimitiveGroups []*TAbstractTimePrimitiveType `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveGroup"`
+
+	XsdGoPkgHasElems_TimeSpan
+
+	XsdGoPkgHasElems_TimeStamp
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_LineStyle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LineStyle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LineStyle instance.
-func (me *XsdGoPkgHasElems_LineStyle) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LineStyle; fn != nil { fn(me) }
-	for _, x := range me.LineStyles { x.Walk() }
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractTimePrimitiveGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractTimePrimitiveGroup instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractTimePrimitiveGroup instance.
+func (me *XsdGoPkgHasElems_AbstractTimePrimitiveGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractTimePrimitiveGroup; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_TimeSpan.Walk()
+	me.XsdGoPkgHasElems_TimeStamp.Walk()
+	for _, x := range me.AbstractTimePrimitiveGroups { x.Walk() }
  }
 
-type XsdGoPkgHasElems_LabelStyle struct {
-	LabelStyles []*TLabelStyleType `xml:"http://www.opengis.net/kml/2.2 LabelStyle"`
+type XsdGoPkgHasElems_LatLonBox struct {
+	LatLonBoxs []*TLatLonBoxType `xml:"http://www.opengis.net/kml/2.2 LatLonBox"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_LabelStyle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LabelStyle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LabelStyle instance.
-func (me *XsdGoPkgHasElems_LabelStyle) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LabelStyle; fn != nil { fn(me) }
-	for _, x := range me.LabelStyles { x.Walk() }
- }
-
-type XsdGoPkgHasElems_PolyStyle struct {
-	PolyStyles []*TPolyStyleType `xml:"http://www.opengis.net/kml/2.2 PolyStyle"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PolyStyle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PolyStyle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PolyStyle instance.
-func (me *XsdGoPkgHasElems_PolyStyle) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_PolyStyle; fn != nil { fn(me) }
-	for _, x := range me.PolyStyles { x.Walk() }
- }
-
-type XsdGoPkgHasElems_IconStyle struct {
-	IconStyles []*TIconStyleType `xml:"http://www.opengis.net/kml/2.2 IconStyle"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_IconStyle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_IconStyle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_IconStyle instance.
-func (me *XsdGoPkgHasElems_IconStyle) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_IconStyle; fn != nil { fn(me) }
-	for _, x := range me.IconStyles { x.Walk() }
- }
-
-type XsdGoPkgHasElems_AbstractColorStyleGroup struct {
-	AbstractColorStyleGroups []*TAbstractColorStyleType `xml:"http://www.opengis.net/kml/2.2 AbstractColorStyleGroup"`
-
-	XsdGoPkgHasElems_LineStyle
-
-	XsdGoPkgHasElems_LabelStyle
-
-	XsdGoPkgHasElems_PolyStyle
-
-	XsdGoPkgHasElems_IconStyle
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractColorStyleGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractColorStyleGroup instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractColorStyleGroup instance.
-func (me *XsdGoPkgHasElems_AbstractColorStyleGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractColorStyleGroup; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_LabelStyle.Walk()
-	me.XsdGoPkgHasElems_PolyStyle.Walk()
-	me.XsdGoPkgHasElems_IconStyle.Walk()
-	me.XsdGoPkgHasElems_LineStyle.Walk()
-	for _, x := range me.AbstractColorStyleGroups { x.Walk() }
- }
-
-type XsdGoPkgHasElems_BalloonStyle struct {
-	BalloonStyles []*TBalloonStyleType `xml:"http://www.opengis.net/kml/2.2 BalloonStyle"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_BalloonStyle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_BalloonStyle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_BalloonStyle instance.
-func (me *XsdGoPkgHasElems_BalloonStyle) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_BalloonStyle; fn != nil { fn(me) }
-	for _, x := range me.BalloonStyles { x.Walk() }
- }
-
-type XsdGoPkgHasElems_AbstractSubStyleGroup struct {
-	AbstractSubStyleGroups []*TAbstractSubStyleType `xml:"http://www.opengis.net/kml/2.2 AbstractSubStyleGroup"`
-
-	XsdGoPkgHasElems_ListStyle
-
-	XsdGoPkgHasElems_AbstractColorStyleGroup
-
-	XsdGoPkgHasElems_BalloonStyle
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractSubStyleGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractSubStyleGroup instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractSubStyleGroup instance.
-func (me *XsdGoPkgHasElems_AbstractSubStyleGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractSubStyleGroup; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_ListStyle.Walk()
-	me.XsdGoPkgHasElems_AbstractColorStyleGroup.Walk()
-	me.XsdGoPkgHasElems_BalloonStyle.Walk()
-	for _, x := range me.AbstractSubStyleGroups { x.Walk() }
- }
-
-type XsdGoPkgHasElems_Location struct {
-	Locations []*TLocationType `xml:"http://www.opengis.net/kml/2.2 Location"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Location function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Location instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Location instance.
-func (me *XsdGoPkgHasElems_Location) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Location; fn != nil { fn(me) }
-	for _, x := range me.Locations { x.Walk() }
- }
-
-type XsdGoPkgHasElems_KmlObjectExtensionGroup struct {
-	KmlObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 KmlObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_KmlObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_KmlObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_KmlObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_KmlObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_KmlObjectExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_LatLonBox function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LatLonBox instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LatLonBox instance.
+func (me *XsdGoPkgHasElems_LatLonBox) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LatLonBox; fn != nil { fn(me) }
+	for _, x := range me.LatLonBoxs { x.Walk() }
  }
 
 type XsdGoPkgHasElems_Region struct {
@@ -7112,6 +7021,201 @@ type XsdGoPkgHasElems_Url struct {
 func (me *XsdGoPkgHasElems_Url) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_Url; fn != nil { fn(me) }
 	for _, x := range me.Urls { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_ResourceMap struct {
+	ResourceMaps []*TResourceMapType `xml:"http://www.opengis.net/kml/2.2 ResourceMap"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ResourceMap function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ResourceMap instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ResourceMap instance.
+func (me *XsdGoPkgHasElems_ResourceMap) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_ResourceMap; fn != nil { fn(me) }
+	for _, x := range me.ResourceMaps { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_ImagePyramid struct {
+	ImagePyramids []*TImagePyramidType `xml:"http://www.opengis.net/kml/2.2 ImagePyramid"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ImagePyramid function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ImagePyramid instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ImagePyramid instance.
+func (me *XsdGoPkgHasElems_ImagePyramid) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_ImagePyramid; fn != nil { fn(me) }
+	for _, x := range me.ImagePyramids { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_PolyStyle struct {
+	PolyStyles []*TPolyStyleType `xml:"http://www.opengis.net/kml/2.2 PolyStyle"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PolyStyle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PolyStyle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PolyStyle instance.
+func (me *XsdGoPkgHasElems_PolyStyle) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_PolyStyle; fn != nil { fn(me) }
+	for _, x := range me.PolyStyles { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_LabelStyle struct {
+	LabelStyles []*TLabelStyleType `xml:"http://www.opengis.net/kml/2.2 LabelStyle"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LabelStyle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LabelStyle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LabelStyle instance.
+func (me *XsdGoPkgHasElems_LabelStyle) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LabelStyle; fn != nil { fn(me) }
+	for _, x := range me.LabelStyles { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_IconStyle struct {
+	IconStyles []*TIconStyleType `xml:"http://www.opengis.net/kml/2.2 IconStyle"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_IconStyle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_IconStyle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_IconStyle instance.
+func (me *XsdGoPkgHasElems_IconStyle) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_IconStyle; fn != nil { fn(me) }
+	for _, x := range me.IconStyles { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_LineStyle struct {
+	LineStyles []*TLineStyleType `xml:"http://www.opengis.net/kml/2.2 LineStyle"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LineStyle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LineStyle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LineStyle instance.
+func (me *XsdGoPkgHasElems_LineStyle) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_LineStyle; fn != nil { fn(me) }
+	for _, x := range me.LineStyles { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_AbstractColorStyleGroup struct {
+	AbstractColorStyleGroups []*TAbstractColorStyleType `xml:"http://www.opengis.net/kml/2.2 AbstractColorStyleGroup"`
+
+	XsdGoPkgHasElems_PolyStyle
+
+	XsdGoPkgHasElems_LabelStyle
+
+	XsdGoPkgHasElems_IconStyle
+
+	XsdGoPkgHasElems_LineStyle
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractColorStyleGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractColorStyleGroup instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractColorStyleGroup instance.
+func (me *XsdGoPkgHasElems_AbstractColorStyleGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractColorStyleGroup; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_PolyStyle.Walk()
+	me.XsdGoPkgHasElems_LabelStyle.Walk()
+	me.XsdGoPkgHasElems_IconStyle.Walk()
+	me.XsdGoPkgHasElems_LineStyle.Walk()
+	for _, x := range me.AbstractColorStyleGroups { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_ListStyle struct {
+	ListStyles []*TListStyleType `xml:"http://www.opengis.net/kml/2.2 ListStyle"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ListStyle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ListStyle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ListStyle instance.
+func (me *XsdGoPkgHasElems_ListStyle) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_ListStyle; fn != nil { fn(me) }
+	for _, x := range me.ListStyles { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_BalloonStyle struct {
+	BalloonStyles []*TBalloonStyleType `xml:"http://www.opengis.net/kml/2.2 BalloonStyle"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_BalloonStyle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_BalloonStyle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_BalloonStyle instance.
+func (me *XsdGoPkgHasElems_BalloonStyle) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_BalloonStyle; fn != nil { fn(me) }
+	for _, x := range me.BalloonStyles { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_AbstractSubStyleGroup struct {
+	AbstractSubStyleGroups []*TAbstractSubStyleType `xml:"http://www.opengis.net/kml/2.2 AbstractSubStyleGroup"`
+
+	XsdGoPkgHasElems_AbstractColorStyleGroup
+
+	XsdGoPkgHasElems_ListStyle
+
+	XsdGoPkgHasElems_BalloonStyle
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AbstractSubStyleGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractSubStyleGroup instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractSubStyleGroup instance.
+func (me *XsdGoPkgHasElems_AbstractSubStyleGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractSubStyleGroup; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_AbstractColorStyleGroup.Walk()
+	me.XsdGoPkgHasElems_ListStyle.Walk()
+	me.XsdGoPkgHasElems_BalloonStyle.Walk()
+	for _, x := range me.AbstractSubStyleGroups { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_ScaleObjectExtensionGroup struct {
+	ScaleObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 ScaleObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ScaleObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ScaleObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ScaleObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_ScaleObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_ScaleObjectExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasElems_Icon struct {
+	Icons []*TLinkType `xml:"http://www.opengis.net/kml/2.2 Icon"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Icon function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Icon instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Icon instance.
+func (me *XsdGoPkgHasElems_Icon) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Icon; fn != nil { fn(me) }
+	for _, x := range me.Icons { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_Link struct {
+	Links []*TLinkType `xml:"http://www.opengis.net/kml/2.2 Link"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Link function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Link instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Link instance.
+func (me *XsdGoPkgHasElems_Link) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Link; fn != nil { fn(me) }
+	for _, x := range me.Links { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_Orientation struct {
+	Orientations []*TOrientationType `xml:"http://www.opengis.net/kml/2.2 Orientation"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Orientation function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Orientation instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Orientation instance.
+func (me *XsdGoPkgHasElems_Orientation) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Orientation; fn != nil { fn(me) }
+	for _, x := range me.Orientations { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_Location struct {
+	Locations []*TLocationType `xml:"http://www.opengis.net/kml/2.2 Location"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Location function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Location instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Location instance.
+func (me *XsdGoPkgHasElems_Location) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Location; fn != nil { fn(me) }
+	for _, x := range me.Locations { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_KmlObjectExtensionGroup struct {
+	KmlObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 KmlObjectExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_KmlObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_KmlObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_KmlObjectExtensionGroup instance.
+func (me *XsdGoPkgHasElems_KmlObjectExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_KmlObjectExtensionGroup; fn != nil { fn(me) }
  }
 
 type XsdGoPkgHasElems_ViewVolume struct {
@@ -7150,364 +7254,260 @@ func (me *XsdGoPkgHasElems_LookAt) Walk ()  {
 type XsdGoPkgHasElems_AbstractViewGroup struct {
 	AbstractViewGroups []*TAbstractViewType `xml:"http://www.opengis.net/kml/2.2 AbstractViewGroup"`
 
-	XsdGoPkgHasElems_Camera
-
 	XsdGoPkgHasElems_LookAt
+
+	XsdGoPkgHasElems_Camera
 
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_AbstractViewGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractViewGroup instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractViewGroup instance.
 func (me *XsdGoPkgHasElems_AbstractViewGroup) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractViewGroup; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Camera.Walk()
 	me.XsdGoPkgHasElems_LookAt.Walk()
+	me.XsdGoPkgHasElems_Camera.Walk()
 	for _, x := range me.AbstractViewGroups { x.Walk() }
- }
-
-type XsdGoPkgHasElems_Icon struct {
-	Icons []*TLinkType `xml:"http://www.opengis.net/kml/2.2 Icon"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Icon function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Icon instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Icon instance.
-func (me *XsdGoPkgHasElems_Icon) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Icon; fn != nil { fn(me) }
-	for _, x := range me.Icons { x.Walk() }
- }
-
-type XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup struct {
-	NetworkLinkControlObjectExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 NetworkLinkControlObjectExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup instance.
-func (me *XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_TimeStamp struct {
-	TimeStamps []*TimeStampType `xml:"http://www.opengis.net/kml/2.2 TimeStamp"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_TimeStamp function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_TimeStamp instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_TimeStamp instance.
-func (me *XsdGoPkgHasElems_TimeStamp) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_TimeStamp; fn != nil { fn(me) }
-	for _, x := range me.TimeStamps { x.Walk() }
- }
-
-type XsdGoPkgHasElems_TimeSpan struct {
-	TimeSpans []*TimeSpanType `xml:"http://www.opengis.net/kml/2.2 TimeSpan"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_TimeSpan function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_TimeSpan instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_TimeSpan instance.
-func (me *XsdGoPkgHasElems_TimeSpan) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_TimeSpan; fn != nil { fn(me) }
-	for _, x := range me.TimeSpans { x.Walk() }
- }
-
-type XsdGoPkgHasElems_AbstractTimePrimitiveGroup struct {
-	AbstractTimePrimitiveGroups []*TAbstractTimePrimitiveType `xml:"http://www.opengis.net/kml/2.2 AbstractTimePrimitiveGroup"`
-
-	XsdGoPkgHasElems_TimeStamp
-
-	XsdGoPkgHasElems_TimeSpan
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AbstractTimePrimitiveGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractTimePrimitiveGroup instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractTimePrimitiveGroup instance.
-func (me *XsdGoPkgHasElems_AbstractTimePrimitiveGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractTimePrimitiveGroup; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_TimeStamp.Walk()
-	me.XsdGoPkgHasElems_TimeSpan.Walk()
-	for _, x := range me.AbstractTimePrimitiveGroups { x.Walk() }
- }
-
-type XsdGoPkgHasElems_ImagePyramid struct {
-	ImagePyramids []*TImagePyramidType `xml:"http://www.opengis.net/kml/2.2 ImagePyramid"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ImagePyramid function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ImagePyramid instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ImagePyramid instance.
-func (me *XsdGoPkgHasElems_ImagePyramid) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ImagePyramid; fn != nil { fn(me) }
-	for _, x := range me.ImagePyramids { x.Walk() }
- }
-
-type XsdGoPkgHasElems_Link struct {
-	Links []*TLinkType `xml:"http://www.opengis.net/kml/2.2 Link"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Link function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Link instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Link instance.
-func (me *XsdGoPkgHasElems_Link) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Link; fn != nil { fn(me) }
-	for _, x := range me.Links { x.Walk() }
- }
-
-type XsdGoPkgHasElems_Orientation struct {
-	Orientations []*TOrientationType `xml:"http://www.opengis.net/kml/2.2 Orientation"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Orientation function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Orientation instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Orientation instance.
-func (me *XsdGoPkgHasElems_Orientation) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Orientation; fn != nil { fn(me) }
-	for _, x := range me.Orientations { x.Walk() }
- }
-
-type XsdGoPkgHasElems_ResourceMap struct {
-	ResourceMaps []*TResourceMapType `xml:"http://www.opengis.net/kml/2.2 ResourceMap"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ResourceMap function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ResourceMap instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ResourceMap instance.
-func (me *XsdGoPkgHasElems_ResourceMap) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ResourceMap; fn != nil { fn(me) }
-	for _, x := range me.ResourceMaps { x.Walk() }
  }
 
 type XsdGoPkgHasElems_AbstractObjectGroup struct {
 	AbstractObjectGroups []*TAbstractObjectType `xml:"http://www.opengis.net/kml/2.2 AbstractObjectGroup"`
 
-	XsdGoPkgHasElems_PlacemarkObjectExtensionGroup
-
-	XsdGoPkgHasElems_PairObjectExtensionGroup
-
-	XsdGoPkgHasElems_TimeStampObjectExtensionGroup
-
-	XsdGoPkgHasElems_Lod
-
 	XsdGoPkgHasElems_IconStyleObjectExtensionGroup
-
-	XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup
-
-	XsdGoPkgHasElems_ItemIconObjectExtensionGroup
-
-	XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup
-
-	XsdGoPkgHasElems_LinearRingObjectExtensionGroup
-
-	XsdGoPkgHasElems_ScaleObjectExtensionGroup
-
-	XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup
-
-	XsdGoPkgHasElems_LineStringObjectExtensionGroup
-
-	XsdGoPkgHasElems_AbstractStyleSelectorGroup
-
-	XsdGoPkgHasElems_LookAtObjectExtensionGroup
-
-	XsdGoPkgHasElems_ModelObjectExtensionGroup
-
-	XsdGoPkgHasElems_PointObjectExtensionGroup
-
-	XsdGoPkgHasElems_LinkObjectExtensionGroup
-
-	XsdGoPkgHasElems_PolygonObjectExtensionGroup
-
-	XsdGoPkgHasElems_AbstractFeatureGroup
-
-	XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup
-
-	XsdGoPkgHasElems_AbstractSubStyleGroup
-
-	XsdGoPkgHasElems_CameraObjectExtensionGroup
-
-	XsdGoPkgHasElems_Scale
-
-	XsdGoPkgHasElems_Location
-
-	XsdGoPkgHasElems_KmlObjectExtensionGroup
 
 	XsdGoPkgHasElems_TimeSpanObjectExtensionGroup
 
+	XsdGoPkgHasElems_PairObjectExtensionGroup
+
+	XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup
+
+	XsdGoPkgHasElems_FolderObjectExtensionGroup
+
+	XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup
+
+	XsdGoPkgHasElems_PlacemarkObjectExtensionGroup
+
+	XsdGoPkgHasElems_ListStyleObjectExtensionGroup
+
+	XsdGoPkgHasElems_CameraObjectExtensionGroup
+
+	XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup
+
+	XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup
+
+	XsdGoPkgHasElems_Lod
+
+	XsdGoPkgHasElems_AbstractTimePrimitiveGroup
+
+	XsdGoPkgHasElems_ItemIcon
+
+	XsdGoPkgHasElems_OrientationObjectExtensionGroup
+
+	XsdGoPkgHasElems_ModelObjectExtensionGroup
+
+	XsdGoPkgHasElems_AbstractViewObjectExtensionGroup
+
 	XsdGoPkgHasElems_ViewVolumeObjectExtensionGroup
 
-	XsdGoPkgHasElems_LodObjectExtensionGroup
+	XsdGoPkgHasElems_LinkObjectExtensionGroup
 
-	XsdGoPkgHasElems_LocationObjectExtensionGroup
+	XsdGoPkgHasElems_Alias
+
+	XsdGoPkgHasElems_LatLonBox
+
+	XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup
+
+	XsdGoPkgHasElems_PointObjectExtensionGroup
 
 	XsdGoPkgHasElems_Region
 
-	XsdGoPkgHasElems_LatLonAltBox
-
-	XsdGoPkgHasElems_LabelStyleObjectExtensionGroup
-
-	XsdGoPkgHasElems_PolyStyleObjectExtensionGroup
-
-	XsdGoPkgHasElems_BoundaryObjectExtensionGroup
+	XsdGoPkgHasElems_AbstractSubStyleObjectExtensionGroup
 
 	XsdGoPkgHasElems_DocumentObjectExtensionGroup
 
-	XsdGoPkgHasElems_ListStyleObjectExtensionGroup
+	XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup
+
+	XsdGoPkgHasElems_LatLonAltBox
+
+	XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup
+
+	XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup
+
+//	Url deprecated in 2.2
+	XsdGoPkgHasElems_Url
+
+	XsdGoPkgHasElems_ResourceMap
+
+	XsdGoPkgHasElems_AliasObjectExtensionGroup
+
+	XsdGoPkgHasElems_LineStyleObjectExtensionGroup
+
+	XsdGoPkgHasElems_ImagePyramid
+
+	XsdGoPkgHasElems_StyleObjectExtensionGroup
+
+	XsdGoPkgHasElems_AbstractSubStyleGroup
+
+	XsdGoPkgHasElems_LookAtObjectExtensionGroup
+
+	XsdGoPkgHasElems_LocationObjectExtensionGroup
 
 	XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup
 
 	XsdGoPkgHasElems_SchemaData
 
-	XsdGoPkgHasElems_AliasObjectExtensionGroup
-
-//	Url deprecated in 2.2
-	XsdGoPkgHasElems_Url
-
-	XsdGoPkgHasElems_ViewVolume
-
-	XsdGoPkgHasElems_LineStyleObjectExtensionGroup
-
-	XsdGoPkgHasElems_BalloonStyleObjectExtensionGroup
-
-	XsdGoPkgHasElems_AbstractViewGroup
-
-	XsdGoPkgHasElems_Alias
-
-	XsdGoPkgHasElems_AbstractGeometryGroup
-
-	XsdGoPkgHasElems_StyleMapObjectExtensionGroup
-
-	XsdGoPkgHasElems_StyleObjectExtensionGroup
-
-	XsdGoPkgHasElems_OrientationObjectExtensionGroup
-
-	XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup
-
-	XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup
-
-	XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup
-
-	XsdGoPkgHasElems_BasicLinkObjectExtensionGroup
+	XsdGoPkgHasElems_ScaleObjectExtensionGroup
 
 	XsdGoPkgHasElems_Icon
 
-	XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup
+	XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup
 
-	XsdGoPkgHasElems_AbstractTimePrimitiveGroup
+	XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup
 
-	XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup
+	XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup
 
-	XsdGoPkgHasElems_ImagePyramid
+	XsdGoPkgHasElems_LineStringObjectExtensionGroup
+
+	XsdGoPkgHasElems_Data
+
+	XsdGoPkgHasElems_AbstractGeometryGroup
+
+	XsdGoPkgHasElems_LabelStyleObjectExtensionGroup
+
+	XsdGoPkgHasElems_LinearRingObjectExtensionGroup
+
+	XsdGoPkgHasElems_StyleMapObjectExtensionGroup
+
+	XsdGoPkgHasElems_Scale
+
+	XsdGoPkgHasElems_PolyStyleObjectExtensionGroup
+
+	XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup
+
+	XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup
 
 	XsdGoPkgHasElems_Link
 
 	XsdGoPkgHasElems_Orientation
 
-	XsdGoPkgHasElems_FolderObjectExtensionGroup
-
-	XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup
-
-	XsdGoPkgHasElems_ItemIcon
-
-	XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup
-
-	XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup
-
-	XsdGoPkgHasElems_AbstractSubStyleObjectExtensionGroup
-
-	XsdGoPkgHasElems_Pair
-
-	XsdGoPkgHasElems_Data
+	XsdGoPkgHasElems_BoundaryObjectExtensionGroup
 
 	XsdGoPkgHasElems_ResourceMapObjectExtensionGroup
 
-	XsdGoPkgHasElems_ResourceMap
+	XsdGoPkgHasElems_Location
 
-	XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup
+	XsdGoPkgHasElems_KmlObjectExtensionGroup
+
+	XsdGoPkgHasElems_ItemIconObjectExtensionGroup
+
+	XsdGoPkgHasElems_ViewVolume
+
+	XsdGoPkgHasElems_Pair
+
+	XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup
 
 	XsdGoPkgHasElems_RegionObjectExtensionGroup
 
-	XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup
+	XsdGoPkgHasElems_LodObjectExtensionGroup
 
-	XsdGoPkgHasElems_LatLonBox
+	XsdGoPkgHasElems_AbstractFeatureGroup
 
-	XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup
+	XsdGoPkgHasElems_BalloonStyleObjectExtensionGroup
+
+	XsdGoPkgHasElems_AbstractStyleSelectorGroup
+
+	XsdGoPkgHasElems_TimeStampObjectExtensionGroup
+
+	XsdGoPkgHasElems_BasicLinkObjectExtensionGroup
 
 	XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup
 
-	XsdGoPkgHasElems_AbstractViewObjectExtensionGroup
+	XsdGoPkgHasElems_AbstractViewGroup
+
+	XsdGoPkgHasElems_PolygonObjectExtensionGroup
+
+	XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup
 
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_AbstractObjectGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AbstractObjectGroup instance as the single argument. Then calls the Walk() method on 77/77 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AbstractObjectGroup instance.
 func (me *XsdGoPkgHasElems_AbstractObjectGroup) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_AbstractObjectGroup; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Lod.Walk()
-	me.XsdGoPkgHasElems_IconStyleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_ItemIconObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_LinearRingObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_ScaleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_LineStringObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractStyleSelectorGroup.Walk()
-	me.XsdGoPkgHasElems_LookAtObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_ModelObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_PointObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_LinkObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_PolygonObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractFeatureGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_Url.Walk()
+	me.XsdGoPkgHasElems_ResourceMap.Walk()
+	me.XsdGoPkgHasElems_AliasObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_LineStyleObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_ImagePyramid.Walk()
+	me.XsdGoPkgHasElems_StyleObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElems_AbstractSubStyleGroup.Walk()
-	me.XsdGoPkgHasElems_CameraObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_Scale.Walk()
-	me.XsdGoPkgHasElems_Location.Walk()
-	me.XsdGoPkgHasElems_KmlObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_TimeSpanObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_ViewVolumeObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_LodObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_LookAtObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElems_LocationObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_Region.Walk()
-	me.XsdGoPkgHasElems_LatLonAltBox.Walk()
-	me.XsdGoPkgHasElems_LabelStyleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_PolyStyleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_BoundaryObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_DocumentObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_ListStyleObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElems_SchemaData.Walk()
-	me.XsdGoPkgHasElems_AliasObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_Url.Walk()
-	me.XsdGoPkgHasElems_ViewVolume.Walk()
-	me.XsdGoPkgHasElems_LineStyleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_BalloonStyleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractViewGroup.Walk()
-	me.XsdGoPkgHasElems_Alias.Walk()
-	me.XsdGoPkgHasElems_AbstractGeometryGroup.Walk()
-	me.XsdGoPkgHasElems_StyleMapObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_StyleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_OrientationObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_BasicLinkObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_ScaleObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElems_Icon.Walk()
-	me.XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractTimePrimitiveGroup.Walk()
-	me.XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_ImagePyramid.Walk()
+	me.XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_LineStringObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_Data.Walk()
+	me.XsdGoPkgHasElems_AbstractGeometryGroup.Walk()
+	me.XsdGoPkgHasElems_LabelStyleObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_LinearRingObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_StyleMapObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_Scale.Walk()
+	me.XsdGoPkgHasElems_PolyStyleObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElems_Link.Walk()
 	me.XsdGoPkgHasElems_Orientation.Walk()
-	me.XsdGoPkgHasElems_FolderObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_ItemIcon.Walk()
-	me.XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractSubStyleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_Pair.Walk()
-	me.XsdGoPkgHasElems_Data.Walk()
+	me.XsdGoPkgHasElems_BoundaryObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElems_ResourceMapObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_ResourceMap.Walk()
-	me.XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_Location.Walk()
+	me.XsdGoPkgHasElems_KmlObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_ItemIconObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_ViewVolume.Walk()
+	me.XsdGoPkgHasElems_Pair.Walk()
+	me.XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElems_RegionObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_LatLonBox.Walk()
-	me.XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_AbstractViewObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_PlacemarkObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_PairObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_LodObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_AbstractFeatureGroup.Walk()
+	me.XsdGoPkgHasElems_BalloonStyleObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_AbstractStyleSelectorGroup.Walk()
 	me.XsdGoPkgHasElems_TimeStampObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_BasicLinkObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_AbstractViewGroup.Walk()
+	me.XsdGoPkgHasElems_PolygonObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_IconStyleObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_TimeSpanObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_PairObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_FolderObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_PlacemarkObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_ListStyleObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_CameraObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_Lod.Walk()
+	me.XsdGoPkgHasElems_AbstractTimePrimitiveGroup.Walk()
+	me.XsdGoPkgHasElems_ItemIcon.Walk()
+	me.XsdGoPkgHasElems_OrientationObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_ModelObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_AbstractViewObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_ViewVolumeObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_LinkObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_Alias.Walk()
+	me.XsdGoPkgHasElems_LatLonBox.Walk()
+	me.XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_PointObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_Region.Walk()
+	me.XsdGoPkgHasElems_AbstractSubStyleObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_DocumentObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_LatLonAltBox.Walk()
+	me.XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup.Walk()
 	for _, x := range me.AbstractObjectGroups { x.Walk() }
  }
 
@@ -7667,20 +7667,15 @@ func (me *XsdGoPkgHasElem_AbstractTimePrimitiveSimpleExtensionGroup) Walk ()  {
  }
 
 //	<kml> is the root element.
-type XsdGoPkgHasElems_KmlSimpleExtensionGroup struct {
-	KmlSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 KmlSimpleExtensionGroup"`
+type XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup struct {
+	NetworkLinkControlSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 NetworkLinkControlSimpleExtensionGroup"`
 
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_KmlSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_KmlSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_KmlSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_KmlSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_KmlSimpleExtensionGroup; fn != nil { fn(me) }
+//	If the WalkHandlers.XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup; fn != nil { fn(me) }
  }
-
-type XsdGoPkgHasAttr_Hint_XsdtString_ struct {
-	Hint xsdt.String `xml:"http://www.opengis.net/kml/2.2 hint,attr"`
-
-}
 
 type TDeleteType struct {
 	XsdGoPkgHasElems_AbstractFeatureGroup
@@ -7702,6 +7697,38 @@ type XsdGoPkgHasElems_Delete struct {
 func (me *XsdGoPkgHasElems_Delete) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_Delete; fn != nil { fn(me) }
 	for _, x := range me.Deletes { x.Walk() }
+ }
+
+type XsdGoPkgHasElems_UpdateOpExtensionGroup struct {
+	UpdateOpExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 UpdateOpExtensionGroup"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_UpdateOpExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_UpdateOpExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_UpdateOpExtensionGroup instance.
+func (me *XsdGoPkgHasElems_UpdateOpExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_UpdateOpExtensionGroup; fn != nil { fn(me) }
+ }
+
+type TChangeType struct {
+	XsdGoPkgHasElems_AbstractObjectGroup
+
+}
+
+//	If the WalkHandlers.TChangeType function is not nil (ie. was set by outside code), calls it with this TChangeType instance as the single argument. Then calls the Walk() method on 1/1 embed(s) and 0/0 field(s) belonging to this TChangeType instance.
+func (me *TChangeType) Walk ()  { 
+	if fn := WalkHandlers.TChangeType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_AbstractObjectGroup.Walk()
+ }
+
+type XsdGoPkgHasElems_Change struct {
+	Changes []*TChangeType `xml:"http://www.opengis.net/kml/2.2 Change"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Change function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Change instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Change instance.
+func (me *XsdGoPkgHasElems_Change) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_Change; fn != nil { fn(me) }
+	for _, x := range me.Changes { x.Walk() }
  }
 
 type TCreateType struct {
@@ -7736,48 +7763,16 @@ func (me *XsdGoPkgHasElems_UpdateExtensionGroup) Walk ()  {
 	if fn := WalkHandlers.XsdGoPkgHasElems_UpdateExtensionGroup; fn != nil { fn(me) }
  }
 
-type TChangeType struct {
-	XsdGoPkgHasElems_AbstractObjectGroup
-
-}
-
-//	If the WalkHandlers.TChangeType function is not nil (ie. was set by outside code), calls it with this TChangeType instance as the single argument. Then calls the Walk() method on 1/1 embed(s) and 0/0 field(s) belonging to this TChangeType instance.
-func (me *TChangeType) Walk ()  { 
-	if fn := WalkHandlers.TChangeType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_AbstractObjectGroup.Walk()
- }
-
-type XsdGoPkgHasElems_Change struct {
-	Changes []*TChangeType `xml:"http://www.opengis.net/kml/2.2 Change"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Change function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Change instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Change instance.
-func (me *XsdGoPkgHasElems_Change) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Change; fn != nil { fn(me) }
-	for _, x := range me.Changes { x.Walk() }
- }
-
-type XsdGoPkgHasElems_UpdateOpExtensionGroup struct {
-	UpdateOpExtensionGroups []xsdt.String `xml:"http://www.opengis.net/kml/2.2 UpdateOpExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_UpdateOpExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_UpdateOpExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_UpdateOpExtensionGroup instance.
-func (me *XsdGoPkgHasElems_UpdateOpExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_UpdateOpExtensionGroup; fn != nil { fn(me) }
- }
-
 type TUpdateType struct {
-	XsdGoPkgHasElem_TargetHref
-
-	XsdGoPkgHasElems_Delete
+	XsdGoPkgHasElems_Change
 
 	XsdGoPkgHasElems_Create
 
+	XsdGoPkgHasElem_TargetHref
+
 	XsdGoPkgHasElems_UpdateExtensionGroup
 
-	XsdGoPkgHasElems_Change
+	XsdGoPkgHasElems_Delete
 
 	XsdGoPkgHasElems_UpdateOpExtensionGroup
 
@@ -7786,12 +7781,12 @@ type TUpdateType struct {
 //	If the WalkHandlers.TUpdateType function is not nil (ie. was set by outside code), calls it with this TUpdateType instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this TUpdateType instance.
 func (me *TUpdateType) Walk ()  { 
 	if fn := WalkHandlers.TUpdateType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Change.Walk()
-	me.XsdGoPkgHasElems_UpdateOpExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_TargetHref.Walk()
-	me.XsdGoPkgHasElems_Delete.Walk()
-	me.XsdGoPkgHasElems_Create.Walk()
 	me.XsdGoPkgHasElems_UpdateExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_Delete.Walk()
+	me.XsdGoPkgHasElems_UpdateOpExtensionGroup.Walk()
+	me.XsdGoPkgHasElems_Change.Walk()
+	me.XsdGoPkgHasElems_Create.Walk()
+	me.XsdGoPkgHasElem_TargetHref.Walk()
  }
 
 type XsdGoPkgHasElem_Update struct {
@@ -7805,58 +7800,48 @@ func (me *XsdGoPkgHasElem_Update) Walk ()  {
 	me.Update.Walk()
  }
 
-type XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup struct {
-	NetworkLinkControlSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 NetworkLinkControlSimpleExtensionGroup"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup instance.
-func (me *XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup; fn != nil { fn(me) }
- }
-
 type TNetworkLinkControlType struct {
+	XsdGoPkgHasElem_Message
+
+	XsdGoPkgHasElem_Expires
+
+	XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup
+
+	XsdGoPkgHasElem_MinRefreshPeriod
+
+	XsdGoPkgHasElem_LinkDescription
+
 	XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup
 
-	XsdGoPkgHasElem_AbstractViewGroup
+	XsdGoPkgHasElem_Update
 
 	XsdGoPkgHasElem_MaxSessionLength
 
 	XsdGoPkgHasElem_LinkSnippet
 
-	XsdGoPkgHasElem_MinRefreshPeriod
+	XsdGoPkgHasElem_LinkName
 
 	XsdGoPkgHasElem_Cookie
 
-	XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup
-
-	XsdGoPkgHasElem_Update
-
-	XsdGoPkgHasElem_Expires
-
-	XsdGoPkgHasElem_LinkName
-
-	XsdGoPkgHasElem_Message
-
-	XsdGoPkgHasElem_LinkDescription
+	XsdGoPkgHasElem_AbstractViewGroup
 
 }
 
 //	If the WalkHandlers.TNetworkLinkControlType function is not nil (ie. was set by outside code), calls it with this TNetworkLinkControlType instance as the single argument. Then calls the Walk() method on 12/12 embed(s) and 0/0 field(s) belonging to this TNetworkLinkControlType instance.
 func (me *TNetworkLinkControlType) Walk ()  { 
 	if fn := WalkHandlers.TNetworkLinkControlType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Expires.Walk()
-	me.XsdGoPkgHasElem_LinkName.Walk()
 	me.XsdGoPkgHasElem_Message.Walk()
+	me.XsdGoPkgHasElem_Expires.Walk()
+	me.XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup.Walk()
+	me.XsdGoPkgHasElem_MinRefreshPeriod.Walk()
 	me.XsdGoPkgHasElem_LinkDescription.Walk()
 	me.XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_AbstractViewGroup.Walk()
+	me.XsdGoPkgHasElem_Update.Walk()
 	me.XsdGoPkgHasElem_MaxSessionLength.Walk()
 	me.XsdGoPkgHasElem_LinkSnippet.Walk()
-	me.XsdGoPkgHasElem_MinRefreshPeriod.Walk()
+	me.XsdGoPkgHasElem_LinkName.Walk()
 	me.XsdGoPkgHasElem_Cookie.Walk()
-	me.XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup.Walk()
-	me.XsdGoPkgHasElem_Update.Walk()
+	me.XsdGoPkgHasElem_AbstractViewGroup.Walk()
  }
 
 type XsdGoPkgHasElem_NetworkLinkControl struct {
@@ -7870,41 +7855,43 @@ func (me *XsdGoPkgHasElem_NetworkLinkControl) Walk ()  {
 	me.NetworkLinkControl.Walk()
  }
 
-type TKmlType struct {
-	XsdGoPkgHasElems_KmlSimpleExtensionGroup
+type XsdGoPkgHasElems_KmlSimpleExtensionGroup struct {
+	KmlSimpleExtensionGroups []xsdt.AnySimpleType `xml:"http://www.opengis.net/kml/2.2 KmlSimpleExtensionGroup"`
 
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_KmlSimpleExtensionGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_KmlSimpleExtensionGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_KmlSimpleExtensionGroup instance.
+func (me *XsdGoPkgHasElems_KmlSimpleExtensionGroup) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElems_KmlSimpleExtensionGroup; fn != nil { fn(me) }
+ }
+
+type XsdGoPkgHasAttr_Hint_XsdtString_ struct {
+	Hint xsdt.String `xml:"http://www.opengis.net/kml/2.2 hint,attr"`
+
+}
+
+type TKmlType struct {
 	XsdGoPkgHasElems_KmlObjectExtensionGroup
+
+	XsdGoPkgHasElem_NetworkLinkControl
+
+	XsdGoPkgHasElems_KmlSimpleExtensionGroup
 
 	XsdGoPkgHasAttr_Hint_XsdtString_
 
 	XsdGoPkgHasElem_AbstractFeatureGroup
-
-	XsdGoPkgHasElem_NetworkLinkControl
 
 }
 
 //	If the WalkHandlers.TKmlType function is not nil (ie. was set by outside code), calls it with this TKmlType instance as the single argument. Then calls the Walk() method on 4/5 embed(s) and 0/0 field(s) belonging to this TKmlType instance.
 func (me *TKmlType) Walk ()  { 
 	if fn := WalkHandlers.TKmlType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_KmlSimpleExtensionGroup.Walk()
-	me.XsdGoPkgHasElems_KmlObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElem_AbstractFeatureGroup.Walk()
+	me.XsdGoPkgHasElems_KmlObjectExtensionGroup.Walk()
 	me.XsdGoPkgHasElem_NetworkLinkControl.Walk()
+	me.XsdGoPkgHasElems_KmlSimpleExtensionGroup.Walk()
  }
 
-type XsdGoPkgHasElem_Kml struct {
-//	<kml> is the root element.
-	Kml *TKmlType `xml:"http://www.opengis.net/kml/2.2 kml"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Kml function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Kml instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Kml instance.
-func (me *XsdGoPkgHasElem_Kml) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Kml; fn != nil { fn(me) }
-	me.Kml.Walk()
- }
-
-//	<kml> is the root element.
 type XsdGoPkgHasElems_Kml struct {
 //	<kml> is the root element.
 	Kmls []*TKmlType `xml:"http://www.opengis.net/kml/2.2 kml"`
@@ -7915,6 +7902,19 @@ type XsdGoPkgHasElems_Kml struct {
 func (me *XsdGoPkgHasElems_Kml) Walk ()  { 
 	if fn := WalkHandlers.XsdGoPkgHasElems_Kml; fn != nil { fn(me) }
 	for _, x := range me.Kmls { x.Walk() }
+ }
+
+//	<kml> is the root element.
+type XsdGoPkgHasElem_Kml struct {
+//	<kml> is the root element.
+	Kml *TKmlType `xml:"http://www.opengis.net/kml/2.2 kml"`
+
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Kml function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Kml instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Kml instance.
+func (me *XsdGoPkgHasElem_Kml) Walk ()  { 
+	if fn := WalkHandlers.XsdGoPkgHasElem_Kml; fn != nil { fn(me) }
+	me.Kml.Walk()
  }
 
 type XsdGoPkgHasElem_KmlSimpleExtensionGroup struct {
@@ -8510,605 +8510,605 @@ func (me *XsdGoPkgHasElem_Change) Walk ()  {
 var WalkHandlers = &XsdGoPkgWalkHandlers {}
 
 type XsdGoPkgWalkHandlers struct {
-	XsdGoPkgHasElems_ScreenXY func (o *XsdGoPkgHasElems_ScreenXY)
-	TOrientationType func (o *TOrientationType)
-	XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup func (o *XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup)
-	XsdGoPkgHasElems_LinearRingSimpleExtensionGroup func (o *XsdGoPkgHasElems_LinearRingSimpleExtensionGroup)
-	XsdGoPkgHasElems_Pair func (o *XsdGoPkgHasElems_Pair)
-	XsdGoPkgHasElems_Polygon func (o *XsdGoPkgHasElems_Polygon)
-	XsdGoPkgHasElem_BottomFov func (o *XsdGoPkgHasElem_BottomFov)
-	XsdGoPkgHasElems_RefreshMode func (o *XsdGoPkgHasElems_RefreshMode)
-	XsdGoPkgHasElem_East func (o *XsdGoPkgHasElem_East)
-	XsdGoPkgHasElems_Camera func (o *XsdGoPkgHasElems_Camera)
-	XsdGoPkgHasElem_Placemark func (o *XsdGoPkgHasElem_Placemark)
-	TViewVolumeType func (o *TViewVolumeType)
-	XsdGoPkgHasElem_PolygonSimpleExtensionGroup func (o *XsdGoPkgHasElem_PolygonSimpleExtensionGroup)
-	XsdGoPkgHasElem_AbstractGeometrySimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractGeometrySimpleExtensionGroup)
-	XsdGoPkgHasElem_AltitudeModeGroup func (o *XsdGoPkgHasElem_AltitudeModeGroup)
-	XsdGoPkgHasElems_FolderObjectExtensionGroup func (o *XsdGoPkgHasElems_FolderObjectExtensionGroup)
-	XsdGoPkgHasElem_MinAltitude func (o *XsdGoPkgHasElem_MinAltitude)
-	XsdGoPkgHasElems_FolderSimpleExtensionGroup func (o *XsdGoPkgHasElems_FolderSimpleExtensionGroup)
-	XsdGoPkgHasElem_UpdateOpExtensionGroup func (o *XsdGoPkgHasElem_UpdateOpExtensionGroup)
-	XsdGoPkgHasElems_ViewFormat func (o *XsdGoPkgHasElems_ViewFormat)
-	XsdGoPkgHasElem_Alias func (o *XsdGoPkgHasElem_Alias)
-	TNetworkLinkType func (o *TNetworkLinkType)
-	XsdGoPkgHasElem_Rotation func (o *XsdGoPkgHasElem_Rotation)
-	XsdGoPkgHasElem_UpdateExtensionGroup func (o *XsdGoPkgHasElem_UpdateExtensionGroup)
-	XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup func (o *XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup)
-	XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup func (o *XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup)
-	XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup func (o *XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup)
-	XsdGoPkgHasElems_ViewBoundScale func (o *XsdGoPkgHasElems_ViewBoundScale)
-	XsdGoPkgHasElems_Outline func (o *XsdGoPkgHasElems_Outline)
-	TBasicLinkType func (o *TBasicLinkType)
-	XsdGoPkgHasElems_SchemaExtension func (o *XsdGoPkgHasElems_SchemaExtension)
-	XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup)
-	XsdGoPkgHasElems_Orientation func (o *XsdGoPkgHasElems_Orientation)
-	XsdGoPkgHasElem_PointObjectExtensionGroup func (o *XsdGoPkgHasElem_PointObjectExtensionGroup)
-	TSnippetType func (o *TSnippetType)
-	XsdGoPkgHasElems_End func (o *XsdGoPkgHasElems_End)
-	TScreenOverlayType func (o *TScreenOverlayType)
-	XsdGoPkgHasElems_PlacemarkObjectExtensionGroup func (o *XsdGoPkgHasElems_PlacemarkObjectExtensionGroup)
-	XsdGoPkgHasElem_AbstractColorStyleSimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractColorStyleSimpleExtensionGroup)
-	TAbstractContainerType func (o *TAbstractContainerType)
-	XsdGoPkgHasElem_Camera func (o *XsdGoPkgHasElem_Camera)
-	XsdGoPkgHasElems_PolyStyle func (o *XsdGoPkgHasElems_PolyStyle)
-	XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup func (o *XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup)
-	XsdGoPkgHasElems_Coordinates func (o *XsdGoPkgHasElems_Coordinates)
-	XsdGoPkgHasElem_ViewVolume func (o *XsdGoPkgHasElem_ViewVolume)
-	XsdGoPkgHasElem_ResourceMapObjectExtensionGroup func (o *XsdGoPkgHasElem_ResourceMapObjectExtensionGroup)
-	XsdGoPkgHasElem_LineStringObjectExtensionGroup func (o *XsdGoPkgHasElem_LineStringObjectExtensionGroup)
-	XsdGoPkgHasElem_MaxSessionLength func (o *XsdGoPkgHasElem_MaxSessionLength)
-	XsdGoPkgHasElems_Key func (o *XsdGoPkgHasElems_Key)
-	XsdGoPkgHasElems_ModelObjectExtensionGroup func (o *XsdGoPkgHasElems_ModelObjectExtensionGroup)
-	XsdGoPkgHasElems_HttpQuery func (o *XsdGoPkgHasElems_HttpQuery)
-	XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup)
-	XsdGoPkgHasElems_LinkSnippet func (o *XsdGoPkgHasElems_LinkSnippet)
-	XsdGoPkgHasElems_Href func (o *XsdGoPkgHasElems_Href)
-	XsdGoPkgHasElem_AbstractLatLonBoxSimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractLatLonBoxSimpleExtensionGroup)
-	XsdGoPkgHasElems_TopFov func (o *XsdGoPkgHasElems_TopFov)
-	XsdGoPkgHasElems_Latitude func (o *XsdGoPkgHasElems_Latitude)
-	XsdGoPkgHasElem_ViewBoundScale func (o *XsdGoPkgHasElem_ViewBoundScale)
-	TLabelStyleType func (o *TLabelStyleType)
-	XsdGoPkgHasElems_FlyToView func (o *XsdGoPkgHasElems_FlyToView)
-	XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup)
-	XsdGoPkgHasElem_When func (o *XsdGoPkgHasElem_When)
-	XsdGoPkgHasElems_Visibility func (o *XsdGoPkgHasElems_Visibility)
-	XsdGoPkgHasElem_LookAtSimpleExtensionGroup func (o *XsdGoPkgHasElem_LookAtSimpleExtensionGroup)
-	XsdGoPkgHasElem_Kml func (o *XsdGoPkgHasElem_Kml)
-	XsdGoPkgHasElems_MaxAltitude func (o *XsdGoPkgHasElems_MaxAltitude)
-	XsdGoPkgHasElem_AbstractFeatureSimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractFeatureSimpleExtensionGroup)
-	TSimpleDataType func (o *TSimpleDataType)
-	XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup func (o *XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup)
-	XsdGoPkgHasElems_AbstractFeatureGroup func (o *XsdGoPkgHasElems_AbstractFeatureGroup)
-	XsdGoPkgHasElem_AliasObjectExtensionGroup func (o *XsdGoPkgHasElem_AliasObjectExtensionGroup)
-	XsdGoPkgHasElems_AbstractViewSimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractViewSimpleExtensionGroup)
-	XsdGoPkgHasElem_Snippet func (o *XsdGoPkgHasElem_Snippet)
-	XsdGoPkgHasElems_Begin func (o *XsdGoPkgHasElems_Begin)
-	XsdGoPkgHasElem_Metadata func (o *XsdGoPkgHasElem_Metadata)
-	XsdGoPkgHasElem_Data func (o *XsdGoPkgHasElem_Data)
-	XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup func (o *XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup)
-	XsdGoPkgHasElems_Heading func (o *XsdGoPkgHasElems_Heading)
-	XsdGoPkgHasElems_CameraSimpleExtensionGroup func (o *XsdGoPkgHasElems_CameraSimpleExtensionGroup)
-	XsdGoPkgHasElems_State func (o *XsdGoPkgHasElems_State)
-	XsdGoPkgHasElems_LinearRingObjectExtensionGroup func (o *XsdGoPkgHasElems_LinearRingObjectExtensionGroup)
-	XsdGoPkgHasElem_StyleMapObjectExtensionGroup func (o *XsdGoPkgHasElem_StyleMapObjectExtensionGroup)
-	XsdGoPkgHasElem_DocumentSimpleExtensionGroup func (o *XsdGoPkgHasElem_DocumentSimpleExtensionGroup)
-	XsdGoPkgHasElems_ImagePyramid func (o *XsdGoPkgHasElems_ImagePyramid)
-	XsdGoPkgHasElem_AbstractStyleSelectorGroup func (o *XsdGoPkgHasElem_AbstractStyleSelectorGroup)
-	XsdGoPkgHasElem_GroundOverlaySimpleExtensionGroup func (o *XsdGoPkgHasElem_GroundOverlaySimpleExtensionGroup)
-	XsdGoPkgHasElems_LodSimpleExtensionGroup func (o *XsdGoPkgHasElems_LodSimpleExtensionGroup)
-	XsdGoPkgHasElem_LocationObjectExtensionGroup func (o *XsdGoPkgHasElem_LocationObjectExtensionGroup)
-	XsdGoPkgHasElems_SchemaData func (o *XsdGoPkgHasElems_SchemaData)
-	XsdGoPkgHasElems_East func (o *XsdGoPkgHasElems_East)
-	XsdGoPkgHasElem_AbstractColorStyleGroup func (o *XsdGoPkgHasElem_AbstractColorStyleGroup)
-	XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup)
-	XsdGoPkgHasElems_AbstractOverlayGroup func (o *XsdGoPkgHasElems_AbstractOverlayGroup)
-	XsdGoPkgHasElems_Tessellate func (o *XsdGoPkgHasElems_Tessellate)
-	XsdGoPkgHasElem_MinRefreshPeriod func (o *XsdGoPkgHasElem_MinRefreshPeriod)
-	XsdGoPkgHasElem_Altitude func (o *XsdGoPkgHasElem_Altitude)
-	XsdGoPkgHasElems_LineStringObjectExtensionGroup func (o *XsdGoPkgHasElems_LineStringObjectExtensionGroup)
-	XsdGoPkgHasElems_AbstractViewGroup func (o *XsdGoPkgHasElems_AbstractViewGroup)
-	TPhotoOverlayType func (o *TPhotoOverlayType)
-	XsdGoPkgHasElem_CameraSimpleExtensionGroup func (o *XsdGoPkgHasElem_CameraSimpleExtensionGroup)
-	XsdGoPkgHasElems_Tilt func (o *XsdGoPkgHasElems_Tilt)
-	XsdGoPkgHasElems_TextColor func (o *XsdGoPkgHasElems_TextColor)
-	XsdGoPkgHasElem_PlacemarkObjectExtensionGroup func (o *XsdGoPkgHasElem_PlacemarkObjectExtensionGroup)
-	TPairType func (o *TPairType)
-	TStyleType func (o *TStyleType)
-	XsdGoPkgHasElem_LinkSimpleExtensionGroup func (o *XsdGoPkgHasElem_LinkSimpleExtensionGroup)
-	XsdGoPkgHasElems_TimeStampSimpleExtensionGroup func (o *XsdGoPkgHasElems_TimeStampSimpleExtensionGroup)
-	XsdGoPkgHasElem_LatLonBoxSimpleExtensionGroup func (o *XsdGoPkgHasElem_LatLonBoxSimpleExtensionGroup)
-	XsdGoPkgHasElem_Fill func (o *XsdGoPkgHasElem_Fill)
-	XsdGoPkgHasElems_BoundarySimpleExtensionGroup func (o *XsdGoPkgHasElems_BoundarySimpleExtensionGroup)
-	XsdGoPkgHasElems_StyleMap func (o *XsdGoPkgHasElems_StyleMap)
-	XsdGoPkgHasElem_IconStyleSimpleExtensionGroup func (o *XsdGoPkgHasElem_IconStyleSimpleExtensionGroup)
-	XsdGoPkgHasElem_GridOrigin func (o *XsdGoPkgHasElem_GridOrigin)
-	XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup func (o *XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup)
-	XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup func (o *XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup)
-	XsdGoPkgHasElems_StyleObjectExtensionGroup func (o *XsdGoPkgHasElems_StyleObjectExtensionGroup)
-	XsdGoPkgHasElems_RegionSimpleExtensionGroup func (o *XsdGoPkgHasElems_RegionSimpleExtensionGroup)
-	XsdGoPkgHasElem_LinearRingSimpleExtensionGroup func (o *XsdGoPkgHasElem_LinearRingSimpleExtensionGroup)
-	XsdGoPkgHasElems_TimeStampObjectExtensionGroup func (o *XsdGoPkgHasElems_TimeStampObjectExtensionGroup)
-	XsdGoPkgHasElem_GroundOverlay func (o *XsdGoPkgHasElem_GroundOverlay)
-	XsdGoPkgHasElem_RefreshMode func (o *XsdGoPkgHasElem_RefreshMode)
-	XsdGoPkgHasElem_ItemIconSimpleExtensionGroup func (o *XsdGoPkgHasElem_ItemIconSimpleExtensionGroup)
-	XsdGoPkgHasElems_LineString func (o *XsdGoPkgHasElems_LineString)
-	XsdGoPkgHasElems_MinRefreshPeriod func (o *XsdGoPkgHasElems_MinRefreshPeriod)
-	TimeSpanType func (o *TimeSpanType)
-	XsdGoPkgHasElem_LabelStyleObjectExtensionGroup func (o *XsdGoPkgHasElem_LabelStyleObjectExtensionGroup)
-	TListStyleType func (o *TListStyleType)
-	XsdGoPkgHasElem_FlyToView func (o *XsdGoPkgHasElem_FlyToView)
-	XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup)
-	XsdGoPkgHasElem_Size func (o *XsdGoPkgHasElem_Size)
-	XsdGoPkgHasElems_LocationObjectExtensionGroup func (o *XsdGoPkgHasElems_LocationObjectExtensionGroup)
+	XsdGoPkgHasElems_Description func (o *XsdGoPkgHasElems_Description)
+	XsdGoPkgHasElems_Alias func (o *XsdGoPkgHasElems_Alias)
+	XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup)
+	XsdGoPkgHasElems_SourceHref func (o *XsdGoPkgHasElems_SourceHref)
+	XsdGoPkgHasElem_RefreshInterval func (o *XsdGoPkgHasElem_RefreshInterval)
+	XsdGoPkgHasElem_AbstractViewObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractViewObjectExtensionGroup)
+	XsdGoPkgHasElems_SimpleFieldExtension func (o *XsdGoPkgHasElems_SimpleFieldExtension)
+	XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup func (o *XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup)
+	XsdGoPkgHasElems_IconStyleSimpleExtensionGroup func (o *XsdGoPkgHasElems_IconStyleSimpleExtensionGroup)
+	XsdGoPkgHasElem_Schema func (o *XsdGoPkgHasElem_Schema)
+	XsdGoPkgHasElem_PhoneNumber func (o *XsdGoPkgHasElem_PhoneNumber)
+	TResourceMapType func (o *TResourceMapType)
+	XsdGoPkgHasElem_Message func (o *XsdGoPkgHasElem_Message)
+	XsdGoPkgHasElems_ExtendedData func (o *XsdGoPkgHasElems_ExtendedData)
+	XsdGoPkgHasElem_StyleSimpleExtensionGroup func (o *XsdGoPkgHasElem_StyleSimpleExtensionGroup)
+	XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup func (o *XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup)
+	XsdGoPkgHasElem_ItemIconObjectExtensionGroup func (o *XsdGoPkgHasElem_ItemIconObjectExtensionGroup)
+	XsdGoPkgHasElem_Update func (o *XsdGoPkgHasElem_Update)
+	TPointType func (o *TPointType)
+	XsdGoPkgHasElem_StyleUrl func (o *XsdGoPkgHasElem_StyleUrl)
+	XsdGoPkgHasElem_ExtendedData func (o *XsdGoPkgHasElem_ExtendedData)
+	XsdGoPkgHasElems_ItemIconObjectExtensionGroup func (o *XsdGoPkgHasElems_ItemIconObjectExtensionGroup)
 	TBalloonStyleType func (o *TBalloonStyleType)
-	XsdGoPkgHasElems_Altitude func (o *XsdGoPkgHasElems_Altitude)
-	XsdGoPkgHasElem_BalloonStyleSimpleExtensionGroup func (o *XsdGoPkgHasElem_BalloonStyleSimpleExtensionGroup)
-	XsdGoPkgHasElem_MaxLodPixels func (o *XsdGoPkgHasElem_MaxLodPixels)
-	XsdGoPkgHasElem_LookAtObjectExtensionGroup func (o *XsdGoPkgHasElem_LookAtObjectExtensionGroup)
-	XsdGoPkgHasElem_AbstractOverlaySimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractOverlaySimpleExtensionGroup)
-	XsdGoPkgHasElems_When func (o *XsdGoPkgHasElems_When)
-	XsdGoPkgHasElem_LineStyle func (o *XsdGoPkgHasElem_LineStyle)
-	XsdGoPkgHasElem_TimeSpanObjectExtensionGroup func (o *XsdGoPkgHasElem_TimeSpanObjectExtensionGroup)
-	XsdGoPkgHasElem_DocumentObjectExtensionGroup func (o *XsdGoPkgHasElem_DocumentObjectExtensionGroup)
-	XsdGoPkgHasElems_ListItemType func (o *XsdGoPkgHasElems_ListItemType)
-	XsdGoPkgHasElem_SimpleField func (o *XsdGoPkgHasElem_SimpleField)
-	TAbstractOverlayType func (o *TAbstractOverlayType)
-	XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup)
-	XsdGoPkgHasElem_LinkObjectExtensionGroup func (o *XsdGoPkgHasElem_LinkObjectExtensionGroup)
-	XsdGoPkgHasElems_Document func (o *XsdGoPkgHasElems_Document)
-	XsdGoPkgHasElems_DocumentSimpleExtensionGroup func (o *XsdGoPkgHasElems_DocumentSimpleExtensionGroup)
-	XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup)
-	XsdGoPkgHasElems_Color func (o *XsdGoPkgHasElems_Color)
-	XsdGoPkgHasElem_ImagePyramid func (o *XsdGoPkgHasElem_ImagePyramid)
-	XsdGoPkgHasElems_CameraObjectExtensionGroup func (o *XsdGoPkgHasElems_CameraObjectExtensionGroup)
-	TLatLonAltBoxType func (o *TLatLonAltBoxType)
-	XsdGoPkgHasElem_AbstractObjectGroup func (o *XsdGoPkgHasElem_AbstractObjectGroup)
-	XsdGoPkgHasElems_StyleUrl func (o *XsdGoPkgHasElems_StyleUrl)
-	XsdGoPkgHasElem_Width func (o *XsdGoPkgHasElem_Width)
-	TStyleMapType func (o *TStyleMapType)
-	XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup func (o *XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup)
-	XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup func (o *XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup)
-	XsdGoPkgHasElem_MaxWidth func (o *XsdGoPkgHasElem_MaxWidth)
-	XsdGoPkgHasElems_Value func (o *XsdGoPkgHasElems_Value)
-	XsdGoPkgHasElem_West func (o *XsdGoPkgHasElem_West)
-	XsdGoPkgHasElem_Location func (o *XsdGoPkgHasElem_Location)
+	XsdGoPkgHasElems_Pair func (o *XsdGoPkgHasElems_Pair)
+	XsdGoPkgHasElems_Z func (o *XsdGoPkgHasElems_Z)
+	XsdGoPkgHasElem_RefreshMode func (o *XsdGoPkgHasElem_RefreshMode)
+	XsdGoPkgHasElems_GridOrigin func (o *XsdGoPkgHasElems_GridOrigin)
+	XsdGoPkgHasElems_Tessellate func (o *XsdGoPkgHasElems_Tessellate)
+	XsdGoPkgHasElems_LineStyle func (o *XsdGoPkgHasElems_LineStyle)
+	XsdGoPkgHasElems_KmlObjectExtensionGroup func (o *XsdGoPkgHasElems_KmlObjectExtensionGroup)
+	XsdGoPkgHasElems_ScreenOverlay func (o *XsdGoPkgHasElems_ScreenOverlay)
+	TExtendedDataType func (o *TExtendedDataType)
+	XsdGoPkgHasElems_LabelStyle func (o *XsdGoPkgHasElems_LabelStyle)
+	TimeSpanType func (o *TimeSpanType)
 	XsdGoPkgHasElem_Coordinates func (o *XsdGoPkgHasElem_Coordinates)
-	XsdGoPkgHasElem_End func (o *XsdGoPkgHasElem_End)
-	XsdGoPkgHasElems_AliasSimpleExtensionGroup func (o *XsdGoPkgHasElems_AliasSimpleExtensionGroup)
+	XsdGoPkgHasElems_Change func (o *XsdGoPkgHasElems_Change)
+	XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup func (o *XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup)
+	XsdGoPkgHasElem_PolyStyleSimpleExtensionGroup func (o *XsdGoPkgHasElem_PolyStyleSimpleExtensionGroup)
+	XsdGoPkgHasElems_ModelObjectExtensionGroup func (o *XsdGoPkgHasElems_ModelObjectExtensionGroup)
+	XsdGoPkgHasElem_ObjectSimpleExtensionGroup func (o *XsdGoPkgHasElem_ObjectSimpleExtensionGroup)
+	XsdGoPkgHasElems_NetworkLinkControl func (o *XsdGoPkgHasElems_NetworkLinkControl)
+	XsdGoPkgHasElem_HttpQuery func (o *XsdGoPkgHasElem_HttpQuery)
+	XsdGoPkgHasElems_Polygon func (o *XsdGoPkgHasElems_Polygon)
+	XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup func (o *XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup)
+	XsdGoPkgHasElem_Link func (o *XsdGoPkgHasElem_Link)
+	XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup func (o *XsdGoPkgHasElems_PhotoOverlaySimpleExtensionGroup)
+	XsdGoPkgHasElems_ViewBoundScale func (o *XsdGoPkgHasElems_ViewBoundScale)
+	XsdGoPkgHasElems_Lod func (o *XsdGoPkgHasElems_Lod)
+	TStyleType func (o *TStyleType)
+	XsdGoPkgHasElems_LineString func (o *XsdGoPkgHasElems_LineString)
+	XsdGoPkgHasElem_InnerBoundaryIs func (o *XsdGoPkgHasElem_InnerBoundaryIs)
+	XsdGoPkgHasElems_MinRefreshPeriod func (o *XsdGoPkgHasElems_MinRefreshPeriod)
+	XsdGoPkgHasElems_Tilt func (o *XsdGoPkgHasElems_Tilt)
+	XsdGoPkgHasElem_AbstractOverlayGroup func (o *XsdGoPkgHasElem_AbstractOverlayGroup)
+	XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup func (o *XsdGoPkgHasElem_PhotoOverlayObjectExtensionGroup)
+	XsdGoPkgHasElems_TimeSpanObjectExtensionGroup func (o *XsdGoPkgHasElems_TimeSpanObjectExtensionGroup)
+	XsdGoPkgHasElem_AbstractTimePrimitiveSimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractTimePrimitiveSimpleExtensionGroup)
+	XsdGoPkgHasElems_End func (o *XsdGoPkgHasElems_End)
+	XsdGoPkgHasElem_DocumentSimpleExtensionGroup func (o *XsdGoPkgHasElem_DocumentSimpleExtensionGroup)
+	XsdGoPkgHasElems_DocumentSimpleExtensionGroup func (o *XsdGoPkgHasElems_DocumentSimpleExtensionGroup)
+	XsdGoPkgHasElem_Url func (o *XsdGoPkgHasElem_Url)
+	XsdGoPkgHasElem_Alias func (o *XsdGoPkgHasElem_Alias)
+	TBasicLinkType func (o *TBasicLinkType)
+	XsdGoPkgHasElem_SchemaExtension func (o *XsdGoPkgHasElem_SchemaExtension)
+	XsdGoPkgHasElem_ModelSimpleExtensionGroup func (o *XsdGoPkgHasElem_ModelSimpleExtensionGroup)
+	TAbstractOverlayType func (o *TAbstractOverlayType)
+	XsdGoPkgHasElem_PhotoOverlaySimpleExtensionGroup func (o *XsdGoPkgHasElem_PhotoOverlaySimpleExtensionGroup)
+	TPlacemarkType func (o *TPlacemarkType)
+	XsdGoPkgHasElems_Link func (o *XsdGoPkgHasElems_Link)
+	XsdGoPkgHasElems_MaxHeight func (o *XsdGoPkgHasElems_MaxHeight)
+	XsdGoPkgHasElems_LinearRingObjectExtensionGroup func (o *XsdGoPkgHasElems_LinearRingObjectExtensionGroup)
+	TLookAtType func (o *TLookAtType)
+	XsdGoPkgHasElem_NetworkLinkSimpleExtensionGroup func (o *XsdGoPkgHasElem_NetworkLinkSimpleExtensionGroup)
+	XsdGoPkgHasElems_IconStyle func (o *XsdGoPkgHasElems_IconStyle)
+	XsdGoPkgHasElems_KmlSimpleExtensionGroup func (o *XsdGoPkgHasElems_KmlSimpleExtensionGroup)
+	XsdGoPkgHasElem_Width func (o *XsdGoPkgHasElem_Width)
+	XsdGoPkgHasElems_Folder func (o *XsdGoPkgHasElems_Folder)
+	XsdGoPkgHasElem_ListStyleSimpleExtensionGroup func (o *XsdGoPkgHasElem_ListStyleSimpleExtensionGroup)
+	TCameraType func (o *TCameraType)
+	XsdGoPkgHasElems_CameraObjectExtensionGroup func (o *XsdGoPkgHasElems_CameraObjectExtensionGroup)
 	XsdGoPkgHasElems_Create func (o *XsdGoPkgHasElems_Create)
 	XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup func (o *XsdGoPkgHasElems_ScreenOverlayObjectExtensionGroup)
-	XsdGoPkgHasElems_Scale func (o *XsdGoPkgHasElems_Scale)
-	XsdGoPkgHasElem_LodSimpleExtensionGroup func (o *XsdGoPkgHasElem_LodSimpleExtensionGroup)
-	XsdGoPkgHasElem_Extrude func (o *XsdGoPkgHasElem_Extrude)
-	TImagePyramidType func (o *TImagePyramidType)
-	XsdGoPkgHasElem_Z func (o *XsdGoPkgHasElem_Z)
-	XsdGoPkgHasElems_GridOrigin func (o *XsdGoPkgHasElems_GridOrigin)
-	XsdGoPkgHasElems_ListStyleSimpleExtensionGroup func (o *XsdGoPkgHasElems_ListStyleSimpleExtensionGroup)
-	XsdGoPkgHasElems_Address func (o *XsdGoPkgHasElems_Address)
-	XsdGoPkgHasElem_LineString func (o *XsdGoPkgHasElem_LineString)
-	XsdGoPkgHasElem_ScaleSimpleExtensionGroup func (o *XsdGoPkgHasElem_ScaleSimpleExtensionGroup)
-	XsdGoPkgHasElems_ScaleObjectExtensionGroup func (o *XsdGoPkgHasElems_ScaleObjectExtensionGroup)
-	XsdGoPkgHasElem_Near func (o *XsdGoPkgHasElem_Near)
-	XsdGoPkgHasElem_Range func (o *XsdGoPkgHasElem_Range)
-	XsdGoPkgHasElem_LocationSimpleExtensionGroup func (o *XsdGoPkgHasElem_LocationSimpleExtensionGroup)
-	XsdGoPkgHasElem_Update func (o *XsdGoPkgHasElem_Update)
-	XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup)
-	XsdGoPkgHasElems_Placemark func (o *XsdGoPkgHasElems_Placemark)
-	XsdGoPkgHasElem_ListStyle func (o *XsdGoPkgHasElem_ListStyle)
-	XsdGoPkgHasElem_Model func (o *XsdGoPkgHasElem_Model)
-	TAliasType func (o *TAliasType)
-	XsdGoPkgHasElem_PolyStyleObjectExtensionGroup func (o *XsdGoPkgHasElem_PolyStyleObjectExtensionGroup)
-	TCreateType func (o *TCreateType)
-	XsdGoPkgHasElem_Key func (o *XsdGoPkgHasElem_Key)
-	XsdGoPkgHasElems_LodObjectExtensionGroup func (o *XsdGoPkgHasElems_LodObjectExtensionGroup)
-	XsdGoPkgHasElems_IconStyle func (o *XsdGoPkgHasElems_IconStyle)
-	XsdGoPkgHasElems_PolyStyleObjectExtensionGroup func (o *XsdGoPkgHasElems_PolyStyleObjectExtensionGroup)
-	XsdGoPkgHasElems_MaxHeight func (o *XsdGoPkgHasElems_MaxHeight)
-	XsdGoPkgHasElems_LineStyleObjectExtensionGroup func (o *XsdGoPkgHasElems_LineStyleObjectExtensionGroup)
-	XsdGoPkgHasElems_ViewVolumeObjectExtensionGroup func (o *XsdGoPkgHasElems_ViewVolumeObjectExtensionGroup)
-	XsdGoPkgHasElems_ModelSimpleExtensionGroup func (o *XsdGoPkgHasElems_ModelSimpleExtensionGroup)
-	XsdGoPkgHasElem_LatLonBox func (o *XsdGoPkgHasElem_LatLonBox)
-	XsdGoPkgHasElems_LinkDescription func (o *XsdGoPkgHasElems_LinkDescription)
-	TKmlType func (o *TKmlType)
-	XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup func (o *XsdGoPkgHasElems_LatLonAltBoxSimpleExtensionGroup)
-	XsdGoPkgHasElem_LineStringSimpleExtensionGroup func (o *XsdGoPkgHasElem_LineStringSimpleExtensionGroup)
-	XsdGoPkgHasElems_IconStyleObjectExtensionGroup func (o *XsdGoPkgHasElems_IconStyleObjectExtensionGroup)
-	TLinkType func (o *TLinkType)
-	XsdGoPkgHasElem_HotSpot func (o *XsdGoPkgHasElem_HotSpot)
-	XsdGoPkgHasElems_AbstractColorStyleSimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractColorStyleSimpleExtensionGroup)
-	XsdGoPkgHasElems_AltitudeMode func (o *XsdGoPkgHasElems_AltitudeMode)
-	XsdGoPkgHasElems_DisplayMode func (o *XsdGoPkgHasElems_DisplayMode)
-	TAbstractObjectType func (o *TAbstractObjectType)
-	XsdGoPkgHasElems_Size func (o *XsdGoPkgHasElems_Size)
-	XsdGoPkgHasElems_MinAltitude func (o *XsdGoPkgHasElems_MinAltitude)
-	XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup)
-	XsdGoPkgHasElem_ColorMode func (o *XsdGoPkgHasElem_ColorMode)
-	XsdGoPkgHasElems_MaxSessionLength func (o *XsdGoPkgHasElems_MaxSessionLength)
-	XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup func (o *XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup)
-	XsdGoPkgHasElem_SchemaData func (o *XsdGoPkgHasElem_SchemaData)
-	XsdGoPkgHasElem_Orientation func (o *XsdGoPkgHasElem_Orientation)
-	XsdGoPkgHasElem_Tessellate func (o *XsdGoPkgHasElem_Tessellate)
-	XsdGoPkgHasElems_TimeSpan func (o *XsdGoPkgHasElems_TimeSpan)
-	XsdGoPkgHasElem_BoundaryObjectExtensionGroup func (o *XsdGoPkgHasElem_BoundaryObjectExtensionGroup)
-	XsdGoPkgHasElems_Data func (o *XsdGoPkgHasElems_Data)
-	TAbstractViewType func (o *TAbstractViewType)
-	XsdGoPkgHasElem_DisplayName func (o *XsdGoPkgHasElem_DisplayName)
-	XsdGoPkgHasElem_StyleSimpleExtensionGroup func (o *XsdGoPkgHasElem_StyleSimpleExtensionGroup)
-	XsdGoPkgHasElems_StyleMapSimpleExtensionGroup func (o *XsdGoPkgHasElems_StyleMapSimpleExtensionGroup)
-	XsdGoPkgHasElems_LinkName func (o *XsdGoPkgHasElems_LinkName)
-	XsdGoPkgHasElems_SimpleFieldExtension func (o *XsdGoPkgHasElems_SimpleFieldExtension)
-	XsdGoPkgHasElem_MinFadeExtent func (o *XsdGoPkgHasElem_MinFadeExtent)
-	XsdGoPkgHasElems_Near func (o *XsdGoPkgHasElems_Near)
-	XsdGoPkgHasElem_PolyStyle func (o *XsdGoPkgHasElem_PolyStyle)
-	XsdGoPkgHasElems_Url func (o *XsdGoPkgHasElems_Url)
-	XsdGoPkgHasElems_North func (o *XsdGoPkgHasElems_North)
-	XsdGoPkgHasElems_Shape func (o *XsdGoPkgHasElems_Shape)
-	XsdGoPkgHasElem_South func (o *XsdGoPkgHasElem_South)
-	XsdGoPkgHasElems_Delete func (o *XsdGoPkgHasElems_Delete)
-	XsdGoPkgHasElem_ScaleObjectExtensionGroup func (o *XsdGoPkgHasElem_ScaleObjectExtensionGroup)
-	XsdGoPkgHasElems_NetworkLinkControl func (o *XsdGoPkgHasElems_NetworkLinkControl)
-	XsdGoPkgHasElems_SimpleData func (o *XsdGoPkgHasElems_SimpleData)
-	XsdGoPkgHasElem_ModelObjectExtensionGroup func (o *XsdGoPkgHasElem_ModelObjectExtensionGroup)
-	XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup)
-	XsdGoPkgHasElem_RefreshInterval func (o *XsdGoPkgHasElem_RefreshInterval)
-	XsdGoPkgHasElems_BalloonStyleObjectExtensionGroup func (o *XsdGoPkgHasElems_BalloonStyleObjectExtensionGroup)
-	XsdGoPkgHasElem_Change func (o *XsdGoPkgHasElem_Change)
-	TGroundOverlayType func (o *TGroundOverlayType)
-	XsdGoPkgHasElems_ViewRefreshMode func (o *XsdGoPkgHasElems_ViewRefreshMode)
-	XsdGoPkgHasElems_DrawOrder func (o *XsdGoPkgHasElems_DrawOrder)
-	XsdGoPkgHasElems_UpdateOpExtensionGroup func (o *XsdGoPkgHasElems_UpdateOpExtensionGroup)
-	XsdGoPkgHasElems_ListStyle func (o *XsdGoPkgHasElems_ListStyle)
-	XsdGoPkgHasElem_ItemIconObjectExtensionGroup func (o *XsdGoPkgHasElem_ItemIconObjectExtensionGroup)
-	XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup)
-	XsdGoPkgHasElems_LineStyle func (o *XsdGoPkgHasElems_LineStyle)
-	XsdGoPkgHasElems_AbstractSubStyleSimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractSubStyleSimpleExtensionGroup)
-	XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup func (o *XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup)
-	XsdGoPkgHasElem_IconStyle func (o *XsdGoPkgHasElem_IconStyle)
-	XsdGoPkgHasElems_LocationSimpleExtensionGroup func (o *XsdGoPkgHasElems_LocationSimpleExtensionGroup)
-	XsdGoPkgHasElem_Color func (o *XsdGoPkgHasElem_Color)
-	XsdGoPkgHasElem_OuterBoundaryIs func (o *XsdGoPkgHasElem_OuterBoundaryIs)
-	XsdGoPkgHasElems_Z func (o *XsdGoPkgHasElems_Z)
-	TSchemaDataType func (o *TSchemaDataType)
-	XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup func (o *XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup)
-	XsdGoPkgHasElem_LodObjectExtensionGroup func (o *XsdGoPkgHasElem_LodObjectExtensionGroup)
-	TPolygonType func (o *TPolygonType)
-	XsdGoPkgHasElem_RegionSimpleExtensionGroup func (o *XsdGoPkgHasElem_RegionSimpleExtensionGroup)
-	XsdGoPkgHasElems_BgColor func (o *XsdGoPkgHasElems_BgColor)
-	TIconStyleType func (o *TIconStyleType)
-	XsdGoPkgHasElem_LinkSnippet func (o *XsdGoPkgHasElem_LinkSnippet)
-	XsdGoPkgHasElems_AbstractObjectGroup func (o *XsdGoPkgHasElems_AbstractObjectGroup)
-	Tvec2Type func (o *Tvec2Type)
-	XsdGoPkgHasElems_PointObjectExtensionGroup func (o *XsdGoPkgHasElems_PointObjectExtensionGroup)
-	XsdGoPkgHasElems_ItemIcon func (o *XsdGoPkgHasElems_ItemIcon)
-	XsdGoPkgHasElem_RefreshVisibility func (o *XsdGoPkgHasElem_RefreshVisibility)
-	XsdGoPkgHasElem_Name func (o *XsdGoPkgHasElem_Name)
-	XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup func (o *XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup)
-	XsdGoPkgHasElems_BasicLinkObjectExtensionGroup func (o *XsdGoPkgHasElems_BasicLinkObjectExtensionGroup)
-	XsdGoPkgHasElem_LabelStyle func (o *XsdGoPkgHasElem_LabelStyle)
-	XsdGoPkgHasElems_Kml func (o *XsdGoPkgHasElems_Kml)
-	XsdGoPkgHasElem_DrawOrder func (o *XsdGoPkgHasElem_DrawOrder)
-	XsdGoPkgHasElems_GroundOverlay func (o *XsdGoPkgHasElems_GroundOverlay)
-	XsdGoPkgHasElems_IconStyleSimpleExtensionGroup func (o *XsdGoPkgHasElems_IconStyleSimpleExtensionGroup)
-	XsdGoPkgHasElem_AltitudeMode func (o *XsdGoPkgHasElem_AltitudeMode)
-	TItemIconType func (o *TItemIconType)
-	XsdGoPkgHasElems_PolygonObjectExtensionGroup func (o *XsdGoPkgHasElems_PolygonObjectExtensionGroup)
-	XsdGoPkgHasElem_TimeStampSimpleExtensionGroup func (o *XsdGoPkgHasElem_TimeStampSimpleExtensionGroup)
-	XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup func (o *XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup)
-	XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup func (o *XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup)
-	XsdGoPkgHasElem_State func (o *XsdGoPkgHasElem_State)
-	XsdGoPkgHasElem_RightFov func (o *XsdGoPkgHasElem_RightFov)
-	XsdGoPkgHasElem_Tilt func (o *XsdGoPkgHasElem_Tilt)
-	XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup func (o *XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup)
-	XsdGoPkgHasElem_AbstractSubStyleSimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractSubStyleSimpleExtensionGroup)
-	XsdGoPkgHasElem_MultiGeometry func (o *XsdGoPkgHasElem_MultiGeometry)
-	XsdGoPkgHasElem_TopFov func (o *XsdGoPkgHasElem_TopFov)
-	XsdGoPkgHasElems_LinkSimpleExtensionGroup func (o *XsdGoPkgHasElems_LinkSimpleExtensionGroup)
-	XsdGoPkgHasElem_MultiGeometrySimpleExtensionGroup func (o *XsdGoPkgHasElem_MultiGeometrySimpleExtensionGroup)
-	TCameraType func (o *TCameraType)
-	XsdGoPkgHasElems_OverlayXY func (o *XsdGoPkgHasElems_OverlayXY)
-	XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup func (o *XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup)
-	XsdGoPkgHasElem_SchemaExtension func (o *XsdGoPkgHasElem_SchemaExtension)
-	XsdGoPkgHasElems_ObjectSimpleExtensionGroup func (o *XsdGoPkgHasElems_ObjectSimpleExtensionGroup)
-	TRegionType func (o *TRegionType)
-	XsdGoPkgHasElems_MaxLodPixels func (o *XsdGoPkgHasElems_MaxLodPixels)
-	XsdGoPkgHasElem_Expires func (o *XsdGoPkgHasElem_Expires)
-	XsdGoPkgHasElems_UpdateExtensionGroup func (o *XsdGoPkgHasElems_UpdateExtensionGroup)
-	XsdGoPkgHasElems_LinkObjectExtensionGroup func (o *XsdGoPkgHasElems_LinkObjectExtensionGroup)
-	XsdGoPkgHasElem_AbstractGeometryGroup func (o *XsdGoPkgHasElem_AbstractGeometryGroup)
-	XsdGoPkgHasElem_Begin func (o *XsdGoPkgHasElem_Begin)
-	XsdGoPkgHasElems_PhotoOverlay func (o *XsdGoPkgHasElems_PhotoOverlay)
-	XsdGoPkgHasElem_ScreenOverlaySimpleExtensionGroup func (o *XsdGoPkgHasElem_ScreenOverlaySimpleExtensionGroup)
-	XsdGoPkgHasElems_Style func (o *XsdGoPkgHasElems_Style)
-	XsdGoPkgHasElem_PairObjectExtensionGroup func (o *XsdGoPkgHasElem_PairObjectExtensionGroup)
-	XsdGoPkgHasElems_Change func (o *XsdGoPkgHasElems_Change)
-	XsdGoPkgHasElem_BalloonStyle func (o *XsdGoPkgHasElem_BalloonStyle)
-	XsdGoPkgHasElem_FolderObjectExtensionGroup func (o *XsdGoPkgHasElem_FolderObjectExtensionGroup)
-	XsdGoPkgHasElem_AbstractContainerSimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractContainerSimpleExtensionGroup)
-	XsdGoPkgHasElems_MinLodPixels func (o *XsdGoPkgHasElems_MinLodPixels)
-	XsdGoPkgHasElem_AliasSimpleExtensionGroup func (o *XsdGoPkgHasElem_AliasSimpleExtensionGroup)
-	XsdGoPkgHasElem_StyleUrl func (o *XsdGoPkgHasElem_StyleUrl)
-	XsdGoPkgHasElem_ScreenXY func (o *XsdGoPkgHasElem_ScreenXY)
-	XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup func (o *XsdGoPkgHasElems_MultiGeometryObjectExtensionGroup)
-	TAbstractFeatureType func (o *TAbstractFeatureType)
-	TLocationType func (o *TLocationType)
-	XsdGoPkgHasElems_AbstractSubStyleObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractSubStyleObjectExtensionGroup)
-	XsdGoPkgHasElem_LookAt func (o *XsdGoPkgHasElem_LookAt)
-	XsdGoPkgHasElem_LabelStyleSimpleExtensionGroup func (o *XsdGoPkgHasElem_LabelStyleSimpleExtensionGroup)
-	XsdGoPkgHasElems_AbstractSubStyleGroup func (o *XsdGoPkgHasElems_AbstractSubStyleGroup)
-	XsdGoPkgHasElems_LineStyleSimpleExtensionGroup func (o *XsdGoPkgHasElems_LineStyleSimpleExtensionGroup)
-	XsdGoPkgHasElem_X func (o *XsdGoPkgHasElem_X)
-	XsdGoPkgHasElems_SchemaDataExtension func (o *XsdGoPkgHasElems_SchemaDataExtension)
-	XsdGoPkgHasElem_Link func (o *XsdGoPkgHasElem_Link)
-	XsdGoPkgHasElems_Name func (o *XsdGoPkgHasElems_Name)
-	TAbstractSubStyleType func (o *TAbstractSubStyleType)
-	XsdGoPkgHasElems_Text func (o *XsdGoPkgHasElems_Text)
-	XsdGoPkgHasElems_PairSimpleExtensionGroup func (o *XsdGoPkgHasElems_PairSimpleExtensionGroup)
-	XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup func (o *XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup)
-	TLatLonBoxType func (o *TLatLonBoxType)
-	XsdGoPkgHasElem_ItemIcon func (o *XsdGoPkgHasElem_ItemIcon)
-	XsdGoPkgHasElems_ItemIconSimpleExtensionGroup func (o *XsdGoPkgHasElems_ItemIconSimpleExtensionGroup)
-	XsdGoPkgHasElems_BottomFov func (o *XsdGoPkgHasElems_BottomFov)
-	XsdGoPkgHasElems_Metadata func (o *XsdGoPkgHasElems_Metadata)
-	XsdGoPkgHasElems_TileSize func (o *XsdGoPkgHasElems_TileSize)
-	TPlacemarkType func (o *TPlacemarkType)
-	XsdGoPkgHasElems_Point func (o *XsdGoPkgHasElems_Point)
-	XsdGoPkgHasElems_DataExtension func (o *XsdGoPkgHasElems_DataExtension)
-	XsdGoPkgHasElem_SimpleFieldExtension func (o *XsdGoPkgHasElem_SimpleFieldExtension)
-	XsdGoPkgHasElems_PolygonSimpleExtensionGroup func (o *XsdGoPkgHasElems_PolygonSimpleExtensionGroup)
-	TAbstractGeometryType func (o *TAbstractGeometryType)
-	XsdGoPkgHasElem_AbstractTimePrimitiveGroup func (o *XsdGoPkgHasElem_AbstractTimePrimitiveGroup)
-	XsdGoPkgHasElem_Icon func (o *XsdGoPkgHasElem_Icon)
-	XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup)
-	XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup)
-	XsdGoPkgHasElem_Document func (o *XsdGoPkgHasElem_Document)
-	XsdGoPkgHasElem_Point func (o *XsdGoPkgHasElem_Point)
-	XsdGoPkgHasElem_PhotoOverlay func (o *XsdGoPkgHasElem_PhotoOverlay)
-	XsdGoPkgHasElems_ColorMode func (o *XsdGoPkgHasElems_ColorMode)
-	XsdGoPkgHasElems_ResourceMap func (o *XsdGoPkgHasElems_ResourceMap)
-	XsdGoPkgHasElems_ListStyleObjectExtensionGroup func (o *XsdGoPkgHasElems_ListStyleObjectExtensionGroup)
-	TAbstractTimePrimitiveType func (o *TAbstractTimePrimitiveType)
-	XsdGoPkgHasElem_SimpleData func (o *XsdGoPkgHasElem_SimpleData)
-	XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup)
-	XsdGoPkgHasElems_InnerBoundaryIs func (o *XsdGoPkgHasElems_InnerBoundaryIs)
-	XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_ func (o *XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_)
-	XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup func (o *XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup)
-	XsdGoPkgHasElem_Folder func (o *XsdGoPkgHasElem_Folder)
-	XsdGoPkgHasElem_Latitude func (o *XsdGoPkgHasElem_Latitude)
-	XsdGoPkgHasElem_PointSimpleExtensionGroup func (o *XsdGoPkgHasElem_PointSimpleExtensionGroup)
-	XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup func (o *XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup)
-	XsdGoPkgHasElem_Pair func (o *XsdGoPkgHasElem_Pair)
-	XsdGoPkgHasElem_Heading func (o *XsdGoPkgHasElem_Heading)
-	XsdGoPkgHasElem_NetworkLinkControl func (o *XsdGoPkgHasElem_NetworkLinkControl)
-	XsdGoPkgHasElem_HttpQuery func (o *XsdGoPkgHasElem_HttpQuery)
-	XsdGoPkgHasElem_ViewRefreshTime func (o *XsdGoPkgHasElem_ViewRefreshTime)
-	XsdGoPkgHasElems_AliasObjectExtensionGroup func (o *XsdGoPkgHasElems_AliasObjectExtensionGroup)
-	XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractOverlaySimpleExtensionGroup)
-	XsdGoPkgHasElem_TileSize func (o *XsdGoPkgHasElem_TileSize)
-	XsdGoPkgHasElems_Icon func (o *XsdGoPkgHasElems_Icon)
-	XsdGoPkgHasElems_StyleMapObjectExtensionGroup func (o *XsdGoPkgHasElems_StyleMapObjectExtensionGroup)
-	XsdGoPkgHasElems_Model func (o *XsdGoPkgHasElems_Model)
-	XsdGoPkgHasElem_Delete func (o *XsdGoPkgHasElem_Delete)
-	TMetadataType func (o *TMetadataType)
-	XsdGoPkgHasElem_OrientationSimpleExtensionGroup func (o *XsdGoPkgHasElem_OrientationSimpleExtensionGroup)
-	XsdGoPkgHasElems_Alias func (o *XsdGoPkgHasElems_Alias)
-	TNetworkLinkControlType func (o *TNetworkLinkControlType)
-	XsdGoPkgHasElems_LookAtSimpleExtensionGroup func (o *XsdGoPkgHasElems_LookAtSimpleExtensionGroup)
-	XsdGoPkgHasElems_MultiGeometry func (o *XsdGoPkgHasElems_MultiGeometry)
-	XsdGoPkgHasElems_Region func (o *XsdGoPkgHasElems_Region)
-	XsdGoPkgHasElems_BoundaryObjectExtensionGroup func (o *XsdGoPkgHasElems_BoundaryObjectExtensionGroup)
-	XsdGoPkgHasElem_Cookie func (o *XsdGoPkgHasElem_Cookie)
-	TLineStyleType func (o *TLineStyleType)
-	TLookAtType func (o *TLookAtType)
-	TModelType func (o *TModelType)
-	XsdGoPkgHasElems_RefreshVisibility func (o *XsdGoPkgHasElems_RefreshVisibility)
-	XsdGoPkgHasElems_West func (o *XsdGoPkgHasElems_West)
-	XsdGoPkgHasElem_Longitude func (o *XsdGoPkgHasElem_Longitude)
-	XsdGoPkgHasElem_Outline func (o *XsdGoPkgHasElem_Outline)
-	XsdGoPkgHasElem_LinkName func (o *XsdGoPkgHasElem_LinkName)
-	XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup func (o *XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup)
-	XsdGoPkgHasElems_X func (o *XsdGoPkgHasElems_X)
-	XsdGoPkgHasElems_Y func (o *XsdGoPkgHasElems_Y)
-	XsdGoPkgHasElem_TextColor func (o *XsdGoPkgHasElem_TextColor)
-	XsdGoPkgHasElem_Visibility func (o *XsdGoPkgHasElem_Visibility)
-	XsdGoPkgHasElems_LabelStyle func (o *XsdGoPkgHasElems_LabelStyle)
-	XsdGoPkgHasElem_ImagePyramidSimpleExtensionGroup func (o *XsdGoPkgHasElem_ImagePyramidSimpleExtensionGroup)
-	XsdGoPkgHasElem_LinkDescription func (o *XsdGoPkgHasElem_LinkDescription)
-	XsdGoPkgHasElem_ResourceMap func (o *XsdGoPkgHasElem_ResourceMap)
-	XsdGoPkgHasElems_PointSimpleExtensionGroup func (o *XsdGoPkgHasElems_PointSimpleExtensionGroup)
-	XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup func (o *XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup)
-	XsdGoPkgHasElem_TargetHref func (o *XsdGoPkgHasElem_TargetHref)
-	XsdGoPkgHasElem_InnerBoundaryIs func (o *XsdGoPkgHasElem_InnerBoundaryIs)
-	XsdGoPkgHasElem_TimeStamp func (o *XsdGoPkgHasElem_TimeStamp)
-	XsdGoPkgHasElems_PairObjectExtensionGroup func (o *XsdGoPkgHasElems_PairObjectExtensionGroup)
-	XsdGoPkgHasElems_LookAt func (o *XsdGoPkgHasElems_LookAt)
-	XsdGoPkgHasElem_AbstractTimePrimitiveSimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractTimePrimitiveSimpleExtensionGroup)
-	XsdGoPkgHasElems_MinFadeExtent func (o *XsdGoPkgHasElems_MinFadeExtent)
-	XsdGoPkgHasElems_StyleSimpleExtensionGroup func (o *XsdGoPkgHasElems_StyleSimpleExtensionGroup)
-	XsdGoPkgHasElem_Y func (o *XsdGoPkgHasElem_Y)
-	XsdGoPkgHasElem_OrientationObjectExtensionGroup func (o *XsdGoPkgHasElem_OrientationObjectExtensionGroup)
-	XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup func (o *XsdGoPkgHasElem_ScreenOverlayObjectExtensionGroup)
-	XsdGoPkgHasElem_ResourceMapSimpleExtensionGroup func (o *XsdGoPkgHasElem_ResourceMapSimpleExtensionGroup)
-	XsdGoPkgHasElem_ListStyleObjectExtensionGroup func (o *XsdGoPkgHasElem_ListStyleObjectExtensionGroup)
-	XsdGoPkgHasElems_BalloonStyle func (o *XsdGoPkgHasElems_BalloonStyle)
-	XsdGoPkgHasElems_Lod func (o *XsdGoPkgHasElems_Lod)
-	TDataType func (o *TDataType)
-	XsdGoPkgHasElems_RotationXY func (o *XsdGoPkgHasElems_RotationXY)
-	XsdGoPkgHasElem_Style func (o *XsdGoPkgHasElem_Style)
-	XsdGoPkgHasElem_Schema func (o *XsdGoPkgHasElem_Schema)
-	TResourceMapType func (o *TResourceMapType)
-	XsdGoPkgHasElems_ViewVolumeSimpleExtensionGroup func (o *XsdGoPkgHasElems_ViewVolumeSimpleExtensionGroup)
-	XsdGoPkgHasElem_AbstractStyleSelectorSimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractStyleSelectorSimpleExtensionGroup)
-	XsdGoPkgHasElems_ScaleSimpleExtensionGroup func (o *XsdGoPkgHasElems_ScaleSimpleExtensionGroup)
-	TDeleteType func (o *TDeleteType)
-	TPolyStyleType func (o *TPolyStyleType)
-	XsdGoPkgHasElem_SchemaDataExtension func (o *XsdGoPkgHasElem_SchemaDataExtension)
-	XsdGoPkgHasElem_MaxAltitude func (o *XsdGoPkgHasElem_MaxAltitude)
-	XsdGoPkgHasElem_ExtendedData func (o *XsdGoPkgHasElem_ExtendedData)
-	XsdGoPkgHasElems_Open func (o *XsdGoPkgHasElems_Open)
-	XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup func (o *XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup)
-	XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup func (o *XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup)
-	XsdGoPkgHasElem_Roll func (o *XsdGoPkgHasElem_Roll)
-	XsdGoPkgHasElems_DocumentObjectExtensionGroup func (o *XsdGoPkgHasElems_DocumentObjectExtensionGroup)
-	XsdGoPkgHasElem_FolderSimpleExtensionGroup func (o *XsdGoPkgHasElem_FolderSimpleExtensionGroup)
-	XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup)
-	XsdGoPkgHasElems_TimeStamp func (o *XsdGoPkgHasElems_TimeStamp)
-	XsdGoPkgHasElems_Roll func (o *XsdGoPkgHasElems_Roll)
-	XsdGoPkgHasElem_OverlayXY func (o *XsdGoPkgHasElem_OverlayXY)
-	XsdGoPkgHasElems_AbstractContainerSimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractContainerSimpleExtensionGroup)
-	XsdGoPkgHasElems_LeftFov func (o *XsdGoPkgHasElems_LeftFov)
-	XsdGoPkgHasElems_LatLonAltBox func (o *XsdGoPkgHasElems_LatLonAltBox)
-	XsdGoPkgHasElem_Polygon func (o *XsdGoPkgHasElem_Polygon)
-	XsdGoPkgHasElems_KmlSimpleExtensionGroup func (o *XsdGoPkgHasElems_KmlSimpleExtensionGroup)
-	XsdGoPkgHasElem_MaxHeight func (o *XsdGoPkgHasElem_MaxHeight)
-	XsdGoPkgHasElem_BgColor func (o *XsdGoPkgHasElem_BgColor)
-	XsdGoPkgHasElems_LabelStyleObjectExtensionGroup func (o *XsdGoPkgHasElems_LabelStyleObjectExtensionGroup)
-	XsdGoPkgHasElem_Scale func (o *XsdGoPkgHasElem_Scale)
-	TSimpleFieldType func (o *TSimpleFieldType)
-	XsdGoPkgHasElems_MaxFadeExtent func (o *XsdGoPkgHasElems_MaxFadeExtent)
-	XsdGoPkgHasElem_KmlSimpleExtensionGroup func (o *XsdGoPkgHasElem_KmlSimpleExtensionGroup)
-	XsdGoPkgHasElems_AbstractViewObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractViewObjectExtensionGroup)
-	XsdGoPkgHasElem_Href func (o *XsdGoPkgHasElem_Href)
-	XsdGoPkgHasElem_DisplayMode func (o *XsdGoPkgHasElem_DisplayMode)
-	XsdGoPkgHasElem_Region func (o *XsdGoPkgHasElem_Region)
-	XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup func (o *XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup)
-	TLodType func (o *TLodType)
-	TFolderType func (o *TFolderType)
-	XsdGoPkgHasElem_ListStyleSimpleExtensionGroup func (o *XsdGoPkgHasElem_ListStyleSimpleExtensionGroup)
-	XsdGoPkgHasElems_AltitudeModeGroup func (o *XsdGoPkgHasElems_AltitudeModeGroup)
-	XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup func (o *XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup)
-	XsdGoPkgHasElem_Text func (o *XsdGoPkgHasElem_Text)
-	XsdGoPkgHasElems_South func (o *XsdGoPkgHasElems_South)
-	XsdGoPkgHasElem_LatLonAltBoxSimpleExtensionGroup func (o *XsdGoPkgHasElem_LatLonAltBoxSimpleExtensionGroup)
-	XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup)
-	XsdGoPkgHasElems_NetworkLink func (o *XsdGoPkgHasElems_NetworkLink)
-	XsdGoPkgHasElems_SourceHref func (o *XsdGoPkgHasElems_SourceHref)
-	TimeStampType func (o *TimeStampType)
-	XsdGoPkgHasElems_RefreshInterval func (o *XsdGoPkgHasElems_RefreshInterval)
-	XsdGoPkgHasElem_PairSimpleExtensionGroup func (o *XsdGoPkgHasElem_PairSimpleExtensionGroup)
-	XsdGoPkgHasElem_DataExtension func (o *XsdGoPkgHasElem_DataExtension)
-	XsdGoPkgHasElems_Cookie func (o *XsdGoPkgHasElems_Cookie)
-	XsdGoPkgHasElems_Link func (o *XsdGoPkgHasElems_Link)
-	XsdGoPkgHasElem_AbstractOverlayGroup func (o *XsdGoPkgHasElem_AbstractOverlayGroup)
-	XsdGoPkgHasElems_Location func (o *XsdGoPkgHasElems_Location)
-	XsdGoPkgHasElems_Range func (o *XsdGoPkgHasElems_Range)
-	TBoundaryType func (o *TBoundaryType)
-	XsdGoPkgHasElem_NetworkLinkControlSimpleExtensionGroup func (o *XsdGoPkgHasElem_NetworkLinkControlSimpleExtensionGroup)
-	XsdGoPkgHasElems_Message func (o *XsdGoPkgHasElems_Message)
-	XsdGoPkgHasElems_ViewVolume func (o *XsdGoPkgHasElems_ViewVolume)
-	XsdGoPkgHasElems_SimpleField func (o *XsdGoPkgHasElems_SimpleField)
-	XsdGoPkgHasElems_Extrude func (o *XsdGoPkgHasElems_Extrude)
-	TAbstractLatLonBoxType func (o *TAbstractLatLonBoxType)
-	XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup)
-	XsdGoPkgHasElems_LinearRing func (o *XsdGoPkgHasElems_LinearRing)
-	XsdGoPkgHasElem_AbstractViewObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractViewObjectExtensionGroup)
-	XsdGoPkgHasElem_LinearRingObjectExtensionGroup func (o *XsdGoPkgHasElem_LinearRingObjectExtensionGroup)
-	XsdGoPkgHasElem_AbstractContainerGroup func (o *XsdGoPkgHasElem_AbstractContainerGroup)
-	XsdGoPkgHasElem_ObjectSimpleExtensionGroup func (o *XsdGoPkgHasElem_ObjectSimpleExtensionGroup)
-	XsdGoPkgHasElems_LatLonBox func (o *XsdGoPkgHasElems_LatLonBox)
-	XsdGoPkgHasElems_LookAtObjectExtensionGroup func (o *XsdGoPkgHasElems_LookAtObjectExtensionGroup)
-	XsdGoPkgHasElem_PolygonObjectExtensionGroup func (o *XsdGoPkgHasElem_PolygonObjectExtensionGroup)
-	XsdGoPkgHasElems_TimeSpanObjectExtensionGroup func (o *XsdGoPkgHasElems_TimeSpanObjectExtensionGroup)
-	TSchemaType func (o *TSchemaType)
-	XsdGoPkgHasElems_OuterBoundaryIs func (o *XsdGoPkgHasElems_OuterBoundaryIs)
-	XsdGoPkgHasElem_ScreenOverlay func (o *XsdGoPkgHasElem_ScreenOverlay)
-	XsdGoPkgHasElems_ResourceMapObjectExtensionGroup func (o *XsdGoPkgHasElems_ResourceMapObjectExtensionGroup)
-	XsdGoPkgHasElems_ScreenOverlay func (o *XsdGoPkgHasElems_ScreenOverlay)
-	XsdGoPkgHasElem_North func (o *XsdGoPkgHasElem_North)
-	XsdGoPkgHasElems_Description func (o *XsdGoPkgHasElems_Description)
-	XsdGoPkgHasElem_Description func (o *XsdGoPkgHasElem_Description)
-	XsdGoPkgHasElems_AbstractContainerGroup func (o *XsdGoPkgHasElems_AbstractContainerGroup)
-	XsdGoPkgHasElems_Rotation func (o *XsdGoPkgHasElems_Rotation)
-	XsdGoPkgHasElem_MaxFadeExtent func (o *XsdGoPkgHasElem_MaxFadeExtent)
-	XsdGoPkgHasElems_Update func (o *XsdGoPkgHasElems_Update)
-	TAbstractStyleSelectorType func (o *TAbstractStyleSelectorType)
-	XsdGoPkgHasElem_BasicLinkSimpleExtensionGroup func (o *XsdGoPkgHasElem_BasicLinkSimpleExtensionGroup)
-	XsdGoPkgHasElems_KmlObjectExtensionGroup func (o *XsdGoPkgHasElems_KmlObjectExtensionGroup)
-	XsdGoPkgHasElem_Url func (o *XsdGoPkgHasElem_Url)
-	XsdGoPkgHasElems_Longitude func (o *XsdGoPkgHasElems_Longitude)
-	XsdGoPkgHasElems_LineStringSimpleExtensionGroup func (o *XsdGoPkgHasElems_LineStringSimpleExtensionGroup)
-	XsdGoPkgHasElems_AbstractTimePrimitiveGroup func (o *XsdGoPkgHasElems_AbstractTimePrimitiveGroup)
-	XsdGoPkgHasElem_StyleObjectExtensionGroup func (o *XsdGoPkgHasElem_StyleObjectExtensionGroup)
-	XsdGoPkgHasElem_Lod func (o *XsdGoPkgHasElem_Lod)
-	XsdGoPkgHasElem_KmlObjectExtensionGroup func (o *XsdGoPkgHasElem_KmlObjectExtensionGroup)
-	XsdGoPkgHasElem_AbstractViewGroup func (o *XsdGoPkgHasElem_AbstractViewGroup)
-	XsdGoPkgHasElems_AbstractGeometryGroup func (o *XsdGoPkgHasElems_AbstractGeometryGroup)
-	XsdGoPkgHasElem_BoundarySimpleExtensionGroup func (o *XsdGoPkgHasElem_BoundarySimpleExtensionGroup)
-	XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup func (o *XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup)
-	XsdGoPkgHasElem_ListItemType func (o *XsdGoPkgHasElem_ListItemType)
-	XsdGoPkgHasElem_NetworkLink func (o *XsdGoPkgHasElem_NetworkLink)
-	XsdGoPkgHasElem_NetworkLinkSimpleExtensionGroup func (o *XsdGoPkgHasElem_NetworkLinkSimpleExtensionGroup)
-	XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup)
-	XsdGoPkgHasElem_TimeStampObjectExtensionGroup func (o *XsdGoPkgHasElem_TimeStampObjectExtensionGroup)
-	XsdGoPkgHasElem_MinLodPixels func (o *XsdGoPkgHasElem_MinLodPixels)
-	XsdGoPkgHasElem_LatLonAltBox func (o *XsdGoPkgHasElem_LatLonAltBox)
-	XsdGoPkgHasElem_ViewVolumeSimpleExtensionGroup func (o *XsdGoPkgHasElem_ViewVolumeSimpleExtensionGroup)
-	TChangeType func (o *TChangeType)
-	XsdGoPkgHasElem_CameraObjectExtensionGroup func (o *XsdGoPkgHasElem_CameraObjectExtensionGroup)
-	XsdGoPkgHasElem_PhoneNumber func (o *XsdGoPkgHasElem_PhoneNumber)
-	XsdGoPkgHasElems_RightFov func (o *XsdGoPkgHasElems_RightFov)
-	XsdGoPkgHasElem_PlacemarkSimpleExtensionGroup func (o *XsdGoPkgHasElem_PlacemarkSimpleExtensionGroup)
 	XsdGoPkgHasElem_IconStyleObjectExtensionGroup func (o *XsdGoPkgHasElem_IconStyleObjectExtensionGroup)
-	XsdGoPkgHasElem_TimeSpanSimpleExtensionGroup func (o *XsdGoPkgHasElem_TimeSpanSimpleExtensionGroup)
-	TLineStringType func (o *TLineStringType)
-	XsdGoPkgHasElems_Expires func (o *XsdGoPkgHasElems_Expires)
-	XsdGoPkgHasElem_SourceHref func (o *XsdGoPkgHasElem_SourceHref)
-	XsdGoPkgHasElem_Message func (o *XsdGoPkgHasElem_Message)
-	TUpdateType func (o *TUpdateType)
-	XsdGoPkgHasElem_Address func (o *XsdGoPkgHasElem_Address)
-	XsdGoPkgHasElems_OrientationObjectExtensionGroup func (o *XsdGoPkgHasElems_OrientationObjectExtensionGroup)
-	XsdGoPkgHasElems_Width func (o *XsdGoPkgHasElems_Width)
-	XsdGoPkgHasElems_PhoneNumber func (o *XsdGoPkgHasElems_PhoneNumber)
-	XsdGoPkgHasElems_ItemIconObjectExtensionGroup func (o *XsdGoPkgHasElems_ItemIconObjectExtensionGroup)
-	XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup)
-	XsdGoPkgHasElems_AbstractColorStyleGroup func (o *XsdGoPkgHasElems_AbstractColorStyleGroup)
-	XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup)
-	XsdGoPkgHasElem_ViewRefreshMode func (o *XsdGoPkgHasElem_ViewRefreshMode)
-	TMultiGeometryType func (o *TMultiGeometryType)
-	XsdGoPkgHasElem_RotationXY func (o *XsdGoPkgHasElem_RotationXY)
-	XsdGoPkgHasElems_Snippet func (o *XsdGoPkgHasElems_Snippet)
-	XsdGoPkgHasElems_HotSpot func (o *XsdGoPkgHasElems_HotSpot)
-	TExtendedDataType func (o *TExtendedDataType)
-	XsdGoPkgHasElem_StyleMapSimpleExtensionGroup func (o *XsdGoPkgHasElem_StyleMapSimpleExtensionGroup)
-	XsdGoPkgHasElems_ExtendedData func (o *XsdGoPkgHasElems_ExtendedData)
-	XsdGoPkgHasElem_PolyStyleSimpleExtensionGroup func (o *XsdGoPkgHasElem_PolyStyleSimpleExtensionGroup)
-	XsdGoPkgHasElems_Schema func (o *XsdGoPkgHasElems_Schema)
-	XsdGoPkgHasElem_Shape func (o *XsdGoPkgHasElem_Shape)
-	XsdGoPkgHasElems_TargetHref func (o *XsdGoPkgHasElems_TargetHref)
-	XsdGoPkgHasElem_LeftFov func (o *XsdGoPkgHasElem_LeftFov)
-	XsdGoPkgHasElems_BalloonStyleSimpleExtensionGroup func (o *XsdGoPkgHasElems_BalloonStyleSimpleExtensionGroup)
-	TAbstractColorStyleType func (o *TAbstractColorStyleType)
-	XsdGoPkgHasElem_Value func (o *XsdGoPkgHasElem_Value)
-	XsdGoPkgHasElem_LineStyleObjectExtensionGroup func (o *XsdGoPkgHasElem_LineStyleObjectExtensionGroup)
-	XsdGoPkgHasElem_StyleMap func (o *XsdGoPkgHasElem_StyleMap)
-	XsdGoPkgHasElem_ModelSimpleExtensionGroup func (o *XsdGoPkgHasElem_ModelSimpleExtensionGroup)
-	XsdGoPkgHasElem_AbstractFeatureGroup func (o *XsdGoPkgHasElem_AbstractFeatureGroup)
-	XsdGoPkgHasElems_Folder func (o *XsdGoPkgHasElems_Folder)
-	XsdGoPkgHasElem_Open func (o *XsdGoPkgHasElem_Open)
+	XsdGoPkgHasElem_ItemIcon func (o *XsdGoPkgHasElem_ItemIcon)
+	XsdGoPkgHasElems_Coordinates func (o *XsdGoPkgHasElems_Coordinates)
+	XsdGoPkgHasElem_ResourceMap func (o *XsdGoPkgHasElem_ResourceMap)
+	XsdGoPkgHasElem_PairObjectExtensionGroup func (o *XsdGoPkgHasElem_PairObjectExtensionGroup)
+	XsdGoPkgHasElem_LinearRingSimpleExtensionGroup func (o *XsdGoPkgHasElem_LinearRingSimpleExtensionGroup)
+	XsdGoPkgHasElem_ViewRefreshTime func (o *XsdGoPkgHasElem_ViewRefreshTime)
+	XsdGoPkgHasElems_FlyToView func (o *XsdGoPkgHasElems_FlyToView)
+	XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup func (o *XsdGoPkgHasElems_NetworkLinkSimpleExtensionGroup)
+	XsdGoPkgHasElems_AltitudeModeGroup func (o *XsdGoPkgHasElems_AltitudeModeGroup)
+	XsdGoPkgHasElems_BottomFov func (o *XsdGoPkgHasElems_BottomFov)
 	XsdGoPkgHasElem_Create func (o *XsdGoPkgHasElem_Create)
-	XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup)
-	XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup func (o *XsdGoPkgHasElems_PlacemarkSimpleExtensionGroup)
-	XsdGoPkgHasElems_DisplayName func (o *XsdGoPkgHasElems_DisplayName)
-	XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup)
-	XsdGoPkgHasElems_RegionObjectExtensionGroup func (o *XsdGoPkgHasElems_RegionObjectExtensionGroup)
-	XsdGoPkgHasElem_ViewFormat func (o *XsdGoPkgHasElem_ViewFormat)
-	XsdGoPkgHasElem_MaxSnippetLines func (o *XsdGoPkgHasElem_MaxSnippetLines)
-	XsdGoPkgHasElems_ViewRefreshTime func (o *XsdGoPkgHasElems_ViewRefreshTime)
-	XsdGoPkgHasElem_AbstractViewSimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractViewSimpleExtensionGroup)
-	XsdGoPkgHasElem_TimeSpan func (o *XsdGoPkgHasElem_TimeSpan)
-	XsdGoPkgHasElems_MaxWidth func (o *XsdGoPkgHasElems_MaxWidth)
-	XsdGoPkgHasElem_LinearRing func (o *XsdGoPkgHasElem_LinearRing)
+	XsdGoPkgHasElems_TimeStampSimpleExtensionGroup func (o *XsdGoPkgHasElems_TimeStampSimpleExtensionGroup)
+	XsdGoPkgHasElems_ScaleObjectExtensionGroup func (o *XsdGoPkgHasElems_ScaleObjectExtensionGroup)
+	XsdGoPkgHasElem_Shape func (o *XsdGoPkgHasElem_Shape)
+	XsdGoPkgHasElems_ScreenXY func (o *XsdGoPkgHasElems_ScreenXY)
+	XsdGoPkgHasElems_LinearRingSimpleExtensionGroup func (o *XsdGoPkgHasElems_LinearRingSimpleExtensionGroup)
 	XsdGoPkgHasElems_MaxSnippetLines func (o *XsdGoPkgHasElems_MaxSnippetLines)
-	XsdGoPkgHasElem_BasicLinkObjectExtensionGroup func (o *XsdGoPkgHasElem_BasicLinkObjectExtensionGroup)
-	XsdGoPkgHasElems_AbstractStyleSelectorGroup func (o *XsdGoPkgHasElems_AbstractStyleSelectorGroup)
+	TSchemaType func (o *TSchemaType)
+	XsdGoPkgHasElem_Fill func (o *XsdGoPkgHasElem_Fill)
+	XsdGoPkgHasElem_ViewVolumeSimpleExtensionGroup func (o *XsdGoPkgHasElem_ViewVolumeSimpleExtensionGroup)
+	XsdGoPkgHasElem_Value func (o *XsdGoPkgHasElem_Value)
+	XsdGoPkgHasElem_Metadata func (o *XsdGoPkgHasElem_Metadata)
+	XsdGoPkgHasElems_CameraSimpleExtensionGroup func (o *XsdGoPkgHasElems_CameraSimpleExtensionGroup)
+	XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup func (o *XsdGoPkgHasElems_GroundOverlaySimpleExtensionGroup)
+	TAbstractColorStyleType func (o *TAbstractColorStyleType)
+	XsdGoPkgHasElem_SchemaData func (o *XsdGoPkgHasElem_SchemaData)
+	XsdGoPkgHasElem_DisplayMode func (o *XsdGoPkgHasElem_DisplayMode)
+	XsdGoPkgHasElems_ViewRefreshMode func (o *XsdGoPkgHasElems_ViewRefreshMode)
+	XsdGoPkgHasElem_SimpleData func (o *XsdGoPkgHasElem_SimpleData)
+	TAbstractLatLonBoxType func (o *TAbstractLatLonBoxType)
+	TAbstractTimePrimitiveType func (o *TAbstractTimePrimitiveType)
+	XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractFeatureObjectExtensionGroup)
+	XsdGoPkgHasElem_ScreenOverlaySimpleExtensionGroup func (o *XsdGoPkgHasElem_ScreenOverlaySimpleExtensionGroup)
+	XsdGoPkgHasElems_Latitude func (o *XsdGoPkgHasElems_Latitude)
+	XsdGoPkgHasElem_Kml func (o *XsdGoPkgHasElem_Kml)
+	XsdGoPkgHasElems_LineStringSimpleExtensionGroup func (o *XsdGoPkgHasElems_LineStringSimpleExtensionGroup)
+	XsdGoPkgHasElem_Size func (o *XsdGoPkgHasElem_Size)
+	XsdGoPkgHasElem_Href func (o *XsdGoPkgHasElem_Href)
+	XsdGoPkgHasElems_MinAltitude func (o *XsdGoPkgHasElems_MinAltitude)
+	XsdGoPkgHasElems_Address func (o *XsdGoPkgHasElems_Address)
+	XsdGoPkgHasElem_Z func (o *XsdGoPkgHasElem_Z)
+	XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractTimePrimitiveObjectExtensionGroup)
+	XsdGoPkgHasElem_ScaleObjectExtensionGroup func (o *XsdGoPkgHasElem_ScaleObjectExtensionGroup)
+	XsdGoPkgHasElems_StyleObjectExtensionGroup func (o *XsdGoPkgHasElems_StyleObjectExtensionGroup)
+	XsdGoPkgHasElem_ViewVolume func (o *XsdGoPkgHasElem_ViewVolume)
+	XsdGoPkgHasElem_NetworkLinkControl func (o *XsdGoPkgHasElem_NetworkLinkControl)
+	XsdGoPkgHasElem_CameraObjectExtensionGroup func (o *XsdGoPkgHasElem_CameraObjectExtensionGroup)
+	XsdGoPkgHasElems_Metadata func (o *XsdGoPkgHasElems_Metadata)
+	XsdGoPkgHasElem_LocationObjectExtensionGroup func (o *XsdGoPkgHasElem_LocationObjectExtensionGroup)
+	XsdGoPkgHasElem_ScreenXY func (o *XsdGoPkgHasElem_ScreenXY)
+	XsdGoPkgHasElem_DisplayName func (o *XsdGoPkgHasElem_DisplayName)
+	XsdGoPkgHasElem_AbstractColorStyleGroup func (o *XsdGoPkgHasElem_AbstractColorStyleGroup)
+	XsdGoPkgHasElem_Camera func (o *XsdGoPkgHasElem_Camera)
+	XsdGoPkgHasElem_TopFov func (o *XsdGoPkgHasElem_TopFov)
+	XsdGoPkgHasElem_StyleMapSimpleExtensionGroup func (o *XsdGoPkgHasElem_StyleMapSimpleExtensionGroup)
+	XsdGoPkgHasElem_AbstractStyleSelectorGroup func (o *XsdGoPkgHasElem_AbstractStyleSelectorGroup)
+	XsdGoPkgHasElem_Model func (o *XsdGoPkgHasElem_Model)
+	XsdGoPkgHasElems_Update func (o *XsdGoPkgHasElems_Update)
+	XsdGoPkgHasElem_LatLonBoxSimpleExtensionGroup func (o *XsdGoPkgHasElem_LatLonBoxSimpleExtensionGroup)
+	XsdGoPkgHasElem_TimeSpanSimpleExtensionGroup func (o *XsdGoPkgHasElem_TimeSpanSimpleExtensionGroup)
+	XsdGoPkgHasElems_Size func (o *XsdGoPkgHasElems_Size)
+	XsdGoPkgHasElem_Latitude func (o *XsdGoPkgHasElem_Latitude)
 	XsdGoPkgHasElem_AbstractSubStyleGroup func (o *XsdGoPkgHasElem_AbstractSubStyleGroup)
-	TLinearRingType func (o *TLinearRingType)
-	XsdGoPkgHasElem_RegionObjectExtensionGroup func (o *XsdGoPkgHasElem_RegionObjectExtensionGroup)
-	XsdGoPkgHasElem_PhotoOverlaySimpleExtensionGroup func (o *XsdGoPkgHasElem_PhotoOverlaySimpleExtensionGroup)
-	TDocumentType func (o *TDocumentType)
-	XsdGoPkgHasElems_OrientationSimpleExtensionGroup func (o *XsdGoPkgHasElems_OrientationSimpleExtensionGroup)
-	TPointType func (o *TPointType)
-	XsdGoPkgHasElem_LineStyleSimpleExtensionGroup func (o *XsdGoPkgHasElem_LineStyleSimpleExtensionGroup)
-	XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup func (o *XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup)
+	XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractContainerObjectExtensionGroup)
+	XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup func (o *XsdGoPkgHasElem_LatLonAltBoxObjectExtensionGroup)
+	XsdGoPkgHasElems_LodObjectExtensionGroup func (o *XsdGoPkgHasElems_LodObjectExtensionGroup)
+	XsdGoPkgHasElems_South func (o *XsdGoPkgHasElems_South)
+	XsdGoPkgHasElems_LocationSimpleExtensionGroup func (o *XsdGoPkgHasElems_LocationSimpleExtensionGroup)
+	XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractFeatureObjectExtensionGroup)
+	XsdGoPkgHasElem_Data func (o *XsdGoPkgHasElem_Data)
+	XsdGoPkgHasElems_Range func (o *XsdGoPkgHasElems_Range)
+	XsdGoPkgHasElems_Rotation func (o *XsdGoPkgHasElems_Rotation)
+	XsdGoPkgHasElems_Point func (o *XsdGoPkgHasElems_Point)
+	XsdGoPkgHasElems_LatLonBox func (o *XsdGoPkgHasElems_LatLonBox)
+	XsdGoPkgHasElem_ResourceMapSimpleExtensionGroup func (o *XsdGoPkgHasElem_ResourceMapSimpleExtensionGroup)
+	XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractFeatureSimpleExtensionGroup)
+	XsdGoPkgHasElem_AltitudeMode func (o *XsdGoPkgHasElem_AltitudeMode)
+	XsdGoPkgHasElem_MinAltitude func (o *XsdGoPkgHasElem_MinAltitude)
+	XsdGoPkgHasElem_Folder func (o *XsdGoPkgHasElem_Folder)
+	XsdGoPkgHasElem_Longitude func (o *XsdGoPkgHasElem_Longitude)
+	TModelType func (o *TModelType)
+	XsdGoPkgHasElem_Visibility func (o *XsdGoPkgHasElem_Visibility)
+	XsdGoPkgHasElem_Name func (o *XsdGoPkgHasElem_Name)
+	XsdGoPkgHasElem_DataExtension func (o *XsdGoPkgHasElem_DataExtension)
+	XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup func (o *XsdGoPkgHasElem_NetworkLinkControlObjectExtensionGroup)
+	TNetworkLinkControlType func (o *TNetworkLinkControlType)
+	XsdGoPkgHasElems_Outline func (o *XsdGoPkgHasElems_Outline)
+	XsdGoPkgHasElems_Shape func (o *XsdGoPkgHasElems_Shape)
+	XsdGoPkgHasElems_AbstractViewSimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractViewSimpleExtensionGroup)
+	XsdGoPkgHasElem_Description func (o *XsdGoPkgHasElem_Description)
+	XsdGoPkgHasElems_TopFov func (o *XsdGoPkgHasElems_TopFov)
+	XsdGoPkgHasElems_MaxAltitude func (o *XsdGoPkgHasElems_MaxAltitude)
+	XsdGoPkgHasElems_GroundOverlay func (o *XsdGoPkgHasElems_GroundOverlay)
+	XsdGoPkgHasElems_LookAtSimpleExtensionGroup func (o *XsdGoPkgHasElems_LookAtSimpleExtensionGroup)
+	XsdGoPkgHasElem_ListStyle func (o *XsdGoPkgHasElem_ListStyle)
+	TCreateType func (o *TCreateType)
+	XsdGoPkgHasElem_LeftFov func (o *XsdGoPkgHasElem_LeftFov)
+	XsdGoPkgHasElems_Snippet func (o *XsdGoPkgHasElems_Snippet)
+	XsdGoPkgHasElems_LeftFov func (o *XsdGoPkgHasElems_LeftFov)
+	XsdGoPkgHasElem_PolyStyleObjectExtensionGroup func (o *XsdGoPkgHasElem_PolyStyleObjectExtensionGroup)
+	XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup func (o *XsdGoPkgHasElems_BasicLinkSimpleExtensionGroup)
+	XsdGoPkgHasElem_ViewBoundScale func (o *XsdGoPkgHasElem_ViewBoundScale)
+	XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup func (o *XsdGoPkgHasElems_ScreenOverlaySimpleExtensionGroup)
+	XsdGoPkgHasElems_RefreshMode func (o *XsdGoPkgHasElems_RefreshMode)
+	XsdGoPkgHasElem_OrientationSimpleExtensionGroup func (o *XsdGoPkgHasElem_OrientationSimpleExtensionGroup)
+	XsdGoPkgHasElem_State func (o *XsdGoPkgHasElem_State)
+	XsdGoPkgHasElem_Document func (o *XsdGoPkgHasElem_Document)
+	XsdGoPkgHasElems_Scale func (o *XsdGoPkgHasElems_Scale)
+	XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractGeometryObjectExtensionGroup)
+	XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup func (o *XsdGoPkgHasElems_GroundOverlayObjectExtensionGroup)
+	XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup func (o *XsdGoPkgHasElems_ImagePyramidObjectExtensionGroup)
+	XsdGoPkgHasElem_AbstractLatLonBoxSimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractLatLonBoxSimpleExtensionGroup)
+	XsdGoPkgHasElem_LineString func (o *XsdGoPkgHasElem_LineString)
+	XsdGoPkgHasElem_Begin func (o *XsdGoPkgHasElem_Begin)
+	TLineStringType func (o *TLineStringType)
+	XsdGoPkgHasElems_DisplayName func (o *XsdGoPkgHasElems_DisplayName)
+	XsdGoPkgHasElems_ObjectSimpleExtensionGroup func (o *XsdGoPkgHasElems_ObjectSimpleExtensionGroup)
 	XsdGoPkgHasElems_Fill func (o *XsdGoPkgHasElems_Fill)
+	XsdGoPkgHasElem_MinFadeExtent func (o *XsdGoPkgHasElem_MinFadeExtent)
+	TLatLonBoxType func (o *TLatLonBoxType)
+	XsdGoPkgHasElems_MultiGeometry func (o *XsdGoPkgHasElems_MultiGeometry)
+	XsdGoPkgHasElems_MaxSessionLength func (o *XsdGoPkgHasElems_MaxSessionLength)
+	XsdGoPkgHasElems_BoundaryObjectExtensionGroup func (o *XsdGoPkgHasElems_BoundaryObjectExtensionGroup)
+	XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractStyleSelectorObjectExtensionGroup)
+	XsdGoPkgHasElem_LabelStyleSimpleExtensionGroup func (o *XsdGoPkgHasElem_LabelStyleSimpleExtensionGroup)
+	XsdGoPkgHasElems_When func (o *XsdGoPkgHasElems_When)
+	XsdGoPkgHasElems_Placemark func (o *XsdGoPkgHasElems_Placemark)
+	XsdGoPkgHasElems_UpdateExtensionGroup func (o *XsdGoPkgHasElems_UpdateExtensionGroup)
+	XsdGoPkgHasElems_SchemaDataExtension func (o *XsdGoPkgHasElems_SchemaDataExtension)
+	XsdGoPkgHasElems_LineStyleSimpleExtensionGroup func (o *XsdGoPkgHasElems_LineStyleSimpleExtensionGroup)
+	TMultiGeometryType func (o *TMultiGeometryType)
+	TNetworkLinkType func (o *TNetworkLinkType)
+	TFolderType func (o *TFolderType)
+	XsdGoPkgHasElem_PointObjectExtensionGroup func (o *XsdGoPkgHasElem_PointObjectExtensionGroup)
+	XsdGoPkgHasElems_ModelSimpleExtensionGroup func (o *XsdGoPkgHasElems_ModelSimpleExtensionGroup)
+	XsdGoPkgHasElems_NetworkLink func (o *XsdGoPkgHasElems_NetworkLink)
+	XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractGeometrySimpleExtensionGroup)
+	XsdGoPkgHasElem_Y func (o *XsdGoPkgHasElem_Y)
+	XsdGoPkgHasElem_RegionSimpleExtensionGroup func (o *XsdGoPkgHasElem_RegionSimpleExtensionGroup)
+	XsdGoPkgHasElem_ItemIconSimpleExtensionGroup func (o *XsdGoPkgHasElem_ItemIconSimpleExtensionGroup)
+	XsdGoPkgHasElem_AbstractColorStyleSimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractColorStyleSimpleExtensionGroup)
+	XsdGoPkgHasElems_LatLonAltBox func (o *XsdGoPkgHasElems_LatLonAltBox)
+	XsdGoPkgHasElem_RegionObjectExtensionGroup func (o *XsdGoPkgHasElem_RegionObjectExtensionGroup)
+	TSnippetType func (o *TSnippetType)
+	XsdGoPkgHasElem_Placemark func (o *XsdGoPkgHasElem_Placemark)
+	XsdGoPkgHasElem_ResourceMapObjectExtensionGroup func (o *XsdGoPkgHasElem_ResourceMapObjectExtensionGroup)
+	XsdGoPkgHasElem_MaxLodPixels func (o *XsdGoPkgHasElem_MaxLodPixels)
+	XsdGoPkgHasElems_Visibility func (o *XsdGoPkgHasElems_Visibility)
+	TListStyleType func (o *TListStyleType)
+	XsdGoPkgHasElem_PointSimpleExtensionGroup func (o *XsdGoPkgHasElem_PointSimpleExtensionGroup)
+	XsdGoPkgHasElem_OverlayXY func (o *XsdGoPkgHasElem_OverlayXY)
+	XsdGoPkgHasElem_Region func (o *XsdGoPkgHasElem_Region)
+	XsdGoPkgHasElem_Cookie func (o *XsdGoPkgHasElem_Cookie)
+	XsdGoPkgHasElem_Delete func (o *XsdGoPkgHasElem_Delete)
+	XsdGoPkgHasElem_LodSimpleExtensionGroup func (o *XsdGoPkgHasElem_LodSimpleExtensionGroup)
+	XsdGoPkgHasElem_East func (o *XsdGoPkgHasElem_East)
+	XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup func (o *XsdGoPkgHasElem_GroundOverlayObjectExtensionGroup)
+	XsdGoPkgHasElems_SchemaData func (o *XsdGoPkgHasElems_SchemaData)
+	XsdGoPkgHasElem_SchemaDataExtension func (o *XsdGoPkgHasElem_SchemaDataExtension)
+	XsdGoPkgHasElem_LinearRingObjectExtensionGroup func (o *XsdGoPkgHasElem_LinearRingObjectExtensionGroup)
+	XsdGoPkgHasElems_OrientationSimpleExtensionGroup func (o *XsdGoPkgHasElems_OrientationSimpleExtensionGroup)
+	XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup func (o *XsdGoPkgHasElems_LatLonBoxSimpleExtensionGroup)
+	XsdGoPkgHasElems_ViewVolume func (o *XsdGoPkgHasElems_ViewVolume)
+	XsdGoPkgHasElem_MaxWidth func (o *XsdGoPkgHasElem_MaxWidth)
+	XsdGoPkgHasElems_StyleSimpleExtensionGroup func (o *XsdGoPkgHasElems_StyleSimpleExtensionGroup)
+	TSchemaDataType func (o *TSchemaDataType)
+	XsdGoPkgHasElems_ListStyleObjectExtensionGroup func (o *XsdGoPkgHasElems_ListStyleObjectExtensionGroup)
+	XsdGoPkgHasElems_Delete func (o *XsdGoPkgHasElems_Delete)
+	XsdGoPkgHasElems_TimeStampObjectExtensionGroup func (o *XsdGoPkgHasElems_TimeStampObjectExtensionGroup)
+	XsdGoPkgHasElems_RotationXY func (o *XsdGoPkgHasElems_RotationXY)
+	XsdGoPkgHasElem_NetworkLinkControlSimpleExtensionGroup func (o *XsdGoPkgHasElem_NetworkLinkControlSimpleExtensionGroup)
+	TAbstractViewType func (o *TAbstractViewType)
+	XsdGoPkgHasElem_MultiGeometry func (o *XsdGoPkgHasElem_MultiGeometry)
+	XsdGoPkgHasElems_TargetHref func (o *XsdGoPkgHasElems_TargetHref)
+	XsdGoPkgHasElems_AbstractTimePrimitiveGroup func (o *XsdGoPkgHasElems_AbstractTimePrimitiveGroup)
+	XsdGoPkgHasElems_Schema func (o *XsdGoPkgHasElems_Schema)
+	TDeleteType func (o *TDeleteType)
+	XsdGoPkgHasElems_Camera func (o *XsdGoPkgHasElems_Camera)
+	XsdGoPkgHasElem_LinearRing func (o *XsdGoPkgHasElem_LinearRing)
+	XsdGoPkgHasElem_AbstractGeometrySimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractGeometrySimpleExtensionGroup)
+	XsdGoPkgHasElem_LineStyleSimpleExtensionGroup func (o *XsdGoPkgHasElem_LineStyleSimpleExtensionGroup)
+	TMetadataType func (o *TMetadataType)
+	XsdGoPkgHasElem_LinkObjectExtensionGroup func (o *XsdGoPkgHasElem_LinkObjectExtensionGroup)
+	TPhotoOverlayType func (o *TPhotoOverlayType)
+	XsdGoPkgHasElem_DrawOrder func (o *XsdGoPkgHasElem_DrawOrder)
+	XsdGoPkgHasElems_ListStyle func (o *XsdGoPkgHasElems_ListStyle)
+	XsdGoPkgHasElem_AltitudeModeGroup func (o *XsdGoPkgHasElem_AltitudeModeGroup)
+	XsdGoPkgHasElem_ImagePyramidSimpleExtensionGroup func (o *XsdGoPkgHasElem_ImagePyramidSimpleExtensionGroup)
+	XsdGoPkgHasElem_LatLonAltBox func (o *XsdGoPkgHasElem_LatLonAltBox)
+	XsdGoPkgHasElem_Point func (o *XsdGoPkgHasElem_Point)
+	XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup func (o *XsdGoPkgHasElems_PhotoOverlayObjectExtensionGroup)
+	XsdGoPkgHasElem_Key func (o *XsdGoPkgHasElem_Key)
+	XsdGoPkgHasElem_Open func (o *XsdGoPkgHasElem_Open)
+	XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup func (o *XsdGoPkgHasElem_ViewVolumeObjectExtensionGroup)
+	XsdGoPkgHasElem_TimeStampSimpleExtensionGroup func (o *XsdGoPkgHasElem_TimeStampSimpleExtensionGroup)
+	XsdGoPkgHasElem_Outline func (o *XsdGoPkgHasElem_Outline)
+	XsdGoPkgHasElem_AbstractViewSimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractViewSimpleExtensionGroup)
+	TImagePyramidType func (o *TImagePyramidType)
+	XsdGoPkgHasElem_BasicLinkSimpleExtensionGroup func (o *XsdGoPkgHasElem_BasicLinkSimpleExtensionGroup)
+	XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractTimePrimitiveSimpleExtensionGroup)
+	TLabelStyleType func (o *TLabelStyleType)
+	XsdGoPkgHasElem_Orientation func (o *XsdGoPkgHasElem_Orientation)
+	XsdGoPkgHasElems_ItemIcon func (o *XsdGoPkgHasElems_ItemIcon)
+	XsdGoPkgHasElems_ResourceMap func (o *XsdGoPkgHasElems_ResourceMap)
+	XsdGoPkgHasElem_ViewFormat func (o *XsdGoPkgHasElem_ViewFormat)
+	XsdGoPkgHasElem_Tessellate func (o *XsdGoPkgHasElem_Tessellate)
+	XsdGoPkgHasElem_MaxSessionLength func (o *XsdGoPkgHasElem_MaxSessionLength)
+	XsdGoPkgHasElem_LookAt func (o *XsdGoPkgHasElem_LookAt)
+	XsdGoPkgHasElems_LinkObjectExtensionGroup func (o *XsdGoPkgHasElems_LinkObjectExtensionGroup)
+	XsdGoPkgHasElems_ListItemType func (o *XsdGoPkgHasElems_ListItemType)
+	XsdGoPkgHasElems_PlacemarkObjectExtensionGroup func (o *XsdGoPkgHasElems_PlacemarkObjectExtensionGroup)
+	XsdGoPkgHasElem_MultiGeometrySimpleExtensionGroup func (o *XsdGoPkgHasElem_MultiGeometrySimpleExtensionGroup)
+	XsdGoPkgHasElem_RefreshVisibility func (o *XsdGoPkgHasElem_RefreshVisibility)
+	XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractLatLonBoxObjectExtensionGroup)
+	XsdGoPkgHasElem_AliasObjectExtensionGroup func (o *XsdGoPkgHasElem_AliasObjectExtensionGroup)
+	XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup func (o *XsdGoPkgHasElems_ImagePyramidSimpleExtensionGroup)
+	XsdGoPkgHasElems_PhotoOverlay func (o *XsdGoPkgHasElems_PhotoOverlay)
+	XsdGoPkgHasElem_PolyStyle func (o *XsdGoPkgHasElem_PolyStyle)
+	XsdGoPkgHasElems_ViewFormat func (o *XsdGoPkgHasElems_ViewFormat)
+	XsdGoPkgHasElems_AbstractGeometryGroup func (o *XsdGoPkgHasElems_AbstractGeometryGroup)
+	XsdGoPkgHasElems_AbstractViewObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractViewObjectExtensionGroup)
+	TimeStampType func (o *TimeStampType)
+	XsdGoPkgHasElem_Snippet func (o *XsdGoPkgHasElem_Snippet)
+	XsdGoPkgHasElems_DisplayMode func (o *XsdGoPkgHasElems_DisplayMode)
+	XsdGoPkgHasElem_SourceHref func (o *XsdGoPkgHasElem_SourceHref)
+	XsdGoPkgHasElem_DocumentObjectExtensionGroup func (o *XsdGoPkgHasElem_DocumentObjectExtensionGroup)
+	XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup func (o *XsdGoPkgHasElems_NetworkLinkObjectExtensionGroup)
+	XsdGoPkgHasElems_North func (o *XsdGoPkgHasElems_North)
+	XsdGoPkgHasElem_North func (o *XsdGoPkgHasElem_North)
+	XsdGoPkgHasElem_TextColor func (o *XsdGoPkgHasElem_TextColor)
+	XsdGoPkgHasElems_LinearRing func (o *XsdGoPkgHasElems_LinearRing)
+	XsdGoPkgHasElem_Pair func (o *XsdGoPkgHasElem_Pair)
+	TAbstractSubStyleType func (o *TAbstractSubStyleType)
+	TLinkType func (o *TLinkType)
+	XsdGoPkgHasElem_LinkName func (o *XsdGoPkgHasElem_LinkName)
+	TAbstractContainerType func (o *TAbstractContainerType)
+	XsdGoPkgHasElem_Rotation func (o *XsdGoPkgHasElem_Rotation)
+	XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup func (o *XsdGoPkgHasElems_TimeSpanSimpleExtensionGroup)
+	XsdGoPkgHasElem_X func (o *XsdGoPkgHasElem_X)
+	TLodType func (o *TLodType)
+	XsdGoPkgHasElem_Range func (o *XsdGoPkgHasElem_Range)
+	XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractStyleSelectorSimpleExtensionGroup)
+	XsdGoPkgHasElems_LodSimpleExtensionGroup func (o *XsdGoPkgHasElems_LodSimpleExtensionGroup)
+	XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractContainerObjectExtensionGroup)
+	XsdGoPkgHasElems_Style func (o *XsdGoPkgHasElems_Style)
+	TSimpleDataType func (o *TSimpleDataType)
+	TRegionType func (o *TRegionType)
+	XsdGoPkgHasElems_StyleMap func (o *XsdGoPkgHasElems_StyleMap)
+	XsdGoPkgHasElem_PhotoOverlay func (o *XsdGoPkgHasElem_PhotoOverlay)
+	XsdGoPkgHasElems_DataExtension func (o *XsdGoPkgHasElems_DataExtension)
+	XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup func (o *XsdGoPkgHasElems_NetworkLinkControlObjectExtensionGroup)
+	XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractColorStyleObjectExtensionGroup)
+	XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup func (o *XsdGoPkgHasElem_BalloonStyleObjectExtensionGroup)
+	XsdGoPkgHasElems_StyleMapObjectExtensionGroup func (o *XsdGoPkgHasElems_StyleMapObjectExtensionGroup)
+	XsdGoPkgHasElems_HotSpot func (o *XsdGoPkgHasElems_HotSpot)
+	XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup func (o *XsdGoPkgHasElems_LatLonBoxObjectExtensionGroup)
+	XsdGoPkgHasElem_LineStyle func (o *XsdGoPkgHasElem_LineStyle)
+	XsdGoPkgHasElems_AbstractViewGroup func (o *XsdGoPkgHasElems_AbstractViewGroup)
+	XsdGoPkgHasElem_Extrude func (o *XsdGoPkgHasElem_Extrude)
+	XsdGoPkgHasElem_Change func (o *XsdGoPkgHasElem_Change)
+	XsdGoPkgHasElems_DrawOrder func (o *XsdGoPkgHasElems_DrawOrder)
+	XsdGoPkgHasElems_ViewVolumeObjectExtensionGroup func (o *XsdGoPkgHasElems_ViewVolumeObjectExtensionGroup)
+	XsdGoPkgHasElems_Longitude func (o *XsdGoPkgHasElems_Longitude)
+	XsdGoPkgHasElem_ListStyleObjectExtensionGroup func (o *XsdGoPkgHasElem_ListStyleObjectExtensionGroup)
+	XsdGoPkgHasElems_LinkSnippet func (o *XsdGoPkgHasElems_LinkSnippet)
+	XsdGoPkgHasElem_Location func (o *XsdGoPkgHasElem_Location)
+	XsdGoPkgHasElems_StyleMapSimpleExtensionGroup func (o *XsdGoPkgHasElems_StyleMapSimpleExtensionGroup)
+	XsdGoPkgHasElem_LineStringObjectExtensionGroup func (o *XsdGoPkgHasElem_LineStringObjectExtensionGroup)
+	TSimpleFieldType func (o *TSimpleFieldType)
+	XsdGoPkgHasElems_Roll func (o *XsdGoPkgHasElems_Roll)
+	XsdGoPkgHasElem_ColorMode func (o *XsdGoPkgHasElem_ColorMode)
+	XsdGoPkgHasElem_End func (o *XsdGoPkgHasElem_End)
+	XsdGoPkgHasElems_TimeStamp func (o *XsdGoPkgHasElems_TimeStamp)
+	XsdGoPkgHasElems_LabelStyleObjectExtensionGroup func (o *XsdGoPkgHasElems_LabelStyleObjectExtensionGroup)
+	XsdGoPkgHasElems_Message func (o *XsdGoPkgHasElems_Message)
+	XsdGoPkgHasElem_BgColor func (o *XsdGoPkgHasElem_BgColor)
+	XsdGoPkgHasElems_AbstractFeatureGroup func (o *XsdGoPkgHasElems_AbstractFeatureGroup)
+	XsdGoPkgHasElems_RefreshVisibility func (o *XsdGoPkgHasElems_RefreshVisibility)
+	XsdGoPkgHasElem_LatLonBox func (o *XsdGoPkgHasElem_LatLonBox)
+	XsdGoPkgHasElem_LinkSimpleExtensionGroup func (o *XsdGoPkgHasElem_LinkSimpleExtensionGroup)
+	XsdGoPkgHasElems_Y func (o *XsdGoPkgHasElems_Y)
+	XsdGoPkgHasElem_ModelObjectExtensionGroup func (o *XsdGoPkgHasElem_ModelObjectExtensionGroup)
+	XsdGoPkgHasElem_ScaleSimpleExtensionGroup func (o *XsdGoPkgHasElem_ScaleSimpleExtensionGroup)
+	XsdGoPkgHasElem_LinkDescription func (o *XsdGoPkgHasElem_LinkDescription)
+	XsdGoPkgHasElems_PairSimpleExtensionGroup func (o *XsdGoPkgHasElems_PairSimpleExtensionGroup)
+	XsdGoPkgHasElems_OrientationObjectExtensionGroup func (o *XsdGoPkgHasElems_OrientationObjectExtensionGroup)
+	XsdGoPkgHasElems_MaxFadeExtent func (o *XsdGoPkgHasElems_MaxFadeExtent)
+	XsdGoPkgHasElem_Near func (o *XsdGoPkgHasElem_Near)
+	XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractOverlayObjectExtensionGroup)
+	XsdGoPkgHasElems_LookAtObjectExtensionGroup func (o *XsdGoPkgHasElems_LookAtObjectExtensionGroup)
+	XsdGoPkgHasElem_MaxFadeExtent func (o *XsdGoPkgHasElem_MaxFadeExtent)
+	XsdGoPkgHasElems_AliasSimpleExtensionGroup func (o *XsdGoPkgHasElems_AliasSimpleExtensionGroup)
+	XsdGoPkgHasElem_Expires func (o *XsdGoPkgHasElem_Expires)
+	XsdGoPkgHasElems_OverlayXY func (o *XsdGoPkgHasElems_OverlayXY)
+	XsdGoPkgHasElem_StyleObjectExtensionGroup func (o *XsdGoPkgHasElem_StyleObjectExtensionGroup)
+	XsdGoPkgHasElem_CameraSimpleExtensionGroup func (o *XsdGoPkgHasElem_CameraSimpleExtensionGroup)
+	XsdGoPkgHasElem_RotationXY func (o *XsdGoPkgHasElem_RotationXY)
+	XsdGoPkgHasElem_FolderObjectExtensionGroup func (o *XsdGoPkgHasElem_FolderObjectExtensionGroup)
+	XsdGoPkgHasElem_MinLodPixels func (o *XsdGoPkgHasElem_MinLodPixels)
+	XsdGoPkgHasElems_IconStyleObjectExtensionGroup func (o *XsdGoPkgHasElems_IconStyleObjectExtensionGroup)
+	XsdGoPkgHasElems_Url func (o *XsdGoPkgHasElems_Url)
+	XsdGoPkgHasElem_ImagePyramid func (o *XsdGoPkgHasElem_ImagePyramid)
+	XsdGoPkgHasElem_ScreenOverlay func (o *XsdGoPkgHasElem_ScreenOverlay)
+	XsdGoPkgHasElems_AbstractColorStyleGroup func (o *XsdGoPkgHasElems_AbstractColorStyleGroup)
+	XsdGoPkgHasElems_AbstractSubStyleGroup func (o *XsdGoPkgHasElems_AbstractSubStyleGroup)
+	XsdGoPkgHasElem_Scale func (o *XsdGoPkgHasElem_Scale)
+	XsdGoPkgHasElem_TimeStamp func (o *XsdGoPkgHasElem_TimeStamp)
+	XsdGoPkgHasElems_Value func (o *XsdGoPkgHasElems_Value)
+	XsdGoPkgHasElems_AbstractContainerGroup func (o *XsdGoPkgHasElems_AbstractContainerGroup)
+	XsdGoPkgHasElems_ImagePyramid func (o *XsdGoPkgHasElems_ImagePyramid)
+	XsdGoPkgHasElems_Key func (o *XsdGoPkgHasElems_Key)
+	XsdGoPkgHasElems_AbstractSubStyleSimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractSubStyleSimpleExtensionGroup)
+	XsdGoPkgHasElem_FolderSimpleExtensionGroup func (o *XsdGoPkgHasElem_FolderSimpleExtensionGroup)
+	XsdGoPkgHasElems_SimpleField func (o *XsdGoPkgHasElems_SimpleField)
+	XsdGoPkgHasElem_Icon func (o *XsdGoPkgHasElem_Icon)
+	XsdGoPkgHasElems_ScaleSimpleExtensionGroup func (o *XsdGoPkgHasElems_ScaleSimpleExtensionGroup)
+	XsdGoPkgHasElems_BalloonStyleSimpleExtensionGroup func (o *XsdGoPkgHasElems_BalloonStyleSimpleExtensionGroup)
+	TUpdateType func (o *TUpdateType)
+	TAbstractStyleSelectorType func (o *TAbstractStyleSelectorType)
+	XsdGoPkgHasElems_PolyStyle func (o *XsdGoPkgHasElems_PolyStyle)
+	XsdGoPkgHasElems_West func (o *XsdGoPkgHasElems_West)
+	XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractOverlayObjectExtensionGroup)
+	XsdGoPkgHasElems_PolygonSimpleExtensionGroup func (o *XsdGoPkgHasElems_PolygonSimpleExtensionGroup)
+	XsdGoPkgHasElem_RightFov func (o *XsdGoPkgHasElem_RightFov)
+	XsdGoPkgHasElems_RegionObjectExtensionGroup func (o *XsdGoPkgHasElems_RegionObjectExtensionGroup)
+	XsdGoPkgHasElem_Altitude func (o *XsdGoPkgHasElem_Altitude)
+	TChangeType func (o *TChangeType)
+	XsdGoPkgHasElem_South func (o *XsdGoPkgHasElem_South)
+	TGroundOverlayType func (o *TGroundOverlayType)
+	TPolyStyleType func (o *TPolyStyleType)
+	XsdGoPkgHasElems_AltitudeMode func (o *XsdGoPkgHasElems_AltitudeMode)
+	XsdGoPkgHasElem_AbstractOverlaySimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractOverlaySimpleExtensionGroup)
+	XsdGoPkgHasElems_TextColor func (o *XsdGoPkgHasElems_TextColor)
+	Tvec2Type func (o *Tvec2Type)
+	XsdGoPkgHasElem_TileSize func (o *XsdGoPkgHasElem_TileSize)
+	XsdGoPkgHasElems_BalloonStyle func (o *XsdGoPkgHasElems_BalloonStyle)
+	XsdGoPkgHasElems_AbstractSubStyleObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractSubStyleObjectExtensionGroup)
+	XsdGoPkgHasElem_BottomFov func (o *XsdGoPkgHasElem_BottomFov)
+	XsdGoPkgHasElems_Name func (o *XsdGoPkgHasElems_Name)
+	XsdGoPkgHasElems_BoundarySimpleExtensionGroup func (o *XsdGoPkgHasElems_BoundarySimpleExtensionGroup)
+	XsdGoPkgHasElem_LabelStyleObjectExtensionGroup func (o *XsdGoPkgHasElem_LabelStyleObjectExtensionGroup)
+	XsdGoPkgHasElem_PolygonSimpleExtensionGroup func (o *XsdGoPkgHasElem_PolygonSimpleExtensionGroup)
+	XsdGoPkgHasElems_Extrude func (o *XsdGoPkgHasElems_Extrude)
+	TIconStyleType func (o *TIconStyleType)
+	XsdGoPkgHasElems_PointObjectExtensionGroup func (o *XsdGoPkgHasElems_PointObjectExtensionGroup)
+	XsdGoPkgHasElem_AbstractObjectGroup func (o *XsdGoPkgHasElem_AbstractObjectGroup)
+	XsdGoPkgHasElem_LabelStyle func (o *XsdGoPkgHasElem_LabelStyle)
+	XsdGoPkgHasElem_Address func (o *XsdGoPkgHasElem_Address)
+	TDataType func (o *TDataType)
+	XsdGoPkgHasElem_TimeSpan func (o *XsdGoPkgHasElem_TimeSpan)
+	XsdGoPkgHasElems_BgColor func (o *XsdGoPkgHasElems_BgColor)
+	XsdGoPkgHasElem_MaxHeight func (o *XsdGoPkgHasElem_MaxHeight)
+	XsdGoPkgHasElem_AbstractSubStyleSimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractSubStyleSimpleExtensionGroup)
+	XsdGoPkgHasElems_RegionSimpleExtensionGroup func (o *XsdGoPkgHasElems_RegionSimpleExtensionGroup)
+	XsdGoPkgHasElems_Location func (o *XsdGoPkgHasElems_Location)
+	XsdGoPkgHasElems_AliasObjectExtensionGroup func (o *XsdGoPkgHasElems_AliasObjectExtensionGroup)
+	XsdGoPkgHasElem_West func (o *XsdGoPkgHasElem_West)
+	XsdGoPkgHasElem_TimeSpanObjectExtensionGroup func (o *XsdGoPkgHasElem_TimeSpanObjectExtensionGroup)
+	XsdGoPkgHasElem_AbstractStyleSelectorSimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractStyleSelectorSimpleExtensionGroup)
+	XsdGoPkgHasElems_East func (o *XsdGoPkgHasElems_East)
+	XsdGoPkgHasElems_BalloonStyleObjectExtensionGroup func (o *XsdGoPkgHasElems_BalloonStyleObjectExtensionGroup)
+	XsdGoPkgHasElems_LinkDescription func (o *XsdGoPkgHasElems_LinkDescription)
+	XsdGoPkgHasElems_Href func (o *XsdGoPkgHasElems_Href)
+	TLinearRingType func (o *TLinearRingType)
+	XsdGoPkgHasElem_PlacemarkObjectExtensionGroup func (o *XsdGoPkgHasElem_PlacemarkObjectExtensionGroup)
+	XsdGoPkgHasElem_LineStringSimpleExtensionGroup func (o *XsdGoPkgHasElem_LineStringSimpleExtensionGroup)
+	XsdGoPkgHasElem_LocationSimpleExtensionGroup func (o *XsdGoPkgHasElem_LocationSimpleExtensionGroup)
+	XsdGoPkgHasElem_PlacemarkSimpleExtensionGroup func (o *XsdGoPkgHasElem_PlacemarkSimpleExtensionGroup)
+	XsdGoPkgHasElems_AbstractObjectGroup func (o *XsdGoPkgHasElems_AbstractObjectGroup)
+	XsdGoPkgHasElem_SimpleFieldExtension func (o *XsdGoPkgHasElem_SimpleFieldExtension)
+	XsdGoPkgHasElems_LineStringObjectExtensionGroup func (o *XsdGoPkgHasElems_LineStringObjectExtensionGroup)
+	XsdGoPkgHasElems_FolderObjectExtensionGroup func (o *XsdGoPkgHasElems_FolderObjectExtensionGroup)
+	XsdGoPkgHasElem_AbstractContainerGroup func (o *XsdGoPkgHasElem_AbstractContainerGroup)
+	XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup func (o *XsdGoPkgHasElems_NetworkLinkControlSimpleExtensionGroup)
+	XsdGoPkgHasElems_Begin func (o *XsdGoPkgHasElems_Begin)
+	XsdGoPkgHasElems_Heading func (o *XsdGoPkgHasElems_Heading)
+	XsdGoPkgHasElem_HotSpot func (o *XsdGoPkgHasElem_HotSpot)
+	XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup func (o *XsdGoPkgHasElems_LatLonAltBoxObjectExtensionGroup)
+	XsdGoPkgHasElems_Region func (o *XsdGoPkgHasElems_Region)
+	XsdGoPkgHasElem_Text func (o *XsdGoPkgHasElem_Text)
+	XsdGoPkgHasElem_MaxAltitude func (o *XsdGoPkgHasElem_MaxAltitude)
+	XsdGoPkgHasElems_State func (o *XsdGoPkgHasElems_State)
+	XsdGoPkgHasElem_LineStyleObjectExtensionGroup func (o *XsdGoPkgHasElem_LineStyleObjectExtensionGroup)
+	XsdGoPkgHasElems_Orientation func (o *XsdGoPkgHasElems_Orientation)
+	TOrientationType func (o *TOrientationType)
+	XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup func (o *XsdGoPkgHasElems_MultiGeometrySimpleExtensionGroup)
+	XsdGoPkgHasElems_LocationObjectExtensionGroup func (o *XsdGoPkgHasElems_LocationObjectExtensionGroup)
+	XsdGoPkgHasElems_Near func (o *XsdGoPkgHasElems_Near)
+	XsdGoPkgHasElem_LodObjectExtensionGroup func (o *XsdGoPkgHasElem_LodObjectExtensionGroup)
+	XsdGoPkgHasElem_TimeStampObjectExtensionGroup func (o *XsdGoPkgHasElem_TimeStampObjectExtensionGroup)
+	XsdGoPkgHasElems_PointSimpleExtensionGroup func (o *XsdGoPkgHasElems_PointSimpleExtensionGroup)
+	XsdGoPkgHasElem_Lod func (o *XsdGoPkgHasElem_Lod)
+	TDocumentType func (o *TDocumentType)
+	XsdGoPkgHasElems_BasicLinkObjectExtensionGroup func (o *XsdGoPkgHasElems_BasicLinkObjectExtensionGroup)
+	XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractTimePrimitiveObjectExtensionGroup)
+	XsdGoPkgHasElems_PairObjectExtensionGroup func (o *XsdGoPkgHasElems_PairObjectExtensionGroup)
+	XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractSubStyleObjectExtensionGroup)
+	XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup func (o *XsdGoPkgHasElem_LatLonBoxObjectExtensionGroup)
+	XsdGoPkgHasElem_KmlSimpleExtensionGroup func (o *XsdGoPkgHasElem_KmlSimpleExtensionGroup)
+	TLatLonAltBoxType func (o *TLatLonAltBoxType)
+	TScreenOverlayType func (o *TScreenOverlayType)
+	XsdGoPkgHasElem_LatLonAltBoxSimpleExtensionGroup func (o *XsdGoPkgHasElem_LatLonAltBoxSimpleExtensionGroup)
+	TStyleMapType func (o *TStyleMapType)
+	XsdGoPkgHasElem_GroundOverlaySimpleExtensionGroup func (o *XsdGoPkgHasElem_GroundOverlaySimpleExtensionGroup)
+	XsdGoPkgHasElem_UpdateExtensionGroup func (o *XsdGoPkgHasElem_UpdateExtensionGroup)
+	TAbstractObjectType func (o *TAbstractObjectType)
+	XsdGoPkgHasElem_BalloonStyleSimpleExtensionGroup func (o *XsdGoPkgHasElem_BalloonStyleSimpleExtensionGroup)
+	XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractColorStyleObjectExtensionGroup)
+	XsdGoPkgHasElems_AbstractStyleSelectorGroup func (o *XsdGoPkgHasElems_AbstractStyleSelectorGroup)
+	TViewVolumeType func (o *TViewVolumeType)
+	XsdGoPkgHasElems_Icon func (o *XsdGoPkgHasElems_Icon)
+	XsdGoPkgHasElem_SimpleField func (o *XsdGoPkgHasElem_SimpleField)
+	TLocationType func (o *TLocationType)
+	TPolygonType func (o *TPolygonType)
+	XsdGoPkgHasElems_LookAt func (o *XsdGoPkgHasElems_LookAt)
+	XsdGoPkgHasElem_OuterBoundaryIs func (o *XsdGoPkgHasElem_OuterBoundaryIs)
+	XsdGoPkgHasElem_BoundarySimpleExtensionGroup func (o *XsdGoPkgHasElem_BoundarySimpleExtensionGroup)
+	XsdGoPkgHasElems_Document func (o *XsdGoPkgHasElems_Document)
+	XsdGoPkgHasElems_UpdateOpExtensionGroup func (o *XsdGoPkgHasElems_UpdateOpExtensionGroup)
+	XsdGoPkgHasElems_Altitude func (o *XsdGoPkgHasElems_Altitude)
+	TPairType func (o *TPairType)
+	XsdGoPkgHasElems_FolderSimpleExtensionGroup func (o *XsdGoPkgHasElems_FolderSimpleExtensionGroup)
+	XsdGoPkgHasElems_LineStyleObjectExtensionGroup func (o *XsdGoPkgHasElems_LineStyleObjectExtensionGroup)
+	XsdGoPkgHasElems_RefreshInterval func (o *XsdGoPkgHasElems_RefreshInterval)
+	XsdGoPkgHasElem_KmlObjectExtensionGroup func (o *XsdGoPkgHasElem_KmlObjectExtensionGroup)
+	XsdGoPkgHasElem_IconStyleSimpleExtensionGroup func (o *XsdGoPkgHasElem_IconStyleSimpleExtensionGroup)
+	XsdGoPkgHasElem_AliasSimpleExtensionGroup func (o *XsdGoPkgHasElem_AliasSimpleExtensionGroup)
+	XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractStyleSelectorObjectExtensionGroup)
+	XsdGoPkgHasElems_LinkName func (o *XsdGoPkgHasElems_LinkName)
+	XsdGoPkgHasElems_MinLodPixels func (o *XsdGoPkgHasElems_MinLodPixels)
+	XsdGoPkgHasElem_Color func (o *XsdGoPkgHasElem_Color)
+	XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_ func (o *XsdGoPkgHasElem_IconsequenceextensioncomplexContentIconStyleTypeschema_Icon_TBasicLinkType_)
+	XsdGoPkgHasElems_AbstractColorStyleSimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractColorStyleSimpleExtensionGroup)
+	XsdGoPkgHasElem_LookAtObjectExtensionGroup func (o *XsdGoPkgHasElem_LookAtObjectExtensionGroup)
+	XsdGoPkgHasElem_UpdateOpExtensionGroup func (o *XsdGoPkgHasElem_UpdateOpExtensionGroup)
+	XsdGoPkgHasElems_HttpQuery func (o *XsdGoPkgHasElems_HttpQuery)
+	XsdGoPkgHasElems_ItemIconSimpleExtensionGroup func (o *XsdGoPkgHasElems_ItemIconSimpleExtensionGroup)
+	XsdGoPkgHasElem_NetworkLink func (o *XsdGoPkgHasElem_NetworkLink)
+	XsdGoPkgHasElem_AbstractContainerSimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractContainerSimpleExtensionGroup)
+	XsdGoPkgHasElem_Heading func (o *XsdGoPkgHasElem_Heading)
+	XsdGoPkgHasElems_StyleUrl func (o *XsdGoPkgHasElems_StyleUrl)
+	XsdGoPkgHasElems_MinFadeExtent func (o *XsdGoPkgHasElems_MinFadeExtent)
+	XsdGoPkgHasElem_IconStyle func (o *XsdGoPkgHasElem_IconStyle)
+	XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup func (o *XsdGoPkgHasElem_AbstractLatLonBoxObjectExtensionGroup)
+	XsdGoPkgHasElem_ListItemType func (o *XsdGoPkgHasElem_ListItemType)
+	XsdGoPkgHasElems_SimpleData func (o *XsdGoPkgHasElems_SimpleData)
+	TBoundaryType func (o *TBoundaryType)
+	XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup func (o *XsdGoPkgHasElem_NetworkLinkObjectExtensionGroup)
+	XsdGoPkgHasElem_AbstractGeometryGroup func (o *XsdGoPkgHasElem_AbstractGeometryGroup)
+	XsdGoPkgHasElems_MaxLodPixels func (o *XsdGoPkgHasElems_MaxLodPixels)
+	XsdGoPkgHasElems_OuterBoundaryIs func (o *XsdGoPkgHasElems_OuterBoundaryIs)
+	XsdGoPkgHasElem_StyleMap func (o *XsdGoPkgHasElem_StyleMap)
+	XsdGoPkgHasElem_AbstractViewGroup func (o *XsdGoPkgHasElem_AbstractViewGroup)
+	XsdGoPkgHasElems_SchemaExtension func (o *XsdGoPkgHasElems_SchemaExtension)
+	XsdGoPkgHasElem_Polygon func (o *XsdGoPkgHasElem_Polygon)
+	XsdGoPkgHasElems_Kml func (o *XsdGoPkgHasElems_Kml)
+	XsdGoPkgHasElems_PolygonObjectExtensionGroup func (o *XsdGoPkgHasElems_PolygonObjectExtensionGroup)
+	XsdGoPkgHasElems_Model func (o *XsdGoPkgHasElems_Model)
+	XsdGoPkgHasElems_Width func (o *XsdGoPkgHasElems_Width)
+	XsdGoPkgHasElems_DocumentObjectExtensionGroup func (o *XsdGoPkgHasElems_DocumentObjectExtensionGroup)
+	XsdGoPkgHasElems_ViewRefreshTime func (o *XsdGoPkgHasElems_ViewRefreshTime)
+	XsdGoPkgHasElem_BalloonStyle func (o *XsdGoPkgHasElem_BalloonStyle)
+	XsdGoPkgHasElems_TimeSpan func (o *XsdGoPkgHasElems_TimeSpan)
+	XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup func (o *XsdGoPkgHasElem_ImagePyramidObjectExtensionGroup)
+	XsdGoPkgHasElem_PolygonObjectExtensionGroup func (o *XsdGoPkgHasElem_PolygonObjectExtensionGroup)
+	TLineStyleType func (o *TLineStyleType)
+	XsdGoPkgHasElem_AbstractFeatureSimpleExtensionGroup func (o *XsdGoPkgHasElem_AbstractFeatureSimpleExtensionGroup)
+	XsdGoPkgHasElems_AbstractOverlayGroup func (o *XsdGoPkgHasElems_AbstractOverlayGroup)
+	XsdGoPkgHasElem_Roll func (o *XsdGoPkgHasElem_Roll)
+	XsdGoPkgHasElem_When func (o *XsdGoPkgHasElem_When)
+	TAliasType func (o *TAliasType)
+	XsdGoPkgHasElems_X func (o *XsdGoPkgHasElems_X)
+	TAbstractFeatureType func (o *TAbstractFeatureType)
+	XsdGoPkgHasElem_Style func (o *XsdGoPkgHasElem_Style)
+	XsdGoPkgHasElem_FlyToView func (o *XsdGoPkgHasElem_FlyToView)
+	XsdGoPkgHasElem_TargetHref func (o *XsdGoPkgHasElem_TargetHref)
+	XsdGoPkgHasElems_RightFov func (o *XsdGoPkgHasElems_RightFov)
+	XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractLatLonBoxSimpleExtensionGroup)
+	XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup func (o *XsdGoPkgHasElems_AbstractGeometryObjectExtensionGroup)
+	XsdGoPkgHasElem_StyleMapObjectExtensionGroup func (o *XsdGoPkgHasElem_StyleMapObjectExtensionGroup)
+	XsdGoPkgHasElem_ViewRefreshMode func (o *XsdGoPkgHasElem_ViewRefreshMode)
+	XsdGoPkgHasElem_AbstractFeatureGroup func (o *XsdGoPkgHasElem_AbstractFeatureGroup)
+	XsdGoPkgHasElems_ColorMode func (o *XsdGoPkgHasElems_ColorMode)
+	XsdGoPkgHasElems_ListStyleSimpleExtensionGroup func (o *XsdGoPkgHasElems_ListStyleSimpleExtensionGroup)
+	XsdGoPkgHasElem_LookAtSimpleExtensionGroup func (o *XsdGoPkgHasElem_LookAtSimpleExtensionGroup)
+	XsdGoPkgHasElems_ResourceMapObjectExtensionGroup func (o *XsdGoPkgHasElems_ResourceMapObjectExtensionGroup)
+	XsdGoPkgHasElems_ViewVolumeSimpleExtensionGroup func (o *XsdGoPkgHasElems_ViewVolumeSimpleExtensionGroup)
+	XsdGoPkgHasElem_AbstractTimePrimitiveGroup func (o *XsdGoPkgHasElem_AbstractTimePrimitiveGroup)
+	XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup func (o *XsdGoPkgHasElem_MultiGeometryObjectExtensionGroup)
+	XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup func (o *XsdGoPkgHasElems_PolyStyleSimpleExtensionGroup)
+	XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup func (o *XsdGoPkgHasElems_ResourceMapSimpleExtensionGroup)
+	TKmlType func (o *TKmlType)
+	XsdGoPkgHasElem_PairSimpleExtensionGroup func (o *XsdGoPkgHasElem_PairSimpleExtensionGroup)
+	XsdGoPkgHasElems_AbstractContainerSimpleExtensionGroup func (o *XsdGoPkgHasElems_AbstractContainerSimpleExtensionGroup)
+	XsdGoPkgHasElems_Expires func (o *XsdGoPkgHasElems_Expires)
+	XsdGoPkgHasElems_Color func (o *XsdGoPkgHasElems_Color)
+	XsdGoPkgHasElems_Text func (o *XsdGoPkgHasElems_Text)
+	XsdGoPkgHasElems_LinkSimpleExtensionGroup func (o *XsdGoPkgHasElems_LinkSimpleExtensionGroup)
+	XsdGoPkgHasElem_MaxSnippetLines func (o *XsdGoPkgHasElem_MaxSnippetLines)
+	XsdGoPkgHasElem_GroundOverlay func (o *XsdGoPkgHasElem_GroundOverlay)
+	XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup func (o *XsdGoPkgHasElems_LabelStyleSimpleExtensionGroup)
+	XsdGoPkgHasElem_GridOrigin func (o *XsdGoPkgHasElem_GridOrigin)
+	XsdGoPkgHasElems_Data func (o *XsdGoPkgHasElems_Data)
+	XsdGoPkgHasElems_MaxWidth func (o *XsdGoPkgHasElems_MaxWidth)
+	TItemIconType func (o *TItemIconType)
+	XsdGoPkgHasElems_PhoneNumber func (o *XsdGoPkgHasElems_PhoneNumber)
+	XsdGoPkgHasElem_LinkSnippet func (o *XsdGoPkgHasElem_LinkSnippet)
+	XsdGoPkgHasElem_MinRefreshPeriod func (o *XsdGoPkgHasElem_MinRefreshPeriod)
+	XsdGoPkgHasElem_Tilt func (o *XsdGoPkgHasElem_Tilt)
+	XsdGoPkgHasElem_OrientationObjectExtensionGroup func (o *XsdGoPkgHasElem_OrientationObjectExtensionGroup)
+	XsdGoPkgHasElems_Open func (o *XsdGoPkgHasElems_Open)
+	XsdGoPkgHasElems_TileSize func (o *XsdGoPkgHasElems_TileSize)
+	XsdGoPkgHasElems_InnerBoundaryIs func (o *XsdGoPkgHasElems_InnerBoundaryIs)
+	XsdGoPkgHasElem_BasicLinkObjectExtensionGroup func (o *XsdGoPkgHasElem_BasicLinkObjectExtensionGroup)
+	XsdGoPkgHasElem_BoundaryObjectExtensionGroup func (o *XsdGoPkgHasElem_BoundaryObjectExtensionGroup)
+	TAbstractGeometryType func (o *TAbstractGeometryType)
+	XsdGoPkgHasElems_PolyStyleObjectExtensionGroup func (o *XsdGoPkgHasElems_PolyStyleObjectExtensionGroup)
+	XsdGoPkgHasElems_Cookie func (o *XsdGoPkgHasElems_Cookie)
 }
