@@ -12,26 +12,26 @@ import (
 
 type TxsdType xsdt.String
 
-//	Returns true if the value of this enumerated TxsdType is "locator".
-func (me TxsdType) IsLocator () bool { return me == "locator" }
-
-//	Returns true if the value of this enumerated TxsdType is "simple".
-func (me TxsdType) IsSimple () bool { return me == "simple" }
-
 //	This convenience method just performs a simple type conversion to TxsdType's alias type xsdt.String.
 func (me TxsdType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdType is "extended".
-func (me TxsdType) IsExtended () bool { return me == "extended" }
-
-//	Returns true if the value of this enumerated TxsdType is "arc".
-func (me TxsdType) IsArc () bool { return me == "arc" }
 
 //	Since TxsdType is just a simple String type, this merely returns the current string value.
 func (me TxsdType) String () string { return xsdt.String(me).String() }
 
 //	Since TxsdType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdType is "locator".
+func (me TxsdType) IsLocator () bool { return me == "locator" }
+
+//	Returns true if the value of this enumerated TxsdType is "arc".
+func (me TxsdType) IsArc () bool { return me == "arc" }
+
+//	Returns true if the value of this enumerated TxsdType is "extended".
+func (me TxsdType) IsExtended () bool { return me == "extended" }
+
+//	Returns true if the value of this enumerated TxsdType is "simple".
+func (me TxsdType) IsSimple () bool { return me == "simple" }
 
 type XsdGoPkgHasAttr_Type struct {
 	Type TxsdType `xml:"http://www.w3.org/1999/xlink type,attr"`
@@ -63,20 +63,8 @@ type XsdGoPkgHasAttr_Title struct {
 
 type TxsdShow xsdt.String
 
-//	Since TxsdShow is just a simple String type, this merely returns the current string value.
-func (me TxsdShow) String () string { return xsdt.String(me).String() }
-
-//	Since TxsdShow is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdShow) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
 //	Returns true if the value of this enumerated TxsdShow is "embed".
 func (me TxsdShow) IsEmbed () bool { return me == "embed" }
-
-//	Returns true if the value of this enumerated TxsdShow is "none".
-func (me TxsdShow) IsNone () bool { return me == "none" }
-
-//	This convenience method just performs a simple type conversion to TxsdShow's alias type xsdt.String.
-func (me TxsdShow) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 //	Returns true if the value of this enumerated TxsdShow is "other".
 func (me TxsdShow) IsOther () bool { return me == "other" }
@@ -84,8 +72,20 @@ func (me TxsdShow) IsOther () bool { return me == "other" }
 //	Returns true if the value of this enumerated TxsdShow is "new".
 func (me TxsdShow) IsNew () bool { return me == "new" }
 
+//	Returns true if the value of this enumerated TxsdShow is "none".
+func (me TxsdShow) IsNone () bool { return me == "none" }
+
 //	Returns true if the value of this enumerated TxsdShow is "replace".
 func (me TxsdShow) IsReplace () bool { return me == "replace" }
+
+//	Since TxsdShow is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdShow) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TxsdShow is just a simple String type, this merely returns the current string value.
+func (me TxsdShow) String () string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TxsdShow's alias type xsdt.String.
+func (me TxsdShow) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
 type XsdGoPkgHasAttr_Show struct {
 	Show TxsdShow `xml:"http://www.w3.org/1999/xlink show,attr"`
@@ -97,8 +97,14 @@ func (me XsdGoPkgHasAttr_Show) ShowDefault () TxsdShow { return TxsdShow("embed"
 
 type TxsdActuate xsdt.String
 
+//	Returns true if the value of this enumerated TxsdActuate is "none".
+func (me TxsdActuate) IsNone () bool { return me == "none" }
+
 //	Returns true if the value of this enumerated TxsdActuate is "onLoad".
 func (me TxsdActuate) IsOnLoad () bool { return me == "onLoad" }
+
+//	Returns true if the value of this enumerated TxsdActuate is "other".
+func (me TxsdActuate) IsOther () bool { return me == "other" }
 
 //	Returns true if the value of this enumerated TxsdActuate is "onRequest".
 func (me TxsdActuate) IsOnRequest () bool { return me == "onRequest" }
@@ -106,17 +112,11 @@ func (me TxsdActuate) IsOnRequest () bool { return me == "onRequest" }
 //	Since TxsdActuate is just a simple String type, this merely returns the current string value.
 func (me TxsdActuate) String () string { return xsdt.String(me).String() }
 
-//	Returns true if the value of this enumerated TxsdActuate is "other".
-func (me TxsdActuate) IsOther () bool { return me == "other" }
-
-//	Since TxsdActuate is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdActuate) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
 //	This convenience method just performs a simple type conversion to TxsdActuate's alias type xsdt.String.
 func (me TxsdActuate) ToXsdtString () xsdt.String { return xsdt.String(me) }
 
-//	Returns true if the value of this enumerated TxsdActuate is "none".
-func (me TxsdActuate) IsNone () bool { return me == "none" }
+//	Since TxsdActuate is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdActuate) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
 
 type XsdGoPkgHasAttr_Actuate struct {
 	Actuate TxsdActuate `xml:"http://www.w3.org/1999/xlink actuate,attr"`
