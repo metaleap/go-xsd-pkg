@@ -4,42 +4,36 @@
 //		docbook.org/xml/5.0/xsd/xml.xsd
 package go_Xml
 
-
-
 import (
 	xsdt "github.com/metaleap/go-xsd/types"
 )
 
 type XsdGoPkgHasAttr_Id struct {
 	Id xsdt.Id `xml:"http://www.w3.org/XML/1998/namespace id,attr"`
-
 }
 
 type XsdGoPkgHasAttr_Lang struct {
 	Lang xsdt.String `xml:"http://www.w3.org/XML/1998/namespace lang,attr"`
-
 }
 
 type XsdGoPkgHasAttr_Base struct {
 	Base xsdt.String `xml:"http://www.w3.org/XML/1998/namespace base,attr"`
-
 }
 
 type TxsdSpace xsdt.Token
 
-//	Since TxsdSpace is just a simple String type, this merely returns the current string value.
-func (me TxsdSpace) String () string { return xsdt.Token(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdSpace's alias type xsdt.Token.
-func (me TxsdSpace) ToXsdtToken () xsdt.Token { return xsdt.Token(me) }
-
 //	Since TxsdSpace is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdSpace) SetFromString (s string)  { (*xsdt.Token)(me).SetFromString(s) }
+func (me *TxsdSpace) SetFromString(s string) { (*xsdt.Token)(me).SetFromString(s) }
+
+//	Since TxsdSpace is just a simple String type, this merely returns the current string value.
+func (me TxsdSpace) String() string { return xsdt.Token(me).String() }
 
 //	Returns true if the value of this enumerated TxsdSpace is "preserve".
-func (me TxsdSpace) IsPreserve () bool { return me == "preserve" }
+func (me TxsdSpace) IsPreserve() bool { return me == "preserve" }
+
+//	This convenience method just performs a simple type conversion to TxsdSpace's alias type xsdt.Token.
+func (me TxsdSpace) ToXsdtToken() xsdt.Token { return xsdt.Token(me) }
 
 type XsdGoPkgHasAttr_Space struct {
 	Space TxsdSpace `xml:"http://www.w3.org/XML/1998/namespace space,attr"`
-
 }

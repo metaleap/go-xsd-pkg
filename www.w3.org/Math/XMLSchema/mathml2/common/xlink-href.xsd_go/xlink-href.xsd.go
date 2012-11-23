@@ -7,12 +7,10 @@ package go_XlinkHref
 //	This schema provides the XLink href attribute for use in the MathML2
 //	schema. Written by Max Froumentin, W3C.
 
-
 import (
 	xsdt "github.com/metaleap/go-xsd/types"
 )
 
 type XsdGoPkgHasAttr_Href struct {
 	Href xsdt.AnyURI `xml:"http://www.w3.org/1999/xlink href,attr"`
-
 }

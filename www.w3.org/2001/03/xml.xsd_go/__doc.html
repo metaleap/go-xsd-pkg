@@ -132,7 +132,7 @@ Comments on types and fields (if any) are from the XSD file located at:
 		
 			
 			
-			<h2 id="TxsdSpace">type <a href="/target/xml.xsd.go?s=3709:3735#L72">TxsdSpace</a></h2>
+			<h2 id="TxsdSpace">type <a href="/target/xml.xsd.go?s=3709:3735#L70">TxsdSpace</a></h2>
 			<pre>type TxsdSpace xsdt.NCName</pre>
 			
 
@@ -146,7 +146,7 @@ Comments on types and fields (if any) are from the XSD file located at:
 
 			
 				
-				<h3 id="TxsdSpace.IsDefault">func (TxsdSpace) <a href="/target/xml.xsd.go?s=3950:3987#L78">IsDefault</a></h3>
+				<h3 id="TxsdSpace.IsDefault">func (TxsdSpace) <a href="/target/xml.xsd.go?s=3809:3845#L73">IsDefault</a></h3>
 				<pre>func (me TxsdSpace) IsDefault() bool</pre>
 				<p>
 Returns true if the value of this enumerated TxsdSpace is &#34;default&#34;.
@@ -156,7 +156,7 @@ Returns true if the value of this enumerated TxsdSpace is &#34;default&#34;.
 				
 			
 				
-				<h3 id="TxsdSpace.IsPreserve">func (TxsdSpace) <a href="/target/xml.xsd.go?s=3810:3848#L75">IsPreserve</a></h3>
+				<h3 id="TxsdSpace.IsPreserve">func (TxsdSpace) <a href="/target/xml.xsd.go?s=4324:4361#L82">IsPreserve</a></h3>
 				<pre>func (me TxsdSpace) IsPreserve() bool</pre>
 				<p>
 Returns true if the value of this enumerated TxsdSpace is &#34;preserve&#34;.
@@ -166,7 +166,7 @@ Returns true if the value of this enumerated TxsdSpace is &#34;preserve&#34;.
 				
 			
 				
-				<h3 id="TxsdSpace.SetFromString">func (*TxsdSpace) <a href="/target/xml.xsd.go?s=4477:4522#L87">SetFromString</a></h3>
+				<h3 id="TxsdSpace.SetFromString">func (*TxsdSpace) <a href="/target/xml.xsd.go?s=3985:4029#L76">SetFromString</a></h3>
 				<pre>func (me *TxsdSpace) SetFromString(s string)</pre>
 				<p>
 Since TxsdSpace is just a simple String type, this merely sets the current value from the specified string.
@@ -176,7 +176,7 @@ Since TxsdSpace is just a simple String type, this merely sets the current value
 				
 			
 				
-				<h3 id="TxsdSpace.String">func (TxsdSpace) <a href="/target/xml.xsd.go?s=4111:4147#L81">String</a></h3>
+				<h3 id="TxsdSpace.String">func (TxsdSpace) <a href="/target/xml.xsd.go?s=4486:4521#L85">String</a></h3>
 				<pre>func (me TxsdSpace) String() string</pre>
 				<p>
 Since TxsdSpace is just a simple String type, this merely returns the current string value.
@@ -186,7 +186,7 @@ Since TxsdSpace is just a simple String type, this merely returns the current st
 				
 			
 				
-				<h3 id="TxsdSpace.ToXsdtNCName">func (TxsdSpace) <a href="/target/xml.xsd.go?s=4290:4337#L84">ToXsdtNCName</a></h3>
+				<h3 id="TxsdSpace.ToXsdtNCName">func (TxsdSpace) <a href="/target/xml.xsd.go?s=4176:4222#L79">ToXsdtNCName</a></h3>
 				<pre>func (me TxsdSpace) ToXsdtNCName() xsdt.NCName</pre>
 				<p>
 This convenience method just performs a simple type conversion to TxsdSpace&#39;s alias type xsdt.NCName.
@@ -198,7 +198,7 @@ This convenience method just performs a simple type conversion to TxsdSpace&#39;
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Base">type <a href="/target/xml.xsd.go?s=4901:5089#L99">XsdGoPkgHasAttr_Base</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Base">type <a href="/target/xml.xsd.go?s=4893:5082#L96">XsdGoPkgHasAttr_Base</a></h2>
 			<pre>type XsdGoPkgHasAttr_Base struct {
     <span class="comment">//	See http://www.w3.org/TR/xmlbase/ for</span>
     <span class="comment">//	information about this attribute.</span>
@@ -222,7 +222,7 @@ information about this attribute.
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Lang">type <a href="/target/xml.xsd.go?s=3477:3707#L65">XsdGoPkgHasAttr_Lang</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Lang">type <a href="/target/xml.xsd.go?s=3476:3707#L64">XsdGoPkgHasAttr_Lang</a></h2>
 			<pre>type XsdGoPkgHasAttr_Lang struct {
     <span class="comment">//	In due course, we should install the relevant ISO 2- and 3-letter</span>
     <span class="comment">//	codes as the enumerated possible values . . .</span>
@@ -246,7 +246,7 @@ codes as the enumerated possible values . . .
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Space">type <a href="/target/xml.xsd.go?s=4565:4676#L89">XsdGoPkgHasAttr_Space</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Space">type <a href="/target/xml.xsd.go?s=4559:4669#L87">XsdGoPkgHasAttr_Space</a></h2>
 			<pre>type XsdGoPkgHasAttr_Space struct {
     Space TxsdSpace `xml:&#34;http://www.w3.org/XML/1998/namespace space,attr&#34;`
 }</pre>
@@ -262,7 +262,7 @@ codes as the enumerated possible values . . .
 
 			
 				
-				<h3 id="XsdGoPkgHasAttr_Space.SpaceDefault">func (XsdGoPkgHasAttr_Space) <a href="/target/xml.xsd.go?s=4731:4788#L95">SpaceDefault</a></h3>
+				<h3 id="XsdGoPkgHasAttr_Space.SpaceDefault">func (XsdGoPkgHasAttr_Space) <a href="/target/xml.xsd.go?s=4724:4780#L92">SpaceDefault</a></h3>
 				<pre>func (me XsdGoPkgHasAttr_Space) SpaceDefault() TxsdSpace</pre>
 				<p>
 Returns the default value for Space -- &#34;preserve&#34;
@@ -274,13 +274,13 @@ Returns the default value for Space -- &#34;preserve&#34;
 		
 			
 			
-			<h2 id="XsdGoPkgHasAtts_SpecialAttrs">type <a href="/target/xml.xsd.go?s=5091:5205#L106">XsdGoPkgHasAtts_SpecialAttrs</a></h2>
+			<h2 id="XsdGoPkgHasAtts_SpecialAttrs">type <a href="/target/xml.xsd.go?s=5084:5197#L102">XsdGoPkgHasAtts_SpecialAttrs</a></h2>
 			<pre>type XsdGoPkgHasAtts_SpecialAttrs struct {
     XsdGoPkgHasAttr_Space
 
-    XsdGoPkgHasAttr_Lang
-
     XsdGoPkgHasAttr_Base
+
+    XsdGoPkgHasAttr_Lang
 }</pre>
 			
 

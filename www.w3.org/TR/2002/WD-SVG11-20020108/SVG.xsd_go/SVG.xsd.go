@@ -4,8 +4,6 @@
 //		www.w3.org/TR/2002/WD-SVG11-20020108/SVG.xsd
 package go_Svg
 
-
-
 import (
 	xlink "github.com/metaleap/go-xsd-pkg/www.w3.org/TR/2002/WD-SVG11-20020108/xlink.xsd_go"
 	xml "github.com/metaleap/go-xsd-pkg/www.w3.org/TR/2002/WD-SVG11-20020108/xml.xsd_go"
@@ -15,177 +13,147 @@ import (
 //	All elements have an ID
 type XsdGoPkgHasAttr_Id_XsdtId_ struct {
 	Id xsdt.Id `xml:"http://www.w3.org/2000/svg id,attr"`
-
 }
 
 type XsdGoPkgHasAtts_StdAttrs struct {
 	XsdGoPkgHasAttr_Id_XsdtId_
 
 	xml.XsdGoPkgHasAttr_Base
-
 }
 
 //	Common attributes for elements that might contain character data content
 type XsdGoPkgHasAtts_LangSpaceAttrs struct {
-	xml.XsdGoPkgHasAttr_Lang
-
 	xml.XsdGoPkgHasAttr_Space
 
+	xml.XsdGoPkgHasAttr_Lang
 }
 
 //	Common attributes to check for system capabilities
-//	a comma-separated list of language codes, as per [RFC3066]
-type TLanguageCodesType xsdt.String
-
-//	Since TLanguageCodesType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TLanguageCodesType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TLanguageCodesType's alias type xsdt.String.
-func (me TLanguageCodesType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TLanguageCodesType is just a simple String type, this merely returns the current string value.
-func (me TLanguageCodesType) String () string { return xsdt.String(me).String() }
-
-type XsdGoPkgHasAttr_SystemLanguage_TLanguageCodesType_ struct {
-	SystemLanguage TLanguageCodesType `xml:"http://www.w3.org/2000/svg systemLanguage,attr"`
-
-}
-
 //	extension list specification
 type TExtensionListType xsdt.String
 
-//	Since TExtensionListType is just a simple String type, this merely returns the current string value.
-func (me TExtensionListType) String () string { return xsdt.String(me).String() }
+//	This convenience method just performs a simple type conversion to TExtensionListType's alias type xsdt.String.
+func (me TExtensionListType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 //	Since TExtensionListType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TExtensionListType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TExtensionListType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
-//	This convenience method just performs a simple type conversion to TExtensionListType's alias type xsdt.String.
-func (me TExtensionListType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	Since TExtensionListType is just a simple String type, this merely returns the current string value.
+func (me TExtensionListType) String() string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasAttr_RequiredExtensions_TExtensionListType_ struct {
 	RequiredExtensions TExtensionListType `xml:"http://www.w3.org/2000/svg requiredExtensions,attr"`
-
 }
 
 //	feature list specification
 type TFeatureListType xsdt.String
 
 //	Since TFeatureListType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TFeatureListType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TFeatureListType's alias type xsdt.String.
-func (me TFeatureListType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me *TFeatureListType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 //	Since TFeatureListType is just a simple String type, this merely returns the current string value.
-func (me TFeatureListType) String () string { return xsdt.String(me).String() }
+func (me TFeatureListType) String() string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TFeatureListType's alias type xsdt.String.
+func (me TFeatureListType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 type XsdGoPkgHasAttr_RequiredFeatures_TFeatureListType_ struct {
 	RequiredFeatures TFeatureListType `xml:"http://www.w3.org/2000/svg requiredFeatures,attr"`
+}
 
+//	a comma-separated list of language codes, as per [RFC3066]
+type TLanguageCodesType xsdt.String
+
+//	Since TLanguageCodesType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TLanguageCodesType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TLanguageCodesType's alias type xsdt.String.
+func (me TLanguageCodesType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TLanguageCodesType is just a simple String type, this merely returns the current string value.
+func (me TLanguageCodesType) String() string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_SystemLanguage_TLanguageCodesType_ struct {
+	SystemLanguage TLanguageCodesType `xml:"http://www.w3.org/2000/svg systemLanguage,attr"`
 }
 
 type XsdGoPkgHasAtts_TestAttrs struct {
-	XsdGoPkgHasAttr_SystemLanguage_TLanguageCodesType_
-
 	XsdGoPkgHasAttr_RequiredExtensions_TExtensionListType_
 
 	XsdGoPkgHasAttr_RequiredFeatures_TFeatureListType_
 
+	XsdGoPkgHasAttr_SystemLanguage_TLanguageCodesType_
 }
 
 //	For most uses of URI referencing: standard XLink attributes other than xlink:href
 type XsdGoPkgHasAtts_XlinkRefAttrs struct {
-	xlink.XsdGoPkgHasAttr_Title
-
 	xlink.XsdGoPkgHasAttr_Type
-
-	xlink.XsdGoPkgHasAttr_Role
 
 	xlink.XsdGoPkgHasAttr_Show
 
-	xlink.XsdGoPkgHasAttr_Arcrole
+	xlink.XsdGoPkgHasAttr_Role
 
 	xlink.XsdGoPkgHasAttr_Actuate
 
+	xlink.XsdGoPkgHasAttr_Arcrole
+
+	xlink.XsdGoPkgHasAttr_Title
 }
 
 //	script expression
 type TScriptType xsdt.String
 
 //	This convenience method just performs a simple type conversion to TScriptType's alias type xsdt.String.
-func (me TScriptType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TScriptType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 //	Since TScriptType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TScriptType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TScriptType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 //	Since TScriptType is just a simple String type, this merely returns the current string value.
-func (me TScriptType) String () string { return xsdt.String(me).String() }
+func (me TScriptType) String() string { return xsdt.String(me).String() }
 
-type XsdGoPkgHasAttr_Onfocusout_TScriptType_ struct {
-	Onfocusout TScriptType `xml:"http://www.w3.org/2000/svg onfocusout,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Onmousedown_TScriptType_ struct {
-	Onmousedown TScriptType `xml:"http://www.w3.org/2000/svg onmousedown,attr"`
-
+type XsdGoPkgHasAttr_Onmouseover_TScriptType_ struct {
+	Onmouseover TScriptType `xml:"http://www.w3.org/2000/svg onmouseover,attr"`
 }
 
 type XsdGoPkgHasAttr_Onmouseout_TScriptType_ struct {
 	Onmouseout TScriptType `xml:"http://www.w3.org/2000/svg onmouseout,attr"`
-
 }
 
 type XsdGoPkgHasAttr_Onload_TScriptType_ struct {
 	Onload TScriptType `xml:"http://www.w3.org/2000/svg onload,attr"`
-
 }
 
 type XsdGoPkgHasAttr_Onclick_TScriptType_ struct {
 	Onclick TScriptType `xml:"http://www.w3.org/2000/svg onclick,attr"`
-
 }
 
-type XsdGoPkgHasAttr_Onmouseover_TScriptType_ struct {
-	Onmouseover TScriptType `xml:"http://www.w3.org/2000/svg onmouseover,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Onmousemove_TScriptType_ struct {
-	Onmousemove TScriptType `xml:"http://www.w3.org/2000/svg onmousemove,attr"`
-
+type XsdGoPkgHasAttr_Onfocusout_TScriptType_ struct {
+	Onfocusout TScriptType `xml:"http://www.w3.org/2000/svg onfocusout,attr"`
 }
 
 type XsdGoPkgHasAttr_Onfocusin_TScriptType_ struct {
 	Onfocusin TScriptType `xml:"http://www.w3.org/2000/svg onfocusin,attr"`
+}
 
+type XsdGoPkgHasAttr_Onmousedown_TScriptType_ struct {
+	Onmousedown TScriptType `xml:"http://www.w3.org/2000/svg onmousedown,attr"`
 }
 
 type XsdGoPkgHasAttr_Onactivate_TScriptType_ struct {
 	Onactivate TScriptType `xml:"http://www.w3.org/2000/svg onactivate,attr"`
-
 }
 
 type XsdGoPkgHasAttr_Onmouseup_TScriptType_ struct {
 	Onmouseup TScriptType `xml:"http://www.w3.org/2000/svg onmouseup,attr"`
+}
 
+type XsdGoPkgHasAttr_Onmousemove_TScriptType_ struct {
+	Onmousemove TScriptType `xml:"http://www.w3.org/2000/svg onmousemove,attr"`
 }
 
 type XsdGoPkgHasAtts_GraphicsElementEvents struct {
 	XsdGoPkgHasAttr_Onmouseover_TScriptType_
-
-	XsdGoPkgHasAttr_Onmousemove_TScriptType_
-
-	XsdGoPkgHasAttr_Onfocusin_TScriptType_
-
-	XsdGoPkgHasAttr_Onactivate_TScriptType_
-
-	XsdGoPkgHasAttr_Onmouseup_TScriptType_
-
-	XsdGoPkgHasAttr_Onfocusout_TScriptType_
-
-	XsdGoPkgHasAttr_Onmousedown_TScriptType_
 
 	XsdGoPkgHasAttr_Onmouseout_TScriptType_
 
@@ -193,182 +161,194 @@ type XsdGoPkgHasAtts_GraphicsElementEvents struct {
 
 	XsdGoPkgHasAttr_Onclick_TScriptType_
 
-}
+	XsdGoPkgHasAttr_Onfocusout_TScriptType_
 
-type XsdGoPkgHasAttr_Onresize_TScriptType_ struct {
-	Onresize TScriptType `xml:"http://www.w3.org/2000/svg onresize,attr"`
+	XsdGoPkgHasAttr_Onfocusin_TScriptType_
 
-}
+	XsdGoPkgHasAttr_Onmousedown_TScriptType_
 
-type XsdGoPkgHasAttr_Onzoom_TScriptType_ struct {
-	Onzoom TScriptType `xml:"http://www.w3.org/2000/svg onzoom,attr"`
+	XsdGoPkgHasAttr_Onactivate_TScriptType_
 
-}
+	XsdGoPkgHasAttr_Onmouseup_TScriptType_
 
-type XsdGoPkgHasAttr_Onabort_TScriptType_ struct {
-	Onabort TScriptType `xml:"http://www.w3.org/2000/svg onabort,attr"`
-
+	XsdGoPkgHasAttr_Onmousemove_TScriptType_
 }
 
 type XsdGoPkgHasAttr_Onscroll_TScriptType_ struct {
 	Onscroll TScriptType `xml:"http://www.w3.org/2000/svg onscroll,attr"`
+}
 
+type XsdGoPkgHasAttr_Onresize_TScriptType_ struct {
+	Onresize TScriptType `xml:"http://www.w3.org/2000/svg onresize,attr"`
+}
+
+type XsdGoPkgHasAttr_Onabort_TScriptType_ struct {
+	Onabort TScriptType `xml:"http://www.w3.org/2000/svg onabort,attr"`
 }
 
 type XsdGoPkgHasAttr_Onunload_TScriptType_ struct {
 	Onunload TScriptType `xml:"http://www.w3.org/2000/svg onunload,attr"`
-
 }
 
 type XsdGoPkgHasAttr_Onerror_TScriptType_ struct {
 	Onerror TScriptType `xml:"http://www.w3.org/2000/svg onerror,attr"`
+}
 
+type XsdGoPkgHasAttr_Onzoom_TScriptType_ struct {
+	Onzoom TScriptType `xml:"http://www.w3.org/2000/svg onzoom,attr"`
 }
 
 type XsdGoPkgHasAtts_DocumentEvents struct {
-	XsdGoPkgHasAttr_Onscroll_TScriptType_
-
-	XsdGoPkgHasAttr_Onunload_TScriptType_
-
 	XsdGoPkgHasAttr_Onerror_TScriptType_
-
-	XsdGoPkgHasAttr_Onresize_TScriptType_
 
 	XsdGoPkgHasAttr_Onzoom_TScriptType_
 
+	XsdGoPkgHasAttr_Onscroll_TScriptType_
+
+	XsdGoPkgHasAttr_Onresize_TScriptType_
+
 	XsdGoPkgHasAttr_Onabort_TScriptType_
 
-}
-
-type XsdGoPkgHasAttr_Onend_TScriptType_ struct {
-	Onend TScriptType `xml:"http://www.w3.org/2000/svg onend,attr"`
-
+	XsdGoPkgHasAttr_Onunload_TScriptType_
 }
 
 type XsdGoPkgHasAttr_Onbegin_TScriptType_ struct {
 	Onbegin TScriptType `xml:"http://www.w3.org/2000/svg onbegin,attr"`
-
 }
 
 type XsdGoPkgHasAttr_Onrepeat_TScriptType_ struct {
 	Onrepeat TScriptType `xml:"http://www.w3.org/2000/svg onrepeat,attr"`
+}
 
+type XsdGoPkgHasAttr_Onend_TScriptType_ struct {
+	Onend TScriptType `xml:"http://www.w3.org/2000/svg onend,attr"`
 }
 
 type XsdGoPkgHasAtts_AnimationEvents struct {
-	XsdGoPkgHasAttr_Onend_TScriptType_
-
 	XsdGoPkgHasAttr_Onbegin_TScriptType_
 
 	XsdGoPkgHasAttr_Onrepeat_TScriptType_
 
+	XsdGoPkgHasAttr_Onend_TScriptType_
 }
 
 //	The following presentation attributes have to do with specifying color.
 type TxsdPresentationAttributesColorColorRendering xsdt.String
 
-//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesColorColorRendering's alias type xsdt.String.
-func (me TxsdPresentationAttributesColorColorRendering) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesColorColorRendering is "optimizeSpeed".
-func (me TxsdPresentationAttributesColorColorRendering) IsOptimizeSpeed () bool { return me == "optimizeSpeed" }
+//	Since TxsdPresentationAttributesColorColorRendering is just a simple String type, this merely returns the current string value.
+func (me TxsdPresentationAttributesColorColorRendering) String() string {
+	return xsdt.String(me).String()
+}
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesColorColorRendering is "optimizeQuality".
-func (me TxsdPresentationAttributesColorColorRendering) IsOptimizeQuality () bool { return me == "optimizeQuality" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesColorColorRendering is "auto".
-func (me TxsdPresentationAttributesColorColorRendering) IsAuto () bool { return me == "auto" }
-
-//	Since TxsdPresentationAttributesColorColorRendering is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesColorColorRendering) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TxsdPresentationAttributesColorColorRendering is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesColorColorRendering) String () string { return xsdt.String(me).String() }
+func (me TxsdPresentationAttributesColorColorRendering) IsOptimizeQuality() bool {
+	return me == "optimizeQuality"
+}
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesColorColorRendering is "inherit".
-func (me TxsdPresentationAttributesColorColorRendering) IsInherit () bool { return me == "inherit" }
+func (me TxsdPresentationAttributesColorColorRendering) IsInherit() bool { return me == "inherit" }
+
+//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesColorColorRendering's alias type xsdt.String.
+func (me TxsdPresentationAttributesColorColorRendering) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesColorColorRendering is "optimizeSpeed".
+func (me TxsdPresentationAttributesColorColorRendering) IsOptimizeSpeed() bool {
+	return me == "optimizeSpeed"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesColorColorRendering is "auto".
+func (me TxsdPresentationAttributesColorColorRendering) IsAuto() bool { return me == "auto" }
+
+//	Since TxsdPresentationAttributesColorColorRendering is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPresentationAttributesColorColorRendering) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
 
 type XsdGoPkgHasAttr_ColorRendering_TxsdPresentationAttributesColorColorRendering_ struct {
 	ColorRendering TxsdPresentationAttributesColorColorRendering `xml:"http://www.w3.org/2000/svg color-rendering,attr"`
-
-}
-
-type TxsdPresentationAttributesColorColorInterpolation xsdt.String
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesColorColorInterpolation is "auto".
-func (me TxsdPresentationAttributesColorColorInterpolation) IsAuto () bool { return me == "auto" }
-
-//	Since TxsdPresentationAttributesColorColorInterpolation is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesColorColorInterpolation) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesColorColorInterpolation is "inherit".
-func (me TxsdPresentationAttributesColorColorInterpolation) IsInherit () bool { return me == "inherit" }
-
-//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesColorColorInterpolation's alias type xsdt.String.
-func (me TxsdPresentationAttributesColorColorInterpolation) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesColorColorInterpolation is "sRGB".
-func (me TxsdPresentationAttributesColorColorInterpolation) IsSrgb () bool { return me == "sRGB" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesColorColorInterpolation is "linearRGB".
-func (me TxsdPresentationAttributesColorColorInterpolation) IsLinearRGB () bool { return me == "linearRGB" }
-
-//	Since TxsdPresentationAttributesColorColorInterpolation is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesColorColorInterpolation) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_ColorInterpolation_TxsdPresentationAttributesColorColorInterpolation_ struct {
-	ColorInterpolation TxsdPresentationAttributesColorColorInterpolation `xml:"http://www.w3.org/2000/svg color-interpolation,attr"`
-
 }
 
 //	a CSS2 Color
 //	Color as defined in CSS2 and XSL 1.0 plus additional recognised color keyword names (the 'X11 colors')
 type TColorType xsdt.String
 
+//	Since TColorType is just a simple String type, this merely returns the current string value.
+func (me TColorType) String() string { return xsdt.String(me).String() }
+
 //	This convenience method just performs a simple type conversion to TColorType's alias type xsdt.String.
-func (me TColorType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TColorType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 //	Since TColorType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TColorType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TColorType is just a simple String type, this merely returns the current string value.
-func (me TColorType) String () string { return xsdt.String(me).String() }
+func (me *TColorType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 type XsdGoPkgHasAttr_Color_TColorType_ struct {
 	Color TColorType `xml:"http://www.w3.org/2000/svg color,attr"`
+}
 
+type TxsdPresentationAttributesColorColorInterpolation xsdt.String
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesColorColorInterpolation is "linearRGB".
+func (me TxsdPresentationAttributesColorColorInterpolation) IsLinearRGB() bool {
+	return me == "linearRGB"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesColorColorInterpolation is "auto".
+func (me TxsdPresentationAttributesColorColorInterpolation) IsAuto() bool { return me == "auto" }
+
+//	Since TxsdPresentationAttributesColorColorInterpolation is just a simple String type, this merely returns the current string value.
+func (me TxsdPresentationAttributesColorColorInterpolation) String() string {
+	return xsdt.String(me).String()
+}
+
+//	Since TxsdPresentationAttributesColorColorInterpolation is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPresentationAttributesColorColorInterpolation) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesColorColorInterpolation's alias type xsdt.String.
+func (me TxsdPresentationAttributesColorColorInterpolation) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesColorColorInterpolation is "sRGB".
+func (me TxsdPresentationAttributesColorColorInterpolation) IsSrgb() bool { return me == "sRGB" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesColorColorInterpolation is "inherit".
+func (me TxsdPresentationAttributesColorColorInterpolation) IsInherit() bool { return me == "inherit" }
+
+type XsdGoPkgHasAttr_ColorInterpolation_TxsdPresentationAttributesColorColorInterpolation_ struct {
+	ColorInterpolation TxsdPresentationAttributesColorColorInterpolation `xml:"http://www.w3.org/2000/svg color-interpolation,attr"`
 }
 
 type XsdGoPkgHasAtts_PresentationAttributesColor struct {
 	XsdGoPkgHasAttr_ColorRendering_TxsdPresentationAttributesColorColorRendering_
 
-	XsdGoPkgHasAttr_ColorInterpolation_TxsdPresentationAttributesColorColorInterpolation_
-
 	XsdGoPkgHasAttr_Color_TColorType_
 
+	XsdGoPkgHasAttr_ColorInterpolation_TxsdPresentationAttributesColorColorInterpolation_
 }
 
 //	The following presentation attributes apply to container elements
 //	accumulate | new [ <x> <y> <width> <height> ] | inherit
 type TEnableBackgroundValueType xsdt.String
 
-//	This convenience method just performs a simple type conversion to TEnableBackgroundValueType's alias type xsdt.String.
-func (me TEnableBackgroundValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
 //	Since TEnableBackgroundValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TEnableBackgroundValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TEnableBackgroundValueType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 //	Since TEnableBackgroundValueType is just a simple String type, this merely returns the current string value.
-func (me TEnableBackgroundValueType) String () string { return xsdt.String(me).String() }
+func (me TEnableBackgroundValueType) String() string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TEnableBackgroundValueType's alias type xsdt.String.
+func (me TEnableBackgroundValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 type XsdGoPkgHasAttr_EnableBackground_TEnableBackgroundValueType_ struct {
 	EnableBackground TEnableBackgroundValueType `xml:"http://www.w3.org/2000/svg enable-background,attr"`
-
 }
 
 type XsdGoPkgHasAtts_PresentationAttributesContainers struct {
 	XsdGoPkgHasAttr_EnableBackground_TEnableBackgroundValueType_
-
 }
 
 //	The following presentation attributes apply to 'feFlood' elements
@@ -377,279 +357,417 @@ type XsdGoPkgHasAtts_PresentationAttributesContainers struct {
 type TOpacityValueType xsdt.String
 
 //	Since TOpacityValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TOpacityValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TOpacityValueType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 //	This convenience method just performs a simple type conversion to TOpacityValueType's alias type xsdt.String.
-func (me TOpacityValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TOpacityValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 //	Since TOpacityValueType is just a simple String type, this merely returns the current string value.
-func (me TOpacityValueType) String () string { return xsdt.String(me).String() }
+func (me TOpacityValueType) String() string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasAttr_FloodOpacity_TOpacityValueType_ struct {
 	FloodOpacity TOpacityValueType `xml:"http://www.w3.org/2000/svg flood-opacity,attr"`
-
 }
 
 //	An SVG color value (sRGB plus optional ICC)
 type TSVGColorType xsdt.String
 
-//	Since TSVGColorType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TSVGColorType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
 //	This convenience method just performs a simple type conversion to TSVGColorType's alias type xsdt.String.
-func (me TSVGColorType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TSVGColorType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 //	Since TSVGColorType is just a simple String type, this merely returns the current string value.
-func (me TSVGColorType) String () string { return xsdt.String(me).String() }
+func (me TSVGColorType) String() string { return xsdt.String(me).String() }
+
+//	Since TSVGColorType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TSVGColorType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 type XsdGoPkgHasAttr_FloodColor_TSVGColorType_ struct {
 	FloodColor TSVGColorType `xml:"http://www.w3.org/2000/svg flood-color,attr"`
-
 }
 
 type XsdGoPkgHasAtts_PresentationAttributesFeFlood struct {
-	XsdGoPkgHasAttr_FloodColor_TSVGColorType_
-
 	XsdGoPkgHasAttr_FloodOpacity_TOpacityValueType_
 
+	XsdGoPkgHasAttr_FloodColor_TSVGColorType_
 }
 
 //	The following presentation attributes apply to filter primitives
 type XsdGoPkgHasAttr_ColorInterpolationFilters_TxsdPresentationAttributesFilterPrimitivesColorInterpolationFilters_ struct {
 	ColorInterpolationFilters TxsdPresentationAttributesColorColorInterpolation `xml:"http://www.w3.org/2000/svg color-interpolation-filters,attr"`
-
 }
 
 type XsdGoPkgHasAtts_PresentationAttributesFilterPrimitives struct {
 	XsdGoPkgHasAttr_ColorInterpolationFilters_TxsdPresentationAttributesFilterPrimitivesColorInterpolationFilters_
-
 }
 
 //	The following presentation attributes apply to filling and stroking operations
 //	'stroke-width' property/attribute value (e.g., <length>)
 type TStrokeWidthValueType xsdt.String
 
-//	Since TStrokeWidthValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TStrokeWidthValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
 //	Since TStrokeWidthValueType is just a simple String type, this merely returns the current string value.
-func (me TStrokeWidthValueType) String () string { return xsdt.String(me).String() }
+func (me TStrokeWidthValueType) String() string { return xsdt.String(me).String() }
 
 //	This convenience method just performs a simple type conversion to TStrokeWidthValueType's alias type xsdt.String.
-func (me TStrokeWidthValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TStrokeWidthValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TStrokeWidthValueType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TStrokeWidthValueType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 type XsdGoPkgHasAttr_StrokeWidth_TStrokeWidthValueType_ struct {
 	StrokeWidth TStrokeWidthValueType `xml:"http://www.w3.org/2000/svg stroke-width,attr"`
+}
 
+//	a 'fill' or 'stroke' property/attribute value
+type TPaintType xsdt.String
+
+//	This convenience method just performs a simple type conversion to TPaintType's alias type xsdt.String.
+func (me TPaintType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TPaintType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TPaintType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TPaintType is just a simple String type, this merely returns the current string value.
+func (me TPaintType) String() string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_Fill_TPaintType_ struct {
+	Fill TPaintType `xml:"http://www.w3.org/2000/svg fill,attr"`
+}
+
+type TxsdPresentationAttributesFillStrokeStrokeLinecap xsdt.String
+
+//	Since TxsdPresentationAttributesFillStrokeStrokeLinecap is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPresentationAttributesFillStrokeStrokeLinecap) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFillStrokeStrokeLinecap is "butt".
+func (me TxsdPresentationAttributesFillStrokeStrokeLinecap) IsButt() bool { return me == "butt" }
+
+//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesFillStrokeStrokeLinecap's alias type xsdt.String.
+func (me TxsdPresentationAttributesFillStrokeStrokeLinecap) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFillStrokeStrokeLinecap is "round".
+func (me TxsdPresentationAttributesFillStrokeStrokeLinecap) IsRound() bool { return me == "round" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFillStrokeStrokeLinecap is "square".
+func (me TxsdPresentationAttributesFillStrokeStrokeLinecap) IsSquare() bool { return me == "square" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFillStrokeStrokeLinecap is "inherit".
+func (me TxsdPresentationAttributesFillStrokeStrokeLinecap) IsInherit() bool { return me == "inherit" }
+
+//	Since TxsdPresentationAttributesFillStrokeStrokeLinecap is just a simple String type, this merely returns the current string value.
+func (me TxsdPresentationAttributesFillStrokeStrokeLinecap) String() string {
+	return xsdt.String(me).String()
+}
+
+type XsdGoPkgHasAttr_StrokeLinecap_TxsdPresentationAttributesFillStrokeStrokeLinecap_ struct {
+	StrokeLinecap TxsdPresentationAttributesFillStrokeStrokeLinecap `xml:"http://www.w3.org/2000/svg stroke-linecap,attr"`
+}
+
+//	'clip-rule' or fill-rule property/attribute value
+type TClipFillRuleType xsdt.String
+
+//	Returns true if the value of this enumerated TClipFillRuleType is "evenodd".
+func (me TClipFillRuleType) IsEvenodd() bool { return me == "evenodd" }
+
+//	Since TClipFillRuleType is just a simple String type, this merely returns the current string value.
+func (me TClipFillRuleType) String() string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TClipFillRuleType's alias type xsdt.String.
+func (me TClipFillRuleType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TClipFillRuleType is "inherit".
+func (me TClipFillRuleType) IsInherit() bool { return me == "inherit" }
+
+//	Since TClipFillRuleType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TClipFillRuleType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TClipFillRuleType is "nonzero".
+func (me TClipFillRuleType) IsNonzero() bool { return me == "nonzero" }
+
+type XsdGoPkgHasAttr_FillRule_TClipFillRuleType_ struct {
+	FillRule TClipFillRuleType `xml:"http://www.w3.org/2000/svg fill-rule,attr"`
+}
+
+type XsdGoPkgHasAttr_StrokeOpacity_TOpacityValueType_ struct {
+	StrokeOpacity TOpacityValueType `xml:"http://www.w3.org/2000/svg stroke-opacity,attr"`
+}
+
+type TxsdPresentationAttributesFillStrokeStrokeLinejoin xsdt.String
+
+//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesFillStrokeStrokeLinejoin's alias type xsdt.String.
+func (me TxsdPresentationAttributesFillStrokeStrokeLinejoin) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
+
+//	Since TxsdPresentationAttributesFillStrokeStrokeLinejoin is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPresentationAttributesFillStrokeStrokeLinejoin) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFillStrokeStrokeLinejoin is "miter".
+func (me TxsdPresentationAttributesFillStrokeStrokeLinejoin) IsMiter() bool { return me == "miter" }
+
+//	Since TxsdPresentationAttributesFillStrokeStrokeLinejoin is just a simple String type, this merely returns the current string value.
+func (me TxsdPresentationAttributesFillStrokeStrokeLinejoin) String() string {
+	return xsdt.String(me).String()
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFillStrokeStrokeLinejoin is "round".
+func (me TxsdPresentationAttributesFillStrokeStrokeLinejoin) IsRound() bool { return me == "round" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFillStrokeStrokeLinejoin is "bevel".
+func (me TxsdPresentationAttributesFillStrokeStrokeLinejoin) IsBevel() bool { return me == "bevel" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFillStrokeStrokeLinejoin is "inherit".
+func (me TxsdPresentationAttributesFillStrokeStrokeLinejoin) IsInherit() bool { return me == "inherit" }
+
+type XsdGoPkgHasAttr_StrokeLinejoin_TxsdPresentationAttributesFillStrokeStrokeLinejoin_ struct {
+	StrokeLinejoin TxsdPresentationAttributesFillStrokeStrokeLinejoin `xml:"http://www.w3.org/2000/svg stroke-linejoin,attr"`
+}
+
+//	'stroke-miterlimit' property/attribute value (e.g., <number>)
+type TStrokeMiterLimitValueType xsdt.String
+
+//	This convenience method just performs a simple type conversion to TStrokeMiterLimitValueType's alias type xsdt.String.
+func (me TStrokeMiterLimitValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TStrokeMiterLimitValueType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TStrokeMiterLimitValueType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TStrokeMiterLimitValueType is just a simple String type, this merely returns the current string value.
+func (me TStrokeMiterLimitValueType) String() string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_StrokeMiterlimit_TStrokeMiterLimitValueType_ struct {
+	StrokeMiterlimit TStrokeMiterLimitValueType `xml:"http://www.w3.org/2000/svg stroke-miterlimit,attr"`
+}
+
+type XsdGoPkgHasAttr_FillOpacity_TOpacityValueType_ struct {
+	FillOpacity TOpacityValueType `xml:"http://www.w3.org/2000/svg fill-opacity,attr"`
+}
+
+type XsdGoPkgHasAttr_Stroke_TPaintType_ struct {
+	Stroke TPaintType `xml:"http://www.w3.org/2000/svg stroke,attr"`
 }
 
 //	'stroke-dashoffset' property/attribute value (e.g., 'none', >length>)
 type TStrokeDashOffsetValueType xsdt.String
 
 //	This convenience method just performs a simple type conversion to TStrokeDashOffsetValueType's alias type xsdt.String.
-func (me TStrokeDashOffsetValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TStrokeDashOffsetValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 //	Since TStrokeDashOffsetValueType is just a simple String type, this merely returns the current string value.
-func (me TStrokeDashOffsetValueType) String () string { return xsdt.String(me).String() }
+func (me TStrokeDashOffsetValueType) String() string { return xsdt.String(me).String() }
 
 //	Since TStrokeDashOffsetValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TStrokeDashOffsetValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TStrokeDashOffsetValueType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 type XsdGoPkgHasAttr_StrokeDashoffset_TStrokeDashOffsetValueType_ struct {
 	StrokeDashoffset TStrokeDashOffsetValueType `xml:"http://www.w3.org/2000/svg stroke-dashoffset,attr"`
-
-}
-
-type XsdGoPkgHasAttr_StrokeOpacity_TOpacityValueType_ struct {
-	StrokeOpacity TOpacityValueType `xml:"http://www.w3.org/2000/svg stroke-opacity,attr"`
-
-}
-
-//	'stroke-miterlimit' property/attribute value (e.g., <number>)
-type TStrokeMiterLimitValueType xsdt.String
-
-//	Since TStrokeMiterLimitValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TStrokeMiterLimitValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TStrokeMiterLimitValueType is just a simple String type, this merely returns the current string value.
-func (me TStrokeMiterLimitValueType) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TStrokeMiterLimitValueType's alias type xsdt.String.
-func (me TStrokeMiterLimitValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type XsdGoPkgHasAttr_StrokeMiterlimit_TStrokeMiterLimitValueType_ struct {
-	StrokeMiterlimit TStrokeMiterLimitValueType `xml:"http://www.w3.org/2000/svg stroke-miterlimit,attr"`
-
-}
-
-//	a 'fill' or 'stroke' property/attribute value
-type TPaintType xsdt.String
-
-//	Since TPaintType is just a simple String type, this merely returns the current string value.
-func (me TPaintType) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TPaintType's alias type xsdt.String.
-func (me TPaintType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TPaintType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TPaintType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_Fill_TPaintType_ struct {
-	Fill TPaintType `xml:"http://www.w3.org/2000/svg fill,attr"`
-
-}
-
-type TxsdPresentationAttributesFillStrokeStrokeLinejoin xsdt.String
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFillStrokeStrokeLinejoin is "round".
-func (me TxsdPresentationAttributesFillStrokeStrokeLinejoin) IsRound () bool { return me == "round" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFillStrokeStrokeLinejoin is "miter".
-func (me TxsdPresentationAttributesFillStrokeStrokeLinejoin) IsMiter () bool { return me == "miter" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFillStrokeStrokeLinejoin is "inherit".
-func (me TxsdPresentationAttributesFillStrokeStrokeLinejoin) IsInherit () bool { return me == "inherit" }
-
-//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesFillStrokeStrokeLinejoin's alias type xsdt.String.
-func (me TxsdPresentationAttributesFillStrokeStrokeLinejoin) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFillStrokeStrokeLinejoin is "bevel".
-func (me TxsdPresentationAttributesFillStrokeStrokeLinejoin) IsBevel () bool { return me == "bevel" }
-
-//	Since TxsdPresentationAttributesFillStrokeStrokeLinejoin is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesFillStrokeStrokeLinejoin) String () string { return xsdt.String(me).String() }
-
-//	Since TxsdPresentationAttributesFillStrokeStrokeLinejoin is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesFillStrokeStrokeLinejoin) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_StrokeLinejoin_TxsdPresentationAttributesFillStrokeStrokeLinejoin_ struct {
-	StrokeLinejoin TxsdPresentationAttributesFillStrokeStrokeLinejoin `xml:"http://www.w3.org/2000/svg stroke-linejoin,attr"`
-
-}
-
-//	'clip-rule' or fill-rule property/attribute value
-type TClipFillRuleType xsdt.String
-
-//	This convenience method just performs a simple type conversion to TClipFillRuleType's alias type xsdt.String.
-func (me TClipFillRuleType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TClipFillRuleType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TClipFillRuleType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TClipFillRuleType is "nonzero".
-func (me TClipFillRuleType) IsNonzero () bool { return me == "nonzero" }
-
-//	Since TClipFillRuleType is just a simple String type, this merely returns the current string value.
-func (me TClipFillRuleType) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TClipFillRuleType is "inherit".
-func (me TClipFillRuleType) IsInherit () bool { return me == "inherit" }
-
-//	Returns true if the value of this enumerated TClipFillRuleType is "evenodd".
-func (me TClipFillRuleType) IsEvenodd () bool { return me == "evenodd" }
-
-type XsdGoPkgHasAttr_FillRule_TClipFillRuleType_ struct {
-	FillRule TClipFillRuleType `xml:"http://www.w3.org/2000/svg fill-rule,attr"`
-
-}
-
-type XsdGoPkgHasAttr_FillOpacity_TOpacityValueType_ struct {
-	FillOpacity TOpacityValueType `xml:"http://www.w3.org/2000/svg fill-opacity,attr"`
-
 }
 
 //	'stroke-dasharray' property/attribute value (e.g., 'none', list of <number>s)
 type TStrokeDashArrayValueType xsdt.String
 
-//	Since TStrokeDashArrayValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TStrokeDashArrayValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+//	This convenience method just performs a simple type conversion to TStrokeDashArrayValueType's alias type xsdt.String.
+func (me TStrokeDashArrayValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 //	Since TStrokeDashArrayValueType is just a simple String type, this merely returns the current string value.
-func (me TStrokeDashArrayValueType) String () string { return xsdt.String(me).String() }
+func (me TStrokeDashArrayValueType) String() string { return xsdt.String(me).String() }
 
-//	This convenience method just performs a simple type conversion to TStrokeDashArrayValueType's alias type xsdt.String.
-func (me TStrokeDashArrayValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	Since TStrokeDashArrayValueType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TStrokeDashArrayValueType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 type XsdGoPkgHasAttr_StrokeDasharray_TStrokeDashArrayValueType_ struct {
 	StrokeDasharray TStrokeDashArrayValueType `xml:"http://www.w3.org/2000/svg stroke-dasharray,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Stroke_TPaintType_ struct {
-	Stroke TPaintType `xml:"http://www.w3.org/2000/svg stroke,attr"`
-
-}
-
-type TxsdPresentationAttributesFillStrokeStrokeLinecap xsdt.String
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFillStrokeStrokeLinecap is "square".
-func (me TxsdPresentationAttributesFillStrokeStrokeLinecap) IsSquare () bool { return me == "square" }
-
-//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesFillStrokeStrokeLinecap's alias type xsdt.String.
-func (me TxsdPresentationAttributesFillStrokeStrokeLinecap) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFillStrokeStrokeLinecap is "butt".
-func (me TxsdPresentationAttributesFillStrokeStrokeLinecap) IsButt () bool { return me == "butt" }
-
-//	Since TxsdPresentationAttributesFillStrokeStrokeLinecap is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesFillStrokeStrokeLinecap) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TxsdPresentationAttributesFillStrokeStrokeLinecap is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesFillStrokeStrokeLinecap) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFillStrokeStrokeLinecap is "round".
-func (me TxsdPresentationAttributesFillStrokeStrokeLinecap) IsRound () bool { return me == "round" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFillStrokeStrokeLinecap is "inherit".
-func (me TxsdPresentationAttributesFillStrokeStrokeLinecap) IsInherit () bool { return me == "inherit" }
-
-type XsdGoPkgHasAttr_StrokeLinecap_TxsdPresentationAttributesFillStrokeStrokeLinecap_ struct {
-	StrokeLinecap TxsdPresentationAttributesFillStrokeStrokeLinecap `xml:"http://www.w3.org/2000/svg stroke-linecap,attr"`
-
 }
 
 type XsdGoPkgHasAtts_PresentationAttributesFillStroke struct {
-	XsdGoPkgHasAttr_StrokeLinejoin_TxsdPresentationAttributesFillStrokeStrokeLinejoin_
-
-	XsdGoPkgHasAttr_FillRule_TClipFillRuleType_
-
-	XsdGoPkgHasAttr_FillOpacity_TOpacityValueType_
-
-	XsdGoPkgHasAttr_StrokeDasharray_TStrokeDashArrayValueType_
-
-	XsdGoPkgHasAttr_Stroke_TPaintType_
-
-	XsdGoPkgHasAttr_StrokeLinecap_TxsdPresentationAttributesFillStrokeStrokeLinecap_
-
 	XsdGoPkgHasAttr_StrokeWidth_TStrokeWidthValueType_
-
-	XsdGoPkgHasAttr_StrokeDashoffset_TStrokeDashOffsetValueType_
-
-	XsdGoPkgHasAttr_StrokeOpacity_TOpacityValueType_
-
-	XsdGoPkgHasAttr_StrokeMiterlimit_TStrokeMiterLimitValueType_
 
 	XsdGoPkgHasAttr_Fill_TPaintType_
 
+	XsdGoPkgHasAttr_StrokeLinecap_TxsdPresentationAttributesFillStrokeStrokeLinecap_
+
+	XsdGoPkgHasAttr_FillRule_TClipFillRuleType_
+
+	XsdGoPkgHasAttr_StrokeOpacity_TOpacityValueType_
+
+	XsdGoPkgHasAttr_StrokeLinejoin_TxsdPresentationAttributesFillStrokeStrokeLinejoin_
+
+	XsdGoPkgHasAttr_StrokeMiterlimit_TStrokeMiterLimitValueType_
+
+	XsdGoPkgHasAttr_FillOpacity_TOpacityValueType_
+
+	XsdGoPkgHasAttr_Stroke_TPaintType_
+
+	XsdGoPkgHasAttr_StrokeDashoffset_TStrokeDashOffsetValueType_
+
+	XsdGoPkgHasAttr_StrokeDasharray_TStrokeDashArrayValueType_
 }
 
 //	The following presentation attributes have to do with selecting a font to use
-//	[[ <family-name> | <generic-family> ],]* [<family-name> | <generic-family>] | inherit
-//	'font-family' property/attribute value (i.e., list of fonts)
-type TFontFamilyValueType xsdt.String
+//	'font-size-adjust' property/attribute value
+//	<number> | none | inherit
+type TFontSizeAdjustValueType xsdt.String
 
-//	This convenience method just performs a simple type conversion to TFontFamilyValueType's alias type xsdt.String.
-func (me TFontFamilyValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	Since TFontSizeAdjustValueType is just a simple String type, this merely returns the current string value.
+func (me TFontSizeAdjustValueType) String() string { return xsdt.String(me).String() }
 
-//	Since TFontFamilyValueType is just a simple String type, this merely returns the current string value.
-func (me TFontFamilyValueType) String () string { return xsdt.String(me).String() }
+//	Since TFontSizeAdjustValueType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TFontSizeAdjustValueType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
-//	Since TFontFamilyValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TFontFamilyValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+//	This convenience method just performs a simple type conversion to TFontSizeAdjustValueType's alias type xsdt.String.
+func (me TFontSizeAdjustValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
-type XsdGoPkgHasAttr_FontFamily_TFontFamilyValueType_ struct {
-	FontFamily TFontFamilyValueType `xml:"http://www.w3.org/2000/svg font-family,attr"`
+type XsdGoPkgHasAttr_FontSizeAdjust_TFontSizeAdjustValueType_ struct {
+	FontSizeAdjust TFontSizeAdjustValueType `xml:"http://www.w3.org/2000/svg font-size-adjust,attr"`
+}
 
+type TxsdPresentationAttributesFontSpecificationFontStyle xsdt.String
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStyle is "oblique".
+func (me TxsdPresentationAttributesFontSpecificationFontStyle) IsOblique() bool {
+	return me == "oblique"
+}
+
+//	Since TxsdPresentationAttributesFontSpecificationFontStyle is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPresentationAttributesFontSpecificationFontStyle) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStyle is "inherit".
+func (me TxsdPresentationAttributesFontSpecificationFontStyle) IsInherit() bool {
+	return me == "inherit"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStyle is "normal".
+func (me TxsdPresentationAttributesFontSpecificationFontStyle) IsNormal() bool { return me == "normal" }
+
+//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesFontSpecificationFontStyle's alias type xsdt.String.
+func (me TxsdPresentationAttributesFontSpecificationFontStyle) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStyle is "italic".
+func (me TxsdPresentationAttributesFontSpecificationFontStyle) IsItalic() bool { return me == "italic" }
+
+//	Since TxsdPresentationAttributesFontSpecificationFontStyle is just a simple String type, this merely returns the current string value.
+func (me TxsdPresentationAttributesFontSpecificationFontStyle) String() string {
+	return xsdt.String(me).String()
+}
+
+type XsdGoPkgHasAttr_FontStyle_TxsdPresentationAttributesFontSpecificationFontStyle_ struct {
+	FontStyle TxsdPresentationAttributesFontSpecificationFontStyle `xml:"http://www.w3.org/2000/svg font-style,attr"`
+}
+
+type TxsdPresentationAttributesFontSpecificationFontVariant xsdt.String
+
+//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesFontSpecificationFontVariant's alias type xsdt.String.
+func (me TxsdPresentationAttributesFontSpecificationFontVariant) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontVariant is "normal".
+func (me TxsdPresentationAttributesFontSpecificationFontVariant) IsNormal() bool {
+	return me == "normal"
+}
+
+//	Since TxsdPresentationAttributesFontSpecificationFontVariant is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPresentationAttributesFontSpecificationFontVariant) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Since TxsdPresentationAttributesFontSpecificationFontVariant is just a simple String type, this merely returns the current string value.
+func (me TxsdPresentationAttributesFontSpecificationFontVariant) String() string {
+	return xsdt.String(me).String()
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontVariant is "inherit".
+func (me TxsdPresentationAttributesFontSpecificationFontVariant) IsInherit() bool {
+	return me == "inherit"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontVariant is "small-caps".
+func (me TxsdPresentationAttributesFontSpecificationFontVariant) IsSmallCaps() bool {
+	return me == "small-caps"
+}
+
+type XsdGoPkgHasAttr_FontVariant_TxsdPresentationAttributesFontSpecificationFontVariant_ struct {
+	FontVariant TxsdPresentationAttributesFontSpecificationFontVariant `xml:"http://www.w3.org/2000/svg font-variant,attr"`
+}
+
+type TxsdPresentationAttributesFontSpecificationFontWeight xsdt.String
+
+//	Since TxsdPresentationAttributesFontSpecificationFontWeight is just a simple String type, this merely returns the current string value.
+func (me TxsdPresentationAttributesFontSpecificationFontWeight) String() string {
+	return xsdt.String(me).String()
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "lighter".
+func (me TxsdPresentationAttributesFontSpecificationFontWeight) IsLighter() bool {
+	return me == "lighter"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "600".
+func (me TxsdPresentationAttributesFontSpecificationFontWeight) Is600() bool { return me == "600" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "100".
+func (me TxsdPresentationAttributesFontSpecificationFontWeight) Is100() bool { return me == "100" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "800".
+func (me TxsdPresentationAttributesFontSpecificationFontWeight) Is800() bool { return me == "800" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "normal".
+func (me TxsdPresentationAttributesFontSpecificationFontWeight) IsNormal() bool {
+	return me == "normal"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "bolder".
+func (me TxsdPresentationAttributesFontSpecificationFontWeight) IsBolder() bool {
+	return me == "bolder"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "400".
+func (me TxsdPresentationAttributesFontSpecificationFontWeight) Is400() bool { return me == "400" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "500".
+func (me TxsdPresentationAttributesFontSpecificationFontWeight) Is500() bool { return me == "500" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "inherit".
+func (me TxsdPresentationAttributesFontSpecificationFontWeight) IsInherit() bool {
+	return me == "inherit"
+}
+
+//	Since TxsdPresentationAttributesFontSpecificationFontWeight is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPresentationAttributesFontSpecificationFontWeight) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "700".
+func (me TxsdPresentationAttributesFontSpecificationFontWeight) Is700() bool { return me == "700" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "200".
+func (me TxsdPresentationAttributesFontSpecificationFontWeight) Is200() bool { return me == "200" }
+
+//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesFontSpecificationFontWeight's alias type xsdt.String.
+func (me TxsdPresentationAttributesFontSpecificationFontWeight) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "900".
+func (me TxsdPresentationAttributesFontSpecificationFontWeight) Is900() bool { return me == "900" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "300".
+func (me TxsdPresentationAttributesFontSpecificationFontWeight) Is300() bool { return me == "300" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "bold".
+func (me TxsdPresentationAttributesFontSpecificationFontWeight) IsBold() bool { return me == "bold" }
+
+type XsdGoPkgHasAttr_FontWeight_TxsdPresentationAttributesFontSpecificationFontWeight_ struct {
+	FontWeight TxsdPresentationAttributesFontSpecificationFontWeight `xml:"http://www.w3.org/2000/svg font-weight,attr"`
 }
 
 //	'font-size' property/attribute value
@@ -657,333 +775,211 @@ type XsdGoPkgHasAttr_FontFamily_TFontFamilyValueType_ struct {
 type TFontSizeValueType xsdt.String
 
 //	Since TFontSizeValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TFontSizeValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TFontSizeValueType is just a simple String type, this merely returns the current string value.
-func (me TFontSizeValueType) String () string { return xsdt.String(me).String() }
+func (me *TFontSizeValueType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 //	This convenience method just performs a simple type conversion to TFontSizeValueType's alias type xsdt.String.
-func (me TFontSizeValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TFontSizeValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TFontSizeValueType is just a simple String type, this merely returns the current string value.
+func (me TFontSizeValueType) String() string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasAttr_FontSize_TFontSizeValueType_ struct {
 	FontSize TFontSizeValueType `xml:"http://www.w3.org/2000/svg font-size,attr"`
-
 }
 
-type TxsdPresentationAttributesFontSpecificationFontWeight xsdt.String
+//	[[ <family-name> | <generic-family> ],]* [<family-name> | <generic-family>] | inherit
+//	'font-family' property/attribute value (i.e., list of fonts)
+type TFontFamilyValueType xsdt.String
 
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "100".
-func (me TxsdPresentationAttributesFontSpecificationFontWeight) Is100 () bool { return me == "100" }
+//	Since TFontFamilyValueType is just a simple String type, this merely returns the current string value.
+func (me TFontFamilyValueType) String() string { return xsdt.String(me).String() }
 
-//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesFontSpecificationFontWeight's alias type xsdt.String.
-func (me TxsdPresentationAttributesFontSpecificationFontWeight) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	Since TFontFamilyValueType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TFontFamilyValueType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "700".
-func (me TxsdPresentationAttributesFontSpecificationFontWeight) Is700 () bool { return me == "700" }
+//	This convenience method just performs a simple type conversion to TFontFamilyValueType's alias type xsdt.String.
+func (me TFontFamilyValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "800".
-func (me TxsdPresentationAttributesFontSpecificationFontWeight) Is800 () bool { return me == "800" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "400".
-func (me TxsdPresentationAttributesFontSpecificationFontWeight) Is400 () bool { return me == "400" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "500".
-func (me TxsdPresentationAttributesFontSpecificationFontWeight) Is500 () bool { return me == "500" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "600".
-func (me TxsdPresentationAttributesFontSpecificationFontWeight) Is600 () bool { return me == "600" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "normal".
-func (me TxsdPresentationAttributesFontSpecificationFontWeight) IsNormal () bool { return me == "normal" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "lighter".
-func (me TxsdPresentationAttributesFontSpecificationFontWeight) IsLighter () bool { return me == "lighter" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "inherit".
-func (me TxsdPresentationAttributesFontSpecificationFontWeight) IsInherit () bool { return me == "inherit" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "bolder".
-func (me TxsdPresentationAttributesFontSpecificationFontWeight) IsBolder () bool { return me == "bolder" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "300".
-func (me TxsdPresentationAttributesFontSpecificationFontWeight) Is300 () bool { return me == "300" }
-
-//	Since TxsdPresentationAttributesFontSpecificationFontWeight is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesFontSpecificationFontWeight) String () string { return xsdt.String(me).String() }
-
-//	Since TxsdPresentationAttributesFontSpecificationFontWeight is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesFontSpecificationFontWeight) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "bold".
-func (me TxsdPresentationAttributesFontSpecificationFontWeight) IsBold () bool { return me == "bold" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "900".
-func (me TxsdPresentationAttributesFontSpecificationFontWeight) Is900 () bool { return me == "900" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontWeight is "200".
-func (me TxsdPresentationAttributesFontSpecificationFontWeight) Is200 () bool { return me == "200" }
-
-type XsdGoPkgHasAttr_FontWeight_TxsdPresentationAttributesFontSpecificationFontWeight_ struct {
-	FontWeight TxsdPresentationAttributesFontSpecificationFontWeight `xml:"http://www.w3.org/2000/svg font-weight,attr"`
-
+type XsdGoPkgHasAttr_FontFamily_TFontFamilyValueType_ struct {
+	FontFamily TFontFamilyValueType `xml:"http://www.w3.org/2000/svg font-family,attr"`
 }
 
 type TxsdPresentationAttributesFontSpecificationFontStretch xsdt.String
 
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "semi-expanded".
-func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsSemiExpanded () bool { return me == "semi-expanded" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "inherit".
-func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsInherit () bool { return me == "inherit" }
-
 //	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "condensed".
-func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsCondensed () bool { return me == "condensed" }
+func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsCondensed() bool {
+	return me == "condensed"
+}
 
-//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesFontSpecificationFontStretch's alias type xsdt.String.
-func (me TxsdPresentationAttributesFontSpecificationFontStretch) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "semi-condensed".
-func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsSemiCondensed () bool { return me == "semi-condensed" }
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "semi-expanded".
+func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsSemiExpanded() bool {
+	return me == "semi-expanded"
+}
 
 //	Since TxsdPresentationAttributesFontSpecificationFontStretch is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesFontSpecificationFontStretch) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "ultra-condensed".
-func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsUltraCondensed () bool { return me == "ultra-condensed" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "wider".
-func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsWider () bool { return me == "wider" }
-
-//	Since TxsdPresentationAttributesFontSpecificationFontStretch is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesFontSpecificationFontStretch) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "ultra-expanded".
-func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsUltraExpanded () bool { return me == "ultra-expanded" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "extra-condensed".
-func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsExtraCondensed () bool { return me == "extra-condensed" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "narrower".
-func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsNarrower () bool { return me == "narrower" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "extra-expanded".
-func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsExtraExpanded () bool { return me == "extra-expanded" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "normal".
-func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsNormal () bool { return me == "normal" }
+func (me TxsdPresentationAttributesFontSpecificationFontStretch) String() string {
+	return xsdt.String(me).String()
+}
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "expanded".
-func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsExpanded () bool { return me == "expanded" }
+func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsExpanded() bool {
+	return me == "expanded"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "inherit".
+func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsInherit() bool {
+	return me == "inherit"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "narrower".
+func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsNarrower() bool {
+	return me == "narrower"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "normal".
+func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsNormal() bool {
+	return me == "normal"
+}
+
+//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesFontSpecificationFontStretch's alias type xsdt.String.
+func (me TxsdPresentationAttributesFontSpecificationFontStretch) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "semi-condensed".
+func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsSemiCondensed() bool {
+	return me == "semi-condensed"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "extra-expanded".
+func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsExtraExpanded() bool {
+	return me == "extra-expanded"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "ultra-expanded".
+func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsUltraExpanded() bool {
+	return me == "ultra-expanded"
+}
+
+//	Since TxsdPresentationAttributesFontSpecificationFontStretch is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPresentationAttributesFontSpecificationFontStretch) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "wider".
+func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsWider() bool { return me == "wider" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "ultra-condensed".
+func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsUltraCondensed() bool {
+	return me == "ultra-condensed"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStretch is "extra-condensed".
+func (me TxsdPresentationAttributesFontSpecificationFontStretch) IsExtraCondensed() bool {
+	return me == "extra-condensed"
+}
 
 type XsdGoPkgHasAttr_FontStretch_TxsdPresentationAttributesFontSpecificationFontStretch_ struct {
 	FontStretch TxsdPresentationAttributesFontSpecificationFontStretch `xml:"http://www.w3.org/2000/svg font-stretch,attr"`
-
-}
-
-type TxsdPresentationAttributesFontSpecificationFontStyle xsdt.String
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStyle is "inherit".
-func (me TxsdPresentationAttributesFontSpecificationFontStyle) IsInherit () bool { return me == "inherit" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStyle is "italic".
-func (me TxsdPresentationAttributesFontSpecificationFontStyle) IsItalic () bool { return me == "italic" }
-
-//	Since TxsdPresentationAttributesFontSpecificationFontStyle is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesFontSpecificationFontStyle) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStyle is "oblique".
-func (me TxsdPresentationAttributesFontSpecificationFontStyle) IsOblique () bool { return me == "oblique" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontStyle is "normal".
-func (me TxsdPresentationAttributesFontSpecificationFontStyle) IsNormal () bool { return me == "normal" }
-
-//	Since TxsdPresentationAttributesFontSpecificationFontStyle is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesFontSpecificationFontStyle) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesFontSpecificationFontStyle's alias type xsdt.String.
-func (me TxsdPresentationAttributesFontSpecificationFontStyle) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type XsdGoPkgHasAttr_FontStyle_TxsdPresentationAttributesFontSpecificationFontStyle_ struct {
-	FontStyle TxsdPresentationAttributesFontSpecificationFontStyle `xml:"http://www.w3.org/2000/svg font-style,attr"`
-
-}
-
-//	'font-size-adjust' property/attribute value
-//	<number> | none | inherit
-type TFontSizeAdjustValueType xsdt.String
-
-//	This convenience method just performs a simple type conversion to TFontSizeAdjustValueType's alias type xsdt.String.
-func (me TFontSizeAdjustValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TFontSizeAdjustValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TFontSizeAdjustValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TFontSizeAdjustValueType is just a simple String type, this merely returns the current string value.
-func (me TFontSizeAdjustValueType) String () string { return xsdt.String(me).String() }
-
-type XsdGoPkgHasAttr_FontSizeAdjust_TFontSizeAdjustValueType_ struct {
-	FontSizeAdjust TFontSizeAdjustValueType `xml:"http://www.w3.org/2000/svg font-size-adjust,attr"`
-
-}
-
-type TxsdPresentationAttributesFontSpecificationFontVariant xsdt.String
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontVariant is "normal".
-func (me TxsdPresentationAttributesFontSpecificationFontVariant) IsNormal () bool { return me == "normal" }
-
-//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesFontSpecificationFontVariant's alias type xsdt.String.
-func (me TxsdPresentationAttributesFontSpecificationFontVariant) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TxsdPresentationAttributesFontSpecificationFontVariant is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesFontSpecificationFontVariant) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontVariant is "inherit".
-func (me TxsdPresentationAttributesFontSpecificationFontVariant) IsInherit () bool { return me == "inherit" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesFontSpecificationFontVariant is "small-caps".
-func (me TxsdPresentationAttributesFontSpecificationFontVariant) IsSmallCaps () bool { return me == "small-caps" }
-
-//	Since TxsdPresentationAttributesFontSpecificationFontVariant is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesFontSpecificationFontVariant) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_FontVariant_TxsdPresentationAttributesFontSpecificationFontVariant_ struct {
-	FontVariant TxsdPresentationAttributesFontSpecificationFontVariant `xml:"http://www.w3.org/2000/svg font-variant,attr"`
-
 }
 
 type XsdGoPkgHasAtts_PresentationAttributesFontSpecification struct {
-	XsdGoPkgHasAttr_FontWeight_TxsdPresentationAttributesFontSpecificationFontWeight_
-
-	XsdGoPkgHasAttr_FontStretch_TxsdPresentationAttributesFontSpecificationFontStretch_
-
-	XsdGoPkgHasAttr_FontStyle_TxsdPresentationAttributesFontSpecificationFontStyle_
-
-	XsdGoPkgHasAttr_FontSizeAdjust_TFontSizeAdjustValueType_
-
 	XsdGoPkgHasAttr_FontVariant_TxsdPresentationAttributesFontSpecificationFontVariant_
 
-	XsdGoPkgHasAttr_FontFamily_TFontFamilyValueType_
+	XsdGoPkgHasAttr_FontWeight_TxsdPresentationAttributesFontSpecificationFontWeight_
 
 	XsdGoPkgHasAttr_FontSize_TFontSizeValueType_
 
+	XsdGoPkgHasAttr_FontFamily_TFontFamilyValueType_
+
+	XsdGoPkgHasAttr_FontStretch_TxsdPresentationAttributesFontSpecificationFontStretch_
+
+	XsdGoPkgHasAttr_FontSizeAdjust_TFontSizeAdjustValueType_
+
+	XsdGoPkgHasAttr_FontStyle_TxsdPresentationAttributesFontSpecificationFontStyle_
 }
 
 //	The following presentation attributes apply to gradient 'stop' elements
 type XsdGoPkgHasAttr_StopColor_TSVGColorType_ struct {
 	StopColor TSVGColorType `xml:"http://www.w3.org/2000/svg stop-color,attr"`
-
 }
 
 type XsdGoPkgHasAttr_StopOpacity_TOpacityValueType_ struct {
 	StopOpacity TOpacityValueType `xml:"http://www.w3.org/2000/svg stop-opacity,attr"`
-
 }
 
 type XsdGoPkgHasAtts_PresentationAttributesGradients struct {
 	XsdGoPkgHasAttr_StopColor_TSVGColorType_
 
 	XsdGoPkgHasAttr_StopOpacity_TOpacityValueType_
-
 }
 
 //	The following presentation attributes apply to graphics elements
-type TxsdPresentationAttributesGraphicsVisibility xsdt.String
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsVisibility is "inherit".
-func (me TxsdPresentationAttributesGraphicsVisibility) IsInherit () bool { return me == "inherit" }
-
-//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesGraphicsVisibility's alias type xsdt.String.
-func (me TxsdPresentationAttributesGraphicsVisibility) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TxsdPresentationAttributesGraphicsVisibility is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesGraphicsVisibility) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsVisibility is "hidden".
-func (me TxsdPresentationAttributesGraphicsVisibility) IsHidden () bool { return me == "hidden" }
-
-//	Since TxsdPresentationAttributesGraphicsVisibility is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesGraphicsVisibility) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsVisibility is "visible".
-func (me TxsdPresentationAttributesGraphicsVisibility) IsVisible () bool { return me == "visible" }
-
-type XsdGoPkgHasAttr_Visibility_TxsdPresentationAttributesGraphicsVisibility_ struct {
-	Visibility TxsdPresentationAttributesGraphicsVisibility `xml:"http://www.w3.org/2000/svg visibility,attr"`
-
-}
-
-//	<uri> | none | inherit
-type TFilterValueType xsdt.String
-
-//	Since TFilterValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TFilterValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TFilterValueType's alias type xsdt.String.
-func (me TFilterValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TFilterValueType is just a simple String type, this merely returns the current string value.
-func (me TFilterValueType) String () string { return xsdt.String(me).String() }
-
-type XsdGoPkgHasAttr_Filter_TFilterValueType_ struct {
-	Filter TFilterValueType `xml:"http://www.w3.org/2000/svg filter,attr"`
-
-}
-
 type TxsdPresentationAttributesGraphicsPointerEvents xsdt.String
 
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "visiblePainted".
-func (me TxsdPresentationAttributesGraphicsPointerEvents) IsVisiblePainted () bool { return me == "visiblePainted" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "visibleFillStroke".
-func (me TxsdPresentationAttributesGraphicsPointerEvents) IsVisibleFillStroke () bool { return me == "visibleFillStroke" }
-
 //	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "fillstroke".
-func (me TxsdPresentationAttributesGraphicsPointerEvents) IsFillstroke () bool { return me == "fillstroke" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "inherit".
-func (me TxsdPresentationAttributesGraphicsPointerEvents) IsInherit () bool { return me == "inherit" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "all".
-func (me TxsdPresentationAttributesGraphicsPointerEvents) IsAll () bool { return me == "all" }
-
-//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesGraphicsPointerEvents's alias type xsdt.String.
-func (me TxsdPresentationAttributesGraphicsPointerEvents) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "visibleFill".
-func (me TxsdPresentationAttributesGraphicsPointerEvents) IsVisibleFill () bool { return me == "visibleFill" }
-
-//	Since TxsdPresentationAttributesGraphicsPointerEvents is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesGraphicsPointerEvents) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "none".
-func (me TxsdPresentationAttributesGraphicsPointerEvents) IsNone () bool { return me == "none" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "visibleStroke".
-func (me TxsdPresentationAttributesGraphicsPointerEvents) IsVisibleStroke () bool { return me == "visibleStroke" }
+func (me TxsdPresentationAttributesGraphicsPointerEvents) IsFillstroke() bool {
+	return me == "fillstroke"
+}
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "fill".
-func (me TxsdPresentationAttributesGraphicsPointerEvents) IsFill () bool { return me == "fill" }
+func (me TxsdPresentationAttributesGraphicsPointerEvents) IsFill() bool { return me == "fill" }
 
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "visible".
-func (me TxsdPresentationAttributesGraphicsPointerEvents) IsVisible () bool { return me == "visible" }
-
-//	Since TxsdPresentationAttributesGraphicsPointerEvents is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesGraphicsPointerEvents) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "painted".
-func (me TxsdPresentationAttributesGraphicsPointerEvents) IsPainted () bool { return me == "painted" }
+//	Since TxsdPresentationAttributesGraphicsPointerEvents is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPresentationAttributesGraphicsPointerEvents) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "stroke".
-func (me TxsdPresentationAttributesGraphicsPointerEvents) IsStroke () bool { return me == "stroke" }
+func (me TxsdPresentationAttributesGraphicsPointerEvents) IsStroke() bool { return me == "stroke" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "visible".
+func (me TxsdPresentationAttributesGraphicsPointerEvents) IsVisible() bool { return me == "visible" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "visibleFillStroke".
+func (me TxsdPresentationAttributesGraphicsPointerEvents) IsVisibleFillStroke() bool {
+	return me == "visibleFillStroke"
+}
+
+//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesGraphicsPointerEvents's alias type xsdt.String.
+func (me TxsdPresentationAttributesGraphicsPointerEvents) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "visibleStroke".
+func (me TxsdPresentationAttributesGraphicsPointerEvents) IsVisibleStroke() bool {
+	return me == "visibleStroke"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "inherit".
+func (me TxsdPresentationAttributesGraphicsPointerEvents) IsInherit() bool { return me == "inherit" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "visiblePainted".
+func (me TxsdPresentationAttributesGraphicsPointerEvents) IsVisiblePainted() bool {
+	return me == "visiblePainted"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "none".
+func (me TxsdPresentationAttributesGraphicsPointerEvents) IsNone() bool { return me == "none" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "all".
+func (me TxsdPresentationAttributesGraphicsPointerEvents) IsAll() bool { return me == "all" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "painted".
+func (me TxsdPresentationAttributesGraphicsPointerEvents) IsPainted() bool { return me == "painted" }
+
+//	Since TxsdPresentationAttributesGraphicsPointerEvents is just a simple String type, this merely returns the current string value.
+func (me TxsdPresentationAttributesGraphicsPointerEvents) String() string {
+	return xsdt.String(me).String()
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsPointerEvents is "visibleFill".
+func (me TxsdPresentationAttributesGraphicsPointerEvents) IsVisibleFill() bool {
+	return me == "visibleFill"
+}
 
 type XsdGoPkgHasAttr_PointerEvents_TxsdPresentationAttributesGraphicsPointerEvents_ struct {
 	PointerEvents TxsdPresentationAttributesGraphicsPointerEvents `xml:"http://www.w3.org/2000/svg pointer-events,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Opacity_TOpacityValueType_ struct {
-	Opacity TOpacityValueType `xml:"http://www.w3.org/2000/svg opacity,attr"`
-
 }
 
 //	Value is an optional comma-separated list orf uri references followed by one token from an enumerated list.
@@ -991,382 +987,597 @@ type XsdGoPkgHasAttr_Opacity_TOpacityValueType_ struct {
 type TCursorValueType xsdt.String
 
 //	This convenience method just performs a simple type conversion to TCursorValueType's alias type xsdt.String.
-func (me TCursorValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TCursorValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 //	Since TCursorValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TCursorValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TCursorValueType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 //	Since TCursorValueType is just a simple String type, this merely returns the current string value.
-func (me TCursorValueType) String () string { return xsdt.String(me).String() }
+func (me TCursorValueType) String() string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasAttr_Cursor_TCursorValueType_ struct {
 	Cursor TCursorValueType `xml:"http://www.w3.org/2000/svg cursor,attr"`
-
 }
 
 type TxsdPresentationAttributesGraphicsTextRendering xsdt.String
 
-//	Since TxsdPresentationAttributesGraphicsTextRendering is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesGraphicsTextRendering) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsTextRendering is "inherit".
-func (me TxsdPresentationAttributesGraphicsTextRendering) IsInherit () bool { return me == "inherit" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsTextRendering is "auto".
-func (me TxsdPresentationAttributesGraphicsTextRendering) IsAuto () bool { return me == "auto" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsTextRendering is "optimizeSpeed".
-func (me TxsdPresentationAttributesGraphicsTextRendering) IsOptimizeSpeed () bool { return me == "optimizeSpeed" }
-
-//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesGraphicsTextRendering's alias type xsdt.String.
-func (me TxsdPresentationAttributesGraphicsTextRendering) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsTextRendering is "geometricPrecision".
-func (me TxsdPresentationAttributesGraphicsTextRendering) IsGeometricPrecision () bool { return me == "geometricPrecision" }
-
 //	Since TxsdPresentationAttributesGraphicsTextRendering is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesGraphicsTextRendering) String () string { return xsdt.String(me).String() }
+func (me TxsdPresentationAttributesGraphicsTextRendering) String() string {
+	return xsdt.String(me).String()
+}
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsTextRendering is "optimizeLegibility".
-func (me TxsdPresentationAttributesGraphicsTextRendering) IsOptimizeLegibility () bool { return me == "optimizeLegibility" }
+func (me TxsdPresentationAttributesGraphicsTextRendering) IsOptimizeLegibility() bool {
+	return me == "optimizeLegibility"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsTextRendering is "geometricPrecision".
+func (me TxsdPresentationAttributesGraphicsTextRendering) IsGeometricPrecision() bool {
+	return me == "geometricPrecision"
+}
+
+//	Since TxsdPresentationAttributesGraphicsTextRendering is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPresentationAttributesGraphicsTextRendering) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsTextRendering is "optimizeSpeed".
+func (me TxsdPresentationAttributesGraphicsTextRendering) IsOptimizeSpeed() bool {
+	return me == "optimizeSpeed"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsTextRendering is "auto".
+func (me TxsdPresentationAttributesGraphicsTextRendering) IsAuto() bool { return me == "auto" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsTextRendering is "inherit".
+func (me TxsdPresentationAttributesGraphicsTextRendering) IsInherit() bool { return me == "inherit" }
+
+//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesGraphicsTextRendering's alias type xsdt.String.
+func (me TxsdPresentationAttributesGraphicsTextRendering) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
 
 type XsdGoPkgHasAttr_TextRendering_TxsdPresentationAttributesGraphicsTextRendering_ struct {
 	TextRendering TxsdPresentationAttributesGraphicsTextRendering `xml:"http://www.w3.org/2000/svg text-rendering,attr"`
+}
 
+//	<uri> | none | inherit
+type TFilterValueType xsdt.String
+
+//	Since TFilterValueType is just a simple String type, this merely returns the current string value.
+func (me TFilterValueType) String() string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TFilterValueType's alias type xsdt.String.
+func (me TFilterValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TFilterValueType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TFilterValueType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_Filter_TFilterValueType_ struct {
+	Filter TFilterValueType `xml:"http://www.w3.org/2000/svg filter,attr"`
 }
 
 type XsdGoPkgHasAttr_ClipRule_TClipFillRuleType_ struct {
 	ClipRule TClipFillRuleType `xml:"http://www.w3.org/2000/svg clip-rule,attr"`
-
 }
 
 type XsdGoPkgHasAttr_ImageRendering_TxsdPresentationAttributesGraphicsImageRendering_ struct {
 	ImageRendering TxsdPresentationAttributesColorColorRendering `xml:"http://www.w3.org/2000/svg image-rendering,attr"`
+}
 
+type TxsdPresentationAttributesGraphicsShapeRendering xsdt.String
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsShapeRendering is "geometricPrecision".
+func (me TxsdPresentationAttributesGraphicsShapeRendering) IsGeometricPrecision() bool {
+	return me == "geometricPrecision"
+}
+
+//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesGraphicsShapeRendering's alias type xsdt.String.
+func (me TxsdPresentationAttributesGraphicsShapeRendering) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsShapeRendering is "crispEdges".
+func (me TxsdPresentationAttributesGraphicsShapeRendering) IsCrispEdges() bool {
+	return me == "crispEdges"
+}
+
+//	Since TxsdPresentationAttributesGraphicsShapeRendering is just a simple String type, this merely returns the current string value.
+func (me TxsdPresentationAttributesGraphicsShapeRendering) String() string {
+	return xsdt.String(me).String()
+}
+
+//	Since TxsdPresentationAttributesGraphicsShapeRendering is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPresentationAttributesGraphicsShapeRendering) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsShapeRendering is "optimizeSpeed".
+func (me TxsdPresentationAttributesGraphicsShapeRendering) IsOptimizeSpeed() bool {
+	return me == "optimizeSpeed"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsShapeRendering is "inherit".
+func (me TxsdPresentationAttributesGraphicsShapeRendering) IsInherit() bool { return me == "inherit" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsShapeRendering is "auto".
+func (me TxsdPresentationAttributesGraphicsShapeRendering) IsAuto() bool { return me == "auto" }
+
+type XsdGoPkgHasAttr_ShapeRendering_TxsdPresentationAttributesGraphicsShapeRendering_ struct {
+	ShapeRendering TxsdPresentationAttributesGraphicsShapeRendering `xml:"http://www.w3.org/2000/svg shape-rendering,attr"`
 }
 
 type TxsdPresentationAttributesGraphicsDisplay xsdt.String
 
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "table-row-group".
-func (me TxsdPresentationAttributesGraphicsDisplay) IsTableRowGroup () bool { return me == "table-row-group" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "table-row".
-func (me TxsdPresentationAttributesGraphicsDisplay) IsTableRow () bool { return me == "table-row" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "table-header-group".
-func (me TxsdPresentationAttributesGraphicsDisplay) IsTableHeaderGroup () bool { return me == "table-header-group" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "table".
-func (me TxsdPresentationAttributesGraphicsDisplay) IsTable () bool { return me == "table" }
-
 //	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "table-column-group".
-func (me TxsdPresentationAttributesGraphicsDisplay) IsTableColumnGroup () bool { return me == "table-column-group" }
-
-//	Since TxsdPresentationAttributesGraphicsDisplay is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesGraphicsDisplay) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "table-column".
-func (me TxsdPresentationAttributesGraphicsDisplay) IsTableColumn () bool { return me == "table-column" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "none".
-func (me TxsdPresentationAttributesGraphicsDisplay) IsNone () bool { return me == "none" }
+func (me TxsdPresentationAttributesGraphicsDisplay) IsTableColumnGroup() bool {
+	return me == "table-column-group"
+}
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "table-caption".
-func (me TxsdPresentationAttributesGraphicsDisplay) IsTableCaption () bool { return me == "table-caption" }
+func (me TxsdPresentationAttributesGraphicsDisplay) IsTableCaption() bool {
+	return me == "table-caption"
+}
 
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "run-in".
-func (me TxsdPresentationAttributesGraphicsDisplay) IsRunIn () bool { return me == "run-in" }
+//	Since TxsdPresentationAttributesGraphicsDisplay is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPresentationAttributesGraphicsDisplay) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "compact".
-func (me TxsdPresentationAttributesGraphicsDisplay) IsCompact () bool { return me == "compact" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "list-item".
-func (me TxsdPresentationAttributesGraphicsDisplay) IsListItem () bool { return me == "list-item" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "block".
-func (me TxsdPresentationAttributesGraphicsDisplay) IsBlock () bool { return me == "block" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "inline-table".
-func (me TxsdPresentationAttributesGraphicsDisplay) IsInlineTable () bool { return me == "inline-table" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "marker".
-func (me TxsdPresentationAttributesGraphicsDisplay) IsMarker () bool { return me == "marker" }
-
-//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesGraphicsDisplay's alias type xsdt.String.
-func (me TxsdPresentationAttributesGraphicsDisplay) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "inline".
-func (me TxsdPresentationAttributesGraphicsDisplay) IsInline () bool { return me == "inline" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "inherit".
-func (me TxsdPresentationAttributesGraphicsDisplay) IsInherit () bool { return me == "inherit" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "table-footer-group".
-func (me TxsdPresentationAttributesGraphicsDisplay) IsTableFooterGroup () bool { return me == "table-footer-group" }
-
-//	Since TxsdPresentationAttributesGraphicsDisplay is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesGraphicsDisplay) String () string { return xsdt.String(me).String() }
+func (me TxsdPresentationAttributesGraphicsDisplay) IsCompact() bool { return me == "compact" }
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "table-cell".
-func (me TxsdPresentationAttributesGraphicsDisplay) IsTableCell () bool { return me == "table-cell" }
+func (me TxsdPresentationAttributesGraphicsDisplay) IsTableCell() bool { return me == "table-cell" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "block".
+func (me TxsdPresentationAttributesGraphicsDisplay) IsBlock() bool { return me == "block" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "inherit".
+func (me TxsdPresentationAttributesGraphicsDisplay) IsInherit() bool { return me == "inherit" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "inline".
+func (me TxsdPresentationAttributesGraphicsDisplay) IsInline() bool { return me == "inline" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "none".
+func (me TxsdPresentationAttributesGraphicsDisplay) IsNone() bool { return me == "none" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "table-column".
+func (me TxsdPresentationAttributesGraphicsDisplay) IsTableColumn() bool { return me == "table-column" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "table".
+func (me TxsdPresentationAttributesGraphicsDisplay) IsTable() bool { return me == "table" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "run-in".
+func (me TxsdPresentationAttributesGraphicsDisplay) IsRunIn() bool { return me == "run-in" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "table-header-group".
+func (me TxsdPresentationAttributesGraphicsDisplay) IsTableHeaderGroup() bool {
+	return me == "table-header-group"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "list-item".
+func (me TxsdPresentationAttributesGraphicsDisplay) IsListItem() bool { return me == "list-item" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "marker".
+func (me TxsdPresentationAttributesGraphicsDisplay) IsMarker() bool { return me == "marker" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "table-row".
+func (me TxsdPresentationAttributesGraphicsDisplay) IsTableRow() bool { return me == "table-row" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "inline-table".
+func (me TxsdPresentationAttributesGraphicsDisplay) IsInlineTable() bool { return me == "inline-table" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "table-footer-group".
+func (me TxsdPresentationAttributesGraphicsDisplay) IsTableFooterGroup() bool {
+	return me == "table-footer-group"
+}
+
+//	Since TxsdPresentationAttributesGraphicsDisplay is just a simple String type, this merely returns the current string value.
+func (me TxsdPresentationAttributesGraphicsDisplay) String() string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesGraphicsDisplay's alias type xsdt.String.
+func (me TxsdPresentationAttributesGraphicsDisplay) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsDisplay is "table-row-group".
+func (me TxsdPresentationAttributesGraphicsDisplay) IsTableRowGroup() bool {
+	return me == "table-row-group"
+}
 
 type XsdGoPkgHasAttr_Display_TxsdPresentationAttributesGraphicsDisplay_ struct {
 	Display TxsdPresentationAttributesGraphicsDisplay `xml:"http://www.w3.org/2000/svg display,attr"`
+}
 
+//	<uri> | none | inherit
+type TClipPathValueType xsdt.String
+
+//	This convenience method just performs a simple type conversion to TClipPathValueType's alias type xsdt.String.
+func (me TClipPathValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TClipPathValueType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TClipPathValueType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TClipPathValueType is just a simple String type, this merely returns the current string value.
+func (me TClipPathValueType) String() string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_ClipPath_TClipPathValueType_ struct {
+	ClipPath TClipPathValueType `xml:"http://www.w3.org/2000/svg clip-path,attr"`
 }
 
 //	'mask' property/attribute value (e.g., 'none', %URI;)
 //	<uri> | none | inherit
 type TMaskValueType xsdt.String
 
+//	Since TMaskValueType is just a simple String type, this merely returns the current string value.
+func (me TMaskValueType) String() string { return xsdt.String(me).String() }
+
 //	Since TMaskValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TMaskValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TMaskValueType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 //	This convenience method just performs a simple type conversion to TMaskValueType's alias type xsdt.String.
-func (me TMaskValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TMaskValueType is just a simple String type, this merely returns the current string value.
-func (me TMaskValueType) String () string { return xsdt.String(me).String() }
+func (me TMaskValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 type XsdGoPkgHasAttr_Mask_TMaskValueType_ struct {
 	Mask TMaskValueType `xml:"http://www.w3.org/2000/svg mask,attr"`
-
 }
 
-type TxsdPresentationAttributesGraphicsShapeRendering xsdt.String
-
-//	Since TxsdPresentationAttributesGraphicsShapeRendering is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesGraphicsShapeRendering) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsShapeRendering is "auto".
-func (me TxsdPresentationAttributesGraphicsShapeRendering) IsAuto () bool { return me == "auto" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsShapeRendering is "geometricPrecision".
-func (me TxsdPresentationAttributesGraphicsShapeRendering) IsGeometricPrecision () bool { return me == "geometricPrecision" }
-
-//	Since TxsdPresentationAttributesGraphicsShapeRendering is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesGraphicsShapeRendering) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsShapeRendering is "crispEdges".
-func (me TxsdPresentationAttributesGraphicsShapeRendering) IsCrispEdges () bool { return me == "crispEdges" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsShapeRendering is "optimizeSpeed".
-func (me TxsdPresentationAttributesGraphicsShapeRendering) IsOptimizeSpeed () bool { return me == "optimizeSpeed" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsShapeRendering is "inherit".
-func (me TxsdPresentationAttributesGraphicsShapeRendering) IsInherit () bool { return me == "inherit" }
-
-//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesGraphicsShapeRendering's alias type xsdt.String.
-func (me TxsdPresentationAttributesGraphicsShapeRendering) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type XsdGoPkgHasAttr_ShapeRendering_TxsdPresentationAttributesGraphicsShapeRendering_ struct {
-	ShapeRendering TxsdPresentationAttributesGraphicsShapeRendering `xml:"http://www.w3.org/2000/svg shape-rendering,attr"`
-
+type XsdGoPkgHasAttr_Opacity_TOpacityValueType_ struct {
+	Opacity TOpacityValueType `xml:"http://www.w3.org/2000/svg opacity,attr"`
 }
 
-//	<uri> | none | inherit
-type TClipPathValueType xsdt.String
+type TxsdPresentationAttributesGraphicsVisibility xsdt.String
 
-//	Since TClipPathValueType is just a simple String type, this merely returns the current string value.
-func (me TClipPathValueType) String () string { return xsdt.String(me).String() }
+//	Since TxsdPresentationAttributesGraphicsVisibility is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPresentationAttributesGraphicsVisibility) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
 
-//	Since TClipPathValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TClipPathValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsVisibility is "inherit".
+func (me TxsdPresentationAttributesGraphicsVisibility) IsInherit() bool { return me == "inherit" }
 
-//	This convenience method just performs a simple type conversion to TClipPathValueType's alias type xsdt.String.
-func (me TClipPathValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesGraphicsVisibility's alias type xsdt.String.
+func (me TxsdPresentationAttributesGraphicsVisibility) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
 
-type XsdGoPkgHasAttr_ClipPath_TClipPathValueType_ struct {
-	ClipPath TClipPathValueType `xml:"http://www.w3.org/2000/svg clip-path,attr"`
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsVisibility is "visible".
+func (me TxsdPresentationAttributesGraphicsVisibility) IsVisible() bool { return me == "visible" }
 
+//	Since TxsdPresentationAttributesGraphicsVisibility is just a simple String type, this merely returns the current string value.
+func (me TxsdPresentationAttributesGraphicsVisibility) String() string {
+	return xsdt.String(me).String()
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesGraphicsVisibility is "hidden".
+func (me TxsdPresentationAttributesGraphicsVisibility) IsHidden() bool { return me == "hidden" }
+
+type XsdGoPkgHasAttr_Visibility_TxsdPresentationAttributesGraphicsVisibility_ struct {
+	Visibility TxsdPresentationAttributesGraphicsVisibility `xml:"http://www.w3.org/2000/svg visibility,attr"`
 }
 
 type XsdGoPkgHasAtts_PresentationAttributesGraphics struct {
-	XsdGoPkgHasAttr_Display_TxsdPresentationAttributesGraphicsDisplay_
-
-	XsdGoPkgHasAttr_Mask_TMaskValueType_
-
-	XsdGoPkgHasAttr_ShapeRendering_TxsdPresentationAttributesGraphicsShapeRendering_
-
-	XsdGoPkgHasAttr_ClipPath_TClipPathValueType_
-
 	XsdGoPkgHasAttr_Visibility_TxsdPresentationAttributesGraphicsVisibility_
 
-	XsdGoPkgHasAttr_Filter_TFilterValueType_
-
 	XsdGoPkgHasAttr_PointerEvents_TxsdPresentationAttributesGraphicsPointerEvents_
-
-	XsdGoPkgHasAttr_Opacity_TOpacityValueType_
 
 	XsdGoPkgHasAttr_Cursor_TCursorValueType_
 
 	XsdGoPkgHasAttr_TextRendering_TxsdPresentationAttributesGraphicsTextRendering_
 
+	XsdGoPkgHasAttr_Filter_TFilterValueType_
+
 	XsdGoPkgHasAttr_ClipRule_TClipFillRuleType_
 
 	XsdGoPkgHasAttr_ImageRendering_TxsdPresentationAttributesGraphicsImageRendering_
 
+	XsdGoPkgHasAttr_ShapeRendering_TxsdPresentationAttributesGraphicsShapeRendering_
+
+	XsdGoPkgHasAttr_Display_TxsdPresentationAttributesGraphicsDisplay_
+
+	XsdGoPkgHasAttr_ClipPath_TClipPathValueType_
+
+	XsdGoPkgHasAttr_Mask_TMaskValueType_
+
+	XsdGoPkgHasAttr_Opacity_TOpacityValueType_
 }
 
 //	The following presentation attributes apply to 'image' elements
 type XsdGoPkgHasAttr_ColorProfile_XsdtString_ struct {
 	ColorProfile xsdt.String `xml:"http://www.w3.org/2000/svg color-profile,attr"`
-
 }
 
 type XsdGoPkgHasAtts_PresentationAttributesImages struct {
 	XsdGoPkgHasAttr_ColorProfile_XsdtString_
-
 }
 
 //	The following presentation attributes apply to 'feDiffuseLighting' and 'feSpecularLighting' elements
 type XsdGoPkgHasAttr_LightingColor_TSVGColorType_ struct {
 	LightingColor TSVGColorType `xml:"http://www.w3.org/2000/svg lighting-color,attr"`
-
 }
 
 type XsdGoPkgHasAtts_PresentationAttributesLightingEffects struct {
 	XsdGoPkgHasAttr_LightingColor_TSVGColorType_
-
 }
 
 //	The following presentation attributes apply to marker operations
 //	'marker' property/attribute value (e.g., 'none', %URI;)
 type TMarkerValueType xsdt.String
 
-//	Since TMarkerValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TMarkerValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
 //	Since TMarkerValueType is just a simple String type, this merely returns the current string value.
-func (me TMarkerValueType) String () string { return xsdt.String(me).String() }
+func (me TMarkerValueType) String() string { return xsdt.String(me).String() }
+
+//	Since TMarkerValueType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TMarkerValueType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 //	This convenience method just performs a simple type conversion to TMarkerValueType's alias type xsdt.String.
-func (me TMarkerValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TMarkerValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 type XsdGoPkgHasAttr_MarkerStart_TMarkerValueType_ struct {
 	MarkerStart TMarkerValueType `xml:"http://www.w3.org/2000/svg marker-start,attr"`
-
-}
-
-type XsdGoPkgHasAttr_MarkerMid_TMarkerValueType_ struct {
-	MarkerMid TMarkerValueType `xml:"http://www.w3.org/2000/svg marker-mid,attr"`
-
 }
 
 type XsdGoPkgHasAttr_MarkerEnd_TMarkerValueType_ struct {
 	MarkerEnd TMarkerValueType `xml:"http://www.w3.org/2000/svg marker-end,attr"`
+}
 
+type XsdGoPkgHasAttr_MarkerMid_TMarkerValueType_ struct {
+	MarkerMid TMarkerValueType `xml:"http://www.w3.org/2000/svg marker-mid,attr"`
 }
 
 type XsdGoPkgHasAtts_PresentationAttributesMarkers struct {
-	XsdGoPkgHasAttr_MarkerStart_TMarkerValueType_
+	XsdGoPkgHasAttr_MarkerEnd_TMarkerValueType_
 
 	XsdGoPkgHasAttr_MarkerMid_TMarkerValueType_
 
-	XsdGoPkgHasAttr_MarkerEnd_TMarkerValueType_
-
+	XsdGoPkgHasAttr_MarkerStart_TMarkerValueType_
 }
 
 //	The following presentation attributes apply to text content elements
-//	'glyph-orientation-horizontal' property/attribute value (e.g., <angle>)
-//	<angle> | inherit
-type TGlyphOrientationHorizontalValueType xsdt.String
+type TxsdPresentationAttributesTextContentElementsAlignmentBaseline xsdt.String
 
-//	This convenience method just performs a simple type conversion to TGlyphOrientationHorizontalValueType's alias type xsdt.String.
-func (me TGlyphOrientationHorizontalValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TGlyphOrientationHorizontalValueType is just a simple String type, this merely returns the current string value.
-func (me TGlyphOrientationHorizontalValueType) String () string { return xsdt.String(me).String() }
-
-//	Since TGlyphOrientationHorizontalValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TGlyphOrientationHorizontalValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_GlyphOrientationHorizontal_TGlyphOrientationHorizontalValueType_ struct {
-	GlyphOrientationHorizontal TGlyphOrientationHorizontalValueType `xml:"http://www.w3.org/2000/svg glyph-orientation-horizontal,attr"`
-
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "text-after-edge".
+func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsTextAfterEdge() bool {
+	return me == "text-after-edge"
 }
 
-//	'letter-spacing' or 'word-spacing' property/attribute value (e.g., normal | <length>)
-type TSpacingValueType xsdt.String
-
-//	Since TSpacingValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TSpacingValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TSpacingValueType's alias type xsdt.String.
-func (me TSpacingValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TSpacingValueType is just a simple String type, this merely returns the current string value.
-func (me TSpacingValueType) String () string { return xsdt.String(me).String() }
-
-type XsdGoPkgHasAttr_LetterSpacing_TSpacingValueType_ struct {
-	LetterSpacing TSpacingValueType `xml:"http://www.w3.org/2000/svg letter-spacing,attr"`
-
+//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesTextContentElementsAlignmentBaseline's alias type xsdt.String.
+func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
 }
 
-type XsdGoPkgHasAttr_WordSpacing_TSpacingValueType_ struct {
-	WordSpacing TSpacingValueType `xml:"http://www.w3.org/2000/svg word-spacing,attr"`
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "mathematical".
+func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsMathematical() bool {
+	return me == "mathematical"
+}
 
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "baseline".
+func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsBaseline() bool {
+	return me == "baseline"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "text-before-edge".
+func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsTextBeforeEdge() bool {
+	return me == "text-before-edge"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "lower".
+func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsLower() bool {
+	return me == "lower"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "top".
+func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsTop() bool {
+	return me == "top"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "before-edge".
+func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsBeforeEdge() bool {
+	return me == "before-edge"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "inherit".
+func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsInherit() bool {
+	return me == "inherit"
+}
+
+//	Since TxsdPresentationAttributesTextContentElementsAlignmentBaseline is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPresentationAttributesTextContentElementsAlignmentBaseline) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "ideographic".
+func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsIdeographic() bool {
+	return me == "ideographic"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "bottom".
+func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsBottom() bool {
+	return me == "bottom"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "hanging".
+func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsHanging() bool {
+	return me == "hanging"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "after-edge".
+func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsAfterEdge() bool {
+	return me == "after-edge"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "text-bottom".
+func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsTextBottom() bool {
+	return me == "text-bottom"
+}
+
+//	Since TxsdPresentationAttributesTextContentElementsAlignmentBaseline is just a simple String type, this merely returns the current string value.
+func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) String() string {
+	return xsdt.String(me).String()
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "middle".
+func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsMiddle() bool {
+	return me == "middle"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "text-top".
+func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsTextTop() bool {
+	return me == "text-top"
+}
+
+type XsdGoPkgHasAttr_AlignmentBaseline_TxsdPresentationAttributesTextContentElementsAlignmentBaseline_ struct {
+	AlignmentBaseline TxsdPresentationAttributesTextContentElementsAlignmentBaseline `xml:"http://www.w3.org/2000/svg alignment-baseline,attr"`
+}
+
+type TxsdPresentationAttributesTextContentElementsDominantBaseline xsdt.String
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDominantBaseline is "inherit".
+func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) IsInherit() bool {
+	return me == "inherit"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDominantBaseline is "no-change".
+func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) IsNoChange() bool {
+	return me == "no-change"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDominantBaseline is "autosense-script".
+func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) IsAutosenseScript() bool {
+	return me == "autosense-script"
+}
+
+//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesTextContentElementsDominantBaseline's alias type xsdt.String.
+func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDominantBaseline is "auto".
+func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) IsAuto() bool {
+	return me == "auto"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDominantBaseline is "hanging".
+func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) IsHanging() bool {
+	return me == "hanging"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDominantBaseline is "ideographic".
+func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) IsIdeographic() bool {
+	return me == "ideographic"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDominantBaseline is "reset".
+func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) IsReset() bool {
+	return me == "reset"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDominantBaseline is "mathematical".
+func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) IsMathematical() bool {
+	return me == "mathematical"
+}
+
+//	Since TxsdPresentationAttributesTextContentElementsDominantBaseline is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPresentationAttributesTextContentElementsDominantBaseline) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDominantBaseline is "lower".
+func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) IsLower() bool {
+	return me == "lower"
+}
+
+//	Since TxsdPresentationAttributesTextContentElementsDominantBaseline is just a simple String type, this merely returns the current string value.
+func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) String() string {
+	return xsdt.String(me).String()
+}
+
+type XsdGoPkgHasAttr_DominantBaseline_TxsdPresentationAttributesTextContentElementsDominantBaseline_ struct {
+	DominantBaseline TxsdPresentationAttributesTextContentElementsDominantBaseline `xml:"http://www.w3.org/2000/svg dominant-baseline,attr"`
 }
 
 type TxsdPresentationAttributesTextContentElementsDirection xsdt.String
 
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDirection is "ltr".
-func (me TxsdPresentationAttributesTextContentElementsDirection) IsLtr () bool { return me == "ltr" }
+//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesTextContentElementsDirection's alias type xsdt.String.
+func (me TxsdPresentationAttributesTextContentElementsDirection) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDirection is "inherit".
-func (me TxsdPresentationAttributesTextContentElementsDirection) IsInherit () bool { return me == "inherit" }
+func (me TxsdPresentationAttributesTextContentElementsDirection) IsInherit() bool {
+	return me == "inherit"
+}
 
 //	Since TxsdPresentationAttributesTextContentElementsDirection is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesTextContentElementsDirection) String () string { return xsdt.String(me).String() }
+func (me TxsdPresentationAttributesTextContentElementsDirection) String() string {
+	return xsdt.String(me).String()
+}
 
 //	Since TxsdPresentationAttributesTextContentElementsDirection is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesTextContentElementsDirection) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TxsdPresentationAttributesTextContentElementsDirection) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDirection is "ltr".
+func (me TxsdPresentationAttributesTextContentElementsDirection) IsLtr() bool { return me == "ltr" }
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDirection is "rtl".
-func (me TxsdPresentationAttributesTextContentElementsDirection) IsRtl () bool { return me == "rtl" }
-
-//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesTextContentElementsDirection's alias type xsdt.String.
-func (me TxsdPresentationAttributesTextContentElementsDirection) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TxsdPresentationAttributesTextContentElementsDirection) IsRtl() bool { return me == "rtl" }
 
 type XsdGoPkgHasAttr_Direction_TxsdPresentationAttributesTextContentElementsDirection_ struct {
 	Direction TxsdPresentationAttributesTextContentElementsDirection `xml:"http://www.w3.org/2000/svg direction,attr"`
-
 }
 
-//	The actual definition is
-//	baseline | sub | super | <percentage> | <length> | inherit
-//	not sure that union can do this
-type TBaselineShiftValueType xsdt.String
+//	'glyph-orientation-horizontal' property/attribute value (e.g., <angle>)
+//	<angle> | inherit
+type TGlyphOrientationHorizontalValueType xsdt.String
 
-//	Since TBaselineShiftValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TBaselineShiftValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+//	Since TGlyphOrientationHorizontalValueType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TGlyphOrientationHorizontalValueType) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
 
-//	Since TBaselineShiftValueType is just a simple String type, this merely returns the current string value.
-func (me TBaselineShiftValueType) String () string { return xsdt.String(me).String() }
+//	Since TGlyphOrientationHorizontalValueType is just a simple String type, this merely returns the current string value.
+func (me TGlyphOrientationHorizontalValueType) String() string { return xsdt.String(me).String() }
 
-//	This convenience method just performs a simple type conversion to TBaselineShiftValueType's alias type xsdt.String.
-func (me TBaselineShiftValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+//	This convenience method just performs a simple type conversion to TGlyphOrientationHorizontalValueType's alias type xsdt.String.
+func (me TGlyphOrientationHorizontalValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
-type XsdGoPkgHasAttr_BaselineShift_TBaselineShiftValueType_ struct {
-	BaselineShift TBaselineShiftValueType `xml:"http://www.w3.org/2000/svg baseline-shift,attr"`
-
+type XsdGoPkgHasAttr_GlyphOrientationHorizontal_TGlyphOrientationHorizontalValueType_ struct {
+	GlyphOrientationHorizontal TGlyphOrientationHorizontalValueType `xml:"http://www.w3.org/2000/svg glyph-orientation-horizontal,attr"`
 }
 
 //	'text-decoration' property/attribute value (e.g., 'none', 'underline')
 type TextDecorationValueType xsdt.String
 
 //	This convenience method just performs a simple type conversion to TextDecorationValueType's alias type xsdt.String.
-func (me TextDecorationValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TextDecorationValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 //	Since TextDecorationValueType is just a simple String type, this merely returns the current string value.
-func (me TextDecorationValueType) String () string { return xsdt.String(me).String() }
+func (me TextDecorationValueType) String() string { return xsdt.String(me).String() }
 
 //	Since TextDecorationValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TextDecorationValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TextDecorationValueType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 type XsdGoPkgHasAttr_TextDecoration_TextDecorationValueType_ struct {
 	TextDecoration TextDecorationValueType `xml:"http://www.w3.org/2000/svg text-decoration,attr"`
+}
 
+//	'letter-spacing' or 'word-spacing' property/attribute value (e.g., normal | <length>)
+type TSpacingValueType xsdt.String
+
+//	This convenience method just performs a simple type conversion to TSpacingValueType's alias type xsdt.String.
+func (me TSpacingValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TSpacingValueType is just a simple String type, this merely returns the current string value.
+func (me TSpacingValueType) String() string { return xsdt.String(me).String() }
+
+//	Since TSpacingValueType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TSpacingValueType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_LetterSpacing_TSpacingValueType_ struct {
+	LetterSpacing TSpacingValueType `xml:"http://www.w3.org/2000/svg letter-spacing,attr"`
 }
 
 //	'glyph-orientation-vertical' property/attribute value (e.g., 'auto', <angle>)
@@ -1374,1422 +1585,1276 @@ type XsdGoPkgHasAttr_TextDecoration_TextDecorationValueType_ struct {
 type TGlyphOrientationVerticalValueType xsdt.String
 
 //	This convenience method just performs a simple type conversion to TGlyphOrientationVerticalValueType's alias type xsdt.String.
-func (me TGlyphOrientationVerticalValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TGlyphOrientationVerticalValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 //	Since TGlyphOrientationVerticalValueType is just a simple String type, this merely returns the current string value.
-func (me TGlyphOrientationVerticalValueType) String () string { return xsdt.String(me).String() }
+func (me TGlyphOrientationVerticalValueType) String() string { return xsdt.String(me).String() }
 
 //	Since TGlyphOrientationVerticalValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TGlyphOrientationVerticalValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TGlyphOrientationVerticalValueType) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
 
 type XsdGoPkgHasAttr_GlyphOrientationVertical_TGlyphOrientationVerticalValueType_ struct {
 	GlyphOrientationVertical TGlyphOrientationVerticalValueType `xml:"http://www.w3.org/2000/svg glyph-orientation-vertical,attr"`
+}
 
+//	The actual definition is
+//	baseline | sub | super | <percentage> | <length> | inherit
+//	not sure that union can do this
+type TBaselineShiftValueType xsdt.String
+
+//	This convenience method just performs a simple type conversion to TBaselineShiftValueType's alias type xsdt.String.
+func (me TBaselineShiftValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TBaselineShiftValueType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TBaselineShiftValueType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TBaselineShiftValueType is just a simple String type, this merely returns the current string value.
+func (me TBaselineShiftValueType) String() string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_BaselineShift_TBaselineShiftValueType_ struct {
+	BaselineShift TBaselineShiftValueType `xml:"http://www.w3.org/2000/svg baseline-shift,attr"`
+}
+
+type XsdGoPkgHasAttr_WordSpacing_TSpacingValueType_ struct {
+	WordSpacing TSpacingValueType `xml:"http://www.w3.org/2000/svg word-spacing,attr"`
 }
 
 type TxsdPresentationAttributesTextContentElementsUnicodeBidi xsdt.String
 
-//	Since TxsdPresentationAttributesTextContentElementsUnicodeBidi is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesTextContentElementsUnicodeBidi) String () string { return xsdt.String(me).String() }
-
 //	This convenience method just performs a simple type conversion to TxsdPresentationAttributesTextContentElementsUnicodeBidi's alias type xsdt.String.
-func (me TxsdPresentationAttributesTextContentElementsUnicodeBidi) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TxsdPresentationAttributesTextContentElementsUnicodeBidi is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesTextContentElementsUnicodeBidi) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsUnicodeBidi is "normal".
-func (me TxsdPresentationAttributesTextContentElementsUnicodeBidi) IsNormal () bool { return me == "normal" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsUnicodeBidi is "embed".
-func (me TxsdPresentationAttributesTextContentElementsUnicodeBidi) IsEmbed () bool { return me == "embed" }
+func (me TxsdPresentationAttributesTextContentElementsUnicodeBidi) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsUnicodeBidi is "bidi-override".
-func (me TxsdPresentationAttributesTextContentElementsUnicodeBidi) IsBidiOverride () bool { return me == "bidi-override" }
+func (me TxsdPresentationAttributesTextContentElementsUnicodeBidi) IsBidiOverride() bool {
+	return me == "bidi-override"
+}
+
+//	Since TxsdPresentationAttributesTextContentElementsUnicodeBidi is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPresentationAttributesTextContentElementsUnicodeBidi) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Since TxsdPresentationAttributesTextContentElementsUnicodeBidi is just a simple String type, this merely returns the current string value.
+func (me TxsdPresentationAttributesTextContentElementsUnicodeBidi) String() string {
+	return xsdt.String(me).String()
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsUnicodeBidi is "normal".
+func (me TxsdPresentationAttributesTextContentElementsUnicodeBidi) IsNormal() bool {
+	return me == "normal"
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsUnicodeBidi is "embed".
+func (me TxsdPresentationAttributesTextContentElementsUnicodeBidi) IsEmbed() bool {
+	return me == "embed"
+}
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsUnicodeBidi is "inherit".
-func (me TxsdPresentationAttributesTextContentElementsUnicodeBidi) IsInherit () bool { return me == "inherit" }
+func (me TxsdPresentationAttributesTextContentElementsUnicodeBidi) IsInherit() bool {
+	return me == "inherit"
+}
 
 type XsdGoPkgHasAttr_UnicodeBidi_TxsdPresentationAttributesTextContentElementsUnicodeBidi_ struct {
 	UnicodeBidi TxsdPresentationAttributesTextContentElementsUnicodeBidi `xml:"http://www.w3.org/2000/svg unicode-bidi,attr"`
-
-}
-
-type TxsdPresentationAttributesTextContentElementsAlignmentBaseline xsdt.String
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "before-edge".
-func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsBeforeEdge () bool { return me == "before-edge" }
-
-//	Since TxsdPresentationAttributesTextContentElementsAlignmentBaseline is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesTextContentElementsAlignmentBaseline) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "text-before-edge".
-func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsTextBeforeEdge () bool { return me == "text-before-edge" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "text-top".
-func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsTextTop () bool { return me == "text-top" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "mathematical".
-func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsMathematical () bool { return me == "mathematical" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "after-edge".
-func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsAfterEdge () bool { return me == "after-edge" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "lower".
-func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsLower () bool { return me == "lower" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "text-bottom".
-func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsTextBottom () bool { return me == "text-bottom" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "top".
-func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsTop () bool { return me == "top" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "hanging".
-func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsHanging () bool { return me == "hanging" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "baseline".
-func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsBaseline () bool { return me == "baseline" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "middle".
-func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsMiddle () bool { return me == "middle" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "ideographic".
-func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsIdeographic () bool { return me == "ideographic" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "inherit".
-func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsInherit () bool { return me == "inherit" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "bottom".
-func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsBottom () bool { return me == "bottom" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsAlignmentBaseline is "text-after-edge".
-func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) IsTextAfterEdge () bool { return me == "text-after-edge" }
-
-//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesTextContentElementsAlignmentBaseline's alias type xsdt.String.
-func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TxsdPresentationAttributesTextContentElementsAlignmentBaseline is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesTextContentElementsAlignmentBaseline) String () string { return xsdt.String(me).String() }
-
-type XsdGoPkgHasAttr_AlignmentBaseline_TxsdPresentationAttributesTextContentElementsAlignmentBaseline_ struct {
-	AlignmentBaseline TxsdPresentationAttributesTextContentElementsAlignmentBaseline `xml:"http://www.w3.org/2000/svg alignment-baseline,attr"`
-
-}
-
-type TxsdPresentationAttributesTextContentElementsDominantBaseline xsdt.String
-
-//	Since TxsdPresentationAttributesTextContentElementsDominantBaseline is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDominantBaseline is "autosense-script".
-func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) IsAutosenseScript () bool { return me == "autosense-script" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDominantBaseline is "mathematical".
-func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) IsMathematical () bool { return me == "mathematical" }
-
-//	Since TxsdPresentationAttributesTextContentElementsDominantBaseline is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesTextContentElementsDominantBaseline) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDominantBaseline is "auto".
-func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) IsAuto () bool { return me == "auto" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDominantBaseline is "ideographic".
-func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) IsIdeographic () bool { return me == "ideographic" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDominantBaseline is "lower".
-func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) IsLower () bool { return me == "lower" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDominantBaseline is "hanging".
-func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) IsHanging () bool { return me == "hanging" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDominantBaseline is "reset".
-func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) IsReset () bool { return me == "reset" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDominantBaseline is "no-change".
-func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) IsNoChange () bool { return me == "no-change" }
-
-//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesTextContentElementsDominantBaseline's alias type xsdt.String.
-func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsDominantBaseline is "inherit".
-func (me TxsdPresentationAttributesTextContentElementsDominantBaseline) IsInherit () bool { return me == "inherit" }
-
-type XsdGoPkgHasAttr_DominantBaseline_TxsdPresentationAttributesTextContentElementsDominantBaseline_ struct {
-	DominantBaseline TxsdPresentationAttributesTextContentElementsDominantBaseline `xml:"http://www.w3.org/2000/svg dominant-baseline,attr"`
-
 }
 
 type TxsdPresentationAttributesTextContentElementsTextAnchor xsdt.String
 
-//	Since TxsdPresentationAttributesTextContentElementsTextAnchor is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesTextContentElementsTextAnchor) String () string { return xsdt.String(me).String() }
-
 //	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsTextAnchor is "inherit".
-func (me TxsdPresentationAttributesTextContentElementsTextAnchor) IsInherit () bool { return me == "inherit" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsTextAnchor is "start".
-func (me TxsdPresentationAttributesTextContentElementsTextAnchor) IsStart () bool { return me == "start" }
-
-//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesTextContentElementsTextAnchor's alias type xsdt.String.
-func (me TxsdPresentationAttributesTextContentElementsTextAnchor) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsTextAnchor is "end".
-func (me TxsdPresentationAttributesTextContentElementsTextAnchor) IsEnd () bool { return me == "end" }
+func (me TxsdPresentationAttributesTextContentElementsTextAnchor) IsInherit() bool {
+	return me == "inherit"
+}
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsTextAnchor is "middle".
-func (me TxsdPresentationAttributesTextContentElementsTextAnchor) IsMiddle () bool { return me == "middle" }
+func (me TxsdPresentationAttributesTextContentElementsTextAnchor) IsMiddle() bool {
+	return me == "middle"
+}
+
+//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesTextContentElementsTextAnchor's alias type xsdt.String.
+func (me TxsdPresentationAttributesTextContentElementsTextAnchor) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsTextAnchor is "start".
+func (me TxsdPresentationAttributesTextContentElementsTextAnchor) IsStart() bool {
+	return me == "start"
+}
 
 //	Since TxsdPresentationAttributesTextContentElementsTextAnchor is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesTextContentElementsTextAnchor) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TxsdPresentationAttributesTextContentElementsTextAnchor) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextContentElementsTextAnchor is "end".
+func (me TxsdPresentationAttributesTextContentElementsTextAnchor) IsEnd() bool { return me == "end" }
+
+//	Since TxsdPresentationAttributesTextContentElementsTextAnchor is just a simple String type, this merely returns the current string value.
+func (me TxsdPresentationAttributesTextContentElementsTextAnchor) String() string {
+	return xsdt.String(me).String()
+}
 
 type XsdGoPkgHasAttr_TextAnchor_TxsdPresentationAttributesTextContentElementsTextAnchor_ struct {
 	TextAnchor TxsdPresentationAttributesTextContentElementsTextAnchor `xml:"http://www.w3.org/2000/svg text-anchor,attr"`
-
 }
 
 type XsdGoPkgHasAtts_PresentationAttributesTextContentElements struct {
+	XsdGoPkgHasAttr_Direction_TxsdPresentationAttributesTextContentElementsDirection_
+
+	XsdGoPkgHasAttr_GlyphOrientationHorizontal_TGlyphOrientationHorizontalValueType_
+
 	XsdGoPkgHasAttr_TextDecoration_TextDecorationValueType_
+
+	XsdGoPkgHasAttr_LetterSpacing_TSpacingValueType_
 
 	XsdGoPkgHasAttr_GlyphOrientationVertical_TGlyphOrientationVerticalValueType_
 
+	XsdGoPkgHasAttr_BaselineShift_TBaselineShiftValueType_
+
+	XsdGoPkgHasAttr_WordSpacing_TSpacingValueType_
+
 	XsdGoPkgHasAttr_UnicodeBidi_TxsdPresentationAttributesTextContentElementsUnicodeBidi_
+
+	XsdGoPkgHasAttr_TextAnchor_TxsdPresentationAttributesTextContentElementsTextAnchor_
 
 	XsdGoPkgHasAttr_AlignmentBaseline_TxsdPresentationAttributesTextContentElementsAlignmentBaseline_
 
 	XsdGoPkgHasAttr_DominantBaseline_TxsdPresentationAttributesTextContentElementsDominantBaseline_
-
-	XsdGoPkgHasAttr_TextAnchor_TxsdPresentationAttributesTextContentElementsTextAnchor_
-
-	XsdGoPkgHasAttr_GlyphOrientationHorizontal_TGlyphOrientationHorizontalValueType_
-
-	XsdGoPkgHasAttr_LetterSpacing_TSpacingValueType_
-
-	XsdGoPkgHasAttr_WordSpacing_TSpacingValueType_
-
-	XsdGoPkgHasAttr_Direction_TxsdPresentationAttributesTextContentElementsDirection_
-
-	XsdGoPkgHasAttr_BaselineShift_TBaselineShiftValueType_
-
 }
 
 //	The following presentation attributes apply to 'text' elements
 type TxsdPresentationAttributesTextElementsWritingMode xsdt.String
 
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextElementsWritingMode is "lr-tb".
-func (me TxsdPresentationAttributesTextElementsWritingMode) IsLrTb () bool { return me == "lr-tb" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextElementsWritingMode is "rl-tb".
-func (me TxsdPresentationAttributesTextElementsWritingMode) IsRlTb () bool { return me == "rl-tb" }
+//	Since TxsdPresentationAttributesTextElementsWritingMode is just a simple String type, this merely returns the current string value.
+func (me TxsdPresentationAttributesTextElementsWritingMode) String() string {
+	return xsdt.String(me).String()
+}
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesTextElementsWritingMode is "lr".
-func (me TxsdPresentationAttributesTextElementsWritingMode) IsLr () bool { return me == "lr" }
+func (me TxsdPresentationAttributesTextElementsWritingMode) IsLr() bool { return me == "lr" }
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesTextElementsWritingMode is "tb-rl".
-func (me TxsdPresentationAttributesTextElementsWritingMode) IsTbRl () bool { return me == "tb-rl" }
+func (me TxsdPresentationAttributesTextElementsWritingMode) IsTbRl() bool { return me == "tb-rl" }
 
-//	Since TxsdPresentationAttributesTextElementsWritingMode is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesTextElementsWritingMode) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesTextElementsWritingMode's alias type xsdt.String.
-func (me TxsdPresentationAttributesTextElementsWritingMode) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesTextElementsWritingMode is "inherit".
-func (me TxsdPresentationAttributesTextElementsWritingMode) IsInherit () bool { return me == "inherit" }
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextElementsWritingMode is "rl-tb".
+func (me TxsdPresentationAttributesTextElementsWritingMode) IsRlTb() bool { return me == "rl-tb" }
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesTextElementsWritingMode is "tb".
-func (me TxsdPresentationAttributesTextElementsWritingMode) IsTb () bool { return me == "tb" }
+func (me TxsdPresentationAttributesTextElementsWritingMode) IsTb() bool { return me == "tb" }
 
-//	Since TxsdPresentationAttributesTextElementsWritingMode is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesTextElementsWritingMode) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+//	This convenience method just performs a simple type conversion to TxsdPresentationAttributesTextElementsWritingMode's alias type xsdt.String.
+func (me TxsdPresentationAttributesTextElementsWritingMode) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextElementsWritingMode is "inherit".
+func (me TxsdPresentationAttributesTextElementsWritingMode) IsInherit() bool { return me == "inherit" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesTextElementsWritingMode is "lr-tb".
+func (me TxsdPresentationAttributesTextElementsWritingMode) IsLrTb() bool { return me == "lr-tb" }
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesTextElementsWritingMode is "rl".
-func (me TxsdPresentationAttributesTextElementsWritingMode) IsRl () bool { return me == "rl" }
+func (me TxsdPresentationAttributesTextElementsWritingMode) IsRl() bool { return me == "rl" }
+
+//	Since TxsdPresentationAttributesTextElementsWritingMode is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPresentationAttributesTextElementsWritingMode) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
 
 type XsdGoPkgHasAttr_WritingMode_TxsdPresentationAttributesTextElementsWritingMode_ struct {
 	WritingMode TxsdPresentationAttributesTextElementsWritingMode `xml:"http://www.w3.org/2000/svg writing-mode,attr"`
-
 }
 
 type XsdGoPkgHasAtts_PresentationAttributesTextElements struct {
 	XsdGoPkgHasAttr_WritingMode_TxsdPresentationAttributesTextElementsWritingMode_
-
 }
 
 //	The following presentation attributes apply to elements that establish viewports
 type TxsdPresentationAttributesViewportsOverflow xsdt.String
 
-//	Returns true if the value of this enumerated TxsdPresentationAttributesViewportsOverflow is "auto".
-func (me TxsdPresentationAttributesViewportsOverflow) IsAuto () bool { return me == "auto" }
-
-//	Since TxsdPresentationAttributesViewportsOverflow is just a simple String type, this merely returns the current string value.
-func (me TxsdPresentationAttributesViewportsOverflow) String () string { return xsdt.String(me).String() }
+//	Returns true if the value of this enumerated TxsdPresentationAttributesViewportsOverflow is "scroll".
+func (me TxsdPresentationAttributesViewportsOverflow) IsScroll() bool { return me == "scroll" }
 
 //	This convenience method just performs a simple type conversion to TxsdPresentationAttributesViewportsOverflow's alias type xsdt.String.
-func (me TxsdPresentationAttributesViewportsOverflow) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TxsdPresentationAttributesViewportsOverflow) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesViewportsOverflow is "inherit".
-func (me TxsdPresentationAttributesViewportsOverflow) IsInherit () bool { return me == "inherit" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesViewportsOverflow is "visible".
-func (me TxsdPresentationAttributesViewportsOverflow) IsVisible () bool { return me == "visible" }
-
-//	Returns true if the value of this enumerated TxsdPresentationAttributesViewportsOverflow is "scroll".
-func (me TxsdPresentationAttributesViewportsOverflow) IsScroll () bool { return me == "scroll" }
+func (me TxsdPresentationAttributesViewportsOverflow) IsInherit() bool { return me == "inherit" }
 
 //	Returns true if the value of this enumerated TxsdPresentationAttributesViewportsOverflow is "hidden".
-func (me TxsdPresentationAttributesViewportsOverflow) IsHidden () bool { return me == "hidden" }
+func (me TxsdPresentationAttributesViewportsOverflow) IsHidden() bool { return me == "hidden" }
+
+//	Since TxsdPresentationAttributesViewportsOverflow is just a simple String type, this merely returns the current string value.
+func (me TxsdPresentationAttributesViewportsOverflow) String() string {
+	return xsdt.String(me).String()
+}
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesViewportsOverflow is "visible".
+func (me TxsdPresentationAttributesViewportsOverflow) IsVisible() bool { return me == "visible" }
+
+//	Returns true if the value of this enumerated TxsdPresentationAttributesViewportsOverflow is "auto".
+func (me TxsdPresentationAttributesViewportsOverflow) IsAuto() bool { return me == "auto" }
 
 //	Since TxsdPresentationAttributesViewportsOverflow is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPresentationAttributesViewportsOverflow) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TxsdPresentationAttributesViewportsOverflow) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
 
 type XsdGoPkgHasAttr_Overflow_TxsdPresentationAttributesViewportsOverflow_ struct {
 	Overflow TxsdPresentationAttributesViewportsOverflow `xml:"http://www.w3.org/2000/svg overflow,attr"`
-
 }
 
 //	<shape> | auto | inherit
 type TClipValueType xsdt.String
 
 //	Since TClipValueType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TClipValueType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TClipValueType is just a simple String type, this merely returns the current string value.
-func (me TClipValueType) String () string { return xsdt.String(me).String() }
+func (me *TClipValueType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 //	This convenience method just performs a simple type conversion to TClipValueType's alias type xsdt.String.
-func (me TClipValueType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TClipValueType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TClipValueType is just a simple String type, this merely returns the current string value.
+func (me TClipValueType) String() string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasAttr_Clip_TClipValueType_ struct {
 	Clip TClipValueType `xml:"http://www.w3.org/2000/svg clip,attr"`
-
 }
 
 type XsdGoPkgHasAtts_PresentationAttributesViewports struct {
-	XsdGoPkgHasAttr_Clip_TClipValueType_
-
 	XsdGoPkgHasAttr_Overflow_TxsdPresentationAttributesViewportsOverflow_
 
+	XsdGoPkgHasAttr_Clip_TClipValueType_
 }
 
 //	The following represents the complete list of presentation attributes
 type XsdGoPkgHasAtts_PresentationAttributesAll struct {
-	XsdGoPkgHasAtts_PresentationAttributesContainers
-
-	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
-
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
-	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
-
-	XsdGoPkgHasAtts_PresentationAttributesFilterPrimitives
-
-	XsdGoPkgHasAtts_PresentationAttributesImages
+	XsdGoPkgHasAtts_PresentationAttributesMarkers
 
 	XsdGoPkgHasAtts_PresentationAttributesLightingEffects
 
-	XsdGoPkgHasAtts_PresentationAttributesViewports
+	XsdGoPkgHasAtts_PresentationAttributesContainers
 
 	XsdGoPkgHasAtts_PresentationAttributesFeFlood
 
-	XsdGoPkgHasAtts_PresentationAttributesColor
-
 	XsdGoPkgHasAtts_PresentationAttributesGraphics
 
-	XsdGoPkgHasAtts_PresentationAttributesTextElements
+	XsdGoPkgHasAtts_PresentationAttributesImages
 
-	XsdGoPkgHasAtts_PresentationAttributesMarkers
+	XsdGoPkgHasAtts_PresentationAttributesColor
+
+	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
+
+	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
+
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
+	XsdGoPkgHasAtts_PresentationAttributesViewports
 
 	XsdGoPkgHasAtts_PresentationAttributesGradients
 
+	XsdGoPkgHasAtts_PresentationAttributesTextElements
+
+	XsdGoPkgHasAtts_PresentationAttributesFilterPrimitives
+}
+
+type XsdGoPkgHasAttr_Result_XsdtString_ struct {
+	Result xsdt.String `xml:"http://www.w3.org/2000/svg result,attr"`
+}
+
+//	a <length>
+type TLengthType xsdt.String
+
+//	Since TLengthType is just a simple String type, this merely returns the current string value.
+func (me TLengthType) String() string { return xsdt.String(me).String() }
+
+//	Since TLengthType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TLengthType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TLengthType's alias type xsdt.String.
+func (me TLengthType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+type XsdGoPkgHasAttr_Height_TLengthType_ struct {
+	Height TLengthType `xml:"http://www.w3.org/2000/svg height,attr"`
 }
 
 //	a <co-ordinate>
 //	a coordinate, which is a number optionally followed immediately by a unit identifier. Perhaps it is possible to represent this as a union by declaring unit idenifiers as a type?
 type TCoordinateType xsdt.String
 
-//	Since TCoordinateType is just a simple String type, this merely returns the current string value.
-func (me TCoordinateType) String () string { return xsdt.String(me).String() }
-
 //	Since TCoordinateType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TCoordinateType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TCoordinateType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 //	This convenience method just performs a simple type conversion to TCoordinateType's alias type xsdt.String.
-func (me TCoordinateType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TCoordinateType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TCoordinateType is just a simple String type, this merely returns the current string value.
+func (me TCoordinateType) String() string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasAttr_X_TCoordinateType_ struct {
 	X TCoordinateType `xml:"http://www.w3.org/2000/svg x,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Result_XsdtString_ struct {
-	Result xsdt.String `xml:"http://www.w3.org/2000/svg result,attr"`
-
-}
-
-//	a <length>
-type TLengthType xsdt.String
-
-//	Since TLengthType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TLengthType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TLengthType is just a simple String type, this merely returns the current string value.
-func (me TLengthType) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TLengthType's alias type xsdt.String.
-func (me TLengthType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type XsdGoPkgHasAttr_Height_TLengthType_ struct {
-	Height TLengthType `xml:"http://www.w3.org/2000/svg height,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Width_TLengthType_ struct {
-	Width TLengthType `xml:"http://www.w3.org/2000/svg width,attr"`
-
 }
 
 type XsdGoPkgHasAttr_Y_TCoordinateType_ struct {
 	Y TCoordinateType `xml:"http://www.w3.org/2000/svg y,attr"`
+}
 
+type XsdGoPkgHasAttr_Width_TLengthType_ struct {
+	Width TLengthType `xml:"http://www.w3.org/2000/svg width,attr"`
 }
 
 type XsdGoPkgHasAtts_FilterPrimitiveAttributes struct {
+	XsdGoPkgHasAttr_X_TCoordinateType_
+
 	XsdGoPkgHasAttr_Y_TCoordinateType_
 
-	XsdGoPkgHasAttr_X_TCoordinateType_
+	XsdGoPkgHasAttr_Width_TLengthType_
 
 	XsdGoPkgHasAttr_Result_XsdtString_
 
 	XsdGoPkgHasAttr_Height_TLengthType_
-
-	XsdGoPkgHasAttr_Width_TLengthType_
-
 }
 
 type XsdGoPkgHasAttr_In_XsdtString_ struct {
 	In xsdt.String `xml:"http://www.w3.org/2000/svg in,attr"`
-
 }
 
 type XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn struct {
-	XsdGoPkgHasAtts_FilterPrimitiveAttributes
-
 	XsdGoPkgHasAttr_In_XsdtString_
 
-}
-
-type XsdGoPkgHasAttr_TableValues_XsdtString_ struct {
-	TableValues xsdt.String `xml:"http://www.w3.org/2000/svg tableValues,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Exponent_XsdtDouble_ struct {
-	Exponent xsdt.Double `xml:"http://www.w3.org/2000/svg exponent,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Intercept_XsdtDouble_ struct {
-	Intercept xsdt.Double `xml:"http://www.w3.org/2000/svg intercept,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Amplitude_XsdtDouble_ struct {
-	Amplitude xsdt.Double `xml:"http://www.w3.org/2000/svg amplitude,attr"`
-
+	XsdGoPkgHasAtts_FilterPrimitiveAttributes
 }
 
 type XsdGoPkgHasAttr_Slope_XsdtDouble_ struct {
 	Slope xsdt.Double `xml:"http://www.w3.org/2000/svg slope,attr"`
+}
 
+type XsdGoPkgHasAttr_Offset_XsdtDouble_ struct {
+	Offset xsdt.Double `xml:"http://www.w3.org/2000/svg offset,attr"`
+}
+
+type XsdGoPkgHasAttr_Exponent_XsdtDouble_ struct {
+	Exponent xsdt.Double `xml:"http://www.w3.org/2000/svg exponent,attr"`
+}
+
+type XsdGoPkgHasAttr_Intercept_XsdtDouble_ struct {
+	Intercept xsdt.Double `xml:"http://www.w3.org/2000/svg intercept,attr"`
+}
+
+type XsdGoPkgHasAttr_TableValues_XsdtString_ struct {
+	TableValues xsdt.String `xml:"http://www.w3.org/2000/svg tableValues,attr"`
+}
+
+type XsdGoPkgHasAttr_Amplitude_XsdtDouble_ struct {
+	Amplitude xsdt.Double `xml:"http://www.w3.org/2000/svg amplitude,attr"`
 }
 
 type TxsdComponentTransferFunctionAttributesType xsdt.String
 
 //	Returns true if the value of this enumerated TxsdComponentTransferFunctionAttributesType is "gamma".
-func (me TxsdComponentTransferFunctionAttributesType) IsGamma () bool { return me == "gamma" }
+func (me TxsdComponentTransferFunctionAttributesType) IsGamma() bool { return me == "gamma" }
 
 //	This convenience method just performs a simple type conversion to TxsdComponentTransferFunctionAttributesType's alias type xsdt.String.
-func (me TxsdComponentTransferFunctionAttributesType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdComponentTransferFunctionAttributesType is "table".
-func (me TxsdComponentTransferFunctionAttributesType) IsTable () bool { return me == "table" }
-
-//	Returns true if the value of this enumerated TxsdComponentTransferFunctionAttributesType is "identity".
-func (me TxsdComponentTransferFunctionAttributesType) IsIdentity () bool { return me == "identity" }
-
-//	Since TxsdComponentTransferFunctionAttributesType is just a simple String type, this merely returns the current string value.
-func (me TxsdComponentTransferFunctionAttributesType) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdComponentTransferFunctionAttributesType is "discrete".
-func (me TxsdComponentTransferFunctionAttributesType) IsDiscrete () bool { return me == "discrete" }
+func (me TxsdComponentTransferFunctionAttributesType) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
 
 //	Since TxsdComponentTransferFunctionAttributesType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdComponentTransferFunctionAttributesType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TxsdComponentTransferFunctionAttributesType) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Returns true if the value of this enumerated TxsdComponentTransferFunctionAttributesType is "identity".
+func (me TxsdComponentTransferFunctionAttributesType) IsIdentity() bool { return me == "identity" }
 
 //	Returns true if the value of this enumerated TxsdComponentTransferFunctionAttributesType is "linear".
-func (me TxsdComponentTransferFunctionAttributesType) IsLinear () bool { return me == "linear" }
+func (me TxsdComponentTransferFunctionAttributesType) IsLinear() bool { return me == "linear" }
+
+//	Returns true if the value of this enumerated TxsdComponentTransferFunctionAttributesType is "table".
+func (me TxsdComponentTransferFunctionAttributesType) IsTable() bool { return me == "table" }
+
+//	Returns true if the value of this enumerated TxsdComponentTransferFunctionAttributesType is "discrete".
+func (me TxsdComponentTransferFunctionAttributesType) IsDiscrete() bool { return me == "discrete" }
+
+//	Since TxsdComponentTransferFunctionAttributesType is just a simple String type, this merely returns the current string value.
+func (me TxsdComponentTransferFunctionAttributesType) String() string {
+	return xsdt.String(me).String()
+}
 
 type XsdGoPkgHasAttr_Type_TxsdComponentTransferFunctionAttributesType_ struct {
 	Type TxsdComponentTransferFunctionAttributesType `xml:"http://www.w3.org/2000/svg type,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Offset_XsdtDouble_ struct {
-	Offset xsdt.Double `xml:"http://www.w3.org/2000/svg offset,attr"`
-
 }
 
 type XsdGoPkgHasAtts_ComponentTransferFunctionAttributes struct {
-	XsdGoPkgHasAttr_TableValues_XsdtString_
+	XsdGoPkgHasAttr_Amplitude_XsdtDouble_
+
+	XsdGoPkgHasAttr_Type_TxsdComponentTransferFunctionAttributesType_
+
+	XsdGoPkgHasAttr_Slope_XsdtDouble_
+
+	XsdGoPkgHasAttr_Offset_XsdtDouble_
 
 	XsdGoPkgHasAttr_Exponent_XsdtDouble_
 
 	XsdGoPkgHasAttr_Intercept_XsdtDouble_
 
-	XsdGoPkgHasAttr_Amplitude_XsdtDouble_
-
-	XsdGoPkgHasAttr_Slope_XsdtDouble_
-
-	XsdGoPkgHasAttr_Type_TxsdComponentTransferFunctionAttributesType_
-
-	XsdGoPkgHasAttr_Offset_XsdtDouble_
-
+	XsdGoPkgHasAttr_TableValues_XsdtString_
 }
 
 type XsdGoPkgHasAtts_AnimElementAttrs struct {
 	XsdGoPkgHasAtts_XlinkRefAttrs
 
 	xlink.XsdGoPkgHasAttr_Href
-
-}
-
-type XsdGoPkgHasAttr_AttributeType_XsdtString_ struct {
-	AttributeType xsdt.String `xml:"http://www.w3.org/2000/svg attributeType,attr"`
-
 }
 
 type XsdGoPkgHasAttr_AttributeName_XsdtString_ struct {
 	AttributeName xsdt.String `xml:"http://www.w3.org/2000/svg attributeName,attr"`
+}
 
+type XsdGoPkgHasAttr_AttributeType_XsdtString_ struct {
+	AttributeType xsdt.String `xml:"http://www.w3.org/2000/svg attributeType,attr"`
 }
 
 type XsdGoPkgHasAtts_AnimAttributeAttrs struct {
-	XsdGoPkgHasAttr_AttributeType_XsdtString_
-
 	XsdGoPkgHasAttr_AttributeName_XsdtString_
 
+	XsdGoPkgHasAttr_AttributeType_XsdtString_
 }
 
 type XsdGoPkgHasAtts_AnimTargetAttrs struct {
-	XsdGoPkgHasAtts_AnimElementAttrs
-
 	XsdGoPkgHasAtts_AnimAttributeAttrs
 
+	XsdGoPkgHasAtts_AnimElementAttrs
 }
 
-type XsdGoPkgHasAttr_RepeatDur_XsdtString_ struct {
-	RepeatDur xsdt.String `xml:"http://www.w3.org/2000/svg repeatDur,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Max_XsdtString_ struct {
-	Max xsdt.String `xml:"http://www.w3.org/2000/svg max,attr"`
-
-}
-
-type XsdGoPkgHasAttr_RepeatCount_XsdtString_ struct {
-	RepeatCount xsdt.String `xml:"http://www.w3.org/2000/svg repeatCount,attr"`
-
+type XsdGoPkgHasAttr_Dur_XsdtString_ struct {
+	Dur xsdt.String `xml:"http://www.w3.org/2000/svg dur,attr"`
 }
 
 type XsdGoPkgHasAttr_Begin_XsdtString_ struct {
 	Begin xsdt.String `xml:"http://www.w3.org/2000/svg begin,attr"`
+}
 
+type XsdGoPkgHasAttr_Max_XsdtString_ struct {
+	Max xsdt.String `xml:"http://www.w3.org/2000/svg max,attr"`
 }
 
 type TxsdAnimTimingAttrsRestart xsdt.String
 
 //	Returns true if the value of this enumerated TxsdAnimTimingAttrsRestart is "never".
-func (me TxsdAnimTimingAttrsRestart) IsNever () bool { return me == "never" }
+func (me TxsdAnimTimingAttrsRestart) IsNever() bool { return me == "never" }
 
 //	Since TxsdAnimTimingAttrsRestart is just a simple String type, this merely returns the current string value.
-func (me TxsdAnimTimingAttrsRestart) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdAnimTimingAttrsRestart is "whenNotActive".
-func (me TxsdAnimTimingAttrsRestart) IsWhenNotActive () bool { return me == "whenNotActive" }
-
-//	This convenience method just performs a simple type conversion to TxsdAnimTimingAttrsRestart's alias type xsdt.String.
-func (me TxsdAnimTimingAttrsRestart) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdAnimTimingAttrsRestart is "always".
-func (me TxsdAnimTimingAttrsRestart) IsAlways () bool { return me == "always" }
+func (me TxsdAnimTimingAttrsRestart) String() string { return xsdt.String(me).String() }
 
 //	Since TxsdAnimTimingAttrsRestart is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdAnimTimingAttrsRestart) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TxsdAnimTimingAttrsRestart) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdAnimTimingAttrsRestart is "always".
+func (me TxsdAnimTimingAttrsRestart) IsAlways() bool { return me == "always" }
+
+//	This convenience method just performs a simple type conversion to TxsdAnimTimingAttrsRestart's alias type xsdt.String.
+func (me TxsdAnimTimingAttrsRestart) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TxsdAnimTimingAttrsRestart is "whenNotActive".
+func (me TxsdAnimTimingAttrsRestart) IsWhenNotActive() bool { return me == "whenNotActive" }
 
 type XsdGoPkgHasAttr_Restart_TxsdAnimTimingAttrsRestart_Always struct {
 	Restart TxsdAnimTimingAttrsRestart `xml:"http://www.w3.org/2000/svg restart,attr"`
-
 }
 
 //	Returns the default value for Restart -- "always"
-func (me XsdGoPkgHasAttr_Restart_TxsdAnimTimingAttrsRestart_Always) RestartDefault () TxsdAnimTimingAttrsRestart { return TxsdAnimTimingAttrsRestart("always") }
-
-type XsdGoPkgHasAttr_Dur_XsdtString_ struct {
-	Dur xsdt.String `xml:"http://www.w3.org/2000/svg dur,attr"`
-
+func (me XsdGoPkgHasAttr_Restart_TxsdAnimTimingAttrsRestart_Always) RestartDefault() TxsdAnimTimingAttrsRestart {
+	return TxsdAnimTimingAttrsRestart("always")
 }
-
-type TxsdAnimTimingAttrsFill xsdt.String
-
-//	Returns true if the value of this enumerated TxsdAnimTimingAttrsFill is "remove".
-func (me TxsdAnimTimingAttrsFill) IsRemove () bool { return me == "remove" }
-
-//	This convenience method just performs a simple type conversion to TxsdAnimTimingAttrsFill's alias type xsdt.String.
-func (me TxsdAnimTimingAttrsFill) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TxsdAnimTimingAttrsFill is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdAnimTimingAttrsFill) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdAnimTimingAttrsFill is "freeze".
-func (me TxsdAnimTimingAttrsFill) IsFreeze () bool { return me == "freeze" }
-
-//	Since TxsdAnimTimingAttrsFill is just a simple String type, this merely returns the current string value.
-func (me TxsdAnimTimingAttrsFill) String () string { return xsdt.String(me).String() }
-
-type XsdGoPkgHasAttr_Fill_TxsdAnimTimingAttrsFill_Remove struct {
-	Fill TxsdAnimTimingAttrsFill `xml:"http://www.w3.org/2000/svg fill,attr"`
-
-}
-
-//	Returns the default value for Fill -- "remove"
-func (me XsdGoPkgHasAttr_Fill_TxsdAnimTimingAttrsFill_Remove) FillDefault () TxsdAnimTimingAttrsFill { return TxsdAnimTimingAttrsFill("remove") }
 
 type XsdGoPkgHasAttr_End_XsdtString_ struct {
 	End xsdt.String `xml:"http://www.w3.org/2000/svg end,attr"`
-
 }
 
 type XsdGoPkgHasAttr_Min_XsdtString_ struct {
 	Min xsdt.String `xml:"http://www.w3.org/2000/svg min,attr"`
+}
 
+type TxsdAnimTimingAttrsFill xsdt.String
+
+//	Since TxsdAnimTimingAttrsFill is just a simple String type, this merely returns the current string value.
+func (me TxsdAnimTimingAttrsFill) String() string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TxsdAnimTimingAttrsFill's alias type xsdt.String.
+func (me TxsdAnimTimingAttrsFill) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TxsdAnimTimingAttrsFill is "remove".
+func (me TxsdAnimTimingAttrsFill) IsRemove() bool { return me == "remove" }
+
+//	Returns true if the value of this enumerated TxsdAnimTimingAttrsFill is "freeze".
+func (me TxsdAnimTimingAttrsFill) IsFreeze() bool { return me == "freeze" }
+
+//	Since TxsdAnimTimingAttrsFill is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdAnimTimingAttrsFill) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_Fill_TxsdAnimTimingAttrsFill_Remove struct {
+	Fill TxsdAnimTimingAttrsFill `xml:"http://www.w3.org/2000/svg fill,attr"`
+}
+
+//	Returns the default value for Fill -- "remove"
+func (me XsdGoPkgHasAttr_Fill_TxsdAnimTimingAttrsFill_Remove) FillDefault() TxsdAnimTimingAttrsFill {
+	return TxsdAnimTimingAttrsFill("remove")
+}
+
+type XsdGoPkgHasAttr_RepeatDur_XsdtString_ struct {
+	RepeatDur xsdt.String `xml:"http://www.w3.org/2000/svg repeatDur,attr"`
+}
+
+type XsdGoPkgHasAttr_RepeatCount_XsdtString_ struct {
+	RepeatCount xsdt.String `xml:"http://www.w3.org/2000/svg repeatCount,attr"`
 }
 
 type XsdGoPkgHasAtts_AnimTimingAttrs struct {
+	XsdGoPkgHasAttr_Begin_XsdtString_
+
+	XsdGoPkgHasAttr_Max_XsdtString_
+
+	XsdGoPkgHasAttr_Restart_TxsdAnimTimingAttrsRestart_Always
+
 	XsdGoPkgHasAttr_End_XsdtString_
 
 	XsdGoPkgHasAttr_Min_XsdtString_
 
-	XsdGoPkgHasAttr_RepeatDur_XsdtString_
+	XsdGoPkgHasAttr_Fill_TxsdAnimTimingAttrsFill_Remove
 
-	XsdGoPkgHasAttr_Max_XsdtString_
+	XsdGoPkgHasAttr_RepeatDur_XsdtString_
 
 	XsdGoPkgHasAttr_RepeatCount_XsdtString_
 
-	XsdGoPkgHasAttr_Begin_XsdtString_
-
-	XsdGoPkgHasAttr_Restart_TxsdAnimTimingAttrsRestart_Always
-
 	XsdGoPkgHasAttr_Dur_XsdtString_
-
-	XsdGoPkgHasAttr_Fill_TxsdAnimTimingAttrsFill_Remove
-
-}
-
-type XsdGoPkgHasAttr_KeySplines_XsdtString_ struct {
-	KeySplines xsdt.String `xml:"http://www.w3.org/2000/svg keySplines,attr"`
-
-}
-
-type TxsdAnimValueAttrsCalcMode xsdt.String
-
-//	Returns true if the value of this enumerated TxsdAnimValueAttrsCalcMode is "discrete".
-func (me TxsdAnimValueAttrsCalcMode) IsDiscrete () bool { return me == "discrete" }
-
-//	Returns true if the value of this enumerated TxsdAnimValueAttrsCalcMode is "linear".
-func (me TxsdAnimValueAttrsCalcMode) IsLinear () bool { return me == "linear" }
-
-//	This convenience method just performs a simple type conversion to TxsdAnimValueAttrsCalcMode's alias type xsdt.String.
-func (me TxsdAnimValueAttrsCalcMode) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdAnimValueAttrsCalcMode is "spline".
-func (me TxsdAnimValueAttrsCalcMode) IsSpline () bool { return me == "spline" }
-
-//	Since TxsdAnimValueAttrsCalcMode is just a simple String type, this merely returns the current string value.
-func (me TxsdAnimValueAttrsCalcMode) String () string { return xsdt.String(me).String() }
-
-//	Since TxsdAnimValueAttrsCalcMode is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdAnimValueAttrsCalcMode) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdAnimValueAttrsCalcMode is "paced".
-func (me TxsdAnimValueAttrsCalcMode) IsPaced () bool { return me == "paced" }
-
-type XsdGoPkgHasAttr_CalcMode_TxsdAnimValueAttrsCalcMode_Linear struct {
-	CalcMode TxsdAnimValueAttrsCalcMode `xml:"http://www.w3.org/2000/svg calcMode,attr"`
-
-}
-
-//	Returns the default value for CalcMode -- "linear"
-func (me XsdGoPkgHasAttr_CalcMode_TxsdAnimValueAttrsCalcMode_Linear) CalcModeDefault () TxsdAnimValueAttrsCalcMode { return TxsdAnimValueAttrsCalcMode("linear") }
-
-type XsdGoPkgHasAttr_To_XsdtString_ struct {
-	To xsdt.String `xml:"http://www.w3.org/2000/svg to,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Values_XsdtString_ struct {
-	Values xsdt.String `xml:"http://www.w3.org/2000/svg values,attr"`
-
-}
-
-type XsdGoPkgHasAttr_From_XsdtString_ struct {
-	From xsdt.String `xml:"http://www.w3.org/2000/svg from,attr"`
-
-}
-
-type XsdGoPkgHasAttr_By_XsdtString_ struct {
-	By xsdt.String `xml:"http://www.w3.org/2000/svg by,attr"`
-
 }
 
 type XsdGoPkgHasAttr_KeyTimes_XsdtString_ struct {
 	KeyTimes xsdt.String `xml:"http://www.w3.org/2000/svg keyTimes,attr"`
+}
 
+type XsdGoPkgHasAttr_To_XsdtString_ struct {
+	To xsdt.String `xml:"http://www.w3.org/2000/svg to,attr"`
+}
+
+type XsdGoPkgHasAttr_Values_XsdtString_ struct {
+	Values xsdt.String `xml:"http://www.w3.org/2000/svg values,attr"`
+}
+
+type TxsdAnimValueAttrsCalcMode xsdt.String
+
+//	Since TxsdAnimValueAttrsCalcMode is just a simple String type, this merely returns the current string value.
+func (me TxsdAnimValueAttrsCalcMode) String() string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdAnimValueAttrsCalcMode is "linear".
+func (me TxsdAnimValueAttrsCalcMode) IsLinear() bool { return me == "linear" }
+
+//	Returns true if the value of this enumerated TxsdAnimValueAttrsCalcMode is "spline".
+func (me TxsdAnimValueAttrsCalcMode) IsSpline() bool { return me == "spline" }
+
+//	Returns true if the value of this enumerated TxsdAnimValueAttrsCalcMode is "discrete".
+func (me TxsdAnimValueAttrsCalcMode) IsDiscrete() bool { return me == "discrete" }
+
+//	This convenience method just performs a simple type conversion to TxsdAnimValueAttrsCalcMode's alias type xsdt.String.
+func (me TxsdAnimValueAttrsCalcMode) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TxsdAnimValueAttrsCalcMode is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdAnimValueAttrsCalcMode) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdAnimValueAttrsCalcMode is "paced".
+func (me TxsdAnimValueAttrsCalcMode) IsPaced() bool { return me == "paced" }
+
+type XsdGoPkgHasAttr_CalcMode_TxsdAnimValueAttrsCalcMode_Linear struct {
+	CalcMode TxsdAnimValueAttrsCalcMode `xml:"http://www.w3.org/2000/svg calcMode,attr"`
+}
+
+//	Returns the default value for CalcMode -- "linear"
+func (me XsdGoPkgHasAttr_CalcMode_TxsdAnimValueAttrsCalcMode_Linear) CalcModeDefault() TxsdAnimValueAttrsCalcMode {
+	return TxsdAnimValueAttrsCalcMode("linear")
+}
+
+type XsdGoPkgHasAttr_From_XsdtString_ struct {
+	From xsdt.String `xml:"http://www.w3.org/2000/svg from,attr"`
+}
+
+type XsdGoPkgHasAttr_KeySplines_XsdtString_ struct {
+	KeySplines xsdt.String `xml:"http://www.w3.org/2000/svg keySplines,attr"`
+}
+
+type XsdGoPkgHasAttr_By_XsdtString_ struct {
+	By xsdt.String `xml:"http://www.w3.org/2000/svg by,attr"`
 }
 
 type XsdGoPkgHasAtts_AnimValueAttrs struct {
-	XsdGoPkgHasAttr_From_XsdtString_
-
-	XsdGoPkgHasAttr_By_XsdtString_
-
 	XsdGoPkgHasAttr_KeyTimes_XsdtString_
-
-	XsdGoPkgHasAttr_KeySplines_XsdtString_
-
-	XsdGoPkgHasAttr_CalcMode_TxsdAnimValueAttrsCalcMode_Linear
 
 	XsdGoPkgHasAttr_To_XsdtString_
 
 	XsdGoPkgHasAttr_Values_XsdtString_
 
+	XsdGoPkgHasAttr_CalcMode_TxsdAnimValueAttrsCalcMode_Linear
+
+	XsdGoPkgHasAttr_From_XsdtString_
+
+	XsdGoPkgHasAttr_KeySplines_XsdtString_
+
+	XsdGoPkgHasAttr_By_XsdtString_
 }
 
 type TxsdAnimAdditionAttrsAccumulate xsdt.String
 
-//	Since TxsdAnimAdditionAttrsAccumulate is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdAnimAdditionAttrsAccumulate) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
 //	Returns true if the value of this enumerated TxsdAnimAdditionAttrsAccumulate is "none".
-func (me TxsdAnimAdditionAttrsAccumulate) IsNone () bool { return me == "none" }
-
-//	This convenience method just performs a simple type conversion to TxsdAnimAdditionAttrsAccumulate's alias type xsdt.String.
-func (me TxsdAnimAdditionAttrsAccumulate) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TxsdAnimAdditionAttrsAccumulate) IsNone() bool { return me == "none" }
 
 //	Since TxsdAnimAdditionAttrsAccumulate is just a simple String type, this merely returns the current string value.
-func (me TxsdAnimAdditionAttrsAccumulate) String () string { return xsdt.String(me).String() }
+func (me TxsdAnimAdditionAttrsAccumulate) String() string { return xsdt.String(me).String() }
+
+//	Since TxsdAnimAdditionAttrsAccumulate is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdAnimAdditionAttrsAccumulate) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	This convenience method just performs a simple type conversion to TxsdAnimAdditionAttrsAccumulate's alias type xsdt.String.
+func (me TxsdAnimAdditionAttrsAccumulate) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 //	Returns true if the value of this enumerated TxsdAnimAdditionAttrsAccumulate is "sum".
-func (me TxsdAnimAdditionAttrsAccumulate) IsSum () bool { return me == "sum" }
+func (me TxsdAnimAdditionAttrsAccumulate) IsSum() bool { return me == "sum" }
 
 type XsdGoPkgHasAttr_Accumulate_TxsdAnimAdditionAttrsAccumulate_None struct {
 	Accumulate TxsdAnimAdditionAttrsAccumulate `xml:"http://www.w3.org/2000/svg accumulate,attr"`
-
 }
 
 //	Returns the default value for Accumulate -- "none"
-func (me XsdGoPkgHasAttr_Accumulate_TxsdAnimAdditionAttrsAccumulate_None) AccumulateDefault () TxsdAnimAdditionAttrsAccumulate { return TxsdAnimAdditionAttrsAccumulate("none") }
+func (me XsdGoPkgHasAttr_Accumulate_TxsdAnimAdditionAttrsAccumulate_None) AccumulateDefault() TxsdAnimAdditionAttrsAccumulate {
+	return TxsdAnimAdditionAttrsAccumulate("none")
+}
 
 type TxsdAnimAdditionAttrsAdditive xsdt.String
 
-//	Since TxsdAnimAdditionAttrsAdditive is just a simple String type, this merely returns the current string value.
-func (me TxsdAnimAdditionAttrsAdditive) String () string { return xsdt.String(me).String() }
+//	This convenience method just performs a simple type conversion to TxsdAnimAdditionAttrsAdditive's alias type xsdt.String.
+func (me TxsdAnimAdditionAttrsAdditive) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 //	Returns true if the value of this enumerated TxsdAnimAdditionAttrsAdditive is "sum".
-func (me TxsdAnimAdditionAttrsAdditive) IsSum () bool { return me == "sum" }
-
-//	This convenience method just performs a simple type conversion to TxsdAnimAdditionAttrsAdditive's alias type xsdt.String.
-func (me TxsdAnimAdditionAttrsAdditive) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TxsdAnimAdditionAttrsAdditive is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdAnimAdditionAttrsAdditive) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me TxsdAnimAdditionAttrsAdditive) IsSum() bool { return me == "sum" }
 
 //	Returns true if the value of this enumerated TxsdAnimAdditionAttrsAdditive is "replace".
-func (me TxsdAnimAdditionAttrsAdditive) IsReplace () bool { return me == "replace" }
+func (me TxsdAnimAdditionAttrsAdditive) IsReplace() bool { return me == "replace" }
+
+//	Since TxsdAnimAdditionAttrsAdditive is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdAnimAdditionAttrsAdditive) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TxsdAnimAdditionAttrsAdditive is just a simple String type, this merely returns the current string value.
+func (me TxsdAnimAdditionAttrsAdditive) String() string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasAttr_Additive_TxsdAnimAdditionAttrsAdditive_Replace struct {
 	Additive TxsdAnimAdditionAttrsAdditive `xml:"http://www.w3.org/2000/svg additive,attr"`
-
 }
 
 //	Returns the default value for Additive -- "replace"
-func (me XsdGoPkgHasAttr_Additive_TxsdAnimAdditionAttrsAdditive_Replace) AdditiveDefault () TxsdAnimAdditionAttrsAdditive { return TxsdAnimAdditionAttrsAdditive("replace") }
+func (me XsdGoPkgHasAttr_Additive_TxsdAnimAdditionAttrsAdditive_Replace) AdditiveDefault() TxsdAnimAdditionAttrsAdditive {
+	return TxsdAnimAdditionAttrsAdditive("replace")
+}
 
 type XsdGoPkgHasAtts_AnimAdditionAttrs struct {
-	XsdGoPkgHasAttr_Accumulate_TxsdAnimAdditionAttrsAccumulate_None
-
 	XsdGoPkgHasAttr_Additive_TxsdAnimAdditionAttrsAdditive_Replace
 
+	XsdGoPkgHasAttr_Accumulate_TxsdAnimAdditionAttrsAccumulate_None
 }
 
 //	Space-separated list of classes
 type TClassListType xsdt.String
 
 //	Since TClassListType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TClassListType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TClassListType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	TClassListType declares a String containing a whitespace-separated list of xsdt.String values. This Values() method creates and returns a slice of all elements in that list.
+func (me TClassListType) Values() (list []xsdt.String) {
+	var svals = xsdt.ListValues(string(me))
+	list = make([]xsdt.String, len(svals))
+	for i, s := range svals {
+		list[i] = xsdt.String(s)
+	}
+	return
+}
 
 //	Since TClassListType is just a simple String type, this merely returns the current string value.
-func (me TClassListType) String () string { return xsdt.String(me).String() }
+func (me TClassListType) String() string { return xsdt.String(me).String() }
 
 //	This convenience method just performs a simple type conversion to TClassListType's alias type xsdt.String.
-func (me TClassListType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	TClassListType defines a String containing a whitespace-separated list of xsdt.String values. This Values() method creates and returns a slice of all elements in that list.
-func (me TClassListType) Values () (list []xsdt.String) { var svals = xsdt.ListValues(string(me)); list = make([]xsdt.String, len(svals)); for i, s := range svals { list[i] = xsdt.String(s) }; return }
+func (me TClassListType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 type XsdGoPkgHasAttr_Class_TClassListType_ struct {
 	Class TClassListType `xml:"http://www.w3.org/2000/svg class,attr"`
-
 }
-
-//	A bit simpler than the DTD, but see commented-out alternative
-type XsdGoPkgHasAttr_Content_XsdtString_StructuredText struct {
-	Content xsdt.String `xml:"http://www.w3.org/2000/svg content,attr"`
-
-}
-
-//	Returns the fixed value for Content -- "structured text"
-func (me XsdGoPkgHasAttr_Content_XsdtString_StructuredText) ContentFixed () xsdt.String { return xsdt.String("structured text") }
 
 //	style sheet data
 type TStyleSheetType xsdt.String
 
-//	Since TStyleSheetType is just a simple String type, this merely returns the current string value.
-func (me TStyleSheetType) String () string { return xsdt.String(me).String() }
-
 //	This convenience method just performs a simple type conversion to TStyleSheetType's alias type xsdt.String.
-func (me TStyleSheetType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TStyleSheetType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TStyleSheetType is just a simple String type, this merely returns the current string value.
+func (me TStyleSheetType) String() string { return xsdt.String(me).String() }
 
 //	Since TStyleSheetType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TStyleSheetType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TStyleSheetType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 type XsdGoPkgHasAttr_Style_TStyleSheetType_ struct {
 	Style TStyleSheetType `xml:"http://www.w3.org/2000/svg style,attr"`
-
 }
 
-type XsdGoPkgHasCdata struct {
-	XsdGoPkgCDATA string `xml:",chardata"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasCdata function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasCdata instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasCdata instance.
-func (me *XsdGoPkgHasCdata) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasCdata; fn != nil { fn(me) }
- }
-
-type TdescType struct {
-	XsdGoPkgHasAttr_Content_XsdtString_StructuredText
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-}
-
-//	If the WalkHandlers.TdescType function is not nil (ie. was set by outside code), calls it with this TdescType instance as the single argument. Then calls the Walk() method on 1/6 embed(s) and 0/0 field(s) belonging to this TdescType instance.
-func (me *TdescType) Walk ()  { 
-	if fn := WalkHandlers.TdescType; fn != nil { fn(me) }
-	me.XsdGoPkgHasCdata.Walk()
- }
-
-type XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_ struct {
-	Desc *TdescType `xml:"http://www.w3.org/2000/svg desc"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_ instance.
-func (me *XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_; fn != nil { fn(me) }
-	me.Desc.Walk()
- }
-
-type TtitleType struct {
-	XsdGoPkgHasAttr_Content_XsdtString_StructuredText
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-}
-
-//	If the WalkHandlers.TtitleType function is not nil (ie. was set by outside code), calls it with this TtitleType instance as the single argument. Then calls the Walk() method on 1/6 embed(s) and 0/0 field(s) belonging to this TtitleType instance.
-func (me *TtitleType) Walk ()  { 
-	if fn := WalkHandlers.TtitleType; fn != nil { fn(me) }
-	me.XsdGoPkgHasCdata.Walk()
- }
-
-type XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_ struct {
-	Title *TtitleType `xml:"http://www.w3.org/2000/svg title"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_ instance.
-func (me *XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_; fn != nil { fn(me) }
-	me.Title.Walk()
- }
-
-type TmetadataType struct {
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasCdata
-
-}
-
-//	If the WalkHandlers.TmetadataType function is not nil (ie. was set by outside code), calls it with this TmetadataType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmetadataType instance.
-func (me *TmetadataType) Walk ()  { 
-	if fn := WalkHandlers.TmetadataType; fn != nil { fn(me) }
-	me.XsdGoPkgHasCdata.Walk()
- }
-
-type XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_ struct {
-	Metadata *TmetadataType `xml:"http://www.w3.org/2000/svg metadata"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_ instance.
-func (me *XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_; fn != nil { fn(me) }
-	me.Metadata.Walk()
- }
-
-type XsdGoPkgHasGroup_DescTitleMetadata struct {
-	XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_
-
-	XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_
-
-	XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasGroup_DescTitleMetadata function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_DescTitleMetadata instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_DescTitleMetadata instance.
-func (me *XsdGoPkgHasGroup_DescTitleMetadata) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasGroup_DescTitleMetadata; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_.Walk()
-	me.XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_.Walk()
-	me.XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_.Walk()
- }
-
-type XsdGoPkgHasAttr_Path_XsdtString_ struct {
-	Path xsdt.String `xml:"http://www.w3.org/2000/svg path,attr"`
-
+type XsdGoPkgHasAttr_HorizAdvX_XsdtDouble_ struct {
+	HorizAdvX xsdt.Double `xml:"http://www.w3.org/2000/svg horiz-adv-x,attr"`
 }
 
 type XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_ struct {
 	ExternalResourcesRequired xsdt.Boolean `xml:"http://www.w3.org/2000/svg externalResourcesRequired,attr"`
+}
 
+type TxsdAnimateTransformTypeType xsdt.String
+
+//	Returns true if the value of this enumerated TxsdAnimateTransformTypeType is "translate".
+func (me TxsdAnimateTransformTypeType) IsTranslate() bool { return me == "translate" }
+
+//	Returns true if the value of this enumerated TxsdAnimateTransformTypeType is "rotate".
+func (me TxsdAnimateTransformTypeType) IsRotate() bool { return me == "rotate" }
+
+//	This convenience method just performs a simple type conversion to TxsdAnimateTransformTypeType's alias type xsdt.String.
+func (me TxsdAnimateTransformTypeType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TxsdAnimateTransformTypeType is just a simple String type, this merely returns the current string value.
+func (me TxsdAnimateTransformTypeType) String() string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdAnimateTransformTypeType is "skewX".
+func (me TxsdAnimateTransformTypeType) IsSkewX() bool { return me == "skewX" }
+
+//	Returns true if the value of this enumerated TxsdAnimateTransformTypeType is "skewY".
+func (me TxsdAnimateTransformTypeType) IsSkewY() bool { return me == "skewY" }
+
+//	Since TxsdAnimateTransformTypeType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdAnimateTransformTypeType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdAnimateTransformTypeType is "scale".
+func (me TxsdAnimateTransformTypeType) IsScale() bool { return me == "scale" }
+
+type XsdGoPkgHasAttr_Type_TxsdAnimateTransformTypeType_Translate struct {
+	Type TxsdAnimateTransformTypeType `xml:"http://www.w3.org/2000/svg type,attr"`
+}
+
+//	Returns the default value for Type -- "translate"
+func (me XsdGoPkgHasAttr_Type_TxsdAnimateTransformTypeType_Translate) TypeDefault() TxsdAnimateTransformTypeType {
+	return TxsdAnimateTransformTypeType("translate")
+}
+
+//	A bit simpler than the DTD, but see commented-out alternative
+type XsdGoPkgHasCdata struct {
+	XsdGoPkgCDATA string `xml:",chardata"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasCdata function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasCdata instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasCdata instance.
+func (me *XsdGoPkgHasCdata) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasCdata; fn != nil {
+		fn(me)
+	}
+}
+
+type XsdGoPkgHasAttr_Content_XsdtString_StructuredText struct {
+	Content xsdt.String `xml:"http://www.w3.org/2000/svg content,attr"`
+}
+
+//	Returns the fixed value for Content -- "structured text"
+func (me XsdGoPkgHasAttr_Content_XsdtString_StructuredText) ContentFixed() xsdt.String {
+	return xsdt.String("structured text")
+}
+
+type TtitleType struct {
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Content_XsdtString_StructuredText
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+}
+
+//	If the WalkHandlers.TtitleType function is not nil (ie. was set by outside code), calls it with this TtitleType instance as the single argument. Then calls the Walk() method on 1/6 embed(s) and 0/0 field(s) belonging to this TtitleType instance.
+func (me *TtitleType) Walk() {
+	if fn := WalkHandlers.TtitleType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasCdata.Walk()
+}
+
+type XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_ struct {
+	Title *TtitleType `xml:"http://www.w3.org/2000/svg title"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_ instance.
+func (me *XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_; fn != nil {
+		fn(me)
+	}
+	me.Title.Walk()
+}
+
+type TmetadataType struct {
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_StdAttrs
+}
+
+//	If the WalkHandlers.TmetadataType function is not nil (ie. was set by outside code), calls it with this TmetadataType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TmetadataType instance.
+func (me *TmetadataType) Walk() {
+	if fn := WalkHandlers.TmetadataType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasCdata.Walk()
+}
+
+type XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_ struct {
+	Metadata *TmetadataType `xml:"http://www.w3.org/2000/svg metadata"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_ instance.
+func (me *XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_; fn != nil {
+		fn(me)
+	}
+	me.Metadata.Walk()
+}
+
+type TdescType struct {
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAttr_Content_XsdtString_StructuredText
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+}
+
+//	If the WalkHandlers.TdescType function is not nil (ie. was set by outside code), calls it with this TdescType instance as the single argument. Then calls the Walk() method on 1/6 embed(s) and 0/0 field(s) belonging to this TdescType instance.
+func (me *TdescType) Walk() {
+	if fn := WalkHandlers.TdescType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasCdata.Walk()
+}
+
+type XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_ struct {
+	Desc *TdescType `xml:"http://www.w3.org/2000/svg desc"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_ instance.
+func (me *XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_; fn != nil {
+		fn(me)
+	}
+	me.Desc.Walk()
+}
+
+type XsdGoPkgHasGroup_DescTitleMetadata struct {
+	XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_
+
+	XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_
+
+	XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_
+}
+
+//	If the WalkHandlers.XsdGoPkgHasGroup_DescTitleMetadata function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_DescTitleMetadata instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_DescTitleMetadata instance.
+func (me *XsdGoPkgHasGroup_DescTitleMetadata) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasGroup_DescTitleMetadata; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_.Walk()
+	me.XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_.Walk()
+	me.XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_.Walk()
+}
+
+type TanimateTransformType struct {
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_AnimTargetAttrs
+
+	XsdGoPkgHasAttr_Type_TxsdAnimateTransformTypeType_Translate
+
+	XsdGoPkgHasAtts_AnimationEvents
+
+	XsdGoPkgHasGroup_DescTitleMetadata
+
+	XsdGoPkgHasAtts_AnimAdditionAttrs
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAtts_AnimTimingAttrs
+
+	XsdGoPkgHasAtts_AnimValueAttrs
+}
+
+//	If the WalkHandlers.TanimateTransformType function is not nil (ie. was set by outside code), calls it with this TanimateTransformType instance as the single argument. Then calls the Walk() method on 1/10 embed(s) and 0/0 field(s) belonging to this TanimateTransformType instance.
+func (me *TanimateTransformType) Walk() {
+	if fn := WalkHandlers.TanimateTransformType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+}
+
+type XsdGoPkgHasElems_AnimateTransform struct {
+	AnimateTransforms []*TanimateTransformType `xml:"http://www.w3.org/2000/svg animateTransform"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AnimateTransform function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AnimateTransform instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AnimateTransform instance.
+func (me *XsdGoPkgHasElems_AnimateTransform) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_AnimateTransform; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.AnimateTransforms {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_TextLength_TLengthType_ struct {
+	TextLength TLengthType `xml:"http://www.w3.org/2000/svg textLength,attr"`
+}
+
+type XsdGoPkgHasAttr_Origin_XsdtString_ struct {
+	Origin xsdt.String `xml:"http://www.w3.org/2000/svg origin,attr"`
 }
 
 type XsdGoPkgHasAttr_Rotate_XsdtString_ struct {
 	Rotate xsdt.String `xml:"http://www.w3.org/2000/svg rotate,attr"`
+}
 
+type TmpathType struct {
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_XlinkRefAttrs
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasGroup_DescTitleMetadata
+
+	xlink.XsdGoPkgHasAttr_Href
+}
+
+//	If the WalkHandlers.TmpathType function is not nil (ie. was set by outside code), calls it with this TmpathType instance as the single argument. Then calls the Walk() method on 1/5 embed(s) and 0/0 field(s) belonging to this TmpathType instance.
+func (me *TmpathType) Walk() {
+	if fn := WalkHandlers.TmpathType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+}
+
+type XsdGoPkgHasElem_Mpath struct {
+	Mpath *TmpathType `xml:"http://www.w3.org/2000/svg mpath"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Mpath function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mpath instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mpath instance.
+func (me *XsdGoPkgHasElem_Mpath) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mpath; fn != nil {
+		fn(me)
+	}
+	me.Mpath.Walk()
 }
 
 type XsdGoPkgHasAttr_KeyPoints_XsdtString_ struct {
 	KeyPoints xsdt.String `xml:"http://www.w3.org/2000/svg keyPoints,attr"`
-
 }
 
-type TmpathType struct {
-	xlink.XsdGoPkgHasAttr_Href
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAtts_XlinkRefAttrs
-
-	XsdGoPkgHasAtts_StdAttrs
-
-}
-
-//	If the WalkHandlers.TmpathType function is not nil (ie. was set by outside code), calls it with this TmpathType instance as the single argument. Then calls the Walk() method on 1/5 embed(s) and 0/0 field(s) belonging to this TmpathType instance.
-func (me *TmpathType) Walk ()  { 
-	if fn := WalkHandlers.TmpathType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
- }
-
-type XsdGoPkgHasElem_Mpath struct {
-	Mpath *TmpathType `xml:"http://www.w3.org/2000/svg mpath"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Mpath function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mpath instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mpath instance.
-func (me *XsdGoPkgHasElem_Mpath) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mpath; fn != nil { fn(me) }
-	me.Mpath.Walk()
- }
-
-type XsdGoPkgHasAttr_Origin_XsdtString_ struct {
-	Origin xsdt.String `xml:"http://www.w3.org/2000/svg origin,attr"`
-
+type XsdGoPkgHasAttr_Path_XsdtString_ struct {
+	Path xsdt.String `xml:"http://www.w3.org/2000/svg path,attr"`
 }
 
 type TanimateMotionType struct {
-	XsdGoPkgHasAttr_Path_XsdtString_
+	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+	XsdGoPkgHasAtts_AnimValueAttrs
 
 	XsdGoPkgHasAttr_Rotate_XsdtString_
 
+	XsdGoPkgHasAtts_AnimTimingAttrs
+
+	XsdGoPkgHasElem_Mpath
+
+	XsdGoPkgHasAtts_AnimAdditionAttrs
+
+	XsdGoPkgHasAttr_KeyPoints_XsdtString_
+
 	XsdGoPkgHasAtts_AnimationEvents
 
+	XsdGoPkgHasAttr_Path_XsdtString_
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasGroup_DescTitleMetadata
+
+	XsdGoPkgHasAtts_AnimElementAttrs
+
+	XsdGoPkgHasAttr_Origin_XsdtString_
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+}
+
+//	If the WalkHandlers.TanimateMotionType function is not nil (ie. was set by outside code), calls it with this TanimateMotionType instance as the single argument. Then calls the Walk() method on 2/14 embed(s) and 0/0 field(s) belonging to this TanimateMotionType instance.
+func (me *TanimateMotionType) Walk() {
+	if fn := WalkHandlers.TanimateMotionType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElem_Mpath.Walk()
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+}
+
+type XsdGoPkgHasElems_AnimateMotion struct {
+	AnimateMotions []*TanimateMotionType `xml:"http://www.w3.org/2000/svg animateMotion"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AnimateMotion function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AnimateMotion instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AnimateMotion instance.
+func (me *XsdGoPkgHasElems_AnimateMotion) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_AnimateMotion; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.AnimateMotions {
+		x.Walk()
+	}
+}
+
+type TanimateType struct {
 	XsdGoPkgHasAtts_AnimTimingAttrs
+
+	XsdGoPkgHasGroup_DescTitleMetadata
+
+	XsdGoPkgHasAtts_AnimationEvents
 
 	XsdGoPkgHasAtts_AnimValueAttrs
 
 	XsdGoPkgHasAtts_AnimAdditionAttrs
 
+	XsdGoPkgHasAtts_TestAttrs
+
 	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAttr_KeyPoints_XsdtString_
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
 
-	XsdGoPkgHasAtts_AnimElementAttrs
+	XsdGoPkgHasAtts_AnimTargetAttrs
+}
 
-	XsdGoPkgHasElem_Mpath
+//	If the WalkHandlers.TanimateType function is not nil (ie. was set by outside code), calls it with this TanimateType instance as the single argument. Then calls the Walk() method on 1/9 embed(s) and 0/0 field(s) belonging to this TanimateType instance.
+func (me *TanimateType) Walk() {
+	if fn := WalkHandlers.TanimateType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+}
 
-	XsdGoPkgHasAttr_Origin_XsdtString_
+type XsdGoPkgHasElems_Animate struct {
+	Animates []*TanimateType `xml:"http://www.w3.org/2000/svg animate"`
+}
 
-	XsdGoPkgHasGroup_DescTitleMetadata
+//	If the WalkHandlers.XsdGoPkgHasElems_Animate function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Animate instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Animate instance.
+func (me *XsdGoPkgHasElems_Animate) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Animate; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Animates {
+		x.Walk()
+	}
+}
+
+type TanimateColorType struct {
+	XsdGoPkgHasAtts_AnimAdditionAttrs
+
+	XsdGoPkgHasAtts_AnimTargetAttrs
+
+	XsdGoPkgHasAtts_AnimValueAttrs
+
+	XsdGoPkgHasAtts_AnimationEvents
+
+	XsdGoPkgHasAtts_AnimTimingAttrs
 
 	XsdGoPkgHasAtts_TestAttrs
 
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasGroup_DescTitleMetadata
 }
 
-//	If the WalkHandlers.TanimateMotionType function is not nil (ie. was set by outside code), calls it with this TanimateMotionType instance as the single argument. Then calls the Walk() method on 2/14 embed(s) and 0/0 field(s) belonging to this TanimateMotionType instance.
-func (me *TanimateMotionType) Walk ()  { 
-	if fn := WalkHandlers.TanimateMotionType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_Mpath.Walk()
+//	If the WalkHandlers.TanimateColorType function is not nil (ie. was set by outside code), calls it with this TanimateColorType instance as the single argument. Then calls the Walk() method on 1/9 embed(s) and 0/0 field(s) belonging to this TanimateColorType instance.
+func (me *TanimateColorType) Walk() {
+	if fn := WalkHandlers.TanimateColorType; fn != nil {
+		fn(me)
+	}
 	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
- }
-
-type XsdGoPkgHasElems_AnimateMotion struct {
-	AnimateMotions []*TanimateMotionType `xml:"http://www.w3.org/2000/svg animateMotion"`
-
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_AnimateMotion function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AnimateMotion instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AnimateMotion instance.
-func (me *XsdGoPkgHasElems_AnimateMotion) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AnimateMotion; fn != nil { fn(me) }
-	for _, x := range me.AnimateMotions { x.Walk() }
- }
+type XsdGoPkgHasElems_AnimateColor struct {
+	AnimateColors []*TanimateColorType `xml:"http://www.w3.org/2000/svg animateColor"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AnimateColor function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AnimateColor instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AnimateColor instance.
+func (me *XsdGoPkgHasElems_AnimateColor) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_AnimateColor; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.AnimateColors {
+		x.Walk()
+	}
+}
 
 //	a list of points
 type TPointsType xsdt.String
 
+//	Since TPointsType is just a simple String type, this merely returns the current string value.
+func (me TPointsType) String() string { return xsdt.String(me).String() }
+
 //	Since TPointsType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TPointsType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TPointsType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 //	This convenience method just performs a simple type conversion to TPointsType's alias type xsdt.String.
-func (me TPointsType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TPointsType is just a simple String type, this merely returns the current string value.
-func (me TPointsType) String () string { return xsdt.String(me).String() }
+func (me TPointsType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 type XsdGoPkgHasAttr_Points_TPointsType_ struct {
 	Points TPointsType `xml:"http://www.w3.org/2000/svg points,attr"`
-
 }
-
-type TanimateType struct {
-	XsdGoPkgHasAtts_AnimationEvents
-
-	XsdGoPkgHasAtts_AnimTargetAttrs
-
-	XsdGoPkgHasAtts_AnimTimingAttrs
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasAtts_AnimAdditionAttrs
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAtts_AnimValueAttrs
-
-}
-
-//	If the WalkHandlers.TanimateType function is not nil (ie. was set by outside code), calls it with this TanimateType instance as the single argument. Then calls the Walk() method on 1/9 embed(s) and 0/0 field(s) belonging to this TanimateType instance.
-func (me *TanimateType) Walk ()  { 
-	if fn := WalkHandlers.TanimateType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
- }
-
-type XsdGoPkgHasElems_Animate struct {
-	Animates []*TanimateType `xml:"http://www.w3.org/2000/svg animate"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Animate function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Animate instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Animate instance.
-func (me *XsdGoPkgHasElems_Animate) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Animate; fn != nil { fn(me) }
-	for _, x := range me.Animates { x.Walk() }
- }
-
-type TxsdAnimateTransformTypeType xsdt.String
-
-//	This convenience method just performs a simple type conversion to TxsdAnimateTransformTypeType's alias type xsdt.String.
-func (me TxsdAnimateTransformTypeType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdAnimateTransformTypeType is "scale".
-func (me TxsdAnimateTransformTypeType) IsScale () bool { return me == "scale" }
-
-//	Returns true if the value of this enumerated TxsdAnimateTransformTypeType is "rotate".
-func (me TxsdAnimateTransformTypeType) IsRotate () bool { return me == "rotate" }
-
-//	Returns true if the value of this enumerated TxsdAnimateTransformTypeType is "skewX".
-func (me TxsdAnimateTransformTypeType) IsSkewX () bool { return me == "skewX" }
-
-//	Returns true if the value of this enumerated TxsdAnimateTransformTypeType is "skewY".
-func (me TxsdAnimateTransformTypeType) IsSkewY () bool { return me == "skewY" }
-
-//	Since TxsdAnimateTransformTypeType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdAnimateTransformTypeType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TxsdAnimateTransformTypeType is just a simple String type, this merely returns the current string value.
-func (me TxsdAnimateTransformTypeType) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdAnimateTransformTypeType is "translate".
-func (me TxsdAnimateTransformTypeType) IsTranslate () bool { return me == "translate" }
-
-type XsdGoPkgHasAttr_Type_TxsdAnimateTransformTypeType_Translate struct {
-	Type TxsdAnimateTransformTypeType `xml:"http://www.w3.org/2000/svg type,attr"`
-
-}
-
-//	Returns the default value for Type -- "translate"
-func (me XsdGoPkgHasAttr_Type_TxsdAnimateTransformTypeType_Translate) TypeDefault () TxsdAnimateTransformTypeType { return TxsdAnimateTransformTypeType("translate") }
-
-type TanimateTransformType struct {
-	XsdGoPkgHasAtts_AnimTimingAttrs
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAtts_AnimationEvents
-
-	XsdGoPkgHasAtts_AnimTargetAttrs
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasAtts_AnimValueAttrs
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAtts_AnimAdditionAttrs
-
-	XsdGoPkgHasAttr_Type_TxsdAnimateTransformTypeType_Translate
-
-}
-
-//	If the WalkHandlers.TanimateTransformType function is not nil (ie. was set by outside code), calls it with this TanimateTransformType instance as the single argument. Then calls the Walk() method on 1/10 embed(s) and 0/0 field(s) belonging to this TanimateTransformType instance.
-func (me *TanimateTransformType) Walk ()  { 
-	if fn := WalkHandlers.TanimateTransformType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
- }
-
-type XsdGoPkgHasElems_AnimateTransform struct {
-	AnimateTransforms []*TanimateTransformType `xml:"http://www.w3.org/2000/svg animateTransform"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AnimateTransform function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AnimateTransform instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AnimateTransform instance.
-func (me *XsdGoPkgHasElems_AnimateTransform) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AnimateTransform; fn != nil { fn(me) }
-	for _, x := range me.AnimateTransforms { x.Walk() }
- }
 
 //	Yes, of course this was generated by a program!
 //	list of transforms
 type TransformListType xsdt.String
 
-//	Since TransformListType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TransformListType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
 //	This convenience method just performs a simple type conversion to TransformListType's alias type xsdt.String.
-func (me TransformListType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TransformListType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TransformListType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TransformListType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 //	Since TransformListType is just a simple String type, this merely returns the current string value.
-func (me TransformListType) String () string { return xsdt.String(me).String() }
+func (me TransformListType) String() string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasAttr_Transform_TransformListType_ struct {
 	Transform TransformListType `xml:"http://www.w3.org/2000/svg transform,attr"`
-
 }
 
 type TsetType struct {
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAtts_AnimTimingAttrs
-
 	XsdGoPkgHasAtts_AnimationEvents
 
 	XsdGoPkgHasAttr_To_XsdtString_
 
-	XsdGoPkgHasAtts_AnimTargetAttrs
-
-}
-
-//	If the WalkHandlers.TsetType function is not nil (ie. was set by outside code), calls it with this TsetType instance as the single argument. Then calls the Walk() method on 1/8 embed(s) and 0/0 field(s) belonging to this TsetType instance.
-func (me *TsetType) Walk ()  { 
-	if fn := WalkHandlers.TsetType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
- }
-
-type XsdGoPkgHasElems_Set struct {
-	Sets []*TsetType `xml:"http://www.w3.org/2000/svg set"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Set function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Set instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Set instance.
-func (me *XsdGoPkgHasElems_Set) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Set; fn != nil { fn(me) }
-	for _, x := range me.Sets { x.Walk() }
- }
-
-type TanimateColorType struct {
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAtts_AnimationEvents
-
-	XsdGoPkgHasAtts_AnimValueAttrs
-
-	XsdGoPkgHasAtts_AnimTargetAttrs
+	XsdGoPkgHasAtts_TestAttrs
 
 	XsdGoPkgHasGroup_DescTitleMetadata
 
-	XsdGoPkgHasAtts_AnimAdditionAttrs
+	XsdGoPkgHasAtts_AnimTargetAttrs
 
-	XsdGoPkgHasAtts_TestAttrs
+	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAtts_AnimTimingAttrs
 
-}
-
-//	If the WalkHandlers.TanimateColorType function is not nil (ie. was set by outside code), calls it with this TanimateColorType instance as the single argument. Then calls the Walk() method on 1/9 embed(s) and 0/0 field(s) belonging to this TanimateColorType instance.
-func (me *TanimateColorType) Walk ()  { 
-	if fn := WalkHandlers.TanimateColorType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
- }
-
-type XsdGoPkgHasElems_AnimateColor struct {
-	AnimateColors []*TanimateColorType `xml:"http://www.w3.org/2000/svg animateColor"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AnimateColor function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AnimateColor instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AnimateColor instance.
-func (me *XsdGoPkgHasElems_AnimateColor) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AnimateColor; fn != nil { fn(me) }
-	for _, x := range me.AnimateColors { x.Walk() }
- }
-
-type TpolylineType struct {
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasAtts_PresentationAttributesMarkers
-
 	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+}
 
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
+//	If the WalkHandlers.TsetType function is not nil (ie. was set by outside code), calls it with this TsetType instance as the single argument. Then calls the Walk() method on 1/8 embed(s) and 0/0 field(s) belonging to this TsetType instance.
+func (me *TsetType) Walk() {
+	if fn := WalkHandlers.TsetType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+}
 
-	XsdGoPkgHasAtts_PresentationAttributesColor
+type XsdGoPkgHasElems_Set struct {
+	Sets []*TsetType `xml:"http://www.w3.org/2000/svg set"`
+}
 
-	XsdGoPkgHasAtts_GraphicsElementEvents
+//	If the WalkHandlers.XsdGoPkgHasElems_Set function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Set instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Set instance.
+func (me *XsdGoPkgHasElems_Set) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Set; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Sets {
+		x.Walk()
+	}
+}
 
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasElems_AnimateMotion
-
-	XsdGoPkgHasAttr_Points_TPointsType_
-
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasElems_AnimateTransform
-
+type TpolygonType struct {
 	XsdGoPkgHasAttr_Transform_TransformListType_
 
 	XsdGoPkgHasElems_Set
 
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasElems_AnimateMotion
+
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
+	XsdGoPkgHasElems_AnimateTransform
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasAtts_PresentationAttributesMarkers
+
+	XsdGoPkgHasGroup_DescTitleMetadata
+
 	XsdGoPkgHasAtts_LangSpaceAttrs
 
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasAtts_PresentationAttributesColor
+
+	XsdGoPkgHasAttr_Points_TPointsType_
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
 }
 
-//	If the WalkHandlers.TpolylineType function is not nil (ie. was set by outside code), calls it with this TpolylineType instance as the single argument. Then calls the Walk() method on 6/19 embed(s) and 0/0 field(s) belonging to this TpolylineType instance.
-func (me *TpolylineType) Walk ()  { 
-	if fn := WalkHandlers.TpolylineType; fn != nil { fn(me) }
+//	If the WalkHandlers.TpolygonType function is not nil (ie. was set by outside code), calls it with this TpolygonType instance as the single argument. Then calls the Walk() method on 6/19 embed(s) and 0/0 field(s) belonging to this TpolygonType instance.
+func (me *TpolygonType) Walk() {
+	if fn := WalkHandlers.TpolygonType; fn != nil {
+		fn(me)
+	}
 	me.XsdGoPkgHasElems_AnimateMotion.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
 	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
 	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
- }
-
-type XsdGoPkgHasElems_Polyline struct {
-	Polylines []*TpolylineType `xml:"http://www.w3.org/2000/svg polyline"`
-
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_Polyline function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Polyline instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Polyline instance.
-func (me *XsdGoPkgHasElems_Polyline) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Polyline; fn != nil { fn(me) }
-	for _, x := range me.Polylines { x.Walk() }
- }
-
-type XsdGoPkgHasElems_Svg struct {
-	Svgs []*TsvgType `xml:"http://www.w3.org/2000/svg svg"`
-
+type XsdGoPkgHasElems_Polygon struct {
+	Polygons []*TpolygonType `xml:"http://www.w3.org/2000/svg polygon"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_Svg function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Svg instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Svg instance.
-func (me *XsdGoPkgHasElems_Svg) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Svg; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasAttr_HorizOriginX_XsdtDouble_ struct {
-	HorizOriginX xsdt.Double `xml:"http://www.w3.org/2000/svg horiz-origin-x,attr"`
-
-}
-
-type XsdGoPkgHasAttr_G2_XsdtString_ struct {
-	G2 xsdt.String `xml:"http://www.w3.org/2000/svg g2,attr"`
-
-}
-
-type XsdGoPkgHasAttr_U1_XsdtString_ struct {
-	U1 xsdt.String `xml:"http://www.w3.org/2000/svg u1,attr"`
-
-}
-
-type XsdGoPkgHasAttr_K_XsdtDouble_ struct {
-	K xsdt.Double `xml:"http://www.w3.org/2000/svg k,attr"`
-
-}
-
-type XsdGoPkgHasAttr_G1_XsdtString_ struct {
-	G1 xsdt.String `xml:"http://www.w3.org/2000/svg g1,attr"`
-
-}
-
-type XsdGoPkgHasAttr_U2_XsdtString_ struct {
-	U2 xsdt.String `xml:"http://www.w3.org/2000/svg u2,attr"`
-
-}
-
-type TvkernType struct {
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_G2_XsdtString_
-
-	XsdGoPkgHasAttr_U1_XsdtString_
-
-	XsdGoPkgHasAttr_K_XsdtDouble_
-
-	XsdGoPkgHasAttr_G1_XsdtString_
-
-	XsdGoPkgHasAttr_U2_XsdtString_
-
-}
-
-//	If the WalkHandlers.TvkernType function is not nil (ie. was set by outside code), calls it with this TvkernType instance as the single argument. Then calls the Walk() method on 0/6 embed(s) and 0/0 field(s) belonging to this TvkernType instance.
-func (me *TvkernType) Walk ()  { 
-	if fn := WalkHandlers.TvkernType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_Vkern struct {
-	Vkerns []*TvkernType `xml:"http://www.w3.org/2000/svg vkern"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Vkern function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Vkern instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Vkern instance.
-func (me *XsdGoPkgHasElems_Vkern) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Vkern; fn != nil { fn(me) }
-	for _, x := range me.Vkerns { x.Walk() }
- }
-
-type ThkernType struct {
-	XsdGoPkgHasAttr_G1_XsdtString_
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_K_XsdtDouble_
-
-	XsdGoPkgHasAttr_G2_XsdtString_
-
-	XsdGoPkgHasAttr_U1_XsdtString_
-
-	XsdGoPkgHasAttr_U2_XsdtString_
-
-}
-
-//	If the WalkHandlers.ThkernType function is not nil (ie. was set by outside code), calls it with this ThkernType instance as the single argument. Then calls the Walk() method on 0/6 embed(s) and 0/0 field(s) belonging to this ThkernType instance.
-func (me *ThkernType) Walk ()  { 
-	if fn := WalkHandlers.ThkernType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_Hkern struct {
-	Hkerns []*ThkernType `xml:"http://www.w3.org/2000/svg hkern"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Hkern function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Hkern instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Hkern instance.
-func (me *XsdGoPkgHasElems_Hkern) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Hkern; fn != nil { fn(me) }
-	for _, x := range me.Hkerns { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_HorizAdvX_XsdtDouble_ struct {
-	HorizAdvX xsdt.Double `xml:"http://www.w3.org/2000/svg horiz-adv-x,attr"`
-
-}
-
-type XsdGoPkgHasAttr_VertAdvY_XsdtDouble_ struct {
-	VertAdvY xsdt.Double `xml:"http://www.w3.org/2000/svg vert-adv-y,attr"`
-
+//	If the WalkHandlers.XsdGoPkgHasElems_Polygon function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Polygon instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Polygon instance.
+func (me *XsdGoPkgHasElems_Polygon) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Polygon; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Polygons {
+		x.Walk()
+	}
 }
 
 //	media type, as per [RFC2045]
@@ -2797,1637 +2862,1324 @@ type XsdGoPkgHasAttr_VertAdvY_XsdtDouble_ struct {
 type TContentTypeType xsdt.String
 
 //	Since TContentTypeType is just a simple String type, this merely returns the current string value.
-func (me TContentTypeType) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TContentTypeType's alias type xsdt.String.
-func (me TContentTypeType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TContentTypeType) String() string { return xsdt.String(me).String() }
 
 //	Since TContentTypeType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TContentTypeType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me *TContentTypeType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TContentTypeType's alias type xsdt.String.
+func (me TContentTypeType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 type XsdGoPkgHasAttr_Type_TContentTypeType_ struct {
 	Type TContentTypeType `xml:"http://www.w3.org/2000/svg type,attr"`
-
 }
 
 type TscriptType struct {
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	xlink.XsdGoPkgHasAttr_Href
-
-	XsdGoPkgHasAtts_StdAttrs
-
 	XsdGoPkgHasAttr_Type_TContentTypeType_
-
-	XsdGoPkgHasAtts_XlinkRefAttrs
 
 	XsdGoPkgHasCdata
 
-}
-
-//	If the WalkHandlers.TscriptType function is not nil (ie. was set by outside code), calls it with this TscriptType instance as the single argument. Then calls the Walk() method on 1/6 embed(s) and 0/0 field(s) belonging to this TscriptType instance.
-func (me *TscriptType) Walk ()  { 
-	if fn := WalkHandlers.TscriptType; fn != nil { fn(me) }
-	me.XsdGoPkgHasCdata.Walk()
- }
-
-type XsdGoPkgHasElems_Script struct {
-	Scripts []*TscriptType `xml:"http://www.w3.org/2000/svg script"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Script function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Script instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Script instance.
-func (me *XsdGoPkgHasElems_Script) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Script; fn != nil { fn(me) }
-	for _, x := range me.Scripts { x.Walk() }
- }
-
-type TimageType struct {
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
+	xlink.XsdGoPkgHasAttr_Href
 
 	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
 
-	XsdGoPkgHasAttr_Y_TCoordinateType_
-
-	XsdGoPkgHasAtts_XlinkRefAttrs
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasAtts_PresentationAttributesColor
-
 	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
-
-	XsdGoPkgHasAttr_Width_TLengthType_
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasElems_AnimateMotion
-
-	XsdGoPkgHasAttr_Height_TLengthType_
-
-	XsdGoPkgHasElems_Set
-
-	xlink.XsdGoPkgHasAttr_Href
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasAttr_Transform_TransformListType_
-
-	XsdGoPkgHasAttr_X_TCoordinateType_
-
-	XsdGoPkgHasAtts_PresentationAttributesViewports
-
-}
-
-//	If the WalkHandlers.TimageType function is not nil (ie. was set by outside code), calls it with this TimageType instance as the single argument. Then calls the Walk() method on 6/23 embed(s) and 0/0 field(s) belonging to this TimageType instance.
-func (me *TimageType) Walk ()  { 
-	if fn := WalkHandlers.TimageType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
- }
-
-type XsdGoPkgHasElems_Image struct {
-	Images []*TimageType `xml:"http://www.w3.org/2000/svg image"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Image function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Image instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Image instance.
-func (me *XsdGoPkgHasElems_Image) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Image; fn != nil { fn(me) }
-	for _, x := range me.Images { x.Walk() }
- }
-
-type XsdGoPkgHasElems_Title struct {
-	Titles []*TtitleType `xml:"http://www.w3.org/2000/svg title"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Title function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Title instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Title instance.
-func (me *XsdGoPkgHasElems_Title) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Title; fn != nil { fn(me) }
-	for _, x := range me.Titles { x.Walk() }
- }
-
-//	'preserveAspectRatio' attribute specification
-type TPreserveAspectRatioSpecType xsdt.String
-
-//	Since TPreserveAspectRatioSpecType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TPreserveAspectRatioSpecType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TPreserveAspectRatioSpecType's alias type xsdt.String.
-func (me TPreserveAspectRatioSpecType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TPreserveAspectRatioSpecType is just a simple String type, this merely returns the current string value.
-func (me TPreserveAspectRatioSpecType) String () string { return xsdt.String(me).String() }
-
-type XsdGoPkgHasAttr_PreserveAspectRatio_TPreserveAspectRatioSpecType_XMidYMidMeet struct {
-	PreserveAspectRatio TPreserveAspectRatioSpecType `xml:"http://www.w3.org/2000/svg preserveAspectRatio,attr"`
-
-}
-
-//	Returns the default value for PreserveAspectRatio -- "xMidYMid meet"
-func (me XsdGoPkgHasAttr_PreserveAspectRatio_TPreserveAspectRatioSpecType_XMidYMidMeet) PreserveAspectRatioDefault () TPreserveAspectRatioSpecType { return TPreserveAspectRatioSpecType("xMidYMid meet") }
-
-type XsdGoPkgHasElems_Desc struct {
-	Descs []*TdescType `xml:"http://www.w3.org/2000/svg desc"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Desc function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Desc instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Desc instance.
-func (me *XsdGoPkgHasElems_Desc) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Desc; fn != nil { fn(me) }
-	for _, x := range me.Descs { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_Local_XsdtString_ struct {
-	Local xsdt.String `xml:"http://www.w3.org/2000/svg local,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Name_XsdtString_ struct {
-	Name xsdt.String `xml:"http://www.w3.org/2000/svg name,attr"`
-
-}
-
-type TxsdColorProfileTypeRenderingIntent xsdt.String
-
-//	Returns true if the value of this enumerated TxsdColorProfileTypeRenderingIntent is "auto".
-func (me TxsdColorProfileTypeRenderingIntent) IsAuto () bool { return me == "auto" }
-
-//	Returns true if the value of this enumerated TxsdColorProfileTypeRenderingIntent is "saturation".
-func (me TxsdColorProfileTypeRenderingIntent) IsSaturation () bool { return me == "saturation" }
-
-//	Since TxsdColorProfileTypeRenderingIntent is just a simple String type, this merely returns the current string value.
-func (me TxsdColorProfileTypeRenderingIntent) String () string { return xsdt.String(me).String() }
-
-//	Since TxsdColorProfileTypeRenderingIntent is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdColorProfileTypeRenderingIntent) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TxsdColorProfileTypeRenderingIntent's alias type xsdt.String.
-func (me TxsdColorProfileTypeRenderingIntent) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdColorProfileTypeRenderingIntent is "relative-colorimetric".
-func (me TxsdColorProfileTypeRenderingIntent) IsRelativeColorimetric () bool { return me == "relative-colorimetric" }
-
-//	Returns true if the value of this enumerated TxsdColorProfileTypeRenderingIntent is "absolute-colorimetric".
-func (me TxsdColorProfileTypeRenderingIntent) IsAbsoluteColorimetric () bool { return me == "absolute-colorimetric" }
-
-//	Returns true if the value of this enumerated TxsdColorProfileTypeRenderingIntent is "perceptual".
-func (me TxsdColorProfileTypeRenderingIntent) IsPerceptual () bool { return me == "perceptual" }
-
-type XsdGoPkgHasAttr_RenderingIntent_TxsdColorProfileTypeRenderingIntent_Auto struct {
-	RenderingIntent TxsdColorProfileTypeRenderingIntent `xml:"http://www.w3.org/2000/svg rendering-intent,attr"`
-
-}
-
-//	Returns the default value for RenderingIntent -- "auto"
-func (me XsdGoPkgHasAttr_RenderingIntent_TxsdColorProfileTypeRenderingIntent_Auto) RenderingIntentDefault () TxsdColorProfileTypeRenderingIntent { return TxsdColorProfileTypeRenderingIntent("auto") }
-
-type TcolorProfileType struct {
-	XsdGoPkgHasAttr_Local_XsdtString_
-
-	XsdGoPkgHasAttr_Name_XsdtString_
-
-	XsdGoPkgHasAttr_RenderingIntent_TxsdColorProfileTypeRenderingIntent_Auto
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	xlink.XsdGoPkgHasAttr_Href
-
 	XsdGoPkgHasAtts_XlinkRefAttrs
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
 }
 
-//	If the WalkHandlers.TcolorProfileType function is not nil (ie. was set by outside code), calls it with this TcolorProfileType instance as the single argument. Then calls the Walk() method on 1/7 embed(s) and 0/0 field(s) belonging to this TcolorProfileType instance.
-func (me *TcolorProfileType) Walk ()  { 
-	if fn := WalkHandlers.TcolorProfileType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
- }
-
-type XsdGoPkgHasElems_ColorProfile struct {
-	ColorProfiles []*TcolorProfileType `xml:"http://www.w3.org/2000/svg color-profile"`
-
+//	If the WalkHandlers.TscriptType function is not nil (ie. was set by outside code), calls it with this TscriptType instance as the single argument. Then calls the Walk() method on 1/6 embed(s) and 0/0 field(s) belonging to this TscriptType instance.
+func (me *TscriptType) Walk() {
+	if fn := WalkHandlers.TscriptType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasCdata.Walk()
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_ColorProfile function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ColorProfile instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ColorProfile instance.
-func (me *XsdGoPkgHasElems_ColorProfile) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ColorProfile; fn != nil { fn(me) }
-	for _, x := range me.ColorProfiles { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_Cx_TCoordinateType_ struct {
-	Cx TCoordinateType `xml:"http://www.w3.org/2000/svg cx,attr"`
-
+type XsdGoPkgHasElems_Script struct {
+	Scripts []*TscriptType `xml:"http://www.w3.org/2000/svg script"`
 }
 
-type XsdGoPkgHasAttr_Cy_TCoordinateType_ struct {
-	Cy TCoordinateType `xml:"http://www.w3.org/2000/svg cy,attr"`
-
+//	If the WalkHandlers.XsdGoPkgHasElems_Script function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Script instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Script instance.
+func (me *XsdGoPkgHasElems_Script) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Script; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Scripts {
+		x.Walk()
+	}
 }
 
 type XsdGoPkgHasAttr_Ry_TLengthType_ struct {
 	Ry TLengthType `xml:"http://www.w3.org/2000/svg ry,attr"`
-
 }
 
 type XsdGoPkgHasAttr_Rx_TLengthType_ struct {
 	Rx TLengthType `xml:"http://www.w3.org/2000/svg rx,attr"`
+}
 
+type TrectType struct {
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_Y_TCoordinateType_
+
+	XsdGoPkgHasAttr_X_TCoordinateType_
+
+	XsdGoPkgHasAttr_Ry_TLengthType_
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAttr_Transform_TransformListType_
+
+	XsdGoPkgHasAttr_Rx_TLengthType_
+
+	XsdGoPkgHasElems_AnimateMotion
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasGroup_DescTitleMetadata
+
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasAttr_Width_TLengthType_
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasElems_AnimateTransform
+
+	XsdGoPkgHasAtts_PresentationAttributesColor
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
+	XsdGoPkgHasAttr_Height_TLengthType_
+
+	XsdGoPkgHasElems_Animate
+}
+
+//	If the WalkHandlers.TrectType function is not nil (ie. was set by outside code), calls it with this TrectType instance as the single argument. Then calls the Walk() method on 6/23 embed(s) and 0/0 field(s) belonging to this TrectType instance.
+func (me *TrectType) Walk() {
+	if fn := WalkHandlers.TrectType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+}
+
+type XsdGoPkgHasElems_Rect struct {
+	Rects []*TrectType `xml:"http://www.w3.org/2000/svg rect"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Rect function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Rect instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Rect instance.
+func (me *XsdGoPkgHasElems_Rect) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Rect; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Rects {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_X1_TCoordinateType_ struct {
+	X1 TCoordinateType `xml:"http://www.w3.org/2000/svg x1,attr"`
+}
+
+type TxsdLinearGradientTypeGradientUnits xsdt.String
+
+//	This convenience method just performs a simple type conversion to TxsdLinearGradientTypeGradientUnits's alias type xsdt.String.
+func (me TxsdLinearGradientTypeGradientUnits) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TxsdLinearGradientTypeGradientUnits is "objectBoundingBox".
+func (me TxsdLinearGradientTypeGradientUnits) IsObjectBoundingBox() bool {
+	return me == "objectBoundingBox"
+}
+
+//	Since TxsdLinearGradientTypeGradientUnits is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdLinearGradientTypeGradientUnits) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Returns true if the value of this enumerated TxsdLinearGradientTypeGradientUnits is "userSpaceOnUse".
+func (me TxsdLinearGradientTypeGradientUnits) IsUserSpaceOnUse() bool { return me == "userSpaceOnUse" }
+
+//	Returns true if the value of this enumerated TxsdLinearGradientTypeGradientUnits is "userSpace".
+func (me TxsdLinearGradientTypeGradientUnits) IsUserSpace() bool { return me == "userSpace" }
+
+//	Since TxsdLinearGradientTypeGradientUnits is just a simple String type, this merely returns the current string value.
+func (me TxsdLinearGradientTypeGradientUnits) String() string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_GradientUnits_TxsdLinearGradientTypeGradientUnits_ struct {
+	GradientUnits TxsdLinearGradientTypeGradientUnits `xml:"http://www.w3.org/2000/svg gradientUnits,attr"`
+}
+
+type XsdGoPkgHasAttr_X2_TCoordinateType_ struct {
+	X2 TCoordinateType `xml:"http://www.w3.org/2000/svg x2,attr"`
+}
+
+type XsdGoPkgHasAttr_GradientTransform_TransformListType_ struct {
+	GradientTransform TransformListType `xml:"http://www.w3.org/2000/svg gradientTransform,attr"`
+}
+
+type XsdGoPkgHasAttr_Offset_TLengthType_ struct {
+	Offset TLengthType `xml:"http://www.w3.org/2000/svg offset,attr"`
+}
+
+type TstopType struct {
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAtts_PresentationAttributesGradients
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAttr_Offset_TLengthType_
+}
+
+//	If the WalkHandlers.TstopType function is not nil (ie. was set by outside code), calls it with this TstopType instance as the single argument. Then calls the Walk() method on 3/8 embed(s) and 0/0 field(s) belonging to this TstopType instance.
+func (me *TstopType) Walk() {
+	if fn := WalkHandlers.TstopType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+}
+
+type XsdGoPkgHasElems_Stop struct {
+	Stops []*TstopType `xml:"http://www.w3.org/2000/svg stop"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Stop function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Stop instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Stop instance.
+func (me *XsdGoPkgHasElems_Stop) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Stop; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Stops {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_Y1_TCoordinateType_ struct {
+	Y1 TCoordinateType `xml:"http://www.w3.org/2000/svg y1,attr"`
+}
+
+type TxsdLinearGradientTypeSpreadMethod xsdt.String
+
+//	Returns true if the value of this enumerated TxsdLinearGradientTypeSpreadMethod is "reflect".
+func (me TxsdLinearGradientTypeSpreadMethod) IsReflect() bool { return me == "reflect" }
+
+//	Since TxsdLinearGradientTypeSpreadMethod is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdLinearGradientTypeSpreadMethod) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	This convenience method just performs a simple type conversion to TxsdLinearGradientTypeSpreadMethod's alias type xsdt.String.
+func (me TxsdLinearGradientTypeSpreadMethod) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TxsdLinearGradientTypeSpreadMethod is "repeat".
+func (me TxsdLinearGradientTypeSpreadMethod) IsRepeat() bool { return me == "repeat" }
+
+//	Returns true if the value of this enumerated TxsdLinearGradientTypeSpreadMethod is "pad".
+func (me TxsdLinearGradientTypeSpreadMethod) IsPad() bool { return me == "pad" }
+
+//	Since TxsdLinearGradientTypeSpreadMethod is just a simple String type, this merely returns the current string value.
+func (me TxsdLinearGradientTypeSpreadMethod) String() string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_SpreadMethod_TxsdLinearGradientTypeSpreadMethod_Pad struct {
+	SpreadMethod TxsdLinearGradientTypeSpreadMethod `xml:"http://www.w3.org/2000/svg spreadMethod,attr"`
+}
+
+//	Returns the default value for SpreadMethod -- "pad"
+func (me XsdGoPkgHasAttr_SpreadMethod_TxsdLinearGradientTypeSpreadMethod_Pad) SpreadMethodDefault() TxsdLinearGradientTypeSpreadMethod {
+	return TxsdLinearGradientTypeSpreadMethod("pad")
+}
+
+type XsdGoPkgHasAttr_Y2_TCoordinateType_ struct {
+	Y2 TCoordinateType `xml:"http://www.w3.org/2000/svg y2,attr"`
+}
+
+type TlinearGradientType struct {
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasAttr_SpreadMethod_TxsdLinearGradientTypeSpreadMethod_Pad
+
+	XsdGoPkgHasAttr_Y2_TCoordinateType_
+
+	XsdGoPkgHasGroup_DescTitleMetadata
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAttr_X1_TCoordinateType_
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAttr_GradientUnits_TxsdLinearGradientTypeGradientUnits_
+
+	XsdGoPkgHasElems_AnimateTransform
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAttr_X2_TCoordinateType_
+
+	XsdGoPkgHasAttr_GradientTransform_TransformListType_
+
+	XsdGoPkgHasAtts_XlinkRefAttrs
+
+	XsdGoPkgHasElems_Stop
+
+	XsdGoPkgHasAttr_Y1_TCoordinateType_
+
+	xlink.XsdGoPkgHasAttr_Href
+}
+
+//	If the WalkHandlers.TlinearGradientType function is not nil (ie. was set by outside code), calls it with this TlinearGradientType instance as the single argument. Then calls the Walk() method on 5/18 embed(s) and 0/0 field(s) belonging to this TlinearGradientType instance.
+func (me *TlinearGradientType) Walk() {
+	if fn := WalkHandlers.TlinearGradientType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+	me.XsdGoPkgHasElems_Stop.Walk()
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+}
+
+type XsdGoPkgHasElems_LinearGradient struct {
+	LinearGradients []*TlinearGradientType `xml:"http://www.w3.org/2000/svg linearGradient"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LinearGradient function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LinearGradient instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LinearGradient instance.
+func (me *XsdGoPkgHasElems_LinearGradient) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_LinearGradient; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.LinearGradients {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_Cy_TCoordinateType_ struct {
+	Cy TCoordinateType `xml:"http://www.w3.org/2000/svg cy,attr"`
+}
+
+type XsdGoPkgHasAttr_Cx_TCoordinateType_ struct {
+	Cx TCoordinateType `xml:"http://www.w3.org/2000/svg cx,attr"`
 }
 
 type TellipseType struct {
+	XsdGoPkgHasGroup_DescTitleMetadata
+
+	XsdGoPkgHasAttr_Transform_TransformListType_
+
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
 	XsdGoPkgHasAttr_Cy_TCoordinateType_
 
+	XsdGoPkgHasAttr_Rx_TLengthType_
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAttr_Cx_TCoordinateType_
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
 	XsdGoPkgHasAtts_PresentationAttributesColor
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasAttr_Ry_TLengthType_
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasElems_AnimateTransform
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasElems_AnimateMotion
+}
+
+//	If the WalkHandlers.TellipseType function is not nil (ie. was set by outside code), calls it with this TellipseType instance as the single argument. Then calls the Walk() method on 6/21 embed(s) and 0/0 field(s) belonging to this TellipseType instance.
+func (me *TellipseType) Walk() {
+	if fn := WalkHandlers.TellipseType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+}
+
+type XsdGoPkgHasElems_Ellipse struct {
+	Ellipses []*TellipseType `xml:"http://www.w3.org/2000/svg ellipse"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Ellipse function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Ellipse instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Ellipse instance.
+func (me *XsdGoPkgHasElems_Ellipse) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Ellipse; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Ellipses {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_GradientUnits_TxsdRadialGradientTypeGradientUnits_ struct {
+	GradientUnits TxsdLinearGradientTypeGradientUnits `xml:"http://www.w3.org/2000/svg gradientUnits,attr"`
+}
+
+type XsdGoPkgHasAttr_Fx_TCoordinateType_ struct {
+	Fx TCoordinateType `xml:"http://www.w3.org/2000/svg fx,attr"`
+}
+
+type XsdGoPkgHasAttr_Fy_TCoordinateType_ struct {
+	Fy TCoordinateType `xml:"http://www.w3.org/2000/svg fy,attr"`
+}
+
+type XsdGoPkgHasAttr_R_TLengthType_ struct {
+	R TLengthType `xml:"http://www.w3.org/2000/svg r,attr"`
+}
+
+type XsdGoPkgHasAttr_SpreadMethod_TxsdRadialGradientTypeSpreadMethod_Pad struct {
+	SpreadMethod TxsdLinearGradientTypeSpreadMethod `xml:"http://www.w3.org/2000/svg spreadMethod,attr"`
+}
+
+//	Returns the default value for SpreadMethod -- "pad"
+func (me XsdGoPkgHasAttr_SpreadMethod_TxsdRadialGradientTypeSpreadMethod_Pad) SpreadMethodDefault() TxsdLinearGradientTypeSpreadMethod {
+	return TxsdLinearGradientTypeSpreadMethod("pad")
+}
+
+type TradialGradientType struct {
+	XsdGoPkgHasAttr_Cy_TCoordinateType_
+
+	XsdGoPkgHasAtts_XlinkRefAttrs
+
+	XsdGoPkgHasAttr_Fx_TCoordinateType_
+
+	XsdGoPkgHasAttr_Fy_TCoordinateType_
+
+	XsdGoPkgHasGroup_DescTitleMetadata
+
+	XsdGoPkgHasElems_Stop
+
+	XsdGoPkgHasAttr_Cx_TCoordinateType_
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_R_TLengthType_
+
+	XsdGoPkgHasAttr_SpreadMethod_TxsdRadialGradientTypeSpreadMethod_Pad
+
+	XsdGoPkgHasElems_Set
+
+	xlink.XsdGoPkgHasAttr_Href
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAttr_GradientTransform_TransformListType_
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasAttr_GradientUnits_TxsdRadialGradientTypeGradientUnits_
+
+	XsdGoPkgHasElems_AnimateTransform
+}
+
+//	If the WalkHandlers.TradialGradientType function is not nil (ie. was set by outside code), calls it with this TradialGradientType instance as the single argument. Then calls the Walk() method on 5/17 embed(s) and 0/0 field(s) belonging to this TradialGradientType instance.
+func (me *TradialGradientType) Walk() {
+	if fn := WalkHandlers.TradialGradientType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+	me.XsdGoPkgHasElems_Stop.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+}
+
+type XsdGoPkgHasElems_RadialGradient struct {
+	RadialGradients []*TradialGradientType `xml:"http://www.w3.org/2000/svg radialGradient"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_RadialGradient function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_RadialGradient instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_RadialGradient instance.
+func (me *XsdGoPkgHasElems_RadialGradient) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_RadialGradient; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.RadialGradients {
+		x.Walk()
+	}
+}
+
+type TpolylineType struct {
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasGroup_DescTitleMetadata
+
+	XsdGoPkgHasAttr_Points_TPointsType_
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAtts_PresentationAttributesColor
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasAtts_PresentationAttributesMarkers
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
+	XsdGoPkgHasElems_AnimateMotion
+
+	XsdGoPkgHasElems_AnimateTransform
+
+	XsdGoPkgHasAttr_Transform_TransformListType_
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+}
+
+//	If the WalkHandlers.TpolylineType function is not nil (ie. was set by outside code), calls it with this TpolylineType instance as the single argument. Then calls the Walk() method on 6/19 embed(s) and 0/0 field(s) belonging to this TpolylineType instance.
+func (me *TpolylineType) Walk() {
+	if fn := WalkHandlers.TpolylineType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+}
+
+type XsdGoPkgHasElems_Polyline struct {
+	Polylines []*TpolylineType `xml:"http://www.w3.org/2000/svg polyline"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Polyline function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Polyline instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Polyline instance.
+func (me *XsdGoPkgHasElems_Polyline) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Polyline; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Polylines {
+		x.Walk()
+	}
+}
+
+type TimageType struct {
+	XsdGoPkgHasAtts_PresentationAttributesViewports
+
+	XsdGoPkgHasAtts_XlinkRefAttrs
+
+	XsdGoPkgHasGroup_DescTitleMetadata
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasElems_AnimateTransform
+
+	XsdGoPkgHasAttr_Width_TLengthType_
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasAttr_Transform_TransformListType_
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_Height_TLengthType_
+
+	xlink.XsdGoPkgHasAttr_Href
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAttr_X_TCoordinateType_
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAttr_Y_TCoordinateType_
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasAtts_PresentationAttributesColor
+
+	XsdGoPkgHasElems_AnimateMotion
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasAtts_TestAttrs
+}
+
+//	If the WalkHandlers.TimageType function is not nil (ie. was set by outside code), calls it with this TimageType instance as the single argument. Then calls the Walk() method on 6/23 embed(s) and 0/0 field(s) belonging to this TimageType instance.
+func (me *TimageType) Walk() {
+	if fn := WalkHandlers.TimageType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+}
+
+type XsdGoPkgHasElems_Image struct {
+	Images []*TimageType `xml:"http://www.w3.org/2000/svg image"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Image function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Image instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Image instance.
+func (me *XsdGoPkgHasElems_Image) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Image; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Images {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasElems_Metadata struct {
+	Metadatas []*TmetadataType `xml:"http://www.w3.org/2000/svg metadata"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Metadata function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Metadata instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Metadata instance.
+func (me *XsdGoPkgHasElems_Metadata) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Metadata; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Metadatas {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasElems_Desc struct {
+	Descs []*TdescType `xml:"http://www.w3.org/2000/svg desc"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Desc function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Desc instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Desc instance.
+func (me *XsdGoPkgHasElems_Desc) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Desc; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Descs {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasElems_Svg struct {
+	Svgs []*TsvgType `xml:"http://www.w3.org/2000/svg svg"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Svg function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Svg instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Svg instance.
+func (me *XsdGoPkgHasElems_Svg) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Svg; fn != nil {
+		fn(me)
+	}
+}
+
+type TcircleType struct {
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasElems_AnimateMotion
+
+	XsdGoPkgHasGroup_DescTitleMetadata
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAttr_Cx_TCoordinateType_
+
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
+	XsdGoPkgHasAttr_Cy_TCoordinateType_
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
 
 	XsdGoPkgHasElems_Set
 
 	XsdGoPkgHasAtts_PresentationAttributesGraphics
 
-	XsdGoPkgHasElems_AnimateMotion
+	XsdGoPkgHasAttr_Transform_TransformListType_
 
-	XsdGoPkgHasAttr_Ry_TLengthType_
+	XsdGoPkgHasAtts_PresentationAttributesColor
 
-	XsdGoPkgHasAtts_TestAttrs
+	XsdGoPkgHasAttr_R_TLengthType_
+
+	XsdGoPkgHasElems_AnimateTransform
 
 	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_Rx_TLengthType_
 
 	XsdGoPkgHasAtts_GraphicsElementEvents
 
+	XsdGoPkgHasElems_AnimateColor
+}
+
+//	If the WalkHandlers.TcircleType function is not nil (ie. was set by outside code), calls it with this TcircleType instance as the single argument. Then calls the Walk() method on 6/20 embed(s) and 0/0 field(s) belonging to this TcircleType instance.
+func (me *TcircleType) Walk() {
+	if fn := WalkHandlers.TcircleType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+}
+
+type XsdGoPkgHasElems_Circle struct {
+	Circles []*TcircleType `xml:"http://www.w3.org/2000/svg circle"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Circle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Circle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Circle instance.
+func (me *XsdGoPkgHasElems_Circle) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Circle; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Circles {
+		x.Walk()
+	}
+}
+
+type TforeignObjectType struct {
+	XsdGoPkgHasAttr_Content_XsdtString_StructuredText
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAttr_X_TCoordinateType_
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_Y_TCoordinateType_
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAttr_Width_TLengthType_
+
 	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasAttr_Cx_TCoordinateType_
 
 	XsdGoPkgHasAttr_Transform_TransformListType_
 
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
-}
-
-//	If the WalkHandlers.TellipseType function is not nil (ie. was set by outside code), calls it with this TellipseType instance as the single argument. Then calls the Walk() method on 6/21 embed(s) and 0/0 field(s) belonging to this TellipseType instance.
-func (me *TellipseType) Walk ()  { 
-	if fn := WalkHandlers.TellipseType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
- }
-
-type XsdGoPkgHasElems_Ellipse struct {
-	Ellipses []*TellipseType `xml:"http://www.w3.org/2000/svg ellipse"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Ellipse function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Ellipse instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Ellipse instance.
-func (me *XsdGoPkgHasElems_Ellipse) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Ellipse; fn != nil { fn(me) }
-	for _, x := range me.Ellipses { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_X2_TCoordinateType_ struct {
-	X2 TCoordinateType `xml:"http://www.w3.org/2000/svg x2,attr"`
-
-}
-
-type TxsdLinearGradientTypeGradientUnits xsdt.String
-
-//	Since TxsdLinearGradientTypeGradientUnits is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdLinearGradientTypeGradientUnits) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdLinearGradientTypeGradientUnits is "userSpace".
-func (me TxsdLinearGradientTypeGradientUnits) IsUserSpace () bool { return me == "userSpace" }
-
-//	Since TxsdLinearGradientTypeGradientUnits is just a simple String type, this merely returns the current string value.
-func (me TxsdLinearGradientTypeGradientUnits) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdLinearGradientTypeGradientUnits is "userSpaceOnUse".
-func (me TxsdLinearGradientTypeGradientUnits) IsUserSpaceOnUse () bool { return me == "userSpaceOnUse" }
-
-//	This convenience method just performs a simple type conversion to TxsdLinearGradientTypeGradientUnits's alias type xsdt.String.
-func (me TxsdLinearGradientTypeGradientUnits) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdLinearGradientTypeGradientUnits is "objectBoundingBox".
-func (me TxsdLinearGradientTypeGradientUnits) IsObjectBoundingBox () bool { return me == "objectBoundingBox" }
-
-type XsdGoPkgHasAttr_GradientUnits_TxsdLinearGradientTypeGradientUnits_ struct {
-	GradientUnits TxsdLinearGradientTypeGradientUnits `xml:"http://www.w3.org/2000/svg gradientUnits,attr"`
-
-}
-
-type TxsdLinearGradientTypeSpreadMethod xsdt.String
-
-//	Returns true if the value of this enumerated TxsdLinearGradientTypeSpreadMethod is "pad".
-func (me TxsdLinearGradientTypeSpreadMethod) IsPad () bool { return me == "pad" }
-
-//	Returns true if the value of this enumerated TxsdLinearGradientTypeSpreadMethod is "reflect".
-func (me TxsdLinearGradientTypeSpreadMethod) IsReflect () bool { return me == "reflect" }
-
-//	Since TxsdLinearGradientTypeSpreadMethod is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdLinearGradientTypeSpreadMethod) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TxsdLinearGradientTypeSpreadMethod's alias type xsdt.String.
-func (me TxsdLinearGradientTypeSpreadMethod) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TxsdLinearGradientTypeSpreadMethod is just a simple String type, this merely returns the current string value.
-func (me TxsdLinearGradientTypeSpreadMethod) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdLinearGradientTypeSpreadMethod is "repeat".
-func (me TxsdLinearGradientTypeSpreadMethod) IsRepeat () bool { return me == "repeat" }
-
-type XsdGoPkgHasAttr_SpreadMethod_TxsdLinearGradientTypeSpreadMethod_Pad struct {
-	SpreadMethod TxsdLinearGradientTypeSpreadMethod `xml:"http://www.w3.org/2000/svg spreadMethod,attr"`
-
-}
-
-//	Returns the default value for SpreadMethod -- "pad"
-func (me XsdGoPkgHasAttr_SpreadMethod_TxsdLinearGradientTypeSpreadMethod_Pad) SpreadMethodDefault () TxsdLinearGradientTypeSpreadMethod { return TxsdLinearGradientTypeSpreadMethod("pad") }
-
-type XsdGoPkgHasAttr_X1_TCoordinateType_ struct {
-	X1 TCoordinateType `xml:"http://www.w3.org/2000/svg x1,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Y2_TCoordinateType_ struct {
-	Y2 TCoordinateType `xml:"http://www.w3.org/2000/svg y2,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Y1_TCoordinateType_ struct {
-	Y1 TCoordinateType `xml:"http://www.w3.org/2000/svg y1,attr"`
-
-}
-
-type XsdGoPkgHasAttr_GradientTransform_TransformListType_ struct {
-	GradientTransform TransformListType `xml:"http://www.w3.org/2000/svg gradientTransform,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Offset_TLengthType_ struct {
-	Offset TLengthType `xml:"http://www.w3.org/2000/svg offset,attr"`
-
-}
-
-type TstopType struct {
-	XsdGoPkgHasAttr_Offset_TLengthType_
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAtts_StdAttrs
+	XsdGoPkgHasCdata
 
 	XsdGoPkgHasAttr_Class_TClassListType_
 
-	XsdGoPkgHasAtts_PresentationAttributesGradients
+	XsdGoPkgHasAtts_GraphicsElementEvents
 
-}
-
-//	If the WalkHandlers.TstopType function is not nil (ie. was set by outside code), calls it with this TstopType instance as the single argument. Then calls the Walk() method on 3/8 embed(s) and 0/0 field(s) belonging to this TstopType instance.
-func (me *TstopType) Walk ()  { 
-	if fn := WalkHandlers.TstopType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
- }
-
-type XsdGoPkgHasElems_Stop struct {
-	Stops []*TstopType `xml:"http://www.w3.org/2000/svg stop"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Stop function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Stop instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Stop instance.
-func (me *XsdGoPkgHasElems_Stop) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Stop; fn != nil { fn(me) }
-	for _, x := range me.Stops { x.Walk() }
- }
-
-type TlinearGradientType struct {
-	XsdGoPkgHasAtts_XlinkRefAttrs
-
-	XsdGoPkgHasAttr_X1_TCoordinateType_
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_Y2_TCoordinateType_
-
-	XsdGoPkgHasAttr_Y1_TCoordinateType_
-
-	XsdGoPkgHasAttr_GradientTransform_TransformListType_
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasElems_Stop
+	XsdGoPkgHasAttr_Height_TLengthType_
 
 	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
 
-	XsdGoPkgHasElems_AnimateTransform
+	XsdGoPkgHasAtts_PresentationAttributesAll
+}
 
-	XsdGoPkgHasAttr_X2_TCoordinateType_
+//	If the WalkHandlers.TforeignObjectType function is not nil (ie. was set by outside code), calls it with this TforeignObjectType instance as the single argument. Then calls the Walk() method on 1/15 embed(s) and 0/0 field(s) belonging to this TforeignObjectType instance.
+func (me *TforeignObjectType) Walk() {
+	if fn := WalkHandlers.TforeignObjectType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasCdata.Walk()
+}
 
-	XsdGoPkgHasAttr_GradientUnits_TxsdLinearGradientTypeGradientUnits_
+type XsdGoPkgHasElems_ForeignObject struct {
+	ForeignObjects []*TforeignObjectType `xml:"http://www.w3.org/2000/svg foreignObject"`
+}
 
-	XsdGoPkgHasAttr_Class_TClassListType_
+//	If the WalkHandlers.XsdGoPkgHasElems_ForeignObject function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ForeignObject instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ForeignObject instance.
+func (me *XsdGoPkgHasElems_ForeignObject) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_ForeignObject; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.ForeignObjects {
+		x.Walk()
+	}
+}
 
-	XsdGoPkgHasAttr_SpreadMethod_TxsdLinearGradientTypeSpreadMethod_Pad
+type XsdGoPkgHasAttr_PathLength_XsdtDouble_ struct {
+	PathLength xsdt.Double `xml:"http://www.w3.org/2000/svg pathLength,attr"`
+}
+
+//	a path data specification
+//	Yes, of course this was generated by a program!
+type TPathDataType xsdt.String
+
+//	This convenience method just performs a simple type conversion to TPathDataType's alias type xsdt.String.
+func (me TPathDataType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TPathDataType is just a simple String type, this merely returns the current string value.
+func (me TPathDataType) String() string { return xsdt.String(me).String() }
+
+//	Since TPathDataType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TPathDataType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_D_TPathDataType_ struct {
+	D TPathDataType `xml:"http://www.w3.org/2000/svg d,attr"`
+}
+
+type TpathType struct {
+	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasGroup_DescTitleMetadata
 
+	XsdGoPkgHasAtts_PresentationAttributesMarkers
+
+	XsdGoPkgHasElems_AnimateMotion
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasAttr_D_TPathDataType_
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasElems_AnimateTransform
+
+	XsdGoPkgHasAttr_Transform_TransformListType_
+
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesColor
+
+	XsdGoPkgHasAttr_PathLength_XsdtDouble_
+
 	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasElems_Animate
+}
+
+//	If the WalkHandlers.TpathType function is not nil (ie. was set by outside code), calls it with this TpathType instance as the single argument. Then calls the Walk() method on 6/20 embed(s) and 0/0 field(s) belonging to this TpathType instance.
+func (me *TpathType) Walk() {
+	if fn := WalkHandlers.TpathType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+}
+
+type XsdGoPkgHasElems_Path struct {
+	Paths []*TpathType `xml:"http://www.w3.org/2000/svg path"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Path function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Path instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Path instance.
+func (me *XsdGoPkgHasElems_Path) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Path; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Paths {
+		x.Walk()
+	}
+}
+
+type TlineType struct {
+	XsdGoPkgHasGroup_DescTitleMetadata
+
+	XsdGoPkgHasAttr_Transform_TransformListType_
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasAtts_PresentationAttributesMarkers
+
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasAttr_X2_TCoordinateType_
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasAttr_Y2_TCoordinateType_
+
+	XsdGoPkgHasAtts_PresentationAttributesColor
+
+	XsdGoPkgHasElems_AnimateMotion
+
+	XsdGoPkgHasElems_AnimateTransform
+
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAttr_Y1_TCoordinateType_
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAttr_X1_TCoordinateType_
+}
+
+//	If the WalkHandlers.TlineType function is not nil (ie. was set by outside code), calls it with this TlineType instance as the single argument. Then calls the Walk() method on 6/22 embed(s) and 0/0 field(s) belonging to this TlineType instance.
+func (me *TlineType) Walk() {
+	if fn := WalkHandlers.TlineType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+}
+
+type XsdGoPkgHasElems_Line struct {
+	Lines []*TlineType `xml:"http://www.w3.org/2000/svg line"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Line function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Line instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Line instance.
+func (me *XsdGoPkgHasElems_Line) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Line; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Lines {
+		x.Walk()
+	}
+}
+
+type TuseType struct {
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAttr_Width_TLengthType_
+
+	XsdGoPkgHasAttr_Y_TCoordinateType_
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAttr_Height_TLengthType_
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesAll
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasAtts_XlinkRefAttrs
+
+	XsdGoPkgHasAttr_Transform_TransformListType_
 
 	xlink.XsdGoPkgHasAttr_Href
 
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasElems_AnimateTransform
+
+	XsdGoPkgHasAttr_X_TCoordinateType_
+
+	XsdGoPkgHasElems_AnimateMotion
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasGroup_DescTitleMetadata
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
 }
 
-//	If the WalkHandlers.TlinearGradientType function is not nil (ie. was set by outside code), calls it with this TlinearGradientType instance as the single argument. Then calls the Walk() method on 5/18 embed(s) and 0/0 field(s) belonging to this TlinearGradientType instance.
-func (me *TlinearGradientType) Walk ()  { 
-	if fn := WalkHandlers.TlinearGradientType; fn != nil { fn(me) }
+//	If the WalkHandlers.TuseType function is not nil (ie. was set by outside code), calls it with this TuseType instance as the single argument. Then calls the Walk() method on 6/21 embed(s) and 0/0 field(s) belonging to this TuseType instance.
+func (me *TuseType) Walk() {
+	if fn := WalkHandlers.TuseType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
 	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Stop.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
 	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
- }
-
-type XsdGoPkgHasElems_LinearGradient struct {
-	LinearGradients []*TlinearGradientType `xml:"http://www.w3.org/2000/svg linearGradient"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LinearGradient function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LinearGradient instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LinearGradient instance.
-func (me *XsdGoPkgHasElems_LinearGradient) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_LinearGradient; fn != nil { fn(me) }
-	for _, x := range me.LinearGradients { x.Walk() }
- }
-
-type TfeFloodType struct {
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasAtts_PresentationAttributesFeFlood
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasElems_Animate
-
-}
-
-//	If the WalkHandlers.TfeFloodType function is not nil (ie. was set by outside code), calls it with this TfeFloodType instance as the single argument. Then calls the Walk() method on 3/8 embed(s) and 0/0 field(s) belonging to this TfeFloodType instance.
-func (me *TfeFloodType) Walk ()  { 
-	if fn := WalkHandlers.TfeFloodType; fn != nil { fn(me) }
+	me.XsdGoPkgHasElems_Animate.Walk()
 	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
- }
-
-type XsdGoPkgHasElems_FeFlood struct {
-	FeFloods []*TfeFloodType `xml:"http://www.w3.org/2000/svg feFlood"`
-
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_FeFlood function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeFlood instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeFlood instance.
-func (me *XsdGoPkgHasElems_FeFlood) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeFlood; fn != nil { fn(me) }
-	for _, x := range me.FeFloods { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_FilterUnits_TxsdFilterTypeFilterUnits_ struct {
-	FilterUnits TxsdLinearGradientTypeGradientUnits `xml:"http://www.w3.org/2000/svg filterUnits,attr"`
-
+type XsdGoPkgHasElems_Use struct {
+	Uses []*TuseType `xml:"http://www.w3.org/2000/svg use"`
 }
 
-type XsdGoPkgHasAttr_Z_XsdtDouble_ struct {
-	Z xsdt.Double `xml:"http://www.w3.org/2000/svg z,attr"`
-
+//	If the WalkHandlers.XsdGoPkgHasElems_Use function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Use instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Use instance.
+func (me *XsdGoPkgHasElems_Use) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Use; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Uses {
+		x.Walk()
+	}
 }
 
-type XsdGoPkgHasAttr_X_XsdtDouble_ struct {
-	X xsdt.Double `xml:"http://www.w3.org/2000/svg x,attr"`
+type TcursorType struct {
+	XsdGoPkgHasGroup_DescTitleMetadata
 
-}
+	XsdGoPkgHasAtts_XlinkRefAttrs
 
-type XsdGoPkgHasAttr_Y_XsdtDouble_ struct {
-	Y xsdt.Double `xml:"http://www.w3.org/2000/svg y,attr"`
+	XsdGoPkgHasAtts_TestAttrs
 
-}
+	xlink.XsdGoPkgHasAttr_Href
 
-type TfePointLightType struct {
-	XsdGoPkgHasAttr_Z_XsdtDouble_
-
-	XsdGoPkgHasAttr_X_XsdtDouble_
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAttr_Y_XsdtDouble_
+	XsdGoPkgHasAttr_X_TCoordinateType_
 
 	XsdGoPkgHasAtts_StdAttrs
 
+	XsdGoPkgHasAttr_Y_TCoordinateType_
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
 }
 
-//	If the WalkHandlers.TfePointLightType function is not nil (ie. was set by outside code), calls it with this TfePointLightType instance as the single argument. Then calls the Walk() method on 2/6 embed(s) and 0/0 field(s) belonging to this TfePointLightType instance.
-func (me *TfePointLightType) Walk ()  { 
-	if fn := WalkHandlers.TfePointLightType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
- }
-
-type XsdGoPkgHasElem_FePointLight struct {
-	FePointLight *TfePointLightType `xml:"http://www.w3.org/2000/svg fePointLight"`
-
+//	If the WalkHandlers.TcursorType function is not nil (ie. was set by outside code), calls it with this TcursorType instance as the single argument. Then calls the Walk() method on 1/8 embed(s) and 0/0 field(s) belonging to this TcursorType instance.
+func (me *TcursorType) Walk() {
+	if fn := WalkHandlers.TcursorType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_FePointLight function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FePointLight instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FePointLight instance.
-func (me *XsdGoPkgHasElem_FePointLight) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FePointLight; fn != nil { fn(me) }
-	me.FePointLight.Walk()
- }
-
-type XsdGoPkgHasAttr_SurfaceScale_XsdtDouble_ struct {
-	SurfaceScale xsdt.Double `xml:"http://www.w3.org/2000/svg surfaceScale,attr"`
-
+type XsdGoPkgHasElems_Cursor struct {
+	Cursors []*TcursorType `xml:"http://www.w3.org/2000/svg cursor"`
 }
 
-type XsdGoPkgHasAttr_Elevation_XsdtDouble_ struct {
-	Elevation xsdt.Double `xml:"http://www.w3.org/2000/svg elevation,attr"`
-
+//	If the WalkHandlers.XsdGoPkgHasElems_Cursor function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Cursor instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Cursor instance.
+func (me *XsdGoPkgHasElems_Cursor) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Cursor; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Cursors {
+		x.Walk()
+	}
 }
 
-type XsdGoPkgHasAttr_Azimuth_XsdtDouble_ struct {
-	Azimuth xsdt.Double `xml:"http://www.w3.org/2000/svg azimuth,attr"`
+//	a space separated list of CoordinateType. Punt to 'string' for now
+type TCoordinatesType xsdt.String
 
+//	This convenience method just performs a simple type conversion to TCoordinatesType's alias type xsdt.String.
+func (me TCoordinatesType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TCoordinatesType is just a simple String type, this merely returns the current string value.
+func (me TCoordinatesType) String() string { return xsdt.String(me).String() }
+
+//	Since TCoordinatesType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TCoordinatesType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_X_TCoordinatesType_ struct {
+	X TCoordinatesType `xml:"http://www.w3.org/2000/svg x,attr"`
 }
 
-type TfeDistantLightType struct {
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAttr_Azimuth_XsdtDouble_
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAttr_Elevation_XsdtDouble_
-
+type XsdGoPkgHasAttr_Y_TCoordinatesType_ struct {
+	Y TCoordinatesType `xml:"http://www.w3.org/2000/svg y,attr"`
 }
 
-//	If the WalkHandlers.TfeDistantLightType function is not nil (ie. was set by outside code), calls it with this TfeDistantLightType instance as the single argument. Then calls the Walk() method on 2/5 embed(s) and 0/0 field(s) belonging to this TfeDistantLightType instance.
-func (me *TfeDistantLightType) Walk ()  { 
-	if fn := WalkHandlers.TfeDistantLightType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
- }
-
-type XsdGoPkgHasElem_FeDistantLight struct {
-	FeDistantLight *TfeDistantLightType `xml:"http://www.w3.org/2000/svg feDistantLight"`
-
+type XsdGoPkgHasAttr_Format_XsdtString_ struct {
+	Format xsdt.String `xml:"http://www.w3.org/2000/svg format,attr"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_FeDistantLight function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeDistantLight instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeDistantLight instance.
-func (me *XsdGoPkgHasElem_FeDistantLight) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeDistantLight; fn != nil { fn(me) }
-	me.FeDistantLight.Walk()
- }
+//	a list of <length>s
+type TLengthsType xsdt.String
 
-type XsdGoPkgHasAttr_DiffuseConstant_XsdtDouble_ struct {
-	DiffuseConstant xsdt.Double `xml:"http://www.w3.org/2000/svg diffuseConstant,attr"`
+//	This convenience method just performs a simple type conversion to TLengthsType's alias type xsdt.String.
+func (me TLengthsType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
+//	Since TLengthsType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TLengthsType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TLengthsType is just a simple String type, this merely returns the current string value.
+func (me TLengthsType) String() string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_Dx_TLengthsType_ struct {
+	Dx TLengthsType `xml:"http://www.w3.org/2000/svg dx,attr"`
 }
 
-type XsdGoPkgHasAttr_PointsAtZ_XsdtDouble_ struct {
-	PointsAtZ xsdt.Double `xml:"http://www.w3.org/2000/svg pointsAtZ,attr"`
-
+type XsdGoPkgHasAttr_Dy_TLengthsType_ struct {
+	Dy TLengthsType `xml:"http://www.w3.org/2000/svg dy,attr"`
 }
 
-type XsdGoPkgHasAttr_SpecularExponent_XsdtDouble_ struct {
-	SpecularExponent xsdt.Double `xml:"http://www.w3.org/2000/svg specularExponent,attr"`
-
+type XsdGoPkgHasAttr_GlyphRef_XsdtString_ struct {
+	GlyphRef xsdt.String `xml:"http://www.w3.org/2000/svg glyphRef,attr"`
 }
 
-type XsdGoPkgHasAttr_PointsAtY_XsdtDouble_ struct {
-	PointsAtY xsdt.Double `xml:"http://www.w3.org/2000/svg pointsAtY,attr"`
-
-}
-
-type XsdGoPkgHasAttr_PointsAtX_XsdtDouble_ struct {
-	PointsAtX xsdt.Double `xml:"http://www.w3.org/2000/svg pointsAtX,attr"`
-
-}
-
-type XsdGoPkgHasAttr_LimitingConeAngle_XsdtDouble_ struct {
-	LimitingConeAngle xsdt.Double `xml:"http://www.w3.org/2000/svg limitingConeAngle,attr"`
-
-}
-
-type TfeSpotLightType struct {
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAttr_PointsAtZ_XsdtDouble_
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_Y_XsdtDouble_
-
-	XsdGoPkgHasAttr_SpecularExponent_XsdtDouble_
-
-	XsdGoPkgHasAttr_PointsAtY_XsdtDouble_
-
-	XsdGoPkgHasAttr_X_XsdtDouble_
-
-	XsdGoPkgHasAttr_Z_XsdtDouble_
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAttr_PointsAtX_XsdtDouble_
-
-	XsdGoPkgHasAttr_LimitingConeAngle_XsdtDouble_
-
-}
-
-//	If the WalkHandlers.TfeSpotLightType function is not nil (ie. was set by outside code), calls it with this TfeSpotLightType instance as the single argument. Then calls the Walk() method on 2/11 embed(s) and 0/0 field(s) belonging to this TfeSpotLightType instance.
-func (me *TfeSpotLightType) Walk ()  { 
-	if fn := WalkHandlers.TfeSpotLightType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
- }
-
-type XsdGoPkgHasElem_FeSpotLight struct {
-	FeSpotLight *TfeSpotLightType `xml:"http://www.w3.org/2000/svg feSpotLight"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_FeSpotLight function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeSpotLight instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeSpotLight instance.
-func (me *XsdGoPkgHasElem_FeSpotLight) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeSpotLight; fn != nil { fn(me) }
-	me.FeSpotLight.Walk()
- }
-
-type TfeDiffuseLightingType struct {
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasElem_FeSpotLight
-
-	XsdGoPkgHasElem_FePointLight
-
-	XsdGoPkgHasAtts_PresentationAttributesLightingEffects
-
-	XsdGoPkgHasElems_AnimateColor
-
+type TglyphRefType struct {
 	XsdGoPkgHasAttr_Style_TStyleSheetType_
 
-	XsdGoPkgHasAttr_SurfaceScale_XsdtDouble_
-
-	XsdGoPkgHasElem_FeDistantLight
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_DiffuseConstant_XsdtDouble_
-
-	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
-
-	XsdGoPkgHasElems_Animate
+	XsdGoPkgHasAttr_X_TCoordinatesType_
 
 	XsdGoPkgHasAttr_Class_TClassListType_
 
+	XsdGoPkgHasAttr_Y_TCoordinatesType_
+
+	XsdGoPkgHasAttr_Format_XsdtString_
+
+	XsdGoPkgHasAttr_Dx_TLengthsType_
+
+	XsdGoPkgHasAtts_XlinkRefAttrs
+
+	XsdGoPkgHasAttr_Dy_TLengthsType_
+
+	XsdGoPkgHasAttr_GlyphRef_XsdtString_
+
+	xlink.XsdGoPkgHasAttr_Href
+
+	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
+
+	XsdGoPkgHasAtts_StdAttrs
 }
 
-//	If the WalkHandlers.TfeDiffuseLightingType function is not nil (ie. was set by outside code), calls it with this TfeDiffuseLightingType instance as the single argument. Then calls the Walk() method on 6/13 embed(s) and 0/0 field(s) belonging to this TfeDiffuseLightingType instance.
-func (me *TfeDiffuseLightingType) Walk ()  { 
-	if fn := WalkHandlers.TfeDiffuseLightingType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Animate.Walk()
+//	If the WalkHandlers.TglyphRefType function is not nil (ie. was set by outside code), calls it with this TglyphRefType instance as the single argument. Then calls the Walk() method on 0/12 embed(s) and 0/0 field(s) belonging to this TglyphRefType instance.
+func (me *TglyphRefType) Walk() {
+	if fn := WalkHandlers.TglyphRefType; fn != nil {
+		fn(me)
+	}
+}
+
+type XsdGoPkgHasElems_GlyphRef struct {
+	GlyphRefs []*TglyphRefType `xml:"http://www.w3.org/2000/svg glyphRef"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_GlyphRef function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_GlyphRef instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_GlyphRef instance.
+func (me *XsdGoPkgHasElems_GlyphRef) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_GlyphRef; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.GlyphRefs {
+		x.Walk()
+	}
+}
+
+type TaltGlyphItemType struct {
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasElems_GlyphRef
+}
+
+//	If the WalkHandlers.TaltGlyphItemType function is not nil (ie. was set by outside code), calls it with this TaltGlyphItemType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TaltGlyphItemType instance.
+func (me *TaltGlyphItemType) Walk() {
+	if fn := WalkHandlers.TaltGlyphItemType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_GlyphRef.Walk()
+}
+
+type XsdGoPkgHasElems_AltGlyphItem struct {
+	AltGlyphItems []*TaltGlyphItemType `xml:"http://www.w3.org/2000/svg altGlyphItem"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AltGlyphItem function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AltGlyphItem instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AltGlyphItem instance.
+func (me *XsdGoPkgHasElems_AltGlyphItem) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_AltGlyphItem; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.AltGlyphItems {
+		x.Walk()
+	}
+}
+
+type TaltGlyphDefType struct {
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasElems_AltGlyphItem
+
+	XsdGoPkgHasElems_GlyphRef
+}
+
+//	If the WalkHandlers.TaltGlyphDefType function is not nil (ie. was set by outside code), calls it with this TaltGlyphDefType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TaltGlyphDefType instance.
+func (me *TaltGlyphDefType) Walk() {
+	if fn := WalkHandlers.TaltGlyphDefType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_AltGlyphItem.Walk()
+	me.XsdGoPkgHasElems_GlyphRef.Walk()
+}
+
+type XsdGoPkgHasElems_AltGlyphDef struct {
+	AltGlyphDefs []*TaltGlyphDefType `xml:"http://www.w3.org/2000/svg altGlyphDef"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AltGlyphDef function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AltGlyphDef instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AltGlyphDef instance.
+func (me *XsdGoPkgHasElems_AltGlyphDef) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_AltGlyphDef; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.AltGlyphDefs {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_StdDeviation_XsdtString_ struct {
+	StdDeviation xsdt.String `xml:"http://www.w3.org/2000/svg stdDeviation,attr"`
+}
+
+type TfeGaussianBlurType struct {
+	XsdGoPkgHasAttr_StdDeviation_XsdtString_
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
+
+	XsdGoPkgHasElems_Set
+}
+
+//	If the WalkHandlers.TfeGaussianBlurType function is not nil (ie. was set by outside code), calls it with this TfeGaussianBlurType instance as the single argument. Then calls the Walk() method on 2/5 embed(s) and 0/0 field(s) belonging to this TfeGaussianBlurType instance.
+func (me *TfeGaussianBlurType) Walk() {
+	if fn := WalkHandlers.TfeGaussianBlurType; fn != nil {
+		fn(me)
+	}
 	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElem_FeSpotLight.Walk()
-	me.XsdGoPkgHasElem_FePointLight.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElem_FeDistantLight.Walk()
- }
-
-type XsdGoPkgHasElems_FeDiffuseLighting struct {
-	FeDiffuseLightings []*TfeDiffuseLightingType `xml:"http://www.w3.org/2000/svg feDiffuseLighting"`
-
+	me.XsdGoPkgHasElems_Animate.Walk()
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_FeDiffuseLighting function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeDiffuseLighting instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeDiffuseLighting instance.
-func (me *XsdGoPkgHasElems_FeDiffuseLighting) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeDiffuseLighting; fn != nil { fn(me) }
-	for _, x := range me.FeDiffuseLightings { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_PrimitiveUnits_TxsdFilterTypePrimitiveUnits_ struct {
-	PrimitiveUnits TxsdLinearGradientTypeGradientUnits `xml:"http://www.w3.org/2000/svg primitiveUnits,attr"`
-
+type XsdGoPkgHasElems_FeGaussianBlur struct {
+	FeGaussianBlurs []*TfeGaussianBlurType `xml:"http://www.w3.org/2000/svg feGaussianBlur"`
 }
 
-type TxsdFeCompositeTypeOperator xsdt.String
-
-//	Returns true if the value of this enumerated TxsdFeCompositeTypeOperator is "arithmetic".
-func (me TxsdFeCompositeTypeOperator) IsArithmetic () bool { return me == "arithmetic" }
-
-//	Returns true if the value of this enumerated TxsdFeCompositeTypeOperator is "in".
-func (me TxsdFeCompositeTypeOperator) IsIn () bool { return me == "in" }
-
-//	Since TxsdFeCompositeTypeOperator is just a simple String type, this merely returns the current string value.
-func (me TxsdFeCompositeTypeOperator) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdFeCompositeTypeOperator is "atop".
-func (me TxsdFeCompositeTypeOperator) IsAtop () bool { return me == "atop" }
-
-//	Returns true if the value of this enumerated TxsdFeCompositeTypeOperator is "xor".
-func (me TxsdFeCompositeTypeOperator) IsXor () bool { return me == "xor" }
-
-//	This convenience method just performs a simple type conversion to TxsdFeCompositeTypeOperator's alias type xsdt.String.
-func (me TxsdFeCompositeTypeOperator) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdFeCompositeTypeOperator is "over".
-func (me TxsdFeCompositeTypeOperator) IsOver () bool { return me == "over" }
-
-//	Returns true if the value of this enumerated TxsdFeCompositeTypeOperator is "out".
-func (me TxsdFeCompositeTypeOperator) IsOut () bool { return me == "out" }
-
-//	Since TxsdFeCompositeTypeOperator is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdFeCompositeTypeOperator) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_Operator_TxsdFeCompositeTypeOperator_Over struct {
-	Operator TxsdFeCompositeTypeOperator `xml:"http://www.w3.org/2000/svg operator,attr"`
-
-}
-
-//	Returns the default value for Operator -- "over"
-func (me XsdGoPkgHasAttr_Operator_TxsdFeCompositeTypeOperator_Over) OperatorDefault () TxsdFeCompositeTypeOperator { return TxsdFeCompositeTypeOperator("over") }
-
-type XsdGoPkgHasAttr_K3_XsdtDouble_ struct {
-	K3 xsdt.Double `xml:"http://www.w3.org/2000/svg k3,attr"`
-
+//	If the WalkHandlers.XsdGoPkgHasElems_FeGaussianBlur function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeGaussianBlur instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeGaussianBlur instance.
+func (me *XsdGoPkgHasElems_FeGaussianBlur) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeGaussianBlur; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeGaussianBlurs {
+		x.Walk()
+	}
 }
 
 type XsdGoPkgHasAttr_In2_XsdtString_ struct {
 	In2 xsdt.String `xml:"http://www.w3.org/2000/svg in2,attr"`
-
 }
-
-type XsdGoPkgHasAttr_K2_XsdtDouble_ struct {
-	K2 xsdt.Double `xml:"http://www.w3.org/2000/svg k2,attr"`
-
-}
-
-type XsdGoPkgHasAttr_K4_XsdtDouble_ struct {
-	K4 xsdt.Double `xml:"http://www.w3.org/2000/svg k4,attr"`
-
-}
-
-type XsdGoPkgHasAttr_K1_XsdtDouble_ struct {
-	K1 xsdt.Double `xml:"http://www.w3.org/2000/svg k1,attr"`
-
-}
-
-type TfeCompositeType struct {
-	XsdGoPkgHasAttr_In2_XsdtString_
-
-	XsdGoPkgHasAttr_K2_XsdtDouble_
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAttr_K4_XsdtDouble_
-
-	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
-
-	XsdGoPkgHasAttr_K1_XsdtDouble_
-
-	XsdGoPkgHasAttr_Operator_TxsdFeCompositeTypeOperator_Over
-
-	XsdGoPkgHasAttr_K3_XsdtDouble_
-
-}
-
-//	If the WalkHandlers.TfeCompositeType function is not nil (ie. was set by outside code), calls it with this TfeCompositeType instance as the single argument. Then calls the Walk() method on 2/10 embed(s) and 0/0 field(s) belonging to this TfeCompositeType instance.
-func (me *TfeCompositeType) Walk ()  { 
-	if fn := WalkHandlers.TfeCompositeType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
- }
-
-type XsdGoPkgHasElems_FeComposite struct {
-	FeComposites []*TfeCompositeType `xml:"http://www.w3.org/2000/svg feComposite"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_FeComposite function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeComposite instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeComposite instance.
-func (me *XsdGoPkgHasElems_FeComposite) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeComposite; fn != nil { fn(me) }
-	for _, x := range me.FeComposites { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_FilterRes_XsdtString_ struct {
-	FilterRes xsdt.String `xml:"http://www.w3.org/2000/svg filterRes,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Type_TxsdFeFuncGTypeType_ struct {
-	Type TxsdComponentTransferFunctionAttributesType `xml:"http://www.w3.org/2000/svg type,attr"`
-
-}
-
-type TfeFuncGType struct {
-	XsdGoPkgHasAtts_ComponentTransferFunctionAttributes
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAttr_Type_TxsdFeFuncGTypeType_
-
-	XsdGoPkgHasElems_Set
-
-}
-
-//	If the WalkHandlers.TfeFuncGType function is not nil (ie. was set by outside code), calls it with this TfeFuncGType instance as the single argument. Then calls the Walk() method on 2/5 embed(s) and 0/0 field(s) belonging to this TfeFuncGType instance.
-func (me *TfeFuncGType) Walk ()  { 
-	if fn := WalkHandlers.TfeFuncGType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
- }
-
-type XsdGoPkgHasElem_FeFuncG struct {
-	FeFuncG *TfeFuncGType `xml:"http://www.w3.org/2000/svg feFuncG"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_FeFuncG function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeFuncG instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeFuncG instance.
-func (me *XsdGoPkgHasElem_FeFuncG) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeFuncG; fn != nil { fn(me) }
-	me.FeFuncG.Walk()
- }
-
-type XsdGoPkgHasAttr_Type_TxsdFeFuncRTypeType_ struct {
-	Type TxsdComponentTransferFunctionAttributesType `xml:"http://www.w3.org/2000/svg type,attr"`
-
-}
-
-type TfeFuncRType struct {
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAttr_Type_TxsdFeFuncRTypeType_
-
-	XsdGoPkgHasAtts_ComponentTransferFunctionAttributes
-
-}
-
-//	If the WalkHandlers.TfeFuncRType function is not nil (ie. was set by outside code), calls it with this TfeFuncRType instance as the single argument. Then calls the Walk() method on 2/5 embed(s) and 0/0 field(s) belonging to this TfeFuncRType instance.
-func (me *TfeFuncRType) Walk ()  { 
-	if fn := WalkHandlers.TfeFuncRType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
- }
-
-type XsdGoPkgHasElem_FeFuncR struct {
-	FeFuncR *TfeFuncRType `xml:"http://www.w3.org/2000/svg feFuncR"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_FeFuncR function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeFuncR instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeFuncR instance.
-func (me *XsdGoPkgHasElem_FeFuncR) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeFuncR; fn != nil { fn(me) }
-	me.FeFuncR.Walk()
- }
-
-type XsdGoPkgHasAttr_Type_TxsdFeFuncBTypeType_ struct {
-	Type TxsdComponentTransferFunctionAttributesType `xml:"http://www.w3.org/2000/svg type,attr"`
-
-}
-
-type TfeFuncBType struct {
-	XsdGoPkgHasAtts_ComponentTransferFunctionAttributes
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAttr_Type_TxsdFeFuncBTypeType_
-
-	XsdGoPkgHasElems_Animate
-
-}
-
-//	If the WalkHandlers.TfeFuncBType function is not nil (ie. was set by outside code), calls it with this TfeFuncBType instance as the single argument. Then calls the Walk() method on 2/5 embed(s) and 0/0 field(s) belonging to this TfeFuncBType instance.
-func (me *TfeFuncBType) Walk ()  { 
-	if fn := WalkHandlers.TfeFuncBType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
- }
-
-type XsdGoPkgHasElem_FeFuncB struct {
-	FeFuncB *TfeFuncBType `xml:"http://www.w3.org/2000/svg feFuncB"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_FeFuncB function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeFuncB instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeFuncB instance.
-func (me *XsdGoPkgHasElem_FeFuncB) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeFuncB; fn != nil { fn(me) }
-	me.FeFuncB.Walk()
- }
-
-type XsdGoPkgHasAttr_Type_TxsdFeFuncATypeType_ struct {
-	Type TxsdComponentTransferFunctionAttributesType `xml:"http://www.w3.org/2000/svg type,attr"`
-
-}
-
-type TfeFuncAType struct {
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAtts_ComponentTransferFunctionAttributes
-
-	XsdGoPkgHasAttr_Type_TxsdFeFuncATypeType_
-
-}
-
-//	If the WalkHandlers.TfeFuncAType function is not nil (ie. was set by outside code), calls it with this TfeFuncAType instance as the single argument. Then calls the Walk() method on 2/5 embed(s) and 0/0 field(s) belonging to this TfeFuncAType instance.
-func (me *TfeFuncAType) Walk ()  { 
-	if fn := WalkHandlers.TfeFuncAType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
- }
-
-type XsdGoPkgHasElem_FeFuncA struct {
-	FeFuncA *TfeFuncAType `xml:"http://www.w3.org/2000/svg feFuncA"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_FeFuncA function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeFuncA instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeFuncA instance.
-func (me *XsdGoPkgHasElem_FeFuncA) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeFuncA; fn != nil { fn(me) }
-	me.FeFuncA.Walk()
- }
-
-type TfeComponentTransferType struct {
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElem_FeFuncB
-
-	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
-
-	XsdGoPkgHasElem_FeFuncA
-
-	XsdGoPkgHasElem_FeFuncG
-
-	XsdGoPkgHasElem_FeFuncR
-
-}
-
-//	If the WalkHandlers.TfeComponentTransferType function is not nil (ie. was set by outside code), calls it with this TfeComponentTransferType instance as the single argument. Then calls the Walk() method on 4/6 embed(s) and 0/0 field(s) belonging to this TfeComponentTransferType instance.
-func (me *TfeComponentTransferType) Walk ()  { 
-	if fn := WalkHandlers.TfeComponentTransferType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_FeFuncR.Walk()
-	me.XsdGoPkgHasElem_FeFuncB.Walk()
-	me.XsdGoPkgHasElem_FeFuncA.Walk()
-	me.XsdGoPkgHasElem_FeFuncG.Walk()
- }
-
-type XsdGoPkgHasElems_FeComponentTransfer struct {
-	FeComponentTransfers []*TfeComponentTransferType `xml:"http://www.w3.org/2000/svg feComponentTransfer"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_FeComponentTransfer function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeComponentTransfer instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeComponentTransfer instance.
-func (me *XsdGoPkgHasElems_FeComponentTransfer) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeComponentTransfer; fn != nil { fn(me) }
-	for _, x := range me.FeComponentTransfers { x.Walk() }
- }
-
-type TfeImageType struct {
-	XsdGoPkgHasAtts_FilterPrimitiveAttributes
-
-	XsdGoPkgHasAtts_XlinkRefAttrs
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAtts_PresentationAttributesAll
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAttr_Transform_TransformListType_
-
-	xlink.XsdGoPkgHasAttr_Href
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-}
-
-//	If the WalkHandlers.TfeImageType function is not nil (ie. was set by outside code), calls it with this TfeImageType instance as the single argument. Then calls the Walk() method on 3/13 embed(s) and 0/0 field(s) belonging to this TfeImageType instance.
-func (me *TfeImageType) Walk ()  { 
-	if fn := WalkHandlers.TfeImageType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
- }
-
-type XsdGoPkgHasElems_FeImage struct {
-	FeImages []*TfeImageType `xml:"http://www.w3.org/2000/svg feImage"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_FeImage function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeImage instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeImage instance.
-func (me *XsdGoPkgHasElems_FeImage) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeImage; fn != nil { fn(me) }
-	for _, x := range me.FeImages { x.Walk() }
- }
-
-type TfeTileType struct {
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
-
-}
-
-//	If the WalkHandlers.TfeTileType function is not nil (ie. was set by outside code), calls it with this TfeTileType instance as the single argument. Then calls the Walk() method on 2/4 embed(s) and 0/0 field(s) belonging to this TfeTileType instance.
-func (me *TfeTileType) Walk ()  { 
-	if fn := WalkHandlers.TfeTileType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
- }
-
-type XsdGoPkgHasElems_FeTile struct {
-	FeTiles []*TfeTileType `xml:"http://www.w3.org/2000/svg feTile"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_FeTile function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeTile instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeTile instance.
-func (me *XsdGoPkgHasElems_FeTile) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeTile; fn != nil { fn(me) }
-	for _, x := range me.FeTiles { x.Walk() }
- }
-
-type TxsdFeColorMatrixTypeType xsdt.String
-
-//	Returns true if the value of this enumerated TxsdFeColorMatrixTypeType is "luminanceToAlpha".
-func (me TxsdFeColorMatrixTypeType) IsLuminanceToAlpha () bool { return me == "luminanceToAlpha" }
-
-//	Since TxsdFeColorMatrixTypeType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdFeColorMatrixTypeType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdFeColorMatrixTypeType is "hueRotate".
-func (me TxsdFeColorMatrixTypeType) IsHueRotate () bool { return me == "hueRotate" }
-
-//	Returns true if the value of this enumerated TxsdFeColorMatrixTypeType is "matrix".
-func (me TxsdFeColorMatrixTypeType) IsMatrix () bool { return me == "matrix" }
-
-//	Returns true if the value of this enumerated TxsdFeColorMatrixTypeType is "saturate".
-func (me TxsdFeColorMatrixTypeType) IsSaturate () bool { return me == "saturate" }
-
-//	This convenience method just performs a simple type conversion to TxsdFeColorMatrixTypeType's alias type xsdt.String.
-func (me TxsdFeColorMatrixTypeType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TxsdFeColorMatrixTypeType is just a simple String type, this merely returns the current string value.
-func (me TxsdFeColorMatrixTypeType) String () string { return xsdt.String(me).String() }
-
-type XsdGoPkgHasAttr_Type_TxsdFeColorMatrixTypeType_Matrix struct {
-	Type TxsdFeColorMatrixTypeType `xml:"http://www.w3.org/2000/svg type,attr"`
-
-}
-
-//	Returns the default value for Type -- "matrix"
-func (me XsdGoPkgHasAttr_Type_TxsdFeColorMatrixTypeType_Matrix) TypeDefault () TxsdFeColorMatrixTypeType { return TxsdFeColorMatrixTypeType("matrix") }
-
-type TfeColorMatrixType struct {
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_Values_XsdtString_
-
-	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAttr_Type_TxsdFeColorMatrixTypeType_Matrix
-
-}
-
-//	If the WalkHandlers.TfeColorMatrixType function is not nil (ie. was set by outside code), calls it with this TfeColorMatrixType instance as the single argument. Then calls the Walk() method on 2/6 embed(s) and 0/0 field(s) belonging to this TfeColorMatrixType instance.
-func (me *TfeColorMatrixType) Walk ()  { 
-	if fn := WalkHandlers.TfeColorMatrixType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
- }
-
-type XsdGoPkgHasElems_FeColorMatrix struct {
-	FeColorMatrixs []*TfeColorMatrixType `xml:"http://www.w3.org/2000/svg feColorMatrix"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_FeColorMatrix function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeColorMatrix instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeColorMatrix instance.
-func (me *XsdGoPkgHasElems_FeColorMatrix) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeColorMatrix; fn != nil { fn(me) }
-	for _, x := range me.FeColorMatrixs { x.Walk() }
- }
-
-type TxsdFeBlendTypeMode xsdt.String
-
-//	Returns true if the value of this enumerated TxsdFeBlendTypeMode is "normal".
-func (me TxsdFeBlendTypeMode) IsNormal () bool { return me == "normal" }
-
-//	Since TxsdFeBlendTypeMode is just a simple String type, this merely returns the current string value.
-func (me TxsdFeBlendTypeMode) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdFeBlendTypeMode is "multiply".
-func (me TxsdFeBlendTypeMode) IsMultiply () bool { return me == "multiply" }
-
-//	Returns true if the value of this enumerated TxsdFeBlendTypeMode is "screen".
-func (me TxsdFeBlendTypeMode) IsScreen () bool { return me == "screen" }
-
-//	Since TxsdFeBlendTypeMode is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdFeBlendTypeMode) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TxsdFeBlendTypeMode's alias type xsdt.String.
-func (me TxsdFeBlendTypeMode) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdFeBlendTypeMode is "darken".
-func (me TxsdFeBlendTypeMode) IsDarken () bool { return me == "darken" }
-
-//	Returns true if the value of this enumerated TxsdFeBlendTypeMode is "lighten".
-func (me TxsdFeBlendTypeMode) IsLighten () bool { return me == "lighten" }
-
-type XsdGoPkgHasAttr_Mode_TxsdFeBlendTypeMode_Normal struct {
-	Mode TxsdFeBlendTypeMode `xml:"http://www.w3.org/2000/svg mode,attr"`
-
-}
-
-//	Returns the default value for Mode -- "normal"
-func (me XsdGoPkgHasAttr_Mode_TxsdFeBlendTypeMode_Normal) ModeDefault () TxsdFeBlendTypeMode { return TxsdFeBlendTypeMode("normal") }
-
-type TfeBlendType struct {
-	XsdGoPkgHasAttr_Mode_TxsdFeBlendTypeMode_Normal
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
-
-	XsdGoPkgHasAttr_In2_XsdtString_
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_Animate
-
-}
-
-//	If the WalkHandlers.TfeBlendType function is not nil (ie. was set by outside code), calls it with this TfeBlendType instance as the single argument. Then calls the Walk() method on 2/6 embed(s) and 0/0 field(s) belonging to this TfeBlendType instance.
-func (me *TfeBlendType) Walk ()  { 
-	if fn := WalkHandlers.TfeBlendType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
- }
-
-type XsdGoPkgHasElems_FeBlend struct {
-	FeBlends []*TfeBlendType `xml:"http://www.w3.org/2000/svg feBlend"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_FeBlend function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeBlend instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeBlend instance.
-func (me *XsdGoPkgHasElems_FeBlend) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeBlend; fn != nil { fn(me) }
-	for _, x := range me.FeBlends { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_Seed_XsdtDouble_ struct {
-	Seed xsdt.Double `xml:"http://www.w3.org/2000/svg seed,attr"`
-
-}
-
-type XsdGoPkgHasAttr_BaseFrequency_XsdtString_ struct {
-	BaseFrequency xsdt.String `xml:"http://www.w3.org/2000/svg baseFrequency,attr"`
-
-}
-
-type TxsdFeTurbulenceTypeStitchTiles xsdt.String
-
-//	This convenience method just performs a simple type conversion to TxsdFeTurbulenceTypeStitchTiles's alias type xsdt.String.
-func (me TxsdFeTurbulenceTypeStitchTiles) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdFeTurbulenceTypeStitchTiles is "stitch".
-func (me TxsdFeTurbulenceTypeStitchTiles) IsStitch () bool { return me == "stitch" }
-
-//	Returns true if the value of this enumerated TxsdFeTurbulenceTypeStitchTiles is "noStitch".
-func (me TxsdFeTurbulenceTypeStitchTiles) IsNoStitch () bool { return me == "noStitch" }
-
-//	Since TxsdFeTurbulenceTypeStitchTiles is just a simple String type, this merely returns the current string value.
-func (me TxsdFeTurbulenceTypeStitchTiles) String () string { return xsdt.String(me).String() }
-
-//	Since TxsdFeTurbulenceTypeStitchTiles is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdFeTurbulenceTypeStitchTiles) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_StitchTiles_TxsdFeTurbulenceTypeStitchTiles_NoStitch struct {
-	StitchTiles TxsdFeTurbulenceTypeStitchTiles `xml:"http://www.w3.org/2000/svg stitchTiles,attr"`
-
-}
-
-//	Returns the default value for StitchTiles -- "noStitch"
-func (me XsdGoPkgHasAttr_StitchTiles_TxsdFeTurbulenceTypeStitchTiles_NoStitch) StitchTilesDefault () TxsdFeTurbulenceTypeStitchTiles { return TxsdFeTurbulenceTypeStitchTiles("noStitch") }
-
-type TxsdFeTurbulenceTypeType xsdt.String
-
-//	This convenience method just performs a simple type conversion to TxsdFeTurbulenceTypeType's alias type xsdt.String.
-func (me TxsdFeTurbulenceTypeType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdFeTurbulenceTypeType is "turbulence".
-func (me TxsdFeTurbulenceTypeType) IsTurbulence () bool { return me == "turbulence" }
-
-//	Since TxsdFeTurbulenceTypeType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdFeTurbulenceTypeType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TxsdFeTurbulenceTypeType is just a simple String type, this merely returns the current string value.
-func (me TxsdFeTurbulenceTypeType) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdFeTurbulenceTypeType is "fractalNoise".
-func (me TxsdFeTurbulenceTypeType) IsFractalNoise () bool { return me == "fractalNoise" }
-
-type XsdGoPkgHasAttr_Type_TxsdFeTurbulenceTypeType_Turbulence struct {
-	Type TxsdFeTurbulenceTypeType `xml:"http://www.w3.org/2000/svg type,attr"`
-
-}
-
-//	Returns the default value for Type -- "turbulence"
-func (me XsdGoPkgHasAttr_Type_TxsdFeTurbulenceTypeType_Turbulence) TypeDefault () TxsdFeTurbulenceTypeType { return TxsdFeTurbulenceTypeType("turbulence") }
-
-type XsdGoPkgHasAttr_NumOctaves_XsdtInteger_ struct {
-	NumOctaves xsdt.Integer `xml:"http://www.w3.org/2000/svg numOctaves,attr"`
-
-}
-
-type TfeTurbulenceType struct {
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAttr_BaseFrequency_XsdtString_
-
-	XsdGoPkgHasAttr_StitchTiles_TxsdFeTurbulenceTypeStitchTiles_NoStitch
-
-	XsdGoPkgHasAttr_Type_TxsdFeTurbulenceTypeType_Turbulence
-
-	XsdGoPkgHasAttr_NumOctaves_XsdtInteger_
-
-	XsdGoPkgHasAtts_FilterPrimitiveAttributes
-
-	XsdGoPkgHasAttr_Seed_XsdtDouble_
-
-	XsdGoPkgHasAtts_StdAttrs
-
-}
-
-//	If the WalkHandlers.TfeTurbulenceType function is not nil (ie. was set by outside code), calls it with this TfeTurbulenceType instance as the single argument. Then calls the Walk() method on 2/9 embed(s) and 0/0 field(s) belonging to this TfeTurbulenceType instance.
-func (me *TfeTurbulenceType) Walk ()  { 
-	if fn := WalkHandlers.TfeTurbulenceType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
- }
-
-type XsdGoPkgHasElems_FeTurbulence struct {
-	FeTurbulences []*TfeTurbulenceType `xml:"http://www.w3.org/2000/svg feTurbulence"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_FeTurbulence function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeTurbulence instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeTurbulence instance.
-func (me *XsdGoPkgHasElems_FeTurbulence) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeTurbulence; fn != nil { fn(me) }
-	for _, x := range me.FeTurbulences { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_Radius_TLengthType_ struct {
-	Radius TLengthType `xml:"http://www.w3.org/2000/svg radius,attr"`
-
-}
-
-type TxsdFeMorphologyTypeOperator xsdt.String
-
-//	Returns true if the value of this enumerated TxsdFeMorphologyTypeOperator is "erode".
-func (me TxsdFeMorphologyTypeOperator) IsErode () bool { return me == "erode" }
-
-//	Since TxsdFeMorphologyTypeOperator is just a simple String type, this merely returns the current string value.
-func (me TxsdFeMorphologyTypeOperator) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdFeMorphologyTypeOperator is "dilate".
-func (me TxsdFeMorphologyTypeOperator) IsDilate () bool { return me == "dilate" }
-
-//	Since TxsdFeMorphologyTypeOperator is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdFeMorphologyTypeOperator) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TxsdFeMorphologyTypeOperator's alias type xsdt.String.
-func (me TxsdFeMorphologyTypeOperator) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-type XsdGoPkgHasAttr_Operator_TxsdFeMorphologyTypeOperator_Erode struct {
-	Operator TxsdFeMorphologyTypeOperator `xml:"http://www.w3.org/2000/svg operator,attr"`
-
-}
-
-//	Returns the default value for Operator -- "erode"
-func (me XsdGoPkgHasAttr_Operator_TxsdFeMorphologyTypeOperator_Erode) OperatorDefault () TxsdFeMorphologyTypeOperator { return TxsdFeMorphologyTypeOperator("erode") }
-
-type TfeMorphologyType struct {
-	XsdGoPkgHasAttr_Radius_TLengthType_
-
-	XsdGoPkgHasAttr_Operator_TxsdFeMorphologyTypeOperator_Erode
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
-
-	XsdGoPkgHasElems_Set
-
-}
-
-//	If the WalkHandlers.TfeMorphologyType function is not nil (ie. was set by outside code), calls it with this TfeMorphologyType instance as the single argument. Then calls the Walk() method on 2/6 embed(s) and 0/0 field(s) belonging to this TfeMorphologyType instance.
-func (me *TfeMorphologyType) Walk ()  { 
-	if fn := WalkHandlers.TfeMorphologyType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
- }
-
-type XsdGoPkgHasElems_FeMorphology struct {
-	FeMorphologies []*TfeMorphologyType `xml:"http://www.w3.org/2000/svg feMorphology"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_FeMorphology function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeMorphology instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeMorphology instance.
-func (me *XsdGoPkgHasElems_FeMorphology) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeMorphology; fn != nil { fn(me) }
-	for _, x := range me.FeMorphologies { x.Walk() }
- }
-
-type TfeMergeNodeType struct {
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAttr_In_XsdtString_
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAtts_StdAttrs
-
-}
-
-//	If the WalkHandlers.TfeMergeNodeType function is not nil (ie. was set by outside code), calls it with this TfeMergeNodeType instance as the single argument. Then calls the Walk() method on 2/4 embed(s) and 0/0 field(s) belonging to this TfeMergeNodeType instance.
-func (me *TfeMergeNodeType) Walk ()  { 
-	if fn := WalkHandlers.TfeMergeNodeType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
- }
-
-type XsdGoPkgHasElems_FeMergeNode struct {
-	FeMergeNodes []*TfeMergeNodeType `xml:"http://www.w3.org/2000/svg feMergeNode"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_FeMergeNode function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeMergeNode instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeMergeNode instance.
-func (me *XsdGoPkgHasElems_FeMergeNode) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeMergeNode; fn != nil { fn(me) }
-	for _, x := range me.FeMergeNodes { x.Walk() }
- }
-
-type TfeMergeType struct {
-	XsdGoPkgHasAtts_FilterPrimitiveAttributes
-
-	XsdGoPkgHasElems_FeMergeNode
-
-	XsdGoPkgHasAtts_StdAttrs
-
-}
-
-//	If the WalkHandlers.TfeMergeType function is not nil (ie. was set by outside code), calls it with this TfeMergeType instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TfeMergeType instance.
-func (me *TfeMergeType) Walk ()  { 
-	if fn := WalkHandlers.TfeMergeType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_FeMergeNode.Walk()
- }
-
-type XsdGoPkgHasElems_FeMerge struct {
-	FeMerges []*TfeMergeType `xml:"http://www.w3.org/2000/svg feMerge"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_FeMerge function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeMerge instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeMerge instance.
-func (me *XsdGoPkgHasElems_FeMerge) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeMerge; fn != nil { fn(me) }
-	for _, x := range me.FeMerges { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_SpecularConstant_XsdtDouble_ struct {
-	SpecularConstant xsdt.Double `xml:"http://www.w3.org/2000/svg specularConstant,attr"`
-
-}
-
-type TfeSpecularLightingType struct {
-	XsdGoPkgHasElem_FeDistantLight
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAttr_SpecularConstant_XsdtDouble_
-
-	XsdGoPkgHasAttr_SurfaceScale_XsdtDouble_
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasElem_FePointLight
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
-
-	XsdGoPkgHasAtts_PresentationAttributesLightingEffects
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_SpecularExponent_XsdtDouble_
-
-	XsdGoPkgHasElem_FeSpotLight
-
-	XsdGoPkgHasElems_Animate
-
-}
-
-//	If the WalkHandlers.TfeSpecularLightingType function is not nil (ie. was set by outside code), calls it with this TfeSpecularLightingType instance as the single argument. Then calls the Walk() method on 6/14 embed(s) and 0/0 field(s) belonging to this TfeSpecularLightingType instance.
-func (me *TfeSpecularLightingType) Walk ()  { 
-	if fn := WalkHandlers.TfeSpecularLightingType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_FeSpotLight.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElem_FeDistantLight.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElem_FePointLight.Walk()
- }
-
-type XsdGoPkgHasElems_FeSpecularLighting struct {
-	FeSpecularLightings []*TfeSpecularLightingType `xml:"http://www.w3.org/2000/svg feSpecularLighting"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_FeSpecularLighting function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeSpecularLighting instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeSpecularLighting instance.
-func (me *XsdGoPkgHasElems_FeSpecularLighting) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeSpecularLighting; fn != nil { fn(me) }
-	for _, x := range me.FeSpecularLightings { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_StdDeviation_XsdtString_ struct {
-	StdDeviation xsdt.String `xml:"http://www.w3.org/2000/svg stdDeviation,attr"`
-
-}
-
-type TfeGaussianBlurType struct {
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
-
-	XsdGoPkgHasAttr_StdDeviation_XsdtString_
-
-}
-
-//	If the WalkHandlers.TfeGaussianBlurType function is not nil (ie. was set by outside code), calls it with this TfeGaussianBlurType instance as the single argument. Then calls the Walk() method on 2/5 embed(s) and 0/0 field(s) belonging to this TfeGaussianBlurType instance.
-func (me *TfeGaussianBlurType) Walk ()  { 
-	if fn := WalkHandlers.TfeGaussianBlurType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
- }
-
-type XsdGoPkgHasElems_FeGaussianBlur struct {
-	FeGaussianBlurs []*TfeGaussianBlurType `xml:"http://www.w3.org/2000/svg feGaussianBlur"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_FeGaussianBlur function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeGaussianBlur instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeGaussianBlur instance.
-func (me *XsdGoPkgHasElems_FeGaussianBlur) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeGaussianBlur; fn != nil { fn(me) }
-	for _, x := range me.FeGaussianBlurs { x.Walk() }
- }
-
-type TxsdFeDisplacementMapTypeXChannelSelector xsdt.String
-
-//	Returns true if the value of this enumerated TxsdFeDisplacementMapTypeXChannelSelector is "R".
-func (me TxsdFeDisplacementMapTypeXChannelSelector) IsR () bool { return me == "R" }
-
-//	Since TxsdFeDisplacementMapTypeXChannelSelector is just a simple String type, this merely returns the current string value.
-func (me TxsdFeDisplacementMapTypeXChannelSelector) String () string { return xsdt.String(me).String() }
-
-//	Since TxsdFeDisplacementMapTypeXChannelSelector is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdFeDisplacementMapTypeXChannelSelector) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdFeDisplacementMapTypeXChannelSelector is "G".
-func (me TxsdFeDisplacementMapTypeXChannelSelector) IsG () bool { return me == "G" }
-
-//	This convenience method just performs a simple type conversion to TxsdFeDisplacementMapTypeXChannelSelector's alias type xsdt.String.
-func (me TxsdFeDisplacementMapTypeXChannelSelector) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdFeDisplacementMapTypeXChannelSelector is "B".
-func (me TxsdFeDisplacementMapTypeXChannelSelector) IsB () bool { return me == "B" }
-
-//	Returns true if the value of this enumerated TxsdFeDisplacementMapTypeXChannelSelector is "A".
-func (me TxsdFeDisplacementMapTypeXChannelSelector) IsA () bool { return me == "A" }
-
-type XsdGoPkgHasAttr_XChannelSelector_TxsdFeDisplacementMapTypeXChannelSelector_A struct {
-	XChannelSelector TxsdFeDisplacementMapTypeXChannelSelector `xml:"http://www.w3.org/2000/svg xChannelSelector,attr"`
-
-}
-
-//	Returns the default value for XChannelSelector -- "A"
-func (me XsdGoPkgHasAttr_XChannelSelector_TxsdFeDisplacementMapTypeXChannelSelector_A) XChannelSelectorDefault () TxsdFeDisplacementMapTypeXChannelSelector { return TxsdFeDisplacementMapTypeXChannelSelector("A") }
 
 type XsdGoPkgHasAttr_Scale_XsdtDouble_ struct {
 	Scale xsdt.Double `xml:"http://www.w3.org/2000/svg scale,attr"`
+}
 
+type TxsdFeDisplacementMapTypeXChannelSelector xsdt.String
+
+//	Since TxsdFeDisplacementMapTypeXChannelSelector is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdFeDisplacementMapTypeXChannelSelector) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Since TxsdFeDisplacementMapTypeXChannelSelector is just a simple String type, this merely returns the current string value.
+func (me TxsdFeDisplacementMapTypeXChannelSelector) String() string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TxsdFeDisplacementMapTypeXChannelSelector's alias type xsdt.String.
+func (me TxsdFeDisplacementMapTypeXChannelSelector) ToXsdtString() xsdt.String {
+	return xsdt.String(me)
+}
+
+//	Returns true if the value of this enumerated TxsdFeDisplacementMapTypeXChannelSelector is "R".
+func (me TxsdFeDisplacementMapTypeXChannelSelector) IsR() bool { return me == "R" }
+
+//	Returns true if the value of this enumerated TxsdFeDisplacementMapTypeXChannelSelector is "A".
+func (me TxsdFeDisplacementMapTypeXChannelSelector) IsA() bool { return me == "A" }
+
+//	Returns true if the value of this enumerated TxsdFeDisplacementMapTypeXChannelSelector is "G".
+func (me TxsdFeDisplacementMapTypeXChannelSelector) IsG() bool { return me == "G" }
+
+//	Returns true if the value of this enumerated TxsdFeDisplacementMapTypeXChannelSelector is "B".
+func (me TxsdFeDisplacementMapTypeXChannelSelector) IsB() bool { return me == "B" }
+
+type XsdGoPkgHasAttr_XChannelSelector_TxsdFeDisplacementMapTypeXChannelSelector_A struct {
+	XChannelSelector TxsdFeDisplacementMapTypeXChannelSelector `xml:"http://www.w3.org/2000/svg xChannelSelector,attr"`
+}
+
+//	Returns the default value for XChannelSelector -- "A"
+func (me XsdGoPkgHasAttr_XChannelSelector_TxsdFeDisplacementMapTypeXChannelSelector_A) XChannelSelectorDefault() TxsdFeDisplacementMapTypeXChannelSelector {
+	return TxsdFeDisplacementMapTypeXChannelSelector("A")
 }
 
 type XsdGoPkgHasAttr_YChannelSelector_TxsdFeDisplacementMapTypeYChannelSelector_A struct {
 	YChannelSelector TxsdFeDisplacementMapTypeXChannelSelector `xml:"http://www.w3.org/2000/svg yChannelSelector,attr"`
-
 }
 
 //	Returns the default value for YChannelSelector -- "A"
-func (me XsdGoPkgHasAttr_YChannelSelector_TxsdFeDisplacementMapTypeYChannelSelector_A) YChannelSelectorDefault () TxsdFeDisplacementMapTypeXChannelSelector { return TxsdFeDisplacementMapTypeXChannelSelector("A") }
+func (me XsdGoPkgHasAttr_YChannelSelector_TxsdFeDisplacementMapTypeYChannelSelector_A) YChannelSelectorDefault() TxsdFeDisplacementMapTypeXChannelSelector {
+	return TxsdFeDisplacementMapTypeXChannelSelector("A")
+}
 
 type TfeDisplacementMapType struct {
-	XsdGoPkgHasAttr_Scale_XsdtDouble_
-
 	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
 
-	XsdGoPkgHasElems_Set
+	XsdGoPkgHasAttr_In2_XsdtString_
+
+	XsdGoPkgHasAttr_Scale_XsdtDouble_
+
+	XsdGoPkgHasAttr_XChannelSelector_TxsdFeDisplacementMapTypeXChannelSelector_A
 
 	XsdGoPkgHasElems_Animate
 
@@ -4435,3313 +4187,3989 @@ type TfeDisplacementMapType struct {
 
 	XsdGoPkgHasAttr_YChannelSelector_TxsdFeDisplacementMapTypeYChannelSelector_A
 
-	XsdGoPkgHasAttr_In2_XsdtString_
-
-	XsdGoPkgHasAttr_XChannelSelector_TxsdFeDisplacementMapTypeXChannelSelector_A
-
+	XsdGoPkgHasElems_Set
 }
 
 //	If the WalkHandlers.TfeDisplacementMapType function is not nil (ie. was set by outside code), calls it with this TfeDisplacementMapType instance as the single argument. Then calls the Walk() method on 2/8 embed(s) and 0/0 field(s) belonging to this TfeDisplacementMapType instance.
-func (me *TfeDisplacementMapType) Walk ()  { 
-	if fn := WalkHandlers.TfeDisplacementMapType; fn != nil { fn(me) }
+func (me *TfeDisplacementMapType) Walk() {
+	if fn := WalkHandlers.TfeDisplacementMapType; fn != nil {
+		fn(me)
+	}
 	me.XsdGoPkgHasElems_Set.Walk()
 	me.XsdGoPkgHasElems_Animate.Walk()
- }
+}
 
 type XsdGoPkgHasElems_FeDisplacementMap struct {
 	FeDisplacementMaps []*TfeDisplacementMapType `xml:"http://www.w3.org/2000/svg feDisplacementMap"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_FeDisplacementMap function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeDisplacementMap instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeDisplacementMap instance.
-func (me *XsdGoPkgHasElems_FeDisplacementMap) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeDisplacementMap; fn != nil { fn(me) }
-	for _, x := range me.FeDisplacementMaps { x.Walk() }
- }
-
-type TxsdFeConvolveMatrixTypeEdgeMode xsdt.String
-
-//	This convenience method just performs a simple type conversion to TxsdFeConvolveMatrixTypeEdgeMode's alias type xsdt.String.
-func (me TxsdFeConvolveMatrixTypeEdgeMode) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdFeConvolveMatrixTypeEdgeMode is "none".
-func (me TxsdFeConvolveMatrixTypeEdgeMode) IsNone () bool { return me == "none" }
-
-//	Since TxsdFeConvolveMatrixTypeEdgeMode is just a simple String type, this merely returns the current string value.
-func (me TxsdFeConvolveMatrixTypeEdgeMode) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdFeConvolveMatrixTypeEdgeMode is "wrap".
-func (me TxsdFeConvolveMatrixTypeEdgeMode) IsWrap () bool { return me == "wrap" }
-
-//	Returns true if the value of this enumerated TxsdFeConvolveMatrixTypeEdgeMode is "duplicate".
-func (me TxsdFeConvolveMatrixTypeEdgeMode) IsDuplicate () bool { return me == "duplicate" }
-
-//	Since TxsdFeConvolveMatrixTypeEdgeMode is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdFeConvolveMatrixTypeEdgeMode) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_EdgeMode_TxsdFeConvolveMatrixTypeEdgeMode_Duplicate struct {
-	EdgeMode TxsdFeConvolveMatrixTypeEdgeMode `xml:"http://www.w3.org/2000/svg edgeMode,attr"`
-
+func (me *XsdGoPkgHasElems_FeDisplacementMap) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeDisplacementMap; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeDisplacementMaps {
+		x.Walk()
+	}
 }
 
-//	Returns the default value for EdgeMode -- "duplicate"
-func (me XsdGoPkgHasAttr_EdgeMode_TxsdFeConvolveMatrixTypeEdgeMode_Duplicate) EdgeModeDefault () TxsdFeConvolveMatrixTypeEdgeMode { return TxsdFeConvolveMatrixTypeEdgeMode("duplicate") }
+type TfeImageType struct {
+	XsdGoPkgHasAtts_StdAttrs
 
-type XsdGoPkgHasAttr_Divisor_XsdtDouble_ struct {
-	Divisor xsdt.Double `xml:"http://www.w3.org/2000/svg divisor,attr"`
+	XsdGoPkgHasElems_Set
 
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasAtts_XlinkRefAttrs
+
+	xlink.XsdGoPkgHasAttr_Href
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasAttr_Transform_TransformListType_
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAtts_FilterPrimitiveAttributes
+
+	XsdGoPkgHasAtts_PresentationAttributesAll
+
+	XsdGoPkgHasElems_AnimateTransform
 }
 
-type XsdGoPkgHasAttr_TargetY_XsdtInteger_ struct {
-	TargetY xsdt.Integer `xml:"http://www.w3.org/2000/svg targetY,attr"`
-
+//	If the WalkHandlers.TfeImageType function is not nil (ie. was set by outside code), calls it with this TfeImageType instance as the single argument. Then calls the Walk() method on 3/13 embed(s) and 0/0 field(s) belonging to this TfeImageType instance.
+func (me *TfeImageType) Walk() {
+	if fn := WalkHandlers.TfeImageType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
 }
 
-type XsdGoPkgHasAttr_KernelUnitLength_XsdtString_ struct {
-	KernelUnitLength xsdt.String `xml:"http://www.w3.org/2000/svg kernelUnitLength,attr"`
-
+type XsdGoPkgHasElems_FeImage struct {
+	FeImages []*TfeImageType `xml:"http://www.w3.org/2000/svg feImage"`
 }
 
-type XsdGoPkgHasAttr_Bias_XsdtDouble_ struct {
-	Bias xsdt.Double `xml:"http://www.w3.org/2000/svg bias,attr"`
-
+//	If the WalkHandlers.XsdGoPkgHasElems_FeImage function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeImage instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeImage instance.
+func (me *XsdGoPkgHasElems_FeImage) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeImage; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeImages {
+		x.Walk()
+	}
 }
 
-type XsdGoPkgHasAttr_PreserveAlpha_XsdtBoolean_ struct {
-	PreserveAlpha xsdt.Boolean `xml:"http://www.w3.org/2000/svg preserveAlpha,attr"`
-
+type XsdGoPkgHasAttr_Radius_TLengthType_ struct {
+	Radius TLengthType `xml:"http://www.w3.org/2000/svg radius,attr"`
 }
 
-type XsdGoPkgHasAttr_Order_XsdtString_ struct {
-	Order xsdt.String `xml:"http://www.w3.org/2000/svg order,attr"`
+type TxsdFeMorphologyTypeOperator xsdt.String
 
+//	This convenience method just performs a simple type conversion to TxsdFeMorphologyTypeOperator's alias type xsdt.String.
+func (me TxsdFeMorphologyTypeOperator) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TxsdFeMorphologyTypeOperator is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdFeMorphologyTypeOperator) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TxsdFeMorphologyTypeOperator is just a simple String type, this merely returns the current string value.
+func (me TxsdFeMorphologyTypeOperator) String() string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdFeMorphologyTypeOperator is "dilate".
+func (me TxsdFeMorphologyTypeOperator) IsDilate() bool { return me == "dilate" }
+
+//	Returns true if the value of this enumerated TxsdFeMorphologyTypeOperator is "erode".
+func (me TxsdFeMorphologyTypeOperator) IsErode() bool { return me == "erode" }
+
+type XsdGoPkgHasAttr_Operator_TxsdFeMorphologyTypeOperator_Erode struct {
+	Operator TxsdFeMorphologyTypeOperator `xml:"http://www.w3.org/2000/svg operator,attr"`
+}
+
+//	Returns the default value for Operator -- "erode"
+func (me XsdGoPkgHasAttr_Operator_TxsdFeMorphologyTypeOperator_Erode) OperatorDefault() TxsdFeMorphologyTypeOperator {
+	return TxsdFeMorphologyTypeOperator("erode")
+}
+
+type TfeMorphologyType struct {
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_Radius_TLengthType_
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAttr_Operator_TxsdFeMorphologyTypeOperator_Erode
+}
+
+//	If the WalkHandlers.TfeMorphologyType function is not nil (ie. was set by outside code), calls it with this TfeMorphologyType instance as the single argument. Then calls the Walk() method on 2/6 embed(s) and 0/0 field(s) belonging to this TfeMorphologyType instance.
+func (me *TfeMorphologyType) Walk() {
+	if fn := WalkHandlers.TfeMorphologyType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+}
+
+type XsdGoPkgHasElems_FeMorphology struct {
+	FeMorphologies []*TfeMorphologyType `xml:"http://www.w3.org/2000/svg feMorphology"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_FeMorphology function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeMorphology instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeMorphology instance.
+func (me *XsdGoPkgHasElems_FeMorphology) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeMorphology; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeMorphologies {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_PrimitiveUnits_TxsdFilterTypePrimitiveUnits_ struct {
+	PrimitiveUnits TxsdLinearGradientTypeGradientUnits `xml:"http://www.w3.org/2000/svg primitiveUnits,attr"`
+}
+
+type XsdGoPkgHasAttr_Type_TxsdFeFuncATypeType_ struct {
+	Type TxsdComponentTransferFunctionAttributesType `xml:"http://www.w3.org/2000/svg type,attr"`
+}
+
+type TfeFuncAType struct {
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_Type_TxsdFeFuncATypeType_
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAtts_ComponentTransferFunctionAttributes
+}
+
+//	If the WalkHandlers.TfeFuncAType function is not nil (ie. was set by outside code), calls it with this TfeFuncAType instance as the single argument. Then calls the Walk() method on 2/5 embed(s) and 0/0 field(s) belonging to this TfeFuncAType instance.
+func (me *TfeFuncAType) Walk() {
+	if fn := WalkHandlers.TfeFuncAType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+}
+
+type XsdGoPkgHasElem_FeFuncA struct {
+	FeFuncA *TfeFuncAType `xml:"http://www.w3.org/2000/svg feFuncA"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_FeFuncA function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeFuncA instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeFuncA instance.
+func (me *XsdGoPkgHasElem_FeFuncA) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeFuncA; fn != nil {
+		fn(me)
+	}
+	me.FeFuncA.Walk()
+}
+
+type XsdGoPkgHasAttr_Type_TxsdFeFuncRTypeType_ struct {
+	Type TxsdComponentTransferFunctionAttributesType `xml:"http://www.w3.org/2000/svg type,attr"`
+}
+
+type TfeFuncRType struct {
+	XsdGoPkgHasAtts_ComponentTransferFunctionAttributes
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAttr_Type_TxsdFeFuncRTypeType_
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAtts_StdAttrs
+}
+
+//	If the WalkHandlers.TfeFuncRType function is not nil (ie. was set by outside code), calls it with this TfeFuncRType instance as the single argument. Then calls the Walk() method on 2/5 embed(s) and 0/0 field(s) belonging to this TfeFuncRType instance.
+func (me *TfeFuncRType) Walk() {
+	if fn := WalkHandlers.TfeFuncRType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+}
+
+type XsdGoPkgHasElem_FeFuncR struct {
+	FeFuncR *TfeFuncRType `xml:"http://www.w3.org/2000/svg feFuncR"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_FeFuncR function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeFuncR instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeFuncR instance.
+func (me *XsdGoPkgHasElem_FeFuncR) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeFuncR; fn != nil {
+		fn(me)
+	}
+	me.FeFuncR.Walk()
+}
+
+type XsdGoPkgHasAttr_Type_TxsdFeFuncBTypeType_ struct {
+	Type TxsdComponentTransferFunctionAttributesType `xml:"http://www.w3.org/2000/svg type,attr"`
+}
+
+type TfeFuncBType struct {
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAtts_ComponentTransferFunctionAttributes
+
+	XsdGoPkgHasAttr_Type_TxsdFeFuncBTypeType_
+
+	XsdGoPkgHasAtts_StdAttrs
+}
+
+//	If the WalkHandlers.TfeFuncBType function is not nil (ie. was set by outside code), calls it with this TfeFuncBType instance as the single argument. Then calls the Walk() method on 2/5 embed(s) and 0/0 field(s) belonging to this TfeFuncBType instance.
+func (me *TfeFuncBType) Walk() {
+	if fn := WalkHandlers.TfeFuncBType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+}
+
+type XsdGoPkgHasElem_FeFuncB struct {
+	FeFuncB *TfeFuncBType `xml:"http://www.w3.org/2000/svg feFuncB"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_FeFuncB function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeFuncB instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeFuncB instance.
+func (me *XsdGoPkgHasElem_FeFuncB) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeFuncB; fn != nil {
+		fn(me)
+	}
+	me.FeFuncB.Walk()
+}
+
+type XsdGoPkgHasAttr_Type_TxsdFeFuncGTypeType_ struct {
+	Type TxsdComponentTransferFunctionAttributesType `xml:"http://www.w3.org/2000/svg type,attr"`
+}
+
+type TfeFuncGType struct {
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAttr_Type_TxsdFeFuncGTypeType_
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_ComponentTransferFunctionAttributes
+}
+
+//	If the WalkHandlers.TfeFuncGType function is not nil (ie. was set by outside code), calls it with this TfeFuncGType instance as the single argument. Then calls the Walk() method on 2/5 embed(s) and 0/0 field(s) belonging to this TfeFuncGType instance.
+func (me *TfeFuncGType) Walk() {
+	if fn := WalkHandlers.TfeFuncGType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+}
+
+type XsdGoPkgHasElem_FeFuncG struct {
+	FeFuncG *TfeFuncGType `xml:"http://www.w3.org/2000/svg feFuncG"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_FeFuncG function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeFuncG instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeFuncG instance.
+func (me *XsdGoPkgHasElem_FeFuncG) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeFuncG; fn != nil {
+		fn(me)
+	}
+	me.FeFuncG.Walk()
+}
+
+type TfeComponentTransferType struct {
+	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
+
+	XsdGoPkgHasElem_FeFuncB
+
+	XsdGoPkgHasElem_FeFuncG
+
+	XsdGoPkgHasElem_FeFuncA
+
+	XsdGoPkgHasElem_FeFuncR
+
+	XsdGoPkgHasAtts_StdAttrs
+}
+
+//	If the WalkHandlers.TfeComponentTransferType function is not nil (ie. was set by outside code), calls it with this TfeComponentTransferType instance as the single argument. Then calls the Walk() method on 4/6 embed(s) and 0/0 field(s) belonging to this TfeComponentTransferType instance.
+func (me *TfeComponentTransferType) Walk() {
+	if fn := WalkHandlers.TfeComponentTransferType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElem_FeFuncB.Walk()
+	me.XsdGoPkgHasElem_FeFuncG.Walk()
+	me.XsdGoPkgHasElem_FeFuncA.Walk()
+	me.XsdGoPkgHasElem_FeFuncR.Walk()
+}
+
+type XsdGoPkgHasElems_FeComponentTransfer struct {
+	FeComponentTransfers []*TfeComponentTransferType `xml:"http://www.w3.org/2000/svg feComponentTransfer"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_FeComponentTransfer function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeComponentTransfer instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeComponentTransfer instance.
+func (me *XsdGoPkgHasElems_FeComponentTransfer) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeComponentTransfer; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeComponentTransfers {
+		x.Walk()
+	}
 }
 
 type XsdGoPkgHasAttr_KernelMatrix_XsdtString_ struct {
 	KernelMatrix xsdt.String `xml:"http://www.w3.org/2000/svg kernelMatrix,attr"`
+}
 
+type TxsdFeConvolveMatrixTypeEdgeMode xsdt.String
+
+//	This convenience method just performs a simple type conversion to TxsdFeConvolveMatrixTypeEdgeMode's alias type xsdt.String.
+func (me TxsdFeConvolveMatrixTypeEdgeMode) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TxsdFeConvolveMatrixTypeEdgeMode is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdFeConvolveMatrixTypeEdgeMode) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Returns true if the value of this enumerated TxsdFeConvolveMatrixTypeEdgeMode is "wrap".
+func (me TxsdFeConvolveMatrixTypeEdgeMode) IsWrap() bool { return me == "wrap" }
+
+//	Since TxsdFeConvolveMatrixTypeEdgeMode is just a simple String type, this merely returns the current string value.
+func (me TxsdFeConvolveMatrixTypeEdgeMode) String() string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdFeConvolveMatrixTypeEdgeMode is "none".
+func (me TxsdFeConvolveMatrixTypeEdgeMode) IsNone() bool { return me == "none" }
+
+//	Returns true if the value of this enumerated TxsdFeConvolveMatrixTypeEdgeMode is "duplicate".
+func (me TxsdFeConvolveMatrixTypeEdgeMode) IsDuplicate() bool { return me == "duplicate" }
+
+type XsdGoPkgHasAttr_EdgeMode_TxsdFeConvolveMatrixTypeEdgeMode_Duplicate struct {
+	EdgeMode TxsdFeConvolveMatrixTypeEdgeMode `xml:"http://www.w3.org/2000/svg edgeMode,attr"`
+}
+
+//	Returns the default value for EdgeMode -- "duplicate"
+func (me XsdGoPkgHasAttr_EdgeMode_TxsdFeConvolveMatrixTypeEdgeMode_Duplicate) EdgeModeDefault() TxsdFeConvolveMatrixTypeEdgeMode {
+	return TxsdFeConvolveMatrixTypeEdgeMode("duplicate")
+}
+
+type XsdGoPkgHasAttr_PreserveAlpha_XsdtBoolean_ struct {
+	PreserveAlpha xsdt.Boolean `xml:"http://www.w3.org/2000/svg preserveAlpha,attr"`
 }
 
 type XsdGoPkgHasAttr_TargetX_XsdtInteger_ struct {
 	TargetX xsdt.Integer `xml:"http://www.w3.org/2000/svg targetX,attr"`
+}
 
+type XsdGoPkgHasAttr_KernelUnitLength_XsdtString_ struct {
+	KernelUnitLength xsdt.String `xml:"http://www.w3.org/2000/svg kernelUnitLength,attr"`
+}
+
+type XsdGoPkgHasAttr_Bias_XsdtDouble_ struct {
+	Bias xsdt.Double `xml:"http://www.w3.org/2000/svg bias,attr"`
+}
+
+type XsdGoPkgHasAttr_Order_XsdtString_ struct {
+	Order xsdt.String `xml:"http://www.w3.org/2000/svg order,attr"`
+}
+
+type XsdGoPkgHasAttr_Divisor_XsdtDouble_ struct {
+	Divisor xsdt.Double `xml:"http://www.w3.org/2000/svg divisor,attr"`
+}
+
+type XsdGoPkgHasAttr_TargetY_XsdtInteger_ struct {
+	TargetY xsdt.Integer `xml:"http://www.w3.org/2000/svg targetY,attr"`
 }
 
 type TfeConvolveMatrixType struct {
 	XsdGoPkgHasAttr_TargetX_XsdtInteger_
 
-	XsdGoPkgHasAttr_EdgeMode_TxsdFeConvolveMatrixTypeEdgeMode_Duplicate
-
-	XsdGoPkgHasElems_Set
-
 	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
-
-	XsdGoPkgHasAttr_Divisor_XsdtDouble_
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAttr_TargetY_XsdtInteger_
 
 	XsdGoPkgHasAttr_KernelUnitLength_XsdtString_
 
-	XsdGoPkgHasAttr_Bias_XsdtDouble_
+	XsdGoPkgHasElems_Animate
 
-	XsdGoPkgHasAttr_PreserveAlpha_XsdtBoolean_
+	XsdGoPkgHasAttr_Bias_XsdtDouble_
 
 	XsdGoPkgHasAttr_Order_XsdtString_
 
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAttr_Divisor_XsdtDouble_
+
+	XsdGoPkgHasAttr_TargetY_XsdtInteger_
+
 	XsdGoPkgHasAttr_KernelMatrix_XsdtString_
 
+	XsdGoPkgHasAttr_EdgeMode_TxsdFeConvolveMatrixTypeEdgeMode_Duplicate
+
+	XsdGoPkgHasAttr_PreserveAlpha_XsdtBoolean_
 }
 
 //	If the WalkHandlers.TfeConvolveMatrixType function is not nil (ie. was set by outside code), calls it with this TfeConvolveMatrixType instance as the single argument. Then calls the Walk() method on 2/12 embed(s) and 0/0 field(s) belonging to this TfeConvolveMatrixType instance.
-func (me *TfeConvolveMatrixType) Walk ()  { 
-	if fn := WalkHandlers.TfeConvolveMatrixType; fn != nil { fn(me) }
+func (me *TfeConvolveMatrixType) Walk() {
+	if fn := WalkHandlers.TfeConvolveMatrixType; fn != nil {
+		fn(me)
+	}
 	me.XsdGoPkgHasElems_Animate.Walk()
 	me.XsdGoPkgHasElems_Set.Walk()
- }
+}
 
 type XsdGoPkgHasElems_FeConvolveMatrix struct {
 	FeConvolveMatrixs []*TfeConvolveMatrixType `xml:"http://www.w3.org/2000/svg feConvolveMatrix"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_FeConvolveMatrix function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeConvolveMatrix instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeConvolveMatrix instance.
-func (me *XsdGoPkgHasElems_FeConvolveMatrix) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeConvolveMatrix; fn != nil { fn(me) }
-	for _, x := range me.FeConvolveMatrixs { x.Walk() }
- }
+func (me *XsdGoPkgHasElems_FeConvolveMatrix) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeConvolveMatrix; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeConvolveMatrixs {
+		x.Walk()
+	}
+}
+
+type TfeMergeNodeType struct {
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAttr_In_XsdtString_
+
+	XsdGoPkgHasElems_Animate
+}
+
+//	If the WalkHandlers.TfeMergeNodeType function is not nil (ie. was set by outside code), calls it with this TfeMergeNodeType instance as the single argument. Then calls the Walk() method on 2/4 embed(s) and 0/0 field(s) belonging to this TfeMergeNodeType instance.
+func (me *TfeMergeNodeType) Walk() {
+	if fn := WalkHandlers.TfeMergeNodeType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+}
+
+type XsdGoPkgHasElems_FeMergeNode struct {
+	FeMergeNodes []*TfeMergeNodeType `xml:"http://www.w3.org/2000/svg feMergeNode"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_FeMergeNode function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeMergeNode instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeMergeNode instance.
+func (me *XsdGoPkgHasElems_FeMergeNode) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeMergeNode; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeMergeNodes {
+		x.Walk()
+	}
+}
+
+type TfeMergeType struct {
+	XsdGoPkgHasElems_FeMergeNode
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_FilterPrimitiveAttributes
+}
+
+//	If the WalkHandlers.TfeMergeType function is not nil (ie. was set by outside code), calls it with this TfeMergeType instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TfeMergeType instance.
+func (me *TfeMergeType) Walk() {
+	if fn := WalkHandlers.TfeMergeType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_FeMergeNode.Walk()
+}
+
+type XsdGoPkgHasElems_FeMerge struct {
+	FeMerges []*TfeMergeType `xml:"http://www.w3.org/2000/svg feMerge"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_FeMerge function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeMerge instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeMerge instance.
+func (me *XsdGoPkgHasElems_FeMerge) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeMerge; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeMerges {
+		x.Walk()
+	}
+}
 
 type XsdGoPkgHasAttr_Dx_TLengthType_ struct {
 	Dx TLengthType `xml:"http://www.w3.org/2000/svg dx,attr"`
-
 }
 
 type XsdGoPkgHasAttr_Dy_TLengthType_ struct {
 	Dy TLengthType `xml:"http://www.w3.org/2000/svg dy,attr"`
-
 }
 
 type TfeOffsetType struct {
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_Dx_TLengthType_
+
 	XsdGoPkgHasAttr_Dy_TLengthType_
+}
+
+//	If the WalkHandlers.TfeOffsetType function is not nil (ie. was set by outside code), calls it with this TfeOffsetType instance as the single argument. Then calls the Walk() method on 2/6 embed(s) and 0/0 field(s) belonging to this TfeOffsetType instance.
+func (me *TfeOffsetType) Walk() {
+	if fn := WalkHandlers.TfeOffsetType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+}
+
+type XsdGoPkgHasElems_FeOffset struct {
+	FeOffsets []*TfeOffsetType `xml:"http://www.w3.org/2000/svg feOffset"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_FeOffset function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeOffset instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeOffset instance.
+func (me *XsdGoPkgHasElems_FeOffset) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeOffset; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeOffsets {
+		x.Walk()
+	}
+}
+
+type TxsdFeColorMatrixTypeType xsdt.String
+
+//	Returns true if the value of this enumerated TxsdFeColorMatrixTypeType is "luminanceToAlpha".
+func (me TxsdFeColorMatrixTypeType) IsLuminanceToAlpha() bool { return me == "luminanceToAlpha" }
+
+//	Returns true if the value of this enumerated TxsdFeColorMatrixTypeType is "hueRotate".
+func (me TxsdFeColorMatrixTypeType) IsHueRotate() bool { return me == "hueRotate" }
+
+//	This convenience method just performs a simple type conversion to TxsdFeColorMatrixTypeType's alias type xsdt.String.
+func (me TxsdFeColorMatrixTypeType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TxsdFeColorMatrixTypeType is "matrix".
+func (me TxsdFeColorMatrixTypeType) IsMatrix() bool { return me == "matrix" }
+
+//	Since TxsdFeColorMatrixTypeType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdFeColorMatrixTypeType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdFeColorMatrixTypeType is "saturate".
+func (me TxsdFeColorMatrixTypeType) IsSaturate() bool { return me == "saturate" }
+
+//	Since TxsdFeColorMatrixTypeType is just a simple String type, this merely returns the current string value.
+func (me TxsdFeColorMatrixTypeType) String() string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_Type_TxsdFeColorMatrixTypeType_Matrix struct {
+	Type TxsdFeColorMatrixTypeType `xml:"http://www.w3.org/2000/svg type,attr"`
+}
+
+//	Returns the default value for Type -- "matrix"
+func (me XsdGoPkgHasAttr_Type_TxsdFeColorMatrixTypeType_Matrix) TypeDefault() TxsdFeColorMatrixTypeType {
+	return TxsdFeColorMatrixTypeType("matrix")
+}
+
+type TfeColorMatrixType struct {
+	XsdGoPkgHasAttr_Values_XsdtString_
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAttr_Type_TxsdFeColorMatrixTypeType_Matrix
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
+
+	XsdGoPkgHasAtts_StdAttrs
+}
+
+//	If the WalkHandlers.TfeColorMatrixType function is not nil (ie. was set by outside code), calls it with this TfeColorMatrixType instance as the single argument. Then calls the Walk() method on 2/6 embed(s) and 0/0 field(s) belonging to this TfeColorMatrixType instance.
+func (me *TfeColorMatrixType) Walk() {
+	if fn := WalkHandlers.TfeColorMatrixType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+}
+
+type XsdGoPkgHasElems_FeColorMatrix struct {
+	FeColorMatrixs []*TfeColorMatrixType `xml:"http://www.w3.org/2000/svg feColorMatrix"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_FeColorMatrix function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeColorMatrix instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeColorMatrix instance.
+func (me *XsdGoPkgHasElems_FeColorMatrix) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeColorMatrix; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeColorMatrixs {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_DiffuseConstant_XsdtDouble_ struct {
+	DiffuseConstant xsdt.Double `xml:"http://www.w3.org/2000/svg diffuseConstant,attr"`
+}
+
+type XsdGoPkgHasAttr_Azimuth_XsdtDouble_ struct {
+	Azimuth xsdt.Double `xml:"http://www.w3.org/2000/svg azimuth,attr"`
+}
+
+type XsdGoPkgHasAttr_Elevation_XsdtDouble_ struct {
+	Elevation xsdt.Double `xml:"http://www.w3.org/2000/svg elevation,attr"`
+}
+
+type TfeDistantLightType struct {
+	XsdGoPkgHasAttr_Elevation_XsdtDouble_
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAttr_Azimuth_XsdtDouble_
+
+	XsdGoPkgHasAtts_StdAttrs
+}
+
+//	If the WalkHandlers.TfeDistantLightType function is not nil (ie. was set by outside code), calls it with this TfeDistantLightType instance as the single argument. Then calls the Walk() method on 2/5 embed(s) and 0/0 field(s) belonging to this TfeDistantLightType instance.
+func (me *TfeDistantLightType) Walk() {
+	if fn := WalkHandlers.TfeDistantLightType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+}
+
+type XsdGoPkgHasElem_FeDistantLight struct {
+	FeDistantLight *TfeDistantLightType `xml:"http://www.w3.org/2000/svg feDistantLight"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_FeDistantLight function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeDistantLight instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeDistantLight instance.
+func (me *XsdGoPkgHasElem_FeDistantLight) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeDistantLight; fn != nil {
+		fn(me)
+	}
+	me.FeDistantLight.Walk()
+}
+
+type XsdGoPkgHasAttr_SurfaceScale_XsdtDouble_ struct {
+	SurfaceScale xsdt.Double `xml:"http://www.w3.org/2000/svg surfaceScale,attr"`
+}
+
+type XsdGoPkgHasAttr_LimitingConeAngle_XsdtDouble_ struct {
+	LimitingConeAngle xsdt.Double `xml:"http://www.w3.org/2000/svg limitingConeAngle,attr"`
+}
+
+type XsdGoPkgHasAttr_PointsAtZ_XsdtDouble_ struct {
+	PointsAtZ xsdt.Double `xml:"http://www.w3.org/2000/svg pointsAtZ,attr"`
+}
+
+type XsdGoPkgHasAttr_SpecularExponent_XsdtDouble_ struct {
+	SpecularExponent xsdt.Double `xml:"http://www.w3.org/2000/svg specularExponent,attr"`
+}
+
+type XsdGoPkgHasAttr_Y_XsdtDouble_ struct {
+	Y xsdt.Double `xml:"http://www.w3.org/2000/svg y,attr"`
+}
+
+type XsdGoPkgHasAttr_PointsAtY_XsdtDouble_ struct {
+	PointsAtY xsdt.Double `xml:"http://www.w3.org/2000/svg pointsAtY,attr"`
+}
+
+type XsdGoPkgHasAttr_PointsAtX_XsdtDouble_ struct {
+	PointsAtX xsdt.Double `xml:"http://www.w3.org/2000/svg pointsAtX,attr"`
+}
+
+type XsdGoPkgHasAttr_Z_XsdtDouble_ struct {
+	Z xsdt.Double `xml:"http://www.w3.org/2000/svg z,attr"`
+}
+
+type XsdGoPkgHasAttr_X_XsdtDouble_ struct {
+	X xsdt.Double `xml:"http://www.w3.org/2000/svg x,attr"`
+}
+
+type TfeSpotLightType struct {
+	XsdGoPkgHasAttr_LimitingConeAngle_XsdtDouble_
+
+	XsdGoPkgHasAttr_PointsAtZ_XsdtDouble_
+
+	XsdGoPkgHasAttr_SpecularExponent_XsdtDouble_
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAttr_Y_XsdtDouble_
+
+	XsdGoPkgHasAttr_PointsAtY_XsdtDouble_
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_PointsAtX_XsdtDouble_
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAttr_Z_XsdtDouble_
+
+	XsdGoPkgHasAttr_X_XsdtDouble_
+}
+
+//	If the WalkHandlers.TfeSpotLightType function is not nil (ie. was set by outside code), calls it with this TfeSpotLightType instance as the single argument. Then calls the Walk() method on 2/11 embed(s) and 0/0 field(s) belonging to this TfeSpotLightType instance.
+func (me *TfeSpotLightType) Walk() {
+	if fn := WalkHandlers.TfeSpotLightType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+}
+
+type XsdGoPkgHasElem_FeSpotLight struct {
+	FeSpotLight *TfeSpotLightType `xml:"http://www.w3.org/2000/svg feSpotLight"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_FeSpotLight function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeSpotLight instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeSpotLight instance.
+func (me *XsdGoPkgHasElem_FeSpotLight) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeSpotLight; fn != nil {
+		fn(me)
+	}
+	me.FeSpotLight.Walk()
+}
+
+type TfePointLightType struct {
+	XsdGoPkgHasAttr_Z_XsdtDouble_
+
+	XsdGoPkgHasAttr_X_XsdtDouble_
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_Y_XsdtDouble_
 
 	XsdGoPkgHasElems_Animate
 
 	XsdGoPkgHasElems_Set
+}
 
-	XsdGoPkgHasAttr_Dx_TLengthType_
+//	If the WalkHandlers.TfePointLightType function is not nil (ie. was set by outside code), calls it with this TfePointLightType instance as the single argument. Then calls the Walk() method on 2/6 embed(s) and 0/0 field(s) belonging to this TfePointLightType instance.
+func (me *TfePointLightType) Walk() {
+	if fn := WalkHandlers.TfePointLightType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+}
+
+type XsdGoPkgHasElem_FePointLight struct {
+	FePointLight *TfePointLightType `xml:"http://www.w3.org/2000/svg fePointLight"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_FePointLight function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FePointLight instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FePointLight instance.
+func (me *XsdGoPkgHasElem_FePointLight) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FePointLight; fn != nil {
+		fn(me)
+	}
+	me.FePointLight.Walk()
+}
+
+type TfeDiffuseLightingType struct {
+	XsdGoPkgHasAttr_SurfaceScale_XsdtDouble_
+
+	XsdGoPkgHasElem_FeSpotLight
+
+	XsdGoPkgHasAtts_PresentationAttributesLightingEffects
+
+	XsdGoPkgHasElem_FePointLight
+
+	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
+
+	XsdGoPkgHasAttr_DiffuseConstant_XsdtDouble_
+
+	XsdGoPkgHasElem_FeDistantLight
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+}
+
+//	If the WalkHandlers.TfeDiffuseLightingType function is not nil (ie. was set by outside code), calls it with this TfeDiffuseLightingType instance as the single argument. Then calls the Walk() method on 6/13 embed(s) and 0/0 field(s) belonging to this TfeDiffuseLightingType instance.
+func (me *TfeDiffuseLightingType) Walk() {
+	if fn := WalkHandlers.TfeDiffuseLightingType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElem_FeDistantLight.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElem_FeSpotLight.Walk()
+	me.XsdGoPkgHasElem_FePointLight.Walk()
+}
+
+type XsdGoPkgHasElems_FeDiffuseLighting struct {
+	FeDiffuseLightings []*TfeDiffuseLightingType `xml:"http://www.w3.org/2000/svg feDiffuseLighting"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_FeDiffuseLighting function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeDiffuseLighting instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeDiffuseLighting instance.
+func (me *XsdGoPkgHasElems_FeDiffuseLighting) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeDiffuseLighting; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeDiffuseLightings {
+		x.Walk()
+	}
+}
+
+type TfeTileType struct {
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
+
+	XsdGoPkgHasAtts_StdAttrs
+}
+
+//	If the WalkHandlers.TfeTileType function is not nil (ie. was set by outside code), calls it with this TfeTileType instance as the single argument. Then calls the Walk() method on 2/4 embed(s) and 0/0 field(s) belonging to this TfeTileType instance.
+func (me *TfeTileType) Walk() {
+	if fn := WalkHandlers.TfeTileType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+}
+
+type XsdGoPkgHasElems_FeTile struct {
+	FeTiles []*TfeTileType `xml:"http://www.w3.org/2000/svg feTile"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_FeTile function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeTile instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeTile instance.
+func (me *XsdGoPkgHasElems_FeTile) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeTile; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeTiles {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_FilterRes_XsdtString_ struct {
+	FilterRes xsdt.String `xml:"http://www.w3.org/2000/svg filterRes,attr"`
+}
+
+type XsdGoPkgHasAttr_SpecularConstant_XsdtDouble_ struct {
+	SpecularConstant xsdt.Double `xml:"http://www.w3.org/2000/svg specularConstant,attr"`
+}
+
+type TfeSpecularLightingType struct {
+	XsdGoPkgHasAtts_PresentationAttributesLightingEffects
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_SpecularConstant_XsdtDouble_
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAttr_SurfaceScale_XsdtDouble_
+
+	XsdGoPkgHasElem_FeSpotLight
+
+	XsdGoPkgHasAttr_SpecularExponent_XsdtDouble_
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasElem_FeDistantLight
+
+	XsdGoPkgHasElem_FePointLight
+
+	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
+}
+
+//	If the WalkHandlers.TfeSpecularLightingType function is not nil (ie. was set by outside code), calls it with this TfeSpecularLightingType instance as the single argument. Then calls the Walk() method on 6/14 embed(s) and 0/0 field(s) belonging to this TfeSpecularLightingType instance.
+func (me *TfeSpecularLightingType) Walk() {
+	if fn := WalkHandlers.TfeSpecularLightingType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElem_FeDistantLight.Walk()
+	me.XsdGoPkgHasElem_FePointLight.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElem_FeSpotLight.Walk()
+}
+
+type XsdGoPkgHasElems_FeSpecularLighting struct {
+	FeSpecularLightings []*TfeSpecularLightingType `xml:"http://www.w3.org/2000/svg feSpecularLighting"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_FeSpecularLighting function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeSpecularLighting instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeSpecularLighting instance.
+func (me *XsdGoPkgHasElems_FeSpecularLighting) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeSpecularLighting; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeSpecularLightings {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_NumOctaves_XsdtInteger_ struct {
+	NumOctaves xsdt.Integer `xml:"http://www.w3.org/2000/svg numOctaves,attr"`
+}
+
+type TxsdFeTurbulenceTypeStitchTiles xsdt.String
+
+//	This convenience method just performs a simple type conversion to TxsdFeTurbulenceTypeStitchTiles's alias type xsdt.String.
+func (me TxsdFeTurbulenceTypeStitchTiles) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TxsdFeTurbulenceTypeStitchTiles is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdFeTurbulenceTypeStitchTiles) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Since TxsdFeTurbulenceTypeStitchTiles is just a simple String type, this merely returns the current string value.
+func (me TxsdFeTurbulenceTypeStitchTiles) String() string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdFeTurbulenceTypeStitchTiles is "noStitch".
+func (me TxsdFeTurbulenceTypeStitchTiles) IsNoStitch() bool { return me == "noStitch" }
+
+//	Returns true if the value of this enumerated TxsdFeTurbulenceTypeStitchTiles is "stitch".
+func (me TxsdFeTurbulenceTypeStitchTiles) IsStitch() bool { return me == "stitch" }
+
+type XsdGoPkgHasAttr_StitchTiles_TxsdFeTurbulenceTypeStitchTiles_NoStitch struct {
+	StitchTiles TxsdFeTurbulenceTypeStitchTiles `xml:"http://www.w3.org/2000/svg stitchTiles,attr"`
+}
+
+//	Returns the default value for StitchTiles -- "noStitch"
+func (me XsdGoPkgHasAttr_StitchTiles_TxsdFeTurbulenceTypeStitchTiles_NoStitch) StitchTilesDefault() TxsdFeTurbulenceTypeStitchTiles {
+	return TxsdFeTurbulenceTypeStitchTiles("noStitch")
+}
+
+type TxsdFeTurbulenceTypeType xsdt.String
+
+//	Since TxsdFeTurbulenceTypeType is just a simple String type, this merely returns the current string value.
+func (me TxsdFeTurbulenceTypeType) String() string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdFeTurbulenceTypeType is "turbulence".
+func (me TxsdFeTurbulenceTypeType) IsTurbulence() bool { return me == "turbulence" }
+
+//	Returns true if the value of this enumerated TxsdFeTurbulenceTypeType is "fractalNoise".
+func (me TxsdFeTurbulenceTypeType) IsFractalNoise() bool { return me == "fractalNoise" }
+
+//	This convenience method just performs a simple type conversion to TxsdFeTurbulenceTypeType's alias type xsdt.String.
+func (me TxsdFeTurbulenceTypeType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TxsdFeTurbulenceTypeType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdFeTurbulenceTypeType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_Type_TxsdFeTurbulenceTypeType_Turbulence struct {
+	Type TxsdFeTurbulenceTypeType `xml:"http://www.w3.org/2000/svg type,attr"`
+}
+
+//	Returns the default value for Type -- "turbulence"
+func (me XsdGoPkgHasAttr_Type_TxsdFeTurbulenceTypeType_Turbulence) TypeDefault() TxsdFeTurbulenceTypeType {
+	return TxsdFeTurbulenceTypeType("turbulence")
+}
+
+type XsdGoPkgHasAttr_Seed_XsdtDouble_ struct {
+	Seed xsdt.Double `xml:"http://www.w3.org/2000/svg seed,attr"`
+}
+
+type XsdGoPkgHasAttr_BaseFrequency_XsdtString_ struct {
+	BaseFrequency xsdt.String `xml:"http://www.w3.org/2000/svg baseFrequency,attr"`
+}
+
+type TfeTurbulenceType struct {
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAttr_NumOctaves_XsdtInteger_
+
+	XsdGoPkgHasAtts_FilterPrimitiveAttributes
+
+	XsdGoPkgHasAttr_StitchTiles_TxsdFeTurbulenceTypeStitchTiles_NoStitch
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAttr_Type_TxsdFeTurbulenceTypeType_Turbulence
+
+	XsdGoPkgHasAttr_Seed_XsdtDouble_
+
+	XsdGoPkgHasAttr_BaseFrequency_XsdtString_
+}
+
+//	If the WalkHandlers.TfeTurbulenceType function is not nil (ie. was set by outside code), calls it with this TfeTurbulenceType instance as the single argument. Then calls the Walk() method on 2/9 embed(s) and 0/0 field(s) belonging to this TfeTurbulenceType instance.
+func (me *TfeTurbulenceType) Walk() {
+	if fn := WalkHandlers.TfeTurbulenceType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+}
+
+type XsdGoPkgHasElems_FeTurbulence struct {
+	FeTurbulences []*TfeTurbulenceType `xml:"http://www.w3.org/2000/svg feTurbulence"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_FeTurbulence function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeTurbulence instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeTurbulence instance.
+func (me *XsdGoPkgHasElems_FeTurbulence) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeTurbulence; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeTurbulences {
+		x.Walk()
+	}
+}
+
+type TxsdFeBlendTypeMode xsdt.String
+
+//	Returns true if the value of this enumerated TxsdFeBlendTypeMode is "screen".
+func (me TxsdFeBlendTypeMode) IsScreen() bool { return me == "screen" }
+
+//	Returns true if the value of this enumerated TxsdFeBlendTypeMode is "darken".
+func (me TxsdFeBlendTypeMode) IsDarken() bool { return me == "darken" }
+
+//	Since TxsdFeBlendTypeMode is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdFeBlendTypeMode) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TxsdFeBlendTypeMode is just a simple String type, this merely returns the current string value.
+func (me TxsdFeBlendTypeMode) String() string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdFeBlendTypeMode is "normal".
+func (me TxsdFeBlendTypeMode) IsNormal() bool { return me == "normal" }
+
+//	Returns true if the value of this enumerated TxsdFeBlendTypeMode is "lighten".
+func (me TxsdFeBlendTypeMode) IsLighten() bool { return me == "lighten" }
+
+//	This convenience method just performs a simple type conversion to TxsdFeBlendTypeMode's alias type xsdt.String.
+func (me TxsdFeBlendTypeMode) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TxsdFeBlendTypeMode is "multiply".
+func (me TxsdFeBlendTypeMode) IsMultiply() bool { return me == "multiply" }
+
+type XsdGoPkgHasAttr_Mode_TxsdFeBlendTypeMode_Normal struct {
+	Mode TxsdFeBlendTypeMode `xml:"http://www.w3.org/2000/svg mode,attr"`
+}
+
+//	Returns the default value for Mode -- "normal"
+func (me XsdGoPkgHasAttr_Mode_TxsdFeBlendTypeMode_Normal) ModeDefault() TxsdFeBlendTypeMode {
+	return TxsdFeBlendTypeMode("normal")
+}
+
+type TfeBlendType struct {
+	XsdGoPkgHasElems_Set
 
 	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
 
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAttr_Mode_TxsdFeBlendTypeMode_Normal
+
+	XsdGoPkgHasAttr_In2_XsdtString_
 }
 
-//	If the WalkHandlers.TfeOffsetType function is not nil (ie. was set by outside code), calls it with this TfeOffsetType instance as the single argument. Then calls the Walk() method on 2/6 embed(s) and 0/0 field(s) belonging to this TfeOffsetType instance.
-func (me *TfeOffsetType) Walk ()  { 
-	if fn := WalkHandlers.TfeOffsetType; fn != nil { fn(me) }
+//	If the WalkHandlers.TfeBlendType function is not nil (ie. was set by outside code), calls it with this TfeBlendType instance as the single argument. Then calls the Walk() method on 2/6 embed(s) and 0/0 field(s) belonging to this TfeBlendType instance.
+func (me *TfeBlendType) Walk() {
+	if fn := WalkHandlers.TfeBlendType; fn != nil {
+		fn(me)
+	}
 	me.XsdGoPkgHasElems_Animate.Walk()
 	me.XsdGoPkgHasElems_Set.Walk()
- }
-
-type XsdGoPkgHasElems_FeOffset struct {
-	FeOffsets []*TfeOffsetType `xml:"http://www.w3.org/2000/svg feOffset"`
-
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_FeOffset function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeOffset instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeOffset instance.
-func (me *XsdGoPkgHasElems_FeOffset) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeOffset; fn != nil { fn(me) }
-	for _, x := range me.FeOffsets { x.Walk() }
- }
+type XsdGoPkgHasElems_FeBlend struct {
+	FeBlends []*TfeBlendType `xml:"http://www.w3.org/2000/svg feBlend"`
+}
 
-type TfilterType struct {
-	XsdGoPkgHasAtts_PresentationAttributesAll
+//	If the WalkHandlers.XsdGoPkgHasElems_FeBlend function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeBlend instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeBlend instance.
+func (me *XsdGoPkgHasElems_FeBlend) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeBlend; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeBlends {
+		x.Walk()
+	}
+}
 
-	XsdGoPkgHasElems_FeImage
-
-	XsdGoPkgHasElems_FeTile
-
-	XsdGoPkgHasAttr_Width_TLengthType_
-
-	XsdGoPkgHasElems_FeColorMatrix
-
-	XsdGoPkgHasElems_FeBlend
-
-	XsdGoPkgHasElems_FeTurbulence
+type TfeFloodType struct {
+	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
 
 	XsdGoPkgHasElems_Set
 
-	XsdGoPkgHasAtts_XlinkRefAttrs
+	XsdGoPkgHasAttr_Class_TClassListType_
 
-	XsdGoPkgHasAttr_Height_TLengthType_
+	XsdGoPkgHasAtts_PresentationAttributesFeFlood
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAtts_StdAttrs
+}
+
+//	If the WalkHandlers.TfeFloodType function is not nil (ie. was set by outside code), calls it with this TfeFloodType instance as the single argument. Then calls the Walk() method on 3/8 embed(s) and 0/0 field(s) belonging to this TfeFloodType instance.
+func (me *TfeFloodType) Walk() {
+	if fn := WalkHandlers.TfeFloodType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+}
+
+type XsdGoPkgHasElems_FeFlood struct {
+	FeFloods []*TfeFloodType `xml:"http://www.w3.org/2000/svg feFlood"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_FeFlood function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeFlood instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeFlood instance.
+func (me *XsdGoPkgHasElems_FeFlood) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeFlood; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeFloods {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_K2_XsdtDouble_ struct {
+	K2 xsdt.Double `xml:"http://www.w3.org/2000/svg k2,attr"`
+}
+
+type XsdGoPkgHasAttr_K4_XsdtDouble_ struct {
+	K4 xsdt.Double `xml:"http://www.w3.org/2000/svg k4,attr"`
+}
+
+type XsdGoPkgHasAttr_K1_XsdtDouble_ struct {
+	K1 xsdt.Double `xml:"http://www.w3.org/2000/svg k1,attr"`
+}
+
+type XsdGoPkgHasAttr_K3_XsdtDouble_ struct {
+	K3 xsdt.Double `xml:"http://www.w3.org/2000/svg k3,attr"`
+}
+
+type TxsdFeCompositeTypeOperator xsdt.String
+
+//	Returns true if the value of this enumerated TxsdFeCompositeTypeOperator is "in".
+func (me TxsdFeCompositeTypeOperator) IsIn() bool { return me == "in" }
+
+//	Since TxsdFeCompositeTypeOperator is just a simple String type, this merely returns the current string value.
+func (me TxsdFeCompositeTypeOperator) String() string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdFeCompositeTypeOperator is "over".
+func (me TxsdFeCompositeTypeOperator) IsOver() bool { return me == "over" }
+
+//	This convenience method just performs a simple type conversion to TxsdFeCompositeTypeOperator's alias type xsdt.String.
+func (me TxsdFeCompositeTypeOperator) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TxsdFeCompositeTypeOperator is "atop".
+func (me TxsdFeCompositeTypeOperator) IsAtop() bool { return me == "atop" }
+
+//	Returns true if the value of this enumerated TxsdFeCompositeTypeOperator is "arithmetic".
+func (me TxsdFeCompositeTypeOperator) IsArithmetic() bool { return me == "arithmetic" }
+
+//	Returns true if the value of this enumerated TxsdFeCompositeTypeOperator is "out".
+func (me TxsdFeCompositeTypeOperator) IsOut() bool { return me == "out" }
+
+//	Returns true if the value of this enumerated TxsdFeCompositeTypeOperator is "xor".
+func (me TxsdFeCompositeTypeOperator) IsXor() bool { return me == "xor" }
+
+//	Since TxsdFeCompositeTypeOperator is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdFeCompositeTypeOperator) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_Operator_TxsdFeCompositeTypeOperator_Over struct {
+	Operator TxsdFeCompositeTypeOperator `xml:"http://www.w3.org/2000/svg operator,attr"`
+}
+
+//	Returns the default value for Operator -- "over"
+func (me XsdGoPkgHasAttr_Operator_TxsdFeCompositeTypeOperator_Over) OperatorDefault() TxsdFeCompositeTypeOperator {
+	return TxsdFeCompositeTypeOperator("over")
+}
+
+type TfeCompositeType struct {
+	XsdGoPkgHasAtts_FilterPrimitiveAttributesWithIn
+
+	XsdGoPkgHasAttr_K2_XsdtDouble_
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_In2_XsdtString_
+
+	XsdGoPkgHasAttr_K4_XsdtDouble_
+
+	XsdGoPkgHasAttr_K1_XsdtDouble_
+
+	XsdGoPkgHasAttr_K3_XsdtDouble_
+
+	XsdGoPkgHasAttr_Operator_TxsdFeCompositeTypeOperator_Over
+}
+
+//	If the WalkHandlers.TfeCompositeType function is not nil (ie. was set by outside code), calls it with this TfeCompositeType instance as the single argument. Then calls the Walk() method on 2/10 embed(s) and 0/0 field(s) belonging to this TfeCompositeType instance.
+func (me *TfeCompositeType) Walk() {
+	if fn := WalkHandlers.TfeCompositeType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+}
+
+type XsdGoPkgHasElems_FeComposite struct {
+	FeComposites []*TfeCompositeType `xml:"http://www.w3.org/2000/svg feComposite"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_FeComposite function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeComposite instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeComposite instance.
+func (me *XsdGoPkgHasElems_FeComposite) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeComposite; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeComposites {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_FilterUnits_TxsdFilterTypeFilterUnits_ struct {
+	FilterUnits TxsdLinearGradientTypeGradientUnits `xml:"http://www.w3.org/2000/svg filterUnits,attr"`
+}
+
+type TfilterType struct {
+	XsdGoPkgHasElems_FeImage
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
 
 	XsdGoPkgHasElems_FeMorphology
 
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasElems_FeMerge
-
-	XsdGoPkgHasElems_FeSpecularLighting
-
-	XsdGoPkgHasElems_FeGaussianBlur
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasElems_FeDisplacementMap
-
-	XsdGoPkgHasElems_FeConvolveMatrix
-
-	XsdGoPkgHasElems_FeOffset
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasAttr_Y_TCoordinateType_
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasAttr_X_TCoordinateType_
-
-	XsdGoPkgHasElems_FeFlood
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAttr_FilterUnits_TxsdFilterTypeFilterUnits_
-
-	xlink.XsdGoPkgHasAttr_Href
-
-	XsdGoPkgHasElems_FeDiffuseLighting
+	XsdGoPkgHasAttr_Width_TLengthType_
 
 	XsdGoPkgHasAttr_PrimitiveUnits_TxsdFilterTypePrimitiveUnits_
 
-	XsdGoPkgHasElems_FeComposite
+	XsdGoPkgHasElems_FeComponentTransfer
+
+	XsdGoPkgHasAtts_XlinkRefAttrs
+
+	XsdGoPkgHasElems_FeConvolveMatrix
+
+	XsdGoPkgHasAtts_PresentationAttributesAll
+
+	XsdGoPkgHasElems_FeMerge
+
+	XsdGoPkgHasAttr_X_TCoordinateType_
+
+	XsdGoPkgHasElems_FeOffset
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasElems_FeColorMatrix
+
+	XsdGoPkgHasElems_FeDiffuseLighting
+
+	XsdGoPkgHasAttr_Height_TLengthType_
+
+	XsdGoPkgHasElems_FeTile
+
+	XsdGoPkgHasElems_Animate
 
 	XsdGoPkgHasAttr_FilterRes_XsdtString_
 
+	XsdGoPkgHasElems_FeSpecularLighting
+
+	XsdGoPkgHasElems_FeTurbulence
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasElems_FeBlend
+
+	XsdGoPkgHasElems_FeFlood
+
+	XsdGoPkgHasElems_FeComposite
+
+	XsdGoPkgHasAttr_FilterUnits_TxsdFilterTypeFilterUnits_
+
+	XsdGoPkgHasElems_Set
+
+	xlink.XsdGoPkgHasAttr_Href
+
 	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
 
-	XsdGoPkgHasElems_FeComponentTransfer
+	XsdGoPkgHasElems_FeGaussianBlur
 
+	XsdGoPkgHasElems_FeDisplacementMap
+
+	XsdGoPkgHasAttr_Y_TCoordinateType_
+
+	XsdGoPkgHasGroup_DescTitleMetadata
 }
 
 //	If the WalkHandlers.TfilterType function is not nil (ie. was set by outside code), calls it with this TfilterType instance as the single argument. Then calls the Walk() method on 19/34 embed(s) and 0/0 field(s) belonging to this TfilterType instance.
-func (me *TfilterType) Walk ()  { 
-	if fn := WalkHandlers.TfilterType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_FeComponentTransfer.Walk()
-	me.XsdGoPkgHasElems_FeImage.Walk()
-	me.XsdGoPkgHasElems_FeTile.Walk()
-	me.XsdGoPkgHasElems_FeColorMatrix.Walk()
-	me.XsdGoPkgHasElems_FeBlend.Walk()
-	me.XsdGoPkgHasElems_FeTurbulence.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
+func (me *TfilterType) Walk() {
+	if fn := WalkHandlers.TfilterType; fn != nil {
+		fn(me)
+	}
 	me.XsdGoPkgHasElems_FeMorphology.Walk()
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+	me.XsdGoPkgHasElems_FeComponentTransfer.Walk()
+	me.XsdGoPkgHasElems_FeConvolveMatrix.Walk()
 	me.XsdGoPkgHasElems_FeMerge.Walk()
+	me.XsdGoPkgHasElems_FeOffset.Walk()
+	me.XsdGoPkgHasElems_FeColorMatrix.Walk()
+	me.XsdGoPkgHasElems_FeDiffuseLighting.Walk()
+	me.XsdGoPkgHasElems_FeTile.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
 	me.XsdGoPkgHasElems_FeSpecularLighting.Walk()
+	me.XsdGoPkgHasElems_FeTurbulence.Walk()
+	me.XsdGoPkgHasElems_FeBlend.Walk()
+	me.XsdGoPkgHasElems_FeFlood.Walk()
+	me.XsdGoPkgHasElems_FeComposite.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
 	me.XsdGoPkgHasElems_FeGaussianBlur.Walk()
 	me.XsdGoPkgHasElems_FeDisplacementMap.Walk()
-	me.XsdGoPkgHasElems_FeConvolveMatrix.Walk()
-	me.XsdGoPkgHasElems_FeOffset.Walk()
-	me.XsdGoPkgHasElems_FeFlood.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_FeDiffuseLighting.Walk()
-	me.XsdGoPkgHasElems_FeComposite.Walk()
- }
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+	me.XsdGoPkgHasElems_FeImage.Walk()
+}
 
 type XsdGoPkgHasElems_Filter struct {
 	Filters []*TfilterType `xml:"http://www.w3.org/2000/svg filter"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Filter function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Filter instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Filter instance.
-func (me *XsdGoPkgHasElems_Filter) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Filter; fn != nil { fn(me) }
-	for _, x := range me.Filters { x.Walk() }
- }
-
-type TcursorType struct {
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAtts_XlinkRefAttrs
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	xlink.XsdGoPkgHasAttr_Href
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAttr_Y_TCoordinateType_
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasAttr_X_TCoordinateType_
-
-}
-
-//	If the WalkHandlers.TcursorType function is not nil (ie. was set by outside code), calls it with this TcursorType instance as the single argument. Then calls the Walk() method on 1/8 embed(s) and 0/0 field(s) belonging to this TcursorType instance.
-func (me *TcursorType) Walk ()  { 
-	if fn := WalkHandlers.TcursorType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
- }
-
-type XsdGoPkgHasElems_Cursor struct {
-	Cursors []*TcursorType `xml:"http://www.w3.org/2000/svg cursor"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Cursor function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Cursor instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Cursor instance.
-func (me *XsdGoPkgHasElems_Cursor) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Cursor; fn != nil { fn(me) }
-	for _, x := range me.Cursors { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_Fy_TCoordinateType_ struct {
-	Fy TCoordinateType `xml:"http://www.w3.org/2000/svg fy,attr"`
-
-}
-
-type XsdGoPkgHasAttr_GradientUnits_TxsdRadialGradientTypeGradientUnits_ struct {
-	GradientUnits TxsdLinearGradientTypeGradientUnits `xml:"http://www.w3.org/2000/svg gradientUnits,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Fx_TCoordinateType_ struct {
-	Fx TCoordinateType `xml:"http://www.w3.org/2000/svg fx,attr"`
-
-}
-
-type XsdGoPkgHasAttr_R_TLengthType_ struct {
-	R TLengthType `xml:"http://www.w3.org/2000/svg r,attr"`
-
-}
-
-type XsdGoPkgHasAttr_SpreadMethod_TxsdRadialGradientTypeSpreadMethod_Pad struct {
-	SpreadMethod TxsdLinearGradientTypeSpreadMethod `xml:"http://www.w3.org/2000/svg spreadMethod,attr"`
-
-}
-
-//	Returns the default value for SpreadMethod -- "pad"
-func (me XsdGoPkgHasAttr_SpreadMethod_TxsdRadialGradientTypeSpreadMethod_Pad) SpreadMethodDefault () TxsdLinearGradientTypeSpreadMethod { return TxsdLinearGradientTypeSpreadMethod("pad") }
-
-type TradialGradientType struct {
-	XsdGoPkgHasAttr_Fx_TCoordinateType_
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAttr_R_TLengthType_
-
-	XsdGoPkgHasAttr_Cx_TCoordinateType_
-
-	XsdGoPkgHasAtts_XlinkRefAttrs
-
-	XsdGoPkgHasElems_Stop
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAttr_SpreadMethod_TxsdRadialGradientTypeSpreadMethod_Pad
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAttr_Cy_TCoordinateType_
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasAttr_Fy_TCoordinateType_
-
-	XsdGoPkgHasAttr_GradientUnits_TxsdRadialGradientTypeGradientUnits_
-
-	xlink.XsdGoPkgHasAttr_Href
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasAttr_GradientTransform_TransformListType_
-
-}
-
-//	If the WalkHandlers.TradialGradientType function is not nil (ie. was set by outside code), calls it with this TradialGradientType instance as the single argument. Then calls the Walk() method on 5/17 embed(s) and 0/0 field(s) belonging to this TradialGradientType instance.
-func (me *TradialGradientType) Walk ()  { 
-	if fn := WalkHandlers.TradialGradientType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Stop.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
- }
-
-type XsdGoPkgHasElems_RadialGradient struct {
-	RadialGradients []*TradialGradientType `xml:"http://www.w3.org/2000/svg radialGradient"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_RadialGradient function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_RadialGradient instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_RadialGradient instance.
-func (me *XsdGoPkgHasElems_RadialGradient) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_RadialGradient; fn != nil { fn(me) }
-	for _, x := range me.RadialGradients { x.Walk() }
- }
-
-type TlineType struct {
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasElems_AnimateMotion
-
-	XsdGoPkgHasAttr_X2_TCoordinateType_
-
-	XsdGoPkgHasAttr_Y1_TCoordinateType_
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasAtts_PresentationAttributesColor
-
-	XsdGoPkgHasAtts_PresentationAttributesMarkers
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasAttr_Y2_TCoordinateType_
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasAttr_Transform_TransformListType_
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasAttr_X1_TCoordinateType_
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
-
-}
-
-//	If the WalkHandlers.TlineType function is not nil (ie. was set by outside code), calls it with this TlineType instance as the single argument. Then calls the Walk() method on 6/22 embed(s) and 0/0 field(s) belonging to this TlineType instance.
-func (me *TlineType) Walk ()  { 
-	if fn := WalkHandlers.TlineType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
- }
-
-type XsdGoPkgHasElems_Line struct {
-	Lines []*TlineType `xml:"http://www.w3.org/2000/svg line"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Line function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Line instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Line instance.
-func (me *XsdGoPkgHasElems_Line) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Line; fn != nil { fn(me) }
-	for _, x := range me.Lines { x.Walk() }
- }
-
-type TpolygonType struct {
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAtts_PresentationAttributesColor
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAtts_PresentationAttributesMarkers
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasAttr_Points_TPointsType_
-
-	XsdGoPkgHasAttr_Transform_TransformListType_
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasElems_AnimateMotion
-
-}
-
-//	If the WalkHandlers.TpolygonType function is not nil (ie. was set by outside code), calls it with this TpolygonType instance as the single argument. Then calls the Walk() method on 6/19 embed(s) and 0/0 field(s) belonging to this TpolygonType instance.
-func (me *TpolygonType) Walk ()  { 
-	if fn := WalkHandlers.TpolygonType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
- }
-
-type XsdGoPkgHasElems_Polygon struct {
-	Polygons []*TpolygonType `xml:"http://www.w3.org/2000/svg polygon"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Polygon function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Polygon instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Polygon instance.
-func (me *XsdGoPkgHasElems_Polygon) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Polygon; fn != nil { fn(me) }
-	for _, x := range me.Polygons { x.Walk() }
- }
-
-type TxsdViewTypeZoomAndPan xsdt.String
-
-//	Returns true if the value of this enumerated TxsdViewTypeZoomAndPan is "magnify".
-func (me TxsdViewTypeZoomAndPan) IsMagnify () bool { return me == "magnify" }
-
-//	This convenience method just performs a simple type conversion to TxsdViewTypeZoomAndPan's alias type xsdt.String.
-func (me TxsdViewTypeZoomAndPan) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdViewTypeZoomAndPan is "disable".
-func (me TxsdViewTypeZoomAndPan) IsDisable () bool { return me == "disable" }
-
-//	Since TxsdViewTypeZoomAndPan is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdViewTypeZoomAndPan) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TxsdViewTypeZoomAndPan is just a simple String type, this merely returns the current string value.
-func (me TxsdViewTypeZoomAndPan) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdViewTypeZoomAndPan is "zoom".
-func (me TxsdViewTypeZoomAndPan) IsZoom () bool { return me == "zoom" }
-
-type XsdGoPkgHasAttr_ZoomAndPan_TxsdViewTypeZoomAndPan_Magnify struct {
-	ZoomAndPan TxsdViewTypeZoomAndPan `xml:"http://www.w3.org/2000/svg zoomAndPan,attr"`
-
-}
-
-//	Returns the default value for ZoomAndPan -- "magnify"
-func (me XsdGoPkgHasAttr_ZoomAndPan_TxsdViewTypeZoomAndPan_Magnify) ZoomAndPanDefault () TxsdViewTypeZoomAndPan { return TxsdViewTypeZoomAndPan("magnify") }
-
-type XsdGoPkgHasAttr_ViewTarget_XsdtString_ struct {
-	ViewTarget xsdt.String `xml:"http://www.w3.org/2000/svg viewTarget,attr"`
-
-}
-
-//	'viewBox' attribute specification
-type TViewBoxSpecType xsdt.String
-
-//	This convenience method just performs a simple type conversion to TViewBoxSpecType's alias type xsdt.String.
-func (me TViewBoxSpecType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TViewBoxSpecType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TViewBoxSpecType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TViewBoxSpecType is just a simple String type, this merely returns the current string value.
-func (me TViewBoxSpecType) String () string { return xsdt.String(me).String() }
-
-type XsdGoPkgHasAttr_ViewBox_TViewBoxSpecType_ struct {
-	ViewBox TViewBoxSpecType `xml:"http://www.w3.org/2000/svg viewBox,attr"`
-
-}
-
-type TviewType struct {
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAttr_ViewBox_TViewBoxSpecType_
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasAttr_ZoomAndPan_TxsdViewTypeZoomAndPan_Magnify
-
-	XsdGoPkgHasAttr_PreserveAspectRatio_TPreserveAspectRatioSpecType_XMidYMidMeet
-
-	XsdGoPkgHasAttr_ViewTarget_XsdtString_
-
-	XsdGoPkgHasAtts_StdAttrs
-
-}
-
-//	If the WalkHandlers.TviewType function is not nil (ie. was set by outside code), calls it with this TviewType instance as the single argument. Then calls the Walk() method on 1/7 embed(s) and 0/0 field(s) belonging to this TviewType instance.
-func (me *TviewType) Walk ()  { 
-	if fn := WalkHandlers.TviewType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
- }
-
-type XsdGoPkgHasElems_View struct {
-	Views []*TviewType `xml:"http://www.w3.org/2000/svg view"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_View function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_View instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_View instance.
-func (me *XsdGoPkgHasElems_View) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_View; fn != nil { fn(me) }
-	for _, x := range me.Views { x.Walk() }
- }
-
-type TuseType struct {
-	XsdGoPkgHasAtts_PresentationAttributesAll
-
-	XsdGoPkgHasAttr_Height_TLengthType_
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasAtts_XlinkRefAttrs
-
-	XsdGoPkgHasAttr_X_TCoordinateType_
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasAttr_Y_TCoordinateType_
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	xlink.XsdGoPkgHasAttr_Href
-
-	XsdGoPkgHasAttr_Transform_TransformListType_
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasElems_AnimateMotion
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAttr_Width_TLengthType_
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-}
-
-//	If the WalkHandlers.TuseType function is not nil (ie. was set by outside code), calls it with this TuseType instance as the single argument. Then calls the Walk() method on 6/21 embed(s) and 0/0 field(s) belonging to this TuseType instance.
-func (me *TuseType) Walk ()  { 
-	if fn := WalkHandlers.TuseType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
- }
-
-type XsdGoPkgHasElems_Use struct {
-	Uses []*TuseType `xml:"http://www.w3.org/2000/svg use"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Use function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Use instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Use instance.
-func (me *XsdGoPkgHasElems_Use) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Use; fn != nil { fn(me) }
-	for _, x := range me.Uses { x.Walk() }
- }
-
-type XsdGoPkgHasElems_Metadata struct {
-	Metadatas []*TmetadataType `xml:"http://www.w3.org/2000/svg metadata"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Metadata function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Metadata instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Metadata instance.
-func (me *XsdGoPkgHasElems_Metadata) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Metadata; fn != nil { fn(me) }
-	for _, x := range me.Metadatas { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_PathLength_XsdtDouble_ struct {
-	PathLength xsdt.Double `xml:"http://www.w3.org/2000/svg pathLength,attr"`
-
-}
-
-//	a path data specification
-//	Yes, of course this was generated by a program!
-type TPathDataType xsdt.String
-
-//	Since TPathDataType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TPathDataType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TPathDataType's alias type xsdt.String.
-func (me TPathDataType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TPathDataType is just a simple String type, this merely returns the current string value.
-func (me TPathDataType) String () string { return xsdt.String(me).String() }
-
-type XsdGoPkgHasAttr_D_TPathDataType_ struct {
-	D TPathDataType `xml:"http://www.w3.org/2000/svg d,attr"`
-
-}
-
-type TpathType struct {
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_Transform_TransformListType_
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasAttr_D_TPathDataType_
-
-	XsdGoPkgHasAtts_PresentationAttributesColor
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAttr_PathLength_XsdtDouble_
-
-	XsdGoPkgHasAtts_PresentationAttributesMarkers
-
-	XsdGoPkgHasElems_AnimateMotion
-
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
-
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
-}
-
-//	If the WalkHandlers.TpathType function is not nil (ie. was set by outside code), calls it with this TpathType instance as the single argument. Then calls the Walk() method on 6/20 embed(s) and 0/0 field(s) belonging to this TpathType instance.
-func (me *TpathType) Walk ()  { 
-	if fn := WalkHandlers.TpathType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
- }
-
-type XsdGoPkgHasElems_Path struct {
-	Paths []*TpathType `xml:"http://www.w3.org/2000/svg path"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Path function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Path instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Path instance.
-func (me *XsdGoPkgHasElems_Path) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Path; fn != nil { fn(me) }
-	for _, x := range me.Paths { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_ClipPathUnits_TxsdClipPathTypeClipPathUnits_ struct {
-	ClipPathUnits TxsdLinearGradientTypeGradientUnits `xml:"http://www.w3.org/2000/svg clipPathUnits,attr"`
-
-}
-
-type TcircleType struct {
-	XsdGoPkgHasElems_AnimateMotion
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasAtts_PresentationAttributesColor
-
-	XsdGoPkgHasAttr_Cx_TCoordinateType_
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasAttr_R_TLengthType_
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
-	XsdGoPkgHasAttr_Cy_TCoordinateType_
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAttr_Transform_TransformListType_
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasElems_AnimateTransform
-
-}
-
-//	If the WalkHandlers.TcircleType function is not nil (ie. was set by outside code), calls it with this TcircleType instance as the single argument. Then calls the Walk() method on 6/20 embed(s) and 0/0 field(s) belonging to this TcircleType instance.
-func (me *TcircleType) Walk ()  { 
-	if fn := WalkHandlers.TcircleType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
- }
-
-type XsdGoPkgHasElems_Circle struct {
-	Circles []*TcircleType `xml:"http://www.w3.org/2000/svg circle"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Circle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Circle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Circle instance.
-func (me *XsdGoPkgHasElems_Circle) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Circle; fn != nil { fn(me) }
-	for _, x := range me.Circles { x.Walk() }
- }
-
-//	a list of <length>s
-type TLengthsType xsdt.String
-
-//	Since TLengthsType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TLengthsType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TLengthsType's alias type xsdt.String.
-func (me TLengthsType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TLengthsType is just a simple String type, this merely returns the current string value.
-func (me TLengthsType) String () string { return xsdt.String(me).String() }
-
-type XsdGoPkgHasAttr_Dy_TLengthsType_ struct {
-	Dy TLengthsType `xml:"http://www.w3.org/2000/svg dy,attr"`
-
-}
-
-type TxsdTrefTypeLengthAdjust xsdt.String
-
-//	Since TxsdTrefTypeLengthAdjust is just a simple String type, this merely returns the current string value.
-func (me TxsdTrefTypeLengthAdjust) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdTrefTypeLengthAdjust is "spacingAndGlyphs".
-func (me TxsdTrefTypeLengthAdjust) IsSpacingAndGlyphs () bool { return me == "spacingAndGlyphs" }
-
-//	Since TxsdTrefTypeLengthAdjust is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdTrefTypeLengthAdjust) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TxsdTrefTypeLengthAdjust's alias type xsdt.String.
-func (me TxsdTrefTypeLengthAdjust) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdTrefTypeLengthAdjust is "spacing".
-func (me TxsdTrefTypeLengthAdjust) IsSpacing () bool { return me == "spacing" }
-
-type XsdGoPkgHasAttr_LengthAdjust_TxsdTrefTypeLengthAdjust_ struct {
-	LengthAdjust TxsdTrefTypeLengthAdjust `xml:"http://www.w3.org/2000/svg lengthAdjust,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Dx_TLengthsType_ struct {
-	Dx TLengthsType `xml:"http://www.w3.org/2000/svg dx,attr"`
-
-}
-
-//	a space separated list of CoordinateType. Punt to 'string' for now
-type TCoordinatesType xsdt.String
-
-//	This convenience method just performs a simple type conversion to TCoordinatesType's alias type xsdt.String.
-func (me TCoordinatesType) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TCoordinatesType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TCoordinatesType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TCoordinatesType is just a simple String type, this merely returns the current string value.
-func (me TCoordinatesType) String () string { return xsdt.String(me).String() }
-
-type XsdGoPkgHasAttr_X_TCoordinatesType_ struct {
-	X TCoordinatesType `xml:"http://www.w3.org/2000/svg x,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Y_TCoordinatesType_ struct {
-	Y TCoordinatesType `xml:"http://www.w3.org/2000/svg y,attr"`
-
-}
-
-type XsdGoPkgHasAttr_TextLength_TLengthType_ struct {
-	TextLength TLengthType `xml:"http://www.w3.org/2000/svg textLength,attr"`
-
-}
-
-type TtrefType struct {
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasAttr_X_TCoordinatesType_
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasAttr_Y_TCoordinatesType_
-
-	XsdGoPkgHasAttr_TextLength_TLengthType_
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasElems_Desc
-
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
-	XsdGoPkgHasElems_Metadata
-
-	XsdGoPkgHasAttr_Rotate_XsdtString_
-
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
-
-	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasAtts_PresentationAttributesColor
-
-	XsdGoPkgHasAtts_XlinkRefAttrs
-
-	XsdGoPkgHasAttr_Dy_TLengthsType_
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasAttr_LengthAdjust_TxsdTrefTypeLengthAdjust_
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	xlink.XsdGoPkgHasAttr_Href
-
-	XsdGoPkgHasAttr_Dx_TLengthsType_
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasAtts_StdAttrs
-
-}
-
-//	If the WalkHandlers.TtrefType function is not nil (ie. was set by outside code), calls it with this TtrefType instance as the single argument. Then calls the Walk() method on 6/27 embed(s) and 0/0 field(s) belonging to this TtrefType instance.
-func (me *TtrefType) Walk ()  { 
-	if fn := WalkHandlers.TtrefType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Desc.Walk()
-	me.XsdGoPkgHasElems_Metadata.Walk()
-	me.XsdGoPkgHasElems_Title.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
- }
-
-type XsdGoPkgHasElems_Tref struct {
-	Trefs []*TtrefType `xml:"http://www.w3.org/2000/svg tref"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Tref function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Tref instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Tref instance.
-func (me *XsdGoPkgHasElems_Tref) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Tref; fn != nil { fn(me) }
-	for _, x := range me.Trefs { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_GlyphRef_XsdtString_ struct {
-	GlyphRef xsdt.String `xml:"http://www.w3.org/2000/svg glyphRef,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Format_XsdtString_ struct {
-	Format xsdt.String `xml:"http://www.w3.org/2000/svg format,attr"`
-
-}
-
-type TaltGlyphType struct {
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasAttr_Y_TCoordinatesType_
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
-
-	xlink.XsdGoPkgHasAttr_Href
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAttr_GlyphRef_XsdtString_
-
-	XsdGoPkgHasAttr_Rotate_XsdtString_
-
-	XsdGoPkgHasAttr_Dx_TLengthsType_
-
-	XsdGoPkgHasAttr_Dy_TLengthsType_
-
-	XsdGoPkgHasAttr_Format_XsdtString_
-
-	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAttr_X_TCoordinatesType_
-
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
-	XsdGoPkgHasAtts_PresentationAttributesColor
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_XlinkRefAttrs
-
-}
-
-//	If the WalkHandlers.TaltGlyphType function is not nil (ie. was set by outside code), calls it with this TaltGlyphType instance as the single argument. Then calls the Walk() method on 1/22 embed(s) and 0/0 field(s) belonging to this TaltGlyphType instance.
-func (me *TaltGlyphType) Walk ()  { 
-	if fn := WalkHandlers.TaltGlyphType; fn != nil { fn(me) }
-	me.XsdGoPkgHasCdata.Walk()
- }
-
-type XsdGoPkgHasElems_AltGlyph struct {
-	AltGlyphs []*TaltGlyphType `xml:"http://www.w3.org/2000/svg altGlyph"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AltGlyph function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AltGlyph instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AltGlyph instance.
-func (me *XsdGoPkgHasElems_AltGlyph) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AltGlyph; fn != nil { fn(me) }
-	for _, x := range me.AltGlyphs { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_StartOffset_XsdtString_ struct {
-	StartOffset xsdt.String `xml:"http://www.w3.org/2000/svg startOffset,attr"`
-
-}
-
-type TxsdTextPathTypeMethod xsdt.String
-
-//	This convenience method just performs a simple type conversion to TxsdTextPathTypeMethod's alias type xsdt.String.
-func (me TxsdTextPathTypeMethod) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Returns true if the value of this enumerated TxsdTextPathTypeMethod is "align".
-func (me TxsdTextPathTypeMethod) IsAlign () bool { return me == "align" }
-
-//	Since TxsdTextPathTypeMethod is just a simple String type, this merely returns the current string value.
-func (me TxsdTextPathTypeMethod) String () string { return xsdt.String(me).String() }
-
-//	Returns true if the value of this enumerated TxsdTextPathTypeMethod is "stretch".
-func (me TxsdTextPathTypeMethod) IsStretch () bool { return me == "stretch" }
-
-//	Since TxsdTextPathTypeMethod is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdTextPathTypeMethod) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_Method_TxsdTextPathTypeMethod_ struct {
-	Method TxsdTextPathTypeMethod `xml:"http://www.w3.org/2000/svg method,attr"`
-
-}
-
-type XsdGoPkgHasAttr_LengthAdjust_TxsdTspanTypeLengthAdjust_ struct {
-	LengthAdjust TxsdTrefTypeLengthAdjust `xml:"http://www.w3.org/2000/svg lengthAdjust,attr"`
-
-}
-
-type TtspanType struct {
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_Dx_TLengthsType_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Tref
-
-	XsdGoPkgHasAtts_PresentationAttributesColor
-
-	XsdGoPkgHasAttr_LengthAdjust_TxsdTspanTypeLengthAdjust_
-
-	XsdGoPkgHasAttr_Y_TCoordinatesType_
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
-
-	XsdGoPkgHasAttr_Dy_TLengthsType_
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_A
-
-	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
-
-	XsdGoPkgHasElems_Tspan
-
-	XsdGoPkgHasElems_AltGlyph
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasAttr_X_TCoordinatesType_
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasAttr_TextLength_TLengthType_
-
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
-	XsdGoPkgHasElems_Metadata
-
-	XsdGoPkgHasAttr_Rotate_XsdtString_
-
-	XsdGoPkgHasElems_Desc
-
-	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAtts_TestAttrs
-
-}
-
-//	If the WalkHandlers.TtspanType function is not nil (ie. was set by outside code), calls it with this TtspanType instance as the single argument. Then calls the Walk() method on 9/30 embed(s) and 0/0 field(s) belonging to this TtspanType instance.
-func (me *TtspanType) Walk ()  { 
-	if fn := WalkHandlers.TtspanType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Title.Walk()
-	me.XsdGoPkgHasElems_AltGlyph.Walk()
-	me.XsdGoPkgHasElems_Metadata.Walk()
-	me.XsdGoPkgHasElems_Desc.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasCdata.Walk()
-	me.XsdGoPkgHasElems_Tref.Walk()
- }
-
-type XsdGoPkgHasElems_Tspan struct {
-	Tspans []*TtspanType `xml:"http://www.w3.org/2000/svg tspan"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Tspan function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Tspan instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Tspan instance.
-func (me *XsdGoPkgHasElems_Tspan) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Tspan; fn != nil { fn(me) }
-	for _, x := range me.Tspans { x.Walk() }
- }
-
-type TxsdTextPathTypeSpacing xsdt.String
-
-//	Returns true if the value of this enumerated TxsdTextPathTypeSpacing is "exact".
-func (me TxsdTextPathTypeSpacing) IsExact () bool { return me == "exact" }
-
-//	Since TxsdTextPathTypeSpacing is just a simple String type, this merely returns the current string value.
-func (me TxsdTextPathTypeSpacing) String () string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdTextPathTypeSpacing's alias type xsdt.String.
-func (me TxsdTextPathTypeSpacing) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TxsdTextPathTypeSpacing is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdTextPathTypeSpacing) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TxsdTextPathTypeSpacing is "auto".
-func (me TxsdTextPathTypeSpacing) IsAuto () bool { return me == "auto" }
-
-type XsdGoPkgHasAttr_Spacing_TxsdTextPathTypeSpacing_ struct {
-	Spacing TxsdTextPathTypeSpacing `xml:"http://www.w3.org/2000/svg spacing,attr"`
-
-}
-
-type XsdGoPkgHasAttr_LengthAdjust_TxsdTextPathTypeLengthAdjust_ struct {
-	LengthAdjust TxsdTrefTypeLengthAdjust `xml:"http://www.w3.org/2000/svg lengthAdjust,attr"`
-
-}
-
-type TtextPathType struct {
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasElems_AltGlyph
-
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
-	xlink.XsdGoPkgHasAttr_Href
-
-	XsdGoPkgHasAttr_StartOffset_XsdtString_
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasAttr_Method_TxsdTextPathTypeMethod_
-
-	XsdGoPkgHasElems_Tspan
-
-	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
-
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
-
-	XsdGoPkgHasElems_Metadata
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasAttr_TextLength_TLengthType_
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAtts_XlinkRefAttrs
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Tref
-
-	XsdGoPkgHasElems_A
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_Spacing_TxsdTextPathTypeSpacing_
-
-	XsdGoPkgHasElems_Desc
-
-	XsdGoPkgHasAttr_LengthAdjust_TxsdTextPathTypeLengthAdjust_
-
-}
-
-//	If the WalkHandlers.TtextPathType function is not nil (ie. was set by outside code), calls it with this TtextPathType instance as the single argument. Then calls the Walk() method on 10/29 embed(s) and 0/0 field(s) belonging to this TtextPathType instance.
-func (me *TtextPathType) Walk ()  { 
-	if fn := WalkHandlers.TtextPathType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Tspan.Walk()
-	me.XsdGoPkgHasElems_Metadata.Walk()
-	me.XsdGoPkgHasCdata.Walk()
-	me.XsdGoPkgHasElems_Tref.Walk()
-	me.XsdGoPkgHasElems_Title.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Desc.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElems_AltGlyph.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
- }
-
-type XsdGoPkgHasElems_TextPath struct {
-	TextPaths []*TtextPathType `xml:"http://www.w3.org/2000/svg textPath"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_TextPath function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_TextPath instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_TextPath instance.
-func (me *XsdGoPkgHasElems_TextPath) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_TextPath; fn != nil { fn(me) }
-	for _, x := range me.TextPaths { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_LengthAdjust_TxsdTextTypeLengthAdjust_ struct {
-	LengthAdjust TxsdTrefTypeLengthAdjust `xml:"http://www.w3.org/2000/svg lengthAdjust,attr"`
-
-}
-
-type TtextType struct {
-	XsdGoPkgHasElems_A
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasElems_Tspan
-
-	XsdGoPkgHasAttr_LengthAdjust_TxsdTextTypeLengthAdjust_
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasAttr_Y_TCoordinateType_
-
-	XsdGoPkgHasElems_AltGlyph
-
-	XsdGoPkgHasAtts_PresentationAttributesTextElements
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasElems_Tref
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasAttr_TextLength_TLengthType_
-
-	XsdGoPkgHasElems_AnimateMotion
-
-	XsdGoPkgHasElems_Metadata
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Desc
-
-	XsdGoPkgHasAttr_Transform_TransformListType_
-
-	XsdGoPkgHasAtts_PresentationAttributesColor
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAttr_X_TCoordinateType_
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
-
-	XsdGoPkgHasElems_TextPath
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
-
-	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
-
-}
-
-//	If the WalkHandlers.TtextType function is not nil (ie. was set by outside code), calls it with this TtextType instance as the single argument. Then calls the Walk() method on 13/32 embed(s) and 0/0 field(s) belonging to this TtextType instance.
-func (me *TtextType) Walk ()  { 
-	if fn := WalkHandlers.TtextType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
-	me.XsdGoPkgHasElems_Metadata.Walk()
-	me.XsdGoPkgHasElems_Title.Walk()
-	me.XsdGoPkgHasElems_Desc.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_TextPath.Walk()
-	me.XsdGoPkgHasCdata.Walk()
-	me.XsdGoPkgHasElems_Tspan.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElems_AltGlyph.Walk()
-	me.XsdGoPkgHasElems_Tref.Walk()
- }
-
-type XsdGoPkgHasElems_Text struct {
-	Texts []*TtextType `xml:"http://www.w3.org/2000/svg text"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Text function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Text instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Text instance.
-func (me *XsdGoPkgHasElems_Text) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Text; fn != nil { fn(me) }
-	for _, x := range me.Texts { x.Walk() }
- }
-
-type TrectType struct {
-	XsdGoPkgHasAttr_Width_TLengthType_
-
-	XsdGoPkgHasAttr_Height_TLengthType_
-
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAttr_Y_TCoordinateType_
-
-	XsdGoPkgHasAttr_Transform_TransformListType_
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAttr_X_TCoordinateType_
-
-	XsdGoPkgHasAttr_Ry_TLengthType_
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasAttr_Rx_TLengthType_
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_AnimateMotion
-
-	XsdGoPkgHasAtts_PresentationAttributesColor
-
-}
-
-//	If the WalkHandlers.TrectType function is not nil (ie. was set by outside code), calls it with this TrectType instance as the single argument. Then calls the Walk() method on 6/23 embed(s) and 0/0 field(s) belonging to this TrectType instance.
-func (me *TrectType) Walk ()  { 
-	if fn := WalkHandlers.TrectType; fn != nil { fn(me) }
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
- }
-
-type XsdGoPkgHasElems_Rect struct {
-	Rects []*TrectType `xml:"http://www.w3.org/2000/svg rect"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Rect function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Rect instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Rect instance.
-func (me *XsdGoPkgHasElems_Rect) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Rect; fn != nil { fn(me) }
-	for _, x := range me.Rects { x.Walk() }
- }
-
-type TclipPathType struct {
-	XsdGoPkgHasElems_Ellipse
-
-	XsdGoPkgHasElems_Use
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasElems_Text
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasElems_Rect
-
-	XsdGoPkgHasAtts_PresentationAttributesFillStroke
-
-	XsdGoPkgHasAtts_PresentationAttributesGraphics
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasElems_Line
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasElems_Polyline
-
-	XsdGoPkgHasElems_Polygon
-
-	XsdGoPkgHasElems_AnimateMotion
-
-	XsdGoPkgHasAttr_Transform_TransformListType_
-
-	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasElems_Path
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
-
-	XsdGoPkgHasAtts_PresentationAttributesTextElements
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasAttr_ClipPathUnits_TxsdClipPathTypeClipPathUnits_
-
-	XsdGoPkgHasElems_Circle
-
-}
-
-//	If the WalkHandlers.TclipPathType function is not nil (ie. was set by outside code), calls it with this TclipPathType instance as the single argument. Then calls the Walk() method on 15/28 embed(s) and 0/0 field(s) belonging to this TclipPathType instance.
-func (me *TclipPathType) Walk ()  { 
-	if fn := WalkHandlers.TclipPathType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Path.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_Circle.Walk()
-	me.XsdGoPkgHasElems_Ellipse.Walk()
-	me.XsdGoPkgHasElems_Use.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Text.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElems_Rect.Walk()
-	me.XsdGoPkgHasElems_Line.Walk()
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
-	me.XsdGoPkgHasElems_Polyline.Walk()
-	me.XsdGoPkgHasElems_Polygon.Walk()
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
- }
-
-type XsdGoPkgHasElems_ClipPath struct {
-	ClipPaths []*TclipPathType `xml:"http://www.w3.org/2000/svg clipPath"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ClipPath function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ClipPath instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ClipPath instance.
-func (me *XsdGoPkgHasElems_ClipPath) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ClipPath; fn != nil { fn(me) }
-	for _, x := range me.ClipPaths { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_Panose1_XsdtString_ struct {
-	Panose1 xsdt.String `xml:"http://www.w3.org/2000/svg panose-1,attr"`
-
-}
-
-type XsdGoPkgHasAttr_CapHeight_XsdtDouble_ struct {
-	CapHeight xsdt.Double `xml:"http://www.w3.org/2000/svg cap-height,attr"`
-
+func (me *XsdGoPkgHasElems_Filter) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Filter; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Filters {
+		x.Walk()
+	}
 }
 
 type TdefinitionSrcType struct {
-	xlink.XsdGoPkgHasAttr_Href
-
 	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAtts_XlinkRefAttrs
 
+	xlink.XsdGoPkgHasAttr_Href
 }
 
 //	If the WalkHandlers.TdefinitionSrcType function is not nil (ie. was set by outside code), calls it with this TdefinitionSrcType instance as the single argument. Then calls the Walk() method on 0/3 embed(s) and 0/0 field(s) belonging to this TdefinitionSrcType instance.
-func (me *TdefinitionSrcType) Walk ()  { 
-	if fn := WalkHandlers.TdefinitionSrcType; fn != nil { fn(me) }
- }
+func (me *TdefinitionSrcType) Walk() {
+	if fn := WalkHandlers.TdefinitionSrcType; fn != nil {
+		fn(me)
+	}
+}
 
 type XsdGoPkgHasElem_DefinitionSrc struct {
 	DefinitionSrc *TdefinitionSrcType `xml:"http://www.w3.org/2000/svg definition-src"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_DefinitionSrc function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_DefinitionSrc instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_DefinitionSrc instance.
-func (me *XsdGoPkgHasElem_DefinitionSrc) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_DefinitionSrc; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_DefinitionSrc) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_DefinitionSrc; fn != nil {
+		fn(me)
+	}
 	me.DefinitionSrc.Walk()
- }
-
-type XsdGoPkgHasAttr_FontVariant_XsdtString_ struct {
-	FontVariant xsdt.String `xml:"http://www.w3.org/2000/svg font-variant,attr"`
-
-}
-
-type XsdGoPkgHasAttr_FontStyle_XsdtString_ struct {
-	FontStyle xsdt.String `xml:"http://www.w3.org/2000/svg font-style,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Bbox_XsdtString_ struct {
-	Bbox xsdt.String `xml:"http://www.w3.org/2000/svg bbox,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Mathline_XsdtDouble_ struct {
-	Mathline xsdt.Double `xml:"http://www.w3.org/2000/svg mathline,attr"`
-
-}
-
-type XsdGoPkgHasAttr_UnderlineThickness_XsdtDouble_ struct {
-	UnderlineThickness xsdt.Double `xml:"http://www.w3.org/2000/svg underline-thickness,attr"`
-
-}
-
-type XsdGoPkgHasAttr_XHeight_XsdtDouble_ struct {
-	XHeight xsdt.Double `xml:"http://www.w3.org/2000/svg x-height,attr"`
-
-}
-
-type XsdGoPkgHasAttr_FontWeight_XsdtString_ struct {
-	FontWeight xsdt.String `xml:"http://www.w3.org/2000/svg font-weight,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Topline_XsdtDouble_ struct {
-	Topline xsdt.Double `xml:"http://www.w3.org/2000/svg topline,attr"`
-
-}
-
-type XsdGoPkgHasAttr_AccentHeight_XsdtDouble_ struct {
-	AccentHeight xsdt.Double `xml:"http://www.w3.org/2000/svg accent-height,attr"`
-
 }
 
 type XsdGoPkgHasAttr_UnderlinePosition_XsdtDouble_ struct {
 	UnderlinePosition xsdt.Double `xml:"http://www.w3.org/2000/svg underline-position,attr"`
-
-}
-
-type XsdGoPkgHasAttr_StrikethroughThickness_XsdtDouble_ struct {
-	StrikethroughThickness xsdt.Double `xml:"http://www.w3.org/2000/svg strikethrough-thickness,attr"`
-
-}
-
-type XsdGoPkgHasAttr_StrikethroughPosition_XsdtDouble_ struct {
-	StrikethroughPosition xsdt.Double `xml:"http://www.w3.org/2000/svg strikethrough-position,attr"`
-
-}
-
-type XsdGoPkgHasAttr_FontStretch_XsdtString_ struct {
-	FontStretch xsdt.String `xml:"http://www.w3.org/2000/svg font-stretch,attr"`
-
-}
-
-type XsdGoPkgHasAttr_UnitsPerEm_XsdtDouble_ struct {
-	UnitsPerEm xsdt.Double `xml:"http://www.w3.org/2000/svg units-per-em,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Widths_XsdtString_ struct {
-	Widths xsdt.String `xml:"http://www.w3.org/2000/svg widths,attr"`
-
-}
-
-type XsdGoPkgHasAttr_UnicodeRange_XsdtString_ struct {
-	UnicodeRange xsdt.String `xml:"http://www.w3.org/2000/svg unicode-range,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Stemv_XsdtDouble_ struct {
-	Stemv xsdt.Double `xml:"http://www.w3.org/2000/svg stemv,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Ascent_XsdtDouble_ struct {
-	Ascent xsdt.Double `xml:"http://www.w3.org/2000/svg ascent,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Ideographic_XsdtDouble_ struct {
-	Ideographic xsdt.Double `xml:"http://www.w3.org/2000/svg ideographic,attr"`
-
 }
 
 type XsdGoPkgHasAttr_Centerline_XsdtDouble_ struct {
 	Centerline xsdt.Double `xml:"http://www.w3.org/2000/svg centerline,attr"`
-
 }
 
-type XsdGoPkgHasAttr_Stemh_XsdtDouble_ struct {
-	Stemh xsdt.Double `xml:"http://www.w3.org/2000/svg stemh,attr"`
+type XsdGoPkgHasAttr_UnitsPerEm_XsdtDouble_ struct {
+	UnitsPerEm xsdt.Double `xml:"http://www.w3.org/2000/svg units-per-em,attr"`
+}
 
+type XsdGoPkgHasAttr_Hanging_XsdtDouble_ struct {
+	Hanging xsdt.Double `xml:"http://www.w3.org/2000/svg hanging,attr"`
+}
+
+type XsdGoPkgHasAttr_Stemv_XsdtDouble_ struct {
+	Stemv xsdt.Double `xml:"http://www.w3.org/2000/svg stemv,attr"`
+}
+
+type XsdGoPkgHasAttr_OverlineThickness_XsdtDouble_ struct {
+	OverlineThickness xsdt.Double `xml:"http://www.w3.org/2000/svg overline-thickness,attr"`
 }
 
 type XsdGoPkgHasAttr_String_XsdtString_ struct {
 	String xsdt.String `xml:"http://www.w3.org/2000/svg string,attr"`
-
 }
 
 type TfontFaceFormatType struct {
 	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAttr_String_XsdtString_
-
 }
 
 //	If the WalkHandlers.TfontFaceFormatType function is not nil (ie. was set by outside code), calls it with this TfontFaceFormatType instance as the single argument. Then calls the Walk() method on 0/2 embed(s) and 0/0 field(s) belonging to this TfontFaceFormatType instance.
-func (me *TfontFaceFormatType) Walk ()  { 
-	if fn := WalkHandlers.TfontFaceFormatType; fn != nil { fn(me) }
- }
+func (me *TfontFaceFormatType) Walk() {
+	if fn := WalkHandlers.TfontFaceFormatType; fn != nil {
+		fn(me)
+	}
+}
 
 type XsdGoPkgHasElem_FontFaceFormat struct {
 	FontFaceFormat *TfontFaceFormatType `xml:"http://www.w3.org/2000/svg font-face-format"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FontFaceFormat function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FontFaceFormat instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FontFaceFormat instance.
-func (me *XsdGoPkgHasElem_FontFaceFormat) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FontFaceFormat; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FontFaceFormat) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FontFaceFormat; fn != nil {
+		fn(me)
+	}
 	me.FontFaceFormat.Walk()
- }
+}
 
 type TfontFaceUriType struct {
-	xlink.XsdGoPkgHasAttr_Href
-
 	XsdGoPkgHasAtts_XlinkRefAttrs
-
-	XsdGoPkgHasElem_FontFaceFormat
 
 	XsdGoPkgHasAtts_StdAttrs
 
+	xlink.XsdGoPkgHasAttr_Href
+
+	XsdGoPkgHasElem_FontFaceFormat
 }
 
 //	If the WalkHandlers.TfontFaceUriType function is not nil (ie. was set by outside code), calls it with this TfontFaceUriType instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TfontFaceUriType instance.
-func (me *TfontFaceUriType) Walk ()  { 
-	if fn := WalkHandlers.TfontFaceUriType; fn != nil { fn(me) }
+func (me *TfontFaceUriType) Walk() {
+	if fn := WalkHandlers.TfontFaceUriType; fn != nil {
+		fn(me)
+	}
 	me.XsdGoPkgHasElem_FontFaceFormat.Walk()
- }
+}
 
 type XsdGoPkgHasElems_FontFaceUri struct {
 	FontFaceUris []*TfontFaceUriType `xml:"http://www.w3.org/2000/svg font-face-uri"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_FontFaceUri function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FontFaceUri instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FontFaceUri instance.
-func (me *XsdGoPkgHasElems_FontFaceUri) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FontFaceUri; fn != nil { fn(me) }
-	for _, x := range me.FontFaceUris { x.Walk() }
- }
+func (me *XsdGoPkgHasElems_FontFaceUri) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FontFaceUri; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FontFaceUris {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_Name_XsdtString_ struct {
+	Name xsdt.String `xml:"http://www.w3.org/2000/svg name,attr"`
+}
 
 type TfontFaceNameType struct {
 	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasAttr_Name_XsdtString_
-
 }
 
 //	If the WalkHandlers.TfontFaceNameType function is not nil (ie. was set by outside code), calls it with this TfontFaceNameType instance as the single argument. Then calls the Walk() method on 0/2 embed(s) and 0/0 field(s) belonging to this TfontFaceNameType instance.
-func (me *TfontFaceNameType) Walk ()  { 
-	if fn := WalkHandlers.TfontFaceNameType; fn != nil { fn(me) }
- }
+func (me *TfontFaceNameType) Walk() {
+	if fn := WalkHandlers.TfontFaceNameType; fn != nil {
+		fn(me)
+	}
+}
 
 type XsdGoPkgHasElems_FontFaceName struct {
 	FontFaceNames []*TfontFaceNameType `xml:"http://www.w3.org/2000/svg font-face-name"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_FontFaceName function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FontFaceName instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FontFaceName instance.
-func (me *XsdGoPkgHasElems_FontFaceName) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FontFaceName; fn != nil { fn(me) }
-	for _, x := range me.FontFaceNames { x.Walk() }
- }
+func (me *XsdGoPkgHasElems_FontFaceName) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FontFaceName; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FontFaceNames {
+		x.Walk()
+	}
+}
 
 type TfontFaceSrcType struct {
-	XsdGoPkgHasElems_FontFaceName
+	XsdGoPkgHasElems_FontFaceUri
 
 	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasElems_FontFaceUri
-
+	XsdGoPkgHasElems_FontFaceName
 }
 
 //	If the WalkHandlers.TfontFaceSrcType function is not nil (ie. was set by outside code), calls it with this TfontFaceSrcType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TfontFaceSrcType instance.
-func (me *TfontFaceSrcType) Walk ()  { 
-	if fn := WalkHandlers.TfontFaceSrcType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_FontFaceName.Walk()
+func (me *TfontFaceSrcType) Walk() {
+	if fn := WalkHandlers.TfontFaceSrcType; fn != nil {
+		fn(me)
+	}
 	me.XsdGoPkgHasElems_FontFaceUri.Walk()
- }
+	me.XsdGoPkgHasElems_FontFaceName.Walk()
+}
 
 type XsdGoPkgHasElem_FontFaceSrc struct {
 	FontFaceSrc *TfontFaceSrcType `xml:"http://www.w3.org/2000/svg font-face-src"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FontFaceSrc function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FontFaceSrc instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FontFaceSrc instance.
-func (me *XsdGoPkgHasElem_FontFaceSrc) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FontFaceSrc; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FontFaceSrc) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FontFaceSrc; fn != nil {
+		fn(me)
+	}
 	me.FontFaceSrc.Walk()
- }
-
-type XsdGoPkgHasAttr_OverlineThickness_XsdtDouble_ struct {
-	OverlineThickness xsdt.Double `xml:"http://www.w3.org/2000/svg overline-thickness,attr"`
-
-}
-
-type XsdGoPkgHasAttr_OverlinePosition_XsdtDouble_ struct {
-	OverlinePosition xsdt.Double `xml:"http://www.w3.org/2000/svg overline-position,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Hanging_XsdtDouble_ struct {
-	Hanging xsdt.Double `xml:"http://www.w3.org/2000/svg hanging,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Baseline_XsdtDouble_ struct {
-	Baseline xsdt.Double `xml:"http://www.w3.org/2000/svg baseline,attr"`
-
 }
 
 type XsdGoPkgHasAttr_Descent_XsdtDouble_ struct {
 	Descent xsdt.Double `xml:"http://www.w3.org/2000/svg descent,attr"`
+}
 
+type XsdGoPkgHasAttr_OverlinePosition_XsdtDouble_ struct {
+	OverlinePosition xsdt.Double `xml:"http://www.w3.org/2000/svg overline-position,attr"`
+}
+
+type XsdGoPkgHasAttr_CapHeight_XsdtDouble_ struct {
+	CapHeight xsdt.Double `xml:"http://www.w3.org/2000/svg cap-height,attr"`
+}
+
+type XsdGoPkgHasAttr_Baseline_XsdtDouble_ struct {
+	Baseline xsdt.Double `xml:"http://www.w3.org/2000/svg baseline,attr"`
+}
+
+type XsdGoPkgHasAttr_FontVariant_XsdtString_ struct {
+	FontVariant xsdt.String `xml:"http://www.w3.org/2000/svg font-variant,attr"`
+}
+
+type XsdGoPkgHasAttr_XHeight_XsdtDouble_ struct {
+	XHeight xsdt.Double `xml:"http://www.w3.org/2000/svg x-height,attr"`
+}
+
+type XsdGoPkgHasAttr_Bbox_XsdtString_ struct {
+	Bbox xsdt.String `xml:"http://www.w3.org/2000/svg bbox,attr"`
+}
+
+type XsdGoPkgHasAttr_AccentHeight_XsdtDouble_ struct {
+	AccentHeight xsdt.Double `xml:"http://www.w3.org/2000/svg accent-height,attr"`
+}
+
+type XsdGoPkgHasAttr_StrikethroughPosition_XsdtDouble_ struct {
+	StrikethroughPosition xsdt.Double `xml:"http://www.w3.org/2000/svg strikethrough-position,attr"`
+}
+
+type XsdGoPkgHasAttr_FontStyle_XsdtString_ struct {
+	FontStyle xsdt.String `xml:"http://www.w3.org/2000/svg font-style,attr"`
+}
+
+type XsdGoPkgHasAttr_FontStretch_XsdtString_ struct {
+	FontStretch xsdt.String `xml:"http://www.w3.org/2000/svg font-stretch,attr"`
+}
+
+type XsdGoPkgHasAttr_Stemh_XsdtDouble_ struct {
+	Stemh xsdt.Double `xml:"http://www.w3.org/2000/svg stemh,attr"`
+}
+
+type XsdGoPkgHasAttr_Ideographic_XsdtDouble_ struct {
+	Ideographic xsdt.Double `xml:"http://www.w3.org/2000/svg ideographic,attr"`
+}
+
+type XsdGoPkgHasAttr_UnderlineThickness_XsdtDouble_ struct {
+	UnderlineThickness xsdt.Double `xml:"http://www.w3.org/2000/svg underline-thickness,attr"`
+}
+
+type XsdGoPkgHasAttr_UnicodeRange_XsdtString_ struct {
+	UnicodeRange xsdt.String `xml:"http://www.w3.org/2000/svg unicode-range,attr"`
+}
+
+type XsdGoPkgHasAttr_Panose1_XsdtString_ struct {
+	Panose1 xsdt.String `xml:"http://www.w3.org/2000/svg panose-1,attr"`
+}
+
+type XsdGoPkgHasAttr_Widths_XsdtString_ struct {
+	Widths xsdt.String `xml:"http://www.w3.org/2000/svg widths,attr"`
+}
+
+type XsdGoPkgHasAttr_StrikethroughThickness_XsdtDouble_ struct {
+	StrikethroughThickness xsdt.Double `xml:"http://www.w3.org/2000/svg strikethrough-thickness,attr"`
+}
+
+type XsdGoPkgHasAttr_Mathline_XsdtDouble_ struct {
+	Mathline xsdt.Double `xml:"http://www.w3.org/2000/svg mathline,attr"`
+}
+
+type XsdGoPkgHasAttr_Ascent_XsdtDouble_ struct {
+	Ascent xsdt.Double `xml:"http://www.w3.org/2000/svg ascent,attr"`
+}
+
+type XsdGoPkgHasAttr_Topline_XsdtDouble_ struct {
+	Topline xsdt.Double `xml:"http://www.w3.org/2000/svg topline,attr"`
+}
+
+type XsdGoPkgHasAttr_FontWeight_XsdtString_ struct {
+	FontWeight xsdt.String `xml:"http://www.w3.org/2000/svg font-weight,attr"`
 }
 
 type TfontFaceType struct {
-	XsdGoPkgHasAttr_Stemh_XsdtDouble_
-
-	XsdGoPkgHasElem_FontFaceSrc
-
-	XsdGoPkgHasAttr_OverlineThickness_XsdtDouble_
-
-	XsdGoPkgHasAttr_OverlinePosition_XsdtDouble_
-
-	XsdGoPkgHasAttr_Hanging_XsdtDouble_
-
-	XsdGoPkgHasAttr_Baseline_XsdtDouble_
-
-	XsdGoPkgHasAttr_Descent_XsdtDouble_
-
-	XsdGoPkgHasAttr_Panose1_XsdtString_
-
-	XsdGoPkgHasAttr_CapHeight_XsdtDouble_
-
-	XsdGoPkgHasElem_DefinitionSrc
+	XsdGoPkgHasAttr_Slope_XsdtDouble_
 
 	XsdGoPkgHasAttr_FontVariant_XsdtString_
 
-	XsdGoPkgHasAttr_FontStyle_XsdtString_
+	XsdGoPkgHasAttr_XHeight_XsdtDouble_
 
 	XsdGoPkgHasAttr_Bbox_XsdtString_
 
-	XsdGoPkgHasAttr_Mathline_XsdtDouble_
-
-	XsdGoPkgHasAttr_FontFamily_TFontFamilyValueType_
-
-	XsdGoPkgHasAttr_UnderlineThickness_XsdtDouble_
-
-	XsdGoPkgHasAttr_XHeight_XsdtDouble_
-
-	XsdGoPkgHasAttr_FontWeight_XsdtString_
-
-	XsdGoPkgHasAttr_Topline_XsdtDouble_
-
 	XsdGoPkgHasAttr_AccentHeight_XsdtDouble_
-
-	XsdGoPkgHasAttr_UnderlinePosition_XsdtDouble_
-
-	XsdGoPkgHasAttr_StrikethroughThickness_XsdtDouble_
 
 	XsdGoPkgHasAttr_StrikethroughPosition_XsdtDouble_
 
-	XsdGoPkgHasAttr_FontSize_TFontSizeValueType_
+	XsdGoPkgHasAttr_FontStyle_XsdtString_
 
 	XsdGoPkgHasAttr_FontStretch_XsdtString_
 
-	XsdGoPkgHasAttr_UnitsPerEm_XsdtDouble_
-
-	XsdGoPkgHasAttr_Widths_XsdtString_
-
-	XsdGoPkgHasAttr_UnicodeRange_XsdtString_
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_Stemv_XsdtDouble_
-
-	XsdGoPkgHasAttr_Ascent_XsdtDouble_
-
-	XsdGoPkgHasAttr_Slope_XsdtDouble_
+	XsdGoPkgHasAttr_Stemh_XsdtDouble_
 
 	XsdGoPkgHasAttr_Ideographic_XsdtDouble_
 
+	XsdGoPkgHasAttr_UnderlineThickness_XsdtDouble_
+
+	XsdGoPkgHasAttr_UnicodeRange_XsdtString_
+
+	XsdGoPkgHasAttr_Panose1_XsdtString_
+
+	XsdGoPkgHasAttr_FontFamily_TFontFamilyValueType_
+
+	XsdGoPkgHasAttr_Widths_XsdtString_
+
+	XsdGoPkgHasAttr_StrikethroughThickness_XsdtDouble_
+
+	XsdGoPkgHasAttr_Mathline_XsdtDouble_
+
+	XsdGoPkgHasAttr_Ascent_XsdtDouble_
+
+	XsdGoPkgHasAttr_Topline_XsdtDouble_
+
+	XsdGoPkgHasAttr_FontWeight_XsdtString_
+
+	XsdGoPkgHasElem_DefinitionSrc
+
+	XsdGoPkgHasAttr_UnderlinePosition_XsdtDouble_
+
 	XsdGoPkgHasAttr_Centerline_XsdtDouble_
+
+	XsdGoPkgHasAttr_UnitsPerEm_XsdtDouble_
+
+	XsdGoPkgHasAttr_Hanging_XsdtDouble_
+
+	XsdGoPkgHasAttr_Stemv_XsdtDouble_
+
+	XsdGoPkgHasAttr_OverlineThickness_XsdtDouble_
+
+	XsdGoPkgHasAttr_FontSize_TFontSizeValueType_
+
+	XsdGoPkgHasElem_FontFaceSrc
+
+	XsdGoPkgHasAttr_Descent_XsdtDouble_
+
+	XsdGoPkgHasAttr_OverlinePosition_XsdtDouble_
+
+	XsdGoPkgHasAttr_CapHeight_XsdtDouble_
 
 	XsdGoPkgHasGroup_DescTitleMetadata
 
+	XsdGoPkgHasAttr_Baseline_XsdtDouble_
+
+	XsdGoPkgHasAtts_StdAttrs
 }
 
 //	If the WalkHandlers.TfontFaceType function is not nil (ie. was set by outside code), calls it with this TfontFaceType instance as the single argument. Then calls the Walk() method on 3/35 embed(s) and 0/0 field(s) belonging to this TfontFaceType instance.
-func (me *TfontFaceType) Walk ()  { 
-	if fn := WalkHandlers.TfontFaceType; fn != nil { fn(me) }
+func (me *TfontFaceType) Walk() {
+	if fn := WalkHandlers.TfontFaceType; fn != nil {
+		fn(me)
+	}
 	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
-	me.XsdGoPkgHasElem_FontFaceSrc.Walk()
 	me.XsdGoPkgHasElem_DefinitionSrc.Walk()
- }
+	me.XsdGoPkgHasElem_FontFaceSrc.Walk()
+}
 
 type XsdGoPkgHasElems_FontFace struct {
 	FontFaces []*TfontFaceType `xml:"http://www.w3.org/2000/svg font-face"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_FontFace function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FontFace instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FontFace instance.
-func (me *XsdGoPkgHasElems_FontFace) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FontFace; fn != nil { fn(me) }
-	for _, x := range me.FontFaces { x.Walk() }
- }
+func (me *XsdGoPkgHasElems_FontFace) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FontFace; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FontFaces {
+		x.Walk()
+	}
+}
 
-type TglyphRefType struct {
-	XsdGoPkgHasAttr_Dx_TLengthsType_
+type TxsdViewTypeZoomAndPan xsdt.String
 
-	XsdGoPkgHasAttr_Dy_TLengthsType_
+//	Since TxsdViewTypeZoomAndPan is just a simple String type, this merely returns the current string value.
+func (me TxsdViewTypeZoomAndPan) String() string { return xsdt.String(me).String() }
 
-	xlink.XsdGoPkgHasAttr_Href
+//	This convenience method just performs a simple type conversion to TxsdViewTypeZoomAndPan's alias type xsdt.String.
+func (me TxsdViewTypeZoomAndPan) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
-	XsdGoPkgHasAttr_Class_TClassListType_
+//	Returns true if the value of this enumerated TxsdViewTypeZoomAndPan is "magnify".
+func (me TxsdViewTypeZoomAndPan) IsMagnify() bool { return me == "magnify" }
 
-	XsdGoPkgHasAttr_X_TCoordinatesType_
+//	Returns true if the value of this enumerated TxsdViewTypeZoomAndPan is "zoom".
+func (me TxsdViewTypeZoomAndPan) IsZoom() bool { return me == "zoom" }
 
-	XsdGoPkgHasAttr_GlyphRef_XsdtString_
+//	Returns true if the value of this enumerated TxsdViewTypeZoomAndPan is "disable".
+func (me TxsdViewTypeZoomAndPan) IsDisable() bool { return me == "disable" }
 
+//	Since TxsdViewTypeZoomAndPan is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdViewTypeZoomAndPan) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_ZoomAndPan_TxsdViewTypeZoomAndPan_Magnify struct {
+	ZoomAndPan TxsdViewTypeZoomAndPan `xml:"http://www.w3.org/2000/svg zoomAndPan,attr"`
+}
+
+//	Returns the default value for ZoomAndPan -- "magnify"
+func (me XsdGoPkgHasAttr_ZoomAndPan_TxsdViewTypeZoomAndPan_Magnify) ZoomAndPanDefault() TxsdViewTypeZoomAndPan {
+	return TxsdViewTypeZoomAndPan("magnify")
+}
+
+//	'viewBox' attribute specification
+type TViewBoxSpecType xsdt.String
+
+//	This convenience method just performs a simple type conversion to TViewBoxSpecType's alias type xsdt.String.
+func (me TViewBoxSpecType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TViewBoxSpecType is just a simple String type, this merely returns the current string value.
+func (me TViewBoxSpecType) String() string { return xsdt.String(me).String() }
+
+//	Since TViewBoxSpecType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TViewBoxSpecType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+type XsdGoPkgHasAttr_ViewBox_TViewBoxSpecType_ struct {
+	ViewBox TViewBoxSpecType `xml:"http://www.w3.org/2000/svg viewBox,attr"`
+}
+
+type XsdGoPkgHasAttr_ViewTarget_XsdtString_ struct {
+	ViewTarget xsdt.String `xml:"http://www.w3.org/2000/svg viewTarget,attr"`
+}
+
+//	'preserveAspectRatio' attribute specification
+type TPreserveAspectRatioSpecType xsdt.String
+
+//	Since TPreserveAspectRatioSpecType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TPreserveAspectRatioSpecType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TPreserveAspectRatioSpecType's alias type xsdt.String.
+func (me TPreserveAspectRatioSpecType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TPreserveAspectRatioSpecType is just a simple String type, this merely returns the current string value.
+func (me TPreserveAspectRatioSpecType) String() string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_PreserveAspectRatio_TPreserveAspectRatioSpecType_XMidYMidMeet struct {
+	PreserveAspectRatio TPreserveAspectRatioSpecType `xml:"http://www.w3.org/2000/svg preserveAspectRatio,attr"`
+}
+
+//	Returns the default value for PreserveAspectRatio -- "xMidYMid meet"
+func (me XsdGoPkgHasAttr_PreserveAspectRatio_TPreserveAspectRatioSpecType_XMidYMidMeet) PreserveAspectRatioDefault() TPreserveAspectRatioSpecType {
+	return TPreserveAspectRatioSpecType("xMidYMid meet")
+}
+
+type TviewType struct {
 	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
+	XsdGoPkgHasAttr_PreserveAspectRatio_TPreserveAspectRatioSpecType_XMidYMidMeet
 
-	XsdGoPkgHasAtts_XlinkRefAttrs
+	XsdGoPkgHasAttr_ZoomAndPan_TxsdViewTypeZoomAndPan_Magnify
 
-	XsdGoPkgHasAttr_Format_XsdtString_
+	XsdGoPkgHasGroup_DescTitleMetadata
 
-	XsdGoPkgHasAttr_Y_TCoordinatesType_
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
 
-	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
+	XsdGoPkgHasAttr_ViewBox_TViewBoxSpecType_
 
+	XsdGoPkgHasAttr_ViewTarget_XsdtString_
 }
 
-//	If the WalkHandlers.TglyphRefType function is not nil (ie. was set by outside code), calls it with this TglyphRefType instance as the single argument. Then calls the Walk() method on 0/12 embed(s) and 0/0 field(s) belonging to this TglyphRefType instance.
-func (me *TglyphRefType) Walk ()  { 
-	if fn := WalkHandlers.TglyphRefType; fn != nil { fn(me) }
- }
-
-type XsdGoPkgHasElems_GlyphRef struct {
-	GlyphRefs []*TglyphRefType `xml:"http://www.w3.org/2000/svg glyphRef"`
-
+//	If the WalkHandlers.TviewType function is not nil (ie. was set by outside code), calls it with this TviewType instance as the single argument. Then calls the Walk() method on 1/7 embed(s) and 0/0 field(s) belonging to this TviewType instance.
+func (me *TviewType) Walk() {
+	if fn := WalkHandlers.TviewType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_GlyphRef function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_GlyphRef instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_GlyphRef instance.
-func (me *XsdGoPkgHasElems_GlyphRef) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_GlyphRef; fn != nil { fn(me) }
-	for _, x := range me.GlyphRefs { x.Walk() }
- }
-
-type TaltGlyphItemType struct {
-	XsdGoPkgHasElems_GlyphRef
-
-	XsdGoPkgHasAtts_StdAttrs
-
+type XsdGoPkgHasElems_View struct {
+	Views []*TviewType `xml:"http://www.w3.org/2000/svg view"`
 }
 
-//	If the WalkHandlers.TaltGlyphItemType function is not nil (ie. was set by outside code), calls it with this TaltGlyphItemType instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TaltGlyphItemType instance.
-func (me *TaltGlyphItemType) Walk ()  { 
-	if fn := WalkHandlers.TaltGlyphItemType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_GlyphRef.Walk()
- }
-
-type XsdGoPkgHasElems_AltGlyphItem struct {
-	AltGlyphItems []*TaltGlyphItemType `xml:"http://www.w3.org/2000/svg altGlyphItem"`
-
+//	If the WalkHandlers.XsdGoPkgHasElems_View function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_View instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_View instance.
+func (me *XsdGoPkgHasElems_View) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_View; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Views {
+		x.Walk()
+	}
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_AltGlyphItem function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AltGlyphItem instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AltGlyphItem instance.
-func (me *XsdGoPkgHasElems_AltGlyphItem) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AltGlyphItem; fn != nil { fn(me) }
-	for _, x := range me.AltGlyphItems { x.Walk() }
- }
-
-type TaltGlyphDefType struct {
-	XsdGoPkgHasElems_GlyphRef
-
-	XsdGoPkgHasElems_AltGlyphItem
-
-	XsdGoPkgHasAtts_StdAttrs
-
+type XsdGoPkgHasElems_Title struct {
+	Titles []*TtitleType `xml:"http://www.w3.org/2000/svg title"`
 }
 
-//	If the WalkHandlers.TaltGlyphDefType function is not nil (ie. was set by outside code), calls it with this TaltGlyphDefType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TaltGlyphDefType instance.
-func (me *TaltGlyphDefType) Walk ()  { 
-	if fn := WalkHandlers.TaltGlyphDefType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_AltGlyphItem.Walk()
-	me.XsdGoPkgHasElems_GlyphRef.Walk()
- }
-
-type XsdGoPkgHasElems_AltGlyphDef struct {
-	AltGlyphDefs []*TaltGlyphDefType `xml:"http://www.w3.org/2000/svg altGlyphDef"`
-
+//	If the WalkHandlers.XsdGoPkgHasElems_Title function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Title instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Title instance.
+func (me *XsdGoPkgHasElems_Title) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Title; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Titles {
+		x.Walk()
+	}
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_AltGlyphDef function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AltGlyphDef instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AltGlyphDef instance.
-func (me *XsdGoPkgHasElems_AltGlyphDef) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_AltGlyphDef; fn != nil { fn(me) }
-	for _, x := range me.AltGlyphDefs { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_RefY_TCoordinateType_ struct {
-	RefY TCoordinateType `xml:"http://www.w3.org/2000/svg refY,attr"`
-
+type XsdGoPkgHasAttr_Title_XsdtString_ struct {
+	Title xsdt.String `xml:"http://www.w3.org/2000/svg title,attr"`
 }
 
 //	comma-separated list of media descriptors.
 type TMediaDescType xsdt.String
 
-//	Since TMediaDescType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TMediaDescType) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
-
 //	This convenience method just performs a simple type conversion to TMediaDescType's alias type xsdt.String.
-func (me TMediaDescType) ToXsdtString () xsdt.String { return xsdt.String(me) }
+func (me TMediaDescType) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TMediaDescType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TMediaDescType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 //	Since TMediaDescType is just a simple String type, this merely returns the current string value.
-func (me TMediaDescType) String () string { return xsdt.String(me).String() }
+func (me TMediaDescType) String() string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasAttr_Media_TMediaDescType_ struct {
 	Media TMediaDescType `xml:"http://www.w3.org/2000/svg media,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Title_XsdtString_ struct {
-	Title xsdt.String `xml:"http://www.w3.org/2000/svg title,attr"`
-
 }
 
 type TstyleType struct {
+	XsdGoPkgHasAttr_Title_XsdtString_
+
+	XsdGoPkgHasAttr_Media_TMediaDescType_
+
 	xml.XsdGoPkgHasAttr_Space
 
 	XsdGoPkgHasCdata
 
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_Media_TMediaDescType_
-
 	XsdGoPkgHasAttr_Type_TContentTypeType_
 
-	XsdGoPkgHasAttr_Title_XsdtString_
-
+	XsdGoPkgHasAtts_StdAttrs
 }
 
 //	If the WalkHandlers.TstyleType function is not nil (ie. was set by outside code), calls it with this TstyleType instance as the single argument. Then calls the Walk() method on 1/6 embed(s) and 0/0 field(s) belonging to this TstyleType instance.
-func (me *TstyleType) Walk ()  { 
-	if fn := WalkHandlers.TstyleType; fn != nil { fn(me) }
+func (me *TstyleType) Walk() {
+	if fn := WalkHandlers.TstyleType; fn != nil {
+		fn(me)
+	}
 	me.XsdGoPkgHasCdata.Walk()
- }
+}
 
 type XsdGoPkgHasElems_Style struct {
 	Styles []*TstyleType `xml:"http://www.w3.org/2000/svg style"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Style function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Style instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Style instance.
-func (me *XsdGoPkgHasElems_Style) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Style; fn != nil { fn(me) }
-	for _, x := range me.Styles { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_MarkerWidth_TLengthType_ struct {
-	MarkerWidth TLengthType `xml:"http://www.w3.org/2000/svg markerWidth,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Orient_XsdtString_ struct {
-	Orient xsdt.String `xml:"http://www.w3.org/2000/svg orient,attr"`
-
-}
-
-type XsdGoPkgHasAttr_RefX_TCoordinateType_ struct {
-	RefX TCoordinateType `xml:"http://www.w3.org/2000/svg refX,attr"`
-
+func (me *XsdGoPkgHasElems_Style) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Style; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Styles {
+		x.Walk()
+	}
 }
 
 type TxsdMarkerTypeMarkerUnits xsdt.String
 
-//	Returns true if the value of this enumerated TxsdMarkerTypeMarkerUnits is "userSpace".
-func (me TxsdMarkerTypeMarkerUnits) IsUserSpace () bool { return me == "userSpace" }
-
 //	Returns true if the value of this enumerated TxsdMarkerTypeMarkerUnits is "userSpaceOnUse".
-func (me TxsdMarkerTypeMarkerUnits) IsUserSpaceOnUse () bool { return me == "userSpaceOnUse" }
-
-//	This convenience method just performs a simple type conversion to TxsdMarkerTypeMarkerUnits's alias type xsdt.String.
-func (me TxsdMarkerTypeMarkerUnits) ToXsdtString () xsdt.String { return xsdt.String(me) }
-
-//	Since TxsdMarkerTypeMarkerUnits is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdMarkerTypeMarkerUnits) SetFromString (s string)  { (*xsdt.String)(me).SetFromString(s) }
+func (me TxsdMarkerTypeMarkerUnits) IsUserSpaceOnUse() bool { return me == "userSpaceOnUse" }
 
 //	Returns true if the value of this enumerated TxsdMarkerTypeMarkerUnits is "strokeWidth".
-func (me TxsdMarkerTypeMarkerUnits) IsStrokeWidth () bool { return me == "strokeWidth" }
+func (me TxsdMarkerTypeMarkerUnits) IsStrokeWidth() bool { return me == "strokeWidth" }
 
 //	Since TxsdMarkerTypeMarkerUnits is just a simple String type, this merely returns the current string value.
-func (me TxsdMarkerTypeMarkerUnits) String () string { return xsdt.String(me).String() }
+func (me TxsdMarkerTypeMarkerUnits) String() string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TxsdMarkerTypeMarkerUnits's alias type xsdt.String.
+func (me TxsdMarkerTypeMarkerUnits) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TxsdMarkerTypeMarkerUnits is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdMarkerTypeMarkerUnits) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdMarkerTypeMarkerUnits is "userSpace".
+func (me TxsdMarkerTypeMarkerUnits) IsUserSpace() bool { return me == "userSpace" }
 
 type XsdGoPkgHasAttr_MarkerUnits_TxsdMarkerTypeMarkerUnits_ struct {
 	MarkerUnits TxsdMarkerTypeMarkerUnits `xml:"http://www.w3.org/2000/svg markerUnits,attr"`
-
 }
 
 type XsdGoPkgHasAttr_MarkerHeight_TLengthType_ struct {
 	MarkerHeight TLengthType `xml:"http://www.w3.org/2000/svg markerHeight,attr"`
+}
 
+type XsdGoPkgHasAttr_Orient_XsdtString_ struct {
+	Orient xsdt.String `xml:"http://www.w3.org/2000/svg orient,attr"`
+}
+
+type XsdGoPkgHasAttr_Local_XsdtString_ struct {
+	Local xsdt.String `xml:"http://www.w3.org/2000/svg local,attr"`
+}
+
+type TxsdColorProfileTypeRenderingIntent xsdt.String
+
+//	Returns true if the value of this enumerated TxsdColorProfileTypeRenderingIntent is "saturation".
+func (me TxsdColorProfileTypeRenderingIntent) IsSaturation() bool { return me == "saturation" }
+
+//	Since TxsdColorProfileTypeRenderingIntent is just a simple String type, this merely returns the current string value.
+func (me TxsdColorProfileTypeRenderingIntent) String() string { return xsdt.String(me).String() }
+
+//	Since TxsdColorProfileTypeRenderingIntent is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdColorProfileTypeRenderingIntent) SetFromString(s string) {
+	(*xsdt.String)(me).SetFromString(s)
+}
+
+//	Returns true if the value of this enumerated TxsdColorProfileTypeRenderingIntent is "absolute-colorimetric".
+func (me TxsdColorProfileTypeRenderingIntent) IsAbsoluteColorimetric() bool {
+	return me == "absolute-colorimetric"
+}
+
+//	Returns true if the value of this enumerated TxsdColorProfileTypeRenderingIntent is "perceptual".
+func (me TxsdColorProfileTypeRenderingIntent) IsPerceptual() bool { return me == "perceptual" }
+
+//	Returns true if the value of this enumerated TxsdColorProfileTypeRenderingIntent is "auto".
+func (me TxsdColorProfileTypeRenderingIntent) IsAuto() bool { return me == "auto" }
+
+//	Returns true if the value of this enumerated TxsdColorProfileTypeRenderingIntent is "relative-colorimetric".
+func (me TxsdColorProfileTypeRenderingIntent) IsRelativeColorimetric() bool {
+	return me == "relative-colorimetric"
+}
+
+//	This convenience method just performs a simple type conversion to TxsdColorProfileTypeRenderingIntent's alias type xsdt.String.
+func (me TxsdColorProfileTypeRenderingIntent) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+type XsdGoPkgHasAttr_RenderingIntent_TxsdColorProfileTypeRenderingIntent_Auto struct {
+	RenderingIntent TxsdColorProfileTypeRenderingIntent `xml:"http://www.w3.org/2000/svg rendering-intent,attr"`
+}
+
+//	Returns the default value for RenderingIntent -- "auto"
+func (me XsdGoPkgHasAttr_RenderingIntent_TxsdColorProfileTypeRenderingIntent_Auto) RenderingIntentDefault() TxsdColorProfileTypeRenderingIntent {
+	return TxsdColorProfileTypeRenderingIntent("auto")
+}
+
+type TcolorProfileType struct {
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_Local_XsdtString_
+
+	XsdGoPkgHasAtts_XlinkRefAttrs
+
+	XsdGoPkgHasAttr_RenderingIntent_TxsdColorProfileTypeRenderingIntent_Auto
+
+	XsdGoPkgHasGroup_DescTitleMetadata
+
+	xlink.XsdGoPkgHasAttr_Href
+
+	XsdGoPkgHasAttr_Name_XsdtString_
+}
+
+//	If the WalkHandlers.TcolorProfileType function is not nil (ie. was set by outside code), calls it with this TcolorProfileType instance as the single argument. Then calls the Walk() method on 1/7 embed(s) and 0/0 field(s) belonging to this TcolorProfileType instance.
+func (me *TcolorProfileType) Walk() {
+	if fn := WalkHandlers.TcolorProfileType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+}
+
+type XsdGoPkgHasElems_ColorProfile struct {
+	ColorProfiles []*TcolorProfileType `xml:"http://www.w3.org/2000/svg color-profile"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ColorProfile function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ColorProfile instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ColorProfile instance.
+func (me *XsdGoPkgHasElems_ColorProfile) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_ColorProfile; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.ColorProfiles {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_RefY_TCoordinateType_ struct {
+	RefY TCoordinateType `xml:"http://www.w3.org/2000/svg refY,attr"`
+}
+
+type XsdGoPkgHasAttr_MarkerWidth_TLengthType_ struct {
+	MarkerWidth TLengthType `xml:"http://www.w3.org/2000/svg markerWidth,attr"`
+}
+
+type XsdGoPkgHasAttr_RefX_TCoordinateType_ struct {
+	RefX TCoordinateType `xml:"http://www.w3.org/2000/svg refX,attr"`
 }
 
 type TmarkerType struct {
-	XsdGoPkgHasElems_Switch
-
-	XsdGoPkgHasElems_Line
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasElems_A
-
-	XsdGoPkgHasAttr_PreserveAspectRatio_TPreserveAspectRatioSpecType_XMidYMidMeet
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasElems_Rect
-
-	XsdGoPkgHasElems_Defs
-
-	XsdGoPkgHasAttr_Orient_XsdtString_
-
-	XsdGoPkgHasElems_Metadata
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasAttr_ViewBox_TViewBoxSpecType_
-
-	XsdGoPkgHasElems_AnimateMotion
-
-	XsdGoPkgHasAttr_RefX_TCoordinateType_
-
-	XsdGoPkgHasElems_View
+	XsdGoPkgHasAttr_MarkerWidth_TLengthType_
 
 	XsdGoPkgHasElems_Path
 
-	XsdGoPkgHasAtts_LangSpaceAttrs
+	XsdGoPkgHasAtts_PresentationAttributesAll
 
-	XsdGoPkgHasAttr_MarkerUnits_TxsdMarkerTypeMarkerUnits_
-
-	XsdGoPkgHasElems_Filter
+	XsdGoPkgHasElems_Svg
 
 	XsdGoPkgHasElems_RadialGradient
 
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasElems_Use
-
-	XsdGoPkgHasAttr_MarkerHeight_TLengthType_
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
 
 	XsdGoPkgHasElems_Image
 
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasElems_AnimateColor
+
 	XsdGoPkgHasElems_Polyline
 
-	XsdGoPkgHasElems_Script
-
-	XsdGoPkgHasElems_Ellipse
-
-	XsdGoPkgHasElems_AltGlyphDef
-
-	XsdGoPkgHasElems_Animate
+	XsdGoPkgHasElems_Title
 
 	XsdGoPkgHasElems_ClipPath
 
-	XsdGoPkgHasElems_Text
+	XsdGoPkgHasAttr_RefX_TCoordinateType_
+
+	XsdGoPkgHasElems_FontFace
+
+	XsdGoPkgHasElems_Desc
+
+	XsdGoPkgHasElems_Circle
+
+	XsdGoPkgHasElems_Ellipse
+
+	XsdGoPkgHasElems_AnimateTransform
+
+	XsdGoPkgHasAttr_MarkerUnits_TxsdMarkerTypeMarkerUnits_
 
 	XsdGoPkgHasElems_Pattern
 
+	XsdGoPkgHasElems_Switch
+
+	XsdGoPkgHasElems_Text
+
+	XsdGoPkgHasAttr_ViewBox_TViewBoxSpecType_
+
+	XsdGoPkgHasAttr_PreserveAspectRatio_TPreserveAspectRatioSpecType_XMidYMidMeet
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAttr_MarkerHeight_TLengthType_
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Use
+
+	XsdGoPkgHasAttr_Orient_XsdtString_
+
+	XsdGoPkgHasElems_Line
+
+	XsdGoPkgHasElems_AltGlyphDef
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasElems_Defs
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasElems_Polygon
+
+	XsdGoPkgHasElems_AnimateMotion
+
 	XsdGoPkgHasElems_Cursor
+
+	XsdGoPkgHasElems_ColorProfile
+
+	XsdGoPkgHasElems_Script
+
+	XsdGoPkgHasElems_View
+
+	XsdGoPkgHasElems_Metadata
+
+	XsdGoPkgHasElems_Marker
+
+	XsdGoPkgHasElems_LinearGradient
+
+	XsdGoPkgHasElems_Rect
+
+	XsdGoPkgHasElems_Style
+
+	XsdGoPkgHasElems_Mask
+
+	XsdGoPkgHasElems_G
+
+	XsdGoPkgHasAttr_Class_TClassListType_
 
 	XsdGoPkgHasElems_Font
 
 	XsdGoPkgHasAttr_RefY_TCoordinateType_
 
-	XsdGoPkgHasElems_Polygon
+	XsdGoPkgHasElems_A
 
-	XsdGoPkgHasElems_LinearGradient
-
-	XsdGoPkgHasElems_Desc
-
-	XsdGoPkgHasElems_Mask
-
-	XsdGoPkgHasElems_ColorProfile
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasAtts_PresentationAttributesAll
-
-	XsdGoPkgHasElems_Svg
+	XsdGoPkgHasElems_Filter
 
 	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_Style
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_G
-
-	XsdGoPkgHasElems_Circle
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAttr_MarkerWidth_TLengthType_
-
-	XsdGoPkgHasElems_Marker
-
-	XsdGoPkgHasElems_FontFace
-
 }
 
-//	If the WalkHandlers.TmarkerType function is not nil (ie. was set by outside code), calls it with this TmarkerType instance as the single argument. Then calls the Walk() method on 30/53 embed(s) and 0/0 field(s) belonging to this TmarkerType instance.
-func (me *TmarkerType) Walk ()  { 
-	if fn := WalkHandlers.TmarkerType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Text.Walk()
-	me.XsdGoPkgHasElems_Cursor.Walk()
-	me.XsdGoPkgHasElems_Polygon.Walk()
-	me.XsdGoPkgHasElems_LinearGradient.Walk()
-	me.XsdGoPkgHasElems_Desc.Walk()
-	me.XsdGoPkgHasElems_ColorProfile.Walk()
-	me.XsdGoPkgHasElems_Svg.Walk()
-	me.XsdGoPkgHasElems_Style.Walk()
-	me.XsdGoPkgHasElems_Circle.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_FontFace.Walk()
-	me.XsdGoPkgHasElems_Line.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElems_Rect.Walk()
-	me.XsdGoPkgHasElems_Metadata.Walk()
-	me.XsdGoPkgHasElems_Title.Walk()
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
-	me.XsdGoPkgHasElems_View.Walk()
-	me.XsdGoPkgHasElems_Path.Walk()
+//	If the WalkHandlers.TmarkerType function is not nil (ie. was set by outside code), calls it with this TmarkerType instance as the single argument. Then calls the Walk() method on 28/53 embed(s) and 0/0 field(s) belonging to this TmarkerType instance.
+func (me *TmarkerType) Walk() {
+	if fn := WalkHandlers.TmarkerType; fn != nil {
+		fn(me)
+	}
 	me.XsdGoPkgHasElems_Filter.Walk()
+	me.XsdGoPkgHasElems_Path.Walk()
+	me.XsdGoPkgHasElems_Svg.Walk()
 	me.XsdGoPkgHasElems_RadialGradient.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_Use.Walk()
 	me.XsdGoPkgHasElems_Image.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
 	me.XsdGoPkgHasElems_Polyline.Walk()
-	me.XsdGoPkgHasElems_Script.Walk()
+	me.XsdGoPkgHasElems_Title.Walk()
+	me.XsdGoPkgHasElems_FontFace.Walk()
+	me.XsdGoPkgHasElems_Desc.Walk()
+	me.XsdGoPkgHasElems_Circle.Walk()
 	me.XsdGoPkgHasElems_Ellipse.Walk()
-	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
 	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_ClipPath.Walk()
- }
+	me.XsdGoPkgHasElems_Use.Walk()
+	me.XsdGoPkgHasElems_Line.Walk()
+	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Polygon.Walk()
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasElems_Cursor.Walk()
+	me.XsdGoPkgHasElems_ColorProfile.Walk()
+	me.XsdGoPkgHasElems_Script.Walk()
+	me.XsdGoPkgHasElems_View.Walk()
+	me.XsdGoPkgHasElems_Metadata.Walk()
+	me.XsdGoPkgHasElems_LinearGradient.Walk()
+	me.XsdGoPkgHasElems_Rect.Walk()
+	me.XsdGoPkgHasElems_Style.Walk()
+}
 
 type XsdGoPkgHasElems_Marker struct {
 	Markers []*TmarkerType `xml:"http://www.w3.org/2000/svg marker"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Marker function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Marker instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Marker instance.
-func (me *XsdGoPkgHasElems_Marker) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Marker; fn != nil { fn(me) }
-	for _, x := range me.Markers { x.Walk() }
- }
+func (me *XsdGoPkgHasElems_Marker) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Marker; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Markers {
+		x.Walk()
+	}
+}
 
 type TgType struct {
-	XsdGoPkgHasElems_Mask
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Image
-
-	XsdGoPkgHasElems_Use
-
-	XsdGoPkgHasElems_Desc
-
-	XsdGoPkgHasElems_ClipPath
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasElems_Filter
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasElems_Font
-
-	XsdGoPkgHasElems_Metadata
-
 	XsdGoPkgHasElems_ColorProfile
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasElems_AnimateTransform
 
 	XsdGoPkgHasElems_A
 
-	XsdGoPkgHasElems_Switch
-
-	XsdGoPkgHasElems_Script
-
-	XsdGoPkgHasAtts_PresentationAttributesAll
-
-	XsdGoPkgHasElems_Cursor
-
-	XsdGoPkgHasElems_RadialGradient
-
-	XsdGoPkgHasElems_Marker
-
-	XsdGoPkgHasElems_Ellipse
-
-	XsdGoPkgHasElems_AnimateColor
-
 	XsdGoPkgHasElems_Text
 
-	XsdGoPkgHasElems_Rect
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasElems_Use
 
 	XsdGoPkgHasElems_Path
 
-	XsdGoPkgHasElems_Style
+	XsdGoPkgHasAtts_StdAttrs
 
-	XsdGoPkgHasElems_FontFace
+	XsdGoPkgHasElems_Font
 
-	XsdGoPkgHasElems_LinearGradient
-
-	XsdGoPkgHasElems_Line
-
-	XsdGoPkgHasElems_AnimateMotion
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasAttr_Transform_TransformListType_
+	XsdGoPkgHasElems_Cursor
 
 	XsdGoPkgHasElems_AltGlyphDef
 
-	XsdGoPkgHasElems_Polygon
+	XsdGoPkgHasElems_Image
 
-	XsdGoPkgHasAtts_StdAttrs
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasElems_Desc
 
 	XsdGoPkgHasElems_Circle
 
-	XsdGoPkgHasElems_G
+	XsdGoPkgHasElems_Line
 
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
+	XsdGoPkgHasElems_Filter
 
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Svg
-
-	XsdGoPkgHasElems_Defs
-
-	XsdGoPkgHasElems_Pattern
-
-	XsdGoPkgHasElems_Polyline
+	XsdGoPkgHasElems_FontFace
 
 	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasElems_AnimateTransform
+
+	XsdGoPkgHasElems_AnimateMotion
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasElems_RadialGradient
+
+	XsdGoPkgHasElems_LinearGradient
 
 	XsdGoPkgHasElems_View
 
 	XsdGoPkgHasAtts_GraphicsElementEvents
 
+	XsdGoPkgHasElems_G
+
+	XsdGoPkgHasElems_Pattern
+
+	XsdGoPkgHasElems_Rect
+
+	XsdGoPkgHasElems_Metadata
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Script
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Ellipse
+
+	XsdGoPkgHasElems_Polyline
+
+	XsdGoPkgHasElems_Polygon
+
+	XsdGoPkgHasElems_Style
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasAttr_Transform_TransformListType_
+
+	XsdGoPkgHasElems_Mask
+
+	XsdGoPkgHasElems_Marker
+
+	XsdGoPkgHasElems_ClipPath
+
+	XsdGoPkgHasElems_Defs
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasElems_Svg
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasElems_Switch
+
+	XsdGoPkgHasAtts_PresentationAttributesAll
 }
 
-//	If the WalkHandlers.TgType function is not nil (ie. was set by outside code), calls it with this TgType instance as the single argument. Then calls the Walk() method on 31/48 embed(s) and 0/0 field(s) belonging to this TgType instance.
-func (me *TgType) Walk ()  { 
-	if fn := WalkHandlers.TgType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Circle.Walk()
-	me.XsdGoPkgHasElems_Title.Walk()
-	me.XsdGoPkgHasElems_Svg.Walk()
-	me.XsdGoPkgHasElems_Polyline.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_View.Walk()
-	me.XsdGoPkgHasElems_Image.Walk()
-	me.XsdGoPkgHasElems_Use.Walk()
-	me.XsdGoPkgHasElems_Desc.Walk()
-	me.XsdGoPkgHasElems_ClipPath.Walk()
-	me.XsdGoPkgHasElems_Filter.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Metadata.Walk()
-	me.XsdGoPkgHasElems_ColorProfile.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_Script.Walk()
+//	If the WalkHandlers.TgType function is not nil (ie. was set by outside code), calls it with this TgType instance as the single argument. Then calls the Walk() method on 29/48 embed(s) and 0/0 field(s) belonging to this TgType instance.
+func (me *TgType) Walk() {
+	if fn := WalkHandlers.TgType; fn != nil {
+		fn(me)
+	}
 	me.XsdGoPkgHasElems_Cursor.Walk()
-	me.XsdGoPkgHasElems_RadialGradient.Walk()
-	me.XsdGoPkgHasElems_Marker.Walk()
-	me.XsdGoPkgHasElems_Ellipse.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElems_Text.Walk()
-	me.XsdGoPkgHasElems_Rect.Walk()
-	me.XsdGoPkgHasElems_Path.Walk()
-	me.XsdGoPkgHasElems_Style.Walk()
-	me.XsdGoPkgHasElems_FontFace.Walk()
-	me.XsdGoPkgHasElems_LinearGradient.Walk()
-	me.XsdGoPkgHasElems_Line.Walk()
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
 	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
+	me.XsdGoPkgHasElems_Image.Walk()
+	me.XsdGoPkgHasElems_Desc.Walk()
+	me.XsdGoPkgHasElems_Circle.Walk()
+	me.XsdGoPkgHasElems_Line.Walk()
+	me.XsdGoPkgHasElems_Filter.Walk()
+	me.XsdGoPkgHasElems_FontFace.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_RadialGradient.Walk()
+	me.XsdGoPkgHasElems_LinearGradient.Walk()
+	me.XsdGoPkgHasElems_View.Walk()
+	me.XsdGoPkgHasElems_Rect.Walk()
+	me.XsdGoPkgHasElems_Metadata.Walk()
+	me.XsdGoPkgHasElems_Script.Walk()
+	me.XsdGoPkgHasElems_Title.Walk()
+	me.XsdGoPkgHasElems_Ellipse.Walk()
+	me.XsdGoPkgHasElems_Polyline.Walk()
 	me.XsdGoPkgHasElems_Polygon.Walk()
- }
+	me.XsdGoPkgHasElems_Style.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_Marker.Walk()
+	me.XsdGoPkgHasElems_Svg.Walk()
+	me.XsdGoPkgHasElems_ColorProfile.Walk()
+	me.XsdGoPkgHasElems_Use.Walk()
+	me.XsdGoPkgHasElems_Path.Walk()
+}
 
 type XsdGoPkgHasElems_G struct {
 	Gs []*TgType `xml:"http://www.w3.org/2000/svg g"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_G function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_G instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_G instance.
-func (me *XsdGoPkgHasElems_G) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_G; fn != nil { fn(me) }
-	for _, x := range me.Gs { x.Walk() }
- }
-
-type TforeignObjectType struct {
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasAttr_Transform_TransformListType_
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Content_XsdtString_StructuredText
-
-	XsdGoPkgHasAttr_Height_TLengthType_
-
-	XsdGoPkgHasAtts_PresentationAttributesAll
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasAttr_Width_TLengthType_
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAttr_Y_TCoordinateType_
-
-	XsdGoPkgHasAttr_X_TCoordinateType_
-
+func (me *XsdGoPkgHasElems_G) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_G; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Gs {
+		x.Walk()
+	}
 }
-
-//	If the WalkHandlers.TforeignObjectType function is not nil (ie. was set by outside code), calls it with this TforeignObjectType instance as the single argument. Then calls the Walk() method on 1/15 embed(s) and 0/0 field(s) belonging to this TforeignObjectType instance.
-func (me *TforeignObjectType) Walk ()  { 
-	if fn := WalkHandlers.TforeignObjectType; fn != nil { fn(me) }
-	me.XsdGoPkgHasCdata.Walk()
- }
-
-type XsdGoPkgHasElems_ForeignObject struct {
-	ForeignObjects []*TforeignObjectType `xml:"http://www.w3.org/2000/svg foreignObject"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ForeignObject function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ForeignObject instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ForeignObject instance.
-func (me *XsdGoPkgHasElems_ForeignObject) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_ForeignObject; fn != nil { fn(me) }
-	for _, x := range me.ForeignObjects { x.Walk() }
- }
 
 type TswitchType struct {
-	XsdGoPkgHasElems_AnimateColor
-
 	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasElems_Image
-
-	XsdGoPkgHasElems_AnimateMotion
-
-	XsdGoPkgHasElems_Circle
-
-	XsdGoPkgHasAttr_Transform_TransformListType_
-
-	XsdGoPkgHasElems_Polyline
-
-	XsdGoPkgHasAtts_PresentationAttributesAll
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasElems_Ellipse
-
-	XsdGoPkgHasElems_Polygon
-
-	XsdGoPkgHasElems_Text
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasElems_Use
-
-	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasElems_Svg
 
-	XsdGoPkgHasElems_Path
+	XsdGoPkgHasElems_Set
 
-	XsdGoPkgHasElems_G
+	XsdGoPkgHasElems_Animate
 
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
+	XsdGoPkgHasElems_Image
+
+	XsdGoPkgHasAtts_PresentationAttributesAll
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasElems_Switch
+
+	XsdGoPkgHasElems_A
+
+	XsdGoPkgHasElems_Text
+
+	XsdGoPkgHasElems_Ellipse
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasElems_Polyline
+
+	XsdGoPkgHasElems_Polygon
+
+	XsdGoPkgHasAttr_Transform_TransformListType_
+
+	XsdGoPkgHasElems_Circle
 
 	XsdGoPkgHasElems_ForeignObject
 
-	XsdGoPkgHasElems_Set
+	XsdGoPkgHasElems_AnimateColor
 
-	XsdGoPkgHasAtts_GraphicsElementEvents
+	XsdGoPkgHasElems_AnimateMotion
 
-	XsdGoPkgHasAttr_Class_TClassListType_
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
 
-	XsdGoPkgHasElems_A
+	XsdGoPkgHasElems_Path
 
-	XsdGoPkgHasElems_Line
+	XsdGoPkgHasElems_AnimateTransform
 
 	XsdGoPkgHasElems_Rect
 
-	XsdGoPkgHasElems_Switch
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
 
+	XsdGoPkgHasElems_Line
+
+	XsdGoPkgHasElems_Use
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasGroup_DescTitleMetadata
+
+	XsdGoPkgHasElems_G
 }
 
-//	If the WalkHandlers.TswitchType function is not nil (ie. was set by outside code), calls it with this TswitchType instance as the single argument. Then calls the Walk() method on 19/30 embed(s) and 0/0 field(s) belonging to this TswitchType instance.
-func (me *TswitchType) Walk ()  { 
-	if fn := WalkHandlers.TswitchType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Ellipse.Walk()
-	me.XsdGoPkgHasElems_Polygon.Walk()
-	me.XsdGoPkgHasElems_Text.Walk()
-	me.XsdGoPkgHasElems_Use.Walk()
-	me.XsdGoPkgHasElems_Svg.Walk()
-	me.XsdGoPkgHasElems_Path.Walk()
-	me.XsdGoPkgHasElems_G.Walk()
-	me.XsdGoPkgHasElems_ForeignObject.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Line.Walk()
-	me.XsdGoPkgHasElems_Rect.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+//	If the WalkHandlers.TswitchType function is not nil (ie. was set by outside code), calls it with this TswitchType instance as the single argument. Then calls the Walk() method on 18/30 embed(s) and 0/0 field(s) belonging to this TswitchType instance.
+func (me *TswitchType) Walk() {
+	if fn := WalkHandlers.TswitchType; fn != nil {
+		fn(me)
+	}
 	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+	me.XsdGoPkgHasElems_G.Walk()
+	me.XsdGoPkgHasElems_Svg.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
 	me.XsdGoPkgHasElems_Image.Walk()
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
-	me.XsdGoPkgHasElems_Circle.Walk()
+	me.XsdGoPkgHasElems_Ellipse.Walk()
 	me.XsdGoPkgHasElems_Polyline.Walk()
- }
+	me.XsdGoPkgHasElems_Polygon.Walk()
+	me.XsdGoPkgHasElems_Circle.Walk()
+	me.XsdGoPkgHasElems_ForeignObject.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasElems_Path.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+	me.XsdGoPkgHasElems_Rect.Walk()
+	me.XsdGoPkgHasElems_Line.Walk()
+	me.XsdGoPkgHasElems_Use.Walk()
+}
 
 type XsdGoPkgHasElems_Switch struct {
 	Switchs []*TswitchType `xml:"http://www.w3.org/2000/svg switch"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Switch function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Switch instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Switch instance.
-func (me *XsdGoPkgHasElems_Switch) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Switch; fn != nil { fn(me) }
-	for _, x := range me.Switchs { x.Walk() }
- }
-
-type TdefsType struct {
-	XsdGoPkgHasElems_ColorProfile
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasElems_AnimateMotion
-
-	XsdGoPkgHasElems_Image
-
-	XsdGoPkgHasElems_ClipPath
-
-	XsdGoPkgHasElems_Filter
-
-	XsdGoPkgHasElems_Use
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasElems_Mask
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasElems_Ellipse
-
-	XsdGoPkgHasElems_Script
-
-	XsdGoPkgHasElems_Desc
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Text
-
-	XsdGoPkgHasElems_Font
-
-	XsdGoPkgHasElems_FontFace
-
-	XsdGoPkgHasAttr_Transform_TransformListType_
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasElems_Metadata
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasElems_A
-
-	XsdGoPkgHasElems_Switch
-
-	XsdGoPkgHasElems_AltGlyphDef
-
-	XsdGoPkgHasElems_Polyline
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasElems_LinearGradient
-
-	XsdGoPkgHasElems_Line
-
-	XsdGoPkgHasElems_Circle
-
-	XsdGoPkgHasAtts_PresentationAttributesAll
-
-	XsdGoPkgHasElems_RadialGradient
-
-	XsdGoPkgHasElems_Cursor
-
-	XsdGoPkgHasElems_Defs
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Pattern
-
-	XsdGoPkgHasElems_View
-
-	XsdGoPkgHasElems_Style
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_G
-
-	XsdGoPkgHasElems_Path
-
-	XsdGoPkgHasElems_Svg
-
-	XsdGoPkgHasElems_Marker
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasElems_Rect
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasElems_Polygon
-
+func (me *XsdGoPkgHasElems_Switch) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Switch; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Switchs {
+		x.Walk()
+	}
 }
-
-//	If the WalkHandlers.TdefsType function is not nil (ie. was set by outside code), calls it with this TdefsType instance as the single argument. Then calls the Walk() method on 33/48 embed(s) and 0/0 field(s) belonging to this TdefsType instance.
-func (me *TdefsType) Walk ()  { 
-	if fn := WalkHandlers.TdefsType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Script.Walk()
-	me.XsdGoPkgHasElems_Desc.Walk()
-	me.XsdGoPkgHasElems_Title.Walk()
-	me.XsdGoPkgHasElems_Text.Walk()
-	me.XsdGoPkgHasElems_FontFace.Walk()
-	me.XsdGoPkgHasElems_Metadata.Walk()
-	me.XsdGoPkgHasElems_Switch.Walk()
-	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
-	me.XsdGoPkgHasElems_Polyline.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElems_LinearGradient.Walk()
-	me.XsdGoPkgHasElems_Line.Walk()
-	me.XsdGoPkgHasElems_Circle.Walk()
-	me.XsdGoPkgHasElems_RadialGradient.Walk()
-	me.XsdGoPkgHasElems_Cursor.Walk()
-	me.XsdGoPkgHasElems_View.Walk()
-	me.XsdGoPkgHasElems_Style.Walk()
-	me.XsdGoPkgHasElems_G.Walk()
-	me.XsdGoPkgHasElems_Path.Walk()
-	me.XsdGoPkgHasElems_Svg.Walk()
-	me.XsdGoPkgHasElems_Marker.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_Rect.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Polygon.Walk()
-	me.XsdGoPkgHasElems_ColorProfile.Walk()
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
-	me.XsdGoPkgHasElems_Image.Walk()
-	me.XsdGoPkgHasElems_ClipPath.Walk()
-	me.XsdGoPkgHasElems_Filter.Walk()
-	me.XsdGoPkgHasElems_Use.Walk()
-	me.XsdGoPkgHasElems_Ellipse.Walk()
- }
-
-type XsdGoPkgHasElems_Defs struct {
-	Defses []*TdefsType `xml:"http://www.w3.org/2000/svg defs"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Defs function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Defs instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Defs instance.
-func (me *XsdGoPkgHasElems_Defs) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Defs; fn != nil { fn(me) }
-	for _, x := range me.Defses { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_Target_XsdtNmtoken_ struct {
-	Target xsdt.Nmtoken `xml:"http://www.w3.org/2000/svg target,attr"`
-
-}
-
-type TaType struct {
-	XsdGoPkgHasElems_LinearGradient
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasElems_Desc
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_Use
-
-	XsdGoPkgHasElems_Metadata
-
-	XsdGoPkgHasElems_Mask
-
-	xlink.XsdGoPkgHasAttr_Actuate
-
-	XsdGoPkgHasElems_Filter
-
-	XsdGoPkgHasElems_ClipPath
-
-	XsdGoPkgHasElems_ColorProfile
-
-	XsdGoPkgHasElems_Rect
-
-	XsdGoPkgHasElems_Line
-
-	XsdGoPkgHasElems_Defs
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasElems_Pattern
-
-	XsdGoPkgHasElems_Svg
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasElems_AnimateMotion
-
-	xlink.XsdGoPkgHasAttr_Show
-
-	XsdGoPkgHasElems_Ellipse
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasElems_Switch
-
-	XsdGoPkgHasElems_Path
-
-	xlink.XsdGoPkgHasAttr_Role
-
-	XsdGoPkgHasElems_G
-
-	XsdGoPkgHasElems_Polyline
-
-	XsdGoPkgHasElems_Script
-
-	XsdGoPkgHasElems_Font
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Transform_TransformListType_
-
-	XsdGoPkgHasElems_Style
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasAtts_PresentationAttributesAll
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasElems_RadialGradient
-
-	XsdGoPkgHasElems_Circle
-
-	XsdGoPkgHasElems_AltGlyphDef
-
-	XsdGoPkgHasElems_Animate
-
-	xlink.XsdGoPkgHasAttr_Href
-
-	XsdGoPkgHasElems_Text
-
-	XsdGoPkgHasAttr_Target_XsdtNmtoken_
-
-	XsdGoPkgHasElems_Set
-
-	xlink.XsdGoPkgHasAttr_Title
-
-	xlink.XsdGoPkgHasAttr_Arcrole
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Image
-
-	XsdGoPkgHasElems_Marker
-
-	XsdGoPkgHasElems_FontFace
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasElems_Polygon
-
-	XsdGoPkgHasElems_Cursor
-
-	XsdGoPkgHasElems_A
-
-	xlink.XsdGoPkgHasAttr_Type
-
-	XsdGoPkgHasElems_View
-
-}
-
-//	If the WalkHandlers.TaType function is not nil (ie. was set by outside code), calls it with this TaType instance as the single argument. Then calls the Walk() method on 35/57 embed(s) and 0/0 field(s) belonging to this TaType instance.
-func (me *TaType) Walk ()  { 
-	if fn := WalkHandlers.TaType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
-	me.XsdGoPkgHasElems_Ellipse.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElems_Switch.Walk()
-	me.XsdGoPkgHasElems_Path.Walk()
-	me.XsdGoPkgHasElems_G.Walk()
-	me.XsdGoPkgHasElems_Polyline.Walk()
-	me.XsdGoPkgHasElems_Script.Walk()
-	me.XsdGoPkgHasCdata.Walk()
-	me.XsdGoPkgHasElems_Style.Walk()
-	me.XsdGoPkgHasElems_RadialGradient.Walk()
-	me.XsdGoPkgHasElems_Circle.Walk()
-	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Text.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Title.Walk()
-	me.XsdGoPkgHasElems_Image.Walk()
-	me.XsdGoPkgHasElems_Marker.Walk()
-	me.XsdGoPkgHasElems_FontFace.Walk()
-	me.XsdGoPkgHasElems_Polygon.Walk()
-	me.XsdGoPkgHasElems_Cursor.Walk()
-	me.XsdGoPkgHasElems_View.Walk()
-	me.XsdGoPkgHasElems_LinearGradient.Walk()
-	me.XsdGoPkgHasElems_Desc.Walk()
-	me.XsdGoPkgHasElems_Use.Walk()
-	me.XsdGoPkgHasElems_Metadata.Walk()
-	me.XsdGoPkgHasElems_Filter.Walk()
-	me.XsdGoPkgHasElems_ClipPath.Walk()
-	me.XsdGoPkgHasElems_ColorProfile.Walk()
-	me.XsdGoPkgHasElems_Rect.Walk()
-	me.XsdGoPkgHasElems_Line.Walk()
-	me.XsdGoPkgHasElems_Defs.Walk()
-	me.XsdGoPkgHasElems_Svg.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
- }
-
-type XsdGoPkgHasElems_A struct {
-	As []*TaType `xml:"http://www.w3.org/2000/svg a"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_A function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_A instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_A instance.
-func (me *XsdGoPkgHasElems_A) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_A; fn != nil { fn(me) }
-	for _, x := range me.As { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_MaskUnits_TxsdMaskTypeMaskUnits_ struct {
-	MaskUnits TxsdLinearGradientTypeGradientUnits `xml:"http://www.w3.org/2000/svg maskUnits,attr"`
-
-}
-
-type TmaskType struct {
-	XsdGoPkgHasElems_View
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Mask
-
-	XsdGoPkgHasElems_A
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasElems_Polyline
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasElems_Font
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_Use
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasElems_FontFace
-
-	XsdGoPkgHasAttr_MaskUnits_TxsdMaskTypeMaskUnits_
-
-	XsdGoPkgHasAttr_Width_TLengthType_
-
-	XsdGoPkgHasElems_RadialGradient
-
-	XsdGoPkgHasElems_Defs
-
-	XsdGoPkgHasElems_Circle
-
-	XsdGoPkgHasElems_G
-
-	XsdGoPkgHasElems_Metadata
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasElems_Rect
-
-	XsdGoPkgHasElems_AnimateMotion
-
-	XsdGoPkgHasElems_Cursor
-
-	XsdGoPkgHasElems_ColorProfile
-
-	XsdGoPkgHasElems_Filter
-
-	XsdGoPkgHasElems_Script
-
-	XsdGoPkgHasElems_Image
-
-	XsdGoPkgHasElems_AltGlyphDef
-
-	XsdGoPkgHasElems_Line
-
-	XsdGoPkgHasElems_Switch
-
-	XsdGoPkgHasElems_Style
-
-	XsdGoPkgHasAttr_Height_TLengthType_
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasElems_Path
-
-	XsdGoPkgHasElems_ClipPath
-
-	XsdGoPkgHasElems_Svg
-
-	XsdGoPkgHasElems_Text
-
-	XsdGoPkgHasElems_Marker
-
-	XsdGoPkgHasElems_Ellipse
-
-	XsdGoPkgHasAttr_Transform_TransformListType_
-
-	XsdGoPkgHasAttr_Y_TCoordinateType_
-
-	XsdGoPkgHasElems_LinearGradient
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAttr_X_TCoordinateType_
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasElems_Pattern
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Polygon
-
-	XsdGoPkgHasAtts_PresentationAttributesAll
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasElems_Desc
-
-}
-
-//	If the WalkHandlers.TmaskType function is not nil (ie. was set by outside code), calls it with this TmaskType instance as the single argument. Then calls the Walk() method on 35/52 embed(s) and 0/0 field(s) belonging to this TmaskType instance.
-func (me *TmaskType) Walk ()  { 
-	if fn := WalkHandlers.TmaskType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_Desc.Walk()
-	me.XsdGoPkgHasElems_View.Walk()
-	me.XsdGoPkgHasElems_Title.Walk()
-	me.XsdGoPkgHasElems_A.Walk()
-	me.XsdGoPkgHasElems_Polyline.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Use.Walk()
-	me.XsdGoPkgHasElems_FontFace.Walk()
-	me.XsdGoPkgHasElems_RadialGradient.Walk()
-	me.XsdGoPkgHasElems_Defs.Walk()
-	me.XsdGoPkgHasElems_Circle.Walk()
-	me.XsdGoPkgHasElems_G.Walk()
-	me.XsdGoPkgHasElems_Metadata.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElems_Rect.Walk()
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
-	me.XsdGoPkgHasElems_Cursor.Walk()
-	me.XsdGoPkgHasElems_ColorProfile.Walk()
-	me.XsdGoPkgHasElems_Filter.Walk()
-	me.XsdGoPkgHasElems_Script.Walk()
-	me.XsdGoPkgHasElems_Image.Walk()
-	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
-	me.XsdGoPkgHasElems_Line.Walk()
-	me.XsdGoPkgHasElems_Switch.Walk()
-	me.XsdGoPkgHasElems_Style.Walk()
-	me.XsdGoPkgHasElems_Path.Walk()
-	me.XsdGoPkgHasElems_ClipPath.Walk()
-	me.XsdGoPkgHasElems_Svg.Walk()
-	me.XsdGoPkgHasElems_Text.Walk()
-	me.XsdGoPkgHasElems_Marker.Walk()
-	me.XsdGoPkgHasElems_Ellipse.Walk()
-	me.XsdGoPkgHasElems_LinearGradient.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Polygon.Walk()
- }
-
-type XsdGoPkgHasElems_Mask struct {
-	Masks []*TmaskType `xml:"http://www.w3.org/2000/svg mask"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Mask function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Mask instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Mask instance.
-func (me *XsdGoPkgHasElems_Mask) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Mask; fn != nil { fn(me) }
-	for _, x := range me.Masks { x.Walk() }
- }
-
-type TsymbolType struct {
-	XsdGoPkgHasElems_G
-
-	XsdGoPkgHasElems_AnimateMotion
-
-	XsdGoPkgHasElems_Cursor
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasElems_Defs
-
-	XsdGoPkgHasElems_ColorProfile
-
-	XsdGoPkgHasElems_Pattern
-
-	XsdGoPkgHasElems_Line
-
-	XsdGoPkgHasElems_Mask
-
-	XsdGoPkgHasElems_Path
-
-	XsdGoPkgHasElems_Ellipse
-
-	XsdGoPkgHasElems_Svg
-
-	XsdGoPkgHasElems_RadialGradient
-
-	XsdGoPkgHasElems_Style
-
-	XsdGoPkgHasElems_Metadata
-
-	XsdGoPkgHasElems_Polygon
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasElems_LinearGradient
-
-	XsdGoPkgHasElems_ClipPath
-
-	XsdGoPkgHasAttr_ViewBox_TViewBoxSpecType_
-
-	XsdGoPkgHasElems_A
-
-	XsdGoPkgHasElems_Marker
-
-	XsdGoPkgHasElems_FontFace
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasAtts_PresentationAttributesAll
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_Rect
-
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasElems_Filter
-
-	XsdGoPkgHasElems_Text
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasElems_Polyline
-
-	XsdGoPkgHasElems_Desc
-
-	XsdGoPkgHasElems_View
-
-	XsdGoPkgHasElems_Font
-
-	XsdGoPkgHasElems_Script
-
-	XsdGoPkgHasElems_Switch
-
-	XsdGoPkgHasElems_Use
-
-	XsdGoPkgHasAttr_PreserveAspectRatio_TPreserveAspectRatioSpecType_XMidYMidMeet
-
-	XsdGoPkgHasElems_Circle
-
-	XsdGoPkgHasElems_AltGlyphDef
-
-	XsdGoPkgHasElems_Image
-
-}
-
-//	If the WalkHandlers.TsymbolType function is not nil (ie. was set by outside code), calls it with this TsymbolType instance as the single argument. Then calls the Walk() method on 36/48 embed(s) and 0/0 field(s) belonging to this TsymbolType instance.
-func (me *TsymbolType) Walk ()  { 
-	if fn := WalkHandlers.TsymbolType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Line.Walk()
-	me.XsdGoPkgHasElems_Mask.Walk()
-	me.XsdGoPkgHasElems_Path.Walk()
-	me.XsdGoPkgHasElems_Ellipse.Walk()
-	me.XsdGoPkgHasElems_Svg.Walk()
-	me.XsdGoPkgHasElems_RadialGradient.Walk()
-	me.XsdGoPkgHasElems_Style.Walk()
-	me.XsdGoPkgHasElems_Metadata.Walk()
-	me.XsdGoPkgHasElems_Polygon.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_LinearGradient.Walk()
-	me.XsdGoPkgHasElems_ClipPath.Walk()
-	me.XsdGoPkgHasElems_A.Walk()
-	me.XsdGoPkgHasElems_Marker.Walk()
-	me.XsdGoPkgHasElems_FontFace.Walk()
-	me.XsdGoPkgHasElems_Title.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Rect.Walk()
-	me.XsdGoPkgHasElems_Filter.Walk()
-	me.XsdGoPkgHasElems_Text.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElems_Polyline.Walk()
-	me.XsdGoPkgHasElems_Desc.Walk()
-	me.XsdGoPkgHasElems_View.Walk()
-	me.XsdGoPkgHasElems_Script.Walk()
-	me.XsdGoPkgHasElems_Switch.Walk()
-	me.XsdGoPkgHasElems_Use.Walk()
-	me.XsdGoPkgHasElems_Circle.Walk()
-	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
-	me.XsdGoPkgHasElems_Image.Walk()
-	me.XsdGoPkgHasElems_G.Walk()
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
-	me.XsdGoPkgHasElems_Cursor.Walk()
-	me.XsdGoPkgHasElems_Defs.Walk()
-	me.XsdGoPkgHasElems_ColorProfile.Walk()
- }
-
-type XsdGoPkgHasElems_Symbol struct {
-	Symbols []*TsymbolType `xml:"http://www.w3.org/2000/svg symbol"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Symbol function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Symbol instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Symbol instance.
-func (me *XsdGoPkgHasElems_Symbol) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Symbol; fn != nil { fn(me) }
-	for _, x := range me.Symbols { x.Walk() }
- }
 
 type XsdGoPkgHasAttr_PatternTransform_TransformListType_ struct {
 	PatternTransform TransformListType `xml:"http://www.w3.org/2000/svg patternTransform,attr"`
-
 }
 
 type XsdGoPkgHasAttr_PatternUnits_TxsdPatternTypePatternUnits_ struct {
 	PatternUnits TxsdLinearGradientTypeGradientUnits `xml:"http://www.w3.org/2000/svg patternUnits,attr"`
-
 }
 
 type TpatternType struct {
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasElems_FontFace
-
-	XsdGoPkgHasElems_Pattern
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasElems_Rect
-
-	XsdGoPkgHasAttr_PatternTransform_TransformListType_
-
 	XsdGoPkgHasElems_Text
+
+	XsdGoPkgHasElems_Path
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_AnimateMotion
+
+	XsdGoPkgHasElems_Svg
 
 	XsdGoPkgHasElems_Switch
 
-	XsdGoPkgHasAttr_Y_TCoordinateType_
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasElems_AnimateTransform
+
+	XsdGoPkgHasElems_Font
+
+	XsdGoPkgHasElems_Cursor
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasAtts_XlinkRefAttrs
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasElems_Filter
+
+	XsdGoPkgHasElems_Mask
+
+	XsdGoPkgHasElems_ColorProfile
+
+	XsdGoPkgHasElems_A
+
+	XsdGoPkgHasElems_Polyline
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
 
 	XsdGoPkgHasAttr_Class_TClassListType_
 
+	xlink.XsdGoPkgHasAttr_Href
+
+	XsdGoPkgHasElems_Line
+
+	XsdGoPkgHasAttr_ViewBox_TViewBoxSpecType_
+
+	XsdGoPkgHasElems_Defs
+
+	XsdGoPkgHasAttr_PatternTransform_TransformListType_
+
+	XsdGoPkgHasElems_Use
+
 	XsdGoPkgHasElems_Metadata
 
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasElems_Rect
+
+	XsdGoPkgHasAttr_Height_TLengthType_
+
+	XsdGoPkgHasAttr_Width_TLengthType_
+
+	XsdGoPkgHasAttr_PatternUnits_TxsdPatternTypePatternUnits_
+
+	XsdGoPkgHasElems_Circle
+
+	XsdGoPkgHasElems_G
+
+	XsdGoPkgHasElems_LinearGradient
+
+	XsdGoPkgHasElems_View
+
+	XsdGoPkgHasAttr_Y_TCoordinateType_
+
 	XsdGoPkgHasElems_Script
+
+	XsdGoPkgHasElems_Pattern
+
+	XsdGoPkgHasElems_Marker
+
+	XsdGoPkgHasElems_Ellipse
+
+	XsdGoPkgHasAttr_PreserveAspectRatio_TPreserveAspectRatioSpecType_XMidYMidMeet
+
+	XsdGoPkgHasElems_Style
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasElems_Polygon
+
+	XsdGoPkgHasElems_Desc
+
+	XsdGoPkgHasElems_ClipPath
+
+	XsdGoPkgHasElems_FontFace
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasElems_Image
+
+	XsdGoPkgHasAtts_PresentationAttributesAll
+
+	XsdGoPkgHasAttr_X_TCoordinateType_
+
+	XsdGoPkgHasElems_RadialGradient
+
+	XsdGoPkgHasElems_AltGlyphDef
+}
+
+//	If the WalkHandlers.TpatternType function is not nil (ie. was set by outside code), calls it with this TpatternType instance as the single argument. Then calls the Walk() method on 31/56 embed(s) and 0/0 field(s) belonging to this TpatternType instance.
+func (me *TpatternType) Walk() {
+	if fn := WalkHandlers.TpatternType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_FontFace.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_Image.Walk()
+	me.XsdGoPkgHasElems_RadialGradient.Walk()
+	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
+	me.XsdGoPkgHasElems_Path.Walk()
+	me.XsdGoPkgHasElems_Title.Walk()
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasElems_Svg.Walk()
+	me.XsdGoPkgHasElems_Switch.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+	me.XsdGoPkgHasElems_Cursor.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Filter.Walk()
+	me.XsdGoPkgHasElems_ColorProfile.Walk()
+	me.XsdGoPkgHasElems_Polyline.Walk()
+	me.XsdGoPkgHasElems_Line.Walk()
+	me.XsdGoPkgHasElems_Use.Walk()
+	me.XsdGoPkgHasElems_Metadata.Walk()
+	me.XsdGoPkgHasElems_Rect.Walk()
+	me.XsdGoPkgHasElems_Circle.Walk()
+	me.XsdGoPkgHasElems_G.Walk()
+	me.XsdGoPkgHasElems_LinearGradient.Walk()
+	me.XsdGoPkgHasElems_View.Walk()
+	me.XsdGoPkgHasElems_Script.Walk()
+	me.XsdGoPkgHasElems_Marker.Walk()
+	me.XsdGoPkgHasElems_Ellipse.Walk()
+	me.XsdGoPkgHasElems_Style.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_Polygon.Walk()
+	me.XsdGoPkgHasElems_Desc.Walk()
+}
+
+type XsdGoPkgHasElems_Pattern struct {
+	Patterns []*TpatternType `xml:"http://www.w3.org/2000/svg pattern"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Pattern function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Pattern instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Pattern instance.
+func (me *XsdGoPkgHasElems_Pattern) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Pattern; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Patterns {
+		x.Walk()
+	}
+}
+
+type TdefsType struct {
+	XsdGoPkgHasElems_ClipPath
+
+	XsdGoPkgHasElems_Line
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesAll
+
+	XsdGoPkgHasElems_Ellipse
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasElems_Circle
+
+	XsdGoPkgHasElems_Desc
+
+	XsdGoPkgHasElems_AltGlyphDef
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasElems_Filter
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAttr_Transform_TransformListType_
+
+	XsdGoPkgHasElems_AnimateMotion
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasElems_Style
+
+	XsdGoPkgHasElems_FontFace
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Metadata
+
+	XsdGoPkgHasElems_Svg
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasElems_Script
+
+	XsdGoPkgHasElems_A
+
+	XsdGoPkgHasElems_ColorProfile
+
+	XsdGoPkgHasElems_Text
+
+	XsdGoPkgHasElems_Mask
+
+	XsdGoPkgHasElems_G
+
+	XsdGoPkgHasElems_Use
+
+	XsdGoPkgHasElems_Image
+
+	XsdGoPkgHasElems_Switch
+
+	XsdGoPkgHasElems_Defs
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_RadialGradient
+
+	XsdGoPkgHasElems_AnimateTransform
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasElems_View
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasElems_Rect
+
+	XsdGoPkgHasElems_Cursor
+
+	XsdGoPkgHasElems_Marker
+
+	XsdGoPkgHasElems_LinearGradient
+
+	XsdGoPkgHasElems_Polygon
+
+	XsdGoPkgHasElems_Polyline
+
+	XsdGoPkgHasElems_Font
+
+	XsdGoPkgHasElems_Path
+
+	XsdGoPkgHasElems_Pattern
+}
+
+//	If the WalkHandlers.TdefsType function is not nil (ie. was set by outside code), calls it with this TdefsType instance as the single argument. Then calls the Walk() method on 32/48 embed(s) and 0/0 field(s) belonging to this TdefsType instance.
+func (me *TdefsType) Walk() {
+	if fn := WalkHandlers.TdefsType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Path.Walk()
+	me.XsdGoPkgHasElems_Pattern.Walk()
+	me.XsdGoPkgHasElems_Line.Walk()
+	me.XsdGoPkgHasElems_Ellipse.Walk()
+	me.XsdGoPkgHasElems_Circle.Walk()
+	me.XsdGoPkgHasElems_Desc.Walk()
+	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
+	me.XsdGoPkgHasElems_Filter.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Style.Walk()
+	me.XsdGoPkgHasElems_FontFace.Walk()
+	me.XsdGoPkgHasElems_Title.Walk()
+	me.XsdGoPkgHasElems_Metadata.Walk()
+	me.XsdGoPkgHasElems_Svg.Walk()
+	me.XsdGoPkgHasElems_Script.Walk()
+	me.XsdGoPkgHasElems_ColorProfile.Walk()
+	me.XsdGoPkgHasElems_G.Walk()
+	me.XsdGoPkgHasElems_Use.Walk()
+	me.XsdGoPkgHasElems_Image.Walk()
+	me.XsdGoPkgHasElems_Switch.Walk()
+	me.XsdGoPkgHasElems_RadialGradient.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_View.Walk()
+	me.XsdGoPkgHasElems_Rect.Walk()
+	me.XsdGoPkgHasElems_Cursor.Walk()
+	me.XsdGoPkgHasElems_Marker.Walk()
+	me.XsdGoPkgHasElems_LinearGradient.Walk()
+	me.XsdGoPkgHasElems_Polygon.Walk()
+	me.XsdGoPkgHasElems_Polyline.Walk()
+}
+
+type XsdGoPkgHasElems_Defs struct {
+	Defses []*TdefsType `xml:"http://www.w3.org/2000/svg defs"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Defs function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Defs instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Defs instance.
+func (me *XsdGoPkgHasElems_Defs) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Defs; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Defses {
+		x.Walk()
+	}
+}
+
+type TsymbolType struct {
+	XsdGoPkgHasElems_Polygon
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Ellipse
+
+	XsdGoPkgHasElems_Image
+
+	XsdGoPkgHasElems_Text
+
+	XsdGoPkgHasElems_AnimateMotion
+
+	XsdGoPkgHasElems_Metadata
+
+	XsdGoPkgHasElems_Desc
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasElems_Defs
+
+	XsdGoPkgHasElems_LinearGradient
+
+	XsdGoPkgHasElems_G
+
+	XsdGoPkgHasElems_A
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasElems_Circle
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasElems_Path
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasElems_Pattern
+
+	XsdGoPkgHasElems_Line
+
+	XsdGoPkgHasElems_AltGlyphDef
+
+	XsdGoPkgHasElems_FontFace
+
+	XsdGoPkgHasElems_Font
+
+	XsdGoPkgHasElems_Rect
+
+	XsdGoPkgHasElems_Style
+
+	XsdGoPkgHasAttr_PreserveAspectRatio_TPreserveAspectRatioSpecType_XMidYMidMeet
+
+	XsdGoPkgHasElems_Mask
+
+	XsdGoPkgHasElems_ColorProfile
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Switch
+
+	XsdGoPkgHasElems_View
+
+	XsdGoPkgHasElems_AnimateTransform
+
+	XsdGoPkgHasElems_RadialGradient
+
+	XsdGoPkgHasElems_Cursor
+
+	XsdGoPkgHasElems_Svg
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasElems_ClipPath
+
+	XsdGoPkgHasElems_Use
+
+	XsdGoPkgHasElems_Filter
+
+	XsdGoPkgHasElems_Marker
+
+	XsdGoPkgHasAtts_PresentationAttributesAll
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAttr_ViewBox_TViewBoxSpecType_
+
+	XsdGoPkgHasElems_Polyline
+
+	XsdGoPkgHasElems_Script
+}
+
+//	If the WalkHandlers.TsymbolType function is not nil (ie. was set by outside code), calls it with this TsymbolType instance as the single argument. Then calls the Walk() method on 33/48 embed(s) and 0/0 field(s) belonging to this TsymbolType instance.
+func (me *TsymbolType) Walk() {
+	if fn := WalkHandlers.TsymbolType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Rect.Walk()
+	me.XsdGoPkgHasElems_Style.Walk()
+	me.XsdGoPkgHasElems_ColorProfile.Walk()
+	me.XsdGoPkgHasElems_Title.Walk()
+	me.XsdGoPkgHasElems_Switch.Walk()
+	me.XsdGoPkgHasElems_View.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+	me.XsdGoPkgHasElems_RadialGradient.Walk()
+	me.XsdGoPkgHasElems_Cursor.Walk()
+	me.XsdGoPkgHasElems_Svg.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Use.Walk()
+	me.XsdGoPkgHasElems_Filter.Walk()
+	me.XsdGoPkgHasElems_Marker.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_Polyline.Walk()
+	me.XsdGoPkgHasElems_Script.Walk()
+	me.XsdGoPkgHasElems_Polygon.Walk()
+	me.XsdGoPkgHasElems_Ellipse.Walk()
+	me.XsdGoPkgHasElems_Image.Walk()
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasElems_Metadata.Walk()
+	me.XsdGoPkgHasElems_Desc.Walk()
+	me.XsdGoPkgHasElems_Defs.Walk()
+	me.XsdGoPkgHasElems_LinearGradient.Walk()
+	me.XsdGoPkgHasElems_G.Walk()
+	me.XsdGoPkgHasElems_Circle.Walk()
+	me.XsdGoPkgHasElems_Path.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_Pattern.Walk()
+	me.XsdGoPkgHasElems_Line.Walk()
+	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
+	me.XsdGoPkgHasElems_FontFace.Walk()
+}
+
+type XsdGoPkgHasElems_Symbol struct {
+	Symbols []*TsymbolType `xml:"http://www.w3.org/2000/svg symbol"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Symbol function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Symbol instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Symbol instance.
+func (me *XsdGoPkgHasElems_Symbol) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Symbol; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Symbols {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_MaskUnits_TxsdMaskTypeMaskUnits_ struct {
+	MaskUnits TxsdLinearGradientTypeGradientUnits `xml:"http://www.w3.org/2000/svg maskUnits,attr"`
+}
+
+type TmaskType struct {
+	XsdGoPkgHasElems_FontFace
+
+	XsdGoPkgHasElems_Defs
+
+	XsdGoPkgHasAttr_Transform_TransformListType_
+
+	XsdGoPkgHasAttr_Height_TLengthType_
+
+	XsdGoPkgHasElems_Style
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasElems_Mask
+
+	XsdGoPkgHasElems_Pattern
+
+	XsdGoPkgHasElems_Polyline
+
+	XsdGoPkgHasElems_Marker
+
+	XsdGoPkgHasElems_Switch
+
+	XsdGoPkgHasElems_G
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasAttr_Width_TLengthType_
+
+	XsdGoPkgHasElems_Use
+
+	XsdGoPkgHasElems_Metadata
+
+	XsdGoPkgHasElems_Polygon
+
+	XsdGoPkgHasElems_ColorProfile
+
+	XsdGoPkgHasElems_Svg
+
+	XsdGoPkgHasElems_Desc
+
+	XsdGoPkgHasElems_Circle
+
+	XsdGoPkgHasElems_AltGlyphDef
+
+	XsdGoPkgHasElems_Path
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasElems_Image
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAttr_MaskUnits_TxsdMaskTypeMaskUnits_
+
+	XsdGoPkgHasElems_View
+
+	XsdGoPkgHasElems_Font
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasElems_ClipPath
+
+	XsdGoPkgHasAttr_Y_TCoordinateType_
+
+	XsdGoPkgHasElems_Script
+
+	XsdGoPkgHasElems_Rect
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasElems_LinearGradient
+
+	XsdGoPkgHasElems_AnimateMotion
+
+	XsdGoPkgHasElems_AnimateTransform
+
+	XsdGoPkgHasElems_Text
+
+	XsdGoPkgHasElems_Ellipse
+
+	XsdGoPkgHasElems_RadialGradient
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Cursor
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasElems_Line
+
+	XsdGoPkgHasAtts_PresentationAttributesAll
+
+	XsdGoPkgHasElems_A
+
+	XsdGoPkgHasElems_Filter
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAttr_X_TCoordinateType_
+}
+
+//	If the WalkHandlers.TmaskType function is not nil (ie. was set by outside code), calls it with this TmaskType instance as the single argument. Then calls the Walk() method on 34/52 embed(s) and 0/0 field(s) belonging to this TmaskType instance.
+func (me *TmaskType) Walk() {
+	if fn := WalkHandlers.TmaskType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Polygon.Walk()
+	me.XsdGoPkgHasElems_ColorProfile.Walk()
+	me.XsdGoPkgHasElems_Svg.Walk()
+	me.XsdGoPkgHasElems_Desc.Walk()
+	me.XsdGoPkgHasElems_Circle.Walk()
+	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
+	me.XsdGoPkgHasElems_Path.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_Image.Walk()
+	me.XsdGoPkgHasElems_View.Walk()
+	me.XsdGoPkgHasElems_Script.Walk()
+	me.XsdGoPkgHasElems_Rect.Walk()
+	me.XsdGoPkgHasElems_LinearGradient.Walk()
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+	me.XsdGoPkgHasElems_Ellipse.Walk()
+	me.XsdGoPkgHasElems_RadialGradient.Walk()
+	me.XsdGoPkgHasElems_Symbol.Walk()
+	me.XsdGoPkgHasElems_Title.Walk()
+	me.XsdGoPkgHasElems_Cursor.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_Line.Walk()
+	me.XsdGoPkgHasElems_Filter.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_FontFace.Walk()
+	me.XsdGoPkgHasElems_Defs.Walk()
+	me.XsdGoPkgHasElems_Style.Walk()
+	me.XsdGoPkgHasElems_Pattern.Walk()
+	me.XsdGoPkgHasElems_Polyline.Walk()
+	me.XsdGoPkgHasElems_Marker.Walk()
+	me.XsdGoPkgHasElems_Switch.Walk()
+	me.XsdGoPkgHasElems_G.Walk()
+	me.XsdGoPkgHasElems_Use.Walk()
+	me.XsdGoPkgHasElems_Metadata.Walk()
+}
+
+type XsdGoPkgHasElems_Mask struct {
+	Masks []*TmaskType `xml:"http://www.w3.org/2000/svg mask"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Mask function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Mask instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Mask instance.
+func (me *XsdGoPkgHasElems_Mask) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Mask; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Masks {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_Target_XsdtNmtoken_ struct {
+	Target xsdt.Nmtoken `xml:"http://www.w3.org/2000/svg target,attr"`
+}
+
+type TaType struct {
+	xlink.XsdGoPkgHasAttr_Title
+
+	XsdGoPkgHasElems_Mask
+
+	XsdGoPkgHasElems_A
+
+	XsdGoPkgHasElems_Cursor
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasElems_G
+
+	XsdGoPkgHasAttr_Target_XsdtNmtoken_
+
+	XsdGoPkgHasElems_Path
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_Use
+
+	XsdGoPkgHasElems_ClipPath
+
+	XsdGoPkgHasElems_Script
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasElems_Defs
+
+	XsdGoPkgHasElems_Switch
+
+	XsdGoPkgHasElems_Line
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasElems_AltGlyphDef
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasElems_Circle
+
+	XsdGoPkgHasElems_FontFace
+
+	xlink.XsdGoPkgHasAttr_Type
+
+	XsdGoPkgHasElems_Marker
+
+	XsdGoPkgHasElems_Polyline
+
+	XsdGoPkgHasElems_Ellipse
+
+	XsdGoPkgHasElems_Filter
+
+	xlink.XsdGoPkgHasAttr_Role
+
+	xlink.XsdGoPkgHasAttr_Show
+
+	XsdGoPkgHasElems_Svg
+
+	XsdGoPkgHasElems_AnimateMotion
+
+	XsdGoPkgHasElems_Desc
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasElems_Font
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_RadialGradient
+
+	XsdGoPkgHasElems_Text
+
+	XsdGoPkgHasAttr_Transform_TransformListType_
+
+	XsdGoPkgHasElems_ColorProfile
+
+	xlink.XsdGoPkgHasAttr_Actuate
+
+	XsdGoPkgHasElems_Image
+
+	XsdGoPkgHasElems_LinearGradient
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasElems_Metadata
+
+	XsdGoPkgHasElems_Style
+
+	xlink.XsdGoPkgHasAttr_Href
+
+	XsdGoPkgHasElems_Rect
+
+	XsdGoPkgHasAtts_PresentationAttributesAll
+
+	XsdGoPkgHasElems_Pattern
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasElems_View
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasElems_Polygon
+
+	xlink.XsdGoPkgHasAttr_Arcrole
+
+	XsdGoPkgHasElems_AnimateTransform
+}
+
+//	If the WalkHandlers.TaType function is not nil (ie. was set by outside code), calls it with this TaType instance as the single argument. Then calls the Walk() method on 36/57 embed(s) and 0/0 field(s) belonging to this TaType instance.
+func (me *TaType) Walk() {
+	if fn := WalkHandlers.TaType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Mask.Walk()
+	me.XsdGoPkgHasElems_Cursor.Walk()
+	me.XsdGoPkgHasElems_G.Walk()
+	me.XsdGoPkgHasElems_Path.Walk()
+	me.XsdGoPkgHasElems_Title.Walk()
+	me.XsdGoPkgHasElems_Use.Walk()
+	me.XsdGoPkgHasElems_Script.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Defs.Walk()
+	me.XsdGoPkgHasElems_Switch.Walk()
+	me.XsdGoPkgHasElems_Line.Walk()
+	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
+	me.XsdGoPkgHasElems_Symbol.Walk()
+	me.XsdGoPkgHasElems_Circle.Walk()
+	me.XsdGoPkgHasElems_FontFace.Walk()
+	me.XsdGoPkgHasElems_Marker.Walk()
+	me.XsdGoPkgHasElems_Polyline.Walk()
+	me.XsdGoPkgHasElems_Ellipse.Walk()
+	me.XsdGoPkgHasElems_Filter.Walk()
+	me.XsdGoPkgHasElems_Svg.Walk()
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasElems_Desc.Walk()
+	me.XsdGoPkgHasCdata.Walk()
+	me.XsdGoPkgHasElems_RadialGradient.Walk()
+	me.XsdGoPkgHasElems_ColorProfile.Walk()
+	me.XsdGoPkgHasElems_Image.Walk()
+	me.XsdGoPkgHasElems_LinearGradient.Walk()
+	me.XsdGoPkgHasElems_Metadata.Walk()
+	me.XsdGoPkgHasElems_Style.Walk()
+	me.XsdGoPkgHasElems_Rect.Walk()
+	me.XsdGoPkgHasElems_Pattern.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_View.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_Polygon.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+}
+
+type XsdGoPkgHasElems_A struct {
+	As []*TaType `xml:"http://www.w3.org/2000/svg a"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_A function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_A instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_A instance.
+func (me *XsdGoPkgHasElems_A) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_A; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.As {
+		x.Walk()
+	}
+}
+
+type TaltGlyphType struct {
+	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
+
+	XsdGoPkgHasAttr_Y_TCoordinatesType_
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAttr_Dy_TLengthsType_
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesColor
+
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
+	XsdGoPkgHasAttr_GlyphRef_XsdtString_
+
+	XsdGoPkgHasAttr_X_TCoordinatesType_
+
+	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
+
+	XsdGoPkgHasAttr_Format_XsdtString_
+
+	XsdGoPkgHasAttr_Dx_TLengthsType_
+
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAttr_Rotate_XsdtString_
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_XlinkRefAttrs
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	xlink.XsdGoPkgHasAttr_Href
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+}
+
+//	If the WalkHandlers.TaltGlyphType function is not nil (ie. was set by outside code), calls it with this TaltGlyphType instance as the single argument. Then calls the Walk() method on 1/22 embed(s) and 0/0 field(s) belonging to this TaltGlyphType instance.
+func (me *TaltGlyphType) Walk() {
+	if fn := WalkHandlers.TaltGlyphType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasCdata.Walk()
+}
+
+type XsdGoPkgHasElems_AltGlyph struct {
+	AltGlyphs []*TaltGlyphType `xml:"http://www.w3.org/2000/svg altGlyph"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AltGlyph function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AltGlyph instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AltGlyph instance.
+func (me *XsdGoPkgHasElems_AltGlyph) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_AltGlyph; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.AltGlyphs {
+		x.Walk()
+	}
+}
+
+type TxsdTextPathTypeMethod xsdt.String
+
+//	Returns true if the value of this enumerated TxsdTextPathTypeMethod is "stretch".
+func (me TxsdTextPathTypeMethod) IsStretch() bool { return me == "stretch" }
+
+//	Since TxsdTextPathTypeMethod is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdTextPathTypeMethod) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdTextPathTypeMethod's alias type xsdt.String.
+func (me TxsdTextPathTypeMethod) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TxsdTextPathTypeMethod is "align".
+func (me TxsdTextPathTypeMethod) IsAlign() bool { return me == "align" }
+
+//	Since TxsdTextPathTypeMethod is just a simple String type, this merely returns the current string value.
+func (me TxsdTextPathTypeMethod) String() string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_Method_TxsdTextPathTypeMethod_ struct {
+	Method TxsdTextPathTypeMethod `xml:"http://www.w3.org/2000/svg method,attr"`
+}
+
+type TxsdTextPathTypeLengthAdjust xsdt.String
+
+//	Since TxsdTextPathTypeLengthAdjust is just a simple String type, this merely returns the current string value.
+func (me TxsdTextPathTypeLengthAdjust) String() string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TxsdTextPathTypeLengthAdjust's alias type xsdt.String.
+func (me TxsdTextPathTypeLengthAdjust) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TxsdTextPathTypeLengthAdjust is "spacingAndGlyphs".
+func (me TxsdTextPathTypeLengthAdjust) IsSpacingAndGlyphs() bool { return me == "spacingAndGlyphs" }
+
+//	Since TxsdTextPathTypeLengthAdjust is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdTextPathTypeLengthAdjust) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	Returns true if the value of this enumerated TxsdTextPathTypeLengthAdjust is "spacing".
+func (me TxsdTextPathTypeLengthAdjust) IsSpacing() bool { return me == "spacing" }
+
+type XsdGoPkgHasAttr_LengthAdjust_TxsdTextPathTypeLengthAdjust_ struct {
+	LengthAdjust TxsdTextPathTypeLengthAdjust `xml:"http://www.w3.org/2000/svg lengthAdjust,attr"`
+}
+
+type XsdGoPkgHasAttr_StartOffset_XsdtString_ struct {
+	StartOffset xsdt.String `xml:"http://www.w3.org/2000/svg startOffset,attr"`
+}
+
+type TxsdTextPathTypeSpacing xsdt.String
+
+//	This convenience method just performs a simple type conversion to TxsdTextPathTypeSpacing's alias type xsdt.String.
+func (me TxsdTextPathTypeSpacing) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Returns true if the value of this enumerated TxsdTextPathTypeSpacing is "auto".
+func (me TxsdTextPathTypeSpacing) IsAuto() bool { return me == "auto" }
+
+//	Since TxsdTextPathTypeSpacing is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdTextPathTypeSpacing) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+
+//	Since TxsdTextPathTypeSpacing is just a simple String type, this merely returns the current string value.
+func (me TxsdTextPathTypeSpacing) String() string { return xsdt.String(me).String() }
+
+//	Returns true if the value of this enumerated TxsdTextPathTypeSpacing is "exact".
+func (me TxsdTextPathTypeSpacing) IsExact() bool { return me == "exact" }
+
+type XsdGoPkgHasAttr_Spacing_TxsdTextPathTypeSpacing_ struct {
+	Spacing TxsdTextPathTypeSpacing `xml:"http://www.w3.org/2000/svg spacing,attr"`
+}
+
+type XsdGoPkgHasAttr_LengthAdjust_TxsdTrefTypeLengthAdjust_ struct {
+	LengthAdjust TxsdTextPathTypeLengthAdjust `xml:"http://www.w3.org/2000/svg lengthAdjust,attr"`
+}
+
+type TtrefType struct {
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
+	XsdGoPkgHasAttr_TextLength_TLengthType_
+
+	XsdGoPkgHasElems_Metadata
+
+	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
+
+	XsdGoPkgHasAttr_X_TCoordinatesType_
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAttr_Rotate_XsdtString_
+
+	XsdGoPkgHasElems_Desc
+
+	xlink.XsdGoPkgHasAttr_Href
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAttr_Dy_TLengthsType_
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAttr_Dx_TLengthsType_
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasAttr_Y_TCoordinatesType_
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesColor
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasAttr_LengthAdjust_TxsdTrefTypeLengthAdjust_
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
+
+	XsdGoPkgHasAtts_XlinkRefAttrs
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+}
+
+//	If the WalkHandlers.TtrefType function is not nil (ie. was set by outside code), calls it with this TtrefType instance as the single argument. Then calls the Walk() method on 6/27 embed(s) and 0/0 field(s) belonging to this TtrefType instance.
+func (me *TtrefType) Walk() {
+	if fn := WalkHandlers.TtrefType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_Title.Walk()
+	me.XsdGoPkgHasElems_Metadata.Walk()
+	me.XsdGoPkgHasElems_Desc.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+}
+
+type XsdGoPkgHasElems_Tref struct {
+	Trefs []*TtrefType `xml:"http://www.w3.org/2000/svg tref"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Tref function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Tref instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Tref instance.
+func (me *XsdGoPkgHasElems_Tref) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Tref; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Trefs {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_LengthAdjust_TxsdTspanTypeLengthAdjust_ struct {
+	LengthAdjust TxsdTextPathTypeLengthAdjust `xml:"http://www.w3.org/2000/svg lengthAdjust,attr"`
+}
+
+type TtspanType struct {
+	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
+
+	XsdGoPkgHasElems_Tspan
+
+	XsdGoPkgHasElems_Metadata
+
+	XsdGoPkgHasElems_Desc
+
+	XsdGoPkgHasAttr_Rotate_XsdtString_
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_X_TCoordinatesType_
+
+	XsdGoPkgHasElems_AltGlyph
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasElems_A
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasAttr_Dy_TLengthsType_
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasAtts_PresentationAttributesColor
+
+	XsdGoPkgHasAttr_Y_TCoordinatesType_
+
+	XsdGoPkgHasAttr_TextLength_TLengthType_
+
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAttr_Dx_TLengthsType_
+
+	XsdGoPkgHasElems_Tref
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAttr_LengthAdjust_TxsdTspanTypeLengthAdjust_
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+}
+
+//	If the WalkHandlers.TtspanType function is not nil (ie. was set by outside code), calls it with this TtspanType instance as the single argument. Then calls the Walk() method on 10/30 embed(s) and 0/0 field(s) belonging to this TtspanType instance.
+func (me *TtspanType) Walk() {
+	if fn := WalkHandlers.TtspanType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Metadata.Walk()
+	me.XsdGoPkgHasElems_Desc.Walk()
+	me.XsdGoPkgHasElems_AltGlyph.Walk()
+	me.XsdGoPkgHasCdata.Walk()
+	me.XsdGoPkgHasElems_A.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_Title.Walk()
+	me.XsdGoPkgHasElems_Tref.Walk()
+}
+
+type XsdGoPkgHasElems_Tspan struct {
+	Tspans []*TtspanType `xml:"http://www.w3.org/2000/svg tspan"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Tspan function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Tspan instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Tspan instance.
+func (me *XsdGoPkgHasElems_Tspan) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Tspan; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Tspans {
+		x.Walk()
+	}
+}
+
+type TtextPathType struct {
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasElems_A
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasElems_AltGlyph
+
+	XsdGoPkgHasElems_Desc
+
+	XsdGoPkgHasAttr_Method_TxsdTextPathTypeMethod_
+
+	XsdGoPkgHasAttr_LengthAdjust_TxsdTextPathTypeLengthAdjust_
+
+	XsdGoPkgHasAtts_XlinkRefAttrs
+
+	XsdGoPkgHasElems_Metadata
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
+
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasAttr_TextLength_TLengthType_
+
+	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasAttr_StartOffset_XsdtString_
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAttr_Spacing_TxsdTextPathTypeSpacing_
+
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	xlink.XsdGoPkgHasAttr_Href
+
+	XsdGoPkgHasElems_Tspan
+
+	XsdGoPkgHasElems_Tref
+
+	XsdGoPkgHasAtts_StdAttrs
+}
+
+//	If the WalkHandlers.TtextPathType function is not nil (ie. was set by outside code), calls it with this TtextPathType instance as the single argument. Then calls the Walk() method on 11/29 embed(s) and 0/0 field(s) belonging to this TtextPathType instance.
+func (me *TtextPathType) Walk() {
+	if fn := WalkHandlers.TtextPathType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Title.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Tspan.Walk()
+	me.XsdGoPkgHasElems_Tref.Walk()
+	me.XsdGoPkgHasCdata.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_A.Walk()
+	me.XsdGoPkgHasElems_AltGlyph.Walk()
+	me.XsdGoPkgHasElems_Desc.Walk()
+	me.XsdGoPkgHasElems_Metadata.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+}
+
+type XsdGoPkgHasElems_TextPath struct {
+	TextPaths []*TtextPathType `xml:"http://www.w3.org/2000/svg textPath"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_TextPath function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_TextPath instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_TextPath instance.
+func (me *XsdGoPkgHasElems_TextPath) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_TextPath; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.TextPaths {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_LengthAdjust_TxsdTextTypeLengthAdjust_ struct {
+	LengthAdjust TxsdTextPathTypeLengthAdjust `xml:"http://www.w3.org/2000/svg lengthAdjust,attr"`
+}
+
+type TtextType struct {
+	XsdGoPkgHasAttr_TextLength_TLengthType_
+
+	XsdGoPkgHasElems_AnimateMotion
+
+	XsdGoPkgHasElems_A
+
+	XsdGoPkgHasAttr_Transform_TransformListType_
+
+	XsdGoPkgHasElems_TextPath
+
+	XsdGoPkgHasElems_Metadata
+
+	XsdGoPkgHasAttr_X_TCoordinateType_
+
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
+	XsdGoPkgHasAtts_PresentationAttributesTextElements
+
+	XsdGoPkgHasElems_AltGlyph
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasElems_Tref
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasElems_Tspan
+
+	XsdGoPkgHasAttr_Y_TCoordinateType_
+
+	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
+
+	XsdGoPkgHasAtts_PresentationAttributesColor
+
+	XsdGoPkgHasAttr_LengthAdjust_TxsdTextTypeLengthAdjust_
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasElems_Desc
+
+	XsdGoPkgHasElems_AnimateTransform
+}
+
+//	If the WalkHandlers.TtextType function is not nil (ie. was set by outside code), calls it with this TtextType instance as the single argument. Then calls the Walk() method on 14/32 embed(s) and 0/0 field(s) belonging to this TtextType instance.
+func (me *TtextType) Walk() {
+	if fn := WalkHandlers.TtextType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasElems_A.Walk()
+	me.XsdGoPkgHasElems_TextPath.Walk()
+	me.XsdGoPkgHasElems_Metadata.Walk()
+	me.XsdGoPkgHasElems_AltGlyph.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Title.Walk()
+	me.XsdGoPkgHasCdata.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_Tref.Walk()
+	me.XsdGoPkgHasElems_Tspan.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_Desc.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+}
+
+type XsdGoPkgHasElems_Text struct {
+	Texts []*TtextType `xml:"http://www.w3.org/2000/svg text"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Text function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Text instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Text instance.
+func (me *XsdGoPkgHasElems_Text) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Text; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Texts {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_ClipPathUnits_TxsdClipPathTypeClipPathUnits_ struct {
+	ClipPathUnits TxsdLinearGradientTypeGradientUnits `xml:"http://www.w3.org/2000/svg clipPathUnits,attr"`
+}
+
+type TclipPathType struct {
+	XsdGoPkgHasElems_Polygon
+
+	XsdGoPkgHasAtts_PresentationAttributesTextContentElements
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasElems_Circle
+
+	XsdGoPkgHasAtts_PresentationAttributesFillStroke
+
+	XsdGoPkgHasElems_AnimateTransform
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasAtts_PresentationAttributesFontSpecification
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasElems_Text
+
+	XsdGoPkgHasElems_Use
+
+	XsdGoPkgHasGroup_DescTitleMetadata
+
+	XsdGoPkgHasElems_Ellipse
+
+	XsdGoPkgHasElems_Line
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasAttr_Transform_TransformListType_
+
+	XsdGoPkgHasAtts_PresentationAttributesGraphics
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasElems_AnimateMotion
+
+	XsdGoPkgHasElems_Path
+
+	XsdGoPkgHasElems_Rect
+
+	XsdGoPkgHasElems_Polyline
+
+	XsdGoPkgHasAtts_PresentationAttributesTextElements
+
+	XsdGoPkgHasAttr_ClipPathUnits_TxsdClipPathTypeClipPathUnits_
+}
+
+//	If the WalkHandlers.TclipPathType function is not nil (ie. was set by outside code), calls it with this TclipPathType instance as the single argument. Then calls the Walk() method on 15/28 embed(s) and 0/0 field(s) belonging to this TclipPathType instance.
+func (me *TclipPathType) Walk() {
+	if fn := WalkHandlers.TclipPathType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Line.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasElems_Path.Walk()
+	me.XsdGoPkgHasElems_Rect.Walk()
+	me.XsdGoPkgHasElems_Polyline.Walk()
+	me.XsdGoPkgHasElems_Polygon.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_Circle.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+	me.XsdGoPkgHasElems_Text.Walk()
+	me.XsdGoPkgHasElems_Use.Walk()
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+	me.XsdGoPkgHasElems_Ellipse.Walk()
+}
+
+type XsdGoPkgHasElems_ClipPath struct {
+	ClipPaths []*TclipPathType `xml:"http://www.w3.org/2000/svg clipPath"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ClipPath function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ClipPath instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ClipPath instance.
+func (me *XsdGoPkgHasElems_ClipPath) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_ClipPath; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.ClipPaths {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_VertTextOrient_XsdtString_ struct {
+	VertTextOrient xsdt.String `xml:"http://www.w3.org/2000/svg vert-text-orient,attr"`
+}
+
+type XsdGoPkgHasAttr_Unicode_XsdtString_ struct {
+	Unicode xsdt.String `xml:"http://www.w3.org/2000/svg unicode,attr"`
+}
+
+type XsdGoPkgHasAttr_Han_XsdtString_ struct {
+	Han xsdt.String `xml:"http://www.w3.org/2000/svg han,attr"`
+}
+
+type XsdGoPkgHasAttr_VertAdvY_XsdtDouble_ struct {
+	VertAdvY xsdt.Double `xml:"http://www.w3.org/2000/svg vert-adv-y,attr"`
+}
+
+type XsdGoPkgHasAttr_Arabic_XsdtString_ struct {
+	Arabic xsdt.String `xml:"http://www.w3.org/2000/svg arabic,attr"`
+}
+
+type XsdGoPkgHasAttr_GlyphName_XsdtString_ struct {
+	GlyphName xsdt.String `xml:"http://www.w3.org/2000/svg glyph-name,attr"`
+}
+
+type TglyphType struct {
+	XsdGoPkgHasElems_ClipPath
+
+	XsdGoPkgHasElems_FontFace
+
+	XsdGoPkgHasElems_Style
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasAttr_D_TPathDataType_
+
+	XsdGoPkgHasElems_Image
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasAttr_VertTextOrient_XsdtString_
+
+	XsdGoPkgHasElems_Pattern
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_AltGlyphDef
+
+	XsdGoPkgHasElems_G
+
+	XsdGoPkgHasElems_Switch
+
+	XsdGoPkgHasAttr_Unicode_XsdtString_
+
+	XsdGoPkgHasElems_Cursor
+
+	XsdGoPkgHasElems_RadialGradient
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasElems_Polygon
+
+	XsdGoPkgHasElems_LinearGradient
+
+	XsdGoPkgHasElems_Script
+
+	XsdGoPkgHasElems_Font
+
+	XsdGoPkgHasElems_Mask
+
+	XsdGoPkgHasElems_Marker
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasAttr_HorizAdvX_XsdtDouble_
+
+	XsdGoPkgHasElems_Line
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasElems_Path
+
+	XsdGoPkgHasAttr_Han_XsdtString_
+
+	XsdGoPkgHasElems_Text
+
+	XsdGoPkgHasElems_Svg
+
+	XsdGoPkgHasElems_Rect
+
+	XsdGoPkgHasElems_Filter
+
+	XsdGoPkgHasAttr_VertAdvY_XsdtDouble_
+
+	XsdGoPkgHasElems_Polyline
 
 	XsdGoPkgHasElems_AnimateTransform
 
 	XsdGoPkgHasElems_View
 
-	XsdGoPkgHasElems_Marker
-
-	XsdGoPkgHasElems_Circle
-
-	XsdGoPkgHasElems_Polyline
-
-	XsdGoPkgHasElems_Path
-
-	XsdGoPkgHasElems_Polygon
-
-	XsdGoPkgHasAttr_Height_TLengthType_
-
-	XsdGoPkgHasAttr_ViewBox_TViewBoxSpecType_
-
-	XsdGoPkgHasAtts_LangSpaceAttrs
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasAttr_Width_TLengthType_
-
-	XsdGoPkgHasElems_ClipPath
-
-	XsdGoPkgHasElems_Line
-
-	xlink.XsdGoPkgHasAttr_Href
-
-	XsdGoPkgHasElems_Mask
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAttr_PatternUnits_TxsdPatternTypePatternUnits_
-
-	XsdGoPkgHasElems_AnimateMotion
+	XsdGoPkgHasElems_Animate
 
 	XsdGoPkgHasElems_Use
 
-	XsdGoPkgHasElems_G
+	XsdGoPkgHasElems_Circle
 
-	XsdGoPkgHasElems_AnimateColor
+	XsdGoPkgHasElems_Defs
 
-	XsdGoPkgHasAttr_PreserveAspectRatio_TPreserveAspectRatioSpecType_XMidYMidMeet
-
-	XsdGoPkgHasAtts_XlinkRefAttrs
+	XsdGoPkgHasAtts_StdAttrs
 
 	XsdGoPkgHasElems_Desc
 
@@ -7749,1793 +8177,1795 @@ type TpatternType struct {
 
 	XsdGoPkgHasElems_Ellipse
 
-	XsdGoPkgHasElems_LinearGradient
-
-	XsdGoPkgHasElems_Filter
-
-	XsdGoPkgHasAttr_X_TCoordinateType_
-
-	XsdGoPkgHasElems_Svg
-
-	XsdGoPkgHasElems_Font
-
-	XsdGoPkgHasElems_Cursor
-
-	XsdGoPkgHasElems_RadialGradient
-
-	XsdGoPkgHasElems_Symbol
+	XsdGoPkgHasElems_AnimateMotion
 
 	XsdGoPkgHasAtts_PresentationAttributesAll
 
-	XsdGoPkgHasElems_Style
-
-	XsdGoPkgHasElems_AltGlyphDef
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasElems_A
-
-	XsdGoPkgHasElems_Defs
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Image
-
-}
-
-//	If the WalkHandlers.TpatternType function is not nil (ie. was set by outside code), calls it with this TpatternType instance as the single argument. Then calls the Walk() method on 37/56 embed(s) and 0/0 field(s) belonging to this TpatternType instance.
-func (me *TpatternType) Walk ()  { 
-	if fn := WalkHandlers.TpatternType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Use.Walk()
-	me.XsdGoPkgHasElems_G.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElems_Desc.Walk()
-	me.XsdGoPkgHasElems_ColorProfile.Walk()
-	me.XsdGoPkgHasElems_Ellipse.Walk()
-	me.XsdGoPkgHasElems_LinearGradient.Walk()
-	me.XsdGoPkgHasElems_Filter.Walk()
-	me.XsdGoPkgHasElems_Svg.Walk()
-	me.XsdGoPkgHasElems_Cursor.Walk()
-	me.XsdGoPkgHasElems_RadialGradient.Walk()
-	me.XsdGoPkgHasElems_Symbol.Walk()
-	me.XsdGoPkgHasElems_Style.Walk()
-	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
-	me.XsdGoPkgHasElems_A.Walk()
-	me.XsdGoPkgHasElems_Defs.Walk()
-	me.XsdGoPkgHasElems_Title.Walk()
-	me.XsdGoPkgHasElems_Image.Walk()
-	me.XsdGoPkgHasElems_FontFace.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Rect.Walk()
-	me.XsdGoPkgHasElems_Text.Walk()
-	me.XsdGoPkgHasElems_Switch.Walk()
-	me.XsdGoPkgHasElems_Metadata.Walk()
-	me.XsdGoPkgHasElems_Script.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_View.Walk()
-	me.XsdGoPkgHasElems_Marker.Walk()
-	me.XsdGoPkgHasElems_Circle.Walk()
-	me.XsdGoPkgHasElems_Polyline.Walk()
-	me.XsdGoPkgHasElems_Path.Walk()
-	me.XsdGoPkgHasElems_Polygon.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_ClipPath.Walk()
-	me.XsdGoPkgHasElems_Line.Walk()
-	me.XsdGoPkgHasElems_Mask.Walk()
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
- }
-
-type XsdGoPkgHasElems_Pattern struct {
-	Patterns []*TpatternType `xml:"http://www.w3.org/2000/svg pattern"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Pattern function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Pattern instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Pattern instance.
-func (me *XsdGoPkgHasElems_Pattern) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Pattern; fn != nil { fn(me) }
-	for _, x := range me.Patterns { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_GlyphName_XsdtString_ struct {
-	GlyphName xsdt.String `xml:"http://www.w3.org/2000/svg glyph-name,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Unicode_XsdtString_ struct {
-	Unicode xsdt.String `xml:"http://www.w3.org/2000/svg unicode,attr"`
-
-}
-
-type XsdGoPkgHasAttr_VertTextOrient_XsdtString_ struct {
-	VertTextOrient xsdt.String `xml:"http://www.w3.org/2000/svg vert-text-orient,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Arabic_XsdtString_ struct {
-	Arabic xsdt.String `xml:"http://www.w3.org/2000/svg arabic,attr"`
-
-}
-
-type XsdGoPkgHasAttr_Han_XsdtString_ struct {
-	Han xsdt.String `xml:"http://www.w3.org/2000/svg han,attr"`
-
-}
-
-type TglyphType struct {
-	XsdGoPkgHasElems_Line
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasElems_Script
-
-	XsdGoPkgHasElems_Image
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_Polyline
-
-	XsdGoPkgHasElems_Pattern
-
-	XsdGoPkgHasAttr_D_TPathDataType_
-
-	XsdGoPkgHasAttr_Class_TClassListType_
+	XsdGoPkgHasAttr_Arabic_XsdtString_
 
 	XsdGoPkgHasAttr_GlyphName_XsdtString_
 
 	XsdGoPkgHasElems_A
 
-	XsdGoPkgHasElems_Circle
-
-	XsdGoPkgHasElems_View
-
-	XsdGoPkgHasElems_Ellipse
-
-	XsdGoPkgHasElems_Path
-
-	XsdGoPkgHasAttr_Unicode_XsdtString_
-
-	XsdGoPkgHasElems_Set
-
 	XsdGoPkgHasElems_Metadata
-
-	XsdGoPkgHasAtts_PresentationAttributesAll
-
-	XsdGoPkgHasElems_AltGlyphDef
-
-	XsdGoPkgHasElems_ColorProfile
-
-	XsdGoPkgHasElems_AnimateMotion
-
-	XsdGoPkgHasElems_Filter
-
-	XsdGoPkgHasAttr_VertTextOrient_XsdtString_
-
-	XsdGoPkgHasElems_Text
-
-	XsdGoPkgHasElems_Use
-
-	XsdGoPkgHasElems_ClipPath
-
-	XsdGoPkgHasAttr_HorizAdvX_XsdtDouble_
-
-	XsdGoPkgHasElems_Style
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasElems_G
-
-	XsdGoPkgHasElems_Svg
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Font
-
-	XsdGoPkgHasElems_Mask
-
-	XsdGoPkgHasElems_Cursor
-
-	XsdGoPkgHasElems_FontFace
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasAttr_Arabic_XsdtString_
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasAttr_Han_XsdtString_
-
-	XsdGoPkgHasElems_Marker
-
-	XsdGoPkgHasElems_Defs
-
-	XsdGoPkgHasElems_Rect
-
-	XsdGoPkgHasElems_Desc
-
-	XsdGoPkgHasElems_Polygon
-
-	XsdGoPkgHasElems_LinearGradient
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasElems_RadialGradient
-
-	XsdGoPkgHasAttr_VertAdvY_XsdtDouble_
-
-	XsdGoPkgHasElems_Switch
-
 }
 
 //	If the WalkHandlers.TglyphType function is not nil (ie. was set by outside code), calls it with this TglyphType instance as the single argument. Then calls the Walk() method on 38/51 embed(s) and 0/0 field(s) belonging to this TglyphType instance.
-func (me *TglyphType) Walk ()  { 
-	if fn := WalkHandlers.TglyphType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Ellipse.Walk()
-	me.XsdGoPkgHasElems_Path.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_Metadata.Walk()
-	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
-	me.XsdGoPkgHasElems_ColorProfile.Walk()
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
-	me.XsdGoPkgHasElems_Filter.Walk()
+func (me *TglyphType) Walk() {
+	if fn := WalkHandlers.TglyphType; fn != nil {
+		fn(me)
+	}
 	me.XsdGoPkgHasElems_Text.Walk()
-	me.XsdGoPkgHasElems_Use.Walk()
-	me.XsdGoPkgHasElems_ClipPath.Walk()
-	me.XsdGoPkgHasElems_Style.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_G.Walk()
 	me.XsdGoPkgHasElems_Svg.Walk()
-	me.XsdGoPkgHasElems_Symbol.Walk()
-	me.XsdGoPkgHasElems_Mask.Walk()
-	me.XsdGoPkgHasElems_Cursor.Walk()
-	me.XsdGoPkgHasElems_FontFace.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElems_Marker.Walk()
-	me.XsdGoPkgHasElems_Defs.Walk()
 	me.XsdGoPkgHasElems_Rect.Walk()
-	me.XsdGoPkgHasElems_Desc.Walk()
-	me.XsdGoPkgHasElems_Polygon.Walk()
-	me.XsdGoPkgHasElems_LinearGradient.Walk()
-	me.XsdGoPkgHasElems_RadialGradient.Walk()
-	me.XsdGoPkgHasElems_Switch.Walk()
-	me.XsdGoPkgHasElems_Line.Walk()
+	me.XsdGoPkgHasElems_Filter.Walk()
+	me.XsdGoPkgHasElems_Polyline.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+	me.XsdGoPkgHasElems_View.Walk()
 	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Script.Walk()
+	me.XsdGoPkgHasElems_Use.Walk()
+	me.XsdGoPkgHasElems_Circle.Walk()
+	me.XsdGoPkgHasElems_Defs.Walk()
+	me.XsdGoPkgHasElems_Desc.Walk()
+	me.XsdGoPkgHasElems_ColorProfile.Walk()
+	me.XsdGoPkgHasElems_Ellipse.Walk()
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasElems_A.Walk()
+	me.XsdGoPkgHasElems_Metadata.Walk()
+	me.XsdGoPkgHasElems_ClipPath.Walk()
+	me.XsdGoPkgHasElems_FontFace.Walk()
+	me.XsdGoPkgHasElems_Style.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
 	me.XsdGoPkgHasElems_Image.Walk()
 	me.XsdGoPkgHasElems_Title.Walk()
-	me.XsdGoPkgHasElems_Polyline.Walk()
 	me.XsdGoPkgHasElems_Pattern.Walk()
-	me.XsdGoPkgHasElems_A.Walk()
-	me.XsdGoPkgHasElems_Circle.Walk()
-	me.XsdGoPkgHasElems_View.Walk()
- }
+	me.XsdGoPkgHasElems_Symbol.Walk()
+	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
+	me.XsdGoPkgHasElems_G.Walk()
+	me.XsdGoPkgHasElems_Switch.Walk()
+	me.XsdGoPkgHasElems_Cursor.Walk()
+	me.XsdGoPkgHasElems_RadialGradient.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Polygon.Walk()
+	me.XsdGoPkgHasElems_LinearGradient.Walk()
+	me.XsdGoPkgHasElems_Script.Walk()
+	me.XsdGoPkgHasElems_Mask.Walk()
+	me.XsdGoPkgHasElems_Marker.Walk()
+	me.XsdGoPkgHasElems_Line.Walk()
+	me.XsdGoPkgHasElems_Path.Walk()
+}
 
 type XsdGoPkgHasElems_Glyph struct {
 	Glyphs []*TglyphType `xml:"http://www.w3.org/2000/svg glyph"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Glyph function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Glyph instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Glyph instance.
-func (me *XsdGoPkgHasElems_Glyph) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Glyph; fn != nil { fn(me) }
-	for _, x := range me.Glyphs { x.Walk() }
- }
+func (me *XsdGoPkgHasElems_Glyph) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Glyph; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Glyphs {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_G1_XsdtString_ struct {
+	G1 xsdt.String `xml:"http://www.w3.org/2000/svg g1,attr"`
+}
+
+type XsdGoPkgHasAttr_U1_XsdtString_ struct {
+	U1 xsdt.String `xml:"http://www.w3.org/2000/svg u1,attr"`
+}
+
+type XsdGoPkgHasAttr_U2_XsdtString_ struct {
+	U2 xsdt.String `xml:"http://www.w3.org/2000/svg u2,attr"`
+}
+
+type XsdGoPkgHasAttr_K_XsdtDouble_ struct {
+	K xsdt.Double `xml:"http://www.w3.org/2000/svg k,attr"`
+}
+
+type XsdGoPkgHasAttr_G2_XsdtString_ struct {
+	G2 xsdt.String `xml:"http://www.w3.org/2000/svg g2,attr"`
+}
+
+type TvkernType struct {
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_U2_XsdtString_
+
+	XsdGoPkgHasAttr_K_XsdtDouble_
+
+	XsdGoPkgHasAttr_G2_XsdtString_
+
+	XsdGoPkgHasAttr_G1_XsdtString_
+
+	XsdGoPkgHasAttr_U1_XsdtString_
+}
+
+//	If the WalkHandlers.TvkernType function is not nil (ie. was set by outside code), calls it with this TvkernType instance as the single argument. Then calls the Walk() method on 0/6 embed(s) and 0/0 field(s) belonging to this TvkernType instance.
+func (me *TvkernType) Walk() {
+	if fn := WalkHandlers.TvkernType; fn != nil {
+		fn(me)
+	}
+}
+
+type XsdGoPkgHasElems_Vkern struct {
+	Vkerns []*TvkernType `xml:"http://www.w3.org/2000/svg vkern"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Vkern function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Vkern instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Vkern instance.
+func (me *XsdGoPkgHasElems_Vkern) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Vkern; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Vkerns {
+		x.Walk()
+	}
+}
 
 type XsdGoPkgHasElem_FontFace struct {
 	FontFace *TfontFaceType `xml:"http://www.w3.org/2000/svg font-face"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FontFace function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FontFace instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FontFace instance.
-func (me *XsdGoPkgHasElem_FontFace) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FontFace; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FontFace) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FontFace; fn != nil {
+		fn(me)
+	}
 	me.FontFace.Walk()
- }
-
-type TmissingGlyphType struct {
-	XsdGoPkgHasElems_ColorProfile
-
-	XsdGoPkgHasElems_Cursor
-
-	XsdGoPkgHasElems_Polyline
-
-	XsdGoPkgHasElems_Mask
-
-	XsdGoPkgHasElems_Animate
-
-	XsdGoPkgHasElems_Use
-
-	XsdGoPkgHasElems_Style
-
-	XsdGoPkgHasElems_Text
-
-	XsdGoPkgHasElems_Switch
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasElems_Line
-
-	XsdGoPkgHasElems_Symbol
-
-	XsdGoPkgHasElems_Image
-
-	XsdGoPkgHasElems_View
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasElems_LinearGradient
-
-	XsdGoPkgHasElems_AltGlyphDef
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasElems_Metadata
-
-	XsdGoPkgHasAttr_HorizAdvX_XsdtDouble_
-
-	XsdGoPkgHasAttr_VertAdvY_XsdtDouble_
-
-	XsdGoPkgHasElems_A
-
-	XsdGoPkgHasElems_Polygon
-
-	XsdGoPkgHasElems_FontFace
-
-	XsdGoPkgHasElems_Defs
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasElems_ClipPath
-
-	XsdGoPkgHasAtts_PresentationAttributesAll
-
-	XsdGoPkgHasElems_Pattern
-
-	XsdGoPkgHasElems_Ellipse
-
-	XsdGoPkgHasElems_Svg
-
-	XsdGoPkgHasElems_Filter
-
-	XsdGoPkgHasElems_Font
-
-	XsdGoPkgHasElems_Marker
-
-	XsdGoPkgHasElems_Circle
-
-	XsdGoPkgHasElems_RadialGradient
-
-	XsdGoPkgHasElems_AnimateMotion
-
-	XsdGoPkgHasElems_Path
-
-	XsdGoPkgHasElems_Title
-
-	XsdGoPkgHasElems_G
-
-	XsdGoPkgHasAttr_D_TPathDataType_
-
-	XsdGoPkgHasElems_Rect
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_Script
-
-	XsdGoPkgHasElems_Desc
-
 }
 
-//	If the WalkHandlers.TmissingGlyphType function is not nil (ie. was set by outside code), calls it with this TmissingGlyphType instance as the single argument. Then calls the Walk() method on 38/46 embed(s) and 0/0 field(s) belonging to this TmissingGlyphType instance.
-func (me *TmissingGlyphType) Walk ()  { 
-	if fn := WalkHandlers.TmissingGlyphType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_ColorProfile.Walk()
-	me.XsdGoPkgHasElems_Cursor.Walk()
-	me.XsdGoPkgHasElems_Polyline.Walk()
-	me.XsdGoPkgHasElems_Mask.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Use.Walk()
-	me.XsdGoPkgHasElems_Style.Walk()
-	me.XsdGoPkgHasElems_Text.Walk()
-	me.XsdGoPkgHasElems_Switch.Walk()
-	me.XsdGoPkgHasElems_Line.Walk()
-	me.XsdGoPkgHasElems_Symbol.Walk()
-	me.XsdGoPkgHasElems_Image.Walk()
-	me.XsdGoPkgHasElems_View.Walk()
-	me.XsdGoPkgHasElems_LinearGradient.Walk()
-	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElems_Metadata.Walk()
-	me.XsdGoPkgHasElems_A.Walk()
-	me.XsdGoPkgHasElems_Polygon.Walk()
-	me.XsdGoPkgHasElems_FontFace.Walk()
-	me.XsdGoPkgHasElems_Defs.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_ClipPath.Walk()
-	me.XsdGoPkgHasElems_Pattern.Walk()
-	me.XsdGoPkgHasElems_Ellipse.Walk()
-	me.XsdGoPkgHasElems_Svg.Walk()
-	me.XsdGoPkgHasElems_Filter.Walk()
-	me.XsdGoPkgHasElems_Marker.Walk()
-	me.XsdGoPkgHasElems_Circle.Walk()
-	me.XsdGoPkgHasElems_RadialGradient.Walk()
-	me.XsdGoPkgHasElems_AnimateMotion.Walk()
-	me.XsdGoPkgHasElems_Path.Walk()
-	me.XsdGoPkgHasElems_Title.Walk()
-	me.XsdGoPkgHasElems_G.Walk()
-	me.XsdGoPkgHasElems_Rect.Walk()
-	me.XsdGoPkgHasElems_Script.Walk()
-	me.XsdGoPkgHasElems_Desc.Walk()
- }
-
-type XsdGoPkgHasElem_MissingGlyph struct {
-	MissingGlyph *TmissingGlyphType `xml:"http://www.w3.org/2000/svg missing-glyph"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_MissingGlyph function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MissingGlyph instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_MissingGlyph instance.
-func (me *XsdGoPkgHasElem_MissingGlyph) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_MissingGlyph; fn != nil { fn(me) }
-	me.MissingGlyph.Walk()
- }
-
-type XsdGoPkgHasAttr_VertOriginY_XsdtDouble_ struct {
-	VertOriginY xsdt.Double `xml:"http://www.w3.org/2000/svg vert-origin-y,attr"`
-
+type XsdGoPkgHasAttr_HorizOriginX_XsdtDouble_ struct {
+	HorizOriginX xsdt.Double `xml:"http://www.w3.org/2000/svg horiz-origin-x,attr"`
 }
 
 type XsdGoPkgHasAttr_VertOriginX_XsdtDouble_ struct {
 	VertOriginX xsdt.Double `xml:"http://www.w3.org/2000/svg vert-origin-x,attr"`
+}
 
+type TmissingGlyphType struct {
+	XsdGoPkgHasElems_Defs
+
+	XsdGoPkgHasAttr_HorizAdvX_XsdtDouble_
+
+	XsdGoPkgHasElems_Svg
+
+	XsdGoPkgHasAttr_D_TPathDataType_
+
+	XsdGoPkgHasElems_Line
+
+	XsdGoPkgHasElems_Path
+
+	XsdGoPkgHasElems_Polygon
+
+	XsdGoPkgHasElems_Mask
+
+	XsdGoPkgHasElems_RadialGradient
+
+	XsdGoPkgHasElems_Rect
+
+	XsdGoPkgHasAttr_VertAdvY_XsdtDouble_
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasElems_Image
+
+	XsdGoPkgHasElems_Text
+
+	XsdGoPkgHasElems_Style
+
+	XsdGoPkgHasElems_Circle
+
+	XsdGoPkgHasElems_Script
+
+	XsdGoPkgHasElems_A
+
+	XsdGoPkgHasElems_G
+
+	XsdGoPkgHasElems_Use
+
+	XsdGoPkgHasElems_Metadata
+
+	XsdGoPkgHasElems_LinearGradient
+
+	XsdGoPkgHasElems_ClipPath
+
+	XsdGoPkgHasElems_Cursor
+
+	XsdGoPkgHasElems_AltGlyphDef
+
+	XsdGoPkgHasElems_Filter
+
+	XsdGoPkgHasElems_Polyline
+
+	XsdGoPkgHasElems_Animate
+
+	XsdGoPkgHasElems_Pattern
+
+	XsdGoPkgHasElems_AnimateTransform
+
+	XsdGoPkgHasElems_Title
+
+	XsdGoPkgHasElems_ColorProfile
+
+	XsdGoPkgHasElems_Ellipse
+
+	XsdGoPkgHasElems_View
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasElems_Font
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasElems_Switch
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasElems_Desc
+
+	XsdGoPkgHasElems_AnimateMotion
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Marker
+
+	XsdGoPkgHasAtts_PresentationAttributesAll
+
+	XsdGoPkgHasElems_FontFace
+}
+
+//	If the WalkHandlers.TmissingGlyphType function is not nil (ie. was set by outside code), calls it with this TmissingGlyphType instance as the single argument. Then calls the Walk() method on 38/46 embed(s) and 0/0 field(s) belonging to this TmissingGlyphType instance.
+func (me *TmissingGlyphType) Walk() {
+	if fn := WalkHandlers.TmissingGlyphType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasElems_Defs.Walk()
+	me.XsdGoPkgHasElems_Svg.Walk()
+	me.XsdGoPkgHasElems_Line.Walk()
+	me.XsdGoPkgHasElems_Path.Walk()
+	me.XsdGoPkgHasElems_Polygon.Walk()
+	me.XsdGoPkgHasElems_Mask.Walk()
+	me.XsdGoPkgHasElems_RadialGradient.Walk()
+	me.XsdGoPkgHasElems_Rect.Walk()
+	me.XsdGoPkgHasElems_Image.Walk()
+	me.XsdGoPkgHasElems_Text.Walk()
+	me.XsdGoPkgHasElems_Style.Walk()
+	me.XsdGoPkgHasElems_Circle.Walk()
+	me.XsdGoPkgHasElems_Script.Walk()
+	me.XsdGoPkgHasElems_A.Walk()
+	me.XsdGoPkgHasElems_G.Walk()
+	me.XsdGoPkgHasElems_Use.Walk()
+	me.XsdGoPkgHasElems_Metadata.Walk()
+	me.XsdGoPkgHasElems_LinearGradient.Walk()
+	me.XsdGoPkgHasElems_ClipPath.Walk()
+	me.XsdGoPkgHasElems_Cursor.Walk()
+	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
+	me.XsdGoPkgHasElems_Filter.Walk()
+	me.XsdGoPkgHasElems_Polyline.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_Pattern.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+	me.XsdGoPkgHasElems_Title.Walk()
+	me.XsdGoPkgHasElems_ColorProfile.Walk()
+	me.XsdGoPkgHasElems_Ellipse.Walk()
+	me.XsdGoPkgHasElems_View.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_Switch.Walk()
+	me.XsdGoPkgHasElems_Desc.Walk()
+	me.XsdGoPkgHasElems_AnimateMotion.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+	me.XsdGoPkgHasElems_Symbol.Walk()
+	me.XsdGoPkgHasElems_Marker.Walk()
+	me.XsdGoPkgHasElems_FontFace.Walk()
+}
+
+type XsdGoPkgHasElem_MissingGlyph struct {
+	MissingGlyph *TmissingGlyphType `xml:"http://www.w3.org/2000/svg missing-glyph"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_MissingGlyph function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MissingGlyph instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_MissingGlyph instance.
+func (me *XsdGoPkgHasElem_MissingGlyph) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_MissingGlyph; fn != nil {
+		fn(me)
+	}
+	me.MissingGlyph.Walk()
 }
 
 type XsdGoPkgHasAttr_HorizOriginY_XsdtDouble_ struct {
 	HorizOriginY xsdt.Double `xml:"http://www.w3.org/2000/svg horiz-origin-y,attr"`
+}
 
+type ThkernType struct {
+	XsdGoPkgHasAttr_K_XsdtDouble_
+
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAttr_G2_XsdtString_
+
+	XsdGoPkgHasAttr_U1_XsdtString_
+
+	XsdGoPkgHasAttr_U2_XsdtString_
+
+	XsdGoPkgHasAttr_G1_XsdtString_
+}
+
+//	If the WalkHandlers.ThkernType function is not nil (ie. was set by outside code), calls it with this ThkernType instance as the single argument. Then calls the Walk() method on 0/6 embed(s) and 0/0 field(s) belonging to this ThkernType instance.
+func (me *ThkernType) Walk() {
+	if fn := WalkHandlers.ThkernType; fn != nil {
+		fn(me)
+	}
+}
+
+type XsdGoPkgHasElems_Hkern struct {
+	Hkerns []*ThkernType `xml:"http://www.w3.org/2000/svg hkern"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Hkern function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Hkern instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Hkern instance.
+func (me *XsdGoPkgHasElems_Hkern) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Hkern; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Hkerns {
+		x.Walk()
+	}
+}
+
+type XsdGoPkgHasAttr_VertOriginY_XsdtDouble_ struct {
+	VertOriginY xsdt.Double `xml:"http://www.w3.org/2000/svg vert-origin-y,attr"`
 }
 
 type TfontType struct {
+	XsdGoPkgHasAtts_StdAttrs
+
+	XsdGoPkgHasAtts_PresentationAttributesAll
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
 	XsdGoPkgHasAttr_HorizAdvX_XsdtDouble_
-
-	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
-
-	XsdGoPkgHasAttr_VertAdvY_XsdtDouble_
 
 	XsdGoPkgHasElems_Glyph
 
+	XsdGoPkgHasElems_Vkern
+
 	XsdGoPkgHasElem_FontFace
-
-	XsdGoPkgHasElem_MissingGlyph
-
-	XsdGoPkgHasAttr_VertOriginY_XsdtDouble_
-
-	XsdGoPkgHasAttr_VertOriginX_XsdtDouble_
-
-	XsdGoPkgHasGroup_DescTitleMetadata
-
-	XsdGoPkgHasAttr_HorizOriginY_XsdtDouble_
 
 	XsdGoPkgHasAttr_HorizOriginX_XsdtDouble_
 
-	XsdGoPkgHasElems_Vkern
+	XsdGoPkgHasAttr_VertOriginX_XsdtDouble_
 
-	XsdGoPkgHasAtts_StdAttrs
+	XsdGoPkgHasElem_MissingGlyph
 
-	XsdGoPkgHasAtts_PresentationAttributesAll
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
+	XsdGoPkgHasAttr_HorizOriginY_XsdtDouble_
 
 	XsdGoPkgHasElems_Hkern
 
-	XsdGoPkgHasAttr_Class_TClassListType_
+	XsdGoPkgHasAttr_VertAdvY_XsdtDouble_
 
-}
-
-//	If the WalkHandlers.TfontType function is not nil (ie. was set by outside code), calls it with this TfontType instance as the single argument. Then calls the Walk() method on 6/17 embed(s) and 0/0 field(s) belonging to this TfontType instance.
-func (me *TfontType) Walk ()  { 
-	if fn := WalkHandlers.TfontType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElem_FontFace.Walk()
-	me.XsdGoPkgHasElem_MissingGlyph.Walk()
-	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
-	me.XsdGoPkgHasElems_Vkern.Walk()
-	me.XsdGoPkgHasElems_Hkern.Walk()
-	me.XsdGoPkgHasElems_Glyph.Walk()
- }
-
-type XsdGoPkgHasElems_Font struct {
-	Fonts []*TfontType `xml:"http://www.w3.org/2000/svg font"`
-
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Font function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Font instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Font instance.
-func (me *XsdGoPkgHasElems_Font) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Font; fn != nil { fn(me) }
-	for _, x := range me.Fonts { x.Walk() }
- }
-
-type XsdGoPkgHasAttr_ZoomAndPan_TxsdSvgTypeZoomAndPan_Magnify struct {
-	ZoomAndPan TxsdViewTypeZoomAndPan `xml:"http://www.w3.org/2000/svg zoomAndPan,attr"`
-
-}
-
-//	Returns the default value for ZoomAndPan -- "magnify"
-func (me XsdGoPkgHasAttr_ZoomAndPan_TxsdSvgTypeZoomAndPan_Magnify) ZoomAndPanDefault () TxsdViewTypeZoomAndPan { return TxsdViewTypeZoomAndPan("magnify") }
-
-type XsdGoPkgHasAttr_ContentStyleType_TContentTypeType_TextCss struct {
-	ContentStyleType TContentTypeType `xml:"http://www.w3.org/2000/svg contentStyleType,attr"`
-
-}
-
-//	Returns the default value for ContentStyleType -- "text/css"
-func (me XsdGoPkgHasAttr_ContentStyleType_TContentTypeType_TextCss) ContentStyleTypeDefault () TContentTypeType { return TContentTypeType("text/css") }
-
-type XsdGoPkgHasAttr_ContentScriptType_TContentTypeType_TextEcmascript struct {
-	ContentScriptType TContentTypeType `xml:"http://www.w3.org/2000/svg contentScriptType,attr"`
-
-}
-
-//	Returns the default value for ContentScriptType -- "text/ecmascript"
-func (me XsdGoPkgHasAttr_ContentScriptType_TContentTypeType_TextEcmascript) ContentScriptTypeDefault () TContentTypeType { return TContentTypeType("text/ecmascript") }
-
-type TsvgType struct {
-	XsdGoPkgHasAttr_ContentStyleType_TContentTypeType_TextCss
-
-	XsdGoPkgHasElems_Text
-
-	XsdGoPkgHasElems_Switch
-
-	XsdGoPkgHasElems_Cursor
-
-	XsdGoPkgHasElems_ColorProfile
-
-	XsdGoPkgHasElems_FontFace
-
-	XsdGoPkgHasElems_Use
-
-	XsdGoPkgHasElems_G
-
-	XsdGoPkgHasAttr_Style_TStyleSheetType_
-
-	XsdGoPkgHasElems_Defs
-
-	XsdGoPkgHasElems_AnimateColor
-
-	XsdGoPkgHasAtts_TestAttrs
-
-	XsdGoPkgHasAttr_Class_TClassListType_
-
-	XsdGoPkgHasElems_ClipPath
+	XsdGoPkgHasAttr_VertOriginY_XsdtDouble_
 
 	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
 
-	XsdGoPkgHasAttr_Y_TCoordinateType_
+	XsdGoPkgHasGroup_DescTitleMetadata
 
-	XsdGoPkgHasElems_LinearGradient
+	XsdGoPkgHasAttr_Class_TClassListType_
+}
 
-	XsdGoPkgHasElems_Symbol
+//	If the WalkHandlers.TfontType function is not nil (ie. was set by outside code), calls it with this TfontType instance as the single argument. Then calls the Walk() method on 6/17 embed(s) and 0/0 field(s) belonging to this TfontType instance.
+func (me *TfontType) Walk() {
+	if fn := WalkHandlers.TfontType; fn != nil {
+		fn(me)
+	}
+	me.XsdGoPkgHasGroup_DescTitleMetadata.Walk()
+	me.XsdGoPkgHasElems_Glyph.Walk()
+	me.XsdGoPkgHasElems_Vkern.Walk()
+	me.XsdGoPkgHasElem_FontFace.Walk()
+	me.XsdGoPkgHasElem_MissingGlyph.Walk()
+	me.XsdGoPkgHasElems_Hkern.Walk()
+}
 
-	XsdGoPkgHasAtts_LangSpaceAttrs
+type XsdGoPkgHasElems_Font struct {
+	Fonts []*TfontType `xml:"http://www.w3.org/2000/svg font"`
+}
 
-	XsdGoPkgHasAttr_ContentScriptType_TContentTypeType_TextEcmascript
+//	If the WalkHandlers.XsdGoPkgHasElems_Font function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Font instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Font instance.
+func (me *XsdGoPkgHasElems_Font) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Font; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Fonts {
+		x.Walk()
+	}
+}
 
-	XsdGoPkgHasElems_Polyline
+type XsdGoPkgHasAttr_ContentScriptType_TContentTypeType_TextEcmascript struct {
+	ContentScriptType TContentTypeType `xml:"http://www.w3.org/2000/svg contentScriptType,attr"`
+}
 
-	XsdGoPkgHasElems_Svg
+//	Returns the default value for ContentScriptType -- "text/ecmascript"
+func (me XsdGoPkgHasAttr_ContentScriptType_TContentTypeType_TextEcmascript) ContentScriptTypeDefault() TContentTypeType {
+	return TContentTypeType("text/ecmascript")
+}
 
-	XsdGoPkgHasElems_Font
+type XsdGoPkgHasAttr_ContentStyleType_TContentTypeType_TextCss struct {
+	ContentStyleType TContentTypeType `xml:"http://www.w3.org/2000/svg contentStyleType,attr"`
+}
 
-	XsdGoPkgHasElems_Rect
+//	Returns the default value for ContentStyleType -- "text/css"
+func (me XsdGoPkgHasAttr_ContentStyleType_TContentTypeType_TextCss) ContentStyleTypeDefault() TContentTypeType {
+	return TContentTypeType("text/css")
+}
 
-	XsdGoPkgHasElems_Polygon
+type XsdGoPkgHasAttr_ZoomAndPan_TxsdSvgTypeZoomAndPan_Magnify struct {
+	ZoomAndPan TxsdViewTypeZoomAndPan `xml:"http://www.w3.org/2000/svg zoomAndPan,attr"`
+}
 
-	XsdGoPkgHasElems_Line
+//	Returns the default value for ZoomAndPan -- "magnify"
+func (me XsdGoPkgHasAttr_ZoomAndPan_TxsdSvgTypeZoomAndPan_Magnify) ZoomAndPanDefault() TxsdViewTypeZoomAndPan {
+	return TxsdViewTypeZoomAndPan("magnify")
+}
 
-	XsdGoPkgHasElems_View
-
-	XsdGoPkgHasElems_Mask
-
-	XsdGoPkgHasAttr_ZoomAndPan_TxsdSvgTypeZoomAndPan_Magnify
-
-	XsdGoPkgHasElems_Path
-
-	XsdGoPkgHasElems_AnimateTransform
-
-	XsdGoPkgHasElems_Desc
-
-	XsdGoPkgHasElems_Marker
-
-	XsdGoPkgHasAttr_Height_TLengthType_
-
-	XsdGoPkgHasElems_A
-
-	XsdGoPkgHasAtts_StdAttrs
-
-	XsdGoPkgHasElems_Set
-
-	XsdGoPkgHasElems_AltGlyphDef
-
-	XsdGoPkgHasElems_Ellipse
-
-	XsdGoPkgHasElems_Pattern
-
-	XsdGoPkgHasElems_Script
-
-	XsdGoPkgHasElems_Circle
-
-	XsdGoPkgHasAtts_DocumentEvents
-
-	XsdGoPkgHasAttr_ViewBox_TViewBoxSpecType_
-
-	XsdGoPkgHasElems_RadialGradient
-
-	XsdGoPkgHasElems_AnimateMotion
-
-	XsdGoPkgHasElems_Style
+type TsvgType struct {
+	XsdGoPkgHasElems_FontFace
 
 	XsdGoPkgHasElems_Title
 
-	XsdGoPkgHasAtts_GraphicsElementEvents
-
-	XsdGoPkgHasElems_Image
-
-	XsdGoPkgHasAttr_X_TCoordinateType_
-
-	XsdGoPkgHasElems_Filter
-
 	XsdGoPkgHasAttr_PreserveAspectRatio_TPreserveAspectRatioSpecType_XMidYMidMeet
+
+	XsdGoPkgHasElems_Line
+
+	XsdGoPkgHasAttr_ViewBox_TViewBoxSpecType_
+
+	XsdGoPkgHasAttr_ZoomAndPan_TxsdSvgTypeZoomAndPan_Magnify
+
+	XsdGoPkgHasElems_Svg
+
+	XsdGoPkgHasElems_Defs
 
 	XsdGoPkgHasElems_Animate
 
-	XsdGoPkgHasAttr_Width_TLengthType_
+	XsdGoPkgHasElems_Use
 
-	XsdGoPkgHasAtts_PresentationAttributesAll
+	XsdGoPkgHasElems_Symbol
+
+	XsdGoPkgHasElems_Path
+
+	XsdGoPkgHasAtts_TestAttrs
+
+	XsdGoPkgHasElems_ClipPath
+
+	XsdGoPkgHasElems_Script
+
+	XsdGoPkgHasElems_LinearGradient
+
+	XsdGoPkgHasAttr_Height_TLengthType_
+
+	XsdGoPkgHasElems_View
+
+	XsdGoPkgHasElems_Pattern
+
+	XsdGoPkgHasElems_Cursor
+
+	XsdGoPkgHasElems_Marker
+
+	XsdGoPkgHasElems_Desc
+
+	XsdGoPkgHasAtts_LangSpaceAttrs
+
+	XsdGoPkgHasAtts_GraphicsElementEvents
+
+	XsdGoPkgHasAttr_X_TCoordinateType_
 
 	XsdGoPkgHasElems_Metadata
 
+	XsdGoPkgHasAtts_DocumentEvents
+
+	XsdGoPkgHasElems_AnimateTransform
+
+	XsdGoPkgHasElems_Filter
+
+	XsdGoPkgHasElems_Circle
+
+	XsdGoPkgHasElems_Font
+
+	XsdGoPkgHasElems_Image
+
+	XsdGoPkgHasAttr_Style_TStyleSheetType_
+
+	XsdGoPkgHasElems_ColorProfile
+
+	XsdGoPkgHasElems_AltGlyphDef
+
+	XsdGoPkgHasElems_Text
+
+	XsdGoPkgHasAttr_ContentScriptType_TContentTypeType_TextEcmascript
+
+	XsdGoPkgHasAtts_PresentationAttributesAll
+
+	XsdGoPkgHasElems_Mask
+
+	XsdGoPkgHasElems_A
+
+	XsdGoPkgHasAttr_Y_TCoordinateType_
+
+	XsdGoPkgHasElems_Style
+
+	XsdGoPkgHasElems_Set
+
+	XsdGoPkgHasAttr_Width_TLengthType_
+
+	XsdGoPkgHasAttr_ExternalResourcesRequired_XsdtBoolean_
+
+	XsdGoPkgHasElems_AnimateColor
+
+	XsdGoPkgHasAttr_ContentStyleType_TContentTypeType_TextCss
+
+	XsdGoPkgHasElems_AnimateMotion
+
+	XsdGoPkgHasElems_Polyline
+
+	XsdGoPkgHasElems_RadialGradient
+
+	XsdGoPkgHasElems_Polygon
+
+	XsdGoPkgHasElems_Ellipse
+
+	XsdGoPkgHasAttr_Class_TClassListType_
+
+	XsdGoPkgHasElems_G
+
+	XsdGoPkgHasElems_Rect
+
+	XsdGoPkgHasElems_Switch
+
+	XsdGoPkgHasAtts_StdAttrs
 }
 
 //	If the WalkHandlers.TsvgType function is not nil (ie. was set by outside code), calls it with this TsvgType instance as the single argument. Then calls the Walk() method on 39/57 embed(s) and 0/0 field(s) belonging to this TsvgType instance.
-func (me *TsvgType) Walk ()  { 
-	if fn := WalkHandlers.TsvgType; fn != nil { fn(me) }
-	me.XsdGoPkgHasElems_Path.Walk()
-	me.XsdGoPkgHasElems_AnimateTransform.Walk()
-	me.XsdGoPkgHasElems_Desc.Walk()
-	me.XsdGoPkgHasElems_Marker.Walk()
-	me.XsdGoPkgHasElems_A.Walk()
-	me.XsdGoPkgHasElems_Set.Walk()
-	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
-	me.XsdGoPkgHasElems_Ellipse.Walk()
-	me.XsdGoPkgHasElems_Pattern.Walk()
-	me.XsdGoPkgHasElems_Script.Walk()
-	me.XsdGoPkgHasElems_Circle.Walk()
-	me.XsdGoPkgHasElems_RadialGradient.Walk()
+func (me *TsvgType) Walk() {
+	if fn := WalkHandlers.TsvgType; fn != nil {
+		fn(me)
+	}
 	me.XsdGoPkgHasElems_AnimateMotion.Walk()
-	me.XsdGoPkgHasElems_Style.Walk()
-	me.XsdGoPkgHasElems_Title.Walk()
-	me.XsdGoPkgHasElems_Image.Walk()
-	me.XsdGoPkgHasElems_Filter.Walk()
-	me.XsdGoPkgHasElems_Animate.Walk()
-	me.XsdGoPkgHasElems_Metadata.Walk()
-	me.XsdGoPkgHasElems_Text.Walk()
-	me.XsdGoPkgHasElems_Switch.Walk()
-	me.XsdGoPkgHasElems_Cursor.Walk()
-	me.XsdGoPkgHasElems_ColorProfile.Walk()
-	me.XsdGoPkgHasElems_FontFace.Walk()
-	me.XsdGoPkgHasElems_Use.Walk()
-	me.XsdGoPkgHasElems_G.Walk()
-	me.XsdGoPkgHasElems_Defs.Walk()
-	me.XsdGoPkgHasElems_AnimateColor.Walk()
-	me.XsdGoPkgHasElems_ClipPath.Walk()
-	me.XsdGoPkgHasElems_LinearGradient.Walk()
-	me.XsdGoPkgHasElems_Symbol.Walk()
 	me.XsdGoPkgHasElems_Polyline.Walk()
-	me.XsdGoPkgHasElems_Svg.Walk()
-	me.XsdGoPkgHasElems_Font.Walk()
-	me.XsdGoPkgHasElems_Rect.Walk()
+	me.XsdGoPkgHasElems_RadialGradient.Walk()
 	me.XsdGoPkgHasElems_Polygon.Walk()
+	me.XsdGoPkgHasElems_Ellipse.Walk()
+	me.XsdGoPkgHasElems_G.Walk()
+	me.XsdGoPkgHasElems_Rect.Walk()
+	me.XsdGoPkgHasElems_Switch.Walk()
+	me.XsdGoPkgHasElems_FontFace.Walk()
+	me.XsdGoPkgHasElems_Title.Walk()
 	me.XsdGoPkgHasElems_Line.Walk()
+	me.XsdGoPkgHasElems_Svg.Walk()
+	me.XsdGoPkgHasElems_Defs.Walk()
+	me.XsdGoPkgHasElems_Animate.Walk()
+	me.XsdGoPkgHasElems_Use.Walk()
+	me.XsdGoPkgHasElems_Symbol.Walk()
+	me.XsdGoPkgHasElems_Path.Walk()
+	me.XsdGoPkgHasElems_ClipPath.Walk()
+	me.XsdGoPkgHasElems_Script.Walk()
+	me.XsdGoPkgHasElems_LinearGradient.Walk()
 	me.XsdGoPkgHasElems_View.Walk()
+	me.XsdGoPkgHasElems_Pattern.Walk()
+	me.XsdGoPkgHasElems_Cursor.Walk()
+	me.XsdGoPkgHasElems_Marker.Walk()
+	me.XsdGoPkgHasElems_Desc.Walk()
+	me.XsdGoPkgHasElems_Metadata.Walk()
+	me.XsdGoPkgHasElems_AnimateTransform.Walk()
+	me.XsdGoPkgHasElems_Filter.Walk()
+	me.XsdGoPkgHasElems_Circle.Walk()
+	me.XsdGoPkgHasElems_Font.Walk()
+	me.XsdGoPkgHasElems_Image.Walk()
+	me.XsdGoPkgHasElems_ColorProfile.Walk()
+	me.XsdGoPkgHasElems_AltGlyphDef.Walk()
+	me.XsdGoPkgHasElems_Text.Walk()
 	me.XsdGoPkgHasElems_Mask.Walk()
- }
+	me.XsdGoPkgHasElems_A.Walk()
+	me.XsdGoPkgHasElems_Style.Walk()
+	me.XsdGoPkgHasElems_Set.Walk()
+	me.XsdGoPkgHasElems_AnimateColor.Walk()
+}
 
 type XsdGoPkgHasElem_Svg struct {
 	Svg *TsvgType `xml:"http://www.w3.org/2000/svg svg"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Svg function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Svg instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Svg instance.
-func (me *XsdGoPkgHasElem_Svg) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Svg; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Svg) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Svg; fn != nil {
+		fn(me)
+	}
 	me.Svg.Walk()
- }
+}
 
 type XsdGoPkgHasElem_G struct {
 	G *TgType `xml:"http://www.w3.org/2000/svg g"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_G function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_G instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_G instance.
-func (me *XsdGoPkgHasElem_G) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_G; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_G) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_G; fn != nil {
+		fn(me)
+	}
 	me.G.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Defs struct {
 	Defs *TdefsType `xml:"http://www.w3.org/2000/svg defs"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Defs function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Defs instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Defs instance.
-func (me *XsdGoPkgHasElem_Defs) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Defs; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Defs) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Defs; fn != nil {
+		fn(me)
+	}
 	me.Defs.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Symbol struct {
 	Symbol *TsymbolType `xml:"http://www.w3.org/2000/svg symbol"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Symbol function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Symbol instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Symbol instance.
-func (me *XsdGoPkgHasElem_Symbol) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Symbol; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Symbol) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Symbol; fn != nil {
+		fn(me)
+	}
 	me.Symbol.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Use struct {
 	Use *TuseType `xml:"http://www.w3.org/2000/svg use"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Use function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Use instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Use instance.
-func (me *XsdGoPkgHasElem_Use) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Use; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Use) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Use; fn != nil {
+		fn(me)
+	}
 	me.Use.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Image struct {
 	Image *TimageType `xml:"http://www.w3.org/2000/svg image"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Image function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Image instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Image instance.
-func (me *XsdGoPkgHasElem_Image) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Image; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Image) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Image; fn != nil {
+		fn(me)
+	}
 	me.Image.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Switch struct {
 	Switch *TswitchType `xml:"http://www.w3.org/2000/svg switch"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Switch function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Switch instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Switch instance.
-func (me *XsdGoPkgHasElem_Switch) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Switch; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Switch) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Switch; fn != nil {
+		fn(me)
+	}
 	me.Switch.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Style struct {
 	Style *TstyleType `xml:"http://www.w3.org/2000/svg style"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Style function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Style instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Style instance.
-func (me *XsdGoPkgHasElem_Style) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Style; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Style) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Style; fn != nil {
+		fn(me)
+	}
 	me.Style.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Path struct {
 	Path *TpathType `xml:"http://www.w3.org/2000/svg path"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Path function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Path instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Path instance.
-func (me *XsdGoPkgHasElem_Path) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Path; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Path) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Path; fn != nil {
+		fn(me)
+	}
 	me.Path.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Rect struct {
 	Rect *TrectType `xml:"http://www.w3.org/2000/svg rect"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Rect function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Rect instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Rect instance.
-func (me *XsdGoPkgHasElem_Rect) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Rect; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Rect) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Rect; fn != nil {
+		fn(me)
+	}
 	me.Rect.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Circle struct {
 	Circle *TcircleType `xml:"http://www.w3.org/2000/svg circle"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Circle function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Circle instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Circle instance.
-func (me *XsdGoPkgHasElem_Circle) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Circle; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Circle) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Circle; fn != nil {
+		fn(me)
+	}
 	me.Circle.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Ellipse struct {
 	Ellipse *TellipseType `xml:"http://www.w3.org/2000/svg ellipse"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Ellipse function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Ellipse instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Ellipse instance.
-func (me *XsdGoPkgHasElem_Ellipse) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Ellipse; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Ellipse) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Ellipse; fn != nil {
+		fn(me)
+	}
 	me.Ellipse.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Line struct {
 	Line *TlineType `xml:"http://www.w3.org/2000/svg line"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Line function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Line instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Line instance.
-func (me *XsdGoPkgHasElem_Line) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Line; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Line) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Line; fn != nil {
+		fn(me)
+	}
 	me.Line.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Polyline struct {
 	Polyline *TpolylineType `xml:"http://www.w3.org/2000/svg polyline"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Polyline function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Polyline instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Polyline instance.
-func (me *XsdGoPkgHasElem_Polyline) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Polyline; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Polyline) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Polyline; fn != nil {
+		fn(me)
+	}
 	me.Polyline.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Polygon struct {
 	Polygon *TpolygonType `xml:"http://www.w3.org/2000/svg polygon"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Polygon function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Polygon instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Polygon instance.
-func (me *XsdGoPkgHasElem_Polygon) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Polygon; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Polygon) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Polygon; fn != nil {
+		fn(me)
+	}
 	me.Polygon.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Text struct {
 	Text *TtextType `xml:"http://www.w3.org/2000/svg text"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Text function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Text instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Text instance.
-func (me *XsdGoPkgHasElem_Text) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Text; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Text) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Text; fn != nil {
+		fn(me)
+	}
 	me.Text.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Tspan struct {
 	Tspan *TtspanType `xml:"http://www.w3.org/2000/svg tspan"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Tspan function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Tspan instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Tspan instance.
-func (me *XsdGoPkgHasElem_Tspan) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Tspan; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Tspan) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Tspan; fn != nil {
+		fn(me)
+	}
 	me.Tspan.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Tref struct {
 	Tref *TtrefType `xml:"http://www.w3.org/2000/svg tref"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Tref function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Tref instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Tref instance.
-func (me *XsdGoPkgHasElem_Tref) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Tref; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Tref) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Tref; fn != nil {
+		fn(me)
+	}
 	me.Tref.Walk()
- }
+}
 
 type XsdGoPkgHasElem_TextPath struct {
 	TextPath *TtextPathType `xml:"http://www.w3.org/2000/svg textPath"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_TextPath function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_TextPath instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_TextPath instance.
-func (me *XsdGoPkgHasElem_TextPath) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_TextPath; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_TextPath) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_TextPath; fn != nil {
+		fn(me)
+	}
 	me.TextPath.Walk()
- }
+}
 
 type XsdGoPkgHasElem_AltGlyph struct {
 	AltGlyph *TaltGlyphType `xml:"http://www.w3.org/2000/svg altGlyph"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_AltGlyph function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AltGlyph instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AltGlyph instance.
-func (me *XsdGoPkgHasElem_AltGlyph) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AltGlyph; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_AltGlyph) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_AltGlyph; fn != nil {
+		fn(me)
+	}
 	me.AltGlyph.Walk()
- }
+}
 
 type XsdGoPkgHasElem_AltGlyphDef struct {
 	AltGlyphDef *TaltGlyphDefType `xml:"http://www.w3.org/2000/svg altGlyphDef"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_AltGlyphDef function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AltGlyphDef instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AltGlyphDef instance.
-func (me *XsdGoPkgHasElem_AltGlyphDef) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AltGlyphDef; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_AltGlyphDef) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_AltGlyphDef; fn != nil {
+		fn(me)
+	}
 	me.AltGlyphDef.Walk()
- }
+}
 
 type XsdGoPkgHasElem_AltGlyphItem struct {
 	AltGlyphItem *TaltGlyphItemType `xml:"http://www.w3.org/2000/svg altGlyphItem"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_AltGlyphItem function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AltGlyphItem instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AltGlyphItem instance.
-func (me *XsdGoPkgHasElem_AltGlyphItem) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AltGlyphItem; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_AltGlyphItem) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_AltGlyphItem; fn != nil {
+		fn(me)
+	}
 	me.AltGlyphItem.Walk()
- }
+}
 
 type XsdGoPkgHasElem_GlyphRef struct {
 	GlyphRef *TglyphRefType `xml:"http://www.w3.org/2000/svg glyphRef"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_GlyphRef function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_GlyphRef instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_GlyphRef instance.
-func (me *XsdGoPkgHasElem_GlyphRef) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_GlyphRef; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_GlyphRef) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_GlyphRef; fn != nil {
+		fn(me)
+	}
 	me.GlyphRef.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Marker struct {
 	Marker *TmarkerType `xml:"http://www.w3.org/2000/svg marker"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Marker function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Marker instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Marker instance.
-func (me *XsdGoPkgHasElem_Marker) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Marker; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Marker) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Marker; fn != nil {
+		fn(me)
+	}
 	me.Marker.Walk()
- }
+}
 
 type XsdGoPkgHasElem_ColorProfile struct {
 	ColorProfile *TcolorProfileType `xml:"http://www.w3.org/2000/svg color-profile"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_ColorProfile function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ColorProfile instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ColorProfile instance.
-func (me *XsdGoPkgHasElem_ColorProfile) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ColorProfile; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_ColorProfile) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ColorProfile; fn != nil {
+		fn(me)
+	}
 	me.ColorProfile.Walk()
- }
+}
 
 type XsdGoPkgHasElem_LinearGradient struct {
 	LinearGradient *TlinearGradientType `xml:"http://www.w3.org/2000/svg linearGradient"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_LinearGradient function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LinearGradient instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_LinearGradient instance.
-func (me *XsdGoPkgHasElem_LinearGradient) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_LinearGradient; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_LinearGradient) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_LinearGradient; fn != nil {
+		fn(me)
+	}
 	me.LinearGradient.Walk()
- }
+}
 
 type XsdGoPkgHasElem_RadialGradient struct {
 	RadialGradient *TradialGradientType `xml:"http://www.w3.org/2000/svg radialGradient"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_RadialGradient function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_RadialGradient instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_RadialGradient instance.
-func (me *XsdGoPkgHasElem_RadialGradient) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_RadialGradient; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_RadialGradient) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_RadialGradient; fn != nil {
+		fn(me)
+	}
 	me.RadialGradient.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Stop struct {
 	Stop *TstopType `xml:"http://www.w3.org/2000/svg stop"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Stop function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Stop instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Stop instance.
-func (me *XsdGoPkgHasElem_Stop) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Stop; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Stop) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Stop; fn != nil {
+		fn(me)
+	}
 	me.Stop.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Pattern struct {
 	Pattern *TpatternType `xml:"http://www.w3.org/2000/svg pattern"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Pattern function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Pattern instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Pattern instance.
-func (me *XsdGoPkgHasElem_Pattern) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Pattern; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Pattern) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Pattern; fn != nil {
+		fn(me)
+	}
 	me.Pattern.Walk()
- }
+}
 
 type XsdGoPkgHasElem_ClipPath struct {
 	ClipPath *TclipPathType `xml:"http://www.w3.org/2000/svg clipPath"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_ClipPath function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ClipPath instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ClipPath instance.
-func (me *XsdGoPkgHasElem_ClipPath) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ClipPath; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_ClipPath) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ClipPath; fn != nil {
+		fn(me)
+	}
 	me.ClipPath.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Mask struct {
 	Mask *TmaskType `xml:"http://www.w3.org/2000/svg mask"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Mask function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Mask instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Mask instance.
-func (me *XsdGoPkgHasElem_Mask) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Mask; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Mask) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Mask; fn != nil {
+		fn(me)
+	}
 	me.Mask.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Filter struct {
 	Filter *TfilterType `xml:"http://www.w3.org/2000/svg filter"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Filter function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Filter instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Filter instance.
-func (me *XsdGoPkgHasElem_Filter) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Filter; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Filter) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Filter; fn != nil {
+		fn(me)
+	}
 	me.Filter.Walk()
- }
+}
 
 type XsdGoPkgHasElems_FeDistantLight struct {
 	FeDistantLights []*TfeDistantLightType `xml:"http://www.w3.org/2000/svg feDistantLight"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_FeDistantLight function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeDistantLight instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeDistantLight instance.
-func (me *XsdGoPkgHasElems_FeDistantLight) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeDistantLight; fn != nil { fn(me) }
-	for _, x := range me.FeDistantLights { x.Walk() }
- }
+func (me *XsdGoPkgHasElems_FeDistantLight) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeDistantLight; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeDistantLights {
+		x.Walk()
+	}
+}
 
 type XsdGoPkgHasElems_FePointLight struct {
 	FePointLights []*TfePointLightType `xml:"http://www.w3.org/2000/svg fePointLight"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_FePointLight function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FePointLight instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FePointLight instance.
-func (me *XsdGoPkgHasElems_FePointLight) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FePointLight; fn != nil { fn(me) }
-	for _, x := range me.FePointLights { x.Walk() }
- }
+func (me *XsdGoPkgHasElems_FePointLight) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FePointLight; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FePointLights {
+		x.Walk()
+	}
+}
 
 type XsdGoPkgHasElems_FeSpotLight struct {
 	FeSpotLights []*TfeSpotLightType `xml:"http://www.w3.org/2000/svg feSpotLight"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_FeSpotLight function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeSpotLight instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeSpotLight instance.
-func (me *XsdGoPkgHasElems_FeSpotLight) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeSpotLight; fn != nil { fn(me) }
-	for _, x := range me.FeSpotLights { x.Walk() }
- }
+func (me *XsdGoPkgHasElems_FeSpotLight) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeSpotLight; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeSpotLights {
+		x.Walk()
+	}
+}
 
 type XsdGoPkgHasElem_FeBlend struct {
 	FeBlend *TfeBlendType `xml:"http://www.w3.org/2000/svg feBlend"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FeBlend function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeBlend instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeBlend instance.
-func (me *XsdGoPkgHasElem_FeBlend) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeBlend; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FeBlend) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeBlend; fn != nil {
+		fn(me)
+	}
 	me.FeBlend.Walk()
- }
+}
 
 type XsdGoPkgHasElem_FeColorMatrix struct {
 	FeColorMatrix *TfeColorMatrixType `xml:"http://www.w3.org/2000/svg feColorMatrix"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FeColorMatrix function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeColorMatrix instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeColorMatrix instance.
-func (me *XsdGoPkgHasElem_FeColorMatrix) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeColorMatrix; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FeColorMatrix) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeColorMatrix; fn != nil {
+		fn(me)
+	}
 	me.FeColorMatrix.Walk()
- }
+}
 
 type XsdGoPkgHasElem_FeComponentTransfer struct {
 	FeComponentTransfer *TfeComponentTransferType `xml:"http://www.w3.org/2000/svg feComponentTransfer"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FeComponentTransfer function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeComponentTransfer instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeComponentTransfer instance.
-func (me *XsdGoPkgHasElem_FeComponentTransfer) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeComponentTransfer; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FeComponentTransfer) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeComponentTransfer; fn != nil {
+		fn(me)
+	}
 	me.FeComponentTransfer.Walk()
- }
+}
 
 type XsdGoPkgHasElems_FeFuncR struct {
 	FeFuncRs []*TfeFuncRType `xml:"http://www.w3.org/2000/svg feFuncR"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_FeFuncR function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeFuncR instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeFuncR instance.
-func (me *XsdGoPkgHasElems_FeFuncR) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeFuncR; fn != nil { fn(me) }
-	for _, x := range me.FeFuncRs { x.Walk() }
- }
+func (me *XsdGoPkgHasElems_FeFuncR) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeFuncR; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeFuncRs {
+		x.Walk()
+	}
+}
 
 type XsdGoPkgHasElems_FeFuncG struct {
 	FeFuncGs []*TfeFuncGType `xml:"http://www.w3.org/2000/svg feFuncG"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_FeFuncG function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeFuncG instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeFuncG instance.
-func (me *XsdGoPkgHasElems_FeFuncG) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeFuncG; fn != nil { fn(me) }
-	for _, x := range me.FeFuncGs { x.Walk() }
- }
+func (me *XsdGoPkgHasElems_FeFuncG) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeFuncG; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeFuncGs {
+		x.Walk()
+	}
+}
 
 type XsdGoPkgHasElems_FeFuncB struct {
 	FeFuncBs []*TfeFuncBType `xml:"http://www.w3.org/2000/svg feFuncB"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_FeFuncB function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeFuncB instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeFuncB instance.
-func (me *XsdGoPkgHasElems_FeFuncB) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeFuncB; fn != nil { fn(me) }
-	for _, x := range me.FeFuncBs { x.Walk() }
- }
+func (me *XsdGoPkgHasElems_FeFuncB) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeFuncB; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeFuncBs {
+		x.Walk()
+	}
+}
 
 type XsdGoPkgHasElems_FeFuncA struct {
 	FeFuncAs []*TfeFuncAType `xml:"http://www.w3.org/2000/svg feFuncA"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_FeFuncA function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FeFuncA instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FeFuncA instance.
-func (me *XsdGoPkgHasElems_FeFuncA) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FeFuncA; fn != nil { fn(me) }
-	for _, x := range me.FeFuncAs { x.Walk() }
- }
+func (me *XsdGoPkgHasElems_FeFuncA) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FeFuncA; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FeFuncAs {
+		x.Walk()
+	}
+}
 
 type XsdGoPkgHasElem_FeComposite struct {
 	FeComposite *TfeCompositeType `xml:"http://www.w3.org/2000/svg feComposite"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FeComposite function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeComposite instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeComposite instance.
-func (me *XsdGoPkgHasElem_FeComposite) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeComposite; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FeComposite) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeComposite; fn != nil {
+		fn(me)
+	}
 	me.FeComposite.Walk()
- }
+}
 
 type XsdGoPkgHasElem_FeConvolveMatrix struct {
 	FeConvolveMatrix *TfeConvolveMatrixType `xml:"http://www.w3.org/2000/svg feConvolveMatrix"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FeConvolveMatrix function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeConvolveMatrix instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeConvolveMatrix instance.
-func (me *XsdGoPkgHasElem_FeConvolveMatrix) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeConvolveMatrix; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FeConvolveMatrix) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeConvolveMatrix; fn != nil {
+		fn(me)
+	}
 	me.FeConvolveMatrix.Walk()
- }
+}
 
 type XsdGoPkgHasElem_FeDiffuseLighting struct {
 	FeDiffuseLighting *TfeDiffuseLightingType `xml:"http://www.w3.org/2000/svg feDiffuseLighting"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FeDiffuseLighting function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeDiffuseLighting instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeDiffuseLighting instance.
-func (me *XsdGoPkgHasElem_FeDiffuseLighting) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeDiffuseLighting; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FeDiffuseLighting) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeDiffuseLighting; fn != nil {
+		fn(me)
+	}
 	me.FeDiffuseLighting.Walk()
- }
+}
 
 type XsdGoPkgHasElem_FeDisplacementMap struct {
 	FeDisplacementMap *TfeDisplacementMapType `xml:"http://www.w3.org/2000/svg feDisplacementMap"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FeDisplacementMap function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeDisplacementMap instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeDisplacementMap instance.
-func (me *XsdGoPkgHasElem_FeDisplacementMap) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeDisplacementMap; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FeDisplacementMap) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeDisplacementMap; fn != nil {
+		fn(me)
+	}
 	me.FeDisplacementMap.Walk()
- }
+}
 
 type XsdGoPkgHasElem_FeFlood struct {
 	FeFlood *TfeFloodType `xml:"http://www.w3.org/2000/svg feFlood"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FeFlood function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeFlood instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeFlood instance.
-func (me *XsdGoPkgHasElem_FeFlood) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeFlood; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FeFlood) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeFlood; fn != nil {
+		fn(me)
+	}
 	me.FeFlood.Walk()
- }
+}
 
 type XsdGoPkgHasElem_FeGaussianBlur struct {
 	FeGaussianBlur *TfeGaussianBlurType `xml:"http://www.w3.org/2000/svg feGaussianBlur"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FeGaussianBlur function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeGaussianBlur instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeGaussianBlur instance.
-func (me *XsdGoPkgHasElem_FeGaussianBlur) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeGaussianBlur; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FeGaussianBlur) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeGaussianBlur; fn != nil {
+		fn(me)
+	}
 	me.FeGaussianBlur.Walk()
- }
+}
 
 type XsdGoPkgHasElem_FeImage struct {
 	FeImage *TfeImageType `xml:"http://www.w3.org/2000/svg feImage"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FeImage function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeImage instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeImage instance.
-func (me *XsdGoPkgHasElem_FeImage) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeImage; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FeImage) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeImage; fn != nil {
+		fn(me)
+	}
 	me.FeImage.Walk()
- }
+}
 
 type XsdGoPkgHasElem_FeMerge struct {
 	FeMerge *TfeMergeType `xml:"http://www.w3.org/2000/svg feMerge"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FeMerge function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeMerge instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeMerge instance.
-func (me *XsdGoPkgHasElem_FeMerge) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeMerge; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FeMerge) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeMerge; fn != nil {
+		fn(me)
+	}
 	me.FeMerge.Walk()
- }
+}
 
 type XsdGoPkgHasElem_FeMergeNode struct {
 	FeMergeNode *TfeMergeNodeType `xml:"http://www.w3.org/2000/svg feMergeNode"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FeMergeNode function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeMergeNode instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeMergeNode instance.
-func (me *XsdGoPkgHasElem_FeMergeNode) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeMergeNode; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FeMergeNode) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeMergeNode; fn != nil {
+		fn(me)
+	}
 	me.FeMergeNode.Walk()
- }
+}
 
 type XsdGoPkgHasElem_FeMorphology struct {
 	FeMorphology *TfeMorphologyType `xml:"http://www.w3.org/2000/svg feMorphology"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FeMorphology function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeMorphology instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeMorphology instance.
-func (me *XsdGoPkgHasElem_FeMorphology) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeMorphology; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FeMorphology) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeMorphology; fn != nil {
+		fn(me)
+	}
 	me.FeMorphology.Walk()
- }
+}
 
 type XsdGoPkgHasElem_FeOffset struct {
 	FeOffset *TfeOffsetType `xml:"http://www.w3.org/2000/svg feOffset"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FeOffset function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeOffset instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeOffset instance.
-func (me *XsdGoPkgHasElem_FeOffset) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeOffset; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FeOffset) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeOffset; fn != nil {
+		fn(me)
+	}
 	me.FeOffset.Walk()
- }
+}
 
 type XsdGoPkgHasElem_FeSpecularLighting struct {
 	FeSpecularLighting *TfeSpecularLightingType `xml:"http://www.w3.org/2000/svg feSpecularLighting"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FeSpecularLighting function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeSpecularLighting instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeSpecularLighting instance.
-func (me *XsdGoPkgHasElem_FeSpecularLighting) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeSpecularLighting; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FeSpecularLighting) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeSpecularLighting; fn != nil {
+		fn(me)
+	}
 	me.FeSpecularLighting.Walk()
- }
+}
 
 type XsdGoPkgHasElem_FeTile struct {
 	FeTile *TfeTileType `xml:"http://www.w3.org/2000/svg feTile"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FeTile function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeTile instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeTile instance.
-func (me *XsdGoPkgHasElem_FeTile) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeTile; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FeTile) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeTile; fn != nil {
+		fn(me)
+	}
 	me.FeTile.Walk()
- }
+}
 
 type XsdGoPkgHasElem_FeTurbulence struct {
 	FeTurbulence *TfeTurbulenceType `xml:"http://www.w3.org/2000/svg feTurbulence"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FeTurbulence function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FeTurbulence instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FeTurbulence instance.
-func (me *XsdGoPkgHasElem_FeTurbulence) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FeTurbulence; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FeTurbulence) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FeTurbulence; fn != nil {
+		fn(me)
+	}
 	me.FeTurbulence.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Cursor struct {
 	Cursor *TcursorType `xml:"http://www.w3.org/2000/svg cursor"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Cursor function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Cursor instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Cursor instance.
-func (me *XsdGoPkgHasElem_Cursor) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Cursor; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Cursor) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Cursor; fn != nil {
+		fn(me)
+	}
 	me.Cursor.Walk()
- }
+}
 
 type XsdGoPkgHasElem_A struct {
 	A *TaType `xml:"http://www.w3.org/2000/svg a"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_A function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_A instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_A instance.
-func (me *XsdGoPkgHasElem_A) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_A; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_A) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_A; fn != nil {
+		fn(me)
+	}
 	me.A.Walk()
- }
+}
 
 type XsdGoPkgHasElem_View struct {
 	View *TviewType `xml:"http://www.w3.org/2000/svg view"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_View function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_View instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_View instance.
-func (me *XsdGoPkgHasElem_View) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_View; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_View) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_View; fn != nil {
+		fn(me)
+	}
 	me.View.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Script struct {
 	Script *TscriptType `xml:"http://www.w3.org/2000/svg script"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Script function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Script instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Script instance.
-func (me *XsdGoPkgHasElem_Script) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Script; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Script) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Script; fn != nil {
+		fn(me)
+	}
 	me.Script.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Animate struct {
 	Animate *TanimateType `xml:"http://www.w3.org/2000/svg animate"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Animate function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Animate instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Animate instance.
-func (me *XsdGoPkgHasElem_Animate) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Animate; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Animate) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Animate; fn != nil {
+		fn(me)
+	}
 	me.Animate.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Set struct {
 	Set *TsetType `xml:"http://www.w3.org/2000/svg set"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Set function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Set instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Set instance.
-func (me *XsdGoPkgHasElem_Set) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Set; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Set) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Set; fn != nil {
+		fn(me)
+	}
 	me.Set.Walk()
- }
+}
 
 type XsdGoPkgHasElem_AnimateMotion struct {
 	AnimateMotion *TanimateMotionType `xml:"http://www.w3.org/2000/svg animateMotion"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_AnimateMotion function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AnimateMotion instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AnimateMotion instance.
-func (me *XsdGoPkgHasElem_AnimateMotion) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AnimateMotion; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_AnimateMotion) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_AnimateMotion; fn != nil {
+		fn(me)
+	}
 	me.AnimateMotion.Walk()
- }
+}
 
 type XsdGoPkgHasElems_Mpath struct {
 	Mpaths []*TmpathType `xml:"http://www.w3.org/2000/svg mpath"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Mpath function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Mpath instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Mpath instance.
-func (me *XsdGoPkgHasElems_Mpath) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_Mpath; fn != nil { fn(me) }
-	for _, x := range me.Mpaths { x.Walk() }
- }
+func (me *XsdGoPkgHasElems_Mpath) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Mpath; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.Mpaths {
+		x.Walk()
+	}
+}
 
 type XsdGoPkgHasElem_AnimateColor struct {
 	AnimateColor *TanimateColorType `xml:"http://www.w3.org/2000/svg animateColor"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_AnimateColor function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AnimateColor instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AnimateColor instance.
-func (me *XsdGoPkgHasElem_AnimateColor) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AnimateColor; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_AnimateColor) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_AnimateColor; fn != nil {
+		fn(me)
+	}
 	me.AnimateColor.Walk()
- }
+}
 
 type XsdGoPkgHasElem_AnimateTransform struct {
 	AnimateTransform *TanimateTransformType `xml:"http://www.w3.org/2000/svg animateTransform"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_AnimateTransform function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AnimateTransform instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AnimateTransform instance.
-func (me *XsdGoPkgHasElem_AnimateTransform) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_AnimateTransform; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_AnimateTransform) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_AnimateTransform; fn != nil {
+		fn(me)
+	}
 	me.AnimateTransform.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Font struct {
 	Font *TfontType `xml:"http://www.w3.org/2000/svg font"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Font function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Font instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Font instance.
-func (me *XsdGoPkgHasElem_Font) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Font; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Font) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Font; fn != nil {
+		fn(me)
+	}
 	me.Font.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Glyph struct {
 	Glyph *TglyphType `xml:"http://www.w3.org/2000/svg glyph"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Glyph function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Glyph instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Glyph instance.
-func (me *XsdGoPkgHasElem_Glyph) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Glyph; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Glyph) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Glyph; fn != nil {
+		fn(me)
+	}
 	me.Glyph.Walk()
- }
+}
 
 type XsdGoPkgHasElems_MissingGlyph struct {
 	MissingGlyphs []*TmissingGlyphType `xml:"http://www.w3.org/2000/svg missing-glyph"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_MissingGlyph function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_MissingGlyph instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_MissingGlyph instance.
-func (me *XsdGoPkgHasElems_MissingGlyph) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_MissingGlyph; fn != nil { fn(me) }
-	for _, x := range me.MissingGlyphs { x.Walk() }
- }
+func (me *XsdGoPkgHasElems_MissingGlyph) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_MissingGlyph; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.MissingGlyphs {
+		x.Walk()
+	}
+}
 
 type XsdGoPkgHasElem_Hkern struct {
 	Hkern *ThkernType `xml:"http://www.w3.org/2000/svg hkern"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Hkern function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Hkern instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Hkern instance.
-func (me *XsdGoPkgHasElem_Hkern) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Hkern; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Hkern) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Hkern; fn != nil {
+		fn(me)
+	}
 	me.Hkern.Walk()
- }
+}
 
 type XsdGoPkgHasElem_Vkern struct {
 	Vkern *TvkernType `xml:"http://www.w3.org/2000/svg vkern"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Vkern function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Vkern instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Vkern instance.
-func (me *XsdGoPkgHasElem_Vkern) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_Vkern; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_Vkern) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Vkern; fn != nil {
+		fn(me)
+	}
 	me.Vkern.Walk()
- }
+}
 
 type XsdGoPkgHasElems_FontFaceSrc struct {
 	FontFaceSrcs []*TfontFaceSrcType `xml:"http://www.w3.org/2000/svg font-face-src"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_FontFaceSrc function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FontFaceSrc instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FontFaceSrc instance.
-func (me *XsdGoPkgHasElems_FontFaceSrc) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FontFaceSrc; fn != nil { fn(me) }
-	for _, x := range me.FontFaceSrcs { x.Walk() }
- }
+func (me *XsdGoPkgHasElems_FontFaceSrc) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FontFaceSrc; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FontFaceSrcs {
+		x.Walk()
+	}
+}
 
 type XsdGoPkgHasElem_FontFaceUri struct {
 	FontFaceUri *TfontFaceUriType `xml:"http://www.w3.org/2000/svg font-face-uri"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FontFaceUri function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FontFaceUri instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FontFaceUri instance.
-func (me *XsdGoPkgHasElem_FontFaceUri) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FontFaceUri; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FontFaceUri) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FontFaceUri; fn != nil {
+		fn(me)
+	}
 	me.FontFaceUri.Walk()
- }
+}
 
 type XsdGoPkgHasElems_FontFaceFormat struct {
 	FontFaceFormats []*TfontFaceFormatType `xml:"http://www.w3.org/2000/svg font-face-format"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_FontFaceFormat function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FontFaceFormat instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FontFaceFormat instance.
-func (me *XsdGoPkgHasElems_FontFaceFormat) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_FontFaceFormat; fn != nil { fn(me) }
-	for _, x := range me.FontFaceFormats { x.Walk() }
- }
+func (me *XsdGoPkgHasElems_FontFaceFormat) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FontFaceFormat; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.FontFaceFormats {
+		x.Walk()
+	}
+}
 
 type XsdGoPkgHasElem_FontFaceName struct {
 	FontFaceName *TfontFaceNameType `xml:"http://www.w3.org/2000/svg font-face-name"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_FontFaceName function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FontFaceName instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FontFaceName instance.
-func (me *XsdGoPkgHasElem_FontFaceName) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_FontFaceName; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_FontFaceName) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FontFaceName; fn != nil {
+		fn(me)
+	}
 	me.FontFaceName.Walk()
- }
+}
 
 type XsdGoPkgHasElems_DefinitionSrc struct {
 	DefinitionSrcs []*TdefinitionSrcType `xml:"http://www.w3.org/2000/svg definition-src"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_DefinitionSrc function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_DefinitionSrc instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_DefinitionSrc instance.
-func (me *XsdGoPkgHasElems_DefinitionSrc) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElems_DefinitionSrc; fn != nil { fn(me) }
-	for _, x := range me.DefinitionSrcs { x.Walk() }
- }
+func (me *XsdGoPkgHasElems_DefinitionSrc) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElems_DefinitionSrc; fn != nil {
+		fn(me)
+	}
+	for _, x := range me.DefinitionSrcs {
+		x.Walk()
+	}
+}
 
 type XsdGoPkgHasElem_ForeignObject struct {
 	ForeignObject *TforeignObjectType `xml:"http://www.w3.org/2000/svg foreignObject"`
-
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_ForeignObject function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ForeignObject instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ForeignObject instance.
-func (me *XsdGoPkgHasElem_ForeignObject) Walk ()  { 
-	if fn := WalkHandlers.XsdGoPkgHasElem_ForeignObject; fn != nil { fn(me) }
+func (me *XsdGoPkgHasElem_ForeignObject) Walk() {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ForeignObject; fn != nil {
+		fn(me)
+	}
 	me.ForeignObject.Walk()
- }
+}
 
 //	Provides 245 strong-typed hooks for your own custom handler functions to be invoked when the Walk() method is called on any instance of any (non-attribute-related) struct type defined in this package.
-var WalkHandlers = &XsdGoPkgWalkHandlers {}
+var WalkHandlers = &XsdGoPkgWalkHandlers{}
 
 //	Provides 245 strong-typed hooks for your own custom handler functions to be invoked when the Walk() method is called on any instance of any (non-attribute-related) struct type defined in this package.
 type XsdGoPkgWalkHandlers struct {
-	XsdGoPkgHasElems_Metadata func (o *XsdGoPkgHasElems_Metadata)
-	TanimateColorType func (o *TanimateColorType)
-	XsdGoPkgHasElem_FeFlood func (o *XsdGoPkgHasElem_FeFlood)
-	XsdGoPkgHasElems_FeDistantLight func (o *XsdGoPkgHasElems_FeDistantLight)
-	XsdGoPkgHasElems_Polygon func (o *XsdGoPkgHasElems_Polygon)
-	TcircleType func (o *TcircleType)
-	XsdGoPkgHasElem_Ellipse func (o *XsdGoPkgHasElem_Ellipse)
-	XsdGoPkgHasElems_Polyline func (o *XsdGoPkgHasElems_Polyline)
-	XsdGoPkgHasElem_Pattern func (o *XsdGoPkgHasElem_Pattern)
-	XsdGoPkgHasElem_FeDisplacementMap func (o *XsdGoPkgHasElem_FeDisplacementMap)
-	XsdGoPkgHasElem_FontFaceSrc func (o *XsdGoPkgHasElem_FontFaceSrc)
-	TfeFuncRType func (o *TfeFuncRType)
-	XsdGoPkgHasElem_Polyline func (o *XsdGoPkgHasElem_Polyline)
-	TfeMorphologyType func (o *TfeMorphologyType)
-	XsdGoPkgHasElems_Mpath func (o *XsdGoPkgHasElems_Mpath)
-	XsdGoPkgHasElems_RadialGradient func (o *XsdGoPkgHasElems_RadialGradient)
-	XsdGoPkgHasElems_FeConvolveMatrix func (o *XsdGoPkgHasElems_FeConvolveMatrix)
-	TfeComponentTransferType func (o *TfeComponentTransferType)
-	XsdGoPkgHasElem_FontFaceFormat func (o *XsdGoPkgHasElem_FontFaceFormat)
-	XsdGoPkgHasElem_Switch func (o *XsdGoPkgHasElem_Switch)
-	XsdGoPkgHasElem_Circle func (o *XsdGoPkgHasElem_Circle)
-	XsdGoPkgHasElem_Vkern func (o *XsdGoPkgHasElem_Vkern)
-	TfeMergeType func (o *TfeMergeType)
-	XsdGoPkgHasElem_FeSpecularLighting func (o *XsdGoPkgHasElem_FeSpecularLighting)
-	XsdGoPkgHasElems_Title func (o *XsdGoPkgHasElems_Title)
-	XsdGoPkgHasElem_LinearGradient func (o *XsdGoPkgHasElem_LinearGradient)
-	TimageType func (o *TimageType)
-	XsdGoPkgHasElem_DefinitionSrc func (o *XsdGoPkgHasElem_DefinitionSrc)
-	XsdGoPkgHasElem_G func (o *XsdGoPkgHasElem_G)
-	TaType func (o *TaType)
-	XsdGoPkgHasElems_Tspan func (o *XsdGoPkgHasElems_Tspan)
-	TanimateType func (o *TanimateType)
-	TfeGaussianBlurType func (o *TfeGaussianBlurType)
-	XsdGoPkgHasElems_FeSpotLight func (o *XsdGoPkgHasElems_FeSpotLight)
-	XsdGoPkgHasElem_MissingGlyph func (o *XsdGoPkgHasElem_MissingGlyph)
-	XsdGoPkgHasElem_TextPath func (o *XsdGoPkgHasElem_TextPath)
-	TfontFaceNameType func (o *TfontFaceNameType)
-	XsdGoPkgHasElems_Set func (o *XsdGoPkgHasElems_Set)
-	TfeColorMatrixType func (o *TfeColorMatrixType)
-	XsdGoPkgHasElems_Line func (o *XsdGoPkgHasElems_Line)
-	TcolorProfileType func (o *TcolorProfileType)
-	TgType func (o *TgType)
-	XsdGoPkgHasElems_Rect func (o *XsdGoPkgHasElems_Rect)
-	XsdGoPkgHasElem_AltGlyphDef func (o *XsdGoPkgHasElem_AltGlyphDef)
-	XsdGoPkgHasElems_FeImage func (o *XsdGoPkgHasElems_FeImage)
-	XsdGoPkgHasElems_FontFaceUri func (o *XsdGoPkgHasElems_FontFaceUri)
-	XsdGoPkgHasElems_Ellipse func (o *XsdGoPkgHasElems_Ellipse)
-	XsdGoPkgHasElems_Font func (o *XsdGoPkgHasElems_Font)
-	XsdGoPkgHasElem_Filter func (o *XsdGoPkgHasElem_Filter)
-	XsdGoPkgHasElem_ClipPath func (o *XsdGoPkgHasElem_ClipPath)
-	TmpathType func (o *TmpathType)
-	XsdGoPkgHasElems_FeFlood func (o *XsdGoPkgHasElems_FeFlood)
-	TfeFloodType func (o *TfeFloodType)
-	XsdGoPkgHasElems_FeFuncR func (o *XsdGoPkgHasElems_FeFuncR)
-	TpatternType func (o *TpatternType)
-	XsdGoPkgHasElem_Line func (o *XsdGoPkgHasElem_Line)
-	XsdGoPkgHasElems_FontFaceFormat func (o *XsdGoPkgHasElems_FontFaceFormat)
-	XsdGoPkgHasElems_ColorProfile func (o *XsdGoPkgHasElems_ColorProfile)
-	XsdGoPkgHasElems_FeComposite func (o *XsdGoPkgHasElems_FeComposite)
-	XsdGoPkgHasElems_AnimateTransform func (o *XsdGoPkgHasElems_AnimateTransform)
-	XsdGoPkgHasElem_Script func (o *XsdGoPkgHasElem_Script)
-	TmissingGlyphType func (o *TmissingGlyphType)
-	TfeCompositeType func (o *TfeCompositeType)
-	XsdGoPkgHasElem_RadialGradient func (o *XsdGoPkgHasElem_RadialGradient)
-	XsdGoPkgHasElem_FeComponentTransfer func (o *XsdGoPkgHasElem_FeComponentTransfer)
-	XsdGoPkgHasElem_Marker func (o *XsdGoPkgHasElem_Marker)
-	XsdGoPkgHasElem_Use func (o *XsdGoPkgHasElem_Use)
-	TfeTurbulenceType func (o *TfeTurbulenceType)
-	TdefinitionSrcType func (o *TdefinitionSrcType)
-	TfeDistantLightType func (o *TfeDistantLightType)
-	TvkernType func (o *TvkernType)
-	XsdGoPkgHasElems_FeTile func (o *XsdGoPkgHasElems_FeTile)
-	XsdGoPkgHasElems_FontFaceSrc func (o *XsdGoPkgHasElems_FontFaceSrc)
-	XsdGoPkgHasElems_FontFaceName func (o *XsdGoPkgHasElems_FontFaceName)
-	XsdGoPkgHasElems_Script func (o *XsdGoPkgHasElems_Script)
-	TfeDisplacementMapType func (o *TfeDisplacementMapType)
-	XsdGoPkgHasElem_FeImage func (o *XsdGoPkgHasElem_FeImage)
-	XsdGoPkgHasElem_Animate func (o *XsdGoPkgHasElem_Animate)
-	TsymbolType func (o *TsymbolType)
-	XsdGoPkgHasElems_ForeignObject func (o *XsdGoPkgHasElems_ForeignObject)
-	XsdGoPkgHasElem_Polygon func (o *XsdGoPkgHasElem_Polygon)
-	TglyphRefType func (o *TglyphRefType)
-	XsdGoPkgHasElems_FeColorMatrix func (o *XsdGoPkgHasElems_FeColorMatrix)
-	XsdGoPkgHasElems_TextPath func (o *XsdGoPkgHasElems_TextPath)
-	TforeignObjectType func (o *TforeignObjectType)
-	XsdGoPkgHasElems_FeFuncG func (o *XsdGoPkgHasElems_FeFuncG)
-	XsdGoPkgHasElem_FeConvolveMatrix func (o *XsdGoPkgHasElem_FeConvolveMatrix)
-	XsdGoPkgHasElems_FontFace func (o *XsdGoPkgHasElems_FontFace)
-	XsdGoPkgHasElem_View func (o *XsdGoPkgHasElem_View)
-	XsdGoPkgHasElem_Cursor func (o *XsdGoPkgHasElem_Cursor)
-	TsetType func (o *TsetType)
-	TmarkerType func (o *TmarkerType)
-	XsdGoPkgHasElem_Path func (o *XsdGoPkgHasElem_Path)
-	TfontType func (o *TfontType)
-	XsdGoPkgHasElems_A func (o *XsdGoPkgHasElems_A)
-	XsdGoPkgHasElems_FeComponentTransfer func (o *XsdGoPkgHasElems_FeComponentTransfer)
-	TswitchType func (o *TswitchType)
-	XsdGoPkgHasElem_FeColorMatrix func (o *XsdGoPkgHasElem_FeColorMatrix)
-	XsdGoPkgHasElems_Symbol func (o *XsdGoPkgHasElems_Symbol)
-	XsdGoPkgHasElem_FeDiffuseLighting func (o *XsdGoPkgHasElem_FeDiffuseLighting)
-	XsdGoPkgHasElem_Text func (o *XsdGoPkgHasElem_Text)
-	XsdGoPkgHasElem_ForeignObject func (o *XsdGoPkgHasElem_ForeignObject)
-	XsdGoPkgHasElems_Vkern func (o *XsdGoPkgHasElems_Vkern)
-	XsdGoPkgHasElems_FeDisplacementMap func (o *XsdGoPkgHasElems_FeDisplacementMap)
-	TfontFaceFormatType func (o *TfontFaceFormatType)
-	TsvgType func (o *TsvgType)
-	TviewType func (o *TviewType)
-	TellipseType func (o *TellipseType)
-	XsdGoPkgHasElem_FePointLight func (o *XsdGoPkgHasElem_FePointLight)
-	TfeTileType func (o *TfeTileType)
-	TfeFuncBType func (o *TfeFuncBType)
-	TanimateTransformType func (o *TanimateTransformType)
-	TtspanType func (o *TtspanType)
-	XsdGoPkgHasElems_View func (o *XsdGoPkgHasElems_View)
-	XsdGoPkgHasElem_FeSpotLight func (o *XsdGoPkgHasElem_FeSpotLight)
-	TaltGlyphDefType func (o *TaltGlyphDefType)
-	XsdGoPkgHasElem_AltGlyphItem func (o *XsdGoPkgHasElem_AltGlyphItem)
-	TfeDiffuseLightingType func (o *TfeDiffuseLightingType)
-	XsdGoPkgHasElems_ClipPath func (o *XsdGoPkgHasElems_ClipPath)
-	XsdGoPkgHasElems_FeMorphology func (o *XsdGoPkgHasElems_FeMorphology)
-	TradialGradientType func (o *TradialGradientType)
-	TfeFuncGType func (o *TfeFuncGType)
-	XsdGoPkgHasElem_Tref func (o *XsdGoPkgHasElem_Tref)
-	XsdGoPkgHasElem_Svg func (o *XsdGoPkgHasElem_Svg)
-	TdescType func (o *TdescType)
-	XsdGoPkgHasElems_AltGlyphDef func (o *XsdGoPkgHasElems_AltGlyphDef)
-	XsdGoPkgHasElem_Image func (o *XsdGoPkgHasElem_Image)
-	TfeFuncAType func (o *TfeFuncAType)
-	XsdGoPkgHasElem_FeMorphology func (o *XsdGoPkgHasElem_FeMorphology)
-	XsdGoPkgHasElem_Set func (o *XsdGoPkgHasElem_Set)
-	XsdGoPkgHasElems_Desc func (o *XsdGoPkgHasElems_Desc)
-	XsdGoPkgHasElem_Tspan func (o *XsdGoPkgHasElem_Tspan)
-	XsdGoPkgHasElem_AnimateMotion func (o *XsdGoPkgHasElem_AnimateMotion)
-	TfontFaceUriType func (o *TfontFaceUriType)
-	XsdGoPkgHasElems_Mask func (o *XsdGoPkgHasElems_Mask)
-	TtextType func (o *TtextType)
-	TfeSpotLightType func (o *TfeSpotLightType)
-	XsdGoPkgHasElem_Style func (o *XsdGoPkgHasElem_Style)
-	TtrefType func (o *TtrefType)
-	XsdGoPkgHasElem_FeFuncA func (o *XsdGoPkgHasElem_FeFuncA)
-	XsdGoPkgHasElems_Pattern func (o *XsdGoPkgHasElems_Pattern)
-	TglyphType func (o *TglyphType)
-	XsdGoPkgHasElem_FeGaussianBlur func (o *XsdGoPkgHasElem_FeGaussianBlur)
-	XsdGoPkgHasElems_Defs func (o *XsdGoPkgHasElems_Defs)
-	XsdGoPkgHasElem_FontFace func (o *XsdGoPkgHasElem_FontFace)
-	XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_ func (o *XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_)
-	XsdGoPkgHasElem_Hkern func (o *XsdGoPkgHasElem_Hkern)
-	XsdGoPkgHasElem_ColorProfile func (o *XsdGoPkgHasElem_ColorProfile)
-	TfeConvolveMatrixType func (o *TfeConvolveMatrixType)
-	XsdGoPkgHasElem_Glyph func (o *XsdGoPkgHasElem_Glyph)
-	TpathType func (o *TpathType)
-	TmaskType func (o *TmaskType)
-	XsdGoPkgHasElems_Hkern func (o *XsdGoPkgHasElems_Hkern)
-	XsdGoPkgHasElems_FeMerge func (o *XsdGoPkgHasElems_FeMerge)
-	TpolygonType func (o *TpolygonType)
-	XsdGoPkgHasElems_Stop func (o *XsdGoPkgHasElems_Stop)
-	XsdGoPkgHasElems_Use func (o *XsdGoPkgHasElems_Use)
-	XsdGoPkgHasElem_AnimateTransform func (o *XsdGoPkgHasElem_AnimateTransform)
-	TpolylineType func (o *TpolylineType)
-	TfeBlendType func (o *TfeBlendType)
-	XsdGoPkgHasElems_Animate func (o *XsdGoPkgHasElems_Animate)
-	XsdGoPkgHasElems_FeBlend func (o *XsdGoPkgHasElems_FeBlend)
-	XsdGoPkgHasElems_Image func (o *XsdGoPkgHasElems_Image)
-	XsdGoPkgHasElem_Defs func (o *XsdGoPkgHasElem_Defs)
-	XsdGoPkgHasElems_FeSpecularLighting func (o *XsdGoPkgHasElems_FeSpecularLighting)
-	XsdGoPkgHasElem_GlyphRef func (o *XsdGoPkgHasElem_GlyphRef)
-	XsdGoPkgHasElems_Style func (o *XsdGoPkgHasElems_Style)
-	TdefsType func (o *TdefsType)
-	TfeMergeNodeType func (o *TfeMergeNodeType)
-	ThkernType func (o *ThkernType)
-	TfilterType func (o *TfilterType)
-	TfePointLightType func (o *TfePointLightType)
-	TlineType func (o *TlineType)
-	XsdGoPkgHasElems_AltGlyphItem func (o *XsdGoPkgHasElems_AltGlyphItem)
-	XsdGoPkgHasElems_Filter func (o *XsdGoPkgHasElems_Filter)
-	XsdGoPkgHasElem_FeMerge func (o *XsdGoPkgHasElem_FeMerge)
-	TstopType func (o *TstopType)
-	XsdGoPkgHasElem_AltGlyph func (o *XsdGoPkgHasElem_AltGlyph)
-	TfontFaceSrcType func (o *TfontFaceSrcType)
-	XsdGoPkgHasElems_Marker func (o *XsdGoPkgHasElems_Marker)
-	XsdGoPkgHasElem_FeComposite func (o *XsdGoPkgHasElem_FeComposite)
-	XsdGoPkgHasElems_AltGlyph func (o *XsdGoPkgHasElems_AltGlyph)
-	XsdGoPkgHasElems_AnimateMotion func (o *XsdGoPkgHasElems_AnimateMotion)
-	TstyleType func (o *TstyleType)
-	TfontFaceType func (o *TfontFaceType)
-	XsdGoPkgHasElems_AnimateColor func (o *XsdGoPkgHasElems_AnimateColor)
-	TclipPathType func (o *TclipPathType)
-	TaltGlyphType func (o *TaltGlyphType)
-	XsdGoPkgHasGroup_DescTitleMetadata func (o *XsdGoPkgHasGroup_DescTitleMetadata)
-	XsdGoPkgHasElem_FeFuncG func (o *XsdGoPkgHasElem_FeFuncG)
-	XsdGoPkgHasElem_FeMergeNode func (o *XsdGoPkgHasElem_FeMergeNode)
-	XsdGoPkgHasElems_Circle func (o *XsdGoPkgHasElems_Circle)
-	TfeOffsetType func (o *TfeOffsetType)
-	TtitleType func (o *TtitleType)
-	XsdGoPkgHasElem_FeOffset func (o *XsdGoPkgHasElem_FeOffset)
-	XsdGoPkgHasElems_FeMergeNode func (o *XsdGoPkgHasElems_FeMergeNode)
-	XsdGoPkgHasElems_Path func (o *XsdGoPkgHasElems_Path)
-	TfeImageType func (o *TfeImageType)
-	XsdGoPkgHasElems_Svg func (o *XsdGoPkgHasElems_Svg)
-	XsdGoPkgHasElems_FeOffset func (o *XsdGoPkgHasElems_FeOffset)
-	XsdGoPkgHasElems_LinearGradient func (o *XsdGoPkgHasElems_LinearGradient)
-	XsdGoPkgHasElem_FeTile func (o *XsdGoPkgHasElem_FeTile)
-	XsdGoPkgHasElem_FeTurbulence func (o *XsdGoPkgHasElem_FeTurbulence)
-	XsdGoPkgHasElems_Cursor func (o *XsdGoPkgHasElems_Cursor)
-	TcursorType func (o *TcursorType)
-	XsdGoPkgHasElems_Text func (o *XsdGoPkgHasElems_Text)
-	XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_ func (o *XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_)
-	XsdGoPkgHasElems_DefinitionSrc func (o *XsdGoPkgHasElems_DefinitionSrc)
-	XsdGoPkgHasElems_Switch func (o *XsdGoPkgHasElems_Switch)
-	TmetadataType func (o *TmetadataType)
-	XsdGoPkgHasElem_FeBlend func (o *XsdGoPkgHasElem_FeBlend)
-	XsdGoPkgHasElems_FePointLight func (o *XsdGoPkgHasElems_FePointLight)
-	XsdGoPkgHasCdata func (o *XsdGoPkgHasCdata)
-	XsdGoPkgHasElem_FontFaceUri func (o *XsdGoPkgHasElem_FontFaceUri)
-	TanimateMotionType func (o *TanimateMotionType)
-	XsdGoPkgHasElems_Tref func (o *XsdGoPkgHasElems_Tref)
-	XsdGoPkgHasElems_MissingGlyph func (o *XsdGoPkgHasElems_MissingGlyph)
-	XsdGoPkgHasElem_FeFuncR func (o *XsdGoPkgHasElem_FeFuncR)
-	XsdGoPkgHasElem_Symbol func (o *XsdGoPkgHasElem_Symbol)
-	TuseType func (o *TuseType)
-	XsdGoPkgHasElems_FeGaussianBlur func (o *XsdGoPkgHasElems_FeGaussianBlur)
-	XsdGoPkgHasElem_Mask func (o *XsdGoPkgHasElem_Mask)
-	XsdGoPkgHasElem_FontFaceName func (o *XsdGoPkgHasElem_FontFaceName)
-	XsdGoPkgHasElem_FeFuncB func (o *XsdGoPkgHasElem_FeFuncB)
-	XsdGoPkgHasElems_Glyph func (o *XsdGoPkgHasElems_Glyph)
-	XsdGoPkgHasElems_FeDiffuseLighting func (o *XsdGoPkgHasElems_FeDiffuseLighting)
-	TtextPathType func (o *TtextPathType)
-	TfeSpecularLightingType func (o *TfeSpecularLightingType)
-	TrectType func (o *TrectType)
-	XsdGoPkgHasElems_G func (o *XsdGoPkgHasElems_G)
-	XsdGoPkgHasElem_A func (o *XsdGoPkgHasElem_A)
-	XsdGoPkgHasElems_FeFuncB func (o *XsdGoPkgHasElems_FeFuncB)
-	XsdGoPkgHasElem_Font func (o *XsdGoPkgHasElem_Font)
-	XsdGoPkgHasElems_FeTurbulence func (o *XsdGoPkgHasElems_FeTurbulence)
-	XsdGoPkgHasElem_Rect func (o *XsdGoPkgHasElem_Rect)
-	XsdGoPkgHasElem_FeDistantLight func (o *XsdGoPkgHasElem_FeDistantLight)
-	XsdGoPkgHasElem_Stop func (o *XsdGoPkgHasElem_Stop)
-	XsdGoPkgHasElems_GlyphRef func (o *XsdGoPkgHasElems_GlyphRef)
-	TaltGlyphItemType func (o *TaltGlyphItemType)
-	XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_ func (o *XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_)
-	XsdGoPkgHasElem_Mpath func (o *XsdGoPkgHasElem_Mpath)
-	XsdGoPkgHasElem_AnimateColor func (o *XsdGoPkgHasElem_AnimateColor)
-	TlinearGradientType func (o *TlinearGradientType)
-	XsdGoPkgHasElems_FeFuncA func (o *XsdGoPkgHasElems_FeFuncA)
-	TscriptType func (o *TscriptType)
+	XsdGoPkgHasElem_FeComposite                                                func(o *XsdGoPkgHasElem_FeComposite)
+	XsdGoPkgHasElems_Text                                                      func(o *XsdGoPkgHasElems_Text)
+	XsdGoPkgHasElem_FeTurbulence                                               func(o *XsdGoPkgHasElem_FeTurbulence)
+	XsdGoPkgHasElems_AltGlyph                                                  func(o *XsdGoPkgHasElems_AltGlyph)
+	XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_             func(o *XsdGoPkgHasElem_descalldescTitleMetadataschema_Desc_TdescType_)
+	TlinearGradientType                                                        func(o *TlinearGradientType)
+	XsdGoPkgHasElem_Use                                                        func(o *XsdGoPkgHasElem_Use)
+	TscriptType                                                                func(o *TscriptType)
+	XsdGoPkgHasElems_FeGaussianBlur                                            func(o *XsdGoPkgHasElems_FeGaussianBlur)
+	XsdGoPkgHasElem_FontFace                                                   func(o *XsdGoPkgHasElem_FontFace)
+	XsdGoPkgHasElem_FeBlend                                                    func(o *XsdGoPkgHasElem_FeBlend)
+	TfeGaussianBlurType                                                        func(o *TfeGaussianBlurType)
+	XsdGoPkgHasElem_FeSpotLight                                                func(o *XsdGoPkgHasElem_FeSpotLight)
+	TdescType                                                                  func(o *TdescType)
+	XsdGoPkgHasElems_A                                                         func(o *XsdGoPkgHasElems_A)
+	TcircleType                                                                func(o *TcircleType)
+	XsdGoPkgHasElems_FontFaceFormat                                            func(o *XsdGoPkgHasElems_FontFaceFormat)
+	TfeSpotLightType                                                           func(o *TfeSpotLightType)
+	TfeDisplacementMapType                                                     func(o *TfeDisplacementMapType)
+	TmissingGlyphType                                                          func(o *TmissingGlyphType)
+	TtspanType                                                                 func(o *TtspanType)
+	XsdGoPkgHasElem_Switch                                                     func(o *XsdGoPkgHasElem_Switch)
+	XsdGoPkgHasElems_Marker                                                    func(o *XsdGoPkgHasElems_Marker)
+	XsdGoPkgHasElems_FontFaceSrc                                               func(o *XsdGoPkgHasElems_FontFaceSrc)
+	TaltGlyphDefType                                                           func(o *TaltGlyphDefType)
+	XsdGoPkgHasElem_Cursor                                                     func(o *XsdGoPkgHasElem_Cursor)
+	XsdGoPkgHasElems_Line                                                      func(o *XsdGoPkgHasElems_Line)
+	TfontFaceType                                                              func(o *TfontFaceType)
+	XsdGoPkgHasElem_Filter                                                     func(o *XsdGoPkgHasElem_Filter)
+	XsdGoPkgHasElem_View                                                       func(o *XsdGoPkgHasElem_View)
+	TmaskType                                                                  func(o *TmaskType)
+	TaltGlyphItemType                                                          func(o *TaltGlyphItemType)
+	XsdGoPkgHasCdata                                                           func(o *XsdGoPkgHasCdata)
+	TcursorType                                                                func(o *TcursorType)
+	TaType                                                                     func(o *TaType)
+	TfeComponentTransferType                                                   func(o *TfeComponentTransferType)
+	XsdGoPkgHasElems_FeComponentTransfer                                       func(o *XsdGoPkgHasElems_FeComponentTransfer)
+	XsdGoPkgHasElem_AltGlyphDef                                                func(o *XsdGoPkgHasElem_AltGlyphDef)
+	XsdGoPkgHasElems_FeMergeNode                                               func(o *XsdGoPkgHasElems_FeMergeNode)
+	XsdGoPkgHasElem_FeSpecularLighting                                         func(o *XsdGoPkgHasElem_FeSpecularLighting)
+	TfeOffsetType                                                              func(o *TfeOffsetType)
+	XsdGoPkgHasElems_ForeignObject                                             func(o *XsdGoPkgHasElems_ForeignObject)
+	XsdGoPkgHasElem_FeComponentTransfer                                        func(o *XsdGoPkgHasElem_FeComponentTransfer)
+	XsdGoPkgHasElem_Style                                                      func(o *XsdGoPkgHasElem_Style)
+	XsdGoPkgHasElem_FeDistantLight                                             func(o *XsdGoPkgHasElem_FeDistantLight)
+	XsdGoPkgHasElem_FontFaceName                                               func(o *XsdGoPkgHasElem_FontFaceName)
+	XsdGoPkgHasElem_Marker                                                     func(o *XsdGoPkgHasElem_Marker)
+	XsdGoPkgHasElem_FontFaceUri                                                func(o *XsdGoPkgHasElem_FontFaceUri)
+	XsdGoPkgHasElems_Hkern                                                     func(o *XsdGoPkgHasElems_Hkern)
+	XsdGoPkgHasElem_Mask                                                       func(o *XsdGoPkgHasElem_Mask)
+	XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_ func(o *XsdGoPkgHasElem_metadataalldescTitleMetadataschema_Metadata_TmetadataType_)
+	XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_          func(o *XsdGoPkgHasElem_titlealldescTitleMetadataschema_Title_TtitleType_)
+	XsdGoPkgHasElem_Text                                                       func(o *XsdGoPkgHasElem_Text)
+	XsdGoPkgHasElems_View                                                      func(o *XsdGoPkgHasElems_View)
+	TcolorProfileType                                                          func(o *TcolorProfileType)
+	TanimateColorType                                                          func(o *TanimateColorType)
+	XsdGoPkgHasElem_Line                                                       func(o *XsdGoPkgHasElem_Line)
+	TglyphRefType                                                              func(o *TglyphRefType)
+	TanimateType                                                               func(o *TanimateType)
+	XsdGoPkgHasElem_Set                                                        func(o *XsdGoPkgHasElem_Set)
+	XsdGoPkgHasElems_Font                                                      func(o *XsdGoPkgHasElems_Font)
+	XsdGoPkgHasElems_FeComposite                                               func(o *XsdGoPkgHasElems_FeComposite)
+	TimageType                                                                 func(o *TimageType)
+	XsdGoPkgHasElems_AltGlyphItem                                              func(o *XsdGoPkgHasElems_AltGlyphItem)
+	XsdGoPkgHasElem_FeMorphology                                               func(o *XsdGoPkgHasElem_FeMorphology)
+	XsdGoPkgHasElem_Symbol                                                     func(o *XsdGoPkgHasElem_Symbol)
+	TrectType                                                                  func(o *TrectType)
+	TfeBlendType                                                               func(o *TfeBlendType)
+	XsdGoPkgHasElem_Rect                                                       func(o *XsdGoPkgHasElem_Rect)
+	XsdGoPkgHasElem_Ellipse                                                    func(o *XsdGoPkgHasElem_Ellipse)
+	XsdGoPkgHasElem_Tspan                                                      func(o *XsdGoPkgHasElem_Tspan)
+	XsdGoPkgHasElems_Set                                                       func(o *XsdGoPkgHasElems_Set)
+	XsdGoPkgHasElem_FontFaceFormat                                             func(o *XsdGoPkgHasElem_FontFaceFormat)
+	TdefinitionSrcType                                                         func(o *TdefinitionSrcType)
+	XsdGoPkgHasElem_Font                                                       func(o *XsdGoPkgHasElem_Font)
+	TglyphType                                                                 func(o *TglyphType)
+	TfeFuncBType                                                               func(o *TfeFuncBType)
+	XsdGoPkgHasElems_Symbol                                                    func(o *XsdGoPkgHasElems_Symbol)
+	TfeFuncRType                                                               func(o *TfeFuncRType)
+	XsdGoPkgHasElems_Title                                                     func(o *XsdGoPkgHasElems_Title)
+	XsdGoPkgHasElems_TextPath                                                  func(o *XsdGoPkgHasElems_TextPath)
+	TfeImageType                                                               func(o *TfeImageType)
+	XsdGoPkgHasElem_Circle                                                     func(o *XsdGoPkgHasElem_Circle)
+	TanimateMotionType                                                         func(o *TanimateMotionType)
+	XsdGoPkgHasElems_FeTile                                                    func(o *XsdGoPkgHasElems_FeTile)
+	XsdGoPkgHasElem_AnimateColor                                               func(o *XsdGoPkgHasElem_AnimateColor)
+	XsdGoPkgHasElem_FeOffset                                                   func(o *XsdGoPkgHasElem_FeOffset)
+	TsvgType                                                                   func(o *TsvgType)
+	XsdGoPkgHasElems_FeTurbulence                                              func(o *XsdGoPkgHasElems_FeTurbulence)
+	XsdGoPkgHasElems_FeMerge                                                   func(o *XsdGoPkgHasElems_FeMerge)
+	TmetadataType                                                              func(o *TmetadataType)
+	XsdGoPkgHasElem_FeFuncR                                                    func(o *XsdGoPkgHasElem_FeFuncR)
+	XsdGoPkgHasElems_FeFuncB                                                   func(o *XsdGoPkgHasElems_FeFuncB)
+	XsdGoPkgHasElems_Animate                                                   func(o *XsdGoPkgHasElems_Animate)
+	XsdGoPkgHasElems_G                                                         func(o *XsdGoPkgHasElems_G)
+	XsdGoPkgHasElems_Glyph                                                     func(o *XsdGoPkgHasElems_Glyph)
+	TpatternType                                                               func(o *TpatternType)
+	XsdGoPkgHasElem_FeConvolveMatrix                                           func(o *XsdGoPkgHasElem_FeConvolveMatrix)
+	XsdGoPkgHasElem_Polyline                                                   func(o *XsdGoPkgHasElem_Polyline)
+	XsdGoPkgHasElem_FePointLight                                               func(o *XsdGoPkgHasElem_FePointLight)
+	TtrefType                                                                  func(o *TtrefType)
+	XsdGoPkgHasElem_FeMerge                                                    func(o *XsdGoPkgHasElem_FeMerge)
+	XsdGoPkgHasElem_Image                                                      func(o *XsdGoPkgHasElem_Image)
+	XsdGoPkgHasElem_FeImage                                                    func(o *XsdGoPkgHasElem_FeImage)
+	TpathType                                                                  func(o *TpathType)
+	XsdGoPkgHasElem_ForeignObject                                              func(o *XsdGoPkgHasElem_ForeignObject)
+	TfontFaceSrcType                                                           func(o *TfontFaceSrcType)
+	XsdGoPkgHasElem_Mpath                                                      func(o *XsdGoPkgHasElem_Mpath)
+	XsdGoPkgHasElems_Switch                                                    func(o *XsdGoPkgHasElems_Switch)
+	TsymbolType                                                                func(o *TsymbolType)
+	XsdGoPkgHasElem_FeFuncG                                                    func(o *XsdGoPkgHasElem_FeFuncG)
+	TtitleType                                                                 func(o *TtitleType)
+	XsdGoPkgHasElem_AltGlyph                                                   func(o *XsdGoPkgHasElem_AltGlyph)
+	XsdGoPkgHasElems_ClipPath                                                  func(o *XsdGoPkgHasElems_ClipPath)
+	XsdGoPkgHasElems_FeDiffuseLighting                                         func(o *XsdGoPkgHasElems_FeDiffuseLighting)
+	XsdGoPkgHasElem_A                                                          func(o *XsdGoPkgHasElem_A)
+	XsdGoPkgHasElem_ColorProfile                                               func(o *XsdGoPkgHasElem_ColorProfile)
+	TtextPathType                                                              func(o *TtextPathType)
+	XsdGoPkgHasElem_FeDiffuseLighting                                          func(o *XsdGoPkgHasElem_FeDiffuseLighting)
+	XsdGoPkgHasElems_Vkern                                                     func(o *XsdGoPkgHasElems_Vkern)
+	TfontFaceFormatType                                                        func(o *TfontFaceFormatType)
+	XsdGoPkgHasElems_Desc                                                      func(o *XsdGoPkgHasElems_Desc)
+	XsdGoPkgHasElems_FeFuncG                                                   func(o *XsdGoPkgHasElems_FeFuncG)
+	TfeTurbulenceType                                                          func(o *TfeTurbulenceType)
+	XsdGoPkgHasGroup_DescTitleMetadata                                         func(o *XsdGoPkgHasGroup_DescTitleMetadata)
+	XsdGoPkgHasElem_FeFuncA                                                    func(o *XsdGoPkgHasElem_FeFuncA)
+	XsdGoPkgHasElems_FeBlend                                                   func(o *XsdGoPkgHasElems_FeBlend)
+	XsdGoPkgHasElems_Stop                                                      func(o *XsdGoPkgHasElems_Stop)
+	TdefsType                                                                  func(o *TdefsType)
+	XsdGoPkgHasElems_FeSpotLight                                               func(o *XsdGoPkgHasElems_FeSpotLight)
+	TgType                                                                     func(o *TgType)
+	TfeFuncGType                                                               func(o *TfeFuncGType)
+	ThkernType                                                                 func(o *ThkernType)
+	XsdGoPkgHasElems_Tspan                                                     func(o *XsdGoPkgHasElems_Tspan)
+	XsdGoPkgHasElems_Cursor                                                    func(o *XsdGoPkgHasElems_Cursor)
+	TfeDistantLightType                                                        func(o *TfeDistantLightType)
+	XsdGoPkgHasElem_Stop                                                       func(o *XsdGoPkgHasElem_Stop)
+	XsdGoPkgHasElem_GlyphRef                                                   func(o *XsdGoPkgHasElem_GlyphRef)
+	XsdGoPkgHasElem_ClipPath                                                   func(o *XsdGoPkgHasElem_ClipPath)
+	XsdGoPkgHasElems_Ellipse                                                   func(o *XsdGoPkgHasElems_Ellipse)
+	XsdGoPkgHasElems_Mask                                                      func(o *XsdGoPkgHasElems_Mask)
+	TstopType                                                                  func(o *TstopType)
+	XsdGoPkgHasElems_Rect                                                      func(o *XsdGoPkgHasElems_Rect)
+	XsdGoPkgHasElems_GlyphRef                                                  func(o *XsdGoPkgHasElems_GlyphRef)
+	XsdGoPkgHasElem_Animate                                                    func(o *XsdGoPkgHasElem_Animate)
+	TfeDiffuseLightingType                                                     func(o *TfeDiffuseLightingType)
+	TfeSpecularLightingType                                                    func(o *TfeSpecularLightingType)
+	TanimateTransformType                                                      func(o *TanimateTransformType)
+	XsdGoPkgHasElem_FeDisplacementMap                                          func(o *XsdGoPkgHasElem_FeDisplacementMap)
+	XsdGoPkgHasElems_FeFlood                                                   func(o *XsdGoPkgHasElems_FeFlood)
+	TfeFloodType                                                               func(o *TfeFloodType)
+	TfeColorMatrixType                                                         func(o *TfeColorMatrixType)
+	XsdGoPkgHasElems_FeColorMatrix                                             func(o *XsdGoPkgHasElems_FeColorMatrix)
+	XsdGoPkgHasElems_Path                                                      func(o *XsdGoPkgHasElems_Path)
+	TuseType                                                                   func(o *TuseType)
+	XsdGoPkgHasElems_AnimateColor                                              func(o *XsdGoPkgHasElems_AnimateColor)
+	XsdGoPkgHasElem_AnimateTransform                                           func(o *XsdGoPkgHasElem_AnimateTransform)
+	TmarkerType                                                                func(o *TmarkerType)
+	XsdGoPkgHasElem_AltGlyphItem                                               func(o *XsdGoPkgHasElem_AltGlyphItem)
+	XsdGoPkgHasElems_FeSpecularLighting                                        func(o *XsdGoPkgHasElems_FeSpecularLighting)
+	XsdGoPkgHasElem_Polygon                                                    func(o *XsdGoPkgHasElem_Polygon)
+	XsdGoPkgHasElems_DefinitionSrc                                             func(o *XsdGoPkgHasElems_DefinitionSrc)
+	XsdGoPkgHasElems_Script                                                    func(o *XsdGoPkgHasElems_Script)
+	XsdGoPkgHasElem_DefinitionSrc                                              func(o *XsdGoPkgHasElem_DefinitionSrc)
+	TpolygonType                                                               func(o *TpolygonType)
+	XsdGoPkgHasElem_G                                                          func(o *XsdGoPkgHasElem_G)
+	XsdGoPkgHasElem_Glyph                                                      func(o *XsdGoPkgHasElem_Glyph)
+	XsdGoPkgHasElem_Defs                                                       func(o *XsdGoPkgHasElem_Defs)
+	TradialGradientType                                                        func(o *TradialGradientType)
+	XsdGoPkgHasElems_Defs                                                      func(o *XsdGoPkgHasElems_Defs)
+	TaltGlyphType                                                              func(o *TaltGlyphType)
+	TsetType                                                                   func(o *TsetType)
+	XsdGoPkgHasElem_RadialGradient                                             func(o *XsdGoPkgHasElem_RadialGradient)
+	TellipseType                                                               func(o *TellipseType)
+	XsdGoPkgHasElems_AnimateMotion                                             func(o *XsdGoPkgHasElems_AnimateMotion)
+	XsdGoPkgHasElems_ColorProfile                                              func(o *XsdGoPkgHasElems_ColorProfile)
+	XsdGoPkgHasElems_Pattern                                                   func(o *XsdGoPkgHasElems_Pattern)
+	TfePointLightType                                                          func(o *TfePointLightType)
+	TforeignObjectType                                                         func(o *TforeignObjectType)
+	XsdGoPkgHasElems_FeOffset                                                  func(o *XsdGoPkgHasElems_FeOffset)
+	XsdGoPkgHasElems_FontFace                                                  func(o *XsdGoPkgHasElems_FontFace)
+	XsdGoPkgHasElems_FeDistantLight                                            func(o *XsdGoPkgHasElems_FeDistantLight)
+	XsdGoPkgHasElems_Tref                                                      func(o *XsdGoPkgHasElems_Tref)
+	XsdGoPkgHasElems_RadialGradient                                            func(o *XsdGoPkgHasElems_RadialGradient)
+	TmpathType                                                                 func(o *TmpathType)
+	XsdGoPkgHasElem_Pattern                                                    func(o *XsdGoPkgHasElem_Pattern)
+	XsdGoPkgHasElem_Vkern                                                      func(o *XsdGoPkgHasElem_Vkern)
+	XsdGoPkgHasElem_MissingGlyph                                               func(o *XsdGoPkgHasElem_MissingGlyph)
+	XsdGoPkgHasElem_Script                                                     func(o *XsdGoPkgHasElem_Script)
+	TstyleType                                                                 func(o *TstyleType)
+	TfeTileType                                                                func(o *TfeTileType)
+	XsdGoPkgHasElems_Polyline                                                  func(o *XsdGoPkgHasElems_Polyline)
+	XsdGoPkgHasElem_FeFuncB                                                    func(o *XsdGoPkgHasElem_FeFuncB)
+	XsdGoPkgHasElems_Use                                                       func(o *XsdGoPkgHasElems_Use)
+	XsdGoPkgHasElem_Svg                                                        func(o *XsdGoPkgHasElem_Svg)
+	TfeMorphologyType                                                          func(o *TfeMorphologyType)
+	TlineType                                                                  func(o *TlineType)
+	XsdGoPkgHasElem_FeColorMatrix                                              func(o *XsdGoPkgHasElem_FeColorMatrix)
+	XsdGoPkgHasElem_LinearGradient                                             func(o *XsdGoPkgHasElem_LinearGradient)
+	TfontFaceNameType                                                          func(o *TfontFaceNameType)
+	TswitchType                                                                func(o *TswitchType)
+	XsdGoPkgHasElem_Tref                                                       func(o *XsdGoPkgHasElem_Tref)
+	XsdGoPkgHasElems_LinearGradient                                            func(o *XsdGoPkgHasElems_LinearGradient)
+	TfeCompositeType                                                           func(o *TfeCompositeType)
+	XsdGoPkgHasElem_Hkern                                                      func(o *XsdGoPkgHasElem_Hkern)
+	XsdGoPkgHasElem_FeTile                                                     func(o *XsdGoPkgHasElem_FeTile)
+	XsdGoPkgHasElems_FeFuncA                                                   func(o *XsdGoPkgHasElems_FeFuncA)
+	XsdGoPkgHasElems_FontFaceUri                                               func(o *XsdGoPkgHasElems_FontFaceUri)
+	TclipPathType                                                              func(o *TclipPathType)
+	TfilterType                                                                func(o *TfilterType)
+	XsdGoPkgHasElems_Image                                                     func(o *XsdGoPkgHasElems_Image)
+	XsdGoPkgHasElems_Metadata                                                  func(o *XsdGoPkgHasElems_Metadata)
+	XsdGoPkgHasElems_FePointLight                                              func(o *XsdGoPkgHasElems_FePointLight)
+	XsdGoPkgHasElem_FeFlood                                                    func(o *XsdGoPkgHasElem_FeFlood)
+	XsdGoPkgHasElems_FeFuncR                                                   func(o *XsdGoPkgHasElems_FeFuncR)
+	TviewType                                                                  func(o *TviewType)
+	XsdGoPkgHasElems_FeMorphology                                              func(o *XsdGoPkgHasElems_FeMorphology)
+	XsdGoPkgHasElems_Polygon                                                   func(o *XsdGoPkgHasElems_Polygon)
+	TpolylineType                                                              func(o *TpolylineType)
+	XsdGoPkgHasElem_Path                                                       func(o *XsdGoPkgHasElem_Path)
+	TvkernType                                                                 func(o *TvkernType)
+	XsdGoPkgHasElems_Mpath                                                     func(o *XsdGoPkgHasElems_Mpath)
+	TfeFuncAType                                                               func(o *TfeFuncAType)
+	XsdGoPkgHasElems_Svg                                                       func(o *XsdGoPkgHasElems_Svg)
+	XsdGoPkgHasElems_Style                                                     func(o *XsdGoPkgHasElems_Style)
+	XsdGoPkgHasElems_FeConvolveMatrix                                          func(o *XsdGoPkgHasElems_FeConvolveMatrix)
+	XsdGoPkgHasElems_FeImage                                                   func(o *XsdGoPkgHasElems_FeImage)
+	TfontFaceUriType                                                           func(o *TfontFaceUriType)
+	XsdGoPkgHasElems_Filter                                                    func(o *XsdGoPkgHasElems_Filter)
+	TfeMergeNodeType                                                           func(o *TfeMergeNodeType)
+	XsdGoPkgHasElem_FeMergeNode                                                func(o *XsdGoPkgHasElem_FeMergeNode)
+	XsdGoPkgHasElems_MissingGlyph                                              func(o *XsdGoPkgHasElems_MissingGlyph)
+	XsdGoPkgHasElems_Circle                                                    func(o *XsdGoPkgHasElems_Circle)
+	TfontType                                                                  func(o *TfontType)
+	TtextType                                                                  func(o *TtextType)
+	TfeMergeType                                                               func(o *TfeMergeType)
+	XsdGoPkgHasElems_FontFaceName                                              func(o *XsdGoPkgHasElems_FontFaceName)
+	XsdGoPkgHasElem_FeGaussianBlur                                             func(o *XsdGoPkgHasElem_FeGaussianBlur)
+	XsdGoPkgHasElems_AltGlyphDef                                               func(o *XsdGoPkgHasElems_AltGlyphDef)
+	XsdGoPkgHasElems_FeDisplacementMap                                         func(o *XsdGoPkgHasElems_FeDisplacementMap)
+	TfeConvolveMatrixType                                                      func(o *TfeConvolveMatrixType)
+	XsdGoPkgHasElem_TextPath                                                   func(o *XsdGoPkgHasElem_TextPath)
+	XsdGoPkgHasElem_FontFaceSrc                                                func(o *XsdGoPkgHasElem_FontFaceSrc)
+	XsdGoPkgHasElem_AnimateMotion                                              func(o *XsdGoPkgHasElem_AnimateMotion)
+	XsdGoPkgHasElems_AnimateTransform                                          func(o *XsdGoPkgHasElems_AnimateTransform)
 }

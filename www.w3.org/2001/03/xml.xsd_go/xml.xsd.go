@@ -65,7 +65,6 @@ package go_Xml
 //	accordingly; the version at
 //	http://www.w3.org/2001/03/xml.xsd will not change.
 
-
 import (
 	xsdt "github.com/metaleap/go-xsd/types"
 )
@@ -73,51 +72,47 @@ import (
 //	In due course, we should install the relevant ISO 2- and 3-letter
 //	codes as the enumerated possible values . . .
 type XsdGoPkgHasAttr_Lang struct {
-//	In due course, we should install the relevant ISO 2- and 3-letter
-//	codes as the enumerated possible values . . .
+	//	In due course, we should install the relevant ISO 2- and 3-letter
+	//	codes as the enumerated possible values . . .
 	Lang xsdt.Language `xml:"http://www.w3.org/XML/1998/namespace lang,attr"`
-
 }
 
 type TxsdSpace xsdt.NCName
 
-//	Returns true if the value of this enumerated TxsdSpace is "preserve".
-func (me TxsdSpace) IsPreserve () bool { return me == "preserve" }
-
 //	Returns true if the value of this enumerated TxsdSpace is "default".
-func (me TxsdSpace) IsDefault () bool { return me == "default" }
-
-//	Since TxsdSpace is just a simple String type, this merely returns the current string value.
-func (me TxsdSpace) String () string { return xsdt.NCName(me).String() }
-
-//	This convenience method just performs a simple type conversion to TxsdSpace's alias type xsdt.NCName.
-func (me TxsdSpace) ToXsdtNCName () xsdt.NCName { return xsdt.NCName(me) }
+func (me TxsdSpace) IsDefault() bool { return me == "default" }
 
 //	Since TxsdSpace is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdSpace) SetFromString (s string)  { (*xsdt.NCName)(me).SetFromString(s) }
+func (me *TxsdSpace) SetFromString(s string) { (*xsdt.NCName)(me).SetFromString(s) }
+
+//	This convenience method just performs a simple type conversion to TxsdSpace's alias type xsdt.NCName.
+func (me TxsdSpace) ToXsdtNCName() xsdt.NCName { return xsdt.NCName(me) }
+
+//	Returns true if the value of this enumerated TxsdSpace is "preserve".
+func (me TxsdSpace) IsPreserve() bool { return me == "preserve" }
+
+//	Since TxsdSpace is just a simple String type, this merely returns the current string value.
+func (me TxsdSpace) String() string { return xsdt.NCName(me).String() }
 
 type XsdGoPkgHasAttr_Space struct {
 	Space TxsdSpace `xml:"http://www.w3.org/XML/1998/namespace space,attr"`
-
 }
 
 //	Returns the default value for Space -- "preserve"
-func (me XsdGoPkgHasAttr_Space) SpaceDefault () TxsdSpace { return TxsdSpace("preserve") }
+func (me XsdGoPkgHasAttr_Space) SpaceDefault() TxsdSpace { return TxsdSpace("preserve") }
 
 //	See http://www.w3.org/TR/xmlbase/ for
 //	information about this attribute.
 type XsdGoPkgHasAttr_Base struct {
-//	See http://www.w3.org/TR/xmlbase/ for
-//	information about this attribute.
+	//	See http://www.w3.org/TR/xmlbase/ for
+	//	information about this attribute.
 	Base xsdt.AnyURI `xml:"http://www.w3.org/XML/1998/namespace base,attr"`
-
 }
 
 type XsdGoPkgHasAtts_SpecialAttrs struct {
 	XsdGoPkgHasAttr_Space
 
-	XsdGoPkgHasAttr_Lang
-
 	XsdGoPkgHasAttr_Base
 
+	XsdGoPkgHasAttr_Lang
 }
