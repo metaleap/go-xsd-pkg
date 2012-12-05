@@ -40,8 +40,9 @@ type XsdGoPkgHasAttr_Version_XsdtString_ struct {
 }
 
 //	This container defines the details of the address. Can define multiple addresses including tracking address history
-//	Postal authorities use specific postal service data to expedient delivery of mail
-//	Required for some postal services
+//	Specification of a thoroughfare. A thoroughfare could be a rd, street, canal, river, etc.  Note dependentlocality in a street. For example, in some countries, a large street will
+//	have many subdivisions with numbers. Normally the subdivision name is the same as the road name, but with a number to identifiy it. Eg. SOI SUKUMVIT 3, SUKUMVIT RD, BANGKOK
+//	North Baker Street, where North is the pre-direction. The direction appears before the name.
 //	Postal, residential, corporate, etc
 type XsdGoPkgHasAttr_Type_XsdtString_ struct {
 	//	Postal, residential, corporate, etc
@@ -53,473 +54,48 @@ type XsdGoPkgHasCdata struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasCdata function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasCdata instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasCdata instance.
-func (me *XsdGoPkgHasCdata) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasCdata
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasCdata) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasCdata; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-type TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode struct {
-	XsdGoPkgHasCdata
-
-	//	Specific to postal service
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasAtts_GrPostal
-}
-
-//	If the WalkHandlers.TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode function is not nil (ie. was set by outside code), calls it with this TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode instance.
-func (me *TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode) Walk() {
-	fn := WalkHandlers.TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_ struct {
-	//	Required for some postal services
-	KeyLineCode *TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 KeyLineCode"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_ instance.
-func (me *XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.KeyLineCode.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	any postal service elements not covered by the container can be represented using this element
-type XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_ struct {
-	//	any postal service elements not covered by the container can be represented using this element
-	SupplementaryPostalServiceDatas []*TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SupplementaryPostalServiceData"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_ instance.
-func (me *XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.SupplementaryPostalServiceDatas {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Required for some postal services
-type XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_ struct {
-	//	Required for some postal services
-	Barcode *TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Barcode"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_ instance.
-func (me *XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.Barcode.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Longtitude of delivery address
-type XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_ struct {
-	//	Longtitude of delivery address
-	AddressLongitude *TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLongitude"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_ instance.
-func (me *XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.AddressLongitude.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Used for sorting addresses. Values may for example be CEDEX 16 (France)
-type TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode struct {
-	XsdGoPkgHasAtts_GrPostal
-
-	//	Specific to postal service
-	XsdGoPkgHasAttr_Type_XsdtString_
-}
-
-//	If the WalkHandlers.TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode function is not nil (ie. was set by outside code), calls it with this TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode instance as the single argument. Then calls the Walk() method on 0/2 embed(s) and 0/0 field(s) belonging to this TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode instance.
-func (me *TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode) Walk() {
-	fn := WalkHandlers.TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode
-	if fn != nil {
-		fn(me, true)
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_ struct {
-	//	Used for sorting addresses. Values may for example be CEDEX 16 (France)
-	SortingCode *TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SortingCode"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_ instance.
-func (me *XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.SortingCode.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Directly affects postal service distribution
-type XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_ struct {
-	//	Directly affects postal service distribution
-	EndorsementLineCode *TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 EndorsementLineCode"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_ instance.
-func (me *XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.EndorsementLineCode.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Longtitude direction of delivery address;N=North and S=South
-type XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_ struct {
-	//	Longtitude direction of delivery address;N=North and S=South
-	AddressLongitudeDirection *TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLongitudeDirection"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_ instance.
-func (me *XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.AddressLongitudeDirection.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	A unique identifier of an address assigned by postal authorities. Example: DPID in Australia
-//	Type of identifier. eg. DPID as in Australia
-type XsdGoPkgHasAttr_IdentifierType_XsdtString_ struct {
-	//	Type of identifier. eg. DPID as in Australia
-	IdentifierType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IdentifierType,attr"`
-}
-
-type TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier struct {
-	//	Type of identifier. eg. DPID as in Australia
-	XsdGoPkgHasAttr_IdentifierType_XsdtString_
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasCdata
-}
-
-//	If the WalkHandlers.TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier function is not nil (ie. was set by outside code), calls it with this TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier instance.
-func (me *TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier) Walk() {
-	fn := WalkHandlers.TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_ struct {
-	//	A unique identifier of an address assigned by postal authorities. Example: DPID in Australia
-	AddressIdentifiers []*TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressIdentifier"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_ instance.
-func (me *XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.AddressIdentifiers {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Latitude direction of delivery address;N = North and S = South
-type XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_ struct {
-	//	Latitude direction of delivery address;N = North and S = South
-	AddressLatitudeDirection *TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLatitudeDirection"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_ instance.
-func (me *XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.AddressLatitudeDirection.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Latitude of delivery address
-type XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_ struct {
-	//	Latitude of delivery address
-	AddressLatitude *TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLatitude"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_ instance.
-func (me *XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.AddressLatitude.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type TxsdAddressDetailsSequencePostalServiceElements struct {
-	//	Longtitude of delivery address
-	XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_
-
-	//	Used for sorting addresses. Values may for example be CEDEX 16 (France)
-	XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_
-
-	//	Directly affects postal service distribution
-	XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_
-
-	//	Longtitude direction of delivery address;N=North and S=South
-	XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_
-
-	//	A unique identifier of an address assigned by postal authorities. Example: DPID in Australia
-	XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_
-
-	//	Latitude direction of delivery address;N = North and S = South
-	XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_
-
-	//	Latitude of delivery address
-	XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_
-
-	//	Required for some postal services
-	XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_
-
-	//	any postal service elements not covered by the container can be represented using this element
-	XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_
-
-	//	USPS, ECMA, UN/PROLIST, etc
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	//	Required for some postal services
-	XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_
-}
-
-//	If the WalkHandlers.TxsdAddressDetailsSequencePostalServiceElements function is not nil (ie. was set by outside code), calls it with this TxsdAddressDetailsSequencePostalServiceElements instance as the single argument. Then calls the Walk() method on 10/11 embed(s) and 0/0 field(s) belonging to this TxsdAddressDetailsSequencePostalServiceElements instance.
-func (me *TxsdAddressDetailsSequencePostalServiceElements) Walk() {
-	fn := WalkHandlers.TxsdAddressDetailsSequencePostalServiceElements
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_.Walk()
-	me.XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_.Walk()
-	me.XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_.Walk()
-	me.XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_.Walk()
-	me.XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_.Walk()
-	me.XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_.Walk()
-	me.XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_.Walk()
-	me.XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_.Walk()
-	me.XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_.Walk()
-	me.XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_ struct {
-	//	Postal authorities use specific postal service data to expedient delivery of mail
-	PostalServiceElements *TxsdAddressDetailsSequencePostalServiceElements `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalServiceElements"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_ instance.
-func (me *XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.PostalServiceElements.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Moved, Living, Investment, Deceased, etc..
-type XsdGoPkgHasAttr_CurrentStatus_XsdtString_ struct {
-	//	Moved, Living, Investment, Deceased, etc..
-	CurrentStatus xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 CurrentStatus,attr"`
-}
-
-//	Type of address. Example: Postal, residential,business, primary, secondary, etc
-type XsdGoPkgHasAttr_AddressType_XsdtString_ struct {
-	//	Type of address. Example: Postal, residential,business, primary, secondary, etc
-	AddressType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressType,attr"`
-}
-
-//	Communication, Contact, etc.
-type XsdGoPkgHasAttr_Usage_XsdtString_ struct {
-	//	Communication, Contact, etc.
-	Usage xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Usage,attr"`
-}
-
-//	Address as one line of free text
-type XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_ struct {
-	//	Address as one line of free text
-	Address *TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Address"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_ instance.
-func (me *XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.Address.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Specification of a country
-//	Specification of a thoroughfare. A thoroughfare could be a rd, street, canal, river, etc.  Note dependentlocality in a street. For example, in some countries, a large street will
-//	have many subdivisions with numbers. Normally the subdivision name is the same as the road name, but with a number to identifiy it. Eg. SOI SUKUMVIT 3, SUKUMVIT RD, BANGKOK
-//	Free format address representation. An address can have more than one line. The order of the AddressLine elements must be preserved.
-type XsdGoPkgHasElems_AddressLine struct {
-	//	Free format address representation. An address can have more than one line. The order of the AddressLine elements must be preserved.
-	AddressLines []*TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLine"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AddressLine function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AddressLine instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AddressLine instance.
-func (me *XsdGoPkgHasElems_AddressLine) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_AddressLine
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.AddressLines {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Prefix before the number. A in A12 Archer Street
-//	A-12 where 12 is number and A is prefix and "-" is the separator
-//	A-12 where 12 is number and A is prefix and "-" is the separator
-type XsdGoPkgHasAttr_NumberPrefixSeparator_XsdtString_ struct {
-	//	A-12 where 12 is number and A is prefix and "-" is the separator
-	NumberPrefixSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberPrefixSeparator,attr"`
-}
-
-type TxsdThoroughfareNumberPrefix struct {
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasAttr_NumberPrefixSeparator_XsdtString_
-}
-
-//	If the WalkHandlers.TxsdThoroughfareNumberPrefix function is not nil (ie. was set by outside code), calls it with this TxsdThoroughfareNumberPrefix instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdThoroughfareNumberPrefix instance.
-func (me *TxsdThoroughfareNumberPrefix) Walk() {
-	fn := WalkHandlers.TxsdThoroughfareNumberPrefix
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElems_ThoroughfareNumberPrefix struct {
-	//	Prefix before the number. A in A12 Archer Street
-	ThoroughfareNumberPrefixs []*TxsdThoroughfareNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberPrefix"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ThoroughfareNumberPrefix function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ThoroughfareNumberPrefix instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ThoroughfareNumberPrefix instance.
-func (me *XsdGoPkgHasElems_ThoroughfareNumberPrefix) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_ThoroughfareNumberPrefix
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.ThoroughfareNumberPrefixs {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	STS in GEORGE and ADELAIDE STS, RDS IN A and B RDS, etc. Use only when both the street types are the same
-type XsdGoPkgHasAttr_DependentThoroughfaresType_XsdtString_ struct {
-	//	STS in GEORGE and ADELAIDE STS, RDS IN A and B RDS, etc. Use only when both the street types are the same
-	DependentThoroughfaresType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfaresType,attr"`
-}
-
-//	North Baker Street, where North is the pre-direction. The direction appears before the name.
 type ThoroughfarePreDirectionType struct {
-	XsdGoPkgHasAttr_Type_XsdtString_
-
 	XsdGoPkgHasCdata
 
 	XsdGoPkgHasAtts_GrPostal
+
+	XsdGoPkgHasAttr_Type_XsdtString_
 }
 
 //	If the WalkHandlers.ThoroughfarePreDirectionType function is not nil (ie. was set by outside code), calls it with this ThoroughfarePreDirectionType instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this ThoroughfarePreDirectionType instance.
-func (me *ThoroughfarePreDirectionType) Walk() {
-	fn := WalkHandlers.ThoroughfarePreDirectionType
-	if fn != nil {
-		fn(me, true)
+func (me *ThoroughfarePreDirectionType) Walk() (err error) {
+	if fn := WalkHandlers.ThoroughfarePreDirectionType; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_ struct {
@@ -528,657 +104,23 @@ type XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_Thorough
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_ instance.
-func (me *XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.ThoroughfarePreDirection.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from
-//	a large mail user address, which contains no street.
-//	Subdivision in the firm: School of Physics at Victoria University (School of Physics is the department)
-//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
-//	Name of the the Mail Stop. eg. MSP, MS, etc
-type XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_ struct {
-	//	Name of the the Mail Stop. eg. MSP, MS, etc
-	MailStopName *ThoroughfarePreDirectionType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 MailStopName"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_ instance.
-func (me *XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.MailStopName.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Number of the Mail stop. eg. 123 in MS 123
-//	"-" in MS-123
-type XsdGoPkgHasAttr_NameNumberSeparator_XsdtString_ struct {
-	//	"-" in MS-123
-	NameNumberSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NameNumberSeparator,attr"`
-}
-
-type TxsdMailStopTypeSequenceMailStopNumber struct {
-	//	"-" in MS-123
-	XsdGoPkgHasAttr_NameNumberSeparator_XsdtString_
-
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasCdata
-}
-
-//	If the WalkHandlers.TxsdMailStopTypeSequenceMailStopNumber function is not nil (ie. was set by outside code), calls it with this TxsdMailStopTypeSequenceMailStopNumber instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TxsdMailStopTypeSequenceMailStopNumber instance.
-func (me *TxsdMailStopTypeSequenceMailStopNumber) Walk() {
-	fn := WalkHandlers.TxsdMailStopTypeSequenceMailStopNumber
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_ struct {
-	//	Number of the Mail stop. eg. 123 in MS 123
-	MailStopNumber *TxsdMailStopTypeSequenceMailStopNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 MailStopNumber"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_ instance.
-func (me *XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.MailStopNumber.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type TMailStopType struct {
-	XsdGoPkgHasElems_AddressLine
-
-	//	Name of the the Mail Stop. eg. MSP, MS, etc
-	XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	//	Number of the Mail stop. eg. 123 in MS 123
-	XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_
-}
-
-//	If the WalkHandlers.TMailStopType function is not nil (ie. was set by outside code), calls it with this TMailStopType instance as the single argument. Then calls the Walk() method on 3/4 embed(s) and 0/0 field(s) belonging to this TMailStopType instance.
-func (me *TMailStopType) Walk() {
-	fn := WalkHandlers.TMailStopType
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_.Walk()
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	me.XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_MailStopsequenceDepartmentschema_MailStop_TMailStopType_ struct {
-	//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
-	MailStop *TMailStopType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 MailStop"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_MailStopsequenceDepartmentschema_MailStop_TMailStopType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MailStopsequenceDepartmentschema_MailStop_TMailStopType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_MailStopsequenceDepartmentschema_MailStop_TMailStopType_ instance.
-func (me *XsdGoPkgHasElem_MailStopsequenceDepartmentschema_MailStop_TMailStopType_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_MailStopsequenceDepartmentschema_MailStop_TMailStopType_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.MailStop.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	PostalCode is the container element for either simple or complex (extended) postal codes. Type: Area Code, Postcode, etc.
-//	Examples are: 1234 (USA), 1G (UK), etc.
-//	The separator between postal code number and the extension. Eg. "-"
-type XsdGoPkgHasAttr_NumberExtensionSeparator_XsdtString_ struct {
-	//	The separator between postal code number and the extension. Eg. "-"
-	NumberExtensionSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberExtensionSeparator,attr"`
-}
-
-type TxsdPostalCodeSequencePostalCodeNumberExtension struct {
-	//	The separator between postal code number and the extension. Eg. "-"
-	XsdGoPkgHasAttr_NumberExtensionSeparator_XsdtString_
-
-	//	Delivery Point Suffix, New Postal Code, etc..
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasCdata
-}
-
-//	If the WalkHandlers.TxsdPostalCodeSequencePostalCodeNumberExtension function is not nil (ie. was set by outside code), calls it with this TxsdPostalCodeSequencePostalCodeNumberExtension instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdPostalCodeSequencePostalCodeNumberExtension instance.
-func (me *TxsdPostalCodeSequencePostalCodeNumberExtension) Walk() {
-	fn := WalkHandlers.TxsdPostalCodeSequencePostalCodeNumberExtension
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_ struct {
-	//	Examples are: 1234 (USA), 1G (UK), etc.
-	PostalCodeNumberExtensions []*TxsdPostalCodeSequencePostalCodeNumberExtension `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalCodeNumberExtension"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_ instance.
-func (me *XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.PostalCodeNumberExtensions {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Specification of a postcode. The postcode is formatted according to country-specific rules. Example: SW3 0A8-1A, 600074, 2067
-type XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_ struct {
-	//	Specification of a postcode. The postcode is formatted according to country-specific rules. Example: SW3 0A8-1A, 600074, 2067
-	PostalCodeNumbers []*ThoroughfarePreDirectionType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalCodeNumber"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_ instance.
-func (me *XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.PostalCodeNumbers {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	A post town is not the same as a locality. A post town can encompass a collection of (small) localities. It can also be a subpart of a locality. An actual post town in Norway is "Bergen".
-//	GENERAL PO in MIAMI GENERAL PO
-type TxsdPostalCodeSequencePostTownSequencePostTownSuffix struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_GrPostal
-}
-
-//	If the WalkHandlers.TxsdPostalCodeSequencePostTownSequencePostTownSuffix function is not nil (ie. was set by outside code), calls it with this TxsdPostalCodeSequencePostTownSequencePostTownSuffix instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TxsdPostalCodeSequencePostTownSequencePostTownSuffix instance.
-func (me *TxsdPostalCodeSequencePostTownSequencePostTownSuffix) Walk() {
-	fn := WalkHandlers.TxsdPostalCodeSequencePostTownSequencePostTownSuffix
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_ struct {
-	//	GENERAL PO in MIAMI GENERAL PO
-	PostTownSuffix *TxsdPostalCodeSequencePostTownSequencePostTownSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostTownSuffix"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_ instance.
-func (me *XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.PostTownSuffix.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Name of the post town
-type XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_ struct {
-	//	Name of the post town
-	PostTownNames []*ThoroughfarePreDirectionType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostTownName"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_ instance.
-func (me *XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.PostTownNames {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type TxsdPostalCodeSequencePostTown struct {
-	//	eg. village, town, suburb, etc
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	//	GENERAL PO in MIAMI GENERAL PO
-	XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_
-
-	XsdGoPkgHasElems_AddressLine
-
-	//	Name of the post town
-	XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_
-}
-
-//	If the WalkHandlers.TxsdPostalCodeSequencePostTown function is not nil (ie. was set by outside code), calls it with this TxsdPostalCodeSequencePostTown instance as the single argument. Then calls the Walk() method on 3/4 embed(s) and 0/0 field(s) belonging to this TxsdPostalCodeSequencePostTown instance.
-func (me *TxsdPostalCodeSequencePostTown) Walk() {
-	fn := WalkHandlers.TxsdPostalCodeSequencePostTown
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_.Walk()
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	me.XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_ struct {
-	//	A post town is not the same as a locality. A post town can encompass a collection of (small) localities. It can also be a subpart of a locality. An actual post town in Norway is "Bergen".
-	PostTown *TxsdPostalCodeSequencePostTown `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostTown"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_ instance.
-func (me *XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.PostTown.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type TxsdPostalCode struct {
-	//	Examples are: 1234 (USA), 1G (UK), etc.
-	XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_
-
-	XsdGoPkgHasElems_AddressLine
-
-	//	Specification of a postcode. The postcode is formatted according to country-specific rules. Example: SW3 0A8-1A, 600074, 2067
-	XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_
-
-	//	Area Code, Postcode, Delivery code as in NZ, etc
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	//	A post town is not the same as a locality. A post town can encompass a collection of (small) localities. It can also be a subpart of a locality. An actual post town in Norway is "Bergen".
-	XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_
-}
-
-//	If the WalkHandlers.TxsdPostalCode function is not nil (ie. was set by outside code), calls it with this TxsdPostalCode instance as the single argument. Then calls the Walk() method on 4/5 embed(s) and 0/0 field(s) belonging to this TxsdPostalCode instance.
-func (me *TxsdPostalCode) Walk() {
-	fn := WalkHandlers.TxsdPostalCode
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_.Walk()
-	me.XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_.Walk()
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	me.XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_PostalCode struct {
-	//	PostalCode is the container element for either simple or complex (extended) postal codes. Type: Area Code, Postcode, etc.
-	PostalCode *TxsdPostalCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalCode"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PostalCode function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostalCode instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostalCode instance.
-func (me *XsdGoPkgHasElem_PostalCode) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PostalCode
-	if fn != nil {
-		fn(me, true)
-	}
-	me.PostalCode.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Specification of the name of a department.
-type XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_ struct {
-	//	Specification of the name of a department.
-	DepartmentNames []*ThoroughfarePreDirectionType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DepartmentName"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_ instance.
-func (me *XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.DepartmentNames {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type TxsdDepartment struct {
-	XsdGoPkgHasElems_AddressLine
-
-	//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
-	XsdGoPkgHasElem_MailStopsequenceDepartmentschema_MailStop_TMailStopType_
-
-	XsdGoPkgHasElem_PostalCode
-
-	//	Specification of the name of a department.
-	XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_
-
-	//	School in Physics School, Division in Radiology division of school of physics
-	XsdGoPkgHasAttr_Type_XsdtString_
-}
-
-//	If the WalkHandlers.TxsdDepartment function is not nil (ie. was set by outside code), calls it with this TxsdDepartment instance as the single argument. Then calls the Walk() method on 4/5 embed(s) and 0/0 field(s) belonging to this TxsdDepartment instance.
-func (me *TxsdDepartment) Walk() {
-	fn := WalkHandlers.TxsdDepartment
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	me.XsdGoPkgHasElem_MailStopsequenceDepartmentschema_MailStop_TMailStopType_.Walk()
-	me.XsdGoPkgHasElem_PostalCode.Walk()
-	me.XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElems_Department struct {
-	//	Subdivision in the firm: School of Physics at Victoria University (School of Physics is the department)
-	Departments []*TxsdDepartment `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Department"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Department function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Department instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Department instance.
-func (me *XsdGoPkgHasElems_Department) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_Department
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.Departments {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Name of the firm
-type XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_ struct {
-	//	Name of the firm
-	FirmNames []*ThoroughfarePreDirectionType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 FirmName"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_ instance.
-func (me *XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.FirmNames {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type TFirmType struct {
-	//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
-	XsdGoPkgHasElem_MailStopsequenceDepartmentschema_MailStop_TMailStopType_
-
-	XsdGoPkgHasElems_AddressLine
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasElems_Department
-
-	//	Name of the firm
-	XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_
-
-	XsdGoPkgHasElem_PostalCode
-}
-
-//	If the WalkHandlers.TFirmType function is not nil (ie. was set by outside code), calls it with this TFirmType instance as the single argument. Then calls the Walk() method on 5/6 embed(s) and 0/0 field(s) belonging to this TFirmType instance.
-func (me *TFirmType) Walk() {
-	fn := WalkHandlers.TFirmType
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasElems_Department.Walk()
-	me.XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_.Walk()
-	me.XsdGoPkgHasElem_PostalCode.Walk()
-	me.XsdGoPkgHasElem_MailStopsequenceDepartmentschema_MailStop_TMailStopType_.Walk()
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_FirmchoicesequenceThoroughfareschema_Firm_TFirmType_ struct {
-	//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from
-	//	a large mail user address, which contains no street.
-	Firm *TFirmType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Firm"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_FirmchoicesequenceThoroughfareschema_Firm_TFirmType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FirmchoicesequenceThoroughfareschema_Firm_TFirmType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FirmchoicesequenceThoroughfareschema_Firm_TFirmType_ instance.
-func (me *XsdGoPkgHasElem_FirmchoicesequenceThoroughfareschema_Firm_TFirmType_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_FirmchoicesequenceThoroughfareschema_Firm_TFirmType_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.Firm.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Corner of, Intersection of
-type XsdGoPkgHasAttr_DependentThoroughfaresIndicator_XsdtString_ struct {
-	//	Corner of, Intersection of
-	DependentThoroughfaresIndicator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfaresIndicator,attr"`
-}
-
-//	Appears after the thoroughfare name. Ed. British: Baker Lane, where Lane is the trailing type.
-type ThoroughfareTrailingTypeType struct {
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasCdata
-}
-
-//	If the WalkHandlers.ThoroughfareTrailingTypeType function is not nil (ie. was set by outside code), calls it with this ThoroughfareTrailingTypeType instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this ThoroughfareTrailingTypeType instance.
-func (me *ThoroughfareTrailingTypeType) Walk() {
-	fn := WalkHandlers.ThoroughfareTrailingTypeType
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_ struct {
-	//	Appears after the thoroughfare name. Ed. British: Baker Lane, where Lane is the trailing type.
-	ThoroughfareTrailingType *ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareTrailingType"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_ instance.
-func (me *XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.ThoroughfareTrailingType.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Suffix after the number. A in 12A Archer Street
-//	12-A where 12 is number and A is suffix and "-" is the separator
-type XsdGoPkgHasAttr_NumberSuffixSeparator_XsdtString_ struct {
-	//	12-A where 12 is number and A is suffix and "-" is the separator
-	NumberSuffixSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberSuffixSeparator,attr"`
-}
-
-type TxsdThoroughfareNumberSuffix struct {
-	XsdGoPkgHasAtts_GrPostal
-
-	//	NEAR, ADJACENT TO, etc
-	//	12-A where 12 is number and A is suffix and "-" is the separator
-	XsdGoPkgHasAttr_NumberSuffixSeparator_XsdtString_
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasCdata
-}
-
-//	If the WalkHandlers.TxsdThoroughfareNumberSuffix function is not nil (ie. was set by outside code), calls it with this TxsdThoroughfareNumberSuffix instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdThoroughfareNumberSuffix instance.
-func (me *TxsdThoroughfareNumberSuffix) Walk() {
-	fn := WalkHandlers.TxsdThoroughfareNumberSuffix
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElems_ThoroughfareNumberSuffix struct {
-	//	Suffix after the number. A in 12A Archer Street
-	ThoroughfareNumberSuffixs []*TxsdThoroughfareNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberSuffix"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ThoroughfareNumberSuffix function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ThoroughfareNumberSuffix instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ThoroughfareNumberSuffix instance.
-func (me *XsdGoPkgHasElems_ThoroughfareNumberSuffix) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_ThoroughfareNumberSuffix
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.ThoroughfareNumberSuffixs {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	DependentThroughfare is related to a street; occurs in GB, IE, ES, PT
-//	221-bis Baker Street North, where North is the post-direction. The post-direction appears after the name.
-type ThoroughfarePostDirectionType struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasAtts_GrPostal
-}
-
-//	If the WalkHandlers.ThoroughfarePostDirectionType function is not nil (ie. was set by outside code), calls it with this ThoroughfarePostDirectionType instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this ThoroughfarePostDirectionType instance.
-func (me *ThoroughfarePostDirectionType) Walk() {
-	fn := WalkHandlers.ThoroughfarePostDirectionType
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_ struct {
-	//	221-bis Baker Street North, where North is the post-direction. The post-direction appears after the name.
-	ThoroughfarePostDirection *ThoroughfarePostDirectionType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfarePostDirection"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_ instance.
-func (me *XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.ThoroughfarePostDirection.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Specification of the name of a Thoroughfare (also dependant street name): street name, canal name, etc.
-type ThoroughfareNameType struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-}
-
-//	If the WalkHandlers.ThoroughfareNameType function is not nil (ie. was set by outside code), calls it with this ThoroughfareNameType instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this ThoroughfareNameType instance.
-func (me *ThoroughfareNameType) Walk() {
-	fn := WalkHandlers.ThoroughfareNameType
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_ struct {
-	//	Specification of the name of a Thoroughfare (also dependant street name): street name, canal name, etc.
-	ThoroughfareNames []*ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareName"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_ instance.
-func (me *XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.ThoroughfareNames {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
+func (me *XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.ThoroughfarePreDirection.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
 }
 
 //	Appears before the thoroughfare name. Ed. Spanish: Avenida Aurora, where Avenida is the leading type / French: Rue Moliere, where Rue is the leading type.
@@ -1191,87 +133,135 @@ type ThoroughfareLeadingTypeType struct {
 }
 
 //	If the WalkHandlers.ThoroughfareLeadingTypeType function is not nil (ie. was set by outside code), calls it with this ThoroughfareLeadingTypeType instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this ThoroughfareLeadingTypeType instance.
-func (me *ThoroughfareLeadingTypeType) Walk() {
-	fn := WalkHandlers.ThoroughfareLeadingTypeType
-	if fn != nil {
-		fn(me, true)
+func (me *ThoroughfareLeadingTypeType) Walk() (err error) {
+	if fn := WalkHandlers.ThoroughfareLeadingTypeType; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-type XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_ struct {
+type XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_ struct {
 	//	Appears before the thoroughfare name. Ed. Spanish: Avenida Aurora, where Avenida is the leading type / French: Rue Moliere, where Rue is the leading type.
 	ThoroughfareLeadingType *ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareLeadingType"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_ instance.
-func (me *XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_
-	if fn != nil {
-		fn(me, true)
+//	If the WalkHandlers.XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_ instance.
+func (me *XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.ThoroughfareLeadingType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.ThoroughfareLeadingType.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-type TxsdThoroughfareSequenceDependentThoroughfare struct {
-	//	Appears before the thoroughfare name. Ed. Spanish: Avenida Aurora, where Avenida is the leading type / French: Rue Moliere, where Rue is the leading type.
-	XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_
-
-	//	Appears after the thoroughfare name. Ed. British: Baker Lane, where Lane is the trailing type.
-	XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_
-
-	XsdGoPkgHasElems_AddressLine
-
-	//	221-bis Baker Street North, where North is the post-direction. The post-direction appears after the name.
-	XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_
-
-	//	North Baker Street, where North is the pre-direction. The direction appears before the name.
-	XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_
-
+//	Appears after the thoroughfare name. Ed. British: Baker Lane, where Lane is the trailing type.
+type ThoroughfareTrailingTypeType struct {
 	XsdGoPkgHasAttr_Type_XsdtString_
 
-	//	Specification of the name of a Thoroughfare (also dependant street name): street name, canal name, etc.
-	XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_
+	XsdGoPkgHasAtts_GrPostal
+
+	XsdGoPkgHasCdata
 }
 
-//	If the WalkHandlers.TxsdThoroughfareSequenceDependentThoroughfare function is not nil (ie. was set by outside code), calls it with this TxsdThoroughfareSequenceDependentThoroughfare instance as the single argument. Then calls the Walk() method on 6/7 embed(s) and 0/0 field(s) belonging to this TxsdThoroughfareSequenceDependentThoroughfare instance.
-func (me *TxsdThoroughfareSequenceDependentThoroughfare) Walk() {
-	fn := WalkHandlers.TxsdThoroughfareSequenceDependentThoroughfare
-	if fn != nil {
-		fn(me, true)
+//	If the WalkHandlers.ThoroughfareTrailingTypeType function is not nil (ie. was set by outside code), calls it with this ThoroughfareTrailingTypeType instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this ThoroughfareTrailingTypeType instance.
+func (me *ThoroughfareTrailingTypeType) Walk() (err error) {
+	if fn := WalkHandlers.ThoroughfareTrailingTypeType; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_.Walk()
-	me.XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_.Walk()
-	me.XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_.Walk()
-	me.XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_.Walk()
-	me.XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_.Walk()
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-type XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_ struct {
-	//	DependentThroughfare is related to a street; occurs in GB, IE, ES, PT
-	DependentThoroughfare *TxsdThoroughfareSequenceDependentThoroughfare `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfare"`
+type XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_ struct {
+	//	Appears after the thoroughfare name. Ed. British: Baker Lane, where Lane is the trailing type.
+	ThoroughfareTrailingType *ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareTrailingType"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_ instance.
-func (me *XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_
-	if fn != nil {
-		fn(me, true)
+//	If the WalkHandlers.XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_ instance.
+func (me *XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.ThoroughfareTrailingType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.DependentThoroughfare.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
+}
+
+//	STS in GEORGE and ADELAIDE STS, RDS IN A and B RDS, etc. Use only when both the street types are the same
+type XsdGoPkgHasAttr_DependentThoroughfaresType_XsdtString_ struct {
+	//	STS in GEORGE and ADELAIDE STS, RDS IN A and B RDS, etc. Use only when both the street types are the same
+	DependentThoroughfaresType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfaresType,attr"`
+}
+
+//	Does this thoroughfare have a a dependent thoroughfare? Corner of street X, etc
+type TxsdThoroughfareDependentThoroughfares xsdt.Nmtoken
+
+//	Returns true if the value of this enumerated TxsdThoroughfareDependentThoroughfares is "Yes".
+func (me TxsdThoroughfareDependentThoroughfares) IsYes() bool { return me == "Yes" }
+
+//	Returns true if the value of this enumerated TxsdThoroughfareDependentThoroughfares is "No".
+func (me TxsdThoroughfareDependentThoroughfares) IsNo() bool { return me == "No" }
+
+//	This convenience method just performs a simple type conversion to TxsdThoroughfareDependentThoroughfares's alias type xsdt.Nmtoken.
+func (me TxsdThoroughfareDependentThoroughfares) ToXsdtNmtoken() xsdt.Nmtoken {
+	return xsdt.Nmtoken(me)
+}
+
+//	Since TxsdThoroughfareDependentThoroughfares is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdThoroughfareDependentThoroughfares) SetFromString(s string) {
+	(*xsdt.Nmtoken)(me).SetFromString(s)
+}
+
+//	Since TxsdThoroughfareDependentThoroughfares is just a simple String type, this merely returns the current string value.
+func (me TxsdThoroughfareDependentThoroughfares) String() string { return xsdt.Nmtoken(me).String() }
+
+type XsdGoPkgHasAttr_DependentThoroughfares_TxsdThoroughfareDependentThoroughfares_ struct {
+	//	Does this thoroughfare have a a dependent thoroughfare? Corner of street X, etc
+	DependentThoroughfares TxsdThoroughfareDependentThoroughfares `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfares,attr"`
 }
 
 //	Corner of Street1 AND Street 2 where AND is the Connector
@@ -1280,173 +270,61 @@ type XsdGoPkgHasAttr_DependentThoroughfaresConnector_XsdtString_ struct {
 	DependentThoroughfaresConnector xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfaresConnector,attr"`
 }
 
-//	Does this thoroughfare have a a dependent thoroughfare? Corner of street X, etc
-type TxsdThoroughfareDependentThoroughfares xsdt.Nmtoken
+//	Specification of a single premise, for example a house or a building. The premise as a whole has a unique premise (house) number or a premise name.  There could be more than
+//	one premise in a street referenced in an address. For example a building address near a major shopping centre or raiwlay station
+//	Specification of the identifier of the premise (house, building, etc). Premises in a street are often uniquely identified by means of consecutive identifiers. The identifier can be a number, a letter or any combination of the two.
+//	12 in BUILDING 12 occurs "after" premise type BUILDING
+type TxsdPremiseNumberNumberTypeOccurrence xsdt.Nmtoken
 
-//	Since TxsdThoroughfareDependentThoroughfares is just a simple String type, this merely returns the current string value.
-func (me TxsdThoroughfareDependentThoroughfares) String() string { return xsdt.Nmtoken(me).String() }
+//	Returns true if the value of this enumerated TxsdPremiseNumberNumberTypeOccurrence is "Before".
+func (me TxsdPremiseNumberNumberTypeOccurrence) IsBefore() bool { return me == "Before" }
 
-//	Returns true if the value of this enumerated TxsdThoroughfareDependentThoroughfares is "Yes".
-func (me TxsdThoroughfareDependentThoroughfares) IsYes() bool { return me == "Yes" }
+//	Returns true if the value of this enumerated TxsdPremiseNumberNumberTypeOccurrence is "After".
+func (me TxsdPremiseNumberNumberTypeOccurrence) IsAfter() bool { return me == "After" }
 
-//	Returns true if the value of this enumerated TxsdThoroughfareDependentThoroughfares is "No".
-func (me TxsdThoroughfareDependentThoroughfares) IsNo() bool { return me == "No" }
-
-//	Since TxsdThoroughfareDependentThoroughfares is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdThoroughfareDependentThoroughfares) SetFromString(s string) {
+//	Since TxsdPremiseNumberNumberTypeOccurrence is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPremiseNumberNumberTypeOccurrence) SetFromString(s string) {
 	(*xsdt.Nmtoken)(me).SetFromString(s)
 }
 
-//	This convenience method just performs a simple type conversion to TxsdThoroughfareDependentThoroughfares's alias type xsdt.Nmtoken.
-func (me TxsdThoroughfareDependentThoroughfares) ToXsdtNmtoken() xsdt.Nmtoken {
-	return xsdt.Nmtoken(me)
+//	This convenience method just performs a simple type conversion to TxsdPremiseNumberNumberTypeOccurrence's alias type xsdt.Nmtoken.
+func (me TxsdPremiseNumberNumberTypeOccurrence) ToXsdtNmtoken() xsdt.Nmtoken { return xsdt.Nmtoken(me) }
+
+//	Since TxsdPremiseNumberNumberTypeOccurrence is just a simple String type, this merely returns the current string value.
+func (me TxsdPremiseNumberNumberTypeOccurrence) String() string { return xsdt.Nmtoken(me).String() }
+
+type XsdGoPkgHasAttr_NumberTypeOccurrence_TxsdPremiseNumberNumberTypeOccurrence_ struct {
+	//	12 in BUILDING 12 occurs "after" premise type BUILDING
+	NumberTypeOccurrence TxsdPremiseNumberNumberTypeOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberTypeOccurrence,attr"`
 }
 
-type XsdGoPkgHasAttr_DependentThoroughfares_TxsdThoroughfareDependentThoroughfares_ struct {
-	//	Does this thoroughfare have a a dependent thoroughfare? Corner of street X, etc
-	DependentThoroughfares TxsdThoroughfareDependentThoroughfares `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfares,attr"`
+//	No. occurs before 12 No.12
+type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdPremiseNumberIndicatorOccurrence_ struct {
+	//	No. occurs before 12 No.12
+	IndicatorOccurrence TxsdPremiseNumberNumberTypeOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
 }
 
-//	Dependent localities are Districts within cities/towns, locality divisions, postal
-//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
-//	Name of the dependent locality
-type XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_ struct {
-	//	Name of the dependent locality
-	DependentLocalityNames []*ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentLocalityName"`
-}
+//	Building 12-14 is "Range" and Building 12 is "Single"
+type TxsdPremiseNumberNumberType xsdt.Nmtoken
 
-//	If the WalkHandlers.XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_ instance.
-func (me *XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.DependentLocalityNames {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
+//	Returns true if the value of this enumerated TxsdPremiseNumberNumberType is "Range".
+func (me TxsdPremiseNumberNumberType) IsRange() bool { return me == "Range" }
 
-//	Dependent localities are Districts within cities/towns, locality divisions, postal
-//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
-type XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_ struct {
-	//	Dependent localities are Districts within cities/towns, locality divisions, postal
-	//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
-	DependentLocality *TDependentLocalityType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentLocality"`
-}
+//	Returns true if the value of this enumerated TxsdPremiseNumberNumberType is "Single".
+func (me TxsdPremiseNumberNumberType) IsSingle() bool { return me == "Single" }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_ instance.
-func (me *XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_
-	if fn != nil {
-		fn(me, true)
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
+//	Since TxsdPremiseNumberNumberType is just a simple String type, this merely returns the current string value.
+func (me TxsdPremiseNumberNumberType) String() string { return xsdt.Nmtoken(me).String() }
 
-//	"VIA" as in Hill Top VIA Parish where Parish is a locality and Hill Top is a dependent locality
-type XsdGoPkgHasAttr_Connector_XsdtString_ struct {
-	//	"VIA" as in Hill Top VIA Parish where Parish is a locality and Hill Top is a dependent locality
-	Connector xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Connector,attr"`
-}
+//	This convenience method just performs a simple type conversion to TxsdPremiseNumberNumberType's alias type xsdt.Nmtoken.
+func (me TxsdPremiseNumberNumberType) ToXsdtNmtoken() xsdt.Nmtoken { return xsdt.Nmtoken(me) }
 
-//	Specification of a postbox like mail delivery point. Only a single postbox number can be specified. Examples of postboxes are POBox, free mail numbers, etc.
-//	Specification of the prefix of the post box number. eg. A in POBox:A-123
-type TxsdPostBoxSequencePostBoxNumberPrefix struct {
-	//	A-12 where 12 is number and A is prefix and "-" is the separator
-	XsdGoPkgHasAttr_NumberPrefixSeparator_XsdtString_
+//	Since TxsdPremiseNumberNumberType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPremiseNumberNumberType) SetFromString(s string) { (*xsdt.Nmtoken)(me).SetFromString(s) }
 
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_GrPostal
-}
-
-//	If the WalkHandlers.TxsdPostBoxSequencePostBoxNumberPrefix function is not nil (ie. was set by outside code), calls it with this TxsdPostBoxSequencePostBoxNumberPrefix instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TxsdPostBoxSequencePostBoxNumberPrefix instance.
-func (me *TxsdPostBoxSequencePostBoxNumberPrefix) Walk() {
-	fn := WalkHandlers.TxsdPostBoxSequencePostBoxNumberPrefix
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_ struct {
-	//	Specification of the prefix of the post box number. eg. A in POBox:A-123
-	PostBoxNumberPrefix *TxsdPostBoxSequencePostBoxNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBoxNumberPrefix"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_ instance.
-func (me *XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.PostBoxNumberPrefix.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Some countries like USA have POBox as 12345-123
-type TxsdPostBoxSequencePostBoxNumberExtension struct {
-	XsdGoPkgHasCdata
-
-	//	"-" is the NumberExtensionSeparator in POBOX:12345-123
-	XsdGoPkgHasAttr_NumberExtensionSeparator_XsdtString_
-}
-
-//	If the WalkHandlers.TxsdPostBoxSequencePostBoxNumberExtension function is not nil (ie. was set by outside code), calls it with this TxsdPostBoxSequencePostBoxNumberExtension instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TxsdPostBoxSequencePostBoxNumberExtension instance.
-func (me *TxsdPostBoxSequencePostBoxNumberExtension) Walk() {
-	fn := WalkHandlers.TxsdPostBoxSequencePostBoxNumberExtension
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_ struct {
-	//	Some countries like USA have POBox as 12345-123
-	PostBoxNumberExtension *TxsdPostBoxSequencePostBoxNumberExtension `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBoxNumberExtension"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_ instance.
-func (me *XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.PostBoxNumberExtension.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Specification of the number of a postbox
-type XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_ struct {
-	//	Specification of the number of a postbox
-	PostBoxNumber *TxsdPostalCodeSequencePostTownSequencePostTownSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBoxNumber"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_ instance.
-func (me *XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.PostBoxNumber.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+type XsdGoPkgHasAttr_NumberType_TxsdPremiseNumberNumberType_ struct {
+	//	Building 12-14 is "Range" and Building 12 is "Single"
+	NumberType TxsdPremiseNumberNumberType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberType,attr"`
 }
 
 //	Eg. Erode (Dist) where (Dist) is the Indicator
@@ -1455,150 +333,478 @@ type XsdGoPkgHasAttr_Indicator_XsdtString_ struct {
 	Indicator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Indicator,attr"`
 }
 
-//	Specification of the suffix of the post box number. eg. A in POBox:123A
-type TxsdPostBoxSequencePostBoxNumberSuffix struct {
+type TxsdPremiseNumber struct {
+	//	12 in BUILDING 12 occurs "after" premise type BUILDING
+	XsdGoPkgHasAttr_NumberTypeOccurrence_TxsdPremiseNumberNumberTypeOccurrence_
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	//	No. occurs before 12 No.12
+	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdPremiseNumberIndicatorOccurrence_
+
+	//	Building 12-14 is "Range" and Building 12 is "Single"
+	XsdGoPkgHasAttr_NumberType_TxsdPremiseNumberNumberType_
+
+	XsdGoPkgHasCdata
+
+	//	No. in House No.12, # in #12, etc.
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+	XsdGoPkgHasAtts_GrPostal
+}
+
+//	If the WalkHandlers.TxsdPremiseNumber function is not nil (ie. was set by outside code), calls it with this TxsdPremiseNumber instance as the single argument. Then calls the Walk() method on 1/7 embed(s) and 0/0 field(s) belonging to this TxsdPremiseNumber instance.
+func (me *TxsdPremiseNumber) Walk() (err error) {
+	if fn := WalkHandlers.TxsdPremiseNumber; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_PremiseNumber struct {
+	//	Specification of the identifier of the premise (house, building, etc). Premises in a street are often uniquely identified by means of consecutive identifiers. The identifier can be a number, a letter or any combination of the two.
+	PremiseNumbers []*TxsdPremiseNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumber"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PremiseNumber function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PremiseNumber instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PremiseNumber instance.
+func (me *XsdGoPkgHasElems_PremiseNumber) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_PremiseNumber; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.PremiseNumbers {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	DES, DE, LA, LA, DU in RUE DU BOIS. These terms connect a premise/thoroughfare type and premise/thoroughfare name. Terms may appear with names AVE DU BOIS
+type XsdGoPkgHasAttr_PremiseThoroughfareConnector_XsdtString_ struct {
+	//	DES, DE, LA, LA, DU in RUE DU BOIS. These terms connect a premise/thoroughfare type and premise/thoroughfare name. Terms may appear with names AVE DU BOIS
+	PremiseThoroughfareConnector xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseThoroughfareConnector,attr"`
+}
+
+//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
+//	Name of the the Mail Stop. eg. MSP, MS, etc
+type XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_ struct {
+	//	Name of the the Mail Stop. eg. MSP, MS, etc
+	MailStopName *ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 MailStopName"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_ instance.
+func (me *XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.MailStopName.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Number of the Mail stop. eg. 123 in MS 123
+//	"-" in MS-123
+type XsdGoPkgHasAttr_NameNumberSeparator_XsdtString_ struct {
+	//	"-" in MS-123
+	NameNumberSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NameNumberSeparator,attr"`
+}
+
+type TxsdMailStopTypeSequenceMailStopNumber struct {
+	XsdGoPkgHasAtts_GrPostal
+
+	//	"-" in MS-123
+	XsdGoPkgHasAttr_NameNumberSeparator_XsdtString_
+
+	XsdGoPkgHasCdata
+}
+
+//	If the WalkHandlers.TxsdMailStopTypeSequenceMailStopNumber function is not nil (ie. was set by outside code), calls it with this TxsdMailStopTypeSequenceMailStopNumber instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TxsdMailStopTypeSequenceMailStopNumber instance.
+func (me *TxsdMailStopTypeSequenceMailStopNumber) Walk() (err error) {
+	if fn := WalkHandlers.TxsdMailStopTypeSequenceMailStopNumber; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_ struct {
+	//	Number of the Mail stop. eg. 123 in MS 123
+	MailStopNumber *TxsdMailStopTypeSequenceMailStopNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 MailStopNumber"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_ instance.
+func (me *XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.MailStopNumber.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Free format address representation. An address can have more than one line. The order of the AddressLine elements must be preserved.
+type XsdGoPkgHasElems_AddressLine struct {
+	//	Free format address representation. An address can have more than one line. The order of the AddressLine elements must be preserved.
+	AddressLines []*ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLine"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AddressLine function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AddressLine instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AddressLine instance.
+func (me *XsdGoPkgHasElems_AddressLine) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_AddressLine; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.AddressLines {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TMailStopType struct {
+	XsdGoPkgHasElems_AddressLine
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	//	Name of the the Mail Stop. eg. MSP, MS, etc
+	XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_
+
+	//	Number of the Mail stop. eg. 123 in MS 123
+	XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_
+}
+
+//	If the WalkHandlers.TMailStopType function is not nil (ie. was set by outside code), calls it with this TMailStopType instance as the single argument. Then calls the Walk() method on 3/4 embed(s) and 0/0 field(s) belonging to this TMailStopType instance.
+func (me *TMailStopType) Walk() (err error) {
+	if fn := WalkHandlers.TMailStopType; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_ struct {
+	//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
+	MailStop *TMailStopType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 MailStop"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_ instance.
+func (me *XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.MailStop.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Specification for defining the premise number range. Some premises have number as Building C1-C7
+//	Eg. Odd or even number range
+type XsdGoPkgHasAttr_RangeType_XsdtString_ struct {
+	//	Eg. Odd or even number range
+	RangeType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 RangeType,attr"`
+}
+
+//	"-" in 12-14  or "Thru" in 12 Thru 14 etc.
+type XsdGoPkgHasAttr_Separator_XsdtString_ struct {
+	//	"-" in 12-14  or "Thru" in 12 Thru 14 etc.
+	Separator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Separator,attr"`
+}
+
+//	No.12-14 where "No." is before actual street number
+type XsdGoPkgHasAttr_IndicatorOccurence_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence_ struct {
+	//	No.12-14 where "No." is before actual street number
+	IndicatorOccurence TxsdPremiseNumberNumberTypeOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurence,attr"`
+}
+
+//	End number details of the premise number range
+//	A in 12A
+//	12-A where 12 is number and A is suffix and "-" is the separator
+type XsdGoPkgHasAttr_NumberSuffixSeparator_XsdtString_ struct {
+	//	12-A where 12 is number and A is suffix and "-" is the separator
+	NumberSuffixSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberSuffixSeparator,attr"`
+}
+
+type TxsdPremiseNumberSuffix struct {
+	XsdGoPkgHasAtts_GrPostal
+
 	//	12-A where 12 is number and A is suffix and "-" is the separator
 	XsdGoPkgHasAttr_NumberSuffixSeparator_XsdtString_
 
 	XsdGoPkgHasCdata
 
-	XsdGoPkgHasAtts_GrPostal
+	XsdGoPkgHasAttr_Type_XsdtString_
 }
 
-//	If the WalkHandlers.TxsdPostBoxSequencePostBoxNumberSuffix function is not nil (ie. was set by outside code), calls it with this TxsdPostBoxSequencePostBoxNumberSuffix instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TxsdPostBoxSequencePostBoxNumberSuffix instance.
-func (me *TxsdPostBoxSequencePostBoxNumberSuffix) Walk() {
-	fn := WalkHandlers.TxsdPostBoxSequencePostBoxNumberSuffix
-	if fn != nil {
-		fn(me, true)
+//	If the WalkHandlers.TxsdPremiseNumberSuffix function is not nil (ie. was set by outside code), calls it with this TxsdPremiseNumberSuffix instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdPremiseNumberSuffix instance.
+func (me *TxsdPremiseNumberSuffix) Walk() (err error) {
+	if fn := WalkHandlers.TxsdPremiseNumberSuffix; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-type XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_ struct {
-	//	Specification of the suffix of the post box number. eg. A in POBox:123A
-	PostBoxNumberSuffix *TxsdPostBoxSequencePostBoxNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBoxNumberSuffix"`
+type XsdGoPkgHasElems_PremiseNumberSuffix struct {
+	//	A in 12A
+	PremiseNumberSuffixs []*TxsdPremiseNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberSuffix"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_ instance.
-func (me *XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_
-	if fn != nil {
-		fn(me, true)
+//	If the WalkHandlers.XsdGoPkgHasElems_PremiseNumberSuffix function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PremiseNumberSuffix instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PremiseNumberSuffix instance.
+func (me *XsdGoPkgHasElems_PremiseNumberSuffix) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_PremiseNumberSuffix; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.PremiseNumberSuffixs {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.PostBoxNumberSuffix.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-type TxsdPostBox struct {
-	XsdGoPkgHasElem_PostalCode
+//	A in A12
+//	A-12 where 12 is number and A is prefix and "-" is the separator
+type XsdGoPkgHasAttr_NumberPrefixSeparator_XsdtString_ struct {
+	//	A-12 where 12 is number and A is prefix and "-" is the separator
+	NumberPrefixSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberPrefixSeparator,attr"`
+}
 
-	//	Specification of the suffix of the post box number. eg. A in POBox:123A
-	XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_
+type TxsdPremiseNumberPrefix struct {
+	XsdGoPkgValue xsdt.String `xml:",chardata"`
 
-	//	Specification of the prefix of the post box number. eg. A in POBox:A-123
-	XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_
-
-	//	Possible values are, not limited to: POBox and Freepost.
 	XsdGoPkgHasAttr_Type_XsdtString_
 
-	//	Some countries like USA have POBox as 12345-123
-	XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_
+	XsdGoPkgHasAtts_GrPostal
 
+	//	A-12 where 12 is number and A is prefix and "-" is the separator
+	XsdGoPkgHasAttr_NumberPrefixSeparator_XsdtString_
+}
+
+//	If the WalkHandlers.TxsdPremiseNumberPrefix function is not nil (ie. was set by outside code), calls it with this TxsdPremiseNumberPrefix instance as the single argument. Then calls the Walk() method on 0/3 embed(s) and 0/1 field(s) belonging to this TxsdPremiseNumberPrefix instance.
+func (me *TxsdPremiseNumberPrefix) Walk() (err error) {
+	if fn := WalkHandlers.TxsdPremiseNumberPrefix; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Simply returns the value of its XsdGoPkgValue field.
+func (me *TxsdPremiseNumberPrefix) ToXsdtString() xsdt.String { return me.XsdGoPkgValue }
+
+type XsdGoPkgHasElems_PremiseNumberPrefix struct {
+	//	A in A12
+	PremiseNumberPrefixs []*TxsdPremiseNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberPrefix"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PremiseNumberPrefix function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PremiseNumberPrefix instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PremiseNumberPrefix instance.
+func (me *XsdGoPkgHasElems_PremiseNumberPrefix) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_PremiseNumberPrefix; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.PremiseNumberPrefixs {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo struct {
 	XsdGoPkgHasElems_AddressLine
 
-	//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from
-	//	a large mail user address, which contains no street.
-	XsdGoPkgHasElem_FirmchoicesequenceThoroughfareschema_Firm_TFirmType_
+	XsdGoPkgHasElems_PremiseNumberPrefix
 
-	//	Specification of the number of a postbox
-	XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_
+	XsdGoPkgHasElems_PremiseNumber
 
-	//	LOCKED BAG NO:1234 where the Indicator is NO: and Type is LOCKED BAG
-	XsdGoPkgHasAttr_Indicator_XsdtString_
+	XsdGoPkgHasElems_PremiseNumberSuffix
 }
 
-//	If the WalkHandlers.TxsdPostBox function is not nil (ie. was set by outside code), calls it with this TxsdPostBox instance as the single argument. Then calls the Walk() method on 7/9 embed(s) and 0/0 field(s) belonging to this TxsdPostBox instance.
-func (me *TxsdPostBox) Walk() {
-	fn := WalkHandlers.TxsdPostBox
-	if fn != nil {
-		fn(me, true)
+//	If the WalkHandlers.TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo function is not nil (ie. was set by outside code), calls it with this TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo instance.
+func (me *TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo) Walk() (err error) {
+	if fn := WalkHandlers.TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_PremiseNumberPrefix.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_PremiseNumber.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_PremiseNumberSuffix.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_.Walk()
-	me.XsdGoPkgHasElem_PostalCode.Walk()
-	me.XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_.Walk()
-	me.XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_.Walk()
-	me.XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_.Walk()
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	me.XsdGoPkgHasElem_FirmchoicesequenceThoroughfareschema_Firm_TFirmType_.Walk()
-	if fn != nil {
-		fn(me, false)
+	return
+}
+
+type XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_ struct {
+	//	End number details of the premise number range
+	PremiseNumberRangeTo *TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberRangeTo"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_ instance.
+func (me *XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PremiseNumberRangeTo.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-}
-
-type XsdGoPkgHasElem_PostBox struct {
-	//	Specification of a postbox like mail delivery point. Only a single postbox number can be specified. Examples of postboxes are POBox, free mail numbers, etc.
-	PostBox *TxsdPostBox `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBox"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PostBox function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostBox instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostBox instance.
-func (me *XsdGoPkgHasElem_PostBox) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PostBox
-	if fn != nil {
-		fn(me, true)
-	}
-	me.PostBox.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Specification of a single premise, for example a house or a building. The premise as a whole has a unique premise (house) number or a premise name.  There could be more than
-//	one premise in a street referenced in an address. For example a building address near a major shopping centre or raiwlay station
-//	Specification for defining the premise number range. Some premises have number as Building C1-C7
-//	No.12-14 where "No." is before actual street number
-type TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence xsdt.Nmtoken
-
-//	Returns true if the value of this enumerated TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence is "After".
-func (me TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence) IsAfter() bool {
-	return me == "After"
-}
-
-//	Since TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence is just a simple String type, this merely returns the current string value.
-func (me TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence) String() string {
-	return xsdt.Nmtoken(me).String()
-}
-
-//	Returns true if the value of this enumerated TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence is "Before".
-func (me TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence) IsBefore() bool {
-	return me == "Before"
-}
-
-//	This convenience method just performs a simple type conversion to TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence's alias type xsdt.Nmtoken.
-func (me TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence) ToXsdtNmtoken() xsdt.Nmtoken {
-	return xsdt.Nmtoken(me)
-}
-
-//	Since TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence) SetFromString(s string) {
-	(*xsdt.Nmtoken)(me).SetFromString(s)
-}
-
-type XsdGoPkgHasAttr_IndicatorOccurence_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence_ struct {
-	//	No.12-14 where "No." is before actual street number
-	IndicatorOccurence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurence,attr"`
+	return
 }
 
 //	Building 23-25 where the number occurs after building name
 type TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence xsdt.Nmtoken
 
-//	Returns true if the value of this enumerated TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence is "AfterType".
-func (me TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence) IsAfterType() bool {
-	return me == "AfterType"
+//	Returns true if the value of this enumerated TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence is "BeforeType".
+func (me TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence) IsBeforeType() bool {
+	return me == "BeforeType"
 }
 
 //	Returns true if the value of this enumerated TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence is "BeforeName".
@@ -1611,14 +817,9 @@ func (me TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence) 
 	return xsdt.Nmtoken(me).String()
 }
 
-//	Since TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence) SetFromString(s string) {
-	(*xsdt.Nmtoken)(me).SetFromString(s)
-}
-
-//	Returns true if the value of this enumerated TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence is "BeforeType".
-func (me TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence) IsBeforeType() bool {
-	return me == "BeforeType"
+//	Returns true if the value of this enumerated TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence is "AfterName".
+func (me TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence) IsAfterName() bool {
+	return me == "AfterName"
 }
 
 //	This convenience method just performs a simple type conversion to TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence's alias type xsdt.Nmtoken.
@@ -1626,9 +827,14 @@ func (me TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence) 
 	return xsdt.Nmtoken(me)
 }
 
-//	Returns true if the value of this enumerated TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence is "AfterName".
-func (me TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence) IsAfterName() bool {
-	return me == "AfterName"
+//	Since TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence is just a simple String type, this merely sets the current value from the specified string.
+func (me *TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence) SetFromString(s string) {
+	(*xsdt.Nmtoken)(me).SetFromString(s)
+}
+
+//	Returns true if the value of this enumerated TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence is "AfterType".
+func (me TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence) IsAfterType() bool {
+	return me == "AfterType"
 }
 
 type XsdGoPkgHasAttr_NumberRangeOccurence_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence_ struct {
@@ -1636,267 +842,78 @@ type XsdGoPkgHasAttr_NumberRangeOccurence_TxsdPremiseSequenceChoiceChoicePremise
 	NumberRangeOccurence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberRangeOccurence,attr"`
 }
 
-//	"-" in 12-14  or "Thru" in 12 Thru 14 etc.
-type XsdGoPkgHasAttr_Separator_XsdtString_ struct {
-	//	"-" in 12-14  or "Thru" in 12 Thru 14 etc.
-	Separator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Separator,attr"`
-}
-
 //	Start number details of the premise number range
-//	A in A12
-type TxsdPremiseNumberPrefix struct {
-	XsdGoPkgValue xsdt.String `xml:",chardata"`
-
-	//	A-12 where 12 is number and A is prefix and "-" is the separator
-	XsdGoPkgHasAttr_NumberPrefixSeparator_XsdtString_
-
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-}
-
-//	If the WalkHandlers.TxsdPremiseNumberPrefix function is not nil (ie. was set by outside code), calls it with this TxsdPremiseNumberPrefix instance as the single argument. Then calls the Walk() method on 0/3 embed(s) and 0/1 field(s) belonging to this TxsdPremiseNumberPrefix instance.
-func (me *TxsdPremiseNumberPrefix) Walk() {
-	fn := WalkHandlers.TxsdPremiseNumberPrefix
-	if fn != nil {
-		fn(me, true)
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Simply returns the value of its XsdGoPkgValue field.
-func (me *TxsdPremiseNumberPrefix) ToXsdtString() xsdt.String { return me.XsdGoPkgValue }
-
-type XsdGoPkgHasElems_PremiseNumberPrefix struct {
-	//	A in A12
-	PremiseNumberPrefixs []*TxsdPremiseNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberPrefix"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PremiseNumberPrefix function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PremiseNumberPrefix instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PremiseNumberPrefix instance.
-func (me *XsdGoPkgHasElems_PremiseNumberPrefix) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_PremiseNumberPrefix
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.PremiseNumberPrefixs {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	A in 12A
-type XsdGoPkgHasElems_PremiseNumberSuffix struct {
-	//	A in 12A
-	PremiseNumberSuffixs []*TxsdThoroughfareNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberSuffix"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PremiseNumberSuffix function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PremiseNumberSuffix instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PremiseNumberSuffix instance.
-func (me *XsdGoPkgHasElems_PremiseNumberSuffix) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_PremiseNumberSuffix
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.PremiseNumberSuffixs {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Specification of the identifier of the premise (house, building, etc). Premises in a street are often uniquely identified by means of consecutive identifiers. The identifier can be a number, a letter or any combination of the two.
-//	Building 12-14 is "Range" and Building 12 is "Single"
-type TxsdPremiseNumberNumberType xsdt.Nmtoken
-
-//	Returns true if the value of this enumerated TxsdPremiseNumberNumberType is "Range".
-func (me TxsdPremiseNumberNumberType) IsRange() bool { return me == "Range" }
-
-//	Since TxsdPremiseNumberNumberType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TxsdPremiseNumberNumberType) SetFromString(s string) { (*xsdt.Nmtoken)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TxsdPremiseNumberNumberType's alias type xsdt.Nmtoken.
-func (me TxsdPremiseNumberNumberType) ToXsdtNmtoken() xsdt.Nmtoken { return xsdt.Nmtoken(me) }
-
-//	Returns true if the value of this enumerated TxsdPremiseNumberNumberType is "Single".
-func (me TxsdPremiseNumberNumberType) IsSingle() bool { return me == "Single" }
-
-//	Since TxsdPremiseNumberNumberType is just a simple String type, this merely returns the current string value.
-func (me TxsdPremiseNumberNumberType) String() string { return xsdt.Nmtoken(me).String() }
-
-type XsdGoPkgHasAttr_NumberType_TxsdPremiseNumberNumberType_ struct {
-	//	Building 12-14 is "Range" and Building 12 is "Single"
-	NumberType TxsdPremiseNumberNumberType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberType,attr"`
-}
-
-//	No. occurs before 12 No.12
-type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdPremiseNumberIndicatorOccurrence_ struct {
-	//	No. occurs before 12 No.12
-	IndicatorOccurrence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
-}
-
-//	12 in BUILDING 12 occurs "after" premise type BUILDING
-type XsdGoPkgHasAttr_NumberTypeOccurrence_TxsdPremiseNumberNumberTypeOccurrence_ struct {
-	//	12 in BUILDING 12 occurs "after" premise type BUILDING
-	NumberTypeOccurrence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberTypeOccurrence,attr"`
-}
-
-type TxsdPremiseNumber struct {
-	//	Building 12-14 is "Range" and Building 12 is "Single"
-	XsdGoPkgHasAttr_NumberType_TxsdPremiseNumberNumberType_
-
-	//	No. occurs before 12 No.12
-	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdPremiseNumberIndicatorOccurrence_
-
-	XsdGoPkgHasCdata
-
-	//	No. in House No.12, # in #12, etc.
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasAtts_GrPostal
-
-	//	12 in BUILDING 12 occurs "after" premise type BUILDING
-	XsdGoPkgHasAttr_NumberTypeOccurrence_TxsdPremiseNumberNumberTypeOccurrence_
-}
-
-//	If the WalkHandlers.TxsdPremiseNumber function is not nil (ie. was set by outside code), calls it with this TxsdPremiseNumber instance as the single argument. Then calls the Walk() method on 1/7 embed(s) and 0/0 field(s) belonging to this TxsdPremiseNumber instance.
-func (me *TxsdPremiseNumber) Walk() {
-	fn := WalkHandlers.TxsdPremiseNumber
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElems_PremiseNumber struct {
-	//	Specification of the identifier of the premise (house, building, etc). Premises in a street are often uniquely identified by means of consecutive identifiers. The identifier can be a number, a letter or any combination of the two.
-	PremiseNumbers []*TxsdPremiseNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumber"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PremiseNumber function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PremiseNumber instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PremiseNumber instance.
-func (me *XsdGoPkgHasElems_PremiseNumber) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_PremiseNumber
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.PremiseNumbers {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom struct {
-	XsdGoPkgHasElems_AddressLine
-
-	XsdGoPkgHasElems_PremiseNumberPrefix
-
-	XsdGoPkgHasElems_PremiseNumberSuffix
-
-	XsdGoPkgHasElems_PremiseNumber
-}
-
-//	If the WalkHandlers.TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom function is not nil (ie. was set by outside code), calls it with this TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom instance as the single argument. Then calls the Walk() method on 4/4 embed(s) and 0/0 field(s) belonging to this TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom instance.
-func (me *TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom) Walk() {
-	fn := WalkHandlers.TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	me.XsdGoPkgHasElems_PremiseNumberPrefix.Walk()
-	me.XsdGoPkgHasElems_PremiseNumberSuffix.Walk()
-	me.XsdGoPkgHasElems_PremiseNumber.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
 type XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_ struct {
 	//	Start number details of the premise number range
-	PremiseNumberRangeFrom *TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberRangeFrom"`
+	PremiseNumberRangeFrom *TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberRangeFrom"`
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_ instance.
-func (me *XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PremiseNumberRangeFrom.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.PremiseNumberRangeFrom.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	End number details of the premise number range
-type XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_ struct {
-	//	End number details of the premise number range
-	PremiseNumberRangeTo *TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberRangeTo"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_ instance.
-func (me *XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.PremiseNumberRangeTo.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Eg. Odd or even number range
-type XsdGoPkgHasAttr_RangeType_XsdtString_ struct {
-	//	Eg. Odd or even number range
-	RangeType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 RangeType,attr"`
+	return
 }
 
 type TxsdPremiseSequenceChoiceChoicePremiseNumberRange struct {
-	//	Start number details of the premise number range
-	XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_
-
-	//	Eg. No. in Building No:C1-C5
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-
-	//	End number details of the premise number range
-	XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_
-
-	//	Eg. Odd or even number range
-	XsdGoPkgHasAttr_RangeType_XsdtString_
+	//	"-" in 12-14  or "Thru" in 12 Thru 14 etc.
+	XsdGoPkgHasAttr_Separator_XsdtString_
 
 	XsdGoPkgHasAttr_Type_XsdtString_
 
 	//	No.12-14 where "No." is before actual street number
 	XsdGoPkgHasAttr_IndicatorOccurence_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence_
 
+	//	End number details of the premise number range
+	XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_
+
 	//	Building 23-25 where the number occurs after building name
 	XsdGoPkgHasAttr_NumberRangeOccurence_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence_
 
-	//	"-" in 12-14  or "Thru" in 12 Thru 14 etc.
-	XsdGoPkgHasAttr_Separator_XsdtString_
+	//	Start number details of the premise number range
+	XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_
+
+	//	Eg. No. in Building No:C1-C5
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+	//	Eg. Odd or even number range
+	XsdGoPkgHasAttr_RangeType_XsdtString_
 }
 
 //	If the WalkHandlers.TxsdPremiseSequenceChoiceChoicePremiseNumberRange function is not nil (ie. was set by outside code), calls it with this TxsdPremiseSequenceChoiceChoicePremiseNumberRange instance as the single argument. Then calls the Walk() method on 2/8 embed(s) and 0/0 field(s) belonging to this TxsdPremiseSequenceChoiceChoicePremiseNumberRange instance.
-func (me *TxsdPremiseSequenceChoiceChoicePremiseNumberRange) Walk() {
-	fn := WalkHandlers.TxsdPremiseSequenceChoiceChoicePremiseNumberRange
-	if fn != nil {
-		fn(me, true)
+func (me *TxsdPremiseSequenceChoiceChoicePremiseNumberRange) Walk() (err error) {
+	if fn := WalkHandlers.TxsdPremiseSequenceChoiceChoicePremiseNumberRange; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_.Walk()
-	me.XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_ struct {
@@ -1905,88 +922,23 @@ type XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_Premise
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_ instance.
-func (me *XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PremiseNumberRange.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.PremiseNumberRange.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	DES, DE, LA, LA, DU in RUE DU BOIS. These terms connect a premise/thoroughfare type and premise/thoroughfare name. Terms may appear with names AVE DU BOIS
-type XsdGoPkgHasAttr_PremiseThoroughfareConnector_XsdtString_ struct {
-	//	DES, DE, LA, LA, DU in RUE DU BOIS. These terms connect a premise/thoroughfare type and premise/thoroughfare name. Terms may appear with names AVE DU BOIS
-	PremiseThoroughfareConnector xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseThoroughfareConnector,attr"`
-}
-
-//	LOBBY, BASEMENT, GROUND FLOOR, etc...
-type XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_ struct {
-	//	LOBBY, BASEMENT, GROUND FLOOR, etc...
-	PremiseLocation *TxsdPostalCodeSequencePostTownSequencePostTownSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseLocation"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_ instance.
-func (me *XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.PremiseLocation.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Specification of the name of the premise (house, building, park, farm, etc). A premise name is specified when the premise cannot be addressed using a street name plus premise (house) number.
-//	EGIS Building where EGIS occurs before Building, DES JARDINS occurs after COMPLEXE DES JARDINS
-type XsdGoPkgHasAttr_TypeOccurrence_TxsdPremiseSequencePremiseNameTypeOccurrence_ struct {
-	//	EGIS Building where EGIS occurs before Building, DES JARDINS occurs after COMPLEXE DES JARDINS
-	TypeOccurrence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 TypeOccurrence,attr"`
-}
-
-type TxsdPremiseSequencePremiseName struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	//	EGIS Building where EGIS occurs before Building, DES JARDINS occurs after COMPLEXE DES JARDINS
-	XsdGoPkgHasAttr_TypeOccurrence_TxsdPremiseSequencePremiseNameTypeOccurrence_
-}
-
-//	If the WalkHandlers.TxsdPremiseSequencePremiseName function is not nil (ie. was set by outside code), calls it with this TxsdPremiseSequencePremiseName instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdPremiseSequencePremiseName instance.
-func (me *TxsdPremiseSequencePremiseName) Walk() {
-	fn := WalkHandlers.TxsdPremiseSequencePremiseName
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_ struct {
-	//	Specification of the name of the premise (house, building, park, farm, etc). A premise name is specified when the premise cannot be addressed using a street name plus premise (house) number.
-	PremiseNames []*TxsdPremiseSequencePremiseName `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseName"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_ instance.
-func (me *XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.PremiseNames {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	NEAR, ADJACENT TO, etc
@@ -2001,130 +953,519 @@ type XsdGoPkgHasAttr_PremiseDependency_XsdtString_ struct {
 	PremiseDependency xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseDependency,attr"`
 }
 
-//	Specification of the name of a building.
-//	Occurrence of the building name before/after the type. eg. EGIS BUILDING where name appears before type
-type XsdGoPkgHasAttr_TypeOccurrence_TxsdBuildingNameTypeTypeOccurrence_ struct {
-	//	Occurrence of the building name before/after the type. eg. EGIS BUILDING where name appears before type
-	TypeOccurrence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 TypeOccurrence,attr"`
+//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from a large mail user address, which contains no street.
+//	PostalCode is the container element for either simple or complex (extended) postal codes. Type: Area Code, Postcode, etc.
+//	Specification of a postcode. The postcode is formatted according to country-specific rules. Example: SW3 0A8-1A, 600074, 2067
+type XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_ struct {
+	//	Specification of a postcode. The postcode is formatted according to country-specific rules. Example: SW3 0A8-1A, 600074, 2067
+	PostalCodeNumbers []*ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalCodeNumber"`
 }
 
-type TBuildingNameType struct {
+//	If the WalkHandlers.XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_ instance.
+func (me *XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.PostalCodeNumbers {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	A post town is not the same as a locality. A post town can encompass a collection of (small) localities. It can also be a subpart of a locality. An actual post town in Norway is "Bergen".
+//	GENERAL PO in MIAMI GENERAL PO
+type TxsdPostalCodeSequencePostTownSequencePostTownSuffix struct {
+	XsdGoPkgHasCdata
+
 	XsdGoPkgHasAtts_GrPostal
+}
+
+//	If the WalkHandlers.TxsdPostalCodeSequencePostTownSequencePostTownSuffix function is not nil (ie. was set by outside code), calls it with this TxsdPostalCodeSequencePostTownSequencePostTownSuffix instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TxsdPostalCodeSequencePostTownSequencePostTownSuffix instance.
+func (me *TxsdPostalCodeSequencePostTownSequencePostTownSuffix) Walk() (err error) {
+	if fn := WalkHandlers.TxsdPostalCodeSequencePostTownSequencePostTownSuffix; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_ struct {
+	//	GENERAL PO in MIAMI GENERAL PO
+	PostTownSuffix *TxsdPostalCodeSequencePostTownSequencePostTownSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostTownSuffix"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_ instance.
+func (me *XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PostTownSuffix.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Name of the post town
+type XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_ struct {
+	//	Name of the post town
+	PostTownNames []*ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostTownName"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_ instance.
+func (me *XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.PostTownNames {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TxsdPostalCodeSequencePostTown struct {
+	//	eg. village, town, suburb, etc
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	//	Name of the post town
+	XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_
+
+	XsdGoPkgHasElems_AddressLine
+
+	//	GENERAL PO in MIAMI GENERAL PO
+	XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_
+}
+
+//	If the WalkHandlers.TxsdPostalCodeSequencePostTown function is not nil (ie. was set by outside code), calls it with this TxsdPostalCodeSequencePostTown instance as the single argument. Then calls the Walk() method on 3/4 embed(s) and 0/0 field(s) belonging to this TxsdPostalCodeSequencePostTown instance.
+func (me *TxsdPostalCodeSequencePostTown) Walk() (err error) {
+	if fn := WalkHandlers.TxsdPostalCodeSequencePostTown; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_ struct {
+	//	A post town is not the same as a locality. A post town can encompass a collection of (small) localities. It can also be a subpart of a locality. An actual post town in Norway is "Bergen".
+	PostTown *TxsdPostalCodeSequencePostTown `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostTown"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_ instance.
+func (me *XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PostTown.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Examples are: 1234 (USA), 1G (UK), etc.
+//	The separator between postal code number and the extension. Eg. "-"
+type XsdGoPkgHasAttr_NumberExtensionSeparator_XsdtString_ struct {
+	//	The separator between postal code number and the extension. Eg. "-"
+	NumberExtensionSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberExtensionSeparator,attr"`
+}
+
+type TxsdPostalCodeSequencePostalCodeNumberExtension struct {
+	//	Delivery Point Suffix, New Postal Code, etc..
+	XsdGoPkgHasAttr_Type_XsdtString_
 
 	XsdGoPkgHasCdata
 
+	XsdGoPkgHasAtts_GrPostal
+
+	//	The separator between postal code number and the extension. Eg. "-"
+	XsdGoPkgHasAttr_NumberExtensionSeparator_XsdtString_
+}
+
+//	If the WalkHandlers.TxsdPostalCodeSequencePostalCodeNumberExtension function is not nil (ie. was set by outside code), calls it with this TxsdPostalCodeSequencePostalCodeNumberExtension instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdPostalCodeSequencePostalCodeNumberExtension instance.
+func (me *TxsdPostalCodeSequencePostalCodeNumberExtension) Walk() (err error) {
+	if fn := WalkHandlers.TxsdPostalCodeSequencePostalCodeNumberExtension; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_ struct {
+	//	Examples are: 1234 (USA), 1G (UK), etc.
+	PostalCodeNumberExtensions []*TxsdPostalCodeSequencePostalCodeNumberExtension `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalCodeNumberExtension"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_ instance.
+func (me *XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.PostalCodeNumberExtensions {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TxsdPostalCode struct {
+	XsdGoPkgHasElems_AddressLine
+
+	//	Examples are: 1234 (USA), 1G (UK), etc.
+	XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_
+
+	//	Area Code, Postcode, Delivery code as in NZ, etc
 	XsdGoPkgHasAttr_Type_XsdtString_
 
-	//	Occurrence of the building name before/after the type. eg. EGIS BUILDING where name appears before type
-	XsdGoPkgHasAttr_TypeOccurrence_TxsdBuildingNameTypeTypeOccurrence_
+	//	Specification of a postcode. The postcode is formatted according to country-specific rules. Example: SW3 0A8-1A, 600074, 2067
+	XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_
+
+	//	A post town is not the same as a locality. A post town can encompass a collection of (small) localities. It can also be a subpart of a locality. An actual post town in Norway is "Bergen".
+	XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_
 }
 
-//	If the WalkHandlers.TBuildingNameType function is not nil (ie. was set by outside code), calls it with this TBuildingNameType instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TBuildingNameType instance.
-func (me *TBuildingNameType) Walk() {
-	fn := WalkHandlers.TBuildingNameType
-	if fn != nil {
-		fn(me, true)
+//	If the WalkHandlers.TxsdPostalCode function is not nil (ie. was set by outside code), calls it with this TxsdPostalCode instance as the single argument. Then calls the Walk() method on 4/5 embed(s) and 0/0 field(s) belonging to this TxsdPostalCode instance.
+func (me *TxsdPostalCode) Walk() (err error) {
+	if fn := WalkHandlers.TxsdPostalCode; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-type XsdGoPkgHasElems_BuildingNamesequencePremiseschema_BuildingName_TBuildingNameType_ struct {
-	//	Specification of the name of a building.
-	BuildingNames []*TBuildingNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 BuildingName"`
+type XsdGoPkgHasElem_PostalCode struct {
+	//	PostalCode is the container element for either simple or complex (extended) postal codes. Type: Area Code, Postcode, etc.
+	PostalCode *TxsdPostalCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalCode"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_BuildingNamesequencePremiseschema_BuildingName_TBuildingNameType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_BuildingNamesequencePremiseschema_BuildingName_TBuildingNameType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_BuildingNamesequencePremiseschema_BuildingName_TBuildingNameType_ instance.
-func (me *XsdGoPkgHasElems_BuildingNamesequencePremiseschema_BuildingName_TBuildingNameType_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_BuildingNamesequencePremiseschema_BuildingName_TBuildingNameType_
-	if fn != nil {
-		fn(me, true)
+//	If the WalkHandlers.XsdGoPkgHasElem_PostalCode function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostalCode instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostalCode instance.
+func (me *XsdGoPkgHasElem_PostalCode) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PostalCode; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PostalCode.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	for _, x := range me.BuildingNames {
-		x.Walk()
+	return
+}
+
+//	Subdivision in the firm: School of Physics at Victoria University (School of Physics is the department)
+//	Specification of the name of a department.
+type XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_ struct {
+	//	Specification of the name of a department.
+	DepartmentNames []*ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DepartmentName"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_ instance.
+func (me *XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.DepartmentNames {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	if fn != nil {
-		fn(me, false)
+	return
+}
+
+type TxsdDepartment struct {
+	//	School in Physics School, Division in Radiology division of school of physics
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	//	Specification of the name of a department.
+	XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_
+
+	XsdGoPkgHasElem_PostalCode
+
+	//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
+	XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_
+
+	XsdGoPkgHasElems_AddressLine
+}
+
+//	If the WalkHandlers.TxsdDepartment function is not nil (ie. was set by outside code), calls it with this TxsdDepartment instance as the single argument. Then calls the Walk() method on 4/5 embed(s) and 0/0 field(s) belonging to this TxsdDepartment instance.
+func (me *TxsdDepartment) Walk() (err error) {
+	if fn := WalkHandlers.TxsdDepartment; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostalCode.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
+	return
+}
+
+type XsdGoPkgHasElems_Department struct {
+	//	Subdivision in the firm: School of Physics at Victoria University (School of Physics is the department)
+	Departments []*TxsdDepartment `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Department"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Department function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Department instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Department instance.
+func (me *XsdGoPkgHasElems_Department) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Department; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.Departments {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Name of the firm
+type XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_ struct {
+	//	Name of the firm
+	FirmNames []*ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 FirmName"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_ instance.
+func (me *XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.FirmNames {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TFirmType struct {
+	XsdGoPkgHasElems_AddressLine
+
+	XsdGoPkgHasElems_Department
+
+	//	Name of the firm
+	XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_
+
+	XsdGoPkgHasElem_PostalCode
+
+	//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
+	XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+}
+
+//	If the WalkHandlers.TFirmType function is not nil (ie. was set by outside code), calls it with this TFirmType instance as the single argument. Then calls the Walk() method on 5/6 embed(s) and 0/0 field(s) belonging to this TFirmType instance.
+func (me *TFirmType) Walk() (err error) {
+	if fn := WalkHandlers.TFirmType; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_Department.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostalCode.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_FirmchoicesequencePremiseschema_Firm_TFirmType_ struct {
+	//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from a large mail user address, which contains no street.
+	Firm *TFirmType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Firm"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_FirmchoicesequencePremiseschema_Firm_TFirmType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_FirmchoicesequencePremiseschema_Firm_TFirmType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_FirmchoicesequencePremiseschema_Firm_TFirmType_ instance.
+func (me *XsdGoPkgHasElem_FirmchoicesequencePremiseschema_Firm_TFirmType_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_FirmchoicesequencePremiseschema_Firm_TFirmType_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Firm.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
 }
 
 //	Specification of a single sub-premise. Examples of sub-premises are apartments and suites. Each sub-premise should be uniquely identifiable.
-//	Specification of the identifier of a sub-premise. Examples of sub-premises are apartments and suites. sub-premises in a building are often uniquely identified by means of consecutive
-//	identifiers. The identifier can be a number, a letter or any combination of the two. In the latter case, the identifier includes exactly one variable (range) part, which is either a
-//	number or a single letter that is surrounded by fixed parts at the left (prefix) or the right (postfix).
-//	12TH occurs "before" FLOOR (a type of subpremise) in 12TH FLOOR
-type XsdGoPkgHasAttr_NumberTypeOccurrence_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumberNumberTypeOccurrence_ struct {
-	//	12TH occurs "before" FLOOR (a type of subpremise) in 12TH FLOOR
-	NumberTypeOccurrence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberTypeOccurrence,attr"`
-}
-
-//	"/" in 12/14 Archer Street where 12 is sub-premise number and 14 is premise number
-type XsdGoPkgHasAttr_PremiseNumberSeparator_XsdtString_ struct {
-	//	"/" in 12/14 Archer Street where 12 is sub-premise number and 14 is premise number
-	PremiseNumberSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberSeparator,attr"`
-}
-
-//	"No." occurs before 1 in No.1, or TH occurs after 12 in 12TH
-type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumberIndicatorOccurrence_ struct {
-	//	"No." occurs before 1 in No.1, or TH occurs after 12 in 12TH
-	IndicatorOccurrence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
-}
-
-type TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber struct {
-	//	"/" in 12/14 Archer Street where 12 is sub-premise number and 14 is premise number
-	XsdGoPkgHasAttr_PremiseNumberSeparator_XsdtString_
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	//	"TH" in 12TH which is a floor number, "NO." in NO.1, "#" in APT #12, etc.
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-
-	//	"No." occurs before 1 in No.1, or TH occurs after 12 in 12TH
-	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumberIndicatorOccurrence_
-
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasCdata
-
-	//	12TH occurs "before" FLOOR (a type of subpremise) in 12TH FLOOR
-	XsdGoPkgHasAttr_NumberTypeOccurrence_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumberNumberTypeOccurrence_
-}
-
-//	If the WalkHandlers.TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber function is not nil (ie. was set by outside code), calls it with this TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber instance as the single argument. Then calls the Walk() method on 1/7 embed(s) and 0/0 field(s) belonging to this TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber instance.
-func (me *TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber) Walk() {
-	fn := WalkHandlers.TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_ struct {
-	//	Specification of the identifier of a sub-premise. Examples of sub-premises are apartments and suites. sub-premises in a building are often uniquely identified by means of consecutive
-	//	identifiers. The identifier can be a number, a letter or any combination of the two. In the latter case, the identifier includes exactly one variable (range) part, which is either a
-	//	number or a single letter that is surrounded by fixed parts at the left (prefix) or the right (postfix).
-	SubPremiseNumbers []*TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremiseNumber"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_ instance.
-func (me *XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.SubPremiseNumbers {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
 //	Specification of a single sub-premise. Examples of sub-premises are apartments and suites.
 //	Each sub-premise should be uniquely identifiable. SubPremiseType: Specification of the name of a sub-premise type. Possible values not limited to: Suite, Appartment, Floor, Unknown
 //	Multiple levels within a premise by recursively calling SubPremise Eg. Level 4, Suite 2, Block C
@@ -2136,54 +1477,327 @@ type XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremi
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremiseType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremiseType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremiseType_ instance.
-func (me *XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremiseType_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremiseType_
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremiseType_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremiseType_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	if fn != nil {
-		fn(me, false)
+	return
+}
+
+//	Prefix of the sub premise number. eg. A in A-12
+type TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix struct {
+	XsdGoPkgHasAtts_GrPostal
+
+	//	A-12 where 12 is number and A is prefix and "-" is the separator
+	XsdGoPkgHasAttr_NumberPrefixSeparator_XsdtString_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+}
+
+//	If the WalkHandlers.TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix function is not nil (ie. was set by outside code), calls it with this TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix instance.
+func (me *TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix) Walk() (err error) {
+	if fn := WalkHandlers.TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
+	return
+}
+
+type XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_ struct {
+	//	Prefix of the sub premise number. eg. A in A-12
+	SubPremiseNumberPrefixs []*TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremiseNumberPrefix"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_ instance.
+func (me *XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.SubPremiseNumberPrefixs {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Name of the building
+//	Occurrence of the building name before/after the type. eg. EGIS BUILDING where name appears before type
+type XsdGoPkgHasAttr_TypeOccurrence_TxsdBuildingNameTypeTypeOccurrence_ struct {
+	//	Occurrence of the building name before/after the type. eg. EGIS BUILDING where name appears before type
+	TypeOccurrence TxsdPremiseNumberNumberTypeOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 TypeOccurrence,attr"`
+}
+
+type TBuildingNameType struct {
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_GrPostal
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	//	Occurrence of the building name before/after the type. eg. EGIS BUILDING where name appears before type
+	XsdGoPkgHasAttr_TypeOccurrence_TxsdBuildingNameTypeTypeOccurrence_
+}
+
+//	If the WalkHandlers.TBuildingNameType function is not nil (ie. was set by outside code), calls it with this TBuildingNameType instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TBuildingNameType instance.
+func (me *TBuildingNameType) Walk() (err error) {
+	if fn := WalkHandlers.TBuildingNameType; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_BuildingNamesequenceSubPremiseTypeschema_BuildingName_TBuildingNameType_ struct {
+	//	Name of the building
+	BuildingNames []*TBuildingNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 BuildingName"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_BuildingNamesequenceSubPremiseTypeschema_BuildingName_TBuildingNameType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_BuildingNamesequenceSubPremiseTypeschema_BuildingName_TBuildingNameType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_BuildingNamesequenceSubPremiseTypeschema_BuildingName_TBuildingNameType_ instance.
+func (me *XsdGoPkgHasElems_BuildingNamesequenceSubPremiseTypeschema_BuildingName_TBuildingNameType_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_BuildingNamesequenceSubPremiseTypeschema_BuildingName_TBuildingNameType_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.BuildingNames {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Name of the SubPremise
+//	EGIS Building where EGIS occurs before Building
+type XsdGoPkgHasAttr_TypeOccurrence_TxsdSubPremiseTypeSequenceSubPremiseNameTypeOccurrence_ struct {
+	//	EGIS Building where EGIS occurs before Building
+	TypeOccurrence TxsdPremiseNumberNumberTypeOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 TypeOccurrence,attr"`
+}
+
+type TxsdSubPremiseTypeSequenceSubPremiseName struct {
+	XsdGoPkgHasAtts_GrPostal
+
+	//	EGIS Building where EGIS occurs before Building
+	XsdGoPkgHasAttr_TypeOccurrence_TxsdSubPremiseTypeSequenceSubPremiseNameTypeOccurrence_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+}
+
+//	If the WalkHandlers.TxsdSubPremiseTypeSequenceSubPremiseName function is not nil (ie. was set by outside code), calls it with this TxsdSubPremiseTypeSequenceSubPremiseName instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdSubPremiseTypeSequenceSubPremiseName instance.
+func (me *TxsdSubPremiseTypeSequenceSubPremiseName) Walk() (err error) {
+	if fn := WalkHandlers.TxsdSubPremiseTypeSequenceSubPremiseName; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_ struct {
+	//	Name of the SubPremise
+	SubPremiseNames []*TxsdSubPremiseTypeSequenceSubPremiseName `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremiseName"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_ instance.
+func (me *XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.SubPremiseNames {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
 }
 
 //	Suffix of the sub premise number. eg. A in 12A
 type XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_ struct {
 	//	Suffix of the sub premise number. eg. A in 12A
-	SubPremiseNumberSuffixs []*TxsdThoroughfareNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremiseNumberSuffix"`
+	SubPremiseNumberSuffixs []*TxsdPremiseNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremiseNumberSuffix"`
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_ instance.
-func (me *XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.SubPremiseNumberSuffixs {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	for _, x := range me.SubPremiseNumberSuffixs {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-//	Prefix of the sub premise number. eg. A in A-12
-type XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_ struct {
-	//	Prefix of the sub premise number. eg. A in A-12
-	SubPremiseNumberPrefixs []*TxsdThoroughfareNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremiseNumberPrefix"`
+//	Specification of the identifier of a sub-premise. Examples of sub-premises are apartments and suites. sub-premises in a building are often uniquely identified by means of consecutive
+//	identifiers. The identifier can be a number, a letter or any combination of the two. In the latter case, the identifier includes exactly one variable (range) part, which is either a
+//	number or a single letter that is surrounded by fixed parts at the left (prefix) or the right (postfix).
+//	"/" in 12/14 Archer Street where 12 is sub-premise number and 14 is premise number
+type XsdGoPkgHasAttr_PremiseNumberSeparator_XsdtString_ struct {
+	//	"/" in 12/14 Archer Street where 12 is sub-premise number and 14 is premise number
+	PremiseNumberSeparator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberSeparator,attr"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_ instance.
-func (me *XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_
-	if fn != nil {
-		fn(me, true)
+//	12TH occurs "before" FLOOR (a type of subpremise) in 12TH FLOOR
+type XsdGoPkgHasAttr_NumberTypeOccurrence_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumberNumberTypeOccurrence_ struct {
+	//	12TH occurs "before" FLOOR (a type of subpremise) in 12TH FLOOR
+	NumberTypeOccurrence TxsdPremiseNumberNumberTypeOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberTypeOccurrence,attr"`
+}
+
+//	"No." occurs before 1 in No.1, or TH occurs after 12 in 12TH
+type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumberIndicatorOccurrence_ struct {
+	//	"No." occurs before 1 in No.1, or TH occurs after 12 in 12TH
+	IndicatorOccurrence TxsdPremiseNumberNumberTypeOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
+}
+
+type TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber struct {
+	//	"/" in 12/14 Archer Street where 12 is sub-premise number and 14 is premise number
+	XsdGoPkgHasAttr_PremiseNumberSeparator_XsdtString_
+
+	XsdGoPkgHasAtts_GrPostal
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	//	12TH occurs "before" FLOOR (a type of subpremise) in 12TH FLOOR
+	XsdGoPkgHasAttr_NumberTypeOccurrence_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumberNumberTypeOccurrence_
+
+	//	"No." occurs before 1 in No.1, or TH occurs after 12 in 12TH
+	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumberIndicatorOccurrence_
+
+	//	"TH" in 12TH which is a floor number, "NO." in NO.1, "#" in APT #12, etc.
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+}
+
+//	If the WalkHandlers.TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber function is not nil (ie. was set by outside code), calls it with this TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber instance as the single argument. Then calls the Walk() method on 1/7 embed(s) and 0/0 field(s) belonging to this TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber instance.
+func (me *TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber) Walk() (err error) {
+	if fn := WalkHandlers.TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	for _, x := range me.SubPremiseNumberPrefixs {
-		x.Walk()
+	return
+}
+
+type XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_ struct {
+	//	Specification of the identifier of a sub-premise. Examples of sub-premises are apartments and suites. sub-premises in a building are often uniquely identified by means of consecutive
+	//	identifiers. The identifier can be a number, a letter or any combination of the two. In the latter case, the identifier includes exactly one variable (range) part, which is either a
+	//	number or a single letter that is surrounded by fixed parts at the left (prefix) or the right (postfix).
+	SubPremiseNumbers []*TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremiseNumber"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_ instance.
+func (me *XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.SubPremiseNumbers {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	Name of the SubPremise Location. eg. LOBBY, BASEMENT, GROUND FLOOR, etc...
@@ -2193,125 +1807,112 @@ type XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPre
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_ instance.
-func (me *XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.SubPremiseLocation.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.SubPremiseLocation.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Name of the SubPremise
-//	EGIS Building where EGIS occurs before Building
-type XsdGoPkgHasAttr_TypeOccurrence_TxsdSubPremiseTypeSequenceSubPremiseNameTypeOccurrence_ struct {
-	//	EGIS Building where EGIS occurs before Building
-	TypeOccurrence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 TypeOccurrence,attr"`
-}
-
-type TxsdSubPremiseTypeSequenceSubPremiseName struct {
-	//	EGIS Building where EGIS occurs before Building
-	XsdGoPkgHasAttr_TypeOccurrence_TxsdSubPremiseTypeSequenceSubPremiseNameTypeOccurrence_
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAtts_GrPostal
-}
-
-//	If the WalkHandlers.TxsdSubPremiseTypeSequenceSubPremiseName function is not nil (ie. was set by outside code), calls it with this TxsdSubPremiseTypeSequenceSubPremiseName instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdSubPremiseTypeSequenceSubPremiseName instance.
-func (me *TxsdSubPremiseTypeSequenceSubPremiseName) Walk() {
-	fn := WalkHandlers.TxsdSubPremiseTypeSequenceSubPremiseName
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_ struct {
-	//	Name of the SubPremise
-	SubPremiseNames []*TxsdSubPremiseTypeSequenceSubPremiseName `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubPremiseName"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_ instance.
-func (me *XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.SubPremiseNames {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type TSubPremiseType struct {
-	//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
-	XsdGoPkgHasElem_MailStopsequenceDepartmentschema_MailStop_TMailStopType_
-
-	XsdGoPkgHasElem_PostalCode
-
 	//	Specification of a single sub-premise. Examples of sub-premises are apartments and suites.
 	//	Each sub-premise should be uniquely identifiable. SubPremiseType: Specification of the name of a sub-premise type. Possible values not limited to: Suite, Appartment, Floor, Unknown
 	//	Multiple levels within a premise by recursively calling SubPremise Eg. Level 4, Suite 2, Block C
 	XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremiseType_
 
-	//	Suffix of the sub premise number. eg. A in 12A
-	XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_
-
 	//	Prefix of the sub premise number. eg. A in A-12
 	XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_
 
-	//	Name of the SubPremise Location. eg. LOBBY, BASEMENT, GROUND FLOOR, etc...
-	XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_
+	//	Name of the building
+	XsdGoPkgHasElems_BuildingNamesequenceSubPremiseTypeschema_BuildingName_TBuildingNameType_
 
 	//	Name of the SubPremise
 	XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_
 
-	XsdGoPkgHasAttr_Type_XsdtString_
+	//	Suffix of the sub premise number. eg. A in 12A
+	XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_
 
-	//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from a large mail user address, which contains no street.
-	XsdGoPkgHasElem_FirmchoicesequenceThoroughfareschema_Firm_TFirmType_
-
-	XsdGoPkgHasElems_AddressLine
-
-	//	Name of the building
-	XsdGoPkgHasElems_BuildingNamesequencePremiseschema_BuildingName_TBuildingNameType_
+	XsdGoPkgHasElem_PostalCode
 
 	//	Specification of the identifier of a sub-premise. Examples of sub-premises are apartments and suites. sub-premises in a building are often uniquely identified by means of consecutive
 	//	identifiers. The identifier can be a number, a letter or any combination of the two. In the latter case, the identifier includes exactly one variable (range) part, which is either a
 	//	number or a single letter that is surrounded by fixed parts at the left (prefix) or the right (postfix).
 	XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	//	Name of the SubPremise Location. eg. LOBBY, BASEMENT, GROUND FLOOR, etc...
+	XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_
+
+	XsdGoPkgHasElems_AddressLine
+
+	//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
+	XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_
+
+	//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from a large mail user address, which contains no street.
+	XsdGoPkgHasElem_FirmchoicesequencePremiseschema_Firm_TFirmType_
 }
 
 //	If the WalkHandlers.TSubPremiseType function is not nil (ie. was set by outside code), calls it with this TSubPremiseType instance as the single argument. Then calls the Walk() method on 11/12 embed(s) and 0/0 field(s) belonging to this TSubPremiseType instance.
-func (me *TSubPremiseType) Walk() {
-	fn := WalkHandlers.TSubPremiseType
-	if fn != nil {
-		fn(me, true)
+func (me *TSubPremiseType) Walk() (err error) {
+	if fn := WalkHandlers.TSubPremiseType; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostalCode.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_FirmchoicesequencePremiseschema_Firm_TFirmType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremiseType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_BuildingNamesequenceSubPremiseTypeschema_BuildingName_TBuildingNameType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_.Walk()
-	me.XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_.Walk()
-	me.XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_.Walk()
-	me.XsdGoPkgHasElem_FirmchoicesequenceThoroughfareschema_Firm_TFirmType_.Walk()
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	me.XsdGoPkgHasElems_BuildingNamesequencePremiseschema_BuildingName_TBuildingNameType_.Walk()
-	me.XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_.Walk()
-	me.XsdGoPkgHasElem_MailStopsequenceDepartmentschema_MailStop_TMailStopType_.Walk()
-	me.XsdGoPkgHasElem_PostalCode.Walk()
-	me.XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremiseType_.Walk()
-	me.XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_ struct {
@@ -2320,87 +1921,216 @@ type XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremi
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_ instance.
-func (me *XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.SubPremises {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	for _, x := range me.SubPremises {
-		x.Walk()
+	return
+}
+
+//	LOBBY, BASEMENT, GROUND FLOOR, etc...
+type XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_ struct {
+	//	LOBBY, BASEMENT, GROUND FLOOR, etc...
+	PremiseLocation *TxsdPostalCodeSequencePostTownSequencePostTownSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseLocation"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_ instance.
+func (me *XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PremiseLocation.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	if fn != nil {
-		fn(me, false)
+	return
+}
+
+//	Specification of the name of the premise (house, building, park, farm, etc). A premise name is specified when the premise cannot be addressed using a street name plus premise (house) number.
+//	EGIS Building where EGIS occurs before Building, DES JARDINS occurs after COMPLEXE DES JARDINS
+type XsdGoPkgHasAttr_TypeOccurrence_TxsdPremiseSequencePremiseNameTypeOccurrence_ struct {
+	//	EGIS Building where EGIS occurs before Building, DES JARDINS occurs after COMPLEXE DES JARDINS
+	TypeOccurrence TxsdPremiseNumberNumberTypeOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 TypeOccurrence,attr"`
+}
+
+type TxsdPremiseSequencePremiseName struct {
+	//	EGIS Building where EGIS occurs before Building, DES JARDINS occurs after COMPLEXE DES JARDINS
+	XsdGoPkgHasAttr_TypeOccurrence_TxsdPremiseSequencePremiseNameTypeOccurrence_
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_GrPostal
+}
+
+//	If the WalkHandlers.TxsdPremiseSequencePremiseName function is not nil (ie. was set by outside code), calls it with this TxsdPremiseSequencePremiseName instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdPremiseSequencePremiseName instance.
+func (me *TxsdPremiseSequencePremiseName) Walk() (err error) {
+	if fn := WalkHandlers.TxsdPremiseSequencePremiseName; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
+	return
+}
+
+type XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_ struct {
+	//	Specification of the name of the premise (house, building, park, farm, etc). A premise name is specified when the premise cannot be addressed using a street name plus premise (house) number.
+	PremiseNames []*TxsdPremiseSequencePremiseName `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseName"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_ instance.
+func (me *XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.PremiseNames {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
 }
 
 type TxsdPremise struct {
+	//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from a large mail user address, which contains no street.
+	XsdGoPkgHasElem_FirmchoicesequencePremiseschema_Firm_TFirmType_
+
+	//	Specification of a single sub-premise. Examples of sub-premises are apartments and suites. Each sub-premise should be uniquely identifiable.
+	XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_
+
+	XsdGoPkgHasElems_AddressLine
+
+	//	Specification of the name of a building.
+	XsdGoPkgHasElems_BuildingNamesequenceSubPremiseTypeschema_BuildingName_TBuildingNameType_
+
 	XsdGoPkgHasElem_PostalCode
 
-	//	Specification for defining the premise number range. Some premises have number as Building C1-C7
-	XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_
+	//	LOBBY, BASEMENT, GROUND FLOOR, etc...
+	XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_
+
+	XsdGoPkgHasElems_PremiseNumberSuffix
+
+	//	Specification of the name of the premise (house, building, park, farm, etc). A premise name is specified when the premise cannot be addressed using a street name plus premise (house) number.
+	XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_
+
+	XsdGoPkgHasElems_PremiseNumber
 
 	//	DES, DE, LA, LA, DU in RUE DU BOIS. These terms connect a premise/thoroughfare type and premise/thoroughfare name. Terms may appear with names AVE DU BOIS
 	XsdGoPkgHasAttr_PremiseThoroughfareConnector_XsdtString_
 
-	XsdGoPkgHasElems_PremiseNumberSuffix
-
 	//	A MailStop is where the the mail is delivered to within a premise/subpremise/firm or a facility.
-	XsdGoPkgHasElem_MailStopsequenceDepartmentschema_MailStop_TMailStopType_
+	XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_
+
+	//	Specification for defining the premise number range. Some premises have number as Building C1-C7
+	XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_
+
+	//	NEAR, ADJACENT TO, etc
+	XsdGoPkgHasAttr_PremiseDependencyType_XsdtString_
 
 	//	COMPLEXE in COMPLEX DES JARDINS, A building, station, etc
 	XsdGoPkgHasAttr_Type_XsdtString_
 
 	XsdGoPkgHasElems_PremiseNumberPrefix
 
-	//	LOBBY, BASEMENT, GROUND FLOOR, etc...
-	XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_
-
-	XsdGoPkgHasElem_Premise
-
-	//	Specification of the name of the premise (house, building, park, farm, etc). A premise name is specified when the premise cannot be addressed using a street name plus premise (house) number.
-	XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_
-
-	//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from a large mail user address, which contains no street.
-	XsdGoPkgHasElem_FirmchoicesequenceThoroughfareschema_Firm_TFirmType_
-
-	//	NEAR, ADJACENT TO, etc
-	XsdGoPkgHasAttr_PremiseDependencyType_XsdtString_
-
-	XsdGoPkgHasElems_PremiseNumber
-
 	//	STREET, PREMISE, SUBPREMISE, PARK, FARM, etc
 	XsdGoPkgHasAttr_PremiseDependency_XsdtString_
 
-	XsdGoPkgHasElems_AddressLine
-
-	//	Specification of the name of a building.
-	XsdGoPkgHasElems_BuildingNamesequencePremiseschema_BuildingName_TBuildingNameType_
-
-	//	Specification of a single sub-premise. Examples of sub-premises are apartments and suites. Each sub-premise should be uniquely identifiable.
-	XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_
+	XsdGoPkgHasElem_Premise
 }
 
 //	If the WalkHandlers.TxsdPremise function is not nil (ie. was set by outside code), calls it with this TxsdPremise instance as the single argument. Then calls the Walk() method on 12/17 embed(s) and 0/0 field(s) belonging to this TxsdPremise instance.
-func (me *TxsdPremise) Walk() {
-	fn := WalkHandlers.TxsdPremise
-	if fn != nil {
-		fn(me, true)
+func (me *TxsdPremise) Walk() (err error) {
+	if fn := WalkHandlers.TxsdPremise; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElems_PremiseNumberPrefix.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_FirmchoicesequencePremiseschema_Firm_TFirmType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_BuildingNamesequenceSubPremiseTypeschema_BuildingName_TBuildingNameType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostalCode.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_PremiseNumberSuffix.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_PremiseNumber.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_.Walk()
-	me.XsdGoPkgHasElem_FirmchoicesequenceThoroughfareschema_Firm_TFirmType_.Walk()
-	me.XsdGoPkgHasElems_PremiseNumber.Walk()
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	me.XsdGoPkgHasElems_BuildingNamesequencePremiseschema_BuildingName_TBuildingNameType_.Walk()
-	me.XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_.Walk()
-	me.XsdGoPkgHasElem_PostalCode.Walk()
-	me.XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_.Walk()
-	me.XsdGoPkgHasElems_PremiseNumberSuffix.Walk()
-	me.XsdGoPkgHasElem_MailStopsequenceDepartmentschema_MailStop_TMailStopType_.Walk()
-	me.XsdGoPkgHasElems_PremiseNumberPrefix.Walk()
-	me.XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type XsdGoPkgHasElem_Premise struct {
@@ -2410,518 +2140,301 @@ type XsdGoPkgHasElem_Premise struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Premise function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Premise instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Premise instance.
-func (me *XsdGoPkgHasElem_Premise) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_Premise
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_Premise) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Premise; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Premise.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.Premise.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-//	Number of the dependent locality. Some areas are numbered. Eg. SECTOR 5 in a Suburb as in India or SOI SUKUMVIT 10 as in Thailand
-//	Eg. SECTOR occurs before 5 in SECTOR 5
-type XsdGoPkgHasAttr_NameNumberOccurrence_TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence_ struct {
-	//	Eg. SECTOR occurs before 5 in SECTOR 5
-	NameNumberOccurrence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NameNumberOccurrence,attr"`
+//	Eg.: 23 Archer street or 25/15 Zero Avenue, etc
+//	12 Archer Street is "Single" and 12-14 Archer Street is "Range"
+type XsdGoPkgHasAttr_NumberType_TxsdThoroughfareNumberNumberType_ struct {
+	//	12 Archer Street is "Single" and 12-14 Archer Street is "Range"
+	NumberType TxsdPremiseNumberNumberType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberType,attr"`
 }
 
-type TxsdDependentLocalityTypeSequenceDependentLocalityNumber struct {
-	//	Eg. SECTOR occurs before 5 in SECTOR 5
-	XsdGoPkgHasAttr_NameNumberOccurrence_TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence_
+//	23 Archer St, Archer Street 23, St Archer 23
+type XsdGoPkgHasAttr_NumberOccurrence_TxsdThoroughfareNumberNumberOccurrence_ struct {
+	//	23 Archer St, Archer Street 23, St Archer 23
+	NumberOccurrence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberOccurrence,attr"`
+}
+
+//	No.12 where "No." is before actual street number
+type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdThoroughfareNumberIndicatorOccurrence_ struct {
+	//	No.12 where "No." is before actual street number
+	IndicatorOccurrence TxsdPremiseNumberNumberTypeOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
+}
+
+type TxsdThoroughfareNumber struct {
+	//	No. in Street No.12 or "#" in Street # 12, etc.
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+	//	No.12 where "No." is before actual street number
+	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdThoroughfareNumberIndicatorOccurrence_
+
+	XsdGoPkgHasCdata
+
+	//	12 Archer Street is "Single" and 12-14 Archer Street is "Range"
+	XsdGoPkgHasAttr_NumberType_TxsdThoroughfareNumberNumberType_
 
 	XsdGoPkgHasAtts_GrPostal
 
+	//	23 Archer St, Archer Street 23, St Archer 23
+	XsdGoPkgHasAttr_NumberOccurrence_TxsdThoroughfareNumberNumberOccurrence_
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+}
+
+//	If the WalkHandlers.TxsdThoroughfareNumber function is not nil (ie. was set by outside code), calls it with this TxsdThoroughfareNumber instance as the single argument. Then calls the Walk() method on 1/7 embed(s) and 0/0 field(s) belonging to this TxsdThoroughfareNumber instance.
+func (me *TxsdThoroughfareNumber) Walk() (err error) {
+	if fn := WalkHandlers.TxsdThoroughfareNumber; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_ThoroughfareNumber struct {
+	//	Eg.: 23 Archer street or 25/15 Zero Avenue, etc
+	ThoroughfareNumbers []*TxsdThoroughfareNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumber"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ThoroughfareNumber function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ThoroughfareNumber instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ThoroughfareNumber instance.
+func (me *XsdGoPkgHasElems_ThoroughfareNumber) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_ThoroughfareNumber; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.ThoroughfareNumbers {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	DependentThroughfare is related to a street; occurs in GB, IE, ES, PT
+//	221-bis Baker Street North, where North is the post-direction. The post-direction appears after the name.
+type ThoroughfarePostDirectionType struct {
 	XsdGoPkgHasCdata
-}
-
-//	If the WalkHandlers.TxsdDependentLocalityTypeSequenceDependentLocalityNumber function is not nil (ie. was set by outside code), calls it with this TxsdDependentLocalityTypeSequenceDependentLocalityNumber instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TxsdDependentLocalityTypeSequenceDependentLocalityNumber instance.
-func (me *TxsdDependentLocalityTypeSequenceDependentLocalityNumber) Walk() {
-	fn := WalkHandlers.TxsdDependentLocalityTypeSequenceDependentLocalityNumber
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_ struct {
-	//	Number of the dependent locality. Some areas are numbered. Eg. SECTOR 5 in a Suburb as in India or SOI SUKUMVIT 10 as in Thailand
-	DependentLocalityNumber *TxsdDependentLocalityTypeSequenceDependentLocalityNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentLocalityNumber"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_ instance.
-func (me *XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.DependentLocalityNumber.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	A Postal van is specific for a route as in Is`rael, Rural route
-//	Name of the Postal Route
-type XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_ struct {
-	//	Name of the Postal Route
-	PostalRouteNames []*ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalRouteName"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_ instance.
-func (me *XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.PostalRouteNames {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Number of the Postal Route
-type XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_ struct {
-	//	Number of the Postal Route
-	PostalRouteNumber *TxsdPostalCodeSequencePostTownSequencePostTownSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalRouteNumber"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_ instance.
-func (me *XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.PostalRouteNumber.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type TPostalRouteType struct {
-	//	Name of the Postal Route
-	XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_
-
-	//	Number of the Postal Route
-	XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_
-
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasElems_AddressLine
-
-	XsdGoPkgHasElem_PostBox
-}
-
-//	If the WalkHandlers.TPostalRouteType function is not nil (ie. was set by outside code), calls it with this TPostalRouteType instance as the single argument. Then calls the Walk() method on 4/5 embed(s) and 0/0 field(s) belonging to this TPostalRouteType instance.
-func (me *TPostalRouteType) Walk() {
-	fn := WalkHandlers.TPostalRouteType
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	me.XsdGoPkgHasElem_PostBox.Walk()
-	me.XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_.Walk()
-	me.XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_PostalRoutechoicesequenceDependentLocalityTypeschema_PostalRoute_TPostalRouteType_ struct {
-	//	A Postal van is specific for a route as in Is`rael, Rural route
-	PostalRoute *TPostalRouteType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalRoute"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PostalRoutechoicesequenceDependentLocalityTypeschema_PostalRoute_TPostalRouteType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostalRoutechoicesequenceDependentLocalityTypeschema_PostalRoute_TPostalRouteType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostalRoutechoicesequenceDependentLocalityTypeschema_PostalRoute_TPostalRouteType_ instance.
-func (me *XsdGoPkgHasElem_PostalRoutechoicesequenceDependentLocalityTypeschema_PostalRoute_TPostalRouteType_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PostalRoutechoicesequenceDependentLocalityTypeschema_PostalRoute_TPostalRouteType_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.PostalRoute.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Specification of a post office. Examples are a rural post office where post is delivered and a post office containing post office boxes.
-//	Specification of the name of the post office. This can be a rural postoffice where post is delivered or a post office containing post office boxes.
-type XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_ struct {
-	//	Specification of the name of the post office. This can be a rural postoffice where post is delivered or a post office containing post office boxes.
-	PostOfficeNames []*ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostOfficeName"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_ instance.
-func (me *XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.PostOfficeNames {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Specification of the number of the postoffice. Common in rural postoffices
-//	MS occurs before 62 in MS 62
-type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdPostOfficeSequenceChoicePostOfficeNumberIndicatorOccurrence_ struct {
-	//	MS occurs before 62 in MS 62
-	IndicatorOccurrence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
-}
-
-type TxsdPostOfficeSequenceChoicePostOfficeNumber struct {
-	XsdGoPkgHasCdata
-
-	//	MS occurs before 62 in MS 62
-	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdPostOfficeSequenceChoicePostOfficeNumberIndicatorOccurrence_
-
-	//	MS in MS 62, # in MS # 12, etc.
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-
-	XsdGoPkgHasAtts_GrPostal
-}
-
-//	If the WalkHandlers.TxsdPostOfficeSequenceChoicePostOfficeNumber function is not nil (ie. was set by outside code), calls it with this TxsdPostOfficeSequenceChoicePostOfficeNumber instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdPostOfficeSequenceChoicePostOfficeNumber instance.
-func (me *TxsdPostOfficeSequenceChoicePostOfficeNumber) Walk() {
-	fn := WalkHandlers.TxsdPostOfficeSequenceChoicePostOfficeNumber
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_ struct {
-	//	Specification of the number of the postoffice. Common in rural postoffices
-	PostOfficeNumber *TxsdPostOfficeSequenceChoicePostOfficeNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostOfficeNumber"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_ instance.
-func (me *XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.PostOfficeNumber.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type TxsdPostOffice struct {
-	//	Could be a Mobile Postoffice Van as in Isreal
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasElem_PostBox
-
-	//	A Postal van is specific for a route as in Is`rael, Rural route
-	XsdGoPkgHasElem_PostalRoutechoicesequenceDependentLocalityTypeschema_PostalRoute_TPostalRouteType_
-
-	//	Specification of the number of the postoffice. Common in rural postoffices
-	XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_
-
-	XsdGoPkgHasElems_AddressLine
-
-	XsdGoPkgHasElem_PostalCode
-
-	//	eg. Kottivakkam (P.O) here (P.O) is the Indicator
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-
-	//	Specification of the name of the post office. This can be a rural postoffice where post is delivered or a post office containing post office boxes.
-	XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_
-}
-
-//	If the WalkHandlers.TxsdPostOffice function is not nil (ie. was set by outside code), calls it with this TxsdPostOffice instance as the single argument. Then calls the Walk() method on 6/8 embed(s) and 0/0 field(s) belonging to this TxsdPostOffice instance.
-func (me *TxsdPostOffice) Walk() {
-	fn := WalkHandlers.TxsdPostOffice
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_.Walk()
-	me.XsdGoPkgHasElem_PostBox.Walk()
-	me.XsdGoPkgHasElem_PostalRoutechoicesequenceDependentLocalityTypeschema_PostalRoute_TPostalRouteType_.Walk()
-	me.XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_.Walk()
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	me.XsdGoPkgHasElem_PostalCode.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_PostOffice struct {
-	//	Specification of a post office. Examples are a rural post office where post is delivered and a post office containing post office boxes.
-	PostOffice *TxsdPostOffice `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostOffice"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PostOffice function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostOffice instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostOffice instance.
-func (me *XsdGoPkgHasElem_PostOffice) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PostOffice
-	if fn != nil {
-		fn(me, true)
-	}
-	me.PostOffice.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Specification of a large mail user address. Examples of large mail users are postal companies, companies in France with a cedex number, hospitals and airports with their own post code. Large mail user addresses do not have a street name with premise name or premise number in countries like Netherlands. But they have a POBox and street also in countries like France
-//	Name of the large mail user. eg. Smith Ford International airport
-type TxsdLargeMailUserTypeSequenceLargeMailUserName struct {
-	//	Airport, Hospital, etc
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Code_XsdtString_
-}
-
-//	If the WalkHandlers.TxsdLargeMailUserTypeSequenceLargeMailUserName function is not nil (ie. was set by outside code), calls it with this TxsdLargeMailUserTypeSequenceLargeMailUserName instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TxsdLargeMailUserTypeSequenceLargeMailUserName instance.
-func (me *TxsdLargeMailUserTypeSequenceLargeMailUserName) Walk() {
-	fn := WalkHandlers.TxsdLargeMailUserTypeSequenceLargeMailUserName
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_ struct {
-	//	Name of the large mail user. eg. Smith Ford International airport
-	LargeMailUserNames []*TxsdLargeMailUserTypeSequenceLargeMailUserName `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 LargeMailUserName"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_ instance.
-func (me *XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.LargeMailUserNames {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Specification of the identification number of a large mail user. An example are the Cedex codes in France.
-type TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier struct {
-	//	CEDEX Code
-	XsdGoPkgHasAttr_Type_XsdtString_
 
 	XsdGoPkgHasAtts_GrPostal
 
-	//	eg. Building 429 in which Building is the Indicator
-	XsdGoPkgHasAttr_Indicator_XsdtString_
+	XsdGoPkgHasAttr_Type_XsdtString_
+}
+
+//	If the WalkHandlers.ThoroughfarePostDirectionType function is not nil (ie. was set by outside code), calls it with this ThoroughfarePostDirectionType instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this ThoroughfarePostDirectionType instance.
+func (me *ThoroughfarePostDirectionType) Walk() (err error) {
+	if fn := WalkHandlers.ThoroughfarePostDirectionType; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_ struct {
+	//	221-bis Baker Street North, where North is the post-direction. The post-direction appears after the name.
+	ThoroughfarePostDirection *ThoroughfarePostDirectionType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfarePostDirection"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_ instance.
+func (me *XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.ThoroughfarePostDirection.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Specification of the name of a Thoroughfare (also dependant street name): street name, canal name, etc.
+type ThoroughfareNameType struct {
+	XsdGoPkgHasAtts_GrPostal
 
 	XsdGoPkgHasCdata
-}
-
-//	If the WalkHandlers.TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier function is not nil (ie. was set by outside code), calls it with this TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier instance.
-func (me *TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier) Walk() {
-	fn := WalkHandlers.TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_ struct {
-	//	Specification of the identification number of a large mail user. An example are the Cedex codes in France.
-	LargeMailUserIdentifier *TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 LargeMailUserIdentifier"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_ instance.
-func (me *XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.LargeMailUserIdentifier.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Subdivision in the firm: School of Physics at Victoria University (School of Physics is the department)
-type XsdGoPkgHasElem_Department struct {
-	//	Subdivision in the firm: School of Physics at Victoria University (School of Physics is the department)
-	Department *TxsdDepartment `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Department"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Department function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Department instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Department instance.
-func (me *XsdGoPkgHasElem_Department) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_Department
-	if fn != nil {
-		fn(me, true)
-	}
-	me.Department.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type TLargeMailUserType struct {
-	//	Specification of the identification number of a large mail user. An example are the Cedex codes in France.
-	XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_
-
-	XsdGoPkgHasElem_PostalCode
-
-	XsdGoPkgHasElem_Department
-
-	XsdGoPkgHasElem_Thoroughfare
-
-	XsdGoPkgHasElem_PostBox
-
-	//	Name of the building
-	XsdGoPkgHasElems_BuildingNamesequencePremiseschema_BuildingName_TBuildingNameType_
-
-	XsdGoPkgHasElems_AddressLine
-
-	//	Name of the large mail user. eg. Smith Ford International airport
-	XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_
 
 	XsdGoPkgHasAttr_Type_XsdtString_
 }
 
-//	If the WalkHandlers.TLargeMailUserType function is not nil (ie. was set by outside code), calls it with this TLargeMailUserType instance as the single argument. Then calls the Walk() method on 7/9 embed(s) and 0/0 field(s) belonging to this TLargeMailUserType instance.
-func (me *TLargeMailUserType) Walk() {
-	fn := WalkHandlers.TLargeMailUserType
-	if fn != nil {
-		fn(me, true)
+//	If the WalkHandlers.ThoroughfareNameType function is not nil (ie. was set by outside code), calls it with this ThoroughfareNameType instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this ThoroughfareNameType instance.
+func (me *ThoroughfareNameType) Walk() (err error) {
+	if fn := WalkHandlers.ThoroughfareNameType; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasElem_PostBox.Walk()
-	me.XsdGoPkgHasElems_BuildingNamesequencePremiseschema_BuildingName_TBuildingNameType_.Walk()
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	me.XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_.Walk()
-	me.XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_.Walk()
-	me.XsdGoPkgHasElem_PostalCode.Walk()
-	me.XsdGoPkgHasElem_Department.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-type XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_ struct {
-	//	Specification of a large mail user address. Examples of large mail users are postal companies, companies in France with a cedex number, hospitals and airports with their own post code. Large mail user addresses do not have a street name with premise name or premise number in countries like Netherlands. But they have a POBox and street also in countries like France
-	LargeMailUser *TLargeMailUserType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 LargeMailUser"`
+type XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_ struct {
+	//	Specification of the name of a Thoroughfare (also dependant street name): street name, canal name, etc.
+	ThoroughfareNames []*ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareName"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_ instance.
-func (me *XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_
-	if fn != nil {
-		fn(me, true)
+//	If the WalkHandlers.XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_ instance.
+func (me *XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.ThoroughfareNames {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.LargeMailUser.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
-type XsdGoPkgHasAttr_UsageType_XsdtString_ struct {
-	//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
-	UsageType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 UsageType,attr"`
-}
-
-type TDependentLocalityType struct {
-	//	"VIA" as in Hill Top VIA Parish where Parish is a locality and Hill Top is a dependent locality
-	XsdGoPkgHasAttr_Connector_XsdtString_
-
-	XsdGoPkgHasElem_PostBox
-
-	//	City or IndustrialEstate, etc
+type TxsdThoroughfareSequenceDependentThoroughfare struct {
 	XsdGoPkgHasAttr_Type_XsdtString_
 
-	//	Eg. Erode (Dist) where (Dist) is the Indicator
-	XsdGoPkgHasAttr_Indicator_XsdtString_
+	//	Appears before the thoroughfare name. Ed. Spanish: Avenida Aurora, where Avenida is the leading type / French: Rue Moliere, where Rue is the leading type.
+	XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_
 
-	XsdGoPkgHasElem_Premise
+	//	Specification of the name of a Thoroughfare (also dependant street name): street name, canal name, etc.
+	XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_
 
-	//	Number of the dependent locality. Some areas are numbered. Eg. SECTOR 5 in a Suburb as in India or SOI SUKUMVIT 10 as in Thailand
-	XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_
-
-	//	A Postal van is specific for a route as in Is`rael, Rural route
-	XsdGoPkgHasElem_PostalRoutechoicesequenceDependentLocalityTypeschema_PostalRoute_TPostalRouteType_
-
-	XsdGoPkgHasElem_PostOffice
-
-	//	Specification of a large mail user address. Examples of large mail users are postal companies, companies in France with a cedex number, hospitals and airports with their own post code. Large mail user addresses do not have a street name with premise name or premise number in countries like Netherlands. But they have a POBox and street also in countries like France
-	XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_
-
-	XsdGoPkgHasElem_PostalCode
+	//	Appears after the thoroughfare name. Ed. British: Baker Lane, where Lane is the trailing type.
+	XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_
 
 	XsdGoPkgHasElems_AddressLine
 
-	//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
-	XsdGoPkgHasAttr_UsageType_XsdtString_
+	//	North Baker Street, where North is the pre-direction. The direction appears before the name.
+	XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_
 
-	XsdGoPkgHasElem_Thoroughfare
-
-	//	Name of the dependent locality
-	XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_
-
-	//	Dependent localities are Districts within cities/towns, locality divisions, postal
-	//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
-	XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_
+	//	221-bis Baker Street North, where North is the post-direction. The post-direction appears after the name.
+	XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_
 }
 
-//	If the WalkHandlers.TDependentLocalityType function is not nil (ie. was set by outside code), calls it with this TDependentLocalityType instance as the single argument. Then calls the Walk() method on 10/15 embed(s) and 0/0 field(s) belonging to this TDependentLocalityType instance.
-func (me *TDependentLocalityType) Walk() {
-	fn := WalkHandlers.TDependentLocalityType
-	if fn != nil {
-		fn(me, true)
+//	If the WalkHandlers.TxsdThoroughfareSequenceDependentThoroughfare function is not nil (ie. was set by outside code), calls it with this TxsdThoroughfareSequenceDependentThoroughfare instance as the single argument. Then calls the Walk() method on 6/7 embed(s) and 0/0 field(s) belonging to this TxsdThoroughfareSequenceDependentThoroughfare instance.
+func (me *TxsdThoroughfareSequenceDependentThoroughfare) Walk() (err error) {
+	if fn := WalkHandlers.TxsdThoroughfareSequenceDependentThoroughfare; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_.Walk()
-	me.XsdGoPkgHasElem_PostalCode.Walk()
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	me.XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_.Walk()
-	me.XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_.Walk()
-	me.XsdGoPkgHasElem_PostBox.Walk()
-	me.XsdGoPkgHasElem_Premise.Walk()
-	me.XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_.Walk()
-	me.XsdGoPkgHasElem_PostalRoutechoicesequenceDependentLocalityTypeschema_PostalRoute_TPostalRouteType_.Walk()
-	me.XsdGoPkgHasElem_PostOffice.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-type XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_ struct {
-	//	Dependent localities are Districts within cities/towns, locality divisions, postal
-	//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
-	DependentLocality *TDependentLocalityType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentLocality"`
+type XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_ struct {
+	//	DependentThroughfare is related to a street; occurs in GB, IE, ES, PT
+	DependentThoroughfare *TxsdThoroughfareSequenceDependentThoroughfare `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfare"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_ instance.
-func (me *XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_
-	if fn != nil {
-		fn(me, true)
+//	If the WalkHandlers.XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_ instance.
+func (me *XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.DependentThoroughfare.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.DependentLocality.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	A container to represent a range of numbers (from x thru y)for a thoroughfare. eg. 1-2 Albert Av
@@ -2931,17 +2444,18 @@ type XsdGoPkgHasAttr_NumberRangeOccurrence_TxsdThoroughfareSequenceChoiceThoroug
 	NumberRangeOccurrence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberRangeOccurrence,attr"`
 }
 
+//	No.12-14 where "No." is before actual street number
+type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeIndicatorOccurrence_ struct {
+	//	No.12-14 where "No." is before actual street number
+	IndicatorOccurrence TxsdPremiseNumberNumberTypeOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
+}
+
 //	Thoroughfare number ranges are odd or even
 type TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType xsdt.Nmtoken
 
-//	Since TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType is just a simple String type, this merely returns the current string value.
-func (me TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType) String() string {
-	return xsdt.Nmtoken(me).String()
-}
-
-//	This convenience method just performs a simple type conversion to TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType's alias type xsdt.Nmtoken.
-func (me TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType) ToXsdtNmtoken() xsdt.Nmtoken {
-	return xsdt.Nmtoken(me)
+//	Returns true if the value of this enumerated TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType is "Even".
+func (me TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType) IsEven() bool {
+	return me == "Even"
 }
 
 //	Since TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType is just a simple String type, this merely sets the current value from the specified string.
@@ -2954,9 +2468,14 @@ func (me TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType) IsOdd()
 	return me == "Odd"
 }
 
-//	Returns true if the value of this enumerated TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType is "Even".
-func (me TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType) IsEven() bool {
-	return me == "Even"
+//	This convenience method just performs a simple type conversion to TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType's alias type xsdt.Nmtoken.
+func (me TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType) ToXsdtNmtoken() xsdt.Nmtoken {
+	return xsdt.Nmtoken(me)
+}
+
+//	Since TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType is just a simple String type, this merely returns the current string value.
+func (me TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType) String() string {
+	return xsdt.Nmtoken(me).String()
 }
 
 type XsdGoPkgHasAttr_RangeType_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType_ struct {
@@ -2964,189 +2483,213 @@ type XsdGoPkgHasAttr_RangeType_TxsdThoroughfareSequenceChoiceThoroughfareNumberR
 	RangeType TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 RangeType,attr"`
 }
 
-//	Ending number in the range
-//	Eg.: 23 Archer street or 25/15 Zero Avenue, etc
-//	12 Archer Street is "Single" and 12-14 Archer Street is "Range"
-type XsdGoPkgHasAttr_NumberType_TxsdThoroughfareNumberNumberType_ struct {
-	//	12 Archer Street is "Single" and 12-14 Archer Street is "Range"
-	NumberType TxsdPremiseNumberNumberType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberType,attr"`
+//	Starting number in the range
+//	Suffix after the number. A in 12A Archer Street
+type XsdGoPkgHasElems_ThoroughfareNumberSuffix struct {
+	//	Suffix after the number. A in 12A Archer Street
+	ThoroughfareNumberSuffixs []*TxsdPremiseNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberSuffix"`
 }
 
-//	No.12 where "No." is before actual street number
-type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdThoroughfareNumberIndicatorOccurrence_ struct {
-	//	No.12 where "No." is before actual street number
-	IndicatorOccurrence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
+//	If the WalkHandlers.XsdGoPkgHasElems_ThoroughfareNumberSuffix function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ThoroughfareNumberSuffix instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ThoroughfareNumberSuffix instance.
+func (me *XsdGoPkgHasElems_ThoroughfareNumberSuffix) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_ThoroughfareNumberSuffix; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.ThoroughfareNumberSuffixs {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
 }
 
-//	23 Archer St, Archer Street 23, St Archer 23
-type XsdGoPkgHasAttr_NumberOccurrence_TxsdThoroughfareNumberNumberOccurrence_ struct {
-	//	23 Archer St, Archer Street 23, St Archer 23
-	NumberOccurrence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeNumberRangeOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NumberOccurrence,attr"`
+//	Prefix before the number. A in A12 Archer Street
+type XsdGoPkgHasElems_ThoroughfareNumberPrefix struct {
+	//	Prefix before the number. A in A12 Archer Street
+	ThoroughfareNumberPrefixs []*TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberPrefix"`
 }
 
-type TxsdThoroughfareNumber struct {
-	XsdGoPkgHasAttr_Type_XsdtString_
+//	If the WalkHandlers.XsdGoPkgHasElems_ThoroughfareNumberPrefix function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ThoroughfareNumberPrefix instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ThoroughfareNumberPrefix instance.
+func (me *XsdGoPkgHasElems_ThoroughfareNumberPrefix) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_ThoroughfareNumberPrefix; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.ThoroughfareNumberPrefixs {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
 
+type TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom struct {
 	XsdGoPkgHasCdata
 
-	//	12 Archer Street is "Single" and 12-14 Archer Street is "Range"
-	XsdGoPkgHasAttr_NumberType_TxsdThoroughfareNumberNumberType_
-
-	//	No.12 where "No." is before actual street number
-	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdThoroughfareNumberIndicatorOccurrence_
-
 	XsdGoPkgHasAtts_GrPostal
 
-	//	23 Archer St, Archer Street 23, St Archer 23
-	XsdGoPkgHasAttr_NumberOccurrence_TxsdThoroughfareNumberNumberOccurrence_
-
-	//	No. in Street No.12 or "#" in Street # 12, etc.
-	XsdGoPkgHasAttr_Indicator_XsdtString_
-}
-
-//	If the WalkHandlers.TxsdThoroughfareNumber function is not nil (ie. was set by outside code), calls it with this TxsdThoroughfareNumber instance as the single argument. Then calls the Walk() method on 1/7 embed(s) and 0/0 field(s) belonging to this TxsdThoroughfareNumber instance.
-func (me *TxsdThoroughfareNumber) Walk() {
-	fn := WalkHandlers.TxsdThoroughfareNumber
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElems_ThoroughfareNumber struct {
-	//	Eg.: 23 Archer street or 25/15 Zero Avenue, etc
-	ThoroughfareNumbers []*TxsdThoroughfareNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumber"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ThoroughfareNumber function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ThoroughfareNumber instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ThoroughfareNumber instance.
-func (me *XsdGoPkgHasElems_ThoroughfareNumber) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_ThoroughfareNumber
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.ThoroughfareNumbers {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo struct {
-	XsdGoPkgHasElems_ThoroughfareNumberSuffix
-
-	XsdGoPkgHasAtts_GrPostal
-
-	XsdGoPkgHasElems_ThoroughfareNumberPrefix
+	XsdGoPkgHasElems_AddressLine
 
 	XsdGoPkgHasElems_ThoroughfareNumber
 
-	XsdGoPkgHasCdata
+	XsdGoPkgHasElems_ThoroughfareNumberSuffix
 
-	XsdGoPkgHasElems_AddressLine
+	XsdGoPkgHasElems_ThoroughfareNumberPrefix
 }
 
-//	If the WalkHandlers.TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo function is not nil (ie. was set by outside code), calls it with this TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo instance as the single argument. Then calls the Walk() method on 5/6 embed(s) and 0/0 field(s) belonging to this TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo instance.
-func (me *TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo) Walk() {
-	fn := WalkHandlers.TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo
-	if fn != nil {
-		fn(me, true)
+//	If the WalkHandlers.TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom function is not nil (ie. was set by outside code), calls it with this TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom instance as the single argument. Then calls the Walk() method on 5/6 embed(s) and 0/0 field(s) belonging to this TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom instance.
+func (me *TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom) Walk() (err error) {
+	if fn := WalkHandlers.TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_ThoroughfareNumber.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_ThoroughfareNumberSuffix.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_ThoroughfareNumberPrefix.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasCdata.Walk()
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	me.XsdGoPkgHasElems_ThoroughfareNumberSuffix.Walk()
-	me.XsdGoPkgHasElems_ThoroughfareNumberPrefix.Walk()
-	me.XsdGoPkgHasElems_ThoroughfareNumber.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-type XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_ struct {
-	//	Ending number in the range
-	ThoroughfareNumberTo *TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberTo"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_ instance.
-func (me *XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.ThoroughfareNumberTo.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Starting number in the range
 type XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_ struct {
 	//	Starting number in the range
-	ThoroughfareNumberFrom *TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberFrom"`
+	ThoroughfareNumberFrom *TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberFrom"`
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_ instance.
-func (me *XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.ThoroughfareNumberFrom.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.ThoroughfareNumberFrom.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-//	No.12-14 where "No." is before actual street number
-type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeIndicatorOccurrence_ struct {
-	//	No.12-14 where "No." is before actual street number
-	IndicatorOccurrence TxsdPremiseSequenceChoiceChoicePremiseNumberRangeIndicatorOccurence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
+//	Ending number in the range
+type XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_ struct {
+	//	Ending number in the range
+	ThoroughfareNumberTo *TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberTo"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_ instance.
+func (me *XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.ThoroughfareNumberTo.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
 }
 
 type TxsdThoroughfareSequenceChoiceThoroughfareNumberRange struct {
+	//	Thoroughfare number ranges are odd or even
+	XsdGoPkgHasAttr_RangeType_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType_
+
 	//	Starting number in the range
 	XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_
 
-	//	No.12-14 where "No." is before actual street number
-	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeIndicatorOccurrence_
-
 	XsdGoPkgHasAttr_Type_XsdtString_
-
-	XsdGoPkgHasElems_AddressLine
-
-	//	"No." No.12-13
-	XsdGoPkgHasAttr_Indicator_XsdtString_
 
 	//	"-" in 12-14  or "Thru" in 12 Thru 14 etc.
 	XsdGoPkgHasAttr_Separator_XsdtString_
 
 	XsdGoPkgHasAtts_GrPostal
 
+	//	Ending number in the range
+	XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_
+
+	//	"No." No.12-13
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
 	//	23-25 Archer St, where number appears before name
 	XsdGoPkgHasAttr_NumberRangeOccurrence_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeNumberRangeOccurrence_
 
-	//	Thoroughfare number ranges are odd or even
-	XsdGoPkgHasAttr_RangeType_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeRangeType_
+	XsdGoPkgHasElems_AddressLine
 
-	//	Ending number in the range
-	XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_
+	//	No.12-14 where "No." is before actual street number
+	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeIndicatorOccurrence_
 }
 
 //	If the WalkHandlers.TxsdThoroughfareSequenceChoiceThoroughfareNumberRange function is not nil (ie. was set by outside code), calls it with this TxsdThoroughfareSequenceChoiceThoroughfareNumberRange instance as the single argument. Then calls the Walk() method on 3/10 embed(s) and 0/0 field(s) belonging to this TxsdThoroughfareSequenceChoiceThoroughfareNumberRange instance.
-func (me *TxsdThoroughfareSequenceChoiceThoroughfareNumberRange) Walk() {
-	fn := WalkHandlers.TxsdThoroughfareSequenceChoiceThoroughfareNumberRange
-	if fn != nil {
-		fn(me, true)
+func (me *TxsdThoroughfareSequenceChoiceThoroughfareNumberRange) Walk() (err error) {
+	if fn := WalkHandlers.TxsdThoroughfareSequenceChoiceThoroughfareNumberRange; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_.Walk()
-	me.XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_.Walk()
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_ struct {
@@ -3155,100 +2698,1201 @@ type XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_Th
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_ instance.
-func (me *XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.ThoroughfareNumberRanges {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	for _, x := range me.ThoroughfareNumberRanges {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-type TxsdThoroughfare struct {
-	//	Appears after the thoroughfare name. Ed. British: Baker Lane, where Lane is the trailing type.
-	XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_
+//	Dependent localities are Districts within cities/towns, locality divisions, postal
+//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
+//	Specification of a postbox like mail delivery point. Only a single postbox number can be specified. Examples of postboxes are POBox, free mail numbers, etc.
+//	Specification of the suffix of the post box number. eg. A in POBox:123A
+type TxsdPostBoxSequencePostBoxNumberSuffix struct {
+	XsdGoPkgHasCdata
 
-	XsdGoPkgHasElems_ThoroughfareNumberSuffix
+	XsdGoPkgHasAtts_GrPostal
+
+	//	12-A where 12 is number and A is suffix and "-" is the separator
+	XsdGoPkgHasAttr_NumberSuffixSeparator_XsdtString_
+}
+
+//	If the WalkHandlers.TxsdPostBoxSequencePostBoxNumberSuffix function is not nil (ie. was set by outside code), calls it with this TxsdPostBoxSequencePostBoxNumberSuffix instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TxsdPostBoxSequencePostBoxNumberSuffix instance.
+func (me *TxsdPostBoxSequencePostBoxNumberSuffix) Walk() (err error) {
+	if fn := WalkHandlers.TxsdPostBoxSequencePostBoxNumberSuffix; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_ struct {
+	//	Specification of the suffix of the post box number. eg. A in POBox:123A
+	PostBoxNumberSuffix *TxsdPostBoxSequencePostBoxNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBoxNumberSuffix"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_ instance.
+func (me *XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PostBoxNumberSuffix.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Specification of the number of a postbox
+type XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_ struct {
+	//	Specification of the number of a postbox
+	PostBoxNumber *TxsdPostalCodeSequencePostTownSequencePostTownSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBoxNumber"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_ instance.
+func (me *XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PostBoxNumber.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Some countries like USA have POBox as 12345-123
+type TxsdPostBoxSequencePostBoxNumberExtension struct {
+	//	"-" is the NumberExtensionSeparator in POBOX:12345-123
+	XsdGoPkgHasAttr_NumberExtensionSeparator_XsdtString_
+
+	XsdGoPkgHasCdata
+}
+
+//	If the WalkHandlers.TxsdPostBoxSequencePostBoxNumberExtension function is not nil (ie. was set by outside code), calls it with this TxsdPostBoxSequencePostBoxNumberExtension instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TxsdPostBoxSequencePostBoxNumberExtension instance.
+func (me *TxsdPostBoxSequencePostBoxNumberExtension) Walk() (err error) {
+	if fn := WalkHandlers.TxsdPostBoxSequencePostBoxNumberExtension; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_ struct {
+	//	Some countries like USA have POBox as 12345-123
+	PostBoxNumberExtension *TxsdPostBoxSequencePostBoxNumberExtension `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBoxNumberExtension"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_ instance.
+func (me *XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PostBoxNumberExtension.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Specification of the prefix of the post box number. eg. A in POBox:A-123
+type TxsdPostBoxSequencePostBoxNumberPrefix struct {
+	XsdGoPkgHasCdata
+
+	//	A-12 where 12 is number and A is prefix and "-" is the separator
+	XsdGoPkgHasAttr_NumberPrefixSeparator_XsdtString_
+
+	XsdGoPkgHasAtts_GrPostal
+}
+
+//	If the WalkHandlers.TxsdPostBoxSequencePostBoxNumberPrefix function is not nil (ie. was set by outside code), calls it with this TxsdPostBoxSequencePostBoxNumberPrefix instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TxsdPostBoxSequencePostBoxNumberPrefix instance.
+func (me *TxsdPostBoxSequencePostBoxNumberPrefix) Walk() (err error) {
+	if fn := WalkHandlers.TxsdPostBoxSequencePostBoxNumberPrefix; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_ struct {
+	//	Specification of the prefix of the post box number. eg. A in POBox:A-123
+	PostBoxNumberPrefix *TxsdPostBoxSequencePostBoxNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBoxNumberPrefix"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_ instance.
+func (me *XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PostBoxNumberPrefix.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TxsdPostBox struct {
+	//	Specification of the suffix of the post box number. eg. A in POBox:123A
+	XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_
+
+	//	Specification of the number of a postbox
+	XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_
 
 	XsdGoPkgHasElem_PostalCode
 
+	//	Some countries like USA have POBox as 12345-123
+	XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_
+
+	//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from
+	//	a large mail user address, which contains no street.
+	XsdGoPkgHasElem_FirmchoicesequencePremiseschema_Firm_TFirmType_
+
+	//	LOCKED BAG NO:1234 where the Indicator is NO: and Type is LOCKED BAG
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+	//	Specification of the prefix of the post box number. eg. A in POBox:A-123
+	XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_
+
+	//	Possible values are, not limited to: POBox and Freepost.
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasElems_AddressLine
+}
+
+//	If the WalkHandlers.TxsdPostBox function is not nil (ie. was set by outside code), calls it with this TxsdPostBox instance as the single argument. Then calls the Walk() method on 7/9 embed(s) and 0/0 field(s) belonging to this TxsdPostBox instance.
+func (me *TxsdPostBox) Walk() (err error) {
+	if fn := WalkHandlers.TxsdPostBox; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostalCode.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_FirmchoicesequencePremiseschema_Firm_TFirmType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_PostBox struct {
+	//	Specification of a postbox like mail delivery point. Only a single postbox number can be specified. Examples of postboxes are POBox, free mail numbers, etc.
+	PostBox *TxsdPostBox `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostBox"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_PostBox function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostBox instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostBox instance.
+func (me *XsdGoPkgHasElem_PostBox) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PostBox; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PostBox.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Specification of a post office. Examples are a rural post office where post is delivered and a post office containing post office boxes.
+//	Specification of the number of the postoffice. Common in rural postoffices
+//	MS occurs before 62 in MS 62
+type XsdGoPkgHasAttr_IndicatorOccurrence_TxsdPostOfficeSequenceChoicePostOfficeNumberIndicatorOccurrence_ struct {
+	//	MS occurs before 62 in MS 62
+	IndicatorOccurrence TxsdPremiseNumberNumberTypeOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IndicatorOccurrence,attr"`
+}
+
+type TxsdPostOfficeSequenceChoicePostOfficeNumber struct {
+	XsdGoPkgHasCdata
+
+	//	MS in MS 62, # in MS # 12, etc.
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+	//	MS occurs before 62 in MS 62
+	XsdGoPkgHasAttr_IndicatorOccurrence_TxsdPostOfficeSequenceChoicePostOfficeNumberIndicatorOccurrence_
+
+	XsdGoPkgHasAtts_GrPostal
+}
+
+//	If the WalkHandlers.TxsdPostOfficeSequenceChoicePostOfficeNumber function is not nil (ie. was set by outside code), calls it with this TxsdPostOfficeSequenceChoicePostOfficeNumber instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdPostOfficeSequenceChoicePostOfficeNumber instance.
+func (me *TxsdPostOfficeSequenceChoicePostOfficeNumber) Walk() (err error) {
+	if fn := WalkHandlers.TxsdPostOfficeSequenceChoicePostOfficeNumber; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_ struct {
+	//	Specification of the number of the postoffice. Common in rural postoffices
+	PostOfficeNumber *TxsdPostOfficeSequenceChoicePostOfficeNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostOfficeNumber"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_ instance.
+func (me *XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PostOfficeNumber.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Specification of the name of the post office. This can be a rural postoffice where post is delivered or a post office containing post office boxes.
+type XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_ struct {
+	//	Specification of the name of the post office. This can be a rural postoffice where post is delivered or a post office containing post office boxes.
+	PostOfficeNames []*ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostOfficeName"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_ instance.
+func (me *XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.PostOfficeNames {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	A Postal van is specific for a route as in Is`rael, Rural route
+//	Name of the Postal Route
+type XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_ struct {
+	//	Name of the Postal Route
+	PostalRouteNames []*ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalRouteName"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_ instance.
+func (me *XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.PostalRouteNames {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Number of the Postal Route
+type XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_ struct {
+	//	Number of the Postal Route
+	PostalRouteNumber *TxsdPostalCodeSequencePostTownSequencePostTownSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalRouteNumber"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_ instance.
+func (me *XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PostalRouteNumber.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TPostalRouteType struct {
+	//	Number of the Postal Route
+	XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_
+
+	XsdGoPkgHasElem_PostBox
+
+	//	Name of the Postal Route
+	XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_
+
+	XsdGoPkgHasElems_AddressLine
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+}
+
+//	If the WalkHandlers.TPostalRouteType function is not nil (ie. was set by outside code), calls it with this TPostalRouteType instance as the single argument. Then calls the Walk() method on 4/5 embed(s) and 0/0 field(s) belonging to this TPostalRouteType instance.
+func (me *TPostalRouteType) Walk() (err error) {
+	if fn := WalkHandlers.TPostalRouteType; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostBox.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_PostalRoutesequencePostOfficeschema_PostalRoute_TPostalRouteType_ struct {
+	//	A Postal van is specific for a route as in Is`rael, Rural route
+	PostalRoute *TPostalRouteType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalRoute"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_PostalRoutesequencePostOfficeschema_PostalRoute_TPostalRouteType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostalRoutesequencePostOfficeschema_PostalRoute_TPostalRouteType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostalRoutesequencePostOfficeschema_PostalRoute_TPostalRouteType_ instance.
+func (me *XsdGoPkgHasElem_PostalRoutesequencePostOfficeschema_PostalRoute_TPostalRouteType_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PostalRoutesequencePostOfficeschema_PostalRoute_TPostalRouteType_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PostalRoute.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TxsdPostOffice struct {
+	XsdGoPkgHasElem_PostBox
+
+	//	A Postal van is specific for a route as in Is`rael, Rural route
+	XsdGoPkgHasElem_PostalRoutesequencePostOfficeschema_PostalRoute_TPostalRouteType_
+
+	XsdGoPkgHasElem_PostalCode
+
+	XsdGoPkgHasElems_AddressLine
+
+	//	Specification of the number of the postoffice. Common in rural postoffices
+	XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_
+
+	//	Specification of the name of the post office. This can be a rural postoffice where post is delivered or a post office containing post office boxes.
+	XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_
+
+	//	Could be a Mobile Postoffice Van as in Isreal
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	//	eg. Kottivakkam (P.O) here (P.O) is the Indicator
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+}
+
+//	If the WalkHandlers.TxsdPostOffice function is not nil (ie. was set by outside code), calls it with this TxsdPostOffice instance as the single argument. Then calls the Walk() method on 6/8 embed(s) and 0/0 field(s) belonging to this TxsdPostOffice instance.
+func (me *TxsdPostOffice) Walk() (err error) {
+	if fn := WalkHandlers.TxsdPostOffice; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElem_PostBox.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostalRoutesequencePostOfficeschema_PostalRoute_TPostalRouteType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostalCode.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_PostOffice struct {
+	//	Specification of a post office. Examples are a rural post office where post is delivered and a post office containing post office boxes.
+	PostOffice *TxsdPostOffice `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostOffice"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_PostOffice function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostOffice instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostOffice instance.
+func (me *XsdGoPkgHasElem_PostOffice) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PostOffice; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PostOffice.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Name of the dependent locality
+type XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_ struct {
+	//	Name of the dependent locality
+	DependentLocalityNames []*ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentLocalityName"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_ instance.
+func (me *XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.DependentLocalityNames {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Specification of a large mail user address. Examples of large mail users are postal companies, companies in France with a cedex number, hospitals and airports with their own post code. Large mail user addresses do not have a street name with premise name or premise number in countries like Netherlands. But they have a POBox and street also in countries like France
+//	Name of the large mail user. eg. Smith Ford International airport
+type TxsdLargeMailUserTypeSequenceLargeMailUserName struct {
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Code_XsdtString_
+
+	//	Airport, Hospital, etc
+	XsdGoPkgHasAttr_Type_XsdtString_
+}
+
+//	If the WalkHandlers.TxsdLargeMailUserTypeSequenceLargeMailUserName function is not nil (ie. was set by outside code), calls it with this TxsdLargeMailUserTypeSequenceLargeMailUserName instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TxsdLargeMailUserTypeSequenceLargeMailUserName instance.
+func (me *TxsdLargeMailUserTypeSequenceLargeMailUserName) Walk() (err error) {
+	if fn := WalkHandlers.TxsdLargeMailUserTypeSequenceLargeMailUserName; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_ struct {
+	//	Name of the large mail user. eg. Smith Ford International airport
+	LargeMailUserNames []*TxsdLargeMailUserTypeSequenceLargeMailUserName `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 LargeMailUserName"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_ instance.
+func (me *XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.LargeMailUserNames {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Specification of the identification number of a large mail user. An example are the Cedex codes in France.
+type TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier struct {
+	//	CEDEX Code
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	//	eg. Building 429 in which Building is the Indicator
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_GrPostal
+}
+
+//	If the WalkHandlers.TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier function is not nil (ie. was set by outside code), calls it with this TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier instance.
+func (me *TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier) Walk() (err error) {
+	if fn := WalkHandlers.TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_ struct {
+	//	Specification of the identification number of a large mail user. An example are the Cedex codes in France.
+	LargeMailUserIdentifier *TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 LargeMailUserIdentifier"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_ instance.
+func (me *XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.LargeMailUserIdentifier.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Subdivision in the firm: School of Physics at Victoria University (School of Physics is the department)
+type XsdGoPkgHasElem_Department struct {
+	//	Subdivision in the firm: School of Physics at Victoria University (School of Physics is the department)
+	Department *TxsdDepartment `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Department"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Department function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Department instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Department instance.
+func (me *XsdGoPkgHasElem_Department) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Department; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Department.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TLargeMailUserType struct {
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasElem_PostBox
+
+	XsdGoPkgHasElems_AddressLine
+
+	//	Name of the large mail user. eg. Smith Ford International airport
+	XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_
+
+	//	Name of the building
+	XsdGoPkgHasElems_BuildingNamesequenceSubPremiseTypeschema_BuildingName_TBuildingNameType_
+
+	//	Specification of the identification number of a large mail user. An example are the Cedex codes in France.
+	XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_
+
+	XsdGoPkgHasElem_PostalCode
+
+	XsdGoPkgHasElem_Department
+
+	XsdGoPkgHasElem_Thoroughfare
+}
+
+//	If the WalkHandlers.TLargeMailUserType function is not nil (ie. was set by outside code), calls it with this TLargeMailUserType instance as the single argument. Then calls the Walk() method on 7/9 embed(s) and 0/0 field(s) belonging to this TLargeMailUserType instance.
+func (me *TLargeMailUserType) Walk() (err error) {
+	if fn := WalkHandlers.TLargeMailUserType; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElem_PostBox.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_BuildingNamesequenceSubPremiseTypeschema_BuildingName_TBuildingNameType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostalCode.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Department.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_ struct {
+	//	Specification of a large mail user address. Examples of large mail users are postal companies, companies in France with a cedex number, hospitals and airports with their own post code. Large mail user addresses do not have a street name with premise name or premise number in countries like Netherlands. But they have a POBox and street also in countries like France
+	LargeMailUser *TLargeMailUserType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 LargeMailUser"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_ instance.
+func (me *XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.LargeMailUser.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Number of the dependent locality. Some areas are numbered. Eg. SECTOR 5 in a Suburb as in India or SOI SUKUMVIT 10 as in Thailand
+//	Eg. SECTOR occurs before 5 in SECTOR 5
+type XsdGoPkgHasAttr_NameNumberOccurrence_TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence_ struct {
+	//	Eg. SECTOR occurs before 5 in SECTOR 5
+	NameNumberOccurrence TxsdPremiseNumberNumberTypeOccurrence `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 NameNumberOccurrence,attr"`
+}
+
+type TxsdDependentLocalityTypeSequenceDependentLocalityNumber struct {
+	//	Eg. SECTOR occurs before 5 in SECTOR 5
+	XsdGoPkgHasAttr_NameNumberOccurrence_TxsdDependentLocalityTypeSequenceDependentLocalityNumberNameNumberOccurrence_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAtts_GrPostal
+}
+
+//	If the WalkHandlers.TxsdDependentLocalityTypeSequenceDependentLocalityNumber function is not nil (ie. was set by outside code), calls it with this TxsdDependentLocalityTypeSequenceDependentLocalityNumber instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TxsdDependentLocalityTypeSequenceDependentLocalityNumber instance.
+func (me *TxsdDependentLocalityTypeSequenceDependentLocalityNumber) Walk() (err error) {
+	if fn := WalkHandlers.TxsdDependentLocalityTypeSequenceDependentLocalityNumber; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_ struct {
+	//	Number of the dependent locality. Some areas are numbered. Eg. SECTOR 5 in a Suburb as in India or SOI SUKUMVIT 10 as in Thailand
+	DependentLocalityNumber *TxsdDependentLocalityTypeSequenceDependentLocalityNumber `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentLocalityNumber"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_ instance.
+func (me *XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.DependentLocalityNumber.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Dependent localities are Districts within cities/towns, locality divisions, postal
+//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
+type XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_ struct {
+	//	Dependent localities are Districts within cities/towns, locality divisions, postal
+	//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
+	DependentLocality *TDependentLocalityType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentLocality"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_ instance.
+func (me *XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	"VIA" as in Hill Top VIA Parish where Parish is a locality and Hill Top is a dependent locality
+type XsdGoPkgHasAttr_Connector_XsdtString_ struct {
+	//	"VIA" as in Hill Top VIA Parish where Parish is a locality and Hill Top is a dependent locality
+	Connector xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Connector,attr"`
+}
+
+//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
+type XsdGoPkgHasAttr_UsageType_XsdtString_ struct {
+	//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
+	UsageType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 UsageType,attr"`
+}
+
+type TDependentLocalityType struct {
+	XsdGoPkgHasElem_PostBox
+
+	XsdGoPkgHasElem_PostOffice
+
+	XsdGoPkgHasElem_PostalCode
+
+	//	Name of the dependent locality
+	XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_
+
+	//	City or IndustrialEstate, etc
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	//	Specification of a large mail user address. Examples of large mail users are postal companies, companies in France with a cedex number, hospitals and airports with their own post code. Large mail user addresses do not have a street name with premise name or premise number in countries like Netherlands. But they have a POBox and street also in countries like France
+	XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_
+
+	//	Number of the dependent locality. Some areas are numbered. Eg. SECTOR 5 in a Suburb as in India or SOI SUKUMVIT 10 as in Thailand
+	XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_
+
+	//	Dependent localities are Districts within cities/towns, locality divisions, postal
+	//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
+	XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_
+
+	//	A Postal van is specific for a route as in Is`rael, Rural route
+	XsdGoPkgHasElem_PostalRoutesequencePostOfficeschema_PostalRoute_TPostalRouteType_
+
+	XsdGoPkgHasElem_Thoroughfare
+
+	//	"VIA" as in Hill Top VIA Parish where Parish is a locality and Hill Top is a dependent locality
+	XsdGoPkgHasAttr_Connector_XsdtString_
+
+	//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
+	XsdGoPkgHasAttr_UsageType_XsdtString_
+
+	XsdGoPkgHasElem_Premise
+
+	XsdGoPkgHasElems_AddressLine
+
+	//	Eg. Erode (Dist) where (Dist) is the Indicator
+	XsdGoPkgHasAttr_Indicator_XsdtString_
+}
+
+//	If the WalkHandlers.TDependentLocalityType function is not nil (ie. was set by outside code), calls it with this TDependentLocalityType instance as the single argument. Then calls the Walk() method on 10/15 embed(s) and 0/0 field(s) belonging to this TDependentLocalityType instance.
+func (me *TDependentLocalityType) Walk() (err error) {
+	if fn := WalkHandlers.TDependentLocalityType; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElem_PostalRoutesequencePostOfficeschema_PostalRoute_TPostalRouteType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Premise.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostBox.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostOffice.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostalCode.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_ struct {
+	//	Dependent localities are Districts within cities/towns, locality divisions, postal
+	//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
+	DependentLocality *TDependentLocalityType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentLocality"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_ instance.
+func (me *XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.DependentLocality.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Corner of, Intersection of
+type XsdGoPkgHasAttr_DependentThoroughfaresIndicator_XsdtString_ struct {
+	//	Corner of, Intersection of
+	DependentThoroughfaresIndicator xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 DependentThoroughfaresIndicator,attr"`
+}
+
+type TxsdThoroughfare struct {
 	//	DependentThroughfare is related to a street; occurs in GB, IE, ES, PT
 	XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_
 
-	//	Corner of Street1 AND Street 2 where AND is the Connector
-	XsdGoPkgHasAttr_DependentThoroughfaresConnector_XsdtString_
+	//	A container to represent a range of numbers (from x thru y)for a thoroughfare. eg. 1-2 Albert Av
+	XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_
 
-	//	Does this thoroughfare have a a dependent thoroughfare? Corner of street X, etc
-	XsdGoPkgHasAttr_DependentThoroughfares_TxsdThoroughfareDependentThoroughfares_
+	XsdGoPkgHasElems_ThoroughfareNumberPrefix
+
+	XsdGoPkgHasElem_PostalCode
+
+	XsdGoPkgHasElems_ThoroughfareNumberSuffix
+
+	//	221-bis Baker Street North, where North is the post-direction. The post-direction appears after the name.
+	XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_
+
+	//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from
+	//	a large mail user address, which contains no street.
+	XsdGoPkgHasElem_FirmchoicesequencePremiseschema_Firm_TFirmType_
+
+	//	Specification of the name of a Thoroughfare (also dependant street name): street name, canal name, etc.
+	XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_
 
 	//	Dependent localities are Districts within cities/towns, locality divisions, postal
 	//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
 	XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_
 
-	XsdGoPkgHasElem_Premise
-
-	//	221-bis Baker Street North, where North is the post-direction. The post-direction appears after the name.
-	XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_
-
-	//	Appears before the thoroughfare name. Ed. Spanish: Avenida Aurora, where Avenida is the leading type / French: Rue Moliere, where Rue is the leading type.
-	XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_
-
-	//	A container to represent a range of numbers (from x thru y)for a thoroughfare. eg. 1-2 Albert Av
-	XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_
-
-	XsdGoPkgHasElems_ThoroughfareNumber
-
-	//	Specification of the name of a Thoroughfare (also dependant street name): street name, canal name, etc.
-	XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_
-
-	XsdGoPkgHasElems_AddressLine
-
-	XsdGoPkgHasElems_ThoroughfareNumberPrefix
-
-	//	STS in GEORGE and ADELAIDE STS, RDS IN A and B RDS, etc. Use only when both the street types are the same
-	XsdGoPkgHasAttr_DependentThoroughfaresType_XsdtString_
+	//	Corner of, Intersection of
+	XsdGoPkgHasAttr_DependentThoroughfaresIndicator_XsdtString_
 
 	//	North Baker Street, where North is the pre-direction. The direction appears before the name.
 	XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_
 
-	//	Specification of a firm, company, organization, etc. It can be specified as part of an address that contains a street or a postbox. It is therefore different from
-	//	a large mail user address, which contains no street.
-	XsdGoPkgHasElem_FirmchoicesequenceThoroughfareschema_Firm_TFirmType_
+	//	Appears before the thoroughfare name. Ed. Spanish: Avenida Aurora, where Avenida is the leading type / French: Rue Moliere, where Rue is the leading type.
+	XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_
 
-	//	Corner of, Intersection of
-	XsdGoPkgHasAttr_DependentThoroughfaresIndicator_XsdtString_
+	//	Appears after the thoroughfare name. Ed. British: Baker Lane, where Lane is the trailing type.
+	XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_
 
 	XsdGoPkgHasAttr_Type_XsdtString_
+
+	//	STS in GEORGE and ADELAIDE STS, RDS IN A and B RDS, etc. Use only when both the street types are the same
+	XsdGoPkgHasAttr_DependentThoroughfaresType_XsdtString_
+
+	//	Does this thoroughfare have a a dependent thoroughfare? Corner of street X, etc
+	XsdGoPkgHasAttr_DependentThoroughfares_TxsdThoroughfareDependentThoroughfares_
+
+	//	Corner of Street1 AND Street 2 where AND is the Connector
+	XsdGoPkgHasAttr_DependentThoroughfaresConnector_XsdtString_
+
+	XsdGoPkgHasElem_Premise
+
+	XsdGoPkgHasElems_AddressLine
+
+	XsdGoPkgHasElems_ThoroughfareNumber
 }
 
 //	If the WalkHandlers.TxsdThoroughfare function is not nil (ie. was set by outside code), calls it with this TxsdThoroughfare instance as the single argument. Then calls the Walk() method on 15/20 embed(s) and 0/0 field(s) belonging to this TxsdThoroughfare instance.
-func (me *TxsdThoroughfare) Walk() {
-	fn := WalkHandlers.TxsdThoroughfare
-	if fn != nil {
-		fn(me, true)
+func (me *TxsdThoroughfare) Walk() (err error) {
+	if fn := WalkHandlers.TxsdThoroughfare; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElems_ThoroughfareNumberSuffix.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_FirmchoicesequencePremiseschema_Firm_TFirmType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Premise.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_ThoroughfareNumber.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_ThoroughfareNumberPrefix.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostalCode.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasElem_PostalCode.Walk()
-	me.XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_.Walk()
-	me.XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_.Walk()
-	me.XsdGoPkgHasElem_Premise.Walk()
-	me.XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_.Walk()
-	me.XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_.Walk()
-	me.XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_.Walk()
-	me.XsdGoPkgHasElems_ThoroughfareNumber.Walk()
-	me.XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_.Walk()
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	me.XsdGoPkgHasElems_ThoroughfareNumberPrefix.Walk()
-	me.XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_.Walk()
-	me.XsdGoPkgHasElem_FirmchoicesequenceThoroughfareschema_Firm_TFirmType_.Walk()
-	me.XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_.Walk()
-	me.XsdGoPkgHasElems_ThoroughfareNumberSuffix.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type XsdGoPkgHasElem_Thoroughfare struct {
@@ -3258,93 +3902,136 @@ type XsdGoPkgHasElem_Thoroughfare struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Thoroughfare function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Thoroughfare instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Thoroughfare instance.
-func (me *XsdGoPkgHasElem_Thoroughfare) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_Thoroughfare
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_Thoroughfare) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Thoroughfare; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Thoroughfare.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.Thoroughfare.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
+//	Examples of administrative areas are provinces counties, special regions (such as "Rijnmond"), etc.
 //	Locality is one level lower than adminisstrative area. Eg.: cities, reservations and any other built-up areas.
 //	Name of the locality
 type XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_ struct {
 	//	Name of the locality
-	LocalityNames []*ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 LocalityName"`
+	LocalityNames []*ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 LocalityName"`
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_ instance.
-func (me *XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.LocalityNames {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	for _, x := range me.LocalityNames {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type TxsdLocality struct {
+	//	Specification of a large mail user address. Examples of large mail users are postal companies, companies in France with a cedex number, hospitals and airports with their own post code. Large mail user addresses do not have a street name with premise name or premise number in countries like Netherlands. But they have a POBox and street also in countries like France
+	XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_
+
 	//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
 	XsdGoPkgHasAttr_UsageType_XsdtString_
 
-	//	Name of the locality
-	XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_
-
-	XsdGoPkgHasElem_PostOffice
+	//	A Postal van is specific for a route as in Is`rael, Rural route
+	XsdGoPkgHasElem_PostalRoutesequencePostOfficeschema_PostalRoute_TPostalRouteType_
 
 	//	Possible values not limited to: City, IndustrialEstate, etc
 	XsdGoPkgHasAttr_Type_XsdtString_
 
 	XsdGoPkgHasElem_Thoroughfare
 
-	//	A Postal van is specific for a route as in Is`rael, Rural route
-	XsdGoPkgHasElem_PostalRoutechoicesequenceDependentLocalityTypeschema_PostalRoute_TPostalRouteType_
+	XsdGoPkgHasElem_PostalCode
 
-	//	Erode (Dist) where (Dist) is the Indicator
-	XsdGoPkgHasAttr_Indicator_XsdtString_
+	XsdGoPkgHasElem_Premise
+
+	XsdGoPkgHasElem_PostBox
+
+	//	Name of the locality
+	XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_
+
+	XsdGoPkgHasElem_PostOffice
 
 	//	Dependent localities are Districts within cities/towns, locality divisions, postal
 	//	divisions of cities, suburbs, etc. DependentLocality is a recursive element, but no nesting deeper than two exists (Locality-DependentLocality-DependentLocality).
 	XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_
 
-	XsdGoPkgHasElem_Premise
+	//	Erode (Dist) where (Dist) is the Indicator
+	XsdGoPkgHasAttr_Indicator_XsdtString_
 
 	XsdGoPkgHasElems_AddressLine
-
-	XsdGoPkgHasElem_PostalCode
-
-	XsdGoPkgHasElem_PostBox
-
-	//	Specification of a large mail user address. Examples of large mail users are postal companies, companies in France with a cedex number, hospitals and airports with their own post code. Large mail user addresses do not have a street name with premise name or premise number in countries like Netherlands. But they have a POBox and street also in countries like France
-	XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_
 }
 
 //	If the WalkHandlers.TxsdLocality function is not nil (ie. was set by outside code), calls it with this TxsdLocality instance as the single argument. Then calls the Walk() method on 10/13 embed(s) and 0/0 field(s) belonging to this TxsdLocality instance.
-func (me *TxsdLocality) Walk() {
-	fn := WalkHandlers.TxsdLocality
-	if fn != nil {
-		fn(me, true)
+func (me *TxsdLocality) Walk() (err error) {
+	if fn := WalkHandlers.TxsdLocality; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElem_Thoroughfare.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostalCode.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Premise.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostBox.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostOffice.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostalRoutesequencePostOfficeschema_PostalRoute_TPostalRouteType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_.Walk()
-	me.XsdGoPkgHasElem_PostOffice.Walk()
-	me.XsdGoPkgHasElem_Thoroughfare.Walk()
-	me.XsdGoPkgHasElem_PostalRoutechoicesequenceDependentLocalityTypeschema_PostalRoute_TPostalRouteType_.Walk()
-	me.XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_.Walk()
-	me.XsdGoPkgHasElem_Premise.Walk()
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	me.XsdGoPkgHasElem_PostalCode.Walk()
-	me.XsdGoPkgHasElem_PostBox.Walk()
-	me.XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type XsdGoPkgHasElem_Locality struct {
@@ -3353,36 +4040,23 @@ type XsdGoPkgHasElem_Locality struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Locality function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Locality instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Locality instance.
-func (me *XsdGoPkgHasElem_Locality) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_Locality
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_Locality) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Locality; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Locality.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.Locality.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Examples of administrative areas are provinces counties, special regions (such as "Rijnmond"), etc.
-//	Name of the administrative area. eg. MI in USA, NSW in Australia
-type XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_ struct {
-	//	Name of the administrative area. eg. MI in USA, NSW in Australia
-	AdministrativeAreaNames []*ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AdministrativeAreaName"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_ instance.
-func (me *XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.AdministrativeAreaNames {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	Specification of a sub-administrative area. An example of a sub-administrative areas is a county. There are two places where the name of an administrative
@@ -3390,59 +4064,83 @@ func (me *XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschem
 //	Name of the sub-administrative area
 type XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_ struct {
 	//	Name of the sub-administrative area
-	SubAdministrativeAreaNames []*ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubAdministrativeAreaName"`
+	SubAdministrativeAreaNames []*ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SubAdministrativeAreaName"`
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_ instance.
-func (me *XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.SubAdministrativeAreaNames {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	for _, x := range me.SubAdministrativeAreaNames {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type TxsdAdministrativeAreaSequenceSubAdministrativeArea struct {
-	XsdGoPkgHasElems_AddressLine
+	XsdGoPkgHasElem_PostalCode
 
-	XsdGoPkgHasElem_PostOffice
+	XsdGoPkgHasElems_AddressLine
 
 	//	Erode (Dist) where (Dist) is the Indicator
 	XsdGoPkgHasAttr_Indicator_XsdtString_
 
-	XsdGoPkgHasElem_Locality
-
-	XsdGoPkgHasElem_PostalCode
-
 	//	Province or State or County or Kanton, etc
 	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasElem_Locality
+
+	//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
+	XsdGoPkgHasAttr_UsageType_XsdtString_
 
 	//	Name of the sub-administrative area
 	XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_
 
-	//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
-	XsdGoPkgHasAttr_UsageType_XsdtString_
+	XsdGoPkgHasElem_PostOffice
 }
 
 //	If the WalkHandlers.TxsdAdministrativeAreaSequenceSubAdministrativeArea function is not nil (ie. was set by outside code), calls it with this TxsdAdministrativeAreaSequenceSubAdministrativeArea instance as the single argument. Then calls the Walk() method on 5/8 embed(s) and 0/0 field(s) belonging to this TxsdAdministrativeAreaSequenceSubAdministrativeArea instance.
-func (me *TxsdAdministrativeAreaSequenceSubAdministrativeArea) Walk() {
-	fn := WalkHandlers.TxsdAdministrativeAreaSequenceSubAdministrativeArea
-	if fn != nil {
-		fn(me, true)
+func (me *TxsdAdministrativeAreaSequenceSubAdministrativeArea) Walk() (err error) {
+	if fn := WalkHandlers.TxsdAdministrativeAreaSequenceSubAdministrativeArea; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElem_Locality.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostOffice.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostalCode.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasElem_PostOffice.Walk()
-	me.XsdGoPkgHasElem_Locality.Walk()
-	me.XsdGoPkgHasElem_PostalCode.Walk()
-	me.XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_.Walk()
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_ struct {
@@ -3452,58 +4150,112 @@ type XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAd
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_ instance.
-func (me *XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.SubAdministrativeArea.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.SubAdministrativeArea.Walk()
-	if fn != nil {
-		fn(me, false)
+	return
+}
+
+//	Name of the administrative area. eg. MI in USA, NSW in Australia
+type XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_ struct {
+	//	Name of the administrative area. eg. MI in USA, NSW in Australia
+	AdministrativeAreaNames []*ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AdministrativeAreaName"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_ instance.
+func (me *XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.AdministrativeAreaNames {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
+	return
 }
 
 type TxsdAdministrativeArea struct {
+	XsdGoPkgHasElem_Locality
+
 	//	Specification of a sub-administrative area. An example of a sub-administrative areas is a county. There are two places where the name of an administrative
 	//	area can be specified and in this case, one becomes sub-administrative area.
 	XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_
 
-	//	Province or State or County or Kanton, etc
-	XsdGoPkgHasAttr_Type_XsdtString_
-
-	//	Name of the administrative area. eg. MI in USA, NSW in Australia
-	XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_
+	XsdGoPkgHasElem_PostalCode
 
 	//	Erode (Dist) where (Dist) is the Indicator
 	XsdGoPkgHasAttr_Indicator_XsdtString_
 
-	XsdGoPkgHasElem_PostalCode
-
-	XsdGoPkgHasElem_PostOffice
-
-	XsdGoPkgHasElem_Locality
-
 	//	Postal or Political - Sometimes locations must be distinguished between postal system, and physical locations as defined by a political system
 	XsdGoPkgHasAttr_UsageType_XsdtString_
 
+	XsdGoPkgHasElem_PostOffice
+
+	//	Name of the administrative area. eg. MI in USA, NSW in Australia
+	XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_
+
 	XsdGoPkgHasElems_AddressLine
+
+	//	Province or State or County or Kanton, etc
+	XsdGoPkgHasAttr_Type_XsdtString_
 }
 
 //	If the WalkHandlers.TxsdAdministrativeArea function is not nil (ie. was set by outside code), calls it with this TxsdAdministrativeArea instance as the single argument. Then calls the Walk() method on 6/9 embed(s) and 0/0 field(s) belonging to this TxsdAdministrativeArea instance.
-func (me *TxsdAdministrativeArea) Walk() {
-	fn := WalkHandlers.TxsdAdministrativeArea
-	if fn != nil {
-		fn(me, true)
+func (me *TxsdAdministrativeArea) Walk() (err error) {
+	if fn := WalkHandlers.TxsdAdministrativeArea; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostalCode.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostOffice.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Locality.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	me.XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_.Walk()
-	me.XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_.Walk()
-	me.XsdGoPkgHasElem_PostalCode.Walk()
-	me.XsdGoPkgHasElem_PostOffice.Walk()
-	me.XsdGoPkgHasElem_Locality.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type XsdGoPkgHasElem_AdministrativeArea struct {
@@ -3512,137 +4264,29 @@ type XsdGoPkgHasElem_AdministrativeArea struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_AdministrativeArea function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AdministrativeArea instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AdministrativeArea instance.
-func (me *XsdGoPkgHasElem_AdministrativeArea) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_AdministrativeArea
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_AdministrativeArea) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_AdministrativeArea; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.AdministrativeArea.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.AdministrativeArea.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-//	A country code according to the specified scheme
-//	Country code scheme possible values, but not limited to: iso.3166-2, iso.3166-3 for two and three character country codes.
-type XsdGoPkgHasAttr_Scheme_XsdtString_ struct {
-	//	Country code scheme possible values, but not limited to: iso.3166-2, iso.3166-3 for two and three character country codes.
-	Scheme xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Scheme,attr"`
-}
-
-type TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode struct {
-	XsdGoPkgHasAtts_GrPostal
-
-	//	Country code scheme possible values, but not limited to: iso.3166-2, iso.3166-3 for two and three character country codes.
-	XsdGoPkgHasAttr_Scheme_XsdtString_
-
-	XsdGoPkgHasCdata
-}
-
-//	If the WalkHandlers.TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode function is not nil (ie. was set by outside code), calls it with this TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode instance.
-func (me *TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode) Walk() {
-	fn := WalkHandlers.TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasCdata.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_ struct {
-	//	A country code according to the specified scheme
-	CountryNameCodes []*TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 CountryNameCode"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_ instance.
-func (me *XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.CountryNameCodes {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Specification of the name of a country.
-type XsdGoPkgHasElems_CountryName struct {
-	//	Specification of the name of a country.
-	CountryNames []*ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 CountryName"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_CountryName function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_CountryName instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_CountryName instance.
-func (me *XsdGoPkgHasElems_CountryName) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_CountryName
-	if fn != nil {
-		fn(me, true)
-	}
-	for _, x := range me.CountryNames {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type TxsdAddressDetailsSequenceChoiceCountry struct {
-	XsdGoPkgHasElem_Thoroughfare
-
-	XsdGoPkgHasElems_AddressLine
-
-	XsdGoPkgHasElem_Locality
-
-	XsdGoPkgHasElem_AdministrativeArea
-
-	//	A country code according to the specified scheme
-	XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_
-
-	XsdGoPkgHasElems_CountryName
-}
-
-//	If the WalkHandlers.TxsdAddressDetailsSequenceChoiceCountry function is not nil (ie. was set by outside code), calls it with this TxsdAddressDetailsSequenceChoiceCountry instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this TxsdAddressDetailsSequenceChoiceCountry instance.
-func (me *TxsdAddressDetailsSequenceChoiceCountry) Walk() {
-	fn := WalkHandlers.TxsdAddressDetailsSequenceChoiceCountry
-	if fn != nil {
-		fn(me, true)
-	}
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	me.XsdGoPkgHasElem_Locality.Walk()
-	me.XsdGoPkgHasElem_AdministrativeArea.Walk()
-	me.XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_.Walk()
-	me.XsdGoPkgHasElems_CountryName.Walk()
-	me.XsdGoPkgHasElem_Thoroughfare.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_ struct {
-	//	Specification of a country
-	Country *TxsdAddressDetailsSequenceChoiceCountry `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Country"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_ instance.
-func (me *XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_
-	if fn != nil {
-		fn(me, true)
-	}
-	me.Country.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Key identifier for the element for not reinforced references from other elements. Not required to be unique for the document to be valid, but application may get confused if not unique. Extend this schema adding unique contraint if needed.
-type XsdGoPkgHasAttr_AddressDetailsKey_XsdtString_ struct {
-	//	Key identifier for the element for not reinforced references from other elements. Not required to be unique for the document to be valid, but application may get confused if not unique. Extend this schema adding unique contraint if needed.
-	AddressDetailsKey xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressDetailsKey,attr"`
+//	Type of address. Example: Postal, residential,business, primary, secondary, etc
+type XsdGoPkgHasAttr_AddressType_XsdtString_ struct {
+	//	Type of address. Example: Postal, residential,business, primary, secondary, etc
+	AddressType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressType,attr"`
 }
 
 //	Start Date of the validity of address
@@ -3651,21 +4295,55 @@ type XsdGoPkgHasAttr_ValidFromDate_XsdtString_ struct {
 	ValidFromDate xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ValidFromDate,attr"`
 }
 
+//	Address as one line of free text
+type XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_ struct {
+	//	Address as one line of free text
+	Address *ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Address"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_ instance.
+func (me *XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Address.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
 //	Container for Address lines
 type TAddressLinesType struct {
 	XsdGoPkgHasElems_AddressLine
 }
 
 //	If the WalkHandlers.TAddressLinesType function is not nil (ie. was set by outside code), calls it with this TAddressLinesType instance as the single argument. Then calls the Walk() method on 1/1 embed(s) and 0/0 field(s) belonging to this TAddressLinesType instance.
-func (me *TAddressLinesType) Walk() {
-	fn := WalkHandlers.TAddressLinesType
-	if fn != nil {
-		fn(me, true)
+func (me *TAddressLinesType) Walk() (err error) {
+	if fn := WalkHandlers.TAddressLinesType; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasElems_AddressLine.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_ struct {
@@ -3674,15 +4352,641 @@ type XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_ instance.
-func (me *XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.AddressLines.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.AddressLines.Walk()
-	if fn != nil {
-		fn(me, false)
+	return
+}
+
+//	Moved, Living, Investment, Deceased, etc..
+type XsdGoPkgHasAttr_CurrentStatus_XsdtString_ struct {
+	//	Moved, Living, Investment, Deceased, etc..
+	CurrentStatus xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 CurrentStatus,attr"`
+}
+
+//	Postal authorities use specific postal service data to expedient delivery of mail
+//	Required for some postal services
+type XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_ struct {
+	//	Required for some postal services
+	KeyLineCode *ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 KeyLineCode"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_ instance.
+func (me *XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.KeyLineCode.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
+	return
+}
+
+//	Longtitude of delivery address
+type XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_ struct {
+	//	Longtitude of delivery address
+	AddressLongitude *ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLongitude"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_ instance.
+func (me *XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.AddressLongitude.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	A unique identifier of an address assigned by postal authorities. Example: DPID in Australia
+//	Type of identifier. eg. DPID as in Australia
+type XsdGoPkgHasAttr_IdentifierType_XsdtString_ struct {
+	//	Type of identifier. eg. DPID as in Australia
+	IdentifierType xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 IdentifierType,attr"`
+}
+
+type TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier struct {
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	//	Type of identifier. eg. DPID as in Australia
+	XsdGoPkgHasAttr_IdentifierType_XsdtString_
+
+	XsdGoPkgHasAtts_GrPostal
+}
+
+//	If the WalkHandlers.TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier function is not nil (ie. was set by outside code), calls it with this TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier instance.
+func (me *TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier) Walk() (err error) {
+	if fn := WalkHandlers.TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_ struct {
+	//	A unique identifier of an address assigned by postal authorities. Example: DPID in Australia
+	AddressIdentifiers []*TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressIdentifier"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_ instance.
+func (me *XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.AddressIdentifiers {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Latitude direction of delivery address;N = North and S = South
+type XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_ struct {
+	//	Latitude direction of delivery address;N = North and S = South
+	AddressLatitudeDirection *ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLatitudeDirection"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_ instance.
+func (me *XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.AddressLatitudeDirection.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Used for sorting addresses. Values may for example be CEDEX 16 (France)
+type TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode struct {
+	//	Specific to postal service
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	XsdGoPkgHasAtts_GrPostal
+}
+
+//	If the WalkHandlers.TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode function is not nil (ie. was set by outside code), calls it with this TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode instance as the single argument. Then calls the Walk() method on 0/2 embed(s) and 0/0 field(s) belonging to this TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode instance.
+func (me *TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode) Walk() (err error) {
+	if fn := WalkHandlers.TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_ struct {
+	//	Used for sorting addresses. Values may for example be CEDEX 16 (France)
+	SortingCode *TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SortingCode"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_ instance.
+func (me *XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.SortingCode.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	any postal service elements not covered by the container can be represented using this element
+type XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_ struct {
+	//	any postal service elements not covered by the container can be represented using this element
+	SupplementaryPostalServiceDatas []*ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 SupplementaryPostalServiceData"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_ instance.
+func (me *XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.SupplementaryPostalServiceDatas {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Directly affects postal service distribution
+type XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_ struct {
+	//	Directly affects postal service distribution
+	EndorsementLineCode *ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 EndorsementLineCode"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_ instance.
+func (me *XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.EndorsementLineCode.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Longtitude direction of delivery address;N=North and S=South
+type XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_ struct {
+	//	Longtitude direction of delivery address;N=North and S=South
+	AddressLongitudeDirection *ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLongitudeDirection"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_ instance.
+func (me *XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.AddressLongitudeDirection.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Latitude of delivery address
+type XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_ struct {
+	//	Latitude of delivery address
+	AddressLatitude *ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLatitude"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_ instance.
+func (me *XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.AddressLatitude.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Required for some postal services
+type XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_ struct {
+	//	Required for some postal services
+	Barcode *ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Barcode"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_ instance.
+func (me *XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Barcode.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TxsdAddressDetailsSequencePostalServiceElements struct {
+	//	USPS, ECMA, UN/PROLIST, etc
+	XsdGoPkgHasAttr_Type_XsdtString_
+
+	//	Used for sorting addresses. Values may for example be CEDEX 16 (France)
+	XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_
+
+	//	any postal service elements not covered by the container can be represented using this element
+	XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_
+
+	//	Directly affects postal service distribution
+	XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_
+
+	//	Longtitude direction of delivery address;N=North and S=South
+	XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_
+
+	//	Latitude of delivery address
+	XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_
+
+	//	Required for some postal services
+	XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_
+
+	//	Required for some postal services
+	XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_
+
+	//	Longtitude of delivery address
+	XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_
+
+	//	A unique identifier of an address assigned by postal authorities. Example: DPID in Australia
+	XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_
+
+	//	Latitude direction of delivery address;N = North and S = South
+	XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_
+}
+
+//	If the WalkHandlers.TxsdAddressDetailsSequencePostalServiceElements function is not nil (ie. was set by outside code), calls it with this TxsdAddressDetailsSequencePostalServiceElements instance as the single argument. Then calls the Walk() method on 10/11 embed(s) and 0/0 field(s) belonging to this TxsdAddressDetailsSequencePostalServiceElements instance.
+func (me *TxsdAddressDetailsSequencePostalServiceElements) Walk() (err error) {
+	if fn := WalkHandlers.TxsdAddressDetailsSequencePostalServiceElements; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_ struct {
+	//	Postal authorities use specific postal service data to expedient delivery of mail
+	PostalServiceElements *TxsdAddressDetailsSequencePostalServiceElements `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PostalServiceElements"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_ instance.
+func (me *XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PostalServiceElements.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Specification of a country
+//	A country code according to the specified scheme
+//	Country code scheme possible values, but not limited to: iso.3166-2, iso.3166-3 for two and three character country codes.
+type XsdGoPkgHasAttr_Scheme_XsdtString_ struct {
+	//	Country code scheme possible values, but not limited to: iso.3166-2, iso.3166-3 for two and three character country codes.
+	Scheme xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Scheme,attr"`
+}
+
+type TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode struct {
+	XsdGoPkgHasCdata
+
+	//	Country code scheme possible values, but not limited to: iso.3166-2, iso.3166-3 for two and three character country codes.
+	XsdGoPkgHasAttr_Scheme_XsdtString_
+
+	XsdGoPkgHasAtts_GrPostal
+}
+
+//	If the WalkHandlers.TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode function is not nil (ie. was set by outside code), calls it with this TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode instance.
+func (me *TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode) Walk() (err error) {
+	if fn := WalkHandlers.TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_ struct {
+	//	A country code according to the specified scheme
+	CountryNameCodes []*TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 CountryNameCode"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_ instance.
+func (me *XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.CountryNameCodes {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Specification of the name of a country.
+type XsdGoPkgHasElems_CountryName struct {
+	//	Specification of the name of a country.
+	CountryNames []*ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 CountryName"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_CountryName function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_CountryName instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_CountryName instance.
+func (me *XsdGoPkgHasElems_CountryName) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_CountryName; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.CountryNames {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TxsdAddressDetailsSequenceChoiceCountry struct {
+	XsdGoPkgHasElem_Locality
+
+	XsdGoPkgHasElems_CountryName
+
+	XsdGoPkgHasElem_AdministrativeArea
+
+	//	A country code according to the specified scheme
+	XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_
+
+	XsdGoPkgHasElems_AddressLine
+
+	XsdGoPkgHasElem_Thoroughfare
+}
+
+//	If the WalkHandlers.TxsdAddressDetailsSequenceChoiceCountry function is not nil (ie. was set by outside code), calls it with this TxsdAddressDetailsSequenceChoiceCountry instance as the single argument. Then calls the Walk() method on 6/6 embed(s) and 0/0 field(s) belonging to this TxsdAddressDetailsSequenceChoiceCountry instance.
+func (me *TxsdAddressDetailsSequenceChoiceCountry) Walk() (err error) {
+	if fn := WalkHandlers.TxsdAddressDetailsSequenceChoiceCountry; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElem_AdministrativeArea.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Thoroughfare.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Locality.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_CountryName.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_ struct {
+	//	Specification of a country
+	Country *TxsdAddressDetailsSequenceChoiceCountry `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Country"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_ instance.
+func (me *XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Country.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	Key identifier for the element for not reinforced references from other elements. Not required to be unique for the document to be valid, but application may get confused if not unique. Extend this schema adding unique contraint if needed.
+type XsdGoPkgHasAttr_AddressDetailsKey_XsdtString_ struct {
+	//	Key identifier for the element for not reinforced references from other elements. Not required to be unique for the document to be valid, but application may get confused if not unique. Extend this schema adding unique contraint if needed.
+	AddressDetailsKey xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressDetailsKey,attr"`
+}
+
+//	Communication, Contact, etc.
+type XsdGoPkgHasAttr_Usage_XsdtString_ struct {
+	//	Communication, Contact, etc.
+	Usage xsdt.String `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 Usage,attr"`
 }
 
 //	End date of the validity of address
@@ -3692,39 +4996,21 @@ type XsdGoPkgHasAttr_ValidToDate_XsdtString_ struct {
 }
 
 type TAddressDetails struct {
-	//	Postal authorities use specific postal service data to expedient delivery of mail
-	XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_
-
-	//	Moved, Living, Investment, Deceased, etc..
-	XsdGoPkgHasAttr_CurrentStatus_XsdtString_
-
-	//	Type of address. Example: Postal, residential,business, primary, secondary, etc
-	XsdGoPkgHasAttr_AddressType_XsdtString_
-
-	XsdGoPkgHasAtts_GrPostal
-
-	//	Communication, Contact, etc.
-	XsdGoPkgHasAttr_Usage_XsdtString_
-
 	//	Use the most suitable option. Country contains the most detailed information while Locality is missing Country and AdminArea
-	//	Address as one line of free text
-	XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_
-
-	//	Use the most suitable option. Country contains the most detailed information while Locality is missing Country and AdminArea
-	//	Specification of a country
-	XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_
-
-	//	Key identifier for the element for not reinforced references from other elements. Not required to be unique for the document to be valid, but application may get confused if not unique. Extend this schema adding unique contraint if needed.
-	XsdGoPkgHasAttr_AddressDetailsKey_XsdtString_
+	XsdGoPkgHasElem_Thoroughfare
 
 	//	Use the most suitable option. Country contains the most detailed information while Locality is missing Country and AdminArea
 	XsdGoPkgHasElem_AdministrativeArea
 
-	//	Use the most suitable option. Country contains the most detailed information while Locality is missing Country and AdminArea
-	XsdGoPkgHasElem_Thoroughfare
+	//	Type of address. Example: Postal, residential,business, primary, secondary, etc
+	XsdGoPkgHasAttr_AddressType_XsdtString_
 
 	//	Start Date of the validity of address
 	XsdGoPkgHasAttr_ValidFromDate_XsdtString_
+
+	//	Use the most suitable option. Country contains the most detailed information while Locality is missing Country and AdminArea
+	//	Address as one line of free text
+	XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_
 
 	//	Use the most suitable option. Country contains the most detailed information while Locality is missing Country and AdminArea
 	XsdGoPkgHasElem_Locality
@@ -3733,26 +5019,64 @@ type TAddressDetails struct {
 	//	Container for Address lines
 	XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_
 
+	//	Moved, Living, Investment, Deceased, etc..
+	XsdGoPkgHasAttr_CurrentStatus_XsdtString_
+
+	//	Postal authorities use specific postal service data to expedient delivery of mail
+	XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_
+
+	//	Use the most suitable option. Country contains the most detailed information while Locality is missing Country and AdminArea
+	//	Specification of a country
+	XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_
+
+	//	Key identifier for the element for not reinforced references from other elements. Not required to be unique for the document to be valid, but application may get confused if not unique. Extend this schema adding unique contraint if needed.
+	XsdGoPkgHasAttr_AddressDetailsKey_XsdtString_
+
+	//	Communication, Contact, etc.
+	XsdGoPkgHasAttr_Usage_XsdtString_
+
 	//	End date of the validity of address
 	XsdGoPkgHasAttr_ValidToDate_XsdtString_
+
+	XsdGoPkgHasAtts_GrPostal
 }
 
 //	If the WalkHandlers.TAddressDetails function is not nil (ie. was set by outside code), calls it with this TAddressDetails instance as the single argument. Then calls the Walk() method on 7/14 embed(s) and 0/0 field(s) belonging to this TAddressDetails instance.
-func (me *TAddressDetails) Walk() {
-	fn := WalkHandlers.TAddressDetails
-	if fn != nil {
-		fn(me, true)
+func (me *TAddressDetails) Walk() (err error) {
+	if fn := WalkHandlers.TAddressDetails; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElem_Thoroughfare.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_AdministrativeArea.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Locality.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_.Walk()
-	me.XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_.Walk()
-	me.XsdGoPkgHasElem_AdministrativeArea.Walk()
-	me.XsdGoPkgHasElem_Thoroughfare.Walk()
-	me.XsdGoPkgHasElem_Locality.Walk()
-	me.XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_.Walk()
-	me.XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type XsdGoPkgHasElems_AddressDetails struct {
@@ -3761,73 +5085,105 @@ type XsdGoPkgHasElems_AddressDetails struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_AddressDetails function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AddressDetails instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AddressDetails instance.
-func (me *XsdGoPkgHasElems_AddressDetails) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_AddressDetails
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_AddressDetails) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_AddressDetails; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.AddressDetailses {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	for _, x := range me.AddressDetailses {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type TxsdXal struct {
-	XsdGoPkgHasElems_AddressDetails
-
 	//	Specific to DTD to specify the version number of DTD
 	XsdGoPkgHasAttr_Version_XsdtString_
+
+	XsdGoPkgHasElems_AddressDetails
 }
 
 //	If the WalkHandlers.TxsdXal function is not nil (ie. was set by outside code), calls it with this TxsdXal instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TxsdXal instance.
-func (me *TxsdXal) Walk() {
-	fn := WalkHandlers.TxsdXal
-	if fn != nil {
-		fn(me, true)
+func (me *TxsdXal) Walk() (err error) {
+	if fn := WalkHandlers.TxsdXal; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElems_AddressDetails.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasElems_AddressDetails.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-type XsdGoPkgHasElem_Xal struct {
-	//	Root element for a list of addresses
-	Xal *TxsdXal `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 xAL"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Xal function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Xal instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Xal instance.
-func (me *XsdGoPkgHasElem_Xal) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_Xal
-	if fn != nil {
-		fn(me, true)
-	}
-	me.Xal.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-//	Root element for a list of addresses
 type XsdGoPkgHasElems_Xal struct {
 	//	Root element for a list of addresses
 	Xals []*TxsdXal `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 xAL"`
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Xal function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Xal instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Xal instance.
-func (me *XsdGoPkgHasElems_Xal) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_Xal
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_Xal) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Xal; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.Xals {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	for _, x := range me.Xals {
-		x.Walk()
+	return
+}
+
+//	Root element for a list of addresses
+type XsdGoPkgHasElem_Xal struct {
+	//	Root element for a list of addresses
+	Xal *TxsdXal `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 xAL"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Xal function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Xal instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Xal instance.
+func (me *XsdGoPkgHasElem_Xal) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Xal; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Xal.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	This container defines the details of the address. Can define multiple addresses including tracking address history
@@ -3837,33 +5193,49 @@ type XsdGoPkgHasElem_AddressDetails struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_AddressDetails function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AddressDetails instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AddressDetails instance.
-func (me *XsdGoPkgHasElem_AddressDetails) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_AddressDetails
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_AddressDetails) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_AddressDetails; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.AddressDetails.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.AddressDetails.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	Free format address representation. An address can have more than one line. The order of the AddressLine elements must be preserved.
 type XsdGoPkgHasElem_AddressLine struct {
 	//	Free format address representation. An address can have more than one line. The order of the AddressLine elements must be preserved.
-	AddressLine *TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLine"`
+	AddressLine *ThoroughfareTrailingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 AddressLine"`
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_AddressLine function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AddressLine instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AddressLine instance.
-func (me *XsdGoPkgHasElem_AddressLine) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_AddressLine
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_AddressLine) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_AddressLine; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.AddressLine.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.AddressLine.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	Locality is one level lower than adminisstrative area. Eg.: cities, reservations and any other built-up areas.
@@ -3873,17 +5245,25 @@ type XsdGoPkgHasElems_Locality struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Locality function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Locality instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Locality instance.
-func (me *XsdGoPkgHasElems_Locality) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_Locality
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_Locality) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Locality; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.Localities {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	for _, x := range me.Localities {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	Specification of a thoroughfare. A thoroughfare could be a rd, street, canal, river, etc.  Note dependentlocality in a street. For example, in some countries, a large street will
@@ -3895,17 +5275,25 @@ type XsdGoPkgHasElems_Thoroughfare struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Thoroughfare function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Thoroughfare instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Thoroughfare instance.
-func (me *XsdGoPkgHasElems_Thoroughfare) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_Thoroughfare
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_Thoroughfare) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Thoroughfare; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.Thoroughfares {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	for _, x := range me.Thoroughfares {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	Examples of administrative areas are provinces counties, special regions (such as "Rijnmond"), etc.
@@ -3915,17 +5303,25 @@ type XsdGoPkgHasElems_AdministrativeArea struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_AdministrativeArea function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AdministrativeArea instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AdministrativeArea instance.
-func (me *XsdGoPkgHasElems_AdministrativeArea) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_AdministrativeArea
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_AdministrativeArea) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_AdministrativeArea; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.AdministrativeAreas {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	for _, x := range me.AdministrativeAreas {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	Specification of a post office. Examples are a rural post office where post is delivered and a post office containing post office boxes.
@@ -3935,17 +5331,25 @@ type XsdGoPkgHasElems_PostOffice struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_PostOffice function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PostOffice instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PostOffice instance.
-func (me *XsdGoPkgHasElems_PostOffice) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_PostOffice
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_PostOffice) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_PostOffice; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.PostOffices {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	for _, x := range me.PostOffices {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	PostalCode is the container element for either simple or complex (extended) postal codes. Type: Area Code, Postcode, etc.
@@ -3955,17 +5359,25 @@ type XsdGoPkgHasElems_PostalCode struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_PostalCode function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PostalCode instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PostalCode instance.
-func (me *XsdGoPkgHasElems_PostalCode) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_PostalCode
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_PostalCode) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_PostalCode; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.PostalCodes {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	for _, x := range me.PostalCodes {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	Specification of a postbox like mail delivery point. Only a single postbox number can be specified. Examples of postboxes are POBox, free mail numbers, etc.
@@ -3975,17 +5387,25 @@ type XsdGoPkgHasElems_PostBox struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_PostBox function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PostBox instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PostBox instance.
-func (me *XsdGoPkgHasElems_PostBox) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_PostBox
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_PostBox) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_PostBox; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.PostBoxs {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	for _, x := range me.PostBoxs {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	Specification of a single premise, for example a house or a building. The premise as a whole has a unique premise (house) number or a premise name.  There could be more than
@@ -3997,53 +5417,77 @@ type XsdGoPkgHasElems_Premise struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Premise function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Premise instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Premise instance.
-func (me *XsdGoPkgHasElems_Premise) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_Premise
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_Premise) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Premise; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.Premises {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	for _, x := range me.Premises {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	Prefix before the number. A in A12 Archer Street
 type XsdGoPkgHasElem_ThoroughfareNumberPrefix struct {
 	//	Prefix before the number. A in A12 Archer Street
-	ThoroughfareNumberPrefix *TxsdThoroughfareNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberPrefix"`
+	ThoroughfareNumberPrefix *TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberPrefix"`
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_ThoroughfareNumberPrefix function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ThoroughfareNumberPrefix instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ThoroughfareNumberPrefix instance.
-func (me *XsdGoPkgHasElem_ThoroughfareNumberPrefix) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_ThoroughfareNumberPrefix
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_ThoroughfareNumberPrefix) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ThoroughfareNumberPrefix; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.ThoroughfareNumberPrefix.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.ThoroughfareNumberPrefix.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	Suffix after the number. A in 12A Archer Street
 type XsdGoPkgHasElem_ThoroughfareNumberSuffix struct {
 	//	Suffix after the number. A in 12A Archer Street
-	ThoroughfareNumberSuffix *TxsdThoroughfareNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberSuffix"`
+	ThoroughfareNumberSuffix *TxsdPremiseNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 ThoroughfareNumberSuffix"`
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_ThoroughfareNumberSuffix function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ThoroughfareNumberSuffix instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ThoroughfareNumberSuffix instance.
-func (me *XsdGoPkgHasElem_ThoroughfareNumberSuffix) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_ThoroughfareNumberSuffix
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_ThoroughfareNumberSuffix) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ThoroughfareNumberSuffix; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.ThoroughfareNumberSuffix.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.ThoroughfareNumberSuffix.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	Eg.: 23 Archer street or 25/15 Zero Avenue, etc
@@ -4053,15 +5497,23 @@ type XsdGoPkgHasElem_ThoroughfareNumber struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_ThoroughfareNumber function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ThoroughfareNumber instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ThoroughfareNumber instance.
-func (me *XsdGoPkgHasElem_ThoroughfareNumber) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_ThoroughfareNumber
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_ThoroughfareNumber) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ThoroughfareNumber; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.ThoroughfareNumber.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.ThoroughfareNumber.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	Specification of the identifier of the premise (house, building, etc). Premises in a street are often uniquely identified by means of consecutive identifiers. The identifier can be a number, a letter or any combination of the two.
@@ -4071,15 +5523,23 @@ type XsdGoPkgHasElem_PremiseNumber struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_PremiseNumber function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PremiseNumber instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PremiseNumber instance.
-func (me *XsdGoPkgHasElem_PremiseNumber) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PremiseNumber
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_PremiseNumber) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PremiseNumber; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PremiseNumber.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.PremiseNumber.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	A in A12
@@ -4089,217 +5549,249 @@ type XsdGoPkgHasElem_PremiseNumberPrefix struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_PremiseNumberPrefix function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PremiseNumberPrefix instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PremiseNumberPrefix instance.
-func (me *XsdGoPkgHasElem_PremiseNumberPrefix) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PremiseNumberPrefix
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_PremiseNumberPrefix) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PremiseNumberPrefix; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PremiseNumberPrefix.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.PremiseNumberPrefix.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	A in 12A
 type XsdGoPkgHasElem_PremiseNumberSuffix struct {
 	//	A in 12A
-	PremiseNumberSuffix *TxsdThoroughfareNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberSuffix"`
+	PremiseNumberSuffix *TxsdPremiseNumberSuffix `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 PremiseNumberSuffix"`
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_PremiseNumberSuffix function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PremiseNumberSuffix instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PremiseNumberSuffix instance.
-func (me *XsdGoPkgHasElem_PremiseNumberSuffix) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_PremiseNumberSuffix
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_PremiseNumberSuffix) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PremiseNumberSuffix; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PremiseNumberSuffix.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.PremiseNumberSuffix.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 //	Specification of the name of a country.
 type XsdGoPkgHasElem_CountryName struct {
 	//	Specification of the name of a country.
-	CountryName *ThoroughfareLeadingTypeType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 CountryName"`
+	CountryName *ThoroughfareNameType `xml:"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 CountryName"`
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_CountryName function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_CountryName instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_CountryName instance.
-func (me *XsdGoPkgHasElem_CountryName) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_CountryName
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_CountryName) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_CountryName; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.CountryName.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.CountryName.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-//	Provides 159 strong-typed hooks for your own custom handler functions to be invoked when the Walk() method is called on any instance of any (non-attribute-related) struct type defined in this package.
-//	If your custom handler does get called at all for a given struct instance, then it always gets called twice, first with the 'enter' bool argument set to true, then (after having Walk()ed all subordinate struct instances, if any) once again with it set to false.
-var WalkHandlers = &XsdGoPkgWalkHandlers{}
+var (
+	//	Set this to false to break a Walk() immediately as soon as the first error is returned by a custom handler function.
+	//	If true, Walk() proceeds and accumulates all errors in the WalkErrors slice.
+	WalkContinueOnError = true
+	//	Contains all errors accumulated during Walk()s. If you're using this, you need to reset this yourself as needed prior to a fresh Walk().
+	WalkErrors []error
+	//	Your custom error-handling function, if required.
+	WalkOnError func(error)
+	//	Provides 158 strong-typed hooks for your own custom handler functions to be invoked when the Walk() method is called on any instance of any (non-attribute-related) struct type defined in this package.
+	//	If your custom handler does get called at all for a given struct instance, then it always gets called twice, first with the 'enter' bool argument set to true, then (after having Walk()ed all subordinate struct instances, if any) once again with it set to false.
+	WalkHandlers = &XsdGoPkgWalkHandlers{}
+)
 
-//	Provides 159 strong-typed hooks for your own custom handler functions to be invoked when the Walk() method is called on any instance of any (non-attribute-related) struct type defined in this package.
+//	Provides 158 strong-typed hooks for your own custom handler functions to be invoked when the Walk() method is called on any instance of any (non-attribute-related) struct type defined in this package.
 //	If your custom handler does get called at all for a given struct instance, then it always gets called twice, first with the 'enter' bool argument set to true, then (after having Walk()ed all subordinate struct instances, if any) once again with it set to false.
 type XsdGoPkgWalkHandlers struct {
-	XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_                                                                                                                             func(o *XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_, enter bool)
-	XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_                                                                                   func(o *XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_, enter bool)
-	XsdGoPkgHasElem_AdministrativeArea                                                                                                                                                                                             func(o *XsdGoPkgHasElem_AdministrativeArea, enter bool)
-	XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_                 func(o *XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_, enter bool)
-	XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_                                                                                                                     func(o *XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_, enter bool)
-	TDependentLocalityType                                                                                                                                                                                                         func(o *TDependentLocalityType, enter bool)
-	TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber                                                                                                                                                                               func(o *TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber, enter bool)
-	TxsdAdministrativeArea                                                                                                                                                                                                         func(o *TxsdAdministrativeArea, enter bool)
-	XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_                                                                                                                                  func(o *XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_, enter bool)
-	XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_        func(o *XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_, enter bool)
-	XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_                                                                                                           func(o *XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_, enter bool)
-	XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_                                                                        func(o *XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_, enter bool)
-	XsdGoPkgHasElem_Premise                                                                                                                                                                                                        func(o *XsdGoPkgHasElem_Premise, enter bool)
-	TxsdPremiseSequenceChoiceChoicePremiseNumberRange                                                                                                                                                                              func(o *TxsdPremiseSequenceChoiceChoicePremiseNumberRange, enter bool)
-	XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_                                                                                     func(o *XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_, enter bool)
-	XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_                                                                                            func(o *XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_, enter bool)
-	XsdGoPkgHasElem_FirmchoicesequenceThoroughfareschema_Firm_TFirmType_                                                                                                                                                           func(o *XsdGoPkgHasElem_FirmchoicesequenceThoroughfareschema_Firm_TFirmType_, enter bool)
-	XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_                                                                                                           func(o *XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_, enter bool)
-	XsdGoPkgHasCdata                                                                                                                                                                                                               func(o *XsdGoPkgHasCdata, enter bool)
-	XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_                                                                                                  func(o *XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_, enter bool)
-	XsdGoPkgHasElem_ThoroughfareNumberSuffix                                                                                                                                                                                       func(o *XsdGoPkgHasElem_ThoroughfareNumberSuffix, enter bool)
-	TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier                                                                                                                                                       func(o *TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier, enter bool)
-	XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_                                                                                                                             func(o *XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_, enter bool)
-	TxsdPostalCodeSequencePostalCodeNumberExtension                                                                                                                                                                                func(o *TxsdPostalCodeSequencePostalCodeNumberExtension, enter bool)
-	TxsdPremiseSequencePremiseName                                                                                                                                                                                                 func(o *TxsdPremiseSequencePremiseName, enter bool)
-	XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_                                                                                         func(o *XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_, enter bool)
-	XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_                                                                            func(o *XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_, enter bool)
-	XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_                                                                                                           func(o *XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_, enter bool)
-	XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_                                                                           func(o *XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_, enter bool)
-	ThoroughfarePostDirectionType                                                                                                                                                                                                  func(o *ThoroughfarePostDirectionType, enter bool)
-	XsdGoPkgHasElem_PostalCode                                                                                                                                                                                                     func(o *XsdGoPkgHasElem_PostalCode, enter bool)
-	TxsdPostOfficeSequenceChoicePostOfficeNumber                                                                                                                                                                                   func(o *TxsdPostOfficeSequenceChoicePostOfficeNumber, enter bool)
-	TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier                                                                                                                                                                           func(o *TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier, enter bool)
-	XsdGoPkgHasElem_PostOffice                                                                                                                                                                                                     func(o *XsdGoPkgHasElem_PostOffice, enter bool)
-	XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_                    func(o *XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_, enter bool)
-	XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_                                        func(o *XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_, enter bool)
-	ThoroughfareNameType                                                                                                                                                                                                           func(o *ThoroughfareNameType, enter bool)
-	XsdGoPkgHasElem_MailStopsequenceDepartmentschema_MailStop_TMailStopType_                                                                                                                                                       func(o *XsdGoPkgHasElem_MailStopsequenceDepartmentschema_MailStop_TMailStopType_, enter bool)
-	XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_                                                                                                             func(o *XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_, enter bool)
-	XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_                                                                                                                   func(o *XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_, enter bool)
-	TxsdLocality                                                                                                                                                                                                                   func(o *TxsdLocality, enter bool)
-	TxsdLargeMailUserTypeSequenceLargeMailUserName                                                                                                                                                                                 func(o *TxsdLargeMailUserTypeSequenceLargeMailUserName, enter bool)
-	TxsdThoroughfareNumberSuffix                                                                                                                                                                                                   func(o *TxsdThoroughfareNumberSuffix, enter bool)
-	XsdGoPkgHasElems_AdministrativeArea                                                                                                                                                                                            func(o *XsdGoPkgHasElems_AdministrativeArea, enter bool)
-	XsdGoPkgHasElems_PostalCode                                                                                                                                                                                                    func(o *XsdGoPkgHasElems_PostalCode, enter bool)
-	XsdGoPkgHasElem_AddressDetails                                                                                                                                                                                                 func(o *XsdGoPkgHasElem_AddressDetails, enter bool)
-	ThoroughfareTrailingTypeType                                                                                                                                                                                                   func(o *ThoroughfareTrailingTypeType, enter bool)
-	XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_                                                                                                                                         func(o *XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_, enter bool)
-	TxsdPostalCodeSequencePostTownSequencePostTownSuffix                                                                                                                                                                           func(o *TxsdPostalCodeSequencePostTownSequencePostTownSuffix, enter bool)
-	XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_                                                                                                      func(o *XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_, enter bool)
-	XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_                                                                        func(o *XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_, enter bool)
-	TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo                                                                                                                                              func(o *TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo, enter bool)
-	XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremiseType_                                                                                                                                             func(o *XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremiseType_, enter bool)
-	XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_                                                                                                                 func(o *XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_, enter bool)
-	XsdGoPkgHasElem_Thoroughfare                                                                                                                                                                                                   func(o *XsdGoPkgHasElem_Thoroughfare, enter bool)
-	XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_                                                                                                                                 func(o *XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_, enter bool)
-	XsdGoPkgHasElem_PremiseNumberSuffix                                                                                                                                                                                            func(o *XsdGoPkgHasElem_PremiseNumberSuffix, enter bool)
-	TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode                                                                                                                                                             func(o *TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode, enter bool)
-	TxsdThoroughfareSequenceChoiceThoroughfareNumberRange                                                                                                                                                                          func(o *TxsdThoroughfareSequenceChoiceThoroughfareNumberRange, enter bool)
-	TxsdPostalCodeSequencePostTown                                                                                                                                                                                                 func(o *TxsdPostalCodeSequencePostTown, enter bool)
-	XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_                                                                                                  func(o *XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_, enter bool)
-	ThoroughfarePreDirectionType                                                                                                                                                                                                   func(o *ThoroughfarePreDirectionType, enter bool)
-	TAddressDetails                                                                                                                                                                                                                func(o *TAddressDetails, enter bool)
-	XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_                                                                                           func(o *XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_, enter bool)
-	XsdGoPkgHasElems_AddressDetails                                                                                                                                                                                                func(o *XsdGoPkgHasElems_AddressDetails, enter bool)
-	XsdGoPkgHasElems_AddressLine                                                                                                                                                                                                   func(o *XsdGoPkgHasElems_AddressLine, enter bool)
-	TxsdPostBox                                                                                                                                                                                                                    func(o *TxsdPostBox, enter bool)
-	XsdGoPkgHasElem_PremiseNumber                                                                                                                                                                                                  func(o *XsdGoPkgHasElem_PremiseNumber, enter bool)
-	ThoroughfareLeadingTypeType                                                                                                                                                                                                    func(o *ThoroughfareLeadingTypeType, enter bool)
-	XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_                                                                                                                     func(o *XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_, enter bool)
-	XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_                                                                       func(o *XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_, enter bool)
-	XsdGoPkgHasElems_Premise                                                                                                                                                                                                       func(o *XsdGoPkgHasElems_Premise, enter bool)
-	TxsdThoroughfare                                                                                                                                                                                                               func(o *TxsdThoroughfare, enter bool)
-	XsdGoPkgHasElem_Locality                                                                                                                                                                                                       func(o *XsdGoPkgHasElem_Locality, enter bool)
-	XsdGoPkgHasElem_Department                                                                                                                                                                                                     func(o *XsdGoPkgHasElem_Department, enter bool)
-	XsdGoPkgHasElems_Department                                                                                                                                                                                                    func(o *XsdGoPkgHasElems_Department, enter bool)
-	TMailStopType                                                                                                                                                                                                                  func(o *TMailStopType, enter bool)
-	XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_                                                                                                                func(o *XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_, enter bool)
-	XsdGoPkgHasElems_PremiseNumberSuffix                                                                                                                                                                                           func(o *XsdGoPkgHasElems_PremiseNumberSuffix, enter bool)
-	TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode                                                                                                                                                                 func(o *TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode, enter bool)
-	XsdGoPkgHasElem_PostalRoutechoicesequenceDependentLocalityTypeschema_PostalRoute_TPostalRouteType_                                                                                                                             func(o *XsdGoPkgHasElem_PostalRoutechoicesequenceDependentLocalityTypeschema_PostalRoute_TPostalRouteType_, enter bool)
-	XsdGoPkgHasElems_CountryName                                                                                                                                                                                                   func(o *XsdGoPkgHasElems_CountryName, enter bool)
-	XsdGoPkgHasElems_BuildingNamesequencePremiseschema_BuildingName_TBuildingNameType_                                                                                                                                             func(o *XsdGoPkgHasElems_BuildingNamesequencePremiseschema_BuildingName_TBuildingNameType_, enter bool)
-	XsdGoPkgHasElems_Locality                                                                                                                                                                                                      func(o *XsdGoPkgHasElems_Locality, enter bool)
-	XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_                                   func(o *XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_, enter bool)
-	TxsdDepartment                                                                                                                                                                                                                 func(o *TxsdDepartment, enter bool)
-	XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_                                                                                                           func(o *XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_, enter bool)
-	TxsdSubPremiseTypeSequenceSubPremiseName                                                                                                                                                                                       func(o *TxsdSubPremiseTypeSequenceSubPremiseName, enter bool)
-	XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_                                                                                                                    func(o *XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_, enter bool)
-	TxsdAddressDetailsSequencePostalServiceElements                                                                                                                                                                                func(o *TxsdAddressDetailsSequencePostalServiceElements, enter bool)
-	TPostalRouteType                                                                                                                                                                                                               func(o *TPostalRouteType, enter bool)
-	XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_                                                                                                                      func(o *XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_, enter bool)
-	TLargeMailUserType                                                                                                                                                                                                             func(o *TLargeMailUserType, enter bool)
-	XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_                                                                                    func(o *XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_, enter bool)
-	XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_                                                                                   func(o *XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_, enter bool)
-	XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_                                                                                                                       func(o *XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_, enter bool)
-	TxsdPremise                                                                                                                                                                                                                    func(o *TxsdPremise, enter bool)
-	XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_                                                                                          func(o *XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_, enter bool)
-	XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_                                                           func(o *XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_, enter bool)
-	TxsdPremiseNumber                                                                                                                                                                                                              func(o *TxsdPremiseNumber, enter bool)
-	TxsdMailStopTypeSequenceMailStopNumber                                                                                                                                                                                         func(o *TxsdMailStopTypeSequenceMailStopNumber, enter bool)
-	TxsdThoroughfareNumber                                                                                                                                                                                                         func(o *TxsdThoroughfareNumber, enter bool)
-	TxsdPostBoxSequencePostBoxNumberSuffix                                                                                                                                                                                         func(o *TxsdPostBoxSequencePostBoxNumberSuffix, enter bool)
-	XsdGoPkgHasElem_PremiseNumberPrefix                                                                                                                                                                                            func(o *XsdGoPkgHasElem_PremiseNumberPrefix, enter bool)
-	XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_                                                                           func(o *XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_, enter bool)
-	XsdGoPkgHasElems_Thoroughfare                                                                                                                                                                                                  func(o *XsdGoPkgHasElems_Thoroughfare, enter bool)
-	TxsdPremiseNumberPrefix                                                                                                                                                                                                        func(o *TxsdPremiseNumberPrefix, enter bool)
-	XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_                                                                                  func(o *XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_, enter bool)
-	XsdGoPkgHasElems_PremiseNumber                                                                                                                                                                                                 func(o *XsdGoPkgHasElems_PremiseNumber, enter bool)
-	TxsdDependentLocalityTypeSequenceDependentLocalityNumber                                                                                                                                                                       func(o *TxsdDependentLocalityTypeSequenceDependentLocalityNumber, enter bool)
-	XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_                            func(o *XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_, enter bool)
-	TxsdPostBoxSequencePostBoxNumberPrefix                                                                                                                                                                                         func(o *TxsdPostBoxSequencePostBoxNumberPrefix, enter bool)
-	XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_                                                                      func(o *XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_, enter bool)
-	XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_                                                                                                                                      func(o *XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_, enter bool)
-	TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode                                                                                                                                                             func(o *TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode, enter bool)
-	XsdGoPkgHasElem_AddressLine                                                                                                                                                                                                    func(o *XsdGoPkgHasElem_AddressLine, enter bool)
-	TxsdThoroughfareNumberPrefix                                                                                                                                                                                                   func(o *TxsdThoroughfareNumberPrefix, enter bool)
-	XsdGoPkgHasElems_ThoroughfareNumberSuffix                                                                                                                                                                                      func(o *XsdGoPkgHasElems_ThoroughfareNumberSuffix, enter bool)
-	TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom                                                                                                                                                func(o *TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom, enter bool)
-	XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_                                                                                    func(o *XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_, enter bool)
-	XsdGoPkgHasElem_PostBox                                                                                                                                                                                                        func(o *XsdGoPkgHasElem_PostBox, enter bool)
-	XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_                    func(o *XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_, enter bool)
-	XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_                                                                                      func(o *XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_, enter bool)
-	XsdGoPkgHasElems_ThoroughfareNumberPrefix                                                                                                                                                                                      func(o *XsdGoPkgHasElems_ThoroughfareNumberPrefix, enter bool)
-	XsdGoPkgHasElem_CountryName                                                                                                                                                                                                    func(o *XsdGoPkgHasElem_CountryName, enter bool)
-	XsdGoPkgHasElem_ThoroughfareNumber                                                                                                                                                                                             func(o *XsdGoPkgHasElem_ThoroughfareNumber, enter bool)
-	TxsdPostalCode                                                                                                                                                                                                                 func(o *TxsdPostalCode, enter bool)
-	XsdGoPkgHasElems_Xal                                                                                                                                                                                                           func(o *XsdGoPkgHasElems_Xal, enter bool)
-	XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_                                                                                       func(o *XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_, enter bool)
-	TxsdXal                                                                                                                                                                                                                        func(o *TxsdXal, enter bool)
-	TxsdPostOffice                                                                                                                                                                                                                 func(o *TxsdPostOffice, enter bool)
-	XsdGoPkgHasElem_Xal                                                                                                                                                                                                            func(o *XsdGoPkgHasElem_Xal, enter bool)
-	TxsdAdministrativeAreaSequenceSubAdministrativeArea                                                                                                                                                                            func(o *TxsdAdministrativeAreaSequenceSubAdministrativeArea, enter bool)
-	TBuildingNameType                                                                                                                                                                                                              func(o *TBuildingNameType, enter bool)
-	XsdGoPkgHasElems_PostOffice                                                                                                                                                                                                    func(o *XsdGoPkgHasElems_PostOffice, enter bool)
-	XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_                      func(o *XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_, enter bool)
-	XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_ func(o *XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_, enter bool)
-	XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_                                            func(o *XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_, enter bool)
-	XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_                                                                                                                                             func(o *XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_, enter bool)
-	XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_                                               func(o *XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_, enter bool)
-	XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_                                                                                                func(o *XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_, enter bool)
-	XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_                                                                   func(o *XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_, enter bool)
-	XsdGoPkgHasElems_ThoroughfareNumber                                                                                                                                                                                            func(o *XsdGoPkgHasElems_ThoroughfareNumber, enter bool)
-	XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_                                                           func(o *XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_, enter bool)
-	TAddressLinesType                                                                                                                                                                                                              func(o *TAddressLinesType, enter bool)
-	TxsdPostBoxSequencePostBoxNumberExtension                                                                                                                                                                                      func(o *TxsdPostBoxSequencePostBoxNumberExtension, enter bool)
-	XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_                                                                                                      func(o *XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_, enter bool)
-	TxsdAddressDetailsSequenceChoiceCountry                                                                                                                                                                                        func(o *TxsdAddressDetailsSequenceChoiceCountry, enter bool)
-	TSubPremiseType                                                                                                                                                                                                                func(o *TSubPremiseType, enter bool)
-	XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_                                                              func(o *XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_, enter bool)
-	XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_                                                                               func(o *XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_, enter bool)
-	XsdGoPkgHasElem_ThoroughfareNumberPrefix                                                                                                                                                                                       func(o *XsdGoPkgHasElem_ThoroughfareNumberPrefix, enter bool)
-	XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_                                                                                         func(o *XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_, enter bool)
-	XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_              func(o *XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_, enter bool)
-	XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_                                                                                                       func(o *XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_, enter bool)
-	TFirmType                                                                                                                                                                                                                      func(o *TFirmType, enter bool)
-	XsdGoPkgHasElems_PostBox                                                                                                                                                                                                       func(o *XsdGoPkgHasElems_PostBox, enter bool)
-	TxsdThoroughfareSequenceDependentThoroughfare                                                                                                                                                                                  func(o *TxsdThoroughfareSequenceDependentThoroughfare, enter bool)
-	XsdGoPkgHasElems_PremiseNumberPrefix                                                                                                                                                                                           func(o *XsdGoPkgHasElems_PremiseNumberPrefix, enter bool)
+	TFirmType                                                                                                                                                                                                                      func(*TFirmType, bool) error
+	XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_                                                                                                                      func(*XsdGoPkgHasElem_MailStopNamesequenceMailStopTypeschema_MailStopName_TxsdMailStopTypeSequenceMailStopName_, bool) error
+	TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix                                                                                                                                                                               func(*TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix, bool) error
+	TxsdAddressDetailsSequencePostalServiceElements                                                                                                                                                                                func(*TxsdAddressDetailsSequencePostalServiceElements, bool) error
+	TxsdPostBoxSequencePostBoxNumberExtension                                                                                                                                                                                      func(*TxsdPostBoxSequencePostBoxNumberExtension, bool) error
+	TxsdPostalCodeSequencePostalCodeNumberExtension                                                                                                                                                                                func(*TxsdPostalCodeSequencePostalCodeNumberExtension, bool) error
+	XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_                                                                                          func(*XsdGoPkgHasElems_PostalRouteNamechoicesequencePostalRouteTypeschema_PostalRouteName_TxsdPostalRouteTypeSequenceChoicePostalRouteName_, bool) error
+	XsdGoPkgHasElem_ThoroughfareNumberSuffix                                                                                                                                                                                       func(*XsdGoPkgHasElem_ThoroughfareNumberSuffix, bool) error
+	TAddressLinesType                                                                                                                                                                                                              func(*TAddressLinesType, bool) error
+	XsdGoPkgHasElem_PremiseNumber                                                                                                                                                                                                  func(*XsdGoPkgHasElem_PremiseNumber, bool) error
+	XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_                                                                                         func(*XsdGoPkgHasElems_SubPremiseNumberchoicesequenceSubPremiseTypeschema_SubPremiseNumber_TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber_, bool) error
+	XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_                 func(*XsdGoPkgHasElem_AddressLongitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitudeDirection_, bool) error
+	XsdGoPkgHasElems_AdministrativeArea                                                                                                                                                                                            func(*XsdGoPkgHasElems_AdministrativeArea, bool) error
+	TxsdPostOfficeSequenceChoicePostOfficeNumber                                                                                                                                                                                   func(*TxsdPostOfficeSequenceChoicePostOfficeNumber, bool) error
+	XsdGoPkgHasElems_ThoroughfareNumber                                                                                                                                                                                            func(*XsdGoPkgHasElems_ThoroughfareNumber, bool) error
+	XsdGoPkgHasElem_AddressDetails                                                                                                                                                                                                 func(*XsdGoPkgHasElem_AddressDetails, bool) error
+	TxsdPremise                                                                                                                                                                                                                    func(*TxsdPremise, bool) error
+	TMailStopType                                                                                                                                                                                                                  func(*TMailStopType, bool) error
+	XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_                    func(*XsdGoPkgHasElem_ThoroughfareNumberTosequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberTo_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberTo_, bool) error
+	TxsdSubPremiseTypeSequenceSubPremiseName                                                                                                                                                                                       func(*TxsdSubPremiseTypeSequenceSubPremiseName, bool) error
+	XsdGoPkgHasCdata                                                                                                                                                                                                               func(*XsdGoPkgHasCdata, bool) error
+	XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_                                                                                                           func(*XsdGoPkgHasElem_PremiseLocationchoicesequencePremiseschema_PremiseLocation_TxsdPremiseSequenceChoicePremiseLocation_, bool) error
+	XsdGoPkgHasElem_PostBox                                                                                                                                                                                                        func(*XsdGoPkgHasElem_PostBox, bool) error
+	XsdGoPkgHasElem_ThoroughfareNumber                                                                                                                                                                                             func(*XsdGoPkgHasElem_ThoroughfareNumber, bool) error
+	TxsdThoroughfareSequenceChoiceThoroughfareNumberRange                                                                                                                                                                          func(*TxsdThoroughfareSequenceChoiceThoroughfareNumberRange, bool) error
+	XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_                                                                                                         func(*XsdGoPkgHasElem_ThoroughfareLeadingTypesequenceThoroughfareschema_ThoroughfareLeadingType_ThoroughfareLeadingTypeType_, bool) error
+	ThoroughfareLeadingTypeType                                                                                                                                                                                                    func(*ThoroughfareLeadingTypeType, bool) error
+	TSubPremiseType                                                                                                                                                                                                                func(*TSubPremiseType, bool) error
+	XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_                                                                                                      func(*XsdGoPkgHasElem_ThoroughfareTrailingTypesequenceThoroughfareschema_ThoroughfareTrailingType_ThoroughfareTrailingTypeType_, bool) error
+	XsdGoPkgHasElem_CountryName                                                                                                                                                                                                    func(*XsdGoPkgHasElem_CountryName, bool) error
+	XsdGoPkgHasElem_Xal                                                                                                                                                                                                            func(*XsdGoPkgHasElem_Xal, bool) error
+	TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier                                                                                                                                                                           func(*TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier, bool) error
+	XsdGoPkgHasElem_Department                                                                                                                                                                                                     func(*XsdGoPkgHasElem_Department, bool) error
+	XsdGoPkgHasElems_ThoroughfareNumberPrefix                                                                                                                                                                                      func(*XsdGoPkgHasElems_ThoroughfareNumberPrefix, bool) error
+	TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber                                                                                                                                                                               func(*TxsdSubPremiseTypeSequenceChoiceSubPremiseNumber, bool) error
+	XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_                                                                                                                                             func(*XsdGoPkgHasElems_SubPremisechoicesequencePremiseschema_SubPremise_TSubPremiseType_, bool) error
+	XsdGoPkgHasElem_PremiseNumberPrefix                                                                                                                                                                                            func(*XsdGoPkgHasElem_PremiseNumberPrefix, bool) error
+	TDependentLocalityType                                                                                                                                                                                                         func(*TDependentLocalityType, bool) error
+	XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_                                                           func(*XsdGoPkgHasElem_KeyLineCodesequencePostalServiceElementssequenceAddressDetailsschema_KeyLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceKeyLineCode_, bool) error
+	TxsdMailStopTypeSequenceMailStopNumber                                                                                                                                                                                         func(*TxsdMailStopTypeSequenceMailStopNumber, bool) error
+	XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_                                                                           func(*XsdGoPkgHasElems_AdministrativeAreaNamesequenceAdministrativeAreaschema_AdministrativeAreaName_TxsdAdministrativeAreaSequenceAdministrativeAreaName_, bool) error
+	XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_                                                                                                             func(*XsdGoPkgHasElems_PostalCodeNumbersequencePostalCodeschema_PostalCodeNumber_TxsdPostalCodeSequencePostalCodeNumber_, bool) error
+	XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_                                                                                                                   func(*XsdGoPkgHasElems_DepartmentNamesequenceDepartmentschema_DepartmentName_TxsdDepartmentSequenceDepartmentName_, bool) error
+	XsdGoPkgHasElems_PremiseNumberSuffix                                                                                                                                                                                           func(*XsdGoPkgHasElems_PremiseNumberSuffix, bool) error
+	XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_              func(*XsdGoPkgHasElem_ThoroughfareNumberFromsequenceThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberFrom_TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom_, bool) error
+	ThoroughfarePostDirectionType                                                                                                                                                                                                  func(*ThoroughfarePostDirectionType, bool) error
+	TxsdPremiseSequenceChoiceChoicePremiseNumberRange                                                                                                                                                                              func(*TxsdPremiseSequenceChoiceChoicePremiseNumberRange, bool) error
+	ThoroughfareTrailingTypeType                                                                                                                                                                                                   func(*ThoroughfareTrailingTypeType, bool) error
+	XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_                                                                      func(*XsdGoPkgHasElem_ThoroughfarePostDirectionsequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfarePostDirection_ThoroughfarePostDirectionType_, bool) error
+	XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_                                                                                   func(*XsdGoPkgHasElems_SubPremiseNumberSuffixsequenceSubPremiseTypeschema_SubPremiseNumberSuffix_TxsdSubPremiseTypeSequenceSubPremiseNumberSuffix_, bool) error
+	TxsdPremiseSequencePremiseName                                                                                                                                                                                                 func(*TxsdPremiseSequencePremiseName, bool) error
+	ThoroughfarePreDirectionType                                                                                                                                                                                                   func(*ThoroughfarePreDirectionType, bool) error
+	XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_                                                                                   func(*XsdGoPkgHasElems_SubPremiseNumberPrefixsequenceSubPremiseTypeschema_SubPremiseNumberPrefix_TxsdSubPremiseTypeSequenceSubPremiseNumberPrefix_, bool) error
+	XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_                                                                                                                    func(*XsdGoPkgHasElem_DependentLocalitychoicesequenceThoroughfareschema_DependentLocality_TDependentLocalityType_, bool) error
+	XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_                                                                                      func(*XsdGoPkgHasElem_PremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRange_TxsdPremiseSequenceChoiceChoicePremiseNumberRange_, bool) error
+	XsdGoPkgHasElems_AddressDetails                                                                                                                                                                                                func(*XsdGoPkgHasElems_AddressDetails, bool) error
+	XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_                                                                        func(*XsdGoPkgHasElems_DependentLocalityNamesequenceDependentLocalityTypeschema_DependentLocalityName_TxsdDependentLocalityTypeSequenceDependentLocalityName_, bool) error
+	TxsdAdministrativeAreaSequenceSubAdministrativeArea                                                                                                                                                                            func(*TxsdAdministrativeAreaSequenceSubAdministrativeArea, bool) error
+	TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode                                                                                                                                                             func(*TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode, bool) error
+	XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_                                                                                       func(*XsdGoPkgHasElem_PostalServiceElementssequenceAddressDetailsschema_PostalServiceElements_TxsdAddressDetailsSequencePostalServiceElements_, bool) error
+	XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_                                                                       func(*XsdGoPkgHasElem_BarcodesequencePostalServiceElementssequenceAddressDetailsschema_Barcode_TxsdAddressDetailsSequencePostalServiceElementsSequenceBarcode_, bool) error
+	XsdGoPkgHasElems_PostalCode                                                                                                                                                                                                    func(*XsdGoPkgHasElems_PostalCode, bool) error
+	XsdGoPkgHasElems_Department                                                                                                                                                                                                    func(*XsdGoPkgHasElems_Department, bool) error
+	XsdGoPkgHasElems_ThoroughfareNumberSuffix                                                                                                                                                                                      func(*XsdGoPkgHasElems_ThoroughfareNumberSuffix, bool) error
+	XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_                                                                                                                 func(*XsdGoPkgHasElem_DependentLocalitysequenceDependentLocalityTypeschema_DependentLocality_TDependentLocalityType_, bool) error
+	XsdGoPkgHasElem_Thoroughfare                                                                                                                                                                                                   func(*XsdGoPkgHasElem_Thoroughfare, bool) error
+	TxsdPostOffice                                                                                                                                                                                                                 func(*TxsdPostOffice, bool) error
+	XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_                                                                                                           func(*XsdGoPkgHasElem_PostBoxNumberSuffixsequencePostBoxschema_PostBoxNumberSuffix_TxsdPostBoxSequencePostBoxNumberSuffix_, bool) error
+	XsdGoPkgHasElems_Locality                                                                                                                                                                                                      func(*XsdGoPkgHasElems_Locality, bool) error
+	TxsdPostBoxSequencePostBoxNumberPrefix                                                                                                                                                                                         func(*TxsdPostBoxSequencePostBoxNumberPrefix, bool) error
+	XsdGoPkgHasElems_PostOffice                                                                                                                                                                                                    func(*XsdGoPkgHasElems_PostOffice, bool) error
+	XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_                                                                           func(*XsdGoPkgHasElem_LargeMailUserIdentifiersequenceLargeMailUserTypeschema_LargeMailUserIdentifier_TxsdLargeMailUserTypeSequenceLargeMailUserIdentifier_, bool) error
+	XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_                                                                                                                             func(*XsdGoPkgHasElems_LocalityNamesequenceLocalityschema_LocalityName_TxsdLocalitySequenceLocalityName_, bool) error
+	XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_                                                                                                  func(*XsdGoPkgHasElem_PostBoxNumberExtensionsequencePostBoxschema_PostBoxNumberExtension_TxsdPostBoxSequencePostBoxNumberExtension_, bool) error
+	TxsdPremiseNumberPrefix                                                                                                                                                                                                        func(*TxsdPremiseNumberPrefix, bool) error
+	XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_                      func(*XsdGoPkgHasElem_PremiseNumberRangeFromsequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeFrom_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeFrom_, bool) error
+	TxsdPremiseNumberSuffix                                                                                                                                                                                                        func(*TxsdPremiseNumberSuffix, bool) error
+	TxsdPostalCodeSequencePostTownSequencePostTownSuffix                                                                                                                                                                           func(*TxsdPostalCodeSequencePostTownSequencePostTownSuffix, bool) error
+	TxsdXal                                                                                                                                                                                                                        func(*TxsdXal, bool) error
+	TxsdAdministrativeArea                                                                                                                                                                                                         func(*TxsdAdministrativeArea, bool) error
+	XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_ func(*XsdGoPkgHasElems_SupplementaryPostalServiceDatasequencePostalServiceElementssequenceAddressDetailsschema_SupplementaryPostalServiceData_TxsdAddressDetailsSequencePostalServiceElementsSequenceSupplementaryPostalServiceData_, bool) error
+	TxsdThoroughfareNumber                                                                                                                                                                                                         func(*TxsdThoroughfareNumber, bool) error
+	XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_                                                                   func(*XsdGoPkgHasElem_DependentLocalityNumbersequenceDependentLocalityTypeschema_DependentLocalityNumber_TxsdDependentLocalityTypeSequenceDependentLocalityNumber_, bool) error
+	TxsdThoroughfare                                                                                                                                                                                                               func(*TxsdThoroughfare, bool) error
+	XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_                                                                                                           func(*XsdGoPkgHasElem_PostBoxNumberPrefixsequencePostBoxschema_PostBoxNumberPrefix_TxsdPostBoxSequencePostBoxNumberPrefix_, bool) error
+	XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_                                                                                                       func(*XsdGoPkgHasElems_PostOfficeNamechoicesequencePostOfficeschema_PostOfficeName_TxsdPostOfficeSequenceChoicePostOfficeName_, bool) error
+	XsdGoPkgHasElem_AdministrativeArea                                                                                                                                                                                             func(*XsdGoPkgHasElem_AdministrativeArea, bool) error
+	XsdGoPkgHasElems_BuildingNamesequenceSubPremiseTypeschema_BuildingName_TBuildingNameType_                                                                                                                                      func(*XsdGoPkgHasElems_BuildingNamesequenceSubPremiseTypeschema_BuildingName_TBuildingNameType_, bool) error
+	XsdGoPkgHasElems_Xal                                                                                                                                                                                                           func(*XsdGoPkgHasElems_Xal, bool) error
+	XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_                                        func(*XsdGoPkgHasElems_AddressIdentifiersequencePostalServiceElementssequenceAddressDetailsschema_AddressIdentifier_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier_, bool) error
+	XsdGoPkgHasElem_PremiseNumberSuffix                                                                                                                                                                                            func(*XsdGoPkgHasElem_PremiseNumberSuffix, bool) error
+	XsdGoPkgHasElems_PostBox                                                                                                                                                                                                       func(*XsdGoPkgHasElems_PostBox, bool) error
+	XsdGoPkgHasElem_FirmchoicesequencePremiseschema_Firm_TFirmType_                                                                                                                                                                func(*XsdGoPkgHasElem_FirmchoicesequencePremiseschema_Firm_TFirmType_, bool) error
+	TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode                                                                                                                                                                 func(*TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode, bool) error
+	XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_                                   func(*XsdGoPkgHasElem_EndorsementLineCodesequencePostalServiceElementssequenceAddressDetailsschema_EndorsementLineCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceEndorsementLineCode_, bool) error
+	XsdGoPkgHasElems_AddressLine                                                                                                                                                                                                   func(*XsdGoPkgHasElems_AddressLine, bool) error
+	TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier                                                                                                                                                       func(*TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressIdentifier, bool) error
+	TxsdPostBoxSequencePostBoxNumberSuffix                                                                                                                                                                                         func(*TxsdPostBoxSequencePostBoxNumberSuffix, bool) error
+	TxsdLocality                                                                                                                                                                                                                   func(*TxsdLocality, bool) error
+	TBuildingNameType                                                                                                                                                                                                              func(*TBuildingNameType, bool) error
+	XsdGoPkgHasElem_AddressLine                                                                                                                                                                                                    func(*XsdGoPkgHasElem_AddressLine, bool) error
+	XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_                                                                                                                     func(*XsdGoPkgHasElem_AddresschoicesequenceAddressDetailsschema_Address_TxsdAddressDetailsSequenceChoiceAddress_, bool) error
+	XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremiseType_                                                                                                                                             func(*XsdGoPkgHasElem_SubPremisesequenceSubPremiseTypeschema_SubPremise_TSubPremiseType_, bool) error
+	XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_                                                                                                      func(*XsdGoPkgHasElem_ThoroughfarePreDirectionsequenceThoroughfareschema_ThoroughfarePreDirection_ThoroughfarePreDirectionType_, bool) error
+	XsdGoPkgHasElems_CountryName                                                                                                                                                                                                   func(*XsdGoPkgHasElems_CountryName, bool) error
+	XsdGoPkgHasElem_PostalCode                                                                                                                                                                                                     func(*XsdGoPkgHasElem_PostalCode, bool) error
+	XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_                                                                                            func(*XsdGoPkgHasElems_LargeMailUserNamesequenceLargeMailUserTypeschema_LargeMailUserName_TxsdLargeMailUserTypeSequenceLargeMailUserName_, bool) error
+	XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_                                                                                         func(*XsdGoPkgHasElems_PostTownNamesequencePostTownsequencePostalCodeschema_PostTownName_TxsdPostalCodeSequencePostTownSequencePostTownName_, bool) error
+	XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_        func(*XsdGoPkgHasElems_SubAdministrativeAreaNamesequenceSubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeAreaName_TxsdAdministrativeAreaSequenceSubAdministrativeAreaSequenceSubAdministrativeAreaName_, bool) error
+	XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_                                                                                                                                  func(*XsdGoPkgHasElems_PremiseNamesequencePremiseschema_PremiseName_TxsdPremiseSequencePremiseName_, bool) error
+	XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_                                                                                                                                      func(*XsdGoPkgHasElem_PostTownsequencePostalCodeschema_PostTown_TxsdPostalCodeSequencePostTown_, bool) error
+	TxsdPostBox                                                                                                                                                                                                                    func(*TxsdPostBox, bool) error
+	XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_                                               func(*XsdGoPkgHasElem_AddressLatitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitude_, bool) error
+	XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_                                                           func(*XsdGoPkgHasElem_SortingCodesequencePostalServiceElementssequenceAddressDetailsschema_SortingCode_TxsdAddressDetailsSequencePostalServiceElementsSequenceSortingCode_, bool) error
+	XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_                                                                        func(*XsdGoPkgHasElems_ThoroughfareNumberRangechoicesequenceThoroughfareschema_ThoroughfareNumberRange_TxsdThoroughfareSequenceChoiceThoroughfareNumberRange_, bool) error
+	TxsdDepartment                                                                                                                                                                                                                 func(*TxsdDepartment, bool) error
+	TxsdDependentLocalityTypeSequenceDependentLocalityNumber                                                                                                                                                                       func(*TxsdDependentLocalityTypeSequenceDependentLocalityNumber, bool) error
+	XsdGoPkgHasElem_Premise                                                                                                                                                                                                        func(*XsdGoPkgHasElem_Premise, bool) error
+	XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_                    func(*XsdGoPkgHasElem_AddressLatitudeDirectionsequencePostalServiceElementssequenceAddressDetailsschema_AddressLatitudeDirection_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLatitudeDirection_, bool) error
+	ThoroughfareNameType                                                                                                                                                                                                           func(*ThoroughfareNameType, bool) error
+	TxsdPostalCodeSequencePostTown                                                                                                                                                                                                 func(*TxsdPostalCodeSequencePostTown, bool) error
+	XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_                                                                                                                                         func(*XsdGoPkgHasElems_FirmNamesequenceFirmTypeschema_FirmName_TxsdFirmTypeSequenceFirmName_, bool) error
+	XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_                                            func(*XsdGoPkgHasElem_AddressLongitudesequencePostalServiceElementssequenceAddressDetailsschema_AddressLongitude_TxsdAddressDetailsSequencePostalServiceElementsSequenceAddressLongitude_, bool) error
+	XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_                                                                                                                func(*XsdGoPkgHasElem_MailStopNumbersequenceMailStopTypeschema_MailStopNumber_TxsdMailStopTypeSequenceMailStopNumber_, bool) error
+	TxsdThoroughfareSequenceDependentThoroughfare                                                                                                                                                                                  func(*TxsdThoroughfareSequenceDependentThoroughfare, bool) error
+	XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_                                                                                     func(*XsdGoPkgHasElem_PostalRouteNumberchoicesequencePostalRouteTypeschema_PostalRouteNumber_TxsdPostalRouteTypeSequenceChoicePostalRouteNumber_, bool) error
+	XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_                                                                                           func(*XsdGoPkgHasElem_DependentThoroughfaresequenceThoroughfareschema_DependentThoroughfare_TxsdThoroughfareSequenceDependentThoroughfare_, bool) error
+	XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_                            func(*XsdGoPkgHasElem_PremiseNumberRangeTosequencePremiseNumberRangechoicechoicesequencePremiseschema_PremiseNumberRangeTo_TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo_, bool) error
+	XsdGoPkgHasElems_Thoroughfare                                                                                                                                                                                                  func(*XsdGoPkgHasElems_Thoroughfare, bool) error
+	XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_                                                                                    func(*XsdGoPkgHasElem_SubPremiseLocationchoicesequenceSubPremiseTypeschema_SubPremiseLocation_TxsdSubPremiseTypeSequenceChoiceSubPremiseLocation_, bool) error
+	XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_                                                                                                                       func(*XsdGoPkgHasElem_LargeMailUserchoicesequenceDependentLocalityTypeschema_LargeMailUser_TLargeMailUserType_, bool) error
+	TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo                                                                                                                                                  func(*TxsdPremiseSequenceChoiceChoicePremiseNumberRangeSequencePremiseNumberRangeTo, bool) error
+	XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_                                                                               func(*XsdGoPkgHasElem_SubAdministrativeAreasequenceAdministrativeAreaschema_SubAdministrativeArea_TxsdAdministrativeAreaSequenceSubAdministrativeArea_, bool) error
+	XsdGoPkgHasElems_PremiseNumber                                                                                                                                                                                                 func(*XsdGoPkgHasElems_PremiseNumber, bool) error
+	TLargeMailUserType                                                                                                                                                                                                             func(*TLargeMailUserType, bool) error
+	XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_                                                                                                                     func(*XsdGoPkgHasElem_CountrychoicesequenceAddressDetailsschema_Country_TxsdAddressDetailsSequenceChoiceCountry_, bool) error
+	TPostalRouteType                                                                                                                                                                                                               func(*TPostalRouteType, bool) error
+	XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_                                                                                                                             func(*XsdGoPkgHasElem_PostBoxNumbersequencePostBoxschema_PostBoxNumber_TxsdPostBoxSequencePostBoxNumber_, bool) error
+	XsdGoPkgHasElem_PostOffice                                                                                                                                                                                                     func(*XsdGoPkgHasElem_PostOffice, bool) error
+	XsdGoPkgHasElem_Locality                                                                                                                                                                                                       func(*XsdGoPkgHasElem_Locality, bool) error
+	XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_                                                                                                  func(*XsdGoPkgHasElem_PostOfficeNumberchoicesequencePostOfficeschema_PostOfficeNumber_TxsdPostOfficeSequenceChoicePostOfficeNumber_, bool) error
+	XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_                                                              func(*XsdGoPkgHasElems_CountryNameCodesequenceCountrychoicesequenceAddressDetailsschema_CountryNameCode_TxsdAddressDetailsSequenceChoiceCountrySequenceCountryNameCode_, bool) error
+	XsdGoPkgHasElems_Premise                                                                                                                                                                                                       func(*XsdGoPkgHasElems_Premise, bool) error
+	TAddressDetails                                                                                                                                                                                                                func(*TAddressDetails, bool) error
+	XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_                                                                                                                                 func(*XsdGoPkgHasElem_AddressLineschoicesequenceAddressDetailsschema_AddressLines_TAddressLinesType_, bool) error
+	XsdGoPkgHasElem_PostalRoutesequencePostOfficeschema_PostalRoute_TPostalRouteType_                                                                                                                                              func(*XsdGoPkgHasElem_PostalRoutesequencePostOfficeschema_PostalRoute_TPostalRouteType_, bool) error
+	XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_                                                                                                           func(*XsdGoPkgHasElems_SubPremiseNamesequenceSubPremiseTypeschema_SubPremiseName_TxsdSubPremiseTypeSequenceSubPremiseName_, bool) error
+	XsdGoPkgHasElem_ThoroughfareNumberPrefix                                                                                                                                                                                       func(*XsdGoPkgHasElem_ThoroughfareNumberPrefix, bool) error
+	XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_                                                                                    func(*XsdGoPkgHasElem_PostTownSuffixsequencePostTownsequencePostalCodeschema_PostTownSuffix_TxsdPostalCodeSequencePostTownSequencePostTownSuffix_, bool) error
+	TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom                                                                                                                                            func(*TxsdThoroughfareSequenceChoiceThoroughfareNumberRangeSequenceThoroughfareNumberFrom, bool) error
+	XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_                                                                                  func(*XsdGoPkgHasElems_PostalCodeNumberExtensionsequencePostalCodeschema_PostalCodeNumberExtension_TxsdPostalCodeSequencePostalCodeNumberExtension_, bool) error
+	TxsdPremiseNumber                                                                                                                                                                                                              func(*TxsdPremiseNumber, bool) error
+	XsdGoPkgHasElems_PremiseNumberPrefix                                                                                                                                                                                           func(*XsdGoPkgHasElems_PremiseNumberPrefix, bool) error
+	TxsdAddressDetailsSequenceChoiceCountry                                                                                                                                                                                        func(*TxsdAddressDetailsSequenceChoiceCountry, bool) error
+	XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_                                                                                                func(*XsdGoPkgHasElems_ThoroughfareNamesequenceDependentThoroughfaresequenceThoroughfareschema_ThoroughfareName_ThoroughfareNameType_, bool) error
+	TxsdPostalCode                                                                                                                                                                                                                 func(*TxsdPostalCode, bool) error
+	TxsdLargeMailUserTypeSequenceLargeMailUserName                                                                                                                                                                                 func(*TxsdLargeMailUserTypeSequenceLargeMailUserName, bool) error
+	XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_                                                                                                                                                          func(*XsdGoPkgHasElem_MailStopsequencePremiseschema_MailStop_TMailStopType_, bool) error
 }

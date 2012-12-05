@@ -17,14 +17,20 @@ type XsdGoPkgHasElem_Name struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Name function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Name instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Name instance.
-func (me *XsdGoPkgHasElem_Name) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_Name
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_Name) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Name; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type XsdGoPkgHasElems_Name struct {
@@ -32,14 +38,20 @@ type XsdGoPkgHasElems_Name struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Name function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Name instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Name instance.
-func (me *XsdGoPkgHasElems_Name) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_Name
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_Name) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Name; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type XsdGoPkgHasElems_Uri struct {
@@ -47,14 +59,20 @@ type XsdGoPkgHasElems_Uri struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Uri function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Uri instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Uri instance.
-func (me *XsdGoPkgHasElems_Uri) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_Uri
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_Uri) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Uri; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type XsdGoPkgHasElem_Uri struct {
@@ -62,14 +80,20 @@ type XsdGoPkgHasElem_Uri struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Uri function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Uri instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Uri instance.
-func (me *XsdGoPkgHasElem_Uri) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_Uri
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_Uri) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Uri; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type TatomEmailAddress xsdt.String
@@ -77,78 +101,86 @@ type TatomEmailAddress xsdt.String
 //	This convenience method just performs a simple type conversion to TatomEmailAddress's alias type xsdt.String.
 func (me TatomEmailAddress) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
-//	Since TatomEmailAddress is just a simple String type, this merely sets the current value from the specified string.
-func (me *TatomEmailAddress) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
-
 //	Since TatomEmailAddress is just a simple String type, this merely returns the current string value.
 func (me TatomEmailAddress) String() string { return xsdt.String(me).String() }
 
-type XsdGoPkgHasElem_Email struct {
-	Email TatomEmailAddress `xml:"http://www.w3.org/2005/Atom email"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Email function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Email instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Email instance.
-func (me *XsdGoPkgHasElem_Email) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_Email
-	if fn != nil {
-		fn(me, true)
-	}
-	if fn != nil {
-		fn(me, false)
-	}
-}
+//	Since TatomEmailAddress is just a simple String type, this merely sets the current value from the specified string.
+func (me *TatomEmailAddress) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 type XsdGoPkgHasElems_Email struct {
 	Emails []TatomEmailAddress `xml:"http://www.w3.org/2005/Atom email"`
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Email function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Email instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Email instance.
-func (me *XsdGoPkgHasElems_Email) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_Email
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_Email) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Email; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	if fn != nil {
-		fn(me, false)
+	return
+}
+
+type XsdGoPkgHasElem_Email struct {
+	Email TatomEmailAddress `xml:"http://www.w3.org/2005/Atom email"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Email function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Email instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Email instance.
+func (me *XsdGoPkgHasElem_Email) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Email; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
+	return
 }
 
 type TatomPersonConstruct struct {
 	XsdGoPkgHasElems_Uri
 
-	XsdGoPkgHasElems_Email
-
 	XsdGoPkgHasElems_Name
+
+	XsdGoPkgHasElems_Email
 }
 
 //	If the WalkHandlers.TatomPersonConstruct function is not nil (ie. was set by outside code), calls it with this TatomPersonConstruct instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this TatomPersonConstruct instance.
-func (me *TatomPersonConstruct) Walk() {
-	fn := WalkHandlers.TatomPersonConstruct
-	if fn != nil {
-		fn(me, true)
+func (me *TatomPersonConstruct) Walk() (err error) {
+	if fn := WalkHandlers.TatomPersonConstruct; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElems_Name.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_Email.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_Uri.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.XsdGoPkgHasElems_Uri.Walk()
-	me.XsdGoPkgHasElems_Email.Walk()
-	me.XsdGoPkgHasElems_Name.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
-}
-
-type XsdGoPkgHasElem_Author struct {
-	Author *TatomPersonConstruct `xml:"http://www.w3.org/2005/Atom author"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Author function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Author instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Author instance.
-func (me *XsdGoPkgHasElem_Author) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_Author
-	if fn != nil {
-		fn(me, true)
-	}
-	me.Author.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type XsdGoPkgHasElems_Author struct {
@@ -156,25 +188,61 @@ type XsdGoPkgHasElems_Author struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Author function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Author instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Author instance.
-func (me *XsdGoPkgHasElems_Author) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_Author
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_Author) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Author; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.Authors {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	for _, x := range me.Authors {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-type XsdGoPkgHasAttr_Title_XsdtString_ struct {
-	Title xsdt.String `xml:"http://www.w3.org/2005/Atom title,attr"`
+type XsdGoPkgHasElem_Author struct {
+	Author *TatomPersonConstruct `xml:"http://www.w3.org/2005/Atom author"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Author function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Author instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Author instance.
+func (me *XsdGoPkgHasElem_Author) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Author; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Author.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
 }
 
 type XsdGoPkgHasAttr_Length_XsdtString_ struct {
 	Length xsdt.String `xml:"http://www.w3.org/2005/Atom length,attr"`
+}
+
+type XsdGoPkgHasAttr_Rel_XsdtString_ struct {
+	Rel xsdt.String `xml:"http://www.w3.org/2005/Atom rel,attr"`
+}
+
+type XsdGoPkgHasAttr_Title_XsdtString_ struct {
+	Title xsdt.String `xml:"http://www.w3.org/2005/Atom title,attr"`
 }
 
 type TatomLanguageTag xsdt.String
@@ -192,20 +260,16 @@ type XsdGoPkgHasAttr_Hreflang_TatomLanguageTag_ struct {
 	Hreflang TatomLanguageTag `xml:"http://www.w3.org/2005/Atom hreflang,attr"`
 }
 
-type XsdGoPkgHasAttr_Rel_XsdtString_ struct {
-	Rel xsdt.String `xml:"http://www.w3.org/2005/Atom rel,attr"`
-}
-
 type TatomMediaType xsdt.String
+
+//	This convenience method just performs a simple type conversion to TatomMediaType's alias type xsdt.String.
+func (me TatomMediaType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 //	Since TatomMediaType is just a simple String type, this merely returns the current string value.
 func (me TatomMediaType) String() string { return xsdt.String(me).String() }
 
 //	Since TatomMediaType is just a simple String type, this merely sets the current value from the specified string.
 func (me *TatomMediaType) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TatomMediaType's alias type xsdt.String.
-func (me TatomMediaType) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
 type XsdGoPkgHasAttr_Type_TatomMediaType_ struct {
 	Type TatomMediaType `xml:"http://www.w3.org/2005/Atom type,attr"`
@@ -218,26 +282,32 @@ type XsdGoPkgHasAttr_Href_XsdtString_ struct {
 type TxsdLink struct {
 	XsdGoPkgHasAttr_Hreflang_TatomLanguageTag_
 
-	XsdGoPkgHasAttr_Rel_XsdtString_
-
 	XsdGoPkgHasAttr_Type_TatomMediaType_
 
 	XsdGoPkgHasAttr_Href_XsdtString_
 
-	XsdGoPkgHasAttr_Title_XsdtString_
-
 	XsdGoPkgHasAttr_Length_XsdtString_
+
+	XsdGoPkgHasAttr_Rel_XsdtString_
+
+	XsdGoPkgHasAttr_Title_XsdtString_
 }
 
 //	If the WalkHandlers.TxsdLink function is not nil (ie. was set by outside code), calls it with this TxsdLink instance as the single argument. Then calls the Walk() method on 0/6 embed(s) and 0/0 field(s) belonging to this TxsdLink instance.
-func (me *TxsdLink) Walk() {
-	fn := WalkHandlers.TxsdLink
-	if fn != nil {
-		fn(me, true)
+func (me *TxsdLink) Walk() (err error) {
+	if fn := WalkHandlers.TxsdLink; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type XsdGoPkgHasElems_Link struct {
@@ -245,17 +315,25 @@ type XsdGoPkgHasElems_Link struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Link function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Link instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Link instance.
-func (me *XsdGoPkgHasElems_Link) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElems_Link
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElems_Link) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Link; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.Links {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	for _, x := range me.Links {
-		x.Walk()
-	}
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
 type XsdGoPkgHasElem_Link struct {
@@ -263,34 +341,51 @@ type XsdGoPkgHasElem_Link struct {
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Link function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Link instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Link instance.
-func (me *XsdGoPkgHasElem_Link) Walk() {
-	fn := WalkHandlers.XsdGoPkgHasElem_Link
-	if fn != nil {
-		fn(me, true)
+func (me *XsdGoPkgHasElem_Link) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Link; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Link.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
 	}
-	me.Link.Walk()
-	if fn != nil {
-		fn(me, false)
-	}
+	return
 }
 
-//	Provides 12 strong-typed hooks for your own custom handler functions to be invoked when the Walk() method is called on any instance of any (non-attribute-related) struct type defined in this package.
-//	If your custom handler does get called at all for a given struct instance, then it always gets called twice, first with the 'enter' bool argument set to true, then (after having Walk()ed all subordinate struct instances, if any) once again with it set to false.
-var WalkHandlers = &XsdGoPkgWalkHandlers{}
+var (
+	//	Set this to false to break a Walk() immediately as soon as the first error is returned by a custom handler function.
+	//	If true, Walk() proceeds and accumulates all errors in the WalkErrors slice.
+	WalkContinueOnError = true
+	//	Contains all errors accumulated during Walk()s. If you're using this, you need to reset this yourself as needed prior to a fresh Walk().
+	WalkErrors []error
+	//	Your custom error-handling function, if required.
+	WalkOnError func(error)
+	//	Provides 12 strong-typed hooks for your own custom handler functions to be invoked when the Walk() method is called on any instance of any (non-attribute-related) struct type defined in this package.
+	//	If your custom handler does get called at all for a given struct instance, then it always gets called twice, first with the 'enter' bool argument set to true, then (after having Walk()ed all subordinate struct instances, if any) once again with it set to false.
+	WalkHandlers = &XsdGoPkgWalkHandlers{}
+)
 
 //	Provides 12 strong-typed hooks for your own custom handler functions to be invoked when the Walk() method is called on any instance of any (non-attribute-related) struct type defined in this package.
 //	If your custom handler does get called at all for a given struct instance, then it always gets called twice, first with the 'enter' bool argument set to true, then (after having Walk()ed all subordinate struct instances, if any) once again with it set to false.
 type XsdGoPkgWalkHandlers struct {
-	XsdGoPkgHasElem_Name    func(o *XsdGoPkgHasElem_Name, enter bool)
-	TatomPersonConstruct    func(o *TatomPersonConstruct, enter bool)
-	XsdGoPkgHasElems_Name   func(o *XsdGoPkgHasElems_Name, enter bool)
-	XsdGoPkgHasElem_Author  func(o *XsdGoPkgHasElem_Author, enter bool)
-	XsdGoPkgHasElem_Uri     func(o *XsdGoPkgHasElem_Uri, enter bool)
-	XsdGoPkgHasElems_Uri    func(o *XsdGoPkgHasElems_Uri, enter bool)
-	XsdGoPkgHasElem_Email   func(o *XsdGoPkgHasElem_Email, enter bool)
-	XsdGoPkgHasElems_Author func(o *XsdGoPkgHasElems_Author, enter bool)
-	TxsdLink                func(o *TxsdLink, enter bool)
-	XsdGoPkgHasElems_Link   func(o *XsdGoPkgHasElems_Link, enter bool)
-	XsdGoPkgHasElem_Link    func(o *XsdGoPkgHasElem_Link, enter bool)
-	XsdGoPkgHasElems_Email  func(o *XsdGoPkgHasElems_Email, enter bool)
+	XsdGoPkgHasElems_Email  func(*XsdGoPkgHasElems_Email, bool) error
+	XsdGoPkgHasElems_Author func(*XsdGoPkgHasElems_Author, bool) error
+	XsdGoPkgHasElem_Link    func(*XsdGoPkgHasElem_Link, bool) error
+	XsdGoPkgHasElems_Link   func(*XsdGoPkgHasElems_Link, bool) error
+	XsdGoPkgHasElems_Uri    func(*XsdGoPkgHasElems_Uri, bool) error
+	XsdGoPkgHasElems_Name   func(*XsdGoPkgHasElems_Name, bool) error
+	XsdGoPkgHasElem_Uri     func(*XsdGoPkgHasElem_Uri, bool) error
+	XsdGoPkgHasElem_Email   func(*XsdGoPkgHasElem_Email, bool) error
+	XsdGoPkgHasElem_Author  func(*XsdGoPkgHasElem_Author, bool) error
+	TxsdLink                func(*TxsdLink, bool) error
+	XsdGoPkgHasElem_Name    func(*XsdGoPkgHasElem_Name, bool) error
+	TatomPersonConstruct    func(*TatomPersonConstruct, bool) error
 }

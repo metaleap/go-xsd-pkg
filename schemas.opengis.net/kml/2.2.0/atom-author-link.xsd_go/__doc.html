@@ -116,7 +116,7 @@ Comments on types and fields (if any) are from the XSD file located at:
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="#TatomPersonConstruct.Walk">func (me *TatomPersonConstruct) Walk()</a></dd>
+					<dd>&nbsp; &nbsp; <a href="#TatomPersonConstruct.Walk">func (me *TatomPersonConstruct) Walk() (err error)</a></dd>
 				
 			
 				
@@ -124,7 +124,7 @@ Comments on types and fields (if any) are from the XSD file located at:
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="#TxsdLink.Walk">func (me *TxsdLink) Walk()</a></dd>
+					<dd>&nbsp; &nbsp; <a href="#TxsdLink.Walk">func (me *TxsdLink) Walk() (err error)</a></dd>
 				
 			
 				
@@ -162,7 +162,7 @@ Comments on types and fields (if any) are from the XSD file located at:
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElem_Author.Walk">func (me *XsdGoPkgHasElem_Author) Walk()</a></dd>
+					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElem_Author.Walk">func (me *XsdGoPkgHasElem_Author) Walk() (err error)</a></dd>
 				
 			
 				
@@ -170,7 +170,7 @@ Comments on types and fields (if any) are from the XSD file located at:
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElem_Email.Walk">func (me *XsdGoPkgHasElem_Email) Walk()</a></dd>
+					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElem_Email.Walk">func (me *XsdGoPkgHasElem_Email) Walk() (err error)</a></dd>
 				
 			
 				
@@ -178,7 +178,7 @@ Comments on types and fields (if any) are from the XSD file located at:
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElem_Link.Walk">func (me *XsdGoPkgHasElem_Link) Walk()</a></dd>
+					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElem_Link.Walk">func (me *XsdGoPkgHasElem_Link) Walk() (err error)</a></dd>
 				
 			
 				
@@ -186,7 +186,7 @@ Comments on types and fields (if any) are from the XSD file located at:
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElem_Name.Walk">func (me *XsdGoPkgHasElem_Name) Walk()</a></dd>
+					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElem_Name.Walk">func (me *XsdGoPkgHasElem_Name) Walk() (err error)</a></dd>
 				
 			
 				
@@ -194,7 +194,7 @@ Comments on types and fields (if any) are from the XSD file located at:
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElem_Uri.Walk">func (me *XsdGoPkgHasElem_Uri) Walk()</a></dd>
+					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElem_Uri.Walk">func (me *XsdGoPkgHasElem_Uri) Walk() (err error)</a></dd>
 				
 			
 				
@@ -202,7 +202,7 @@ Comments on types and fields (if any) are from the XSD file located at:
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElems_Author.Walk">func (me *XsdGoPkgHasElems_Author) Walk()</a></dd>
+					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElems_Author.Walk">func (me *XsdGoPkgHasElems_Author) Walk() (err error)</a></dd>
 				
 			
 				
@@ -210,7 +210,7 @@ Comments on types and fields (if any) are from the XSD file located at:
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElems_Email.Walk">func (me *XsdGoPkgHasElems_Email) Walk()</a></dd>
+					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElems_Email.Walk">func (me *XsdGoPkgHasElems_Email) Walk() (err error)</a></dd>
 				
 			
 				
@@ -218,7 +218,7 @@ Comments on types and fields (if any) are from the XSD file located at:
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElems_Link.Walk">func (me *XsdGoPkgHasElems_Link) Walk()</a></dd>
+					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElems_Link.Walk">func (me *XsdGoPkgHasElems_Link) Walk() (err error)</a></dd>
 				
 			
 				
@@ -226,7 +226,7 @@ Comments on types and fields (if any) are from the XSD file located at:
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElems_Name.Walk">func (me *XsdGoPkgHasElems_Name) Walk()</a></dd>
+					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElems_Name.Walk">func (me *XsdGoPkgHasElems_Name) Walk() (err error)</a></dd>
 				
 			
 				
@@ -234,7 +234,7 @@ Comments on types and fields (if any) are from the XSD file located at:
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElems_Uri.Walk">func (me *XsdGoPkgHasElems_Uri) Walk()</a></dd>
+					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElems_Uri.Walk">func (me *XsdGoPkgHasElems_Uri) Walk() (err error)</a></dd>
 				
 			
 				
@@ -262,19 +262,26 @@ Comments on types and fields (if any) are from the XSD file located at:
 		
 			<h2 id="pkg-variables">Variables</h2>
 			
-				<pre>var WalkHandlers = &amp;XsdGoPkgWalkHandlers{}</pre>
-				<p>
-Provides 12 strong-typed hooks for your own custom handler functions to be invoked when the Walk() method is called on any instance of any (non-attribute-related) struct type defined in this package.
-If your custom handler does get called at all for a given struct instance, then it always gets called twice, first with the &#39;enter&#39; bool argument set to true, then (after having Walk()ed all subordinate struct instances, if any) once again with it set to false.
-</p>
-
+				<pre>var (
+    <span class="comment">//	Set this to false to break a Walk() immediately as soon as the first error is returned by a custom handler function.</span>
+    <span class="comment">//	If true, Walk() proceeds and accumulates all errors in the WalkErrors slice.</span>
+    WalkContinueOnError = true
+    <span class="comment">//	Contains all errors accumulated during Walk()s. If you&#39;re using this, you need to reset this yourself as needed prior to a fresh Walk().</span>
+    WalkErrors []error
+    <span class="comment">//	Your custom error-handling function, if required.</span>
+    WalkOnError func(error)
+    <span class="comment">//	Provides 12 strong-typed hooks for your own custom handler functions to be invoked when the Walk() method is called on any instance of any (non-attribute-related) struct type defined in this package.</span>
+    <span class="comment">//	If your custom handler does get called at all for a given struct instance, then it always gets called twice, first with the &#39;enter&#39; bool argument set to true, then (after having Walk()ed all subordinate struct instances, if any) once again with it set to false.</span>
+    WalkHandlers = &amp;XsdGoPkgWalkHandlers{}
+)</pre>
+				
 			
 		
 		
 		
 			
 			
-			<h2 id="TatomEmailAddress">type <a href="/target/atom-author-link.xsd.go?s=2590:2624#L65">TatomEmailAddress</a></h2>
+			<h2 id="TatomEmailAddress">type <a href="/target/atom-author-link.xsd.go?s=3554:3588#L89">TatomEmailAddress</a></h2>
 			<pre>type TatomEmailAddress xsdt.String</pre>
 			
 
@@ -288,7 +295,7 @@ If your custom handler does get called at all for a given struct instance, then 
 
 			
 				
-				<h3 id="TatomEmailAddress.SetFromString">func (*TatomEmailAddress) <a href="/target/atom-author-link.xsd.go?s=2941:2993#L71">SetFromString</a></h3>
+				<h3 id="TatomEmailAddress.SetFromString">func (*TatomEmailAddress) <a href="/target/atom-author-link.xsd.go?s=4089:4141#L98">SetFromString</a></h3>
 				<pre>func (me *TatomEmailAddress) SetFromString(s string)</pre>
 				<p>
 Since TatomEmailAddress is just a simple String type, this merely sets the current value from the specified string.
@@ -298,7 +305,7 @@ Since TatomEmailAddress is just a simple String type, this merely sets the curre
 				
 			
 				
-				<h3 id="TatomEmailAddress.String">func (TatomEmailAddress) <a href="/target/atom-author-link.xsd.go?s=3138:3181#L74">String</a></h3>
+				<h3 id="TatomEmailAddress.String">func (TatomEmailAddress) <a href="/target/atom-author-link.xsd.go?s=3889:3932#L95">String</a></h3>
 				<pre>func (me TatomEmailAddress) String() string</pre>
 				<p>
 Since TatomEmailAddress is just a simple String type, this merely returns the current string value.
@@ -308,7 +315,7 @@ Since TatomEmailAddress is just a simple String type, this merely returns the cu
 				
 			
 				
-				<h3 id="TatomEmailAddress.ToXsdtString">func (TatomEmailAddress) <a href="/target/atom-author-link.xsd.go?s=2739:2793#L68">ToXsdtString</a></h3>
+				<h3 id="TatomEmailAddress.ToXsdtString">func (TatomEmailAddress) <a href="/target/atom-author-link.xsd.go?s=3703:3757#L92">ToXsdtString</a></h3>
 				<pre>func (me TatomEmailAddress) ToXsdtString() xsdt.String</pre>
 				<p>
 This convenience method just performs a simple type conversion to TatomEmailAddress&#39;s alias type xsdt.String.
@@ -320,7 +327,7 @@ This convenience method just performs a simple type conversion to TatomEmailAddr
 		
 			
 			
-			<h2 id="TatomLanguageTag">type <a href="/target/atom-author-link.xsd.go?s=6379:6412#L170">TatomLanguageTag</a></h2>
+			<h2 id="TatomLanguageTag">type <a href="/target/atom-author-link.xsd.go?s=9148:9181#L238">TatomLanguageTag</a></h2>
 			<pre>type TatomLanguageTag xsdt.String</pre>
 			
 
@@ -334,7 +341,7 @@ This convenience method just performs a simple type conversion to TatomEmailAddr
 
 			
 				
-				<h3 id="TatomLanguageTag.SetFromString">func (*TatomLanguageTag) <a href="/target/atom-author-link.xsd.go?s=6532:6583#L173">SetFromString</a></h3>
+				<h3 id="TatomLanguageTag.SetFromString">func (*TatomLanguageTag) <a href="/target/atom-author-link.xsd.go?s=9301:9352#L241">SetFromString</a></h3>
 				<pre>func (me *TatomLanguageTag) SetFromString(s string)</pre>
 				<p>
 Since TatomLanguageTag is just a simple String type, this merely sets the current value from the specified string.
@@ -344,7 +351,7 @@ Since TatomLanguageTag is just a simple String type, this merely sets the curren
 				
 			
 				
-				<h3 id="TatomLanguageTag.String">func (TatomLanguageTag) <a href="/target/atom-author-link.xsd.go?s=6921:6963#L179">String</a></h3>
+				<h3 id="TatomLanguageTag.String">func (TatomLanguageTag) <a href="/target/atom-author-link.xsd.go?s=9690:9732#L247">String</a></h3>
 				<pre>func (me TatomLanguageTag) String() string</pre>
 				<p>
 Since TatomLanguageTag is just a simple String type, this merely returns the current string value.
@@ -354,7 +361,7 @@ Since TatomLanguageTag is just a simple String type, this merely returns the cur
 				
 			
 				
-				<h3 id="TatomLanguageTag.ToXsdtString">func (TatomLanguageTag) <a href="/target/atom-author-link.xsd.go?s=6737:6790#L176">ToXsdtString</a></h3>
+				<h3 id="TatomLanguageTag.ToXsdtString">func (TatomLanguageTag) <a href="/target/atom-author-link.xsd.go?s=9506:9559#L244">ToXsdtString</a></h3>
 				<pre>func (me TatomLanguageTag) ToXsdtString() xsdt.String</pre>
 				<p>
 This convenience method just performs a simple type conversion to TatomLanguageTag&#39;s alias type xsdt.String.
@@ -366,7 +373,7 @@ This convenience method just performs a simple type conversion to TatomLanguageT
 		
 			
 			
-			<h2 id="TatomMediaType">type <a href="/target/atom-author-link.xsd.go?s=7249:7280#L189">TatomMediaType</a></h2>
+			<h2 id="TatomMediaType">type <a href="/target/atom-author-link.xsd.go?s=9907:9938#L253">TatomMediaType</a></h2>
 			<pre>type TatomMediaType xsdt.String</pre>
 			
 
@@ -380,7 +387,7 @@ This convenience method just performs a simple type conversion to TatomLanguageT
 
 			
 				
-				<h3 id="TatomMediaType.SetFromString">func (*TatomMediaType) <a href="/target/atom-author-link.xsd.go?s=7576:7625#L195">SetFromString</a></h3>
+				<h3 id="TatomMediaType.SetFromString">func (*TatomMediaType) <a href="/target/atom-author-link.xsd.go?s=10424:10473#L262">SetFromString</a></h3>
 				<pre>func (me *TatomMediaType) SetFromString(s string)</pre>
 				<p>
 Since TatomMediaType is just a simple String type, this merely sets the current value from the specified string.
@@ -390,7 +397,7 @@ Since TatomMediaType is just a simple String type, this merely sets the current 
 				
 			
 				
-				<h3 id="TatomMediaType.String">func (TatomMediaType) <a href="/target/atom-author-link.xsd.go?s=7382:7422#L192">String</a></h3>
+				<h3 id="TatomMediaType.String">func (TatomMediaType) <a href="/target/atom-author-link.xsd.go?s=10230:10270#L259">String</a></h3>
 				<pre>func (me TatomMediaType) String() string</pre>
 				<p>
 Since TatomMediaType is just a simple String type, this merely returns the current string value.
@@ -400,7 +407,7 @@ Since TatomMediaType is just a simple String type, this merely returns the curre
 				
 			
 				
-				<h3 id="TatomMediaType.ToXsdtString">func (TatomMediaType) <a href="/target/atom-author-link.xsd.go?s=7777:7828#L198">ToXsdtString</a></h3>
+				<h3 id="TatomMediaType.ToXsdtString">func (TatomMediaType) <a href="/target/atom-author-link.xsd.go?s=10050:10101#L256">ToXsdtString</a></h3>
 				<pre>func (me TatomMediaType) ToXsdtString() xsdt.String</pre>
 				<p>
 This convenience method just performs a simple type conversion to TatomMediaType&#39;s alias type xsdt.String.
@@ -412,13 +419,13 @@ This convenience method just performs a simple type conversion to TatomMediaType
 		
 			
 			
-			<h2 id="TatomPersonConstruct">type <a href="/target/atom-author-link.xsd.go?s=4316:4423#L106">TatomPersonConstruct</a></h2>
+			<h2 id="TatomPersonConstruct">type <a href="/target/atom-author-link.xsd.go?s=5762:5869#L142">TatomPersonConstruct</a></h2>
 			<pre>type TatomPersonConstruct struct {
     XsdGoPkgHasElems_Uri
 
-    XsdGoPkgHasElems_Email
-
     XsdGoPkgHasElems_Name
+
+    XsdGoPkgHasElems_Email
 }</pre>
 			
 
@@ -432,8 +439,8 @@ This convenience method just performs a simple type conversion to TatomMediaType
 
 			
 				
-				<h3 id="TatomPersonConstruct.Walk">func (*TatomPersonConstruct) <a href="/target/atom-author-link.xsd.go?s=4704:4742#L115">Walk</a></h3>
-				<pre>func (me *TatomPersonConstruct) Walk()</pre>
+				<h3 id="TatomPersonConstruct.Walk">func (*TatomPersonConstruct) <a href="/target/atom-author-link.xsd.go?s=6150:6200#L151">Walk</a></h3>
+				<pre>func (me *TatomPersonConstruct) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.TatomPersonConstruct function is not nil (ie. was set by outside code), calls it with this TatomPersonConstruct instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this TatomPersonConstruct instance.
 </p>
@@ -444,19 +451,19 @@ If the WalkHandlers.TatomPersonConstruct function is not nil (ie. was set by out
 		
 			
 			
-			<h2 id="TxsdLink">type <a href="/target/atom-author-link.xsd.go?s=8092:8341#L208">TxsdLink</a></h2>
+			<h2 id="TxsdLink">type <a href="/target/atom-author-link.xsd.go?s=10750:10999#L272">TxsdLink</a></h2>
 			<pre>type TxsdLink struct {
     XsdGoPkgHasAttr_Hreflang_TatomLanguageTag_
-
-    XsdGoPkgHasAttr_Rel_XsdtString_
 
     XsdGoPkgHasAttr_Type_TatomMediaType_
 
     XsdGoPkgHasAttr_Href_XsdtString_
 
-    XsdGoPkgHasAttr_Title_XsdtString_
-
     XsdGoPkgHasAttr_Length_XsdtString_
+
+    XsdGoPkgHasAttr_Rel_XsdtString_
+
+    XsdGoPkgHasAttr_Title_XsdtString_
 }</pre>
 			
 
@@ -470,8 +477,8 @@ If the WalkHandlers.TatomPersonConstruct function is not nil (ie. was set by out
 
 			
 				
-				<h3 id="TxsdLink.Walk">func (*TxsdLink) <a href="/target/atom-author-link.xsd.go?s=8586:8612#L223">Walk</a></h3>
-				<pre>func (me *TxsdLink) Walk()</pre>
+				<h3 id="TxsdLink.Walk">func (*TxsdLink) <a href="/target/atom-author-link.xsd.go?s=11244:11282#L287">Walk</a></h3>
+				<pre>func (me *TxsdLink) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.TxsdLink function is not nil (ie. was set by outside code), calls it with this TxsdLink instance as the single argument. Then calls the Walk() method on 0/6 embed(s) and 0/0 field(s) belonging to this TxsdLink instance.
 </p>
@@ -482,7 +489,7 @@ If the WalkHandlers.TxsdLink function is not nil (ie. was set by outside code), 
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Href_XsdtString_">type <a href="/target/atom-author-link.xsd.go?s=7978:8090#L204">XsdGoPkgHasAttr_Href_XsdtString_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Href_XsdtString_">type <a href="/target/atom-author-link.xsd.go?s=10636:10748#L268">XsdGoPkgHasAttr_Href_XsdtString_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Href_XsdtString_ struct {
     Href xsdt.String `xml:&#34;http://www.w3.org/2005/Atom href,attr&#34;`
 }</pre>
@@ -500,7 +507,7 @@ If the WalkHandlers.TxsdLink function is not nil (ie. was set by outside code), 
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Hreflang_TatomLanguageTag_">type <a href="/target/atom-author-link.xsd.go?s=7001:7136#L181">XsdGoPkgHasAttr_Hreflang_TatomLanguageTag_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Hreflang_TatomLanguageTag_">type <a href="/target/atom-author-link.xsd.go?s=9770:9905#L249">XsdGoPkgHasAttr_Hreflang_TatomLanguageTag_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Hreflang_TatomLanguageTag_ struct {
     Hreflang TatomLanguageTag `xml:&#34;http://www.w3.org/2005/Atom hreflang,attr&#34;`
 }</pre>
@@ -518,7 +525,7 @@ If the WalkHandlers.TxsdLink function is not nil (ie. was set by outside code), 
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Length_XsdtString_">type <a href="/target/atom-author-link.xsd.go?s=6259:6377#L166">XsdGoPkgHasAttr_Length_XsdtString_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Length_XsdtString_">type <a href="/target/atom-author-link.xsd.go?s=8800:8918#L226">XsdGoPkgHasAttr_Length_XsdtString_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Length_XsdtString_ struct {
     Length xsdt.String `xml:&#34;http://www.w3.org/2005/Atom length,attr&#34;`
 }</pre>
@@ -536,7 +543,7 @@ If the WalkHandlers.TxsdLink function is not nil (ie. was set by outside code), 
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Rel_XsdtString_">type <a href="/target/atom-author-link.xsd.go?s=7138:7247#L185">XsdGoPkgHasAttr_Rel_XsdtString_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Rel_XsdtString_">type <a href="/target/atom-author-link.xsd.go?s=8920:9029#L230">XsdGoPkgHasAttr_Rel_XsdtString_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Rel_XsdtString_ struct {
     Rel xsdt.String `xml:&#34;http://www.w3.org/2005/Atom rel,attr&#34;`
 }</pre>
@@ -554,7 +561,7 @@ If the WalkHandlers.TxsdLink function is not nil (ie. was set by outside code), 
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Title_XsdtString_">type <a href="/target/atom-author-link.xsd.go?s=6142:6257#L162">XsdGoPkgHasAttr_Title_XsdtString_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Title_XsdtString_">type <a href="/target/atom-author-link.xsd.go?s=9031:9146#L234">XsdGoPkgHasAttr_Title_XsdtString_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Title_XsdtString_ struct {
     Title xsdt.String `xml:&#34;http://www.w3.org/2005/Atom title,attr&#34;`
 }</pre>
@@ -572,7 +579,7 @@ If the WalkHandlers.TxsdLink function is not nil (ie. was set by outside code), 
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Type_TatomMediaType_">type <a href="/target/atom-author-link.xsd.go?s=7857:7976#L200">XsdGoPkgHasAttr_Type_TatomMediaType_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Type_TatomMediaType_">type <a href="/target/atom-author-link.xsd.go?s=10515:10634#L264">XsdGoPkgHasAttr_Type_TatomMediaType_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Type_TatomMediaType_ struct {
     Type TatomMediaType `xml:&#34;http://www.w3.org/2005/Atom type,attr&#34;`
 }</pre>
@@ -590,7 +597,7 @@ If the WalkHandlers.TxsdLink function is not nil (ie. was set by outside code), 
 		
 			
 			
-			<h2 id="XsdGoPkgHasElem_Author">type <a href="/target/atom-author-link.xsd.go?s=4957:5068#L128">XsdGoPkgHasElem_Author</a></h2>
+			<h2 id="XsdGoPkgHasElem_Author">type <a href="/target/atom-author-link.xsd.go?s=7888:7999#L202">XsdGoPkgHasElem_Author</a></h2>
 			<pre>type XsdGoPkgHasElem_Author struct {
     Author *TatomPersonConstruct `xml:&#34;http://www.w3.org/2005/Atom author&#34;`
 }</pre>
@@ -606,8 +613,8 @@ If the WalkHandlers.TxsdLink function is not nil (ie. was set by outside code), 
 
 			
 				
-				<h3 id="XsdGoPkgHasElem_Author.Walk">func (*XsdGoPkgHasElem_Author) <a href="/target/atom-author-link.xsd.go?s=5355:5395#L133">Walk</a></h3>
-				<pre>func (me *XsdGoPkgHasElem_Author) Walk()</pre>
+				<h3 id="XsdGoPkgHasElem_Author.Walk">func (*XsdGoPkgHasElem_Author) <a href="/target/atom-author-link.xsd.go?s=8286:8338#L207">Walk</a></h3>
+				<pre>func (me *XsdGoPkgHasElem_Author) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElem_Author function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Author instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Author instance.
 </p>
@@ -618,7 +625,7 @@ If the WalkHandlers.XsdGoPkgHasElem_Author function is not nil (ie. was set by o
 		
 			
 			
-			<h2 id="XsdGoPkgHasElem_Email">type <a href="/target/atom-author-link.xsd.go?s=3219:3323#L76">XsdGoPkgHasElem_Email</a></h2>
+			<h2 id="XsdGoPkgHasElem_Email">type <a href="/target/atom-author-link.xsd.go?s=4977:5081#L121">XsdGoPkgHasElem_Email</a></h2>
 			<pre>type XsdGoPkgHasElem_Email struct {
     Email TatomEmailAddress `xml:&#34;http://www.w3.org/2005/Atom email&#34;`
 }</pre>
@@ -634,8 +641,8 @@ If the WalkHandlers.XsdGoPkgHasElem_Author function is not nil (ie. was set by o
 
 			
 				
-				<h3 id="XsdGoPkgHasElem_Email.Walk">func (*XsdGoPkgHasElem_Email) <a href="/target/atom-author-link.xsd.go?s=3607:3646#L81">Walk</a></h3>
-				<pre>func (me *XsdGoPkgHasElem_Email) Walk()</pre>
+				<h3 id="XsdGoPkgHasElem_Email.Walk">func (*XsdGoPkgHasElem_Email) <a href="/target/atom-author-link.xsd.go?s=5365:5416#L126">Walk</a></h3>
+				<pre>func (me *XsdGoPkgHasElem_Email) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElem_Email function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Email instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Email instance.
 </p>
@@ -646,7 +653,7 @@ If the WalkHandlers.XsdGoPkgHasElem_Email function is not nil (ie. was set by ou
 		
 			
 			
-			<h2 id="XsdGoPkgHasElem_Link">type <a href="/target/atom-author-link.xsd.go?s=9297:9390#L251">XsdGoPkgHasElem_Link</a></h2>
+			<h2 id="XsdGoPkgHasElem_Link">type <a href="/target/atom-author-link.xsd.go?s=12538:12631#L329">XsdGoPkgHasElem_Link</a></h2>
 			<pre>type XsdGoPkgHasElem_Link struct {
     Link *TxsdLink `xml:&#34;http://www.w3.org/2005/Atom link&#34;`
 }</pre>
@@ -662,8 +669,8 @@ If the WalkHandlers.XsdGoPkgHasElem_Email function is not nil (ie. was set by ou
 
 			
 				
-				<h3 id="XsdGoPkgHasElem_Link.Walk">func (*XsdGoPkgHasElem_Link) <a href="/target/atom-author-link.xsd.go?s=9671:9709#L256">Walk</a></h3>
-				<pre>func (me *XsdGoPkgHasElem_Link) Walk()</pre>
+				<h3 id="XsdGoPkgHasElem_Link.Walk">func (*XsdGoPkgHasElem_Link) <a href="/target/atom-author-link.xsd.go?s=12912:12962#L334">Walk</a></h3>
+				<pre>func (me *XsdGoPkgHasElem_Link) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElem_Link function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Link instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Link instance.
 </p>
@@ -690,8 +697,8 @@ If the WalkHandlers.XsdGoPkgHasElem_Link function is not nil (ie. was set by out
 
 			
 				
-				<h3 id="XsdGoPkgHasElem_Name.Walk">func (*XsdGoPkgHasElem_Name) <a href="/target/atom-author-link.xsd.go?s=844:882#L10">Walk</a></h3>
-				<pre>func (me *XsdGoPkgHasElem_Name) Walk()</pre>
+				<h3 id="XsdGoPkgHasElem_Name.Walk">func (*XsdGoPkgHasElem_Name) <a href="/target/atom-author-link.xsd.go?s=844:894#L10">Walk</a></h3>
+				<pre>func (me *XsdGoPkgHasElem_Name) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElem_Name function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Name instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Name instance.
 </p>
@@ -702,7 +709,7 @@ If the WalkHandlers.XsdGoPkgHasElem_Name function is not nil (ie. was set by out
 		
 			
 			
-			<h2 id="XsdGoPkgHasElem_Uri">type <a href="/target/atom-author-link.xsd.go?s=2068:2160#L50">XsdGoPkgHasElem_Uri</a></h2>
+			<h2 id="XsdGoPkgHasElem_Uri">type <a href="/target/atom-author-link.xsd.go?s=2791:2883#L68">XsdGoPkgHasElem_Uri</a></h2>
 			<pre>type XsdGoPkgHasElem_Uri struct {
     Uri xsdt.String `xml:&#34;http://www.w3.org/2005/Atom uri&#34;`
 }</pre>
@@ -718,8 +725,8 @@ If the WalkHandlers.XsdGoPkgHasElem_Name function is not nil (ie. was set by out
 
 			
 				
-				<h3 id="XsdGoPkgHasElem_Uri.Walk">func (*XsdGoPkgHasElem_Uri) <a href="/target/atom-author-link.xsd.go?s=2438:2475#L55">Walk</a></h3>
-				<pre>func (me *XsdGoPkgHasElem_Uri) Walk()</pre>
+				<h3 id="XsdGoPkgHasElem_Uri.Walk">func (*XsdGoPkgHasElem_Uri) <a href="/target/atom-author-link.xsd.go?s=3161:3210#L73">Walk</a></h3>
+				<pre>func (me *XsdGoPkgHasElem_Uri) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElem_Uri function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Uri instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Uri instance.
 </p>
@@ -730,7 +737,7 @@ If the WalkHandlers.XsdGoPkgHasElem_Uri function is not nil (ie. was set by outs
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_Author">type <a href="/target/atom-author-link.xsd.go?s=5531:5646#L144">XsdGoPkgHasElems_Author</a></h2>
+			<h2 id="XsdGoPkgHasElems_Author">type <a href="/target/atom-author-link.xsd.go?s=6935:7050#L176">XsdGoPkgHasElems_Author</a></h2>
 			<pre>type XsdGoPkgHasElems_Author struct {
     Authors []*TatomPersonConstruct `xml:&#34;http://www.w3.org/2005/Atom author&#34;`
 }</pre>
@@ -746,8 +753,8 @@ If the WalkHandlers.XsdGoPkgHasElem_Uri function is not nil (ie. was set by outs
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_Author.Walk">func (*XsdGoPkgHasElems_Author) <a href="/target/atom-author-link.xsd.go?s=5936:5977#L149">Walk</a></h3>
-				<pre>func (me *XsdGoPkgHasElems_Author) Walk()</pre>
+				<h3 id="XsdGoPkgHasElems_Author.Walk">func (*XsdGoPkgHasElems_Author) <a href="/target/atom-author-link.xsd.go?s=7340:7393#L181">Walk</a></h3>
+				<pre>func (me *XsdGoPkgHasElems_Author) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_Author function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Author instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Author instance.
 </p>
@@ -758,7 +765,7 @@ If the WalkHandlers.XsdGoPkgHasElems_Author function is not nil (ie. was set by 
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_Email">type <a href="/target/atom-author-link.xsd.go?s=3763:3871#L91">XsdGoPkgHasElems_Email</a></h2>
+			<h2 id="XsdGoPkgHasElems_Email">type <a href="/target/atom-author-link.xsd.go?s=4183:4291#L100">XsdGoPkgHasElems_Email</a></h2>
 			<pre>type XsdGoPkgHasElems_Email struct {
     Emails []TatomEmailAddress `xml:&#34;http://www.w3.org/2005/Atom email&#34;`
 }</pre>
@@ -774,8 +781,8 @@ If the WalkHandlers.XsdGoPkgHasElems_Author function is not nil (ie. was set by 
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_Email.Walk">func (*XsdGoPkgHasElems_Email) <a href="/target/atom-author-link.xsd.go?s=4158:4198#L96">Walk</a></h3>
-				<pre>func (me *XsdGoPkgHasElems_Email) Walk()</pre>
+				<h3 id="XsdGoPkgHasElems_Email.Walk">func (*XsdGoPkgHasElems_Email) <a href="/target/atom-author-link.xsd.go?s=4578:4630#L105">Walk</a></h3>
+				<pre>func (me *XsdGoPkgHasElems_Email) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_Email function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Email instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Email instance.
 </p>
@@ -786,7 +793,7 @@ If the WalkHandlers.XsdGoPkgHasElems_Email function is not nil (ie. was set by o
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_Link">type <a href="/target/atom-author-link.xsd.go?s=8716:8813#L233">XsdGoPkgHasElems_Link</a></h2>
+			<h2 id="XsdGoPkgHasElems_Link">type <a href="/target/atom-author-link.xsd.go?s=11615:11712#L303">XsdGoPkgHasElems_Link</a></h2>
 			<pre>type XsdGoPkgHasElems_Link struct {
     Links []*TxsdLink `xml:&#34;http://www.w3.org/2005/Atom link&#34;`
 }</pre>
@@ -802,8 +809,8 @@ If the WalkHandlers.XsdGoPkgHasElems_Email function is not nil (ie. was set by o
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_Link.Walk">func (*XsdGoPkgHasElems_Link) <a href="/target/atom-author-link.xsd.go?s=9097:9136#L238">Walk</a></h3>
-				<pre>func (me *XsdGoPkgHasElems_Link) Walk()</pre>
+				<h3 id="XsdGoPkgHasElems_Link.Walk">func (*XsdGoPkgHasElems_Link) <a href="/target/atom-author-link.xsd.go?s=11996:12047#L308">Walk</a></h3>
+				<pre>func (me *XsdGoPkgHasElems_Link) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_Link function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Link instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Link instance.
 </p>
@@ -814,7 +821,7 @@ If the WalkHandlers.XsdGoPkgHasElems_Link function is not nil (ie. was set by ou
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_Name">type <a href="/target/atom-author-link.xsd.go?s=998:1097#L20">XsdGoPkgHasElems_Name</a></h2>
+			<h2 id="XsdGoPkgHasElems_Name">type <a href="/target/atom-author-link.xsd.go?s=1239:1338#L26">XsdGoPkgHasElems_Name</a></h2>
 			<pre>type XsdGoPkgHasElems_Name struct {
     Names []xsdt.String `xml:&#34;http://www.w3.org/2005/Atom name&#34;`
 }</pre>
@@ -830,8 +837,8 @@ If the WalkHandlers.XsdGoPkgHasElems_Link function is not nil (ie. was set by ou
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_Name.Walk">func (*XsdGoPkgHasElems_Name) <a href="/target/atom-author-link.xsd.go?s=1381:1420#L25">Walk</a></h3>
-				<pre>func (me *XsdGoPkgHasElems_Name) Walk()</pre>
+				<h3 id="XsdGoPkgHasElems_Name.Walk">func (*XsdGoPkgHasElems_Name) <a href="/target/atom-author-link.xsd.go?s=1622:1673#L31">Walk</a></h3>
+				<pre>func (me *XsdGoPkgHasElems_Name) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_Name function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Name instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Name instance.
 </p>
@@ -842,7 +849,7 @@ If the WalkHandlers.XsdGoPkgHasElems_Name function is not nil (ie. was set by ou
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_Uri">type <a href="/target/atom-author-link.xsd.go?s=1537:1633#L35">XsdGoPkgHasElems_Uri</a></h2>
+			<h2 id="XsdGoPkgHasElems_Uri">type <a href="/target/atom-author-link.xsd.go?s=2019:2115#L47">XsdGoPkgHasElems_Uri</a></h2>
 			<pre>type XsdGoPkgHasElems_Uri struct {
     Uris []xsdt.String `xml:&#34;http://www.w3.org/2005/Atom uri&#34;`
 }</pre>
@@ -858,8 +865,8 @@ If the WalkHandlers.XsdGoPkgHasElems_Name function is not nil (ie. was set by ou
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_Uri.Walk">func (*XsdGoPkgHasElems_Uri) <a href="/target/atom-author-link.xsd.go?s=1914:1952#L40">Walk</a></h3>
-				<pre>func (me *XsdGoPkgHasElems_Uri) Walk()</pre>
+				<h3 id="XsdGoPkgHasElems_Uri.Walk">func (*XsdGoPkgHasElems_Uri) <a href="/target/atom-author-link.xsd.go?s=2396:2446#L52">Walk</a></h3>
+				<pre>func (me *XsdGoPkgHasElems_Uri) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_Uri function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Uri instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Uri instance.
 </p>
@@ -870,20 +877,20 @@ If the WalkHandlers.XsdGoPkgHasElems_Uri function is not nil (ie. was set by out
 		
 			
 			
-			<h2 id="XsdGoPkgWalkHandlers">type <a href="/target/atom-author-link.xsd.go?s=10821:11658#L273">XsdGoPkgWalkHandlers</a></h2>
+			<h2 id="XsdGoPkgWalkHandlers">type <a href="/target/atom-author-link.xsd.go?s=14877:15690#L368">XsdGoPkgWalkHandlers</a></h2>
 			<pre>type XsdGoPkgWalkHandlers struct {
-    XsdGoPkgHasElem_Name    func(o *XsdGoPkgHasElem_Name, enter bool)
-    TatomPersonConstruct    func(o *TatomPersonConstruct, enter bool)
-    XsdGoPkgHasElems_Name   func(o *XsdGoPkgHasElems_Name, enter bool)
-    XsdGoPkgHasElem_Author  func(o *XsdGoPkgHasElem_Author, enter bool)
-    XsdGoPkgHasElem_Uri     func(o *XsdGoPkgHasElem_Uri, enter bool)
-    XsdGoPkgHasElems_Uri    func(o *XsdGoPkgHasElems_Uri, enter bool)
-    XsdGoPkgHasElem_Email   func(o *XsdGoPkgHasElem_Email, enter bool)
-    XsdGoPkgHasElems_Author func(o *XsdGoPkgHasElems_Author, enter bool)
-    TxsdLink                func(o *TxsdLink, enter bool)
-    XsdGoPkgHasElems_Link   func(o *XsdGoPkgHasElems_Link, enter bool)
-    XsdGoPkgHasElem_Link    func(o *XsdGoPkgHasElem_Link, enter bool)
-    XsdGoPkgHasElems_Email  func(o *XsdGoPkgHasElems_Email, enter bool)
+    XsdGoPkgHasElems_Email  func(*XsdGoPkgHasElems_Email, bool) error
+    XsdGoPkgHasElems_Author func(*XsdGoPkgHasElems_Author, bool) error
+    XsdGoPkgHasElem_Link    func(*XsdGoPkgHasElem_Link, bool) error
+    XsdGoPkgHasElems_Link   func(*XsdGoPkgHasElems_Link, bool) error
+    XsdGoPkgHasElems_Uri    func(*XsdGoPkgHasElems_Uri, bool) error
+    XsdGoPkgHasElems_Name   func(*XsdGoPkgHasElems_Name, bool) error
+    XsdGoPkgHasElem_Uri     func(*XsdGoPkgHasElem_Uri, bool) error
+    XsdGoPkgHasElem_Email   func(*XsdGoPkgHasElem_Email, bool) error
+    XsdGoPkgHasElem_Author  func(*XsdGoPkgHasElem_Author, bool) error
+    TxsdLink                func(*TxsdLink, bool) error
+    XsdGoPkgHasElem_Name    func(*XsdGoPkgHasElem_Name, bool) error
+    TatomPersonConstruct    func(*TatomPersonConstruct, bool) error
 }</pre>
 			<p>
 Provides 12 strong-typed hooks for your own custom handler functions to be invoked when the Walk() method is called on any instance of any (non-attribute-related) struct type defined in this package.

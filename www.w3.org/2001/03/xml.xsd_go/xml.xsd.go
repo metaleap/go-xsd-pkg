@@ -79,11 +79,11 @@ type XsdGoPkgHasAttr_Lang struct {
 
 type TxsdSpace xsdt.NCName
 
-//	Returns true if the value of this enumerated TxsdSpace is "preserve".
-func (me TxsdSpace) IsPreserve() bool { return me == "preserve" }
-
 //	This convenience method just performs a simple type conversion to TxsdSpace's alias type xsdt.NCName.
 func (me TxsdSpace) ToXsdtNCName() xsdt.NCName { return xsdt.NCName(me) }
+
+//	Returns true if the value of this enumerated TxsdSpace is "preserve".
+func (me TxsdSpace) IsPreserve() bool { return me == "preserve" }
 
 //	Since TxsdSpace is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdSpace) SetFromString(s string) { (*xsdt.NCName)(me).SetFromString(s) }
@@ -112,7 +112,7 @@ type XsdGoPkgHasAttr_Base struct {
 type XsdGoPkgHasAtts_SpecialAttrs struct {
 	XsdGoPkgHasAttr_Base
 
-	XsdGoPkgHasAttr_Lang
-
 	XsdGoPkgHasAttr_Space
+
+	XsdGoPkgHasAttr_Lang
 }
