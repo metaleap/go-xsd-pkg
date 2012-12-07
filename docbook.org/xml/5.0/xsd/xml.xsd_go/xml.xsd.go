@@ -25,14 +25,14 @@ type TxsdSpace xsdt.Token
 //	Since TxsdSpace is just a simple String type, this merely sets the current value from the specified string.
 func (me *TxsdSpace) SetFromString(s string) { (*xsdt.Token)(me).SetFromString(s) }
 
+//	Since TxsdSpace is just a simple String type, this merely returns the current string value.
+func (me TxsdSpace) String() string { return xsdt.Token(me).String() }
+
 //	Returns true if the value of this enumerated TxsdSpace is "preserve".
 func (me TxsdSpace) IsPreserve() bool { return me == "preserve" }
 
 //	This convenience method just performs a simple type conversion to TxsdSpace's alias type xsdt.Token.
 func (me TxsdSpace) ToXsdtToken() xsdt.Token { return xsdt.Token(me) }
-
-//	Since TxsdSpace is just a simple String type, this merely returns the current string value.
-func (me TxsdSpace) String() string { return xsdt.Token(me).String() }
 
 type XsdGoPkgHasAttr_Space struct {
 	Space TxsdSpace `xml:"http://www.w3.org/XML/1998/namespace space,attr"`
