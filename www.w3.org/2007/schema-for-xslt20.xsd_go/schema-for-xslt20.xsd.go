@@ -58,37 +58,89 @@ import (
 
 type Tprefixes xsdt.String
 
-//	Since Tprefixes is just a simple String type, this merely returns the current string value.
-func (me Tprefixes) String() string { return xsdt.String(me).String() }
-
 //	Tprefixes declares a String containing a whitespace-separated list of xsdt.NCName values. This Values() method creates and returns a slice of all elements in that list.
 func (me Tprefixes) Values() (list []xsdt.NCName) {
 	svals := xsdt.ListValues(string(me))
 	list = make([]xsdt.NCName, len(svals))
 	for i, s := range svals {
-		list[i] = xsdt.NCName(s)
+		list[i].Set(s)
 	}
 	return
 }
 
 //	Since Tprefixes is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tprefixes) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+func (me *Tprefixes) Set(s string) { (*xsdt.String)(me).Set(s) }
 
 //	This convenience method just performs a simple type conversion to Tprefixes's alias type xsdt.String.
 func (me Tprefixes) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since Tprefixes is just a simple String type, this merely returns the current string value.
+func (me Tprefixes) String() string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasAttr_ExcludeResultPrefixes_Tprefixes_ struct {
 	ExcludeResultPrefixes Tprefixes `xml:"http://www.w3.org/1999/XSL/Transform exclude-result-prefixes,attr"`
 }
 
+//	A QName.
+//	This schema does not use the built-in type xs:QName, but rather defines its own
+//	QName type. Although xs:QName would define the correct validation on these attributes,
+//	a schema processor would expand unprefixed QNames incorrectly when constructing the PSVI,
+//	because (as defined in XML Schema errata) an unprefixed xs:QName is assumed to be in
+//	the default namespace, which is not the correct assumption for XSLT.
+//	The data type is defined as a restriction of the built-in type Name, restricted
+//	so that it can only contain one colon which must not be the first or last character.
+type TQName xsdt.Name
+
+//	Since TQName is just a simple String type, this merely returns the current string value.
+func (me TQName) String() string { return xsdt.Name(me).String() }
+
+//	Since TQName is just a simple String type, this merely sets the current value from the specified string.
+func (me *TQName) Set(s string) { (*xsdt.Name)(me).Set(s) }
+
+//	This convenience method just performs a simple type conversion to TQName's alias type xsdt.Name.
+func (me TQName) ToXsdtName() xsdt.Name { return xsdt.Name(me) }
+
+type XsdGoPkgHasAttr_Type_TQName_ struct {
+	Type TQName `xml:"http://www.w3.org/1999/XSL/Transform type,attr"`
+}
+
+type TuriList xsdt.String
+
+//	Since TuriList is just a simple String type, this merely returns the current string value.
+func (me TuriList) String() string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TuriList's alias type xsdt.String.
+func (me TuriList) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	TuriList declares a String containing a whitespace-separated list of xsdt.AnyURI values. This Values() method creates and returns a slice of all elements in that list.
+func (me TuriList) Values() (list []xsdt.AnyURI) {
+	svals := xsdt.ListValues(string(me))
+	list = make([]xsdt.AnyURI, len(svals))
+	for i, s := range svals {
+		list[i].Set(s)
+	}
+	return
+}
+
+//	Since TuriList is just a simple String type, this merely sets the current value from the specified string.
+func (me *TuriList) Set(s string) { (*xsdt.String)(me).Set(s) }
+
+type XsdGoPkgHasAttr_DefaultCollation_TuriList_ struct {
+	DefaultCollation TuriList `xml:"http://www.w3.org/1999/XSL/Transform default-collation,attr"`
+}
+
+type XsdGoPkgHasAttr_ExtensionElementPrefixes_Tprefixes_ struct {
+	ExtensionElementPrefixes Tprefixes `xml:"http://www.w3.org/1999/XSL/Transform extension-element-prefixes,attr"`
+}
+
 //	One of the values "yes" or "no".
 type TyesOrNo xsdt.Token
 
-//	Since TyesOrNo is just a simple String type, this merely sets the current value from the specified string.
-func (me *TyesOrNo) SetFromString(s string) { (*xsdt.Token)(me).SetFromString(s) }
-
 //	This convenience method just performs a simple type conversion to TyesOrNo's alias type xsdt.Token.
 func (me TyesOrNo) ToXsdtToken() xsdt.Token { return xsdt.Token(me) }
+
+//	Since TyesOrNo is just a simple String type, this merely sets the current value from the specified string.
+func (me *TyesOrNo) Set(s string) { (*xsdt.Token)(me).Set(s) }
 
 //	Returns true if the value of this enumerated TyesOrNo is "no".
 func (me TyesOrNo) IsNo() bool { return me == "no" }
@@ -111,26 +163,26 @@ func (me XsdGoPkgHasAttr_InheritNamespaces_TyesOrNo_Yes) InheritNamespacesDefaul
 //	Describes different ways of type-annotating an element or attribute.
 type TvalidationType xsdt.Token
 
-//	Since TvalidationType is just a simple String type, this merely returns the current string value.
-func (me TvalidationType) String() string { return xsdt.Token(me).String() }
+//	Returns true if the value of this enumerated TvalidationType is "lax".
+func (me TvalidationType) IsLax() bool { return me == "lax" }
 
-//	Returns true if the value of this enumerated TvalidationType is "preserve".
-func (me TvalidationType) IsPreserve() bool { return me == "preserve" }
+//	Since TvalidationType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TvalidationType) Set(s string) { (*xsdt.Token)(me).Set(s) }
 
 //	Returns true if the value of this enumerated TvalidationType is "strip".
 func (me TvalidationType) IsStrip() bool { return me == "strip" }
 
-//	Returns true if the value of this enumerated TvalidationType is "strict".
-func (me TvalidationType) IsStrict() bool { return me == "strict" }
+//	Since TvalidationType is just a simple String type, this merely returns the current string value.
+func (me TvalidationType) String() string { return xsdt.Token(me).String() }
 
 //	This convenience method just performs a simple type conversion to TvalidationType's alias type xsdt.Token.
 func (me TvalidationType) ToXsdtToken() xsdt.Token { return xsdt.Token(me) }
 
-//	Since TvalidationType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TvalidationType) SetFromString(s string) { (*xsdt.Token)(me).SetFromString(s) }
+//	Returns true if the value of this enumerated TvalidationType is "preserve".
+func (me TvalidationType) IsPreserve() bool { return me == "preserve" }
 
-//	Returns true if the value of this enumerated TvalidationType is "lax".
-func (me TvalidationType) IsLax() bool { return me == "lax" }
+//	Returns true if the value of this enumerated TvalidationType is "strict".
+func (me TvalidationType) IsStrict() bool { return me == "strict" }
 
 type XsdGoPkgHasAttr_Validation_TvalidationType_ struct {
 	Validation TvalidationType `xml:"http://www.w3.org/1999/XSL/Transform validation,attr"`
@@ -140,72 +192,24 @@ type XsdGoPkgHasAttr_XpathDefaultNamespace_XsdtAnyURI_ struct {
 	XpathDefaultNamespace xsdt.AnyURI `xml:"http://www.w3.org/1999/XSL/Transform xpath-default-namespace,attr"`
 }
 
+type XsdGoPkgHasAttr_Version_XsdtDecimal_ struct {
+	Version xsdt.Decimal `xml:"http://www.w3.org/1999/XSL/Transform version,attr"`
+}
+
 //	An XPath 2.0 expression.
 type Texpression xsdt.Token
-
-//	This convenience method just performs a simple type conversion to Texpression's alias type xsdt.Token.
-func (me Texpression) ToXsdtToken() xsdt.Token { return xsdt.Token(me) }
 
 //	Since Texpression is just a simple String type, this merely returns the current string value.
 func (me Texpression) String() string { return xsdt.Token(me).String() }
 
 //	Since Texpression is just a simple String type, this merely sets the current value from the specified string.
-func (me *Texpression) SetFromString(s string) { (*xsdt.Token)(me).SetFromString(s) }
+func (me *Texpression) Set(s string) { (*xsdt.Token)(me).Set(s) }
+
+//	This convenience method just performs a simple type conversion to Texpression's alias type xsdt.Token.
+func (me Texpression) ToXsdtToken() xsdt.Token { return xsdt.Token(me) }
 
 type XsdGoPkgHasAttr_UseWhen_Texpression_ struct {
 	UseWhen Texpression `xml:"http://www.w3.org/1999/XSL/Transform use-when,attr"`
-}
-
-type TuriList xsdt.String
-
-//	This convenience method just performs a simple type conversion to TuriList's alias type xsdt.String.
-func (me TuriList) ToXsdtString() xsdt.String { return xsdt.String(me) }
-
-//	Since TuriList is just a simple String type, this merely returns the current string value.
-func (me TuriList) String() string { return xsdt.String(me).String() }
-
-//	Since TuriList is just a simple String type, this merely sets the current value from the specified string.
-func (me *TuriList) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
-
-//	TuriList declares a String containing a whitespace-separated list of xsdt.AnyURI values. This Values() method creates and returns a slice of all elements in that list.
-func (me TuriList) Values() (list []xsdt.AnyURI) {
-	svals := xsdt.ListValues(string(me))
-	list = make([]xsdt.AnyURI, len(svals))
-	for i, s := range svals {
-		list[i] = xsdt.AnyURI(s)
-	}
-	return
-}
-
-type XsdGoPkgHasAttr_DefaultCollation_TuriList_ struct {
-	DefaultCollation TuriList `xml:"http://www.w3.org/1999/XSL/Transform default-collation,attr"`
-}
-
-type XsdGoPkgHasAttr_ExtensionElementPrefixes_Tprefixes_ struct {
-	ExtensionElementPrefixes Tprefixes `xml:"http://www.w3.org/1999/XSL/Transform extension-element-prefixes,attr"`
-}
-
-//	A QName.
-//	This schema does not use the built-in type xs:QName, but rather defines its own
-//	QName type. Although xs:QName would define the correct validation on these attributes,
-//	a schema processor would expand unprefixed QNames incorrectly when constructing the PSVI,
-//	because (as defined in XML Schema errata) an unprefixed xs:QName is assumed to be in
-//	the default namespace, which is not the correct assumption for XSLT.
-//	The data type is defined as a restriction of the built-in type Name, restricted
-//	so that it can only contain one colon which must not be the first or last character.
-type TQName xsdt.Name
-
-//	Since TQName is just a simple String type, this merely returns the current string value.
-func (me TQName) String() string { return xsdt.Name(me).String() }
-
-//	Since TQName is just a simple String type, this merely sets the current value from the specified string.
-func (me *TQName) SetFromString(s string) { (*xsdt.Name)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TQName's alias type xsdt.Name.
-func (me TQName) ToXsdtName() xsdt.Name { return xsdt.Name(me) }
-
-type XsdGoPkgHasAttr_Type_TQName_ struct {
-	Type TQName `xml:"http://www.w3.org/1999/XSL/Transform type,attr"`
 }
 
 //	A list of QNames.
@@ -213,53 +217,104 @@ type XsdGoPkgHasAttr_Type_TQName_ struct {
 //	and in the cdata-section-elements attribute of xsl:output
 type TQNames xsdt.String
 
-//	Since TQNames is just a simple String type, this merely returns the current string value.
-func (me TQNames) String() string { return xsdt.String(me).String() }
-
-//	This convenience method just performs a simple type conversion to TQNames's alias type xsdt.String.
-func (me TQNames) ToXsdtString() xsdt.String { return xsdt.String(me) }
-
-//	Since TQNames is just a simple String type, this merely sets the current value from the specified string.
-func (me *TQNames) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
-
 //	TQNames declares a String containing a whitespace-separated list of TQName values. This Values() method creates and returns a slice of all elements in that list.
 func (me TQNames) Values() (list []TQName) {
 	svals := xsdt.ListValues(string(me))
 	list = make([]TQName, len(svals))
 	for i, s := range svals {
-		list[i] = TQName(s)
+		list[i].Set(s)
 	}
 	return
 }
+
+//	This convenience method just performs a simple type conversion to TQNames's alias type xsdt.String.
+func (me TQNames) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TQNames is just a simple String type, this merely sets the current value from the specified string.
+func (me *TQNames) Set(s string) { (*xsdt.String)(me).Set(s) }
+
+//	Since TQNames is just a simple String type, this merely returns the current string value.
+func (me TQNames) String() string { return xsdt.String(me).String() }
 
 type XsdGoPkgHasAttr_UseAttributeSets_TQNames_ struct {
 	UseAttributeSets TQNames `xml:"http://www.w3.org/1999/XSL/Transform use-attribute-sets,attr"`
 }
 
-type XsdGoPkgHasAttr_Version_XsdtDecimal_ struct {
-	Version xsdt.Decimal `xml:"http://www.w3.org/1999/XSL/Transform version,attr"`
-}
-
 type XsdGoPkgHasAtts_LiteralResultElementAttributes struct {
-	XsdGoPkgHasAttr_UseWhen_Texpression_
+	XsdGoPkgHasAttr_Type_TQName_
 
 	XsdGoPkgHasAttr_DefaultCollation_TuriList_
 
 	XsdGoPkgHasAttr_ExtensionElementPrefixes_Tprefixes_
-
-	XsdGoPkgHasAttr_Type_TQName_
-
-	XsdGoPkgHasAttr_UseAttributeSets_TQNames_
-
-	XsdGoPkgHasAttr_Version_XsdtDecimal_
-
-	XsdGoPkgHasAttr_ExcludeResultPrefixes_Tprefixes_
 
 	XsdGoPkgHasAttr_InheritNamespaces_TyesOrNo_Yes
 
 	XsdGoPkgHasAttr_Validation_TvalidationType_
 
 	XsdGoPkgHasAttr_XpathDefaultNamespace_XsdtAnyURI_
+
+	XsdGoPkgHasAttr_Version_XsdtDecimal_
+
+	XsdGoPkgHasAttr_UseWhen_Texpression_
+
+	XsdGoPkgHasAttr_UseAttributeSets_TQNames_
+
+	XsdGoPkgHasAttr_ExcludeResultPrefixes_Tprefixes_
+}
+
+//	A list of NameTests, as defined in the XPath 2.0 Recommendation.
+//	Each NameTest is either a QName, or "*", or "prefix:*", or "*:localname"
+type Tnametests xsdt.String
+
+//	Since Tnametests is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tnametests) Set(s string) { (*xsdt.String)(me).Set(s) }
+
+//	This convenience method just performs a simple type conversion to Tnametests's alias type xsdt.String.
+func (me Tnametests) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since Tnametests is just a simple String type, this merely returns the current string value.
+func (me Tnametests) String() string { return xsdt.String(me).String() }
+
+type XsdGoPkgHasAttr_Elements_Tnametests_ struct {
+	Elements Tnametests `xml:"http://www.w3.org/1999/XSL/Transform elements,attr"`
+}
+
+//	Either a namespace prefix, or #default.
+//	Used in the xsl:namespace-alias element.
+type TprefixOrDefault xsdt.String
+
+//	Since TprefixOrDefault is just a simple String type, this merely sets the current value from the specified string.
+func (me *TprefixOrDefault) Set(s string) { (*xsdt.String)(me).Set(s) }
+
+//	This convenience method just performs a simple type conversion to TprefixOrDefault's alias type xsdt.String.
+func (me TprefixOrDefault) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TprefixOrDefault is just a simple String type, this merely returns the current string value.
+func (me TprefixOrDefault) String() string { return xsdt.String(me).String() }
+
+type TprefixList xsdt.String
+
+//	TprefixList declares a String containing a whitespace-separated list of TprefixOrDefault values. This Values() method creates and returns a slice of all elements in that list.
+func (me TprefixList) Values() (list []TprefixOrDefault) {
+	svals := xsdt.ListValues(string(me))
+	list = make([]TprefixOrDefault, len(svals))
+	for i, s := range svals {
+		list[i].Set(s)
+	}
+	return
+}
+
+//	Since TprefixList is just a simple String type, this merely returns the current string value.
+func (me TprefixList) String() string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to TprefixList's alias type xsdt.String.
+func (me TprefixList) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since TprefixList is just a simple String type, this merely sets the current value from the specified string.
+func (me *TprefixList) Set(s string) { (*xsdt.String)(me).Set(s) }
+
+type XsdGoPkgHasAttr_ExtensionElementPrefixes_TprefixList_ struct {
+	ExtensionElementPrefixes TprefixList `xml:"http://www.w3.org/1999/XSL/Transform extension-element-prefixes,attr"`
 }
 
 type XsdGoPkgHasCdata struct {
@@ -283,17 +338,13 @@ func (me *XsdGoPkgHasCdata) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasAttr_Tunnel_TyesOrNo_ struct {
-	Tunnel TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform tunnel,attr"`
-}
-
 type TprefixListOrAll xsdt.String
-
-//	Since TprefixListOrAll is just a simple String type, this merely sets the current value from the specified string.
-func (me *TprefixListOrAll) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
 
 //	Since TprefixListOrAll is just a simple String type, this merely returns the current string value.
 func (me TprefixListOrAll) String() string { return xsdt.String(me).String() }
+
+//	Since TprefixListOrAll is just a simple String type, this merely sets the current value from the specified string.
+func (me *TprefixListOrAll) Set(s string) { (*xsdt.String)(me).Set(s) }
 
 //	This convenience method just performs a simple type conversion to TprefixListOrAll's alias type xsdt.String.
 func (me TprefixListOrAll) ToXsdtString() xsdt.String { return xsdt.String(me) }
@@ -302,56 +353,18 @@ type XsdGoPkgHasAttr_ExcludeResultPrefixes_TprefixListOrAll_ struct {
 	ExcludeResultPrefixes TprefixListOrAll `xml:"http://www.w3.org/1999/XSL/Transform exclude-result-prefixes,attr"`
 }
 
-//	Either a namespace prefix, or #default.
-//	Used in the xsl:namespace-alias element.
-type TprefixOrDefault xsdt.String
-
-//	This convenience method just performs a simple type conversion to TprefixOrDefault's alias type xsdt.String.
-func (me TprefixOrDefault) ToXsdtString() xsdt.String { return xsdt.String(me) }
-
-//	Since TprefixOrDefault is just a simple String type, this merely sets the current value from the specified string.
-func (me *TprefixOrDefault) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
-
-//	Since TprefixOrDefault is just a simple String type, this merely returns the current string value.
-func (me TprefixOrDefault) String() string { return xsdt.String(me).String() }
-
-type TprefixList xsdt.String
-
-//	Since TprefixList is just a simple String type, this merely sets the current value from the specified string.
-func (me *TprefixList) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TprefixList's alias type xsdt.String.
-func (me TprefixList) ToXsdtString() xsdt.String { return xsdt.String(me) }
-
-//	Since TprefixList is just a simple String type, this merely returns the current string value.
-func (me TprefixList) String() string { return xsdt.String(me).String() }
-
-//	TprefixList declares a String containing a whitespace-separated list of TprefixOrDefault values. This Values() method creates and returns a slice of all elements in that list.
-func (me TprefixList) Values() (list []TprefixOrDefault) {
-	svals := xsdt.ListValues(string(me))
-	list = make([]TprefixOrDefault, len(svals))
-	for i, s := range svals {
-		list[i] = TprefixOrDefault(s)
-	}
-	return
-}
-
-type XsdGoPkgHasAttr_ExtensionElementPrefixes_TprefixList_ struct {
-	ExtensionElementPrefixes TprefixList `xml:"http://www.w3.org/1999/XSL/Transform extension-element-prefixes,attr"`
-}
-
 type TgenericElementType struct {
-	XsdGoPkgHasAttr_XpathDefaultNamespace_XsdtAnyURI_
-
-	XsdGoPkgHasAttr_UseWhen_Texpression_
-
-	XsdGoPkgHasCdata
+	XsdGoPkgHasAttr_ExtensionElementPrefixes_TprefixList_
 
 	XsdGoPkgHasAttr_DefaultCollation_TuriList_
 
-	XsdGoPkgHasAttr_ExcludeResultPrefixes_TprefixListOrAll_
+	XsdGoPkgHasAttr_UseWhen_Texpression_
 
-	XsdGoPkgHasAttr_ExtensionElementPrefixes_TprefixList_
+	XsdGoPkgHasAttr_XpathDefaultNamespace_XsdtAnyURI_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_ExcludeResultPrefixes_TprefixListOrAll_
 }
 
 //	If the WalkHandlers.TgenericElementType function is not nil (ie. was set by outside code), calls it with this TgenericElementType instance as the single argument. Then calls the Walk() method on 1/6 embed(s) and 0/0 field(s) belonging to this TgenericElementType instance.
@@ -375,11 +388,11 @@ func (me *TgenericElementType) Walk() (err error) {
 }
 
 type TversionedElementType struct {
-	XsdGoPkgHasAttr_Version_XsdtDecimal_
-
 	XsdGoPkgHasCdata
 
 	TgenericElementType
+
+	XsdGoPkgHasAttr_Version_XsdtDecimal_
 }
 
 //	If the WalkHandlers.TversionedElementType function is not nil (ie. was set by outside code), calls it with this TversionedElementType instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TversionedElementType instance.
@@ -395,125 +408,6 @@ func (me *TversionedElementType) Walk() (err error) {
 		}
 		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type TsequenceConstructor struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasGroup_SequenceConstructorGroup
-
-	TversionedElementType
-}
-
-//	If the WalkHandlers.TsequenceConstructor function is not nil (ie. was set by outside code), calls it with this TsequenceConstructor instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TsequenceConstructor instance.
-func (me *TsequenceConstructor) Walk() (err error) {
-	if fn := WalkHandlers.TsequenceConstructor; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.TversionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasAttr_Select_Texpression_ struct {
-	Select Texpression `xml:"http://www.w3.org/1999/XSL/Transform select,attr"`
-}
-
-type XsdGoPkgHasAttr_Name_TQName_ struct {
-	Name TQName `xml:"http://www.w3.org/1999/XSL/Transform name,attr"`
-}
-
-//	The description of a data type, conforming to the
-//	SequenceType production defined in the XPath 2.0 Recommendation
-type TsequenceType xsdt.Token
-
-//	Since TsequenceType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TsequenceType) SetFromString(s string) { (*xsdt.Token)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to TsequenceType's alias type xsdt.Token.
-func (me TsequenceType) ToXsdtToken() xsdt.Token { return xsdt.Token(me) }
-
-//	Since TsequenceType is just a simple String type, this merely returns the current string value.
-func (me TsequenceType) String() string { return xsdt.Token(me).String() }
-
-type XsdGoPkgHasAttr_As_TsequenceType_ struct {
-	As TsequenceType `xml:"http://www.w3.org/1999/XSL/Transform as,attr"`
-}
-
-type TxsdWithParam struct {
-	XsdGoPkgHasAttr_As_TsequenceType_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Tunnel_TyesOrNo_
-
-	TsequenceConstructor
-
-	XsdGoPkgHasAttr_Select_Texpression_
-
-	XsdGoPkgHasAttr_Name_TQName_
-}
-
-//	If the WalkHandlers.TxsdWithParam function is not nil (ie. was set by outside code), calls it with this TxsdWithParam instance as the single argument. Then calls the Walk() method on 2/6 embed(s) and 0/0 field(s) belonging to this TxsdWithParam instance.
-func (me *TxsdWithParam) Walk() (err error) {
-	if fn := WalkHandlers.TxsdWithParam; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.TsequenceConstructor.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_WithParam struct {
-	WithParams []*TxsdWithParam `xml:"http://www.w3.org/1999/XSL/Transform with-param"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_WithParam function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_WithParam instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_WithParam instance.
-func (me *XsdGoPkgHasElems_WithParam) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_WithParam; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.WithParams {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
 		}
 		if fn != nil {
 			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
@@ -548,24 +442,19 @@ func (me *TelementOnlyVersionedElementType) Walk() (err error) {
 	return
 }
 
-type TxsdCallTemplate struct {
+type TxsdPreserveSpace struct {
+	XsdGoPkgHasAttr_Elements_Tnametests_
+
 	TelementOnlyVersionedElementType
-
-	XsdGoPkgHasAttr_Name_TQName_
-
-	XsdGoPkgHasElems_WithParam
 }
 
-//	If the WalkHandlers.TxsdCallTemplate function is not nil (ie. was set by outside code), calls it with this TxsdCallTemplate instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TxsdCallTemplate instance.
-func (me *TxsdCallTemplate) Walk() (err error) {
-	if fn := WalkHandlers.TxsdCallTemplate; me != nil {
+//	If the WalkHandlers.TxsdPreserveSpace function is not nil (ie. was set by outside code), calls it with this TxsdPreserveSpace instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TxsdPreserveSpace instance.
+func (me *TxsdPreserveSpace) Walk() (err error) {
+	if fn := WalkHandlers.TxsdPreserveSpace; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
-		}
-		if err = me.XsdGoPkgHasElems_WithParam.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
 		}
 		if err = me.TelementOnlyVersionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
@@ -579,19 +468,100 @@ func (me *TxsdCallTemplate) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElem_CallTemplate struct {
-	CallTemplate *TxsdCallTemplate `xml:"http://www.w3.org/1999/XSL/Transform call-template"`
+type XsdGoPkgHasElem_PreserveSpace struct {
+	PreserveSpace *TxsdPreserveSpace `xml:"http://www.w3.org/1999/XSL/Transform preserve-space"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_CallTemplate function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_CallTemplate instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_CallTemplate instance.
-func (me *XsdGoPkgHasElem_CallTemplate) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_CallTemplate; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElem_PreserveSpace function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PreserveSpace instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PreserveSpace instance.
+func (me *XsdGoPkgHasElem_PreserveSpace) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PreserveSpace; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		if err = me.CallTemplate.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.PreserveSpace.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	The description of a data type, conforming to the
+//	SequenceType production defined in the XPath 2.0 Recommendation
+type TsequenceType xsdt.Token
+
+//	Since TsequenceType is just a simple String type, this merely returns the current string value.
+func (me TsequenceType) String() string { return xsdt.Token(me).String() }
+
+//	This convenience method just performs a simple type conversion to TsequenceType's alias type xsdt.Token.
+func (me TsequenceType) ToXsdtToken() xsdt.Token { return xsdt.Token(me) }
+
+//	Since TsequenceType is just a simple String type, this merely sets the current value from the specified string.
+func (me *TsequenceType) Set(s string) { (*xsdt.Token)(me).Set(s) }
+
+type XsdGoPkgHasAttr_As_TsequenceType_ struct {
+	As TsequenceType `xml:"http://www.w3.org/1999/XSL/Transform as,attr"`
+}
+
+type XsdGoPkgHasAttr_Select_Texpression_ struct {
+	Select Texpression `xml:"http://www.w3.org/1999/XSL/Transform select,attr"`
+}
+
+type XsdGoPkgHasAttr_Name_TQName_ struct {
+	Name TQName `xml:"http://www.w3.org/1999/XSL/Transform name,attr"`
+}
+
+type TxsdVariable struct {
+	XsdGoPkgHasAttr_As_TsequenceType_
+
+	TsequenceConstructor
+
+	XsdGoPkgHasAttr_Select_Texpression_
+
+	XsdGoPkgHasAttr_Name_TQName_
+
+	XsdGoPkgHasCdata
+}
+
+//	If the WalkHandlers.TxsdVariable function is not nil (ie. was set by outside code), calls it with this TxsdVariable instance as the single argument. Then calls the Walk() method on 1/5 embed(s) and 0/0 field(s) belonging to this TxsdVariable instance.
+func (me *TxsdVariable) Walk() (err error) {
+	if fn := WalkHandlers.TxsdVariable; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_Variable struct {
+	Variable *TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform variable"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Variable function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Variable instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Variable instance.
+func (me *XsdGoPkgHasElem_Variable) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Variable; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Variable.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if fn != nil {
@@ -611,303 +581,33 @@ type Tavt xsdt.String
 //	This convenience method just performs a simple type conversion to Tavt's alias type xsdt.String.
 func (me Tavt) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
-//	Since Tavt is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tavt) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
-
 //	Since Tavt is just a simple String type, this merely returns the current string value.
 func (me Tavt) String() string { return xsdt.String(me).String() }
 
-type XsdGoPkgHasAttr_Terminate_Tavt_No struct {
-	Terminate Tavt `xml:"http://www.w3.org/1999/XSL/Transform terminate,attr"`
-}
-
-//	Returns the default value for Terminate -- "no"
-func (me XsdGoPkgHasAttr_Terminate_Tavt_No) TerminateDefault() Tavt { return Tavt("no") }
-
-type TxsdMessage struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Terminate_Tavt_No
-
-	TsequenceConstructor
-
-	XsdGoPkgHasAttr_Select_Texpression_
-}
-
-//	If the WalkHandlers.TxsdMessage function is not nil (ie. was set by outside code), calls it with this TxsdMessage instance as the single argument. Then calls the Walk() method on 2/4 embed(s) and 0/0 field(s) belonging to this TxsdMessage instance.
-func (me *TxsdMessage) Walk() (err error) {
-	if fn := WalkHandlers.TxsdMessage; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.TsequenceConstructor.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_Message struct {
-	Message *TxsdMessage `xml:"http://www.w3.org/1999/XSL/Transform message"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Message function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Message instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Message instance.
-func (me *XsdGoPkgHasElem_Message) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Message; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.Message.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type TxsdComment struct {
-	TsequenceConstructor
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Select_Texpression_
-}
-
-//	If the WalkHandlers.TxsdComment function is not nil (ie. was set by outside code), calls it with this TxsdComment instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TxsdComment instance.
-func (me *TxsdComment) Walk() (err error) {
-	if fn := WalkHandlers.TxsdComment; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.TsequenceConstructor.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_Comment struct {
-	Comment *TxsdComment `xml:"http://www.w3.org/1999/XSL/Transform comment"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Comment function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Comment instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Comment instance.
-func (me *XsdGoPkgHasElem_Comment) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Comment; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.Comment.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type TxsdApplyImports struct {
-	XsdGoPkgHasElems_WithParam
-
-	TelementOnlyVersionedElementType
-}
-
-//	If the WalkHandlers.TxsdApplyImports function is not nil (ie. was set by outside code), calls it with this TxsdApplyImports instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/0 field(s) belonging to this TxsdApplyImports instance.
-func (me *TxsdApplyImports) Walk() (err error) {
-	if fn := WalkHandlers.TxsdApplyImports; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.TelementOnlyVersionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_WithParam.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_ApplyImports struct {
-	ApplyImports *TxsdApplyImports `xml:"http://www.w3.org/1999/XSL/Transform apply-imports"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ApplyImports function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ApplyImports instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ApplyImports instance.
-func (me *XsdGoPkgHasElem_ApplyImports) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_ApplyImports; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.ApplyImports.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
+//	Since Tavt is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tavt) Set(s string) { (*xsdt.String)(me).Set(s) }
 
 type XsdGoPkgHasAttr_Name_Tavt_ struct {
 	Name Tavt `xml:"http://www.w3.org/1999/XSL/Transform name,attr"`
 }
 
-type XsdGoPkgHasAttr_Namespace_Tavt_ struct {
-	Namespace Tavt `xml:"http://www.w3.org/1999/XSL/Transform namespace,attr"`
-}
-
-type TxsdElement struct {
-	TsequenceConstructor
+type TxsdNamespace struct {
+	XsdGoPkgHasAttr_Select_Texpression_
 
 	XsdGoPkgHasAttr_Name_Tavt_
 
-	XsdGoPkgHasAttr_Namespace_Tavt_
-
-	XsdGoPkgHasAttr_InheritNamespaces_TyesOrNo_Yes
-
-	XsdGoPkgHasAttr_Type_TQName_
-
-	XsdGoPkgHasAttr_UseAttributeSets_TQNames_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Validation_TvalidationType_
-}
-
-//	If the WalkHandlers.TxsdElement function is not nil (ie. was set by outside code), calls it with this TxsdElement instance as the single argument. Then calls the Walk() method on 2/8 embed(s) and 0/0 field(s) belonging to this TxsdElement instance.
-func (me *TxsdElement) Walk() (err error) {
-	if fn := WalkHandlers.TxsdElement; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.TsequenceConstructor.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_Element struct {
-	Element *TxsdElement `xml:"http://www.w3.org/1999/XSL/Transform element"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Element function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Element instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Element instance.
-func (me *XsdGoPkgHasElem_Element) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Element; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.Element.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_Otherwise struct {
-	Otherwise *TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform otherwise"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Otherwise function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Otherwise instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Otherwise instance.
-func (me *XsdGoPkgHasElem_Otherwise) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Otherwise; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.Otherwise.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasAttr_Test_Texpression_ struct {
-	Test Texpression `xml:"http://www.w3.org/1999/XSL/Transform test,attr"`
-}
-
-type TxsdWhen struct {
-	XsdGoPkgHasAttr_Test_Texpression_
-
 	TsequenceConstructor
 
 	XsdGoPkgHasCdata
 }
 
-//	If the WalkHandlers.TxsdWhen function is not nil (ie. was set by outside code), calls it with this TxsdWhen instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TxsdWhen instance.
-func (me *TxsdWhen) Walk() (err error) {
-	if fn := WalkHandlers.TxsdWhen; me != nil {
+//	If the WalkHandlers.TxsdNamespace function is not nil (ie. was set by outside code), calls it with this TxsdNamespace instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdNamespace instance.
+func (me *TxsdNamespace) Walk() (err error) {
+	if fn := WalkHandlers.TxsdNamespace; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
-		}
-		if err = me.TsequenceConstructor.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
 		}
 		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
@@ -921,55 +621,19 @@ func (me *TxsdWhen) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElems_When struct {
-	Whens []*TxsdWhen `xml:"http://www.w3.org/1999/XSL/Transform when"`
+type XsdGoPkgHasElem_Namespace struct {
+	Namespace *TxsdNamespace `xml:"http://www.w3.org/1999/XSL/Transform namespace"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_When function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_When instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_When instance.
-func (me *XsdGoPkgHasElems_When) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_When; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElem_Namespace function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Namespace instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Namespace instance.
+func (me *XsdGoPkgHasElem_Namespace) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Namespace; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		for _, x := range me.Whens {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type TxsdChoose struct {
-	XsdGoPkgHasElems_When
-
-	TelementOnlyVersionedElementType
-
-	XsdGoPkgHasElem_Otherwise
-}
-
-//	If the WalkHandlers.TxsdChoose function is not nil (ie. was set by outside code), calls it with this TxsdChoose instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this TxsdChoose instance.
-func (me *TxsdChoose) Walk() (err error) {
-	if fn := WalkHandlers.TxsdChoose; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.TelementOnlyVersionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_Otherwise.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_When.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.Namespace.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if fn != nil {
@@ -979,68 +643,6 @@ func (me *TxsdChoose) Walk() (err error) {
 		}
 	}
 	return
-}
-
-type XsdGoPkgHasElem_Choose struct {
-	Choose *TxsdChoose `xml:"http://www.w3.org/1999/XSL/Transform choose"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Choose function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Choose instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Choose instance.
-func (me *XsdGoPkgHasElem_Choose) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Choose; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.Choose.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-//	A match pattern as defined in the XSLT 2.0 Recommendation.
-//	The syntax for patterns is a restricted form of the syntax for
-//	XPath 2.0 expressions.
-type Tpattern Texpression
-
-//	Since Tpattern is just a simple String type, this merely returns the current string value.
-func (me Tpattern) String() string { return Texpression(me).String() }
-
-//	Since Tpattern is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tpattern) SetFromString(s string) { (*Texpression)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to Tpattern's alias type Texpression.
-func (me Tpattern) ToTexpression() Texpression { return Texpression(me) }
-
-type XsdGoPkgHasAttr_GroupEndingWith_Tpattern_ struct {
-	GroupEndingWith Tpattern `xml:"http://www.w3.org/1999/XSL/Transform group-ending-with,attr"`
-}
-
-type XsdGoPkgHasAttr_GroupAdjacent_Texpression_ struct {
-	GroupAdjacent Texpression `xml:"http://www.w3.org/1999/XSL/Transform group-adjacent,attr"`
-}
-
-type XsdGoPkgHasAttr_GroupBy_Texpression_ struct {
-	GroupBy Texpression `xml:"http://www.w3.org/1999/XSL/Transform group-by,attr"`
-}
-
-type XsdGoPkgHasAttr_GroupStartingWith_Tpattern_ struct {
-	GroupStartingWith Tpattern `xml:"http://www.w3.org/1999/XSL/Transform group-starting-with,attr"`
-}
-
-type XsdGoPkgHasAttr_Collation_XsdtAnyURI_ struct {
-	Collation xsdt.AnyURI `xml:"http://www.w3.org/1999/XSL/Transform collation,attr"`
-}
-
-type XsdGoPkgHasAttr_CaseOrder_Tavt_ struct {
-	CaseOrder Tavt `xml:"http://www.w3.org/1999/XSL/Transform case-order,attr"`
 }
 
 type XsdGoPkgHasAttr_Stable_TyesOrNo_ struct {
@@ -1050,6 +652,13 @@ type XsdGoPkgHasAttr_Stable_TyesOrNo_ struct {
 type XsdGoPkgHasAttr_Lang_Tavt_ struct {
 	Lang Tavt `xml:"http://www.w3.org/1999/XSL/Transform lang,attr"`
 }
+
+type XsdGoPkgHasAttr_DataType_Tavt_Text struct {
+	DataType Tavt `xml:"http://www.w3.org/1999/XSL/Transform data-type,attr"`
+}
+
+//	Returns the default value for DataType -- "text"
+func (me XsdGoPkgHasAttr_DataType_Tavt_Text) DataTypeDefault() Tavt { return Tavt("text") }
 
 type XsdGoPkgHasAttr_Order_Tavt_Ascending struct {
 	Order Tavt `xml:"http://www.w3.org/1999/XSL/Transform order,attr"`
@@ -1062,43 +671,37 @@ type XsdGoPkgHasAttr_Collation_Tavt_ struct {
 	Collation Tavt `xml:"http://www.w3.org/1999/XSL/Transform collation,attr"`
 }
 
-type XsdGoPkgHasAttr_DataType_Tavt_Text struct {
-	DataType Tavt `xml:"http://www.w3.org/1999/XSL/Transform data-type,attr"`
+type XsdGoPkgHasAttr_CaseOrder_Tavt_ struct {
+	CaseOrder Tavt `xml:"http://www.w3.org/1999/XSL/Transform case-order,attr"`
 }
 
-//	Returns the default value for DataType -- "text"
-func (me XsdGoPkgHasAttr_DataType_Tavt_Text) DataTypeDefault() Tavt { return Tavt("text") }
-
 type TxsdSort struct {
-	XsdGoPkgHasAttr_DataType_Tavt_Text
-
-	XsdGoPkgHasAttr_Select_Texpression_
-
-	XsdGoPkgHasAttr_CaseOrder_Tavt_
-
-	TsequenceConstructor
-
-	XsdGoPkgHasAttr_Stable_TyesOrNo_
-
 	XsdGoPkgHasAttr_Lang_Tavt_
 
-	XsdGoPkgHasCdata
+	XsdGoPkgHasAttr_DataType_Tavt_Text
 
 	XsdGoPkgHasAttr_Order_Tavt_Ascending
 
 	XsdGoPkgHasAttr_Collation_Tavt_
+
+	TsequenceConstructor
+
+	XsdGoPkgHasAttr_CaseOrder_Tavt_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Stable_TyesOrNo_
+
+	XsdGoPkgHasAttr_Select_Texpression_
 }
 
-//	If the WalkHandlers.TxsdSort function is not nil (ie. was set by outside code), calls it with this TxsdSort instance as the single argument. Then calls the Walk() method on 2/9 embed(s) and 0/0 field(s) belonging to this TxsdSort instance.
+//	If the WalkHandlers.TxsdSort function is not nil (ie. was set by outside code), calls it with this TxsdSort instance as the single argument. Then calls the Walk() method on 1/9 embed(s) and 0/0 field(s) belonging to this TxsdSort instance.
 func (me *TxsdSort) Walk() (err error) {
 	if fn := WalkHandlers.TxsdSort; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
-		}
-		if err = me.TsequenceConstructor.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
 		}
 		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
@@ -1138,148 +741,21 @@ func (me *XsdGoPkgHasElems_Sort) Walk() (err error) {
 	return
 }
 
-type TxsdForEachGroup struct {
-	XsdGoPkgHasAttr_Collation_XsdtAnyURI_
+//	The mode attribute of xsl:apply-templates:
+//	either a QName, or #current, or #default.
+type Tmode xsdt.String
 
-	XsdGoPkgHasElems_Sort
+//	Since Tmode is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tmode) Set(s string) { (*xsdt.String)(me).Set(s) }
 
-	XsdGoPkgHasCdata
+//	This convenience method just performs a simple type conversion to Tmode's alias type xsdt.String.
+func (me Tmode) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
-	XsdGoPkgHasAttr_GroupEndingWith_Tpattern_
+//	Since Tmode is just a simple String type, this merely returns the current string value.
+func (me Tmode) String() string { return xsdt.String(me).String() }
 
-	XsdGoPkgHasAttr_GroupAdjacent_Texpression_
-
-	XsdGoPkgHasGroup_SequenceConstructorGroup
-
-	XsdGoPkgHasAttr_GroupBy_Texpression_
-
-	XsdGoPkgHasAttr_Select_Texpression_
-
-	XsdGoPkgHasAttr_GroupStartingWith_Tpattern_
-
-	TversionedElementType
-}
-
-//	If the WalkHandlers.TxsdForEachGroup function is not nil (ie. was set by outside code), calls it with this TxsdForEachGroup instance as the single argument. Then calls the Walk() method on 3/10 embed(s) and 0/0 field(s) belonging to this TxsdForEachGroup instance.
-func (me *TxsdForEachGroup) Walk() (err error) {
-	if fn := WalkHandlers.TxsdForEachGroup; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.XsdGoPkgHasElems_Sort.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.TversionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_ForEachGroup struct {
-	ForEachGroup *TxsdForEachGroup `xml:"http://www.w3.org/1999/XSL/Transform for-each-group"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ForEachGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ForEachGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ForEachGroup instance.
-func (me *XsdGoPkgHasElem_ForEachGroup) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_ForEachGroup; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.ForEachGroup.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasAttr_Separator_Tavt_ struct {
-	Separator Tavt `xml:"http://www.w3.org/1999/XSL/Transform separator,attr"`
-}
-
-type XsdGoPkgHasAttr_DisableOutputEscaping_TyesOrNo_No struct {
-	DisableOutputEscaping TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform disable-output-escaping,attr"`
-}
-
-//	Returns the default value for DisableOutputEscaping -- "no"
-func (me XsdGoPkgHasAttr_DisableOutputEscaping_TyesOrNo_No) DisableOutputEscapingDefault() TyesOrNo {
-	return TyesOrNo("no")
-}
-
-type TxsdValueOf struct {
-	TsequenceConstructor
-
-	XsdGoPkgHasAttr_Select_Texpression_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Separator_Tavt_
-
-	XsdGoPkgHasAttr_DisableOutputEscaping_TyesOrNo_No
-}
-
-//	If the WalkHandlers.TxsdValueOf function is not nil (ie. was set by outside code), calls it with this TxsdValueOf instance as the single argument. Then calls the Walk() method on 2/5 embed(s) and 0/0 field(s) belonging to this TxsdValueOf instance.
-func (me *TxsdValueOf) Walk() (err error) {
-	if fn := WalkHandlers.TxsdValueOf; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.TsequenceConstructor.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_ValueOf struct {
-	ValueOf *TxsdValueOf `xml:"http://www.w3.org/1999/XSL/Transform value-of"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ValueOf function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ValueOf instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ValueOf instance.
-func (me *XsdGoPkgHasElem_ValueOf) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_ValueOf; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.ValueOf.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
+type XsdGoPkgHasAttr_Mode_Tmode_ struct {
+	Mode Tmode `xml:"http://www.w3.org/1999/XSL/Transform mode,attr"`
 }
 
 type XsdGoPkgHasAttr_Select_Texpression_ChildNode struct {
@@ -1291,33 +767,80 @@ func (me XsdGoPkgHasAttr_Select_Texpression_ChildNode) SelectDefault() Texpressi
 	return Texpression("child::node()")
 }
 
-//	The mode attribute of xsl:apply-templates:
-//	either a QName, or #current, or #default.
-type Tmode xsdt.String
+type XsdGoPkgHasAttr_Tunnel_TyesOrNo_ struct {
+	Tunnel TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform tunnel,attr"`
+}
 
-//	Since Tmode is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tmode) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+type TxsdWithParam struct {
+	XsdGoPkgHasCdata
 
-//	Since Tmode is just a simple String type, this merely returns the current string value.
-func (me Tmode) String() string { return xsdt.String(me).String() }
+	XsdGoPkgHasAttr_Name_TQName_
 
-//	This convenience method just performs a simple type conversion to Tmode's alias type xsdt.String.
-func (me Tmode) ToXsdtString() xsdt.String { return xsdt.String(me) }
+	XsdGoPkgHasAttr_Select_Texpression_
 
-type XsdGoPkgHasAttr_Mode_Tmode_ struct {
-	Mode Tmode `xml:"http://www.w3.org/1999/XSL/Transform mode,attr"`
+	XsdGoPkgHasAttr_As_TsequenceType_
+
+	TsequenceConstructor
+
+	XsdGoPkgHasAttr_Tunnel_TyesOrNo_
+}
+
+//	If the WalkHandlers.TxsdWithParam function is not nil (ie. was set by outside code), calls it with this TxsdWithParam instance as the single argument. Then calls the Walk() method on 1/6 embed(s) and 0/0 field(s) belonging to this TxsdWithParam instance.
+func (me *TxsdWithParam) Walk() (err error) {
+	if fn := WalkHandlers.TxsdWithParam; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_WithParam struct {
+	WithParams []*TxsdWithParam `xml:"http://www.w3.org/1999/XSL/Transform with-param"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_WithParam function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_WithParam instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_WithParam instance.
+func (me *XsdGoPkgHasElems_WithParam) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_WithParam; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.WithParams {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
 }
 
 type TxsdApplyTemplates struct {
-	XsdGoPkgHasAttr_Select_Texpression_ChildNode
-
-	XsdGoPkgHasAttr_Mode_Tmode_
+	XsdGoPkgHasElems_WithParam
 
 	TelementOnlyVersionedElementType
 
 	XsdGoPkgHasElems_Sort
 
-	XsdGoPkgHasElems_WithParam
+	XsdGoPkgHasAttr_Mode_Tmode_
+
+	XsdGoPkgHasAttr_Select_Texpression_ChildNode
 }
 
 //	If the WalkHandlers.TxsdApplyTemplates function is not nil (ie. was set by outside code), calls it with this TxsdApplyTemplates instance as the single argument. Then calls the Walk() method on 3/5 embed(s) and 0/0 field(s) belonging to this TxsdApplyTemplates instance.
@@ -1328,13 +851,13 @@ func (me *TxsdApplyTemplates) Walk() (err error) {
 				return
 			}
 		}
+		if err = me.XsdGoPkgHasElems_WithParam.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
 		if err = me.TelementOnlyVersionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if err = me.XsdGoPkgHasElems_Sort.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_WithParam.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if fn != nil {
@@ -1370,145 +893,6 @@ func (me *XsdGoPkgHasElem_ApplyTemplates) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasAttr_LetterValue_Tavt_ struct {
-	LetterValue Tavt `xml:"http://www.w3.org/1999/XSL/Transform letter-value,attr"`
-}
-
-type XsdGoPkgHasAttr_GroupingSeparator_Tavt_ struct {
-	GroupingSeparator Tavt `xml:"http://www.w3.org/1999/XSL/Transform grouping-separator,attr"`
-}
-
-type XsdGoPkgHasAttr_From_Tpattern_ struct {
-	From Tpattern `xml:"http://www.w3.org/1999/XSL/Transform from,attr"`
-}
-
-type XsdGoPkgHasAttr_Format_Tavt_1 struct {
-	Format Tavt `xml:"http://www.w3.org/1999/XSL/Transform format,attr"`
-}
-
-//	Returns the default value for Format -- "1"
-func (me XsdGoPkgHasAttr_Format_Tavt_1) FormatDefault() Tavt { return Tavt("1") }
-
-//	The level attribute of xsl:number:
-//	one of single, multiple, or any.
-type Tlevel xsdt.NCName
-
-//	Since Tlevel is just a simple String type, this merely returns the current string value.
-func (me Tlevel) String() string { return xsdt.NCName(me).String() }
-
-//	Returns true if the value of this enumerated Tlevel is "single".
-func (me Tlevel) IsSingle() bool { return me == "single" }
-
-//	Since Tlevel is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tlevel) SetFromString(s string) { (*xsdt.NCName)(me).SetFromString(s) }
-
-//	This convenience method just performs a simple type conversion to Tlevel's alias type xsdt.NCName.
-func (me Tlevel) ToXsdtNCName() xsdt.NCName { return xsdt.NCName(me) }
-
-//	Returns true if the value of this enumerated Tlevel is "any".
-func (me Tlevel) IsAny() bool { return me == "any" }
-
-//	Returns true if the value of this enumerated Tlevel is "multiple".
-func (me Tlevel) IsMultiple() bool { return me == "multiple" }
-
-type XsdGoPkgHasAttr_Level_Tlevel_Single struct {
-	Level Tlevel `xml:"http://www.w3.org/1999/XSL/Transform level,attr"`
-}
-
-//	Returns the default value for Level -- "single"
-func (me XsdGoPkgHasAttr_Level_Tlevel_Single) LevelDefault() Tlevel { return Tlevel("single") }
-
-type XsdGoPkgHasAttr_Value_Texpression_ struct {
-	Value Texpression `xml:"http://www.w3.org/1999/XSL/Transform value,attr"`
-}
-
-type XsdGoPkgHasAttr_GroupingSize_Tavt_ struct {
-	GroupingSize Tavt `xml:"http://www.w3.org/1999/XSL/Transform grouping-size,attr"`
-}
-
-type XsdGoPkgHasAttr_Count_Tpattern_ struct {
-	Count Tpattern `xml:"http://www.w3.org/1999/XSL/Transform count,attr"`
-}
-
-type XsdGoPkgHasAttr_Ordinal_Tavt_ struct {
-	Ordinal Tavt `xml:"http://www.w3.org/1999/XSL/Transform ordinal,attr"`
-}
-
-type TxsdNumber struct {
-	XsdGoPkgHasAttr_Ordinal_Tavt_
-
-	XsdGoPkgHasAttr_Select_Texpression_
-
-	XsdGoPkgHasAttr_LetterValue_Tavt_
-
-	XsdGoPkgHasAttr_GroupingSeparator_Tavt_
-
-	XsdGoPkgHasAttr_From_Tpattern_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Lang_Tavt_
-
-	XsdGoPkgHasAttr_Format_Tavt_1
-
-	TversionedElementType
-
-	XsdGoPkgHasAttr_Level_Tlevel_Single
-
-	XsdGoPkgHasAttr_Value_Texpression_
-
-	XsdGoPkgHasAttr_GroupingSize_Tavt_
-
-	XsdGoPkgHasAttr_Count_Tpattern_
-}
-
-//	If the WalkHandlers.TxsdNumber function is not nil (ie. was set by outside code), calls it with this TxsdNumber instance as the single argument. Then calls the Walk() method on 2/13 embed(s) and 0/0 field(s) belonging to this TxsdNumber instance.
-func (me *TxsdNumber) Walk() (err error) {
-	if fn := WalkHandlers.TxsdNumber; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.TversionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_Number struct {
-	Number *TxsdNumber `xml:"http://www.w3.org/1999/XSL/Transform number"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Number function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Number instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Number instance.
-func (me *XsdGoPkgHasElem_Number) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Number; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.Number.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
 type XsdGoPkgHasAttr_CopyNamespaces_TyesOrNo_Yes struct {
 	CopyNamespaces TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform copy-namespaces,attr"`
 }
@@ -1519,17 +903,17 @@ func (me XsdGoPkgHasAttr_CopyNamespaces_TyesOrNo_Yes) CopyNamespacesDefault() Ty
 }
 
 type TxsdCopyOf struct {
-	TversionedElementType
+	XsdGoPkgHasAttr_Validation_TvalidationType_
 
-	XsdGoPkgHasCdata
+	XsdGoPkgHasAttr_Select_Texpression_
+
+	TversionedElementType
 
 	XsdGoPkgHasAttr_Type_TQName_
 
 	XsdGoPkgHasAttr_CopyNamespaces_TyesOrNo_Yes
 
-	XsdGoPkgHasAttr_Validation_TvalidationType_
-
-	XsdGoPkgHasAttr_Select_Texpression_
+	XsdGoPkgHasCdata
 }
 
 //	If the WalkHandlers.TxsdCopyOf function is not nil (ie. was set by outside code), calls it with this TxsdCopyOf instance as the single argument. Then calls the Walk() method on 2/6 embed(s) and 0/0 field(s) belonging to this TxsdCopyOf instance.
@@ -1579,184 +963,21 @@ func (me *XsdGoPkgHasElem_CopyOf) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasAttr_UseCharacterMaps_TQNames_ struct {
-	UseCharacterMaps TQNames `xml:"http://www.w3.org/1999/XSL/Transform use-character-maps,attr"`
+type XsdGoPkgHasAttr_Test_Texpression_ struct {
+	Test Texpression `xml:"http://www.w3.org/1999/XSL/Transform test,attr"`
 }
 
-type XsdGoPkgHasAttr_Method_Tavt_ struct {
-	Method Tavt `xml:"http://www.w3.org/1999/XSL/Transform method,attr"`
-}
-
-type XsdGoPkgHasAttr_UndeclarePrefixes_Tavt_ struct {
-	UndeclarePrefixes Tavt `xml:"http://www.w3.org/1999/XSL/Transform undeclare-prefixes,attr"`
-}
-
-type XsdGoPkgHasAttr_OmitXmlDeclaration_Tavt_ struct {
-	OmitXmlDeclaration Tavt `xml:"http://www.w3.org/1999/XSL/Transform omit-xml-declaration,attr"`
-}
-
-type XsdGoPkgHasAttr_IncludeContentType_Tavt_ struct {
-	IncludeContentType Tavt `xml:"http://www.w3.org/1999/XSL/Transform include-content-type,attr"`
-}
-
-type XsdGoPkgHasAttr_ByteOrderMark_Tavt_ struct {
-	ByteOrderMark Tavt `xml:"http://www.w3.org/1999/XSL/Transform byte-order-mark,attr"`
-}
-
-type XsdGoPkgHasAttr_DoctypePublic_Tavt_ struct {
-	DoctypePublic Tavt `xml:"http://www.w3.org/1999/XSL/Transform doctype-public,attr"`
-}
-
-type XsdGoPkgHasAttr_MediaType_Tavt_ struct {
-	MediaType Tavt `xml:"http://www.w3.org/1999/XSL/Transform media-type,attr"`
-}
-
-type XsdGoPkgHasAttr_CdataSectionElements_Tavt_ struct {
-	CdataSectionElements Tavt `xml:"http://www.w3.org/1999/XSL/Transform cdata-section-elements,attr"`
-}
-
-type XsdGoPkgHasAttr_OutputVersion_Tavt_ struct {
-	OutputVersion Tavt `xml:"http://www.w3.org/1999/XSL/Transform output-version,attr"`
-}
-
-type XsdGoPkgHasAttr_Encoding_Tavt_ struct {
-	Encoding Tavt `xml:"http://www.w3.org/1999/XSL/Transform encoding,attr"`
-}
-
-type XsdGoPkgHasAttr_NormalizationForm_Tavt_ struct {
-	NormalizationForm Tavt `xml:"http://www.w3.org/1999/XSL/Transform normalization-form,attr"`
-}
-
-type XsdGoPkgHasAttr_Format_Tavt_ struct {
-	Format Tavt `xml:"http://www.w3.org/1999/XSL/Transform format,attr"`
-}
-
-type XsdGoPkgHasAttr_Indent_Tavt_ struct {
-	Indent Tavt `xml:"http://www.w3.org/1999/XSL/Transform indent,attr"`
-}
-
-type XsdGoPkgHasAttr_Standalone_Tavt_ struct {
-	Standalone Tavt `xml:"http://www.w3.org/1999/XSL/Transform standalone,attr"`
-}
-
-type XsdGoPkgHasAttr_DoctypeSystem_Tavt_ struct {
-	DoctypeSystem Tavt `xml:"http://www.w3.org/1999/XSL/Transform doctype-system,attr"`
-}
-
-type XsdGoPkgHasAttr_Href_Tavt_ struct {
-	Href Tavt `xml:"http://www.w3.org/1999/XSL/Transform href,attr"`
-}
-
-type XsdGoPkgHasAttr_EscapeUriAttributes_Tavt_ struct {
-	EscapeUriAttributes Tavt `xml:"http://www.w3.org/1999/XSL/Transform escape-uri-attributes,attr"`
-}
-
-type TxsdResultDocument struct {
-	XsdGoPkgHasAttr_Method_Tavt_
-
-	XsdGoPkgHasAttr_UndeclarePrefixes_Tavt_
-
-	XsdGoPkgHasAttr_OmitXmlDeclaration_Tavt_
-
-	XsdGoPkgHasAttr_IncludeContentType_Tavt_
-
-	XsdGoPkgHasAttr_ByteOrderMark_Tavt_
-
-	XsdGoPkgHasAttr_DoctypePublic_Tavt_
-
-	XsdGoPkgHasAttr_MediaType_Tavt_
-
-	XsdGoPkgHasAttr_CdataSectionElements_Tavt_
-
-	XsdGoPkgHasAttr_OutputVersion_Tavt_
-
-	XsdGoPkgHasAttr_Validation_TvalidationType_
-
-	XsdGoPkgHasAttr_Encoding_Tavt_
-
-	XsdGoPkgHasAttr_NormalizationForm_Tavt_
-
-	XsdGoPkgHasAttr_Format_Tavt_
-
-	XsdGoPkgHasAttr_Indent_Tavt_
-
-	XsdGoPkgHasAttr_Standalone_Tavt_
-
-	XsdGoPkgHasAttr_DoctypeSystem_Tavt_
-
-	XsdGoPkgHasAttr_Href_Tavt_
-
-	XsdGoPkgHasAttr_Type_TQName_
-
-	XsdGoPkgHasAttr_EscapeUriAttributes_Tavt_
-
-	XsdGoPkgHasCdata
-
+type TxsdIf struct {
 	TsequenceConstructor
 
-	XsdGoPkgHasAttr_UseCharacterMaps_TQNames_
-}
-
-//	If the WalkHandlers.TxsdResultDocument function is not nil (ie. was set by outside code), calls it with this TxsdResultDocument instance as the single argument. Then calls the Walk() method on 2/22 embed(s) and 0/0 field(s) belonging to this TxsdResultDocument instance.
-func (me *TxsdResultDocument) Walk() (err error) {
-	if fn := WalkHandlers.TxsdResultDocument; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.TsequenceConstructor.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_ResultDocument struct {
-	ResultDocument *TxsdResultDocument `xml:"http://www.w3.org/1999/XSL/Transform result-document"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ResultDocument function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ResultDocument instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ResultDocument instance.
-func (me *XsdGoPkgHasElem_ResultDocument) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_ResultDocument; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.ResultDocument.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type TxsdProcessingInstruction struct {
-	XsdGoPkgHasAttr_Select_Texpression_
-
 	XsdGoPkgHasCdata
 
-	XsdGoPkgHasAttr_Name_Tavt_
-
-	TsequenceConstructor
+	XsdGoPkgHasAttr_Test_Texpression_
 }
 
-//	If the WalkHandlers.TxsdProcessingInstruction function is not nil (ie. was set by outside code), calls it with this TxsdProcessingInstruction instance as the single argument. Then calls the Walk() method on 2/4 embed(s) and 0/0 field(s) belonging to this TxsdProcessingInstruction instance.
-func (me *TxsdProcessingInstruction) Walk() (err error) {
-	if fn := WalkHandlers.TxsdProcessingInstruction; me != nil {
+//	If the WalkHandlers.TxsdIf function is not nil (ie. was set by outside code), calls it with this TxsdIf instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TxsdIf instance.
+func (me *TxsdIf) Walk() (err error) {
+	if fn := WalkHandlers.TxsdIf; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
@@ -1765,9 +986,6 @@ func (me *TxsdProcessingInstruction) Walk() (err error) {
 		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.TsequenceConstructor.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
 		if fn != nil {
 			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
@@ -1777,170 +995,19 @@ func (me *TxsdProcessingInstruction) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElem_ProcessingInstruction struct {
-	ProcessingInstruction *TxsdProcessingInstruction `xml:"http://www.w3.org/1999/XSL/Transform processing-instruction"`
+type XsdGoPkgHasElem_If struct {
+	If *TxsdIf `xml:"http://www.w3.org/1999/XSL/Transform if"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_ProcessingInstruction function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ProcessingInstruction instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ProcessingInstruction instance.
-func (me *XsdGoPkgHasElem_ProcessingInstruction) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_ProcessingInstruction; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElem_If function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_If instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_If instance.
+func (me *XsdGoPkgHasElem_If) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_If; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		if err = me.ProcessingInstruction.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type TxsdPerformSort struct {
-	XsdGoPkgHasElems_Sort
-
-	XsdGoPkgHasAttr_Select_Texpression_
-
-	XsdGoPkgHasCdata
-
-	TversionedElementType
-
-	XsdGoPkgHasGroup_SequenceConstructorGroup
-}
-
-//	If the WalkHandlers.TxsdPerformSort function is not nil (ie. was set by outside code), calls it with this TxsdPerformSort instance as the single argument. Then calls the Walk() method on 3/5 embed(s) and 0/0 field(s) belonging to this TxsdPerformSort instance.
-func (me *TxsdPerformSort) Walk() (err error) {
-	if fn := WalkHandlers.TxsdPerformSort; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.XsdGoPkgHasElems_Sort.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.TversionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_PerformSort struct {
-	PerformSort *TxsdPerformSort `xml:"http://www.w3.org/1999/XSL/Transform perform-sort"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PerformSort function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PerformSort instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PerformSort instance.
-func (me *XsdGoPkgHasElem_PerformSort) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_PerformSort; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.PerformSort.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type TxsdAttribute struct {
-	XsdGoPkgHasAttr_Separator_Tavt_
-
-	XsdGoPkgHasAttr_Type_TQName_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Select_Texpression_
-
-	XsdGoPkgHasAttr_Validation_TvalidationType_
-
-	XsdGoPkgHasAttr_Namespace_Tavt_
-
-	XsdGoPkgHasAttr_Name_Tavt_
-
-	TsequenceConstructor
-}
-
-//	If the WalkHandlers.TxsdAttribute function is not nil (ie. was set by outside code), calls it with this TxsdAttribute instance as the single argument. Then calls the Walk() method on 2/8 embed(s) and 0/0 field(s) belonging to this TxsdAttribute instance.
-func (me *TxsdAttribute) Walk() (err error) {
-	if fn := WalkHandlers.TxsdAttribute; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.TsequenceConstructor.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_Attribute struct {
-	Attribute *TxsdAttribute `xml:"http://www.w3.org/1999/XSL/Transform attribute"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Attribute function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Attribute instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Attribute instance.
-func (me *XsdGoPkgHasElem_Attribute) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Attribute; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.Attribute.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_Namespace struct {
-	Namespace *TxsdProcessingInstruction `xml:"http://www.w3.org/1999/XSL/Transform namespace"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Namespace function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Namespace instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Namespace instance.
-func (me *XsdGoPkgHasElem_Namespace) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Namespace; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.Namespace.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.If.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if fn != nil {
@@ -1964,11 +1031,6 @@ func (me *XsdGoPkgHasElems_Fallback) Walk() (err error) {
 				return
 			}
 		}
-		for _, x := range me.Fallbacks {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
 		if fn != nil {
 			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
@@ -1978,17 +1040,19 @@ func (me *XsdGoPkgHasElems_Fallback) Walk() (err error) {
 	return
 }
 
-type TxsdNextMatch struct {
+type TxsdSequence struct {
+	XsdGoPkgHasCdata
+
 	XsdGoPkgHasElems_Fallback
 
-	XsdGoPkgHasElems_WithParam
+	XsdGoPkgHasAttr_Select_Texpression_
 
 	TelementOnlyVersionedElementType
 }
 
-//	If the WalkHandlers.TxsdNextMatch function is not nil (ie. was set by outside code), calls it with this TxsdNextMatch instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this TxsdNextMatch instance.
-func (me *TxsdNextMatch) Walk() (err error) {
-	if fn := WalkHandlers.TxsdNextMatch; me != nil {
+//	If the WalkHandlers.TxsdSequence function is not nil (ie. was set by outside code), calls it with this TxsdSequence instance as the single argument. Then calls the Walk() method on 3/4 embed(s) and 0/0 field(s) belonging to this TxsdSequence instance.
+func (me *TxsdSequence) Walk() (err error) {
+	if fn := WalkHandlers.TxsdSequence; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
@@ -1997,115 +1061,10 @@ func (me *TxsdNextMatch) Walk() (err error) {
 		if err = me.TelementOnlyVersionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElems_Fallback.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_WithParam.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_NextMatch struct {
-	NextMatch *TxsdNextMatch `xml:"http://www.w3.org/1999/XSL/Transform next-match"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_NextMatch function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_NextMatch instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_NextMatch instance.
-func (me *XsdGoPkgHasElem_NextMatch) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_NextMatch; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.NextMatch.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_ForEach struct {
-	ForEach *TxsdPerformSort `xml:"http://www.w3.org/1999/XSL/Transform for-each"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ForEach function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ForEach instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ForEach instance.
-func (me *XsdGoPkgHasElem_ForEach) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_ForEach; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.ForEach.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type TxsdDocument struct {
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_Validation_TvalidationType_
-
-	XsdGoPkgHasAttr_Type_TQName_
-
-	TsequenceConstructor
-}
-
-//	If the WalkHandlers.TxsdDocument function is not nil (ie. was set by outside code), calls it with this TxsdDocument instance as the single argument. Then calls the Walk() method on 2/4 embed(s) and 0/0 field(s) belonging to this TxsdDocument instance.
-func (me *TxsdDocument) Walk() (err error) {
-	if fn := WalkHandlers.TxsdDocument; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.TsequenceConstructor.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
 		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_Document struct {
-	Document *TxsdDocument `xml:"http://www.w3.org/1999/XSL/Transform document"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Document function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Document instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Document instance.
-func (me *XsdGoPkgHasElem_Document) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Document; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.Document.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElems_Fallback.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if fn != nil {
@@ -2115,6 +1074,39 @@ func (me *XsdGoPkgHasElem_Document) Walk() (err error) {
 		}
 	}
 	return
+}
+
+type XsdGoPkgHasElem_Sequence struct {
+	Sequence *TxsdSequence `xml:"http://www.w3.org/1999/XSL/Transform sequence"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Sequence function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Sequence instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Sequence instance.
+func (me *XsdGoPkgHasElem_Sequence) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Sequence; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Sequence.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasAttr_DisableOutputEscaping_TyesOrNo_No struct {
+	DisableOutputEscaping TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform disable-output-escaping,attr"`
+}
+
+//	Returns the default value for DisableOutputEscaping -- "no"
+func (me XsdGoPkgHasAttr_DisableOutputEscaping_TyesOrNo_No) DisableOutputEscapingDefault() TyesOrNo {
+	return TyesOrNo("no")
 }
 
 type TtextElementBaseType struct {
@@ -2199,19 +1191,77 @@ func (me *XsdGoPkgHasElem_Text) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElem_NonMatchingSubstring struct {
-	NonMatchingSubstring *TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform non-matching-substring"`
+type XsdGoPkgHasAttr_GroupAdjacent_Texpression_ struct {
+	GroupAdjacent Texpression `xml:"http://www.w3.org/1999/XSL/Transform group-adjacent,attr"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_NonMatchingSubstring function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_NonMatchingSubstring instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_NonMatchingSubstring instance.
-func (me *XsdGoPkgHasElem_NonMatchingSubstring) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_NonMatchingSubstring; me != nil {
+//	A match pattern as defined in the XSLT 2.0 Recommendation.
+//	The syntax for patterns is a restricted form of the syntax for
+//	XPath 2.0 expressions.
+type Tpattern Texpression
+
+//	Since Tpattern is just a simple String type, this merely returns the current string value.
+func (me Tpattern) String() string { return Texpression(me).String() }
+
+//	Since Tpattern is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tpattern) Set(s string) { (*Texpression)(me).Set(s) }
+
+//	This convenience method just performs a simple type conversion to Tpattern's alias type Texpression.
+func (me Tpattern) ToTexpression() Texpression { return Texpression(me) }
+
+type XsdGoPkgHasAttr_GroupEndingWith_Tpattern_ struct {
+	GroupEndingWith Tpattern `xml:"http://www.w3.org/1999/XSL/Transform group-ending-with,attr"`
+}
+
+type XsdGoPkgHasAttr_GroupStartingWith_Tpattern_ struct {
+	GroupStartingWith Tpattern `xml:"http://www.w3.org/1999/XSL/Transform group-starting-with,attr"`
+}
+
+type XsdGoPkgHasAttr_Collation_XsdtAnyURI_ struct {
+	Collation xsdt.AnyURI `xml:"http://www.w3.org/1999/XSL/Transform collation,attr"`
+}
+
+type XsdGoPkgHasAttr_GroupBy_Texpression_ struct {
+	GroupBy Texpression `xml:"http://www.w3.org/1999/XSL/Transform group-by,attr"`
+}
+
+type TxsdForEachGroup struct {
+	XsdGoPkgHasElems_Sort
+
+	XsdGoPkgHasAttr_Select_Texpression_
+
+	XsdGoPkgHasAttr_GroupAdjacent_Texpression_
+
+	XsdGoPkgHasAttr_GroupEndingWith_Tpattern_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_GroupStartingWith_Tpattern_
+
+	XsdGoPkgHasAttr_Collation_XsdtAnyURI_
+
+	XsdGoPkgHasAttr_GroupBy_Texpression_
+
+	XsdGoPkgHasGroup_SequenceConstructorGroup
+
+	TversionedElementType
+}
+
+//	If the WalkHandlers.TxsdForEachGroup function is not nil (ie. was set by outside code), calls it with this TxsdForEachGroup instance as the single argument. Then calls the Walk() method on 3/10 embed(s) and 0/0 field(s) belonging to this TxsdForEachGroup instance.
+func (me *TxsdForEachGroup) Walk() (err error) {
+	if fn := WalkHandlers.TxsdForEachGroup; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		if err = me.NonMatchingSubstring.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.TversionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_Sort.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if fn != nil {
@@ -2223,19 +1273,911 @@ func (me *XsdGoPkgHasElem_NonMatchingSubstring) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElem_MatchingSubstring struct {
-	MatchingSubstring *TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform matching-substring"`
+type XsdGoPkgHasElem_ForEachGroup struct {
+	ForEachGroup *TxsdForEachGroup `xml:"http://www.w3.org/1999/XSL/Transform for-each-group"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_MatchingSubstring function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MatchingSubstring instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_MatchingSubstring instance.
-func (me *XsdGoPkgHasElem_MatchingSubstring) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_MatchingSubstring; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElem_ForEachGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ForEachGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ForEachGroup instance.
+func (me *XsdGoPkgHasElem_ForEachGroup) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ForEachGroup; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		if err = me.MatchingSubstring.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.ForEachGroup.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasAttr_Separator_Tavt_ struct {
+	Separator Tavt `xml:"http://www.w3.org/1999/XSL/Transform separator,attr"`
+}
+
+type TxsdValueOf struct {
+	XsdGoPkgHasAttr_DisableOutputEscaping_TyesOrNo_No
+
+	TsequenceConstructor
+
+	XsdGoPkgHasAttr_Select_Texpression_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Separator_Tavt_
+}
+
+//	If the WalkHandlers.TxsdValueOf function is not nil (ie. was set by outside code), calls it with this TxsdValueOf instance as the single argument. Then calls the Walk() method on 1/5 embed(s) and 0/0 field(s) belonging to this TxsdValueOf instance.
+func (me *TxsdValueOf) Walk() (err error) {
+	if fn := WalkHandlers.TxsdValueOf; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_ValueOf struct {
+	ValueOf *TxsdValueOf `xml:"http://www.w3.org/1999/XSL/Transform value-of"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ValueOf function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ValueOf instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ValueOf instance.
+func (me *XsdGoPkgHasElem_ValueOf) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ValueOf; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.ValueOf.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasAttr_Terminate_Tavt_No struct {
+	Terminate Tavt `xml:"http://www.w3.org/1999/XSL/Transform terminate,attr"`
+}
+
+//	Returns the default value for Terminate -- "no"
+func (me XsdGoPkgHasAttr_Terminate_Tavt_No) TerminateDefault() Tavt { return Tavt("no") }
+
+type TxsdMessage struct {
+	XsdGoPkgHasAttr_Terminate_Tavt_No
+
+	XsdGoPkgHasCdata
+
+	TsequenceConstructor
+
+	XsdGoPkgHasAttr_Select_Texpression_
+}
+
+//	If the WalkHandlers.TxsdMessage function is not nil (ie. was set by outside code), calls it with this TxsdMessage instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdMessage instance.
+func (me *TxsdMessage) Walk() (err error) {
+	if fn := WalkHandlers.TxsdMessage; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_Message struct {
+	Message *TxsdMessage `xml:"http://www.w3.org/1999/XSL/Transform message"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Message function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Message instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Message instance.
+func (me *XsdGoPkgHasElem_Message) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Message; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Message.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TxsdForEach struct {
+	XsdGoPkgHasElems_Sort
+
+	XsdGoPkgHasCdata
+
+	TversionedElementType
+
+	XsdGoPkgHasAttr_Select_Texpression_
+
+	XsdGoPkgHasGroup_SequenceConstructorGroup
+}
+
+//	If the WalkHandlers.TxsdForEach function is not nil (ie. was set by outside code), calls it with this TxsdForEach instance as the single argument. Then calls the Walk() method on 3/5 embed(s) and 0/0 field(s) belonging to this TxsdForEach instance.
+func (me *TxsdForEach) Walk() (err error) {
+	if fn := WalkHandlers.TxsdForEach; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElems_Sort.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.TversionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_ForEach struct {
+	ForEach *TxsdForEach `xml:"http://www.w3.org/1999/XSL/Transform for-each"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ForEach function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ForEach instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ForEach instance.
+func (me *XsdGoPkgHasElem_ForEach) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ForEach; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.ForEach.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasAttr_CdataSectionElements_Tavt_ struct {
+	CdataSectionElements Tavt `xml:"http://www.w3.org/1999/XSL/Transform cdata-section-elements,attr"`
+}
+
+type XsdGoPkgHasAttr_UseCharacterMaps_TQNames_ struct {
+	UseCharacterMaps TQNames `xml:"http://www.w3.org/1999/XSL/Transform use-character-maps,attr"`
+}
+
+type XsdGoPkgHasAttr_UndeclarePrefixes_Tavt_ struct {
+	UndeclarePrefixes Tavt `xml:"http://www.w3.org/1999/XSL/Transform undeclare-prefixes,attr"`
+}
+
+type XsdGoPkgHasAttr_Indent_Tavt_ struct {
+	Indent Tavt `xml:"http://www.w3.org/1999/XSL/Transform indent,attr"`
+}
+
+type XsdGoPkgHasAttr_Method_Tavt_ struct {
+	Method Tavt `xml:"http://www.w3.org/1999/XSL/Transform method,attr"`
+}
+
+type XsdGoPkgHasAttr_Encoding_Tavt_ struct {
+	Encoding Tavt `xml:"http://www.w3.org/1999/XSL/Transform encoding,attr"`
+}
+
+type XsdGoPkgHasAttr_OutputVersion_Tavt_ struct {
+	OutputVersion Tavt `xml:"http://www.w3.org/1999/XSL/Transform output-version,attr"`
+}
+
+type XsdGoPkgHasAttr_NormalizationForm_Tavt_ struct {
+	NormalizationForm Tavt `xml:"http://www.w3.org/1999/XSL/Transform normalization-form,attr"`
+}
+
+type XsdGoPkgHasAttr_MediaType_Tavt_ struct {
+	MediaType Tavt `xml:"http://www.w3.org/1999/XSL/Transform media-type,attr"`
+}
+
+type XsdGoPkgHasAttr_OmitXmlDeclaration_Tavt_ struct {
+	OmitXmlDeclaration Tavt `xml:"http://www.w3.org/1999/XSL/Transform omit-xml-declaration,attr"`
+}
+
+type XsdGoPkgHasAttr_Standalone_Tavt_ struct {
+	Standalone Tavt `xml:"http://www.w3.org/1999/XSL/Transform standalone,attr"`
+}
+
+type XsdGoPkgHasAttr_DoctypeSystem_Tavt_ struct {
+	DoctypeSystem Tavt `xml:"http://www.w3.org/1999/XSL/Transform doctype-system,attr"`
+}
+
+type XsdGoPkgHasAttr_Href_Tavt_ struct {
+	Href Tavt `xml:"http://www.w3.org/1999/XSL/Transform href,attr"`
+}
+
+type XsdGoPkgHasAttr_DoctypePublic_Tavt_ struct {
+	DoctypePublic Tavt `xml:"http://www.w3.org/1999/XSL/Transform doctype-public,attr"`
+}
+
+type XsdGoPkgHasAttr_Format_Tavt_ struct {
+	Format Tavt `xml:"http://www.w3.org/1999/XSL/Transform format,attr"`
+}
+
+type XsdGoPkgHasAttr_EscapeUriAttributes_Tavt_ struct {
+	EscapeUriAttributes Tavt `xml:"http://www.w3.org/1999/XSL/Transform escape-uri-attributes,attr"`
+}
+
+type XsdGoPkgHasAttr_IncludeContentType_Tavt_ struct {
+	IncludeContentType Tavt `xml:"http://www.w3.org/1999/XSL/Transform include-content-type,attr"`
+}
+
+type XsdGoPkgHasAttr_ByteOrderMark_Tavt_ struct {
+	ByteOrderMark Tavt `xml:"http://www.w3.org/1999/XSL/Transform byte-order-mark,attr"`
+}
+
+type TxsdResultDocument struct {
+	XsdGoPkgHasAttr_Indent_Tavt_
+
+	XsdGoPkgHasAttr_Method_Tavt_
+
+	XsdGoPkgHasAttr_Encoding_Tavt_
+
+	XsdGoPkgHasAttr_OutputVersion_Tavt_
+
+	XsdGoPkgHasAttr_NormalizationForm_Tavt_
+
+	TsequenceConstructor
+
+	XsdGoPkgHasAttr_MediaType_Tavt_
+
+	XsdGoPkgHasAttr_Type_TQName_
+
+	XsdGoPkgHasAttr_OmitXmlDeclaration_Tavt_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Standalone_Tavt_
+
+	XsdGoPkgHasAttr_DoctypeSystem_Tavt_
+
+	XsdGoPkgHasAttr_Validation_TvalidationType_
+
+	XsdGoPkgHasAttr_Href_Tavt_
+
+	XsdGoPkgHasAttr_DoctypePublic_Tavt_
+
+	XsdGoPkgHasAttr_Format_Tavt_
+
+	XsdGoPkgHasAttr_EscapeUriAttributes_Tavt_
+
+	XsdGoPkgHasAttr_IncludeContentType_Tavt_
+
+	XsdGoPkgHasAttr_ByteOrderMark_Tavt_
+
+	XsdGoPkgHasAttr_CdataSectionElements_Tavt_
+
+	XsdGoPkgHasAttr_UseCharacterMaps_TQNames_
+
+	XsdGoPkgHasAttr_UndeclarePrefixes_Tavt_
+}
+
+//	If the WalkHandlers.TxsdResultDocument function is not nil (ie. was set by outside code), calls it with this TxsdResultDocument instance as the single argument. Then calls the Walk() method on 1/22 embed(s) and 0/0 field(s) belonging to this TxsdResultDocument instance.
+func (me *TxsdResultDocument) Walk() (err error) {
+	if fn := WalkHandlers.TxsdResultDocument; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_ResultDocument struct {
+	ResultDocument *TxsdResultDocument `xml:"http://www.w3.org/1999/XSL/Transform result-document"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ResultDocument function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ResultDocument instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ResultDocument instance.
+func (me *XsdGoPkgHasElem_ResultDocument) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ResultDocument; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.ResultDocument.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_ProcessingInstruction struct {
+	ProcessingInstruction *TxsdNamespace `xml:"http://www.w3.org/1999/XSL/Transform processing-instruction"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ProcessingInstruction function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ProcessingInstruction instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ProcessingInstruction instance.
+func (me *XsdGoPkgHasElem_ProcessingInstruction) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ProcessingInstruction; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.ProcessingInstruction.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TxsdApplyImports struct {
+	XsdGoPkgHasElems_WithParam
+
+	TelementOnlyVersionedElementType
+}
+
+//	If the WalkHandlers.TxsdApplyImports function is not nil (ie. was set by outside code), calls it with this TxsdApplyImports instance as the single argument. Then calls the Walk() method on 2/2 embed(s) and 0/0 field(s) belonging to this TxsdApplyImports instance.
+func (me *TxsdApplyImports) Walk() (err error) {
+	if fn := WalkHandlers.TxsdApplyImports; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.TelementOnlyVersionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_WithParam.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_ApplyImports struct {
+	ApplyImports *TxsdApplyImports `xml:"http://www.w3.org/1999/XSL/Transform apply-imports"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ApplyImports function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ApplyImports instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ApplyImports instance.
+func (me *XsdGoPkgHasElem_ApplyImports) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ApplyImports; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.ApplyImports.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_Fallback struct {
+	Fallback *TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform fallback"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Fallback function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Fallback instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Fallback instance.
+func (me *XsdGoPkgHasElem_Fallback) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Fallback; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TxsdCallTemplate struct {
+	XsdGoPkgHasAttr_Name_TQName_
+
+	TelementOnlyVersionedElementType
+
+	XsdGoPkgHasElems_WithParam
+}
+
+//	If the WalkHandlers.TxsdCallTemplate function is not nil (ie. was set by outside code), calls it with this TxsdCallTemplate instance as the single argument. Then calls the Walk() method on 2/3 embed(s) and 0/0 field(s) belonging to this TxsdCallTemplate instance.
+func (me *TxsdCallTemplate) Walk() (err error) {
+	if fn := WalkHandlers.TxsdCallTemplate; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.TelementOnlyVersionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_WithParam.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_CallTemplate struct {
+	CallTemplate *TxsdCallTemplate `xml:"http://www.w3.org/1999/XSL/Transform call-template"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_CallTemplate function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_CallTemplate instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_CallTemplate instance.
+func (me *XsdGoPkgHasElem_CallTemplate) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_CallTemplate; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.CallTemplate.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_PerformSort struct {
+	PerformSort *TxsdForEach `xml:"http://www.w3.org/1999/XSL/Transform perform-sort"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_PerformSort function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PerformSort instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PerformSort instance.
+func (me *XsdGoPkgHasElem_PerformSort) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_PerformSort; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.PerformSort.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TxsdCopy struct {
+	XsdGoPkgHasAttr_Type_TQName_
+
+	XsdGoPkgHasAttr_UseAttributeSets_TQNames_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_CopyNamespaces_TyesOrNo_Yes
+
+	XsdGoPkgHasAttr_InheritNamespaces_TyesOrNo_Yes
+
+	XsdGoPkgHasAttr_Validation_TvalidationType_
+
+	TsequenceConstructor
+}
+
+//	If the WalkHandlers.TxsdCopy function is not nil (ie. was set by outside code), calls it with this TxsdCopy instance as the single argument. Then calls the Walk() method on 1/7 embed(s) and 0/0 field(s) belonging to this TxsdCopy instance.
+func (me *TxsdCopy) Walk() (err error) {
+	if fn := WalkHandlers.TxsdCopy; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_Copy struct {
+	Copy *TxsdCopy `xml:"http://www.w3.org/1999/XSL/Transform copy"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Copy function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Copy instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Copy instance.
+func (me *XsdGoPkgHasElem_Copy) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Copy; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Copy.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+//	The level attribute of xsl:number:
+//	one of single, multiple, or any.
+type Tlevel xsdt.NCName
+
+//	Since Tlevel is just a simple String type, this merely returns the current string value.
+func (me Tlevel) String() string { return xsdt.NCName(me).String() }
+
+//	Since Tlevel is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tlevel) Set(s string) { (*xsdt.NCName)(me).Set(s) }
+
+//	Returns true if the value of this enumerated Tlevel is "single".
+func (me Tlevel) IsSingle() bool { return me == "single" }
+
+//	Returns true if the value of this enumerated Tlevel is "multiple".
+func (me Tlevel) IsMultiple() bool { return me == "multiple" }
+
+//	Returns true if the value of this enumerated Tlevel is "any".
+func (me Tlevel) IsAny() bool { return me == "any" }
+
+//	This convenience method just performs a simple type conversion to Tlevel's alias type xsdt.NCName.
+func (me Tlevel) ToXsdtNCName() xsdt.NCName { return xsdt.NCName(me) }
+
+type XsdGoPkgHasAttr_Level_Tlevel_Single struct {
+	Level Tlevel `xml:"http://www.w3.org/1999/XSL/Transform level,attr"`
+}
+
+//	Returns the default value for Level -- "single"
+func (me XsdGoPkgHasAttr_Level_Tlevel_Single) LevelDefault() Tlevel { return Tlevel("single") }
+
+type XsdGoPkgHasAttr_Value_Texpression_ struct {
+	Value Texpression `xml:"http://www.w3.org/1999/XSL/Transform value,attr"`
+}
+
+type XsdGoPkgHasAttr_Format_Tavt_1 struct {
+	Format Tavt `xml:"http://www.w3.org/1999/XSL/Transform format,attr"`
+}
+
+//	Returns the default value for Format -- "1"
+func (me XsdGoPkgHasAttr_Format_Tavt_1) FormatDefault() Tavt { return Tavt("1") }
+
+type XsdGoPkgHasAttr_Ordinal_Tavt_ struct {
+	Ordinal Tavt `xml:"http://www.w3.org/1999/XSL/Transform ordinal,attr"`
+}
+
+type XsdGoPkgHasAttr_GroupingSeparator_Tavt_ struct {
+	GroupingSeparator Tavt `xml:"http://www.w3.org/1999/XSL/Transform grouping-separator,attr"`
+}
+
+type XsdGoPkgHasAttr_Count_Tpattern_ struct {
+	Count Tpattern `xml:"http://www.w3.org/1999/XSL/Transform count,attr"`
+}
+
+type XsdGoPkgHasAttr_From_Tpattern_ struct {
+	From Tpattern `xml:"http://www.w3.org/1999/XSL/Transform from,attr"`
+}
+
+type XsdGoPkgHasAttr_LetterValue_Tavt_ struct {
+	LetterValue Tavt `xml:"http://www.w3.org/1999/XSL/Transform letter-value,attr"`
+}
+
+type XsdGoPkgHasAttr_GroupingSize_Tavt_ struct {
+	GroupingSize Tavt `xml:"http://www.w3.org/1999/XSL/Transform grouping-size,attr"`
+}
+
+type TxsdNumber struct {
+	XsdGoPkgHasAttr_From_Tpattern_
+
+	XsdGoPkgHasAttr_LetterValue_Tavt_
+
+	TversionedElementType
+
+	XsdGoPkgHasAttr_GroupingSize_Tavt_
+
+	XsdGoPkgHasAttr_Level_Tlevel_Single
+
+	XsdGoPkgHasAttr_Value_Texpression_
+
+	XsdGoPkgHasAttr_Format_Tavt_1
+
+	XsdGoPkgHasAttr_Ordinal_Tavt_
+
+	XsdGoPkgHasAttr_GroupingSeparator_Tavt_
+
+	XsdGoPkgHasAttr_Select_Texpression_
+
+	XsdGoPkgHasAttr_Lang_Tavt_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Count_Tpattern_
+}
+
+//	If the WalkHandlers.TxsdNumber function is not nil (ie. was set by outside code), calls it with this TxsdNumber instance as the single argument. Then calls the Walk() method on 2/13 embed(s) and 0/0 field(s) belonging to this TxsdNumber instance.
+func (me *TxsdNumber) Walk() (err error) {
+	if fn := WalkHandlers.TxsdNumber; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.TversionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_Number struct {
+	Number *TxsdNumber `xml:"http://www.w3.org/1999/XSL/Transform number"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Number function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Number instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Number instance.
+func (me *XsdGoPkgHasElem_Number) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Number; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Number.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasAttr_Namespace_Tavt_ struct {
+	Namespace Tavt `xml:"http://www.w3.org/1999/XSL/Transform namespace,attr"`
+}
+
+type TxsdElement struct {
+	XsdGoPkgHasAttr_Namespace_Tavt_
+
+	XsdGoPkgHasAttr_Validation_TvalidationType_
+
+	XsdGoPkgHasAttr_UseAttributeSets_TQNames_
+
+	XsdGoPkgHasAttr_Type_TQName_
+
+	XsdGoPkgHasAttr_InheritNamespaces_TyesOrNo_Yes
+
+	XsdGoPkgHasAttr_Name_Tavt_
+
+	XsdGoPkgHasCdata
+
+	TsequenceConstructor
+}
+
+//	If the WalkHandlers.TxsdElement function is not nil (ie. was set by outside code), calls it with this TxsdElement instance as the single argument. Then calls the Walk() method on 1/8 embed(s) and 0/0 field(s) belonging to this TxsdElement instance.
+func (me *TxsdElement) Walk() (err error) {
+	if fn := WalkHandlers.TxsdElement; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_Element struct {
+	Element *TxsdElement `xml:"http://www.w3.org/1999/XSL/Transform element"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Element function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Element instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Element instance.
+func (me *XsdGoPkgHasElem_Element) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Element; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Element.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_Otherwise struct {
+	Otherwise *TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform otherwise"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Otherwise function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Otherwise instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Otherwise instance.
+func (me *XsdGoPkgHasElem_Otherwise) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Otherwise; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_When struct {
+	Whens []*TxsdIf `xml:"http://www.w3.org/1999/XSL/Transform when"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_When function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_When instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_When instance.
+func (me *XsdGoPkgHasElems_When) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_When; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.Whens {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TxsdChoose struct {
+	TelementOnlyVersionedElementType
+
+	XsdGoPkgHasElem_Otherwise
+
+	XsdGoPkgHasElems_When
+}
+
+//	If the WalkHandlers.TxsdChoose function is not nil (ie. was set by outside code), calls it with this TxsdChoose instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this TxsdChoose instance.
+func (me *TxsdChoose) Walk() (err error) {
+	if fn := WalkHandlers.TxsdChoose; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElems_When.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.TelementOnlyVersionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Otherwise.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_Choose struct {
+	Choose *TxsdChoose `xml:"http://www.w3.org/1999/XSL/Transform choose"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Choose function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Choose instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Choose instance.
+func (me *XsdGoPkgHasElem_Choose) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Choose; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Choose.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if fn != nil {
@@ -2251,6 +2193,48 @@ type XsdGoPkgHasAttr_Flags_Tavt_ struct {
 	Flags Tavt `xml:"http://www.w3.org/1999/XSL/Transform flags,attr"`
 }
 
+type XsdGoPkgHasElem_NonMatchingSubstring struct {
+	NonMatchingSubstring *TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform non-matching-substring"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_NonMatchingSubstring function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_NonMatchingSubstring instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_NonMatchingSubstring instance.
+func (me *XsdGoPkgHasElem_NonMatchingSubstring) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_NonMatchingSubstring; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_MatchingSubstring struct {
+	MatchingSubstring *TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform matching-substring"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_MatchingSubstring function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_MatchingSubstring instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_MatchingSubstring instance.
+func (me *XsdGoPkgHasElem_MatchingSubstring) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_MatchingSubstring; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
 type XsdGoPkgHasAttr_Regex_Tavt_ struct {
 	Regex Tavt `xml:"http://www.w3.org/1999/XSL/Transform regex,attr"`
 }
@@ -2258,17 +2242,17 @@ type XsdGoPkgHasAttr_Regex_Tavt_ struct {
 type TxsdAnalyzeString struct {
 	XsdGoPkgHasElem_MatchingSubstring
 
-	XsdGoPkgHasAttr_Flags_Tavt_
+	XsdGoPkgHasAttr_Select_Texpression_
 
 	XsdGoPkgHasAttr_Regex_Tavt_
 
-	XsdGoPkgHasAttr_Select_Texpression_
-
-	XsdGoPkgHasElems_Fallback
-
 	TelementOnlyVersionedElementType
 
+	XsdGoPkgHasAttr_Flags_Tavt_
+
 	XsdGoPkgHasElem_NonMatchingSubstring
+
+	XsdGoPkgHasElems_Fallback
 }
 
 //	If the WalkHandlers.TxsdAnalyzeString function is not nil (ie. was set by outside code), calls it with this TxsdAnalyzeString instance as the single argument. Then calls the Walk() method on 4/7 embed(s) and 0/0 field(s) belonging to this TxsdAnalyzeString instance.
@@ -2279,13 +2263,13 @@ func (me *TxsdAnalyzeString) Walk() (err error) {
 				return
 			}
 		}
-		if err = me.XsdGoPkgHasElems_Fallback.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
 		if err = me.TelementOnlyVersionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if err = me.XsdGoPkgHasElem_NonMatchingSubstring.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_Fallback.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if err = me.XsdGoPkgHasElem_MatchingSubstring.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
@@ -2324,80 +2308,23 @@ func (me *XsdGoPkgHasElem_AnalyzeString) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElem_If struct {
-	If *TxsdWhen `xml:"http://www.w3.org/1999/XSL/Transform if"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_If function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_If instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_If instance.
-func (me *XsdGoPkgHasElem_If) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_If; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.If.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_Fallback struct {
-	Fallback *TsequenceConstructor `xml:"http://www.w3.org/1999/XSL/Transform fallback"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Fallback function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Fallback instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Fallback instance.
-func (me *XsdGoPkgHasElem_Fallback) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Fallback; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.Fallback.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type TxsdCopy struct {
-	XsdGoPkgHasAttr_Type_TQName_
-
-	XsdGoPkgHasAttr_CopyNamespaces_TyesOrNo_Yes
-
+type TxsdDocument struct {
 	TsequenceConstructor
+
+	XsdGoPkgHasAttr_Type_TQName_
 
 	XsdGoPkgHasAttr_Validation_TvalidationType_
 
 	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_UseAttributeSets_TQNames_
-
-	XsdGoPkgHasAttr_InheritNamespaces_TyesOrNo_Yes
 }
 
-//	If the WalkHandlers.TxsdCopy function is not nil (ie. was set by outside code), calls it with this TxsdCopy instance as the single argument. Then calls the Walk() method on 2/7 embed(s) and 0/0 field(s) belonging to this TxsdCopy instance.
-func (me *TxsdCopy) Walk() (err error) {
-	if fn := WalkHandlers.TxsdCopy; me != nil {
+//	If the WalkHandlers.TxsdDocument function is not nil (ie. was set by outside code), calls it with this TxsdDocument instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TxsdDocument instance.
+func (me *TxsdDocument) Walk() (err error) {
+	if fn := WalkHandlers.TxsdDocument; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
-		}
-		if err = me.TsequenceConstructor.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
 		}
 		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
@@ -2411,19 +2338,19 @@ func (me *TxsdCopy) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElem_Copy struct {
-	Copy *TxsdCopy `xml:"http://www.w3.org/1999/XSL/Transform copy"`
+type XsdGoPkgHasElem_Document struct {
+	Document *TxsdDocument `xml:"http://www.w3.org/1999/XSL/Transform document"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_Copy function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Copy instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Copy instance.
-func (me *XsdGoPkgHasElem_Copy) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Copy; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElem_Document function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Document instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Document instance.
+func (me *XsdGoPkgHasElem_Document) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Document; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		if err = me.Copy.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.Document.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if fn != nil {
@@ -2435,19 +2362,131 @@ func (me *XsdGoPkgHasElem_Copy) Walk() (err error) {
 	return
 }
 
-type TxsdSequence struct {
+type TxsdComment struct {
+	XsdGoPkgHasAttr_Select_Texpression_
+
 	XsdGoPkgHasCdata
+
+	TsequenceConstructor
+}
+
+//	If the WalkHandlers.TxsdComment function is not nil (ie. was set by outside code), calls it with this TxsdComment instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TxsdComment instance.
+func (me *TxsdComment) Walk() (err error) {
+	if fn := WalkHandlers.TxsdComment; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_Comment struct {
+	Comment *TxsdComment `xml:"http://www.w3.org/1999/XSL/Transform comment"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Comment function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Comment instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Comment instance.
+func (me *XsdGoPkgHasElem_Comment) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Comment; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Comment.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TxsdAttribute struct {
+	XsdGoPkgHasAttr_Name_Tavt_
+
+	XsdGoPkgHasAttr_Type_TQName_
 
 	XsdGoPkgHasAttr_Select_Texpression_
 
-	TelementOnlyVersionedElementType
+	XsdGoPkgHasAttr_Separator_Tavt_
 
-	XsdGoPkgHasElems_Fallback
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_Namespace_Tavt_
+
+	TsequenceConstructor
+
+	XsdGoPkgHasAttr_Validation_TvalidationType_
 }
 
-//	If the WalkHandlers.TxsdSequence function is not nil (ie. was set by outside code), calls it with this TxsdSequence instance as the single argument. Then calls the Walk() method on 3/4 embed(s) and 0/0 field(s) belonging to this TxsdSequence instance.
-func (me *TxsdSequence) Walk() (err error) {
-	if fn := WalkHandlers.TxsdSequence; me != nil {
+//	If the WalkHandlers.TxsdAttribute function is not nil (ie. was set by outside code), calls it with this TxsdAttribute instance as the single argument. Then calls the Walk() method on 1/8 embed(s) and 0/0 field(s) belonging to this TxsdAttribute instance.
+func (me *TxsdAttribute) Walk() (err error) {
+	if fn := WalkHandlers.TxsdAttribute; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_Attribute struct {
+	Attribute *TxsdAttribute `xml:"http://www.w3.org/1999/XSL/Transform attribute"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Attribute function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Attribute instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Attribute instance.
+func (me *XsdGoPkgHasElem_Attribute) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Attribute; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Attribute.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TxsdNextMatch struct {
+	XsdGoPkgHasElems_Fallback
+
+	XsdGoPkgHasElems_WithParam
+
+	TelementOnlyVersionedElementType
+}
+
+//	If the WalkHandlers.TxsdNextMatch function is not nil (ie. was set by outside code), calls it with this TxsdNextMatch instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this TxsdNextMatch instance.
+func (me *TxsdNextMatch) Walk() (err error) {
+	if fn := WalkHandlers.TxsdNextMatch; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
@@ -2456,7 +2495,7 @@ func (me *TxsdSequence) Walk() (err error) {
 		if err = me.XsdGoPkgHasElems_Fallback.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElems_WithParam.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if err = me.TelementOnlyVersionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
@@ -2471,19 +2510,19 @@ func (me *TxsdSequence) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElem_Sequence struct {
-	Sequence *TxsdSequence `xml:"http://www.w3.org/1999/XSL/Transform sequence"`
+type XsdGoPkgHasElem_NextMatch struct {
+	NextMatch *TxsdNextMatch `xml:"http://www.w3.org/1999/XSL/Transform next-match"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_Sequence function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Sequence instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Sequence instance.
-func (me *XsdGoPkgHasElem_Sequence) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Sequence; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElem_NextMatch function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_NextMatch instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_NextMatch instance.
+func (me *XsdGoPkgHasElem_NextMatch) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_NextMatch; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		if err = me.Sequence.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.NextMatch.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if fn != nil {
@@ -2498,55 +2537,55 @@ func (me *XsdGoPkgHasElem_Sequence) Walk() (err error) {
 type XsdGoPkgHasElem_Instruction struct {
 	Instruction *TversionedElementType `xml:"http://www.w3.org/1999/XSL/Transform instruction"`
 
-	XsdGoPkgHasElem_Attribute
-
-	XsdGoPkgHasElem_Namespace
-
-	XsdGoPkgHasElem_NextMatch
-
-	XsdGoPkgHasElem_ForEach
-
 	XsdGoPkgHasElem_Document
-
-	XsdGoPkgHasElem_Text
-
-	XsdGoPkgHasElem_AnalyzeString
-
-	XsdGoPkgHasElem_If
-
-	XsdGoPkgHasElem_Fallback
-
-	XsdGoPkgHasElem_Copy
-
-	XsdGoPkgHasElem_Sequence
-
-	XsdGoPkgHasElem_CallTemplate
-
-	XsdGoPkgHasElem_Message
 
 	XsdGoPkgHasElem_Comment
 
-	XsdGoPkgHasElem_ApplyImports
+	XsdGoPkgHasElem_Attribute
 
-	XsdGoPkgHasElem_Element
+	XsdGoPkgHasElem_NextMatch
 
-	XsdGoPkgHasElem_Choose
+	XsdGoPkgHasElem_Namespace
+
+	XsdGoPkgHasElem_ApplyTemplates
+
+	XsdGoPkgHasElem_CopyOf
+
+	XsdGoPkgHasElem_If
+
+	XsdGoPkgHasElem_Sequence
+
+	XsdGoPkgHasElem_Text
 
 	XsdGoPkgHasElem_ForEachGroup
 
 	XsdGoPkgHasElem_ValueOf
 
-	XsdGoPkgHasElem_ApplyTemplates
+	XsdGoPkgHasElem_Message
 
-	XsdGoPkgHasElem_Number
-
-	XsdGoPkgHasElem_CopyOf
+	XsdGoPkgHasElem_ForEach
 
 	XsdGoPkgHasElem_ResultDocument
 
 	XsdGoPkgHasElem_ProcessingInstruction
 
+	XsdGoPkgHasElem_ApplyImports
+
+	XsdGoPkgHasElem_Fallback
+
+	XsdGoPkgHasElem_CallTemplate
+
 	XsdGoPkgHasElem_PerformSort
+
+	XsdGoPkgHasElem_Copy
+
+	XsdGoPkgHasElem_Number
+
+	XsdGoPkgHasElem_Element
+
+	XsdGoPkgHasElem_Choose
+
+	XsdGoPkgHasElem_AnalyzeString
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_Instruction function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Instruction instance as the single argument. Then calls the Walk() method on 25/25 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Instruction instance.
@@ -2557,16 +2596,22 @@ func (me *XsdGoPkgHasElem_Instruction) Walk() (err error) {
 				return
 			}
 		}
-		if err = me.XsdGoPkgHasElem_Comment.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElem_Namespace.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElem_ApplyImports.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElem_ApplyTemplates.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElem_Element.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElem_CopyOf.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElem_Choose.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElem_If.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Sequence.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Text.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if err = me.XsdGoPkgHasElem_ForEachGroup.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
@@ -2575,13 +2620,10 @@ func (me *XsdGoPkgHasElem_Instruction) Walk() (err error) {
 		if err = me.XsdGoPkgHasElem_ValueOf.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElem_ApplyTemplates.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElem_Message.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElem_Number.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_CopyOf.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElem_ForEach.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if err = me.XsdGoPkgHasElem_ResultDocument.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
@@ -2590,108 +2632,46 @@ func (me *XsdGoPkgHasElem_Instruction) Walk() (err error) {
 		if err = me.XsdGoPkgHasElem_ProcessingInstruction.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElem_PerformSort.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_Attribute.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_Namespace.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_NextMatch.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_ForEach.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_Document.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_Text.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_AnalyzeString.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_If.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElem_ApplyImports.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if err = me.XsdGoPkgHasElem_Fallback.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElem_Copy.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_Sequence.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
 		if err = me.XsdGoPkgHasElem_CallTemplate.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElem_Message.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElem_PerformSort.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Copy.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Number.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Element.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Choose.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_AnalyzeString.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Document.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Comment.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Attribute.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_NextMatch.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if err = me.Instruction.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type TxsdVariable struct {
-	XsdGoPkgHasAttr_Select_Texpression_
-
-	XsdGoPkgHasAttr_As_TsequenceType_
-
-	XsdGoPkgHasAttr_Name_TQName_
-
-	TsequenceConstructor
-
-	XsdGoPkgHasCdata
-}
-
-//	If the WalkHandlers.TxsdVariable function is not nil (ie. was set by outside code), calls it with this TxsdVariable instance as the single argument. Then calls the Walk() method on 2/5 embed(s) and 0/0 field(s) belonging to this TxsdVariable instance.
-func (me *TxsdVariable) Walk() (err error) {
-	if fn := WalkHandlers.TxsdVariable; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.TsequenceConstructor.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_Variable struct {
-	Variable *TxsdVariable `xml:"http://www.w3.org/1999/XSL/Transform variable"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Variable function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Variable instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Variable instance.
-func (me *XsdGoPkgHasElem_Variable) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Variable; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.Variable.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if fn != nil {
@@ -2751,9 +2731,9 @@ func (me *XsdGoPkgHasGroup_ResultElements) Walk() (err error) {
 type XsdGoPkgHasGroup_SequenceConstructorGroup struct {
 	XsdGoPkgHasElem_Variable
 
-	XsdGoPkgHasGroup_ResultElements
-
 	XsdGoPkgHasElem_Instruction
+
+	XsdGoPkgHasGroup_ResultElements
 }
 
 //	If the WalkHandlers.XsdGoPkgHasGroup_SequenceConstructorGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasGroup_SequenceConstructorGroup instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this XsdGoPkgHasGroup_SequenceConstructorGroup instance.
@@ -2764,13 +2744,47 @@ func (me *XsdGoPkgHasGroup_SequenceConstructorGroup) Walk() (err error) {
 				return
 			}
 		}
-		if err = me.XsdGoPkgHasElem_Variable.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElem_Instruction.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if err = me.XsdGoPkgHasGroup_ResultElements.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElem_Instruction.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElem_Variable.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TsequenceConstructor struct {
+	XsdGoPkgHasGroup_SequenceConstructorGroup
+
+	XsdGoPkgHasCdata
+
+	TversionedElementType
+}
+
+//	If the WalkHandlers.TsequenceConstructor function is not nil (ie. was set by outside code), calls it with this TsequenceConstructor instance as the single argument. Then calls the Walk() method on 3/3 embed(s) and 0/0 field(s) belonging to this TsequenceConstructor instance.
+func (me *TsequenceConstructor) Walk() (err error) {
+	if fn := WalkHandlers.TsequenceConstructor; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.TversionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasGroup_SequenceConstructorGroup.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if fn != nil {
@@ -2789,17 +2803,17 @@ type XsdGoPkgHasAttr_Required_TyesOrNo_ struct {
 type TxsdParam struct {
 	XsdGoPkgHasAttr_Required_TyesOrNo_
 
-	XsdGoPkgHasCdata
+	TsequenceConstructor
 
 	XsdGoPkgHasAttr_Select_Texpression_
 
+	XsdGoPkgHasCdata
+
 	XsdGoPkgHasAttr_As_TsequenceType_
 
-	XsdGoPkgHasAttr_Tunnel_TyesOrNo_
-
-	TsequenceConstructor
-
 	XsdGoPkgHasAttr_Name_TQName_
+
+	XsdGoPkgHasAttr_Tunnel_TyesOrNo_
 }
 
 //	If the WalkHandlers.TxsdParam function is not nil (ie. was set by outside code), calls it with this TxsdParam instance as the single argument. Then calls the Walk() method on 2/7 embed(s) and 0/0 field(s) belonging to this TxsdParam instance.
@@ -2810,10 +2824,10 @@ func (me *TxsdParam) Walk() (err error) {
 				return
 			}
 		}
-		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.TsequenceConstructor.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.TsequenceConstructor.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if fn != nil {
@@ -2868,19 +2882,19 @@ func (me XsdGoPkgHasAttr_As_TsequenceType_Item) AsDefault() TsequenceType {
 }
 
 type TxsdFunction struct {
-	XsdGoPkgHasAttr_Name_TQName_
-
-	XsdGoPkgHasGroup_SequenceConstructorGroup
-
 	XsdGoPkgHasElems_Param
 
 	XsdGoPkgHasCdata
 
 	XsdGoPkgHasAttr_Override_TyesOrNo_Yes
 
-	TversionedElementType
+	XsdGoPkgHasGroup_SequenceConstructorGroup
+
+	XsdGoPkgHasAttr_Name_TQName_
 
 	XsdGoPkgHasAttr_As_TsequenceType_Item
+
+	TversionedElementType
 }
 
 //	If the WalkHandlers.TxsdFunction function is not nil (ie. was set by outside code), calls it with this TxsdFunction instance as the single argument. Then calls the Walk() method on 4/7 embed(s) and 0/0 field(s) belonging to this TxsdFunction instance.
@@ -2891,7 +2905,7 @@ func (me *TxsdFunction) Walk() (err error) {
 				return
 			}
 		}
-		if err = me.XsdGoPkgHasGroup_SequenceConstructorGroup.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.TversionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if err = me.XsdGoPkgHasElems_Param.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
@@ -2900,7 +2914,7 @@ func (me *TxsdFunction) Walk() (err error) {
 		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.TversionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasGroup_SequenceConstructorGroup.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if fn != nil {
@@ -2912,64 +2926,19 @@ func (me *TxsdFunction) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElems_Function struct {
-	Functions []*TxsdFunction `xml:"http://www.w3.org/1999/XSL/Transform function"`
+type XsdGoPkgHasElem_Function struct {
+	Function *TxsdFunction `xml:"http://www.w3.org/1999/XSL/Transform function"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_Function function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Function instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Function instance.
-func (me *XsdGoPkgHasElems_Function) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_Function; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElem_Function function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Function instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Function instance.
+func (me *XsdGoPkgHasElem_Function) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Function; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		for _, x := range me.Functions {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-//	A list of NameTests, as defined in the XPath 2.0 Recommendation.
-//	Each NameTest is either a QName, or "*", or "prefix:*", or "*:localname"
-type Tnametests xsdt.String
-
-//	This convenience method just performs a simple type conversion to Tnametests's alias type xsdt.String.
-func (me Tnametests) ToXsdtString() xsdt.String { return xsdt.String(me) }
-
-//	Since Tnametests is just a simple String type, this merely returns the current string value.
-func (me Tnametests) String() string { return xsdt.String(me).String() }
-
-//	Since Tnametests is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tnametests) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_Elements_Tnametests_ struct {
-	Elements Tnametests `xml:"http://www.w3.org/1999/XSL/Transform elements,attr"`
-}
-
-type TxsdPreserveSpace struct {
-	XsdGoPkgHasAttr_Elements_Tnametests_
-
-	TelementOnlyVersionedElementType
-}
-
-//	If the WalkHandlers.TxsdPreserveSpace function is not nil (ie. was set by outside code), calls it with this TxsdPreserveSpace instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TxsdPreserveSpace instance.
-func (me *TxsdPreserveSpace) Walk() (err error) {
-	if fn := WalkHandlers.TxsdPreserveSpace; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.TelementOnlyVersionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.Function.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if fn != nil {
@@ -2981,22 +2950,154 @@ func (me *TxsdPreserveSpace) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElems_PreserveSpace struct {
-	PreserveSpaces []*TxsdPreserveSpace `xml:"http://www.w3.org/1999/XSL/Transform preserve-space"`
+type XsdGoPkgHasAttr_IncludeContentType_TyesOrNo_ struct {
+	IncludeContentType TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform include-content-type,attr"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_PreserveSpace function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PreserveSpace instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PreserveSpace instance.
-func (me *XsdGoPkgHasElems_PreserveSpace) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_PreserveSpace; me != nil {
+//	The method attribute of xsl:output:
+//	Either one of the recognized names "xml", "xhtml", "html", "text",
+//	or a QName that must include a prefix.
+type Tmethod xsdt.String
+
+//	Since Tmethod is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tmethod) Set(s string) { (*xsdt.String)(me).Set(s) }
+
+//	Since Tmethod is just a simple String type, this merely returns the current string value.
+func (me Tmethod) String() string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to Tmethod's alias type xsdt.String.
+func (me Tmethod) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+type XsdGoPkgHasAttr_Method_Tmethod_ struct {
+	Method Tmethod `xml:"http://www.w3.org/1999/XSL/Transform method,attr"`
+}
+
+type XsdGoPkgHasAttr_UndeclarePrefixes_TyesOrNo_ struct {
+	UndeclarePrefixes TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform undeclare-prefixes,attr"`
+}
+
+type XsdGoPkgHasAttr_EscapeUriAttributes_TyesOrNo_ struct {
+	EscapeUriAttributes TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform escape-uri-attributes,attr"`
+}
+
+type XsdGoPkgHasAttr_DoctypeSystem_XsdtString_ struct {
+	DoctypeSystem xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform doctype-system,attr"`
+}
+
+type XsdGoPkgHasAttr_Indent_TyesOrNo_ struct {
+	Indent TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform indent,attr"`
+}
+
+type XsdGoPkgHasAttr_MediaType_XsdtString_ struct {
+	MediaType xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform media-type,attr"`
+}
+
+type XsdGoPkgHasAttr_DoctypePublic_XsdtString_ struct {
+	DoctypePublic xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform doctype-public,attr"`
+}
+
+type XsdGoPkgHasAttr_Version_XsdtNmtoken_ struct {
+	Version xsdt.Nmtoken `xml:"http://www.w3.org/1999/XSL/Transform version,attr"`
+}
+
+type XsdGoPkgHasAttr_OmitXmlDeclaration_TyesOrNo_ struct {
+	OmitXmlDeclaration TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform omit-xml-declaration,attr"`
+}
+
+type XsdGoPkgHasAttr_ByteOrderMark_TyesOrNo_ struct {
+	ByteOrderMark TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform byte-order-mark,attr"`
+}
+
+type XsdGoPkgHasAttr_NormalizationForm_XsdtNmtoken_ struct {
+	NormalizationForm xsdt.Nmtoken `xml:"http://www.w3.org/1999/XSL/Transform normalization-form,attr"`
+}
+
+//	One of the values "yes" or "no" or "omit".
+type TyesOrNoOrOmit xsdt.Token
+
+//	Returns true if the value of this enumerated TyesOrNoOrOmit is "omit".
+func (me TyesOrNoOrOmit) IsOmit() bool { return me == "omit" }
+
+//	This convenience method just performs a simple type conversion to TyesOrNoOrOmit's alias type xsdt.Token.
+func (me TyesOrNoOrOmit) ToXsdtToken() xsdt.Token { return xsdt.Token(me) }
+
+//	Since TyesOrNoOrOmit is just a simple String type, this merely returns the current string value.
+func (me TyesOrNoOrOmit) String() string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TyesOrNoOrOmit is "no".
+func (me TyesOrNoOrOmit) IsNo() bool { return me == "no" }
+
+//	Since TyesOrNoOrOmit is just a simple String type, this merely sets the current value from the specified string.
+func (me *TyesOrNoOrOmit) Set(s string) { (*xsdt.Token)(me).Set(s) }
+
+//	Returns true if the value of this enumerated TyesOrNoOrOmit is "yes".
+func (me TyesOrNoOrOmit) IsYes() bool { return me == "yes" }
+
+type XsdGoPkgHasAttr_Standalone_TyesOrNoOrOmit_ struct {
+	Standalone TyesOrNoOrOmit `xml:"http://www.w3.org/1999/XSL/Transform standalone,attr"`
+}
+
+type XsdGoPkgHasAttr_CdataSectionElements_TQNames_ struct {
+	CdataSectionElements TQNames `xml:"http://www.w3.org/1999/XSL/Transform cdata-section-elements,attr"`
+}
+
+type XsdGoPkgHasAttr_Encoding_XsdtString_ struct {
+	Encoding xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform encoding,attr"`
+}
+
+type TxsdOutput struct {
+	XsdGoPkgHasAttr_Method_Tmethod_
+
+	XsdGoPkgHasAttr_UndeclarePrefixes_TyesOrNo_
+
+	XsdGoPkgHasAttr_EscapeUriAttributes_TyesOrNo_
+
+	XsdGoPkgHasAttr_DoctypeSystem_XsdtString_
+
+	XsdGoPkgHasAttr_Indent_TyesOrNo_
+
+	XsdGoPkgHasAttr_MediaType_XsdtString_
+
+	XsdGoPkgHasAttr_DoctypePublic_XsdtString_
+
+	XsdGoPkgHasAttr_Version_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_Name_TQName_
+
+	XsdGoPkgHasAttr_OmitXmlDeclaration_TyesOrNo_
+
+	XsdGoPkgHasAttr_ByteOrderMark_TyesOrNo_
+
+	XsdGoPkgHasCdata
+
+	XsdGoPkgHasAttr_NormalizationForm_XsdtNmtoken_
+
+	XsdGoPkgHasAttr_UseCharacterMaps_TQNames_
+
+	XsdGoPkgHasAttr_Standalone_TyesOrNoOrOmit_
+
+	XsdGoPkgHasAttr_CdataSectionElements_TQNames_
+
+	XsdGoPkgHasAttr_Encoding_XsdtString_
+
+	TgenericElementType
+
+	XsdGoPkgHasAttr_IncludeContentType_TyesOrNo_
+}
+
+//	If the WalkHandlers.TxsdOutput function is not nil (ie. was set by outside code), calls it with this TxsdOutput instance as the single argument. Then calls the Walk() method on 2/19 embed(s) and 0/0 field(s) belonging to this TxsdOutput instance.
+func (me *TxsdOutput) Walk() (err error) {
+	if fn := WalkHandlers.TxsdOutput; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		for _, x := range me.PreserveSpaces {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
+		if err = me.TgenericElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
 		}
 		if fn != nil {
 			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
@@ -3007,26 +3108,50 @@ func (me *XsdGoPkgHasElems_PreserveSpace) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasAttr_Match_Tpattern_ struct {
-	Match Tpattern `xml:"http://www.w3.org/1999/XSL/Transform match,attr"`
+type XsdGoPkgHasElem_Output struct {
+	Output *TxsdOutput `xml:"http://www.w3.org/1999/XSL/Transform output"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Output function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Output instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Output instance.
+func (me *XsdGoPkgHasElem_Output) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Output; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.Output.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
 }
 
 type XsdGoPkgHasAttr_Use_Texpression_ struct {
 	Use Texpression `xml:"http://www.w3.org/1999/XSL/Transform use,attr"`
 }
 
+type XsdGoPkgHasAttr_Match_Tpattern_ struct {
+	Match Tpattern `xml:"http://www.w3.org/1999/XSL/Transform match,attr"`
+}
+
 type TxsdKey struct {
+	TsequenceConstructor
+
 	XsdGoPkgHasAttr_Name_TQName_
-
-	XsdGoPkgHasAttr_Match_Tpattern_
-
-	XsdGoPkgHasAttr_Use_Texpression_
 
 	XsdGoPkgHasAttr_Collation_XsdtAnyURI_
 
+	XsdGoPkgHasAttr_Use_Texpression_
+
 	XsdGoPkgHasCdata
 
-	TsequenceConstructor
+	XsdGoPkgHasAttr_Match_Tpattern_
 }
 
 //	If the WalkHandlers.TxsdKey function is not nil (ie. was set by outside code), calls it with this TxsdKey instance as the single argument. Then calls the Walk() method on 2/6 embed(s) and 0/0 field(s) belonging to this TxsdKey instance.
@@ -3052,22 +3177,163 @@ func (me *TxsdKey) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElems_Key struct {
-	Keys []*TxsdKey `xml:"http://www.w3.org/1999/XSL/Transform key"`
+type XsdGoPkgHasElem_Key struct {
+	Key *TxsdKey `xml:"http://www.w3.org/1999/XSL/Transform key"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_Key function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Key instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Key instance.
-func (me *XsdGoPkgHasElems_Key) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_Key; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElem_Key function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Key instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Key instance.
+func (me *XsdGoPkgHasElem_Key) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Key; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		for _, x := range me.Keys {
+		if err = me.Key.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_Attribute struct {
+	Attributes []*TxsdAttribute `xml:"http://www.w3.org/1999/XSL/Transform attribute"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Attribute function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Attribute instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Attribute instance.
+func (me *XsdGoPkgHasElems_Attribute) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Attribute; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.Attributes {
 			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type TxsdAttributeSet struct {
+	XsdGoPkgHasAttr_Name_TQName_
+
+	XsdGoPkgHasAttr_UseAttributeSets_TQNames_
+
+	XsdGoPkgHasElems_Attribute
+
+	TelementOnlyVersionedElementType
+}
+
+//	If the WalkHandlers.TxsdAttributeSet function is not nil (ie. was set by outside code), calls it with this TxsdAttributeSet instance as the single argument. Then calls the Walk() method on 2/4 embed(s) and 0/0 field(s) belonging to this TxsdAttributeSet instance.
+func (me *TxsdAttributeSet) Walk() (err error) {
+	if fn := WalkHandlers.TxsdAttributeSet; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElems_Attribute.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.TelementOnlyVersionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_AttributeSet struct {
+	AttributeSet *TxsdAttributeSet `xml:"http://www.w3.org/1999/XSL/Transform attribute-set"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_AttributeSet function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AttributeSet instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AttributeSet instance.
+func (me *XsdGoPkgHasElem_AttributeSet) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_AttributeSet; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.AttributeSet.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasAttr_SchemaLocation_XsdtAnyURI_ struct {
+	SchemaLocation xsdt.AnyURI `xml:"http://www.w3.org/1999/XSL/Transform schema-location,attr"`
+}
+
+type XsdGoPkgHasAttr_Namespace_XsdtAnyURI_ struct {
+	Namespace xsdt.AnyURI `xml:"http://www.w3.org/1999/XSL/Transform namespace,attr"`
+}
+
+type TxsdImportSchema struct {
+	XsdGoPkgHasAttr_SchemaLocation_XsdtAnyURI_
+
+	TelementOnlyVersionedElementType
+
+	XsdGoPkgHasAttr_Namespace_XsdtAnyURI_
+}
+
+//	If the WalkHandlers.TxsdImportSchema function is not nil (ie. was set by outside code), calls it with this TxsdImportSchema instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TxsdImportSchema instance.
+func (me *TxsdImportSchema) Walk() (err error) {
+	if fn := WalkHandlers.TxsdImportSchema; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.TelementOnlyVersionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_ImportSchema struct {
+	ImportSchema *TxsdImportSchema `xml:"http://www.w3.org/1999/XSL/Transform import-schema"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_ImportSchema function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ImportSchema instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ImportSchema instance.
+func (me *XsdGoPkgHasElem_ImportSchema) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_ImportSchema; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.ImportSchema.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
 		}
 		if fn != nil {
 			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
@@ -3083,9 +3349,9 @@ type XsdGoPkgHasAttr_Href_XsdtAnyURI_ struct {
 }
 
 type TxsdInclude struct {
-	TelementOnlyVersionedElementType
-
 	XsdGoPkgHasAttr_Href_XsdtAnyURI_
+
+	TelementOnlyVersionedElementType
 }
 
 //	If the WalkHandlers.TxsdInclude function is not nil (ie. was set by outside code), calls it with this TxsdInclude instance as the single argument. Then calls the Walk() method on 1/2 embed(s) and 0/0 field(s) belonging to this TxsdInclude instance.
@@ -3108,22 +3374,20 @@ func (me *TxsdInclude) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElems_Include struct {
-	Includes []*TxsdInclude `xml:"http://www.w3.org/1999/XSL/Transform include"`
+type XsdGoPkgHasElem_Include struct {
+	Include *TxsdInclude `xml:"http://www.w3.org/1999/XSL/Transform include"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_Include function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Include instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Include instance.
-func (me *XsdGoPkgHasElems_Include) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_Include; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElem_Include function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Include instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Include instance.
+func (me *XsdGoPkgHasElem_Include) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Include; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		for _, x := range me.Includes {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
+		if err = me.Include.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
 		}
 		if fn != nil {
 			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
@@ -3134,18 +3398,174 @@ func (me *XsdGoPkgHasElems_Include) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasAttr_ResultPrefix_TprefixOrDefault_ struct {
-	ResultPrefix TprefixOrDefault `xml:"http://www.w3.org/1999/XSL/Transform result-prefix,attr"`
+//	A string containing exactly one character.
+type Tchar xsdt.String
+
+//	Since Tchar is just a simple String type, this merely returns the current string value.
+func (me Tchar) String() string { return xsdt.String(me).String() }
+
+//	This convenience method just performs a simple type conversion to Tchar's alias type xsdt.String.
+func (me Tchar) ToXsdtString() xsdt.String { return xsdt.String(me) }
+
+//	Since Tchar is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tchar) Set(s string) { (*xsdt.String)(me).Set(s) }
+
+type XsdGoPkgHasAttr_PerMille_Tchar_ struct {
+	PerMille Tchar `xml:"http://www.w3.org/1999/XSL/Transform per-mille,attr"`
+}
+
+//	Returns the default value for PerMille -- "‰"
+func (me XsdGoPkgHasAttr_PerMille_Tchar_) PerMilleDefault() Tchar { return Tchar("‰") }
+
+type XsdGoPkgHasAttr_GroupingSeparator_Tchar_ struct {
+	GroupingSeparator Tchar `xml:"http://www.w3.org/1999/XSL/Transform grouping-separator,attr"`
+}
+
+//	Returns the default value for GroupingSeparator -- ","
+func (me XsdGoPkgHasAttr_GroupingSeparator_Tchar_) GroupingSeparatorDefault() Tchar {
+	return Tchar(",")
+}
+
+type XsdGoPkgHasAttr_Percent_Tchar_ struct {
+	Percent Tchar `xml:"http://www.w3.org/1999/XSL/Transform percent,attr"`
+}
+
+//	Returns the default value for Percent -- "%"
+func (me XsdGoPkgHasAttr_Percent_Tchar_) PercentDefault() Tchar { return Tchar("%") }
+
+type XsdGoPkgHasAttr_PatternSeparator_Tchar_ struct {
+	PatternSeparator Tchar `xml:"http://www.w3.org/1999/XSL/Transform pattern-separator,attr"`
+}
+
+//	Returns the default value for PatternSeparator -- ";"
+func (me XsdGoPkgHasAttr_PatternSeparator_Tchar_) PatternSeparatorDefault() Tchar { return Tchar(";") }
+
+type XsdGoPkgHasAttr_NaN_XsdtString_NaN struct {
+	NaN xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform NaN,attr"`
+}
+
+//	Returns the default value for NaN -- "NaN"
+func (me XsdGoPkgHasAttr_NaN_XsdtString_NaN) NaNDefault() xsdt.String { return xsdt.String("NaN") }
+
+type XsdGoPkgHasAttr_MinusSign_Tchar_ struct {
+	MinusSign Tchar `xml:"http://www.w3.org/1999/XSL/Transform minus-sign,attr"`
+}
+
+//	Returns the default value for MinusSign -- "-"
+func (me XsdGoPkgHasAttr_MinusSign_Tchar_) MinusSignDefault() Tchar { return Tchar("-") }
+
+type XsdGoPkgHasAttr_Digit_Tchar_ struct {
+	Digit Tchar `xml:"http://www.w3.org/1999/XSL/Transform digit,attr"`
+}
+
+//	Returns the default value for Digit -- "#"
+func (me XsdGoPkgHasAttr_Digit_Tchar_) DigitDefault() Tchar { return Tchar("#") }
+
+type XsdGoPkgHasAttr_ZeroDigit_Tchar_0 struct {
+	ZeroDigit Tchar `xml:"http://www.w3.org/1999/XSL/Transform zero-digit,attr"`
+}
+
+//	Returns the default value for ZeroDigit -- "0"
+func (me XsdGoPkgHasAttr_ZeroDigit_Tchar_0) ZeroDigitDefault() Tchar { return Tchar("0") }
+
+type XsdGoPkgHasAttr_DecimalSeparator_Tchar_ struct {
+	DecimalSeparator Tchar `xml:"http://www.w3.org/1999/XSL/Transform decimal-separator,attr"`
+}
+
+//	Returns the default value for DecimalSeparator -- "."
+func (me XsdGoPkgHasAttr_DecimalSeparator_Tchar_) DecimalSeparatorDefault() Tchar { return Tchar(".") }
+
+type XsdGoPkgHasAttr_Infinity_XsdtString_Infinity struct {
+	Infinity xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform infinity,attr"`
+}
+
+//	Returns the default value for Infinity -- "Infinity"
+func (me XsdGoPkgHasAttr_Infinity_XsdtString_Infinity) InfinityDefault() xsdt.String {
+	return xsdt.String("Infinity")
+}
+
+type TxsdDecimalFormat struct {
+	XsdGoPkgHasAttr_Digit_Tchar_
+
+	XsdGoPkgHasAttr_ZeroDigit_Tchar_0
+
+	XsdGoPkgHasAttr_DecimalSeparator_Tchar_
+
+	XsdGoPkgHasAttr_Infinity_XsdtString_Infinity
+
+	XsdGoPkgHasAttr_PerMille_Tchar_
+
+	TelementOnlyVersionedElementType
+
+	XsdGoPkgHasAttr_GroupingSeparator_Tchar_
+
+	XsdGoPkgHasAttr_Percent_Tchar_
+
+	XsdGoPkgHasAttr_Name_TQName_
+
+	XsdGoPkgHasAttr_PatternSeparator_Tchar_
+
+	XsdGoPkgHasAttr_NaN_XsdtString_NaN
+
+	XsdGoPkgHasAttr_MinusSign_Tchar_
+}
+
+//	If the WalkHandlers.TxsdDecimalFormat function is not nil (ie. was set by outside code), calls it with this TxsdDecimalFormat instance as the single argument. Then calls the Walk() method on 1/12 embed(s) and 0/0 field(s) belonging to this TxsdDecimalFormat instance.
+func (me *TxsdDecimalFormat) Walk() (err error) {
+	if fn := WalkHandlers.TxsdDecimalFormat; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.TelementOnlyVersionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElem_DecimalFormat struct {
+	DecimalFormat *TxsdDecimalFormat `xml:"http://www.w3.org/1999/XSL/Transform decimal-format"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_DecimalFormat function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_DecimalFormat instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_DecimalFormat instance.
+func (me *XsdGoPkgHasElem_DecimalFormat) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_DecimalFormat; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.DecimalFormat.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
 }
 
 type XsdGoPkgHasAttr_StylesheetPrefix_TprefixOrDefault_ struct {
 	StylesheetPrefix TprefixOrDefault `xml:"http://www.w3.org/1999/XSL/Transform stylesheet-prefix,attr"`
 }
 
-type TxsdNamespaceAlias struct {
-	XsdGoPkgHasAttr_ResultPrefix_TprefixOrDefault_
+type XsdGoPkgHasAttr_ResultPrefix_TprefixOrDefault_ struct {
+	ResultPrefix TprefixOrDefault `xml:"http://www.w3.org/1999/XSL/Transform result-prefix,attr"`
+}
 
+type TxsdNamespaceAlias struct {
 	XsdGoPkgHasAttr_StylesheetPrefix_TprefixOrDefault_
+
+	XsdGoPkgHasAttr_ResultPrefix_TprefixOrDefault_
 
 	TelementOnlyVersionedElementType
 }
@@ -3170,22 +3590,20 @@ func (me *TxsdNamespaceAlias) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElems_NamespaceAlias struct {
-	NamespaceAliases []*TxsdNamespaceAlias `xml:"http://www.w3.org/1999/XSL/Transform namespace-alias"`
+type XsdGoPkgHasElem_NamespaceAlias struct {
+	NamespaceAlias *TxsdNamespaceAlias `xml:"http://www.w3.org/1999/XSL/Transform namespace-alias"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_NamespaceAlias function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_NamespaceAlias instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_NamespaceAlias instance.
-func (me *XsdGoPkgHasElems_NamespaceAlias) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_NamespaceAlias; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElem_NamespaceAlias function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_NamespaceAlias instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_NamespaceAlias instance.
+func (me *XsdGoPkgHasElem_NamespaceAlias) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_NamespaceAlias; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		for _, x := range me.NamespaceAliases {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
+		if err = me.NamespaceAlias.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
 		}
 		if fn != nil {
 			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
@@ -3196,22 +3614,20 @@ func (me *XsdGoPkgHasElems_NamespaceAlias) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElems_StripSpace struct {
-	StripSpaces []*TxsdPreserveSpace `xml:"http://www.w3.org/1999/XSL/Transform strip-space"`
+type XsdGoPkgHasElem_StripSpace struct {
+	StripSpace *TxsdPreserveSpace `xml:"http://www.w3.org/1999/XSL/Transform strip-space"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_StripSpace function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_StripSpace instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_StripSpace instance.
-func (me *XsdGoPkgHasElems_StripSpace) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_StripSpace; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElem_StripSpace function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_StripSpace instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_StripSpace instance.
+func (me *XsdGoPkgHasElem_StripSpace) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_StripSpace; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		for _, x := range me.StripSpaces {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
+		if err = me.StripSpace.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
 		}
 		if fn != nil {
 			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
@@ -3222,127 +3638,66 @@ func (me *XsdGoPkgHasElems_StripSpace) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasAttr_NaN_XsdtString_NaN struct {
-	NaN xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform NaN,attr"`
+type XsdGoPkgHasAttr_Priority_XsdtDecimal_ struct {
+	Priority xsdt.Decimal `xml:"http://www.w3.org/1999/XSL/Transform priority,attr"`
 }
 
-//	Returns the default value for NaN -- "NaN"
-func (me XsdGoPkgHasAttr_NaN_XsdtString_NaN) NaNDefault() xsdt.String { return xsdt.String("NaN") }
+//	The mode attribute of xsl:template:
+//	either a list, each member being either a QName or #default;
+//	or the value #all
+type Tmodes xsdt.String
 
-//	A string containing exactly one character.
-type Tchar xsdt.String
+//	Since Tmodes is just a simple String type, this merely returns the current string value.
+func (me Tmodes) String() string { return xsdt.String(me).String() }
 
-//	Since Tchar is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tchar) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+//	Since Tmodes is just a simple String type, this merely sets the current value from the specified string.
+func (me *Tmodes) Set(s string) { (*xsdt.String)(me).Set(s) }
 
-//	This convenience method just performs a simple type conversion to Tchar's alias type xsdt.String.
-func (me Tchar) ToXsdtString() xsdt.String { return xsdt.String(me) }
+//	This convenience method just performs a simple type conversion to Tmodes's alias type xsdt.String.
+func (me Tmodes) ToXsdtString() xsdt.String { return xsdt.String(me) }
 
-//	Since Tchar is just a simple String type, this merely returns the current string value.
-func (me Tchar) String() string { return xsdt.String(me).String() }
-
-type XsdGoPkgHasAttr_DecimalSeparator_Tchar_ struct {
-	DecimalSeparator Tchar `xml:"http://www.w3.org/1999/XSL/Transform decimal-separator,attr"`
+type XsdGoPkgHasAttr_Mode_Tmodes_ struct {
+	Mode Tmodes `xml:"http://www.w3.org/1999/XSL/Transform mode,attr"`
 }
 
-//	Returns the default value for DecimalSeparator -- "."
-func (me XsdGoPkgHasAttr_DecimalSeparator_Tchar_) DecimalSeparatorDefault() Tchar { return Tchar(".") }
-
-type XsdGoPkgHasAttr_MinusSign_Tchar_ struct {
-	MinusSign Tchar `xml:"http://www.w3.org/1999/XSL/Transform minus-sign,attr"`
-}
-
-//	Returns the default value for MinusSign -- "-"
-func (me XsdGoPkgHasAttr_MinusSign_Tchar_) MinusSignDefault() Tchar { return Tchar("-") }
-
-type XsdGoPkgHasAttr_Percent_Tchar_ struct {
-	Percent Tchar `xml:"http://www.w3.org/1999/XSL/Transform percent,attr"`
-}
-
-//	Returns the default value for Percent -- "%"
-func (me XsdGoPkgHasAttr_Percent_Tchar_) PercentDefault() Tchar { return Tchar("%") }
-
-type XsdGoPkgHasAttr_PerMille_Tchar_ struct {
-	PerMille Tchar `xml:"http://www.w3.org/1999/XSL/Transform per-mille,attr"`
-}
-
-//	Returns the default value for PerMille -- "‰"
-func (me XsdGoPkgHasAttr_PerMille_Tchar_) PerMilleDefault() Tchar { return Tchar("‰") }
-
-type XsdGoPkgHasAttr_PatternSeparator_Tchar_ struct {
-	PatternSeparator Tchar `xml:"http://www.w3.org/1999/XSL/Transform pattern-separator,attr"`
-}
-
-//	Returns the default value for PatternSeparator -- ";"
-func (me XsdGoPkgHasAttr_PatternSeparator_Tchar_) PatternSeparatorDefault() Tchar { return Tchar(";") }
-
-type XsdGoPkgHasAttr_GroupingSeparator_Tchar_ struct {
-	GroupingSeparator Tchar `xml:"http://www.w3.org/1999/XSL/Transform grouping-separator,attr"`
-}
-
-//	Returns the default value for GroupingSeparator -- ","
-func (me XsdGoPkgHasAttr_GroupingSeparator_Tchar_) GroupingSeparatorDefault() Tchar {
-	return Tchar(",")
-}
-
-type XsdGoPkgHasAttr_Infinity_XsdtString_Infinity struct {
-	Infinity xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform infinity,attr"`
-}
-
-//	Returns the default value for Infinity -- "Infinity"
-func (me XsdGoPkgHasAttr_Infinity_XsdtString_Infinity) InfinityDefault() xsdt.String {
-	return xsdt.String("Infinity")
-}
-
-type XsdGoPkgHasAttr_Digit_Tchar_ struct {
-	Digit Tchar `xml:"http://www.w3.org/1999/XSL/Transform digit,attr"`
-}
-
-//	Returns the default value for Digit -- "#"
-func (me XsdGoPkgHasAttr_Digit_Tchar_) DigitDefault() Tchar { return Tchar("#") }
-
-type XsdGoPkgHasAttr_ZeroDigit_Tchar_0 struct {
-	ZeroDigit Tchar `xml:"http://www.w3.org/1999/XSL/Transform zero-digit,attr"`
-}
-
-//	Returns the default value for ZeroDigit -- "0"
-func (me XsdGoPkgHasAttr_ZeroDigit_Tchar_0) ZeroDigitDefault() Tchar { return Tchar("0") }
-
-type TxsdDecimalFormat struct {
-	TelementOnlyVersionedElementType
-
-	XsdGoPkgHasAttr_NaN_XsdtString_NaN
-
-	XsdGoPkgHasAttr_DecimalSeparator_Tchar_
-
-	XsdGoPkgHasAttr_MinusSign_Tchar_
+type TxsdTemplate struct {
+	XsdGoPkgHasAttr_Priority_XsdtDecimal_
 
 	XsdGoPkgHasAttr_Name_TQName_
 
-	XsdGoPkgHasAttr_Percent_Tchar_
+	XsdGoPkgHasElems_Param
 
-	XsdGoPkgHasAttr_PerMille_Tchar_
+	XsdGoPkgHasAttr_As_TsequenceType_Item
 
-	XsdGoPkgHasAttr_PatternSeparator_Tchar_
+	XsdGoPkgHasGroup_SequenceConstructorGroup
 
-	XsdGoPkgHasAttr_GroupingSeparator_Tchar_
+	XsdGoPkgHasAttr_Mode_Tmodes_
 
-	XsdGoPkgHasAttr_Infinity_XsdtString_Infinity
+	TversionedElementType
 
-	XsdGoPkgHasAttr_Digit_Tchar_
+	XsdGoPkgHasCdata
 
-	XsdGoPkgHasAttr_ZeroDigit_Tchar_0
+	XsdGoPkgHasAttr_Match_Tpattern_
 }
 
-//	If the WalkHandlers.TxsdDecimalFormat function is not nil (ie. was set by outside code), calls it with this TxsdDecimalFormat instance as the single argument. Then calls the Walk() method on 1/12 embed(s) and 0/0 field(s) belonging to this TxsdDecimalFormat instance.
-func (me *TxsdDecimalFormat) Walk() (err error) {
-	if fn := WalkHandlers.TxsdDecimalFormat; me != nil {
+//	If the WalkHandlers.TxsdTemplate function is not nil (ie. was set by outside code), calls it with this TxsdTemplate instance as the single argument. Then calls the Walk() method on 4/9 embed(s) and 0/0 field(s) belonging to this TxsdTemplate instance.
+func (me *TxsdTemplate) Walk() (err error) {
+	if fn := WalkHandlers.TxsdTemplate; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		if err = me.TelementOnlyVersionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElems_Param.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasGroup_SequenceConstructorGroup.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.TversionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if fn != nil {
@@ -3354,57 +3709,19 @@ func (me *TxsdDecimalFormat) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElems_DecimalFormat struct {
-	DecimalFormats []*TxsdDecimalFormat `xml:"http://www.w3.org/1999/XSL/Transform decimal-format"`
+type XsdGoPkgHasElem_Template struct {
+	Template *TxsdTemplate `xml:"http://www.w3.org/1999/XSL/Transform template"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_DecimalFormat function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_DecimalFormat instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_DecimalFormat instance.
-func (me *XsdGoPkgHasElems_DecimalFormat) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_DecimalFormat; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElem_Template function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Template instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Template instance.
+func (me *XsdGoPkgHasElem_Template) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Template; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		for _, x := range me.DecimalFormats {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasAttr_Namespace_XsdtAnyURI_ struct {
-	Namespace xsdt.AnyURI `xml:"http://www.w3.org/1999/XSL/Transform namespace,attr"`
-}
-
-type XsdGoPkgHasAttr_SchemaLocation_XsdtAnyURI_ struct {
-	SchemaLocation xsdt.AnyURI `xml:"http://www.w3.org/1999/XSL/Transform schema-location,attr"`
-}
-
-type TxsdImportSchema struct {
-	XsdGoPkgHasAttr_Namespace_XsdtAnyURI_
-
-	XsdGoPkgHasAttr_SchemaLocation_XsdtAnyURI_
-
-	TelementOnlyVersionedElementType
-}
-
-//	If the WalkHandlers.TxsdImportSchema function is not nil (ie. was set by outside code), calls it with this TxsdImportSchema instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TxsdImportSchema instance.
-func (me *TxsdImportSchema) Walk() (err error) {
-	if fn := WalkHandlers.TxsdImportSchema; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.TelementOnlyVersionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.Template.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if fn != nil {
@@ -3414,40 +3731,14 @@ func (me *TxsdImportSchema) Walk() (err error) {
 		}
 	}
 	return
-}
-
-type XsdGoPkgHasElems_ImportSchema struct {
-	ImportSchemas []*TxsdImportSchema `xml:"http://www.w3.org/1999/XSL/Transform import-schema"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ImportSchema function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ImportSchema instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ImportSchema instance.
-func (me *XsdGoPkgHasElems_ImportSchema) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_ImportSchema; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.ImportSchemas {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasAttr_Character_Tchar_ struct {
-	Character Tchar `xml:"http://www.w3.org/1999/XSL/Transform character,attr"`
 }
 
 type XsdGoPkgHasAttr_String_XsdtString_ struct {
 	String xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform string,attr"`
+}
+
+type XsdGoPkgHasAttr_Character_Tchar_ struct {
+	Character Tchar `xml:"http://www.w3.org/1999/XSL/Transform character,attr"`
 }
 
 type TxsdOutputCharacter struct {
@@ -3505,13 +3796,13 @@ func (me *XsdGoPkgHasElems_OutputCharacter) Walk() (err error) {
 }
 
 type TxsdCharacterMap struct {
-	XsdGoPkgHasAttr_Name_TQName_
-
 	XsdGoPkgHasAttr_UseCharacterMaps_TQNames_
 
 	TelementOnlyVersionedElementType
 
 	XsdGoPkgHasElems_OutputCharacter
+
+	XsdGoPkgHasAttr_Name_TQName_
 }
 
 //	If the WalkHandlers.TxsdCharacterMap function is not nil (ie. was set by outside code), calls it with this TxsdCharacterMap instance as the single argument. Then calls the Walk() method on 2/4 embed(s) and 0/0 field(s) belonging to this TxsdCharacterMap instance.
@@ -3537,22 +3828,20 @@ func (me *TxsdCharacterMap) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElems_CharacterMap struct {
-	CharacterMaps []*TxsdCharacterMap `xml:"http://www.w3.org/1999/XSL/Transform character-map"`
+type XsdGoPkgHasElem_CharacterMap struct {
+	CharacterMap *TxsdCharacterMap `xml:"http://www.w3.org/1999/XSL/Transform character-map"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_CharacterMap function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_CharacterMap instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_CharacterMap instance.
-func (me *XsdGoPkgHasElems_CharacterMap) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_CharacterMap; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElem_CharacterMap function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_CharacterMap instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_CharacterMap instance.
+func (me *XsdGoPkgHasElem_CharacterMap) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_CharacterMap; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		for _, x := range me.CharacterMaps {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
+		if err = me.CharacterMap.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
 		}
 		if fn != nil {
 			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
@@ -3563,66 +3852,79 @@ func (me *XsdGoPkgHasElems_CharacterMap) Walk() (err error) {
 	return
 }
 
-//	The mode attribute of xsl:template:
-//	either a list, each member being either a QName or #default;
-//	or the value #all
-type Tmodes xsdt.String
+type XsdGoPkgHasElem_Declaration struct {
+	Declaration *TgenericElementType `xml:"http://www.w3.org/1999/XSL/Transform declaration"`
 
-//	Since Tmodes is just a simple String type, this merely returns the current string value.
-func (me Tmodes) String() string { return xsdt.String(me).String() }
+	XsdGoPkgHasElem_PreserveSpace
 
-//	Since Tmodes is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tmodes) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
+	XsdGoPkgHasElem_Function
 
-//	This convenience method just performs a simple type conversion to Tmodes's alias type xsdt.String.
-func (me Tmodes) ToXsdtString() xsdt.String { return xsdt.String(me) }
+	XsdGoPkgHasElem_Output
 
-type XsdGoPkgHasAttr_Mode_Tmodes_ struct {
-	Mode Tmodes `xml:"http://www.w3.org/1999/XSL/Transform mode,attr"`
+	XsdGoPkgHasElem_Key
+
+	XsdGoPkgHasElem_AttributeSet
+
+	XsdGoPkgHasElem_ImportSchema
+
+	XsdGoPkgHasElem_Include
+
+	XsdGoPkgHasElem_DecimalFormat
+
+	XsdGoPkgHasElem_NamespaceAlias
+
+	XsdGoPkgHasElem_StripSpace
+
+	XsdGoPkgHasElem_Template
+
+	XsdGoPkgHasElem_CharacterMap
 }
 
-type XsdGoPkgHasAttr_Priority_XsdtDecimal_ struct {
-	Priority xsdt.Decimal `xml:"http://www.w3.org/1999/XSL/Transform priority,attr"`
-}
-
-type TxsdTemplate struct {
-	XsdGoPkgHasElems_Param
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_As_TsequenceType_Item
-
-	XsdGoPkgHasAttr_Mode_Tmodes_
-
-	XsdGoPkgHasGroup_SequenceConstructorGroup
-
-	XsdGoPkgHasAttr_Priority_XsdtDecimal_
-
-	XsdGoPkgHasAttr_Match_Tpattern_
-
-	XsdGoPkgHasAttr_Name_TQName_
-
-	TversionedElementType
-}
-
-//	If the WalkHandlers.TxsdTemplate function is not nil (ie. was set by outside code), calls it with this TxsdTemplate instance as the single argument. Then calls the Walk() method on 4/9 embed(s) and 0/0 field(s) belonging to this TxsdTemplate instance.
-func (me *TxsdTemplate) Walk() (err error) {
-	if fn := WalkHandlers.TxsdTemplate; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElem_Declaration function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Declaration instance as the single argument. Then calls the Walk() method on 12/12 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Declaration instance.
+func (me *XsdGoPkgHasElem_Declaration) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Declaration; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		if err = me.TversionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElem_Key.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElems_Param.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElem_AttributeSet.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElem_ImportSchema.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasGroup_SequenceConstructorGroup.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElem_Include.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_DecimalFormat.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_NamespaceAlias.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_StripSpace.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Template.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_CharacterMap.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_PreserveSpace.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Function.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElem_Output.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.Declaration.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if fn != nil {
@@ -3660,19 +3962,19 @@ func (me *XsdGoPkgHasElems_Template) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElems_Attribute struct {
-	Attributes []*TxsdAttribute `xml:"http://www.w3.org/1999/XSL/Transform attribute"`
+type XsdGoPkgHasElems_Include struct {
+	Includes []*TxsdInclude `xml:"http://www.w3.org/1999/XSL/Transform include"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_Attribute function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Attribute instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Attribute instance.
-func (me *XsdGoPkgHasElems_Attribute) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_Attribute; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElems_Include function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Include instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Include instance.
+func (me *XsdGoPkgHasElems_Include) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Include; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		for _, x := range me.Attributes {
+		for _, x := range me.Includes {
 			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
@@ -3686,52 +3988,19 @@ func (me *XsdGoPkgHasElems_Attribute) Walk() (err error) {
 	return
 }
 
-type TxsdAttributeSet struct {
-	XsdGoPkgHasElems_Attribute
-
-	XsdGoPkgHasAttr_UseAttributeSets_TQNames_
-
-	TelementOnlyVersionedElementType
-
-	XsdGoPkgHasAttr_Name_TQName_
+type XsdGoPkgHasElems_StripSpace struct {
+	StripSpaces []*TxsdPreserveSpace `xml:"http://www.w3.org/1999/XSL/Transform strip-space"`
 }
 
-//	If the WalkHandlers.TxsdAttributeSet function is not nil (ie. was set by outside code), calls it with this TxsdAttributeSet instance as the single argument. Then calls the Walk() method on 2/4 embed(s) and 0/0 field(s) belonging to this TxsdAttributeSet instance.
-func (me *TxsdAttributeSet) Walk() (err error) {
-	if fn := WalkHandlers.TxsdAttributeSet; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElems_StripSpace function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_StripSpace instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_StripSpace instance.
+func (me *XsdGoPkgHasElems_StripSpace) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_StripSpace; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		if err = me.TelementOnlyVersionedElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_Attribute.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_AttributeSet struct {
-	AttributeSets []*TxsdAttributeSet `xml:"http://www.w3.org/1999/XSL/Transform attribute-set"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AttributeSet function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AttributeSet instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AttributeSet instance.
-func (me *XsdGoPkgHasElems_AttributeSet) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_AttributeSet; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.AttributeSets {
+		for _, x := range me.StripSpaces {
 			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
@@ -3745,154 +4014,22 @@ func (me *XsdGoPkgHasElems_AttributeSet) Walk() (err error) {
 	return
 }
 
-//	The method attribute of xsl:output:
-//	Either one of the recognized names "xml", "xhtml", "html", "text",
-//	or a QName that must include a prefix.
-type Tmethod xsdt.String
-
-//	This convenience method just performs a simple type conversion to Tmethod's alias type xsdt.String.
-func (me Tmethod) ToXsdtString() xsdt.String { return xsdt.String(me) }
-
-//	Since Tmethod is just a simple String type, this merely returns the current string value.
-func (me Tmethod) String() string { return xsdt.String(me).String() }
-
-//	Since Tmethod is just a simple String type, this merely sets the current value from the specified string.
-func (me *Tmethod) SetFromString(s string) { (*xsdt.String)(me).SetFromString(s) }
-
-type XsdGoPkgHasAttr_Method_Tmethod_ struct {
-	Method Tmethod `xml:"http://www.w3.org/1999/XSL/Transform method,attr"`
+type XsdGoPkgHasElems_Function struct {
+	Functions []*TxsdFunction `xml:"http://www.w3.org/1999/XSL/Transform function"`
 }
 
-type XsdGoPkgHasAttr_UndeclarePrefixes_TyesOrNo_ struct {
-	UndeclarePrefixes TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform undeclare-prefixes,attr"`
-}
-
-type XsdGoPkgHasAttr_ByteOrderMark_TyesOrNo_ struct {
-	ByteOrderMark TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform byte-order-mark,attr"`
-}
-
-type XsdGoPkgHasAttr_Indent_TyesOrNo_ struct {
-	Indent TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform indent,attr"`
-}
-
-type XsdGoPkgHasAttr_IncludeContentType_TyesOrNo_ struct {
-	IncludeContentType TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform include-content-type,attr"`
-}
-
-type XsdGoPkgHasAttr_Encoding_XsdtString_ struct {
-	Encoding xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform encoding,attr"`
-}
-
-type XsdGoPkgHasAttr_DoctypeSystem_XsdtString_ struct {
-	DoctypeSystem xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform doctype-system,attr"`
-}
-
-type XsdGoPkgHasAttr_EscapeUriAttributes_TyesOrNo_ struct {
-	EscapeUriAttributes TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform escape-uri-attributes,attr"`
-}
-
-type XsdGoPkgHasAttr_DoctypePublic_XsdtString_ struct {
-	DoctypePublic xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform doctype-public,attr"`
-}
-
-type XsdGoPkgHasAttr_Version_XsdtNmtoken_ struct {
-	Version xsdt.Nmtoken `xml:"http://www.w3.org/1999/XSL/Transform version,attr"`
-}
-
-type XsdGoPkgHasAttr_MediaType_XsdtString_ struct {
-	MediaType xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform media-type,attr"`
-}
-
-type XsdGoPkgHasAttr_OmitXmlDeclaration_TyesOrNo_ struct {
-	OmitXmlDeclaration TyesOrNo `xml:"http://www.w3.org/1999/XSL/Transform omit-xml-declaration,attr"`
-}
-
-type XsdGoPkgHasAttr_CdataSectionElements_TQNames_ struct {
-	CdataSectionElements TQNames `xml:"http://www.w3.org/1999/XSL/Transform cdata-section-elements,attr"`
-}
-
-type XsdGoPkgHasAttr_NormalizationForm_XsdtNmtoken_ struct {
-	NormalizationForm xsdt.Nmtoken `xml:"http://www.w3.org/1999/XSL/Transform normalization-form,attr"`
-}
-
-//	One of the values "yes" or "no" or "omit".
-type TyesOrNoOrOmit xsdt.Token
-
-//	Returns true if the value of this enumerated TyesOrNoOrOmit is "omit".
-func (me TyesOrNoOrOmit) IsOmit() bool { return me == "omit" }
-
-//	Since TyesOrNoOrOmit is just a simple String type, this merely returns the current string value.
-func (me TyesOrNoOrOmit) String() string { return xsdt.Token(me).String() }
-
-//	This convenience method just performs a simple type conversion to TyesOrNoOrOmit's alias type xsdt.Token.
-func (me TyesOrNoOrOmit) ToXsdtToken() xsdt.Token { return xsdt.Token(me) }
-
-//	Returns true if the value of this enumerated TyesOrNoOrOmit is "yes".
-func (me TyesOrNoOrOmit) IsYes() bool { return me == "yes" }
-
-//	Since TyesOrNoOrOmit is just a simple String type, this merely sets the current value from the specified string.
-func (me *TyesOrNoOrOmit) SetFromString(s string) { (*xsdt.Token)(me).SetFromString(s) }
-
-//	Returns true if the value of this enumerated TyesOrNoOrOmit is "no".
-func (me TyesOrNoOrOmit) IsNo() bool { return me == "no" }
-
-type XsdGoPkgHasAttr_Standalone_TyesOrNoOrOmit_ struct {
-	Standalone TyesOrNoOrOmit `xml:"http://www.w3.org/1999/XSL/Transform standalone,attr"`
-}
-
-type TxsdOutput struct {
-	XsdGoPkgHasAttr_UndeclarePrefixes_TyesOrNo_
-
-	XsdGoPkgHasAttr_ByteOrderMark_TyesOrNo_
-
-	XsdGoPkgHasAttr_Indent_TyesOrNo_
-
-	XsdGoPkgHasAttr_IncludeContentType_TyesOrNo_
-
-	XsdGoPkgHasAttr_Encoding_XsdtString_
-
-	XsdGoPkgHasAttr_DoctypeSystem_XsdtString_
-
-	XsdGoPkgHasAttr_EscapeUriAttributes_TyesOrNo_
-
-	XsdGoPkgHasAttr_DoctypePublic_XsdtString_
-
-	XsdGoPkgHasAttr_Version_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_MediaType_XsdtString_
-
-	XsdGoPkgHasCdata
-
-	XsdGoPkgHasAttr_OmitXmlDeclaration_TyesOrNo_
-
-	XsdGoPkgHasAttr_Name_TQName_
-
-	XsdGoPkgHasAttr_CdataSectionElements_TQNames_
-
-	XsdGoPkgHasAttr_NormalizationForm_XsdtNmtoken_
-
-	XsdGoPkgHasAttr_Standalone_TyesOrNoOrOmit_
-
-	XsdGoPkgHasAttr_UseCharacterMaps_TQNames_
-
-	TgenericElementType
-
-	XsdGoPkgHasAttr_Method_Tmethod_
-}
-
-//	If the WalkHandlers.TxsdOutput function is not nil (ie. was set by outside code), calls it with this TxsdOutput instance as the single argument. Then calls the Walk() method on 2/19 embed(s) and 0/0 field(s) belonging to this TxsdOutput instance.
-func (me *TxsdOutput) Walk() (err error) {
-	if fn := WalkHandlers.TxsdOutput; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElems_Function function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Function instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Function instance.
+func (me *XsdGoPkgHasElems_Function) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Function; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		if err = me.XsdGoPkgHasCdata.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.TgenericElementType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
+		for _, x := range me.Functions {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
 		}
 		if fn != nil {
 			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
@@ -3929,32 +4066,214 @@ func (me *XsdGoPkgHasElems_Output) Walk() (err error) {
 	return
 }
 
+type XsdGoPkgHasElems_ImportSchema struct {
+	ImportSchemas []*TxsdImportSchema `xml:"http://www.w3.org/1999/XSL/Transform import-schema"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ImportSchema function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ImportSchema instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ImportSchema instance.
+func (me *XsdGoPkgHasElems_ImportSchema) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_ImportSchema; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.ImportSchemas {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_Key struct {
+	Keys []*TxsdKey `xml:"http://www.w3.org/1999/XSL/Transform key"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Key function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Key instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Key instance.
+func (me *XsdGoPkgHasElems_Key) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Key; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.Keys {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_NamespaceAlias struct {
+	NamespaceAliases []*TxsdNamespaceAlias `xml:"http://www.w3.org/1999/XSL/Transform namespace-alias"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_NamespaceAlias function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_NamespaceAlias instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_NamespaceAlias instance.
+func (me *XsdGoPkgHasElems_NamespaceAlias) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_NamespaceAlias; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.NamespaceAliases {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_AttributeSet struct {
+	AttributeSets []*TxsdAttributeSet `xml:"http://www.w3.org/1999/XSL/Transform attribute-set"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AttributeSet function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AttributeSet instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AttributeSet instance.
+func (me *XsdGoPkgHasElems_AttributeSet) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_AttributeSet; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.AttributeSets {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_PreserveSpace struct {
+	PreserveSpaces []*TxsdPreserveSpace `xml:"http://www.w3.org/1999/XSL/Transform preserve-space"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PreserveSpace function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PreserveSpace instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PreserveSpace instance.
+func (me *XsdGoPkgHasElems_PreserveSpace) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_PreserveSpace; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.PreserveSpaces {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_CharacterMap struct {
+	CharacterMaps []*TxsdCharacterMap `xml:"http://www.w3.org/1999/XSL/Transform character-map"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_CharacterMap function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_CharacterMap instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_CharacterMap instance.
+func (me *XsdGoPkgHasElems_CharacterMap) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_CharacterMap; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.CharacterMaps {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_DecimalFormat struct {
+	DecimalFormats []*TxsdDecimalFormat `xml:"http://www.w3.org/1999/XSL/Transform decimal-format"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_DecimalFormat function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_DecimalFormat instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_DecimalFormat instance.
+func (me *XsdGoPkgHasElems_DecimalFormat) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_DecimalFormat; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.DecimalFormats {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
 type XsdGoPkgHasElems_Declaration struct {
 	Declarations []*TgenericElementType `xml:"http://www.w3.org/1999/XSL/Transform declaration"`
 
-	XsdGoPkgHasElems_NamespaceAlias
-
-	XsdGoPkgHasElems_StripSpace
-
-	XsdGoPkgHasElems_DecimalFormat
-
 	XsdGoPkgHasElems_ImportSchema
-
-	XsdGoPkgHasElems_CharacterMap
-
-	XsdGoPkgHasElems_Template
-
-	XsdGoPkgHasElems_AttributeSet
-
-	XsdGoPkgHasElems_Output
-
-	XsdGoPkgHasElems_Function
-
-	XsdGoPkgHasElems_PreserveSpace
 
 	XsdGoPkgHasElems_Key
 
+	XsdGoPkgHasElems_NamespaceAlias
+
+	XsdGoPkgHasElems_AttributeSet
+
+	XsdGoPkgHasElems_PreserveSpace
+
+	XsdGoPkgHasElems_CharacterMap
+
+	XsdGoPkgHasElems_DecimalFormat
+
+	XsdGoPkgHasElems_Template
+
 	XsdGoPkgHasElems_Include
+
+	XsdGoPkgHasElems_StripSpace
+
+	XsdGoPkgHasElems_Function
+
+	XsdGoPkgHasElems_Output
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Declaration function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Declaration instance as the single argument. Then calls the Walk() method on 12/12 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Declaration instance.
@@ -3968,828 +4287,40 @@ func (me *XsdGoPkgHasElems_Declaration) Walk() (err error) {
 		if err = me.XsdGoPkgHasElems_Include.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElems_NamespaceAlias.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
 		if err = me.XsdGoPkgHasElems_StripSpace.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_DecimalFormat.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_ImportSchema.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_CharacterMap.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_Template.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_AttributeSet.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_Output.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if err = me.XsdGoPkgHasElems_Function.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElems_PreserveSpace.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElems_Output.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_ImportSchema.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if err = me.XsdGoPkgHasElems_Key.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
+		if err = me.XsdGoPkgHasElems_NamespaceAlias.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AttributeSet.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_PreserveSpace.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_CharacterMap.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_DecimalFormat.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_Template.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
 		for _, x := range me.Declarations {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_StripSpace struct {
-	StripSpace *TxsdPreserveSpace `xml:"http://www.w3.org/1999/XSL/Transform strip-space"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_StripSpace function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_StripSpace instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_StripSpace instance.
-func (me *XsdGoPkgHasElem_StripSpace) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_StripSpace; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.StripSpace.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_DecimalFormat struct {
-	DecimalFormat *TxsdDecimalFormat `xml:"http://www.w3.org/1999/XSL/Transform decimal-format"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_DecimalFormat function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_DecimalFormat instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_DecimalFormat instance.
-func (me *XsdGoPkgHasElem_DecimalFormat) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_DecimalFormat; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.DecimalFormat.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_Include struct {
-	Include *TxsdInclude `xml:"http://www.w3.org/1999/XSL/Transform include"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Include function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Include instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Include instance.
-func (me *XsdGoPkgHasElem_Include) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Include; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.Include.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_Output struct {
-	Output *TxsdOutput `xml:"http://www.w3.org/1999/XSL/Transform output"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Output function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Output instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Output instance.
-func (me *XsdGoPkgHasElem_Output) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Output; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.Output.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_CharacterMap struct {
-	CharacterMap *TxsdCharacterMap `xml:"http://www.w3.org/1999/XSL/Transform character-map"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_CharacterMap function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_CharacterMap instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_CharacterMap instance.
-func (me *XsdGoPkgHasElem_CharacterMap) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_CharacterMap; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.CharacterMap.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_ImportSchema struct {
-	ImportSchema *TxsdImportSchema `xml:"http://www.w3.org/1999/XSL/Transform import-schema"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_ImportSchema function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_ImportSchema instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_ImportSchema instance.
-func (me *XsdGoPkgHasElem_ImportSchema) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_ImportSchema; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.ImportSchema.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_NamespaceAlias struct {
-	NamespaceAlias *TxsdNamespaceAlias `xml:"http://www.w3.org/1999/XSL/Transform namespace-alias"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_NamespaceAlias function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_NamespaceAlias instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_NamespaceAlias instance.
-func (me *XsdGoPkgHasElem_NamespaceAlias) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_NamespaceAlias; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.NamespaceAlias.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_PreserveSpace struct {
-	PreserveSpace *TxsdPreserveSpace `xml:"http://www.w3.org/1999/XSL/Transform preserve-space"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_PreserveSpace function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_PreserveSpace instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_PreserveSpace instance.
-func (me *XsdGoPkgHasElem_PreserveSpace) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_PreserveSpace; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.PreserveSpace.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_Function struct {
-	Function *TxsdFunction `xml:"http://www.w3.org/1999/XSL/Transform function"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Function function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Function instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Function instance.
-func (me *XsdGoPkgHasElem_Function) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Function; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.Function.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_Key struct {
-	Key *TxsdKey `xml:"http://www.w3.org/1999/XSL/Transform key"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Key function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Key instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Key instance.
-func (me *XsdGoPkgHasElem_Key) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Key; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.Key.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_AttributeSet struct {
-	AttributeSet *TxsdAttributeSet `xml:"http://www.w3.org/1999/XSL/Transform attribute-set"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_AttributeSet function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_AttributeSet instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_AttributeSet instance.
-func (me *XsdGoPkgHasElem_AttributeSet) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_AttributeSet; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.AttributeSet.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_Template struct {
-	Template *TxsdTemplate `xml:"http://www.w3.org/1999/XSL/Transform template"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Template function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Template instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Template instance.
-func (me *XsdGoPkgHasElem_Template) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Template; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.Template.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_Declaration struct {
-	Declaration *TgenericElementType `xml:"http://www.w3.org/1999/XSL/Transform declaration"`
-
-	XsdGoPkgHasElem_AttributeSet
-
-	XsdGoPkgHasElem_Template
-
-	XsdGoPkgHasElem_StripSpace
-
-	XsdGoPkgHasElem_DecimalFormat
-
-	XsdGoPkgHasElem_Include
-
-	XsdGoPkgHasElem_Output
-
-	XsdGoPkgHasElem_CharacterMap
-
-	XsdGoPkgHasElem_ImportSchema
-
-	XsdGoPkgHasElem_NamespaceAlias
-
-	XsdGoPkgHasElem_PreserveSpace
-
-	XsdGoPkgHasElem_Function
-
-	XsdGoPkgHasElem_Key
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Declaration function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Declaration instance as the single argument. Then calls the Walk() method on 12/12 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Declaration instance.
-func (me *XsdGoPkgHasElem_Declaration) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Declaration; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.XsdGoPkgHasElem_Key.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_AttributeSet.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_Template.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_StripSpace.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_DecimalFormat.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_Include.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_Output.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_CharacterMap.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_ImportSchema.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_NamespaceAlias.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_PreserveSpace.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElem_Function.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.Declaration.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_PerformSort struct {
-	PerformSorts []*TxsdPerformSort `xml:"http://www.w3.org/1999/XSL/Transform perform-sort"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_PerformSort function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PerformSort instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PerformSort instance.
-func (me *XsdGoPkgHasElems_PerformSort) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_PerformSort; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.PerformSorts {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_Text struct {
-	Texts []*TxsdText `xml:"http://www.w3.org/1999/XSL/Transform text"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Text function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Text instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Text instance.
-func (me *XsdGoPkgHasElems_Text) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_Text; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.Texts {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_Document struct {
-	Documents []*TxsdDocument `xml:"http://www.w3.org/1999/XSL/Transform document"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Document function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Document instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Document instance.
-func (me *XsdGoPkgHasElems_Document) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_Document; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.Documents {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_ForEachGroup struct {
-	ForEachGroups []*TxsdForEachGroup `xml:"http://www.w3.org/1999/XSL/Transform for-each-group"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ForEachGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ForEachGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ForEachGroup instance.
-func (me *XsdGoPkgHasElems_ForEachGroup) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_ForEachGroup; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.ForEachGroups {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_ResultDocument struct {
-	ResultDocuments []*TxsdResultDocument `xml:"http://www.w3.org/1999/XSL/Transform result-document"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ResultDocument function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ResultDocument instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ResultDocument instance.
-func (me *XsdGoPkgHasElems_ResultDocument) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_ResultDocument; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.ResultDocuments {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_Namespace struct {
-	Namespaces []*TxsdProcessingInstruction `xml:"http://www.w3.org/1999/XSL/Transform namespace"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Namespace function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Namespace instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Namespace instance.
-func (me *XsdGoPkgHasElems_Namespace) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_Namespace; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.Namespaces {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_CopyOf struct {
-	CopyOfs []*TxsdCopyOf `xml:"http://www.w3.org/1999/XSL/Transform copy-of"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_CopyOf function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_CopyOf instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_CopyOf instance.
-func (me *XsdGoPkgHasElems_CopyOf) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_CopyOf; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.CopyOfs {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_Choose struct {
-	Chooses []*TxsdChoose `xml:"http://www.w3.org/1999/XSL/Transform choose"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Choose function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Choose instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Choose instance.
-func (me *XsdGoPkgHasElems_Choose) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_Choose; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.Chooses {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_Sequence struct {
-	Sequences []*TxsdSequence `xml:"http://www.w3.org/1999/XSL/Transform sequence"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Sequence function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Sequence instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Sequence instance.
-func (me *XsdGoPkgHasElems_Sequence) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_Sequence; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.Sequences {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_Number struct {
-	Numbers []*TxsdNumber `xml:"http://www.w3.org/1999/XSL/Transform number"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Number function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Number instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Number instance.
-func (me *XsdGoPkgHasElems_Number) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_Number; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.Numbers {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_AnalyzeString struct {
-	AnalyzeStrings []*TxsdAnalyzeString `xml:"http://www.w3.org/1999/XSL/Transform analyze-string"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_AnalyzeString function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AnalyzeString instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AnalyzeString instance.
-func (me *XsdGoPkgHasElems_AnalyzeString) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_AnalyzeString; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.AnalyzeStrings {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_NextMatch struct {
-	NextMatchs []*TxsdNextMatch `xml:"http://www.w3.org/1999/XSL/Transform next-match"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_NextMatch function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_NextMatch instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_NextMatch instance.
-func (me *XsdGoPkgHasElems_NextMatch) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_NextMatch; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.NextMatchs {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_ValueOf struct {
-	ValueOfs []*TxsdValueOf `xml:"http://www.w3.org/1999/XSL/Transform value-of"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ValueOf function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ValueOf instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ValueOf instance.
-func (me *XsdGoPkgHasElems_ValueOf) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_ValueOf; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.ValueOfs {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_ProcessingInstruction struct {
-	ProcessingInstructions []*TxsdProcessingInstruction `xml:"http://www.w3.org/1999/XSL/Transform processing-instruction"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ProcessingInstruction function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ProcessingInstruction instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ProcessingInstruction instance.
-func (me *XsdGoPkgHasElems_ProcessingInstruction) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_ProcessingInstruction; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.ProcessingInstructions {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_CallTemplate struct {
-	CallTemplates []*TxsdCallTemplate `xml:"http://www.w3.org/1999/XSL/Transform call-template"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_CallTemplate function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_CallTemplate instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_CallTemplate instance.
-func (me *XsdGoPkgHasElems_CallTemplate) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_CallTemplate; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.CallTemplates {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_If struct {
-	Ifs []*TxsdWhen `xml:"http://www.w3.org/1999/XSL/Transform if"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_If function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_If instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_If instance.
-func (me *XsdGoPkgHasElems_If) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_If; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.Ifs {
 			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
@@ -4829,19 +4360,19 @@ func (me *XsdGoPkgHasElems_Copy) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElems_Message struct {
-	Messages []*TxsdMessage `xml:"http://www.w3.org/1999/XSL/Transform message"`
+type XsdGoPkgHasElems_Sequence struct {
+	Sequences []*TxsdSequence `xml:"http://www.w3.org/1999/XSL/Transform sequence"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_Message function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Message instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Message instance.
-func (me *XsdGoPkgHasElems_Message) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_Message; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElems_Sequence function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Sequence instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Sequence instance.
+func (me *XsdGoPkgHasElems_Sequence) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Sequence; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		for _, x := range me.Messages {
+		for _, x := range me.Sequences {
 			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
@@ -4855,71 +4386,19 @@ func (me *XsdGoPkgHasElems_Message) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElems_ApplyTemplates struct {
-	ApplyTemplateses []*TxsdApplyTemplates `xml:"http://www.w3.org/1999/XSL/Transform apply-templates"`
+type XsdGoPkgHasElems_Namespace struct {
+	Namespaces []*TxsdNamespace `xml:"http://www.w3.org/1999/XSL/Transform namespace"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_ApplyTemplates function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ApplyTemplates instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ApplyTemplates instance.
-func (me *XsdGoPkgHasElems_ApplyTemplates) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_ApplyTemplates; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElems_Namespace function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Namespace instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Namespace instance.
+func (me *XsdGoPkgHasElems_Namespace) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Namespace; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
 		}
-		for _, x := range me.ApplyTemplateses {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_Comment struct {
-	Comments []*TxsdComment `xml:"http://www.w3.org/1999/XSL/Transform comment"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Comment function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Comment instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Comment instance.
-func (me *XsdGoPkgHasElems_Comment) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_Comment; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.Comments {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_ApplyImports struct {
-	ApplyImportses []*TxsdApplyImports `xml:"http://www.w3.org/1999/XSL/Transform apply-imports"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_ApplyImports function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ApplyImports instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ApplyImports instance.
-func (me *XsdGoPkgHasElems_ApplyImports) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_ApplyImports; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.ApplyImportses {
+		for _, x := range me.Namespaces {
 			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
@@ -4959,8 +4438,112 @@ func (me *XsdGoPkgHasElems_Element) Walk() (err error) {
 	return
 }
 
+type XsdGoPkgHasElems_ResultDocument struct {
+	ResultDocuments []*TxsdResultDocument `xml:"http://www.w3.org/1999/XSL/Transform result-document"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ResultDocument function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ResultDocument instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ResultDocument instance.
+func (me *XsdGoPkgHasElems_ResultDocument) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_ResultDocument; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.ResultDocuments {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_Comment struct {
+	Comments []*TxsdComment `xml:"http://www.w3.org/1999/XSL/Transform comment"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Comment function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Comment instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Comment instance.
+func (me *XsdGoPkgHasElems_Comment) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Comment; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.Comments {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_Message struct {
+	Messages []*TxsdMessage `xml:"http://www.w3.org/1999/XSL/Transform message"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Message function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Message instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Message instance.
+func (me *XsdGoPkgHasElems_Message) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Message; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.Messages {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_ForEachGroup struct {
+	ForEachGroups []*TxsdForEachGroup `xml:"http://www.w3.org/1999/XSL/Transform for-each-group"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ForEachGroup function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ForEachGroup instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ForEachGroup instance.
+func (me *XsdGoPkgHasElems_ForEachGroup) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_ForEachGroup; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.ForEachGroups {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
 type XsdGoPkgHasElems_ForEach struct {
-	ForEachs []*TxsdPerformSort `xml:"http://www.w3.org/1999/XSL/Transform for-each"`
+	ForEachs []*TxsdForEach `xml:"http://www.w3.org/1999/XSL/Transform for-each"`
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_ForEach function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ForEach instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ForEach instance.
@@ -4985,58 +4568,422 @@ func (me *XsdGoPkgHasElems_ForEach) Walk() (err error) {
 	return
 }
 
+type XsdGoPkgHasElems_Number struct {
+	Numbers []*TxsdNumber `xml:"http://www.w3.org/1999/XSL/Transform number"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Number function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Number instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Number instance.
+func (me *XsdGoPkgHasElems_Number) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Number; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.Numbers {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_NextMatch struct {
+	NextMatchs []*TxsdNextMatch `xml:"http://www.w3.org/1999/XSL/Transform next-match"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_NextMatch function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_NextMatch instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_NextMatch instance.
+func (me *XsdGoPkgHasElems_NextMatch) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_NextMatch; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.NextMatchs {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_ApplyImports struct {
+	ApplyImportses []*TxsdApplyImports `xml:"http://www.w3.org/1999/XSL/Transform apply-imports"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ApplyImports function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ApplyImports instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ApplyImports instance.
+func (me *XsdGoPkgHasElems_ApplyImports) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_ApplyImports; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.ApplyImportses {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_AnalyzeString struct {
+	AnalyzeStrings []*TxsdAnalyzeString `xml:"http://www.w3.org/1999/XSL/Transform analyze-string"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_AnalyzeString function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_AnalyzeString instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_AnalyzeString instance.
+func (me *XsdGoPkgHasElems_AnalyzeString) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_AnalyzeString; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.AnalyzeStrings {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_ProcessingInstruction struct {
+	ProcessingInstructions []*TxsdNamespace `xml:"http://www.w3.org/1999/XSL/Transform processing-instruction"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ProcessingInstruction function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ProcessingInstruction instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ProcessingInstruction instance.
+func (me *XsdGoPkgHasElems_ProcessingInstruction) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_ProcessingInstruction; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.ProcessingInstructions {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_Document struct {
+	Documents []*TxsdDocument `xml:"http://www.w3.org/1999/XSL/Transform document"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Document function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Document instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Document instance.
+func (me *XsdGoPkgHasElems_Document) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Document; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.Documents {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_Text struct {
+	Texts []*TxsdText `xml:"http://www.w3.org/1999/XSL/Transform text"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Text function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Text instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Text instance.
+func (me *XsdGoPkgHasElems_Text) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Text; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.Texts {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_If struct {
+	Ifs []*TxsdIf `xml:"http://www.w3.org/1999/XSL/Transform if"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_If function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_If instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_If instance.
+func (me *XsdGoPkgHasElems_If) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_If; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.Ifs {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_Choose struct {
+	Chooses []*TxsdChoose `xml:"http://www.w3.org/1999/XSL/Transform choose"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Choose function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Choose instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Choose instance.
+func (me *XsdGoPkgHasElems_Choose) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Choose; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.Chooses {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_CopyOf struct {
+	CopyOfs []*TxsdCopyOf `xml:"http://www.w3.org/1999/XSL/Transform copy-of"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_CopyOf function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_CopyOf instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_CopyOf instance.
+func (me *XsdGoPkgHasElems_CopyOf) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_CopyOf; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.CopyOfs {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_CallTemplate struct {
+	CallTemplates []*TxsdCallTemplate `xml:"http://www.w3.org/1999/XSL/Transform call-template"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_CallTemplate function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_CallTemplate instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_CallTemplate instance.
+func (me *XsdGoPkgHasElems_CallTemplate) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_CallTemplate; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.CallTemplates {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_ValueOf struct {
+	ValueOfs []*TxsdValueOf `xml:"http://www.w3.org/1999/XSL/Transform value-of"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ValueOf function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ValueOf instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ValueOf instance.
+func (me *XsdGoPkgHasElems_ValueOf) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_ValueOf; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.ValueOfs {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_ApplyTemplates struct {
+	ApplyTemplateses []*TxsdApplyTemplates `xml:"http://www.w3.org/1999/XSL/Transform apply-templates"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_ApplyTemplates function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_ApplyTemplates instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_ApplyTemplates instance.
+func (me *XsdGoPkgHasElems_ApplyTemplates) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_ApplyTemplates; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.ApplyTemplateses {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_PerformSort struct {
+	PerformSorts []*TxsdForEach `xml:"http://www.w3.org/1999/XSL/Transform perform-sort"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_PerformSort function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_PerformSort instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_PerformSort instance.
+func (me *XsdGoPkgHasElems_PerformSort) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_PerformSort; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.PerformSorts {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
 type XsdGoPkgHasElems_Instruction struct {
 	Instructions []*TversionedElementType `xml:"http://www.w3.org/1999/XSL/Transform instruction"`
 
-	XsdGoPkgHasElems_NextMatch
+	XsdGoPkgHasElems_ApplyTemplates
 
-	XsdGoPkgHasElems_ValueOf
-
-	XsdGoPkgHasElems_ProcessingInstruction
-
-	XsdGoPkgHasElems_CallTemplate
-
-	XsdGoPkgHasElems_If
+	XsdGoPkgHasElems_PerformSort
 
 	XsdGoPkgHasElems_Attribute
 
 	XsdGoPkgHasElems_Copy
 
-	XsdGoPkgHasElems_Message
+	XsdGoPkgHasElems_Sequence
 
 	XsdGoPkgHasElems_Fallback
 
-	XsdGoPkgHasElems_ApplyTemplates
-
-	XsdGoPkgHasElems_Comment
-
-	XsdGoPkgHasElems_ApplyImports
+	XsdGoPkgHasElems_Namespace
 
 	XsdGoPkgHasElems_Element
 
-	XsdGoPkgHasElems_ForEach
+	XsdGoPkgHasElems_ResultDocument
 
-	XsdGoPkgHasElems_PerformSort
+	XsdGoPkgHasElems_Comment
 
-	XsdGoPkgHasElems_Text
-
-	XsdGoPkgHasElems_Document
+	XsdGoPkgHasElems_Message
 
 	XsdGoPkgHasElems_ForEachGroup
 
-	XsdGoPkgHasElems_ResultDocument
-
-	XsdGoPkgHasElems_Namespace
-
-	XsdGoPkgHasElems_CopyOf
-
-	XsdGoPkgHasElems_Choose
-
-	XsdGoPkgHasElems_Sequence
+	XsdGoPkgHasElems_ForEach
 
 	XsdGoPkgHasElems_Number
 
+	XsdGoPkgHasElems_NextMatch
+
+	XsdGoPkgHasElems_ApplyImports
+
 	XsdGoPkgHasElems_AnalyzeString
+
+	XsdGoPkgHasElems_ProcessingInstruction
+
+	XsdGoPkgHasElems_Document
+
+	XsdGoPkgHasElems_Text
+
+	XsdGoPkgHasElems_If
+
+	XsdGoPkgHasElems_Choose
+
+	XsdGoPkgHasElems_CopyOf
+
+	XsdGoPkgHasElems_CallTemplate
+
+	XsdGoPkgHasElems_ValueOf
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElems_Instruction function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Instruction instance as the single argument. Then calls the Walk() method on 25/25 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Instruction instance.
@@ -5047,37 +4994,16 @@ func (me *XsdGoPkgHasElems_Instruction) Walk() (err error) {
 				return
 			}
 		}
-		if err = me.XsdGoPkgHasElems_Namespace.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_CopyOf.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_Choose.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_Sequence.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_Number.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_AnalyzeString.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_NextMatch.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElems_CallTemplate.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if err = me.XsdGoPkgHasElems_ValueOf.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElems_ProcessingInstruction.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElems_ApplyTemplates.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElems_CallTemplate.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_If.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElems_PerformSort.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if err = me.XsdGoPkgHasElems_Attribute.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
@@ -5086,43 +5012,90 @@ func (me *XsdGoPkgHasElems_Instruction) Walk() (err error) {
 		if err = me.XsdGoPkgHasElems_Copy.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElems_Message.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElems_Sequence.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if err = me.XsdGoPkgHasElems_Fallback.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElems_ApplyTemplates.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_Comment.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_ApplyImports.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElems_Namespace.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if err = me.XsdGoPkgHasElems_Element.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElems_ForEach.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElems_ResultDocument.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElems_PerformSort.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElems_Comment.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElems_Text.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_Document.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElems_Message.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if err = me.XsdGoPkgHasElems_ForEachGroup.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElems_ResultDocument.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElems_ForEach.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_Number.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_NextMatch.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_ApplyImports.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_AnalyzeString.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_ProcessingInstruction.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_Document.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_Text.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_If.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_Choose.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.XsdGoPkgHasElems_CopyOf.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		for _, x := range me.Instructions {
+			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
+type XsdGoPkgHasElems_Import struct {
+	Imports []*TxsdInclude `xml:"http://www.w3.org/1999/XSL/Transform import"`
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElems_Import function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Import instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Import instance.
+func (me *XsdGoPkgHasElems_Import) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Import; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		for _, x := range me.Imports {
 			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
 			}
@@ -5150,32 +5123,6 @@ func (me *XsdGoPkgHasElem_Import) Walk() (err error) {
 		}
 		if err = me.Import.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
-		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElems_Import struct {
-	Imports []*TxsdInclude `xml:"http://www.w3.org/1999/XSL/Transform import"`
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElems_Import function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Import instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Import instance.
-func (me *XsdGoPkgHasElems_Import) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_Import; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		for _, x := range me.Imports {
-			if err = x.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
 		}
 		if fn != nil {
 			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
@@ -5336,13 +5283,13 @@ func (me *XsdGoPkgHasElem_Sort) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElems_Stylesheet struct {
-	Stylesheets []xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform stylesheet"`
+type XsdGoPkgHasElem_Stylesheet struct {
+	Stylesheet xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform stylesheet"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElems_Stylesheet function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Stylesheet instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Stylesheet instance.
-func (me *XsdGoPkgHasElems_Stylesheet) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElems_Stylesheet; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElem_Stylesheet function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Stylesheet instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Stylesheet instance.
+func (me *XsdGoPkgHasElem_Stylesheet) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Stylesheet; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
@@ -5357,13 +5304,13 @@ func (me *XsdGoPkgHasElems_Stylesheet) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasElem_Stylesheet struct {
-	Stylesheet xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform stylesheet"`
+type XsdGoPkgHasElems_Stylesheet struct {
+	Stylesheets []xsdt.String `xml:"http://www.w3.org/1999/XSL/Transform stylesheet"`
 }
 
-//	If the WalkHandlers.XsdGoPkgHasElem_Stylesheet function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Stylesheet instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElem_Stylesheet instance.
-func (me *XsdGoPkgHasElem_Stylesheet) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Stylesheet; me != nil {
+//	If the WalkHandlers.XsdGoPkgHasElems_Stylesheet function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Stylesheet instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Stylesheet instance.
+func (me *XsdGoPkgHasElems_Stylesheet) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElems_Stylesheet; me != nil {
 		if fn != nil {
 			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 				return
@@ -5430,29 +5377,23 @@ func (me *XsdGoPkgHasElems_Variable) Walk() (err error) {
 	return
 }
 
-type XsdGoPkgHasAttr_Id_XsdtId_ struct {
-	Id xsdt.Id `xml:"http://www.w3.org/1999/XSL/Transform id,attr"`
-}
-
 //	Describes different ways of type-annotating an element or attribute.
 type TvalidationStripOrPreserve TvalidationType
 
-//	Returns true if the value of this enumerated TvalidationStripOrPreserve is "preserve".
-func (me TvalidationStripOrPreserve) IsPreserve() bool { return me == "preserve" }
+//	Returns true if the value of this enumerated TvalidationStripOrPreserve is "strip".
+func (me TvalidationStripOrPreserve) IsStrip() bool { return me == "strip" }
 
 //	Since TvalidationStripOrPreserve is just a simple String type, this merely sets the current value from the specified string.
-func (me *TvalidationStripOrPreserve) SetFromString(s string) {
-	(*TvalidationType)(me).SetFromString(s)
-}
-
-//	This convenience method just performs a simple type conversion to TvalidationStripOrPreserve's alias type TvalidationType.
-func (me TvalidationStripOrPreserve) ToTvalidationType() TvalidationType { return TvalidationType(me) }
+func (me *TvalidationStripOrPreserve) Set(s string) { (*TvalidationType)(me).Set(s) }
 
 //	Since TvalidationStripOrPreserve is just a simple String type, this merely returns the current string value.
 func (me TvalidationStripOrPreserve) String() string { return TvalidationType(me).String() }
 
-//	Returns true if the value of this enumerated TvalidationStripOrPreserve is "strip".
-func (me TvalidationStripOrPreserve) IsStrip() bool { return me == "strip" }
+//	Returns true if the value of this enumerated TvalidationStripOrPreserve is "preserve".
+func (me TvalidationStripOrPreserve) IsPreserve() bool { return me == "preserve" }
+
+//	This convenience method just performs a simple type conversion to TvalidationStripOrPreserve's alias type TvalidationType.
+func (me TvalidationStripOrPreserve) ToTvalidationType() TvalidationType { return TvalidationType(me) }
 
 type XsdGoPkgHasAttr_DefaultValidation_TvalidationStripOrPreserve_Strip struct {
 	DefaultValidation TvalidationStripOrPreserve `xml:"http://www.w3.org/1999/XSL/Transform default-validation,attr"`
@@ -5463,26 +5404,30 @@ func (me XsdGoPkgHasAttr_DefaultValidation_TvalidationStripOrPreserve_Strip) Def
 	return TvalidationStripOrPreserve("strip")
 }
 
+type XsdGoPkgHasAttr_Id_XsdtId_ struct {
+	Id xsdt.Id `xml:"http://www.w3.org/1999/XSL/Transform id,attr"`
+}
+
 //	Describes how type annotations in source documents are handled.
 type TinputTypeAnnotationsType xsdt.Token
-
-//	Returns true if the value of this enumerated TinputTypeAnnotationsType is "preserve".
-func (me TinputTypeAnnotationsType) IsPreserve() bool { return me == "preserve" }
 
 //	Returns true if the value of this enumerated TinputTypeAnnotationsType is "unspecified".
 func (me TinputTypeAnnotationsType) IsUnspecified() bool { return me == "unspecified" }
 
+//	Returns true if the value of this enumerated TinputTypeAnnotationsType is "preserve".
+func (me TinputTypeAnnotationsType) IsPreserve() bool { return me == "preserve" }
+
 //	Since TinputTypeAnnotationsType is just a simple String type, this merely sets the current value from the specified string.
-func (me *TinputTypeAnnotationsType) SetFromString(s string) { (*xsdt.Token)(me).SetFromString(s) }
+func (me *TinputTypeAnnotationsType) Set(s string) { (*xsdt.Token)(me).Set(s) }
 
 //	This convenience method just performs a simple type conversion to TinputTypeAnnotationsType's alias type xsdt.Token.
 func (me TinputTypeAnnotationsType) ToXsdtToken() xsdt.Token { return xsdt.Token(me) }
 
-//	Returns true if the value of this enumerated TinputTypeAnnotationsType is "strip".
-func (me TinputTypeAnnotationsType) IsStrip() bool { return me == "strip" }
-
 //	Since TinputTypeAnnotationsType is just a simple String type, this merely returns the current string value.
 func (me TinputTypeAnnotationsType) String() string { return xsdt.Token(me).String() }
+
+//	Returns true if the value of this enumerated TinputTypeAnnotationsType is "strip".
+func (me TinputTypeAnnotationsType) IsStrip() bool { return me == "strip" }
 
 type XsdGoPkgHasAttr_InputTypeAnnotations_TinputTypeAnnotationsType_Unspecified struct {
 	InputTypeAnnotations TinputTypeAnnotationsType `xml:"http://www.w3.org/1999/XSL/Transform input-type-annotations,attr"`
@@ -5494,21 +5439,21 @@ func (me XsdGoPkgHasAttr_InputTypeAnnotations_TinputTypeAnnotationsType_Unspecif
 }
 
 type TxsdTransform struct {
-	TtransformElementBaseType
-
-	XsdGoPkgHasElems_Variable
-
 	XsdGoPkgHasAttr_Id_XsdtId_
 
-	XsdGoPkgHasAttr_DefaultValidation_TvalidationStripOrPreserve_Strip
-
 	XsdGoPkgHasAttr_InputTypeAnnotations_TinputTypeAnnotationsType_Unspecified
-
-	XsdGoPkgHasElems_Param
 
 	XsdGoPkgHasElems_Declaration
 
 	XsdGoPkgHasElems_Import
+
+	XsdGoPkgHasElems_Param
+
+	TtransformElementBaseType
+
+	XsdGoPkgHasElems_Variable
+
+	XsdGoPkgHasAttr_DefaultValidation_TvalidationStripOrPreserve_Strip
 }
 
 //	If the WalkHandlers.TxsdTransform function is not nil (ie. was set by outside code), calls it with this TxsdTransform instance as the single argument. Then calls the Walk() method on 5/8 embed(s) and 0/0 field(s) belonging to this TxsdTransform instance.
@@ -5522,45 +5467,16 @@ func (me *TxsdTransform) Walk() (err error) {
 		if err = me.XsdGoPkgHasElems_Param.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.XsdGoPkgHasElems_Declaration.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
-		if err = me.XsdGoPkgHasElems_Import.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-			return
-		}
 		if err = me.TtransformElementBaseType.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if err = me.XsdGoPkgHasElems_Variable.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if fn != nil {
-			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-	}
-	return
-}
-
-type XsdGoPkgHasElem_Transform struct {
-	Transform *TxsdTransform `xml:"http://www.w3.org/1999/XSL/Transform transform"`
-
-	XsdGoPkgHasElem_Stylesheet
-}
-
-//	If the WalkHandlers.XsdGoPkgHasElem_Transform function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Transform instance as the single argument. Then calls the Walk() method on 1/1 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Transform instance.
-func (me *XsdGoPkgHasElem_Transform) Walk() (err error) {
-	if fn := WalkHandlers.XsdGoPkgHasElem_Transform; me != nil {
-		if fn != nil {
-			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
-				return
-			}
-		}
-		if err = me.XsdGoPkgHasElem_Stylesheet.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElems_Declaration.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
-		if err = me.Transform.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+		if err = me.XsdGoPkgHasElems_Import.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
 			return
 		}
 		if fn != nil {
@@ -5603,8 +5519,37 @@ func (me *XsdGoPkgHasElems_Transform) Walk() (err error) {
 	return
 }
 
+type XsdGoPkgHasElem_Transform struct {
+	Transform *TxsdTransform `xml:"http://www.w3.org/1999/XSL/Transform transform"`
+
+	XsdGoPkgHasElem_Stylesheet
+}
+
+//	If the WalkHandlers.XsdGoPkgHasElem_Transform function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Transform instance as the single argument. Then calls the Walk() method on 1/1 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Transform instance.
+func (me *XsdGoPkgHasElem_Transform) Walk() (err error) {
+	if fn := WalkHandlers.XsdGoPkgHasElem_Transform; me != nil {
+		if fn != nil {
+			if err = fn(me, true); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+		if err = me.XsdGoPkgHasElem_Stylesheet.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if err = me.Transform.Walk(); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+			return
+		}
+		if fn != nil {
+			if err = fn(me, false); xsdt.OnWalkError(&err, &WalkErrors, WalkContinueOnError, WalkOnError) {
+				return
+			}
+		}
+	}
+	return
+}
+
 type XsdGoPkgHasElem_When struct {
-	When *TxsdWhen `xml:"http://www.w3.org/1999/XSL/Transform when"`
+	When *TxsdIf `xml:"http://www.w3.org/1999/XSL/Transform when"`
 }
 
 //	If the WalkHandlers.XsdGoPkgHasElem_When function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_When instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_When instance.
@@ -5688,158 +5633,158 @@ var (
 //	Provides 152 strong-typed hooks for your own custom handler functions to be invoked when the Walk() method is called on any instance of any (non-attribute-related) struct type defined in this package.
 //	If your custom handler does get called at all for a given struct instance, then it always gets called twice, first with the 'enter' bool argument set to true, then (after having Walk()ed all subordinate struct instances, if any) once again with it set to false.
 type XsdGoPkgWalkHandlers struct {
-	XsdGoPkgHasCdata                          func(*XsdGoPkgHasCdata, bool) error
-	XsdGoPkgHasElem_LiteralResultElement      func(*XsdGoPkgHasElem_LiteralResultElement, bool) error
-	XsdGoPkgHasElems_StripSpace               func(*XsdGoPkgHasElems_StripSpace, bool) error
-	XsdGoPkgHasElem_Variable                  func(*XsdGoPkgHasElem_Variable, bool) error
-	XsdGoPkgHasElem_If                        func(*XsdGoPkgHasElem_If, bool) error
-	XsdGoPkgHasElems_Comment                  func(*XsdGoPkgHasElems_Comment, bool) error
-	XsdGoPkgHasElem_Stylesheet                func(*XsdGoPkgHasElem_Stylesheet, bool) error
-	XsdGoPkgHasElems_Number                   func(*XsdGoPkgHasElems_Number, bool) error
-	TelementOnlyVersionedElementType          func(*TelementOnlyVersionedElementType, bool) error
-	XsdGoPkgHasElem_DecimalFormat             func(*XsdGoPkgHasElem_DecimalFormat, bool) error
-	TxsdApplyTemplates                        func(*TxsdApplyTemplates, bool) error
-	XsdGoPkgHasElem_Sort                      func(*XsdGoPkgHasElem_Sort, bool) error
-	XsdGoPkgHasElem_Text                      func(*XsdGoPkgHasElem_Text, bool) error
-	XsdGoPkgHasElem_Param                     func(*XsdGoPkgHasElem_Param, bool) error
-	TxsdFunction                              func(*TxsdFunction, bool) error
-	XsdGoPkgHasElem_CallTemplate              func(*XsdGoPkgHasElem_CallTemplate, bool) error
-	XsdGoPkgHasElems_LiteralResultElement     func(*XsdGoPkgHasElems_LiteralResultElement, bool) error
-	XsdGoPkgHasElems_Copy                     func(*XsdGoPkgHasElems_Copy, bool) error
-	XsdGoPkgHasElem_ValueOf                   func(*XsdGoPkgHasElem_ValueOf, bool) error
-	XsdGoPkgHasElems_ValueOf                  func(*XsdGoPkgHasElems_ValueOf, bool) error
-	TtextElementBaseType                      func(*TtextElementBaseType, bool) error
-	XsdGoPkgHasElem_Key                       func(*XsdGoPkgHasElem_Key, bool) error
-	XsdGoPkgHasElems_ApplyImports             func(*XsdGoPkgHasElems_ApplyImports, bool) error
-	TgenericElementType                       func(*TgenericElementType, bool) error
-	TxsdCharacterMap                          func(*TxsdCharacterMap, bool) error
-	TxsdWhen                                  func(*TxsdWhen, bool) error
-	TxsdSort                                  func(*TxsdSort, bool) error
-	XsdGoPkgHasElems_AttributeSet             func(*XsdGoPkgHasElems_AttributeSet, bool) error
-	XsdGoPkgHasElems_Text                     func(*XsdGoPkgHasElems_Text, bool) error
-	XsdGoPkgHasElem_Comment                   func(*XsdGoPkgHasElem_Comment, bool) error
-	XsdGoPkgHasElem_NonMatchingSubstring      func(*XsdGoPkgHasElem_NonMatchingSubstring, bool) error
-	XsdGoPkgHasElem_Copy                      func(*XsdGoPkgHasElem_Copy, bool) error
-	XsdGoPkgHasElems_ImportSchema             func(*XsdGoPkgHasElems_ImportSchema, bool) error
-	TxsdNamespaceAlias                        func(*TxsdNamespaceAlias, bool) error
-	XsdGoPkgHasElems_Message                  func(*XsdGoPkgHasElems_Message, bool) error
-	TxsdTemplate                              func(*TxsdTemplate, bool) error
-	XsdGoPkgHasElem_ApplyImports              func(*XsdGoPkgHasElem_ApplyImports, bool) error
-	XsdGoPkgHasElems_Transform                func(*XsdGoPkgHasElems_Transform, bool) error
-	TxsdPreserveSpace                         func(*TxsdPreserveSpace, bool) error
-	TxsdAttributeSet                          func(*TxsdAttributeSet, bool) error
-	TxsdApplyImports                          func(*TxsdApplyImports, bool) error
-	XsdGoPkgHasElems_ProcessingInstruction    func(*XsdGoPkgHasElems_ProcessingInstruction, bool) error
-	TxsdForEachGroup                          func(*TxsdForEachGroup, bool) error
-	TxsdPerformSort                           func(*TxsdPerformSort, bool) error
-	TxsdMessage                               func(*TxsdMessage, bool) error
-	XsdGoPkgHasElems_Key                      func(*XsdGoPkgHasElems_Key, bool) error
-	XsdGoPkgHasElem_ApplyTemplates            func(*XsdGoPkgHasElem_ApplyTemplates, bool) error
-	XsdGoPkgHasElem_Function                  func(*XsdGoPkgHasElem_Function, bool) error
-	XsdGoPkgHasElems_Element                  func(*XsdGoPkgHasElems_Element, bool) error
-	XsdGoPkgHasElem_Instruction               func(*XsdGoPkgHasElem_Instruction, bool) error
-	XsdGoPkgHasElem_ImportSchema              func(*XsdGoPkgHasElem_ImportSchema, bool) error
-	XsdGoPkgHasElems_ForEach                  func(*XsdGoPkgHasElems_ForEach, bool) error
-	TxsdProcessingInstruction                 func(*TxsdProcessingInstruction, bool) error
-	XsdGoPkgHasElems_Otherwise                func(*XsdGoPkgHasElems_Otherwise, bool) error
-	XsdGoPkgHasElems_Variable                 func(*XsdGoPkgHasElems_Variable, bool) error
-	XsdGoPkgHasElem_Document                  func(*XsdGoPkgHasElem_Document, bool) error
-	XsdGoPkgHasElems_Declaration              func(*XsdGoPkgHasElems_Declaration, bool) error
-	TversionedElementType                     func(*TversionedElementType, bool) error
-	TxsdAnalyzeString                         func(*TxsdAnalyzeString, bool) error
-	TxsdCopyOf                                func(*TxsdCopyOf, bool) error
-	TxsdNumber                                func(*TxsdNumber, bool) error
-	XsdGoPkgHasElems_CopyOf                   func(*XsdGoPkgHasElems_CopyOf, bool) error
-	TxsdSequence                              func(*TxsdSequence, bool) error
-	XsdGoPkgHasElems_ForEachGroup             func(*XsdGoPkgHasElems_ForEachGroup, bool) error
-	XsdGoPkgHasElem_When                      func(*XsdGoPkgHasElem_When, bool) error
-	XsdGoPkgHasElem_ForEachGroup              func(*XsdGoPkgHasElem_ForEachGroup, bool) error
-	XsdGoPkgHasElem_Declaration               func(*XsdGoPkgHasElem_Declaration, bool) error
-	XsdGoPkgHasElems_Include                  func(*XsdGoPkgHasElems_Include, bool) error
-	XsdGoPkgHasElem_Otherwise                 func(*XsdGoPkgHasElem_Otherwise, bool) error
-	XsdGoPkgHasElems_Sequence                 func(*XsdGoPkgHasElems_Sequence, bool) error
-	TxsdOutput                                func(*TxsdOutput, bool) error
-	XsdGoPkgHasGroup_SequenceConstructorGroup func(*XsdGoPkgHasGroup_SequenceConstructorGroup, bool) error
-	TtransformElementBaseType                 func(*TtransformElementBaseType, bool) error
-	XsdGoPkgHasElem_AttributeSet              func(*XsdGoPkgHasElem_AttributeSet, bool) error
-	XsdGoPkgHasElem_Fallback                  func(*XsdGoPkgHasElem_Fallback, bool) error
-	TxsdChoose                                func(*TxsdChoose, bool) error
-	XsdGoPkgHasElem_OutputCharacter           func(*XsdGoPkgHasElem_OutputCharacter, bool) error
-	TxsdComment                               func(*TxsdComment, bool) error
-	XsdGoPkgHasElem_Choose                    func(*XsdGoPkgHasElem_Choose, bool) error
-	XsdGoPkgHasElem_ForEach                   func(*XsdGoPkgHasElem_ForEach, bool) error
-	XsdGoPkgHasElems_Namespace                func(*XsdGoPkgHasElems_Namespace, bool) error
-	XsdGoPkgHasElem_Number                    func(*XsdGoPkgHasElem_Number, bool) error
-	TxsdCallTemplate                          func(*TxsdCallTemplate, bool) error
-	XsdGoPkgHasElems_AnalyzeString            func(*XsdGoPkgHasElems_AnalyzeString, bool) error
-	XsdGoPkgHasElem_StripSpace                func(*XsdGoPkgHasElem_StripSpace, bool) error
-	XsdGoPkgHasElems_PreserveSpace            func(*XsdGoPkgHasElems_PreserveSpace, bool) error
-	TxsdResultDocument                        func(*TxsdResultDocument, bool) error
-	TxsdAttribute                             func(*TxsdAttribute, bool) error
-	XsdGoPkgHasElem_ProcessingInstruction     func(*XsdGoPkgHasElem_ProcessingInstruction, bool) error
-	TxsdInclude                               func(*TxsdInclude, bool) error
-	XsdGoPkgHasElem_NextMatch                 func(*XsdGoPkgHasElem_NextMatch, bool) error
-	XsdGoPkgHasElem_Include                   func(*XsdGoPkgHasElem_Include, bool) error
-	XsdGoPkgHasElems_NonMatchingSubstring     func(*XsdGoPkgHasElems_NonMatchingSubstring, bool) error
-	XsdGoPkgHasElems_Stylesheet               func(*XsdGoPkgHasElems_Stylesheet, bool) error
-	XsdGoPkgHasElems_Attribute                func(*XsdGoPkgHasElems_Attribute, bool) error
-	TxsdTransform                             func(*TxsdTransform, bool) error
-	XsdGoPkgHasElem_Message                   func(*XsdGoPkgHasElem_Message, bool) error
-	XsdGoPkgHasElems_Fallback                 func(*XsdGoPkgHasElems_Fallback, bool) error
-	XsdGoPkgHasElems_CharacterMap             func(*XsdGoPkgHasElems_CharacterMap, bool) error
-	XsdGoPkgHasElem_PerformSort               func(*XsdGoPkgHasElem_PerformSort, bool) error
-	XsdGoPkgHasElem_Output                    func(*XsdGoPkgHasElem_Output, bool) error
-	XsdGoPkgHasElems_Template                 func(*XsdGoPkgHasElems_Template, bool) error
-	TxsdParam                                 func(*TxsdParam, bool) error
-	TsequenceConstructor                      func(*TsequenceConstructor, bool) error
-	XsdGoPkgHasElems_DecimalFormat            func(*XsdGoPkgHasElems_DecimalFormat, bool) error
-	XsdGoPkgHasElems_Function                 func(*XsdGoPkgHasElems_Function, bool) error
-	TxsdText                                  func(*TxsdText, bool) error
-	XsdGoPkgHasElem_MatchingSubstring         func(*XsdGoPkgHasElem_MatchingSubstring, bool) error
-	XsdGoPkgHasElems_Output                   func(*XsdGoPkgHasElems_Output, bool) error
-	XsdGoPkgHasElems_Import                   func(*XsdGoPkgHasElems_Import, bool) error
-	XsdGoPkgHasElems_NextMatch                func(*XsdGoPkgHasElems_NextMatch, bool) error
-	XsdGoPkgHasElem_ResultDocument            func(*XsdGoPkgHasElem_ResultDocument, bool) error
-	XsdGoPkgHasElem_Namespace                 func(*XsdGoPkgHasElem_Namespace, bool) error
-	XsdGoPkgHasElems_MatchingSubstring        func(*XsdGoPkgHasElems_MatchingSubstring, bool) error
-	XsdGoPkgHasElems_OutputCharacter          func(*XsdGoPkgHasElems_OutputCharacter, bool) error
-	XsdGoPkgHasElem_Attribute                 func(*XsdGoPkgHasElem_Attribute, bool) error
-	XsdGoPkgHasElems_WithParam                func(*XsdGoPkgHasElems_WithParam, bool) error
-	XsdGoPkgHasElems_ResultDocument           func(*XsdGoPkgHasElems_ResultDocument, bool) error
-	XsdGoPkgHasElems_PerformSort              func(*XsdGoPkgHasElems_PerformSort, bool) error
-	XsdGoPkgHasElems_Instruction              func(*XsdGoPkgHasElems_Instruction, bool) error
-	TxsdElement                               func(*TxsdElement, bool) error
-	TxsdWithParam                             func(*TxsdWithParam, bool) error
-	TxsdVariable                              func(*TxsdVariable, bool) error
-	XsdGoPkgHasElem_CopyOf                    func(*XsdGoPkgHasElem_CopyOf, bool) error
-	TxsdImportSchema                          func(*TxsdImportSchema, bool) error
-	XsdGoPkgHasElems_When                     func(*XsdGoPkgHasElems_When, bool) error
-	TxsdKey                                   func(*TxsdKey, bool) error
-	XsdGoPkgHasElems_Choose                   func(*XsdGoPkgHasElems_Choose, bool) error
-	XsdGoPkgHasElem_WithParam                 func(*XsdGoPkgHasElem_WithParam, bool) error
-	XsdGoPkgHasElems_Param                    func(*XsdGoPkgHasElems_Param, bool) error
-	XsdGoPkgHasElems_Sort                     func(*XsdGoPkgHasElems_Sort, bool) error
-	TxsdValueOf                               func(*TxsdValueOf, bool) error
-	XsdGoPkgHasElems_CallTemplate             func(*XsdGoPkgHasElems_CallTemplate, bool) error
-	TxsdDecimalFormat                         func(*TxsdDecimalFormat, bool) error
-	XsdGoPkgHasGroup_ResultElements           func(*XsdGoPkgHasGroup_ResultElements, bool) error
 	XsdGoPkgHasElem_Element                   func(*XsdGoPkgHasElem_Element, bool) error
-	XsdGoPkgHasElems_Document                 func(*XsdGoPkgHasElems_Document, bool) error
-	TxsdCopy                                  func(*TxsdCopy, bool) error
+	XsdGoPkgHasElems_DecimalFormat            func(*XsdGoPkgHasElems_DecimalFormat, bool) error
+	XsdGoPkgHasElems_Attribute                func(*XsdGoPkgHasElems_Attribute, bool) error
+	XsdGoPkgHasElem_Text                      func(*XsdGoPkgHasElem_Text, bool) error
+	XsdGoPkgHasElem_Function                  func(*XsdGoPkgHasElem_Function, bool) error
+	TxsdNumber                                func(*TxsdNumber, bool) error
+	XsdGoPkgHasElems_MatchingSubstring        func(*XsdGoPkgHasElems_MatchingSubstring, bool) error
+	XsdGoPkgHasElem_Declaration               func(*XsdGoPkgHasElem_Declaration, bool) error
+	TxsdAttribute                             func(*TxsdAttribute, bool) error
+	XsdGoPkgHasElem_ForEachGroup              func(*XsdGoPkgHasElem_ForEachGroup, bool) error
+	TsequenceConstructor                      func(*TsequenceConstructor, bool) error
+	XsdGoPkgHasElems_Stylesheet               func(*XsdGoPkgHasElems_Stylesheet, bool) error
+	XsdGoPkgHasElems_StripSpace               func(*XsdGoPkgHasElems_StripSpace, bool) error
+	TxsdDocument                              func(*TxsdDocument, bool) error
+	TxsdResultDocument                        func(*TxsdResultDocument, bool) error
+	TxsdForEachGroup                          func(*TxsdForEachGroup, bool) error
+	XsdGoPkgHasElem_AttributeSet              func(*XsdGoPkgHasElem_AttributeSet, bool) error
+	XsdGoPkgHasElems_Declaration              func(*XsdGoPkgHasElems_Declaration, bool) error
+	XsdGoPkgHasElems_Fallback                 func(*XsdGoPkgHasElems_Fallback, bool) error
+	TxsdTemplate                              func(*TxsdTemplate, bool) error
+	XsdGoPkgHasElems_Include                  func(*XsdGoPkgHasElems_Include, bool) error
+	XsdGoPkgHasElem_Fallback                  func(*XsdGoPkgHasElem_Fallback, bool) error
+	XsdGoPkgHasElem_CharacterMap              func(*XsdGoPkgHasElem_CharacterMap, bool) error
+	XsdGoPkgHasElem_OutputCharacter           func(*XsdGoPkgHasElem_OutputCharacter, bool) error
+	TxsdTransform                             func(*TxsdTransform, bool) error
+	XsdGoPkgHasElems_CallTemplate             func(*XsdGoPkgHasElems_CallTemplate, bool) error
+	TxsdApplyTemplates                        func(*TxsdApplyTemplates, bool) error
+	XsdGoPkgHasElem_Param                     func(*XsdGoPkgHasElem_Param, bool) error
+	TxsdAttributeSet                          func(*TxsdAttributeSet, bool) error
+	XsdGoPkgHasElem_ProcessingInstruction     func(*XsdGoPkgHasElem_ProcessingInstruction, bool) error
+	XsdGoPkgHasElem_ApplyTemplates            func(*XsdGoPkgHasElem_ApplyTemplates, bool) error
+	TxsdIf                                    func(*TxsdIf, bool) error
+	TxsdParam                                 func(*TxsdParam, bool) error
+	XsdGoPkgHasElems_ForEach                  func(*XsdGoPkgHasElems_ForEach, bool) error
+	XsdGoPkgHasElems_Message                  func(*XsdGoPkgHasElems_Message, bool) error
+	XsdGoPkgHasElem_PreserveSpace             func(*XsdGoPkgHasElem_PreserveSpace, bool) error
+	XsdGoPkgHasElems_Sequence                 func(*XsdGoPkgHasElems_Sequence, bool) error
+	XsdGoPkgHasElem_Document                  func(*XsdGoPkgHasElem_Document, bool) error
+	XsdGoPkgHasElems_Comment                  func(*XsdGoPkgHasElems_Comment, bool) error
+	XsdGoPkgHasElems_PerformSort              func(*XsdGoPkgHasElems_PerformSort, bool) error
+	XsdGoPkgHasElems_ProcessingInstruction    func(*XsdGoPkgHasElems_ProcessingInstruction, bool) error
+	TxsdAnalyzeString                         func(*TxsdAnalyzeString, bool) error
+	TxsdKey                                   func(*TxsdKey, bool) error
+	XsdGoPkgHasElem_Instruction               func(*XsdGoPkgHasElem_Instruction, bool) error
+	XsdGoPkgHasElems_LiteralResultElement     func(*XsdGoPkgHasElems_LiteralResultElement, bool) error
+	TxsdNamespace                             func(*TxsdNamespace, bool) error
+	XsdGoPkgHasElems_AnalyzeString            func(*XsdGoPkgHasElems_AnalyzeString, bool) error
+	TtransformElementBaseType                 func(*TtransformElementBaseType, bool) error
+	XsdGoPkgHasGroup_ResultElements           func(*XsdGoPkgHasGroup_ResultElements, bool) error
+	XsdGoPkgHasElem_Output                    func(*XsdGoPkgHasElem_Output, bool) error
+	XsdGoPkgHasElem_Stylesheet                func(*XsdGoPkgHasElem_Stylesheet, bool) error
+	XsdGoPkgHasElem_StripSpace                func(*XsdGoPkgHasElem_StripSpace, bool) error
+	XsdGoPkgHasElem_Namespace                 func(*XsdGoPkgHasElem_Namespace, bool) error
+	XsdGoPkgHasElem_Include                   func(*XsdGoPkgHasElem_Include, bool) error
+	XsdGoPkgHasElems_Choose                   func(*XsdGoPkgHasElems_Choose, bool) error
+	XsdGoPkgHasElems_ApplyImports             func(*XsdGoPkgHasElems_ApplyImports, bool) error
+	XsdGoPkgHasElem_Copy                      func(*XsdGoPkgHasElem_Copy, bool) error
+	TxsdSequence                              func(*TxsdSequence, bool) error
+	TxsdDecimalFormat                         func(*TxsdDecimalFormat, bool) error
+	XsdGoPkgHasElem_MatchingSubstring         func(*XsdGoPkgHasElem_MatchingSubstring, bool) error
 	XsdGoPkgHasElem_NamespaceAlias            func(*XsdGoPkgHasElem_NamespaceAlias, bool) error
-	XsdGoPkgHasElem_Template                  func(*XsdGoPkgHasElem_Template, bool) error
-	XsdGoPkgHasElem_Import                    func(*XsdGoPkgHasElem_Import, bool) error
+	TxsdCopyOf                                func(*TxsdCopyOf, bool) error
+	XsdGoPkgHasElems_Copy                     func(*XsdGoPkgHasElems_Copy, bool) error
+	XsdGoPkgHasElems_Param                    func(*XsdGoPkgHasElems_Param, bool) error
+	TxsdInclude                               func(*TxsdInclude, bool) error
+	XsdGoPkgHasElems_NonMatchingSubstring     func(*XsdGoPkgHasElems_NonMatchingSubstring, bool) error
+	TxsdVariable                              func(*TxsdVariable, bool) error
+	XsdGoPkgHasElem_DecimalFormat             func(*XsdGoPkgHasElem_DecimalFormat, bool) error
+	TxsdCharacterMap                          func(*TxsdCharacterMap, bool) error
 	TxsdNextMatch                             func(*TxsdNextMatch, bool) error
 	XsdGoPkgHasElem_Transform                 func(*XsdGoPkgHasElem_Transform, bool) error
-	XsdGoPkgHasElem_AnalyzeString             func(*XsdGoPkgHasElem_AnalyzeString, bool) error
-	XsdGoPkgHasElems_If                       func(*XsdGoPkgHasElems_If, bool) error
+	TxsdPreserveSpace                         func(*TxsdPreserveSpace, bool) error
+	TxsdText                                  func(*TxsdText, bool) error
+	XsdGoPkgHasElem_CallTemplate              func(*XsdGoPkgHasElem_CallTemplate, bool) error
+	XsdGoPkgHasElems_Template                 func(*XsdGoPkgHasElems_Template, bool) error
+	XsdGoPkgHasElems_NextMatch                func(*XsdGoPkgHasElems_NextMatch, bool) error
+	XsdGoPkgHasElem_Message                   func(*XsdGoPkgHasElem_Message, bool) error
 	XsdGoPkgHasElem_Sequence                  func(*XsdGoPkgHasElem_Sequence, bool) error
-	XsdGoPkgHasElem_CharacterMap              func(*XsdGoPkgHasElem_CharacterMap, bool) error
-	TxsdDocument                              func(*TxsdDocument, bool) error
+	XsdGoPkgHasElems_Instruction              func(*XsdGoPkgHasElems_Instruction, bool) error
+	XsdGoPkgHasElem_ImportSchema              func(*XsdGoPkgHasElem_ImportSchema, bool) error
+	XsdGoPkgHasElems_Variable                 func(*XsdGoPkgHasElems_Variable, bool) error
+	XsdGoPkgHasElem_Key                       func(*XsdGoPkgHasElem_Key, bool) error
+	XsdGoPkgHasElems_ValueOf                  func(*XsdGoPkgHasElems_ValueOf, bool) error
+	XsdGoPkgHasElem_Template                  func(*XsdGoPkgHasElem_Template, bool) error
+	XsdGoPkgHasElems_Transform                func(*XsdGoPkgHasElems_Transform, bool) error
+	XsdGoPkgHasElems_ResultDocument           func(*XsdGoPkgHasElems_ResultDocument, bool) error
+	XsdGoPkgHasElem_Number                    func(*XsdGoPkgHasElem_Number, bool) error
+	TxsdImportSchema                          func(*TxsdImportSchema, bool) error
+	XsdGoPkgHasElem_WithParam                 func(*XsdGoPkgHasElem_WithParam, bool) error
+	XsdGoPkgHasElems_PreserveSpace            func(*XsdGoPkgHasElems_PreserveSpace, bool) error
+	XsdGoPkgHasElems_Output                   func(*XsdGoPkgHasElems_Output, bool) error
+	XsdGoPkgHasElem_If                        func(*XsdGoPkgHasElem_If, bool) error
+	XsdGoPkgHasElem_When                      func(*XsdGoPkgHasElem_When, bool) error
+	TxsdNamespaceAlias                        func(*TxsdNamespaceAlias, bool) error
+	XsdGoPkgHasElems_OutputCharacter          func(*XsdGoPkgHasElems_OutputCharacter, bool) error
+	XsdGoPkgHasElem_Comment                   func(*XsdGoPkgHasElem_Comment, bool) error
+	XsdGoPkgHasElems_Sort                     func(*XsdGoPkgHasElems_Sort, bool) error
+	TxsdChoose                                func(*TxsdChoose, bool) error
+	XsdGoPkgHasElems_ImportSchema             func(*XsdGoPkgHasElems_ImportSchema, bool) error
+	XsdGoPkgHasElems_Text                     func(*XsdGoPkgHasElems_Text, bool) error
+	XsdGoPkgHasElems_Key                      func(*XsdGoPkgHasElems_Key, bool) error
+	TxsdCallTemplate                          func(*TxsdCallTemplate, bool) error
+	XsdGoPkgHasElem_CopyOf                    func(*XsdGoPkgHasElem_CopyOf, bool) error
+	XsdGoPkgHasElem_PerformSort               func(*XsdGoPkgHasElem_PerformSort, bool) error
+	XsdGoPkgHasGroup_SequenceConstructorGroup func(*XsdGoPkgHasGroup_SequenceConstructorGroup, bool) error
+	TelementOnlyVersionedElementType          func(*TelementOnlyVersionedElementType, bool) error
+	TxsdForEach                               func(*TxsdForEach, bool) error
+	XsdGoPkgHasElems_Element                  func(*XsdGoPkgHasElems_Element, bool) error
+	XsdGoPkgHasElem_Attribute                 func(*XsdGoPkgHasElem_Attribute, bool) error
 	TxsdOutputCharacter                       func(*TxsdOutputCharacter, bool) error
-	XsdGoPkgHasElems_ApplyTemplates           func(*XsdGoPkgHasElems_ApplyTemplates, bool) error
+	XsdGoPkgHasElem_AnalyzeString             func(*XsdGoPkgHasElem_AnalyzeString, bool) error
+	XsdGoPkgHasCdata                          func(*XsdGoPkgHasCdata, bool) error
+	XsdGoPkgHasElems_If                       func(*XsdGoPkgHasElems_If, bool) error
+	TxsdApplyImports                          func(*TxsdApplyImports, bool) error
+	TxsdSort                                  func(*TxsdSort, bool) error
+	XsdGoPkgHasElem_Choose                    func(*XsdGoPkgHasElem_Choose, bool) error
+	XsdGoPkgHasElem_ForEach                   func(*XsdGoPkgHasElem_ForEach, bool) error
+	XsdGoPkgHasElem_ApplyImports              func(*XsdGoPkgHasElem_ApplyImports, bool) error
+	XsdGoPkgHasElems_Number                   func(*XsdGoPkgHasElems_Number, bool) error
+	XsdGoPkgHasElems_When                     func(*XsdGoPkgHasElems_When, bool) error
+	XsdGoPkgHasElem_Variable                  func(*XsdGoPkgHasElem_Variable, bool) error
+	XsdGoPkgHasElem_Import                    func(*XsdGoPkgHasElem_Import, bool) error
+	XsdGoPkgHasElems_WithParam                func(*XsdGoPkgHasElems_WithParam, bool) error
 	XsdGoPkgHasElems_NamespaceAlias           func(*XsdGoPkgHasElems_NamespaceAlias, bool) error
-	XsdGoPkgHasElem_PreserveSpace             func(*XsdGoPkgHasElem_PreserveSpace, bool) error
+	XsdGoPkgHasElem_LiteralResultElement      func(*XsdGoPkgHasElem_LiteralResultElement, bool) error
+	TxsdComment                               func(*TxsdComment, bool) error
+	XsdGoPkgHasElems_CharacterMap             func(*XsdGoPkgHasElems_CharacterMap, bool) error
+	TversionedElementType                     func(*TversionedElementType, bool) error
+	XsdGoPkgHasElem_ResultDocument            func(*XsdGoPkgHasElem_ResultDocument, bool) error
+	TxsdMessage                               func(*TxsdMessage, bool) error
+	XsdGoPkgHasElems_Document                 func(*XsdGoPkgHasElems_Document, bool) error
+	XsdGoPkgHasElem_Otherwise                 func(*XsdGoPkgHasElem_Otherwise, bool) error
+	XsdGoPkgHasElems_Function                 func(*XsdGoPkgHasElems_Function, bool) error
+	TxsdElement                               func(*TxsdElement, bool) error
+	XsdGoPkgHasElems_Import                   func(*XsdGoPkgHasElems_Import, bool) error
+	XsdGoPkgHasElem_Sort                      func(*XsdGoPkgHasElem_Sort, bool) error
+	TtextElementBaseType                      func(*TtextElementBaseType, bool) error
+	TxsdFunction                              func(*TxsdFunction, bool) error
+	XsdGoPkgHasElem_ValueOf                   func(*XsdGoPkgHasElem_ValueOf, bool) error
+	XsdGoPkgHasElems_Namespace                func(*XsdGoPkgHasElems_Namespace, bool) error
+	TxsdOutput                                func(*TxsdOutput, bool) error
+	XsdGoPkgHasElems_ApplyTemplates           func(*XsdGoPkgHasElems_ApplyTemplates, bool) error
+	XsdGoPkgHasElems_ForEachGroup             func(*XsdGoPkgHasElems_ForEachGroup, bool) error
+	TxsdValueOf                               func(*TxsdValueOf, bool) error
+	XsdGoPkgHasElems_AttributeSet             func(*XsdGoPkgHasElems_AttributeSet, bool) error
+	XsdGoPkgHasElem_NextMatch                 func(*XsdGoPkgHasElem_NextMatch, bool) error
+	TxsdCopy                                  func(*TxsdCopy, bool) error
+	XsdGoPkgHasElems_CopyOf                   func(*XsdGoPkgHasElems_CopyOf, bool) error
+	XsdGoPkgHasElems_Otherwise                func(*XsdGoPkgHasElems_Otherwise, bool) error
+	TxsdWithParam                             func(*TxsdWithParam, bool) error
+	TgenericElementType                       func(*TgenericElementType, bool) error
+	XsdGoPkgHasElem_NonMatchingSubstring      func(*XsdGoPkgHasElem_NonMatchingSubstring, bool) error
 }
 
 //	A convenience interface that declares a type conversion to TversionedElementType.
