@@ -339,11 +339,11 @@ Comments on types and fields (if any) are from the XSD file located at:
 				
 			
 				
-				<dd><a href="#XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_">type XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_</a></dd>
+				<dd><a href="#XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_">type XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_</a></dd>
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_.Walk">func (me *XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_) Walk() (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_.Walk">func (me *XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_) Walk() (err error)</a></dd>
 				
 			
 				
@@ -395,19 +395,19 @@ Comments on types and fields (if any) are from the XSD file located at:
 				
 			
 				
-				<dd><a href="#XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_">type XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_</a></dd>
+				<dd><a href="#XsdGoPkgHasElems_idchoicefeedTypeschema_Id_TidType_">type XsdGoPkgHasElems_idchoicefeedTypeschema_Id_TidType_</a></dd>
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_.Walk">func (me *XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_) Walk() (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElems_idchoicefeedTypeschema_Id_TidType_.Walk">func (me *XsdGoPkgHasElems_idchoicefeedTypeschema_Id_TidType_) Walk() (err error)</a></dd>
 				
 			
 				
-				<dd><a href="#XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_">type XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_</a></dd>
+				<dd><a href="#XsdGoPkgHasElems_linkchoicefeedTypeschema_Link_TlinkType_">type XsdGoPkgHasElems_linkchoicefeedTypeschema_Link_TlinkType_</a></dd>
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_.Walk">func (me *XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_) Walk() (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElems_linkchoicefeedTypeschema_Link_TlinkType_.Walk">func (me *XsdGoPkgHasElems_linkchoicefeedTypeschema_Link_TlinkType_) Walk() (err error)</a></dd>
 				
 			
 				
@@ -435,11 +435,11 @@ Comments on types and fields (if any) are from the XSD file located at:
 				
 			
 				
-				<dd><a href="#XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_">type XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_</a></dd>
+				<dd><a href="#XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_">type XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_</a></dd>
 				
 				
 					
-					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_.Walk">func (me *XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_) Walk() (err error)</a></dd>
+					<dd>&nbsp; &nbsp; <a href="#XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_.Walk">func (me *XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_) Walk() (err error)</a></dd>
 				
 			
 				
@@ -534,15 +534,15 @@ Comments on types and fields (if any) are from the XSD file located at:
 		
 			
 			
-			<h2 id="TcategoryType">type <a href="/target/atom.xsd.xml.go?s=17832:18003#L437">TcategoryType</a></h2>
+			<h2 id="TcategoryType">type <a href="/target/atom.xsd.xml.go?s=17666:17837#L452">TcategoryType</a></h2>
 			<pre>type TcategoryType struct {
-    XsdGoPkgHasAttr_Term_XsdtString_
+    XsdGoPkgHasAtts_CommonAttributes
 
     XsdGoPkgHasAttr_Scheme_XsdtAnyURI_
 
     XsdGoPkgHasAttr_Label_XsdtString_
 
-    XsdGoPkgHasAtts_CommonAttributes
+    XsdGoPkgHasAttr_Term_XsdtString_
 }</pre>
 			
 
@@ -556,7 +556,7 @@ Comments on types and fields (if any) are from the XSD file located at:
 
 			
 				
-				<h3 id="TcategoryType.Walk">func (*TcategoryType) <a href="/target/atom.xsd.xml.go?s=18263:18306#L448">Walk</a></h3>
+				<h3 id="TcategoryType.Walk">func (*TcategoryType) <a href="/target/atom.xsd.xml.go?s=18097:18140#L463">Walk</a></h3>
 				<pre>func (me *TcategoryType) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.TcategoryType function is not nil (ie. was set by outside code), calls it with this TcategoryType instance as the single argument. Then calls the Walk() method on 0/4 embed(s) and 0/0 field(s) belonging to this TcategoryType instance.
@@ -568,15 +568,15 @@ If the WalkHandlers.TcategoryType function is not nil (ie. was set by outside co
 		
 			
 			
-			<h2 id="TcontentType">type <a href="/target/atom.xsd.xml.go?s=21230:21380#L521">TcontentType</a></h2>
+			<h2 id="TcontentType">type <a href="/target/atom.xsd.xml.go?s=31031:31181#L758">TcontentType</a></h2>
 			<pre>type TcontentType struct {
-    XsdGoPkgHasAttr_Type_XsdtString_
+    XsdGoPkgHasAtts_CommonAttributes
 
     XsdGoPkgHasCdata
 
-    XsdGoPkgHasAttr_Src_XsdtAnyURI_
+    XsdGoPkgHasAttr_Type_XsdtString_
 
-    XsdGoPkgHasAtts_CommonAttributes
+    XsdGoPkgHasAttr_Src_XsdtAnyURI_
 }</pre>
 			
 
@@ -590,7 +590,7 @@ If the WalkHandlers.TcategoryType function is not nil (ie. was set by outside co
 
 			
 				
-				<h3 id="TcontentType.Walk">func (*TcontentType) <a href="/target/atom.xsd.xml.go?s=21637:21679#L532">Walk</a></h3>
+				<h3 id="TcontentType.Walk">func (*TcontentType) <a href="/target/atom.xsd.xml.go?s=31438:31480#L769">Walk</a></h3>
 				<pre>func (me *TcontentType) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.TcontentType function is not nil (ie. was set by outside code), calls it with this TcontentType instance as the single argument. Then calls the Walk() method on 1/4 embed(s) and 0/0 field(s) belonging to this TcontentType instance.
@@ -602,16 +602,13 @@ If the WalkHandlers.TcontentType function is not nil (ie. was set by outside cod
 		
 			
 			
-			<h2 id="TdateTimeType">type <a href="/target/atom.xsd.xml.go?s=776:887#L13">TdateTimeType</a></h2>
+			<h2 id="TdateTimeType">type <a href="/target/atom.xsd.xml.go?s=4924:5035#L119">TdateTimeType</a></h2>
 			<pre>type TdateTimeType struct {
     XsdGoPkgValue xsdt.DateTime `xml:&#34;,chardata&#34;`
 
     XsdGoPkgHasAtts_CommonAttributes
 }</pre>
-			<p>
-The Atom feed construct is defined in section 4.1.1 of the format spec.
-</p>
-
+			
 
 			
 
@@ -623,7 +620,7 @@ The Atom feed construct is defined in section 4.1.1 of the format spec.
 
 			
 				
-				<h3 id="TdateTimeType.ToXsdtDateTime">func (*TdateTimeType) <a href="/target/atom.xsd.xml.go?s=1584:1639#L37">ToXsdtDateTime</a></h3>
+				<h3 id="TdateTimeType.ToXsdtDateTime">func (*TdateTimeType) <a href="/target/atom.xsd.xml.go?s=5732:5787#L143">ToXsdtDateTime</a></h3>
 				<pre>func (me *TdateTimeType) ToXsdtDateTime() xsdt.DateTime</pre>
 				<p>
 Simply returns the value of its XsdGoPkgValue field.
@@ -633,7 +630,7 @@ Simply returns the value of its XsdGoPkgValue field.
 				
 			
 				
-				<h3 id="TdateTimeType.Walk">func (*TdateTimeType) <a href="/target/atom.xsd.xml.go?s=1147:1190#L20">Walk</a></h3>
+				<h3 id="TdateTimeType.Walk">func (*TdateTimeType) <a href="/target/atom.xsd.xml.go?s=5295:5338#L126">Walk</a></h3>
 				<pre>func (me *TdateTimeType) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.TdateTimeType function is not nil (ie. was set by outside code), calls it with this TdateTimeType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/1 field(s) belonging to this TdateTimeType instance.
@@ -645,10 +642,9 @@ If the WalkHandlers.TdateTimeType function is not nil (ie. was set by outside co
 		
 			
 			
-			<h2 id="TemailType">type <a href="/target/atom.xsd.xml.go?s=10080:10117#L257">TemailType</a></h2>
+			<h2 id="TemailType">type <a href="/target/atom.xsd.xml.go?s=26516:26553#L659">TemailType</a></h2>
 			<pre>type TemailType xsdt.NormalizedString</pre>
 			<p>
-The Atom person construct is defined in section 3.2 of the format spec.
 Schema definition for an email address.
 </p>
 
@@ -663,7 +659,7 @@ Schema definition for an email address.
 
 			
 				
-				<h3 id="TemailType.SetFromString">func (*TemailType) <a href="/target/atom.xsd.xml.go?s=10633:10678#L266">SetFromString</a></h3>
+				<h3 id="TemailType.SetFromString">func (*TemailType) <a href="/target/atom.xsd.xml.go?s=27069:27114#L668">SetFromString</a></h3>
 				<pre>func (me *TemailType) SetFromString(s string)</pre>
 				<p>
 Since TemailType is just a simple String type, this merely sets the current value from the specified string.
@@ -673,7 +669,7 @@ Since TemailType is just a simple String type, this merely sets the current valu
 				
 			
 				
-				<h3 id="TemailType.String">func (TemailType) <a href="/target/atom.xsd.xml.go?s=10437:10473#L263">String</a></h3>
+				<h3 id="TemailType.String">func (TemailType) <a href="/target/atom.xsd.xml.go?s=26651:26687#L662">String</a></h3>
 				<pre>func (me TemailType) String() string</pre>
 				<p>
 Since TemailType is just a simple String type, this merely returns the current string value.
@@ -683,7 +679,7 @@ Since TemailType is just a simple String type, this merely returns the current s
 				
 			
 				
-				<h3 id="TemailType.ToXsdtNormalizedString">func (TemailType) <a href="/target/atom.xsd.xml.go?s=10235:10302#L260">ToXsdtNormalizedString</a></h3>
+				<h3 id="TemailType.ToXsdtNormalizedString">func (TemailType) <a href="/target/atom.xsd.xml.go?s=26851:26918#L665">ToXsdtNormalizedString</a></h3>
 				<pre>func (me TemailType) ToXsdtNormalizedString() xsdt.NormalizedString</pre>
 				<p>
 This convenience method just performs a simple type conversion to TemailType&#39;s alias type xsdt.NormalizedString.
@@ -695,33 +691,33 @@ This convenience method just performs a simple type conversion to TemailType&#39
 		
 			
 			
-			<h2 id="TentryType">type <a href="/target/atom.xsd.xml.go?s=30181:31049#L734">TentryType</a></h2>
+			<h2 id="TentryType">type <a href="/target/atom.xsd.xml.go?s=35505:36369#L866">TentryType</a></h2>
 			<pre>type TentryType struct {
-    XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_
-
-    XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_
-
-    XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_
-
-    XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_
-
-    XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_
-
-    XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_
+    XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_
 
     XsdGoPkgHasAtts_CommonAttributes
 
-    XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_
+    XsdGoPkgHasElems_linkchoicefeedTypeschema_Link_TlinkType_
+
+    XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_
 
     XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_
 
-    XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_
-
-    XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_
-
-    XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_
+    XsdGoPkgHasElems_idchoicefeedTypeschema_Id_TidType_
 
     XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_
+
+    XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_
+
+    XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_
+
+    XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_
+
+    XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_
+
+    XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_
+
+    XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_
 }</pre>
 			
 
@@ -735,7 +731,7 @@ This convenience method just performs a simple type conversion to TemailType&#39
 
 			
 				
-				<h3 id="TentryType.Walk">func (*TentryType) <a href="/target/atom.xsd.xml.go?s=31302:31342#L763">Walk</a></h3>
+				<h3 id="TentryType.Walk">func (*TentryType) <a href="/target/atom.xsd.xml.go?s=36622:36662#L895">Walk</a></h3>
 				<pre>func (me *TentryType) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.TentryType function is not nil (ie. was set by outside code), calls it with this TentryType instance as the single argument. Then calls the Walk() method on 12/13 embed(s) and 0/0 field(s) belonging to this TentryType instance.
@@ -747,35 +743,35 @@ If the WalkHandlers.TentryType function is not nil (ie. was set by outside code)
 		
 			
 			
-			<h2 id="TfeedType">type <a href="/target/atom.xsd.xml.go?s=42797:43713#L1038">TfeedType</a></h2>
+			<h2 id="TfeedType">type <a href="/target/atom.xsd.xml.go?s=42765:43677#L1038">TfeedType</a></h2>
 			<pre>type TfeedType struct {
-    XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_
+    XsdGoPkgHasElems_linkchoicefeedTypeschema_Link_TlinkType_
 
-    XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_
-
-    XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_
+    XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_
 
     XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_
 
+    XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_
+
     XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_
 
-    XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_
+    XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_
 
     XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_
 
     XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_
 
-    XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_
-
     XsdGoPkgHasAtts_CommonAttributes
 
-    XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_
-
-    XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_
-
-    XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_
-
     XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_
+
+    XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_
+
+    XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_
+
+    XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_
+
+    XsdGoPkgHasElems_idchoicefeedTypeschema_Id_TidType_
 }</pre>
 			
 
@@ -789,7 +785,7 @@ If the WalkHandlers.TentryType function is not nil (ie. was set by outside code)
 
 			
 				
-				<h3 id="TfeedType.Walk">func (*TfeedType) <a href="/target/atom.xsd.xml.go?s=43963:44002#L1069">Walk</a></h3>
+				<h3 id="TfeedType.Walk">func (*TfeedType) <a href="/target/atom.xsd.xml.go?s=43927:43966#L1069">Walk</a></h3>
 				<pre>func (me *TfeedType) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.TfeedType function is not nil (ie. was set by outside code), calls it with this TfeedType instance as the single argument. Then calls the Walk() method on 13/14 embed(s) and 0/0 field(s) belonging to this TfeedType instance.
@@ -801,15 +797,15 @@ If the WalkHandlers.TfeedType function is not nil (ie. was set by outside code),
 		
 			
 			
-			<h2 id="TgeneratorType">type <a href="/target/atom.xsd.xml.go?s=38507:38689#L929">TgeneratorType</a></h2>
+			<h2 id="TgeneratorType">type <a href="/target/atom.xsd.xml.go?s=40549:40731#L982">TgeneratorType</a></h2>
 			<pre>type TgeneratorType struct {
     XsdGoPkgValue xsdt.String `xml:&#34;,chardata&#34;`
 
-    XsdGoPkgHasAttr_Uri_XsdtAnyURI_
+    XsdGoPkgHasAtts_CommonAttributes
 
     XsdGoPkgHasAttr_Version_XsdtString_
 
-    XsdGoPkgHasAtts_CommonAttributes
+    XsdGoPkgHasAttr_Uri_XsdtAnyURI_
 }</pre>
 			
 
@@ -823,7 +819,7 @@ If the WalkHandlers.TfeedType function is not nil (ie. was set by outside code),
 
 			
 				
-				<h3 id="TgeneratorType.ToXsdtString">func (*TgeneratorType) <a href="/target/atom.xsd.xml.go?s=39391:39443#L957">ToXsdtString</a></h3>
+				<h3 id="TgeneratorType.ToXsdtString">func (*TgeneratorType) <a href="/target/atom.xsd.xml.go?s=41433:41485#L1010">ToXsdtString</a></h3>
 				<pre>func (me *TgeneratorType) ToXsdtString() xsdt.String</pre>
 				<p>
 Simply returns the value of its XsdGoPkgValue field.
@@ -833,7 +829,7 @@ Simply returns the value of its XsdGoPkgValue field.
 				
 			
 				
-				<h3 id="TgeneratorType.Walk">func (*TgeneratorType) <a href="/target/atom.xsd.xml.go?s=38952:38996#L940">Walk</a></h3>
+				<h3 id="TgeneratorType.Walk">func (*TgeneratorType) <a href="/target/atom.xsd.xml.go?s=40994:41038#L993">Walk</a></h3>
 				<pre>func (me *TgeneratorType) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.TgeneratorType function is not nil (ie. was set by outside code), calls it with this TgeneratorType instance as the single argument. Then calls the Walk() method on 0/3 embed(s) and 0/1 field(s) belonging to this TgeneratorType instance.
@@ -845,13 +841,14 @@ If the WalkHandlers.TgeneratorType function is not nil (ie. was set by outside c
 		
 			
 			
-			<h2 id="TiconType">type <a href="/target/atom.xsd.xml.go?s=36196:36301#L868">TiconType</a></h2>
+			<h2 id="TiconType">type <a href="/target/atom.xsd.xml.go?s=851:956#L14">TiconType</a></h2>
 			<pre>type TiconType struct {
     XsdGoPkgValue xsdt.AnyURI `xml:&#34;,chardata&#34;`
 
     XsdGoPkgHasAtts_CommonAttributes
 }</pre>
 			<p>
+The Atom feed construct is defined in section 4.1.1 of the format spec.
 The Atom icon construct is defined in section 4.2.5 of the format spec.
 </p>
 
@@ -866,7 +863,7 @@ The Atom icon construct is defined in section 4.2.5 of the format spec.
 
 			
 				
-				<h3 id="TiconType.ToXsdtAnyURI">func (*TiconType) <a href="/target/atom.xsd.xml.go?s=36978:37025#L892">ToXsdtAnyURI</a></h3>
+				<h3 id="TiconType.ToXsdtAnyURI">func (*TiconType) <a href="/target/atom.xsd.xml.go?s=1633:1680#L38">ToXsdtAnyURI</a></h3>
 				<pre>func (me *TiconType) ToXsdtAnyURI() xsdt.AnyURI</pre>
 				<p>
 Simply returns the value of its XsdGoPkgValue field.
@@ -876,7 +873,7 @@ Simply returns the value of its XsdGoPkgValue field.
 				
 			
 				
-				<h3 id="TiconType.Walk">func (*TiconType) <a href="/target/atom.xsd.xml.go?s=36549:36588#L875">Walk</a></h3>
+				<h3 id="TiconType.Walk">func (*TiconType) <a href="/target/atom.xsd.xml.go?s=1204:1243#L21">Walk</a></h3>
 				<pre>func (me *TiconType) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.TiconType function is not nil (ie. was set by outside code), calls it with this TiconType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/1 field(s) belonging to this TiconType instance.
@@ -888,7 +885,7 @@ If the WalkHandlers.TiconType function is not nil (ie. was set by outside code),
 		
 			
 			
-			<h2 id="TidType">type <a href="/target/atom.xsd.xml.go?s=23426:23529#L578">TidType</a></h2>
+			<h2 id="TidType">type <a href="/target/atom.xsd.xml.go?s=12310:12413#L298">TidType</a></h2>
 			<pre>type TidType struct {
     XsdGoPkgValue xsdt.AnyURI `xml:&#34;,chardata&#34;`
 
@@ -909,7 +906,7 @@ The Atom id construct is defined in section 4.2.6 of the format spec.
 
 			
 				
-				<h3 id="TidType.ToXsdtAnyURI">func (*TidType) <a href="/target/atom.xsd.xml.go?s=23587:23632#L585">ToXsdtAnyURI</a></h3>
+				<h3 id="TidType.ToXsdtAnyURI">func (*TidType) <a href="/target/atom.xsd.xml.go?s=13080:13125#L322">ToXsdtAnyURI</a></h3>
 				<pre>func (me *TidType) ToXsdtAnyURI() xsdt.AnyURI</pre>
 				<p>
 Simply returns the value of its XsdGoPkgValue field.
@@ -919,7 +916,7 @@ Simply returns the value of its XsdGoPkgValue field.
 				
 			
 				
-				<h3 id="TidType.Walk">func (*TidType) <a href="/target/atom.xsd.xml.go?s=23902:23939#L588">Walk</a></h3>
+				<h3 id="TidType.Walk">func (*TidType) <a href="/target/atom.xsd.xml.go?s=12655:12692#L305">Walk</a></h3>
 				<pre>func (me *TidType) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.TidType function is not nil (ie. was set by outside code), calls it with this TidType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/1 field(s) belonging to this TidType instance.
@@ -931,23 +928,23 @@ If the WalkHandlers.TidType function is not nil (ie. was set by outside code), c
 		
 			
 			
-			<h2 id="TlinkType">type <a href="/target/atom.xsd.xml.go?s=4481:4785#L112">TlinkType</a></h2>
+			<h2 id="TlinkType">type <a href="/target/atom.xsd.xml.go?s=15046:15350#L375">TlinkType</a></h2>
 			<pre>type TlinkType struct {
-    XsdGoPkgHasAttr_Hreflang_XsdtNmtoken_
-
-    XsdGoPkgHasAttr_Href_XsdtAnyURI_
-
-    XsdGoPkgHasAttr_Rel_XsdtString_
-
-    XsdGoPkgHasAtts_CommonAttributes
-
-    XsdGoPkgHasAttr_Type_XsdtString_
+    XsdGoPkgHasAttr_Length_XsdtPositiveInteger_
 
     XsdGoPkgHasCdata
 
     XsdGoPkgHasAttr_Title_XsdtString_
 
-    XsdGoPkgHasAttr_Length_XsdtPositiveInteger_
+    XsdGoPkgHasAttr_Href_XsdtAnyURI_
+
+    XsdGoPkgHasAttr_Hreflang_XsdtNmtoken_
+
+    XsdGoPkgHasAttr_Type_XsdtString_
+
+    XsdGoPkgHasAtts_CommonAttributes
+
+    XsdGoPkgHasAttr_Rel_XsdtString_
 }</pre>
 			
 
@@ -961,7 +958,7 @@ If the WalkHandlers.TidType function is not nil (ie. was set by outside code), c
 
 			
 				
-				<h3 id="TlinkType.Walk">func (*TlinkType) <a href="/target/atom.xsd.xml.go?s=5033:5072#L131">Walk</a></h3>
+				<h3 id="TlinkType.Walk">func (*TlinkType) <a href="/target/atom.xsd.xml.go?s=15598:15637#L394">Walk</a></h3>
 				<pre>func (me *TlinkType) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.TlinkType function is not nil (ie. was set by outside code), calls it with this TlinkType instance as the single argument. Then calls the Walk() method on 1/8 embed(s) and 0/0 field(s) belonging to this TlinkType instance.
@@ -973,7 +970,7 @@ If the WalkHandlers.TlinkType function is not nil (ie. was set by outside code),
 		
 			
 			
-			<h2 id="TlogoType">type <a href="/target/atom.xsd.xml.go?s=40798:40903#L986">TlogoType</a></h2>
+			<h2 id="TlogoType">type <a href="/target/atom.xsd.xml.go?s=2925:3030#L67">TlogoType</a></h2>
 			<pre>type TlogoType struct {
     XsdGoPkgValue xsdt.AnyURI `xml:&#34;,chardata&#34;`
 
@@ -994,7 +991,7 @@ The Atom logo construct is defined in section 4.2.8 of the format spec.
 
 			
 				
-				<h3 id="TlogoType.ToXsdtAnyURI">func (*TlogoType) <a href="/target/atom.xsd.xml.go?s=41580:41627#L1010">ToXsdtAnyURI</a></h3>
+				<h3 id="TlogoType.ToXsdtAnyURI">func (*TlogoType) <a href="/target/atom.xsd.xml.go?s=3088:3135#L74">ToXsdtAnyURI</a></h3>
 				<pre>func (me *TlogoType) ToXsdtAnyURI() xsdt.AnyURI</pre>
 				<p>
 Simply returns the value of its XsdGoPkgValue field.
@@ -1004,7 +1001,7 @@ Simply returns the value of its XsdGoPkgValue field.
 				
 			
 				
-				<h3 id="TlogoType.Walk">func (*TlogoType) <a href="/target/atom.xsd.xml.go?s=41151:41190#L993">Walk</a></h3>
+				<h3 id="TlogoType.Walk">func (*TlogoType) <a href="/target/atom.xsd.xml.go?s=3411:3450#L77">Walk</a></h3>
 				<pre>func (me *TlogoType) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.TlogoType function is not nil (ie. was set by outside code), calls it with this TlogoType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/1 field(s) belonging to this TlogoType instance.
@@ -1016,15 +1013,15 @@ If the WalkHandlers.TlogoType function is not nil (ie. was set by outside code),
 		
 			
 			
-			<h2 id="TpersonType">type <a href="/target/atom.xsd.xml.go?s=14753:15001#L362">TpersonType</a></h2>
+			<h2 id="TpersonType">type <a href="/target/atom.xsd.xml.go?s=28193:28441#L691">TpersonType</a></h2>
 			<pre>type TpersonType struct {
-    XsdGoPkgHasAtts_CommonAttributes
-
     XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_
+
+    XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_
 
     XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_
 
-    XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_
+    XsdGoPkgHasAtts_CommonAttributes
 }</pre>
 			
 
@@ -1038,7 +1035,7 @@ If the WalkHandlers.TlogoType function is not nil (ie. was set by outside code),
 
 			
 				
-				<h3 id="TpersonType.Walk">func (*TpersonType) <a href="/target/atom.xsd.xml.go?s=15255:15296#L373">Walk</a></h3>
+				<h3 id="TpersonType.Walk">func (*TpersonType) <a href="/target/atom.xsd.xml.go?s=28695:28736#L702">Walk</a></h3>
 				<pre>func (me *TpersonType) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.TpersonType function is not nil (ie. was set by outside code), calls it with this TpersonType instance as the single argument. Then calls the Walk() method on 3/4 embed(s) and 0/0 field(s) belonging to this TpersonType instance.
@@ -1050,11 +1047,11 @@ If the WalkHandlers.TpersonType function is not nil (ie. was set by outside code
 		
 			
 			
-			<h2 id="TtextType">type <a href="/target/atom.xsd.xml.go?s=7919:8038#L201">TtextType</a></h2>
+			<h2 id="TtextType">type <a href="/target/atom.xsd.xml.go?s=9000:9119#L217">TtextType</a></h2>
 			<pre>type TtextType struct {
-    XsdGoPkgHasCdata
-
     XsdGoPkgHasAtts_CommonAttributes
+
+    XsdGoPkgHasCdata
 
     XsdGoPkgHasAttr_Type_TxsdTextTypeType_
 }</pre>
@@ -1070,7 +1067,7 @@ If the WalkHandlers.TpersonType function is not nil (ie. was set by outside code
 
 			
 				
-				<h3 id="TtextType.Walk">func (*TtextType) <a href="/target/atom.xsd.xml.go?s=8286:8325#L210">Walk</a></h3>
+				<h3 id="TtextType.Walk">func (*TtextType) <a href="/target/atom.xsd.xml.go?s=9367:9406#L226">Walk</a></h3>
 				<pre>func (me *TtextType) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.TtextType function is not nil (ie. was set by outside code), calls it with this TtextType instance as the single argument. Then calls the Walk() method on 1/3 embed(s) and 0/0 field(s) belonging to this TtextType instance.
@@ -1082,7 +1079,7 @@ If the WalkHandlers.TtextType function is not nil (ie. was set by outside code),
 		
 			
 			
-			<h2 id="TuriType">type <a href="/target/atom.xsd.xml.go?s=11757:11861#L289">TuriType</a></h2>
+			<h2 id="TuriType">type <a href="/target/atom.xsd.xml.go?s=24491:24595#L606">TuriType</a></h2>
 			<pre>type TuriType struct {
     XsdGoPkgValue xsdt.AnyURI `xml:&#34;,chardata&#34;`
 
@@ -1100,7 +1097,7 @@ If the WalkHandlers.TtextType function is not nil (ie. was set by outside code),
 
 			
 				
-				<h3 id="TuriType.ToXsdtAnyURI">func (*TuriType) <a href="/target/atom.xsd.xml.go?s=11919:11965#L296">ToXsdtAnyURI</a></h3>
+				<h3 id="TuriType.ToXsdtAnyURI">func (*TuriType) <a href="/target/atom.xsd.xml.go?s=24653:24699#L613">ToXsdtAnyURI</a></h3>
 				<pre>func (me *TuriType) ToXsdtAnyURI() xsdt.AnyURI</pre>
 				<p>
 Simply returns the value of its XsdGoPkgValue field.
@@ -1110,7 +1107,7 @@ Simply returns the value of its XsdGoPkgValue field.
 				
 			
 				
-				<h3 id="TuriType.Walk">func (*TuriType) <a href="/target/atom.xsd.xml.go?s=12238:12276#L299">Walk</a></h3>
+				<h3 id="TuriType.Walk">func (*TuriType) <a href="/target/atom.xsd.xml.go?s=24972:25010#L616">Walk</a></h3>
 				<pre>func (me *TuriType) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.TuriType function is not nil (ie. was set by outside code), calls it with this TuriType instance as the single argument. Then calls the Walk() method on 0/1 embed(s) and 0/1 field(s) belonging to this TuriType instance.
@@ -1122,7 +1119,7 @@ If the WalkHandlers.TuriType function is not nil (ie. was set by outside code), 
 		
 			
 			
-			<h2 id="TxsdTextTypeType">type <a href="/target/atom.xsd.xml.go?s=6750:6782#L177">TxsdTextTypeType</a></h2>
+			<h2 id="TxsdTextTypeType">type <a href="/target/atom.xsd.xml.go?s=7103:7135#L172">TxsdTextTypeType</a></h2>
 			<pre>type TxsdTextTypeType xsdt.Token</pre>
 			<p>
 The Atom text construct is defined in section 3.1 of the format spec.
@@ -1139,7 +1136,7 @@ The Atom text construct is defined in section 3.1 of the format spec.
 
 			
 				
-				<h3 id="TxsdTextTypeType.IsHtml">func (TxsdTextTypeType) <a href="/target/atom.xsd.xml.go?s=7260:7300#L186">IsHtml</a></h3>
+				<h3 id="TxsdTextTypeType.IsHtml">func (TxsdTextTypeType) <a href="/target/atom.xsd.xml.go?s=7900:7940#L187">IsHtml</a></h3>
 				<pre>func (me TxsdTextTypeType) IsHtml() bool</pre>
 				<p>
 Returns true if the value of this enumerated TxsdTextTypeType is &#34;html&#34;.
@@ -1149,7 +1146,7 @@ Returns true if the value of this enumerated TxsdTextTypeType is &#34;html&#34;.
 				
 			
 				
-				<h3 id="TxsdTextTypeType.IsText">func (TxsdTextTypeType) <a href="/target/atom.xsd.xml.go?s=7547:7587#L192">IsText</a></h3>
+				<h3 id="TxsdTextTypeType.IsText">func (TxsdTextTypeType) <a href="/target/atom.xsd.xml.go?s=7403:7443#L178">IsText</a></h3>
 				<pre>func (me TxsdTextTypeType) IsText() bool</pre>
 				<p>
 Returns true if the value of this enumerated TxsdTextTypeType is &#34;text&#34;.
@@ -1159,7 +1156,7 @@ Returns true if the value of this enumerated TxsdTextTypeType is &#34;text&#34;.
 				
 			
 				
-				<h3 id="TxsdTextTypeType.IsXhtml">func (TxsdTextTypeType) <a href="/target/atom.xsd.xml.go?s=7403:7444#L189">IsXhtml</a></h3>
+				<h3 id="TxsdTextTypeType.IsXhtml">func (TxsdTextTypeType) <a href="/target/atom.xsd.xml.go?s=7756:7797#L184">IsXhtml</a></h3>
 				<pre>func (me TxsdTextTypeType) IsXhtml() bool</pre>
 				<p>
 Returns true if the value of this enumerated TxsdTextTypeType is &#34;xhtml&#34;.
@@ -1169,7 +1166,7 @@ Returns true if the value of this enumerated TxsdTextTypeType is &#34;xhtml&#34;
 				
 			
 				
-				<h3 id="TxsdTextTypeType.SetFromString">func (*TxsdTextTypeType) <a href="/target/atom.xsd.xml.go?s=6902:6953#L180">SetFromString</a></h3>
+				<h3 id="TxsdTextTypeType.SetFromString">func (*TxsdTextTypeType) <a href="/target/atom.xsd.xml.go?s=7587:7638#L181">SetFromString</a></h3>
 				<pre>func (me *TxsdTextTypeType) SetFromString(s string)</pre>
 				<p>
 Since TxsdTextTypeType is just a simple String type, this merely sets the current value from the specified string.
@@ -1179,7 +1176,7 @@ Since TxsdTextTypeType is just a simple String type, this merely sets the curren
 				
 			
 				
-				<h3 id="TxsdTextTypeType.String">func (TxsdTextTypeType) <a href="/target/atom.xsd.xml.go?s=7715:7757#L195">String</a></h3>
+				<h3 id="TxsdTextTypeType.String">func (TxsdTextTypeType) <a href="/target/atom.xsd.xml.go?s=8068:8110#L190">String</a></h3>
 				<pre>func (me TxsdTextTypeType) String() string</pre>
 				<p>
 Since TxsdTextTypeType is just a simple String type, this merely returns the current string value.
@@ -1189,7 +1186,7 @@ Since TxsdTextTypeType is just a simple String type, this merely returns the cur
 				
 			
 				
-				<h3 id="TxsdTextTypeType.ToXsdtToken">func (TxsdTextTypeType) <a href="/target/atom.xsd.xml.go?s=7105:7156#L183">ToXsdtToken</a></h3>
+				<h3 id="TxsdTextTypeType.ToXsdtToken">func (TxsdTextTypeType) <a href="/target/atom.xsd.xml.go?s=7248:7299#L175">ToXsdtToken</a></h3>
 				<pre>func (me TxsdTextTypeType) ToXsdtToken() xsdt.Token</pre>
 				<p>
 This convenience method just performs a simple type conversion to TxsdTextTypeType&#39;s alias type xsdt.Token.
@@ -1201,7 +1198,7 @@ This convenience method just performs a simple type conversion to TxsdTextTypeTy
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Href_XsdtAnyURI_">type <a href="/target/atom.xsd.xml.go?s=3159:3271#L71">XsdGoPkgHasAttr_Href_XsdtAnyURI_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Href_XsdtAnyURI_">type <a href="/target/atom.xsd.xml.go?s=14690:14802#L363">XsdGoPkgHasAttr_Href_XsdtAnyURI_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Href_XsdtAnyURI_ struct {
     Href xsdt.AnyURI `xml:&#34;http://www.w3.org/2005/Atom href,attr&#34;`
 }</pre>
@@ -1219,15 +1216,11 @@ This convenience method just performs a simple type conversion to TxsdTextTypeTy
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Hreflang_XsdtNmtoken_">type <a href="/target/atom.xsd.xml.go?s=3031:3157#L67">XsdGoPkgHasAttr_Hreflang_XsdtNmtoken_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Hreflang_XsdtNmtoken_">type <a href="/target/atom.xsd.xml.go?s=14804:14930#L367">XsdGoPkgHasAttr_Hreflang_XsdtNmtoken_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Hreflang_XsdtNmtoken_ struct {
     Hreflang xsdt.Nmtoken `xml:&#34;http://www.w3.org/2005/Atom hreflang,attr&#34;`
 }</pre>
-			<p>
-The Atom entry construct is defined in section 4.1.2 of the format spec.
-The Atom link construct is defined in section 3.4 of the format spec.
-</p>
-
+			
 
 			
 
@@ -1241,7 +1234,7 @@ The Atom link construct is defined in section 3.4 of the format spec.
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Label_XsdtString_">type <a href="/target/atom.xsd.xml.go?s=17715:17830#L433">XsdGoPkgHasAttr_Label_XsdtString_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Label_XsdtString_">type <a href="/target/atom.xsd.xml.go?s=17435:17550#L444">XsdGoPkgHasAttr_Label_XsdtString_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Label_XsdtString_ struct {
     Label xsdt.String `xml:&#34;http://www.w3.org/2005/Atom label,attr&#34;`
 }</pre>
@@ -1259,7 +1252,7 @@ The Atom link construct is defined in section 3.4 of the format spec.
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Length_XsdtPositiveInteger_">type <a href="/target/atom.xsd.xml.go?s=4343:4479#L108">XsdGoPkgHasAttr_Length_XsdtPositiveInteger_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Length_XsdtPositiveInteger_">type <a href="/target/atom.xsd.xml.go?s=14435:14571#L355">XsdGoPkgHasAttr_Length_XsdtPositiveInteger_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Length_XsdtPositiveInteger_ struct {
     Length xsdt.PositiveInteger `xml:&#34;http://www.w3.org/2005/Atom length,attr&#34;`
 }</pre>
@@ -1277,11 +1270,14 @@ The Atom link construct is defined in section 3.4 of the format spec.
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Rel_XsdtString_">type <a href="/target/atom.xsd.xml.go?s=3273:3382#L75">XsdGoPkgHasAttr_Rel_XsdtString_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Rel_XsdtString_">type <a href="/target/atom.xsd.xml.go?s=14324:14433#L351">XsdGoPkgHasAttr_Rel_XsdtString_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Rel_XsdtString_ struct {
     Rel xsdt.String `xml:&#34;http://www.w3.org/2005/Atom rel,attr&#34;`
 }</pre>
-			
+			<p>
+The Atom link construct is defined in section 3.4 of the format spec.
+</p>
+
 
 			
 
@@ -1295,11 +1291,14 @@ The Atom link construct is defined in section 3.4 of the format spec.
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Scheme_XsdtAnyURI_">type <a href="/target/atom.xsd.xml.go?s=17595:17713#L429">XsdGoPkgHasAttr_Scheme_XsdtAnyURI_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Scheme_XsdtAnyURI_">type <a href="/target/atom.xsd.xml.go?s=17315:17433#L440">XsdGoPkgHasAttr_Scheme_XsdtAnyURI_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Scheme_XsdtAnyURI_ struct {
     Scheme xsdt.AnyURI `xml:&#34;http://www.w3.org/2005/Atom scheme,attr&#34;`
 }</pre>
-			
+			<p>
+The Atom cagegory construct is defined in section 4.2.2 of the format spec.
+</p>
+
 
 			
 
@@ -1313,7 +1312,7 @@ The Atom link construct is defined in section 3.4 of the format spec.
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Src_XsdtAnyURI_">type <a href="/target/atom.xsd.xml.go?s=21119:21228#L517">XsdGoPkgHasAttr_Src_XsdtAnyURI_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Src_XsdtAnyURI_">type <a href="/target/atom.xsd.xml.go?s=30920:31029#L754">XsdGoPkgHasAttr_Src_XsdtAnyURI_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Src_XsdtAnyURI_ struct {
     Src xsdt.AnyURI `xml:&#34;http://www.w3.org/2005/Atom src,attr&#34;`
 }</pre>
@@ -1334,14 +1333,11 @@ The Atom content construct is defined in section 4.1.3 of the format spec.
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Term_XsdtString_">type <a href="/target/atom.xsd.xml.go?s=17481:17593#L425">XsdGoPkgHasAttr_Term_XsdtString_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Term_XsdtString_">type <a href="/target/atom.xsd.xml.go?s=17552:17664#L448">XsdGoPkgHasAttr_Term_XsdtString_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Term_XsdtString_ struct {
     Term xsdt.String `xml:&#34;http://www.w3.org/2005/Atom term,attr&#34;`
 }</pre>
-			<p>
-The Atom cagegory construct is defined in section 4.2.2 of the format spec.
-</p>
-
+			
 
 			
 
@@ -1355,7 +1351,7 @@ The Atom cagegory construct is defined in section 4.2.2 of the format spec.
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Title_XsdtString_">type <a href="/target/atom.xsd.xml.go?s=4226:4341#L104">XsdGoPkgHasAttr_Title_XsdtString_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Title_XsdtString_">type <a href="/target/atom.xsd.xml.go?s=14573:14688#L359">XsdGoPkgHasAttr_Title_XsdtString_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Title_XsdtString_ struct {
     Title xsdt.String `xml:&#34;http://www.w3.org/2005/Atom title,attr&#34;`
 }</pre>
@@ -1373,7 +1369,7 @@ The Atom cagegory construct is defined in section 4.2.2 of the format spec.
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Type_TxsdTextTypeType_">type <a href="/target/atom.xsd.xml.go?s=7794:7917#L197">XsdGoPkgHasAttr_Type_TxsdTextTypeType_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Type_TxsdTextTypeType_">type <a href="/target/atom.xsd.xml.go?s=8147:8270#L192">XsdGoPkgHasAttr_Type_TxsdTextTypeType_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Type_TxsdTextTypeType_ struct {
     Type TxsdTextTypeType `xml:&#34;http://www.w3.org/2005/Atom type,attr&#34;`
 }</pre>
@@ -1391,7 +1387,7 @@ The Atom cagegory construct is defined in section 4.2.2 of the format spec.
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Type_XsdtString_">type <a href="/target/atom.xsd.xml.go?s=3384:3496#L79">XsdGoPkgHasAttr_Type_XsdtString_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Type_XsdtString_">type <a href="/target/atom.xsd.xml.go?s=14932:15044#L371">XsdGoPkgHasAttr_Type_XsdtString_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Type_XsdtString_ struct {
     Type xsdt.String `xml:&#34;http://www.w3.org/2005/Atom type,attr&#34;`
 }</pre>
@@ -1409,7 +1405,7 @@ The Atom cagegory construct is defined in section 4.2.2 of the format spec.
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Uri_XsdtAnyURI_">type <a href="/target/atom.xsd.xml.go?s=38396:38505#L925">XsdGoPkgHasAttr_Uri_XsdtAnyURI_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Uri_XsdtAnyURI_">type <a href="/target/atom.xsd.xml.go?s=40438:40547#L978">XsdGoPkgHasAttr_Uri_XsdtAnyURI_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Uri_XsdtAnyURI_ struct {
     Uri xsdt.AnyURI `xml:&#34;http://www.w3.org/2005/Atom uri,attr&#34;`
 }</pre>
@@ -1427,7 +1423,7 @@ The Atom cagegory construct is defined in section 4.2.2 of the format spec.
 		
 			
 			
-			<h2 id="XsdGoPkgHasAttr_Version_XsdtString_">type <a href="/target/atom.xsd.xml.go?s=38273:38394#L921">XsdGoPkgHasAttr_Version_XsdtString_</a></h2>
+			<h2 id="XsdGoPkgHasAttr_Version_XsdtString_">type <a href="/target/atom.xsd.xml.go?s=40315:40436#L974">XsdGoPkgHasAttr_Version_XsdtString_</a></h2>
 			<pre>type XsdGoPkgHasAttr_Version_XsdtString_ struct {
     Version xsdt.String `xml:&#34;http://www.w3.org/2005/Atom version,attr&#34;`
 }</pre>
@@ -1450,9 +1446,9 @@ The Atom generator element is defined in section 4.2.4 of the format spec.
 			
 			<h2 id="XsdGoPkgHasAtts_CommonAttributes">type <a href="/target/atom.xsd.xml.go?s=598:699#L6">XsdGoPkgHasAtts_CommonAttributes</a></h2>
 			<pre>type XsdGoPkgHasAtts_CommonAttributes struct {
-    xml.XsdGoPkgHasAttr_Lang
-
     xml.XsdGoPkgHasAttr_Base
+
+    xml.XsdGoPkgHasAttr_Lang
 }</pre>
 			
 
@@ -1468,7 +1464,7 @@ The Atom generator element is defined in section 4.2.4 of the format spec.
 		
 			
 			
-			<h2 id="XsdGoPkgHasCdata">type <a href="/target/atom.xsd.xml.go?s=3498:3570#L83">XsdGoPkgHasCdata</a></h2>
+			<h2 id="XsdGoPkgHasCdata">type <a href="/target/atom.xsd.xml.go?s=8272:8344#L196">XsdGoPkgHasCdata</a></h2>
 			<pre>type XsdGoPkgHasCdata struct {
     XsdGoPkgCDATA string `xml:&#34;,chardata&#34;`
 }</pre>
@@ -1484,7 +1480,7 @@ The Atom generator element is defined in section 4.2.4 of the format spec.
 
 			
 				
-				<h3 id="XsdGoPkgHasCdata.Walk">func (*XsdGoPkgHasCdata) <a href="/target/atom.xsd.xml.go?s=3839:3885#L88">Walk</a></h3>
+				<h3 id="XsdGoPkgHasCdata.Walk">func (*XsdGoPkgHasCdata) <a href="/target/atom.xsd.xml.go?s=8613:8659#L201">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasCdata) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasCdata function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasCdata instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasCdata instance.
@@ -1496,7 +1492,7 @@ If the WalkHandlers.XsdGoPkgHasCdata function is not nil (ie. was set by outside
 		
 			
 			
-			<h2 id="XsdGoPkgHasElem_Entry">type <a href="/target/atom.xsd.xml.go?s=48378:48476#L1174">XsdGoPkgHasElem_Entry</a></h2>
+			<h2 id="XsdGoPkgHasElem_Entry">type <a href="/target/atom.xsd.xml.go?s=48338:48436#L1174">XsdGoPkgHasElem_Entry</a></h2>
 			<pre>type XsdGoPkgHasElem_Entry struct {
     Entry *TentryType `xml:&#34;http://www.w3.org/2005/Atom entry&#34;`
 }</pre>
@@ -1512,7 +1508,7 @@ If the WalkHandlers.XsdGoPkgHasCdata function is not nil (ie. was set by outside
 
 			
 				
-				<h3 id="XsdGoPkgHasElem_Entry.Walk">func (*XsdGoPkgHasElem_Entry) <a href="/target/atom.xsd.xml.go?s=48760:48811#L1179">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElem_Entry.Walk">func (*XsdGoPkgHasElem_Entry) <a href="/target/atom.xsd.xml.go?s=48720:48771#L1179">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElem_Entry) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElem_Entry function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Entry instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Entry instance.
@@ -1524,7 +1520,7 @@ If the WalkHandlers.XsdGoPkgHasElem_Entry function is not nil (ie. was set by ou
 		
 			
 			
-			<h2 id="XsdGoPkgHasElem_Feed">type <a href="/target/atom.xsd.xml.go?s=47495:47589#L1150">XsdGoPkgHasElem_Feed</a></h2>
+			<h2 id="XsdGoPkgHasElem_Feed">type <a href="/target/atom.xsd.xml.go?s=46531:46625#L1124">XsdGoPkgHasElem_Feed</a></h2>
 			<pre>type XsdGoPkgHasElem_Feed struct {
     Feed *TfeedType `xml:&#34;http://www.w3.org/2005/Atom feed&#34;`
 }</pre>
@@ -1540,7 +1536,7 @@ If the WalkHandlers.XsdGoPkgHasElem_Entry function is not nil (ie. was set by ou
 
 			
 				
-				<h3 id="XsdGoPkgHasElem_Feed.Walk">func (*XsdGoPkgHasElem_Feed) <a href="/target/atom.xsd.xml.go?s=47870:47920#L1155">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElem_Feed.Walk">func (*XsdGoPkgHasElem_Feed) <a href="/target/atom.xsd.xml.go?s=46906:46956#L1129">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElem_Feed) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElem_Feed function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElem_Feed instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 1/1 field(s) belonging to this XsdGoPkgHasElem_Feed instance.
@@ -1552,7 +1548,7 @@ If the WalkHandlers.XsdGoPkgHasElem_Feed function is not nil (ie. was set by out
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_Feed">type <a href="/target/atom.xsd.xml.go?s=46571:46669#L1124">XsdGoPkgHasElems_Feed</a></h2>
+			<h2 id="XsdGoPkgHasElems_Feed">type <a href="/target/atom.xsd.xml.go?s=47414:47512#L1148">XsdGoPkgHasElems_Feed</a></h2>
 			<pre>type XsdGoPkgHasElems_Feed struct {
     Feeds []*TfeedType `xml:&#34;http://www.w3.org/2005/Atom feed&#34;`
 }</pre>
@@ -1568,7 +1564,7 @@ If the WalkHandlers.XsdGoPkgHasElem_Feed function is not nil (ie. was set by out
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_Feed.Walk">func (*XsdGoPkgHasElems_Feed) <a href="/target/atom.xsd.xml.go?s=46953:47004#L1129">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElems_Feed.Walk">func (*XsdGoPkgHasElems_Feed) <a href="/target/atom.xsd.xml.go?s=47796:47847#L1153">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElems_Feed) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_Feed function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_Feed instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_Feed instance.
@@ -1580,7 +1576,7 @@ If the WalkHandlers.XsdGoPkgHasElems_Feed function is not nil (ie. was set by ou
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_">type <a href="/target/atom.xsd.xml.go?s=26566:26713#L656">XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_</a></h2>
+			<h2 id="XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_">type <a href="/target/atom.xsd.xml.go?s=33154:33301#L814">XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_</a></h2>
 			<pre>type XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_ struct {
     Authors []*TpersonType `xml:&#34;http://www.w3.org/2005/Atom author&#34;`
 }</pre>
@@ -1596,7 +1592,7 @@ If the WalkHandlers.XsdGoPkgHasElems_Feed function is not nil (ie. was set by ou
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_.Walk">func (*XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_) <a href="/target/atom.xsd.xml.go?s=27126:27220#L661">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_.Walk">func (*XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_) <a href="/target/atom.xsd.xml.go?s=33714:33808#L819">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_ instance.
@@ -1608,8 +1604,8 @@ If the WalkHandlers.XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonT
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_">type <a href="/target/atom.xsd.xml.go?s=18644:18804#L464">XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_</a></h2>
-			<pre>type XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_ struct {
+			<h2 id="XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_">type <a href="/target/atom.xsd.xml.go?s=18478:18637#L479">XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_</a></h2>
+			<pre>type XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_ struct {
     Categories []*TcategoryType `xml:&#34;http://www.w3.org/2005/Atom category&#34;`
 }</pre>
 			
@@ -1624,10 +1620,10 @@ If the WalkHandlers.XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonT
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_.Walk">func (*XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_) <a href="/target/atom.xsd.xml.go?s=19235:19335#L469">Walk</a></h3>
-				<pre>func (me *XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_) Walk() (err error)</pre>
+				<h3 id="XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_.Walk">func (*XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_) <a href="/target/atom.xsd.xml.go?s=19065:19164#L484">Walk</a></h3>
+				<pre>func (me *XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_) Walk() (err error)</pre>
 				<p>
-If the WalkHandlers.XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_ instance.
+If the WalkHandlers.XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_ instance.
 </p>
 
 				
@@ -1636,7 +1632,7 @@ If the WalkHandlers.XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_Tcat
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_">type <a href="/target/atom.xsd.xml.go?s=22141:22294#L551">XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_</a></h2>
+			<h2 id="XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_">type <a href="/target/atom.xsd.xml.go?s=31942:32095#L788">XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_</a></h2>
 			<pre>type XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_ struct {
     Contents []*TcontentType `xml:&#34;http://www.w3.org/2005/Atom content&#34;`
 }</pre>
@@ -1652,7 +1648,7 @@ If the WalkHandlers.XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_Tcat
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_.Walk">func (*XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_) <a href="/target/atom.xsd.xml.go?s=22716:22813#L556">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_.Walk">func (*XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_) <a href="/target/atom.xsd.xml.go?s=32517:32614#L793">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_ instance.
@@ -1664,7 +1660,7 @@ If the WalkHandlers.XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_Tconte
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_">type <a href="/target/atom.xsd.xml.go?s=16137:16304#L398">XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_</a></h2>
+			<h2 id="XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_">type <a href="/target/atom.xsd.xml.go?s=29577:29744#L727">XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_</a></h2>
 			<pre>type XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_ struct {
     Contributors []*TpersonType `xml:&#34;http://www.w3.org/2005/Atom contributor&#34;`
 }</pre>
@@ -1680,7 +1676,7 @@ If the WalkHandlers.XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_Tconte
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_.Walk">func (*XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_) <a href="/target/atom.xsd.xml.go?s=16747:16851#L403">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_.Walk">func (*XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_) <a href="/target/atom.xsd.xml.go?s=30187:30291#L732">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_ instance.
@@ -1692,7 +1688,7 @@ If the WalkHandlers.XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributo
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_">type <a href="/target/atom.xsd.xml.go?s=10730:10871#L268">XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_</a></h2>
+			<h2 id="XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_">type <a href="/target/atom.xsd.xml.go?s=27166:27307#L670">XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_</a></h2>
 			<pre>type XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_ struct {
     Emails []TemailType `xml:&#34;http://www.w3.org/2005/Atom email&#34;`
 }</pre>
@@ -1708,7 +1704,7 @@ If the WalkHandlers.XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributo
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_.Walk">func (*XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_) <a href="/target/atom.xsd.xml.go?s=11278:11370#L273">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_.Walk">func (*XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_) <a href="/target/atom.xsd.xml.go?s=27714:27806#L675">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_ instance.
@@ -1720,7 +1716,7 @@ If the WalkHandlers.XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailTyp
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_">type <a href="/target/atom.xsd.xml.go?s=33757:33898#L815">XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_</a></h2>
+			<h2 id="XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_">type <a href="/target/atom.xsd.xml.go?s=39073:39214#L947">XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_</a></h2>
 			<pre>type XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_ struct {
     Entries []*TentryType `xml:&#34;http://www.w3.org/2005/Atom entry&#34;`
 }</pre>
@@ -1736,7 +1732,7 @@ If the WalkHandlers.XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailTyp
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_.Walk">func (*XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_) <a href="/target/atom.xsd.xml.go?s=34299:34389#L820">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_.Walk">func (*XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_) <a href="/target/atom.xsd.xml.go?s=39615:39705#L952">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_ instance.
@@ -1748,7 +1744,7 @@ If the WalkHandlers.XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_">type <a href="/target/atom.xsd.xml.go?s=39473:39637#L959">XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_</a></h2>
+			<h2 id="XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_">type <a href="/target/atom.xsd.xml.go?s=41515:41679#L1012">XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_</a></h2>
 			<pre>type XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_ struct {
     Generators []*TgeneratorType `xml:&#34;http://www.w3.org/2005/Atom generator&#34;`
 }</pre>
@@ -1764,7 +1760,7 @@ If the WalkHandlers.XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_.Walk">func (*XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_) <a href="/target/atom.xsd.xml.go?s=40074:40176#L964">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_.Walk">func (*XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_) <a href="/target/atom.xsd.xml.go?s=42116:42218#L1017">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_ instance.
@@ -1776,7 +1772,7 @@ If the WalkHandlers.XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_Tge
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_">type <a href="/target/atom.xsd.xml.go?s=37055:37189#L894">XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_</a></h2>
+			<h2 id="XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_">type <a href="/target/atom.xsd.xml.go?s=1710:1844#L40">XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_</a></h2>
 			<pre>type XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_ struct {
     Icons []*TiconType `xml:&#34;http://www.w3.org/2005/Atom icon&#34;`
 }</pre>
@@ -1792,7 +1788,7 @@ If the WalkHandlers.XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_Tge
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_.Walk">func (*XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_) <a href="/target/atom.xsd.xml.go?s=37581:37668#L899">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_.Walk">func (*XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_) <a href="/target/atom.xsd.xml.go?s=2236:2323#L45">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_ instance.
@@ -1804,8 +1800,8 @@ If the WalkHandlers.XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_ fu
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_">type <a href="/target/atom.xsd.xml.go?s=24271:24394#L604">XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_</a></h2>
-			<pre>type XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_ struct {
+			<h2 id="XsdGoPkgHasElems_idchoicefeedTypeschema_Id_TidType_">type <a href="/target/atom.xsd.xml.go?s=13155:13277#L324">XsdGoPkgHasElems_idchoicefeedTypeschema_Id_TidType_</a></h2>
+			<pre>type XsdGoPkgHasElems_idchoicefeedTypeschema_Id_TidType_ struct {
     Ids []*TidType `xml:&#34;http://www.w3.org/2005/Atom id&#34;`
 }</pre>
 			
@@ -1820,10 +1816,10 @@ If the WalkHandlers.XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_ fu
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_.Walk">func (*XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_) <a href="/target/atom.xsd.xml.go?s=24771:24853#L609">Walk</a></h3>
-				<pre>func (me *XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_) Walk() (err error)</pre>
+				<h3 id="XsdGoPkgHasElems_idchoicefeedTypeschema_Id_TidType_.Walk">func (*XsdGoPkgHasElems_idchoicefeedTypeschema_Id_TidType_) <a href="/target/atom.xsd.xml.go?s=13651:13732#L329">Walk</a></h3>
+				<pre>func (me *XsdGoPkgHasElems_idchoicefeedTypeschema_Id_TidType_) Walk() (err error)</pre>
 				<p>
-If the WalkHandlers.XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_ instance.
+If the WalkHandlers.XsdGoPkgHasElems_idchoicefeedTypeschema_Id_TidType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_idchoicefeedTypeschema_Id_TidType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_idchoicefeedTypeschema_Id_TidType_ instance.
 </p>
 
 				
@@ -1832,8 +1828,8 @@ If the WalkHandlers.XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_ functio
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_">type <a href="/target/atom.xsd.xml.go?s=5531:5666#L150">XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_</a></h2>
-			<pre>type XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_ struct {
+			<h2 id="XsdGoPkgHasElems_linkchoicefeedTypeschema_Link_TlinkType_">type <a href="/target/atom.xsd.xml.go?s=16096:16230#L413">XsdGoPkgHasElems_linkchoicefeedTypeschema_Link_TlinkType_</a></h2>
+			<pre>type XsdGoPkgHasElems_linkchoicefeedTypeschema_Link_TlinkType_ struct {
     Links []*TlinkType `xml:&#34;http://www.w3.org/2005/Atom link&#34;`
 }</pre>
 			
@@ -1848,10 +1844,10 @@ If the WalkHandlers.XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_ functio
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_.Walk">func (*XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_) <a href="/target/atom.xsd.xml.go?s=6061:6149#L155">Walk</a></h3>
-				<pre>func (me *XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_) Walk() (err error)</pre>
+				<h3 id="XsdGoPkgHasElems_linkchoicefeedTypeschema_Link_TlinkType_.Walk">func (*XsdGoPkgHasElems_linkchoicefeedTypeschema_Link_TlinkType_) <a href="/target/atom.xsd.xml.go?s=16622:16709#L418">Walk</a></h3>
+				<pre>func (me *XsdGoPkgHasElems_linkchoicefeedTypeschema_Link_TlinkType_) Walk() (err error)</pre>
 				<p>
-If the WalkHandlers.XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_ instance.
+If the WalkHandlers.XsdGoPkgHasElems_linkchoicefeedTypeschema_Link_TlinkType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_linkchoicefeedTypeschema_Link_TlinkType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_linkchoicefeedTypeschema_Link_TlinkType_ instance.
 </p>
 
 				
@@ -1860,7 +1856,7 @@ If the WalkHandlers.XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_ f
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_">type <a href="/target/atom.xsd.xml.go?s=41657:41791#L1012">XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_</a></h2>
+			<h2 id="XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_">type <a href="/target/atom.xsd.xml.go?s=3784:3918#L93">XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_</a></h2>
 			<pre>type XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_ struct {
     Logos []*TlogoType `xml:&#34;http://www.w3.org/2005/Atom logo&#34;`
 }</pre>
@@ -1876,7 +1872,7 @@ If the WalkHandlers.XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_ f
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_.Walk">func (*XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_) <a href="/target/atom.xsd.xml.go?s=42183:42270#L1017">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_.Walk">func (*XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_) <a href="/target/atom.xsd.xml.go?s=4310:4397#L98">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_ instance.
@@ -1888,11 +1884,14 @@ If the WalkHandlers.XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_ fu
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_">type <a href="/target/atom.xsd.xml.go?s=13739:13877#L341">XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_</a></h2>
+			<h2 id="XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_">type <a href="/target/atom.xsd.xml.go?s=23477:23615#L585">XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_</a></h2>
 			<pre>type XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_ struct {
     Names []xsdt.String `xml:&#34;http://www.w3.org/2005/Atom name&#34;`
 }</pre>
-			
+			<p>
+The Atom person construct is defined in section 3.2 of the format spec.
+</p>
+
 
 			
 
@@ -1904,7 +1903,7 @@ If the WalkHandlers.XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_ fu
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_.Walk">func (*XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_) <a href="/target/atom.xsd.xml.go?s=14278:14368#L346">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_.Walk">func (*XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_) <a href="/target/atom.xsd.xml.go?s=24016:24106#L590">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_ instance.
@@ -1916,11 +1915,14 @@ If the WalkHandlers.XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_">type <a href="/target/atom.xsd.xml.go?s=27756:27919#L682">XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_</a></h2>
+			<h2 id="XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_">type <a href="/target/atom.xsd.xml.go?s=19784:19947#L506">XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_</a></h2>
 			<pre>type XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_ struct {
     Publisheds []*TdateTimeType `xml:&#34;http://www.w3.org/2005/Atom published&#34;`
 }</pre>
-			
+			<p>
+The Atom entry construct is defined in section 4.1.2 of the format spec.
+</p>
+
 
 			
 
@@ -1932,7 +1934,7 @@ If the WalkHandlers.XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_.Walk">func (*XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_) <a href="/target/atom.xsd.xml.go?s=28356:28458#L687">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_.Walk">func (*XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_) <a href="/target/atom.xsd.xml.go?s=20384:20486#L511">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_ instance.
@@ -1944,8 +1946,8 @@ If the WalkHandlers.XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_Td
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_">type <a href="/target/atom.xsd.xml.go?s=8784:8928#L229">XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_</a></h2>
-			<pre>type XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_ struct {
+			<h2 id="XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_">type <a href="/target/atom.xsd.xml.go?s=11065:11208#L271">XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_</a></h2>
+			<pre>type XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_ struct {
     Rightses []*TtextType `xml:&#34;http://www.w3.org/2005/Atom rights&#34;`
 }</pre>
 			
@@ -1960,10 +1962,10 @@ If the WalkHandlers.XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_Td
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_.Walk">func (*XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_) <a href="/target/atom.xsd.xml.go?s=9335:9427#L234">Walk</a></h3>
-				<pre>func (me *XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_) Walk() (err error)</pre>
+				<h3 id="XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_.Walk">func (*XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_) <a href="/target/atom.xsd.xml.go?s=11612:11703#L276">Walk</a></h3>
+				<pre>func (me *XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_) Walk() (err error)</pre>
 				<p>
-If the WalkHandlers.XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_ instance.
+If the WalkHandlers.XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_ instance.
 </p>
 
 				
@@ -1972,7 +1974,7 @@ If the WalkHandlers.XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextTyp
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_">type <a href="/target/atom.xsd.xml.go?s=29005:29148#L708">XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_</a></h2>
+			<h2 id="XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_">type <a href="/target/atom.xsd.xml.go?s=22226:22369#L558">XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_</a></h2>
 			<pre>type XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_ struct {
     Sources []*TtextType `xml:&#34;http://www.w3.org/2005/Atom source&#34;`
 }</pre>
@@ -1988,7 +1990,7 @@ If the WalkHandlers.XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextTyp
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_.Walk">func (*XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_) <a href="/target/atom.xsd.xml.go?s=29555:29647#L713">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_.Walk">func (*XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_) <a href="/target/atom.xsd.xml.go?s=22776:22868#L563">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_ instance.
@@ -2000,7 +2002,7 @@ If the WalkHandlers.XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextTyp
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_">type <a href="/target/atom.xsd.xml.go?s=34921:35071#L841">XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_</a></h2>
+			<h2 id="XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_">type <a href="/target/atom.xsd.xml.go?s=9865:10015#L245">XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_</a></h2>
 			<pre>type XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_ struct {
     Subtitles []*TtextType `xml:&#34;http://www.w3.org/2005/Atom subtitle&#34;`
 }</pre>
@@ -2016,7 +2018,7 @@ If the WalkHandlers.XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextTyp
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_.Walk">func (*XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_) <a href="/target/atom.xsd.xml.go?s=35487:35582#L846">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_.Walk">func (*XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_) <a href="/target/atom.xsd.xml.go?s=10431:10526#L250">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_ instance.
@@ -2028,7 +2030,7 @@ If the WalkHandlers.XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_Ttext
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_">type <a href="/target/atom.xsd.xml.go?s=25373:25521#L630">XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_</a></h2>
+			<h2 id="XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_">type <a href="/target/atom.xsd.xml.go?s=21033:21181#L532">XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_</a></h2>
 			<pre>type XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_ struct {
     Summaries []*TtextType `xml:&#34;http://www.w3.org/2005/Atom summary&#34;`
 }</pre>
@@ -2044,7 +2046,7 @@ If the WalkHandlers.XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_Ttext
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_.Walk">func (*XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_) <a href="/target/atom.xsd.xml.go?s=25934:26028#L635">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_.Walk">func (*XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_) <a href="/target/atom.xsd.xml.go?s=21594:21688#L537">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_ instance.
@@ -2056,7 +2058,7 @@ If the WalkHandlers.XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextT
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_">type <a href="/target/atom.xsd.xml.go?s=19880:20019#L490">XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_</a></h2>
+			<h2 id="XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_">type <a href="/target/atom.xsd.xml.go?s=34344:34483#L840">XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_</a></h2>
 			<pre>type XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_ struct {
     Titles []*TtextType `xml:&#34;http://www.w3.org/2005/Atom title&#34;`
 }</pre>
@@ -2072,7 +2074,7 @@ If the WalkHandlers.XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextT
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_.Walk">func (*XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_) <a href="/target/atom.xsd.xml.go?s=20420:20510#L495">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_.Walk">func (*XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_) <a href="/target/atom.xsd.xml.go?s=34884:34974#L845">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_ instance.
@@ -2084,7 +2086,7 @@ If the WalkHandlers.XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_">type <a href="/target/atom.xsd.xml.go?s=1669:1823#L39">XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_</a></h2>
+			<h2 id="XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_">type <a href="/target/atom.xsd.xml.go?s=5817:5971#L145">XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_</a></h2>
 			<pre>type XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_ struct {
     Updateds []*TdateTimeType `xml:&#34;http://www.w3.org/2005/Atom updated&#34;`
 }</pre>
@@ -2100,7 +2102,7 @@ If the WalkHandlers.XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_.Walk">func (*XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_) <a href="/target/atom.xsd.xml.go?s=2245:2342#L44">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_.Walk">func (*XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_) <a href="/target/atom.xsd.xml.go?s=6393:6490#L150">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_ instance.
@@ -2112,7 +2114,7 @@ If the WalkHandlers.XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTi
 		
 			
 			
-			<h2 id="XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_">type <a href="/target/atom.xsd.xml.go?s=12609:12739#L315">XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_</a></h2>
+			<h2 id="XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_">type <a href="/target/atom.xsd.xml.go?s=25343:25473#L632">XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_</a></h2>
 			<pre>type XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_ struct {
     Uris []*TuriType `xml:&#34;http://www.w3.org/2005/Atom uri&#34;`
 }</pre>
@@ -2128,7 +2130,7 @@ If the WalkHandlers.XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTi
 
 			
 				
-				<h3 id="XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_.Walk">func (*XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_) <a href="/target/atom.xsd.xml.go?s=13128:13214#L320">Walk</a></h3>
+				<h3 id="XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_.Walk">func (*XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_) <a href="/target/atom.xsd.xml.go?s=25862:25948#L637">Walk</a></h3>
 				<pre>func (me *XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_) Walk() (err error)</pre>
 				<p>
 If the WalkHandlers.XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_ function is not nil (ie. was set by outside code), calls it with this XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_ instance as the single argument. Then calls the Walk() method on 0/0 embed(s) and 0/1 field(s) belonging to this XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_ instance.
@@ -2140,45 +2142,45 @@ If the WalkHandlers.XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_ fun
 		
 			
 			
-			<h2 id="XsdGoPkgWalkHandlers">type <a href="/target/atom.xsd.xml.go?s=50728:55788#L1213">XsdGoPkgWalkHandlers</a></h2>
+			<h2 id="XsdGoPkgWalkHandlers">type <a href="/target/atom.xsd.xml.go?s=50688:55744#L1213">XsdGoPkgWalkHandlers</a></h2>
 			<pre>type XsdGoPkgWalkHandlers struct {
-    XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_        func(*XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_, bool) error
-    XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_   func(*XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_, bool) error
-    XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_                 func(*XsdGoPkgHasElems_linkchoiceentryTypeschema_Link_TlinkType_, bool) error
-    TtextType                                                                  func(*TtextType, bool) error
-    TuriType                                                                   func(*TuriType, bool) error
-    TpersonType                                                                func(*TpersonType, bool) error
     XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_             func(*XsdGoPkgHasElems_sourcechoiceentryTypeschema_Source_TtextType_, bool) error
-    TentryType                                                                 func(*TentryType, bool) error
-    XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_           func(*XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_, bool) error
-    XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_               func(*XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_, bool) error
-    XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_                       func(*XsdGoPkgHasElems_idchoiceentryTypeschema_Id_TidType_, bool) error
-    XsdGoPkgHasCdata                                                           func(*XsdGoPkgHasCdata, bool) error
-    XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_     func(*XsdGoPkgHasElems_categorychoiceentryTypeschema_Category_TcategoryType_, bool) error
-    XsdGoPkgHasElem_Entry                                                      func(*XsdGoPkgHasElem_Entry, bool) error
-    XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_                  func(*XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_, bool) error
-    TfeedType                                                                  func(*TfeedType, bool) error
-    XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_          func(*XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_, bool) error
-    TdateTimeType                                                              func(*TdateTimeType, bool) error
-    XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_        func(*XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_, bool) error
-    TlogoType                                                                  func(*TlogoType, bool) error
-    XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_           func(*XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_, bool) error
-    XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_                  func(*XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_, bool) error
-    TiconType                                                                  func(*TiconType, bool) error
     XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_               func(*XsdGoPkgHasElems_titlechoiceentryTypeschema_Title_TtextType_, bool) error
-    XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_             func(*XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_, bool) error
-    XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_ func(*XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_, bool) error
-    XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_   func(*XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_, bool) error
-    TcategoryType                                                              func(*TcategoryType, bool) error
-    TcontentType                                                               func(*TcontentType, bool) error
-    XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_               func(*XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_, bool) error
-    TidType                                                                    func(*TidType, bool) error
-    TlinkType                                                                  func(*TlinkType, bool) error
-    XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_                   func(*XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_, bool) error
-    XsdGoPkgHasElem_Feed                                                       func(*XsdGoPkgHasElem_Feed, bool) error
-    XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_             func(*XsdGoPkgHasElems_rightschoiceentryTypeschema_Rights_TtextType_, bool) error
     TgeneratorType                                                             func(*TgeneratorType, bool) error
+    XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_        func(*XsdGoPkgHasElems_updatedchoicefeedTypeschema_Updated_TdateTimeType_, bool) error
+    XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_                  func(*XsdGoPkgHasElems_iconchoicefeedTypeschema_Icon_TiconType_, bool) error
+    XsdGoPkgHasElem_Feed                                                       func(*XsdGoPkgHasElem_Feed, bool) error
+    XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_   func(*XsdGoPkgHasElems_generatorchoicefeedTypeschema_Generator_TgeneratorType_, bool) error
+    TtextType                                                                  func(*TtextType, bool) error
+    TcontentType                                                               func(*TcontentType, bool) error
+    TdateTimeType                                                              func(*TdateTimeType, bool) error
+    XsdGoPkgHasElems_idchoicefeedTypeschema_Id_TidType_                        func(*XsdGoPkgHasElems_idchoicefeedTypeschema_Id_TidType_, bool) error
+    TlinkType                                                                  func(*TlinkType, bool) error
+    XsdGoPkgHasElems_linkchoicefeedTypeschema_Link_TlinkType_                  func(*XsdGoPkgHasElems_linkchoicefeedTypeschema_Link_TlinkType_, bool) error
+    XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_   func(*XsdGoPkgHasElems_publishedchoiceentryTypeschema_Published_TdateTimeType_, bool) error
+    XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_                   func(*XsdGoPkgHasElems_urichoicepersonTypeschema_Uri_TuriType_, bool) error
+    XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_             func(*XsdGoPkgHasElems_emailchoicepersonTypeschema_Email_TemailType_, bool) error
+    XsdGoPkgHasCdata                                                           func(*XsdGoPkgHasCdata, bool) error
+    XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_ func(*XsdGoPkgHasElems_contributorchoiceentryTypeschema_Contributor_TpersonType_, bool) error
+    TfeedType                                                                  func(*TfeedType, bool) error
+    TuriType                                                                   func(*TuriType, bool) error
+    XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_               func(*XsdGoPkgHasElems_namechoicepersonTypeschema_Name_XsdtString_, bool) error
     XsdGoPkgHasElems_Feed                                                      func(*XsdGoPkgHasElems_Feed, bool) error
+    TcategoryType                                                              func(*TcategoryType, bool) error
+    XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_          func(*XsdGoPkgHasElems_subtitlechoicefeedTypeschema_Subtitle_TtextType_, bool) error
+    XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_                  func(*XsdGoPkgHasElems_logochoicefeedTypeschema_Logo_TlogoType_, bool) error
+    XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_              func(*XsdGoPkgHasElems_rightschoicefeedTypeschema_Rights_TtextType_, bool) error
+    XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_           func(*XsdGoPkgHasElems_authorchoiceentryTypeschema_Author_TpersonType_, bool) error
+    XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_           func(*XsdGoPkgHasElems_summarychoiceentryTypeschema_Summary_TtextType_, bool) error
+    TidType                                                                    func(*TidType, bool) error
+    XsdGoPkgHasElem_Entry                                                      func(*XsdGoPkgHasElem_Entry, bool) error
+    TlogoType                                                                  func(*TlogoType, bool) error
+    TpersonType                                                                func(*TpersonType, bool) error
+    XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_               func(*XsdGoPkgHasElems_entrychoicefeedTypeschema_Entry_TentryType_, bool) error
+    XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_        func(*XsdGoPkgHasElems_contentchoiceentryTypeschema_Content_TcontentType_, bool) error
+    TiconType                                                                  func(*TiconType, bool) error
+    XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_      func(*XsdGoPkgHasElems_categorychoicefeedTypeschema_Category_TcategoryType_, bool) error
+    TentryType                                                                 func(*TentryType, bool) error
 }</pre>
 			<p>
 Provides 37 strong-typed hooks for your own custom handler functions to be invoked when the Walk() method is called on any instance of any (non-attribute-related) struct type defined in this package.
